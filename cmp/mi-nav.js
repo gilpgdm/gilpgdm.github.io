@@ -7,8 +7,8 @@ customElements.define("mi-nav", class extends HTMLElement {
         <li><a href="0_sw.html">Software a Instalar</a></li>
         <li><a href="1_app_multiplataforma.html">Las App Multiplataforma</a></li>
         <li><a href="2_html.html">Introducción a HTML5</a></li>
-        <li><a href="3_multimedia.html">Elementos Multimedia</a></li>
         <li><a href="4_css3.html">Introducción a CSS3</a></li>
+        <li><a href="3_multimedia.html">Elementos Multimedia</a></li>
         <li><a href="5_cajas.html">Modelo de Cajas</a></li>
         <li><a href="6_intro_js.html">Introducción a JavaScript</a></li>
         <li><a href="7_tipos.html">Tipos de Datos</a></li>
