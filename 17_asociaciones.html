@@ -21,7 +21,9 @@
               <option value=arreglos>Arreglos</option>
               <option value=arrobjs>Arreglos de Objetos</option>
               <option value=muchos>Asociaciones a Muchos</option>
-              <option value=bidireccional>Asociaciones Bidireccionales</option>
+              <option value=uno_a_uno>Asociaciones Uno a Uno</option>
+              <option value=uno_a_muchos>Asociaciones Uno a Muchos</option>
+              <option value=muchs_a_muchos>Asociaciones Muchos a Muchos</option>
               <option value=agregacion>Agregación</option>
               <option value=composicion>Composición</option>
             </select>`);
@@ -44,14 +46,19 @@
         <header></header>
         <h2></h2>
         <div class="marco-lectura">
+          <h3>Imagina</h3>
           <figure>
             <img src="img/a_uno.svg" alt="Imagina asociaciones a uno">
           </figure>
+          <h3>Diagrama de Clases</h3>
           <figure>
-            <img src="img/clases_a_uno.svg" alt="Diagrama de clases a uno">
+            <img class="dc" src="img/clases_a_uno.svg" alt="Diagrama de clases a uno">
           </figure>
+          <h3>Frases</h3>
+          <p>Una sonaja tiene como <em>dueño</em> a <strong>un bebé</strong>.</p>
+          <h3>Código</h3>
           <p>
-            <a href="http://pythontutor.com/javascript.html#code=class%20Piloto%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%7D%0A%7D%0Aclass%20Avi%C3%B3n%20%7B%0A%20%20constructor%28modelo%29%20%7B%0A%20%20%20%20this.modelo%20%3D%20modelo%3B%0A%20%20%20%20this.piloto%20%3D%20null%3B%0A%20%20%7D%0A%7D%0Aconst%20av1%20%3D%20new%20Avi%C3%B3n%28%22toin121%22%29%3B%0Aconst%20pp%20%3D%20new%20Piloto%28%22pp%22%29%3B%0Aav1.piloto%20%3D%20pp%3B%0Aconst%20qk%20%3D%20new%20Piloto%28%22qk%22%29%3B%0Aconst%20av2%20%3D%20new%20Avi%C3%B3n%28%22toin122%22%29%3B%0Aav2.piloto%20%3D%20qk%3B%0Aav1.piloto%20%3D%20qk%3B%0Aconst%20av3%20%3D%20new%20Avi%C3%B3n%28%22abue64%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            <a href="http://pythontutor.com/javascript.html#code=class%20Beb%C3%A9%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%7D%0A%7D%0Aclass%20Sonaja%20%7B%0A%20%20constructor%28modelo%29%20%7B%0A%20%20%20%20this.modelo%20%3D%20modelo%3B%0A%20%20%20%20this.due%C3%B1o%20%3D%20null%3B%0A%20%20%7D%20%20%0A%7D%0Aconst%20telSonajita1%20%3D%20new%20Sonaja%28%22sonajita1%22%29%3B%0Alet%20telQk%20%3D%20new%20Beb%C3%A9%28%22qk%22%29%3B%0AtelSonajita1.due%C3%B1o%20%3D%20telQk%3B%0AtelQk%20%3D%20null%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
               target="_blank">
               Programa animado de asociaciones a uno.
             </a>
@@ -67,19 +74,19 @@
             <img src="img/arreglos.svg" alt="Imagina un arreglo">
           </figure>
           <p>
-            <a href="http://pythontutor.com/javascript.html#code=let%20arr1%20%3D%20%5B%22mx%22,%20%22my%22,%20%22mu%22%5D%3B%0Aconsole.log%28arr1%29%3B%0Aconsole.log%28arr1.length%29%3B%0Afor%20%28var%20i%20%3D%200,%0A%20%20%20%20len%20%3D%20arr1.length%3B%0A%20%20%20%20i%20%3C%20len%3B%0A%20%20%20%20i%2B%2B%29%20%7B%0A%20%20const%20str%20%3D%20arr1%5Bi%5D%3B%0A%20%20console.log%28str%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            <a href="http://pythontutor.com/javascript.html#code=const%20arr1%20%3D%20%5B%22mx%22,%20%22my%22,%20%22mu%22%5D%3B%0Aconsole.log%28arr1%29%3B%0Aconsole.log%28arr1.length%29%3B%0Afor%20%28var%20i%20%3D%200,%0A%20%20%20%20len%20%3D%20arr1.length%3B%0A%20%20%20%20i%20%3C%20len%3B%0A%20%20%20%20i%2B%2B%29%20%7B%0A%20%20const%20str%20%3D%20arr1%5Bi%5D%3B%0A%20%20console.log%28str%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
               target="_blank">
               Programa animado de arreglos con contadores.
             </a>
           </p>
           <p>
-            <a href="http://pythontutor.com/javascript.html#code=var%20arr1%20%3D%20%5B%22mx%22,%20%22my%22,%20%22mu%22%5D%3B%0Afor%20%28var%20str%20of%20arr1%29%20%7B%0A%20%20console.log%28str%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            <a href="http://pythontutor.com/javascript.html#code=const%20arr1%20%3D%20%5B%22mx%22,%20%22my%22,%20%22mu%22%5D%3B%0Afor%20%28var%20str%20of%20arr1%29%20%7B%0A%20%20console.log%28str%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
               target="_blank">
               Programa animado de arreglos con for-of.
             </a>
           </p>
           <p>
-            <a href="http://pythontutor.com/javascript.html#code=var%20arr1%20%3D%20%5B%22mx%22,%20%22my%22,%20%22mu%22%5D%3B%0Aarr1.forEach%28str%20%3D%3E%20console.log%28str%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            <a href="http://pythontutor.com/javascript.html#code=const%20arr1%20%3D%20%5B%22mx%22,%20%22my%22,%20%22mu%22%5D%3B%0Aarr1.forEach%28str%20%3D%3E%20console.log%28str%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
               target="_blank">
               Programa animado de arreglos con forEach.
             </a>
@@ -95,19 +102,19 @@
             <img src="img/arrobjs.svg" alt="Imagina un arreglo de objetos">
           </figure>
           <p>
-            <a href="http://pythontutor.com/javascript.html#code=class%20Clao%20%7B%0A%20%20constructor%28a%29%20%7B%0A%20%20%20%20this.a%20%3D%20a%3B%0A%20%20%7D%0A%7D%0Avar%20arro1%20%3D%20%5Bnew%20Clao%28-3%29,%20new%20Clao%284%29,%20new%20Clao%288%29%5D%3B%0Aconsole.log%28arro1%29%3B%0Afor%20%28var%20ob%20of%20arro1%29%20%7B%0A%20%20console.log%28ob.a%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            <a href="http://pythontutor.com/javascript.html#code=class%20Clao%20%7B%0A%20%20constructor%28a%29%20%7B%0A%20%20%20%20this.a%20%3D%20a%3B%0A%20%20%7D%0A%7D%0Aconst%20arro1%20%3D%20%5Bnew%20Clao%28-3%29,%20new%20Clao%284%29,%20new%20Clao%288%29%5D%3B%0Aconsole.log%28arro1%29%3B%0Afor%20%28var%20ob%20of%20arro1%29%20%7B%0A%20%20console.log%28ob.a%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
               target="_blank">
               Programa animado de arreglos de instancias.
             </a>
           </p>
           <p>
-            <a href="http://pythontutor.com/javascript.html#code=var%20arro2%20%3D%20%5B%7B%20a%3A%20-3%20%7D,%20%7B%20a%3A%204%20%7D,%20%7B%20a%3A%208%20%7D%5D%3B%0Aconsole.log%28arro2%29%3B%0Afor%20%28var%20ob%20of%20arro2%29%20%7B%0A%20%20console.log%28ob.a%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            <a href="http://pythontutor.com/javascript.html#code=const%20arro2%20%3D%20%5B%7B%20a%3A%20-3%20%7D,%20%7B%20a%3A%204%20%7D,%20%7B%20a%3A%208%20%7D%5D%3B%0Aconsole.log%28arro2%29%3B%0Afor%20%28var%20ob%20of%20arro2%29%20%7B%0A%20%20console.log%28ob.a%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
               target="_blank">
               Programa animado de arreglos de literales de objetos.
             </a>
           </p>
           <p>
-            <a href="http://pythontutor.com/javascript.html#code=var%20arro2%20%3D%20%5B%7B%20a%3A%20-3%20%7D,%20%7B%20a%3A%204%20%7D,%20%7B%20a%3A%208%20%7D%5D%3B%0Aarro2.forEach%28n%20%3D%3E%20console.log%28n.a%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            <a href="http://pythontutor.com/javascript.html#code=const%20arro3%20%3D%20%5B%7B%20a%3A%20-3%20%7D,%20%7B%20a%3A%204%20%7D,%20%7B%20a%3A%208%20%7D%5D%3B%0Aarro3.forEach%28n%20%3D%3E%20console.log%28n.a%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
               target="_blank">
               Programa animado de arreglos de literales de objetos y foreach.
             </a>
@@ -119,50 +126,87 @@
         <header></header>
         <h2></h2>
         <div class="marco-lectura">
+          <h3>Imagina</h3>
           <figure>
             <img src="img/a_muchos.svg" alt="Imagina asociaciones a muchos">
-            <img src="img/clases_a_muchos.svg" alt="Diagrama de clases a muchos">
           </figure>
+          <h3>Diagrama de Clases</h3>
+          <figure>
+            <img class="dc" src="img/clases_a_muchos.svg" alt="Diagrama de clases a muchos">
+          </figure>
+          <h3>Frases</h3>
+          <p>Una infante tiene <strong>muchos juguetes</strong>.</p>
+          <h3>Código</h3>
           <p>
-            <a href="http://pythontutor.com/javascript.html#code=class%20Taller%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%20%20this.pasajeros%20%3D%20%5B%5D%3B%0A%20%20%7D%0A%7D%0Aclass%20Estudiante%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%7D%0A%7D%0Aconst%20tt%20%3D%20new%20Estudiante%28%22tt%22%29%3B%0Aconst%20t1%20%3D%20new%20Taller%28%22tkt699%22%29%3B%0Aconst%20bb%20%3D%20new%20Estudiante%28%22bb%22%29%3B%0At1.pasajeros%20%3D%20%5Btt,%20bb%5D%3B%0Aconst%20t2%20%3D%20new%20Taller%28%22tbc666%22%29%3B%0Aconst%20fr%20%3D%20new%20Estudiante%28%22fr%22%29%3B%0At2.pasajeros%20%3D%20%5Bbb,%20fr%5D%3B%0At2.pasajeros%20%3D%20%5B%5D%3B%0Aconst%20t3%20%3D%20new%20Taller%28%22tdk111%22%29%3B%0At3.pasajeros%20%3D%20%5Bfr%5D%3B%0Aconst%20t4%20%3D%20new%20Taller%28%22ctke88%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            <a href="http://pythontutor.com/javascript.html#code=class%20Juguete%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%7D%0A%7D%0Aclass%20Infante%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%20%20this.tiene%20%3D%20%5B%5D%3B%0A%20%20%7D%0A%7D%0Aconst%20tTt%20%3D%20new%20Infante%28%22tt%22%29%3B%0Alet%20tSpid%20%3D%20new%20Juguete%28%22spiderant%22%29%3B%0Alet%20tWon%20%3D%20new%20Juguete%28%22wonderant%22%29%3B%0AtTt.tiene%20%3D%20%5BtSpid,%20tWon%5D%3B%0AtSpid%20%3D%20null%3B%0AtWon%20%3D%20null%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
               target="_blank">
               Programa animado de asociaciones a muchos.
             </a>
           </p>
         </div>
       </section>
-      <section id=bidireccional slot=diapositiva>
+      <section id=uno_a_uno slot=diapositiva>
         <div class="cortina"></div>
         <header></header>
         <h2></h2>
         <div class="marco-lectura">
-          <h3>Uno a Uno</h3>
+          <h3>Imagina</h3>
           <figure>
-            <img src="img/clases_uno_a_uno_flechas.svg" alt="Diagrama de clases a uno a uno con flechas">
-            <img src="img/clases_uno_a_uno.svg" alt="Diagrama de clases a uno a uno">
+            <img src="img/uno_a_uno.svg" alt="Imagina asociaciones uno a uno">
           </figure>
+          <h3>Diagrama de Clases</h3>
+          <figure>
+            <img class="dc" src="img/clases_uno_a_uno_flechas.svg" alt="Diagrama de clases a uno a uno con flechas">
+            <img class="dc" src="img/clases_uno_a_uno.svg" alt="Diagrama de clases a uno a uno">
+          </figure>
+          <h3>Frases</h3>
+          <p>Un piloto <em>pilotea</em> <strong>un avión</strong>.</p>
+          <p>Un avión es <em>piloteado</em> por <strong>un piloto</strong>.</p>
+          <h3>Código</h3>
           <p>
-            <a href="http://pythontutor.com/javascript.html"
+            <a href="http://pythontutor.com/javascript.html#code=class%20Avi%C3%B3n%20%7B%0A%20%20constructor%28modelo%29%20%7B%0A%20%20%20%20this.modelo%20%3D%20modelo%3B%0A%20%20%20%20this.piloteado%20%3D%20null%3B%0A%20%20%7D%0A%7D%0Aclass%20Piloto%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%20%20this.pilotea%20%3D%20null%3B%0A%20%20%7D%0A%7D%0Aconst%20tToin121%20%3D%20new%20Avi%C3%B3n%28%22toin121%22%29%3B%0Alet%20tQk%20%3D%20new%20Piloto%28%22qk%22%29%3B%0AtToin121.piloteado%20%3D%20tQk%3B%0AtQk.pilotea%20%3D%20tToin121%3B%0AtQk%20%3D%20null%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
               target="_blank">
               Programa animado de asociaciones uno a uno.
             </a>
           </p>
-          <h3>Uno a Muchos</h3>
+        </div>
+      </section>
+      <section id=uno_a_muchos slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <h3>Imagina</h3>
           <figure>
-            <img src="img/clases_uno_a_muchos.svg" alt="Diagrama de clases a uno a muchos">
+            <img src="img/uno_a_muchos.svg" alt="Imagina asociaciones uno a muchos">
           </figure>
+          <h3>Diagrama de Clases</h3>
+          <figure>
+            <img class="dc" src="img/clases_uno_a_muchos.svg" alt="Diagrama de clases a uno a muchos">
+          </figure>
+          <h3>Frases</h3>
+          <p>Un juguete2 <em>pertenece</em> a <strong>un infante2</strong>.</p>
+          <p>Un infante2 tiene <strong>muchos juguetes2</strong>.</p>
+          <h3>Código</h3>
           <p>
-            <a href="http://pythontutor.com/javascript.html"
+            <a href="http://pythontutor.com/javascript.html#code=class%20Juguete2%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%20%20this.pertenece%20%3D%20null%3B%0A%20%20%7D%0A%7D%0Aclass%20Infante2%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%20%20this.tiene%20%3D%20%5B%5D%3B%0A%20%20%7D%0A%7D%0Aconst%20tTt%20%3D%20new%20Infante2%28%22tt%22%29%3B%0Alet%20tSpid%20%3D%20new%20Juguete2%28%22spiderant%22%29%3B%0Alet%20tWon%20%3D%20new%20Juguete2%28%22wonderant%22%29%3B%0AtTt.tiene%20%3D%20%5BtSpid,%20tWon%5D%3B%0AtSpid.pertenece%20%3D%20tTt%3B%0AtWon.pertenece%20%3D%20tTt%3B%0AtSpid%20%3D%20null%3B%0AtWon%20%3D%20null%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
               target="_blank">
               Programa animado de asociaciones uno a muchos.
             </a>
           </p>
-          <h3>Muchos a Muchos</h3>
+        </div>
+      </section>
+      <section id=muchs_a_muchos slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
           <figure>
-            <img src="img/clases_muchos_a_muchos.svg" alt="Diagrama de clases a muchos a muchos">
+            <img src="img/muchos_a_muchos.svg" alt="Imagina asociaciones muchos a muchos">
+            <img class="dc" src="img/clases_muchos_a_muchos.svg" alt="Diagrama de clases a muchos a muchos">
           </figure>
           <p>
-            <a href="http://pythontutor.com/javascript.html"
+            <a href="http://pythontutor.com/javascript.html#code=class%20Computadora%20%7B%0A%20%20constructor%28modelo%29%20%7B%0A%20%20%20%20this.modelo%20%3D%20modelo%3B%0A%20%20%20%20this.usada%20%3D%20null%3B%0A%20%20%7D%0A%7D%0Aclass%20Usuario%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%20%20this.usa%20%3D%20%5B%5D%3B%0A%20%20%7D%0A%7D%0Aconst%20tQk%20%3D%20new%20Usuario%28%22qk%22%29%3B%0Alet%20tPp%20%3D%20new%20Usuario%28%22pp%22%29%3B%0Alet%20tChp1%20%3D%20new%20Computadora%28%22chp%201%22%29%3B%0Alet%20tDella2%20%3D%20new%20Computadora%28%22della%202%22%29%3B%0AtQk.usa%20%3D%20%5BtChp1,%20tDella2%5D%3B%0AtPp.usa%20%3D%20%5BtDella2%5D%3B%0AtChp1.usada%20%3D%20%5BtQk%5D%3B%0AtDella2.usada%20%3D%20%5BtQk,%20tPp%5D%3B%0AtPp%20%3D%20null%3B%0AtChp1%20%3D%20null%3B%0AtDella2%20%3D%20null%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
               target="_blank">
               Programa animado de asociaciones muchos a muchos.
             </a>
@@ -174,15 +218,11 @@
         <header></header>
         <h2></h2>
         <div class="marco-lectura">
+          <p>Asociación binaria.</p>
+          <p>Un objeto se forma a con partes independientes.</p>
           <figure>
-            <img src="img/agregacion.svg" alt="Diagrama de clases de agregación">
+            <img class="dc" src="img/agregacion.svg" alt="Diagrama de clases de agregación">
           </figure>
-          <p>
-            <a href="http://pythontutor.com/javascript.html"
-              target="_blank">
-              Programa animado de agregación.
-            </a>
-          </p>
         </div>
       </section>
       <section id=composicion slot=diapositiva>
@@ -190,15 +230,15 @@
         <header></header>
         <h2></h2>
         <div class="marco-lectura">
-          <figure>
-            <img src="img/composicion.svg" alt="Diagrama de clases de composición">
-          </figure>
+          <p>Asociación binaria.</p>
           <p>
-            <a href="http://pythontutor.com/javascript.html"
-              target="_blank">
-              Programa animado de composición.
-            </a>
+            Un objeto se forma a con partes que no pueden existir sin el objeto
+            principal.
           </p>
+          <figure>
+            <img class="dc" src="img/composicion.svg"
+              alt="Diagrama de clases de composición">
+          </figure>
         </div>
       </section>
     </mi-presentacion>
