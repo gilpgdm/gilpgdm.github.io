@@ -19,6 +19,8 @@
               <option value=intro>Bases de Datos</option>
               <option value=Clases>Diagrama de Clases</option>
               <option value=Datos>Diseño de Datos</option>
+              <option value=Ejemplo>Datos de Ejemplo</option>
+              <option value=Instrucciones>Instrucciones</option>
               <option value=Archivos>Archivos</option>
               <option value=Footer>Footer</option>
               <option value=Navegacion>Navegación</option>
@@ -49,6 +51,27 @@
         <header></header>
         <h2></h2>
         <div class="marco-lectura">
+          <figure>
+            <img class="dc" src="img/clases_bd.svg"
+              alt="Diagrama de clases de la Base de Datos">
+          </figure>
+          <h3>Diagrama Entidad Relación</h3>
+          <figure>
+            <img class="dc" src="img/entidad_relacion.svg"
+              alt="Diagrama de Entidad Relación de la Base de Datos">
+          </figure>
+          <h3>Frases</h3>
+          <p>Un usuario <em>practica</em> <strong>un pasatiempo</strong>.</p>
+          <p>
+            Una pasatiempo es <em>practicado</em> por
+            <strong>muchos usuarios</strong>.
+          </p>
+          <p>
+            A un usuario se <em>asignan</em>
+            <strong>muchos priviegios</strong>.</p>
+          <p>Un privilegio es <em>asignado</em> a
+            <strong>muchos usuarios</strong>.
+          </p>
         </div>
       </section>
       <section id=Datos slot=diapositiva>
@@ -56,6 +79,245 @@
         <header></header>
         <h2></h2>
         <div class="marco-lectura">
+          <p>
+            La base de datos es Firestore de Firebase. Las entidades se
+            almacenan en <dfn>colecciones</dfn>, que consisten en una lista de
+            identificadores que tienen asociados documentos. Cada
+            <dfn>documento</dfn> contiene propiedades que tienen un nombre y
+            llevan asociado un valor.
+          </p>
+          <p>
+            Los archivos se cargan en el servicio de Storage, donde se usará el
+            id de usuario como nombre del archivo para simplificar el código.
+          </p>
+          <p>
+            Para la asociaciones a 1 (1-1 o M-1) se usa el id del objeto
+            relacionado. En este caso, el campo PAS_ID de USUARIO hace
+            referencia al id de PASATIEMPO.
+          </p>
+          <p>
+            Para la asociaciones a muchos (1-M o M-N) se usa un arreglo con los
+            id de los objetos relacionados. En este caso, el campo
+            PRIVILEGIO_IDS de USUARIO hace referencia a algunos id de
+            PRIVILEGIO.
+          </p>
+          <p>
+            Como la aplicación usa email creados externamente, este campo no se
+            usa como llave, permitiendo que el usuario pueda cambiar de cuenta.
+          </p>
+          <p>
+            Los identificadores de USUARIO y de PASATIEMPO se generan
+            automáticamente, pero los de PRIVILEGIO son manejados desde el
+            código y por lo mismo se registran directamente por el desarrollador
+            en la base de datos.
+          </p>
+          <p>
+            Los datos de PRIVILEGIO son manejados usados desde el código y casi
+            no se modifican. Por ello, el desarrollador asigna los
+            identificadores y llena esta entidad directamente en la base de
+            datos.
+          </p>
+          <figure>
+            <img class="dc" src="img/no_sql.svg"
+              alt="Diseño No SQL de la Base de Datos">
+          </figure>
+        </div>
+      </section>
+      <section id=Ejemplo slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <h3>Firestore</h3>
+          <dl class="datos">
+            <dt><strong>PRIVILEGIO</strong></dt>
+            <dd>
+              <dl>
+                <dt>(id) Pasatiempos</dt>
+                <dd>
+                  <table>
+                    <tr>
+                      <th>Propiedad</th>
+                      <th>Tipo</th>
+                      <th>Valor</th>
+                    </tr>
+                    <tr>
+                      <td>PRIV_DESCRIPCION</td>
+                      <td>string</td>
+                      <td>
+                        El usuario puede acceder a la vista
+                        <q>Pasatiempos</q>.
+                      </td>
+                    </tr>
+                  </table>
+                </dd>
+                <dt>(id) Usuarios</dt>
+                <dd>
+                  <table>
+                    <tr>
+                      <th>Propiedad</th>
+                      <th>Tipo</th>
+                      <th>Valor</th>
+                    </tr>
+                    <tr>
+                      <td>PRIV_DESCRIPCION</td>
+                      <td>string</td>
+                      <td>
+                        El usuario puede acceder a la vista
+                        <q>Usuarios</q>.
+                      </td>
+                    </tr>
+                  </table>
+                </dd>
+              </dl>
+            </dd>
+            <dt><strong>PASATIEMPO</strong></dt>
+            <dd>
+              <dl>
+                <dt>(id automático) NXY-MNY-PXQ1</dt>
+                <dd>
+                  <table>
+                    <tr>
+                      <th>Propiedad</th>
+                      <th>Tipo</th>
+                      <th>Valor</th>
+                    </tr>
+                    <tr>
+                      <td>PAS_NOMBRE</td>
+                      <td>string</td>
+                      <td>Futbol</td>
+                    </tr>
+                  </table>
+                </dd>
+                <dt>(id automático) PHX-DGC-AI66</dt>
+                <dd>
+                  <table>
+                    <tr>
+                      <th>Propiedad</th>
+                      <th>Tipo</th>
+                      <th>Valor</th>
+                    </tr>
+                    <tr>
+                      <td>PAS_NOMBRE</td>
+                      <td>string</td>
+                      <td>Estudiar</td>
+                    </tr>
+                  </table>
+                </dd>
+              </dl>
+            </dd>
+            <dt><strong>USUARIO</strong></dt>
+            <dd>
+              <dl>
+                <dt>(id automático) CHT-ACA-C999</dt>
+                <dd>
+                  <table>
+                    <tr>
+                      <th>Propiedad</th>
+                      <th>Tipo</th>
+                      <th>Valor</th>
+                    </tr>
+                    <tr>
+                      <td>USU_EMAIL</td>
+                      <td>string</td>
+                      <td>pp@gm.com</td>
+                    </tr>
+                    <tr>
+                      <td>PAS_ID</td>
+                      <td>string</td>
+                      <td>PHX-DGC-AI66 (apunta a PASATIEMPO)</td>
+                    </tr>
+                    <tr>
+                      <td>PRIVILEGIO_IDS</td>
+                      <td>arreglo</td>
+                      <td>
+                        <ol start="0">
+                          <li>Pasatiempos (apunta a PRIVILEGIO)</li>
+                          <li>Usuarios (apunta a PRIVILEGIO)</li>
+                        </ol>
+                      </td>
+                    </tr>
+                  </table>
+                </dd>
+              </dl>
+            </dd>
+          </dl>
+          <h3>Storage</h3>
+          <p>
+            El servicio de Storage almacena archivos por su nombre y va separado
+            de los datos.
+          </p>
+          <table>
+            <tr>
+              <th>Nombre</th>
+              <th>Datos</th>
+            </tr>
+            <tr>
+              <td>CHT-ACA-C999 (apunta a USUARIO)</td>
+              <td>
+                <figure>
+                  <img
+                    src="https://media.giphy.com/media/KzysaM2kn6oeM4Nx3Y/giphy.gif"
+                    alt="Avatar de pp">
+                </figure>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section id=Instrucciones slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <ol>
+            <li>
+              <p>
+                Crea una cuenta de Google con el nombre de tu aplicación de base
+                de datos.
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="https://web.microsoftstream.com/video/ca9eaa42-1865-4de4-8aa4-7972a170dbbf"
+                  target="_blank">Crea los íconos del proyecto con GIMP.</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="https://web.microsoftstream.com/video/cababed9-723e-4ba6-a07d-973de4ab5b1d"
+                  target="_blank">Crea una página con GitHub usando tu cuenta de
+                   Google.</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="https://web.microsoftstream.com/video/0237a0e5-3812-4fa3-94bf-c526724241de"
+                  target="_blank">Clona tu proyecto desde Visual Studio Code
+                  para trabajar desde tu PC.</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="https://web.microsoftstream.com/video/1a324af1-b026-4b38-a050-9f053223648e"
+                  target="_blank">Crear un proyecto de Firebase con el mismo
+                  correo que la cuenta de GitHub.</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="https://web.microsoftstream.com/video/1a324af1-b026-4b38-a050-9f053223648e"
+                  target="_blank">Configura Storage y Firestore en tu proyecto
+                  de Firebase y añade datos.</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                Edita el código, utilizando las diapositivas que siguen después
+                de esta y pruébalo.
+              </p>
+            </li>
+          </ol>
         </div>
       </section>
       <section id=Archivos slot=diapositiva>
@@ -101,13 +363,6 @@
         </div>
       </section>
       <section id=Cambios slot=diapositiva>
-        <div class="cortina"></div>
-        <header></header>
-        <h2></h2>
-        <div class="marco-lectura">
-        </div>
-      </section>
-      <section id=Maestras slot=diapositiva>
         <div class="cortina"></div>
         <header></header>
         <h2></h2>
