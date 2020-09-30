@@ -186,7 +186,7 @@
           </figure>
           <h3>Frases</h3>
           <p>Un juguete2 <em>pertenece</em> a <strong>un infante2</strong>.</p>
-          <p>Un infante2 tiene <strong>muchos juguetes2</strong>.</p>
+          <p>Un infante2 <em>tiene</em> <strong>muchos juguetes2</strong>.</p>
           <h3>Código</h3>
           <p>
             <a href="http://pythontutor.com/javascript.html#code=class%20Juguete2%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%20%20this.pertenece%20%3D%20null%3B%0A%20%20%7D%0A%7D%0Aclass%20Infante2%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%20%20this.tiene%20%3D%20%5B%5D%3B%0A%20%20%7D%0A%7D%0Aconst%20tTt%20%3D%20new%20Infante2%28%22tt%22%29%3B%0Alet%20tSpid%20%3D%20new%20Juguete2%28%22spiderant%22%29%3B%0Alet%20tWon%20%3D%20new%20Juguete2%28%22wonderant%22%29%3B%0AtTt.tiene%20%3D%20%5BtSpid,%20tWon%5D%3B%0AtSpid.pertenece%20%3D%20tTt%3B%0AtWon.pertenece%20%3D%20tTt%3B%0AtSpid%20%3D%20null%3B%0AtWon%20%3D%20null%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
@@ -205,6 +205,10 @@
             <img src="img/muchos_a_muchos.svg" alt="Imagina asociaciones muchos a muchos">
             <img class="dc" src="img/clases_muchos_a_muchos.svg" alt="Diagrama de clases a muchos a muchos">
           </figure>
+          <h3>Frases</h3>
+          <p>Un usuario <em>usa</em> <strong>muchas computadoras</strong>.</p>
+          <p>Una computadora es <em>usada</em> por <strong>muchos usuarios</strong>.</p>
+          <h3>Código</h3>
           <p>
             <a href="http://pythontutor.com/javascript.html#code=class%20Computadora%20%7B%0A%20%20constructor%28modelo%29%20%7B%0A%20%20%20%20this.modelo%20%3D%20modelo%3B%0A%20%20%20%20this.usada%20%3D%20null%3B%0A%20%20%7D%0A%7D%0Aclass%20Usuario%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%20%20this.usa%20%3D%20%5B%5D%3B%0A%20%20%7D%0A%7D%0Aconst%20tQk%20%3D%20new%20Usuario%28%22qk%22%29%3B%0Alet%20tPp%20%3D%20new%20Usuario%28%22pp%22%29%3B%0Alet%20tChp1%20%3D%20new%20Computadora%28%22chp%201%22%29%3B%0Alet%20tDella2%20%3D%20new%20Computadora%28%22della%202%22%29%3B%0AtQk.usa%20%3D%20%5BtChp1,%20tDella2%5D%3B%0AtPp.usa%20%3D%20%5BtDella2%5D%3B%0AtChp1.usada%20%3D%20%5BtQk%5D%3B%0AtDella2.usada%20%3D%20%5BtQk,%20tPp%5D%3B%0AtPp%20%3D%20null%3B%0AtChp1%20%3D%20null%3B%0AtDella2%20%3D%20null%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
               target="_blank">
@@ -219,7 +223,7 @@
         <h2></h2>
         <div class="marco-lectura">
           <p>Asociación binaria.</p>
-          <p>Un objeto se forma a con partes independientes.</p>
+          <p>Un objeto se forma con partes independientes.</p>
           <figure>
             <img class="dc" src="img/agregacion.svg" alt="Diagrama de clases de agregación">
           </figure>
@@ -232,7 +236,7 @@
         <div class="marco-lectura">
           <p>Asociación binaria.</p>
           <p>
-            Un objeto se forma a con partes que no pueden existir sin el objeto
+            Un objeto se forma con partes que no pueden existir sin el objeto
             principal.
           </p>
           <figure>
