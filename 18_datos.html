@@ -105,17 +105,15 @@
             Como la aplicación usa email creados externamente, este campo no se
             usa como llave, permitiendo que el usuario pueda cambiar de cuenta.
           </p>
+          <p>El identificadores PASATIEMPO se genera automáticamente.</p>
           <p>
-            Los identificadores de USUARIO y de PASATIEMPO se generan
-            automáticamente, pero los de PRIVILEGIO son manejados desde el
-            código y por lo mismo se registran directamente por el desarrollador
-            en la base de datos.
+            La colección PASATIEMPO se procesa más fácilmente si el id es el
+            email.
           </p>
           <p>
-            Los datos de PRIVILEGIO son manejados usados desde el código y casi
-            no se modifican. Por ello, el desarrollador asigna los
-            identificadores y llena esta entidad directamente en la base de
-            datos.
+            Los datos de PRIVILEGIO son usados directamente en el código. El
+            desarrollador asigna los identificadores y llena los datos
+            directamente en la base de datos desde el inicio.
           </p>
           <figure>
             <img class="dc" src="img/no_sql.svg"
@@ -209,18 +207,13 @@
             <dt><strong>USUARIO</strong></dt>
             <dd>
               <dl>
-                <dt>(id automático) CHT-ACA-C999</dt>
+                <dt>(id) pp@gm.com</dt>
                 <dd>
                   <table>
                     <tr>
                       <th>Propiedad</th>
                       <th>Tipo</th>
                       <th>Valor</th>
-                    </tr>
-                    <tr>
-                      <td>USU_EMAIL</td>
-                      <td>string</td>
-                      <td>pp@gm.com</td>
                     </tr>
                     <tr>
                       <td>PAS_ID</td>
@@ -253,7 +246,7 @@
               <th>Datos</th>
             </tr>
             <tr>
-              <td>CHT-ACA-C999 (apunta a USUARIO)</td>
+              <td>pp@gm.com (apunta a USUARIO)</td>
               <td>
                 <figure>
                   <img
@@ -306,8 +299,8 @@
             </li>
             <li>
               <p>
-                <a href="https://web.microsoftstream.com/video/1a324af1-b026-4b38-a050-9f053223648e"
-                  target="_blank">Configura Storage y Firestore en tu proyecto
+                <a href="https://web.microsoftstream.com/video/607ada67-a975-4d30-8327-4c96773a2da5"
+                  target="_blank">Configura Authorization, Storage y Firestore en tu proyecto
                   de Firebase y añade datos.</a>
               </p>
             </li>
