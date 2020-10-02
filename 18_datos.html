@@ -83,12 +83,12 @@
             La base de datos es Firestore de Firebase. Las entidades se
             almacenan en <dfn>colecciones</dfn>, que consisten en una lista de
             identificadores que tienen asociados documentos. Cada
-            <dfn>documento</dfn> contiene propiedades que tienen un nombre y
-            llevan asociado un valor.
+            <dfn>documento</dfn> contiene campos que tienen un nombre y llevan
+            asociado un valor.
           </p>
           <p>
             Los archivos se cargan en el servicio de Storage, donde se usará el
-            id de usuario como nombre del archivo para simplificar el código.
+            id de USUARIO como nombre del archivo.
           </p>
           <p>
             Para la asociaciones a 1 (1-1 o M-1) se usa el id del objeto
@@ -98,17 +98,12 @@
           <p>
             Para la asociaciones a muchos (1-M o M-N) se usa un arreglo con los
             id de los objetos relacionados. En este caso, el campo
-            PRIVILEGIO_IDS de USUARIO hace referencia a algunos id de
-            PRIVILEGIO.
-          </p>
-          <p>
-            Como la aplicación usa email creados externamente, este campo no se
-            usa como llave, permitiendo que el usuario pueda cambiar de cuenta.
+            PRIV_IDS de USUARIO hace referencia a algunos ids de PRIVILEGIO.
           </p>
           <p>El identificadores PASATIEMPO se genera automáticamente.</p>
           <p>
-            La colección PASATIEMPO se procesa más fácilmente si el id es el
-            email.
+            La colección USUARIO se procesa más fácilmente si el id es el email.
+            Un problema es que el usuario no puede cambiar de email.
           </p>
           <p>
             Los datos de PRIVILEGIO son usados directamente en el código. El
@@ -140,11 +135,10 @@
                       <th>Valor</th>
                     </tr>
                     <tr>
-                      <td>PRIV_DESCRIPCION</td>
+                      <td>PRIV_DESCR</td>
                       <td>string</td>
                       <td>
-                        El usuario puede acceder a la vista
-                        <q>Pasatiempos</q>.
+                        Acceder a la vista Pasatiempos.
                       </td>
                     </tr>
                   </table>
@@ -158,11 +152,10 @@
                       <th>Valor</th>
                     </tr>
                     <tr>
-                      <td>PRIV_DESCRIPCION</td>
+                      <td>PRIV_DESCR</td>
                       <td>string</td>
                       <td>
-                        El usuario puede acceder a la vista
-                        <q>Usuarios</q>.
+                        Acceder a la vista Usuarios.
                       </td>
                     </tr>
                   </table>
@@ -221,7 +214,7 @@
                       <td>PHX-DGC-AI66 (apunta a PASATIEMPO)</td>
                     </tr>
                     <tr>
-                      <td>PRIVILEGIO_IDS</td>
+                      <td>PRIV_IDS</td>
                       <td>arreglo</td>
                       <td>
                         <ol start="0">
@@ -300,8 +293,9 @@
             <li>
               <p>
                 <a href="https://web.microsoftstream.com/video/607ada67-a975-4d30-8327-4c96773a2da5"
-                  target="_blank">Configura Authorization, Storage y Firestore en tu proyecto
-                  de Firebase y añade datos.</a>
+                  target="_blank">Configura Authorization, Storage y Firestore
+                  en tu proyecto de Firebase; añade datos y registra tu
+                  administrador.</a>
               </p>
             </li>
             <li>
@@ -318,7 +312,9 @@
         <header></header>
         <h2></h2>
         <div class="marco-lectura">
-          <!-- AGREGAR UNA SESIÓN ESPECÍFICAMENTE PARA ARREGLOS, INCLUIR
+          <!--
+          FALTAN LOS DIAGRAMAS 
+          AGREGAR UNA SESIÓN ESPECÍFICAMENTE PARA ARREGLOS, INCLUIR
           MAP Y SORT (Revisar código de usuarios.)
           INCLUIR EN ESTE EJEMPLO EL LAYOUT DE LISTAS PARA MÓVIL
           VER EN UNA LECCIÓN ANTERIOR EL LAYOUT PARA LA NAVEGACIÓN.
