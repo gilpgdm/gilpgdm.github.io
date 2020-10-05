@@ -21,22 +21,21 @@
         --color-primario-fondo: #81d4fa;
         --color-contenido: black;
         --color-contenido-fondo: white;
-        --color-componente-sin-foco: gray;
-        --color-componente-con-foco: #03a9f4;
-        --color-componente-error: #b00020;
-        --color-componente-fondo: #eeeeee;
-        --color-contenido-fondo: white;
+        --color-control-sin-foco: gray;
+        --color-control-con-foco: #03a9f4;
+        --color-control-error: #b00020;
+        --color-control-fondo: #eeeeee;
         --color-active: #4646462c;
         /** Los 2 primeros fonts son para apple y "Roboto" es para Android. */
         --font-family: -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-      }
-
-      body {
-        margin: 0;
         /* Uso de la custom property "--color-contenido". */
         color: var(--color-contenido);
         background-color: var(--color-contenido-fondo);
         font-family: var(--font-family);
+      }
+
+      body {
+        margin: 0;
       }
 
       header {
@@ -93,8 +92,8 @@
       campo-dinámico {
         display: block;
         position: relative;
-        color: var(--color-componente-sin-foco);
-        background-color: var(--color-componente-fondo);
+        color: var(--color-control-sin-foco);
+        background-color: var(--color-control-fondo);
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
         margin: 1rem 0;
@@ -106,7 +105,7 @@
         top: 1.75rem;
         left: 1rem;
         font-size: 1rem;
-        color: var(--color-componente-sin-foco);
+        color: var(--color-control-sin-foco);
         /* transition: 0.7s ease-in
          * Cuando algún atributo cambie, lo hece paulatinamente
          * 0.7s
@@ -118,15 +117,15 @@
 
       /* La misma definición de estilos se aplicaca a 2 selectores diferentes
        * separados por ",":
-       * campo-dinámico .contenido_sin_foco+label
+       * campo-dinámico .control_sin_foco+label
        *   Selecciona a un elemento "label" inmediatamente antes de un elemento
-       *   hermano de la clase "contenido_sin_foco" y ambos elementos están
+       *   hermano de la clase "control_sin_foco" y ambos elementos están
        *   dentro de un web component de tipo "campo-dinámico".
        * campo-dinámico :focus+label
        *   Selecciona a un elemento "label" inmediatamente antes de un elemento
        *   hermano que tiene el foco del teclado y ambos elementos están dentro
        *   de un web component de tipo "campo-dinámico". */
-      campo-dinámico .contenido_sin_foco+label,
+      campo-dinámico .control_sin_foco+label,
       campo-dinámico :focus+label {
         top: 0.5rem;
         font-size: 0.75rem;
@@ -153,7 +152,7 @@
         font-size: 1rem;
         font-family: var(--font-family);
         border: none;
-        border-bottom: 2px solid var(--color-componente-sin-foco);
+        border-bottom: 2px solid var(--color-control-sin-foco);
         resize: none;
         outline: none;
         width: 100%;
@@ -172,13 +171,13 @@
       }
 
       campo-dinámico :focus+label {
-        color: var(--color-componente-con-foco);
+        color: var(--color-control-con-foco);
       }
 
       campo-dinámico select:focus,
       campo-dinámico input:focus,
       campo-dinámico textarea:focus {
-        border-bottom-color: var(--color-componente-con-foco);
+        border-bottom-color: var(--color-control-con-foco);
       }
 
       /* :invalid
@@ -187,7 +186,7 @@
       campo-dinámico select:invalid,
       campo-dinámico input:invalid,
       campo-dinámico textarea:invalid {
-        border-bottom-color: var(--color-componente-error);
+        border-bottom-color: var(--color-control-error);
       }
 
       /* campo-dinámico :invalid~small
@@ -196,7 +195,7 @@
        *   de tipo "campo-dinámico". */
       campo-dinámico :invalid+label,
       campo-dinámico :invalid~small {
-        color: var(--color-componente-error);
+        color: var(--color-control-error);
       }
     </style>
     <script>
@@ -207,18 +206,18 @@
           this.addEventListener("focus", this.ganaFoco, true);
           this.addEventListener("focusout", this.pierdeFoco, true);
         }
-        get componente() {
+        get control() {
           return this.querySelector("input,textarea,select");
         }
         ganaFoco() {
-          this.componente.classList.remove("contenido_sin_foco");
+          this.control.classList.remove("control_sin_foco");
         }
         pierdeFoco() {
-          const componente = this.componente;
-          if (componente.value.length === 0) {
-            componente.classList.remove("contenido_sin_foco");
+          const control = this.control;
+          if (control.value.length === 0) {
+            control.classList.remove("control_sin_foco");
           } else {
-            componente.classList.add("contenido_sin_foco");
+            control.classList.add("control_sin_foco");
           }
         }
       }
