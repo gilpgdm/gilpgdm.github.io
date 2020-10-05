@@ -20,9 +20,12 @@ customElements.define("mi-nav", class extends HTMLElement {
         <li><a href="13_objetos.html">Objetos</a></li>
         <li><a href="14_excepciones.html">Excepciones</a></li>
         <li><a href="15_dispositivo.html">Acceso al Dispositivo</a></li>
-        <li><a href="16_pwa.html">PWA</a></li>
-        <li><a href="17_asociaciones.html">Asociaciones</a></li>
-        <li><a href="18_datos.html">Bases de Datos</a></li>
+        <li><a href="16_sitio.html">Sitio Web</a></li>
+        <li><a href="17_arreglos.html">Arreglos</a></li>
+        <li><a href="18_promesas.html">Promesas</a></li>
+        <li><a href="19_pwa.html">PWA</a></li>
+        <li><a href="20_asociaciones.html">Asociaciones</a></li>
+        <li><a href="21_datos.html">Bases de Datos</a></li>
       </ul>`;
   }
 });
