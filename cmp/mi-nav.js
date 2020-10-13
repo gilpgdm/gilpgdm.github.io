@@ -29,6 +29,7 @@ customElements.define("mi-nav", class extends HTMLElement {
         <li><a href="22_servicios.html">Servicios</a></li>
         <li><a href="23_IoT.html">IoT</a></li>
         <li><a href="24_ESP8266.html">ESP8266</a></li>
+        <li><a href="25_Dispositivo.html">Dispositivo Implementado</a></li>
       </ul>`;
   }
 });
