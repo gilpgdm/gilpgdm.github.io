@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../cmp/base.js"></script>
+    <script type="module" src="./cmp/ctrl-diapositiva.js"></script>
+    <script type="module" src="../lib/muestra-codigo.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../lib/ctrl-diapositiva.css">
+  </head>
+  <body>
+    <layout-cajon>
+      <mi-nav slot="nav"></mi-nav>
+      <ctrl-diapositiva slot="toolbar"></ctrl-diapositiva>
+      <h1>El Elemento <strong>video</strong></h1>
+      <div class="marco-lectura">
+        <p>Se usa para desplegar videos o películas.</p>
+        <p>
+          Aunque este elemento puede llevar contenido, por ejemplo texto, este
+          no se muestra al usuario; es para desplegarse en navegadores que no
+          soportan <q>video</q>, para poder probar con plugins o indicar como
+          acceder al contenido.
+        </p>
+        <p>
+          Para que tu video se despliegue en el navegador Safari para las
+          computadoras Apple (iPad, iPhone, Mac), tu servidor web debe soportar
+          byte-range request. No todos los servidores soportan este tipo de
+          solicitudes.
+        </p>
+        <p>
+          Una opción es usar el servicio storage de
+          <a href="https://firebase.google.com" target="_blank">Firebase</a>,
+          que es gratis para archivos multimedia que juntos ocupen hasta GB y
+          con poco tráfico. La URL que te proporciona el servicio es muy larga.
+          La puedes acortar usando un servicio como
+          <a href="https://bit.ly" target="_blank">Bitly</a>.
+        </p>
+        <p>
+          Otra opción es usar Giphy que en formato de video es más rápido y
+          eficiente que el formato GIF. Al seleccionar una imagen, haz clic en
+          <strong>Media</strong> y copia la URL del formato MP4.
+        </p>
+        <h3>Atributos adicionales</h3>
+        <dl>
+          <dt><dfn><code class="language-html">poster</code></dfn></dt>
+          <dd>
+            <p>
+              Proporciona la URL de una imagen que se muestra mientras no se
+              haya cargado ningún byte del video.
+            </p>
+          </dd>
+        </dl>
+        <h3>Videotutoriales</h3>
+        <ul>
+          <li>
+            <p>
+              <a href="https://web.microsoftstream.com/video/771912b7-4671-4f98-88e3-8032ae9be625"
+                target="_blank">Descarga un video desde Pexels.</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="https://web.microsoftstream.com/video/1a324af1-b026-4b38-a050-9f053223648e"
+                target="_blank">Crear un proyecto de Firebase.</a>
+              (Necesitas una cuenta de Google.)
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="https://web.microsoftstream.com/video/4daf3557-f4b7-4d93-a78a-0e3691a30472"
+                target="_blank">Sube un video a Firebase.</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="https://web.microsoftstream.com/video/64f5e2f5-4880-41c0-bc3e-276582b95697"
+                target="_blank">Acorta una URL.</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+      <mi-footer></mi-footer>
+    </layout-cajon>
+    <script type="module" src="../js/title.js"></script>
+  </body>
+</html>

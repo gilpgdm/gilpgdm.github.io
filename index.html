@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GilPGDM</title>
     <script type="module" src="cmp/base.js"></script>
     <link rel="stylesheet" href="css/estilos.css">
   </head>
   <body>
-    <div class="cortina"></div>
-    <mi-menu></mi-menu>
-    <hgroup>
-      <h1>GilPGDM</h1>
-      <h2>Desarrollo Multiplataforma</h2>
-    </hgroup>
-    <div class="marco-lectura">
-      <mi-nav></mi-nav>
-    </div>
-    <mi-footer></mi-footer>
+    <layout-cajon>
+      <mi-nav slot="nav"></mi-nav>
+      <h1>Desarrollo Multiplataforma</h1>
+      <div class="marco-lectura">
+        <p>
+          Este sitio es continuación de
+          <a href="https://gilpgpoojs.github.io" target="_blank">GilPGPOOJS</a>.
+        </p>
+        <mi-nav></mi-nav>
+      </div>
+    </layout-cajon>
+    <script type="module" src="js/title.js"></script>
   </body>
 </html>

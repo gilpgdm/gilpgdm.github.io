@@ -1,35 +1,24 @@
-customElements.define("mi-nav", class extends HTMLElement {
+/* This work by Gilberto Pacheco Gallegos is licensed under the Creative Commons
+ * Atribución 4.0 Internacional License. To view a copy of this license, visit
+ * http://creativecommons.org/licenses/by/4.0/. */
+
+class MiNav extends HTMLElement {
   connectedCallback() {
     this.innerHTML = /* html */
       `<h2>Contenido</h2>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="0_sw.html">Software a Instalar</a></li>
-        <li><a href="1_app_multiplataforma.html">Las App Multiplataforma</a></li>
-        <li><a href="2_html.html">Introducción a HTML5</a></li>
-        <li><a href="4_css3.html">Introducción a CSS3</a></li>
-        <li><a href="5_cajas.html">Modelo de Cajas</a></li>
-        <li><a href="3_multimedia.html">Elementos Multimedia</a></li>
-        <li><a href="6_intro_js.html">Introducción a JavaScript</a></li>
-        <li><a href="7_tipos.html">Tipos de Datos</a></li>
-        <li><a href="8_formularios.html">Formularios</a></li>
-        <li><a href="9_condicionales.html">Condicionales</a></li>
-        <li><a href="10_posicionamiento.html">Posicionamiento CSS3</a></li>
-        <li><a href="11_ciclos.html">Ciclos</a></li>
-        <li><a href="12_funciones.html">Funciones</a></li>
-        <li><a href="13_objetos.html">Objetos</a></li>
-        <li><a href="14_excepciones.html">Excepciones</a></li>
-        <li><a href="15_dispositivo.html">Acceso al Dispositivo</a></li>
-        <li><a href="16_sitio.html">Sitio Web</a></li>
-        <li><a href="17_arreglos.html">Arreglos</a></li>
-        <li><a href="18_promesas.html">Promesas</a></li>
-        <li><a href="19_pwa.html">PWA</a></li>
-        <li><a href="20_asociaciones.html">Asociaciones</a></li>
-        <li><a href="21_datos.html">Bases de Datos</a></li>
-        <li><a href="22_servicios.html">Servicios</a></li>
-        <li><a href="23_IoT.html">IoT</a></li>
-        <li><a href="24_ESP8266.html">ESP8266</a></li>
-        <li><a href="25_Dispositivo.html">Dispositivo Implementado</a></li>
-      </ul>`;
+      <ol>
+        <li><p><a href="/index.html">Inicio</a></p></li>
+        <li><p><a href="/2_sw.html">Software a Instalar</a></p></li>
+        <li><p><a href="/3_multiplataforma">Las App Multiplataforma</a></p></li>
+        <li><p><a href="/4_multimedia">Elementos Multimedia de HTML5</a></p></li>
+        <li><p><a href="/5_posicionamiento">Posicionamiento con CSS3</a></p></li>
+        <li><p><a href="/6_dispositivo">Acceso al Dispositivo</a></p></li>
+        <li><p><a href="/7_pwa">PWA con Acceso al Dispositivo</a></p></li>
+        <li><p><a href="/9_arquitectura">Arquitectura IoT</a></p></li>
+        <li><p><a href="/10_esp8266">ESP8266</a></p></li>
+        <li><p><a href="/11_cliente">Implementación de Cliente ESP8266</a></p></li>
+      </ol>`;
   }
-});
+}
+
+customElements.define("mi-nav", MiNav);
