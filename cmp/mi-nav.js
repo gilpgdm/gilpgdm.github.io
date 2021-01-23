@@ -11,12 +11,10 @@ class MiNav extends HTMLElement {
         <li><p><a href="/2_sw.html">Software a Instalar</a></p></li>
         <li><p><a href="/3_multiplataforma">Las App Multiplataforma</a></p></li>
         <li><p><a href="/4_multimedia">Elementos Multimedia de HTML5</a></p></li>
-        <li><p><a href="/5_posicionamiento">Posicionamiento con CSS3</a></p></li>
-        <li><p><a href="/6_dispositivo">Acceso al Dispositivo</a></p></li>
-        <li><p><a href="/7_pwa">PWA con Acceso al Dispositivo</a></p></li>
-        <li><p><a href="/9_arquitectura">Arquitectura IoT</a></p></li>
-        <li><p><a href="/10_esp8266">ESP8266</a></p></li>
-        <li><p><a href="/11_cliente">Implementación de Cliente ESP8266</a></p></li>
+        <li><p><a href="/5_pwa">PWA con Acceso al Dispositivo</a></p></li>
+        <li><p><a href="/6_iot">Arquitectura IoT</a></p></li>
+        <li><p><a href="/7_esp8266">ESP8266</a></p></li>
+        <li><p><a href="/8_cliente">Implementación de Cliente ESP8266</a></p></li>
       </ol>`;
   }
 }
