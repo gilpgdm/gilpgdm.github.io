@@ -15,14 +15,16 @@ const int BOTON_FLASH = 0;
 // Pin de un LED.
 const int LED_INTEGRADO_2 =  2;
 const String URL_SALIDA(
-  urlDeDocumento(ID_PROYECTO,
-                 "Salida", DISPOSITIVO_ID));
+  urlDeDocumento(
+    ID_PROYECTO, "Salida",
+    DISPOSITIVO_ID));
 const String URL_ENTRADA(
-  urlDeDocumento(ID_PROYECTO,
-                 "Entrada", DISPOSITIVO_ID));
+  urlDeDocumento(
+    ID_PROYECTO, "Entrada",
+    DISPOSITIVO_ID));
 const String URL_HISTORIAL(
-  urlDeColeccion(ID_PROYECTO,
-                 "Historial"));
+  urlDeColeccion(
+    ID_PROYECTO, "Historial"));
 
 int entrada = 0;
 ProxySalida proxySalida(
@@ -86,8 +88,9 @@ enviaLaEntrada(bool forzosa) {
     recuperaEntrada();
   if (forzosa ||
       entrada != nuevaEntrada) {
-    String error = proxyEntrada.
-                   set(nuevaEntrada);
+    String error =
+      proxyEntrada.
+      set(nuevaEntrada);
     if (error.length() > 0) {
       muestraError(error);
       return;

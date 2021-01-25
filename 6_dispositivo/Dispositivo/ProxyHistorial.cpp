@@ -5,54 +5,83 @@
 #include <ArduinoJson.h>
 #include <Arduino.h>
 
-ProxyHistorial::ProxyHistorial(const char * dispositivoId,
-                               const char * huellaDigital, const String url):
-  _dispositivoId(dispositivoId), _huellaDigital(huellaDigital), _url(url) {
-}
+ProxyHistorial::ProxyHistorial(
+  const char * dispositivoId,
+  const char * huellaDigital,
+  const String url):
+  _dispositivoId(dispositivoId),
+  _huellaDigital(huellaDigital),
+  _url(url) {}
 
-String ProxyHistorial::add(int valor) {
+String
+ProxyHistorial::add(int valor) {
   String error;
   String json = _creaJson(valor);
-  std::unique_ptr<BearSSL::WiFiClientSecure> client(
-    new BearSSL::WiFiClientSecure);
-  client->setFingerprint(_huellaDigital);
 
-  HTTPClient https;
-  Serial.println("Conectando al servidor...");
-  if (https.begin(*client, _url)) {
-    https.addHeader(CONTENT_TYPE, APPLICATION_JSON);
-    Serial.print("Inicia POST...\n");
-    int codigoHttps = https.POST(json);
-    if (codigoHttps > 0) {
-      String texto = https.getString();
-      Serial.printf("POST OK. codigoHttps: %d\n", codigoHttps);
+  std::unique_ptr <
+  BearSSL::WiFiClientSecure
+  > clie(
+    new BearSSL::
+    WiFiClientSecure);
+  clie->setFingerprint(
+    HUELLA_DIGITAL);
+
+  HTTPClient http;
+  Serial.print("Conectando ");
+  Serial.println(
+    "al servidor...");
+  Serial.println(
+    "al servidor...");
+  if (http.begin(*clie, _url)) {
+    http.addHeader(
+      CONTENT_TYPE,
+      APPLICATION_JSON);
+    Serial.print(
+      "Inicia POST...\n");
+    int code = http.POST(json);
+    if (code > 0) {
+      String texto =
+        http.getString();
+      Serial.printf(
+        "Código de POST: %d\n",
+        cod);
       Serial.println(texto);
-      if (codigoHttps != HTTP_CODE_OK
-          && codigoHttps != HTTP_CODE_MOVED_PERMANENTLY) {
-        error = texto;
+      switch (cod) {
+        case HTTP_CODE_OK:
+        case
+            HTTP_CODE_MOVED_PERMANENTLY:
+          break;
+        default:
+          error = texto;
       }
     } else {
-      error = https.errorToString(codigoHttps);
+      error =
+        http.errorToString(code);
     }
-    https.end();
+    http.end();
   } else {
     error = "La conexión falló";
   }
   return error;
 }
 
-String ProxyHistorial::_creaJson(int valor) {
+String ProxyHistorial::_creaJson(
+  int valor) {
   char ts[30];
   getTimestamp(ts);
   Serial.println(ts);
-
-  /* Al cálculo del tamaño le añadimos 30, que es el tamaño del buffer para
-      el timestamp. */
-  StaticJsonDocument < 192 + 30 > doc;
-  JsonObject fields = doc.createNestedObject("fields");
-  fields["timestamp"]["timestampValue"] = ts;
-  fields["dispositivoId"]["stringValue"] = _dispositivoId;
-  fields["valor"]["integerValue"] = valor;
+  StaticJsonDocument <
+  192 + 30 > doc;
+  JsonObject fields =
+    doc.createNestedObject(
+      "fields");
+  fields["timestamp"]
+  ["timestampValue"] = ts;
+  fields["dispositivoId"]
+  ["stringValue"] =
+    _dispositivoId;
+  fields["valor"]
+  ["integerValue"] = valor;
 
   String json;
   serializeJson(doc, json);

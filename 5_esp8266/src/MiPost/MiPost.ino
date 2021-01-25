@@ -120,7 +120,7 @@ void loop() {
         String texto =
           http.getString();
         Serial.printf(
-          "Código de PATCH: %d\n",
+          "Código de POST: %d\n",
           cod);
         Serial.println(texto);
         switch (cod) {

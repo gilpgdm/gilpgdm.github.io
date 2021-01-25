@@ -17,29 +17,40 @@ ProxyEntrada::set(int valor) {
   String error;
   String json = _creaJson(valor);
   std::unique_ptr <
-  BearSSL::WiFiClientSecure > client(
+  BearSSL::WiFiClientSecure > clie(
     new BearSSL::WiFiClientSecure);
-  client->setFingerprint(
+  clie->setFingerprint(
     _huellaDigital);
 
-  HTTPClient https;
-  Serial.println("Conectando al servidor...");
-  if (https.begin(*client, _url)) {
-    https.addHeader(CONTENT_TYPE, APPLICATION_JSON);
-    Serial.print("Inicia PATCH...\n");
-    int codigoHttps = https.PATCH(json);
-    if (codigoHttps > 0) {
-      String texto = https.getString();
-      Serial.printf("PATCH OK. codigoHttps: %d\n", codigoHttps);
+  HTTPClient http;
+  Serial.print("Conectando ");
+  Serial.println(
+    "al servidor...");
+  if (http.begin(*clie, _url)) {
+    http.addHeader(
+      CONTENT_TYPE,
+      APPLICATION_JSON);
+    Serial.print(
+      "Inicia PATCH...\n");
+    int cod = http.PATCH(json);
+    if (cod > 0) {
+      String texto =
+        http.getString();
+      Serial.printf(
+        "Código de PATCH: %d\n",
+        cod);
       Serial.println(texto);
-      if (codigoHttps != HTTP_CODE_OK
-          && codigoHttps != HTTP_CODE_MOVED_PERMANENTLY) {
-        error = texto;
+      switch (cod) {
+        case HTTP_CODE_OK:
+        case
+            HTTP_CODE_MOVED_PERMANENTLY:
+          error = texto;
       }
     } else {
-      error = https.errorToString(codigoHttps);
+      error =
+        http.errorToString(code);
     }
-    https.end();
+    http.end();
   } else {
     error = "La conexión falló";
   }
@@ -48,7 +59,8 @@ ProxyEntrada::set(int valor) {
 
 String ProxyEntrada::_creaJson(int valor) {
   StaticJsonDocument<48> doc;
-  doc["fields"]["valor"]["integerValue"] = valor;
+  doc["fields"]["valor"]
+  ["integerValue"] = valor;
   String json;
   serializeJson(doc, json);
   return json;

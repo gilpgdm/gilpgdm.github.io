@@ -5,9 +5,13 @@
 #define CONTENT_TYPE "Content-Type"
 #define APPLICATION_JSON "application/json"
 
-void conectaWiFi(char *ssid, char *pass);
+void conectaWiFi(char *ssid,
+                 char *pass);
 void iniciaTimestamp();
 void getTimestamp(char *ts);
-String urlDeColeccion(char *proyecto, char *coleccion);
-String urlDeDocumento(char *proyecto, char *coleccion, char *id);
+String urlDeColeccion(
+  char *proyecto, char *coleccion);
+String urlDeDocumento(
+  char *proyecto, char *coleccion,
+  char *id);
 #endif

@@ -5,44 +5,67 @@
 #include <ArduinoJson.h>
 #include <Arduino.h>
 
-ProxySalida::ProxySalida(const char *huellaDigital,
-                         const String url) : _huellaDigital(huellaDigital), _url(url) {}
+ProxySalida::ProxySalida(
+  const char *huellaDigital,
+  const String url) :
+  _huellaDigital(huellaDigital),
+  _url(url) {}
 
 ResInt ProxySalida::get() {
   String error;
   int valor = 0;
 
-  std::unique_ptr<BearSSL::WiFiClientSecure> client(
-    new BearSSL::WiFiClientSecure);
-  client->setFingerprint(_huellaDigital);
+  std::unique_ptr <
+  BearSSL::WiFiClientSecure
+  > clie(
+    new BearSSL::
+    WiFiClientSecure);
+  clie->setFingerprint(
+    _huellaDigital);
 
-  HTTPClient https;
-  Serial.println("Conectando al servidor...");
-  if (https.begin(*client, _url)) {
-    Serial.println("Inicia GET...");
-    int codigoHttps = https.GET();
-    if (codigoHttps > 0) {
-      String texto = https.getString();
-      Serial.printf("Get OK. codigoHttps: %d\n", codigoHttps);
-      if (codigoHttps == HTTP_CODE_OK || codigoHttps == HTTP_CODE_MOVED_PERMANENTLY) {
-        valor = _leeValor(texto);
-      } else if (codigoHttps != HTTP_CODE_NOT_FOUND) {
-        error = texto;
+  HTTPClient http;
+  Serial.print("Conectando ");
+  Serial.println(
+    "al servidor...");
+  if (http.begin(*clie, _url)) {
+    Serial.println(
+      "Inicia GET...");
+    int cod = http.GET();
+    if (cod > 0) {
+      String texto =
+        http.getString();
+      Serial.printf(
+        "Código de GET: %d\n",
+        cod);
+      Serial.println(texto);
+      switch (cod) {
+        case HTTP_CODE_OK:
+        case
+            HTTP_CODE_MOVED_PERMANENTLY:
+          valor =
+            _leeValor(texto);
+          break;
+        case
+            HTTP_CODE_NOT_FOUND:
+          error = texto;
       }
     } else {
-      error = https.errorToString(codigoHttps);
+      error =
+        http.errorToString(cod);
     }
-    https.end();
+    http.end();
   } else {
     error = "La conexión falló";
   }
-  Serial.printf("valor: %d\n", valor);
+  Serial.printf("valor: %d\n",
+                valor);
   return ResInt(valor, error);
 }
-int ProxySalida::_leeValor(const String texto) {
-  // Este valor debe obtenerse con ArduinoJson Assistant
+int ProxySalida::_leeValor(
+  const String texto) {
   StaticJsonDocument<384> doc;
-  // A partir del texto devuelto por Internet, se obtiene el árbol JSON.
   deserializeJson(doc, texto);
-  return doc["fields"]["valor"]["integerValue"].as<int>();
+  return doc["fields"]["valor"]
+         ["integerValue"]
+         .as<int>();
 }
