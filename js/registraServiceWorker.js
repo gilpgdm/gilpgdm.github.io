@@ -1,6 +1,6 @@
 import { muestraError } from "../lib/utilHtml.js";
 
-registraServiceWorker();
+//registraServiceWorker();
 async function registraServiceWorker() {
   try {
     const registro = await navigator.serviceWorker.register("/sw.js");

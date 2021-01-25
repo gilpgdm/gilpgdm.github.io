@@ -2,6 +2,6 @@
  * Atribución 4.0 Internacional License. To view a copy of this license, visit
  * http://creativecommons.org/licenses/by/4.0/. */
 
- import "./mi-footer.js";
+import "./mi-footer.js";
 import "./mi-nav.js";
 import "../lib/layout-cajon.js";
