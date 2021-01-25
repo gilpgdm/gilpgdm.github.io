@@ -5,15 +5,22 @@
 #include <ArduinoJson.h>
 #include <Arduino.h>
 
-ProxyEntrada::ProxyEntrada(const char* huellaDigital,
-                           const String url): _huellaDigital(huellaDigital), _url(url) { }
+ProxyEntrada::ProxyEntrada(
+  const char* huellaDigital,
+  const String url):
+  _huellaDigital(huellaDigital),
+  _url(url)
+{ }
 
-String ProxyEntrada::set(int valor) {
+String
+ProxyEntrada::set(int valor) {
   String error;
   String json = _creaJson(valor);
-  std::unique_ptr<BearSSL::WiFiClientSecure> client(
+  std::unique_ptr <
+  BearSSL::WiFiClientSecure > client(
     new BearSSL::WiFiClientSecure);
-  client->setFingerprint(_huellaDigital);
+  client->setFingerprint(
+    _huellaDigital);
 
   HTTPClient https;
   Serial.println("Conectando al servidor...");
