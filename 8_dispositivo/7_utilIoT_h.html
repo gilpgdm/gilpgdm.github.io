@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../js/registraServiceWorker.js"></script>
+    <link rel="icon" sizes="32x32" href="../favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="../manifest.json">
+    <script type="module" src="../cmp/base.js"></script>
+    <script type="module" src="./cmp/ctrl-diapositiva.js"></script>
+    <script type="module" src="../lib/muestra-codigo.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../lib/ctrl-diapositiva.css">
+  </head>
+  <body>
+    <layout-cajon>
+      <mi-nav slot="nav"></mi-nav>
+      <ctrl-diapositiva slot="toolbar"></ctrl-diapositiva>
+      <h1>utilIoT.hpp</h1>
+      <muestra-codigo><div><div><span style="color: #af00db;">#ifndef</span><span style="color: #0000ff;">&nbsp;__UTIL_IOT_H__</span></div><div><span style="color: #af00db;">#define</span><span style="color: #0000ff;">&nbsp;</span><span style="color: #0000ff;">__UTIL_IOT_H__</span></div><div><span style="color: #af00db;">#include</span><span style="color: #0000ff;">&nbsp;</span><span style="color: #a31515;">&lt;Arduino.h&gt;</span></div><br><div><span style="color: #af00db;">#define</span><span style="color: #0000ff;">&nbsp;</span><span style="color: #0000ff;">CONT_TYPE</span><span style="color: #0000ff;">&nbsp;</span><span style="color: #a31515;">"Content-Type"</span></div><div><span style="color: #af00db;">#define</span><span style="color: #0000ff;">&nbsp;</span><span style="color: #0000ff;">APP_JSN</span><span style="color: #0000ff;">&nbsp;</span><span style="color: #a31515;">"application/json"</span></div><br><div><span style="color: #0000ff;">void</span>&nbsp;<span style="color: #795e26;">conectaWiFi</span>(<span style="color: #0000ff;">char</span>&nbsp;<span style="color: #0000ff;">*</span><span style="color: #001080;">ssid</span>,</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">char</span>&nbsp;<span style="color: #0000ff;">*</span><span style="color: #001080;">pass</span>);</div><div><span style="color: #0000ff;">void</span>&nbsp;<span style="color: #795e26;">iniciaTimestamp</span>();</div><div><span style="color: #0000ff;">void</span>&nbsp;<span style="color: #795e26;">getTimestamp</span>(<span style="color: #0000ff;">char</span>&nbsp;<span style="color: #0000ff;">*</span><span style="color: #001080;">ts</span>);</div><div><span style="color: #267f99;">String</span>&nbsp;<span style="color: #795e26;">urlDeColeccion</span>(</div><div>&nbsp;&nbsp;<span style="color: #0000ff;">char</span>&nbsp;<span style="color: #0000ff;">*</span><span style="color: #001080;">proyecto</span>,</div><div>&nbsp;&nbsp;<span style="color: #0000ff;">char</span>&nbsp;<span style="color: #0000ff;">*</span><span style="color: #001080;">coleccion</span>);</div><div><span style="color: #267f99;">String</span>&nbsp;<span style="color: #795e26;">urlDeDocumento</span>(</div><div>&nbsp;&nbsp;<span style="color: #0000ff;">char</span>&nbsp;<span style="color: #0000ff;">*</span><span style="color: #001080;">proyecto</span>,&nbsp;<span style="color: #0000ff;">char</span>&nbsp;<span style="color: #0000ff;">*</span><span style="color: #001080;">coleccion</span>,</div><div>&nbsp;&nbsp;<span style="color: #0000ff;">char</span>&nbsp;<span style="color: #0000ff;">*</span><span style="color: #001080;">id</span>);</div><div><span style="color: #af00db;">#endif</span></div><br></div></muestra-codigo>
+      <mi-footer></mi-footer>
+    </layout-cajon>
+    <script type="module" src="../js/title.js"></script>
+  </body>
+</html>
