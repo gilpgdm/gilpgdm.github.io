@@ -1,3 +1,3 @@
-import { setTitle } from "../lib/utilHtmlx.js";
+import { setTitle } from "../lib/utilHtml.js";
 
 setTitle("gilpgdm");
