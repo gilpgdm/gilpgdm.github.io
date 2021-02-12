@@ -1,7 +1,7 @@
 // @ts-nocheck
 /* Espera 11 minutos después de hacer los cambios en tu sitio, para depués
  * actualizar este archivo. */
-const CACHE = "gilpgdm-1.02";
+const CACHE = "gilpgdm-1.03";
 
 /**  Archivos requeridos para que la aplicación funcione fuera de línea. */
 const ARCHIVOS = [
