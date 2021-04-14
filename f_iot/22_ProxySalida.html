@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>disp/ProxySalida.js</h1>
+    <muestra-codigo>
+      <div>
+        <div><span style="color: #af00db;">import</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">ResInt</span></div>
+        <div>}&nbsp;<span style="color: #af00db;">from</span>&nbsp;<span
+            style="color: #a31515;">"./ResInt.js"</span>;</div><br>
+        <div><span
+            style="color: #008000;">/**&nbsp;Clase&nbsp;para&nbsp;conectarse&nbsp;a&nbsp;la</span>
+        </div>
+        <div><span
+            style="color: #008000;">&nbsp;*&nbsp;base&nbsp;de&nbsp;datos.&nbsp;*/</span>
+        </div>
+        <div><span style="color: #af00db;">export</span>&nbsp;<span
+            style="color: #0000ff;">class</span>&nbsp;<span
+            style="color: #267f99;">ProxySalida</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #008000;">/**</span></div>
+        <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@param</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{string}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">url</span><span
+            style="color: #008000;">&nbsp;URL&nbsp;del</span></div>
+        <div><span
+            style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;servidor.&nbsp;*/</span>
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">constructor</span>(<span
+            style="color: #001080;">url</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #008000;">/**&nbsp;</span><span
+            style="color: #0000ff;">@private</span><span
+            style="color: #008000;">&nbsp;*/</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0000ff;">this</span>.<span
+            style="color: #001080;">_url</span>&nbsp;=&nbsp;<span
+            style="color: #001080;">url</span>;</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;<span
+            style="color: #008000;">/**&nbsp;@returns&nbsp;{Promise&lt;ResInt&gt;}</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;*/</span></div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">async</span>&nbsp;<span
+            style="color: #795e26;">get</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0000ff;">let</span>&nbsp;<span
+            style="color: #001080;">error</span>&nbsp;=&nbsp;<span
+            style="color: #a31515;">""</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0000ff;">let</span>&nbsp;<span
+            style="color: #001080;">valor</span>&nbsp;=&nbsp;<span
+            style="color: #098658;">0</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #af00db;">try</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">res</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #af00db;">await</span>&nbsp;<span
+            style="color: #795e26;">fetch</span>(<span
+            style="color: #0000ff;">this</span>.<span
+            style="color: #001080;">_url</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #af00db;">if</span>&nbsp;(<span
+            style="color: #0070c1;">res</span>.<span
+            style="color: #0070c1;">ok</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">valor</span>&nbsp;=&nbsp;<span
+            style="color: #af00db;">await</span>&nbsp;<span
+            style="color: #0000ff;">this</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">_leeValor</span>(<span
+            style="color: #0070c1;">res</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+            style="color: #af00db;">else</span>&nbsp;<span
+            style="color: #af00db;">if</span>&nbsp;(<span
+            style="color: #0070c1;">res</span>.<span
+            style="color: #0070c1;">status</span>&nbsp;!==</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #098658;">404</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">error</span>&nbsp;=&nbsp;<span
+            style="color: #0070c1;">res</span>.<span
+            style="color: #0070c1;">statusText</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+            style="color: #af00db;">catch</span>&nbsp;(<span
+            style="color: #001080;">e</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">error</span>&nbsp;=&nbsp;<span
+            style="color: #001080;">e</span>.<span
+            style="color: #001080;">message</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #af00db;">return</span>&nbsp;<span
+            style="color: #0000ff;">new</span>&nbsp;<span
+            style="color: #267f99;">ResInt</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">valor</span>,&nbsp;<span
+            style="color: #001080;">error</span>);</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;<span style="color: #008000;">/**</span></div>
+        <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@private</span></div>
+        <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@param</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{Response}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">res</span><span
+            style="color: #008000;">&nbsp;</span></div>
+        <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@returns</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{Promise&lt;number&gt;}</span><span
+            style="color: #008000;">&nbsp;*/</span></div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">async</span>&nbsp;<span
+            style="color: #795e26;">_leeValor</span>(<span
+            style="color: #001080;">res</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">json</span>&nbsp;=&nbsp;<span
+            style="color: #af00db;">await</span>&nbsp;<span
+            style="color: #001080;">res</span>.<span
+            style="color: #795e26;">json</span>();</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #af00db;">if</span>&nbsp;(<span
+            style="color: #0070c1;">json</span>.<span
+            style="color: #001080;">fields</span>.<span
+            style="color: #001080;">valor</span>&nbsp;&amp;&amp;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0070c1;">json</span>.<span
+            style="color: #001080;">fields</span>.<span
+            style="color: #001080;">valor</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">integerValue</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #af00db;">return</span>&nbsp;<span
+            style="color: #795e26;">parseInt</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0070c1;">json</span>.<span
+            style="color: #001080;">fields</span>.<span
+            style="color: #001080;">valor</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">integerValue</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #098658;">10</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+            style="color: #af00db;">else</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #af00db;">return</span>&nbsp;<span
+            style="color: #098658;">0</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div>
+      </div>
+    </muestra-codigo>
+  </layout-cajon>
+</body>
+</html>

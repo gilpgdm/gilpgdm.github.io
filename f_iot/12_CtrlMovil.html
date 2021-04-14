@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>js/CtrlMovil.js</h1>
+    <muestra-codigo>
+      <div>
+        <div><span style="color: #af00db;">import</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">getFirestore</span></div>
+        <div>}&nbsp;<span style="color: #af00db;">from</span>&nbsp;<span
+            style="color: #a31515;">"../lib/fabrica.js"</span>;</div>
+        <div><span style="color: #af00db;">import</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">muestraError</span></div>
+        <div>}&nbsp;<span style="color: #af00db;">from</span>&nbsp;<span
+            style="color: #a31515;">"../lib/util.js"</span>;</div><br>
+        <div><span style="color: #008000;">/**&nbsp;</span><span
+            style="color: #0000ff;">@type</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{HTMLOutputElement}</span><span
+            style="color: #008000;">&nbsp;*/</span></div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">ctDispositivo</span>&nbsp;=&nbsp;<span
+            style="color: #001080;">document</span>.</div>
+        <div>&nbsp;&nbsp;<span
+            style="color: #795e26;">querySelector</span>(<span
+            style="color: #a31515;">"#ctDispositivo"</span>);</div>
+        <div><span style="color: #008000;">/**&nbsp;</span><span
+            style="color: #0000ff;">@type</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{HTMLInputElement}</span><span
+            style="color: #008000;">&nbsp;*/</span></div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">ctSalida</span>&nbsp;=&nbsp;<span
+            style="color: #001080;">document</span>.</div>
+        <div>&nbsp;&nbsp;<span
+            style="color: #795e26;">querySelector</span>(<span
+            style="color: #a31515;">"#ctSalida"</span>);</div>
+        <div><span style="color: #008000;">/**&nbsp;</span><span
+            style="color: #0000ff;">@type</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{HTMLMeterElement}</span><span
+            style="color: #008000;">&nbsp;*/</span></div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">ctEntrada</span>&nbsp;=&nbsp;<span
+            style="color: #001080;">document</span>.</div>
+        <div>&nbsp;&nbsp;<span
+            style="color: #795e26;">querySelector</span>(<span
+            style="color: #a31515;">"#ctEntrada"</span>);</div><br>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">firestore</span>&nbsp;=&nbsp;<span
+            style="color: #795e26;">getFirestore</span>();</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">colSalida</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;<span style="color: #0070c1;">firestore</span>.<span
+            style="color: #795e26;">collection</span>(<span
+            style="color: #a31515;">"Salida"</span>);</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">colEntrada</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;<span style="color: #0070c1;">firestore</span>.<span
+            style="color: #795e26;">collection</span>(<span
+            style="color: #a31515;">"Entrada"</span>);</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">dispositivoId</span>&nbsp;=&nbsp;<span
+            style="color: #795e26;">prompt</span>(</div>
+        <div>&nbsp;&nbsp;<span
+            style="color: #a31515;">"Identificador&nbsp;de&nbsp;Dispositivo:"</span>,
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #a31515;">"iot1"</span>);</div><br>
+        <div><span style="color: #af00db;">if</span>&nbsp;(<span
+            style="color: #0070c1;">dispositivoId</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #0070c1;">ctSalida</span>.<span
+            style="color: #795e26;">addEventListener</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #a31515;">"click"</span>,&nbsp;<span
+            style="color: #795e26;">modificaSalida</span>);</div>
+        <div>&nbsp;&nbsp;<span
+            style="color: #0070c1;">ctDispositivo</span>.<span
+            style="color: #001080;">value</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0070c1;">dispositivoId</span>;</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">setup</span>();</div>
+        <div>}</div>
+        <div><span style="color: #0000ff;">async</span>&nbsp;<span
+            style="color: #0000ff;">function</span>&nbsp;<span
+            style="color: #795e26;">setup</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">try</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">escuchaEntrada</span>();</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #af00db;">await</span>&nbsp;<span
+            style="color: #795e26;">leeSalida</span>();</div>
+        <div>&nbsp;&nbsp;}&nbsp;<span
+            style="color: #af00db;">catch</span>&nbsp;(<span
+            style="color: #001080;">e</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">muestraError</span>(<span
+            style="color: #001080;">e</span>);</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div>
+        <div><span style="color: #0000ff;">async</span>&nbsp;<span
+            style="color: #0000ff;">function</span>&nbsp;<span
+            style="color: #795e26;">leeSalida</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">doc</span>&nbsp;=&nbsp;<span
+            style="color: #af00db;">await</span>&nbsp;<span
+            style="color: #0070c1;">colSalida</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">doc</span>(<span
+            style="color: #0070c1;">dispositivoId</span>).<span
+            style="color: #795e26;">get</span>();</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
+            style="color: #0070c1;">doc</span>.<span
+            style="color: #001080;">exists</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">data</span>&nbsp;=&nbsp;<span
+            style="color: #0070c1;">doc</span>.<span
+            style="color: #795e26;">data</span>();</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0070c1;">ctSalida</span>.<span
+            style="color: #001080;">checked</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #267f99;">Boolean</span>(<span
+            style="color: #0070c1;">data</span>.<span
+            style="color: #001080;">valor</span>);</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div>
+        <div><span style="color: #0000ff;">async</span>&nbsp;<span
+            style="color: #0000ff;">function</span>&nbsp;<span
+            style="color: #795e26;">modificaSalida</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">try</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">valor</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0070c1;">ctSalida</span>.<span
+            style="color: #001080;">checked</span>&nbsp;?&nbsp;<span
+            style="color: #098658;">1</span>&nbsp;:&nbsp;<span
+            style="color: #098658;">0</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #af00db;">await</span>&nbsp;<span
+            style="color: #0070c1;">colSalida</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">doc</span>(<span
+            style="color: #0070c1;">dispositivoId</span>).</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">set</span>({&nbsp;<span
+            style="color: #001080;">valor</span>&nbsp;});</div>
+        <div>&nbsp;&nbsp;}&nbsp;<span
+            style="color: #af00db;">catch</span>&nbsp;(<span
+            style="color: #001080;">e</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">muestraError</span>(<span
+            style="color: #001080;">e</span>);</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div>
+        <div><span style="color: #0000ff;">function</span>&nbsp;<span
+            style="color: #795e26;">escuchaEntrada</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #0070c1;">colEntrada</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">doc</span>(<span
+            style="color: #0070c1;">dispositivoId</span>).</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">onSnapshot</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">doc</span>&nbsp;<span
+            style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #af00db;">if</span>&nbsp;(<span
+            style="color: #001080;">doc</span>.<span
+            style="color: #001080;">exists</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">data</span>&nbsp;=&nbsp;<span
+            style="color: #001080;">doc</span>.<span
+            style="color: #795e26;">data</span>();</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0070c1;">ctEntrada</span>.<span
+            style="color: #001080;">value</span>&nbsp;=</div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0070c1;">data</span>.<span
+            style="color: #001080;">valor</span>&nbsp;||&nbsp;<span
+            style="color: #098658;">0</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">e</span>&nbsp;<span
+            style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">muestraError</span>(<span
+            style="color: #001080;">e</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">escuchaEntrada</span>();</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
+        <div>}</div>
+      </div>
+    </muestra-codigo>
+    <mi-footer></mi-footer>
+  </layout-cajon>
+</body>
+</html>

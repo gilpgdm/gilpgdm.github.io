@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>js/CtrlHistorial.js</h1>
+    <muestra-codigo>
+      <div>
+        <div><span style="color: #af00db;">import</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">getFirestore</span></div>
+        <div>}&nbsp;<span style="color: #af00db;">from</span>&nbsp;<span
+            style="color: #a31515;">"../lib/fabrica.js"</span>;</div>
+        <div><span style="color: #af00db;">import</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">cod</span>,&nbsp;<span
+            style="color: #001080;">muestraError</span></div>
+        <div>}&nbsp;<span style="color: #af00db;">from</span>&nbsp;<span
+            style="color: #a31515;">"../lib/util.js"</span>;</div><br>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">tbody</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">document</span>.<span
+            style="color: #795e26;">querySelector</span>(<span
+            style="color: #a31515;">"tbody"</span>);</div><br>
+        <div><span style="color: #795e26;">renderHistorial</span>();</div>
+        <div><span style="color: #0000ff;">async</span>&nbsp;<span
+            style="color: #0000ff;">function</span>&nbsp;<span
+            style="color: #795e26;">renderHistorial</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">try</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0000ff;">let</span>&nbsp;<span
+            style="color: #001080;">html</span>&nbsp;=&nbsp;<span
+            style="color: #a31515;">""</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">snap</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #af00db;">await</span>&nbsp;<span
+            style="color: #795e26;">getFirestore</span>().</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">collection</span>(<span
+            style="color: #a31515;">"Historial"</span>).</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">orderBy</span>(<span
+            style="color: #a31515;">"timestamp"</span>).</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">get</span>();</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0070c1;">snap</span>.<span
+            style="color: #795e26;">forEach</span>(<span
+            style="color: #001080;">doc</span>&nbsp;<span
+            style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">data</span>&nbsp;=&nbsp;<span
+            style="color: #001080;">doc</span>.<span
+            style="color: #795e26;">data</span>();</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">html</span>&nbsp;+=&nbsp;<span
+            style="color: #008000;">/*&nbsp;html&nbsp;*/</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<span
+            style="color: #800000;">&lt;tr&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #800000;">&lt;td&gt;</span></div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #800000;">${</span><span
+            style="color: #795e26;">cod</span>(<span
+            style="color: #001080;">doc</span>.<span
+            style="color: #001080;">id</span>)<span
+            style="color: #800000;">}</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #800000;">&lt;/td&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #800000;">&lt;td&gt;</span></div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #800000;">${</span><span
+            style="color: #795e26;">cod</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0070c1;">data</span>.<span
+            style="color: #001080;">dispositivoId</span>)<span
+            style="color: #800000;">}</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #800000;">&lt;/td&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #800000;">&lt;td&gt;</span></div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #800000;">${</span><span
+            style="color: #795e26;">cod</span>(<span
+            style="color: #0070c1;">data</span>.<span
+            style="color: #001080;">valor</span>.</div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">toString</span>())<span
+            style="color: #800000;">}</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #800000;">&lt;/td&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #800000;">&lt;td&gt;</span></div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #800000;">${</span><span
+            style="color: #795e26;">cod</span>(<span
+            style="color: #0070c1;">data</span>.<span
+            style="color: #001080;">timestamp</span>.</div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">toString</span>())<span
+            style="color: #800000;">}</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #800000;">&lt;/td&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #800000;">&lt;/tr&gt;</span>`;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;});</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0070c1;">tbody</span>.<span
+            style="color: #001080;">innerHTML</span>&nbsp;=&nbsp;<span
+            style="color: #001080;">html</span>;</div>
+        <div>&nbsp;&nbsp;}&nbsp;<span
+            style="color: #af00db;">catch</span>&nbsp;(<span
+            style="color: #001080;">e</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">muestraError</span>(<span
+            style="color: #001080;">e</span>);</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div>
+      </div>
+    </muestra-codigo>
+  </layout-cajon>
+</body>
+</html>

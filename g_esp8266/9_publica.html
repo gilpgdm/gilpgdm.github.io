@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>Publica datos por WiFi</h1>
+    <div class="marco-lectura">
+      <p>
+        El código se muestra en la diapositiva siguiente (MiPost.ino).
+      </p>
+      <p>
+        Necesitas instalar
+        <a href="https://www.pjrc.com/teensy/td_download.html"
+          target="_blank">Teensyduino</a>
+        pues contiene la librería Time.
+      </p>
+      <p>
+        Necesitas instalar las librerías ArduinoJSON, NTPClient y Time.
+      </p>
+      <p>
+        Al publicar los datos se incluye una marca de tiempo (timestamp)
+        que indica la fecha y hora en que el regstro se sube al servidor.
+        Para ello, se usa la infraestructura mundial NTP para obtener
+        fecha y hora.
+      </p>
+      <p>
+        Este proyecto sube una estructura JSON a tu base de datos
+        Firestore para IoT, que es similar a esta:</p>
+    </div>
+    <muestra-codigo>
+      <div>
+        <div>{</div>
+        <div>&nbsp;&nbsp;<span style="color: #0451a5;">"fields"</span>:&nbsp;{
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0451a5;">"timestamp"</span>:&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0451a5;">"timestampValue"</span>:&nbsp;<span
+            style="color: #a31515;">"2020-10-12T04:28:22Z"</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;},</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0451a5;">"dispositivoId"</span>:&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0451a5;">"stringValue"</span>:&nbsp;<span
+            style="color: #a31515;">"iot2"</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;},</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0451a5;">"valor"</span>:&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0451a5;">"integerValue"</span>:&nbsp;<span
+            style="color: #a31515;">"0"</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div>
+      </div>
+    </muestra-codigo>
+    <div class="marco-lectura">
+      <p>
+        Para obtener el código de arduino que procesa JSON, usa el
+        <a href="https://arduinojson.org/v6/assistant/"
+          target="_blank">ArduinoJSON Assistant</a>
+        y el fragmento de JSON del párrafo anterior.
+      </p>
+    </div>
+    <mi-footer></mi-footer>
+  </layout-cajon>
+</body>
+</html>

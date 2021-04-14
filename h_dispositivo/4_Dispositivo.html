@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>Dispositivo.ino</h1>
+    <muestra-codigo>
+      <div>
+        <div><span style="color: #af00db;">#include</span><span
+            style="color: #0000ff;">&nbsp;</span><span
+            style="color: #a31515;">"utilIoT.hpp"</span></div>
+        <div><span style="color: #af00db;">#include</span><span
+            style="color: #0000ff;">&nbsp;</span><span
+            style="color: #a31515;">"ResInt.hpp"</span></div>
+        <div><span style="color: #af00db;">#include</span><span
+            style="color: #0000ff;">&nbsp;</span><span
+            style="color: #a31515;">"ProxySalida.hpp"</span></div>
+        <div><span style="color: #af00db;">#include</span><span
+            style="color: #0000ff;">&nbsp;</span><span
+            style="color: #a31515;">"ProxyEntrada.hpp"</span></div>
+        <div><span style="color: #af00db;">#include</span><span
+            style="color: #0000ff;">&nbsp;</span><span
+            style="color: #a31515;">"ProxyHistorial.hpp"</span></div><br>
+        <div><span style="color: #af00db;">#define</span><span
+            style="color: #0000ff;">&nbsp;</span><span
+            style="color: #0000ff;">SSID</span><span
+            style="color: #0000ff;">&nbsp;</span><span
+            style="color: #a31515;">"Iot"</span></div>
+        <div><span style="color: #af00db;">#define</span><span
+            style="color: #0000ff;">&nbsp;</span><span
+            style="color: #0000ff;">PASS</span><span
+            style="color: #0000ff;">&nbsp;&nbsp;</span><span
+            style="color: #a31515;">"12345678"</span></div>
+        <div><span style="color: #af00db;">#define</span><span
+            style="color: #0000ff;">&nbsp;</span><span
+            style="color: #0000ff;">HUELLA_DIGITAL</span><span
+            style="color: #0000ff;">&nbsp;</span><span
+            style="color: #a31515;">"798bb177930734ec69314098399b857fc89321e8"</span>
+        </div>
+        <div><span style="color: #af00db;">#define</span><span
+            style="color: #0000ff;">&nbsp;</span><span
+            style="color: #0000ff;">DISPOSITIVO_ID</span><span
+            style="color: #0000ff;">&nbsp;</span><span
+            style="color: #a31515;">"iot2"</span></div>
+        <div><span style="color: #af00db;">#define</span><span
+            style="color: #0000ff;">&nbsp;</span><span
+            style="color: #0000ff;">ID_PROYECTO</span><span
+            style="color: #0000ff;">&nbsp;</span><span
+            style="color: #a31515;">"gilpgiotx"</span></div><br>
+        <div><span
+            style="color: #008000;">//&nbsp;Pin&nbsp;del&nbsp;botón&nbsp;flash.</span>
+        </div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0000ff;">int</span>&nbsp;<span
+            style="color: #001080;">BOTON_FLASH</span>&nbsp;=&nbsp;<span
+            style="color: #098658;">0</span>;</div>
+        <div><span
+            style="color: #008000;">//&nbsp;Pin&nbsp;de&nbsp;un&nbsp;LED.</span>
+        </div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0000ff;">int</span>&nbsp;<span
+            style="color: #001080;">LED_INTEGRADO_2</span>&nbsp;=&nbsp;&nbsp;<span
+            style="color: #098658;">2</span>;</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #267f99;">String</span>&nbsp;<span
+            style="color: #001080;">URL_SALIDA</span>(</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">urlDeDocumento</span>(
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0000ff;">ID_PROYECTO</span>,&nbsp;<span
+            style="color: #a31515;">"Salida"</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0000ff;">DISPOSITIVO_ID</span>));</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #267f99;">String</span>&nbsp;<span
+            style="color: #001080;">URL_ENTRADA</span>(</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">urlDeDocumento</span>(
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0000ff;">ID_PROYECTO</span>,&nbsp;<span
+            style="color: #a31515;">"Entrada"</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0000ff;">DISPOSITIVO_ID</span>));</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #267f99;">String</span>&nbsp;<span
+            style="color: #001080;">URL_HISTORIAL</span>(</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">urlDeColeccion</span>(
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #0000ff;">ID_PROYECTO</span>,&nbsp;<span
+            style="color: #a31515;">"Historial"</span>));</div><br>
+        <div><span style="color: #0000ff;">int</span>&nbsp;<span
+            style="color: #001080;">entrada</span>&nbsp;=&nbsp;<span
+            style="color: #098658;">0</span>;</div>
+        <div><span style="color: #267f99;">ProxySalida</span>&nbsp;<span
+            style="color: #001080;">proxySalida</span>(</div>
+        <div>&nbsp;&nbsp;<span
+            style="color: #0000ff;">HUELLA_DIGITAL</span>,&nbsp;<span
+            style="color: #001080;">URL_SALIDA</span>);</div>
+        <div><span style="color: #267f99;">ProxyEntrada</span>&nbsp;<span
+            style="color: #001080;">proxyEntrada</span>(</div>
+        <div>&nbsp;&nbsp;<span
+            style="color: #0000ff;">HUELLA_DIGITAL</span>,&nbsp;<span
+            style="color: #001080;">URL_ENTRADA</span>);</div>
+        <div><span style="color: #267f99;">ProxyHistorial</span>&nbsp;<span
+            style="color: #001080;">proxyHistorial</span>(</div>
+        <div>&nbsp;&nbsp;<span
+            style="color: #0000ff;">DISPOSITIVO_ID</span>,&nbsp;<span
+            style="color: #0000ff;">HUELLA_DIGITAL</span>,</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">URL_HISTORIAL</span>);
+        </div><br>
+        <div><span style="color: #0000ff;">void</span>&nbsp;<span
+            style="color: #795e26;">muestraSalida</span>(<span
+            style="color: #0000ff;">int</span>&nbsp;<span
+            style="color: #001080;">valor</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">digitalWrite</span>(
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">LED_INTEGRADO_2</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">valor</span>&nbsp;&gt;&nbsp;<span
+            style="color: #098658;">0</span>&nbsp;?&nbsp;LOW&nbsp;:&nbsp;HIGH);
+        </div>
+        <div>}</div>
+        <div><span style="color: #0000ff;">int</span>&nbsp;<span
+            style="color: #795e26;">recuperaEntrada</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0000ff;">int</span>&nbsp;<span
+            style="color: #001080;">estadoDelBoton</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">digitalRead</span>(<span
+            style="color: #001080;">BOTON_FLASH</span>);</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">return</span>&nbsp;<span
+            style="color: #001080;">estadoDelBoton</span>&nbsp;==&nbsp;HIGH&nbsp;?
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #098658;">10</span>&nbsp;:&nbsp;<span
+            style="color: #098658;">2</span>;</div>
+        <div>}</div>
+        <div><span style="color: #0000ff;">void</span></div>
+        <div><span style="color: #795e26;">muestraError</span>(String&nbsp;<span
+            style="color: #001080;">mensaje</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">Serial</span>.<span
+            style="color: #795e26;">println</span>(<span
+            style="color: #001080;">mensaje</span>.<span
+            style="color: #795e26;">c_str</span>());</div>
+        <div>}</div><br>
+        <div><span style="color: #0000ff;">void</span>&nbsp;<span
+            style="color: #795e26;">setup</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">Serial</span>.<span
+            style="color: #795e26;">begin</span>(<span
+            style="color: #098658;">115200</span>);</div>
+        <div><span
+            style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Inicializa&nbsp;el&nbsp;pin&nbsp;para</span>
+        </div>
+        <div><span
+            style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LED_INTEGRADO_2&nbsp;como&nbsp;salida.</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;&nbsp;*/</span></div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">pinMode</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">LED_INTEGRADO_2</span>,&nbsp;OUTPUT);</div>
+        <div><span
+            style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Inicializa&nbsp;el&nbsp;pin&nbsp;para</span>
+        </div>
+        <div><span
+            style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BOTÓN_FLASH&nbsp;como&nbsp;entrada.&nbsp;*/</span>
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">pinMode</span>(<span
+            style="color: #001080;">BOTON_FLASH</span>,&nbsp;INPUT);</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">conectaWiFi</span>(<span
+            style="color: #0000ff;">SSID</span>,&nbsp;<span
+            style="color: #0000ff;">PASS</span>);</div>
+        <div>&nbsp;&nbsp;<span
+            style="color: #795e26;">muestraLaSalidaDelServidor</span>();</div>
+        <div>&nbsp;&nbsp;<span
+            style="color: #795e26;">enviaLaEntrada</span>(<span
+            style="color: #0000ff;">true</span>);</div>
+        <div>}</div><br>
+        <div><span style="color: #0000ff;">void</span>&nbsp;<span
+            style="color: #795e26;">loop</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span
+            style="color: #795e26;">muestraLaSalidaDelServidor</span>();</div>
+        <div>&nbsp;&nbsp;<span
+            style="color: #795e26;">enviaLaEntrada</span>(<span
+            style="color: #0000ff;">false</span>);</div>
+        <div>}</div><br>
+        <div><span style="color: #0000ff;">void</span></div>
+        <div><span
+            style="color: #795e26;">muestraLaSalidaDelServidor</span>()&nbsp;{
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #267f99;">ResInt</span>&nbsp;<span
+            style="color: #001080;">res</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">proxySalida</span>.<span
+            style="color: #795e26;">get</span>();</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
+            style="color: #001080;">res</span>.<span
+            style="color: #001080;">error</span>.<span
+            style="color: #795e26;">length</span>()&nbsp;&gt;&nbsp;<span
+            style="color: #098658;">0</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">muestraError</span>(<span
+            style="color: #001080;">res</span>.<span
+            style="color: #001080;">error</span>);</div>
+        <div>&nbsp;&nbsp;}&nbsp;<span style="color: #af00db;">else</span>&nbsp;{
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">muestraSalida</span>(<span
+            style="color: #001080;">res</span>.<span
+            style="color: #001080;">valor</span>);</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div><br>
+        <div><span style="color: #0000ff;">void</span></div>
+        <div><span style="color: #795e26;">enviaLaEntrada</span>(<span
+            style="color: #0000ff;">bool</span>&nbsp;<span
+            style="color: #001080;">forzosa</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0000ff;">int</span>&nbsp;<span
+            style="color: #001080;">nuevaEntrada</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">recuperaEntrada</span>();</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
+            style="color: #001080;">forzosa</span>&nbsp;||</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">entrada</span>&nbsp;!=&nbsp;<span
+            style="color: #001080;">nuevaEntrada</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;<span
+            style="color: #001080;">error</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">proxyEntrada</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">set</span>(<span
+            style="color: #001080;">nuevaEntrada</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #af00db;">if</span>&nbsp;(<span
+            style="color: #001080;">error</span>.<span
+            style="color: #795e26;">length</span>()&nbsp;&gt;&nbsp;<span
+            style="color: #098658;">0</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">muestraError</span>(<span
+            style="color: #001080;">error</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #af00db;">return</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">error</span>&nbsp;=&nbsp;<span
+            style="color: #001080;">proxyHistorial</span>.</div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">add</span>(<span
+            style="color: #001080;">nuevaEntrada</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #af00db;">if</span>&nbsp;(<span
+            style="color: #001080;">error</span>.<span
+            style="color: #795e26;">length</span>()&nbsp;&gt;&nbsp;<span
+            style="color: #098658;">0</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #795e26;">muestraError</span>(<span
+            style="color: #001080;">error</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #af00db;">return</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: #001080;">entrada</span>&nbsp;=&nbsp;<span
+            style="color: #001080;">nuevaEntrada</span>;</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div><br>
+      </div>
+    </muestra-codigo>
+    <mi-footer></mi-footer>
+  </layout-cajon>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>lib/tiposFire.js</h1>
+    <muestra-codigo>
+      <div>
+        <div><span
+            style="color: #008000;">/**&nbsp;Datos&nbsp;que&nbsp;Firebase&nbsp;proporciona</span>
+        </div>
+        <div><span
+            style="color: #008000;">&nbsp;*&nbsp;sobre&nbsp;un&nbsp;usuario&nbsp;autorizado.</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@typedef</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{Object}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">User</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{string}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">email</span><span
+            style="color: #008000;">&nbsp;email&nbsp;del&nbsp;usuario.</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{string}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">displayName</span><span
+            style="color: #008000;">&nbsp;nombre&nbsp;del&nbsp;usuario.</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{string}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">photoURL</span><span
+            style="color: #008000;">&nbsp;URL&nbsp;de&nbsp;la&nbsp;foto&nbsp;del&nbsp;usuario.</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div><br>
+        <div><span
+            style="color: #008000;">/**&nbsp;Implementación&nbsp;de&nbsp;seguridad;</span>
+        </div>
+        <div><span
+            style="color: #008000;">&nbsp;*&nbsp;por&nbsp;ejemplo&nbsp;Google,&nbsp;Microsoft,</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;Twiter,&nbsp;etc.</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@see</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">https://firebase.google.com/docs/reference/js/firebase.auth.AuthProvider</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@typedef</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{Object}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">AuthProvider</span></div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div><br>
+        <div><span
+            style="color: #008000;">/**&nbsp;Implementación&nbsp;de&nbsp;AuthProvider</span>
+        </div>
+        <div><span
+            style="color: #008000;">&nbsp;*&nbsp;que&nbsp;usa&nbsp;el&nbsp;sistema&nbsp;de&nbsp;seguridad</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;de&nbsp;Google,</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@see</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">https://firebase.google.com/docs/reference/js/firebase.auth.GoogleAuthProvider</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@typedef</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{Object}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">GoogleAuthProvider</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{(p:Object)=&gt;AuthProvider}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">setCustomParameters</span><span
+            style="color: #008000;">&nbsp;asigna</span></div>
+        <div><span
+            style="color: #008000;">&nbsp;*&nbsp;&nbsp;parámetros&nbsp;para&nbsp;el&nbsp;sistema</span>
+        </div>
+        <div><span
+            style="color: #008000;">&nbsp;*&nbsp;&nbsp;OAuth&nbsp;de&nbsp;Google.</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div><br>
+        <div><span
+            style="color: #008000;">/**&nbsp;Servicio&nbsp;de&nbsp;autenticación&nbsp;de</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;usuarios.</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@see</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">https://firebase.google.com/docs/reference/js/firebase.auth.Auth</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@typedef</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{Object}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">Auth</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{(provider:AuthProvider)=&gt;Promise&lt;void&gt;}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">signInWithRedirect</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{()=&gt;Promise&lt;void&gt;}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">signOut</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{(n:(user:&nbsp;User)=&gt;void,&nbsp;e:(e:Error)=&gt;void)=&gt;void}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">onAuthStateChanged</span></div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div><br>
+        <div><span style="color: #008000;">/**</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@see</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">https://firebase.google.com/docs/reference/js/firebase.firestore.DocumentSnapshot</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@typedef</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{Object}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">DocumentSnapshot</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{boolean}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">exists</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{string}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">id</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{()=&gt;Object}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">data</span></div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div><br>
+        <div><span
+            style="color: #008000;">/**&nbsp;&nbsp;https://firebase.google.com/docs/reference/js/firebase.firestore.DocumentReference</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@typedef</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{Object}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">DocumentReference</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{()=&gt;Promise&lt;DocumentSnapshot&gt;}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">get</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{(o:Object)=&gt;Promise&lt;void&gt;}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">set</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{()=&gt;Promise&lt;void&gt;}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">delete</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{(n:(snap:&nbsp;DocumentSnapshot)=&gt;void,&nbsp;e:(e:Error)=&gt;void)=&gt;void}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">onSnapshot</span><span
+            style="color: #008000;">&nbsp;</span></div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div><br>
+        <div><span
+            style="color: #008000;">/**&nbsp;https://firebase.google.com/docs/reference/js/firebase.firestore.QuerySnapshot</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@typedef</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{Object}</span><span
+            style="color: #008000;">&nbsp;&nbsp;</span><span
+            style="color: #267f99;">QuerySnapshot</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{number}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">size</span><span
+            style="color: #008000;">&nbsp;</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{(f:(d:DocumentSnapshot)=&gt;any)=&gt;void}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">forEach</span><span
+            style="color: #008000;">&nbsp;los&nbsp;documentos&nbsp;existen</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div><br>
+        <div><span
+            style="color: #008000;">/**&nbsp;https://firebase.google.com/docs/reference/js/firebase.firestore.Query</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@typedef</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{Object}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">Query</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{(n:(snap:&nbsp;QuerySnapshot)=&gt;void,&nbsp;e:(e:Error)=&gt;void)=&gt;void}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">onSnapshot</span><span
+            style="color: #008000;">&nbsp;</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{()=&gt;Promise&lt;QuerySnapshot&gt;}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">get</span></div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div><br>
+        <div><span
+            style="color: #008000;">/**&nbsp;https://firebase.google.com/docs/reference/js/firebase.firestore.CollectionReference</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@typedef</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{Object}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">CollectionReference</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{(ruta:string)=&gt;DocumentReference}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">doc</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{(campo:string,&nbsp;orden?:string)=&gt;Query}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">orderBy</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{(n:(snap:&nbsp;QuerySnapshot)=&gt;void,&nbsp;e:(e:Error)=&gt;void)=&gt;void}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">onSnapshot</span><span
+            style="color: #008000;">&nbsp;</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{(o:Object)=&gt;Promise&lt;void&gt;}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">add</span></div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div><br>
+        <div><span
+            style="color: #008000;">/**&nbsp;https://firebase.google.com/docs/reference/js/firebase.firestore.Firestore</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@typedef</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{Object}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">Firestore</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{(ruta:string)=&gt;CollectionReference}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">collection</span></div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div><br>
+        <div><span
+            style="color: #008000;">/**&nbsp;https://firebase.google.com/docs/reference/js/firebase.storage.Reference</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@typedef</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{Object}</span><span
+            style="color: #008000;">&nbsp;&nbsp;</span><span
+            style="color: #267f99;">Reference</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{(datos:FormDataEntryValue)=&gt;Promise&lt;void&gt;}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">put</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{()=&gt;Promise&lt;string&gt;}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">getDownloadURL</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{()=&gt;Promise&lt;void&gt;}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">delete</span></div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div><br>
+        <div><span
+            style="color: #008000;">/**&nbsp;https://firebase.google.com/docs/reference/js/firebase.storage.Storage</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@typedef</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{Object}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">Storage</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+            style="color: #0000ff;">@property</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #267f99;">{(ruta:string)=&gt;&nbsp;Reference}</span><span
+            style="color: #008000;">&nbsp;</span><span
+            style="color: #001080;">ref</span></div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div><br>
+        <div><span style="color: #af00db;">export</span>&nbsp;<span
+            style="color: #0000ff;">const</span>&nbsp;<span
+            style="color: #0070c1;">__tiposFire</span>&nbsp;=&nbsp;<span
+            style="color: #098658;">0</span>;</div>
+      </div>
+    </muestra-codigo>
+    <mi-footer></mi-footer>
+  </layout-cajon>
+</body>
+</html>
