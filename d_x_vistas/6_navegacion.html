@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>Navegación</h1>
+    <div class="marco-lectura">
+      <p>
+        <a href="https://material.io/components/bottom-navigation"
+            target="_blank">Bottom navigation en Material Design.</a>
+      </p>
+    </div>
+    <div class="horizontal">
+      <div>
+        <h2>Salida</h2>
+        <iframe src="src/navegacion.html"></iframe>
+        <p><a href="src/navegacion.html" target="_blank">Ábrelo en otra
+            pestaña.</a></p>
+      </div>
+      <muestra-codigo>
+        <div>
+          <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+                style="color: #ff0000;">html</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+                style="color: #ff0000;">lang</span>=<span
+                style="color: #0000ff;">"es"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div><span style="color: #800000;">&lt;head&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;meta</span>&nbsp;<span
+                style="color: #ff0000;">charset</span>=<span
+                style="color: #0000ff;">"UTF-8"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;meta</span>&nbsp;<span
+                style="color: #ff0000;">http-equiv</span>=<span
+                style="color: #0000ff;">"X-UA-Compatible"</span>&nbsp;<span
+                style="color: #ff0000;">content</span>=<span
+                style="color: #0000ff;">"IE=edge"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;meta</span>&nbsp;<span
+                style="color: #ff0000;">name</span>=<span
+                style="color: #0000ff;">"viewport"</span>&nbsp;<span
+                style="color: #ff0000;">content</span>=<span
+                style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;title&gt;</span>Navegación<span
+                style="color: #800000;">&lt;/title&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;link</span>&nbsp;<span
+                style="color: #ff0000;">href</span>=<span
+                style="color: #0000ff;">"https://fonts.googleapis.com/icon?family=Material+Icons"</span>
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">rel</span>=<span
+                style="color: #0000ff;">"stylesheet"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;style&gt;</span>
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">html</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colContenido</span>:&nbsp;<span
+                style="color: #0451a5;">black</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colContenidoFondo</span>:&nbsp;<span
+                style="color: #0451a5;">white</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colPrimario</span>:&nbsp;<span
+                style="color: #0451a5;">black</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colPrimarioFondo</span>:&nbsp;<span
+                style="color: #0451a5;">#81D4FA</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colBotFondoAct</span>:&nbsp;<span
+                style="color: #0451a5;">#bbe5f8</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #008000;">/*&nbsp;Los&nbsp;2&nbsp;primeros&nbsp;fonts&nbsp;son</span>
+          </div>
+          <div><span
+                style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;para&nbsp;apple.&nbsp;*/</span>
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--fontFamily</span>:&nbsp;-apple-system,
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BlinkMacSystemFont,
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0451a5;">sans-serif</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">color</span>:&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colContenido</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">font-family</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--fontFamily</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-color</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colContenidoFondo</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #008000;">/*&nbsp;El&nbsp;margin-top&nbsp;es&nbsp;más&nbsp;grande</span>
+          </div>
+          <div><span
+                style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;para&nbsp;que&nbsp;no&nbsp;lo&nbsp;tape&nbsp;la</span>
+          </div>
+          <div><span
+                style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;barra&nbsp;de&nbsp;navegación.&nbsp;*/</span>
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">body</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">margin</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #098658;">4.5rem</span>&nbsp;<span
+                style="color: #098658;">1rem</span>&nbsp;<span
+                style="color: #098658;">5rem</span>&nbsp;<span
+                style="color: #098658;">1rem</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">mi-nav</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">position</span>:&nbsp;<span
+                style="color: #0451a5;">fixed</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">left</span>:&nbsp;<span
+                style="color: #098658;">0</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">right</span>:&nbsp;<span
+                style="color: #098658;">0</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">bottom</span>:&nbsp;<span
+                style="color: #098658;">0</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">color</span>:&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colPrimario</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-color</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colPrimarioFondo</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">display</span>:&nbsp;<span
+                style="color: #0451a5;">flex</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">list-style-type</span>:&nbsp;<span
+                style="color: #0451a5;">none</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">justify-content</span>:&nbsp;<span
+                style="color: #0451a5;">center</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">align-items</span>:&nbsp;<span
+                style="color: #0451a5;">stretch</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">margin</span>:&nbsp;<span
+                style="color: #098658;">0</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">padding</span>:&nbsp;<span
+                style="color: #098658;">0</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">mi-nav</span>&nbsp;<span
+                style="color: #800000;">a</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">display</span>:&nbsp;<span
+                style="color: #0451a5;">block</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">color</span>:&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colPrimario</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">font-size</span>:&nbsp;<span
+                style="color: #098658;">0.75rem</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">text-decoration</span>:&nbsp;<span
+                style="color: #0451a5;">none</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">padding-top</span>:&nbsp;<span
+                style="color: #098658;">0.5rem</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">padding-bottom</span>:&nbsp;<span
+                style="color: #098658;">0.75rem</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">padding-left</span>:&nbsp;<span
+                style="color: #098658;">0.75rem</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">padding-right</span>:&nbsp;<span
+                style="color: #098658;">0.75rem</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">text-align</span>:&nbsp;<span
+                style="color: #0451a5;">center</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">mi-nav</span>&nbsp;<span
+                style="color: #800000;">a:active</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-color</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colBotFondoAct</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-position</span>:&nbsp;<span
+                style="color: #0451a5;">center</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-image</span>:&nbsp;<span
+                style="color: #795e26;">radial-gradient</span>(<span
+                style="color: #0451a5;">circle</span>,&nbsp;<span
+                style="color: #0451a5;">transparent</span>&nbsp;<span
+                style="color: #098658;">1%</span>,&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colPrimarioFondo</span>)&nbsp;<span
+                style="color: #098658;">1%</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">animation-name</span>:&nbsp;ripple;
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">animation-fill-mode</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0451a5;">forwards</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">animation-duration</span>:&nbsp;<span
+                style="color: #098658;">0.8s</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #af00db;">@keyframes</span>&nbsp;<span
+                style="color: #001080;">ripple</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-size</span>:&nbsp;<span
+                style="color: #098658;">100%</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-size</span>:&nbsp;<span
+                style="color: #098658;">15000%</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">mi-nav</span>&nbsp;<span
+                style="color: #800000;">.material-icons</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">display</span>:&nbsp;<span
+                style="color: #0451a5;">block</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">margin-left</span>:&nbsp;<span
+                style="color: #0451a5;">auto</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">margin-right</span>:&nbsp;<span
+                style="color: #0451a5;">auto</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/style&gt;</span>
+          </div>
+          <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+          <div><span style="color: #800000;">&lt;body&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;mi-nav&gt;&lt;/mi-nav&gt;</span>
+          </div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;script&gt;</span>
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0000ff;">class</span>&nbsp;<span
+                style="color: #267f99;">MiNav</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0000ff;">extends</span>&nbsp;<span
+                style="color: #267f99;">HTMLElement</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0000ff;">this</span>.<span
+                style="color: #001080;">innerHTML</span>&nbsp;=</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #008000;">/*&nbsp;html&nbsp;*/</span></div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<span
+                style="color: #800000;">&lt;a</span>&nbsp;<span
+                style="color: #ff0000;">href</span>=<span
+                style="color: #0000ff;">"index.html"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;span</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">class</span>=<span
+                style="color: #0000ff;">"material-icons"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;home
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;/span&gt;</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inicio</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;/a&gt;</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;a</span>&nbsp;<span
+                style="color: #ff0000;">href</span>=<span
+                style="color: #0000ff;">"ayuda.html"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;span</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">class</span>=<span
+                style="color: #0000ff;">"material-icons"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;help
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;/span&gt;</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ayuda</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;/a&gt;</span>`;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #001080;">customElements</span>.<span
+                style="color: #795e26;">define</span>(</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #a31515;">"mi-nav"</span>,&nbsp;<span
+                style="color: #267f99;">MiNav</span>);</div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/script&gt;</span>
+          </div>
+          <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+          <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+        </div>
+      </muestra-codigo>
+    </div>
+    <mi-footer></mi-footer>
+  </layout-cajon>
+</body>
+</html>

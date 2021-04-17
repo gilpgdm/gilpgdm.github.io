@@ -11,14 +11,12 @@
       --colContenido: black;
       --colContenidoFondo: white;
       --colBot: black;
-      --colBotFondo: #81D4FA;
+      --colPrimarioFondo: #81D4FA;
       --colBotFondoHov: #95dbfc;
-      --colBotSombraHov:
-        #75a0b444;
       --colBotFondoAct: #bbe5f8;
-      --colBotSombraAct:
-        #75a0b444;
       --colBotFondoFoc: #a2e0fd;
+      --colBotSombra:
+        #00000055;
       --fontFamily: -apple-system,
         BlinkMacSystemFont,
         sans-serif;
@@ -33,33 +31,48 @@
       text-transform: uppercase;
       color: var(--colBot);
       background-color:
-        var(--colBotFondo);
+        var(--colPrimarioFondo);
       font-size: 0.875rem;
       padding: 0.5rem 1rem;
       border: none;
       border-radius: 4px;
     }
 
+    button.contained:hover,
+    button.contained:focus {
+      box-shadow: 0 3px 6px var(--colBotSombra);
+    }
+
     button.contained:hover {
-      -webkit-box-shadow: 0 3px 2px 2px var(--colBotSombraHov);
-      box-shadow: 0 3px 2px 2px var(--colBotSombraHov);
       background-color:
         var(--colBotFondoHov);
     }
 
     button.contained:focus {
       outline: none;
-      -webkit-box-shadow: 0 3px 2px 2px var(--colBotSombraHov);
-      box-shadow: 0 3px 2px 2px var(--colBotSombraHov);
       background-color:
         var(--colBotFondoFoc);
     }
 
     button.contained:active {
-      -webkit-box-shadow: 0 4px 3px 3px var(--colBotSombraAct);
-      box-shadow: 0 4px 3px 3px var(--colBotSombraAct);
+      box-shadow: 0 6px 12px var(--colBotSombra);
       background-color:
         var(--colBotFondoAct);
+      background-position: center;
+      background-image: radial-gradient(circle, transparent 1%, var(--colBotFondoHov) 1%);
+      animation-name: ripple;
+      animation-fill-mode: forwards;
+      animation-duration: 0.8s;
+    }
+
+    @keyframes ripple {
+      from {
+        background-size: 100%;
+      }
+
+      to {
+        background-size: 15000%;
+      }
     }
   </style>
 </head>

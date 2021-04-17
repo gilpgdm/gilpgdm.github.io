@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navegación</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <style>
+    html {
+      --colContenido: black;
+      --colContenidoFondo: white;
+      --colPrimario: black;
+      --colPrimarioFondo: #81D4FA;
+      --colBotFondoAct: #bbe5f8;
+      /* Los 2 primeros fonts son
+       * para apple. */
+      --fontFamily: -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+      color: var(--colContenido);
+      font-family:
+        var(--fontFamily);
+      background-color:
+        var(--colContenidoFondo);
+    }
+
+    /* El margin-top es más grande
+     * para que no lo tape la
+     * barra de navegación. */
+    body {
+      margin:
+        4.5rem 1rem 5rem 1rem;
+    }
+
+    mi-nav {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      color: var(--colPrimario);
+      background-color:
+        var(--colPrimarioFondo);
+      display: flex;
+      list-style-type: none;
+      justify-content: center;
+      align-items: stretch;
+      margin: 0;
+      padding: 0;
+    }
+
+    mi-nav a {
+      display: block;
+      color: var(--colPrimario);
+      font-size: 0.75rem;
+      text-decoration: none;
+      padding-top: 0.5rem;
+      padding-bottom: 0.75rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      text-align: center;
+    }
+
+    mi-nav a:active {
+      background-color:
+        var(--colBotFondoAct);
+      background-position: center;
+      background-image: radial-gradient(circle, transparent 1%, var(--colPrimarioFondo) 1%);
+      animation-name: ripple;
+      animation-fill-mode:
+        forwards;
+      animation-duration: 0.8s;
+    }
+
+    @keyframes ripple {
+      from {
+        background-size: 100%;
+      }
+
+      to {
+        background-size: 15000%;
+      }
+    }
+
+    mi-nav .material-icons {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <mi-nav></mi-nav>
+  <script>
+    class MiNav
+      extends HTMLElement {
+      connectedCallback() {
+        this.innerHTML =
+          /* html */
+          `<a href="index.html">
+        <span
+          class="material-icons">
+          home
+        </span>
+        Inicio
+      </a>
+      <a href="ayuda.html">
+        <span
+          class="material-icons">
+          help
+        </span>
+        Ayuda
+      </a>`;
+      }
+    }
+    customElements.define(
+      "mi-nav", MiNav);
+  </script>
+</body>
+</html>
