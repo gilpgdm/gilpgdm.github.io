@@ -1,6 +1,6 @@
 /* Espera 11 minutos después de hacer los cambios en tu sitio, para depués
  * actualizar este archivo. */
-const CACHE = "gilpgdm-1.04";
+const CACHE = "gilpgdm-1.05";
 
 /**  Archivos requeridos para que la aplicación funcione fuera de línea. */
 const ARCHIVOS = [
@@ -9,7 +9,6 @@ const ARCHIVOS = [
   "index.html",
   "LICENSE",
   "site.webmanifest",
-  "sw.js",
   "cmp/mi-nav.js",
   "css/estilos.css",
   "c_multiplataforma/3_nativa.html",
