@@ -1,6 +1,6 @@
 /* Espera 11 minutos después de hacer los cambios en tu sitio, para depués
  * actualizar este archivo. */
-const CACHE = "gilpgdm-1.05";
+const CACHE = "gilpgdm-1.06";
 
 /**  Archivos requeridos para que la aplicación funcione fuera de línea. */
 const ARCHIVOS = [
@@ -178,13 +178,13 @@ const ARCHIVOS = [
   '/'
 ];
 
-self.addEventListener("install", evt => {
+addEventListener("install", evt => {
   console.log("Service Worker instalado.");
   // @ts-ignore
   evt.waitUntil(cargaCache());
 });
 
-self.addEventListener("fetch", evt => {
+addEventListener("fetch", evt => {
   // @ts-ignore
   if (evt.request.method === "GET") {
     // @ts-ignore
@@ -192,7 +192,7 @@ self.addEventListener("fetch", evt => {
   }
 });
 
-self.addEventListener("activate", () => console.log("Service Worker activo."));
+addEventListener("activate", () => console.log("Service Worker activo."));
 
 async function cargaCache() {
   console.log("Intentando cargar cache: " + CACHE);
