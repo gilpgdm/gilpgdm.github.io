@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <style>
+    html {
+      --colContenido: black;
+      --colContenidoFondo: white;
+      --colPrimario: black;
+      --colPrimarioFondo: #81D4FA;
+      --colCampoSinFoco: gray;
+      --colCampoFoco: #01579B;
+      --colError: #b00020;
+      --colCampoFondo: #F5F5F5;
+      --colCampoFondoHover:
+        #EEEEEE;
+      --colCampoFondoFocus:
+        #E0E0E0;
+      --fontFamily: -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+      color: var(--colContenido);
+      font-family:
+        var(--fontFamily);
+      background-color:
+        var(--colContenidoFondo);
+    }
+
+    body {
+      margin: 4rem 1rem 1rem 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      padding: 1rem;
+      font-size: 1.25rem;
+      color: var(--colPrimario);
+      background-color:
+        var(--colPrimarioFondo);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    .ios h1 {
+      text-align: center;
+    }
+
+    campo-dinamico {
+      display: block;
+      position: relative;
+      color:
+        var(--colCampoSinFoco);
+      background-color:
+        var(--colCampoFondo);
+      border-top-left-radius: 4px;
+      border-top-right-radius:
+        4px;
+      margin: 1rem 0;
+      padding: 1.25rem 0 0 0;
+    }
+
+    campo-dinamico:hover {
+      background-color:
+        var(--colCampoFondoHover);
+    }
+
+    campo-dinamico:focus-within {
+      background-color:
+        var(--colCampoFondoFocus);
+    }
+
+    campo-dinamico label {
+      position: absolute;
+      top: 1.75rem;
+      left: 1rem;
+      font-size: 1rem;
+      color:
+        var(--colCampoSinFoco);
+      transition: 0.3s ease-in;
+    }
+
+    campo-dinamico .valor+label,
+    campo-dinamico :focus+label,
+    campo-dinamico [type=file]+label {
+      top: 0.5rem;
+      font-size: 0.75rem;
+    }
+
+    campo-dinamico>output,
+    campo-dinamico select,
+    campo-dinamico input,
+    campo-dinamico textarea {
+      display: block;
+      box-sizing: border-box;
+      padding:
+        0.5rem 1rem 0.5rem 1rem;
+      font-size: 1rem;
+    }
+
+    campo-dinamico select,
+    campo-dinamico input,
+    campo-dinamico textarea {
+      background-color:
+        transparent;
+      font-family:
+        var(--fontFamily);
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color:
+        var(--colCampoSinFoco);
+      resize: none;
+      outline: none;
+      width: 100%;
+      transition: 0.3s ease-in;
+    }
+
+    campo-dinamico :focus {
+      border-bottom-width: 2px;
+    }
+
+    campo-dinamico small {
+      display: block;
+      height: 1em;
+      font-size: 0.75rem;
+      padding-left: 1rem;
+      background-color:
+        var(--colContenidoFondo);
+      transition: 0.3s ease-in;
+    }
+
+    campo-dinamico :focus+label {
+      color: var(--colCampoFoco);
+    }
+
+    campo-dinamico :focus {
+      border-bottom-color:
+        var(--colCampoFoco);
+    }
+
+    campo-dinamico :invalid,
+    campo-dinamico :focus:invalid,
+    campo-dinamico .error,
+    campo-dinamico :focus.error {
+      border-bottom-color:
+        var(--colError);
+    }
+
+    campo-dinamico :invalid+label,
+    campo-dinamico .error+label,
+    campo-dinamico :invalid~small,
+    campo-dinamico .error~small {
+      color: var(--colError);
+    }
+
+    campo-dinamico select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-right: 1rem;
+      background-repeat:
+        no-repeat;
+      background-position-x:
+        right;
+      background-position-y:
+        center;
+      background-image:
+        var(--flechaAbajo);
+    }
+
+    campo-dinamico select:focus {
+      background-image:
+        var(--flechaArriba);
+    }
+
+    option {
+      padding: 0.3rem 1rem;
+      background-color:
+        var(--colContenidoFondo);
+    }
+
+    option:checked {
+      background-color:
+        var(--colCampoFoco);
+      color:
+        var(--colContenidoFondo);
+    }
+  </style>
+</head>
+<body>
+  <h1>Archivos y Cámara</h1>
+  <campo-dinamico>
+    <input id="foto"
+        type="file"
+        accept="image/*"
+        capture="camera">
+    <label for="foto">
+      Foto de Móvil
+    </label>
+  </campo-dinamico>
+  <campo-dinamico>
+    <input id="video"
+        type="file"
+        accept="video/*"
+        capture="">
+    <label for="video">
+      Video de Móvil
+    </label>
+  </campo-dinamico>
+  <campo-dinamico>
+    <input id="archivo"
+        type="file">
+    <label for="archivo">
+      Archivo
+    </label>
+  </campo-dinamico>
+</body>
+</html>

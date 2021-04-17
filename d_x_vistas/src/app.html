@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+      content="width=device-width,
+              initial-scale=1.0">
+  <title>App</title>
+  <style>
+    html {
+      --colContenido: black;
+      --colContenidoFondo: white;
+      --colPrimario: black;
+      --colPrimarioFondo: #81D4FA;
+      /* Los 2 primeros fonts son
+       * para apple. */
+      --fontFamily: -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+      color: var(--colContenido);
+      font-family:
+        var(--fontFamily);
+      background-color:
+        var(--colContenidoFondo);
+    }
+
+    body {
+      margin: 4rem 1rem 1rem 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      padding: 1rem;
+      font-size: 1.25rem;
+      color: var(--colPrimario);
+      background-color:
+        var(--colPrimarioFondo);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    .ios h1 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>App</h1>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <script>
+    const USER_AGENT =
+      navigator.userAgent ||
+      navigator.vendor ||
+      window["opera"];
+    if (/android/i.
+      test(USER_AGENT)) {
+      document.body.classList
+        .add("android");
+    }
+    if (/iPad|iPhone|iPod|Mac/.
+      test(USER_AGENT) &&
+      !window.MSStream) {
+      document.body.classList.
+        add('ios');
+    }
+  </script>
+</body>
+</html>

@@ -16,185 +16,198 @@
     <h1>js/CtrlDivide.js</h1>
     <muestra-codigo>
       <div>
+        <div><span style="color: #af00db;">import</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">msg</span></div>
+        <div>}&nbsp;<span style="color: #af00db;">from</span>&nbsp;<span
+              style="color: #a31515;">"../lib/movil.js"</span>;</div><br>
         <div><span style="color: #0000ff;">const</span>&nbsp;<span
-            style="color: #0070c1;">REQUERIDO</span>&nbsp;=</div>
+              style="color: #0070c1;">REQUERIDO</span>&nbsp;=&nbsp;<span
+              style="color: #a31515;">"*Requerido"</span>;</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">REQUERIDO_NO_0</span>&nbsp;=</div>
         <div>&nbsp;&nbsp;<span
-            style="color: #a31515;">"Requerido,&nbsp;1&nbsp;decimal"</span>;
-        </div>
+              style="color: #a31515;">"*Requerido,&nbsp;no&nbsp;0"</span>;</div>
         <div><span style="color: #0000ff;">const</span>&nbsp;<span
-            style="color: #0070c1;">SER_DEC</span>&nbsp;=&nbsp;<span
-            style="color: #a31515;">`Debe&nbsp;ser</span></div>
-        <div><span
-            style="color: #a31515;">&nbsp;&nbsp;un&nbsp;número&nbsp;de&nbsp;1&nbsp;decimal.`</span>;
-        </div>
-        <div><span style="color: #0000ff;">const</span>&nbsp;<span
-            style="color: #0070c1;">NO_0</span>&nbsp;=&nbsp;<span
-            style="color: #a31515;">"No&nbsp;puede&nbsp;ser&nbsp;0."</span>;
+              style="color: #0070c1;">NO_0</span>&nbsp;=&nbsp;<span
+              style="color: #a31515;">"No&nbsp;puede&nbsp;ser&nbsp;0"</span>;
         </div><br>
-        <div><span style="color: #008000;">/**&nbsp;</span><span
-            style="color: #0000ff;">@type</span><span
-            style="color: #008000;">&nbsp;</span><span
-            style="color: #267f99;">{HTMLFormElement}</span><span
-            style="color: #008000;">&nbsp;*/</span></div>
         <div><span style="color: #0000ff;">const</span>&nbsp;<span
-            style="color: #0070c1;">forma</span>&nbsp;=&nbsp;<span
-            style="color: #001080;">document</span>[<span
-            style="color: #a31515;">"forma"</span>];</div><br>
-        <div><span style="color: #0070c1;">forma</span>.<span
-            style="color: #795e26;">addEventListener</span>(</div>
-        <div>&nbsp;&nbsp;<span
-            style="color: #a31515;">"submit"</span>,&nbsp;<span
-            style="color: #795e26;">divide</span>);</div><br>
-        <div><span style="color: #008000;">/**&nbsp;</span><span
-            style="color: #0000ff;">@param</span><span
-            style="color: #008000;">&nbsp;</span><span
-            style="color: #267f99;">{Event}</span><span
-            style="color: #008000;">&nbsp;</span><span
-            style="color: #001080;">evt</span><span
-            style="color: #008000;">&nbsp;*/</span></div>
+              style="color: #0070c1;">form</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">document</span>.<span
+              style="color: #795e26;">querySelector</span>(<span
+              style="color: #a31515;">"form"</span>);</div>
+        <div><span
+              style="color: #008000;">/**&nbsp;@type&nbsp;{HTMLInputElement|</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null}&nbsp;*/</span>
+        </div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">inA</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">document</span>.<span
+              style="color: #795e26;">querySelector</span>(<span
+              style="color: #a31515;">"#inA"</span>);</div>
+        <div><span
+              style="color: #008000;">/**&nbsp;@type&nbsp;{HTMLOutputElement|</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null}&nbsp;*/</span>
+        </div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">msgA</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">document</span>.<span
+              style="color: #795e26;">querySelector</span>(<span
+              style="color: #a31515;">"#msgA"</span>);</div>
+        <div><span
+              style="color: #008000;">/**&nbsp;@type&nbsp;{HTMLInputElement|</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null}&nbsp;*/</span>
+        </div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">inB</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">document</span>.<span
+              style="color: #795e26;">querySelector</span>(<span
+              style="color: #a31515;">"#inB"</span>);</div>
+        <div><span
+              style="color: #008000;">/**&nbsp;@type&nbsp;{HTMLOutputElement|</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null}&nbsp;*/</span>
+        </div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">msgB</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">document</span>.<span
+              style="color: #795e26;">querySelector</span>(<span
+              style="color: #a31515;">"#msgB"</span>);</div>
+        <div><span style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #0070c1;">inA</span>&nbsp;&amp;&amp;&nbsp;<span
+              style="color: #0070c1;">inB</span>&nbsp;&amp;&amp;&nbsp;<span
+              style="color: #0070c1;">form</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #0070c1;">inA</span>.<span
+              style="color: #795e26;">addEventListener</span>(<span
+              style="color: #a31515;">"input"</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;()&nbsp;<span
+              style="color: #0000ff;">=&gt;</span>&nbsp;<span
+              style="color: #795e26;">msg</span>(<span
+              style="color: #0070c1;">inA</span>,&nbsp;<span
+              style="color: #0070c1;">msgA</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">REQUERIDO</span>));</div>
+        <div>&nbsp;&nbsp;<span style="color: #0070c1;">inB</span>.<span
+              style="color: #795e26;">addEventListener</span>(<span
+              style="color: #a31515;">"input"</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">validaB</span>);</div>
+        <div>&nbsp;&nbsp;<span style="color: #0070c1;">form</span>.<span
+              style="color: #795e26;">addEventListener</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #a31515;">"submit"</span>,&nbsp;<span
+              style="color: #795e26;">divide</span>);</div>
+        <div>}</div><br>
         <div><span style="color: #0000ff;">function</span>&nbsp;<span
-            style="color: #795e26;">divide</span>(<span
-            style="color: #001080;">evt</span>)&nbsp;{</div>
-        <div>&nbsp;&nbsp;<span style="color: #af00db;">try</span>&nbsp;{</div>
+              style="color: #795e26;">validaB</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #0070c1;">inB</span>)&nbsp;{</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #001080;">evt</span>.<span
-            style="color: #795e26;">preventDefault</span>();</div>
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">b</span>&nbsp;=&nbsp;<span
+              style="color: #0070c1;">inB</span>.<span
+              style="color: #001080;">valueAsNumber</span>;</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0070c1;">forma</span>.<span
-            style="color: #001080;">a</span>.<span
-            style="color: #001080;">classList</span>.</div>
+              style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #795e26;">isNaN</span>(<span
+              style="color: #0070c1;">b</span>)&nbsp;||&nbsp;<span
+              style="color: #0070c1;">b</span>&nbsp;!==&nbsp;<span
+              style="color: #098658;">0</span>)&nbsp;{</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #795e26;">remove</span>(<span
-            style="color: #a31515;">"error"</span>);</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0070c1;">forma</span>.<span
-            style="color: #001080;">b</span>.<span
-            style="color: #001080;">classList</span>.</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #795e26;">remove</span>(<span
-            style="color: #a31515;">"error"</span>);</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0070c1;">forma</span>.<span
-            style="color: #001080;">msgA</span>.<span
-            style="color: #001080;">value</span>&nbsp;=&nbsp;<span
-            style="color: #0070c1;">REQUERIDO</span>;</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0070c1;">forma</span>.<span
-            style="color: #001080;">msgB</span>.<span
-            style="color: #001080;">value</span>&nbsp;=&nbsp;<span
-            style="color: #0070c1;">REQUERIDO</span>;</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0000ff;">const</span>&nbsp;<span
-            style="color: #0070c1;">a</span>&nbsp;=</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #795e26;">parseFloat</span>(<span
-            style="color: #0070c1;">forma</span>.<span
-            style="color: #001080;">a</span>.<span
-            style="color: #001080;">value</span>);</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0000ff;">const</span>&nbsp;<span
-            style="color: #0070c1;">b</span>&nbsp;=</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #795e26;">parseFloat</span>(<span
-            style="color: #0070c1;">forma</span>.<span
-            style="color: #001080;">b</span>.<span
-            style="color: #001080;">value</span>);</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0000ff;">let</span>&nbsp;<span
-            style="color: #001080;">error</span>&nbsp;=&nbsp;<span
-            style="color: #0000ff;">false</span>;</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #af00db;">if</span>&nbsp;(<span
-            style="color: #795e26;">isNaN</span>(<span
-            style="color: #0070c1;">a</span>))&nbsp;{</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #001080;">error</span>&nbsp;=&nbsp;<span
-            style="color: #0000ff;">true</span>;</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0070c1;">forma</span>.<span
-            style="color: #001080;">inA</span>.<span
-            style="color: #001080;">classList</span>.</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #795e26;">add</span>(<span
-            style="color: #a31515;">"error"</span>);</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0070c1;">forma</span>.<span
-            style="color: #001080;">msgA</span>.<span
-            style="color: #001080;">value</span>&nbsp;=&nbsp;<span
-            style="color: #0070c1;">SER_DEC</span>;</div><br>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #af00db;">if</span>&nbsp;(<span
-            style="color: #795e26;">isNaN</span>(<span
-            style="color: #0070c1;">b</span>))&nbsp;{</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #001080;">error</span>&nbsp;=&nbsp;<span
-            style="color: #0000ff;">true</span>;</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0070c1;">forma</span>.<span
-            style="color: #001080;">inB</span>.<span
-            style="color: #001080;">classList</span>.</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #795e26;">add</span>(<span
-            style="color: #a31515;">"error"</span>);</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0070c1;">forma</span>.<span
-            style="color: #001080;">msgB</span>.<span
-            style="color: #001080;">value</span>&nbsp;=&nbsp;<span
-            style="color: #0070c1;">SER_DEC</span>;</div>
+              style="color: #0070c1;">inB</span>.<span
+              style="color: #795e26;">setCustomValidity</span>(<span
+              style="color: #a31515;">""</span>);</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
-            style="color: #af00db;">else</span>&nbsp;<span
-            style="color: #af00db;">if</span>&nbsp;(<span
-            style="color: #0070c1;">b</span>&nbsp;===&nbsp;<span
-            style="color: #098658;">0</span>)&nbsp;{</div>
+              style="color: #af00db;">else</span>&nbsp;{</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #001080;">error</span>&nbsp;=&nbsp;<span
-            style="color: #0000ff;">true</span>;</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0070c1;">forma</span>.<span
-            style="color: #001080;">inB</span>.<span
-            style="color: #001080;">classList</span>.</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #795e26;">add</span>(<span
-            style="color: #a31515;">"error"</span>);</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0070c1;">forma</span>.<span
-            style="color: #001080;">msgB</span>.<span
-            style="color: #001080;">value</span>&nbsp;=&nbsp;<span
-            style="color: #0070c1;">NO_0</span>;</div>
+              style="color: #0070c1;">inB</span>.<span
+              style="color: #795e26;">setCustomValidity</span>(<span
+              style="color: #0070c1;">NO_0</span>);</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #af00db;">if</span>&nbsp;(<span
-            style="color: #001080;">error</span>)&nbsp;{</div>
+              style="color: #795e26;">msg</span>(<span
+              style="color: #0070c1;">inB</span>,&nbsp;<span
+              style="color: #0070c1;">msgB</span>,</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0070c1;">forma</span>.<span
-            style="color: #001080;">outSalida</span>.<span
-            style="color: #001080;">value</span>&nbsp;=&nbsp;<span
-            style="color: #a31515;">""</span>;</div>
+              style="color: #0070c1;">REQUERIDO_NO_0</span>);</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div><br>
+        <div><span style="color: #008000;">/**&nbsp;</span><span
+              style="color: #0000ff;">@param</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #267f99;">{Event}</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #001080;">evt</span><span
+              style="color: #008000;">&nbsp;*/</span></div>
+        <div><span style="color: #0000ff;">function</span>&nbsp;<span
+              style="color: #795e26;">divide</span>(<span
+              style="color: #001080;">evt</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">evt</span>.<span
+              style="color: #795e26;">preventDefault</span>();</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #0070c1;">inA</span>&nbsp;&amp;&amp;&nbsp;<span
+              style="color: #0070c1;">inB</span>&nbsp;&amp;&amp;&nbsp;<span
+              style="color: #0070c1;">form</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">try</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #0070c1;">inA</span>.<span
+              style="color: #0070c1;">validity</span>.<span
+              style="color: #0070c1;">valid</span>&nbsp;&amp;&amp;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">inB</span>.<span
+              style="color: #0070c1;">validity</span>.<span
+              style="color: #0070c1;">valid</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">a</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">inA</span>.<span
+              style="color: #001080;">valueAsNumber</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">b</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">inB</span>.<span
+              style="color: #001080;">valueAsNumber</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">form</span>.<span
+              style="color: #001080;">outSalida</span>.<span
+              style="color: #001080;">value</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">a</span>&nbsp;/&nbsp;<span
+              style="color: #0070c1;">b</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+              style="color: #af00db;">else</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">form</span>.<span
+              style="color: #001080;">outSalida</span>.<span
+              style="color: #001080;">value</span>&nbsp;=&nbsp;<span
+              style="color: #a31515;">""</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
-            style="color: #af00db;">else</span>&nbsp;{</div>
+              style="color: #af00db;">catch</span>&nbsp;(<span
+              style="color: #001080;">e</span>)&nbsp;{</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0070c1;">forma</span>.<span
-            style="color: #001080;">outSalida</span>.<span
-            style="color: #001080;">value</span>&nbsp;=</div>
+              style="color: #001080;">console</span>.<span
+              style="color: #795e26;">error</span>(<span
+              style="color: #001080;">e</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">form</span>.<span
+              style="color: #001080;">outSalida</span>.<span
+              style="color: #001080;">value</span>&nbsp;=</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0070c1;">a</span>&nbsp;/&nbsp;<span
-            style="color: #0070c1;">b</span>;</div>
+              style="color: #001080;">e</span>.<span
+              style="color: #001080;">message</span>;</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-        <div>&nbsp;&nbsp;}&nbsp;<span
-            style="color: #af00db;">catch</span>&nbsp;(<span
-            style="color: #001080;">e</span>)&nbsp;{</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #001080;">console</span>.<span
-            style="color: #795e26;">error</span>(<span
-            style="color: #001080;">e</span>);</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #0070c1;">forma</span>.<span
-            style="color: #001080;">outSalida</span>.<span
-            style="color: #001080;">value</span>&nbsp;=</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #001080;">e</span>.<span
-            style="color: #001080;">message</span>;</div>
         <div>&nbsp;&nbsp;}</div>
         <div>}</div>
       </div>

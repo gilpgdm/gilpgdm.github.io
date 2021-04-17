@@ -1,4 +1,3 @@
-// @ts-nocheck
 /* Espera 11 minutos después de hacer los cambios en tu sitio, para depués
  * actualizar este archivo. */
 const CACHE = "gilpgdm-1.04";
@@ -33,27 +32,44 @@ const ARCHIVOS = [
   "d_multimedia/src/3_video.html",
   "d_multimedia/src/bensound-summer.mp3",
   "d_multimedia/src/clouds_poster.jpg",
-  "e_pwa/10_webmanifest.html",
-  "e_pwa/11_estilos.html",
-  "e_pwa/12_campo.html",
-  "e_pwa/13_nav.html",
-  "e_pwa/14_nav_css.html",
-  "e_pwa/15_favicon.html",
-  "e_pwa/16_icono256.html",
-  "e_pwa/17_icono1024.html",
-  "e_pwa/18_icono2048.html",
-  "e_pwa/19_ayuda.html",
-  "e_pwa/20_gps.html",
-  "e_pwa/21_archivos.html",
-  "e_pwa/22_README.html",
-  "e_pwa/23_LICENSE.html",
+  "d_x_vistas/1_app.html",
+  "d_x_vistas/2_campos.html",
+  "d_x_vistas/3_interruptores.html",
+  "d_x_vistas/4_sliders.html",
+  "d_x_vistas/5_botones.html",
+  "d_x_vistas/6_formulario.html",
+  "d_x_vistas/7_gps.html",
+  "d_x_vistas/8_archivos.html",
+  "d_x_vistas/index.html",
+  "d_x_vistas/src/app.html",
+  "d_x_vistas/src/archivos.html",
+  "d_x_vistas/src/botones.html",
+  "d_x_vistas/src/campos.html",
+  "d_x_vistas/src/formulario.html",
+  "d_x_vistas/src/gps.html",
+  "d_x_vistas/src/interruptor.html",
+  "d_x_vistas/src/slider.html",
+  "e_pwa/10_estilos.html",
+  "e_pwa/11_botones.html",
+  "e_pwa/12_campo-dinamico_css.html",
+  "e_pwa/13_campo_interruptor_css.html",
+  "e_pwa/14_campo-slider_css.html",
+  "e_pwa/15_principal.html",
+  "e_pwa/16_campo-dinamico_js.html",
+  "e_pwa/17_campo_interruptor_js.html",
+  "e_pwa/18_campo-slider_js.html",
+  "e_pwa/19_movil.html",
+  "e_pwa/20_favicon.html",
+  "e_pwa/21_icono256.html",
+  "e_pwa/22_icono1024.html",
+  "e_pwa/23_icono2048.html",
   "e_pwa/3_instrucciones.html",
   "e_pwa/4_archivos.html",
   "e_pwa/5_index.html",
   "e_pwa/6_CtrlDivide.html",
-  "e_pwa/7_agent.html",
-  "e_pwa/8_regSw.html",
-  "e_pwa/9_sw.html",
+  "e_pwa/7_config.html",
+  "e_pwa/8_sw.html",
+  "e_pwa/9_webmanifest.html",
   "e_pwa/index.html",
   "e_pwa/img/favicon.ico",
   "e_pwa/img/icono1024.png",
@@ -90,6 +106,8 @@ const ARCHIVOS = [
   "f_iot/img/despliegue_iot.svg",
   "f_iot/img/entidades_iot.svg",
   "f_iot/img/nosql_iot.svg",
+  "f_iot/src/init.js",
+  "f_iot/src/LICENSE.html",
   "g_esp8266/10_MiPost.html",
   "g_esp8266/3_blink.html",
   "g_esp8266/4_button.html",
@@ -163,11 +181,14 @@ const ARCHIVOS = [
 
 self.addEventListener("install", evt => {
   console.log("Service Worker instalado.");
+  // @ts-ignore
   evt.waitUntil(cargaCache());
 });
 
 self.addEventListener("fetch", evt => {
+  // @ts-ignore
   if (evt.request.method === "GET") {
+    // @ts-ignore
     evt.respondWith(usaCache(evt));
   }
 });

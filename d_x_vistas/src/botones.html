@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0">
+  <title>Botones</title>
+  <style>
+    html {
+      --colContenido: black;
+      --colContenidoFondo: white;
+      --colBot: black;
+      --colBotFondo: #81D4FA;
+      --colBotFondoHov: #95dbfc;
+      --colBotSombraHov:
+        #75a0b444;
+      --colBotFondoAct: #bbe5f8;
+      --colBotSombraAct:
+        #75a0b444;
+      --colBotFondoFoc: #a2e0fd;
+      --fontFamily: -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+      color: var(--colContenido);
+      font-family:
+        var(--fontFamily);
+      background-color:
+        var(--colContenidoFondo);
+    }
+
+    button.contained {
+      text-transform: uppercase;
+      color: var(--colBot);
+      background-color:
+        var(--colBotFondo);
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+    }
+
+    button.contained:hover {
+      -webkit-box-shadow: 0 3px 2px 2px var(--colBotSombraHov);
+      box-shadow: 0 3px 2px 2px var(--colBotSombraHov);
+      background-color:
+        var(--colBotFondoHov);
+    }
+
+    button.contained:focus {
+      outline: none;
+      -webkit-box-shadow: 0 3px 2px 2px var(--colBotSombraHov);
+      box-shadow: 0 3px 2px 2px var(--colBotSombraHov);
+      background-color:
+        var(--colBotFondoFoc);
+    }
+
+    button.contained:active {
+      -webkit-box-shadow: 0 4px 3px 3px var(--colBotSombraAct);
+      box-shadow: 0 4px 3px 3px var(--colBotSombraAct);
+      background-color:
+        var(--colBotFondoAct);
+    }
+  </style>
+</head>
+<body>
+  <h1>Botones</h1>
+  <p>
+    <button class="contained">
+      Haz Clic
+    </button>
+  <div></div>
+  </p>
+</body>
+</html>

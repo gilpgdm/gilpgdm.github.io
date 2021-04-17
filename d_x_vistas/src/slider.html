@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0">
+  <title>Sliders</title>
+  <style>
+    html {
+      --colContenido: black;
+      --colContenidoFondo: white;
+      --colSlider: #0277BD;
+      --colSliderHover: #dfe8f388;
+      --colSliderFocus: #bfcfe077;
+      --colSliderActive:
+        #acbfd877;
+      --colSliderFondo: #96c6e2;
+      --fontFamily: -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+      color: var(--colContenido);
+      font-family:
+        var(--fontFamily);
+      background-color:
+        var(--colContenidoFondo);
+    }
+
+    campo-slider {
+      display: block;
+      margin: 1rem 0;
+    }
+
+    campo-slider input {
+      vertical-align: middle;
+      -webkit-appearance: none;
+      background: linear-gradient(to right, var(--colSlider) 0%, var(--colSlider) 50%, var(--colSliderFondo) 50%, var(--colSliderFondo) 100%);
+      border-radius: 3px;
+      height: 6px;
+    }
+
+    campo-slider input:focus {
+      outline: none;
+    }
+
+    campo-slider input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background:
+        var(--colSlider);
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+    }
+
+    campo-slider input:hover::-webkit-slider-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSliderHover);
+    }
+
+    campo-slider input:focus::-webkit-slider-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSliderFocus);
+    }
+
+    campo-slider input:active::-webkit-slider-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSliderActive);
+    }
+
+    campo-slider input::-moz-range-thumb {
+      background:
+        var(--colSlider);
+      width: 20px;
+      height: 20px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    campo-slider input:hover::-moz-range-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSliderHover);
+    }
+
+    campo-slider input:focus::-moz-range-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSliderFocus);
+    }
+
+    campo-slider input:active::-moz-range-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSliderActive);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sliders</h1>
+  </header>
+  <campo-slider>
+    <label>
+      Muestra resultados
+      <input type="range" min="1"
+          max="10">
+    </label>
+  </campo-slider>
+  <script>
+    class CampoSlider
+      extends HTMLElement {
+      connectedCallback() {
+        setTimeout(
+          () => this.prepara(),
+          100);
+      }
+      prepara() {
+        /** @private */
+        this._input =
+          this.querySelector(
+            "input");
+        if (this._input) {
+          this._input.
+            addEventListener(
+              "input", () =>
+              this.analiza());
+          this.analiza();
+        }
+      }
+      analiza() {
+        const i = this._input;
+        if (i) {
+          const min =
+            parseFloat(i.min);
+          const max =
+            parseFloat(i.max);
+          const value =
+            (i.valueAsNumber - min) /
+            (max - min) * 100;
+          i.style.background = `linear-gradient(to right, var(--colSlider) 0%, var(--colSlider) ${value}%, var(--colSliderFondo) ${value}%, var(--colSliderFondo) 100%)`;
+        }
+      }
+    }
+    customElements.define(
+      "campo-slider",
+      CampoSlider);
+  </script>
+</body>
+</html>

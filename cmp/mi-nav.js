@@ -27,18 +27,36 @@ class MiNav extends HTMLElement {
         <li>
           <details>
             <summary>
-              <h3>Elementos Multimedia de HTML5</h3>
+              <h3>Elementos multimedia de HTML5</h3>
             </summary>
             <ol>
-              <li><p><a href="/d_multimedia/index.html">Elementos Multimedia de HTML5</a></p></li>
-              <li><p><a href="/d_multimedia/3_a.html">El Elemento <strong>a</strong></a></p></li>
+              <li><p><a href="/d_multimedia/index.html">Elementos multimedia de HTML5</a></p></li>
+              <li><p><a href="/d_multimedia/3_a.html">El elemento <strong>a</strong></a></p></li>
               <li><p><a href="/d_multimedia/4_imagenes.html">Imágenes</a></p></li>
-              <li><p><a href="/d_multimedia/5_ejemplo_imagenes.html">Ejemplo de Imágenes</a></p></li>
-              <li><p><a href="/d_multimedia/6_audio_y_video.html">Audio y Video</a></p></li>
-              <li><p><a href="/d_multimedia/7_audio.html">El Elemento <strong>audio</strong></a></p></li>
+              <li><p><a href="/d_multimedia/5_ejemplo_imagenes.html">Ejemplo de imágenes</a></p></li>
+              <li><p><a href="/d_multimedia/6_audio_y_video.html">Audio y video</a></p></li>
+              <li><p><a href="/d_multimedia/7_audio.html">El elemento <strong>audio</strong></a></p></li>
               <li><p><a href="/d_multimedia/8_ejemplo_audio.html">Ejemplo de <strong>audio</strong></a></p></li>
-              <li><p><a href="/d_multimedia/9_video.html">El Elemento <strong>video</strong></a></p></li>
+              <li><p><a href="/d_multimedia/9_video.html">El elemento <strong>video</strong></a></p></li>
               <li><p><a href="/d_multimedia/10_ejemplo_video.html">Ejemplo de <strong>video</strong></a></p></li>
+            </ol>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>
+              <h3>Vistas móviles</h3>
+            </summary>
+            <ol>
+              <li><p><a href="/d_x_vistas/index.html">Vistas móviles</a></p></li>
+              <li><p><a href="/d_x_vistas/1_app.html">Una app básica</a></p></li>
+              <li><p><a href="/d_x_vistas/2_campos.html">Campos</a></p></li>
+              <li><p><a href="/d_x_vistas/3_interruptores.html">Interruptores</a></p></li>
+              <li><p><a href="/d_x_vistas/4_sliders.html">Sliders</a></p></li>
+              <li><p><a href="/d_x_vistas/5_botones.html">Botones</a></p></li>
+              <li><p><a href="/d_x_vistas/6_formulario.html">Formularios</a></p></li>
+              <li><p><a href="/d_x_vistas/7_gps.html">GPS</a></p></li>
+              <li><p><a href="/d_x_vistas/8_archivos.html">Archivos y cámara</a></p></li>
             </ol>
           </details>
         </li>
@@ -53,23 +71,23 @@ class MiNav extends HTMLElement {
               <li><p><a href="/e_pwa/4_archivos.html">Archivos</a></p></li>
               <li><p><a href="/e_pwa/5_index.html">index.html</a></p></li>
               <li><p><a href="/e_pwa/6_CtrlDivide.html">js/CtrlDivide.js</a></p></li>
-              <li><p><a href="/e_pwa/7_agent.html">js/agent.js</a></p></li>
-              <li><p><a href="/e_pwa/8_regSw.html">js/regSw.js</a></p></li>
-              <li><p><a href="/e_pwa/9_sw.html">sw.js</a></p></li>
-              <li><p><a href="/e_pwa/10_webmanifest.html">site.webmanifest</a></p></li>
-              <li><p><a href="/e_pwa/11_estilos.html">css/estilos.css</a></p></li>
-              <li><p><a href="/e_pwa/12_campo.html">css/campo.css</a></p></li>
-              <li><p><a href="/e_pwa/13_nav.html">cmp/mi-nav.js</a></p></li>
-              <li><p><a href="/e_pwa/14_nav_css.html">css/mi-nav.css</a></p></li>
-              <li><p><a href="/e_pwa/15_favicon.html">favicon.ico</a></p></li>
-              <li><p><a href="/e_pwa/16_icono256.html">img/icono256.png</a></p></li>
-              <li><p><a href="/e_pwa/17_icono1024.html">img/icono1024.png</a></p></li>
-              <li><p><a href="/e_pwa/18_icono2048.html">img/icono2048.png</a></p></li>
-              <li><p><a href="/e_pwa/19_ayuda.html">ayuda.html</a></p></li>
-              <li><p><a href="/e_pwa/20_gps.html">gps.html</a></p></li>
-              <li><p><a href="/e_pwa/21_archivos.html">archivos.html</a></p></li>
-              <li><p><a href="/e_pwa/22_README.html">README.md</a></p></li>
-              <li><p><a href="/e_pwa/23_LICENSE.html">LICENSE</a></p></li>
+              <li><p><a href="/e_pwa/7_config.html">js/config.js</a></p></li>
+              <li><p><a href="/e_pwa/8_sw.html">sw.js</a></p></li>
+              <li><p><a href="/e_pwa/9_webmanifest.html">site.webmanifest</a></p></li>
+              <li><p><a href="/e_pwa/10_estilos.html">css/estilos.css</a></p></li>
+              <li><p><a href="/e_pwa/11_botones.html">lib/css/botones.css</a></p></li>
+              <li><p><a href="/e_pwa/12_campo-dinamico_css.html">lib/css/campo-dinamico.css</a></p></li>
+              <li><p><a href="/e_pwa/13_campo_interruptor_css.html">lib/css/campo-interruptor.css</a></p></li>
+              <li><p><a href="/e_pwa/14_campo-slider_css.html">lib/css/campo-slider.css</a></p></li>
+              <li><p><a href="/e_pwa/15_principal.html">lib/css/principal.css</a></p></li>
+              <li><p><a href="/e_pwa/16_campo-dinamico_js.html">lib/campo-dinamico.js</a></p></li>
+              <li><p><a href="/e_pwa/17_campo_interruptor_js.html">lib/campo-interruptor.js</a></p></li>
+              <li><p><a href="/e_pwa/18_campo-slider_js.html">lib/campo-slider.js</a></p></li>
+              <li><p><a href="/e_pwa/19_movil.html">lib/movil.js</a></p></li>
+              <li><p><a href="/e_pwa/20_favicon.html">favicon.ico</a></p></li>
+              <li><p><a href="/e_pwa/21_icono256.html">img/icono256.png</a></p></li>
+              <li><p><a href="/e_pwa/22_icono1024.html">img/icono1024.png</a></p></li>
+              <li><p><a href="/e_pwa/23_icono2048.html">img/icono2048.png</a></p></li>
             </ol>
           </details>
         </li>

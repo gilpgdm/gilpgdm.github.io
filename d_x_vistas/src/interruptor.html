@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0">
+  <title>Interruptores</title>
+  <style>
+    html {
+      --colContenido: black;
+      --colContenidoFondo: white;
+      --colIntOn: #0277BD;
+      --colIntOnHover: #dfe8f388;
+      --colIntOnFocus: #bfcfe077;
+      --colIntOnActive: #acbfd877;
+      --colIntOnFondo: #6fa9ca;
+      --colIntOff: #f0f0f0;
+      --colIntOffHover: #e0e0e088;
+      --colIntOffFocus: #d0d0d077;
+      --colIntOffActive:
+        #c0c0c077;
+      --colIntOffFondo: #BDBDBD;
+      --colIntIos: white;
+      --colIntOnIosFondo: #2acc2a;
+      --colIntOnIosFondoFocus:
+        #1bbb1b;
+      --colIntOffIosFondo:
+        #dbdbdb;
+      --colIntOffIosFondoFocus:
+        #BDBDBD;
+      --fontFamily: -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+      color: var(--colContenido);
+      font-family:
+        var(--fontFamily);
+      background-color:
+        var(--colContenidoFondo);
+    }
+
+    campo-interruptor {
+      display: block;
+      margin: 1rem 0;
+    }
+
+    campo-interruptor input {
+      vertical-align: middle;
+      -webkit-appearance: none;
+    }
+
+    body:not(.ios) campo-interruptor input {
+      width: 2rem;
+    }
+
+    campo-interruptor input:focus {
+      outline: none;
+    }
+
+    body:not(.ios) campo-interruptor input::-webkit-slider-runnable-track {
+      background:
+        var(--colIntOnFondo);
+      border-radius: 5px;
+      height: 10px;
+    }
+
+    body:not(.ios) campo-interruptor input.off::-webkit-slider-runnable-track {
+      background:
+        var(--colIntOffFondo);
+    }
+
+    body:not(.ios) campo-interruptor input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background: var(--colIntOn);
+      margin-top: -5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+    }
+
+    body:not(.ios) campo-interruptor input.off::-webkit-slider-thumb {
+      background: var(--colIntOff);
+      border: thin solid var(--colIntOffFondo);
+    }
+
+    body:not(.ios) campo-interruptor input:hover::-webkit-slider-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colIntOnHover);
+    }
+
+    body:not(.ios) campo-interruptor input.off:hover::-webkit-slider-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colIntOffHover);
+    }
+
+    body:not(.ios) campo-interruptor input:focus::-webkit-slider-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colIntOnFocus);
+    }
+
+    body:not(.ios) campo-interruptor input.off:focus::-webkit-slider-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colIntOffFocus);
+    }
+
+    body:not(.ios) campo-interruptor input:active::-webkit-slider-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colIntOnActive);
+    }
+
+    body:not(.ios) campo-interruptor input.off:active::-webkit-slider-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colIntOffActive);
+    }
+
+    body:not(.ios) campo-interruptor input::-moz-range-track {
+      background:
+        var(--colIntOnFondo);
+      border-radius: 5px;
+      height: 10px;
+    }
+
+    body:not(.ios) campo-interruptor input::-moz-range-thumb {
+      background: var(--colIntOn);
+      margin-top: -5px;
+      width: 20px;
+      height: 20px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    body:not(.ios) campo-interruptor input:hover::-moz-range-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colIntOnHover);
+    }
+
+    body:not(.ios) campo-interruptor input:focus::-moz-range-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colIntOnFocus);
+    }
+
+    body:not(.ios) campo-interruptor input:active::-moz-range-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colIntOnActive);
+    }
+
+    body:not(.ios) campo-interruptor input.off::-moz-range-track {
+      background:
+        var(--colIntOffFondo);
+    }
+
+    body:not(.ios) campo-interruptor input.off::-moz-range-thumb {
+      background:
+        var(--colIntOff);
+      border: thin solid var(--colIntOffFondo);
+    }
+
+    body:not(.ios) campo-interruptor input.off:hover::-moz-range-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colIntOffHover);
+    }
+
+    body:not(.ios) campo-interruptor input.off:focus::-moz-range-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colIntOffFocus);
+    }
+
+    body:not(.ios) campo-interruptor input.off:active::-moz-range-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colIntOffActive);
+    }
+
+    body.ios campo-interruptor input {
+      width: 3rem;
+    }
+
+    body.ios campo-interruptor input::-webkit-slider-runnable-track {
+      background:
+        var(--colIntOnIosFondo);
+      border-radius: 14px;
+      height: 28px;
+    }
+
+    body.ios campo-interruptor input.off::-webkit-slider-runnable-track {
+      background:
+        var(--colIntOffIosFondo);
+    }
+
+    body.ios campo-interruptor input::-webkit-slider-thumb {
+      margin-top: 1px;
+      width: 26px;
+      height: 26px;
+      background: var(--colIntIos);
+      border: 1px solid var(--colIntOnIosFondo);
+      border-radius: 13px;
+      -webkit-appearance: none;
+    }
+
+    body.ios campo-interruptor input.off::-webkit-slider-thumb {
+      border: 1px solid var(--colIntOffIosFondo);
+    }
+
+    body.ios campo-interruptor input:focus::-webkit-slider-runnable-track {
+      background: var(--colIntOnIosFondoFocus);
+    }
+
+    body.ios campo-interruptor input:focus::-webkit-slider-thumb {
+      border: 1px solid var(--colIntOnIosFondoFocus);
+    }
+
+    body.ios campo-interruptor input:focus.off::-webkit-slider-runnable-track {
+      background: var(--colIntOffIosFondoFocus);
+    }
+
+    body.ios campo-interruptor input.off:focus::-webkit-slider-thumb {
+      border: 1px solid var(--colIntOffIosFondoFocus);
+    }
+
+    body.ios campo-interruptor input::-moz-range-track {
+      background:
+        var(--colIntOnIosFondo);
+      border-radius: 14px;
+      height: 28px;
+    }
+
+    body.ios campo-interruptor input::-moz-range-thumb {
+      width: 26px;
+      height: 26px;
+      background:
+        var(--colIntIos);
+      border: 1px solid var(--colIntOnIosFondo);
+      border-radius: 13px;
+    }
+
+    body.ios campo-interruptor input:focus::-moz-range-track {
+      background: var(--colIntOnIosFondoFocus);
+    }
+
+    body.ios campo-interruptor input:focus::-moz-range-thumb {
+      border: 1px solid var(--colIntOnIosFondoFocus);
+    }
+
+    body.ios campo-interruptor input.off::-moz-range-track {
+      background:
+        var(--colIntOffIosFondo);
+    }
+
+    body.ios campo-interruptor input.off::-moz-range-thumb {
+      border: thin solid var(--colIntOffIosFondo);
+    }
+
+    body.ios campo-interruptor input.off:focus::-moz-range-track {
+      background: var(--colIntOffIosFondoFocus);
+    }
+
+    body.ios campo-interruptor input.off:focus::-moz-range-thumb {
+      border: thin solid var(--colIntOffIosFondoFocus);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Interruptores</h1>
+  </header>
+  <campo-interruptor>
+    <label>
+      Muestra resultados
+      <input>
+    </label>
+  </campo-interruptor>
+  <script>
+    const USER_AGENT =
+      navigator.userAgent ||
+      navigator.vendor ||
+      window["opera"];
+    if (/android/i.
+      test(USER_AGENT)) {
+      document.body.classList
+        .add("android");
+    }
+    if (/iPad|iPhone|iPod|Mac/.
+      test(USER_AGENT) &&
+      !window.MSStream) {
+      document.body.classList.
+        add('ios');
+    }
+    class CampoInterruptor
+      extends HTMLElement {
+      connectedCallback() {
+        setTimeout(
+          () => this.prepara(),
+          100);
+      }
+      prepara() {
+        /** @private */
+        this._input =
+          this.querySelector(
+            "input");
+        if (this._input) {
+          this._input.type =
+            "range";
+          this._input.min = "0";
+          this._input.max = "1";
+          this._input.
+            addEventListener(
+              "change", () =>
+              this.
+                analiza());
+          this.analiza();
+        }
+      }
+      analiza() {
+        if (this._input) {
+          if (this._input.
+            valueAsNumber === 0) {
+            this._input.classList.
+              add("off");
+          } else {
+            this._input.classList.
+              remove("off");
+          }
+        }
+      }
+    }
+    customElements.define(
+      "campo-interruptor",
+      CampoInterruptor);
+  </script>
+</body>
+</html>

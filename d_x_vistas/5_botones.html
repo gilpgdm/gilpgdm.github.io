@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>Botones</h1>
+    <div class="marco-lectura">
+      <p>
+        <a href="https://material.io/components/buttons"
+            target="_blank">Botones en Material Design.</a>
+      </p>
+    </div>
+    <div class="horizontal">
+      <div>
+        <h2>Salida</h2>
+        <iframe src="src/botones.html"></iframe>
+        <p><a href="src/botones.html" target="_blank">Ábrelo en otra
+            pestaña.</a></p>
+      </div>
+      <muestra-codigo>
+        <div>
+          <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+                style="color: #ff0000;">html</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+                style="color: #ff0000;">lang</span>=<span
+                style="color: #0000ff;">"es"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div><span style="color: #800000;">&lt;head&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;meta</span>&nbsp;<span
+                style="color: #ff0000;">charset</span>=<span
+                style="color: #0000ff;">"UTF-8"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;meta</span>&nbsp;<span
+                style="color: #ff0000;">name</span>=<span
+                style="color: #0000ff;">"viewport"</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">content</span>=<span
+                style="color: #0000ff;">"width=device-width,</span></div>
+          <div><span
+                style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initial-scale=1.0"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;title&gt;</span>Botones<span
+                style="color: #800000;">&lt;/title&gt;</span></div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;style&gt;</span>
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">html</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colContenido</span>:&nbsp;<span
+                style="color: #0451a5;">black</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colContenidoFondo</span>:&nbsp;<span
+                style="color: #0451a5;">white</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colBot</span>:&nbsp;<span
+                style="color: #0451a5;">black</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colBotFondo</span>:&nbsp;<span
+                style="color: #0451a5;">#81D4FA</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colBotFondoHov</span>:&nbsp;<span
+                style="color: #0451a5;">#95dbfc</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colBotSombraHov</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0451a5;">#75a0b444</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colBotFondoAct</span>:&nbsp;<span
+                style="color: #0451a5;">#bbe5f8</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colBotSombraAct</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0451a5;">#75a0b444</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colBotFondoFoc</span>:&nbsp;<span
+                style="color: #0451a5;">#a2e0fd</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--fontFamily</span>:&nbsp;-apple-system,
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BlinkMacSystemFont,
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0451a5;">sans-serif</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">color</span>:&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colContenido</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">font-family</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--fontFamily</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-color</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colContenidoFondo</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">button.contained</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">text-transform</span>:&nbsp;<span
+                style="color: #0451a5;">uppercase</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">color</span>:&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colBot</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-color</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colBotFondo</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">font-size</span>:&nbsp;<span
+                style="color: #098658;">0.875rem</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">padding</span>:&nbsp;<span
+                style="color: #098658;">0.5rem</span>&nbsp;<span
+                style="color: #098658;">1rem</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">border</span>:&nbsp;<span
+                style="color: #0451a5;">none</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">border-radius</span>:&nbsp;<span
+                style="color: #098658;">4px</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">button.contained:hover</span>&nbsp;{
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">-webkit-box-shadow</span>:&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">3px</span>&nbsp;<span
+                style="color: #098658;">2px</span>&nbsp;<span
+                style="color: #098658;">2px</span>&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colBotSombraHov</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">box-shadow</span>:&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">3px</span>&nbsp;<span
+                style="color: #098658;">2px</span>&nbsp;<span
+                style="color: #098658;">2px</span>&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colBotSombraHov</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-color</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colBotFondoHov</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">button.contained:focus</span>&nbsp;{
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">outline</span>:&nbsp;<span
+                style="color: #0451a5;">none</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">-webkit-box-shadow</span>:&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">3px</span>&nbsp;<span
+                style="color: #098658;">2px</span>&nbsp;<span
+                style="color: #098658;">2px</span>&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colBotSombraHov</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">box-shadow</span>:&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">3px</span>&nbsp;<span
+                style="color: #098658;">2px</span>&nbsp;<span
+                style="color: #098658;">2px</span>&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colBotSombraHov</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-color</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colBotFondoFoc</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">button.contained:active</span>&nbsp;{
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">-webkit-box-shadow</span>:&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">4px</span>&nbsp;<span
+                style="color: #098658;">3px</span>&nbsp;<span
+                style="color: #098658;">3px</span>&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colBotSombraAct</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">box-shadow</span>:&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">4px</span>&nbsp;<span
+                style="color: #098658;">3px</span>&nbsp;<span
+                style="color: #098658;">3px</span>&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colBotSombraAct</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-color</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colBotFondoAct</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/style&gt;</span>
+          </div>
+          <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+          <div><span style="color: #800000;">&lt;body&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;h1&gt;</span>Botones<span
+                style="color: #800000;">&lt;/h1&gt;</span></div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;button</span>&nbsp;<span
+                style="color: #ff0000;">class</span>=<span
+                style="color: #0000ff;">"contained"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Haz&nbsp;Clic</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;/button&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;div&gt;&lt;/div&gt;</span></div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+          <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+          <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+        </div>
+      </muestra-codigo>
+    </div>
+    <mi-footer></mi-footer>
+  </layout-cajon>
+</body>
+</html>
