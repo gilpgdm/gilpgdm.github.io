@@ -5,30 +5,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navegación</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  <!--
+    Carga los íconos oficiales de
+    Material Design.
+  -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
   <style>
     html {
-      --colContenido: black;
-      --colContenidoFondo: white;
-      --colPrimario: black;
-      --colPrimarioFondo: #81D4FA;
-      --colBotFondoAct: #bbe5f8;
-      /* Los 2 primeros fonts son
-       * para apple. */
-      --fontFamily: -apple-system,
+      --colTxt: black;
+      --colBk: white;
+      --colPrim: black;
+      --colPrimBk: #81D4FA;
+      --colPrimBkAc: #bbe5f8;
+      --fntFam: -apple-system,
         BlinkMacSystemFont,
-        sans-serif;
-      color: var(--colContenido);
-      font-family:
-        var(--fontFamily);
+        Roboto, sans-serif;
+      color: var(--colTxt);
+      font-family: var(--fntFam);
       background-color:
-        var(--colContenidoFondo);
+        var(--colBk);
     }
 
-    /* El margin-top es más grande
-     * para que no lo tape la
-     * barra de navegación. */
+    /* El margin-bottom es más
+     * grande para que no lo tape
+     * la barra de navegación. */
     body {
       margin:
         4.5rem 1rem 5rem 1rem;
@@ -39,9 +40,9 @@
       left: 0;
       right: 0;
       bottom: 0;
-      color: var(--colPrimario);
+      color: var(--colPrim);
       background-color:
-        var(--colPrimarioFondo);
+        var(--colPrimBk);
       display: flex;
       list-style-type: none;
       justify-content: center;
@@ -52,7 +53,7 @@
 
     mi-nav a {
       display: block;
-      color: var(--colPrimario);
+      color: var(--colPrim);
       font-size: 0.75rem;
       text-decoration: none;
       padding-top: 0.5rem;
@@ -64,13 +65,18 @@
 
     mi-nav a:active {
       background-color:
-        var(--colBotFondoAct);
+        var(--colPrimBkAc);
       background-position: center;
-      background-image: radial-gradient(circle, transparent 1%, var(--colPrimarioFondo) 1%);
+      background-image: radial-gradient(circle, transparent 1%, var(--colPrimBk) 1%);
+      background-size: 15000%;
       animation-name: ripple;
-      animation-fill-mode:
-        forwards;
-      animation-duration: 0.8s;
+      animation-duration: 0.5s;
+    }
+
+    mi-nav .material-icons {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     @keyframes ripple {
@@ -81,12 +87,6 @@
       to {
         background-size: 15000%;
       }
-    }
-
-    mi-nav .material-icons {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
     }
   </style>
 </head>

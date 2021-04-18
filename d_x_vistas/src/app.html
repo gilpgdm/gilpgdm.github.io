@@ -7,21 +7,24 @@
               initial-scale=1.0">
   <title>App</title>
   <style>
+    /* El font preferido para
+     * Android es Roboto. */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
     html {
-      --colContenido: black;
-      --colContenidoFondo: white;
-      --colPrimario: black;
-      --colPrimarioFondo: #81D4FA;
+      --colTxt: black;
+      --colBk: white;
+      --colPrim: black;
+      --colPrimBk: #81D4FA;
       /* Los 2 primeros fonts son
        * para apple. */
-      --fontFamily: -apple-system,
+      --fntFam: -apple-system,
         BlinkMacSystemFont,
-        sans-serif;
-      color: var(--colContenido);
-      font-family:
-        var(--fontFamily);
+        Roboto, sans-serif;
+      color: var(--colTxt);
+      font-family: var(--fntFam);
       background-color:
-        var(--colContenidoFondo);
+        var(--colBk);
     }
 
     /* El margin-top es más grande
@@ -35,9 +38,9 @@
       margin: 0;
       padding: 1rem;
       font-size: 1.25rem;
-      color: var(--colPrimario);
+      color: var(--colPrim);
       background-color:
-        var(--colPrimarioFondo);
+        var(--colPrimBk);
       position: fixed;
       top: 0;
       left: 0;

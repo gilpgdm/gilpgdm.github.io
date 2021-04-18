@@ -8,61 +8,62 @@
   <title>Botones</title>
   <style>
     html {
-      --colContenido: black;
-      --colContenidoFondo: white;
-      --colBot: black;
-      --colPrimarioFondo: #81D4FA;
-      --colBotFondoHov: #95dbfc;
-      --colBotFondoAct: #bbe5f8;
-      --colBotFondoFoc: #a2e0fd;
-      --colBotSombra:
-        #00000055;
-      --fontFamily: -apple-system,
+      --colTxt: black;
+      --colBk: white;
+      --colPrim: black;
+      --colPrimBk: #81D4FA;
+      --colPrimBkHv: #95dbfc;
+      --colPrimBkAc: #bbe5f8;
+      --colPrimBkFc: #a2e0fd;
+      --colSh: #00000055;
+      --fntFam: -apple-system,
         BlinkMacSystemFont,
-        sans-serif;
-      color: var(--colContenido);
-      font-family:
-        var(--fontFamily);
+        Roboto, sans-serif;
+      color: var(--colTxt);
+      font-family: var(--fntFam);
       background-color:
-        var(--colContenidoFondo);
+        var(--colBk);
     }
 
-    button.contained {
+    .contained {
+      font-family: var(--fntFam);
       text-transform: uppercase;
-      color: var(--colBot);
+      color: var(--colPrim);
       background-color:
-        var(--colPrimarioFondo);
+        var(--colPrimBk);
       font-size: 0.875rem;
       padding: 0.5rem 1rem;
       border: none;
       border-radius: 4px;
     }
 
-    button.contained:hover,
-    button.contained:focus {
-      box-shadow: 0 3px 6px var(--colBotSombra);
+    .contained:hover,
+    .contained:focus {
+      box-shadow:
+        0 3px 6px var(--colSh);
     }
 
-    button.contained:hover {
+    .contained:hover {
       background-color:
-        var(--colBotFondoHov);
+        var(--colPrimBkHv);
     }
 
-    button.contained:focus {
+    .contained:focus {
       outline: none;
       background-color:
-        var(--colBotFondoFoc);
+        var(--colPrimBkFc);
     }
 
-    button.contained:active {
-      box-shadow: 0 6px 12px var(--colBotSombra);
+    .contained:active {
+      box-shadow:
+        0 6px 12px var(--colSh);
       background-color:
-        var(--colBotFondoAct);
+        var(--colPrimBkAc);
       background-position: center;
-      background-image: radial-gradient(circle, transparent 1%, var(--colBotFondoHov) 1%);
+      background-image: radial-gradient(circle, transparent 1%, var(--colPrimBkHv) 1%);
+      background-size: 15000%;
       animation-name: ripple;
-      animation-fill-mode: forwards;
-      animation-duration: 0.8s;
+      animation-duration: 0.5s;
     }
 
     @keyframes ripple {
@@ -82,7 +83,6 @@
     <button class="contained">
       Haz Clic
     </button>
-  <div></div>
   </p>
 </body>
 </html>

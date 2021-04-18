@@ -48,7 +48,7 @@
         </div>
         <div><span style="color: #0000ff;">const</span>&nbsp;<span
               style="color: #0070c1;">CACHE</span>&nbsp;=&nbsp;<span
-              style="color: #a31515;">"pwa-1.00"</span>;</div><br>
+              style="color: #a31515;">"pwa-1.07"</span>;</div><br>
         <div><span
               style="color: #008000;">/**&nbsp;Archivos&nbsp;requeridos&nbsp;para&nbsp;que</span>
         </div>
@@ -59,12 +59,6 @@
         <div><span style="color: #008000;">&nbsp;*/</span></div>
         <div><span style="color: #0000ff;">const</span>&nbsp;<span
               style="color: #0070c1;">ARCHIVOS</span>&nbsp;=&nbsp;[</div>
-        <div>&nbsp;&nbsp;<span style="color: #a31515;">"favicon.ico"</span>,
-        </div>
-        <div>&nbsp;&nbsp;<span style="color: #a31515;">"index.html"</span>,
-        </div>
-        <div>&nbsp;&nbsp;<span
-              style="color: #a31515;">"site.webmanifest"</span>,</div>
         <div>&nbsp;&nbsp;<span style="color: #a31515;">"css/estilos.css"</span>,
         </div>
         <div>&nbsp;&nbsp;<span
@@ -77,25 +71,46 @@
         </div>
         <div>&nbsp;&nbsp;<span
               style="color: #a31515;">"js/CtrlDivide.js"</span>,</div>
+        <div>&nbsp;&nbsp;<span style="color: #a31515;">"js/mi-nav.js"</span>,
+        </div>
         <div>&nbsp;&nbsp;<span
               style="color: #a31515;">"lib/css/botones.css"</span>,</div>
         <div>&nbsp;&nbsp;<span
-              style="color: #a31515;">"lib/css/campo-dinamico.css"</span>,</div>
+              style="color: #a31515;">"lib/css/cmp-din.css"</span>,</div>
         <div>&nbsp;&nbsp;<span
-              style="color: #a31515;">"lib/css/campo-interruptor.css"</span>,
-        </div>
+              style="color: #a31515;">"lib/css/material-icons.css"</span>,</div>
         <div>&nbsp;&nbsp;<span
-              style="color: #a31515;">"lib/css/campo-slider.css"</span>,</div>
+              style="color: #a31515;">"lib/css/mi-nav.css"</span>,</div>
         <div>&nbsp;&nbsp;<span
               style="color: #a31515;">"lib/css/principal.css"</span>,</div>
         <div>&nbsp;&nbsp;<span
-              style="color: #a31515;">"lib/campo-dinamico.js"</span>,</div>
+              style="color: #a31515;">"lib/css/ripple.css"</span>,</div>
         <div>&nbsp;&nbsp;<span
-              style="color: #a31515;">"lib/campo-interruptor.js"</span>,</div>
+              style="color: #a31515;">"lib/css/roboto.css"</span>,</div>
         <div>&nbsp;&nbsp;<span
-              style="color: #a31515;">"lib/campo-slider.js"</span>,</div>
+              style="color: #a31515;">"lib/fonts/MaterialIcons-Regular.codepoints"</span>,
+        </div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #a31515;">"lib/fonts/MaterialIcons-Regular.ttf"</span>,
+        </div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #a31515;">"lib/fonts/roboto-v27-latin-regular.woff"</span>,
+        </div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #a31515;">"lib/fonts/roboto-v27-latin-regular.woff2"</span>,
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #a31515;">"lib/cmp-din.js"</span>,
+        </div>
         <div>&nbsp;&nbsp;<span style="color: #a31515;">"lib/movil.js"</span>,
         </div>
+        <div>&nbsp;&nbsp;<span style="color: #a31515;">"ayuda.html"</span>,
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #a31515;">"favicon.ico"</span>,
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #a31515;">"index.html"</span>,
+        </div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #a31515;">"site.webmanifest"</span>,</div>
         <div>&nbsp;&nbsp;<span style="color: #a31515;">"/"</span></div>
         <div>];</div><br>
         <div><span style="color: #795e26;">addEventListener</span>(<span
@@ -180,7 +195,7 @@
               style="color: #795e26;">open</span>(<span
               style="color: #0070c1;">CACHE</span>);</div>
         <div>&nbsp;&nbsp;<span style="color: #af00db;">await</span>&nbsp;<span
-              style="color: #0070c1;">cache</span>.<span
+              style="color: #001080;">cache</span>.<span
               style="color: #795e26;">addAll</span>(<span
               style="color: #0070c1;">ARCHIVOS</span>);</div>
         <div>&nbsp;&nbsp;<span style="color: #001080;">console</span>.<span
@@ -205,16 +220,15 @@
               style="color: #0070c1;">response</span>&nbsp;=</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
               style="color: #af00db;">await</span>&nbsp;<span
-              style="color: #0070c1;">cache</span>.<span
+              style="color: #001080;">cache</span>.<span
               style="color: #795e26;">match</span>(<span
               style="color: #001080;">evt</span>.<span
               style="color: #001080;">request</span>,</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<span
-              style="color: #001080;">ignoreSearch</span><span
-              style="color: #001080;">:</span>&nbsp;<span
+              style="color: #001080;">ignoreSearch:</span>&nbsp;<span
               style="color: #0000ff;">true</span>&nbsp;});</div>
         <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
-              style="color: #0070c1;">response</span>)&nbsp;{</div>
+              style="color: #001080;">response</span>)&nbsp;{</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
               style="color: #af00db;">return</span>&nbsp;<span
               style="color: #001080;">response</span>;</div>

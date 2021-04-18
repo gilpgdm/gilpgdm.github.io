@@ -22,37 +22,38 @@
           points="7 15 12 10 17 15">
       </polygon>
     </svg> */
-
     html {
-      --flechaAbajo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon stroke='gray' fill-rule='evenodd' points='7 10 12 15 17 10'%3E%3C/polygon%3E%3C/svg%3E");
-      --flechaArriba: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon stroke='%2301579B' fill-rule='evenodd' points='7 15 12 10 17 15'%3E%3C/polygon%3E%3C/svg%3E%0A");
-      --colContenido: black;
-      --colContenidoFondo: white;
-      --colCampoSinFoco: gray;
-      --colCampoFoco: #01579B;
-      --colError: #b00020;
-      --colCampoFondo: #F5F5F5;
-      --colCampoFondoHover:
-        #EEEEEE;
-      --colCampoFondoFocus:
-        #E0E0E0;
-      --fontFamily: -apple-system,
+      --flAb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon stroke='gray' fill-rule='evenodd' points='7 10 12 15 17 10'%3E%3C/polygon%3E%3C/svg%3E");
+      --flArr: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon stroke='%2301579B' fill-rule='evenodd' points='7 15 12 10 17 15'%3E%3C/polygon%3E%3C/svg%3E%0A");
+      --colTxt: black;
+      --colBk: white;
+      --colCmp: gray;
+      --colCmpFc: #01579B;
+      --colErr: #b00020;
+      --colCmpBk: #F5F5F5;
+      --colCmpBkHv: #EEEEEE;
+      --colCmpBkFc: #E0E0E0;
+      --fntFam: -apple-system,
         BlinkMacSystemFont,
-        sans-serif;
-      color: var(--colContenido);
-      font-family:
-        var(--fontFamily);
+        Roboto, sans-serif;
+      color: var(--colTxt);
+      font-family: var(--fntFam);
       background-color:
-        var(--colContenidoFondo);
+        var(--colBk);
     }
 
-    campo-dinamico {
+    /* Quita un borde rojo que
+     * coloca Firefox. */
+    :-moz-ui-invalid {
+      box-shadow: none;
+    }
+
+    cmp-din {
       display: block;
       position: relative;
-      color:
-        var(--colCampoSinFoco);
+      color: var(--colCmp);
       background-color:
-        var(--colCampoFondo);
+        var(--colCmpBk);
       border-top-left-radius: 4px;
       border-top-right-radius:
         4px;
@@ -60,37 +61,36 @@
       padding: 1.25rem 0 0 0;
     }
 
-    campo-dinamico:hover {
+    cmp-din:hover {
       background-color:
-        var(--colCampoFondoHover);
+        var(--colCmpBkHv);
     }
 
-    campo-dinamico:focus-within {
+    cmp-din:focus-within {
       background-color:
-        var(--colCampoFondoFocus);
+        var(--colCmpBkFc);
     }
 
-    campo-dinamico label {
+    cmp-din label {
       position: absolute;
       top: 1.75rem;
       left: 1rem;
       font-size: 1rem;
-      color:
-        var(--colCampoSinFoco);
+      color: var(--colCmp);
       transition: 0.3s ease-in;
     }
 
-    campo-dinamico .valor+label,
-    campo-dinamico :focus+label,
-    campo-dinamico [type=file]+label {
+    cmp-din .valor+label,
+    cmp-din :focus+label,
+    cmp-din [type=file]+label {
       top: 0.5rem;
       font-size: 0.75rem;
     }
 
-    campo-dinamico>output,
-    campo-dinamico select,
-    campo-dinamico input,
-    campo-dinamico textarea {
+    cmp-din>output,
+    cmp-din select,
+    cmp-din input,
+    cmp-din textarea {
       display: block;
       box-sizing: border-box;
       padding:
@@ -98,65 +98,65 @@
       font-size: 1rem;
     }
 
-    campo-dinamico select,
-    campo-dinamico input,
-    campo-dinamico textarea {
+    cmp-din select,
+    cmp-din input,
+    cmp-din textarea {
       background-color:
         transparent;
-      font-family:
-        var(--fontFamily);
+      font-family: var(--fntFam);
       border-top: none;
       border-left: none;
       border-right: none;
       border-bottom-width: 1px;
       border-bottom-style: solid;
       border-bottom-color:
-        var(--colCampoSinFoco);
+        var(--colCmp);
       resize: none;
       outline: none;
       width: 100%;
       transition: 0.3s ease-in;
     }
 
-    campo-dinamico :focus {
+    cmp-din :focus {
       border-bottom-width: 2px;
     }
 
-    campo-dinamico small {
+    cmp-din small {
       display: block;
       height: 1em;
       font-size: 0.75rem;
       padding-left: 1rem;
       background-color:
-        var(--colContenidoFondo);
+        var(--colBk);
       transition: 0.3s ease-in;
     }
 
-    campo-dinamico :focus+label {
-      color: var(--colCampoFoco);
+    cmp-din :focus+label {
+      color: var(--colCmpFc);
     }
 
-    campo-dinamico :focus {
+    cmp-din :focus {
       border-bottom-color:
-        var(--colCampoFoco);
+        var(--colCmpFc);
     }
 
-    campo-dinamico :invalid,
-    campo-dinamico :focus:invalid,
-    campo-dinamico .error,
-    campo-dinamico :focus.error {
+    cmp-din :invalid,
+    cmp-din :focus:invalid,
+    cmp-din .error,
+    cmp-din :focus.error {
       border-bottom-color:
-        var(--colError);
+        var(--colErr);
+      outline: none;
     }
 
-    campo-dinamico :invalid+label,
-    campo-dinamico .error+label,
-    campo-dinamico :invalid~small,
-    campo-dinamico .error~small {
-      color: var(--colError);
+    cmp-din :invalid+label,
+    cmp-din .error+label,
+    cmp-din :invalid~small,
+    cmp-din .error~small {
+      color: var(--colErr);
     }
 
-    campo-dinamico select {
+    cmp-din select {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
@@ -168,63 +168,60 @@
       background-position-y:
         center;
       background-image:
-        var(--flechaAbajo);
+        var(--flAb);
     }
 
-    campo-dinamico select:focus {
+    cmp-din select:focus {
       background-image:
-        var(--flechaArriba);
+        var(--flArr);
     }
 
-    option {
+    cmp-din option {
       padding: 0.3rem 1rem;
       background-color:
-        var(--colContenidoFondo);
+        var(--colBk);
     }
 
-    option:checked {
+    cmp-din option:checked {
       background-color:
-        var(--colCampoFoco);
-      color:
-        var(--colContenidoFondo);
+        var(--colCmpFc);
+      color: var(--colBk);
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Campos</h1>
-  </header>
-  <campo-dinamico>
+  <h1>Campos</h1>
+  <cmp-din>
     <output id="saludo">
       Hola
     </output>
     <label for="Saludo">
       Saludo
     </label>
-  </campo-dinamico>
-  <campo-dinamico>
+  </cmp-din>
+  <cmp-din>
     <input id="nombre" required>
     <label for="nombre">
       Nombre*
     </label>
     <small>*Requerido</small>
-  </campo-dinamico>
-  <campo-dinamico>
+  </cmp-din>
+  <cmp-din>
     <input id="email"
         type="email">
     <label for="email">
       Email
     </label>
-  </campo-dinamico>
-  <campo-dinamico>
+  </cmp-din>
+  <cmp-din>
     <textarea id="dirección"
         rows="3"
         required></textarea>
     <label for="dirección">
       Dirección
     </label>
-  </campo-dinamico>
-  <campo-dinamico>
+  </cmp-din>
+  <cmp-din>
     <select id="grupo" rows="3">
       <option value=""></option>
       <option value="IC21">
@@ -240,14 +237,14 @@
     <label for="grupo">
       Grupo
     </label>
-  </campo-dinamico>
+  </cmp-din>
   <script>
-    class CampoDinámico
+    class CmpDin
       extends HTMLElement {
       connectedCallback() {
-        setTimeout(() => {
-          this.prepara();
-        }, 100);
+        setTimeout(
+          () => this.prepara(),
+          100);
       }
       prepara() {
         /**
@@ -257,12 +254,10 @@
             HTMLSelectElement|
             HTMLOutputElement|
             null} */
-        this._control =
+        this._elem =
           this.querySelector(
-            `input,
-            textarea,
-            select,
-            output`);
+            `input, textarea,
+            select, output`);
         this.addEventListener(
           "focus",
           () => this.analiza(),
@@ -274,25 +269,23 @@
         this.analiza();
       }
       analiza() {
-        if (this._control) {
-          if (!this._control.
-            validity.badInput &&
-            this._control.value.
+        const e = this._elem;
+        if (e) {
+          if (!e.validity.
+            badInput &&
+            e.value.
               length === 0) {
-            this._control.
-              classList.
+            e.classList.
               remove("valor");
           } else {
-            this._control.
-              classList.
+            e.classList.
               add("valor");
           }
         }
       }
     }
     customElements.define(
-      "campo-dinamico",
-      CampoDinámico);
+      "cmp-din", CmpDin);
   </script>
 </body>
 </html>

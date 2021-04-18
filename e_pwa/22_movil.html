@@ -147,6 +147,77 @@
               style="color: #001080;">validationMessage</span>;</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
         <div>&nbsp;&nbsp;}</div>
+        <div>}</div><br>
+        <div><span
+              style="color: #008000;">/**&nbsp;Registra&nbsp;un&nbsp;service&nbsp;worker</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;para&nbsp;instalar&nbsp;la&nbsp;aplicación&nbsp;en</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;el&nbsp;caché&nbsp;del&nbsp;navegador.</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+              style="color: #0000ff;">@param</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #267f99;">{string}</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #001080;">sw</span><span
+              style="color: #008000;">&nbsp;nombre&nbsp;del</span></div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;&nbsp;service&nbsp;worker.&nbsp;*/</span>
+        </div>
+        <div><span style="color: #af00db;">export</span>&nbsp;<span
+              style="color: #0000ff;">async</span>&nbsp;<span
+              style="color: #0000ff;">function</span>&nbsp;<span
+              style="color: #795e26;">regSw</span>(<span
+              style="color: #001080;">sw</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">try</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #008000;">/*&nbsp;Registra&nbsp;el&nbsp;service&nbsp;worker,</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;que&nbsp;debe&nbsp;estar&nbsp;en&nbsp;la</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;carpeta&nbsp;principal.&nbsp;*/</span>
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">registro</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #001080;">navigator</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">serviceWorker</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">register</span>(<span
+              style="color: #001080;">sw</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">console</span>.<span
+              style="color: #795e26;">log</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #a31515;">`</span><span
+              style="color: #0000ff;">${</span><span
+              style="color: #001080;">sw</span><span
+              style="color: #0000ff;">}</span><span
+              style="color: #a31515;">&nbsp;registrado.`</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">console</span>.<span
+              style="color: #795e26;">log</span>(<span
+              style="color: #0070c1;">registro</span>);</div>
+        <div>&nbsp;&nbsp;}&nbsp;<span
+              style="color: #af00db;">catch</span>&nbsp;(<span
+              style="color: #001080;">e</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">console</span>.<span
+              style="color: #795e26;">error</span>(<span
+              style="color: #001080;">e</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">alert</span>(<span
+              style="color: #001080;">e</span>.<span
+              style="color: #001080;">message</span>);</div>
+        <div>&nbsp;&nbsp;}</div>
         <div>}</div>
       </div>
     </muestra-codigo>

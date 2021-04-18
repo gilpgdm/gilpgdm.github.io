@@ -67,27 +67,34 @@ class MiNav extends HTMLElement {
             </summary>
             <ol>
               <li><p><a href="/e_pwa/index.html">PWA</a></p></li>
-              <li><p><a href="/e_pwa/3_instrucciones.html">Instrucciones</a></p></li>
-              <li><p><a href="/e_pwa/4_archivos.html">Archivos</a></p></li>
+              <li><p><a href="/e_pwa/2_instrucciones.html">Instrucciones</a></p></li>
+              <li><p><a href="/e_pwa/3_archivos.html">Archivos</a></p></li>
+              <li><p><a href="/e_pwa/4_ayuda.html">ayuda.html</a></p></li>
               <li><p><a href="/e_pwa/5_index.html">index.html</a></p></li>
               <li><p><a href="/e_pwa/6_CtrlDivide.html">js/CtrlDivide.js</a></p></li>
               <li><p><a href="/e_pwa/7_config.html">js/config.js</a></p></li>
-              <li><p><a href="/e_pwa/8_sw.html">sw.js</a></p></li>
-              <li><p><a href="/e_pwa/9_webmanifest.html">site.webmanifest</a></p></li>
-              <li><p><a href="/e_pwa/10_estilos.html">css/estilos.css</a></p></li>
-              <li><p><a href="/e_pwa/11_botones.html">lib/css/botones.css</a></p></li>
-              <li><p><a href="/e_pwa/12_campo-dinamico_css.html">lib/css/campo-dinamico.css</a></p></li>
-              <li><p><a href="/e_pwa/13_campo_interruptor_css.html">lib/css/campo-interruptor.css</a></p></li>
-              <li><p><a href="/e_pwa/14_campo-slider_css.html">lib/css/campo-slider.css</a></p></li>
-              <li><p><a href="/e_pwa/15_principal.html">lib/css/principal.css</a></p></li>
-              <li><p><a href="/e_pwa/16_campo-dinamico_js.html">lib/campo-dinamico.js</a></p></li>
-              <li><p><a href="/e_pwa/17_campo_interruptor_js.html">lib/campo-interruptor.js</a></p></li>
-              <li><p><a href="/e_pwa/18_campo-slider_js.html">lib/campo-slider.js</a></p></li>
-              <li><p><a href="/e_pwa/19_movil.html">lib/movil.js</a></p></li>
-              <li><p><a href="/e_pwa/20_favicon.html">favicon.ico</a></p></li>
-              <li><p><a href="/e_pwa/21_icono256.html">img/icono256.png</a></p></li>
-              <li><p><a href="/e_pwa/22_icono1024.html">img/icono1024.png</a></p></li>
-              <li><p><a href="/e_pwa/23_icono2048.html">img/icono2048.png</a></p></li>
+              <li><p><a href="/e_pwa/22_movil.html">lib/movil.js</a></p></li>
+              <li><p><a href="/e_pwa/8_mi-nav_js.html">js/mi-nav.js</a></p></li>
+              <li><p><a href="/e_pwa/9_mi-nav_css.html">lib/css/mi-nav.css</a></p></li>
+              <li><p><a href="/e_pwa/10_favicon.html">favicon.ico</a></p></li>
+              <li><p><a href="/e_pwa/11_icono256.html">img/icono256.png</a></p></li>
+              <li><p><a href="/e_pwa/12_icono1024.html">img/icono1024.png</a></p></li>
+              <li><p><a href="/e_pwa/13_icono2048.html">img/icono2048.png</a></p></li>
+              <li><p><a href="/e_pwa/14_webmanifest.html">site.webmanifest</a></p></li>
+              <li><p><a href="/e_pwa/15_sw.html">sw.js</a></p></li>
+              <li><p><a href="/e_pwa/16_estilos.html">css/estilos.css</a></p></li>
+              <li><p><a href="/e_pwa/17_principal.html">lib/css/principal.css</a></p></li>
+              <li><p><a href="/e_pwa/18_ripple.html">lib/css/ripple.css</a></p></li>
+              <li><p><a href="/e_pwa/19_botones.html">lib/css/botones.css</a></p></li>
+              <li><p><a href="/e_pwa/20_cmp-din_js.html">lib/cmp-din.js</a></p></li>
+              <li><p><a href="/e_pwa/21_cmp-din_css.html">lib/css/cmp-din.css</a></p></li>
+              <li><p><a href="/e_pwa/23_material-icons.html">lib/css/material-icons.css</a></p></li>
+              <li><p><a href="/e_pwa/24_MaterialIcons-Regular_codepoints.html">lib/fonts/MaterialIcons-Regular.codepoints</a></p></li>
+              <li><p><a href="/e_pwa/25_MaterialIcons-Regular.html">lib/fonts/MaterialIcons-Regular.ttf</a></p></li>
+              <li><p><a href="/e_pwa/26_roboto.html">lib/css/roboto.css</a></p></li>
+              <li><p><a href="/e_pwa/27_roboto-v27-latin-regular_woff.html">lib/fonts/roboto-v27-latin-regular.woff</a></p></li>
+              <li><p><a href="/e_pwa/28_roboto-v27-latin-regular_woff2.html">lib/fonts/roboto-v27-latin-regular.woff2</a></p></li>
+              <li><p><a href="29_LICENSE.html">LICENSE</a></p></li>
             </ol>
           </details>
         </li>

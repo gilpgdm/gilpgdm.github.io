@@ -8,97 +8,93 @@
   <title>Sliders</title>
   <style>
     html {
-      --colContenido: black;
-      --colContenidoFondo: white;
-      --colSlider: #0277BD;
-      --colSliderHover: #dfe8f388;
-      --colSliderFocus: #bfcfe077;
-      --colSliderActive:
-        #acbfd877;
-      --colSliderFondo: #96c6e2;
-      --fontFamily: -apple-system,
+      --colTxt: black;
+      --colBk: white;
+      --colSld: #0277BD;
+      --colSldHv: #dfe8f388;
+      --colSldFc: #bfcfe077;
+      --colSldAc: #acbfd877;
+      --colSldBk: #96c6e2;
+      --fntFam: -apple-system,
         BlinkMacSystemFont,
-        sans-serif;
-      color: var(--colContenido);
-      font-family:
-        var(--fontFamily);
+        Roboto, sans-serif;
+      color: var(--colTxt);
+      font-family: var(--fntFam);
       background-color:
-        var(--colContenidoFondo);
+        var(--colBk);
     }
 
-    campo-slider {
+    cmp-sld {
       display: block;
       margin: 1rem 0;
     }
 
-    campo-slider input {
+    cmp-sld input {
       vertical-align: middle;
       -webkit-appearance: none;
-      background: linear-gradient(to right, var(--colSlider) 0%, var(--colSlider) 50%, var(--colSliderFondo) 50%, var(--colSliderFondo) 100%);
+      background-image: linear-gradient(to right, var(--colSld) 0%, var(--colSld) 50%, var(--colSldBk) 50%, var(--colSldBk) 100%);
       border-radius: 3px;
       height: 6px;
     }
 
-    campo-slider input:focus {
+    cmp-sld input:focus {
       outline: none;
     }
 
-    campo-slider input::-webkit-slider-thumb {
+    cmp-sld input::-webkit-slider-thumb {
       -webkit-appearance: none;
-      background:
-        var(--colSlider);
+      background-color:
+        var(--colSld);
       width: 20px;
       height: 20px;
       border-radius: 10px;
     }
 
-    campo-slider input:hover::-webkit-slider-thumb {
-      box-shadow: 0 0 0 0.5rem var(--colSliderHover);
+    cmp-sld input:hover::-webkit-slider-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSldHv);
     }
 
-    campo-slider input:focus::-webkit-slider-thumb {
-      box-shadow: 0 0 0 0.5rem var(--colSliderFocus);
+    cmp-sld input:focus::-webkit-slider-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSldFc);
     }
 
-    campo-slider input:active::-webkit-slider-thumb {
-      box-shadow: 0 0 0 0.5rem var(--colSliderActive);
+    cmp-sld input:active::-webkit-slider-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSldAc);
     }
 
-    campo-slider input::-moz-range-thumb {
-      background:
-        var(--colSlider);
+    cmp-sld input::-moz-range-thumb {
+      background-color:
+        var(--colSld);
       width: 20px;
       height: 20px;
       border: none;
       border-radius: 10px;
     }
 
-    campo-slider input:hover::-moz-range-thumb {
-      box-shadow: 0 0 0 0.5rem var(--colSliderHover);
+    cmp-sld input:hover::-moz-range-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSldHv);
     }
 
-    campo-slider input:focus::-moz-range-thumb {
-      box-shadow: 0 0 0 0.5rem var(--colSliderFocus);
+    cmp-sld input:focus::-moz-range-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSldFc);
     }
 
-    campo-slider input:active::-moz-range-thumb {
-      box-shadow: 0 0 0 0.5rem var(--colSliderActive);
+    cmp-sld input:active::-moz-range-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSldAc);
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Sliders</h1>
-  </header>
-  <campo-slider>
+  <h1>Sliders</h1>
+  <cmp-sld>
     <label>
       Muestra resultados
       <input type="range" min="1"
           max="10">
     </label>
-  </campo-slider>
+  </cmp-sld>
   <script>
-    class CampoSlider
+    class CmpSld
       extends HTMLElement {
       connectedCallback() {
         setTimeout(
@@ -121,20 +117,21 @@
       analiza() {
         const i = this._input;
         if (i) {
+          const v =
+            i.valueAsNumber;
           const min =
             parseFloat(i.min);
           const max =
             parseFloat(i.max);
           const value =
-            (i.valueAsNumber - min) /
+            (v - min) /
             (max - min) * 100;
-          i.style.background = `linear-gradient(to right, var(--colSlider) 0%, var(--colSlider) ${value}%, var(--colSliderFondo) ${value}%, var(--colSliderFondo) 100%)`;
+          i.style.background = `linear-gradient(to right, var(--colSld) 0%, var(--colSld) ${value}%, var(--colSldBk) ${value}%, var(--colSldBk) 100%)`;
         }
       }
     }
     customElements.define(
-      "campo-slider",
-      CampoSlider);
+      "cmp-sld", CmpSld);
   </script>
 </body>
 </html>
