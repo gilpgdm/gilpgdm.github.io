@@ -10,12 +10,12 @@
     html {
       --colTxt: black;
       --colBk: white;
-      --colPrim: black;
-      --colPrimBk: #81D4FA;
-      --colPrimBkHv: #95dbfc;
-      --colPrimBkAc: #bbe5f8;
-      --colPrimBkFc: #a2e0fd;
-      --colSh: #00000055;
+      --colCnt: white;
+      --colCntBk: #6a0080;
+      --colCntBkHv: #6a0080dd;
+      --colCntBkFc: #6a0080bb;
+      --colCntBkAc: #d05ce3;
+      --colCntSh: #00000055;
       --fntFam: -apple-system,
         BlinkMacSystemFont,
         Roboto, sans-serif;
@@ -28,9 +28,9 @@
     .contained {
       font-family: var(--fntFam);
       text-transform: uppercase;
-      color: var(--colPrim);
+      color: var(--colCnt);
       background-color:
-        var(--colPrimBk);
+        var(--colCntBk);
       font-size: 0.875rem;
       padding: 0.5rem 1rem;
       border: none;
@@ -40,27 +40,27 @@
     .contained:hover,
     .contained:focus {
       box-shadow:
-        0 3px 6px var(--colSh);
+        0 3px 6px var(--colCntSh);
     }
 
     .contained:hover {
       background-color:
-        var(--colPrimBkHv);
+        var(--colCntBkHv);
     }
 
     .contained:focus {
       outline: none;
       background-color:
-        var(--colPrimBkFc);
+        var(--colCntBkFc);
     }
 
     .contained:active {
       box-shadow:
-        0 6px 12px var(--colSh);
+        0 6px 12px var(--colCntSh);
       background-color:
-        var(--colPrimBkAc);
+        var(--colCntBkAc);
       background-position: center;
-      background-image: radial-gradient(circle, transparent 1%, var(--colPrimBkHv) 1%);
+      background-image: radial-gradient(circle, transparent 1%, var(--colCntBkHv) 1%);
       background-size: 15000%;
       animation-name: ripple;
       animation-duration: 0.5s;

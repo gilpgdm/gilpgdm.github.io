@@ -53,6 +53,7 @@ class MiNav extends HTMLElement {
               <li><p><a href="/d_x_vistas/2_campos.html">Campos</a></p></li>
               <li><p><a href="/d_x_vistas/3_interruptores.html">Interruptores</a></p></li>
               <li><p><a href="/d_x_vistas/4_sliders.html">Sliders</a></p></li>
+              <li><p><a href="/d_x_vistas/5_progreso.html">Indicadores de progreso</a></p></li>
               <li><p><a href="/d_x_vistas/5_botones.html">Botones</a></p></li>
               <li><p><a href="/d_x_vistas/6_navegacion.html">Navegación</a></p></li>
               <li><p><a href="/d_x_vistas/7_gps.html">GPS</a></p></li>

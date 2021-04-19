@@ -17,22 +17,24 @@
     </svg> */
     /* Flecha arriba foco
     <svg width="24" height="24">
-      <polygon stroke="#01579B"
+      <polygon stroke="#6a0080"
           fill-rule="evenodd"
           points="7 15 12 10 17 15">
       </polygon>
     </svg> */
     html {
       --flAb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon stroke='gray' fill-rule='evenodd' points='7 10 12 15 17 10'%3E%3C/polygon%3E%3C/svg%3E");
-      --flArr: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon stroke='%2301579B' fill-rule='evenodd' points='7 15 12 10 17 15'%3E%3C/polygon%3E%3C/svg%3E%0A");
+      --flArr: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon stroke='%236a0080' fill-rule='evenodd' points='7 15 12 10 17 15'%3E%3C/polygon%3E%3C/svg%3E%0A");
       --colTxt: black;
       --colBk: white;
       --colCmp: gray;
-      --colCmpFc: #01579B;
-      --colErr: #b00020;
+      --colCmpFc: #6a0080;
+      --colCmpEr: #b00020;
       --colCmpBk: #F5F5F5;
       --colCmpBkHv: #EEEEEE;
       --colCmpBkFc: #E0E0E0;
+      --colCmpOp: white;
+      --colCmpOpBk: #9c27b0;
       --fntFam: -apple-system,
         BlinkMacSystemFont,
         Roboto, sans-serif;
@@ -145,15 +147,18 @@
     cmp-din .error,
     cmp-din :focus.error {
       border-bottom-color:
-        var(--colErr);
+        var(--colCmpEr);
       outline: none;
     }
 
     cmp-din :invalid+label,
-    cmp-din .error+label,
+    cmp-din .error+label {
+      color: var(--colCmpEr);
+    }
+
     cmp-din :invalid~small,
     cmp-din .error~small {
-      color: var(--colErr);
+      color: var(--colCmpEr);
     }
 
     cmp-din select {
@@ -183,9 +188,9 @@
     }
 
     cmp-din option:checked {
+      color: var(--colCmpOp);
       background-color:
-        var(--colCmpFc);
-      color: var(--colBk);
+        var(--colCmpOpBk);
     }
   </style>
 </head>

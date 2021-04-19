@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>Sliders</h1>
+    <div class="marco-lectura">
+      <p>
+        <a href="https://material.io/components/progress-indicators"
+            target="_blank">Indicadores de progreso en Material Design.</a>
+      </p>
+    </div>
+    <div class="horizontal">
+      <div>
+        <h2>Salida</h2>
+        <iframe src="src/progreso.html"></iframe>
+        <p><a href="src/progreso.html" target="_blank">Ábrelo en otra
+            pestaña.</a></p>
+      </div>
+      <muestra-codigo>
+        <div>
+          <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+                style="color: #ff0000;">html</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+                style="color: #ff0000;">lang</span>=<span
+                style="color: #0000ff;">"es"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div><span style="color: #800000;">&lt;head&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;meta</span>&nbsp;<span
+                style="color: #ff0000;">charset</span>=<span
+                style="color: #0000ff;">"UTF-8"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;meta</span>&nbsp;<span
+                style="color: #ff0000;">name</span>=<span
+                style="color: #0000ff;">"viewport"</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">content</span>=<span
+                style="color: #0000ff;">"width=device-width,</span></div>
+          <div><span
+                style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initial-scale=1.0"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;title&gt;</span>Progreso<span
+                style="color: #800000;">&lt;/title&gt;</span></div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;style&gt;</span>
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">html</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colTxt</span>:&nbsp;<span
+                style="color: #0451a5;">black</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colBk</span>:&nbsp;<span
+                style="color: #0451a5;">white</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colLnr</span>:&nbsp;<span
+                style="color: #0451a5;">#6a0080</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colLnrBk</span>:&nbsp;<span
+                style="color: #0451a5;">#d05ce377</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--fntFam</span>:&nbsp;-apple-system,
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BlinkMacSystemFont,
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Roboto,&nbsp;<span
+                style="color: #0451a5;">sans-serif</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">color</span>:&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colTxt</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">font-family</span>:&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--fntFam</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-color</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colBk</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">.linear</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">width</span>:&nbsp;<span
+                style="color: #098658;">100%</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">height</span>:&nbsp;<span
+                style="color: #098658;">0.25rem</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">border</span>:&nbsp;<span
+                style="color: #0451a5;">none</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background</span>:&nbsp;<span
+                style="color: #0451a5;">none</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-color</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colLnrBk</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">-moz-appearance</span>:&nbsp;<span
+                style="color: #0451a5;">none</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">.linear::-webkit-meter-bar</span>&nbsp;{
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">height</span>:&nbsp;<span
+                style="color: #098658;">0.25rem</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">border</span>:&nbsp;<span
+                style="color: #0451a5;">none</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-color</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colLnrBk</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">.linear::-webkit-meter-optimum-value</span>&nbsp;{
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-color</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colLnr</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">.linear::-moz-meter-bar</span>&nbsp;{
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">height</span>:&nbsp;<span
+                style="color: #098658;">0.25rem</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">border</span>:&nbsp;<span
+                style="color: #0451a5;">none</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background</span>:&nbsp;<span
+                style="color: #0451a5;">none</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-color</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colLnr</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/style&gt;</span>
+          </div>
+          <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+          <div><span style="color: #800000;">&lt;body&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;h1&gt;</span>Progreso<span
+                style="color: #800000;">&lt;/h1&gt;</span></div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #008000;">&lt;!--</span></div>
+          <div><span
+                style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;El&nbsp;contenido&nbsp;de&nbsp;meter&nbsp;es</span>
+          </div>
+          <div><span
+                style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;para&nbsp;navegadores&nbsp;que&nbsp;no</span>
+          </div>
+          <div><span
+                style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;soportan&nbsp;la&nbsp;etiqueta.</span>
+          </div>
+          <div><span
+                style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;--&gt;</span>
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;meter</span>&nbsp;<span
+                style="color: #ff0000;">class</span>=<span
+                style="color: #0000ff;">"linear"</span>&nbsp;<span
+                style="color: #ff0000;">max</span>=<span
+                style="color: #0000ff;">"10"</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">value</span>=<span
+                style="color: #0000ff;">"6"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;/meter&gt;</span></div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+          <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+          <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+        </div>
+      </muestra-codigo>
+    </div>
+    <mi-footer></mi-footer>
+  </layout-cajon>
+</body>
+</html>

@@ -92,7 +92,7 @@
                 style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;svg&nbsp;width="24"&nbsp;height="24"&gt;</span>
           </div>
           <div><span
-                style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;polygon&nbsp;stroke="#01579B"</span>
+                style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;polygon&nbsp;stroke="#6a0080"</span>
           </div>
           <div><span
                 style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fill-rule="evenodd"</span>
@@ -116,7 +116,7 @@
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
                 style="color: #ff0000;">--flArr</span>:&nbsp;<span
                 style="color: #795e26;">url</span>(<span
-                style="color: #a31515;">"data:image/svg+xml,%3Csvg&nbsp;xmlns='http://www.w3.org/2000/svg'&nbsp;width='24'&nbsp;height='24'%3E%3Cpolygon&nbsp;stroke='%2301579B'&nbsp;fill-rule='evenodd'&nbsp;points='7&nbsp;15&nbsp;12&nbsp;10&nbsp;17&nbsp;15'%3E%3C/polygon%3E%3C/svg%3E%0A"</span>);
+                style="color: #a31515;">"data:image/svg+xml,%3Csvg&nbsp;xmlns='http://www.w3.org/2000/svg'&nbsp;width='24'&nbsp;height='24'%3E%3Cpolygon&nbsp;stroke='%236a0080'&nbsp;fill-rule='evenodd'&nbsp;points='7&nbsp;15&nbsp;12&nbsp;10&nbsp;17&nbsp;15'%3E%3C/polygon%3E%3C/svg%3E%0A"</span>);
           </div>
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
                 style="color: #ff0000;">--colTxt</span>:&nbsp;<span
@@ -129,9 +129,9 @@
                 style="color: #0451a5;">gray</span>;</div>
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
                 style="color: #ff0000;">--colCmpFc</span>:&nbsp;<span
-                style="color: #0451a5;">#01579B</span>;</div>
+                style="color: #0451a5;">#6a0080</span>;</div>
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-                style="color: #ff0000;">--colErr</span>:&nbsp;<span
+                style="color: #ff0000;">--colCmpEr</span>:&nbsp;<span
                 style="color: #0451a5;">#b00020</span>;</div>
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
                 style="color: #ff0000;">--colCmpBk</span>:&nbsp;<span
@@ -142,6 +142,12 @@
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
                 style="color: #ff0000;">--colCmpBkFc</span>:&nbsp;<span
                 style="color: #0451a5;">#E0E0E0</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colCmpOp</span>:&nbsp;<span
+                style="color: #0451a5;">white</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colCmpOpBk</span>:&nbsp;<span
+                style="color: #0451a5;">#9c27b0</span>;</div>
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
                 style="color: #ff0000;">--fntFam</span>:&nbsp;-apple-system,
           </div>
@@ -418,7 +424,7 @@
                 style="color: #ff0000;">border-bottom-color</span>:</div>
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
                 style="color: #795e26;">var</span>(<span
-                style="color: #001080;">--colErr</span>);</div>
+                style="color: #001080;">--colCmpEr</span>);</div>
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
                 style="color: #ff0000;">outline</span>:&nbsp;<span
                 style="color: #0451a5;">none</span>;</div>
@@ -430,7 +436,12 @@
           <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
                 style="color: #800000;">cmp-din</span>&nbsp;<span
                 style="color: #800000;">.error</span>+<span
-                style="color: #800000;">label</span>,</div>
+                style="color: #800000;">label</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">color</span>:&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colCmpEr</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
           <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
                 style="color: #800000;">cmp-din</span>&nbsp;<span
                 style="color: #800000;">:invalid</span>~<span
@@ -442,7 +453,7 @@
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
                 style="color: #ff0000;">color</span>:&nbsp;<span
                 style="color: #795e26;">var</span>(<span
-                style="color: #001080;">--colErr</span>);</div>
+                style="color: #001080;">--colCmpEr</span>);</div>
           <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
           <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
                 style="color: #800000;">cmp-din</span>&nbsp;<span
@@ -503,14 +514,14 @@
                 style="color: #800000;">cmp-din</span>&nbsp;<span
                 style="color: #800000;">option:checked</span>&nbsp;{</div>
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">color</span>:&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colCmpOp</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
                 style="color: #ff0000;">background-color</span>:</div>
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
                 style="color: #795e26;">var</span>(<span
-                style="color: #001080;">--colCmpFc</span>);</div>
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-                style="color: #ff0000;">color</span>:&nbsp;<span
-                style="color: #795e26;">var</span>(<span
-                style="color: #001080;">--colBk</span>);</div>
+                style="color: #001080;">--colCmpOpBk</span>);</div>
           <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
           <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/style&gt;</span>
           </div>
