@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>js/CtrlMovil.js</h1>
+    <muestra-codigo>
+      <div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">CUE</span>&nbsp;=&nbsp;<span
+              style="color: #a31515;">"cue"</span>;</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">section</span>&nbsp;=&nbsp;<span
+              style="color: #001080;">document</span>.</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #795e26;">querySelector</span>(<span
+              style="color: #a31515;">"section"</span>);</div>
+        <div><span style="color: #008000;">/**</span><span
+              style="color: #0000ff;">@type</span><span
+              style="color: #008000;">{HTMLButtonElement|null}*/</span></div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">terminar</span>&nbsp;=&nbsp;<span
+              style="color: #001080;">document</span>.</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #795e26;">querySelector</span>(<span
+              style="color: #a31515;">"#terminar"</span>);</div>
+        <div><span style="color: #008000;">/**</span><span
+              style="color: #0000ff;">@type</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #267f99;">{HTMLFormElement|null}</span><span
+              style="color: #008000;">*/</span></div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">form</span>&nbsp;=&nbsp;<span
+              style="color: #001080;">document</span>[<span
+              style="color: #a31515;">"forma"</span>];</div><br>
+        <div><span style="color: #0000ff;">let</span>&nbsp;<span
+              style="color: #001080;">humanoAcreditado</span>&nbsp;=&nbsp;<span
+              style="color: #0000ff;">false</span>;</div><br>
+        <div><span style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #0070c1;">terminar</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #0070c1;">terminar</span>.<span
+              style="color: #795e26;">addEventListener</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #a31515;">"click"</span>,&nbsp;<span
+              style="color: #795e26;">terminaSesión</span>);</div>
+        <div>}</div>
+        <div><span style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #0070c1;">form</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #0070c1;">form</span>.<span
+              style="color: #795e26;">addEventListener</span>(<span
+              style="color: #a31515;">"submit"</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">iniciaSesión</span>);</div>
+        <div>&nbsp;&nbsp;<span style="color: #0070c1;">form</span>.<span
+              style="color: #001080;">humano</span>.<span
+              style="color: #795e26;">addEventListener</span>(<span
+              style="color: #a31515;">"input"</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">soyHumano</span>);</div>
+        <div>}</div><br>
+        <div><span style="color: #795e26;">muestraSesion</span>();</div><br>
+        <div><span style="color: #0000ff;">function</span>&nbsp;<span
+              style="color: #795e26;">soyHumano</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #0070c1;">form</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">humanoAcreditado</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">form</span>.<span
+              style="color: #001080;">humano</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">valueAsNumber</span>&nbsp;&gt;&nbsp;<span
+              style="color: #098658;">0</span>;</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div><br>
+        <div><span style="color: #0000ff;">function</span>&nbsp;<span
+              style="color: #795e26;">muestraSesion</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">cue</span>&nbsp;=&nbsp;<span
+              style="color: #001080;">sessionStorage</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">getItem</span>(<span
+              style="color: #0070c1;">CUE</span>);</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #0070c1;">section</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">section</span>.<span
+              style="color: #001080;">hidden</span>&nbsp;=&nbsp;!<span
+              style="color: #0070c1;">cue</span>;</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #0070c1;">form</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">form</span>.<span
+              style="color: #001080;">hidden</span>&nbsp;=&nbsp;<span
+              style="color: #267f99;">Boolean</span>(<span
+              style="color: #0070c1;">cue</span>);</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div><br>
+        <div><span style="color: #008000;">/**&nbsp;</span><span
+              style="color: #0000ff;">@param</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #267f99;">{Event}</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #001080;">evt</span><span
+              style="color: #008000;">&nbsp;*/</span></div>
+        <div><span style="color: #0000ff;">async</span>&nbsp;<span
+              style="color: #0000ff;">function</span>&nbsp;<span
+              style="color: #795e26;">iniciaSesión</span>(<span
+              style="color: #001080;">evt</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">try</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">evt</span>.<span
+              style="color: #795e26;">preventDefault</span>();</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">if</span>&nbsp;(!<span
+              style="color: #0070c1;">form</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">throw</span>&nbsp;<span
+              style="color: #0000ff;">new</span>&nbsp;<span
+              style="color: #267f99;">Error</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #a31515;">"Forma&nbsp;nula."</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">if</span>&nbsp;(!<span
+              style="color: #001080;">humanoAcreditado</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">alert</span>(<span
+              style="color: #a31515;">"Comprueba&nbsp;que&nbsp;"</span>&nbsp;+
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #a31515;">"eres&nbsp;un&nbsp;humano."</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">return</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #008000;">/*&nbsp;Usa&nbsp;el&nbsp;método&nbsp;POST&nbsp;para</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;enviar&nbsp;los&nbsp;datos&nbsp;de&nbsp;la</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;forma&nbsp;al&nbsp;recurso</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;"/verifica"&nbsp;en&nbsp;el</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;servidor.&nbsp;*/</span>
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">res</span>&nbsp;=&nbsp;<span
+              style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #795e26;">fetch</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #a31515;">"/valida"</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">method:</span>&nbsp;<span
+              style="color: #a31515;">"POST"</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">body:</span>&nbsp;<span
+              style="color: #0000ff;">new</span>&nbsp;<span
+              style="color: #795e26;">FormData</span>(<span
+              style="color: #001080;">form</span>)</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #001080;">res</span>.<span
+              style="color: #001080;">ok</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">ver</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #001080;">res</span>.<span
+              style="color: #795e26;">text</span>();</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #001080;">ver</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">sessionStorage</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">setItem</span>(<span
+              style="color: #0070c1;">CUE</span>,&nbsp;<span
+              style="color: #001080;">ver</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">muestraSesion</span>();</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">form</span>.<span
+              style="color: #001080;">cue</span>.<span
+              style="color: #001080;">value</span>&nbsp;=&nbsp;<span
+              style="color: #a31515;">""</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">form</span>.<span
+              style="color: #001080;">match</span>.<span
+              style="color: #001080;">value</span>&nbsp;=&nbsp;<span
+              style="color: #a31515;">""</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">form</span>.<span
+              style="color: #001080;">humano</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">valueAsNumber</span>&nbsp;=&nbsp;<span
+              style="color: #098658;">0</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">humanoAcreditado</span>&nbsp;=&nbsp;<span
+              style="color: #0000ff;">false</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+              style="color: #af00db;">else</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">alert</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #a31515;">"Datos&nbsp;incorrectos"</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+              style="color: #af00db;">else</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">throw</span>&nbsp;<span
+              style="color: #0000ff;">new</span>&nbsp;<span
+              style="color: #267f99;">Error</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">res</span>.<span
+              style="color: #001080;">statusText</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;}&nbsp;<span
+              style="color: #af00db;">catch</span>&nbsp;(<span
+              style="color: #001080;">e</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">muestraError</span>(<span
+              style="color: #001080;">e</span>);</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div><br>
+        <div><span style="color: #0000ff;">async</span>&nbsp;<span
+              style="color: #0000ff;">function</span>&nbsp;<span
+              style="color: #795e26;">terminaSesión</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">sessionStorage</span>.
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">removeItem</span>(<span
+              style="color: #0070c1;">CUE</span>);</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">muestraSesion</span>();
+        </div>
+        <div>}</div><br>
+        <div><span style="color: #0000ff;">function</span>&nbsp;<span
+              style="color: #795e26;">muestraError</span>(<span
+              style="color: #001080;">e</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">console</span>.<span
+              style="color: #795e26;">error</span>(<span
+              style="color: #001080;">e</span>);</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">alert</span>(<span
+              style="color: #001080;">e</span>.<span
+              style="color: #001080;">message</span>);</div>
+        <div>}</div>
+      </div>
+    </muestra-codigo>
+    <mi-footer></mi-footer>
+  </layout-cajon>
+</body>
+</html>

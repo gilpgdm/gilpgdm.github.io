@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>Diseño no Relacional</h1>
+    <div class="marco-lectura">
+      <p>
+        Replit nos proporciona una base de datos tipo
+        <dfn>par llave-valor</dfn>,
+        donde cada registro tiene una llave y un valor asociado.
+      </p>
+      <p>
+        La <dfn>llave</dfn> identifica el registro y debe ser texto.
+      </p>
+      <p>
+        El <dfn>valor</dfn> puede ser de cualquier tipo de literal, incluyendo
+        literales de objeto.
+      </p>
+      <p>
+        Para asignar valor a una llave se utiliza el método async
+        <dfn>set</dfn>; por ejemplo:
+      </p>
+      <pre><code class="language-javascript">await bd.set("pepito", "cuentos");</code></pre>
+      <p>
+        Para recuperar el valor asignado a una llave se utiliza el método
+        async <dfn>get</dfn>; por ejemplo:
+      </p>
+      <pre><code class="language-javascript">let pass = await bd.get("pepito");</code></pre>
+      <p>
+        Para este proyecto, la llave es el nombre de usuario y el valor asociado
+        es la contraseña encriptada.
+      </p>
+    </div>
+    <mi-footer></mi-footer>
+  </layout-cajon>
+</body>
+</html>

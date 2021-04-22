@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>Arquitectura</h1>
+    <div class="marco-lectura">
+      <p>
+        Cuando una PWA necesita que el servidor procese información, debe
+        invocar servicios alojados en dicho servidor.
+      </p>
+      <p>
+        Cada <dfn>servicio</dfn> es una función y para accederlo, el servidor le
+        asigna un <dfn>nombre de recurso</dfn>, el cual es una ruta dentro de la
+        URL; es como si fuera el nombre del archivo. Por ejemplo, en la URL
+        <q>http://localhost:3000/validaUsuario</q>, el nombre del recurso es
+        <q>/validaUsuario</q>.
+      </p>
+      <p>
+        En este caso, a todos los archivos de HTML y JavaScript les llamaremos
+        <df>www</df>.
+      </p>
+      <p>
+        Para validar el acceso usaremos un servicio llamado
+        <dfn>validaUsuario</dfn>
+        que tiene asociado el nombre de recurso
+        <dfn>valida</dfn>.
+      </p>
+      <p>
+        Para poder validar el acceso, <q>validaUsuario</q> usa una entidad de
+        base de datos llamada <dfn>Usuario</dfn>, donde se guarda la contraseña
+        de cada usuario.
+      </p>
+      <h2>Diagrama de componentes</h2>
+      <figure>
+        <img class="dc" src="img/aut_componentes.svg"
+            alt="Diagrama de Componentes">
+      </figure>
+    </div>
+    <mi-footer></mi-footer>
+  </layout-cajon>
+</body>
+</html>
