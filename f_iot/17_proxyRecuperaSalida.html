@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>disp/ProxyEntrada.js</h1>
+    <muestra-codigo>
+      <div>
+        <div><span style="color: #af00db;">import</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">ResInt</span></div>
+        <div>}&nbsp;<span style="color: #af00db;">from</span>&nbsp;<span
+              style="color: #a31515;">"./ResInt.js"</span>;</div>
+        <div><span style="color: #af00db;">import</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">URL_SALIDA</span></div>
+        <div>}&nbsp;<span style="color: #af00db;">from</span>&nbsp;<span
+              style="color: #a31515;">"./util.js"</span>;</div><br>
+        <div><span style="color: #008000;">/**&nbsp;</span><span
+              style="color: #0000ff;">@param</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #267f99;">{string}</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #001080;">dispositivo</span><span
+              style="color: #008000;">&nbsp;*/</span></div>
+        <div><span style="color: #af00db;">export</span>&nbsp;<span
+              style="color: #0000ff;">async</span>&nbsp;<span
+              style="color: #0000ff;">function</span></div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #795e26;">proxyRecuperaSalida</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">dispositivo</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">let</span>&nbsp;<span
+              style="color: #001080;">error</span>&nbsp;=&nbsp;<span
+              style="color: #a31515;">""</span>;</div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">let</span>&nbsp;<span
+              style="color: #001080;">valor</span>&nbsp;=&nbsp;<span
+              style="color: #098658;">0</span>;</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">try</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">res</span>&nbsp;=&nbsp;<span
+              style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #795e26;">fetch</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">URL_SALIDA</span>&nbsp;+&nbsp;<span
+              style="color: #001080;">dispositivo</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #0070c1;">res</span>.<span
+              style="color: #0070c1;">ok</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">recuperado</span>&nbsp;=&nbsp;<span
+              style="color: #795e26;">parseInt</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #0070c1;">res</span>.<span
+              style="color: #795e26;">text</span>());</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">if</span>&nbsp;(!<span
+              style="color: #795e26;">isNaN</span>(<span
+              style="color: #0070c1;">recuperado</span>))&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">valor</span>&nbsp;=&nbsp;<span
+              style="color: #0070c1;">recuperado</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+              style="color: #af00db;">else</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">error</span>&nbsp;=&nbsp;<span
+              style="color: #0070c1;">res</span>.<span
+              style="color: #0070c1;">statusText</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;}&nbsp;<span
+              style="color: #af00db;">catch</span>&nbsp;(<span
+              style="color: #001080;">e</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">error</span>&nbsp;=&nbsp;<span
+              style="color: #001080;">e</span>.<span
+              style="color: #001080;">message</span>;</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">return</span>&nbsp;<span
+              style="color: #0000ff;">new</span>&nbsp;<span
+              style="color: #267f99;">ResInt</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">valor</span>,&nbsp;<span
+              style="color: #001080;">error</span>);</div>
+        <div>}</div>
+      </div>
+    </muestra-codigo>
+  </layout-cajon>
+</body>
+</html>

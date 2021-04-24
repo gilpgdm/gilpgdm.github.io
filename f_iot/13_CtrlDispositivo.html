@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>disp/CtrlDispositivo.js</h1>
+    <muestra-codigo>
+      <div>
+        <div><span style="color: #af00db;">import</span>&nbsp;<span
+              style="color: #a31515;">"./mi-footer.js"</span>;</div>
+        <div><span style="color: #af00db;">import</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">proxyAgregaEntrada</span>
+        </div>
+        <div>}&nbsp;<span style="color: #af00db;">from</span>&nbsp;<span
+              style="color: #a31515;">"./proxyAgregaEntrada.js"</span>;</div>
+        <div><span style="color: #af00db;">import</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #001080;">proxyRecuperaSalida</span></div>
+        <div>}&nbsp;<span style="color: #af00db;">from</span>&nbsp;<span
+              style="color: #a31515;">"./proxyRecuperaSalida.js"</span>;</div>
+        <br>
+        <div><span
+              style="color: #008000;">/**&nbsp;Milisegundos&nbsp;para&nbsp;realizar</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;otro&nbsp;loop.&nbsp;*/</span>
+        </div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">RETRASO</span>&nbsp;=&nbsp;<span
+              style="color: #098658;">1000</span>;</div><br>
+        <div><span style="color: #008000;">/**</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+              style="color: #0000ff;">@type</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #267f99;">{HTMLOutputElement|null}</span></div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">ctDispositivo</span>&nbsp;=&nbsp;<span
+              style="color: #001080;">document</span>.</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #795e26;">querySelector</span>(<span
+              style="color: #a31515;">"#ctDispositivo"</span>);</div>
+        <div><span style="color: #008000;">/**</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+              style="color: #0000ff;">@type</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #267f99;">{HTMLOutputElement|null}</span></div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">ctSalida</span>&nbsp;=&nbsp;<span
+              style="color: #001080;">document</span>.</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #795e26;">querySelector</span>(<span
+              style="color: #a31515;">"#ctSalida"</span>);</div>
+        <div><span style="color: #008000;">/**</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+              style="color: #0000ff;">@type</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #267f99;">{HTMLOutputElement|null}</span></div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">iotError</span>&nbsp;=&nbsp;<span
+              style="color: #001080;">document</span>.</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #795e26;">querySelector</span>(<span
+              style="color: #a31515;">"#iotError"</span>);</div>
+        <div><span style="color: #008000;">/**</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+              style="color: #0000ff;">@type</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #267f99;">{HTMLInputElement|null}</span></div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">ctEntrada</span>&nbsp;=&nbsp;<span
+              style="color: #001080;">document</span>.</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #795e26;">querySelector</span>(<span
+              style="color: #a31515;">"#ctEntrada"</span>);</div><br>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">dispositivoId</span>&nbsp;=&nbsp;<span
+              style="color: #795e26;">prompt</span>(</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #a31515;">"Identificador&nbsp;del&nbsp;Dispositivo"</span>,
+        </div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #a31515;">"1"</span>)&nbsp;||&nbsp;<span
+              style="color: #a31515;">""</span>;</div><br>
+        <div><span style="color: #0000ff;">let</span>&nbsp;<span
+              style="color: #001080;">entrada</span>&nbsp;=&nbsp;<span
+              style="color: #098658;">0</span>;</div><br>
+        <div><span style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #0070c1;">ctDispositivo</span>&nbsp;&amp;&amp;</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #0070c1;">dispositivoId</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #0070c1;">ctDispositivo</span>.<span
+              style="color: #001080;">value</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">dispositivoId</span>;</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">programa</span>();</div>
+        <div>}</div><br>
+        <div><span style="color: #008000;">/**&nbsp;</span><span
+              style="color: #0000ff;">@param</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #267f99;">{number}</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #001080;">valor</span><span
+              style="color: #008000;">&nbsp;*/</span></div>
+        <div><span style="color: #0000ff;">function</span>&nbsp;<span
+              style="color: #795e26;">muestraSalida</span>(<span
+              style="color: #001080;">valor</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #0070c1;">ctSalida</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">ctSalida</span>.<span
+              style="color: #001080;">value</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">valor</span>&nbsp;&gt;&nbsp;<span
+              style="color: #098658;">0</span>&nbsp;?&nbsp;<span
+              style="color: #a31515;">"🔴"</span>&nbsp;:&nbsp;<span
+              style="color: #a31515;">"⚪"</span>;</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div><br>
+        <div><span style="color: #0000ff;">function</span>&nbsp;<span
+              style="color: #795e26;">recuperaEntrada</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">return</span>&nbsp;<span
+              style="color: #0070c1;">ctEntrada</span>&nbsp;?</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">ctEntrada</span>.<span
+              style="color: #001080;">valueAsNumber</span>&nbsp;:&nbsp;<span
+              style="color: #098658;">0</span>;</div>
+        <div>}</div><br>
+        <div><span style="color: #008000;">/**&nbsp;</span><span
+              style="color: #0000ff;">@param</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #267f99;">{string}</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #001080;">mensaje</span><span
+              style="color: #008000;">&nbsp;*/</span></div>
+        <div><span style="color: #0000ff;">function</span>&nbsp;<span
+              style="color: #795e26;">muestraError</span>(<span
+              style="color: #001080;">mensaje</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">console</span>.<span
+              style="color: #795e26;">error</span>(<span
+              style="color: #001080;">mensaje</span>);</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #0070c1;">iotError</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">iotError</span>.<span
+              style="color: #001080;">value</span>&nbsp;=&nbsp;<span
+              style="color: #001080;">mensaje</span>;</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div><br>
+        <div><span style="color: #0000ff;">async</span>&nbsp;<span
+              style="color: #0000ff;">function</span>&nbsp;<span
+              style="color: #795e26;">setup</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">await</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">muestraLaSalidaDelServidor</span>();</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #795e26;">envíaLaEntrada</span>(<span
+              style="color: #0000ff;">true</span>);</div>
+        <div>}</div><br>
+        <div><span style="color: #0000ff;">async</span>&nbsp;<span
+              style="color: #0000ff;">function</span>&nbsp;<span
+              style="color: #795e26;">loop</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">await</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">muestraLaSalidaDelServidor</span>();</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #795e26;">envíaLaEntrada</span>(<span
+              style="color: #0000ff;">false</span>);</div>
+        <div>}</div><br>
+        <div><span style="color: #0000ff;">async</span>&nbsp;<span
+              style="color: #0000ff;">function</span></div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #795e26;">muestraLaSalidaDelServidor</span>()&nbsp;{
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">res</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #795e26;">proxyRecuperaSalida</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">dispositivoId</span>);</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #001080;">res</span>.<span
+              style="color: #001080;">error</span>.<span
+              style="color: #001080;">length</span>&nbsp;&gt;&nbsp;<span
+              style="color: #098658;">0</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">muestraError</span>(<span
+              style="color: #001080;">res</span>.<span
+              style="color: #001080;">error</span>);</div>
+        <div>&nbsp;&nbsp;}&nbsp;<span style="color: #af00db;">else</span>&nbsp;{
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">muestraSalida</span>(<span
+              style="color: #001080;">res</span>.<span
+              style="color: #001080;">valor</span>);</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div><br>
+        <div><span style="color: #008000;">/**&nbsp;</span><span
+              style="color: #0000ff;">@param</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #267f99;">{boolean}</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #001080;">forzosa</span><span
+              style="color: #008000;">&nbsp;*/</span></div>
+        <div><span style="color: #0000ff;">async</span>&nbsp;<span
+              style="color: #0000ff;">function</span></div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #795e26;">envíaLaEntrada</span>(<span
+              style="color: #001080;">forzosa</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">nuevaEntrada</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">recuperaEntrada</span>();</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #001080;">forzosa</span>&nbsp;||</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">entrada</span>&nbsp;!=&nbsp;<span
+              style="color: #001080;">nuevaEntrada</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">let</span>&nbsp;<span
+              style="color: #001080;">error</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #795e26;">proxyAgregaEntrada</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">dispositivoId</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">nuevaEntrada</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #001080;">error</span>.<span
+              style="color: #001080;">length</span>&nbsp;&gt;&nbsp;<span
+              style="color: #098658;">0</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">muestraError</span>(<span
+              style="color: #001080;">error</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">return</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">entrada</span>&nbsp;=&nbsp;<span
+              style="color: #001080;">nuevaEntrada</span>;</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div><br>
+        <div><span style="color: #0000ff;">async</span>&nbsp;<span
+              style="color: #0000ff;">function</span>&nbsp;<span
+              style="color: #795e26;">programa</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #795e26;">setup</span>();</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #795e26;">repiteLoop</span>();</div>
+        <div>}</div><br>
+        <div><span style="color: #0000ff;">async</span>&nbsp;<span
+              style="color: #0000ff;">function</span>&nbsp;<span
+              style="color: #795e26;">repiteLoop</span>()&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #795e26;">loop</span>();</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">setTimeout</span>(<span
+              style="color: #001080;">repiteLoop</span>,&nbsp;<span
+              style="color: #0070c1;">RETRASO</span>);</div>
+        <div>}</div>
+      </div>
+    </muestra-codigo>
+  </layout-cajon>
+</body>
+</html>

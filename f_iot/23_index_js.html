@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>lib/fabrica.js</h1>
+    <muestra-codigo>
+      <div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #795e26;">express</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">require</span>(<span
+              style="color: #a31515;">"express"</span>);</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #267f99;">http</span>&nbsp;=&nbsp;<span
+              style="color: #795e26;">require</span>(<span
+              style="color: #a31515;">"http"</span>);</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">path</span>&nbsp;=&nbsp;<span
+              style="color: #795e26;">require</span>(<span
+              style="color: #a31515;">"path"</span>);</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #795e26;">historico</span>&nbsp;=&nbsp;<span
+              style="color: #795e26;">require</span>(</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #a31515;">"./servicios/historico"</span>);</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #795e26;">agregaEntrada</span>&nbsp;=&nbsp;<span
+              style="color: #795e26;">require</span>(</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #a31515;">"./servicios/agregaEntrada"</span>);</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #795e26;">recuperaEntrada</span>&nbsp;=&nbsp;<span
+              style="color: #795e26;">require</span>(</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #a31515;">"./servicios/recuperaEntrada"</span>);
+        </div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #795e26;">recuperaSalida</span>&nbsp;=&nbsp;<span
+              style="color: #795e26;">require</span>(</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #a31515;">"./servicios/recuperaSalida"</span>);
+        </div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #795e26;">agregaSalida</span>&nbsp;=&nbsp;<span
+              style="color: #795e26;">require</span>(</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #a31515;">"./servicios/agregaSalida"</span>);</div>
+        <br>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">app</span>&nbsp;=&nbsp;<span
+              style="color: #795e26;">express</span>();</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">httpserver</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;<span style="color: #008000;">//&nbsp;@ts-ignore</span>
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #267f99;">http</span>.<span
+              style="color: #267f99;">Server</span>(<span
+              style="color: #0070c1;">app</span>);</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">archivos</span>&nbsp;=&nbsp;<span
+              style="color: #0070c1;">path</span>.</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">join</span>(<span
+              style="color: #001080;">__dirname</span>,&nbsp;<span
+              style="color: #a31515;">"www"</span>);</div><br>
+        <div><span style="color: #0070c1;">app</span>.<span
+              style="color: #795e26;">use</span>(<span
+              style="color: #795e26;">express</span>.<span
+              style="color: #795e26;">static</span>(<span
+              style="color: #0070c1;">archivos</span>));</div>
+        <div><span style="color: #0070c1;">app</span>.<span
+              style="color: #795e26;">use</span>(<span
+              style="color: #795e26;">express</span>.<span
+              style="color: #795e26;">text</span>());</div>
+        <div><span style="color: #0070c1;">app</span>.<span
+              style="color: #795e26;">get</span>(<span
+              style="color: #a31515;">"/historico"</span>,&nbsp;<span
+              style="color: #795e26;">historico</span>);</div>
+        <div><span
+              style="color: #008000;">/*&nbsp;La&nbsp;última&nbsp;parte&nbsp;del&nbsp;recurso&nbsp;se</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;marca&nbsp;con&nbsp;:i&nbsp;para&nbsp;que&nbsp;se&nbsp;tome</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;como&nbsp;el&nbsp;parámetro&nbsp;id.&nbsp;*/</span>
+        </div>
+        <div><span style="color: #0070c1;">app</span>.<span
+              style="color: #795e26;">get</span>(<span
+              style="color: #a31515;">"/entrada/:id"</span>,</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">recuperaEntrada</span>);
+        </div>
+        <div><span style="color: #0070c1;">app</span>.<span
+              style="color: #795e26;">post</span>(<span
+              style="color: #a31515;">"/entrada/:id"</span>,</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">agregaEntrada</span>);
+        </div>
+        <div><span style="color: #0070c1;">app</span>.<span
+              style="color: #795e26;">get</span>(<span
+              style="color: #a31515;">"/salida/:id"</span>,</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">recuperaSalida</span>);
+        </div>
+        <div><span style="color: #0070c1;">app</span>.<span
+              style="color: #795e26;">post</span>(<span
+              style="color: #a31515;">"/salida/:id"</span>,</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">agregaSalida</span>);
+        </div>
+        <div><span style="color: #0070c1;">httpserver</span>.<span
+              style="color: #795e26;">listen</span>(<span
+              style="color: #098658;">3000</span>);</div>
+      </div>
+    </muestra-codigo>
+    <mi-footer></mi-footer>
+  </layout-cajon>
+</body>
+</html>

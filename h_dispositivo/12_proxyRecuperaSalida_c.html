@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>ProxySalida.cpp</h1>
+    <muestra-codigo>
+      <div>
+        <div><span style="color: #af00db;">#include</span><span
+              style="color: #0000ff;">&nbsp;</span><span
+              style="color: #a31515;">&lt;memory&gt;</span></div>
+        <div><span style="color: #af00db;">#include</span><span
+              style="color: #0000ff;">&nbsp;</span><span
+              style="color: #a31515;">&lt;WiFiClientSecureBearSSL.h&gt;</span>
+        </div>
+        <div><span style="color: #af00db;">#include</span><span
+              style="color: #0000ff;">&nbsp;</span><span
+              style="color: #a31515;">&lt;ESP8266HTTPClient.h&gt;</span></div>
+        <div><span style="color: #af00db;">#include</span><span
+              style="color: #0000ff;">&nbsp;</span><span
+              style="color: #a31515;">"util.hpp"</span></div>
+        <div><span style="color: #af00db;">#include</span><span
+              style="color: #0000ff;">&nbsp;</span><span
+              style="color: #a31515;">"ResInt.hpp"</span></div>
+        <div><span style="color: #af00db;">#include</span><span
+              style="color: #0000ff;">&nbsp;</span><span
+              style="color: #a31515;">"proxyRecuperaSalida.hpp"</span></div><br>
+        <div><span style="color: #267f99;">ResInt</span>&nbsp;<span
+              style="color: #795e26;">proxyRecuperaSalida</span>(</div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0000ff;">char</span>&nbsp;<span
+              style="color: #0000ff;">*</span><span
+              style="color: #001080;">huellaDigital</span>,</div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0000ff;">char</span>&nbsp;<span
+              style="color: #0000ff;">*</span>&nbsp;<span
+              style="color: #001080;">dispostivo</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #267f99;">String</span>&nbsp;<span
+              style="color: #001080;">error</span>;</div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">int</span>&nbsp;<span
+              style="color: #001080;">valor</span>&nbsp;=&nbsp;<span
+              style="color: #098658;">0</span>;</div>
+        <div>&nbsp;&nbsp;<span style="color: #267f99;">String</span>&nbsp;<span
+              style="color: #001080;">URL</span>(<span
+              style="color: #001080;">URL_SALIDA</span>);</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">URL</span>&nbsp;<span
+              style="color: #795e26;">+=</span>&nbsp;<span
+              style="color: #001080;">dispostivo</span>;</div><br>
+        <div>&nbsp;&nbsp;<span
+              style="color: #267f99;">std</span>::unique_ptr&nbsp;&lt;</div>
+        <div>&nbsp;&nbsp;<span style="color: #267f99;">BearSSL</span>::<span
+              style="color: #267f99;">WiFiClientSecure</span></div>
+        <div>&nbsp;&nbsp;&gt;&nbsp;<span style="color: #795e26;">clie</span>(
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">new</span>&nbsp;<span
+              style="color: #267f99;">BearSSL</span>::</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #267f99;">WiFiClientSecure</span>);</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">clie</span>-&gt;<span
+              style="color: #795e26;">setFingerprint</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">huellaDigital</span>);</div><br>
+        <div>&nbsp;&nbsp;<span
+              style="color: #267f99;">HTTPClient</span>&nbsp;<span
+              style="color: #001080;">http</span>;</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">Serial</span>.<span
+              style="color: #795e26;">print</span>(<span
+              style="color: #a31515;">"Conectando&nbsp;"</span>);</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">Serial</span>.<span
+              style="color: #795e26;">println</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #a31515;">"al&nbsp;servidor..."</span>);</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #001080;">http</span>.<span
+              style="color: #795e26;">begin</span>(*clie,&nbsp;<span
+              style="color: #001080;">URL</span>))&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">Serial</span>.<span
+              style="color: #795e26;">println</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #a31515;">"Inicia&nbsp;GET..."</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">int</span>&nbsp;<span
+              style="color: #001080;">cod</span>&nbsp;=&nbsp;<span
+              style="color: #001080;">http</span>.<span
+              style="color: #795e26;">GET</span>();</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #001080;">cod</span>&nbsp;&gt;&nbsp;<span
+              style="color: #098658;">0</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #267f99;">String</span>&nbsp;<span
+              style="color: #001080;">texto</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">http</span>.<span
+              style="color: #795e26;">getString</span>();</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">Serial</span>.<span
+              style="color: #795e26;">printf</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #a31515;">"Código&nbsp;de&nbsp;GET:&nbsp;%d</span><span
+              style="color: #ee0000;">\n</span><span
+              style="color: #a31515;">"</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">cod</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">Serial</span>.<span
+              style="color: #795e26;">println</span>(<span
+              style="color: #001080;">texto</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">switch</span>&nbsp;(<span
+              style="color: #001080;">cod</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">case</span>&nbsp;<span
+              style="color: #0070c1;">HTTP_CODE_OK</span>:</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">case</span></div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">HTTP_CODE_MOVED_PERMANENTLY</span>:</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">valor</span>&nbsp;=&nbsp;<span
+              style="color: #795e26;">atoi</span>(</div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">texto</span>.<span
+              style="color: #795e26;">c_str</span>());</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">break</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">default</span>:</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">error</span>&nbsp;<span
+              style="color: #795e26;">=</span>&nbsp;<span
+              style="color: #001080;">texto</span>;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+              style="color: #af00db;">else</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">error</span>&nbsp;<span
+              style="color: #795e26;">=</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">http</span>.<span
+              style="color: #795e26;">errorToString</span>(<span
+              style="color: #001080;">cod</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">http</span>.<span
+              style="color: #795e26;">end</span>();</div>
+        <div>&nbsp;&nbsp;}&nbsp;<span style="color: #af00db;">else</span>&nbsp;{
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">error</span>&nbsp;<span
+              style="color: #795e26;">=</span>&nbsp;<span
+              style="color: #a31515;">"La&nbsp;conexión&nbsp;falló"</span>;
+        </div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">Serial</span>.<span
+              style="color: #795e26;">printf</span>(<span
+              style="color: #a31515;">"valor:&nbsp;%d</span><span
+              style="color: #ee0000;">\n</span><span
+              style="color: #a31515;">"</span>,</div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">valor</span>);</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">return</span>&nbsp;<span
+              style="color: #267f99;">ResInt</span>(<span
+              style="color: #001080;">valor</span>,&nbsp;<span
+              style="color: #001080;">error</span>);</div>
+        <div>}</div><br>
+      </div>
+    </muestra-codigo>
+    <mi-footer></mi-footer>
+  </layout-cajon>
+</body>
+</html>

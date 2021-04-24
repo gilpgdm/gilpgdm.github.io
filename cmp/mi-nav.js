@@ -102,20 +102,20 @@ class MiNav extends HTMLElement {
         <li>
           <details>
             <summary>
-              <h3>Control de Sesión</h3>
+              <h3>Control de sesión</h3>
             </summary>
             <ol>
-              <li><p><a href="/e_sesion/index.html">Control de Sesión</a></p></li>
+              <li><p><a href="/e_sesion/index.html">Control de sesión</a></p></li>
               <li><p><a href="/e_sesion/3_arquitectura.html">Arquitectura</a></p></li>
               <li><p><a href="/e_sesion/4_despliegue.html">Despliegue</a></p></li>
               <li><p><a href="/e_sesion/5_er.html">Diagrama Entidad Relación</a></p></li>
               <li><p><a href="/e_sesion/6_no_rel.html">Diseño par llave-valor</a></p></li>
               <li><p><a href="/e_sesion/7_instrucciones.html">Instrucciones</a></p></li>
               <li><p><a href="/e_sesion/8_archivos.html">Archivos</a></p></li>
-              <li><p><a href="/e_sesion/9_index_html.html">index.html</a></p></li>
-              <li><p><a href="/e_sesion/10_CtrlSesion.html">js/CtrlSesion.js</a></p></li>
-              <li><p><a href="/e_sesion/11_index_js.html">index.js</a></p></li>
-              <li><p><a href="/e_sesion/12_b.html">b.js</a></p></li>
+              <li><p><a href="/e_sesion/9_index_html.html">www/index.html</a></p></li>
+              <li><p><a href="/e_sesion/10_CtrlSesion.html">www/js/CtrlSesion.js</a></p></li>
+              <li><p><a href="/e_sesion/11_b.html">b.js</a></p></li>
+              <li><p><a href="/e_sesion/12_index_js.html">index.js</a></p></li>
               <li><p><a href="/e_sesion/13_creaUsuarios.html">servicios/creaUsuarios.js</a></p></li>
               <li><p><a href="/e_sesion/14_validaUsuario.html">servicios/validaUsuario.js</a></p></li>
               <li><p><a href="/e_sesion/15_LICENSE.html">LICENSE</a></p></li>
@@ -135,26 +135,27 @@ class MiNav extends HTMLElement {
               <li><p><a href="/f_iot/6_no_rel.html">Diseño no Relacional</a></p></li>
               <li><p><a href="/f_iot/7_instrucciones.html">Instrucciones</a></p></li>
               <li><p><a href="/f_iot/8_archivos.html">Archivos</a></p></li>
-              <li><p><a href="/f_iot/9_tipos.html">js/tipos.js</a></p></li>
-              <li><p><a href="/f_iot/10_init.html">js/init.js</a></p></li>
-              <li><p><a href="/f_iot/11_index.html">index.html</a></p></li>
-              <li><p><a href="/f_iot/12_CtrlMovil.html">js/CtrlMovil.js</a></p></li>
-              <li><p><a href="/f_iot/13_fabrica.html">lib/fabrica.js</a></p></li>
-              <li><p><a href="/f_iot/14_tiposFire.html">lib/tiposFire.js</a></p></li>
-              <li><p><a href="/f_iot/15_util.html">lib/util.js</a></p></li>
-              <li><p><a href="/f_iot/16_footer.html">cmp/mi-footer.js</a></p></li>
-              <li><p><a href="/f_iot/17_estilos.html">css/estilos.css</a></p></li>
-              <li><p><a href="/f_iot/18_dispositivo.html">dispositivo.html</a></p></li>
-              <li><p><a href="/f_iot/19_ResInt.html">disp/ResInt.js</a></p></li>
-              <li><p><a href="/f_iot/20_utilIoT.html">disp/utilIoT.js</a></p></li>
-              <li><p><a href="/f_iot/21_CtrlDispositivo.html">disp/CtrlDispositivo.js</a></p></li>
-              <li><p><a href="/f_iot/22_ProxySalida.html">disp/ProxySalida.js</a></p></li>
-              <li><p><a href="/f_iot/23_ProxyEntrada.html">disp/ProxyEntrada.js</a></p></li>
-              <li><p><a href="/f_iot/24_ProxyHistorial.html">disp/ProxyHistorial.js</a></p></li>
-              <li><p><a href="/f_iot/25_historial.html">historial.html</a></p></li>
-              <li><p><a href="/f_iot/26_CtrlHistorial.html">js/CtrlHistorial.js</a></p></li>
-              <li><p><a href="/f_iot/27_README.html">README.md</a></p></li>
-              <li><p><a href="/f_iot/28_LICENSE.html">LICENSE</a></p></li>
+              <li><p><a href="/f_iot/9_tipos.html">servicios/tipos.js</a></p></li>
+              <li><p><a href="/f_iot/10_index_html.html">www/index.html</a></p></li>
+              <li><p><a href="/f_iot/11_CtrlMovil.html">www/js/CtrlMovil.js</a></p></li>
+              <li><p><a href="/f_iot/12_dispositivo.html">www/dispositivo.html</a></p></li>
+              <li><p><a href="/f_iot/13_CtrlDispositivo.html">www/js/CtrlDispositivo.js</a></p></li>
+              <li><p><a href="/f_iot/18_ResInt.html">www/js/ResInt.js</a></p></li>
+              <li><p><a href="/f_iot/19_util.html">www/js/util.js</a></p></li>
+              <li><p><a href="/f_iot/14_proxyAgregaEntrada.html">www/js/proxyAgregaEntrada.js</a></p></li>
+              <li><p><a href="/f_iot/15_proxyAgregaSalida.html">www/js/proxyAgregaSalida.js</a></p></li>
+              <li><p><a href="/f_iot/16_proxyRecuperaEntrada.html">www/js/proxyRecuperaEntrada.js</a></p></li>
+              <li><p><a href="/f_iot/17_proxyRecuperaSalida.html">www/js/proxyRecuperaSalida.js</a></p></li>
+              <li><p><a href="/f_iot/20_estilos.html">www/css/estilos.css</a></p></li>
+              <li><p><a href="/f_iot/21_footer.html">www/js/mi-footer.js</a></p></li>
+              <li><p><a href="/f_iot/22_b.html">b.js</a></p></li>
+              <li><p><a href="/f_iot/23_index_js.html">index.js</a></p></li>
+              <li><p><a href="/f_iot/24_agregaEntrada.html">servicios/agregaEntrada.js</a></p></li>
+              <li><p><a href="/f_iot/25_agregaSalida.html">servicios/agregaSalida.js</a></p></li>
+              <li><p><a href="/f_iot/26_historico.html">servicios/historico.js</a></p></li>
+              <li><p><a href="/f_iot/27_recuperaEntrada.html">servicios/recuperaEntrada.js</a></p></li>
+              <li><p><a href="/f_iot/28_recuperaSalida.html">servicios/recuperaSalida.js</a></p></li>
+              <li><p><a href="/f_iot/29_LICENSE.html">LICENSE</a></p></li>
             </ol>
           </details>
         </li>
@@ -167,11 +168,7 @@ class MiNav extends HTMLElement {
               <li><p><a href="/g_esp8266/index.html">ESP8266</a></p></li>
               <li><p><a href="/g_esp8266/3_blink.html">Blink.ino</a></p></li>
               <li><p><a href="/g_esp8266/4_button.html">Button.ino</a></p></li>
-              <li><p><a href="/g_esp8266/5_descarga.html">Descarga de datos por WiFi</a></p></li>
               <li><p><a href="/g_esp8266/6_MiGet.html">MiGet.ino</a></p></li>
-              <li><p><a href="/g_esp8266/7_modifica.html">Modifica datos por WiFi</a></p></li>
-              <li><p><a href="/g_esp8266/8_MiPatch.html">MiPatch.ino</a></p></li>
-              <li><p><a href="/g_esp8266/9_publica.html">Publica datos por WiFi</a></p></li>
               <li><p><a href="/g_esp8266/10_MiPost.html">MiPost.ino</a></p></li>
             </ol>
           </details>
@@ -187,14 +184,12 @@ class MiNav extends HTMLElement {
               <li><p><a href="/h_dispositivo/4_Dispositivo.html">Dispositivo.ino</a></p></li>
               <li><p><a href="/h_dispositivo/5_ResInt_h.html">ResInt.hpp</a></p></li>
               <li><p><a href="/h_dispositivo/6_ResInt_c.html">ResInt.cpp</a></p></li>
-              <li><p><a href="/h_dispositivo/7_utilIoT_h.html">utilIoT.hpp</a></p></li>
-              <li><p><a href="/h_dispositivo/8_utilIoT_c.html">utilIoT.cpp</a></p></li>
-              <li><p><a href="/h_dispositivo/9_ProxySalida_h.html">ProxySalida.hpp</a></p></li>
-              <li><p><a href="/h_dispositivo/10_ProxySalida_c.html">ProxySalida.cpp</a></p></li>
-              <li><p><a href="/h_dispositivo/11_ProxyEntrada_h.html">ProxyEntrada.hpp</a></p></li>
-              <li><p><a href="/h_dispositivo/12_ProxyEntrada_c.html">ProxyEntrada.cpp</a></p></li>
-              <li><p><a href="/h_dispositivo/13_ProxyHistorial_h.html">ProxyHistorial.hpp</a></p></li>
-              <li><p><a href="/h_dispositivo/14_ProxyHistorial_c.html">ProxyHistorial.cpp</a></p></li>
+              <li><p><a href="/h_dispositivo/7_util_h.html">util.hpp</a></p></li>
+              <li><p><a href="/h_dispositivo/8_util_c.html">util.cpp</a></p></li>
+              <li><p><a href="/h_dispositivo/9_proxyAgregaEntrada_h.html">proxyAgregaEntrada.hpp</a></p></li>
+              <li><p><a href="/h_dispositivo/10_proxyAgregaEntrada_c.html">proxyAgregaEntrada.cpp</a></p></li>
+              <li><p><a href="/h_dispositivo/11_proxyRecuperaSalida_h.html">proxyRecuperaSalida.hpp</a></p></li>
+              <li><p><a href="/h_dispositivo/12_proxyRecuperaSalida_c.html">proxyRecuperaSalida.cpp</a></p></li>
             </ol>
           </details>
         </li>

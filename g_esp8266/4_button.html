@@ -15,96 +15,93 @@
     <mi-nav slot="nav"></mi-nav>
     <h1>Button.ino</h1>
     <iframe width="100%" height="315"
-      src="https://drive.google.com/file/d/1Sf6Ht2ao0FaYFuKyFJQxkBVJWJcJdxdv/preview?usp=sharing"
-      allowfullscreen></iframe>
+        src="https://drive.google.com/file/d/1Sf6Ht2ao0FaYFuKyFJQxkBVJWJcJdxdv/preview?usp=sharing"
+        allowfullscreen></iframe>
     <muestra-codigo>
       <div>
         <div><span
-            style="color: #008000;">/*&nbsp;Este&nbsp;es&nbsp;un&nbsp;derivado&nbsp;de&nbsp;Button</span>
+              style="color: #008000;">/*&nbsp;Este&nbsp;es&nbsp;un&nbsp;derivado&nbsp;de&nbsp;Button</span>
         </div>
         <div><span
-            style="color: #008000;">&nbsp;&nbsp;&nbsp;por&nbsp;DojoDave&nbsp;y&nbsp;Tom&nbsp;Igoe&nbsp;*/</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;por&nbsp;DojoDave&nbsp;y&nbsp;Tom&nbsp;Igoe&nbsp;*/</span>
         </div><br>
         <div><span
-            style="color: #008000;">/*&nbsp;Constantes&nbsp;(no&nbsp;cambian)&nbsp;para</span>
-        </div>
-        <div><span
-            style="color: #008000;">&nbsp;&nbsp;&nbsp;asignar&nbsp;los&nbsp;números&nbsp;de&nbsp;pines.</span>
-        </div>
-        <div><span style="color: #008000;">*/</span></div>
-        <div><span
-            style="color: #008000;">//&nbsp;Pin&nbsp;para&nbsp;el&nbsp;botón&nbsp;flash.</span>
+              style="color: #008000;">/*&nbsp;Pin&nbsp;para&nbsp;el&nbsp;botón&nbsp;flash.&nbsp;*/</span>
         </div>
         <div><span style="color: #0000ff;">const</span>&nbsp;<span
-            style="color: #0000ff;">int</span>&nbsp;<span
-            style="color: #001080;">BOTON_FLASH</span>&nbsp;=&nbsp;<span
-            style="color: #098658;">0</span>;</div>
+              style="color: #0000ff;">int</span>&nbsp;<span
+              style="color: #001080;">BOTON_FLASH</span>&nbsp;=&nbsp;<span
+              style="color: #098658;">0</span>;</div>
         <div><span
-            style="color: #008000;">//&nbsp;Pin&nbsp;que&nbsp;trae&nbsp;cableado&nbsp;un&nbsp;LED.</span>
+              style="color: #008000;">/*&nbsp;Pin&nbsp;con&nbsp;LED&nbsp;cableado.&nbsp;*/</span>
         </div>
         <div><span style="color: #0000ff;">const</span>&nbsp;<span
-            style="color: #0000ff;">int</span>&nbsp;<span
-            style="color: #001080;">LED_INTEGRADO_2</span>&nbsp;=&nbsp;&nbsp;<span
-            style="color: #098658;">2</span>;</div><br>
+              style="color: #0000ff;">int</span>&nbsp;<span
+              style="color: #001080;">LED_INTEGRADO_2</span>&nbsp;=&nbsp;&nbsp;<span
+              style="color: #098658;">2</span>;</div><br>
         <div><span style="color: #0000ff;">int</span>&nbsp;<span
-            style="color: #001080;">estadoDelBoton</span>&nbsp;=&nbsp;<span
-            style="color: #098658;">0</span>;</div><br>
+              style="color: #001080;">estadoDelBoton</span>&nbsp;=&nbsp;<span
+              style="color: #098658;">0</span>;</div><br>
         <div><span style="color: #0000ff;">void</span>&nbsp;<span
-            style="color: #795e26;">setup</span>()&nbsp;{</div>
+              style="color: #795e26;">setup</span>()&nbsp;{</div>
         <div><span
-            style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Inicializa&nbsp;el&nbsp;pin&nbsp;para</span>
+              style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Inicializa&nbsp;el&nbsp;pin&nbsp;para</span>
         </div>
         <div><span
-            style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LED_INTEGRADO_2&nbsp;como&nbsp;salida.</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LED_INTEGRADO_2&nbsp;como&nbsp;salida.</span>
         </div>
         <div><span style="color: #008000;">&nbsp;&nbsp;*/</span></div>
         <div>&nbsp;&nbsp;<span style="color: #795e26;">pinMode</span>(</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #001080;">LED_INTEGRADO_2</span>,&nbsp;OUTPUT);</div>
+              style="color: #001080;">LED_INTEGRADO_2</span>,&nbsp;<span
+              style="color: #0000ff;">OUTPUT</span>);</div>
         <div><span
-            style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Initializa&nbsp;el&nbsp;pin&nbsp;para</span>
+              style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Initializa&nbsp;el&nbsp;pin&nbsp;para</span>
         </div>
         <div><span
-            style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BOTÓN_FLASH&nbsp;como&nbsp;entrada.&nbsp;*/</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BOTÓN_FLASH&nbsp;como&nbsp;entrada.&nbsp;*/</span>
         </div>
         <div>&nbsp;&nbsp;<span style="color: #795e26;">pinMode</span>(<span
-            style="color: #001080;">BOTON_FLASH</span>,&nbsp;INPUT);</div>
+              style="color: #001080;">BOTON_FLASH</span>,&nbsp;<span
+              style="color: #0000ff;">INPUT</span>);</div>
         <div>}</div><br>
         <div><span style="color: #0000ff;">void</span>&nbsp;<span
-            style="color: #795e26;">loop</span>()&nbsp;{</div>
+              style="color: #795e26;">loop</span>()&nbsp;{</div>
         <div>&nbsp;&nbsp;<span
-            style="color: #001080;">estadoDelBoton</span>&nbsp;=</div>
+              style="color: #001080;">estadoDelBoton</span>&nbsp;=</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #795e26;">digitalRead</span>(<span
-            style="color: #001080;">BOTON_FLASH</span>);</div>
+              style="color: #795e26;">digitalRead</span>(<span
+              style="color: #001080;">BOTON_FLASH</span>);</div>
         <div><span
-            style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Checa&nbsp;si&nbsp;el&nbsp;botón&nbsp;está</span>
+              style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Checa&nbsp;si&nbsp;el&nbsp;botón&nbsp;está</span>
         </div>
         <div><span
-            style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;presionado.&nbsp;Esto&nbsp;es,&nbsp;si</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;presionado.&nbsp;Esto&nbsp;es,&nbsp;si</span>
         </div>
         <div><span
-            style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;estadoDelBotón&nbsp;es&nbsp;LOW:&nbsp;*/</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;estadoDelBotón&nbsp;es&nbsp;LOW:&nbsp;*/</span>
         </div>
         <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
-            style="color: #001080;">estadoDelBoton</span>&nbsp;==&nbsp;LOW)&nbsp;{
-        </div>
+              style="color: #001080;">estadoDelBoton</span>&nbsp;==&nbsp;<span
+              style="color: #0000ff;">LOW</span>)&nbsp;{</div>
         <div><span
-            style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Enciende&nbsp;el&nbsp;LED.</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Enciende&nbsp;el&nbsp;LED.</span>
         </div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #795e26;">digitalWrite</span>(</div>
+              style="color: #795e26;">digitalWrite</span>(</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #001080;">LED_INTEGRADO_2</span>,&nbsp;LOW);</div>
+              style="color: #001080;">LED_INTEGRADO_2</span>,&nbsp;<span
+              style="color: #0000ff;">LOW</span>);</div>
         <div>&nbsp;&nbsp;}&nbsp;<span style="color: #af00db;">else</span>&nbsp;{
         </div>
         <div><span
-            style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Apaga&nbsp;el&nbsp;LED.</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Apaga&nbsp;el&nbsp;LED.</span>
         </div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #795e26;">digitalWrite</span>(</div>
+              style="color: #795e26;">digitalWrite</span>(</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-            style="color: #001080;">LED_INTEGRADO_2</span>,&nbsp;HIGH);</div>
+              style="color: #001080;">LED_INTEGRADO_2</span>,&nbsp;<span
+              style="color: #0000ff;">HIGH</span>);</div>
         <div>&nbsp;&nbsp;}</div>
         <div>}</div><br>
       </div>

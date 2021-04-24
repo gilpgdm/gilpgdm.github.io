@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>historial.html</h1>
+    <muestra-codigo>
+      <div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">Client</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">require</span>(<span
+              style="color: #a31515;">"@replit/database"</span>);</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">b</span>&nbsp;=&nbsp;<span
+              style="color: #795e26;">require</span>(<span
+              style="color: #a31515;">'../b'</span>);</div><br>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">INICIO</span>&nbsp;=&nbsp;<span
+              style="color: #008000;">/*&nbsp;html&nbsp;*/</span></div>
+        <div>&nbsp;&nbsp;`<span
+              style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+              style="color: #ff0000;">html</span><span
+              style="color: #800000;">&gt;</span></div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;html</span>&nbsp;<span
+              style="color: #ff0000;">lang</span>=<span
+              style="color: #0000ff;">"es"</span><span
+              style="color: #800000;">&gt;</span></div>
+        <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;meta</span>&nbsp;<span
+              style="color: #ff0000;">charset</span>=<span
+              style="color: #0000ff;">"UTF-8"</span><span
+              style="color: #800000;">&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;title&gt;</span>Histórico<span
+              style="color: #800000;">&lt;/title&gt;</span></div>
+        <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span>
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;table&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;thead&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;tr&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;th&gt;</span>Id<span
+              style="color: #800000;">&lt;/th&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;th&gt;</span>Dispositivo<span
+              style="color: #800000;">&lt;/th&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;th&gt;</span>Valor<span
+              style="color: #800000;">&lt;/th&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;th&gt;</span>Timestamp<span
+              style="color: #800000;">&lt;/th&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;/tr&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;/thead&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;tbody&gt;</span>`;</div><br>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">FINAL</span>&nbsp;=&nbsp;<span
+              style="color: #008000;">/*&nbsp;html&nbsp;*/</span></div>
+        <div>&nbsp;&nbsp;`&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;/tbody&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;/table&gt;</span></div>
+        <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span>
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/html&gt;</span>`;
+        </div><br>
+        <div><span style="color: #008000;">/**</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+              style="color: #0000ff;">@param</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #267f99;">{import("express").</span></div>
+        <div><span style="color: #008000;">&nbsp;*</span><span
+              style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Request}</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #001080;">_req</span></div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
+              style="color: #0000ff;">@param</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #267f99;">{import("express").</span></div>
+        <div><span style="color: #008000;">&nbsp;*</span><span
+              style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response}</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #001080;">resp</span></div>
+        <div><span style="color: #008000;">&nbsp;*/</span></div>
+        <div><span style="color: #0000ff;">async</span>&nbsp;<span
+              style="color: #0000ff;">function</span></div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">historico</span>(<span
+              style="color: #001080;">_req</span>,&nbsp;<span
+              style="color: #001080;">resp</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;<span style="color: #008000;">//&nbsp;@ts-ignore</span>
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">bd</span>&nbsp;=&nbsp;<span
+              style="color: #0000ff;">new</span>&nbsp;<span
+              style="color: #795e26;">Client</span>(<span
+              style="color: #001080;">b</span>);</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #008000;">//&nbsp;recupera&nbsp;todos&nbsp;los&nbsp;registros.</span>
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">todo</span>&nbsp;=&nbsp;<span
+              style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #0070c1;">bd</span>.<span
+              style="color: #795e26;">getAll</span>();</div>
+        <div>&nbsp;&nbsp;<span style="color: #008000;">/**</span></div>
+        <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
+              style="color: #0000ff;">@type</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #267f99;">{import("./tipos").</span></div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Histórico[]}&nbsp;*/</span>
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">arr</span>&nbsp;=&nbsp;[];</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">for</span>&nbsp;(<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">id</span>&nbsp;<span
+              style="color: #0000ff;">in</span>&nbsp;<span
+              style="color: #0070c1;">todo</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #008000;">/**&nbsp;@type&nbsp;{import("./tipos").</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Registro}&nbsp;*/</span>
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">r</span>&nbsp;=&nbsp;<span
+              style="color: #0070c1;">todo</span>[<span
+              style="color: #0070c1;">id</span>];</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">if</span>&nbsp;(<span
+              style="color: #0070c1;">r</span>.<span
+              style="color: #001080;">tipo</span>&nbsp;===&nbsp;<span
+              style="color: #a31515;">"Histórico"</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #008000;">/**</span></div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
+              style="color: #0000ff;">@type</span><span
+              style="color: #008000;">&nbsp;</span><span
+              style="color: #267f99;">{import("./tipos").</span></div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Histórico}&nbsp;*/</span>
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">histórico</span>&nbsp;=&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">id</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">dispositivoId</span><span
+              style="color: #001080;">:</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">r</span>.<span
+              style="color: #001080;">dispositivoId</span>&nbsp;||&nbsp;<span
+              style="color: #a31515;">"0"</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">valor</span><span
+              style="color: #001080;">:</span>&nbsp;<span
+              style="color: #0070c1;">r</span>.<span
+              style="color: #001080;">valor</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">timestamp</span><span
+              style="color: #001080;">:</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">r</span>.<span
+              style="color: #001080;">timestamp</span>&nbsp;||&nbsp;<span
+              style="color: #098658;">0</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">arr</span>.<span
+              style="color: #795e26;">push</span>(<span
+              style="color: #0070c1;">histórico</span>)</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;<span style="color: #0070c1;">arr</span>.<span
+              style="color: #795e26;">sort</span>((<span
+              style="color: #001080;">a</span>,&nbsp;<span
+              style="color: #001080;">b</span>)&nbsp;<span
+              style="color: #0000ff;">=&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">a</span>.<span
+              style="color: #001080;">timestamp</span>&nbsp;-&nbsp;<span
+              style="color: #001080;">b</span>.<span
+              style="color: #001080;">timestamp</span>);</div>
+        <div>&nbsp;&nbsp;<span style="color: #0000ff;">let</span>&nbsp;<span
+              style="color: #001080;">html</span>&nbsp;=&nbsp;<span
+              style="color: #0070c1;">INICIO</span>;</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">for</span>&nbsp;(<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">h</span>&nbsp;<span
+              style="color: #0000ff;">of</span>&nbsp;<span
+              style="color: #0070c1;">arr</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">html</span>&nbsp;+=&nbsp;<span
+              style="color: #008000;">/*&nbsp;html&nbsp;*/</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<span
+              style="color: #800000;">&lt;tr&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;td&gt;${</span><span
+              style="color: #0070c1;">h</span>.<span
+              style="color: #001080;">id</span><span
+              style="color: #800000;">}&lt;/td&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;td&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">${</span><span
+              style="color: #0070c1;">h</span>.<span
+              style="color: #001080;">dispositivoId</span><span
+              style="color: #800000;">}</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;/td&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;th&gt;${</span><span
+              style="color: #0070c1;">h</span>.<span
+              style="color: #001080;">valor</span><span
+              style="color: #800000;">}&lt;/th&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;th&gt;${</span><span
+              style="color: #0070c1;">h</span>.<span
+              style="color: #001080;">timestamp</span><span
+              style="color: #800000;">}&lt;/th&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #800000;">&lt;/tr&gt;</span>`;</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;<span
+              style="color: #001080;">html</span>&nbsp;+=&nbsp;<span
+              style="color: #0070c1;">FINAL</span>;</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">resp</span>.<span
+              style="color: #001080;">charset</span>&nbsp;=&nbsp;<span
+              style="color: #a31515;">"UTF-8"</span>;</div>
+        <div>&nbsp;&nbsp;<span style="color: #001080;">resp</span>.<span
+              style="color: #795e26;">type</span>(<span
+              style="color: #a31515;">"html"</span>).<span
+              style="color: #795e26;">send</span>(<span
+              style="color: #001080;">html</span>);</div>
+        <div>}</div><br>
+        <div><span style="color: #795e26;">module</span>.<span
+              style="color: #795e26;">exports</span>&nbsp;=&nbsp;<span
+              style="color: #795e26;">historico</span>;</div>
+      </div>
+    </muestra-codigo>
+  </layout-cajon>
+</body>
+</html>
