@@ -1,8 +1,8 @@
 /* Espera 11 minutos después de hacer los cambios en tu sitio, para depués
  * actualizar este archivo. */
-const CACHE = "gilpgdm-1.14";
+const CACHE = "gilpgdm-1.15";
 
-/**  Archivos requeridos para que la aplicación funcione fuera de línea. */
+/** Archivos requeridos para que la aplicación funcione fuera de línea. */
 const ARCHIVOS = [
   "b_sw.html",
   "favicon.ico",
