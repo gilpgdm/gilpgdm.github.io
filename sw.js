@@ -91,15 +91,12 @@ const ARCHIVOS = [
   "e_pwa/src/roboto-v27-latin-regular.woff",
   "e_pwa/src/roboto-v27-latin-regular.woff2",
   "e_sesion/10_CtrlSesion.html",
-  "e_sesion/11_b.html",
   "e_sesion/12_index_js.html",
-  "e_sesion/13_creaUsuarios.html",
   "e_sesion/14_validaUsuario.html",
   "e_sesion/15_LICENSE.html",
   "e_sesion/3_arquitectura.html",
   "e_sesion/4_despliegue.html",
   "e_sesion/5_er.html",
-  "e_sesion/6_no_rel.html",
   "e_sesion/7_instrucciones.html",
   "e_sesion/8_archivos.html",
   "e_sesion/9_index_html.html",
@@ -125,7 +122,6 @@ const ARCHIVOS = [
   "f_iot/23_index_js.html",
   "f_iot/24_agregaEntrada.html",
   "f_iot/25_agregaSalida.html",
-  "f_iot/26_historico.html",
   "f_iot/27_recuperaEntrada.html",
   "f_iot/28_recuperaSalida.html",
   "f_iot/29_LICENSE.html",
@@ -207,8 +203,7 @@ const ARCHIVOS = [
   "lib/css/ubuntu-v15-latin-italic.woff2",
   "lib/css/ubuntu-v15-latin-regular.woff",
   "lib/css/ubuntu-v15-latin-regular.woff2",
-  "lib/css/ubuntu.css",
-  "/"
+  "lib/css/ubuntu.css",  "/"
 ];
 
 addEventListener("install", evt => {

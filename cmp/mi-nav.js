@@ -109,14 +109,11 @@ class MiNav extends HTMLElement {
               <li><p><a href="/e_sesion/3_arquitectura.html">Arquitectura</a></p></li>
               <li><p><a href="/e_sesion/4_despliegue.html">Despliegue</a></p></li>
               <li><p><a href="/e_sesion/5_er.html">Diagrama Entidad Relación</a></p></li>
-              <li><p><a href="/e_sesion/6_no_rel.html">Diseño par llave-valor</a></p></li>
               <li><p><a href="/e_sesion/7_instrucciones.html">Instrucciones</a></p></li>
               <li><p><a href="/e_sesion/8_archivos.html">Archivos</a></p></li>
               <li><p><a href="/e_sesion/9_index_html.html">www/index.html</a></p></li>
               <li><p><a href="/e_sesion/10_CtrlSesion.html">www/js/CtrlSesion.js</a></p></li>
-              <li><p><a href="/e_sesion/11_b.html">b.js</a></p></li>
               <li><p><a href="/e_sesion/12_index_js.html">index.js</a></p></li>
-              <li><p><a href="/e_sesion/13_creaUsuarios.html">servicios/creaUsuarios.js</a></p></li>
               <li><p><a href="/e_sesion/14_validaUsuario.html">servicios/validaUsuario.js</a></p></li>
               <li><p><a href="/e_sesion/15_LICENSE.html">LICENSE</a></p></li>
             </ol>
@@ -152,7 +149,6 @@ class MiNav extends HTMLElement {
               <li><p><a href="/f_iot/23_index_js.html">index.js</a></p></li>
               <li><p><a href="/f_iot/24_agregaEntrada.html">servicios/agregaEntrada.js</a></p></li>
               <li><p><a href="/f_iot/25_agregaSalida.html">servicios/agregaSalida.js</a></p></li>
-              <li><p><a href="/f_iot/26_historico.html">servicios/historico.js</a></p></li>
               <li><p><a href="/f_iot/27_recuperaEntrada.html">servicios/recuperaEntrada.js</a></p></li>
               <li><p><a href="/f_iot/28_recuperaSalida.html">servicios/recuperaSalida.js</a></p></li>
               <li><p><a href="/f_iot/29_LICENSE.html">LICENSE</a></p></li>

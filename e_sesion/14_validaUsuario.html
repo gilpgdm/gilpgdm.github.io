@@ -17,17 +17,29 @@
     <muestra-codigo>
       <div>
         <div><span style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #267f99;">crypto</span>&nbsp;=&nbsp;<span
-              style="color: #795e26;">require</span>(<span
-              style="color: #a31515;">"crypto"</span>);</div>
-        <div><span style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0070c1;">Client</span>&nbsp;=</div>
+              style="color: #267f99;">MongoClient</span>&nbsp;=</div>
         <div>&nbsp;&nbsp;<span style="color: #795e26;">require</span>(<span
-              style="color: #a31515;">"@replit/database"</span>);</div>
+              style="color: #a31515;">'mongodb'</span>).<span
+              style="color: #267f99;">MongoClient</span>;</div>
+        <div><span
+              style="color: #008000;">/*&nbsp;Cambia&nbsp;el&nbsp;valor&nbsp;por&nbsp;el&nbsp;que&nbsp;te</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;proporciona&nbsp;Atlas&nbsp;y&nbsp;cambia</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;&lt;password&gt;&nbsp;por&nbsp;la&nbsp;contraseña</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;del&nbsp;usuario&nbsp;que&nbsp;creaste&nbsp;dentro</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;de&nbsp;Atlas.&nbsp;*/</span>
+        </div>
         <div><span style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0070c1;">b</span>&nbsp;=&nbsp;<span
-              style="color: #795e26;">require</span>(<span
-              style="color: #a31515;">'../b'</span>);</div><br>
+              style="color: #0070c1;">uri</span>&nbsp;=&nbsp;<span
+              style="color: #a31515;">"mongodb+srv://UUU:&lt;password&gt;@cluster0.nvilc.mongodb.net/myFirstDatabase?retryWrites=true&amp;w=majority"</span>;
+        </div><br>
         <div><span style="color: #008000;">/**</span></div>
         <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
               style="color: #0000ff;">@param</span><span
@@ -68,69 +80,91 @@
         <div><span
               style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;datos.&nbsp;*/</span>
         </div>
-        <div>&nbsp;&nbsp;<span style="color: #008000;">//&nbsp;@ts-ignore</span>
-        </div>
         <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0070c1;">bd</span>&nbsp;=&nbsp;<span
+              style="color: #0070c1;">client</span>&nbsp;=&nbsp;<span
               style="color: #0000ff;">new</span>&nbsp;<span
-              style="color: #795e26;">Client</span>(<span
-              style="color: #001080;">b</span>);</div>
-        <div>&nbsp;&nbsp;<span
+              style="color: #267f99;">MongoClient</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0070c1;">uri</span>,
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">useNewUrlParser</span><span
+              style="color: #001080;">:</span>&nbsp;<span
+              style="color: #0000ff;">true</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">useUnifiedTopology</span><span
+              style="color: #001080;">:</span>&nbsp;<span
+              style="color: #0000ff;">true</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;});</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">try</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #0070c1;">client</span>.<span
+              style="color: #795e26;">connect</span>();</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">usuario</span>&nbsp;=&nbsp;<span
+              style="color: #0070c1;">client</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">db</span>(<span
+              style="color: #a31515;">"aut"</span>).</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">collection</span>(<span
+              style="color: #a31515;">"usuario"</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
               style="color: #008000;">/*&nbsp;Los&nbsp;datos&nbsp;enviados&nbsp;por&nbsp;la</span>
         </div>
         <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;página&nbsp;vienen&nbsp;en&nbsp;la&nbsp;propiedad</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;página&nbsp;vienen&nbsp;en&nbsp;la</span>
         </div>
         <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;body&nbsp;de&nbsp;req.&nbsp;*/</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;propiedad&nbsp;body&nbsp;de&nbsp;req.&nbsp;*/</span>
         </div>
-        <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">const</span>&nbsp;<span
               style="color: #0070c1;">datos</span>&nbsp;=&nbsp;<span
               style="color: #001080;">req</span>.<span
               style="color: #001080;">body</span>;</div>
-        <div>&nbsp;&nbsp;<span
-              style="color: #008000;">/*&nbsp;Busca&nbsp;en&nbsp;la&nbsp;base&nbsp;de&nbsp;datos&nbsp;el</span>
-        </div>
-        <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;valor&nbsp;asociado&nbsp;con&nbsp;el&nbsp;campo</span>
-        </div>
-        <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;cue&nbsp;en&nbsp;la&nbsp;base&nbsp;de&nbsp;datos.&nbsp;Si</span>
-        </div>
-        <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;no&nbsp;lo&nbsp;encuentra,&nbsp;recibe</span>
-        </div>
-        <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;null.&nbsp;*/</span>
-        </div>
-        <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0070c1;">pass</span>&nbsp;=</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #af00db;">await</span>&nbsp;<span
-              style="color: #0070c1;">bd</span>.<span
-              style="color: #795e26;">get</span>(<span
-              style="color: #0070c1;">datos</span>.<span
-              style="color: #001080;">cue</span>);</div>
-        <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
-              style="color: #0070c1;">pass</span>)&nbsp;{</div>
+              style="color: #008000;">/*&nbsp;Cuenta&nbsp;en&nbsp;la&nbsp;base&nbsp;de&nbsp;datos</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;los&nbsp;documentos&nbsp;que&nbsp;tengan</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;nombre&nbsp;===&nbsp;datos.cue</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;y</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;contrasena&nbsp;===&nbsp;datos.match</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span>
+        </div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
               style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0070c1;">enc</span>&nbsp;=&nbsp;<span
-              style="color: #267f99;">crypto</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span
-              style="color: #795e26;">createHash</span>(<span
-              style="color: #a31515;">"sha256"</span>)</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span
-              style="color: #795e26;">update</span>(<span
+              style="color: #0070c1;">total</span>&nbsp;=&nbsp;<span
+              style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #0070c1;">usuario</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">countDocuments</span>({</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">nombre</span><span
+              style="color: #001080;">:</span>&nbsp;<span
               style="color: #0070c1;">datos</span>.<span
-              style="color: #001080;">match</span>)</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span
-              style="color: #795e26;">digest</span>(<span
-              style="color: #a31515;">"base64"</span>);</div>
+              style="color: #001080;">cue</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">contrasena</span><span
+              style="color: #001080;">:</span>&nbsp;<span
+              style="color: #0070c1;">datos</span>.<span
+              style="color: #001080;">match</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
               style="color: #af00db;">if</span>&nbsp;(<span
-              style="color: #0070c1;">pass</span>&nbsp;===&nbsp;<span
-              style="color: #0070c1;">enc</span>)&nbsp;{</div>
+              style="color: #0070c1;">total</span>&nbsp;&gt;&nbsp;<span
+              style="color: #098658;">0</span>)&nbsp;{</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
               style="color: #008000;">/*&nbsp;Devuelve&nbsp;a&nbsp;la&nbsp;página&nbsp;el</span>
         </div>
@@ -144,18 +178,35 @@
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
               style="color: #af00db;">return</span>;</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-        <div>&nbsp;&nbsp;}</div>
-        <div>&nbsp;&nbsp;<span
-              style="color: #008000;">/*&nbsp;Devuelve&nbsp;a&nbsp;la&nbsp;página&nbsp;el&nbsp;texto</span>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #008000;">/*&nbsp;Devuelve&nbsp;a&nbsp;la&nbsp;página&nbsp;el</span>
         </div>
         <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;"".&nbsp;*/</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;texto&nbsp;"".&nbsp;*/</span>
         </div>
-        <div>&nbsp;&nbsp;<span style="color: #001080;">res</span>.<span
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">res</span>.<span
               style="color: #795e26;">send</span>(<span
               style="color: #a31515;">""</span>);</div>
+        <div>&nbsp;&nbsp;}&nbsp;<span
+              style="color: #af00db;">catch</span>&nbsp;(<span
+              style="color: #001080;">e</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">res</span>.<span
+              style="color: #795e26;">send</span>(<span
+              style="color: #a31515;">""</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">console</span>.<span
+              style="color: #795e26;">log</span>(<span
+              style="color: #001080;">e</span>);</div>
+        <div>&nbsp;&nbsp;}&nbsp;<span
+              style="color: #af00db;">finally</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">client</span>.<span
+              style="color: #795e26;">close</span>();</div>
+        <div>&nbsp;&nbsp;}</div>
         <div>}</div><br>
-        <div><span style="color: #267f99;">module</span>.<span
+        <div><span style="color: #795e26;">module</span>.<span
               style="color: #267f99;">exports</span>&nbsp;=&nbsp;<span
               style="color: #001080;">validaUsuario</span>;</div>
       </div>
