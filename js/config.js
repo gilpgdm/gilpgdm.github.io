@@ -3,7 +3,7 @@ import "../cmp/mi-nav.js";
 import "../lib/layout-cajon.js";
 import { muestraError, setTitle } from "../lib/utilHtml.js";
 
-registraServiceWorker();
+// registraServiceWorker();
 
 document.addEventListener("DOMContentLoaded", () => setTitle("gilpgdm"));
 

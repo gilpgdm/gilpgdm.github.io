@@ -50,19 +50,12 @@
               style="color: #001080;">DISPOSITIVO_ID</span>&nbsp;=&nbsp;<span
               style="color: #a31515;">"2"</span>;</div><br>
         <div><span
-              style="color: #008000;">//&nbsp;Pin&nbsp;del&nbsp;botón&nbsp;flash.</span>
+              style="color: #008000;">//&nbsp;Pin&nbsp;del&nbsp;botón.</span>
         </div>
         <div><span style="color: #0000ff;">const</span>&nbsp;<span
               style="color: #0000ff;">int</span>&nbsp;<span
-              style="color: #001080;">BOTON_FLASH</span>&nbsp;=&nbsp;<span
+              style="color: #001080;">BOTON</span>&nbsp;=&nbsp;<span
               style="color: #098658;">0</span>;</div>
-        <div><span
-              style="color: #008000;">//&nbsp;Pin&nbsp;de&nbsp;un&nbsp;LED.</span>
-        </div>
-        <div><span style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0000ff;">int</span>&nbsp;<span
-              style="color: #001080;">LED_INTEGRADO_2</span>&nbsp;=&nbsp;<span
-              style="color: #098658;">2</span>;</div><br>
         <div><span style="color: #0000ff;">int</span>&nbsp;<span
               style="color: #001080;">entrada</span>&nbsp;=&nbsp;<span
               style="color: #098658;">0</span>;</div><br>
@@ -73,7 +66,7 @@
         <div>&nbsp;&nbsp;<span style="color: #795e26;">digitalWrite</span>(
         </div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #001080;">LED_INTEGRADO_2</span>,</div>
+              style="color: #0000ff;">LED_BUILTIN</span>,</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
               style="color: #001080;">valor</span>&nbsp;&gt;&nbsp;<span
               style="color: #098658;">0</span>&nbsp;?&nbsp;<span
@@ -87,7 +80,7 @@
               style="color: #001080;">estadoDelBoton</span>&nbsp;=</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
               style="color: #795e26;">digitalRead</span>(<span
-              style="color: #001080;">BOTON_FLASH</span>);</div>
+              style="color: #001080;">BOTON</span>);</div>
         <div>&nbsp;&nbsp;<span style="color: #af00db;">return</span>&nbsp;<span
               style="color: #001080;">estadoDelBoton</span>&nbsp;==&nbsp;<span
               style="color: #0000ff;">HIGH</span>&nbsp;?</div>
@@ -118,12 +111,11 @@
               style="color: #795e26;">println</span>();</div>
         <div>&nbsp;&nbsp;<span style="color: #001080;">Serial</span>.<span
               style="color: #795e26;">println</span>();</div>
-        <div>&nbsp;&nbsp;<span style="color: #795e26;">pinMode</span>(</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #001080;">LED_INTEGRADO_2</span>,&nbsp;<span
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">pinMode</span>(<span
+              style="color: #0000ff;">LED_BUILTIN</span>,&nbsp;<span
               style="color: #0000ff;">OUTPUT</span>);</div>
         <div>&nbsp;&nbsp;<span style="color: #795e26;">pinMode</span>(<span
-              style="color: #001080;">BOTON_FLASH</span>,&nbsp;<span
+              style="color: #001080;">BOTON</span>,&nbsp;<span
               style="color: #0000ff;">INPUT</span>);</div>
         <div>&nbsp;&nbsp;<span style="color: #795e26;">conectaWiFi</span>(<span
               style="color: #001080;">SSID</span>,&nbsp;<span

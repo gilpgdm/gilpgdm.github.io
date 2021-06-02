@@ -32,7 +32,8 @@
       </p>
       <p>
         <a href="https://drive.google.com/file/d/1buuaEpXd02E8eeHhDwzxcC4sZsvcVV5A/view?usp=sharing"
-            target="_blank">Ve como capturar y ejecutar este ejemplo.</a>
+            target="_blank">Ve como capturar y ejecutar un ejemplo parecido a
+          este.</a>
       </p>
     </div>
     <muestra-codigo>
@@ -44,20 +45,6 @@
               style="color: #008000;">&nbsp;&nbsp;&nbsp;ESP8266&nbsp;Blink&nbsp;by&nbsp;Simon&nbsp;Peter&nbsp;*/</span>
         </div><br>
         <div><span
-              style="color: #008000;">/*&nbsp;Pin&nbsp;con&nbsp;LED&nbsp;cableado.&nbsp;*/</span>
-        </div>
-        <div><span style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0000ff;">int</span>&nbsp;<span
-              style="color: #001080;">LED_INTEGRADO_2</span>&nbsp;=&nbsp;<span
-              style="color: #098658;">2</span>;</div>
-        <div><span
-              style="color: #008000;">/*&nbsp;Otro&nbsp;pin&nbsp;con&nbsp;LED&nbsp;cableado.&nbsp;*/</span>
-        </div>
-        <div><span style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0000ff;">int</span>&nbsp;<span
-              style="color: #001080;">LED_INTEGRADO_16</span>&nbsp;=&nbsp;<span
-              style="color: #098658;">16</span>;</div><br>
-        <div><span
               style="color: #008000;">/**&nbsp;Función&nbsp;que&nbsp;se&nbsp;invoca&nbsp;una&nbsp;sola</span>
         </div>
         <div><span
@@ -66,26 +53,28 @@
         <div><span style="color: #0000ff;">void</span>&nbsp;<span
               style="color: #795e26;">setup</span>()&nbsp;{</div>
         <div><span
-              style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Inicializa&nbsp;el&nbsp;pin&nbsp;para</span>
+              style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Todas&nbsp;las&nbsp;placas&nbsp;compatibles</span>
         </div>
         <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LED_INTEGRADO_2&nbsp;como&nbsp;salida.</span>
-        </div>
-        <div><span style="color: #008000;">&nbsp;&nbsp;*/</span></div>
-        <div>&nbsp;&nbsp;<span style="color: #795e26;">pinMode</span>(</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #001080;">LED_INTEGRADO_2</span>,&nbsp;<span
-              style="color: #0000ff;">OUTPUT</span>);</div>
-        <div><span
-              style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Inicializa&nbsp;el&nbsp;pin&nbsp;para</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;con&nbsp;Arduino&nbsp;incluyen&nbsp;un&nbsp;led</span>
         </div>
         <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LED_INTEGRADO_16&nbsp;como&nbsp;salida.</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;de&nbsp;prueba&nbsp;ligado&nbsp;a&nbsp;un&nbsp;pin</span>
         </div>
-        <div><span style="color: #008000;">&nbsp;&nbsp;*/</span></div>
-        <div>&nbsp;&nbsp;<span style="color: #795e26;">pinMode</span>(</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #001080;">LED_INTEGRADO_16</span>,&nbsp;<span
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cuyo&nbsp;número&nbsp;está&nbsp;definido&nbsp;por</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;la&nbsp;constante&nbsp;LED_BUILTIN.</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inicializa&nbsp;el&nbsp;pin&nbsp;para</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LED_BUILTIN&nbsp;como&nbsp;salida.&nbsp;*/</span>
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">pinMode</span>(<span
+              style="color: #0000ff;">LED_BUILTIN</span>,&nbsp;<span
               style="color: #0000ff;">OUTPUT</span>);</div>
         <div>}</div><br>
         <div><span
@@ -100,41 +89,30 @@
         <div><span style="color: #0000ff;">void</span>&nbsp;<span
               style="color: #795e26;">loop</span>()&nbsp;{</div>
         <div><span
-              style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Enciende&nbsp;el&nbsp;LED&nbsp;(LOW&nbsp;es&nbsp;el</span>
+              style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Enciende&nbsp;el&nbsp;LED_BUILTIN&nbsp;(LOW</span>
         </div>
         <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nivel&nbsp;de&nbsp;voltaje).&nbsp;*/</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;es&nbsp;el&nbsp;nivel&nbsp;de&nbsp;voltaje).&nbsp;*/</span>
         </div>
-        <div>&nbsp;&nbsp;<span style="color: #795e26;">digitalWrite</span>(
-        </div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #001080;">LED_INTEGRADO_2</span>,&nbsp;<span
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">digitalWrite</span>(<span
+              style="color: #0000ff;">LED_BUILTIN</span>,&nbsp;<span
               style="color: #0000ff;">LOW</span>);</div>
-        <div><span
-              style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Apaga&nbsp;el&nbsp;LED&nbsp;haciendo&nbsp;que&nbsp;el</span>
-        </div>
-        <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nivel&nbsp;de&nbsp;voltaje&nbsp;sea&nbsp;HIGH.&nbsp;*/</span>
-        </div>
-        <div>&nbsp;&nbsp;<span style="color: #795e26;">digitalWrite</span>(
-        </div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #001080;">LED_INTEGRADO_16</span>,&nbsp;<span
-              style="color: #0000ff;">HIGH</span>);</div>
         <div>&nbsp;&nbsp;<span style="color: #795e26;">delay</span>(<span
               style="color: #098658;">1000</span>);<span
               style="color: #008000;">&nbsp;//&nbsp;Espera&nbsp;1&nbsp;segundo</span>
         </div>
-        <div>&nbsp;&nbsp;<span style="color: #795e26;">digitalWrite</span>(
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Apaga&nbsp;el&nbsp;LED_BUILTIN&nbsp;haciendo</span>
         </div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #001080;">LED_INTEGRADO_2</span>,&nbsp;<span
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;que&nbsp;el&nbsp;nivel&nbsp;de&nbsp;voltaje&nbsp;sea</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HIGH.&nbsp;*/</span>
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">digitalWrite</span>(<span
+              style="color: #0000ff;">LED_BUILTIN</span>,&nbsp;<span
               style="color: #0000ff;">HIGH</span>);</div>
-        <div>&nbsp;&nbsp;<span style="color: #795e26;">digitalWrite</span>(
-        </div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #001080;">LED_INTEGRADO_16</span>,&nbsp;<span
-              style="color: #0000ff;">LOW</span>);</div>
         <div>&nbsp;&nbsp;<span style="color: #795e26;">delay</span>(<span
               style="color: #098658;">1000</span>);</div>
         <div>}</div><br>

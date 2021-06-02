@@ -16,18 +16,10 @@
     <h1>lib/util.js</h1>
     <muestra-codigo>
       <div>
-        <div><span style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0070c1;">Client</span>&nbsp;=</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;{&nbsp;<span
+              style="color: #795e26;">clienteMongo</span>&nbsp;}&nbsp;=</div>
         <div>&nbsp;&nbsp;<span style="color: #795e26;">require</span>(<span
-              style="color: #a31515;">"@replit/database"</span>);</div>
-        <div><span style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0070c1;">uuidAPIKey</span>&nbsp;=</div>
-        <div>&nbsp;&nbsp;<span style="color: #795e26;">require</span>(<span
-              style="color: #a31515;">'uuid-apikey'</span>);</div>
-        <div><span style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0070c1;">b</span>&nbsp;=&nbsp;<span
-              style="color: #795e26;">require</span>(<span
-              style="color: #a31515;">'../b'</span>);</div><br>
+              style="color: #a31515;">"./utilsrv"</span>);</div><br>
         <div><span style="color: #008000;">/**</span></div>
         <div><span style="color: #008000;">&nbsp;*&nbsp;</span><span
               style="color: #0000ff;">@param</span><span
@@ -41,120 +33,133 @@
               style="color: #0000ff;">@param</span><span
               style="color: #008000;">&nbsp;</span><span
               style="color: #267f99;">{import("express").</span></div>
-        <div><span style="color: #008000;">&nbsp;*</span><span
-              style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response}</span><span
-              style="color: #008000;">&nbsp;</span><span
-              style="color: #001080;">res</span></div>
-        <div><span style="color: #008000;">&nbsp;*/</span></div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response}&nbsp;res&nbsp;*/</span>
+        </div>
         <div><span style="color: #0000ff;">async</span>&nbsp;<span
               style="color: #0000ff;">function</span></div>
         <div>&nbsp;&nbsp;<span
               style="color: #795e26;">agregaEntrada</span>(<span
               style="color: #001080;">req</span>,&nbsp;<span
               style="color: #001080;">res</span>)&nbsp;{</div>
-        <div>&nbsp;&nbsp;<span style="color: #008000;">//&nbsp;@ts-ignore</span>
-        </div>
         <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0070c1;">bd</span>&nbsp;=&nbsp;<span
-              style="color: #0000ff;">new</span>&nbsp;<span
-              style="color: #795e26;">Client</span>(<span
-              style="color: #001080;">b</span>);</div>
-        <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0070c1;">id</span>&nbsp;=&nbsp;<span
+              style="color: #0070c1;">client</span>&nbsp;=&nbsp;<span
+              style="color: #795e26;">clienteMongo</span>();</div>
+        <div>&nbsp;&nbsp;<span style="color: #af00db;">try</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #0070c1;">client</span>.<span
+              style="color: #795e26;">connect</span>();</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">iot</span>&nbsp;=&nbsp;<span
+              style="color: #0070c1;">client</span>.<span
+              style="color: #795e26;">db</span>(<span
+              style="color: #a31515;">"iot"</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">dispositivo</span>&nbsp;=&nbsp;<span
+              style="color: #0070c1;">iot</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">collection</span>(<span
+              style="color: #a31515;">"dispositivo"</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">historico</span>&nbsp;=&nbsp;<span
+              style="color: #0070c1;">iot</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">collection</span>(<span
+              style="color: #a31515;">"historico"</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">id</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">parseInt</span>(<span
               style="color: #001080;">req</span>.<span
               style="color: #001080;">params</span>.<span
-              style="color: #001080;">id</span>;</div>
-        <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0070c1;">valor</span>&nbsp;=</div>
+              style="color: #001080;">id</span>,&nbsp;<span
+              style="color: #098658;">10</span>);</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #0070c1;">valor</span>&nbsp;=</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
               style="color: #795e26;">parseInt</span>(<span
               style="color: #001080;">req</span>.<span
               style="color: #001080;">body</span>,&nbsp;<span
               style="color: #098658;">10</span>);</div>
-        <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(!<span
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #af00db;">if</span>&nbsp;(!<span
               style="color: #795e26;">isNaN</span>(<span
               style="color: #0070c1;">valor</span>))&nbsp;{</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">/**</span>
-        </div>
-        <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
-              style="color: #0000ff;">@type</span><span
-              style="color: #008000;">&nbsp;</span><span
-              style="color: #267f99;">{import("./tipos").</span></div>
-        <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Registro}&nbsp;*/</span>
-        </div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0070c1;">entrada</span>&nbsp;=&nbsp;{</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #001080;">tipo</span><span
-              style="color: #001080;">:</span>&nbsp;<span
-              style="color: #a31515;">"Entrada"</span>,</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #001080;">valor</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;};</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
               style="color: #af00db;">await</span>&nbsp;<span
-              style="color: #0070c1;">bd</span>.<span
-              style="color: #795e26;">set</span>(<span
-              style="color: #a31515;">`entrada</span><span
-              style="color: #0000ff;">${</span><span
-              style="color: #0070c1;">id</span><span
-              style="color: #0000ff;">}</span><span
-              style="color: #a31515;">`</span>,</div>
+              style="color: #0070c1;">dispositivo</span>.<span
+              style="color: #795e26;">updateOne</span>(</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<span
+              style="color: #001080;">_id</span><span
+              style="color: #001080;">:</span>&nbsp;<span
+              style="color: #0070c1;">id</span>&nbsp;},</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">$set</span><span
+              style="color: #001080;">:</span>&nbsp;{</div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">entrada</span><span
+              style="color: #001080;">:</span>&nbsp;<span
+              style="color: #0070c1;">valor</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #0070c1;">entrada</span>);</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0070c1;">uuid</span>&nbsp;=</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #008000;">//&nbsp;@ts-ignore</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #001080;">uuidAPIKey</span>.<span
-              style="color: #795e26;">create</span>();</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">/**</span>
-        </div>
+              style="color: #008000;">/**</span></div>
         <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
               style="color: #0000ff;">@type</span><span
               style="color: #008000;">&nbsp;</span><span
               style="color: #267f99;">{import("./tipos").</span></div>
         <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Registro}&nbsp;*/</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;historico}&nbsp;*/</span>
         </div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
               style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0070c1;">histórico</span>&nbsp;=&nbsp;{</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #001080;">tipo</span><span
-              style="color: #001080;">:</span>&nbsp;<span
-              style="color: #a31515;">"Histórico"</span>,</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">modelo</span>&nbsp;=&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
               style="color: #001080;">dispositivoId</span><span
               style="color: #001080;">:</span>&nbsp;<span
               style="color: #0070c1;">id</span>,</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
               style="color: #001080;">valor</span>,</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
               style="color: #001080;">timestamp</span><span
               style="color: #001080;">:</span>&nbsp;<span
               style="color: #267f99;">Date</span>.<span
               style="color: #795e26;">now</span>()</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;};</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #af00db;">await</span>&nbsp;<span
-              style="color: #0070c1;">bd</span>.<span
-              style="color: #795e26;">set</span>(<span
-              style="color: #0070c1;">uuid</span>.<span
-              style="color: #001080;">uuid</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #0070c1;">histórico</span>);</div>
-        <div>&nbsp;&nbsp;}</div>
-        <div>&nbsp;&nbsp;<span style="color: #001080;">res</span>.<span
+              style="color: #af00db;">await</span>&nbsp;<span
+              style="color: #0070c1;">historico</span>.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #795e26;">insertOne</span>(<span
+              style="color: #0070c1;">modelo</span>);</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div>&nbsp;&nbsp;}&nbsp;<span
+              style="color: #af00db;">catch</span>&nbsp;(<span
+              style="color: #001080;">e</span>)&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">console</span>.<span
+              style="color: #795e26;">log</span>(<span
+              style="color: #001080;">e</span>);</div>
+        <div>&nbsp;&nbsp;}&nbsp;<span
+              style="color: #af00db;">finally</span>&nbsp;{</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #001080;">res</span>.<span
               style="color: #795e26;">send</span>(<span
               style="color: #a31515;">""</span>);</div>
-        <div>}</div><br>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #0070c1;">client</span>.<span
+              style="color: #795e26;">close</span>();</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div>
         <div><span style="color: #795e26;">module</span>.<span
               style="color: #795e26;">exports</span>&nbsp;=&nbsp;<span
               style="color: #795e26;">agregaEntrada</span>;</div>

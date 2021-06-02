@@ -132,7 +132,6 @@ class MiNav extends HTMLElement {
               <li><p><a href="/f_iot/6_no_rel.html">Diseño no Relacional</a></p></li>
               <li><p><a href="/f_iot/7_instrucciones.html">Instrucciones</a></p></li>
               <li><p><a href="/f_iot/8_archivos.html">Archivos</a></p></li>
-              <li><p><a href="/f_iot/9_tipos.html">servicios/tipos.js</a></p></li>
               <li><p><a href="/f_iot/10_index_html.html">www/index.html</a></p></li>
               <li><p><a href="/f_iot/11_CtrlMovil.html">www/js/CtrlMovil.js</a></p></li>
               <li><p><a href="/f_iot/12_dispositivo.html">www/dispositivo.html</a></p></li>
@@ -145,8 +144,9 @@ class MiNav extends HTMLElement {
               <li><p><a href="/f_iot/17_proxyRecuperaSalida.html">www/js/proxyRecuperaSalida.js</a></p></li>
               <li><p><a href="/f_iot/20_estilos.html">www/css/estilos.css</a></p></li>
               <li><p><a href="/f_iot/21_footer.html">www/js/mi-footer.js</a></p></li>
-              <li><p><a href="/f_iot/22_b.html">b.js</a></p></li>
               <li><p><a href="/f_iot/23_index_js.html">index.js</a></p></li>
+              <li><p><a href="/f_iot/9_tipos.html">servicios/tipos.js</a></p></li>
+              <li><p><a href="/f_iot/22_utilsrv.html">servicios/utilsrv.js</a></p></li>
               <li><p><a href="/f_iot/24_agregaEntrada.html">servicios/agregaEntrada.js</a></p></li>
               <li><p><a href="/f_iot/25_agregaSalida.html">servicios/agregaSalida.js</a></p></li>
               <li><p><a href="/f_iot/27_recuperaEntrada.html">servicios/recuperaEntrada.js</a></p></li>

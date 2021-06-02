@@ -29,6 +29,10 @@
               style="color: #795e26;">require</span>(<span
               style="color: #a31515;">"path"</span>);</div>
         <div><span style="color: #0000ff;">const</span>&nbsp;<span
+              style="color: #795e26;">cors</span>&nbsp;=&nbsp;<span
+              style="color: #795e26;">require</span>(<span
+              style="color: #a31515;">'cors'</span>);</div>
+        <div><span style="color: #0000ff;">const</span>&nbsp;<span
               style="color: #795e26;">agregaEntrada</span>&nbsp;=&nbsp;<span
               style="color: #795e26;">require</span>(</div>
         <div>&nbsp;&nbsp;<span
@@ -90,14 +94,32 @@
               style="color: #a31515;">"/entrada/:id"</span>,</div>
         <div>&nbsp;&nbsp;<span style="color: #795e26;">recuperaEntrada</span>);
         </div>
+        <div><span
+              style="color: #008000;">/*&nbsp;Los&nbsp;recursos&nbsp;con&nbsp;cors&nbsp;pueden</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;recibir&nbsp;solicitudes&nbsp;desde</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;cualquier&nbsp;dirección&nbsp;de</span>
+        </div>
+        <div><span style="color: #008000;">&nbsp;*&nbsp;internet.</span></div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;Son&nbsp;los&nbsp;servicios&nbsp;que&nbsp;utilizan</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;*&nbsp;los&nbsp;dispositivos&nbsp;IoT.&nbsp;*/</span>
+        </div>
         <div><span style="color: #0070c1;">app</span>.<span
               style="color: #795e26;">post</span>(<span
-              style="color: #a31515;">"/entrada/:id"</span>,</div>
+              style="color: #a31515;">"/entrada/:id"</span>,&nbsp;<span
+              style="color: #795e26;">cors</span>(),</div>
         <div>&nbsp;&nbsp;<span style="color: #795e26;">agregaEntrada</span>);
         </div>
         <div><span style="color: #0070c1;">app</span>.<span
               style="color: #795e26;">get</span>(<span
-              style="color: #a31515;">"/salida/:id"</span>,</div>
+              style="color: #a31515;">"/salida/:id"</span>,&nbsp;<span
+              style="color: #795e26;">cors</span>(),</div>
         <div>&nbsp;&nbsp;<span style="color: #795e26;">recuperaSalida</span>);
         </div>
         <div><span style="color: #0070c1;">app</span>.<span

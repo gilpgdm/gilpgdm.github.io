@@ -26,19 +26,12 @@
               style="color: #008000;">&nbsp;&nbsp;&nbsp;por&nbsp;DojoDave&nbsp;y&nbsp;Tom&nbsp;Igoe&nbsp;*/</span>
         </div><br>
         <div><span
-              style="color: #008000;">/*&nbsp;Pin&nbsp;para&nbsp;el&nbsp;botón&nbsp;flash.&nbsp;*/</span>
+              style="color: #008000;">/*&nbsp;Pin&nbsp;para&nbsp;el&nbsp;botón.&nbsp;*/</span>
         </div>
         <div><span style="color: #0000ff;">const</span>&nbsp;<span
               style="color: #0000ff;">int</span>&nbsp;<span
-              style="color: #001080;">BOTON_FLASH</span>&nbsp;=&nbsp;<span
-              style="color: #098658;">0</span>;</div>
-        <div><span
-              style="color: #008000;">/*&nbsp;Pin&nbsp;con&nbsp;LED&nbsp;cableado.&nbsp;*/</span>
-        </div>
-        <div><span style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0000ff;">int</span>&nbsp;<span
-              style="color: #001080;">LED_INTEGRADO_2</span>&nbsp;=&nbsp;&nbsp;<span
-              style="color: #098658;">2</span>;</div><br>
+              style="color: #001080;">BOTON</span>&nbsp;=&nbsp;<span
+              style="color: #098658;">0</span>;</div><br>
         <div><span style="color: #0000ff;">int</span>&nbsp;<span
               style="color: #001080;">estadoDelBoton</span>&nbsp;=&nbsp;<span
               style="color: #098658;">0</span>;</div><br>
@@ -48,21 +41,19 @@
               style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Inicializa&nbsp;el&nbsp;pin&nbsp;para</span>
         </div>
         <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LED_INTEGRADO_2&nbsp;como&nbsp;salida.</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LED_BUILTIN&nbsp;como&nbsp;salida.&nbsp;*/</span>
         </div>
-        <div><span style="color: #008000;">&nbsp;&nbsp;*/</span></div>
-        <div>&nbsp;&nbsp;<span style="color: #795e26;">pinMode</span>(</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #001080;">LED_INTEGRADO_2</span>,&nbsp;<span
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">pinMode</span>(<span
+              style="color: #0000ff;">LED_BUILTIN</span>,&nbsp;<span
               style="color: #0000ff;">OUTPUT</span>);</div>
         <div><span
               style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Initializa&nbsp;el&nbsp;pin&nbsp;para</span>
         </div>
         <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BOTÓN_FLASH&nbsp;como&nbsp;entrada.&nbsp;*/</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BOTON&nbsp;como&nbsp;entrada.&nbsp;*/</span>
         </div>
         <div>&nbsp;&nbsp;<span style="color: #795e26;">pinMode</span>(<span
-              style="color: #001080;">BOTON_FLASH</span>,&nbsp;<span
+              style="color: #001080;">BOTON</span>,&nbsp;<span
               style="color: #0000ff;">INPUT</span>);</div>
         <div>}</div><br>
         <div><span style="color: #0000ff;">void</span>&nbsp;<span
@@ -71,7 +62,7 @@
               style="color: #001080;">estadoDelBoton</span>&nbsp;=</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
               style="color: #795e26;">digitalRead</span>(<span
-              style="color: #001080;">BOTON_FLASH</span>);</div>
+              style="color: #001080;">BOTON</span>);</div>
         <div><span
               style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Checa&nbsp;si&nbsp;el&nbsp;botón&nbsp;está</span>
         </div>
@@ -85,22 +76,22 @@
               style="color: #001080;">estadoDelBoton</span>&nbsp;==&nbsp;<span
               style="color: #0000ff;">LOW</span>)&nbsp;{</div>
         <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Enciende&nbsp;el&nbsp;LED.</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Enciende&nbsp;el&nbsp;LED_BUILTIN.</span>
         </div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #795e26;">digitalWrite</span>(</div>
+              style="color: #795e26;">digitalWrite</span>(<span
+              style="color: #0000ff;">LED_BUILTIN</span>,</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #001080;">LED_INTEGRADO_2</span>,&nbsp;<span
               style="color: #0000ff;">LOW</span>);</div>
         <div>&nbsp;&nbsp;}&nbsp;<span style="color: #af00db;">else</span>&nbsp;{
         </div>
         <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Apaga&nbsp;el&nbsp;LED.</span>
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Apaga&nbsp;el&nbsp;LED_BUILTIN.</span>
         </div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #795e26;">digitalWrite</span>(</div>
+              style="color: #795e26;">digitalWrite</span>(<span
+              style="color: #0000ff;">LED_BUILTIN</span>,</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #001080;">LED_INTEGRADO_2</span>,&nbsp;<span
               style="color: #0000ff;">HIGH</span>);</div>
         <div>&nbsp;&nbsp;}</div>
         <div>}</div><br>
