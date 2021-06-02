@@ -9,7 +9,6 @@ const ARCHIVOS = [
   "index.html",
   "LICENSE",
   "site.webmanifest",
-  "sw.js",
   "cmp/mi-nav.js",
   "css/estilos.css",
   "c_multiplataforma/3_nativa.html",
@@ -118,7 +117,7 @@ const ARCHIVOS = [
   "f_iot/19_util.html",
   "f_iot/20_estilos.html",
   "f_iot/21_footer.html",
-  "f_iot/22_b.html",
+  "f_iot/22_utilsrv.html",
   "f_iot/23_index_js.html",
   "f_iot/24_agregaEntrada.html",
   "f_iot/25_agregaSalida.html",
@@ -203,7 +202,8 @@ const ARCHIVOS = [
   "lib/css/ubuntu-v15-latin-italic.woff2",
   "lib/css/ubuntu-v15-latin-regular.woff",
   "lib/css/ubuntu-v15-latin-regular.woff2",
-  "lib/css/ubuntu.css",  "/"
+  "lib/css/ubuntu.css",
+  "/"
 ];
 
 addEventListener("install", evt => {
