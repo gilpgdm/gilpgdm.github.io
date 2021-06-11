@@ -84,13 +84,14 @@
       navigator.userAgent ||
       navigator.vendor ||
       window["opera"];
-    if (/android/i.
+    if (/.*android.*/i.
       test(USER_AGENT)) {
       document.body.classList
         .add("android");
     }
-    if (/iPad|iPhone|iPod|Mac/.
-      test(USER_AGENT) &&
+    if (
+      /.*(iPad|iPhone|iPod|Mac).*/.
+        test(USER_AGENT) &&
       !window.MSStream) {
       document.body.classList.
         add('ios');
