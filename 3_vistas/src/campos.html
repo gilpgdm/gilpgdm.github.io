@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0">
+  <title>Campos</title>
+  <style>
+    /* Flecha abajo sin foco
+    <svg width="24"
+        height="24">
+      <polygon stroke="gray"
+        fill-rule="evenodd"
+        points="7 10 12 15 17 10">
+      </polygon>
+    </svg> */
+    /* Flecha arriba foco
+    <svg width="24" height="24">
+      <polygon stroke="#6a0080"
+          fill-rule="evenodd"
+          points="7 15 12 10 17 15">
+      </polygon>
+    </svg> */
+    html {
+      --flAb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon stroke='gray' fill-rule='evenodd' points='7 10 12 15 17 10'%3E%3C/polygon%3E%3C/svg%3E");
+      --flArr: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon stroke='%236a0080' fill-rule='evenodd' points='7 15 12 10 17 15'%3E%3C/polygon%3E%3C/svg%3E%0A");
+      --colTxt: black;
+      --colBk: white;
+      --colCmp: gray;
+      --colCmpFc: #6a0080;
+      --colCmpEr: #b00020;
+      --colCmpBk: #F5F5F5;
+      --colCmpBkHv: #EEEEEE;
+      --colCmpBkFc: #E0E0E0;
+      --colCmpOp: white;
+      --colCmpOpBk: #9c27b0;
+      --fntFam: -apple-system,
+        BlinkMacSystemFont,
+        Roboto, sans-serif;
+      color: var(--colTxt);
+      font-family: var(--fntFam);
+      background-color:
+        var(--colBk);
+    }
+
+    /* Quita un borde rojo que
+     * coloca Firefox. */
+    :-moz-ui-invalid {
+      box-shadow: none;
+    }
+
+    cmp-din {
+      display: block;
+      position: relative;
+      color: var(--colCmp);
+      background-color:
+        var(--colCmpBk);
+      border-top-left-radius: 4px;
+      border-top-right-radius:
+        4px;
+      margin: 1rem 0;
+      padding: 1.25rem 0 0 0;
+    }
+
+    cmp-din:hover {
+      background-color:
+        var(--colCmpBkHv);
+    }
+
+    cmp-din:focus-within {
+      background-color:
+        var(--colCmpBkFc);
+    }
+
+    cmp-din label {
+      position: absolute;
+      top: 1.75rem;
+      left: 1rem;
+      font-size: 1rem;
+      color: var(--colCmp);
+      transition: 0.3s ease-in;
+    }
+
+    cmp-din .valor+label,
+    cmp-din :focus+label,
+    cmp-din [type=file]+label {
+      top: 0.5rem;
+      font-size: 0.75rem;
+    }
+
+    cmp-din>output,
+    cmp-din select,
+    cmp-din input,
+    cmp-din textarea {
+      display: block;
+      box-sizing: border-box;
+      padding:
+        0.5rem 1rem 0.5rem 1rem;
+      font-size: 1rem;
+    }
+
+    cmp-din select,
+    cmp-din input,
+    cmp-din textarea {
+      background-color:
+        transparent;
+      font-family: var(--fntFam);
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color:
+        var(--colCmp);
+      resize: none;
+      outline: none;
+      width: 100%;
+      transition: 0.3s ease-in;
+    }
+
+    cmp-din :focus {
+      border-bottom-width: 2px;
+    }
+
+    cmp-din small {
+      display: block;
+      height: 1em;
+      font-size: 0.75rem;
+      padding-left: 1rem;
+      background-color:
+        var(--colBk);
+      transition: 0.3s ease-in;
+    }
+
+    cmp-din :focus+label {
+      color: var(--colCmpFc);
+    }
+
+    cmp-din :focus {
+      border-bottom-color:
+        var(--colCmpFc);
+    }
+
+    cmp-din :invalid,
+    cmp-din :focus:invalid,
+    cmp-din .error,
+    cmp-din :focus.error {
+      border-bottom-color:
+        var(--colCmpEr);
+      outline: none;
+    }
+
+    cmp-din :invalid+label,
+    cmp-din .error+label {
+      color: var(--colCmpEr);
+    }
+
+    cmp-din :invalid~small,
+    cmp-din .error~small {
+      color: var(--colCmpEr);
+    }
+
+    cmp-din select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-right: 1rem;
+      background-repeat:
+        no-repeat;
+      background-position-x:
+        right;
+      background-position-y:
+        center;
+      background-image:
+        var(--flAb);
+    }
+
+    cmp-din select:focus {
+      background-image:
+        var(--flArr);
+    }
+
+    cmp-din option {
+      padding: 0.3rem 1rem;
+      background-color:
+        var(--colBk);
+    }
+
+    cmp-din option:checked {
+      color: var(--colCmpOp);
+      background-color:
+        var(--colCmpOpBk);
+    }
+  </style>
+</head>
+<body>
+  <h1>Campos</h1>
+  <cmp-din>
+    <output id="saludo">
+      Hola
+    </output>
+    <label for="Saludo">
+      Saludo
+    </label>
+  </cmp-din>
+  <cmp-din>
+    <input id="nombre" required>
+    <label for="nombre">
+      Nombre*
+    </label>
+    <small>*Requerido</small>
+  </cmp-din>
+  <cmp-din>
+    <input id="email"
+        type="email">
+    <label for="email">
+      Email
+    </label>
+  </cmp-din>
+  <cmp-din>
+    <textarea id="dirección"
+        rows="3"
+        required></textarea>
+    <label for="dirección">
+      Dirección
+    </label>
+  </cmp-din>
+  <cmp-din>
+    <select id="grupo" rows="3">
+      <option value=""></option>
+      <option value="IC21">
+        IC-21
+      </option>
+      <option value="IC22">
+        IC-22
+      </option>
+      <option value="IC23">
+        IC-23
+      </option>
+    </select>
+    <label for="grupo">
+      Grupo
+    </label>
+  </cmp-din>
+  <script>
+    class CmpDin
+      extends HTMLElement {
+      connectedCallback() {
+        setTimeout(
+          () => this.prepara(),
+          100);
+      }
+      prepara() {
+        /**
+         * @type {
+            HTMLInputElement|
+            HTMLTextAreaElement|
+            HTMLSelectElement|
+            HTMLOutputElement|
+            null} */
+        this._elem =
+          this.querySelector(
+            `input, textarea,
+            select, output`);
+        this.addEventListener(
+          "focus",
+          () => this.analiza(),
+          true);
+        this.addEventListener(
+          "focusout",
+          () => this.analiza(),
+          true);
+        this.analiza();
+      }
+      analiza() {
+        const e = this._elem;
+        if (e) {
+          if (!e.validity.
+            badInput &&
+            e.value.
+              length === 0) {
+            e.classList.
+              remove("valor");
+          } else {
+            e.classList.
+              add("valor");
+          }
+        }
+      }
+    }
+    customElements.define(
+      "cmp-din", CmpDin);
+  </script>
+</body>
+</html>

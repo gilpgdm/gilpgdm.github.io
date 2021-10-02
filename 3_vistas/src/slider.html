@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0">
+  <title>Sliders</title>
+  <style>
+    html {
+      --colTxt: black;
+      --colBk: white;
+      --colSld: #6a0080;
+      --colSldHv: #6a008033;
+      --colSldFc: #6a008044;
+      --colSldAc: #6a008055;
+      --colSldBk: #d05ce3;
+      --fntFam: -apple-system,
+        BlinkMacSystemFont,
+        Roboto, sans-serif;
+      color: var(--colTxt);
+      font-family: var(--fntFam);
+      background-color:
+        var(--colBk);
+    }
+
+    cmp-sld {
+      display: block;
+      margin: 1rem 0;
+    }
+
+    cmp-sld input {
+      vertical-align: middle;
+      -webkit-appearance: none;
+      background-image: linear-gradient(to right, var(--colSld) 0%, var(--colSld) 50%, var(--colSldBk) 50%, var(--colSldBk) 100%);
+      border-radius: 3px;
+      height: 6px;
+    }
+
+    cmp-sld input:focus {
+      outline: none;
+    }
+
+    cmp-sld input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background-color:
+        var(--colSld);
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+    }
+
+    cmp-sld input:hover::-webkit-slider-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSldHv);
+    }
+
+    cmp-sld input:focus::-webkit-slider-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSldFc);
+    }
+
+    cmp-sld input:active::-webkit-slider-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSldAc);
+    }
+
+    cmp-sld input::-moz-range-thumb {
+      background-color:
+        var(--colSld);
+      width: 20px;
+      height: 20px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    cmp-sld input:hover::-moz-range-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSldHv);
+    }
+
+    cmp-sld input:focus::-moz-range-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSldFc);
+    }
+
+    cmp-sld input:active::-moz-range-thumb {
+      box-shadow: 0 0 0 0.5rem var(--colSldAc);
+    }
+  </style>
+</head>
+<body>
+  <h1>Sliders</h1>
+  <cmp-sld>
+    <label>
+      Muestra resultados
+      <input type="range" min="1"
+          max="10">
+    </label>
+  </cmp-sld>
+  <script>
+    class CmpSld
+      extends HTMLElement {
+      connectedCallback() {
+        setTimeout(
+          () => this.prepara(),
+          100);
+      }
+      prepara() {
+        /** @private */
+        this._input =
+          this.querySelector(
+            "input");
+        if (this._input) {
+          this._input.
+            addEventListener(
+              "input", () =>
+              this.analiza());
+          this.analiza();
+        }
+      }
+      analiza() {
+        const i = this._input;
+        if (i) {
+          const v =
+            i.valueAsNumber;
+          const min =
+            parseFloat(i.min);
+          const max =
+            parseFloat(i.max);
+          const value =
+            (v - min) /
+            (max - min) * 100;
+          i.style.background = `linear-gradient(to right, var(--colSld) 0%, var(--colSld) ${value}%, var(--colSldBk) ${value}%, var(--colSldBk) 100%)`;
+        }
+      }
+    }
+    customElements.define(
+      "cmp-sld", CmpSld);
+  </script>
+</body>
+</html>

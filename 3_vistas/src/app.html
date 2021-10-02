@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+      content="width=device-width,
+              initial-scale=1.0">
+  <title>App</title>
+  <style>
+    /* El font preferido para
+     * Android es Roboto. */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+    html {
+      --colTxt: black;
+      --colBk: white;
+      --colPrim: white;
+      --colPrimBk: #9c27b0;
+      /* Los 2 primeros fonts son
+       * para apple. */
+      --fntFam: -apple-system,
+        BlinkMacSystemFont,
+        Roboto, sans-serif;
+      color: var(--colTxt);
+      font-family: var(--fntFam);
+      background-color:
+        var(--colBk);
+    }
+
+    /* El margin-top es más grande
+     * para que no lo tape la
+     * barra de la aplicación. */
+    body {
+      margin: 4rem 1rem 1rem 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      padding: 1rem;
+      font-size: 1.25rem;
+      color: var(--colPrim);
+      background-color:
+        var(--colPrimBk);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    .ios h1 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>App</h1>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <p>x</p>
+  <script>
+    const USER_AGENT =
+      navigator.userAgent ||
+      navigator.vendor ||
+      window["opera"];
+    if (/.*android.*/i.
+      test(USER_AGENT)) {
+      document.body.classList
+        .add("android");
+    }
+    if (
+      /.*(iPad|iPhone|iPod|Mac).*/.
+        test(USER_AGENT) &&
+      !window.MSStream) {
+      document.body.classList.
+        add('ios');
+    }
+  </script>
+</body>
+</html>

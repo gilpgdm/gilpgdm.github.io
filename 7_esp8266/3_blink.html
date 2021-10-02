@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="cache-control" content="max-age=0" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>Blink.ino</h1>
+    <figure>
+      <img src="img/Video-Blink.gif" alt="Video de la placa">
+    </figure>
+    <div class="lectura">
+      <p>
+        Para empezar a programar, revisa que al conectar tu dispositivo ESP8266,
+        Arduino IDE lo reconozca y tenga habilitado el menú
+        <q>Herramientas > Puerto</q>;
+        si no es así, tienes que revisar que el driver para Windows esté bien
+        cargado.
+      </p>
+      <p>
+        <a href="https://drive.google.com/file/d/1dXv5jirpTN09kPwgxMthgKtV-fc2YOU0/view?usp=sharing"
+            target="_blank">Revisa que el driver para Windows esté bien
+          cargado.</a>
+      </p>
+      <p>
+        <a href="https://drive.google.com/file/d/1buuaEpXd02E8eeHhDwzxcC4sZsvcVV5A/view?usp=sharing"
+            target="_blank">Ve como capturar y ejecutar un ejemplo parecido a
+          este.</a>
+      </p>
+      <p>
+        <a href="https://drive.google.com/file/d/1yqVaTYYt8BxQLhvmZW2bwdiTkqxPQKcB/view?usp=sharing"
+            target="_blank">Ve como desplegar este ejemplo en Tinkercad y
+          compartirlo.</a>
+      </p>
+    </div>
+    <muestra-codigo>
+      <div>
+        <div><span
+              style="color: #008000;">/*&nbsp;Este&nbsp;programa&nbsp;es&nbsp;un&nbsp;derivado&nbsp;de</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;ESP8266&nbsp;Blink&nbsp;by&nbsp;Simon&nbsp;Peter&nbsp;*/</span>
+        </div><br>
+        <div><span
+              style="color: #008000;">/**&nbsp;Función&nbsp;que&nbsp;se&nbsp;invoca&nbsp;una&nbsp;sola</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;vez&nbsp;al&nbsp;inicio&nbsp;del&nbsp;programa.&nbsp;*/</span>
+        </div>
+        <div><span style="color: #0000ff;">void</span>&nbsp;<span
+              style="color: #795e26;">setup</span>()&nbsp;{</div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Todas&nbsp;las&nbsp;placas&nbsp;compatibles</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;con&nbsp;Arduino&nbsp;incluyen&nbsp;un&nbsp;led</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;de&nbsp;prueba&nbsp;ligado&nbsp;a&nbsp;un&nbsp;pin</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cuyo&nbsp;número&nbsp;está&nbsp;definido&nbsp;por</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;la&nbsp;constante&nbsp;LED_BUILTIN.</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inicializa&nbsp;el&nbsp;pin&nbsp;para</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LED_BUILTIN&nbsp;como&nbsp;salida.&nbsp;*/</span>
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">pinMode</span>(<span
+              style="color: #0000ff;">LED_BUILTIN</span>,&nbsp;<span
+              style="color: #0000ff;">OUTPUT</span>);</div>
+        <div>}</div><br>
+        <div><span
+              style="color: #008000;">/*&nbsp;Función&nbsp;que&nbsp;se&nbsp;invoca</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;repetidamente&nbsp;mientras&nbsp;el</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;programa&nbsp;esté&nbsp;activo.&nbsp;*/</span>
+        </div>
+        <div><span style="color: #0000ff;">void</span>&nbsp;<span
+              style="color: #795e26;">loop</span>()&nbsp;{</div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Enciende&nbsp;el&nbsp;LED_BUILTIN&nbsp;(LOW</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;es&nbsp;el&nbsp;nivel&nbsp;de&nbsp;voltaje).&nbsp;*/</span>
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">digitalWrite</span>(<span
+              style="color: #0000ff;">LED_BUILTIN</span>,&nbsp;<span
+              style="color: #0000ff;">LOW</span>);</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">delay</span>(<span
+              style="color: #098658;">1000</span>);<span
+              style="color: #008000;">&nbsp;//&nbsp;Espera&nbsp;1&nbsp;segundo</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Apaga&nbsp;el&nbsp;LED_BUILTIN&nbsp;haciendo</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;que&nbsp;el&nbsp;nivel&nbsp;de&nbsp;voltaje&nbsp;sea</span>
+        </div>
+        <div><span
+              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HIGH.&nbsp;*/</span>
+        </div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">digitalWrite</span>(<span
+              style="color: #0000ff;">LED_BUILTIN</span>,&nbsp;<span
+              style="color: #0000ff;">HIGH</span>);</div>
+        <div>&nbsp;&nbsp;<span style="color: #795e26;">delay</span>(<span
+              style="color: #098658;">1000</span>);</div>
+        <div>}</div><br>
+      </div>
+    </muestra-codigo>
+    <mi-footer></mi-footer>
+  </layout-cajon>
+</body>
+</html>
