@@ -1,20 +1,8 @@
-import "../lib/mi-footer.js";
 import "../cmp/mi-nav.js";
 import "../lib/layout-cajon.js";
-import { muestraError, setTitle } from "../lib/utilHtml.js";
+import "../lib/mi-footer.js";
+import { registraServiceWorker, setTitle } from "../lib/utilHtml.js";
 
-registraServiceWorker();
+// registraServiceWorker();
 
 document.addEventListener("DOMContentLoaded", () => setTitle("gilpgdm"));
-
-async function registraServiceWorker() {
-  try {
-    if (navigator.serviceWorker) {
-      const registro = await navigator.serviceWorker.register("/sw.js");
-      console.log("Service Worker registrado.");
-      console.log(registro);
-    }
-  } catch (e) {
-    muestraError(e);
-  }
-}
