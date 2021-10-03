@@ -2,7 +2,7 @@ import "../../js/config.js";
 import { Diapositiva } from "../../lib/Diapositiva.js";
 import "../../lib/muestra-codigo.js";
 
-export class E9Descendiente extends Diapositiva {
+export class E3Botones extends Diapositiva {
  /** @override */
  connectedCallback() {
   super.connectedCallback();
@@ -134,4 +134,4 @@ export class E9Descendiente extends Diapositiva {
  }
 }
 
-customElements.define("e9-descendiente", E9Descendiente);
+customElements.define("e3-botones", E3Botones);

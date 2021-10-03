@@ -2,7 +2,7 @@ import "../../js/config.js";
 import { Diapositiva } from "../../lib/Diapositiva.js";
 import "../../lib/muestra-codigo.js";
 
-export class H9Lista extends Diapositiva {
+export class H3Archivos extends Diapositiva {
  /** @override */
  connectedCallback() {
   super.connectedCallback();
@@ -94,4 +94,4 @@ export class H9Lista extends Diapositiva {
  }
 }
 
-customElements.define("h9-lista", H9Lista);
+customElements.define("h3-archivos", H3Archivos);

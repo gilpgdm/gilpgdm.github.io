@@ -3,6 +3,7 @@
  * http://creativecommons.org/licenses/by/4.0/. */
 import "../1_multiplataforma/cmp/nativas-contenido.js";
 import "../2_multimedia/cmp/multimedia-contenido.js";
+import "../3_vistas/cmp/vistas-contenido.js";
 
 class MiNav extends HTMLElement {
  connectedCallback() {
@@ -32,21 +33,11 @@ class MiNav extends HTMLElement {
            </details>
          </li>
          <li>
-           <details>
-             <summary>
-               <h4><a href="/3_vistas/index.html">Vistas móviles</a></h4>
-             </summary>
-             <ol>
-               <li><p><a href="/3_vistas/1_app.html">Una app básica</a></p></li>
-               <li><p><a href="/3_vistas/2_campos.html">Campos</a></p></li>
-               <li><p><a href="/3_vistas/3_interruptores.html">Interruptores</a></p></li>
-               <li><p><a href="/3_vistas/4_sliders.html">Sliders</a></p></li>
-               <li><p><a href="/3_vistas/5_progreso.html">Indicadores de progreso</a></p></li>
-               <li><p><a href="/3_vistas/5_botones.html">Botones</a></p></li>
-               <li><p><a href="/3_vistas/6_navegacion.html">Navegación</a></p></li>
-               <li><p><a href="/3_vistas/7_gps.html">GPS</a></p></li>
-               <li><p><a href="/3_vistas/8_archivos.html">Archivos y cámara</a></p></li>
-             </ol>
+          <details>
+           <summary>
+            <h4><a href="/3_vistas/index.html">Vistas móviles</a></h4>
+           </summary>
+           <vistas-contenido></vistas-contenido>
            </details>
          </li>
          <li>
@@ -74,8 +65,8 @@ class MiNav extends HTMLElement {
                <li><p><a href="/4_pwa/17_principal.html">lib/css/principal.css</a></p></li>
                <li><p><a href="/4_pwa/18_ripple.html">lib/css/ripple.css</a></p></li>
                <li><p><a href="/4_pwa/19_botones.html">lib/css/botones.css</a></p></li>
-               <li><p><a href="/4_pwa/20_cmp-din_js.html">lib/cmp-din.js</a></p></li>
-               <li><p><a href="/4_pwa/21_cmp-din_css.html">lib/css/cmp-din.css</a></p></li>
+               <li><p><a href="/4_pwa/20_cmp-din_js.html">lib/cm-din.js</a></p></li>
+               <li><p><a href="/4_pwa/21_cmp-din_css.html">lib/css/cm-din.css</a></p></li>
                <li><p><a href="/4_pwa/23_material-icons.html">lib/css/material-icons.css</a></p></li>
                <li><p><a href="/4_pwa/24_MaterialIcons-Regular_codepoints.html">lib/fonts/MaterialIcons-Regular.codepoints</a></p></li>
                <li><p><a href="/4_pwa/25_MaterialIcons-Regular.html">lib/fonts/MaterialIcons-Regular.ttf</a></p></li>
