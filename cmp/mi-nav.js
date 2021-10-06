@@ -46,31 +46,31 @@ class MiNav extends HTMLElement {
                <h4><a href="/4_pwa/index.html">PWA</a></h4>
              </summary>
              <ol type="A">
-               <li><p><a href="/4_pwa/2_instrucciones.html">Instrucciones</a></p></li>
-               <li><p><a href="/4_pwa/3_archivos.html">Archivos</a></p></li>
-               <li><p><a href="/4_pwa/4_ayuda.html">ayuda.html</a></p></li>
-               <li><p><a href="/4_pwa/5_index.html">index.html</a></p></li>
-               <li><p><a href="/4_pwa/6_CtrlRecomienda.html">js/CtrlRecomienda.js</a></p></li>
-               <li><p><a href="/4_pwa/7_config.html">js/config.js</a></p></li>
-               <li><p><a href="/4_pwa/22_movil.html">lib/movil.js</a></p></li>
-               <li><p><a href="/4_pwa/8_mi-nav_js.html">js/mi-nav.js</a></p></li>
-               <li><p><a href="/4_pwa/9_mi-nav_css.html">lib/css/mi-nav.css</a></p></li>
-               <li><p><a href="/4_pwa/10_favicon.html">favicon.ico</a></p></li>
-               <li><p><a href="/4_pwa/11_icono256.html">img/icono256.png</a></p></li>
-               <li><p><a href="/4_pwa/12_icono1024.html">img/icono1024.png</a></p></li>
-               <li><p><a href="/4_pwa/13_icono2048.html">img/icono2048.png</a></p></li>
-               <li><p><a href="/4_pwa/14_webmanifest.html">site.webmanifest</a></p></li>
-               <li><p><a href="/4_pwa/15_sw.html">sw.js</a></p></li>
-               <li><p><a href="/4_pwa/16_estilos.html">css/estilos.css</a></p></li>
-               <li><p><a href="/4_pwa/17_principal.html">lib/css/principal.css</a></p></li>
-               <li><p><a href="/4_pwa/18_ripple.html">lib/css/ripple.css</a></p></li>
-               <li><p><a href="/4_pwa/19_botones.html">lib/css/botones.css</a></p></li>
-               <li><p><a href="/4_pwa/20_cmp-din_js.html">lib/cm-din.js</a></p></li>
-               <li><p><a href="/4_pwa/21_cmp-din_css.html">lib/css/cm-din.css</a></p></li>
-               <li><p><a href="/4_pwa/23_material-icons.html">lib/css/material-icons.css</a></p></li>
-               <li><p><a href="/4_pwa/24_MaterialIcons-Regular_codepoints.html">lib/fonts/MaterialIcons-Regular.codepoints</a></p></li>
-               <li><p><a href="/4_pwa/25_MaterialIcons-Regular.html">lib/fonts/MaterialIcons-Regular.ttf</a></p></li>
-               <li><p><a href="29_LICENSE.html">LICENSE</a></p></li>
+               <li><p><a href="/4_pwa/a_pwa.html">Instrucciones</a></p></li>
+               <li><p><a href="/4_pwa/b_archivos.html">Archivos</a></p></li>
+               <li><p><a href="/4_pwa/c_ayuda.html">ayuda.html</a></p></li>
+               <li><p><a href="/4_pwa/d_index.html">index.html</a></p></li>
+               <li><p><a href="/4_pwa/e_CtrlRecomienda.html">js/CtrlRecomienda.js</a></p></li>
+               <li><p><a href="/4_pwa/f_config.html">js/config.js</a></p></li>
+               <li><p><a href="/4_pwa/g_movil.html">lib/movil.js</a></p></li>
+               <li><p><a href="/4_pwa/h_mi-nav_js.html">js/mi-nav.js</a></p></li>
+               <li><p><a href="/4_pwa/i_mi-nav_css.html">lib/css/mi-nav.css</a></p></li>
+               <li><p><a href="/4_pwa/j_favicon.html">favicon.ico</a></p></li>
+               <li><p><a href="/4_pwa/k_icono256.html">img/icono256.png</a></p></li>
+               <li><p><a href="/4_pwa/l_icono1024.html">img/icono1024.png</a></p></li>
+               <li><p><a href="/4_pwa/m_icono2048.html">img/icono2048.png</a></p></li>
+               <li><p><a href="/4_pwa/n_webmanifest.html">site.webmanifest</a></p></li>
+               <li><p><a href="/4_pwa/o_sw.html">sw.js</a></p></li>
+               <li><p><a href="/4_pwa/p_estilos.html">css/estilos.css</a></p></li>
+               <li><p><a href="/4_pwa/q_principal.html">lib/css/principal.css</a></p></li>
+               <li><p><a href="/4_pwa/r_ripple.html">lib/css/ripple.css</a></p></li>
+               <li><p><a href="/4_pwa/s_botones.html">lib/css/botones.css</a></p></li>
+               <li><p><a href="/4_pwa/t_cmp-din_js.html">lib/cm-din.js</a></p></li>
+               <li><p><a href="/4_pwa/u_cmp-din_css.html">lib/css/cm-din.css</a></p></li>
+               <li><p><a href="/4_pwa/v_material-icons.html">lib/css/material-icons.css</a></p></li>
+               <li><p><a href="/4_pwa/w_MaterialIcons-Regular_codepoints.html">lib/fonts/MaterialIcons-Regular.codepoints</a></p></li>
+               <li><p><a href="/4_pwa/x_MaterialIcons-Regular.html">lib/fonts/MaterialIcons-Regular.ttf</a></p></li>
+               <li><p><a href="/4_pwa/y_LICENSE.html">LICENSE</a></p></li>
              </ol>
            </details>
          </li>
