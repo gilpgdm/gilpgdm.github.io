@@ -4,6 +4,7 @@ import "./gilpgdm-index.js";
 import "../cmp/sw-index.js";
 import "../1_multiplataforma/cmp/nativas-print.js";
 import "../2_multimedia/cmp/multimedia-print.js";
+import "../3_vistas/cmp/vistas-print.js";
 
 export class GilPGDMPrint extends Diapositiva {
  /** @override */
@@ -28,8 +29,8 @@ export class GilPGDMPrint extends Diapositiva {
      <mi-footer></mi-footer>
     </section>
     <section>
-     <h1 class="presentación">3. Elementos básicos de HTML</h1>
-     <elementos-print></elementos-print>
+     <h1 class="presentación">3. Vistas móviles</h1>
+     <vistas-print></vistas-print>
      <mi-footer></mi-footer>
     </section>
     <section>

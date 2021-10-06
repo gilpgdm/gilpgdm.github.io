@@ -6,22 +6,22 @@
    content="width=device-width">
  <title>Campos</title>
  <style>
-  /* Flecha abajo sin foco
-   <svg width="24" height="24">
-    <polygon stroke="gray"
-      fill-rule="evenodd"
-      points="7 10 12 15 17 10">
-    </polygon>
-   </svg> */
-  /* Flecha arriba foco
-   <svg width="24" height="24">
-    <polygon stroke="#6a0080"
-      fill-rule="evenodd"
-      points="7 15 12 10 17 15">
-    </polygon>
-   </svg> */
   html {
+   /* Flecha abajo sin foco
+      <svg width="24" height="24">
+       <polygon stroke="gray"
+         fill-rule="evenodd"
+         points="7 10 12 15 17 10">
+       </polygon>
+      </svg> */
    --flAb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon stroke='gray' fill-rule='evenodd' points='7 10 12 15 17 10'%3E%3C/polygon%3E%3C/svg%3E");
+   /* Flecha arriba foco
+      <svg width="24" height="24">
+       <polygon stroke="#6a0080"
+         fill-rule="evenodd"
+         points="7 15 12 10 17 15">
+       </polygon>
+      </svg> */
    --flArr: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon stroke='%236a0080' fill-rule='evenodd' points='7 15 12 10 17 15'%3E%3C/polygon%3E%3C/svg%3E%0A");
    --colTxt: black;
    --colBk: white;
@@ -87,8 +87,7 @@
 
   cm-din>output,
   cm-din select,
-  cm-din input,
-  cm-din textarea {
+  cm-din input {
    display: block;
    box-sizing: border-box;
    font-size: 1rem;
@@ -96,8 +95,7 @@
   }
 
   cm-din select,
-  cm-din input,
-  cm-din textarea {
+  cm-din input {
    background-color: transparent;
    font-family: var(--fntFam);
    border-top: none;
@@ -199,13 +197,6 @@
   <label for="email">Email</label>
  </cm-din>
  <cm-din>
-  <textarea id="dirección" rows="3"
-    required></textarea>
-  <label for="dirección">
-   Dirección
-  </label>
- </cm-din>
- <cm-din>
   <select id="grupo">
    <option value=""></option>
    <option value="IC21">
@@ -225,22 +216,21 @@
    connectedCallback() {
     setTimeout(
      () => this.prepara(),
-     100);
+     100)
    }
    prepara() {
     /**
      * @type {
      *  HTMLInputElement|
-     *  HTMLTextAreaElement|
      *  HTMLSelectElement|
      *  HTMLOutputElement|
      *  null} */
     this._elem = this.
-     querySelector(`input,
-       textarea, select, output`);
+     querySelector(
+      "input, select, output")
     if (this._elem) {
      this.addEventListener("input",
-      () => this.analiza());
+      () => this.analiza())
     }
     this.analiza();
    }
@@ -249,15 +239,15 @@
     if (e) {
      if (!e.validity.badInput &&
       e.value.length === 0) {
-      e.classList.remove("valor");
+      e.classList.remove("valor")
      } else {
-      e.classList.add("valor");
+      e.classList.add("valor")
      }
     }
    }
   }
   customElements.
-   define("cm-din", CmDin);
+   define("cm-din", CmDin)
  </script>
 </body>
 </html>
