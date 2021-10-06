@@ -7,22 +7,6 @@
  <title>Campos</title>
  <style>
   html {
-   /* Flecha abajo sin foco
-      <svg width="24" height="24">
-       <polygon stroke="gray"
-         fill-rule="evenodd"
-         points="7 10 12 15 17 10">
-       </polygon>
-      </svg> */
-   --flAb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon stroke='gray' fill-rule='evenodd' points='7 10 12 15 17 10'%3E%3C/polygon%3E%3C/svg%3E");
-   /* Flecha arriba foco
-      <svg width="24" height="24">
-       <polygon stroke="#6a0080"
-         fill-rule="evenodd"
-         points="7 15 12 10 17 15">
-       </polygon>
-      </svg> */
-   --flArr: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon stroke='%236a0080' fill-rule='evenodd' points='7 15 12 10 17 15'%3E%3C/polygon%3E%3C/svg%3E%0A");
    --colTxt: black;
    --colBk: white;
    --colCmp: gray;
@@ -41,8 +25,8 @@
    background-color: var(--colBk);
   }
 
-  /* Quita un borde rojo que
-     * coloca Firefox. */
+  /* Quita un borde rojo que coloca
+   * Firefox. */
   :-moz-ui-invalid {
    box-shadow: none;
   }
@@ -148,21 +132,6 @@
    color: var(--colCmpEr);
   }
 
-  cm-din select {
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   appearance: none;
-   padding-right: 1rem;
-   background-repeat: no-repeat;
-   background-position-x: right;
-   background-position-y: center;
-   background-image: var(--flAb);
-  }
-
-  cm-din select:focus {
-   background-image: var(--flArr)
-  }
-
   cm-din option {
    padding: 0.3rem 1rem;
    background-color: var(--colBk);
@@ -220,8 +189,7 @@
    }
    prepara() {
     /**
-     * @type {
-     *  HTMLInputElement|
+     * @type {HTMLInputElement|
      *  HTMLSelectElement|
      *  HTMLOutputElement|
      *  null} */
