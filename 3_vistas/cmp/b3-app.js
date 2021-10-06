@@ -44,7 +44,7 @@ export class B3App extends Diapositiva {
      </p>
     </div>
     <muestra-codigo>
-      <div>
+    <div>
     <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
        style="color: #ff0000;">html</span><span
        style="color: #800000;">&gt;</span></div>
@@ -237,7 +237,7 @@ export class B3App extends Diapositiva {
     <div><span style="color: #800000;">&lt;/body&gt;</span></div>
     <div><span style="color: #800000;">&lt;/html&gt;</span></div>
    </div>
- </muestra-codigo>
+  </muestra-codigo>
    </div>`;
  }
 }

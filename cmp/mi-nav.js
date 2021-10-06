@@ -45,12 +45,12 @@ class MiNav extends HTMLElement {
              <summary>
                <h4><a href="/4_pwa/index.html">PWA</a></h4>
              </summary>
-             <ol>
+             <ol type="A">
                <li><p><a href="/4_pwa/2_instrucciones.html">Instrucciones</a></p></li>
                <li><p><a href="/4_pwa/3_archivos.html">Archivos</a></p></li>
                <li><p><a href="/4_pwa/4_ayuda.html">ayuda.html</a></p></li>
                <li><p><a href="/4_pwa/5_index.html">index.html</a></p></li>
-               <li><p><a href="/4_pwa/6_CtrlDivide.html">js/CtrlDivide.js</a></p></li>
+               <li><p><a href="/4_pwa/6_CtrlRecomienda.html">js/CtrlRecomienda.js</a></p></li>
                <li><p><a href="/4_pwa/7_config.html">js/config.js</a></p></li>
                <li><p><a href="/4_pwa/22_movil.html">lib/movil.js</a></p></li>
                <li><p><a href="/4_pwa/8_mi-nav_js.html">js/mi-nav.js</a></p></li>
@@ -70,9 +70,6 @@ class MiNav extends HTMLElement {
                <li><p><a href="/4_pwa/23_material-icons.html">lib/css/material-icons.css</a></p></li>
                <li><p><a href="/4_pwa/24_MaterialIcons-Regular_codepoints.html">lib/fonts/MaterialIcons-Regular.codepoints</a></p></li>
                <li><p><a href="/4_pwa/25_MaterialIcons-Regular.html">lib/fonts/MaterialIcons-Regular.ttf</a></p></li>
-               <li><p><a href="/4_pwa/26_roboto.html">lib/css/roboto.css</a></p></li>
-               <li><p><a href="/4_pwa/27_roboto-v27-latin-regular_woff.html">lib/fonts/roboto-v27-latin-regular.woff</a></p></li>
-               <li><p><a href="/4_pwa/28_roboto-v27-latin-regular_woff2.html">lib/fonts/roboto-v27-latin-regular.woff2</a></p></li>
                <li><p><a href="29_LICENSE.html">LICENSE</a></p></li>
              </ol>
            </details>

@@ -9,14 +9,14 @@
   html {
    --colTxt: black;
    --colBk: white;
-   --colCmp: gray;
-   --colCmpFc: #6a0080;
-   --colCmpEr: #b00020;
-   --colCmpBk: #F5F5F5;
-   --colCmpBkHv: #EEEEEE;
-   --colCmpBkFc: #E0E0E0;
-   --colCmpOp: white;
-   --colCmpOpBk: #9c27b0;
+   --colCm: gray;
+   --colCmFc: #6a0080;
+   --colCmEr: #b00020;
+   --colCmBk: #F5F5F5;
+   --colCmBkHv: #EEEEEE;
+   --colCmBkFc: #E0E0E0;
+   --colCmOp: white;
+   --colCmOpBk: #9c27b0;
    --fntFam: -apple-system,
     BlinkMacSystemFont, Roboto,
     sans-serif;
@@ -34,9 +34,9 @@
   cm-din {
    display: block;
    position: relative;
-   color: var(--colCmp);
+   color: var(--colCm);
    background-color:
-    var(--colCmpBk);
+    var(--colCmBk);
    border-top-left-radius: 4px;
    border-top-right-radius: 4px;
    margin: 1rem 0;
@@ -45,12 +45,12 @@
 
   cm-din:hover {
    background-color:
-    var(--colCmpBkHv);
+    var(--colCmBkHv);
   }
 
   cm-din:focus-within {
    background-color:
-    var(--colCmpBkFc);
+    var(--colCmBkFc);
   }
 
   cm-din label {
@@ -58,7 +58,7 @@
    top: 1.75rem;
    left: 1rem;
    font-size: 1rem;
-   color: var(--colCmp);
+   color: var(--colCm);
    transition: 0.3s ease-in;
   }
 
@@ -88,7 +88,7 @@
    border-bottom-width: 1px;
    border-bottom-style: solid;
    border-bottom-color:
-    var(--colCmp);
+    var(--colCm);
    resize: none;
    outline: none;
    width: 100%;
@@ -109,27 +109,27 @@
   }
 
   cm-din :focus+label {
-   color: var(--colCmpFc);
+   color: var(--colCmFc);
   }
 
   cm-din :focus {
    border-bottom-color:
-    var(--colCmpFc);
+    var(--colCmFc);
   }
 
   cm-din :invalid,
   cm-din :focus:invalid {
    border-bottom-color:
-    var(--colCmpEr);
+    var(--colCmEr);
    outline: none;
   }
 
   cm-din :invalid+label {
-   color: var(--colCmpEr);
+   color: var(--colCmEr);
   }
 
   cm-din :invalid~small {
-   color: var(--colCmpEr);
+   color: var(--colCmEr);
   }
 
   cm-din option {
@@ -138,9 +138,9 @@
   }
 
   cm-din option:checked {
-   color: var(--colCmpOp);
+   color: var(--colCmOp);
    background-color:
-    var(--colCmpOpBk);
+    var(--colCmOpBk);
   }
  </style>
 </head>
