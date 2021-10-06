@@ -1,5 +1,6 @@
 import "../../js/config.js";
 import { Diapositiva } from "../../lib/Diapositiva.js";
+import "./a3-referencias.js";
 import "./b3-app.js";
 import "./c3-campos.js";
 import "./d3-interruptores.js";
@@ -14,7 +15,7 @@ export class VistasPrint extends Diapositiva {
      <vistas-index></vistas-index>
     </section>
     <section>
-     <a3-app></a3-app>
+     <a3-referencias></a3-referencias>
     </section>
     <section>
      <b2-campo></b2-campo>
