@@ -25,101 +25,86 @@ class MiNav extends HTMLElement {
           <nativas-contenido></nativas-contenido>
          </details>
         </li>
-         <li>
-          <details>
-           <summary>
-            <h4><a href="/2_multimedia/index.html">Elementos multimedia de HTML5</a></h4>
-           </summary>
-           <multimedia-contenido></multimedia-contenido>
-           </details>
-         </li>
-         <li>
-          <details>
-           <summary>
-            <h4><a href="/3_vistas/index.html">Vistas móviles</a></h4>
-           </summary>
-           <vistas-contenido></vistas-contenido>
-           </details>
-         </li>
-         <li>
-          <details>
-           <summary>
-            <h4><a href="/4_pwa/index.html">PWA</a></h4>
-           </summary>
-           <pwa-contenido></pwa-contenido>
+        <li>
+         <details>
+          <summary>
+           <h4><a href="/2_multimedia/index.html">Elementos multimedia de HTML5</a></h4>
+          </summary>
+          <multimedia-contenido></multimedia-contenido>
           </details>
-         </li>
-         <li>
-           <details>
-             <summary>
-               <h4><a href="/5_sesion/index.html">Control de sesión</a></h4>
-             </summary>
-             <ol>
-               <li><p><a href="/5_sesion/3_arquitectura.html">Arquitectura</a></p></li>
-               <li><p><a href="/5_sesion/4_despliegue.html">Despliegue</a></p></li>
-               <li><p><a href="/5_sesion/5_er.html">Diagrama Entidad Relación</a></p></li>
-               <li><p><a href="/5_sesion/7_instrucciones.html">Instrucciones</a></p></li>
-               <li><p><a href="/5_sesion/8_archivos.html">Archivos</a></p></li>
-               <li><p><a href="/5_sesion/9_index_html.html">www/index.html</a></p></li>
-               <li><p><a href="/5_sesion/10_CtrlSesion.html">www/js/CtrlSesion.js</a></p></li>
-               <li><p><a href="/5_sesion/12_index_js.html">index.js</a></p></li>
-               <li><p><a href="/5_sesion/14_validaUsuario.html">servicios/validaUsuario.js</a></p></li>
-               <li><p><a href="/5_sesion/15_LICENSE.html">LICENSE</a></p></li>
-             </ol>
-           </details>
-         </li>
-         <li>
-           <details>
-             <summary>
-               <h4><a href="/6_iot/index.html">IoT</a></h4>
-             </summary>
-             <ol>
-               <li><p><a href="/6_iot/3_casos.html">Casos de Uso</a></p></li>
-               <li><p><a href="/6_iot/4_despliegue.html">Despliegue</a></p></li>
-               <li><p><a href="/6_iot/5_er.html">Diagrama Entidad Relación</a></p></li>
-               <li><p><a href="/6_iot/6_no_rel.html">Diseño no Relacional</a></p></li>
-               <li><p><a href="/6_iot/7_instrucciones.html">Instrucciones</a></p></li>
-               <li><p><a href="/6_iot/8_archivos.html">Archivos</a></p></li>
-               <li><p><a href="/6_iot/10_index_html.html">www/index.html</a></p></li>
-               <li><p><a href="/6_iot/11_CtrlMovil.html">www/js/CtrlMovil.js</a></p></li>
-               <li><p><a href="/6_iot/12_dispositivo.html">www/dispositivo.html</a></p></li>
-               <li><p><a href="/6_iot/13_CtrlDispositivo.html">www/js/CtrlDispositivo.js</a></p></li>
-               <li><p><a href="/6_iot/18_ResInt.html">www/js/ResInt.js</a></p></li>
-               <li><p><a href="/6_iot/19_util.html">www/js/util.js</a></p></li>
-               <li><p><a href="/6_iot/14_proxyAgregaEntrada.html">www/js/proxyAgregaEntrada.js</a></p></li>
-               <li><p><a href="/6_iot/15_proxyAgregaSalida.html">www/js/proxyAgregaSalida.js</a></p></li>
-               <li><p><a href="/6_iot/16_proxyRecuperaEntrada.html">www/js/proxyRecuperaEntrada.js</a></p></li>
-               <li><p><a href="/6_iot/17_proxyRecuperaSalida.html">www/js/proxyRecuperaSalida.js</a></p></li>
-               <li><p><a href="/6_iot/20_estilos.html">www/css/estilos.css</a></p></li>
-               <li><p><a href="/6_iot/21_footer.html">www/js/mi-footer.js</a></p></li>
-               <li><p><a href="/6_iot/23_index_js.html">index.js</a></p></li>
-               <li><p><a href="/6_iot/9_tipos.html">servicios/tipos.js</a></p></li>
-               <li><p><a href="/6_iot/22_utilsrv.html">servicios/utilsrv.js</a></p></li>
-               <li><p><a href="/6_iot/24_agregaEntrada.html">servicios/agregaEntrada.js</a></p></li>
-               <li><p><a href="/6_iot/25_agregaSalida.html">servicios/agregaSalida.js</a></p></li>
-               <li><p><a href="/6_iot/27_recuperaEntrada.html">servicios/recuperaEntrada.js</a></p></li>
-               <li><p><a href="/6_iot/28_recuperaSalida.html">servicios/recuperaSalida.js</a></p></li>
-               <li><p><a href="/6_iot/29_LICENSE.html">LICENSE</a></p></li>
-             </ol>
-           </details>
-         </li>
-         <li>
-           <details>
-             <summary>
-               <h4><a href="/7_esp8266/index.html">ESP8266</a></h4>
-             </summary>
-             <ol>
-               <li><p><a href="/7_esp8266/3_blink.html">Blink.ino</a></p></li>
-               <li><p><a href="/7_esp8266/4_button.html">Button.ino</a></p></li>
-               <li><p><a href="/7_esp8266/6_MiGet.html">MiGet.ino</a></p></li>
-               <li><p><a href="/7_esp8266/10_MiPost.html">MiPost.ino</a></p></li>
-             </ol>
-           </details>
-         </li>
+        </li>
+        <li>
+         <details>
+          <summary>
+           <h4><a href="/3_vistas/index.html">Vistas móviles</a></h4>
+          </summary>
+          <vistas-contenido></vistas-contenido>
+          </details>
+        </li>
+        <li>
+         <details>
+          <summary>
+           <h4><a href="/4_pwa/index.html">PWA</a></h4>
+          </summary>
+          <pwa-contenido></pwa-contenido>
+         </details>
+        </li>
+        <li>
+         <details>
+          <summary>
+           <h4><a href="/5_sesion/index.html">Control de sesión</a></h4>
+          </summary>
+          <ol type="A">
+           <li><p><a href="/5_sesion/a_arquitectura.html">Arquitectura</a></p></li>
+           <li><p><a href="/5_sesion/b_despliegue.html">Despliegue</a></p></li>
+           <li><p><a href="/5_sesion/c_er.html">Diagrama Entidad Relación</a></p></li>
+           <li><p><a href="/5_sesion/d_instrucciones.html">Instrucciones</a></p></li>
+           <li><p><a href="/5_sesion/e_archivos.html">Archivos</a></p></li>
+           <li><p><a href="/5_sesion/f_index_html.html">www/index.html</a></p></li>
+           <li><p><a href="/5_sesion/g_CtrlSesion.html">www/js/CtrlSesion.js</a></p></li>
+           <li><p><a href="/5_sesion/h_index_js.html">index.js</a></p></li>
+           <li><p><a href="/5_sesion/i_validaUsuario.html">validaUsuario.js</a></p></li>
+           <li><p><a href="/5_sesion/j_LICENSE.html">LICENSE</a></p></li>
           </ol>
-         </li>
-        </ul>
-       </nav>`;
+         </details>
+        </li>
+        <li>
+         <details>
+          <summary>
+            <h4><a href="/6_iot/index.html">IoT</a></h4>
+          </summary>
+          <ol type="A">
+           <li><p><a href="/6_iot/a_casos.html">Casos de Uso</a></p></li>
+           <li><p><a href="/6_iot/b_despliegue.html">Despliegue</a></p></li>
+           <li><p><a href="/6_iot/c_er.html">Diagrama Entidad Relación</a></p></li>
+           <li><p><a href="/6_iot/d_no_rel.html">Diseño no Relacional</a></p></li>
+           <li><p><a href="/6_iot/e_instrucciones.html">Instrucciones</a></p></li>
+           <li><p><a href="/6_iot/f_archivos.html">Archivos</a></p></li>
+           <li><p><a href="/6_iot/g_tipos.html">tipos.js</a></p></li>
+           <li><p><a href="/6_iot/h_cliente.html">cliente.js</a></p></li>
+           <li><p><a href="/6_iot/i_getValor.html">getValor.js</a></p></li>
+           <li><p><a href="/6_iot/j_setValor.html">setValor.js</a></p></li>
+           <li><p><a href="/6_iot/k_index_js.html">index.js</a></p></li>
+           <li><p><a href="/6_iot/l_index_html.html">www/index.html</a></p></li>
+          </ol>
+         </details>
+        </li>
+        <li>
+         <details>
+          <summary>
+           <h4><a href="/7_esp8266/index.html">ESP8266</a></h4>
+          </summary>
+          <ol type="A">
+           <li><p><a href="/7_esp8266/3_blink.html">Blink.ino</a></p></li>
+           <li><p><a href="/7_esp8266/4_button.html">Button.ino</a></p></li>
+           <li><p><a href="/7_esp8266/6_MiGet.html">Dispositivo.ino</a></p></li>
+          </ol>
+         </details>
+        </li>
+       </ol>
+      </li>
+     </ul>
+    </nav>`;
  }
 }
 
