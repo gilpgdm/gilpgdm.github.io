@@ -5,6 +5,9 @@ import "../1_multiplataforma/cmp/nativas-contenido.js";
 import "../2_multimedia/cmp/multimedia-contenido.js";
 import "../3_vistas/cmp/vistas-contenido.js";
 import "../4_pwa/cmp/pwa-contenido.js";
+import "../5_sesion/cmp/sesion-contenido.js";
+import "../6_iot/cmp/iot-contenido.js";
+import "../7_esp8266/cmp/esp8266-contenido.js";
 
 class MiNav extends HTMLElement {
  connectedCallback() {
@@ -54,18 +57,7 @@ class MiNav extends HTMLElement {
           <summary>
            <h4><a href="/5_sesion/index.html">Control de sesión</a></h4>
           </summary>
-          <ol type="A">
-           <li><p><a href="/5_sesion/a_arquitectura.html">Arquitectura</a></p></li>
-           <li><p><a href="/5_sesion/b_despliegue.html">Despliegue</a></p></li>
-           <li><p><a href="/5_sesion/c_er.html">Diagrama Entidad Relación</a></p></li>
-           <li><p><a href="/5_sesion/d_instrucciones.html">Instrucciones</a></p></li>
-           <li><p><a href="/5_sesion/e_archivos.html">Archivos</a></p></li>
-           <li><p><a href="/5_sesion/f_index_html.html">www/index.html</a></p></li>
-           <li><p><a href="/5_sesion/g_CtrlSesion.html">www/js/CtrlSesion.js</a></p></li>
-           <li><p><a href="/5_sesion/h_index_js.html">index.js</a></p></li>
-           <li><p><a href="/5_sesion/i_validaUsuario.html">validaUsuario.js</a></p></li>
-           <li><p><a href="/5_sesion/j_LICENSE.html">LICENSE</a></p></li>
-          </ol>
+          <sesion-contenido></sesion-contenido>
          </details>
         </li>
         <li>
@@ -73,20 +65,7 @@ class MiNav extends HTMLElement {
           <summary>
             <h4><a href="/6_iot/index.html">IoT</a></h4>
           </summary>
-          <ol type="A">
-           <li><p><a href="/6_iot/a_casos.html">Casos de Uso</a></p></li>
-           <li><p><a href="/6_iot/b_despliegue.html">Despliegue</a></p></li>
-           <li><p><a href="/6_iot/c_er.html">Diagrama Entidad Relación</a></p></li>
-           <li><p><a href="/6_iot/d_no_rel.html">Diseño no Relacional</a></p></li>
-           <li><p><a href="/6_iot/e_instrucciones.html">Instrucciones</a></p></li>
-           <li><p><a href="/6_iot/f_archivos.html">Archivos</a></p></li>
-           <li><p><a href="/6_iot/g_tipos.html">tipos.js</a></p></li>
-           <li><p><a href="/6_iot/h_cliente.html">cliente.js</a></p></li>
-           <li><p><a href="/6_iot/i_getValor.html">getValor.js</a></p></li>
-           <li><p><a href="/6_iot/j_setValor.html">setValor.js</a></p></li>
-           <li><p><a href="/6_iot/k_index_js.html">index.js</a></p></li>
-           <li><p><a href="/6_iot/l_index_html.html">www/index.html</a></p></li>
-          </ol>
+          <iot-contenido></iot-contenido>
          </details>
         </li>
         <li>
@@ -94,11 +73,7 @@ class MiNav extends HTMLElement {
           <summary>
            <h4><a href="/7_esp8266/index.html">ESP8266</a></h4>
           </summary>
-          <ol type="A">
-           <li><p><a href="/7_esp8266/3_blink.html">Blink.ino</a></p></li>
-           <li><p><a href="/7_esp8266/4_button.html">Button.ino</a></p></li>
-           <li><p><a href="/7_esp8266/6_MiGet.html">Dispositivo.ino</a></p></li>
-          </ol>
+          <esp8266-contenido></esp8266-contenido>
          </details>
         </li>
        </ol>

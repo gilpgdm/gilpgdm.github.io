@@ -6,6 +6,8 @@ import "../1_multiplataforma/cmp/nativas-print.js";
 import "../2_multimedia/cmp/multimedia-print.js";
 import "../3_vistas/cmp/vistas-print.js";
 import "../4_pwa/cmp/pwa-print.js";
+import "../5_sesion/cmp/sesion-print.js";
+import "../6_iot/cmp/iot-print.js";
 
 export class GilPGDMPrint extends Diapositiva {
  /** @override */
@@ -41,27 +43,17 @@ export class GilPGDMPrint extends Diapositiva {
     </section>
     <section>
      <h1 class="presentación">5. Control de sesión</h1>
-     <basicas-print></basicas-print>
+     <sesion-print></sesion-print>
      <mi-footer></mi-footer>
     </section>
     <section>
      <h1 class="presentación">6. IoT</h1>
-     <display-print></display-print>
+     <iot-print></iot-print>
      <mi-footer></mi-footer>
     </section>
     <section>
      <h1 class="presentación">7. ESP8266</h1>
      <cajas-print></cajas-print>
-     <mi-footer></mi-footer>
-    </section>
-    <section>
-     <h1 class="presentación">8. Posicionamiento</h1>
-     <posicionamiento-print></posicionamiento-print>
-     <mi-footer></mi-footer>
-    </section>
-    <section>
-     <h1 class="presentación">9. Selectores</h1>
-     <selectores-print></selectores-print>
      <mi-footer></mi-footer>
     </section>`;
  }
