@@ -45,21 +45,6 @@ export class A3Referencias extends Diapositiva {
       </p>
      </dd>
     </dl>
-    <ul class="noPrint">
-     <li>
-      <p>
-       <a href="https://drive.google.com/file/d/1FrtKSJWrmpaueTjyhdTYwbtQFBz_i8qr/view?usp=sharing"
-         target="_blank">Observa las interfaces en Android.</a>
-      </p>
-     </li>
-     <li>
-      <p>
-       <a href="https://drive.google.com/file/d/1a_w5cAm5gg2pEzYKMDv4PivD0vmWjwUQ/view?usp=sharing"
-         target="_blank">Observa las interfaces en iOS (iPhone o
-        iPad).</a>
-      </p>
-     </li>
-    </ul>
    </div>`;
  }
 }

@@ -21,6 +21,16 @@ export class H3Archivos extends Diapositiva {
         href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EArchivos%20y%20C%C3%A1mara%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3EArchivos%20y%20C%C3%A1mara%3C%2Fh1%3E%0A%20%3Cp%3E%0A%20%20%3Clabel%3E%0A%20%20%20Foto%20de%20M%C3%B3vil%0A%20%20%20%3Cinput%20type%3D%22file%22%0A%20%20%20%20%20accept%3D%22image%2F*%22%0A%20%20%20%20%20capture%3D%22camera%22%3E%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fp%3E%0A%20%3Cp%3E%0A%20%20%3Clabel%3E%0A%20%20%20Video%20de%20M%C3%B3vil%0A%20%20%20%3Cinput%20type%3D%22file%22%0A%20%20%20%20%20accept%3D%22video%2F*%22%0A%20%20%20%20%20capture%3D%22%22%3E%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fp%3E%0A%20%3Cp%3E%0A%20%20%3Clabel%20for%3D%22archivo%22%3E%0A%20%20%20Archivo%0A%20%20%20%3Cinput%20type%3D%22file%22%3E%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
        Revísalo en gilpgedit.</a>
      </p>
+     <p class="noPrint">
+      <a target="_blank"
+        href="https://drive.google.com/file/d/1LZ0BjQB2Hlt4df2ksrJp2QdA9Ky1oghw/view?usp=sharing">
+       Observa como funciona en Android.</a>
+     </p>
+     <p class="noPrint">
+      <a target="_blank"
+        href="https://drive.google.com/file/d/1JKaeJaWg0VepcuaDGc0j7S-7CphTtulN/view?usp=sharing">
+       Observa como funciona en iOS.</a>
+     </p>
     </div>
     <muestra-codigo>
      <div>

@@ -18,7 +18,8 @@ export class A4PWA extends Diapositiva {
     </p>
     <p>
      <a href="https://replit.com/@GilbertoPacheco/pwa?v=1"
-       target="_blank">Revisa el código, Prueba e instala el ejemplo.</a>
+       target="_blank">Revisa el código en Replit. Prueba e instala el
+      ejemplo.</a>
     </p>
     <h2>Instrucciones</h2>
     <ol>
