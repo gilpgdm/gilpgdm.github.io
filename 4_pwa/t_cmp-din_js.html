@@ -1,145 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="cache-control" content="max-age=0" />
-  <meta http-equiv="cache-control" content="no-cache" />
-  <meta http-equiv="expires" content="0" />
-  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-  <meta http-equiv="pragma" content="no-cache" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="module" src="/js/config.js"></script>
-  <link rel="icon" sizes="32x32" href="/favicon.ico">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/css/estilos.css">
-  <script type="module" src="/lib/muestra-codigo.js"></script>
+ <meta charset="UTF-8">
+ <meta http-equiv="cache-control" content="max-age=0" />
+ <meta http-equiv="cache-control" content="no-cache" />
+ <meta http-equiv="expires" content="0" />
+ <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+ <meta http-equiv="pragma" content="no-cache" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="icon" sizes="32x32" href="/favicon.ico">
+ <meta name="theme-color" content="#ffffff">
+ <link rel="manifest" href="/site.webmanifest">
+ <link rel="stylesheet" href="/css/estilos.css">
+ <script type="module" src="cmp/t4_cmp-din-js.js"></script>
 </head>
 <body>
-  <layout-cajon>
-    <mi-nav slot="nav"></mi-nav>
-    <h1>lib/cm-din.js</h1>
-    <muestra-codigo>
-      <div>
-        <div><span style="color: #af00db;">export</span>&nbsp;<span
-              style="color: #0000ff;">class</span>&nbsp;<span
-              style="color: #267f99;">CmpDin</span></div>
-        <div>&nbsp;&nbsp;<span style="color: #0000ff;">extends</span>&nbsp;<span
-              style="color: #267f99;">HTMLElement</span>&nbsp;{</div>
-        <div>&nbsp;&nbsp;<span
-              style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #795e26;">setTimeout</span>(</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;()&nbsp;<span
-              style="color: #0000ff;">=&gt;</span>&nbsp;<span
-              style="color: #0000ff;">this</span>.<span
-              style="color: #795e26;">prepara</span>(),</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #098658;">100</span>);</div>
-        <div>&nbsp;&nbsp;}</div>
-        <div>&nbsp;&nbsp;<span style="color: #795e26;">prepara</span>()&nbsp;{
-        </div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">/**</span>
-        </div>
-        <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
-              style="color: #0000ff;">@type</span><span
-              style="color: #008000;">&nbsp;</span><span
-              style="color: #267f99;">{</span></div>
-        <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTMLInputElement|</span>
-        </div>
-        <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTMLTextAreaElement|</span>
-        </div>
-        <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTMLSelectElement|</span>
-        </div>
-        <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTMLOutputElement|</span>
-        </div>
-        <div><span
-              style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null}&nbsp;*/</span>
-        </div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #0000ff;">this</span>.<span
-              style="color: #001080;">_elem</span>&nbsp;=</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #0000ff;">this</span>.<span
-              style="color: #795e26;">querySelector</span>(</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #a31515;">`input,&nbsp;textarea,</span></div>
-        <div><span
-              style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select,&nbsp;output`</span>);
-        </div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #0000ff;">this</span>.<span
-              style="color: #795e26;">addEventListener</span>(<span
-              style="color: #a31515;">"focus"</span>,</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;()&nbsp;<span
-              style="color: #0000ff;">=&gt;</span>&nbsp;<span
-              style="color: #0000ff;">this</span>.<span
-              style="color: #795e26;">analiza</span>(),&nbsp;<span
-              style="color: #0000ff;">true</span>);</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #0000ff;">this</span>.<span
-              style="color: #795e26;">addEventListener</span>(</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #a31515;">"focusout"</span>,</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;()&nbsp;<span
-              style="color: #0000ff;">=&gt;</span>&nbsp;<span
-              style="color: #0000ff;">this</span>.<span
-              style="color: #795e26;">analiza</span>(),&nbsp;<span
-              style="color: #0000ff;">true</span>);</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #0000ff;">this</span>.<span
-              style="color: #795e26;">analiza</span>();</div>
-        <div>&nbsp;&nbsp;}</div>
-        <div>&nbsp;&nbsp;<span style="color: #795e26;">analiza</span>()&nbsp;{
-        </div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #0000ff;">const</span>&nbsp;<span
-              style="color: #0070c1;">e</span>&nbsp;=&nbsp;<span
-              style="color: #0000ff;">this</span>.<span
-              style="color: #001080;">_elem</span>;</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #af00db;">if</span>&nbsp;(<span
-              style="color: #0070c1;">e</span>)&nbsp;{</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #af00db;">if</span>&nbsp;(!<span
-              style="color: #0070c1;">e</span>.<span
-              style="color: #001080;">validity</span>.<span
-              style="color: #0070c1;">badInput</span>&nbsp;&amp;&amp;</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #0070c1;">e</span>.<span
-              style="color: #001080;">value</span>.<span
-              style="color: #0070c1;">length</span>&nbsp;===&nbsp;<span
-              style="color: #098658;">0</span>)&nbsp;{</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #0070c1;">e</span>.<span
-              style="color: #0070c1;">classList</span>.</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #795e26;">remove</span>(<span
-              style="color: #a31515;">"valor"</span>);</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
-              style="color: #af00db;">else</span>&nbsp;{</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              style="color: #0070c1;">e</span>.<span
-              style="color: #0070c1;">classList</span>.<span
-              style="color: #795e26;">add</span>(<span
-              style="color: #a31515;">"valor"</span>);</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-        <div>&nbsp;&nbsp;}</div>
-        <div>}</div>
-        <div><span style="color: #001080;">customElements</span>.<span
-              style="color: #795e26;">define</span>(</div>
-        <div>&nbsp;&nbsp;<span
-              style="color: #a31515;">"cm-din"</span>,&nbsp;<span
-              style="color: #267f99;">CmpDin</span>);</div>
-      </div>
-    </muestra-codigo>
-    <mi-footer></mi-footer>
-  </layout-cajon>
+ <layout-cajon>
+  <mi-nav slot="nav"></mi-nav>
+  <t4_cmp-din-js></t4_cmp-din-js>
+  <mi-footer></mi-footer>
+ </layout-cajon>
 </body>
 </html>

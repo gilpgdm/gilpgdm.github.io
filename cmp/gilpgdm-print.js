@@ -5,6 +5,7 @@ import "../cmp/sw-index.js";
 import "../1_multiplataforma/cmp/nativas-print.js";
 import "../2_multimedia/cmp/multimedia-print.js";
 import "../3_vistas/cmp/vistas-print.js";
+import "../4_pwa/cmp/pwa-print.js";
 
 export class GilPGDMPrint extends Diapositiva {
  /** @override */
@@ -34,22 +35,22 @@ export class GilPGDMPrint extends Diapositiva {
      <mi-footer></mi-footer>
     </section>
     <section>
-     <h1 class="presentación">4. CSS</h1>
-     <css-print></css-print>
+     <h1 class="presentación">4. PWA</h1>
+     <pwa-print></pwa-print>
      <mi-footer></mi-footer>
     </section>
     <section>
-     <h1 class="presentación">5. Propiedades básicas de CSS</h1>
+     <h1 class="presentación">5. Control de sesión</h1>
      <basicas-print></basicas-print>
      <mi-footer></mi-footer>
     </section>
     <section>
-     <h1 class="presentación">6. La propiedad <strong>display</strong></h1>
+     <h1 class="presentación">6. IoT</h1>
      <display-print></display-print>
      <mi-footer></mi-footer>
     </section>
     <section>
-     <h1 class="presentación">7. El modelo de cajas</h1>
+     <h1 class="presentación">7. ESP8266</h1>
      <cajas-print></cajas-print>
      <mi-footer></mi-footer>
     </section>
