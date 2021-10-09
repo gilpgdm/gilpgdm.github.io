@@ -19,26 +19,14 @@ export class D5Instrucciones extends Diapositiva {
      <li>
       <p>
        <a href="https://drive.google.com/file/d/1_n_R8U31zloq1x4EFuXepaWCOUgDkKoT/view?usp=sharing"
-         target="_blank">Crea un sitio de Replit de nombre aut con
-        Node.js y base de datos.</a>
-      </p>
-      <p>La instrucción para agregar librerías es:</p>
-      <pre><kbd>npm i express multer mongodb</kbd></pre>
-     </li>
-     <li>
-      <p>Edita el código, utilizando las páginas que siguen.</p>
-     </li>
-     <li>
-      <p>
-       <a href="https://drive.google.com/file/d/1q-egiof-2m3jO1DbSoXAmskBn8lJkRyu/view?usp=sharing"
-         target="_blank">Prueba tu código localmente con Visual Studio
-        Code.</a>
+         target="_blank">Crea un sitio de Replit de tipo <em>Node.js</em>
+         utilizando las páginas que siguen y pruébalo.</a>
       </p>
      </li>
      <li>
       <p>
        <a href="https://drive.google.com/file/d/16YhVAWW_Rw0OEfZkjkPMpPhBeO_-HCf_/view?usp=sharing"
-         target="_blank">Súbelo a Replit y pruébalo.</a>
+         target="_blank">Depura el sitio.</a>
       </p>
      </li>
     </ol>

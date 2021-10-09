@@ -14,12 +14,7 @@ export class E5Archivos extends Diapositiva {
       <p>www</p>
       <ul>
        <li>
-        <p>js</p>
-        <ul>
-         <li>
-          <p><a href="10_CtrlSesion.html">CtrlSesion.js</a></p>
-         </li>
-        </ul>
+        <p><a href="10_CtrlSesion.html">CtrlSesion.js</a></p>
        </li>
        <li>
         <p><a href="9_index_html.html">index.html</a></p>

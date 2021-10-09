@@ -18,12 +18,9 @@ export class A5Arquitectura extends Diapositiva {
       servidor web.
      </p>
      <p>
-      <a href="https://replit.com/@GilbertoPachec1/aut?v=1"
-        target="_blank">Revisa el código y pruébalo en Replit.</a>
-     </p>
-     <p>
-      Cuando una PWA necesita que el servidor procese información, debe
-      invocar servicios alojados en dicho servidor.
+      Revisa el código y pruébalo en Replit con la url
+      <a href="https://replit.com/@GilbertoPacheco/auth?v=1"
+        target="_blank">https://replit.com/@GilbertoPacheco/auth?v=1</a>.
      </p>
      <p>
       Cada <dfn>servicio</dfn> es una función y para accederlo, el servidor le
@@ -43,9 +40,9 @@ export class A5Arquitectura extends Diapositiva {
       <dfn>valida</dfn>.
      </p>
      <p>
-      Para poder validar el acceso, <q>validaUsuario</q> usa una entidad de
-      base de datos llamada <dfn>Usuario</dfn>, donde se guarda la contraseña
-      de cada usuario.
+      Para poder validar el acceso, <q>validaUsuario</q> guarda la contraseña
+      de cada usuario en una entidad llamada <dfn>Usuario</dfn>. En este ejemplo
+      se usa el servidor Atlas para la base de datos tipo MongoDB.
      </p>
      <h2>Diagrama de componentes</h2>
      <figure>
