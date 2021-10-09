@@ -75,7 +75,7 @@ export class SwIndex extends Diapositiva {
       <a href="https://www.gimp.org/" target="_blank">https://www.gimp.org/</a>.
      </p>
      <p class="noPrint">
-      <a href="https://drive.google.com/file/d/1tJRBbu2IX5MhMsLzRebDkO0YGOTbFmWO/view?usp=sharing"
+      <a href="https://drive.google.com/file/d/1i5dc5d7Dy_VHwiAK0w2J-CE09xCcgEVw/view?usp=sharing"
         target="_blank">Video de Instalación.</a>
      </p>
     </dd>

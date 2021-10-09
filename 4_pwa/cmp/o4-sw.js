@@ -42,7 +42,7 @@ export class O4Sw extends Diapositiva {
      </div>
      <div><span style="color: #0000ff;">const</span>&nbsp;<span
         style="color: #0070c1;">CACHE</span>&nbsp;=&nbsp;<span
-        style="color: #a31515;">"pwa-1.10"</span></div><br>
+        style="color: #a31515;">"pwa-1.00"</span></div><br>
      <div><span
         style="color: #008000;">/**&nbsp;Archivos&nbsp;requeridos&nbsp;para&nbsp;que</span>
      </div>

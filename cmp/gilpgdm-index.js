@@ -16,7 +16,7 @@ export class GilPGDMIndex extends Diapositiva {
        target="_blank">https://gilpgpoojs.github.io</a>
      y
      <a href="https://gilpgihc.github.io"
-       target="_blank">https://gilpgihc.github.i</a>
+       target="_blank">https://gilpgihc.github.io</a>
     </p>
     <mi-nav open></mi-nav>
    </div>`;

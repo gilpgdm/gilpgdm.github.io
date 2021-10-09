@@ -17,7 +17,7 @@ export class A4PWA extends Diapositiva {
      <a href="src/pwa.zip" download>Descarga el ejemplo.</a>
     </p>
     <p>
-     <a href="https://replit.com/@GilbertoPacheco/pwa?v=1"
+     <a href="https://replit.com/@GilbertoPachec3/pwa?v=1"
        target="_blank">Revisa el código en Replit. Prueba e instala el
       ejemplo.</a>
     </p>
@@ -31,17 +31,25 @@ export class A4PWA extends Diapositiva {
      </li>
      <li>
       <p>
-       <a href="https://drive.google.com/file/d/1pf1U49FbtVhOy8PawCbloQ2TCsEGrPrw/view?usp=sharing"
-         target="_blank">Crea la base de tu sitio web.</a>
+       <a href="https://drive.google.com/file/d/1ujeNp8TaHjqqRXl_TFT0omUGymmFWTLm/view?usp=sharing"
+         target="_blank">Usa o crea una cuenta de Google.</a>
       </p>
      </li>
      <li>
-      <p>Añade los archivos de este proyecto.</p>
+      <p>
+       <a href="https://drive.google.com/file/d/1dmifWNqm_gRmQuMEe67HqKBYzzDTwEHt/view?usp=sharing"
+         target="_blank">Crea una cuenta de Replit usando la cuenta de Google.</a>
+      </p>
      </li>
      <li>
       <p>
-       <a href="https://drive.google.com/file/d/1dp1XxWJg07n7B0_ivuo_gykJWAMnsT1p/view?usp=sharing"
-         target="_blank">Prueba tu PWA localmente.</a>
+       <a href="https://drive.google.com/file/d/1XMmasbHWeDMT7jLHBjYsPsEQ7JBrNTcy/view?usp=sharing"
+         target="_blank">Crea un proyecto <em>HTML, CSS, JS</em> en Replit y edita o sube
+        los archivos de este proyecto y pruébalo.</a>
+      </p>
+      <p>
+       Cada vez que hagas cambios en los archivos, debes modificar el valor de CACHE en
+       el archivo sw.js.
       </p>
       <p>
        Recuerda usar la combinación de teclas
@@ -52,26 +60,20 @@ export class A4PWA extends Diapositiva {
      </li>
      <li>
       <p>
-       <a href="https://drive.google.com/file/d/1bI1VHh6zgcyd-SI_ivAXola0cVR3WlPU/view?usp=sharing"
-         target="_blank">Despliega tu PWA en Replit y pruébalo en
-        Windows.</a>
+       <a href="https://drive.google.com/file/d/1XoJ0ordsKsaAQpOfMXdaQUOq5VBFZ5M1/view?usp=sharing"
+         target="_blank">Instala tu PWA en Windows.</a>
       </p>
      </li>
      <li>
       <p>
-       <a href="https://drive.google.com/file/d/1FrtKSJWrmpaueTjyhdTYwbtQFBz_i8qr/view?usp=sharing"
+       <a href="https://drive.google.com/file/d/1z7teVdzAqk0tZo-cHmTqtKuG-mGHmSAe/view?usp=sharing"
          target="_blank">Instala y usa tu PWA en Android.</a>
-       (El video está desactualizado, pero el mecanismo de instalación es
-       el mismo.)
       </p>
      </li>
      <li>
       <p>
-       <a href="https://drive.google.com/file/d/1a_w5cAm5gg2pEzYKMDv4PivD0vmWjwUQ/view?usp=sharing"
-         target="_blank">Instala y usa tu PWA en tu iPhone o en tu
-        iPad.</a>
-       (El video está desactualizado, pero el mecanismo de instalación es
-       el mismo.)
+       <a href="https://drive.google.com/file/d/1dX00-bV2NnIHsgoyaTydgUod6mazAOBV/view?usp=sharing"
+         target="_blank">Instala y usa tu PWA en tu iPhone o en tu iPad.</a>
       </p>
      </li>
     </ol>

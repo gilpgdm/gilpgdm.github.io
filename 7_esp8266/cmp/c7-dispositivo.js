@@ -82,12 +82,12 @@ export class C7Dispositivo extends Diapositiva {
         style="color: #0000ff;">char</span>*&nbsp;<span
         style="color: #0000ff;">const</span>&nbsp;<span
         style="color: #001080;">SSID</span>&nbsp;=</div>
-     <div>&nbsp;<span style="color: #a31515;">"Galaxy&nbsp;A723C85"</span>;</div>
+     <div>&nbsp;<span style="color: #a31515;">"********"</span>;</div>
      <div><span style="color: #0000ff;">const</span>&nbsp;<span
         style="color: #0000ff;">char</span>*&nbsp;<span
         style="color: #0000ff;">const</span>&nbsp;<span
         style="color: #001080;">PASS</span>&nbsp;=</div>
-     <div>&nbsp;<span style="color: #a31515;">"bdoi1764"</span>;</div>
+     <div>&nbsp;<span style="color: #a31515;">"******"</span>;</div>
      <div><span style="color: #0000ff;">const</span>&nbsp;<span
         style="color: #0000ff;">char</span>*&nbsp;<span
         style="color: #0000ff;">const</span>&nbsp;<span
