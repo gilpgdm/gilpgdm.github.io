@@ -18,15 +18,16 @@ export class D5Instrucciones extends Diapositiva {
      </li>
      <li>
       <p>
-       <a href="https://drive.google.com/file/d/1_n_R8U31zloq1x4EFuXepaWCOUgDkKoT/view?usp=sharing"
+       <a href="https://drive.google.com/file/d/1dKuFogISfIV1O4rnsysBjuUexmpJFUJl/view?usp=sharing"
          target="_blank">Crea un sitio de Replit de tipo <em>Node.js</em>
          utilizando las páginas que siguen y pruébalo.</a>
       </p>
      </li>
      <li>
       <p>
-       <a href="https://drive.google.com/file/d/16YhVAWW_Rw0OEfZkjkPMpPhBeO_-HCf_/view?usp=sharing"
-         target="_blank">Depura el sitio.</a>
+       <a href="https://drive.google.com/file/d/1BnRquRDpNmnTUM9iijjeY1WV1J1MrT9z/view?usp=sharing"
+         target="_blank">Observa paso a paso la comunicación entre ciente y
+        servidor.</a>
       </p>
      </li>
     </ol>

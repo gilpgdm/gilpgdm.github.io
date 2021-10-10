@@ -19,14 +19,14 @@ export class A5Arquitectura extends Diapositiva {
      </p>
      <p>
       Revisa el código y pruébalo en Replit con la url
-      <a href="https://replit.com/@GilbertoPacheco/auth?v=1"
-        target="_blank">https://replit.com/@GilbertoPacheco/auth?v=1</a>.
+      <a href="https://replit.com/@GilbertoPachec3/aut?v=1"
+        target="_blank">https://replit.com/@GilbertoPachec3/aut?v=1</a>.
      </p>
      <p>
       Cada <dfn>servicio</dfn> es una función y para accederlo, el servidor le
       asigna un <dfn>nombre de recurso</dfn>, el cual es una ruta dentro de la
       URL; es como si fuera el nombre del archivo. Por ejemplo, en la URL
-      <q>http://localhost:3000/valida</q>, el nombre del recurso es
+      <q>https://aut--gilbertopachec3.repl.co/valida</q>, el nombre del recurso es
       <q>/valida</q>.
      </p>
      <p>

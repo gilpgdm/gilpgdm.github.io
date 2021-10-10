@@ -45,29 +45,6 @@ export class SwIndex extends Diapositiva {
         target="_blank">Video de Instalación.</a>
      </p>
     </dd>
-    <dt>Node.js</dt>
-    <dd>
-     <p>
-      Lo puedes descargar de
-      <a href="https://nodejs.org/" target="_blank">https://nodejs.org/</a>.
-     </p>
-     <p class="noPrint">
-      <a href="https://drive.google.com/file/d/1s_3a4dEOOhTWhhCFv8J5bEevktGSaS3n/view?usp=sharing"
-        target="_blank">Video de Instalación.</a>
-     </p>
-    </dd>
-    <dt>Visual Studio Code</dt>
-    <dd>
-     <p>
-      Lo puedes descargar de
-      <a href="https://code.visualstudio.com/"
-        target="_blank">https://code.visualstudio.com/</a>.
-     </p>
-     <p class="noPrint">
-      <a href="https://drive.google.com/file/d/1B0yS96lNKwFu_ZhCGhL9M2qSlD6jEqa1/view?usp=sharing"
-        target="_blank">Video de Instalación.</a>
-     </p>
-    </dd>
     <dt>GIMP</dt>
     <dd>
      <p>
@@ -81,6 +58,7 @@ export class SwIndex extends Diapositiva {
     </dd>
     <dt>Arduino IDE</dt>
     <dt>Arduino core for ESP8266 WiFi chip</dt>
+    <dt>ArduinoWebSockets</dt>
     <dd>
      <p>
       Puedes descargar Arduino IDE desde
@@ -93,8 +71,8 @@ export class SwIndex extends Diapositiva {
         target="_blank">https://github.com/esp8266/Arduino</a>.
      </p>
      <p class="noPrint">
-      <a href="https://drive.google.com/file/d/18YJwnpYDLFQLGdOl3MBmaMR5DbYBeZoM/view?usp=sharing"
-        target="_blank">Video de Instalación de Arduino IDE + ESP8266.</a>
+      <a href="https://drive.google.com/file/d/16zCByIKzt6OyCplIMbQg8EtVyButtKuO/view?usp=sharing"
+        target="_blank">Video de Instalación de Arduino IDE + ESP8266 + ArduinoWebSockets.</a>
      </p>
     </dd>
    </dl>

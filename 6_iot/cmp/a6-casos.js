@@ -12,8 +12,9 @@ export class A6Casos extends Diapositiva {
     <ul>
      <li>
       <p>
-       <a href="https://replit.com/@GilbertoPacheco/ws1?v=1"
-         target="_blank">Revisa el código y pruébalo en Replit.</a>
+       Revisa el código y pruébalo en Replit conla URL
+       <a href="https://replit.com/@GilbertoPachec3/iot?v=1"
+         target="_blank">https://replit.com/@GilbertoPachec3/iot?v=1</a>.
       </p>
      </li>
     </ul>

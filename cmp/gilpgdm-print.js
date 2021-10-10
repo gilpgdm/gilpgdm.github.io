@@ -8,6 +8,7 @@ import "../3_vistas/cmp/vistas-print.js";
 import "../4_pwa/cmp/pwa-print.js";
 import "../5_sesion/cmp/sesion-print.js";
 import "../6_iot/cmp/iot-print.js";
+import "../7_esp8266/cmp/esp8266-print.js";
 
 export class GilPGDMPrint extends Diapositiva {
  /** @override */
@@ -53,7 +54,7 @@ export class GilPGDMPrint extends Diapositiva {
     </section>
     <section>
      <h1 class="presentación">7. ESP8266</h1>
-     <cajas-print></cajas-print>
+     <esp8266-print></esp8266-print>
      <mi-footer></mi-footer>
     </section>`;
  }

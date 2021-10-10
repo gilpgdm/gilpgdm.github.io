@@ -8,6 +8,9 @@ export class C7Dispositivo extends Diapositiva {
   super.connectedCallback();
   this.innerHTML = /* html */
    `<h1>C. Dispositivo.ino</h1>
+   <figure>
+     <img src="/7_esp8266/img/dispositivo.gif" alt="Video del dispositivo">
+   </figure>
    <div class="lectura">
     <ul>
      <li>
@@ -15,9 +18,6 @@ export class C7Dispositivo extends Diapositiva {
      </li>
     </ul>
    </div>
-   <figure>
-    <img src="/7_esp8266/img/MiGet.png" alt="Salida serial">
-   </figure>
    <div class="lectura">
     <p>
      En el siguiente código, sustituye la configuración por los datos de
@@ -27,7 +27,12 @@ export class C7Dispositivo extends Diapositiva {
     <p>Sigue las siguientes instrucciones para obtener la huella digital:</p>
     <ol>
      <li>
-      <p>Usa Chrome para abrir la URL del código.</p>
+      <p>
+       Usa Chrome para abrir la URL del código de la lección IoT. En este caso
+       es
+       <a href="https://iot.gilbertopachec3.repl.co/"
+         target="_blank">https://iot.gilbertopachec3.repl.co/</a>.
+      </p>
      </li>
      <li>
       <p>
@@ -63,223 +68,208 @@ export class C7Dispositivo extends Diapositiva {
      baja la velocidad tanto en el código, como en el monitor.
     </p>
     <p class="noPrint">
-     <a href="https://drive.google.com/file/d/1OebIZysF3_Ma_8ED7MK7tiX50lU-4Hah/view?usp=sharing"
+     <a href="https://drive.google.com/file/d/1az-Brq31wdorrqchkezANCuzRm9XNg_7/view?usp=sharing"
        target="_blank">Ve como configurar y ejecutar este ejemplo.</a>
     </p>
    </div>
    <muestra-codigo>
-    <div>
-     <div><span style="color: #af00db;">#include</span><span
-        style="color: #0000ff;">&nbsp;</span><span
-        style="color: #a31515;">&lt;ESP8266WiFi.h&gt;</span></div>
-     <div><span style="color: #af00db;">#include</span><span
-        style="color: #0000ff;">&nbsp;</span><span
-        style="color: #a31515;">&lt;ESP8266WiFiMulti.h&gt;</span></div>
-     <div><span style="color: #af00db;">#include</span><span
-        style="color: #0000ff;">&nbsp;</span><span
-        style="color: #a31515;">&lt;ArduinoWebsockets.h&gt;</span></div><br>
-     <div><span style="color: #0000ff;">const</span>&nbsp;<span
-        style="color: #0000ff;">char</span>*&nbsp;<span
-        style="color: #0000ff;">const</span>&nbsp;<span
-        style="color: #001080;">SSID</span>&nbsp;=</div>
-     <div>&nbsp;<span style="color: #a31515;">"********"</span>;</div>
-     <div><span style="color: #0000ff;">const</span>&nbsp;<span
-        style="color: #0000ff;">char</span>*&nbsp;<span
-        style="color: #0000ff;">const</span>&nbsp;<span
-        style="color: #001080;">PASS</span>&nbsp;=</div>
-     <div>&nbsp;<span style="color: #a31515;">"******"</span>;</div>
-     <div><span style="color: #0000ff;">const</span>&nbsp;<span
-        style="color: #0000ff;">char</span>*&nbsp;<span
-        style="color: #0000ff;">const</span>&nbsp;<span
-        style="color: #001080;">HUELLA_DIGITAL</span>&nbsp;=</div>
-     <div>&nbsp;<span
-        style="color: #a31515;">"a57a9b583ab02ab6f8b7df082df9fb3c88930eb8"</span>;
-     </div>
-     <div><span style="color: #0000ff;">const</span>&nbsp;<span
-        style="color: #0000ff;">char</span>*&nbsp;<span
-        style="color: #0000ff;">const</span>&nbsp;<span
-        style="color: #001080;">URL</span>&nbsp;=</div>
-     <div>&nbsp;<span
-        style="color: #a31515;">"wss://ws1.gilbertopacheco.repl.co/"</span>;
-     </div><br>
-     <div><span style="color: #af00db;">using</span>&nbsp;<span
-        style="color: #0000ff;">namespace</span>&nbsp;<span
-        style="color: #267f99;">websockets</span>;</div>
-     <div>ESP8266WiFiMulti&nbsp;<span style="color: #001080;">WiFiMulti</span>;
-     </div>
-     <div>WebsocketsClient&nbsp;&nbsp;<span
-        style="color: #001080;">client</span>;</div><br>
-     <div><span style="color: #008000;">//&nbsp;Pin&nbsp;del&nbsp;botón.</span>
-     </div>
-     <div><span style="color: #0000ff;">const</span>&nbsp;<span
-        style="color: #0000ff;">int</span>&nbsp;<span
-        style="color: #001080;">BOTON</span>&nbsp;=&nbsp;<span
-        style="color: #098658;">0</span>;</div>
-     <div><span style="color: #0000ff;">bool</span>&nbsp;<span
-        style="color: #001080;">presionado</span>&nbsp;=&nbsp;<span
-        style="color: #0000ff;">false</span>;</div>
-     <div><span style="color: #0000ff;">bool</span>&nbsp;<span
-        style="color: #001080;">conectado</span>&nbsp;=&nbsp;<span
-        style="color: #0000ff;">false</span>;</div>
-     <div><span style="color: #0000ff;">String</span>&nbsp;<span
-        style="color: #001080;">valor</span>;</div><br>
-     <div><span style="color: #0000ff;">void</span>&nbsp;<span
-        style="color: #795e26;">onMessageCallback</span>(</div>
-     <div>&nbsp;&nbsp;<span
-        style="color: #267f99;">WebsocketsMessage</span>&nbsp;<span
-        style="color: #001080;">message</span>)&nbsp;{</div>
-     <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
-        style="color: #795e26;">print</span>(<span
-        style="color: #a31515;">"Got&nbsp;Message:&nbsp;"</span>);</div>
-     <div>&nbsp;<span style="color: #001080;">valor</span>&nbsp;=&nbsp;<span
-        style="color: #001080;">message</span>.<span
-        style="color: #795e26;">data</span>();</div>
-     <div>&nbsp;<span style="color: #795e26;">digitalWrite</span>(LED_BUILTIN,
-     </div>
-     <div>&nbsp;&nbsp;<span
-        style="color: #001080;">valor</span>&nbsp;==&nbsp;<span
-        style="color: #a31515;">"1"</span>&nbsp;?&nbsp;LOW&nbsp;:&nbsp;HIGH);
-     </div>
-     <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
-        style="color: #795e26;">println</span>(<span
-        style="color: #001080;">message</span>.<span
-        style="color: #795e26;">data</span>());</div>
-     <div>}</div><br>
-     <div><span style="color: #0000ff;">void</span>&nbsp;<span
-        style="color: #795e26;">onEventsCallback</span>(</div>
-     <div>&nbsp;&nbsp;<span
-        style="color: #267f99;">WebsocketsEvent</span>&nbsp;<span
-        style="color: #001080;">event</span>,</div>
-     <div>&nbsp;&nbsp;<span style="color: #267f99;">String</span>&nbsp;<span
-        style="color: #001080;">data</span>)&nbsp;{</div>
-     <div>&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
-        style="color: #001080;">event</span>&nbsp;==</div>
-     <div>&nbsp;&nbsp;&nbsp;<span
-        style="color: #267f99;">WebsocketsEvent</span>::ConnectionOpened)&nbsp;{
-     </div>
-     <div>&nbsp;&nbsp;<span style="color: #001080;">Serial</span>.<span
-        style="color: #795e26;">println</span>(<span
-        style="color: #a31515;">"Conectado."</span>);</div>
-     <div>&nbsp;&nbsp;<span
-        style="color: #001080;">conectado</span>&nbsp;=&nbsp;<span
-        style="color: #0000ff;">true</span>;</div>
-     <div>&nbsp;}&nbsp;<span style="color: #af00db;">else</span>&nbsp;<span
-        style="color: #af00db;">if</span>&nbsp;(<span
-        style="color: #001080;">event</span>&nbsp;==</div>
-     <div>&nbsp;&nbsp;&nbsp;<span
-        style="color: #267f99;">WebsocketsEvent</span>::ConnectionClosed)&nbsp;{
-     </div>
-     <div>&nbsp;&nbsp;<span style="color: #001080;">Serial</span>.<span
-        style="color: #795e26;">println</span>(<span
-        style="color: #a31515;">"Desconectado."</span>);</div>
-     <div>&nbsp;&nbsp;<span
-        style="color: #001080;">conectado</span>&nbsp;=&nbsp;<span
-        style="color: #0000ff;">false</span>;</div>
-     <div>&nbsp;}</div>
-     <div>}</div><br>
-     <div><span style="color: #0000ff;">void</span>&nbsp;<span
-        style="color: #795e26;">setup</span>()&nbsp;{</div>
-     <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
-        style="color: #795e26;">begin</span>(<span
-        style="color: #098658;">115200</span>);</div>
-     <div><span
-        style="color: #008000;">&nbsp;//&nbsp;Serial.setDebugOutput(true);</span>
-     </div>
-     <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
-        style="color: #795e26;">println</span>();</div>
-     <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
-        style="color: #795e26;">println</span>();</div>
-     <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
-        style="color: #795e26;">println</span>();</div>
-     <div>&nbsp;<span
-        style="color: #795e26;">pinMode</span>(LED_BUILTIN,&nbsp;OUTPUT);</div>
-     <div>&nbsp;<span style="color: #795e26;">pinMode</span>(<span
-        style="color: #001080;">BOTON</span>,&nbsp;INPUT);</div>
-     <div>&nbsp;<span style="color: #af00db;">for</span>&nbsp;(<span
-        style="color: #0000ff;">uint8_t</span>&nbsp;<span
-        style="color: #001080;">t</span>&nbsp;=&nbsp;<span
-        style="color: #098658;">4</span>;&nbsp;<span
-        style="color: #001080;">t</span>&nbsp;&gt;&nbsp;<span
-        style="color: #098658;">0</span>;</div>
-     <div>&nbsp;&nbsp;<span style="color: #001080;">t</span>--)&nbsp;{</div>
-     <div>&nbsp;&nbsp;<span style="color: #001080;">Serial</span>.<span
-        style="color: #795e26;">printf</span>(</div>
-     <div>&nbsp;&nbsp;&nbsp;<span
-        style="color: #a31515;">"ESPERANDO&nbsp;</span><span
-        style="color: #001080;">%d</span><span
-        style="color: #a31515;">...</span><span
-        style="color: #ee0000;">\n</span><span
-        style="color: #a31515;">"</span>,&nbsp;<span
-        style="color: #001080;">t</span>);</div>
-     <div>&nbsp;&nbsp;<span style="color: #001080;">Serial</span>.<span
-        style="color: #795e26;">flush</span>();</div>
-     <div>&nbsp;&nbsp;<span style="color: #795e26;">delay</span>(<span
-        style="color: #098658;">1000</span>);</div>
-     <div>&nbsp;}</div>
-     <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
-        style="color: #795e26;">println</span>(</div>
-     <div>&nbsp;&nbsp;<span
-        style="color: #a31515;">"Conectando&nbsp;WiFi..."</span>);</div>
-     <div>&nbsp;<span style="color: #001080;">WiFi</span>.<span
-        style="color: #795e26;">mode</span>(WIFI_STA);</div>
-     <div>&nbsp;<span style="color: #001080;">WiFiMulti</span>.<span
-        style="color: #795e26;">addAP</span>(<span
-        style="color: #001080;">SSID</span>,&nbsp;<span
-        style="color: #001080;">PASS</span>);</div>
-     <div>&nbsp;<span style="color: #af00db;">while</span>&nbsp;(<span
-        style="color: #001080;">WiFiMulti</span>.<span
-        style="color: #795e26;">run</span>()&nbsp;!=</div>
-     <div>&nbsp;&nbsp;&nbsp;WL_CONNECTED)&nbsp;{</div>
-     <div>&nbsp;&nbsp;<span style="color: #795e26;">delay</span>(<span
-        style="color: #098658;">500</span>);</div>
-     <div>&nbsp;}</div>
-     <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
-        style="color: #795e26;">println</span>(<span
-        style="color: #a31515;">"WiFi&nbsp;conectado."</span>);</div>
-     <div>&nbsp;<span style="color: #001080;">client</span>.</div>
-     <div>&nbsp;&nbsp;&nbsp;<span style="color: #795e26;">onMessage</span>(<span
-        style="color: #795e26;">onMessageCallback</span>);</div>
-     <div>&nbsp;<span style="color: #001080;">client</span>.<span
-        style="color: #795e26;">onEvent</span>(<span
-        style="color: #795e26;">onEventsCallback</span>);</div>
-     <div>&nbsp;<span style="color: #001080;">client</span>.</div>
-     <div>&nbsp;&nbsp;&nbsp;<span
-        style="color: #795e26;">setFingerprint</span>(<span
-        style="color: #001080;">HUELLA_DIGITAL</span>);</div>
-     <div>&nbsp;<span style="color: #001080;">client</span>.<span
-        style="color: #795e26;">connect</span>(<span
-        style="color: #001080;">URL</span>);</div>
-     <div>}</div><br>
-     <div><span style="color: #0000ff;">void</span>&nbsp;<span
-        style="color: #795e26;">loop</span>()&nbsp;{</div>
-     <div>&nbsp;<span style="color: #001080;">client</span>.<span
-        style="color: #795e26;">poll</span>();</div>
-     <div>&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
-        style="color: #001080;">conectado</span>)&nbsp;{</div>
-     <div>&nbsp;&nbsp;<span style="color: #0000ff;">bool</span>&nbsp;<span
-        style="color: #001080;">actual</span>&nbsp;=&nbsp;<span
-        style="color: #795e26;">digitalRead</span>(<span
-        style="color: #001080;">BOTON</span>);</div>
-     <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(!<span
-        style="color: #001080;">presionado</span>&nbsp;&amp;&amp;</div>
-     <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-        style="color: #001080;">actual</span>&nbsp;==&nbsp;LOW)&nbsp;{</div>
-     <div>&nbsp;&nbsp;&nbsp;<span style="color: #001080;">client</span>.<span
-        style="color: #795e26;">send</span>(<span
-        style="color: #001080;">valor</span>);</div>
-     <div>&nbsp;&nbsp;&nbsp;<span style="color: #001080;">Serial</span>.<span
-        style="color: #795e26;">print</span>(<span
-        style="color: #a31515;">"Envía"</span>);</div>
-     <div>&nbsp;&nbsp;&nbsp;<span style="color: #001080;">Serial</span>.<span
-        style="color: #795e26;">println</span>(<span
-        style="color: #001080;">valor</span>);</div>
-     <div>&nbsp;&nbsp;}</div>
-     <div>&nbsp;&nbsp;<span
-        style="color: #001080;">presionado</span>&nbsp;=&nbsp;(<span
-        style="color: #001080;">actual</span>&nbsp;==&nbsp;LOW);</div>
-     <div>&nbsp;}</div>
-     <div>}</div><br>
-    </div>
+   <div>
+   <div><span style="color: #af00db;">#include</span><span
+      style="color: #0000ff;"> </span><span
+      style="color: #a31515;">&lt;ESP8266WiFi.h&gt;</span></div>
+   <div><span style="color: #af00db;">#include</span><span
+      style="color: #0000ff;"> </span><span
+      style="color: #a31515;">&lt;ESP8266WiFiMulti.h&gt;</span></div>
+   <div><span style="color: #af00db;">#include</span><span
+      style="color: #0000ff;"> </span><span
+      style="color: #a31515;">&lt;ArduinoWebsockets.h&gt;</span></div><br>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0000ff;">char</span>* <span
+      style="color: #0000ff;">const</span> <span
+      style="color: #001080;">SSID</span> =</div>
+   <div>&nbsp;<span style="color: #a31515;">"*******"</span>;</div>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0000ff;">char</span>* <span
+      style="color: #0000ff;">const</span> <span
+      style="color: #001080;">PASS</span> =</div>
+   <div>&nbsp;<span style="color: #a31515;">"*******"</span>;</div>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0000ff;">char</span>* <span
+      style="color: #0000ff;">const</span> <span
+      style="color: #001080;">HUELLA_DIGITAL</span> =</div>
+   <div>&nbsp;<span
+      style="color: #a31515;">"*************"</span>;
+   </div>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0000ff;">char</span>* <span
+      style="color: #0000ff;">const</span> <span
+      style="color: #001080;">URL</span> =</div>
+   <div>&nbsp;<span
+      style="color: #a31515;">"wss://iot.gilbertopachec3.repl.co/"</span>;</div>
+   <br>
+   <div><span style="color: #af00db;">using</span> <span
+      style="color: #0000ff;">namespace</span> <span
+      style="color: #267f99;">websockets</span>;</div>
+   <div>ESP8266WiFiMulti <span style="color: #001080;">WiFiMulti</span>;</div>
+   <div>WebsocketsClient &nbsp;<span style="color: #001080;">client</span>;
+   </div><br>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0000ff;">int</span> <span
+      style="color: #001080;">BOTON</span> = <span
+      style="color: #098658;">0</span>;</div>
+   <div><span style="color: #0000ff;">bool</span> <span
+      style="color: #001080;">presionado</span> = <span
+      style="color: #0000ff;">false</span>;</div>
+   <div><span style="color: #0000ff;">bool</span> <span
+      style="color: #001080;">conectado</span> = <span
+      style="color: #0000ff;">false</span>;</div>
+   <div><span style="color: #0000ff;">String</span> <span
+      style="color: #001080;">valor</span>;</div><br>
+   <div><span style="color: #0000ff;">void</span> <span
+      style="color: #795e26;">onMessageCallback</span>(</div>
+   <div>&nbsp; <span style="color: #267f99;">WebsocketsMessage</span> <span
+      style="color: #001080;">message</span>) {</div>
+   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
+      style="color: #795e26;">print</span>(<span style="color: #a31515;">"Recibe
+     "</span>);</div>
+   <div>&nbsp;<span style="color: #001080;">valor</span> = <span
+      style="color: #001080;">message</span>.<span
+      style="color: #795e26;">data</span>();</div>
+   <div>&nbsp;<span style="color: #795e26;">digitalWrite</span>(LED_BUILTIN,
+   </div>
+   <div>&nbsp; <span style="color: #001080;">valor</span> == <span
+      style="color: #a31515;">"1"</span> ? LOW : HIGH);</div>
+   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
+      style="color: #795e26;">println</span>(<span
+      style="color: #001080;">message</span>.<span
+      style="color: #795e26;">data</span>());</div>
+   <div>}</div><br>
+   <div><span style="color: #0000ff;">void</span> <span
+      style="color: #795e26;">onEventsCallback</span>(</div>
+   <div>&nbsp; <span style="color: #267f99;">WebsocketsEvent</span> <span
+      style="color: #001080;">event</span>,</div>
+   <div>&nbsp; <span style="color: #267f99;">String</span> <span
+      style="color: #001080;">data</span>) {</div>
+   <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #001080;">event</span> ==</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #267f99;">WebsocketsEvent</span>::ConnectionOpened) {</div>
+   <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
+      style="color: #795e26;">println</span>(<span
+      style="color: #a31515;">"Conectado."</span>);</div>
+   <div>&nbsp; <span style="color: #001080;">conectado</span> = <span
+      style="color: #0000ff;">true</span>;</div>
+   <div>&nbsp;} <span style="color: #af00db;">else</span> <span
+      style="color: #af00db;">if</span> (<span
+      style="color: #001080;">event</span> ==</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #267f99;">WebsocketsEvent</span>::ConnectionClosed) {</div>
+   <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
+      style="color: #795e26;">println</span>(<span
+      style="color: #a31515;">"Desconectado."</span>);</div>
+   <div>&nbsp; <span style="color: #001080;">conectado</span> = <span
+      style="color: #0000ff;">false</span>;</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
+   <div><span style="color: #0000ff;">void</span> <span
+      style="color: #795e26;">setup</span>() {</div>
+   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
+      style="color: #795e26;">begin</span>(<span
+      style="color: #098658;">115200</span>);</div>
+   <div><span style="color: #008000;">&nbsp;//
+     Serial.setDebugOutput(true);</span></div>
+   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
+      style="color: #795e26;">println</span>();</div>
+   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
+      style="color: #795e26;">println</span>();</div>
+   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
+      style="color: #795e26;">println</span>();</div>
+   <div>&nbsp;<span style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);
+   </div>
+   <div>&nbsp;<span style="color: #795e26;">pinMode</span>(<span
+      style="color: #001080;">BOTON</span>, INPUT);</div>
+   <div>&nbsp;<span style="color: #af00db;">for</span> (<span
+      style="color: #0000ff;">uint8_t</span> <span
+      style="color: #001080;">t</span> = <span style="color: #098658;">4</span>;
+    <span style="color: #001080;">t</span> &gt; <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp; <span style="color: #001080;">t</span>--) {</div>
+   <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
+      style="color: #795e26;">printf</span>(</div>
+   <div>&nbsp; &nbsp;<span style="color: #a31515;">"ESPERANDO </span><span
+      style="color: #001080;">%d</span><span
+      style="color: #a31515;">...</span><span
+      style="color: #ee0000;">\n</span><span style="color: #a31515;">"</span>,
+    <span style="color: #001080;">t</span>);</div>
+   <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
+      style="color: #795e26;">flush</span>();</div>
+   <div>&nbsp; <span style="color: #795e26;">delay</span>(<span
+      style="color: #098658;">1000</span>);</div>
+   <div>&nbsp;}</div>
+   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
+      style="color: #795e26;">println</span>(</div>
+   <div>&nbsp; <span style="color: #a31515;">"Conectando WiFi..."</span>);</div>
+   <div>&nbsp;<span style="color: #001080;">WiFi</span>.<span
+      style="color: #795e26;">mode</span>(WIFI_STA);</div>
+   <div>&nbsp;<span style="color: #001080;">WiFiMulti</span>.<span
+      style="color: #795e26;">addAP</span>(<span
+      style="color: #001080;">SSID</span>, <span
+      style="color: #001080;">PASS</span>);</div>
+   <div>&nbsp;<span style="color: #af00db;">while</span> (<span
+      style="color: #001080;">WiFiMulti</span>.<span
+      style="color: #795e26;">run</span>() !=</div>
+   <div>&nbsp; &nbsp;WL_CONNECTED) {</div>
+   <div>&nbsp; <span style="color: #795e26;">delay</span>(<span
+      style="color: #098658;">500</span>);</div>
+   <div>&nbsp;}</div>
+   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
+      style="color: #795e26;">println</span>(<span style="color: #a31515;">"WiFi
+     conectado."</span>);</div>
+   <div>&nbsp;<span style="color: #001080;">client</span>.</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">onMessage</span>(<span
+      style="color: #795e26;">onMessageCallback</span>);</div>
+   <div>&nbsp;<span style="color: #001080;">client</span>.<span
+      style="color: #795e26;">onEvent</span>(<span
+      style="color: #795e26;">onEventsCallback</span>);</div>
+   <div>&nbsp;<span style="color: #001080;">client</span>.</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">setFingerprint</span>(<span
+      style="color: #001080;">HUELLA_DIGITAL</span>);</div>
+   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
+      style="color: #795e26;">println</span>(<span
+      style="color: #a31515;">"Conectando WS."</span>);</div>
+   <div>&nbsp;<span style="color: #001080;">client</span>.<span
+      style="color: #795e26;">connect</span>(<span
+      style="color: #001080;">URL</span>);</div>
+   <div>}</div><br>
+   <div><span style="color: #0000ff;">void</span> <span
+      style="color: #795e26;">loop</span>() {</div>
+   <div>&nbsp;<span style="color: #001080;">client</span>.<span
+      style="color: #795e26;">poll</span>();</div>
+   <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #001080;">conectado</span>) {</div>
+   <div>&nbsp; <span style="color: #0000ff;">bool</span> <span
+      style="color: #001080;">actual</span> = <span
+      style="color: #795e26;">digitalRead</span>(<span
+      style="color: #001080;">BOTON</span>);</div>
+   <div>&nbsp; <span style="color: #af00db;">if</span> (!<span
+      style="color: #001080;">presionado</span> &amp;&amp;</div>
+   <div>&nbsp; &nbsp; <span style="color: #001080;">actual</span> == LOW) {
+   </div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">client</span>.<span
+      style="color: #795e26;">send</span>(<span
+      style="color: #001080;">valor</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">Serial</span>.<span
+      style="color: #795e26;">print</span>(<span
+      style="color: #a31515;">"Envía"</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">Serial</span>.<span
+      style="color: #795e26;">println</span>(<span
+      style="color: #001080;">valor</span>);</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp; <span style="color: #001080;">presionado</span> = (<span
+      style="color: #001080;">actual</span> == LOW);</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
+  </div>
    </muestra-codigo>`;
  }
 }

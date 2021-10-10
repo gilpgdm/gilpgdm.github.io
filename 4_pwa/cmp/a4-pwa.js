@@ -17,9 +17,14 @@ export class A4PWA extends Diapositiva {
      <a href="src/pwa.zip" download>Descarga el ejemplo.</a>
     </p>
     <p>
+     Prueba el proyecto en Replit e instala el ejemplo con la URl
      <a href="https://replit.com/@GilbertoPachec3/pwa?v=1"
-       target="_blank">Revisa el código en Replit. Prueba e instala el
-      ejemplo.</a>
+       target="_blank">https://replit.com/@GilbertoPachec3/pwa?v=1</a>
+    </p>
+    <p>
+     Instala el ejemplo con la URl
+     <a href="https://pwa--gilbertopachec3.repl.co/"
+       target="_blank">https://pwa--gilbertopachec3.repl.co/</a>
     </p>
     <h2>Instrucciones</h2>
     <ol>

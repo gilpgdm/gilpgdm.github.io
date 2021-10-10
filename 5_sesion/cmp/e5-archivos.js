@@ -14,21 +14,21 @@ export class E5Archivos extends Diapositiva {
       <p>www</p>
       <ul>
        <li>
-        <p><a href="10_CtrlSesion.html">CtrlSesion.js</a></p>
+        <p><a href="g_CtrlSesion.html">CtrlSesion.js</a></p>
        </li>
        <li>
-        <p><a href="9_index_html.html">index.html</a></p>
+        <p><a href="f_index_html.html">index.html</a></p>
        </li>
        <li>
-        <p><a href="15_LICENSE.html">LICENSE</a></p>
+        <p><a href="j_LICENSE.html">LICENSE</a></p>
        </li>
       </ul>
      </li>
      <li>
-      <p><a href="12_index_js.html">index.js</a></p>
+      <p><a href="h_index_js.html">index.js</a></p>
      </li>
      <li>
-      <p><a href="14_validaUsuario.html">validaUsuario.js</a></p>
+      <p><a href="i_validaUsuario.html">validaUsuario.js</a></p>
      </li>
     </ul>
    </div>`;
