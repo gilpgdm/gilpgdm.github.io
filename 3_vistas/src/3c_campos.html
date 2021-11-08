@@ -189,6 +189,7 @@
    }
    prepara() {
     /**
+     * @private
      * @type {HTMLInputElement|
      *  HTMLSelectElement|
      *  HTMLOutputElement|
@@ -196,7 +197,7 @@
     this._elem = this.
      querySelector(
       "input, select, output")
-    if (this._elem) {
+    if (this._elem != null) {
      this.addEventListener("input",
       () => this.analiza())
     }
@@ -204,9 +205,9 @@
    }
    analiza() {
     const e = this._elem;
-    if (e) {
+    if (e != null) {
      if (!e.validity.badInput &&
-      e.value.length === 0) {
+      e.value === "") {
       e.classList.remove("valor")
      } else {
       e.classList.add("valor")
