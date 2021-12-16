@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>G. Archivos y cámara - GilPG DM</title>
- <meta name="description" content="Uso de archivos y cámara.">
+ <title>G. Geolocalización - GilPG DM</title>
+ <meta name="description" content="Uso del geolocalización con HTML y JavaScript.">
  <style>
  :root {
   --introDuracion: 2s;
@@ -348,31 +348,22 @@
   <button id="abre" type="button" title="Menú" class="cambiaMenu">
    &#x2630;
   </button>
-  <a class="anterior" href="/m03vistas/mFgps.html" title="F. Geolocalización">◀</a>
-  <a class="siguiente" href="/m03vistas/mHresumen.html" title="H. Resumen">▶</a>
+  <a class="anterior" href="/m03vistas/mFinterruptores.html" title="F. Interruptores">◀</a>
+  <a class="siguiente" href="/m03vistas/mHarchivos.html" title="H. Archivos y cámara">▶</a>
  </div>
-   <h1 >G. Archivos y cámara</h1><div class="horizontal">
+   <h1 >G. Geolocalización</h1><div class="horizontal">
  <section>
   <h1>Salida</h1>
-  <iframe src="/src/m03vistas/Harchivos.html" height="300"></iframe>
+  <iframe src="/src/m03vistas/Fgps.html" height="200"
+    title="Uso de geolocalización"></iframe>
   <p class="noPrint">
-   <a href="/src/m03vistas/Harchivos.html" target="_blank">Ábrelo en otra
+   <a href="/src/m03vistas/Fgps.html" target="_blank" rel="nooper">Ábrelo en otra
     pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank"
-     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EArchivos%20y%20C%C3%A1mara%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3EArchivos%20y%20C%C3%A1mara%3C%2Fh1%3E%0A%20%3Cp%3E%0A%20%20%3Clabel%3E%0A%20%20%20Foto%20de%20M%C3%B3vil%0A%20%20%20%3Cinput%20type%3D%22file%22%0A%20%20%20%20%20accept%3D%22image%2F*%22%0A%20%20%20%20%20capture%3D%22camera%22%3E%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fp%3E%0A%20%3Cp%3E%0A%20%20%3Clabel%3E%0A%20%20%20Video%20de%20M%C3%B3vil%0A%20%20%20%3Cinput%20type%3D%22file%22%0A%20%20%20%20%20accept%3D%22video%2F*%22%0A%20%20%20%20%20capture%3D%22%22%3E%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fp%3E%0A%20%3Cp%3E%0A%20%20%3Clabel%20for%3D%22archivo%22%3E%0A%20%20%20Archivo%0A%20%20%20%3Cinput%20type%3D%22file%22%3E%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+   <a target="_blank" rel="nooper"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EGPS%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3FGPS%3C%2Fh1%3E%0A%20%3Cp%3E%0A%20%20%3Clabel%3E%0A%20%20%20Latitud%0A%20%20%20%3Coutput%20id%3D%22latitud%22%3E%3C%2Foutput%3E%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fp%3E%0A%20%3Cp%3E%0A%20%20%3Clabel%3E%0A%20%20%20Longitud%0A%20%20%20%3Coutput%20id%3D%22longitud%22%3E%3C%2Foutput%3E%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fp%3E%0A%20%3Cscript%3E%0A%20%20navigator.geolocation.%0A%20%20%20watchPosition(p%20%3D%3E%20%7B%0A%20%20%20%20latitud.value%20%3D%0A%20%20%20%20%20p.coords.latitude%3B%0A%20%20%20%20longitud.value%20%3D%0A%20%20%20%20%20p.coords.longitude%3B%0A%20%20%20%7D)%3B%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
-  </p>
-  <p class="noPrint">
-   <a target="_blank"
-     href="https://drive.google.com/file/d/1LZ0BjQB2Hlt4df2ksrJp2QdA9Ky1oghw/view?usp=sharing">
-    Observa como funciona en Android.</a>
-  </p>
-  <p class="noPrint">
-   <a target="_blank"
-     href="https://drive.google.com/file/d/1JKaeJaWg0VepcuaDGc0j7S-7CphTtulN/view?usp=sharing">
-    Observa como funciona en iOS.</a>
   </p>
  </section>
  <muestra-codigo>
@@ -395,59 +386,55 @@
    <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
       style="color: #0000ff;">"width=device-width"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;title&gt;</span>Archivos&nbsp;y&nbsp;Cámara<span
+   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>GPS<span
       style="color: #800000;">&lt;/title&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
    <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span>Archivos&nbsp;y&nbsp;Cámara<span
+   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>GPS<span
       style="color: #800000;">&lt;/h1&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;label&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;Foto&nbsp;de&nbsp;Móvil</div>
+   <div>&nbsp;&nbsp;&nbsp;Latitud</div>
    <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;input</span>&nbsp;<span
-      style="color: #ff0000;">type</span>=<span
-      style="color: #0000ff;">"file"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #ff0000;">accept</span>=<span
-      style="color: #0000ff;">"image/*"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #ff0000;">capture</span>=<span
-      style="color: #0000ff;">"camera"</span><span
-      style="color: #800000;">&gt;</span></div>
+      style="color: #800000;">&lt;output</span>&nbsp;<span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"latitud"</span><span
+      style="color: #800000;">&gt;&lt;/output&gt;</span></div>
    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;label&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;Video&nbsp;de&nbsp;Móvil</div>
+   <div>&nbsp;&nbsp;&nbsp;Longitud</div>
    <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;input</span>&nbsp;<span
-      style="color: #ff0000;">type</span>=<span
-      style="color: #0000ff;">"file"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #ff0000;">accept</span>=<span
-      style="color: #0000ff;">"video/*"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #ff0000;">capture</span>=<span
-      style="color: #0000ff;">""</span><span
-      style="color: #800000;">&gt;</span></div>
+      style="color: #800000;">&lt;output</span>&nbsp;<span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"longitud"</span><span
+      style="color: #800000;">&gt;&lt;/output&gt;</span></div>
    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;label</span>&nbsp;<span
-      style="color: #ff0000;">for</span>=<span
-      style="color: #0000ff;">"archivo"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;Archivo</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #001080;">navigator</span>.<span
+      style="color: #0070c1;">geolocation</span>.</div>
    <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;input</span>&nbsp;<span
-      style="color: #ff0000;">type</span>=<span
-      style="color: #0000ff;">"file"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+      style="color: #795e26;">watchPosition</span>(<span
+      style="color: #001080;">p</span>&nbsp;<span
+      style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #001080;">latitud</span>.<span
+      style="color: #001080;">value</span>&nbsp;=</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #001080;">p</span>.<span
+      style="color: #0070c1;">coords</span>.<span
+      style="color: #0070c1;">latitude</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #001080;">longitud</span>.<span
+      style="color: #001080;">value</span>&nbsp;=</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #001080;">p</span>.<span
+      style="color: #0070c1;">coords</span>.<span
+      style="color: #0070c1;">longitude</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;});</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
   </div>
@@ -495,37 +482,42 @@
     </li>
     <li>
      <p>
-      <a href="/m03vistas/mBapp.html">Una app básica</a>
+      <a href="/m03vistas/mBformulario.html">Un formulario para móvil</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03vistas/mCcampos.html">Campos</a>
+      <a href="/m03vistas/mCapp.html">Una app básica</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03vistas/mDbotones.html">Botones</a>
+      <a href="/m03vistas/mDcampos.html">Campos</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03vistas/mEinterruptores.html">Interruptores</a>
+      <a href="/m03vistas/mEbotones.html">Botones</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03vistas/mFgps.html">Geolocalización</a>
+      <a href="/m03vistas/mFinterruptores.html">Interruptores</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03vistas/mGarchivos.html" class="actual">Archivos y cámara</a>
+      <a href="/m03vistas/mGgps.html" class="actual">Geolocalización</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03vistas/mHresumen.html">Resumen</a>
+      <a href="/m03vistas/mHarchivos.html">Archivos y cámara</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03vistas/mIresumen.html">Resumen</a>
      </p>
     </li>
    </ol><p>
@@ -542,9 +534,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m03vistas/mFgps.html"
+ let urlAnterior = "/m03vistas/mFinterruptores.html"
  /**@type {string} */
- let urlSiguiente = "/m03vistas/mHresumen.html"
+ let urlSiguiente = "/m03vistas/mHarchivos.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
