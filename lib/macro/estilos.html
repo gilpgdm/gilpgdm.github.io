@@ -23,6 +23,11 @@
   --colStack1: black;
   --colStack2: #224ba5;
   --colStack3: #92731f;
+  --colScrollbar: #CFD8DC;
+  --colThumb: #90a4ae;
+  --colThumbActivo: #3f3f3f;
+  --anchoThumb: 7px;
+  --borderRadiusThumb: 3.5px;
   --gap: 0.5rem;
   --fontMono: monospace;
   --fontSans: sans-serif;
@@ -30,6 +35,26 @@
   font-family: var(--fontSerif);
   color: var(--colLetra);
   background-color: var(--colFondo);
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ body::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ body::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
  }
 
  .anterior,
@@ -113,7 +138,10 @@
   .noPrint {
    display: none;
   }
-  .pruebaDeEscritorio {page-break-before: always;}
+
+  .pruebaDeEscritorio {
+   page-break-before: always;
+  }
  }
 
  iframe {
