@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
  <meta charset="UTF-8">
  <meta name="viewport"
@@ -9,12 +10,12 @@
   html {
    --colTxt: black;
    --colBk: white;
-   --colCnt: white;
-   --colCntBk: #6a0080;
-   --colCntBkHv: #6a0080dd;
-   --colCntBkFc: #6a0080bb;
-   --colCntBkAc: #d05ce3;
-   --colCntSh: #00000055;
+   --colFil: white;
+   --colFilBk: #0039cb;
+   --colFilBkHv: #0039cb;
+   --colFilBkFc: #0039cbdd;
+   --colFilBkAc: #0039cbee;
+   --colFilSh: #00000055;
    --fntFam: -apple-system,
     BlinkMacSystemFont, sans-serif;
    color: var(--colTxt);
@@ -22,67 +23,47 @@
    background-color: var(--colBk);
   }
 
-  .contained {
+  .filled {
    font-family: var(--fntFam);
-   text-transform: uppercase;
-   color: var(--colCnt);
+   color: var(--colFil);
    background-color:
-    var(--colCntBk);
+    var(--colFilBk);
    font-size: 0.875rem;
    padding: 0.5rem 1rem;
    border: none;
-   border-radius: 4px;
+   border-radius: 1.5rem;
   }
 
-  .contained:hover,
-  .contained:focus {
+  .filled:hover {
    box-shadow:
-    0 3px 6px var(--colCntSh);
+    0 3px 6px var(--colFilSh);
   }
 
-  .contained:hover {
+  .filled:hover {
    background-color:
-    var(--colCntBkHv);
+    var(--colFilBkHv);
   }
 
-  .contained:focus {
+  .filled:focus {
    outline: none;
    background-color:
-    var(--colCntBkFc);
+    var(--colFilBkFc);
   }
 
-  .contained:active {
-   box-shadow:
-    0 6px 12px var(--colCntSh);
+  .filled:active {
    background-color:
-    var(--colCntBkAc);
-   background-position: center;
-   background-image:
-    radial-gradient(circle,
-     transparent 1%,
-     var(--colCntBkHv) 1%);
-   background-size: 15000%;
-   animation-name: ripple;
-   animation-duration: 0.5s;
-  }
-
-  @keyframes ripple {
-   from {
-    background-size: 100%;
-   }
-
-   to {
-    background-size: 15000%;
-   }
+    var(--colFilBkAc);
   }
  </style>
 </head>
+
 <body>
  <h1>Botones</h1>
  <p>
-  <button class="contained">
+  <button class="filled">
    Haz Clic
   </button>
  </p>
 </body>
+
 </html>
