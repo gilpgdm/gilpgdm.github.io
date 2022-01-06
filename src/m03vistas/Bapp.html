@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
  <meta charset="UTF-8">
  <meta name="viewport"
@@ -9,10 +10,10 @@
   html {
    --colTxt: black;
    --colBk: white;
-   --colPrim: white;
-   --colPrimBk: #9c27b0;
+   --colPrim: black;
+   --colPrimBk: #fff9c4;
    /* Los 2 primeros fonts son
-       * para apple. */
+    * para apple. */
    --fntFam: -apple-system,
     BlinkMacSystemFont, sans-serif;
    color: var(--colTxt);
@@ -30,14 +31,12 @@
    top: 0;
    margin: 0;
    padding: 1rem;
-   font-size: 1.25rem;
+   font-size: 1.375rem;
+   line-height: 1.75rem;
+   text-align: center;
    color: var(--colPrim);
    background-color:
     var(--colPrimBk);
-  }
-
-  .ios h1 {
-   text-align: center;
   }
 
   p {
@@ -45,6 +44,7 @@
   }
  </style>
 </head>
+
 <body>
  <h1>App</h1>
  <p>x</p>
@@ -71,18 +71,6 @@
  <p>x</p>
  <p>x</p>
  <p>x</p>
- <script>
-  if (/.*android.*/i.
-   test(navigator.userAgent)) {
-   document.body.classList
-    .add("android");
-  }
-  if (
-   /.*(iPad|iPhone|iPod|Mac).*/.
-    test(navigator.userAgent)) {
-   document.body.classList.
-    add('ios');
-  }
- </script>
 </body>
+
 </html>
