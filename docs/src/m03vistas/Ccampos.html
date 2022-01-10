@@ -6,24 +6,31 @@
  <meta name="viewport"
    content="width=device-width">
  <title>Campos</title>
+ <link rel="preconnect"
+   href="https://fonts.googleapis.com">
+ <link rel="preconnect"
+   href="https://fonts.gstatic.com"
+   crossorigin>
+ <link rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
  <style>
   html {
-   --colTxt: black;
-   --colBk: white;
-   --colCm: gray;
-   --colCmFc: #0039cb;
-   --colCmEr: #b00020;
-   --colCmBk: #F5F5F5;
-   --colCmBkHv: #EEEEEE;
-   --colCmBkFc: #E0E0E0;
+   --colOnBg: #1C1B1F;
+   --colBg: #FFFBFE;
+   --colCm: #79747E;
+   --colCmFc: #6750A4;
+   --colCmEr: #B3261E;
+   --colCmBg: #E7E0EC44;
+   --colCmBgHv: #E7E0EC88;
+   --colCmBgFc: #E7E0EC;
    --colCmOp: white;
-   --colCmOpBk: #0039cb;
+   --colCmOpBg: #6750A4;
    --fntFam: -apple-system,
     BlinkMacSystemFont, Roboto,
     sans-serif;
-   color: var(--colTxt);
+   color: var(--colOnBg);
    font-family: var(--fntFam);
-   background-color: var(--colBk);
+   background-color: var(--colBg);
   }
 
   /* Quita un borde rojo que coloca
@@ -31,13 +38,52 @@
   :-moz-ui-invalid {
    box-shadow: none;
   }
-
+ </style>
+ <script>
+  class CmDin extends HTMLElement {
+   connectedCallback() {
+    setTimeout(
+     () => this.prepara(),
+     100)
+   }
+   prepara() {
+    /**
+     * @private
+     * @type {HTMLInputElement|
+     *  HTMLSelectElement|
+     *  HTMLOutputElement|
+     *  null} */
+    this._elem = this.
+     querySelector(
+      "input, select, output")
+    if (this._elem != null) {
+     this.addEventListener("input",
+      () => this.analiza())
+    }
+    this.analiza();
+   }
+   analiza() {
+    const e = this._elem;
+    if (e != null) {
+     if (!e.validity.badInput &&
+      e.value === "") {
+      e.classList.remove("valor")
+     } else {
+      e.classList.add("valor")
+     }
+    }
+   }
+  }
+  customElements.
+   define("cm-din", CmDin)
+ </script>
+ <style>
   cm-din {
    display: block;
    position: relative;
    color: var(--colCm);
    background-color:
-    var(--colCmBk);
+    var(--colCmBg);
    border-top-left-radius: 4px;
    border-top-right-radius: 4px;
    margin: 1rem 0;
@@ -46,12 +92,12 @@
 
   cm-din:hover {
    background-color:
-    var(--colCmBkHv);
+    var(--colCmBgHv);
   }
 
   cm-din:focus-within {
    background-color:
-    var(--colCmBkFc);
+    var(--colCmBgFc);
   }
 
   cm-din label {
@@ -105,7 +151,7 @@
    height: 1em;
    font-size: 0.75rem;
    padding-left: 1rem;
-   background-color: var(--colBk);
+   background-color: var(--colBg);
    transition: 0.3s ease-in;
   }
 
@@ -135,13 +181,13 @@
 
   cm-din option {
    padding: 0.3rem 1rem;
-   background-color: var(--colBk);
+   background-color: var(--colBg);
   }
 
   cm-din option:checked {
    color: var(--colCmOp);
    background-color:
-    var(--colCmOpBk);
+    var(--colCmOpBg);
   }
  </style>
 </head>
@@ -182,44 +228,6 @@
   </select>
   <label for="grupo">Grupo</label>
  </cm-din>
- <script>
-  class CmDin extends HTMLElement {
-   connectedCallback() {
-    setTimeout(
-     () => this.prepara(),
-     100)
-   }
-   prepara() {
-    /**
-     * @private
-     * @type {HTMLInputElement|
-     *  HTMLSelectElement|
-     *  HTMLOutputElement|
-     *  null} */
-    this._elem = this.
-     querySelector(
-      "input, select, output")
-    if (this._elem != null) {
-     this.addEventListener("input",
-      () => this.analiza())
-    }
-    this.analiza();
-   }
-   analiza() {
-    const e = this._elem;
-    if (e != null) {
-     if (!e.validity.badInput &&
-      e.value === "") {
-      e.classList.remove("valor")
-     } else {
-      e.classList.add("valor")
-     }
-    }
-   }
-  }
-  customElements.
-   define("cm-din", CmDin)
- </script>
 </body>
 
 </html>

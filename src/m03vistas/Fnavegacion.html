@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Navegación</title>
+ <!--
+  Carga los íconos oficiales de
+  Material Design.
+ -->
+ <link rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Material+Icons">
+ <style>
+  html {
+   --colTxt: black;
+   --colBk: white;
+   --colNv: white;
+   --colNvBk: #9c27b0;
+   --colNvBkAc: #d05ce3;
+   --fntFam: -apple-system,
+    BlinkMacSystemFont, Roboto,
+    sans-serif;
+   color: var(--colTxt);
+   font-family: var(--fntFam);
+   background-color: var(--colBk);
+  }
+
+  /* El margin-bottom es más grande
+   * para que no lo tape la barra
+   * de navegación. */
+  body {
+   margin: 0 0 5rem 0;
+   scroll-padding-top: 3rem;
+   scroll-padding-bottom: 5rem;
+  }
+
+  mi-nav {
+   position: fixed;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   display: flex;
+   list-style-type: none;
+   justify-content: center;
+   align-items: stretch;
+   margin: 0;
+   padding: 0;
+   color: var(--colNv);
+   background-color: var(--colNvBk)
+  }
+
+  mi-nav a {
+   display: block;
+   color: var(--colNv);
+   font-size: 0.75rem;
+   text-decoration: none;
+   padding-top: 0.5rem;
+   padding-bottom: 0.75rem;
+   padding-left: 0.75rem;
+   padding-right: 0.75rem;
+   text-align: center;
+  }
+
+  mi-nav a:active {
+   background-position: center;
+   background-image:
+    radial-gradient(circle,
+     transparent 1%,
+     var(--colNvBk) 1%);
+   background-size: 15000%;
+   animation-name: ripple;
+   animation-duration: 0.5s;
+   background-color:
+    var(--colNvBkAc);
+  }
+
+  mi-nav .material-icons {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+  }
+
+  @keyframes ripple {
+   from {
+    background-size: 100%;
+   }
+
+   to {
+    background-size: 15000%;
+   }
+  }
+ </style>
+</head>
+
+<body>
+ <mi-nav></mi-nav>
+ <script>
+  class MiNav extends HTMLElement {
+   connectedCallback() {
+    this.innerHTML = /* html */
+     `<a href="index.html">
+      <span class="material-icons">
+       home
+      </span>
+      Inicio
+     </a>
+     <a href="ayuda.html">
+      <span class="material-icons">
+       help
+      </span>
+      Ayuda
+     </a>`;
+   }
+  }
+  customElements.
+   define("mi-nav", MiNav);
+ </script>
+</body>
+
+</html>

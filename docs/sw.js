@@ -139,6 +139,7 @@ const ARCHIVOS = [
    "/src/m03vistas/Dbotones.html",
    "/src/m03vistas/Einterruptor.html",
    "/src/m03vistas/Fgps.html",
+   "/src/m03vistas/Fnavegacion.html",
    "/src/m03vistas/Garchivos.html",
    "/src/m05pwaBasica/pwa.zip",
     "/"]

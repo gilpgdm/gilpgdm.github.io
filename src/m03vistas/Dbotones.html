@@ -6,28 +6,37 @@
  <meta name="viewport"
    content="width=device-width">
  <title>Botones</title>
+ <link rel="preconnect"
+   href="https://fonts.googleapis.com">
+ <link rel="preconnect"
+   href="https://fonts.gstatic.com"
+   crossorigin>
+ <link rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
  <style>
   html {
-   --colTxt: black;
-   --colBk: white;
+   --colOnBg: black;
+   --colBg: white;
    --colFil: white;
-   --colFilBk: #0039cb;
-   --colFilBkHv: #0039cb;
-   --colFilBkFc: #0039cbdd;
-   --colFilBkAc: #0039cbee;
-   --colFilSh: #00000055;
+   --colFilBg: #6750A4;
+   --colFilBgHv: #6750A4;
+   --colFilBgFc: #6750A4DD;
+   --colFilBgAc: #6750A4EE;
+   --colSh: #00000055;
    --fntFam: -apple-system,
-    BlinkMacSystemFont, sans-serif;
-   color: var(--colTxt);
+    BlinkMacSystemFont, Roboto,
+    sans-serif;
+   color: var(--colOnBg);
    font-family: var(--fntFam);
-   background-color: var(--colBk);
+   background-color: var(--colBg);
   }
-
+ </style>
+ <style>
   .filled {
    font-family: var(--fntFam);
    color: var(--colFil);
    background-color:
-    var(--colFilBk);
+    var(--colFilBg);
    font-size: 0.875rem;
    padding: 0.5rem 1rem;
    border: none;
@@ -36,23 +45,23 @@
 
   .filled:hover {
    box-shadow:
-    0 3px 6px var(--colFilSh);
+    0 3px 6px var(--colSh);
   }
 
   .filled:hover {
    background-color:
-    var(--colFilBkHv);
+    var(--colFilBgHv);
   }
 
   .filled:focus {
    outline: none;
    background-color:
-    var(--colFilBkFc);
+    var(--colFilBgFc);
   }
 
   .filled:active {
    background-color:
-    var(--colFilBkAc);
+    var(--colFilBgAc);
   }
  </style>
 </head>
