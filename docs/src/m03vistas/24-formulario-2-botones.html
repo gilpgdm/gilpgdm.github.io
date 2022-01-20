@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con 2 botones</title>
+  </head>
+  <body>
+    <form action=javascript:calculaSuma();>
+      <p>
+        <button>Sumar</button>
+        <button formaction="javascript:calculaDivisión();">Dividir</button>
+      </p>
+      <p><label>a <input id=inA type=number required></label></p>
+      <p><label>b <input id=inB type=number required></label></p>
+      <p><output id=outResultado></output></p>
+    </form>
+    <script>
+      function calculaSuma() {
+        const a = inA.valueAsNumber;
+        const b = inB.valueAsNumber;
+        const resultado = a + b;
+        outResultado.value = resultado;
+      }
+      function calculaDivisión() {
+        try {
+          const a = inA.valueAsNumber;
+          const b = inB.valueAsNumber;
+          valida(b !== 0, "Valor de b incorrecto.");
+          const resultado = a / b;
+          outResultado.value = resultado;
+        } catch (e) {
+          console.log(e);
+          alert(e.message);
+        }
+      }
+      function valida(cond, mensaje) {
+        if (!cond) {
+          throw new Error(mensaje);
+        }
+      }
+    </script>
+  </body>
+</html>
