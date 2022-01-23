@@ -56,6 +56,7 @@ const ARCHIVOS = [
    "/m02vistas/mEbotones.html",
    "/m02vistas/mFinterruptores.html",
    "/m02vistas/mGgps.html",
+   "/m02vistas/mGnavegacion.html",
    "/m02vistas/mHarchivos.html",
    "/m02vistas/mIresumen.html",
    "/m02vistas/print.html",
@@ -123,7 +124,6 @@ const ARCHIVOS = [
    "/m07esp8266/print.html",
    "/print.html",
    "/site.webmanifest",
-   "/src/m03vistas/12-navegacion.html",
    "/src/m03vistas/13-1-lista-simple.html",
    "/src/m03vistas/13-2-lista.html",
    "/src/m03vistas/14-lista-imagen.html",
@@ -139,6 +139,7 @@ const ARCHIVOS = [
    "/src/m03vistas/Einterruptor.html",
    "/src/m03vistas/Fgps.html",
    "/src/m03vistas/Garchivos.html",
+   "/src/m03vistas/Hnavegacion.html",
    "/src/m05pwaBasica/pwa.zip",
     "/"]
 
