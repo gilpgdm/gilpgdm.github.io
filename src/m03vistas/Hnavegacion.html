@@ -6,6 +6,13 @@
  <meta name="viewport"
    content="width=device-width">
  <title>Navegación</title>
+ <link rel="preconnect"
+   href="https://fonts.googleapis.com">
+ <link rel="preconnect"
+   href="https://fonts.gstatic.com"
+   crossorigin>
+ <link rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
  <!--
   Carga los íconos oficiales de
   Material Design.
@@ -13,89 +20,27 @@
  <link rel="stylesheet"
    href="https://fonts.googleapis.com/css2?family=Material+Icons">
  <style>
+  /* Custom properties */
   html {
-   --colTxt: black;
-   --colBk: white;
-   --colNv: white;
-   --colNvBk: #9c27b0;
-   --colNvBkAc: #d05ce3;
+   --colOnBg: #1C1B1F;
+   --colBg: #FFFBFE;
+   --colNv: #49454F;
+   --colNvSel: #1C1B1F;
+   --colNvBg: #FFFBFE;
+   --colNvBgHv: #E7E0ECDD;
+   --colNvBgFc: #E7E0EC99;
+   --colNvBgAc: #E7E0EC;
+   --colNvIc: #49454F;
+   --colNvIcSel: #1D192B;
+   --colNvIcBgSel: #E8DEF8;
    --fntFam: -apple-system,
     BlinkMacSystemFont, Roboto,
     sans-serif;
-   color: var(--colTxt);
+   color: var(--colOnBg);
    font-family: var(--fntFam);
-   background-color: var(--colBk);
-  }
-
-  /* El margin-bottom es más grande
-   * para que no lo tape la barra
-   * de navegación. */
-  body {
-   margin: 0 0 5rem 0;
-   scroll-padding-top: 3rem;
-   scroll-padding-bottom: 5rem;
-  }
-
-  mi-nav {
-   position: fixed;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   display: flex;
-   list-style-type: none;
-   justify-content: center;
-   align-items: stretch;
-   margin: 0;
-   padding: 0;
-   color: var(--colNv);
-   background-color: var(--colNvBk)
-  }
-
-  mi-nav a {
-   display: block;
-   color: var(--colNv);
-   font-size: 0.75rem;
-   text-decoration: none;
-   padding-top: 0.5rem;
-   padding-bottom: 0.75rem;
-   padding-left: 0.75rem;
-   padding-right: 0.75rem;
-   text-align: center;
-  }
-
-  mi-nav a:active {
-   background-position: center;
-   background-image:
-    radial-gradient(circle,
-     transparent 1%,
-     var(--colNvBk) 1%);
-   background-size: 15000%;
-   animation-name: ripple;
-   animation-duration: 0.5s;
-   background-color:
-    var(--colNvBkAc);
-  }
-
-  mi-nav .material-icons {
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
-  }
-
-  @keyframes ripple {
-   from {
-    background-size: 100%;
-   }
-
-   to {
-    background-size: 15000%;
-   }
+   background-color: var(--colBg);
   }
  </style>
-</head>
-
-<body>
- <mi-nav></mi-nav>
  <script>
   class MiNav extends HTMLElement {
    connectedCallback() {
@@ -117,6 +62,74 @@
   customElements.
    define("mi-nav", MiNav);
  </script>
+ <style>
+  /* El margin-bottom es más grande
+   * para que no lo tape la barra
+   * de navegación. */
+  body {
+   margin: 0 0 5rem 0;
+   scroll-padding-top: 3rem;
+   scroll-padding-bottom: 5rem;
+  }
+
+  mi-nav {
+   position: fixed;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   display: flex;
+   list-style-type: none;
+   justify-content: center;
+   align-items: stretch;
+   margin: 0;
+   padding: 0;
+   color: var(--colNv);
+   background-color: var(--colNvBg)
+  }
+
+  mi-nav a {
+   display: block;
+   color: var(--colNv);
+   font-size: 0.75rem;
+   font-weight: 500;
+   text-decoration: none;
+   padding-top: 0.5rem;
+   padding-bottom: 0.75rem;
+   padding-left: 0.75rem;
+   padding-right: 0.75rem;
+   text-align: center;
+  }
+
+  mi-nav a:hover {
+   background-color:
+    var(--colNvBgHv);
+  }
+
+  mi-nav a:focus {
+   outline: none;
+   background-color:
+    var(--colNvBgFc);
+  }
+
+  mi-nav a:active {
+   background-color:
+    var(--colNvBgAc);
+  }
+
+  mi-nav .material-icons {
+   display: block;
+   box-sizing: border-box;
+   margin-left: auto;
+   margin-right: auto;
+   padding-left: 1rem;
+   padding-right: 1rem;
+   border-radius: 1rem;
+  }
+ </style>
+</head>
+
+<body>
+ <mi-nav></mi-nav>
 </body>
 
 </html>
