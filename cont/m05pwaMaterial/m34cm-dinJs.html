@@ -1,0 +1,83 @@
+<muestra-codigo>
+ <div>
+  <div><span style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">class</span> <span
+     style="color: #267f99;">CmDin</span></div>
+  <div>&nbsp;<span style="color: #0000ff;">extends</span> <span
+     style="color: #267f99;">HTMLElement</span> {</div>
+  <div>&nbsp;<span
+     style="color: #795e26;">connectedCallback</span>() {</div>
+  <div>&nbsp; <span style="color: #795e26;">setTimeout</span>(</div>
+  <div>&nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">prepara</span>(),</div>
+  <div>&nbsp; &nbsp;<span style="color: #098658;">100</span>)</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span style="color: #795e26;">prepara</span>() {</div>
+  <div>&nbsp; <span style="color: #008000;">/**</span></div>
+  <div><span style="color: #008000;">&nbsp; &nbsp;* </span><span
+     style="color: #0000ff;">@private</span></div>
+  <div><span style="color: #008000;">&nbsp; &nbsp;* </span><span
+     style="color: #0000ff;">@type</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{HTMLInputElement|</span></div>
+  <div><span style="color: #008000;">&nbsp; &nbsp;*</span><span
+     style="color: #267f99;"> &nbsp;HTMLSelectElement|</span></div>
+  <div><span style="color: #008000;">&nbsp; &nbsp;*</span><span
+     style="color: #267f99;"> &nbsp;HTMLOutputElement|</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp;* &nbsp;null} */</span></div>
+  <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_elem</span> = <span
+     style="color: #0000ff;">this</span>.</div>
+  <div>&nbsp; &nbsp;<span style="color: #795e26;">querySelector</span>(</div>
+  <div>&nbsp; &nbsp; <span
+     style="color: #a31515;">"input, select, output"</span>)</div>
+  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_elem</span> != <span
+     style="color: #0000ff;">null</span>) {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">addEventListener</span>(<span
+     style="color: #a31515;">"input"</span>,</div>
+  <div>&nbsp; &nbsp; () <span style="color: #0000ff;">=&gt;</span> <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">analiza</span>())</div>
+  <div>&nbsp; }</div>
+  <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">analiza</span>();</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span style="color: #795e26;">analiza</span>() {</div>
+  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">e</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_elem</span>;</div>
+  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">e</span> != <span
+     style="color: #0000ff;">null</span>) {</div>
+  <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (!<span
+     style="color: #0070c1;">e</span>.<span
+     style="color: #001080;">validity</span>.<span
+     style="color: #0070c1;">badInput</span> &amp;&amp;</div>
+  <div>&nbsp; &nbsp; <span style="color: #0070c1;">e</span>.<span
+     style="color: #001080;">value</span> === <span
+     style="color: #a31515;">""</span>) {</div>
+  <div>&nbsp; &nbsp; <span style="color: #0070c1;">e</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">remove</span>(<span
+     style="color: #a31515;">"valor"</span>)</div>
+  <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
+  <div>&nbsp; &nbsp; <span style="color: #0070c1;">e</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"valor"</span>)</div>
+  <div>&nbsp; &nbsp;}</div>
+  <div>&nbsp; }</div>
+  <div>&nbsp;}</div>
+  <div>}</div>
+  <div><span style="color: #001080;">customElements</span>.</div>
+  <div>&nbsp;<span style="color: #795e26;">define</span>(<span
+     style="color: #a31515;">"cm-din"</span>, <span
+     style="color: #267f99;">CmDin</span>)</div>
+ </div>
+</muestra-codigo>
