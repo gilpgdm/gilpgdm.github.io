@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>M. dao/bdCrea.php - GilPG DM</title>
+ <title>K. dao/bdCrea.php - GilPG DM</title>
  <meta name="description" content="Contenido del archivo «dao/bdCrea.php».">
  <style>
  :root {
@@ -396,10 +396,10 @@
   <button id="abre" type="button" title="Menú" class="cambiaMenu">
    &#x2630;
   </button>
-  <a class="anterior" href="/m07iot/mLDispositivoPhp.html" title="L. modelo/Dispositivo.php">◀</a>
-  <a class="siguiente" href="/m07iot/mNAccesoBdPhp.html" title="N. dao/AccesoBd.php">▶</a>
+  <a class="anterior" href="/m07iot/mLDispositivoPhp.html" title="J. modelo/Dispositivo.php">◀</a>
+  <a class="siguiente" href="/m07iot/mNAccesoBdPhp.html" title="L. dao/AccesoBd.php">▶</a>
  </div>
-   <h1 >M. dao/bdCrea.php</h1><muestra-codigo>
+   <h1 >K. dao/bdCrea.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
@@ -410,9 +410,8 @@
   <div>&nbsp;<span style="color: #001080;">$con</span>-&gt;<span
      style="color: #795e26;">exec</span>(</div>
   <div>&nbsp; <span style="color: #a31515;">'</span><span
-     style="color: #0000ff;">CREATE</span><span
-     style="color: #a31515;"> </span><span
-     style="color: #0000ff;">TABLE</span></div>
+     style="color: #0000ff;">CREATE</span><span style="color: #a31515;">
+   </span><span style="color: #0000ff;">TABLE</span></div>
   <div><span style="color: #a31515;">&nbsp; &nbsp;</span><span
      style="color: #0000ff;">IF</span><span
      style="color: #a31515;"> </span><span
@@ -421,12 +420,11 @@
      style="color: #0000ff;">EXISTS</span><span
      style="color: #a31515;"> DISPOSITIVO (</span></div>
   <div><span style="color: #a31515;">&nbsp; &nbsp; DIS_ID </span><span
-     style="color: #0000ff;">TEXT</span><span
-     style="color: #a31515;"> </span><span
-     style="color: #0000ff;">PRIMARY</span><span
+     style="color: #0000ff;">TEXT</span><span style="color: #a31515;">
+   </span><span style="color: #0000ff;">PRIMARY</span><span
      style="color: #a31515;"> </span><span
      style="color: #0000ff;">KEY</span><span
-     style="color: #a31515;">,</span></div>
+     style="color: #a31515;">,</span> </div>
   <div><span style="color: #a31515;">&nbsp; &nbsp; DIS_VALOR </span><span
      style="color: #0000ff;">TEXT</span><span
      style="color: #a31515;"> </span><span
@@ -449,16 +447,21 @@
      style="color: #a31515;"> </span><span
      style="color: #0000ff;">EXISTS</span><span
      style="color: #a31515;"> HISTORICO (</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp; &nbsp; HIS_ID </span><span
+  <div><span style="color: #a31515;">&nbsp; &nbsp; HIS_ID </span><span
      style="color: #0000ff;">INTEGER</span><span
      style="color: #a31515;"> </span><span
      style="color: #0000ff;">PRIMARY</span><span
      style="color: #a31515;"> </span><span
      style="color: #0000ff;">KEY</span><span
      style="color: #a31515;">,</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp; &nbsp; DIS_ID </span><span
+  <div><span style="color: #a31515;">&nbsp; &nbsp; DIS_ID </span><span
+     style="color: #0000ff;">TEXT</span><span
+     style="color: #a31515;"> </span><span
+     style="color: #0000ff;">NOT</span><span
+     style="color: #a31515;"> </span><span
+     style="color: #0000ff;">NULL</span><span
+     style="color: #a31515;">,</span></div>
+  <div><span style="color: #a31515;">&nbsp; &nbsp; HIS_VALOR </span><span
      style="color: #0000ff;">TEXT</span><span
      style="color: #a31515;"> </span><span
      style="color: #0000ff;">NOT</span><span
@@ -466,30 +469,24 @@
      style="color: #0000ff;">NULL</span><span
      style="color: #a31515;">,</span></div>
   <div><span
-     style="color: #a31515;">&nbsp; &nbsp; HIS_VALOR STRING </span><span
-     style="color: #0000ff;">NOT</span><span
-     style="color: #a31515;"> </span><span
-     style="color: #0000ff;">NULL</span><span
-     style="color: #a31515;">,</span></div>
-  <div><span style="color: #a31515;">&nbsp; &nbsp; HIS_TIMESTAMP </span><span
+     style="color: #a31515;">&nbsp; &nbsp; HIS_TIMESTAMP </span><span
      style="color: #0000ff;">TEXT</span><span
      style="color: #a31515;"> </span><span
      style="color: #0000ff;">NOT</span><span
      style="color: #a31515;"> </span><span
      style="color: #0000ff;">NULL</span><span
      style="color: #a31515;">,</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp; &nbsp; </span><span
+  <div><span style="color: #a31515;">&nbsp; &nbsp; </span><span
      style="color: #0000ff;">FOREIGN KEY</span><span
      style="color: #a31515;"> (DIS_ID)</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp; &nbsp; &nbsp;</span><span
+  <div><span style="color: #a31515;">&nbsp; &nbsp; &nbsp;</span><span
      style="color: #0000ff;">REFERENCES</span><span
      style="color: #a31515;"> DISPOSITIVO(DIS_ID)</span></div>
   <div><span style="color: #a31515;">&nbsp; &nbsp;)</span><span
      style="color: #a31515;">'</span></div>
   <div>&nbsp;);</div>
   <div>}</div><br>
+ </div>
  </div>/muestra-codigo>
  <footer>
  <p>
@@ -521,21 +518,11 @@
     <a href="/index.html"
       data-logo="true">GilPG DM</a>
    </p><p>
-    <a class="paginaAnterior" href="/m06sesion/mJresumen.html"
-      title="J. Resumen">▲</a>
+    <a class="paginaAnterior" href="/m06sesion/mZresumen.html"
+      title="Z. Resumen">▲</a>
    </p>
      <h1><a href="/m07iot/index.html">7. IoT</a></h1>
    <ol type="A">
-    <li>
-     <p>
-      <a href="/m07iot/mAcasos.html">Diagrama de casos de uso</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m07iot/mBdespliegue.html">Diagrama de despliegue</a>
-     </p>
-    </li>
     <li>
      <p>
       <a href="/m07iot/mCer.html">Diagrama entidad relación</a>

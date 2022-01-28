@@ -20,8 +20,8 @@
      <p>
       Usa Chrome para abrir la URL del código de la lección IoT. En este caso
       es
-      <a href="https://iot.gilbertopachec3.repl.co/" rel="nooper"
-        target="_blank">https://iot.gilbertopachec3.repl.co/</a>.
+      <a href="https://iot2.gilbertopacheco.repl.co/" rel="nooper"
+        target="_blank">https://iot2.gilbertopacheco.repl.co/</a>.
      </p>
     </li>
     <li>
@@ -63,7 +63,8 @@
   <li class="noPrint">
    <p class="noPrint">
     <a href="https://drive.google.com/file/d/1az-Brq31wdorrqchkezANCuzRm9XNg_7/view?usp=sharing"
-      target="_blank" rel="nooper">Ve como configurar y ejecutar este ejemplo.</a>
+      target="_blank" rel="nooper">Ve como configurar y ejecutar este
+     ejemplo.</a>
    </p>
   </li>
  </ul>
@@ -101,7 +102,8 @@
      style="color: #0000ff;">const</span> <span
      style="color: #001080;">URL</span> =</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"wss://iot.gilbertopachec3.repl.co/"</span>;</div>
+     style="color: #a31515;">"wss://phpws.gilbertopacheco.repl.co/"</span>;
+  </div>
   <br>
   <div><span style="color: #af00db;">using</span> <span
      style="color: #0000ff;">namespace</span> <span
@@ -126,13 +128,13 @@
   <div>&nbsp; <span style="color: #267f99;">WebsocketsMessage</span> <span
      style="color: #001080;">message</span>) {</div>
   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
-     style="color: #795e26;">print</span>(<span style="color: #a31515;">"Recibe
-    "</span>);</div>
+     style="color: #795e26;">print</span>(<span
+     style="color: #a31515;">"Recibe "</span>);</div>
   <div>&nbsp;<span style="color: #001080;">valor</span> = <span
      style="color: #001080;">message</span>.<span
      style="color: #795e26;">data</span>();</div>
-  <div>&nbsp;<span style="color: #795e26;">digitalWrite</span>(LED_BUILTIN,
-  </div>
+  <div>&nbsp;<span
+     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, </div>
   <div>&nbsp; <span style="color: #001080;">valor</span> == <span
      style="color: #a31515;">"1"</span> ? LOW : HIGH);</div>
   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
@@ -172,33 +174,33 @@
   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
      style="color: #795e26;">begin</span>(<span
      style="color: #098658;">115200</span>);</div>
-  <div><span style="color: #008000;">&nbsp;//
-    Serial.setDebugOutput(true);</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;// Serial.setDebugOutput(true);</span></div>
   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
      style="color: #795e26;">println</span>();</div>
   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
      style="color: #795e26;">println</span>();</div>
   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
      style="color: #795e26;">println</span>();</div>
-  <div>&nbsp;<span style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);
-  </div>
+  <div>&nbsp;<span
+     style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
   <div>&nbsp;<span style="color: #795e26;">pinMode</span>(<span
      style="color: #001080;">BOTON</span>, INPUT);</div>
   <div>&nbsp;<span style="color: #af00db;">for</span> (<span
      style="color: #0000ff;">uint8_t</span> <span
-     style="color: #001080;">t</span> = <span style="color: #098658;">4</span>;
-   <span style="color: #001080;">t</span> &gt; <span
-     style="color: #098658;">0</span>;
-  </div>
+     style="color: #001080;">t</span> = <span
+     style="color: #098658;">4</span>; <span
+     style="color: #001080;">t</span> &gt; <span
+     style="color: #098658;">0</span>;</div>
   <div>&nbsp; <span style="color: #001080;">t</span>--) {</div>
   <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
      style="color: #795e26;">printf</span>(</div>
   <div>&nbsp; &nbsp;<span style="color: #a31515;">"ESPERANDO </span><span
      style="color: #001080;">%d</span><span
      style="color: #a31515;">...</span><span
-     style="color: #ee0000;">\n</span><span style="color: #a31515;">"</span>,
-   <span style="color: #001080;">t</span>);
-  </div>
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span>, <span
+     style="color: #001080;">t</span>);</div>
   <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
      style="color: #795e26;">flush</span>();</div>
   <div>&nbsp; <span style="color: #795e26;">delay</span>(<span
@@ -206,7 +208,8 @@
   <div>&nbsp;}</div>
   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
      style="color: #795e26;">println</span>(</div>
-  <div>&nbsp; <span style="color: #a31515;">"Conectando WiFi..."</span>);</div>
+  <div>&nbsp; <span
+     style="color: #a31515;">"Conectando WiFi..."</span>);</div>
   <div>&nbsp;<span style="color: #001080;">WiFi</span>.<span
      style="color: #795e26;">mode</span>(WIFI_STA);</div>
   <div>&nbsp;<span style="color: #001080;">WiFiMulti</span>.<span
@@ -221,8 +224,8 @@
      style="color: #098658;">500</span>);</div>
   <div>&nbsp;}</div>
   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
-     style="color: #795e26;">println</span>(<span style="color: #a31515;">"WiFi
-    conectado."</span>);</div>
+     style="color: #795e26;">println</span>(<span
+     style="color: #a31515;">"WiFi conectado."</span>);</div>
   <div>&nbsp;<span style="color: #001080;">client</span>.</div>
   <div>&nbsp; &nbsp;<span style="color: #795e26;">onMessage</span>(<span
      style="color: #795e26;">onMessageCallback</span>);</div>
@@ -230,7 +233,8 @@
      style="color: #795e26;">onEvent</span>(<span
      style="color: #795e26;">onEventsCallback</span>);</div>
   <div>&nbsp;<span style="color: #001080;">client</span>.</div>
-  <div>&nbsp; &nbsp;<span style="color: #795e26;">setFingerprint</span>(<span
+  <div>&nbsp; &nbsp;<span
+     style="color: #795e26;">setFingerprint</span>(<span
      style="color: #001080;">HUELLA_DIGITAL</span>);</div>
   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
      style="color: #795e26;">println</span>(<span
@@ -251,8 +255,8 @@
      style="color: #001080;">BOTON</span>);</div>
   <div>&nbsp; <span style="color: #af00db;">if</span> (!<span
      style="color: #001080;">presionado</span> &amp;&amp;</div>
-  <div>&nbsp; &nbsp; <span style="color: #001080;">actual</span> == LOW) {
-  </div>
+  <div>&nbsp; &nbsp; <span
+     style="color: #001080;">actual</span> == LOW) {</div>
   <div>&nbsp; &nbsp;<span style="color: #001080;">client</span>.<span
      style="color: #795e26;">send</span>(<span
      style="color: #001080;">valor</span>);</div>

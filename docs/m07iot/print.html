@@ -353,16 +353,6 @@
    <ol type="A">
     <li>
      <p>
-      <a href="/m07iot/mAcasos.html">Diagrama de casos de uso</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m07iot/mBdespliegue.html">Diagrama de despliegue</a>
-     </p>
-    </li>
-    <li>
-     <p>
       <a href="/m07iot/mCer.html">Diagrama entidad relación</a>
      </p>
     </li>
@@ -480,47 +470,23 @@
  </nav>
 </div>
      <section >
-         <h1 >A. Diagrama de casos de uso</h1><div class="lectura">
- <ul>
-  <li>
-   <p>
-    Revisa el código y pruébalo en Replit conla URL
-    <a href="https://replit.com/@GilbertoPachec3/iot?v=1" rel="nooper"
-      target="_blank">https://replit.com/@GilbertoPachec3/iot?v=1</a>.
-   </p>
-  </li>
- </ul>
+         <h1 >A. Diagrama entidad relación</h1><div class="lectura">
  <figure>
-  <img src="/img/m05iot/casos_iot.svg" alt="Diagrama de Casos de Uso">
- </figure>
-</div>
-      </section>
-     <section >
-         <h1 >B. Diagrama de despliegue</h1><div class="lectura">
- <figure>
-  <img class="dc" src="/img/m05iot/despliegue_iot.svg"
-    alt="Diagrama de Despliegue">
- </figure>
-</div>
-      </section>
-     <section >
-         <h1 >C. Diagrama entidad relación</h1><div class="lectura">
- <figure>
-  <img class="dc" src="/img/m05iot/entidades_iot.svg"
+  <img class="dc" src="/img/m05iot/entidades_iot.drawio.svg"
     alt="Diagrama de Entidad Relación de la Base de Datos">
  </figure>
 </div>
       </section>
      <section >
-         <h1 >D. Diseño relacional</h1><div class="lectura">
+         <h1 >B. Diseño relacional</h1><div class="lectura">
  <figure>
-  <img class="dc" src="/img/m05iot/nosql_iot.svg"
+  <img class="dc" src="/img/m05iot/sql_iot.drawio.svg"
     alt="Diseño No SQL de la Base de Datos">
  </figure>
 </div>
       </section>
      <section >
-         <h1 >E. Instrucciones</h1><div class="lectura">
+         <h1 >C. Instrucciones</h1><div class="lectura">
  <ol>
   <li>
    <p>
@@ -627,10 +593,10 @@
 </div>
       </section>
      <section >
-         <h1 >F. Proyecto phpws</h1>
+         <h1 >D. Proyecto phpws</h1>
       </section>
      <section >
-         <h1 >G. Archivos</h1><div class="lectura">
+         <h1 >E. Archivos</h1><div class="lectura">
  <ul>
   <li>
    <p>dao</p>
@@ -696,10 +662,10 @@
 </div>
       </section>
      <section >
-         <h1 >H. Mensajes</h1>
+         <h1 >F. Mensajes</h1>
       </section>
      <section >
-         <h1 >I. mensajes/msgFaltaElId.php</h1><muestra-codigo>
+         <h1 >G. mensajes/msgFaltaElId.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
@@ -712,7 +678,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >J. mensajes/msgFaltaElValor.php</h1><muestra-codigo>
+         <h1 >H. mensajes/msgFaltaElValor.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
@@ -725,10 +691,10 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >K. Base de datos</h1>
+         <h1 >I. Base de datos</h1>
       </section>
      <section >
-         <h1 >L. modelo/Dispositivo.php</h1><muestra-codigo>
+         <h1 >J. modelo/Dispositivo.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -795,7 +761,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >M. dao/bdCrea.php</h1><muestra-codigo>
+         <h1 >K. dao/bdCrea.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
@@ -806,9 +772,8 @@
   <div>&nbsp;<span style="color: #001080;">$con</span>-&gt;<span
      style="color: #795e26;">exec</span>(</div>
   <div>&nbsp; <span style="color: #a31515;">'</span><span
-     style="color: #0000ff;">CREATE</span><span
-     style="color: #a31515;"> </span><span
-     style="color: #0000ff;">TABLE</span></div>
+     style="color: #0000ff;">CREATE</span><span style="color: #a31515;">
+   </span><span style="color: #0000ff;">TABLE</span></div>
   <div><span style="color: #a31515;">&nbsp; &nbsp;</span><span
      style="color: #0000ff;">IF</span><span
      style="color: #a31515;"> </span><span
@@ -817,12 +782,11 @@
      style="color: #0000ff;">EXISTS</span><span
      style="color: #a31515;"> DISPOSITIVO (</span></div>
   <div><span style="color: #a31515;">&nbsp; &nbsp; DIS_ID </span><span
-     style="color: #0000ff;">TEXT</span><span
-     style="color: #a31515;"> </span><span
-     style="color: #0000ff;">PRIMARY</span><span
+     style="color: #0000ff;">TEXT</span><span style="color: #a31515;">
+   </span><span style="color: #0000ff;">PRIMARY</span><span
      style="color: #a31515;"> </span><span
      style="color: #0000ff;">KEY</span><span
-     style="color: #a31515;">,</span></div>
+     style="color: #a31515;">,</span> </div>
   <div><span style="color: #a31515;">&nbsp; &nbsp; DIS_VALOR </span><span
      style="color: #0000ff;">TEXT</span><span
      style="color: #a31515;"> </span><span
@@ -845,16 +809,21 @@
      style="color: #a31515;"> </span><span
      style="color: #0000ff;">EXISTS</span><span
      style="color: #a31515;"> HISTORICO (</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp; &nbsp; HIS_ID </span><span
+  <div><span style="color: #a31515;">&nbsp; &nbsp; HIS_ID </span><span
      style="color: #0000ff;">INTEGER</span><span
      style="color: #a31515;"> </span><span
      style="color: #0000ff;">PRIMARY</span><span
      style="color: #a31515;"> </span><span
      style="color: #0000ff;">KEY</span><span
      style="color: #a31515;">,</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp; &nbsp; DIS_ID </span><span
+  <div><span style="color: #a31515;">&nbsp; &nbsp; DIS_ID </span><span
+     style="color: #0000ff;">TEXT</span><span
+     style="color: #a31515;"> </span><span
+     style="color: #0000ff;">NOT</span><span
+     style="color: #a31515;"> </span><span
+     style="color: #0000ff;">NULL</span><span
+     style="color: #a31515;">,</span></div>
+  <div><span style="color: #a31515;">&nbsp; &nbsp; HIS_VALOR </span><span
      style="color: #0000ff;">TEXT</span><span
      style="color: #a31515;"> </span><span
      style="color: #0000ff;">NOT</span><span
@@ -862,34 +831,28 @@
      style="color: #0000ff;">NULL</span><span
      style="color: #a31515;">,</span></div>
   <div><span
-     style="color: #a31515;">&nbsp; &nbsp; HIS_VALOR STRING </span><span
-     style="color: #0000ff;">NOT</span><span
-     style="color: #a31515;"> </span><span
-     style="color: #0000ff;">NULL</span><span
-     style="color: #a31515;">,</span></div>
-  <div><span style="color: #a31515;">&nbsp; &nbsp; HIS_TIMESTAMP </span><span
+     style="color: #a31515;">&nbsp; &nbsp; HIS_TIMESTAMP </span><span
      style="color: #0000ff;">TEXT</span><span
      style="color: #a31515;"> </span><span
      style="color: #0000ff;">NOT</span><span
      style="color: #a31515;"> </span><span
      style="color: #0000ff;">NULL</span><span
      style="color: #a31515;">,</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp; &nbsp; </span><span
+  <div><span style="color: #a31515;">&nbsp; &nbsp; </span><span
      style="color: #0000ff;">FOREIGN KEY</span><span
      style="color: #a31515;"> (DIS_ID)</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp; &nbsp; &nbsp;</span><span
+  <div><span style="color: #a31515;">&nbsp; &nbsp; &nbsp;</span><span
      style="color: #0000ff;">REFERENCES</span><span
      style="color: #a31515;"> DISPOSITIVO(DIS_ID)</span></div>
   <div><span style="color: #a31515;">&nbsp; &nbsp;)</span><span
      style="color: #a31515;">'</span></div>
   <div>&nbsp;);</div>
   <div>}</div><br>
+ </div>
  </div>/muestra-codigo>
       </section>
      <section >
-         <h1 >N. dao/AccesoBd.php</h1><muestra-codigo>
+         <h1 >L. dao/AccesoBd.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -984,7 +947,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >O. dao/dispositivoAgrega.php</h1><muestra-codigo>
+         <h1 >M. dao/dispositivoAgrega.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1035,7 +998,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >P. dao/dispositivoBusca.php</h1><muestra-codigo>
+         <h1 >N. dao/dispositivoBusca.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1091,7 +1054,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >Q. dao/dispositivoModifica.php</h1><muestra-codigo>
+         <h1 >O. dao/dispositivoModifica.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1143,7 +1106,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >R. dao/historicoAgrega.php</h1><muestra-codigo>
+         <h1 >P. dao/historicoAgrega.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1196,10 +1159,10 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >S. Funcionalidad</h1>
+         <h1 >Q. Funcionalidad</h1>
       </section>
      <section >
-         <h1 >T. guarda.php</h1><muestra-codigo>
+         <h1 >R. guarda.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span></div>
@@ -1242,7 +1205,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >U. Eventos.php</h1><muestra-codigo>
+         <h1 >S. Eventos.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1373,7 +1336,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >V. main.php</h1><muestra-codigo>
+         <h1 >T. main.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require</span> <span
@@ -1426,10 +1389,10 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >W. Proyecto iot</h1>
+         <h1 >U. Proyecto iot</h1>
       </section>
      <section >
-         <h1 >X. index.html</h1><muestra-codigo>
+         <h1 >V. index.html</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
      style="color: #ff0000;">html</span><span
@@ -1524,7 +1487,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >Y. Resumen</h1><div class="lectura">
+         <h1 >W. Resumen</h1><div class="lectura">
  <ul>
   <li>
    <p>En esta lección se presento el proyecto base para IoT.</p>
