@@ -1,0 +1,51 @@
+<muestra-codigo>
+ <div>
+  <div><span style="color: #800000;">&lt;?php</span></div>
+  <div><span style="color: #af00db;">require</span> <span
+     style="color: #0000ff;">__DIR__</span> .</div>
+  <div>&nbsp;<span style="color: #a31515;">'/vendor/autoload.php'</span>;</div>
+  <div><span style="color: #af00db;">require_once</span> <span
+     style="color: #a31515;">"./Eventos.php"</span>;</div>
+  <div><span style="color: #af00db;">require_once</span></div>
+  <div>&nbsp;<span style="color: #a31515;">"./dao/dispositivoBusca.php"</span>;
+  </div><br>
+  <div><span style="color: #0000ff;">use</span> Ratchet\Server\<span
+     style="color: #267f99;">IoServer</span>;</div>
+  <div><span style="color: #0000ff;">use</span> Ratchet\Http\<span
+     style="color: #267f99;">HttpServer</span>;</div>
+  <div><span style="color: #0000ff;">use</span> Ratchet\WebSocket\<span
+     style="color: #267f99;">WsServer</span>;</div><br>
+  <div><span style="color: #af00db;">try</span> {</div>
+  <div>&nbsp;<span style="color: #001080;">$dispositivo</span> =</div>
+  <div>&nbsp; <span style="color: #795e26;">dispositivoBusca</span>(<span
+     style="color: #a31515;">"1"</span>);</div>
+  <div>&nbsp;<span style="color: #001080;">$valor</span> = <span
+     style="color: #001080;">$dispositivo</span></div>
+  <div>&nbsp; ? <span style="color: #001080;">$dispositivo</span>-&gt;<span
+     style="color: #001080;">valor</span> : <span
+     style="color: #a31515;">"0"</span>;</div>
+  <div>&nbsp;<span style="color: #001080;">$server</span> = <span
+     style="color: #267f99;">IoServer</span>::<span
+     style="color: #795e26;">factory</span>(</div>
+  <div>&nbsp; <span style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">HttpServer</span>(</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">WsServer</span>(</div>
+  <div>&nbsp; &nbsp; <span style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Eventos</span>(<span
+     style="color: #001080;">$valor</span>)</div>
+  <div>&nbsp; &nbsp;)</div>
+  <div>&nbsp; ),</div>
+  <div>&nbsp; <span style="color: #098658;">80</span></div>
+  <div>&nbsp;);</div><br>
+  <div>&nbsp;<span style="color: #001080;">$server</span>-&gt;<span
+     style="color: #795e26;">run</span>();</div>
+  <div>} <span style="color: #af00db;">catch</span> (\<span
+     style="color: #267f99;">Throwable</span> <span
+     style="color: #001080;">$e</span>) {</div>
+  <div>&nbsp;<span style="color: #795e26;">echo</span> <span
+     style="color: #001080;">$e</span>-&gt;<span
+     style="color: #795e26;">getMessage</span>();</div>
+  <div>}</div><br>
+ </div>
+</muestra-codigo>
