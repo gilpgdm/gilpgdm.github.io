@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
  <meta charset="UTF-8">
  <meta name="viewport"
    content="width=device-width">
  <title>Formulario</title>
 </head>
+
 <body>
  <form id="form" novalidate
    action="javascript:procesa()">
@@ -50,24 +52,28 @@
 
   function procesa() {
    try {
+    copiaMensajes()
     if (inGenero.validity.valid) {
      const genero = inGenero.value
-     if (genero === "pop") {
-      outSalida.value =
-       "Escucha a Ariana Grande."
-     } else if (genero === "reg") {
-      outSalida.value =
-       "Escucha a Bad Bunny."
-     } else {
-      outSalida.value =
-       "De ese género no conozco."
-     }
+     outSalida.value =
+      recomienda(genero)
     } else {
      outSalida.value = ""
     }
    } catch (e) {
     console.error(e)
     outSalida.value = e.message
+   }
+  }
+
+  /** @param {string} genero */
+  function recomienda(genero) {
+   if (genero === "pop") {
+    return "Ariana Grande."
+   } else if (genero === "reg") {
+    return "Bad Bunny."
+   } else {
+    return "De eso no conozco."
    }
   }
 
@@ -88,7 +94,7 @@
    *   referencia a un elemento
    *   que contiene datos.
    * @param {HTMLOutputElement|
-   *  null} out  referencia a un
+   *  null} out referencia a un
    *   elemento de ayuda para e.
    * @param {string} ok mensaje de
    *   ayuda cuando el estado de e
@@ -105,4 +111,5 @@
   }
  </script>
 </body>
+
 </html>

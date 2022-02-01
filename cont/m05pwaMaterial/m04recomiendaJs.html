@@ -1,150 +1,30 @@
 <muestra-codigo>
  <div>
-  <div><span style="color: #af00db;">import</span> { <span
-     style="color: #001080;">msg</span> } <span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/msg.js"</span></div>
-  <div><span style="color: #af00db;">import</span> <span
-     style="color: #a31515;">"./config.js"</span>;</div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">CmDin</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/cm-din.js"</span></div><br>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">REQUERIDO</span> = <span
-     style="color: #a31515;">"*Requerido"</span></div><br>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">form</span> =</div>
-  <div>&nbsp;<span style="color: #001080;">document</span>.<span
-     style="color: #795e26;">querySelector</span>(<span
-     style="color: #a31515;">"form"</span>)</div><br>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{HTMLSelectElement|null}</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">inGenero</span> = <span
-     style="color: #001080;">document</span>.</div>
-  <div>&nbsp;<span style="color: #795e26;">querySelector</span>(<span
-     style="color: #a31515;">"#inGenero"</span>)</div><br>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{HTMLOutputElement|null}</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">msgGenero</span> = <span
-     style="color: #001080;">document</span>.</div>
-  <div>&nbsp;<span style="color: #795e26;">querySelector</span>(<span
-     style="color: #a31515;">"#msgGenero"</span>)</div><br>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@type</span><span style="color: #008000;">
-   </span><span style="color: #267f99;">{HTMLOutputElement|null}</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">outSalida</span> = <span
-     style="color: #001080;">document</span>.</div>
-  <div>&nbsp;<span style="color: #795e26;">querySelector</span>(<span
-     style="color: #a31515;">"#outSalida"</span>)</div><br>
-  <div><span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">inGenero</span> &amp;&amp; <span
-     style="color: #0070c1;">form</span>) {</div>
-  <div>&nbsp;<span style="color: #0070c1;">form</span>.<span
-     style="color: #795e26;">addEventListener</span>(</div>
-  <div>&nbsp; <span style="color: #a31515;">"submit"</span>, <span
-     style="color: #795e26;">procesa</span>)</div>
-  <div>&nbsp;<span style="color: #0070c1;">inGenero</span>.<span
-     style="color: #795e26;">addEventListener</span>(<span
-     style="color: #a31515;">"input"</span>,</div>
-  <div>&nbsp; <span style="color: #795e26;">copiaMensajes</span>)</div>
-  <div>}</div><br>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">copiaMensajes</span>() {</div>
-  <div>&nbsp;<span style="color: #795e26;">msg</span>(<span
-     style="color: #0070c1;">inGenero</span>, <span
-     style="color: #0070c1;">msgGenero</span>,</div>
-  <div>&nbsp; <span style="color: #0070c1;">REQUERIDO</span>)</div>
-  <div>}</div><br>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
+  <div><span style="color: #008000;">/** </span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{SubmitEvent}</span><span
+     style="color: #267f99;">{string}</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">evt</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">procesa</span>(<span
-     style="color: #001080;">evt</span>) {</div>
-  <div>&nbsp;<span style="color: #001080;">evt</span>.<span
-     style="color: #795e26;">preventDefault</span>()</div>
+     style="color: #001080;">genero</span><span
+     style="color: #008000;"> */</span></div>
+  <div><span style="color: #0000ff;">export</span></div>
+  <div>&nbsp;<span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">recomienda</span>(<span
+     style="color: #001080;">genero</span>) {</div>
   <div>&nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">inGenero</span> !== <span
-     style="color: #0000ff;">null</span></div>
-  <div>&nbsp; &amp;&amp; <span
-     style="color: #0070c1;">outSalida</span> !== <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; <span style="color: #af00db;">try</span> {</div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">inGenero</span>.<span
-     style="color: #0070c1;">validity</span>.<span
-     style="color: #0070c1;">valid</span>) {</div>
-  <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">genero</span> = <span
-     style="color: #0070c1;">inGenero</span>.<span
-     style="color: #001080;">value</span></div>
-  <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">genero</span> === <span
+     style="color: #001080;">genero</span> === <span
      style="color: #a31515;">"pop"</span>) {</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #0070c1;">outSalida</span>.<span
-     style="color: #001080;">value</span> =</div>
-  <div>&nbsp; &nbsp; &nbsp; <span
-     style="color: #a31515;">"Escucha a Ariana Grande."</span></div>
-  <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> <span
+  <div>&nbsp; <span style="color: #af00db;">return</span> <span
+     style="color: #a31515;">"Ariana Grande."</span></div>
+  <div>&nbsp;} <span style="color: #af00db;">else</span> <span
      style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">genero</span> === <span
+     style="color: #001080;">genero</span> === <span
      style="color: #a31515;">"reg"</span>) {</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #0070c1;">outSalida</span>.<span
-     style="color: #001080;">value</span> =</div>
-  <div>&nbsp; &nbsp; &nbsp; <span
-     style="color: #a31515;">"Escucha a Bad Bunny."</span></div>
-  <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #0070c1;">outSalida</span>.<span
-     style="color: #001080;">value</span> =</div>
-  <div>&nbsp; &nbsp; &nbsp; <span
-     style="color: #a31515;">"De ese género no conozco."</span></div>
-  <div>&nbsp; &nbsp; }</div>
-  <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
-  <div>&nbsp; &nbsp; <span style="color: #0070c1;">outSalida</span>.<span
-     style="color: #001080;">value</span> = <span
-     style="color: #a31515;">""</span></div>
-  <div>&nbsp; &nbsp;}</div>
-  <div>&nbsp; } <span style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">e</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">console</span>.<span
-     style="color: #795e26;">error</span>(<span
-     style="color: #001080;">e</span>)</div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">outSalida</span>.<span
-     style="color: #001080;">value</span> = <span
-     style="color: #001080;">e</span>.<span
-     style="color: #001080;">message</span></div>
-  <div>&nbsp; }</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">outSalida</span>.<span
-     style="color: #0070c1;">parentElement</span></div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">instanceof</span> <span
-     style="color: #267f99;">CmDin</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">outSalida</span>.<span
-     style="color: #0070c1;">parentElement</span>.</div>
-  <div>&nbsp; &nbsp; <span style="color: #795e26;">analiza</span>()</div>
-  <div>&nbsp; }</div>
+  <div>&nbsp; <span style="color: #af00db;">return</span> <span
+     style="color: #a31515;">"Bad Bunny."</span></div>
+  <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
+  <div>&nbsp; <span style="color: #af00db;">return</span> <span
+     style="color: #a31515;">"De eso no conozco."</span></div>
   <div>&nbsp;}</div>
   <div>}</div>
  </div>

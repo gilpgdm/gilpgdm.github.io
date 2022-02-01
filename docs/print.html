@@ -671,7 +671,7 @@
   </p>
   <p class="noPrint">
    <a target="_blank" rel="nooper"
-     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EFormulario%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Cform%20id%3D%22form%22%20novalidate%0A%20%20%20action%3D%22javascript%3Aprocesa()%22%3E%0A%20%20%3Ch1%3EFormulario%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%20for%3D%22inGenero%22%3E%0A%20%20%20%20*G%C3%A9nero%0A%20%20%20%3C%2Flabel%3E%0A%20%20%20%3Cselect%20id%3D%22inGenero%22%20required%0A%20%20%20%20%20oninput%3D%22copiaMensajes()%22%3E%0A%20%20%20%20%3Coption%20value%3D%22%22%3E%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22pop%22%3E%0A%20%20%20%20%20Pop%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%3Coption%0A%20%20%20%20%20%20value%3D%22reg%22%3E%0A%20%20%20%20%20Reguet%C3%B3n%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22tango%22%3E%0A%20%20%20%20%20Tango%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%3C%2Fselect%3E%0A%20%20%20%3Csmall%3E%0A%20%20%20%20%3Coutput%20id%3D%22msgGenero%22%3E%0A%20%20%20%20%20*Requerido%0A%20%20%20%20%3C%2Foutput%3E%0A%20%20%20%3C%2Fsmall%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cbutton%3ERecomendar%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%20for%3D%22outSalida%22%3E%0A%20%20%20%20Resultado%0A%20%20%20%3C%2Flabel%3E%0A%20%20%20%3Coutput%20id%3D%22outSalida%22%3E%0A%20%20%20%3C%2Foutput%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20const%20REQUERIDO%20%3D%20%22*Requerido%22%0A%0A%20%20function%20procesa()%20%7B%0A%20%20%20try%20%7B%0A%20%20%20%20if%20(inGenero.validity.valid)%20%7B%0A%20%20%20%20%20const%20genero%20%3D%20inGenero.value%0A%20%20%20%20%20if%20(genero%20%3D%3D%3D%20%22pop%22)%20%7B%0A%20%20%20%20%20%20outSalida.value%20%3D%0A%20%20%20%20%20%20%20%22Escucha%20a%20Ariana%20Grande.%22%0A%20%20%20%20%20%7D%20else%20if%20(genero%20%3D%3D%3D%20%22reg%22)%20%7B%0A%20%20%20%20%20%20outSalida.value%20%3D%0A%20%20%20%20%20%20%20%22Escucha%20a%20Bad%20Bunny.%22%0A%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20outSalida.value%20%3D%0A%20%20%20%20%20%20%20%22De%20ese%20g%C3%A9nero%20no%20conozco.%22%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20outSalida.value%20%3D%20%22%22%0A%20%20%20%20%7D%0A%20%20%20%7D%20catch%20(e)%20%7B%0A%20%20%20%20console.error(e)%0A%20%20%20%20outSalida.value%20%3D%20e.message%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20function%20copiaMensajes()%20%7B%0A%20%20%20msg(inGenero%2C%20msgGenero%2C%0A%20%20%20%20REQUERIDO)%0A%20%20%7D%0A%0A%20%20%2F**%20Si%20un%20elemento%20tiene%20un%0A%20%20%20*%20mensaje%20de%20validaci%C3%B3n%2C%20lo%0A%20%20%20*%20muestra%20en%20su%20elemento%20de%0A%20%20%20*%20ayuda%20y%20si%20no%2C%20muestra%20un%0A%20%20%20*%20texto%20de%20ayuda.%20%0A%20%20%20*%20%40param%20%7BHTMLInputElement%7C%0A%20%20%20*%20%20HTMLTextAreaElement%7C%0A%20%20%20*%20%20HTMLSelectElement%7C%0A%20%20%20*%20%20HTMLOutputElement%7Cnull%7D%20e%0A%20%20%20*%20%20%20referencia%20a%20un%20elemento%0A%20%20%20*%20%20%20que%20contiene%20datos.%0A%20%20%20*%20%40param%20%7BHTMLOutputElement%7C%0A%20%20%20*%20%20null%7D%20out%20%20referencia%20a%20un%0A%20%20%20*%20%20%20elemento%20de%20ayuda%20para%20e.%0A%20%20%20*%20%40param%20%7Bstring%7D%20ok%20mensaje%20de%0A%20%20%20*%20%20%20ayuda%20cuando%20el%20estado%20de%20e%0A%20%20%20*%20%20%20es%20v%C3%A1lido.%20*%2F%0A%20%20function%20msg(e%2C%20out%2C%20ok)%20%7B%0A%20%20%20if%20(e%20%26%26%20out)%20%7B%0A%20%20%20%20if%20(e.validity.valid)%20%7B%0A%20%20%20%20%20out.value%20%3D%20ok%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20out.value%20%3D%0A%20%20%20%20%20%20e.validationMessage%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EFormulario%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%20id%3D%22form%22%20novalidate%0A%20%20%20action%3D%22javascript%3Aprocesa()%22%3E%0A%20%20%3Ch1%3EFormulario%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%20for%3D%22inGenero%22%3E%0A%20%20%20%20*G%C3%A9nero%0A%20%20%20%3C%2Flabel%3E%0A%20%20%20%3Cselect%20id%3D%22inGenero%22%20required%0A%20%20%20%20%20oninput%3D%22copiaMensajes()%22%3E%0A%20%20%20%20%3Coption%20value%3D%22%22%3E%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22pop%22%3E%0A%20%20%20%20%20Pop%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%3Coption%0A%20%20%20%20%20%20value%3D%22reg%22%3E%0A%20%20%20%20%20Reguet%C3%B3n%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22tango%22%3E%0A%20%20%20%20%20Tango%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%3C%2Fselect%3E%0A%20%20%20%3Csmall%3E%0A%20%20%20%20%3Coutput%20id%3D%22msgGenero%22%3E%0A%20%20%20%20%20*Requerido%0A%20%20%20%20%3C%2Foutput%3E%0A%20%20%20%3C%2Fsmall%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cbutton%3ERecomendar%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%20for%3D%22outSalida%22%3E%0A%20%20%20%20Resultado%0A%20%20%20%3C%2Flabel%3E%0A%20%20%20%3Coutput%20id%3D%22outSalida%22%3E%0A%20%20%20%3C%2Foutput%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20const%20REQUERIDO%20%3D%20%22*Requerido%22%0A%0A%20%20function%20procesa()%20%7B%0A%20%20%20try%20%7B%0A%20%20%20%20copiaMensajes()%0A%20%20%20%20if%20(inGenero.validity.valid)%20%7B%0A%20%20%20%20%20const%20genero%20%3D%20inGenero.value%0A%20%20%20%20%20outSalida.value%20%3D%0A%20%20%20%20%20%20recomienda(genero)%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20outSalida.value%20%3D%20%22%22%0A%20%20%20%20%7D%0A%20%20%20%7D%20catch%20(e)%20%7B%0A%20%20%20%20console.error(e)%0A%20%20%20%20outSalida.value%20%3D%20e.message%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20%2F**%20%40param%20%7Bstring%7D%20genero%20*%2F%0A%20%20function%20recomienda(genero)%20%7B%0A%20%20%20if%20(genero%20%3D%3D%3D%20%22pop%22)%20%7B%0A%20%20%20%20return%20%22Ariana%20Grande.%22%0A%20%20%20%7D%20else%20if%20(genero%20%3D%3D%3D%20%22reg%22)%20%7B%0A%20%20%20%20return%20%22Bad%20Bunny.%22%0A%20%20%20%7D%20else%20%7B%0A%20%20%20%20return%20%22De%20eso%20no%20conozco.%22%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20function%20copiaMensajes()%20%7B%0A%20%20%20msg(inGenero%2C%20msgGenero%2C%0A%20%20%20%20REQUERIDO)%0A%20%20%7D%0A%0A%20%20%2F**%20Si%20un%20elemento%20tiene%20un%0A%20%20%20*%20mensaje%20de%20validaci%C3%B3n%2C%20lo%0A%20%20%20*%20muestra%20en%20su%20elemento%20de%0A%20%20%20*%20ayuda%20y%20si%20no%2C%20muestra%20un%0A%20%20%20*%20texto%20de%20ayuda.%0A%20%20%20*%20%40param%20%7BHTMLInputElement%7C%0A%20%20%20*%20%20HTMLTextAreaElement%7C%0A%20%20%20*%20%20HTMLSelectElement%7C%0A%20%20%20*%20%20HTMLOutputElement%7Cnull%7D%20e%0A%20%20%20*%20%20%20referencia%20a%20un%20elemento%0A%20%20%20*%20%20%20que%20contiene%20datos.%0A%20%20%20*%20%40param%20%7BHTMLOutputElement%7C%0A%20%20%20*%20%20null%7D%20out%20referencia%20a%20un%0A%20%20%20*%20%20%20elemento%20de%20ayuda%20para%20e.%0A%20%20%20*%20%40param%20%7Bstring%7D%20ok%20mensaje%20de%0A%20%20%20*%20%20%20ayuda%20cuando%20el%20estado%20de%20e%0A%20%20%20*%20%20%20es%20v%C3%A1lido.%20*%2F%0A%20%20function%20msg(e%2C%20out%2C%20ok)%20%7B%0A%20%20%20if%20(e%20%26%26%20out)%20%7B%0A%20%20%20%20if%20(e.validity.valid)%20%7B%0A%20%20%20%20%20out.value%20%3D%20ok%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20out.value%20%3D%0A%20%20%20%20%20%20e.validationMessage%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
  </section>
@@ -683,7 +683,7 @@
    <div><span style="color: #800000;">&lt;html</span> <span
       style="color: #ff0000;">lang</span>=<span
       style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div>
+      style="color: #800000;">&gt;</span></div><br>
    <div><span style="color: #800000;">&lt;head&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
       style="color: #ff0000;">charset</span>=<span
@@ -697,7 +697,7 @@
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Formulario<span
       style="color: #800000;">&lt;/title&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
    <div><span style="color: #800000;">&lt;body&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;form</span> <span
       style="color: #ff0000;">id</span>=<span
@@ -714,48 +714,64 @@
       style="color: #0000ff;">"inGenero"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; *Género</div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;select</span> <span
+   <div>&nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #800000;">&lt;select</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"inGenero"</span> <span
       style="color: #ff0000;">required</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">oninput</span>=<span
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">oninput</span>=<span
       style="color: #0000ff;">"</span><span
       style="color: #795e26;">copiaMensajes</span><span
       style="color: #0000ff;">()</span><span
-      style="color: #0000ff;">"</span><span style="color: #800000;">&gt;</span>
-   </div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;option</span> <span
+      style="color: #0000ff;">"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #800000;">&lt;option</span> <span
       style="color: #ff0000;">value</span>=<span
       style="color: #0000ff;">""</span><span
       style="color: #800000;">&gt;&lt;/option&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;option</span> <span
+   <div>&nbsp; &nbsp; <span
+      style="color: #800000;">&lt;option</span> <span
       style="color: #ff0000;">value</span>=<span
       style="color: #0000ff;">"pop"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp;Pop</div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/option&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;option</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">value</span>=<span
+   <div>&nbsp; &nbsp; <span
+      style="color: #800000;">&lt;/option&gt;</span></div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #800000;">&lt;option</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #ff0000;">value</span>=<span
       style="color: #0000ff;">"reg"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp;Reguetón</div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/option&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;option</span> <span
+   <div>&nbsp; &nbsp; <span
+      style="color: #800000;">&lt;/option&gt;</span></div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #800000;">&lt;option</span> <span
       style="color: #ff0000;">value</span>=<span
       style="color: #0000ff;">"tango"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp;Tango</div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/option&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/select&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;small&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;output</span> <span
+   <div>&nbsp; &nbsp; <span
+      style="color: #800000;">&lt;/option&gt;</span></div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/select&gt;</span></div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #800000;">&lt;small&gt;</span></div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #800000;">&lt;output</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"msgGenero"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp;*Requerido</div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/output&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/small&gt;</span></div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #800000;">&lt;/output&gt;</span></div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/small&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
    <div>&nbsp; &nbsp;<span
@@ -768,12 +784,15 @@
       style="color: #0000ff;">"outSalida"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; Resultado</div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;output</span> <span
+   <div>&nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #800000;">&lt;output</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"outSalida"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/output&gt;</span></div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/output&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
@@ -783,52 +802,63 @@
    <div>&nbsp; <span style="color: #0000ff;">function</span> <span
       style="color: #795e26;">procesa</span>() {</div>
    <div>&nbsp; &nbsp;<span style="color: #af00db;">try</span> {</div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #795e26;">copiaMensajes</span>()</div>
    <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
       style="color: #001080;">inGenero</span>.<span
       style="color: #001080;">validity</span>.<span
       style="color: #001080;">valid</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">genero</span> = <span
       style="color: #001080;">inGenero</span>.<span
       style="color: #001080;">value</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
-      style="color: #0070c1;">genero</span> === <span
-      style="color: #a31515;">"pop"</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
+   <div>&nbsp; &nbsp; &nbsp;<span
       style="color: #001080;">outSalida</span>.<span
       style="color: #001080;">value</span> =</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #a31515;">"Escucha a Ariana Grande."</span></div>
-   <div>&nbsp; &nbsp; &nbsp;} <span style="color: #af00db;">else</span> <span
-      style="color: #af00db;">if</span> (<span
-      style="color: #0070c1;">genero</span> === <span
-      style="color: #a31515;">"reg"</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">recomienda</span>(<span
+      style="color: #0070c1;">genero</span>)</div>
+   <div>&nbsp; &nbsp; } <span
+      style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
       style="color: #001080;">outSalida</span>.<span
-      style="color: #001080;">value</span> =</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #a31515;">"Escucha a Bad Bunny."</span></div>
-   <div>&nbsp; &nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #001080;">outSalida</span>.<span
-      style="color: #001080;">value</span> =</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #a31515;">"De ese género no conozco."</span></div>
-   <div>&nbsp; &nbsp; &nbsp;}</div>
-   <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">outSalida</span>.<span
       style="color: #001080;">value</span> = <span
       style="color: #a31515;">""</span></div>
    <div>&nbsp; &nbsp; }</div>
-   <div>&nbsp; &nbsp;} <span style="color: #af00db;">catch</span> (<span
+   <div>&nbsp; &nbsp;} <span
+      style="color: #af00db;">catch</span> (<span
       style="color: #001080;">e</span>) {</div>
-   <div>&nbsp; &nbsp; <span style="color: #001080;">console</span>.<span
+   <div>&nbsp; &nbsp; <span
+      style="color: #001080;">console</span>.<span
       style="color: #795e26;">error</span>(<span
       style="color: #001080;">e</span>)</div>
-   <div>&nbsp; &nbsp; <span style="color: #001080;">outSalida</span>.<span
+   <div>&nbsp; &nbsp; <span
+      style="color: #001080;">outSalida</span>.<span
       style="color: #001080;">value</span> = <span
       style="color: #001080;">e</span>.<span
       style="color: #001080;">message</span></div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span
+      style="color: #008000;">/** @param {string} genero */</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">recomienda</span>(<span
+      style="color: #001080;">genero</span>) {</div>
+   <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #001080;">genero</span> === <span
+      style="color: #a31515;">"pop"</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #a31515;">"Ariana Grande."</span></div>
+   <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> <span
+      style="color: #af00db;">if</span> (<span
+      style="color: #001080;">genero</span> === <span
+      style="color: #a31515;">"reg"</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #a31515;">"Bad Bunny."</span></div>
+   <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #a31515;">"De eso no conozco."</span></div>
    <div>&nbsp; &nbsp;}</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #0000ff;">function</span> <span
@@ -836,7 +866,8 @@
    <div>&nbsp; &nbsp;<span style="color: #795e26;">msg</span>(<span
       style="color: #001080;">inGenero</span>, <span
       style="color: #001080;">msgGenero</span>,</div>
-   <div>&nbsp; &nbsp; <span style="color: #0070c1;">REQUERIDO</span>)</div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #0070c1;">REQUERIDO</span>)</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span
       style="color: #008000;">/** Si un elemento tiene un</span></div>
@@ -849,8 +880,8 @@
    <div><span
       style="color: #008000;">&nbsp; &nbsp;* ayuda y si no, muestra un</span>
    </div>
-   <div><span style="color: #008000;">&nbsp; &nbsp;* texto de ayuda. </span>
-   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;* texto de ayuda. </span></div>
    <div><span
       style="color: #008000;">&nbsp; &nbsp;* @param {HTMLInputElement|</span>
    </div>
@@ -861,37 +892,37 @@
       style="color: #008000;">&nbsp; &nbsp;* &nbsp;HTMLSelectElement|</span>
    </div>
    <div><span
-      style="color: #008000;">&nbsp; &nbsp;* &nbsp;HTMLOutputElement|null}
-     e</span></div>
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;HTMLOutputElement|null}&nbsp;e</span>
+   </div>
    <div><span
-      style="color: #008000;">&nbsp; &nbsp;* &nbsp; referencia a un
-     elemento</span></div>
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;referencia&nbsp;a&nbsp;un&nbsp;elemento</span>
+   </div>
    <div><span
-      style="color: #008000;">&nbsp; &nbsp;* &nbsp; que contiene datos.</span>
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;que&nbsp;contiene&nbsp;datos.</span>
    </div>
    <div><span
       style="color: #008000;">&nbsp; &nbsp;* @param {HTMLOutputElement|</span>
    </div>
    <div><span
-      style="color: #008000;">&nbsp; &nbsp;* &nbsp;null} out &nbsp;referencia a
-     un</span></div>
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;null}&nbsp;out&nbsp;referencia&nbsp;a&nbsp;un</span>
+   </div>
    <div><span
-      style="color: #008000;">&nbsp; &nbsp;* &nbsp; elemento de ayuda para
-     e.</span></div>
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;elemento&nbsp;de&nbsp;ayuda&nbsp;para&nbsp;e.</span>
+   </div>
    <div><span
-      style="color: #008000;">&nbsp; &nbsp;* @param {string} ok mensaje
-     de</span></div>
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{string}&nbsp;ok&nbsp;mensaje&nbsp;de</span>
+   </div>
    <div><span
-      style="color: #008000;">&nbsp; &nbsp;* &nbsp; ayuda cuando el estado de
-     e</span></div>
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;ayuda&nbsp;cuando&nbsp;el&nbsp;estado&nbsp;de&nbsp;e</span>
+   </div>
    <div><span
-      style="color: #008000;">&nbsp; &nbsp;* &nbsp; es válido. */</span></div>
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;es&nbsp;válido.&nbsp;*/</span>
+   </div>
    <div>&nbsp; <span style="color: #0000ff;">function</span> <span
       style="color: #795e26;">msg</span>(<span
       style="color: #001080;">e</span>, <span
       style="color: #001080;">out</span>, <span
-      style="color: #001080;">ok</span>) {
-   </div>
+      style="color: #001080;">ok</span>) {</div>
    <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
       style="color: #001080;">e</span> &amp;&amp; <span
       style="color: #001080;">out</span>) {</div>
@@ -902,19 +933,16 @@
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">out</span>.<span
       style="color: #001080;">value</span> = <span
       style="color: #001080;">ok</span></div>
-   <div>&nbsp; &nbsp; } <span
-      style="color: #af00db;">else</span> {</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #001080;">out</span>.<span
+   <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">out</span>.<span
       style="color: #001080;">value</span> =</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #001080;">e</span>.<span
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #001080;">e</span>.<span
       style="color: #001080;">validationMessage</span></div>
    <div>&nbsp; &nbsp; }</div>
    <div>&nbsp; &nbsp;}</div>
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
   </div>
  </muestra-codigo>
@@ -1272,7 +1300,7 @@
   </p>
   <p class="noPrint">
    <a target="_blank" rel="nooper"
-     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ECampos%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--colOnBg%3A%20%231C1B1F%3B%0A%20%20%20--colBg%3A%20%23FFFBFE%3B%0A%20%20%20--colCm%3A%20%2379747E%3B%0A%20%20%20--colCmFc%3A%20%236750A4%3B%0A%20%20%20--colCmEr%3A%20%23B3261E%3B%0A%20%20%20--colCmBg%3A%20%23E7E0EC44%3B%0A%20%20%20--colCmBgHv%3A%20%23E7E0EC88%3B%0A%20%20%20--colCmBgFc%3A%20%23E7E0EC%3B%0A%20%20%20--colCmOp%3A%20white%3B%0A%20%20%20--colCmOpBg%3A%20%236750A4%3B%0A%20%20%20--fntFam%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20color%3A%20var(--colOnBg)%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%0A%20%20%2F*%20Quita%20un%20borde%20rojo%20que%20coloca%0A%20%20%20*%20Firefox.%20*%2F%0A%20%20%3A-moz-ui-invalid%20%7B%0A%20%20%20box-shadow%3A%20none%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cscript%3E%0A%20%20class%20CmDin%20extends%20HTMLElement%20%7B%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20setTimeout(%0A%20%20%20%20%20()%20%3D%3E%20this.prepara()%2C%0A%20%20%20%20%20100)%0A%20%20%20%7D%0A%20%20%20prepara()%20%7B%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BHTMLInputElement%7C%0A%20%20%20%20%20*%20%20HTMLSelectElement%7C%0A%20%20%20%20%20*%20%20HTMLOutputElement%7C%0A%20%20%20%20%20*%20%20null%7D%20*%2F%0A%20%20%20%20this._elem%20%3D%20this.%0A%20%20%20%20%20querySelector(%0A%20%20%20%20%20%20%22input%2C%20select%2C%20output%22)%0A%20%20%20%20if%20(this._elem%20!%3D%20null)%20%7B%0A%20%20%20%20%20this.addEventListener(%22input%22%2C%0A%20%20%20%20%20%20()%20%3D%3E%20this.analiza())%0A%20%20%20%20%7D%0A%20%20%20%20this.analiza()%3B%0A%20%20%20%7D%0A%20%20%20analiza()%20%7B%0A%20%20%20%20const%20e%20%3D%20this._elem%3B%0A%20%20%20%20if%20(e%20!%3D%20null)%20%7B%0A%20%20%20%20%20if%20(!e.validity.badInput%20%26%26%0A%20%20%20%20%20%20e.value%20%3D%3D%3D%20%22%22)%20%7B%0A%20%20%20%20%20%20e.classList.remove(%22valor%22)%0A%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20e.classList.add(%22valor%22)%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.%0A%20%20%20define(%22cm-din%22%2C%20CmDin)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20cm-din%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20position%3A%20relative%3B%0A%20%20%20color%3A%20var(--colCm)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colCmBg)%3B%0A%20%20%20border-top-left-radius%3A%204px%3B%0A%20%20%20border-top-right-radius%3A%204px%3B%0A%20%20%20margin%3A%201rem%200%3B%0A%20%20%20padding%3A%201.25rem%200%200%200%3B%0A%20%20%7D%0A%0A%20%20cm-din%3Ahover%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colCmBgHv)%3B%0A%20%20%7D%0A%0A%20%20cm-din%3Afocus-within%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colCmBgFc)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20label%20%7B%0A%20%20%20position%3A%20absolute%3B%0A%20%20%20top%3A%201.75rem%3B%0A%20%20%20left%3A%201rem%3B%0A%20%20%20font-size%3A%201rem%3B%0A%20%20%20color%3A%20var(--colCm)%3B%0A%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%7D%0A%0A%20%20cm-din%20.valor%2Blabel%2C%0A%20%20cm-din%20%3Afocus%2Blabel%2C%0A%20%20cm-din%20%5Btype%3Dfile%5D%2Blabel%20%7B%0A%20%20%20top%3A%200.5rem%3B%0A%20%20%20font-size%3A%200.75rem%3B%0A%20%20%7D%0A%0A%20%20cm-din%3Eoutput%2C%0A%20%20cm-din%20select%2C%0A%20%20cm-din%20input%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20font-size%3A%201rem%3B%0A%20%20%20padding%3A%200.5rem%201rem%200.5rem%201rem%0A%20%20%7D%0A%0A%20%20cm-din%20select%2C%0A%20%20cm-din%20input%20%7B%0A%20%20%20background-color%3A%20transparent%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20border-top%3A%20none%3B%0A%20%20%20border-left%3A%20none%3B%0A%20%20%20border-right%3A%20none%3B%0A%20%20%20border-bottom-width%3A%201px%3B%0A%20%20%20border-bottom-style%3A%20solid%3B%0A%20%20%20border-bottom-color%3A%0A%20%20%20%20var(--colCm)%3B%0A%20%20%20resize%3A%20none%3B%0A%20%20%20outline%3A%20none%3B%0A%20%20%20width%3A%20100%25%3B%0A%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Afocus%20%7B%0A%20%20%20border-bottom-width%3A%202px%3B%0A%20%20%7D%0A%0A%20%20cm-din%20small%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20height%3A%201em%3B%0A%20%20%20font-size%3A%200.75rem%3B%0A%20%20%20padding-left%3A%201rem%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Afocus%2Blabel%20%7B%0A%20%20%20color%3A%20var(--colCmFc)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Afocus%20%7B%0A%20%20%20border-bottom-color%3A%0A%20%20%20%20var(--colCmFc)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Ainvalid%2C%0A%20%20cm-din%20%3Afocus%3Ainvalid%20%7B%0A%20%20%20border-bottom-color%3A%0A%20%20%20%20var(--colCmEr)%3B%0A%20%20%20outline%3A%20none%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Ainvalid%2Blabel%20%7B%0A%20%20%20color%3A%20var(--colCmEr)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Ainvalid~small%20%7B%0A%20%20%20color%3A%20var(--colCmEr)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20option%20%7B%0A%20%20%20padding%3A%200.3rem%201rem%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20option%3Achecked%20%7B%0A%20%20%20color%3A%20var(--colCmOp)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colCmOpBg)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3ECampos%3C%2Fh1%3E%0A%20%3Ccm-din%3E%0A%20%20%3Coutput%20id%3D%22saludo%22%3E%0A%20%20%20Hola%0A%20%20%3C%2Foutput%3E%0A%20%20%3Clabel%20for%3D%22Saludo%22%3E%0A%20%20%20Saludo%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fcm-din%3E%0A%20%3Ccm-din%3E%0A%20%20%3Cinput%20id%3D%22nombre%22%20required%3E%0A%20%20%3Clabel%20for%3D%22nombre%22%3E%0A%20%20%20Nombre*%0A%20%20%3C%2Flabel%3E%0A%20%20%3Csmall%3E*Requerido%3C%2Fsmall%3E%0A%20%3C%2Fcm-din%3E%0A%20%3Ccm-din%3E%0A%20%20%3Cinput%20id%3D%22email%22%20type%3D%22email%22%3E%0A%20%20%3Clabel%20for%3D%22email%22%3EEmail%3C%2Flabel%3E%0A%20%3C%2Fcm-din%3E%0A%20%3Ccm-din%3E%0A%20%20%3Cselect%20id%3D%22grupo%22%3E%0A%20%20%20%3Coption%20value%3D%22%22%3E%3C%2Foption%3E%0A%20%20%20%3Coption%20value%3D%22IC21%22%3E%0A%20%20%20%20IC-21%0A%20%20%20%3C%2Foption%3E%0A%20%20%20%3Coption%20value%3D%22IC22%22%3E%0A%20%20%20%20IC-22%0A%20%20%20%3C%2Foption%3E%0A%20%20%20%3Coption%20value%3D%22IC23%22%3E%0A%20%20%20%20IC-23%0A%20%20%20%3C%2Foption%3E%0A%20%20%3C%2Fselect%3E%0A%20%20%3Clabel%20for%3D%22grupo%22%3EGrupo%3C%2Flabel%3E%0A%20%3C%2Fcm-din%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ECampos%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--colOnBg%3A%20%231C1B1F%3B%0A%20%20%20--colBg%3A%20%23FFFBFE%3B%0A%20%20%20--colCm%3A%20%2379747E%3B%0A%20%20%20--colCmFc%3A%20%236750A4%3B%0A%20%20%20--colCmEr%3A%20%23B3261E%3B%0A%20%20%20--colCmBg%3A%20%23E7E0EC44%3B%0A%20%20%20--colCmBgHv%3A%20%23E7E0EC88%3B%0A%20%20%20--colCmBgFc%3A%20%23E7E0EC%3B%0A%20%20%20--colCmOp%3A%20white%3B%0A%20%20%20--colCmOpBg%3A%20%236750A4%3B%0A%20%20%20--fntFam%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20color%3A%20var(--colOnBg)%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%0A%20%20%2F*%20Quita%20un%20borde%20rojo%20que%20coloca%0A%20%20%20*%20Firefox.%20*%2F%0A%20%20%3A-moz-ui-invalid%20%7B%0A%20%20%20box-shadow%3A%20none%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cscript%3E%0A%20%20class%20CmDin%20extends%20HTMLElement%20%7B%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20setTimeout(%0A%20%20%20%20%20()%20%3D%3E%20this.prepara()%2C%0A%20%20%20%20%20100)%0A%20%20%20%7D%0A%20%20%20prepara()%20%7B%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BHTMLInputElement%7C%0A%20%20%20%20%20*%20%20HTMLSelectElement%7C%0A%20%20%20%20%20*%20%20HTMLOutputElement%7C%0A%20%20%20%20%20*%20%20null%7D%20*%2F%0A%20%20%20%20this._elem%20%3D%20this.%0A%20%20%20%20%20querySelector(%0A%20%20%20%20%20%20%22input%2C%20select%2C%20output%22)%0A%20%20%20%20if%20(this._elem%20!%3D%20null)%20%7B%0A%20%20%20%20%20this.addEventListener(%22input%22%2C%0A%20%20%20%20%20%20()%20%3D%3E%20this.analiza())%0A%20%20%20%20%7D%0A%20%20%20%20this.analiza()%3B%0A%20%20%20%7D%0A%20%20%20analiza()%20%7B%0A%20%20%20%20const%20e%20%3D%20this._elem%3B%0A%20%20%20%20if%20(e%20!%3D%20null)%20%7B%0A%20%20%20%20%20if%20(!e.validity.badInput%20%26%26%0A%20%20%20%20%20%20e.value%20%3D%3D%3D%20%22%22)%20%7B%0A%20%20%20%20%20%20e.classList.remove(%22valor%22)%0A%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20e.classList.add(%22valor%22)%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.%0A%20%20%20define(%22cm-din%22%2C%20CmDin)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20cm-din%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20position%3A%20relative%3B%0A%20%20%20color%3A%20var(--colCm)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colCmBg)%3B%0A%20%20%20border-top-left-radius%3A%204px%3B%0A%20%20%20border-top-right-radius%3A%204px%3B%0A%20%20%20margin%3A%201rem%3B%0A%20%20%20padding%3A%201.25rem%200%200%200%3B%0A%20%20%7D%0A%0A%20%20cm-din%3Ahover%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colCmBgHv)%3B%0A%20%20%7D%0A%0A%20%20cm-din%3Afocus-within%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colCmBgFc)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20label%20%7B%0A%20%20%20position%3A%20absolute%3B%0A%20%20%20top%3A%201.75rem%3B%0A%20%20%20left%3A%201rem%3B%0A%20%20%20font-size%3A%201rem%3B%0A%20%20%20color%3A%20var(--colCm)%3B%0A%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%7D%0A%0A%20%20cm-din%20.valor%2Blabel%2C%0A%20%20cm-din%20%3Afocus%2Blabel%2C%0A%20%20cm-din%20%5Btype%3Dfile%5D%2Blabel%20%7B%0A%20%20%20top%3A%200.5rem%3B%0A%20%20%20font-size%3A%200.75rem%3B%0A%20%20%7D%0A%0A%20%20cm-din%3Eoutput%2C%0A%20%20cm-din%20select%2C%0A%20%20cm-din%20input%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20font-size%3A%201rem%3B%0A%20%20%20padding%3A%200.5rem%201rem%200.5rem%201rem%0A%20%20%7D%0A%0A%20%20cm-din%20select%2C%0A%20%20cm-din%20input%20%7B%0A%20%20%20background-color%3A%20transparent%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20border-top%3A%20none%3B%0A%20%20%20border-left%3A%20none%3B%0A%20%20%20border-right%3A%20none%3B%0A%20%20%20border-bottom-width%3A%201px%3B%0A%20%20%20border-bottom-style%3A%20solid%3B%0A%20%20%20border-bottom-color%3A%0A%20%20%20%20var(--colCm)%3B%0A%20%20%20resize%3A%20none%3B%0A%20%20%20outline%3A%20none%3B%0A%20%20%20width%3A%20100%25%3B%0A%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Afocus%20%7B%0A%20%20%20border-bottom-width%3A%202px%3B%0A%20%20%7D%0A%0A%20%20cm-din%20small%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20height%3A%201em%3B%0A%20%20%20font-size%3A%200.75rem%3B%0A%20%20%20padding-left%3A%201rem%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Afocus%2Blabel%20%7B%0A%20%20%20color%3A%20var(--colCmFc)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Afocus%20%7B%0A%20%20%20border-bottom-color%3A%0A%20%20%20%20var(--colCmFc)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Ainvalid%2C%0A%20%20cm-din%20%3Afocus%3Ainvalid%20%7B%0A%20%20%20border-bottom-color%3A%0A%20%20%20%20var(--colCmEr)%3B%0A%20%20%20outline%3A%20none%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Ainvalid%2Blabel%20%7B%0A%20%20%20color%3A%20var(--colCmEr)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Ainvalid~small%20%7B%0A%20%20%20color%3A%20var(--colCmEr)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20option%20%7B%0A%20%20%20padding%3A%200.3rem%201rem%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20option%3Achecked%20%7B%0A%20%20%20color%3A%20var(--colCmOp)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colCmOpBg)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3ECampos%3C%2Fh1%3E%0A%20%3Ccm-din%3E%0A%20%20%3Coutput%20id%3D%22saludo%22%3E%0A%20%20%20Hola%0A%20%20%3C%2Foutput%3E%0A%20%20%3Clabel%20for%3D%22Saludo%22%3E%0A%20%20%20Saludo%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fcm-din%3E%0A%20%3Ccm-din%3E%0A%20%20%3Cinput%20id%3D%22nombre%22%20required%3E%0A%20%20%3Clabel%20for%3D%22nombre%22%3E%0A%20%20%20Nombre*%0A%20%20%3C%2Flabel%3E%0A%20%20%3Csmall%3E*Requerido%3C%2Fsmall%3E%0A%20%3C%2Fcm-din%3E%0A%20%3Ccm-din%3E%0A%20%20%3Cinput%20id%3D%22email%22%20type%3D%22email%22%3E%0A%20%20%3Clabel%20for%3D%22email%22%3EEmail%3C%2Flabel%3E%0A%20%3C%2Fcm-din%3E%0A%20%3Ccm-din%3E%0A%20%20%3Cselect%20id%3D%22grupo%22%3E%0A%20%20%20%3Coption%20value%3D%22%22%3E%3C%2Foption%3E%0A%20%20%20%3Coption%20value%3D%22IC21%22%3E%0A%20%20%20%20IC-21%0A%20%20%20%3C%2Foption%3E%0A%20%20%20%3Coption%20value%3D%22IC22%22%3E%0A%20%20%20%20IC-22%0A%20%20%20%3C%2Foption%3E%0A%20%20%20%3Coption%20value%3D%22IC23%22%3E%0A%20%20%20%20IC-23%0A%20%20%20%3C%2Foption%3E%0A%20%20%3C%2Fselect%3E%0A%20%20%3Clabel%20for%3D%22grupo%22%3EGrupo%3C%2Flabel%3E%0A%20%3C%2Fcm-din%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
  </section>
@@ -1466,8 +1494,7 @@
       style="color: #ff0000;">border-top-right-radius</span>: <span
       style="color: #098658;">4px</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
-      style="color: #098658;">1rem</span> <span
-      style="color: #098658;">0</span>;</div>
+      style="color: #098658;">1rem</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">padding</span>: <span
       style="color: #098658;">1.25rem</span> <span
       style="color: #098658;">0</span> <span
@@ -5087,8 +5114,7 @@
   <div>&nbsp; &nbsp;<span style="color: #ff0000;">src</span>=<span
      style="color: #0000ff;">"js/mi-nav.js"</span><span
      style="color: #800000;">&gt;</span></div>
-  <div>&nbsp; &nbsp;<span
-     style="color: #800000;">&lt;/script&gt;</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
   <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
      style="color: #ff0000;">rel</span>=<span
      style="color: #0000ff;">"stylesheet"</span></div>
@@ -5098,9 +5124,12 @@
   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
   <div><span style="color: #800000;">&lt;body&gt;</span></div>
   <div>&nbsp;<span style="color: #800000;">&lt;form</span> <span
+     style="color: #ff0000;">id</span>=<span
+     style="color: #0000ff;">"form"</span> <span
      style="color: #ff0000;">novalidate</span><span
      style="color: #800000;">&gt;</span></div>
-  <div>&nbsp; <span style="color: #800000;">&lt;cn-app-bar&gt;</span></div>
+  <div>&nbsp; <span
+     style="color: #800000;">&lt;cn-app-bar&gt;</span></div>
   <div>&nbsp; &nbsp;<span
      style="color: #800000;">&lt;h1&gt;</span>Recomiendo<span
      style="color: #800000;">&lt;/h1&gt;</span></div>
@@ -5120,24 +5149,20 @@
      style="color: #0000ff;">"pop"</span><span
      style="color: #800000;">&gt;</span></div>
   <div>&nbsp; &nbsp; &nbsp;Pop</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #800000;">&lt;/option&gt;</span></div>
+  <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/option&gt;</span></div>
   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;option</span></div>
   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">value</span>=<span
      style="color: #0000ff;">"reg"</span><span
      style="color: #800000;">&gt;</span></div>
   <div>&nbsp; &nbsp; &nbsp;Reguetón</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #800000;">&lt;/option&gt;</span></div>
+  <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/option&gt;</span></div>
   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;option</span> <span
      style="color: #ff0000;">value</span>=<span
      style="color: #0000ff;">"tango"</span><span
      style="color: #800000;">&gt;</span></div>
   <div>&nbsp; &nbsp; &nbsp;Tango</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #800000;">&lt;/option&gt;</span></div>
-  <div>&nbsp; &nbsp;<span
-     style="color: #800000;">&lt;/select&gt;</span></div>
+  <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/option&gt;</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/select&gt;</span></div>
   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;label</span> <span
      style="color: #ff0000;">for</span>=<span
      style="color: #0000ff;">"inGenero"</span><span
@@ -5150,10 +5175,8 @@
      style="color: #0000ff;">"msgGenero"</span><span
      style="color: #800000;">&gt;</span></div>
   <div>&nbsp; &nbsp; &nbsp;*Requerido</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #800000;">&lt;/output&gt;</span></div>
-  <div>&nbsp; &nbsp;<span
-     style="color: #800000;">&lt;/small&gt;</span></div>
+  <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/output&gt;</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/small&gt;</span></div>
   <div>&nbsp; <span style="color: #800000;">&lt;/cm-din&gt;</span></div>
   <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;button</span> <span
@@ -5161,10 +5184,12 @@
      style="color: #0000ff;">"filled"</span><span
      style="color: #800000;">&gt;</span></div>
   <div>&nbsp; &nbsp; Recomendar</div>
-  <div>&nbsp; &nbsp;<span
-     style="color: #800000;">&lt;/button&gt;</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/button&gt;</span></div>
   <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
-  <div>&nbsp; <span style="color: #800000;">&lt;cm-din&gt;</span></div>
+  <div>&nbsp; <span style="color: #800000;">&lt;cm-din</span> <span
+     style="color: #ff0000;">id</span>=<span
+     style="color: #0000ff;">"cmDinSalida"</span><span
+     style="color: #800000;">&gt;</span></div>
   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;output</span> <span
      style="color: #ff0000;">id</span>=<span
      style="color: #0000ff;">"outSalida"</span><span
@@ -5174,18 +5199,88 @@
      style="color: #0000ff;">"outSalida"</span><span
      style="color: #800000;">&gt;</span></div>
   <div>&nbsp; &nbsp; Resultado</div>
-  <div>&nbsp; &nbsp;<span
-     style="color: #800000;">&lt;/label&gt;</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
   <div>&nbsp; <span style="color: #800000;">&lt;/cm-din&gt;</span></div>
   <div>&nbsp; <span
      style="color: #800000;">&lt;mi-nav&gt;&lt;/mi-nav&gt;</span></div>
   <div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div>
   <div>&nbsp;<span style="color: #800000;">&lt;script</span> <span
      style="color: #ff0000;">type</span>=<span
-     style="color: #0000ff;">"module"</span></div>
-  <div>&nbsp; &nbsp;<span style="color: #ff0000;">src</span>=<span
-     style="color: #0000ff;">"js/recomienda.js"</span><span
-     style="color: #800000;">&gt;&lt;/script&gt;</span></div>
+     style="color: #0000ff;">"module"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp; <span style="color: #af00db;">import</span> {</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">msg</span></div>
+  <div>&nbsp; } <span style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/msg.js"</span></div>
+  <div>&nbsp; <span style="color: #af00db;">import</span> {</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">recomienda</span></div>
+  <div>&nbsp; } <span style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./js/recomienda.js"</span></div>
+  <div>&nbsp; <span style="color: #af00db;">import</span> <span
+     style="color: #a31515;">"./js/config.js"</span>;</div><br>
+  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">REQUERIDO</span> = <span
+     style="color: #a31515;">"*Requerido"</span></div><br>
+  <div>&nbsp; <span style="color: #001080;">form</span>.<span
+     style="color: #795e26;">addEventListener</span>(</div>
+  <div>&nbsp; &nbsp;<span style="color: #a31515;">"submit"</span>, <span
+     style="color: #795e26;">procesa</span>)</div>
+  <div>&nbsp; <span style="color: #001080;">inGenero</span>.<span
+     style="color: #795e26;">addEventListener</span>(</div>
+  <div>&nbsp; &nbsp;<span style="color: #a31515;">"input"</span>, <span
+     style="color: #795e26;">copiaMensajes</span>)</div><br>
+  <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">copiaMensajes</span>() {</div>
+  <div>&nbsp; &nbsp;<span style="color: #795e26;">msg</span>(<span
+     style="color: #001080;">inGenero</span>, <span
+     style="color: #001080;">msgGenero</span>,</div>
+  <div>&nbsp; &nbsp; <span style="color: #0070c1;">REQUERIDO</span>)</div>
+  <div>&nbsp; }</div><br>
+  <div>&nbsp; <span style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp;* @param {SubmitEvent} evt</span>
+  </div>
+  <div><span style="color: #008000;">&nbsp; &nbsp;*/</span></div>
+  <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">procesa</span>(<span
+     style="color: #001080;">evt</span>) {</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">evt</span>.<span
+     style="color: #795e26;">preventDefault</span>()</div>
+  <div>&nbsp; &nbsp;<span style="color: #af00db;">try</span> {</div>
+  <div>&nbsp; &nbsp; <span style="color: #795e26;">copiaMensajes</span>()</div>
+  <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">inGenero</span>.<span
+     style="color: #001080;">validity</span>.<span
+     style="color: #001080;">valid</span>) {</div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">genero</span> = <span
+     style="color: #001080;">inGenero</span>.<span
+     style="color: #001080;">value</span></div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">outSalida</span>.<span
+     style="color: #001080;">value</span> =</div>
+  <div>&nbsp; &nbsp; &nbsp; <span
+     style="color: #795e26;">recomienda</span>(<span
+     style="color: #0070c1;">genero</span>)</div>
+  <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #001080;">outSalida</span>.<span
+     style="color: #001080;">value</span> = <span
+     style="color: #a31515;">""</span></div>
+  <div>&nbsp; &nbsp; }</div>
+  <div>&nbsp; &nbsp;} <span style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">e</span>) {</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">error</span>(<span
+     style="color: #001080;">e</span>)</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">outSalida</span>.<span
+     style="color: #001080;">value</span> = <span
+     style="color: #001080;">e</span>.<span
+     style="color: #001080;">message</span></div>
+  <div>&nbsp; &nbsp;}</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">cmDinSalida</span>.<span
+     style="color: #795e26;">analiza</span>()</div>
+  <div>&nbsp; }</div>
+  <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
  </div>
@@ -5194,151 +5289,31 @@
      <section >
          <h1 >4. js/recomienda.js</h1><muestra-codigo>
  <div>
-  <div><span style="color: #af00db;">import</span> { <span
-     style="color: #001080;">msg</span> } <span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/msg.js"</span></div>
-  <div><span style="color: #af00db;">import</span> <span
-     style="color: #a31515;">"./config.js"</span>;</div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">CmDin</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/cm-din.js"</span></div><br>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">REQUERIDO</span> = <span
-     style="color: #a31515;">"*Requerido"</span></div><br>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">form</span> =</div>
-  <div>&nbsp;<span style="color: #001080;">document</span>.<span
-     style="color: #795e26;">querySelector</span>(<span
-     style="color: #a31515;">"form"</span>)</div><br>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{HTMLSelectElement|null}</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">inGenero</span> = <span
-     style="color: #001080;">document</span>.</div>
-  <div>&nbsp;<span style="color: #795e26;">querySelector</span>(<span
-     style="color: #a31515;">"#inGenero"</span>)</div><br>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{HTMLOutputElement|null}</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">msgGenero</span> = <span
-     style="color: #001080;">document</span>.</div>
-  <div>&nbsp;<span style="color: #795e26;">querySelector</span>(<span
-     style="color: #a31515;">"#msgGenero"</span>)</div><br>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@type</span><span style="color: #008000;">
-   </span><span style="color: #267f99;">{HTMLOutputElement|null}</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">outSalida</span> = <span
-     style="color: #001080;">document</span>.</div>
-  <div>&nbsp;<span style="color: #795e26;">querySelector</span>(<span
-     style="color: #a31515;">"#outSalida"</span>)</div><br>
-  <div><span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">inGenero</span> &amp;&amp; <span
-     style="color: #0070c1;">form</span>) {</div>
-  <div>&nbsp;<span style="color: #0070c1;">form</span>.<span
-     style="color: #795e26;">addEventListener</span>(</div>
-  <div>&nbsp; <span style="color: #a31515;">"submit"</span>, <span
-     style="color: #795e26;">procesa</span>)</div>
-  <div>&nbsp;<span style="color: #0070c1;">inGenero</span>.<span
-     style="color: #795e26;">addEventListener</span>(<span
-     style="color: #a31515;">"input"</span>,</div>
-  <div>&nbsp; <span style="color: #795e26;">copiaMensajes</span>)</div>
-  <div>}</div><br>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">copiaMensajes</span>() {</div>
-  <div>&nbsp;<span style="color: #795e26;">msg</span>(<span
-     style="color: #0070c1;">inGenero</span>, <span
-     style="color: #0070c1;">msgGenero</span>,</div>
-  <div>&nbsp; <span style="color: #0070c1;">REQUERIDO</span>)</div>
-  <div>}</div><br>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
+  <div><span style="color: #008000;">/** </span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{SubmitEvent}</span><span
+     style="color: #267f99;">{string}</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">evt</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">procesa</span>(<span
-     style="color: #001080;">evt</span>) {</div>
-  <div>&nbsp;<span style="color: #001080;">evt</span>.<span
-     style="color: #795e26;">preventDefault</span>()</div>
+     style="color: #001080;">genero</span><span
+     style="color: #008000;"> */</span></div>
+  <div><span style="color: #0000ff;">export</span></div>
+  <div>&nbsp;<span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">recomienda</span>(<span
+     style="color: #001080;">genero</span>) {</div>
   <div>&nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">inGenero</span> !== <span
-     style="color: #0000ff;">null</span></div>
-  <div>&nbsp; &amp;&amp; <span
-     style="color: #0070c1;">outSalida</span> !== <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; <span style="color: #af00db;">try</span> {</div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">inGenero</span>.<span
-     style="color: #0070c1;">validity</span>.<span
-     style="color: #0070c1;">valid</span>) {</div>
-  <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">genero</span> = <span
-     style="color: #0070c1;">inGenero</span>.<span
-     style="color: #001080;">value</span></div>
-  <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">genero</span> === <span
+     style="color: #001080;">genero</span> === <span
      style="color: #a31515;">"pop"</span>) {</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #0070c1;">outSalida</span>.<span
-     style="color: #001080;">value</span> =</div>
-  <div>&nbsp; &nbsp; &nbsp; <span
-     style="color: #a31515;">"Escucha a Ariana Grande."</span></div>
-  <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> <span
+  <div>&nbsp; <span style="color: #af00db;">return</span> <span
+     style="color: #a31515;">"Ariana Grande."</span></div>
+  <div>&nbsp;} <span style="color: #af00db;">else</span> <span
      style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">genero</span> === <span
+     style="color: #001080;">genero</span> === <span
      style="color: #a31515;">"reg"</span>) {</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #0070c1;">outSalida</span>.<span
-     style="color: #001080;">value</span> =</div>
-  <div>&nbsp; &nbsp; &nbsp; <span
-     style="color: #a31515;">"Escucha a Bad Bunny."</span></div>
-  <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #0070c1;">outSalida</span>.<span
-     style="color: #001080;">value</span> =</div>
-  <div>&nbsp; &nbsp; &nbsp; <span
-     style="color: #a31515;">"De ese género no conozco."</span></div>
-  <div>&nbsp; &nbsp; }</div>
-  <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
-  <div>&nbsp; &nbsp; <span style="color: #0070c1;">outSalida</span>.<span
-     style="color: #001080;">value</span> = <span
-     style="color: #a31515;">""</span></div>
-  <div>&nbsp; &nbsp;}</div>
-  <div>&nbsp; } <span style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">e</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">console</span>.<span
-     style="color: #795e26;">error</span>(<span
-     style="color: #001080;">e</span>)</div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">outSalida</span>.<span
-     style="color: #001080;">value</span> = <span
-     style="color: #001080;">e</span>.<span
-     style="color: #001080;">message</span></div>
-  <div>&nbsp; }</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">outSalida</span>.<span
-     style="color: #0070c1;">parentElement</span></div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">instanceof</span> <span
-     style="color: #267f99;">CmDin</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">outSalida</span>.<span
-     style="color: #0070c1;">parentElement</span>.</div>
-  <div>&nbsp; &nbsp; <span style="color: #795e26;">analiza</span>()</div>
-  <div>&nbsp; }</div>
+  <div>&nbsp; <span style="color: #af00db;">return</span> <span
+     style="color: #a31515;">"Bad Bunny."</span></div>
+  <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
+  <div>&nbsp; <span style="color: #af00db;">return</span> <span
+     style="color: #a31515;">"De eso no conozco."</span></div>
   <div>&nbsp;}</div>
   <div>}</div>
  </div>
@@ -6172,8 +6147,7 @@
      style="color: #ff0000;">border-top-right-radius</span>: <span
      style="color: #098658;">4px</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">margin</span>: <span
-     style="color: #098658;">1rem</span> <span
-     style="color: #098658;">0</span>;</div>
+     style="color: #098658;">1rem</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">padding</span>: <span
      style="color: #098658;">1.25rem</span> <span
      style="color: #098658;">0</span> <span
