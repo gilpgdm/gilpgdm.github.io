@@ -378,7 +378,7 @@
     </li>
     <li>
      <p>
-      <a href="/m04pwaBasica/mFregSwJs.html">lib/regSw.js</a>
+      <a href="/m04pwaBasica/mFregSwJs.html">lib/js/regSw.js</a>
      </p>
     </li>
     <li>
@@ -615,7 +615,12 @@
    <p>lib</p>
    <ul>
     <li>
-     <p><a href="mFregSwJs.html">regSw.js</a></p>
+     <p>js</p>
+     <ul>
+      <li>
+       <p><a href="mFregSwJs.html">regSw.js</a></p>
+      </li>
+     </ul>
     </li>
    </ul>
   </li>
@@ -777,34 +782,37 @@
  <div>
   <div><span style="color: #008000;">/* Este archivo debe estar</span></div>
   <div><span
-     style="color: #008000;">&nbsp;* colocado en la carpeta raíz del</span></div>
+     style="color: #008000;">&nbsp;* colocado en la carpeta raíz del</span>
+  </div>
   <div><span style="color: #008000;">&nbsp;* sitio.</span></div>
   <div><span style="color: #008000;">&nbsp;* </span></div>
   <div><span style="color: #008000;">&nbsp;* Cualquier cambio en el</span></div>
   <div><span
-    style="color: #008000;">&nbsp;* contenido de este archivo hace</span></div>
+     style="color: #008000;">&nbsp;* contenido de este archivo hace</span></div>
   <div><span
-    style="color: #008000;">&nbsp;* que el service worker se</span></div>
+     style="color: #008000;">&nbsp;* que el service worker se</span></div>
   <div><span style="color: #008000;">&nbsp;* reinstale.</span></div>
   <div><span style="color: #008000;">&nbsp;* </span></div>
   <div><span
-    style="color: #008000;">&nbsp;* Normalmente se cambia el número</span></div>
+     style="color: #008000;">&nbsp;* Normalmente se cambia el número</span>
+  </div>
   <div><span
-    style="color: #008000;">&nbsp;* de la versión cuando cambia el</span></div>
+     style="color: #008000;">&nbsp;* de la versión cuando cambia el</span></div>
   <div><span
-    style="color: #008000;">&nbsp;* contenido de los archivos. */</span></div>
+     style="color: #008000;">&nbsp;* contenido de los archivos. */</span></div>
   <div><span style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">VERSION</span> = <span
      style="color: #a31515;">"1.00"</span></div><br>
   <div><span
-    style="color: #008000;">/** Nombre del archivo de cache. */</span></div>
+     style="color: #008000;">/** Nombre del archivo de cache. */</span></div>
   <div><span style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">CACHE</span> = <span
      style="color: #a31515;">"ejemploPWA"</span></div><br>
   <div><span
-    style="color: #008000;">/** Archivos requeridos para que</span></div>
+     style="color: #008000;">/** Archivos requeridos para que</span></div>
   <div><span
-    style="color: #008000;">&nbsp;* la aplicación funcione fuera de</span></div>
+     style="color: #008000;">&nbsp;* la aplicación funcione fuera de</span>
+  </div>
   <div><span style="color: #008000;">&nbsp;* línea.</span></div>
   <div><span style="color: #008000;">&nbsp;*/</span></div>
   <div><span style="color: #0000ff;">const</span> <span
@@ -812,46 +820,47 @@
   <div>&nbsp;<span style="color: #a31515;">"css/estilos.css"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"img/icono2048.png"</span>,</div>
   <div>&nbsp;<span
-    style="color: #a31515;">"img/maskable_icon_x48.png"</span>,</div>
+     style="color: #a31515;">"img/maskable_icon_x48.png"</span>,</div>
   <div>&nbsp;<span
-    style="color: #a31515;">"img/maskable_icon_x72.png"</span>,</div>
+     style="color: #a31515;">"img/maskable_icon_x72.png"</span>,</div>
   <div>&nbsp;<span
-    style="color: #a31515;">"img/maskable_icon_x96.png"</span>,</div>
+     style="color: #a31515;">"img/maskable_icon_x96.png"</span>,</div>
   <div>&nbsp;<span
-    style="color: #a31515;">"img/maskable_icon_x128.png"</span>,</div>
+     style="color: #a31515;">"img/maskable_icon_x128.png"</span>,</div>
   <div>&nbsp;<span
-    style="color: #a31515;">"img/maskable_icon_x192.png"</span>,</div>
+     style="color: #a31515;">"img/maskable_icon_x192.png"</span>,</div>
   <div>&nbsp;<span
-    style="color: #a31515;">"img/maskable_icon_x384.png"</span>,</div>
+     style="color: #a31515;">"img/maskable_icon_x384.png"</span>,</div>
   <div>&nbsp;<span
-    style="color: #a31515;">"img/maskable_icon_x512.png"</span>,</div>
-  <div>&nbsp;<span style="color: #a31515;">"img/maskable_icon.png"</span>,</div>
+     style="color: #a31515;">"img/maskable_icon_x512.png"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/maskable_icon.png"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"js/config.js"</span>,</div>
-  <div>&nbsp;<span style="color: #a31515;">"lib/regSw.js"</span>,</div>
+  <div>&nbsp;<span style="color: #a31515;">"lib/js/regSw.js"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"favicon.ico"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"index.html"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"site.webmanifest"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"/"</span></div>
-  <div>]</div>
+  <div>]</div><br>
   <div><span style="color: #af00db;">if</span> (<span
      style="color: #001080;">self</span> <span
      style="color: #0000ff;">instanceof</span></div>
   <div>&nbsp;<span
-    style="color: #267f99;">ServiceWorkerGlobalScope</span>) {</div>
+     style="color: #267f99;">ServiceWorkerGlobalScope</span>) {</div>
   <div>&nbsp;<span
-    style="color: #008000;">// Evento al empezar a instalar</span></div>
+     style="color: #008000;">// Evento al empezar a instalar</span></div>
   <div>&nbsp;<span style="color: #001080;">self</span>.<span
      style="color: #795e26;">addEventListener</span>(<span
      style="color: #a31515;">"install"</span>,</div>
   <div>&nbsp; <span style="color: #795e26;">instala</span>)</div><br>
   <div>&nbsp;<span
-    style="color: #008000;">// Evento al solicitar a la red</span></div>
+     style="color: #008000;">// Evento al solicitar a la red</span></div>
   <div>&nbsp;<span style="color: #001080;">self</span>.<span
      style="color: #795e26;">addEventListener</span>(<span
      style="color: #a31515;">"fetch"</span>,</div>
   <div>&nbsp; <span style="color: #795e26;">descargaDatos</span>)</div><br>
   <div>&nbsp;<span
-    style="color: #008000;">// Evento cuando está activo.</span></div>
+     style="color: #008000;">// Evento cuando está activo.</span></div>
   <div>&nbsp;<span style="color: #001080;">self</span>.<span
      style="color: #795e26;">addEventListener</span>(<span
      style="color: #a31515;">"activate"</span>,</div>
@@ -862,14 +871,14 @@
   <div>&nbsp;<span style="color: #001080;">console</span>.<span
      style="color: #795e26;">log</span>(</div>
   <div>&nbsp; <span
-    style="color: #a31515;">"Service Worker activo."</span>)</div>
+     style="color: #a31515;">"Service Worker activo."</span>)</div>
   <div>}</div><br>
   <div><span style="color: #008000;">/**</span></div>
   <div><span style="color: #008000;">&nbsp;* </span><span
      style="color: #0000ff;">@param</span><span style="color: #008000;">
    </span><span style="color: #267f99;">{ExtendableEvent}</span><span
      style="color: #008000;"> </span><span
-      style="color: #001080;">evt</span></div>
+     style="color: #001080;">evt</span></div>
   <div><span style="color: #008000;">&nbsp;*/</span></div>
   <div><span style="color: #0000ff;">function</span> <span
      style="color: #795e26;">instala</span>(<span
@@ -877,7 +886,7 @@
   <div>&nbsp;<span style="color: #001080;">console</span>.<span
      style="color: #795e26;">log</span>(</div>
   <div>&nbsp; <span
-    style="color: #a31515;">"Service Worker instalando."</span>)</div>
+     style="color: #a31515;">"Service Worker instalando."</span>)</div>
   <div>&nbsp;<span style="color: #001080;">evt</span>.<span
      style="color: #795e26;">waitUntil</span>(<span
      style="color: #795e26;">cargaCache</span>());</div>
@@ -885,10 +894,10 @@
   <div><span style="color: #008000;">/**</span></div>
   <div><span style="color: #008000;">&nbsp;* </span><span
      style="color: #0000ff;">@param</span><span
-      style="color: #008000;"> </span><span
-       style="color: #267f99;">{FetchEvent}</span><span
      style="color: #008000;"> </span><span
-      style="color: #001080;">evt</span></div>
+     style="color: #267f99;">{FetchEvent}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">evt</span></div>
   <div><span style="color: #008000;">&nbsp;*/</span></div>
   <div><span style="color: #0000ff;">function</span> <span
      style="color: #795e26;">descargaDatos</span>(<span
@@ -910,10 +919,10 @@
   <div>&nbsp;<span style="color: #001080;">console</span>.<span
      style="color: #795e26;">log</span>(</div>
   <div>&nbsp; <span
-    style="color: #a31515;">"Intentando cargar cache:"</span>,</div>
+     style="color: #a31515;">"Intentando cargar cache:"</span>,</div>
   <div>&nbsp; <span style="color: #0070c1;">CACHE</span>)</div>
   <div>&nbsp;<span
-    style="color: #008000;">// Borra todos los chaches.</span></div>
+     style="color: #008000;">// Borra todos los chaches.</span></div>
   <div>&nbsp;<span style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">keys</span> = <span
      style="color: #af00db;">await</span> <span
@@ -922,15 +931,15 @@
   <div>&nbsp;<span style="color: #af00db;">for</span> (<span
      style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">key</span> <span
-      style="color: #0000ff;">of</span> <span
-       style="color: #0070c1;">keys</span>) {</div>
+     style="color: #0000ff;">of</span> <span
+     style="color: #001080;">keys</span>) {</div>
   <div>&nbsp; <span style="color: #af00db;">await</span> <span
      style="color: #001080;">caches</span>.<span
      style="color: #795e26;">delete</span>(<span
-     style="color: #0070c1;">key</span>)</div>
+     style="color: #001080;">key</span>)</div>
   <div>&nbsp;}</div>
   <div>&nbsp;<span
-    style="color: #008000;">// Carga el nuevo contenido.</span></div>
+     style="color: #008000;">// Carga el nuevo contenido.</span></div>
   <div>&nbsp;<span style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">cache</span> =</div>
   <div>&nbsp; <span style="color: #af00db;">await</span> <span
@@ -938,7 +947,7 @@
      style="color: #795e26;">open</span>(<span
      style="color: #0070c1;">CACHE</span>)</div>
   <div>&nbsp;<span style="color: #af00db;">await</span> <span
-     style="color: #0070c1;">cache</span>.<span
+     style="color: #001080;">cache</span>.<span
      style="color: #795e26;">addAll</span>(<span
      style="color: #0070c1;">ARCHIVOS</span>)</div>
   <div>&nbsp;<span style="color: #001080;">console</span>.</div>
@@ -952,18 +961,17 @@
   <div>}</div><br>
   <div><span style="color: #008000;">/** </span><span
      style="color: #0000ff;">@param</span><span
-      style="color: #008000;"> </span><span
-       style="color: #267f99;">{FetchEvent}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{FetchEvent}</span><span
      style="color: #008000;"> </span><span
      style="color: #001080;">evt</span><span
-      style="color: #008000;"> */</span>
-  </div>
+     style="color: #008000;"> */</span></div>
   <div><span style="color: #0000ff;">async</span> <span
      style="color: #0000ff;">function</span> <span
      style="color: #795e26;">usaCache</span>(<span
      style="color: #001080;">evt</span>) {</div>
   <div>&nbsp;<span
-    style="color: #008000;">// Busca el contenido del cache.</span></div>
+     style="color: #008000;">// Busca el contenido del cache.</span></div>
   <div>&nbsp;<span style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">cache</span> =</div>
   <div>&nbsp; <span style="color: #af00db;">await</span> <span
@@ -973,39 +981,39 @@
   <div>&nbsp;<span style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">response</span> =</div>
   <div>&nbsp; <span style="color: #af00db;">await</span> <span
-     style="color: #0070c1;">cache</span>.<span
+     style="color: #001080;">cache</span>.<span
      style="color: #795e26;">match</span>(<span
      style="color: #001080;">evt</span>.<span
-     style="color: #0070c1;">request</span>,</div>
-  <div>&nbsp; &nbsp;{ <span style="color: #001080;">ignoreSearch</span><span
-     style="color: #001080;">:</span> <span
-      style="color: #0000ff;">true</span> })</div>
+     style="color: #001080;">request</span>,</div>
+  <div>&nbsp; &nbsp;{ <span style="color: #001080;">ignoreSearch:</span> <span
+     style="color: #0000ff;">true</span> })</div>
   <div>&nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">response</span>) {</div>
-  <div>&nbsp; <span style="color: #008000;">/* Si lo encuentra, devuelve
-    el</span></div>
+     style="color: #001080;">response</span>) {</div>
+  <div>&nbsp; <span
+     style="color: #008000;">/* Si lo encuentra, devuelve el</span></div>
   <div><span
-    style="color: #008000;">&nbsp; &nbsp;* archivo del cache. */</span></div>
+     style="color: #008000;">&nbsp; &nbsp;* archivo del cache. */</span></div>
   <div>&nbsp; <span style="color: #af00db;">return</span> <span
-     style="color: #0070c1;">response</span></div>
+     style="color: #001080;">response</span></div>
   <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
   <div>&nbsp; <span
-    style="color: #008000;">/* Si no lo encuentra, lo</span></div>
+     style="color: #008000;">/* Si no lo encuentra, lo</span></div>
+  <div><span style="color: #008000;">&nbsp; &nbsp;* empieza a descargar de la
+    red</span></div>
   <div><span
-    style="color: #008000;">&nbsp; &nbsp;* empieza a descargar de la red</span></div>
-  <div><span
-    style="color: #008000;">&nbsp; &nbsp;* y devuelve la promesa. */</span></div>
+     style="color: #008000;">&nbsp; &nbsp;* y devuelve la promesa. */</span>
+  </div>
   <div>&nbsp; <span style="color: #af00db;">return</span> <span
      style="color: #795e26;">fetch</span>(<span
      style="color: #001080;">evt</span>.<span
-     style="color: #0070c1;">request</span>)</div>
+     style="color: #001080;">request</span>)</div>
   <div>&nbsp;}</div>
   <div>}</div>
  </div>
 </muestra-codigo>
       </section>
      <section >
-         <h1 >F. lib/regSw.js</h1><muestra-codigo>
+         <h1 >F. lib/js/regSw.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span style="color: #008000;">&nbsp;* </span><span
@@ -1064,7 +1072,7 @@
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">regSw</span></div>
   <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/regSw.js"</span>;</div><br>
+     style="color: #a31515;">"../lib/js/regSw.js"</span>;</div><br>
   <div><span style="color: #795e26;">regSw</span>(<span
      style="color: #a31515;">"sw.js"</span>)</div>
  </div>
