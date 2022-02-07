@@ -17,6 +17,8 @@
    href="https://fonts.googleapis.com/css2?family=Material+Icons">
  <style>
   html {
+   --colOnBg: #1C1B1F;
+   --colBg: #FFFBFE;
    --colLs: #1C1B1F;
    --colLsBg: #FFFBFE;
    --colLsBgHv: #99999966;
@@ -41,7 +43,6 @@
 
   .lista>* {
    display: block;
-   box-sizing: border-box;
    text-decoration: none;
    background-color:
     var(--colLsBg);
@@ -83,12 +84,15 @@
   .lista .primario {
    display: inline-block;
    vertical-align: middle;
-   height: 1rem;
    font-size: 1rem;
    font-weight: bold;
    overflow: hidden;
    white-space: nowrap;
    text-overflow: ellipsis;
+  }
+
+  .lista a .primario {
+   text-decoration: underline;
   }
 
   .lista .material-icons {
