@@ -373,7 +373,7 @@
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m05mi-navJs.html">js/mi-nav.js</a>
+      <a href="/m05pwaMaterial/m05nav-tabsJs.html">js/nav-tabs.js</a>
      </p>
     </li>
     <li>
@@ -488,7 +488,7 @@
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m28mi-navCss.html">lib/css/mi-nav.css</a>
+      <a href="/m05pwaMaterial/m28nav-tabsCss.html">lib/css/nav-tabs.css</a>
      </p>
     </li>
     <li>
@@ -743,7 +743,7 @@
      <p><a href="m06configJs.html">config.js</a></p>
     </li>
     <li>
-     <p><a href="m05mi-navJs.html">mi-nav.js</a></p>
+     <p><a href="m05nav-tabsJs.html">nav-tabs.js</a></p>
     </li>
     <li>
      <p><a href="m04recomiendaJs.html">mi-nav.js</a></p>
@@ -769,7 +769,7 @@
        <p><a href="m27material-iconsCss.html">material-icons.css</a></p>
       </li>
       <li>
-       <p><a href="m28mi-navCss.html">mi-nav.css</a></p>
+       <p><a href="m28nav-tabsCss.html">nav-tabs.css</a></p>
       </li>
       <li>
        <p><a href="m29robotoCss.html">roboto.css</a></p>
@@ -1024,14 +1024,14 @@
      style="color: #ff0000;">type</span>=<span
      style="color: #0000ff;">"module"</span></div>
   <div>&nbsp; &nbsp;<span style="color: #ff0000;">src</span>=<span
-     style="color: #0000ff;">"js/mi-nav.js"</span><span
+     style="color: #0000ff;">"js/nav-tabs.js"</span><span
      style="color: #800000;">&gt;</span></div>
   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
   <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
      style="color: #ff0000;">rel</span>=<span
      style="color: #0000ff;">"stylesheet"</span></div>
   <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
-     style="color: #0000ff;">"lib/css/mi-nav.css"</span><span
+     style="color: #0000ff;">"lib/css/nav-tabs.css"</span><span
      style="color: #800000;">&gt;</span></div>
   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
   <div><span style="color: #800000;">&lt;body&gt;</span></div>
@@ -1044,6 +1044,8 @@
   <div>&nbsp; &nbsp;<span
      style="color: #800000;">&lt;h1&gt;</span>Recomiendo<span
      style="color: #800000;">&lt;/h1&gt;</span></div>
+  <div>&nbsp; &nbsp;<span
+     style="color: #800000;">&lt;nav-tabs&gt;&lt;/nav-tabs&gt;</span></div>
   <div>&nbsp; <span style="color: #800000;">&lt;/cn-app-bar&gt;</span></div>
   <div>&nbsp; <span style="color: #800000;">&lt;cm-din&gt;</span></div>
   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;select</span> <span
@@ -1112,8 +1114,6 @@
   <div>&nbsp; &nbsp; Resultado</div>
   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
   <div>&nbsp; <span style="color: #800000;">&lt;/cm-din&gt;</span></div>
-  <div>&nbsp; <span
-     style="color: #800000;">&lt;mi-nav&gt;&lt;/mi-nav&gt;</span></div>
   <div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div>
   <div>&nbsp;<span style="color: #800000;">&lt;script</span> <span
      style="color: #ff0000;">type</span>=<span
@@ -1230,11 +1230,14 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >5. js/mi-nav.js</h1><muestra-codigo>
+         <h1 >5. js/nav-tabs.js</h1><muestra-codigo>
  <div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">SEL</span> = <span
+     style="color: #a31515;">"sel"</span></div>
   <div><span style="color: #af00db;">export</span> <span
      style="color: #0000ff;">class</span> <span
-     style="color: #267f99;">MiNav</span></div>
+     style="color: #267f99;">NavTabs</span></div>
   <div>&nbsp;<span style="color: #0000ff;">extends</span> <span
      style="color: #267f99;">HTMLElement</span> {</div>
   <div>&nbsp;<span style="color: #795e26;">connectedCallback</span>() {</div>
@@ -1264,15 +1267,50 @@
      style="color: #800000;">&gt;</span></div>
   <div>&nbsp; &nbsp; &nbsp; help</div>
   <div>&nbsp; &nbsp; &nbsp;<span
-    style="color: #800000;">&lt;/span&gt;</span></div>
+     style="color: #800000;">&lt;/span&gt;</span></div>
   <div>&nbsp; &nbsp; &nbsp;Ayuda</div>
   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/a&gt;</span>`</div>
+  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">href</span> = <span
+     style="color: #001080;">location</span>.<span
+     style="color: #001080;">href</span></div>
+  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">index</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">querySelector</span>(</div>
+  <div>&nbsp; &nbsp;<span
+     style="color: #a31515;">"[href='index.html']"</span>)</div>
+  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">ayuda</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">querySelector</span>(</div>
+  <div>&nbsp; &nbsp;<span
+     style="color: #a31515;">"[href='ayuda.html']"</span>)</div>
+  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">ayuda</span> != <span
+     style="color: #0000ff;">null</span> &amp;&amp;</div>
+  <div>&nbsp; &nbsp;<span style="color: #0070c1;">href</span>.<span
+     style="color: #795e26;">endsWith</span>(<span
+     style="color: #a31515;">"ayuda.html"</span>)) {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0070c1;">ayuda</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #0070c1;">SEL</span>)</div>
+  <div>&nbsp; } <span style="color: #af00db;">else</span> <span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">index</span> != <span
+     style="color: #0000ff;">null</span>) {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0070c1;">index</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #0070c1;">SEL</span>)</div>
+  <div>&nbsp; }</div>
   <div>&nbsp;}</div>
   <div>}</div>
   <div><span style="color: #001080;">customElements</span>.<span
      style="color: #795e26;">define</span>(</div>
-  <div>&nbsp;<span style="color: #a31515;">"mi-nav"</span>, <span
-     style="color: #267f99;">MiNav</span>)</div>
+  <div>&nbsp;<span style="color: #a31515;">"nav-tabs"</span>, <span
+     style="color: #267f99;">NavTabs</span>)</div>
  </div>
 </muestra-codigo>
       </section>
@@ -1382,19 +1420,21 @@
      style="color: #ff0000;">type</span>=<span
      style="color: #0000ff;">"module"</span></div>
   <div>&nbsp; &nbsp;<span style="color: #ff0000;">src</span>=<span
-     style="color: #0000ff;">"js/mi-nav.js"</span><span
+     style="color: #0000ff;">"js/nav-tabs.js"</span><span
      style="color: #800000;">&gt;</span></div>
   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
   <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
      style="color: #ff0000;">rel</span>=<span
      style="color: #0000ff;">"stylesheet"</span></div>
   <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
-     style="color: #0000ff;">"lib/css/mi-nav.css"</span><span
+     style="color: #0000ff;">"lib/css/nav-tabs.css"</span><span
      style="color: #800000;">&gt;</span></div><br>
   <div><span style="color: #800000;">&lt;body&gt;</span></div>
   <div>&nbsp;<span style="color: #800000;">&lt;cn-app-bar&gt;</span></div>
   <div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>Ayuda<span
      style="color: #800000;">&lt;/h1&gt;</span></div>
+  <div>&nbsp; <span
+     style="color: #800000;">&lt;nav-tabs&gt;&lt;/nav-tabs&gt;</span></div>
   <div>&nbsp;<span style="color: #800000;">&lt;/cn-app-bar&gt;</span></div>
   <div>&nbsp;<span
      style="color: #800000;">&lt;p&gt;</span>PWA con Material Design<span
@@ -1415,8 +1455,6 @@
   <div>&nbsp; <span style="color: #0000ff;">&amp;copy;</span> 2022</div>
   <div>&nbsp; Gilberto Pacheco Gallegos</div>
   <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;mi-nav&gt;&lt;/mi-nav&gt;</span></div>
   <div>&nbsp;<span style="color: #800000;">&lt;script</span> <span
      style="color: #ff0000;">type</span>=<span
      style="color: #0000ff;">"module"</span><span
@@ -1429,8 +1467,7 @@
      style="color: #0070c1;">userAgent</span></div>
   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
-  <div><span
-     style="color: #800000;">&lt;/html&gt;</span></div>
+  <div><span style="color: #800000;">&lt;/html&gt;</span></div>
  </div>
 </muestra-codigo>
       </section>
@@ -1551,7 +1588,8 @@
  <div>
   <div><span style="color: #008000;">/* Este archivo debe estar</span></div>
   <div><span
-     style="color: #008000;">&nbsp;* colocado en la carpeta raízdel</span></div>
+     style="color: #008000;">&nbsp;* colocado en la carpeta raíz del</span>
+  </div>
   <div><span style="color: #008000;">&nbsp;* sitio.</span></div>
   <div><span style="color: #008000;">&nbsp;* </span></div>
   <div><span style="color: #008000;">&nbsp;* Cualquier cambio en el</span></div>
@@ -1604,7 +1642,7 @@
   <div>&nbsp;<span
      style="color: #a31515;">"img/maskable_icon.png"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"js/config.js"</span>,</div>
-  <div>&nbsp;<span style="color: #a31515;">"js/mi-nav.js"</span>,</div>
+  <div>&nbsp;<span style="color: #a31515;">"js/nav-tabs.js"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"js/recomienda.js"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"lib/css/botones.css"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"lib/css/cm-din.css"</span>,</div>
@@ -1612,7 +1650,8 @@
      style="color: #a31515;">"lib/css/cn-app-bar.css"</span>,</div>
   <div>&nbsp;<span
      style="color: #a31515;">"lib/css/material-icons.css"</span>,</div>
-  <div>&nbsp;<span style="color: #a31515;">"lib/css/mi-nav.css"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/css/nav-tabs.css"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"lib/css/roboto.css"</span>,</div>
   <div>&nbsp;<span
      style="color: #a31515;">"lib/fonts/MaterialIcons-Regular.codepoints"</span>,
@@ -1640,25 +1679,25 @@
      style="color: #001080;">self</span> <span
      style="color: #0000ff;">instanceof</span></div>
   <div>&nbsp;<span
-     style="color: #267f99;">ServiceWorkerGlobalScope</span>) {</div>
+     style="color: #001080;">ServiceWorkerGlobalScope</span>) {</div>
   <div>&nbsp;<span
      style="color: #008000;">// Evento al empezar a instalar</span></div>
   <div>&nbsp;<span style="color: #001080;">self</span>.<span
      style="color: #795e26;">addEventListener</span>(<span
      style="color: #a31515;">"install"</span>,</div>
-  <div>&nbsp; <span style="color: #795e26;">instala</span>)</div><br>
+  <div>&nbsp; <span style="color: #001080;">instala</span>)</div><br>
   <div>&nbsp;<span
      style="color: #008000;">// Evento al solicitar a la red</span></div>
   <div>&nbsp;<span style="color: #001080;">self</span>.<span
      style="color: #795e26;">addEventListener</span>(<span
      style="color: #a31515;">"fetch"</span>,</div>
-  <div>&nbsp; <span style="color: #795e26;">descargaDatos</span>)</div><br>
+  <div>&nbsp; <span style="color: #001080;">descargaDatos</span>)</div><br>
   <div>&nbsp;<span
      style="color: #008000;">// Evento cuando está activo.</span></div>
   <div>&nbsp;<span style="color: #001080;">self</span>.<span
      style="color: #795e26;">addEventListener</span>(<span
      style="color: #a31515;">"activate"</span>,</div>
-  <div>&nbsp; <span style="color: #795e26;">activo</span>)</div>
+  <div>&nbsp; <span style="color: #001080;">activo</span>)</div>
   <div>}</div><br>
   <div><span style="color: #0000ff;">function</span> <span
      style="color: #795e26;">activo</span>() {</div>
@@ -1688,8 +1727,9 @@
   <div>}</div><br>
   <div><span style="color: #008000;">/**</span></div>
   <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@param</span><span style="color: #008000;">
-   </span><span style="color: #267f99;">{FetchEvent}</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{FetchEvent}</span><span
      style="color: #008000;"> </span><span
      style="color: #001080;">evt</span></div>
   <div><span style="color: #008000;">&nbsp;*/</span></div>
@@ -1779,8 +1819,7 @@
      style="color: #795e26;">match</span>(<span
      style="color: #001080;">evt</span>.<span
      style="color: #001080;">request</span>,</div>
-  <div>&nbsp; &nbsp;{ <span
-     style="color: #001080;">ignoreSearch:</span> <span
+  <div>&nbsp; &nbsp;{ <span style="color: #001080;">ignoreSearch:</span> <span
      style="color: #0000ff;">true</span> })</div>
   <div>&nbsp;<span style="color: #af00db;">if</span> (<span
      style="color: #001080;">response</span>) {</div>
@@ -1860,14 +1899,7 @@
      style="color: #0451a5;">#E7E0EC99</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">--colNvBgAc</span>: <span
      style="color: #0451a5;">#E7E0EC</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colNvIc</span>: <span
-     style="color: #0451a5;">#49454F</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colNvIcSel</span>: <span
-     style="color: #0451a5;">#1D192B</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colNvIcBgSel</span>: <span
-     style="color: #0451a5;">#E8DEF8</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">--fntFam</span>: -apple-system,</div>
+  <div>&nbsp;<span style="color: #ff0000;">--fntFam</span>: -apple-system,</div>
   <div>&nbsp; BlinkMacSystemFont, Roboto,</div>
   <div>&nbsp; <span style="color: #0451a5;">sans-serif</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">color</span>: <span
@@ -1882,14 +1914,9 @@
   <div>}</div><br>
   <div><span style="color: #800000;">body</span> {</div>
   <div>&nbsp;<span style="color: #ff0000;">margin</span>: <span
-     style="color: #098658;">0</span> <span
-     style="color: #098658;">0</span> <span
-     style="color: #098658;">5rem</span> <span
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">scroll-padding-top</span>: <span
-     style="color: #098658;">3rem</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">scroll-padding-bottom</span>: <span
-     style="color: #098658;">5rem</span>;</div>
+     style="color: #098658;">139px</span>;</div>
   <div>}</div>
  </div>
 </muestra-codigo>
@@ -2240,11 +2267,9 @@
          <h1 >26. lib/css/cn-app-bar.css</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">html</span> {</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">--fntFam</span>: -apple-system,</div>
+  <div>&nbsp;<span style="color: #ff0000;">--fntFam</span>: -apple-system,</div>
   <div>&nbsp; BlinkMacSystemFont,</div>
-  <div>&nbsp; Roboto, <span
-     style="color: #0451a5;">sans-serif</span>;</div>
+  <div>&nbsp; Roboto, <span style="color: #0451a5;">sans-serif</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">color</span>: <span
      style="color: #795e26;">var</span>(<span
      style="color: #001080;">--colTxt</span>);</div>
@@ -2272,14 +2297,8 @@
      style="color: #0451a5;">sticky</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">top</span>: <span
      style="color: #098658;">0</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">margin</span>: <span
-     style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">display</span>: <span
      style="color: #0451a5;">block</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">padding</span>: <span
-     style="color: #098658;">1.125rem</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">text-align</span>: <span
-     style="color: #0451a5;">center</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">color</span>: <span
      style="color: #795e26;">var</span>(<span
      style="color: #001080;">--colOnSrf</span>);</div>
@@ -2288,10 +2307,12 @@
      style="color: #001080;">--colSrf</span>)</div>
   <div>}</div><br>
   <div><span style="color: #800000;">h1</span> {</div>
-  <div>&nbsp;<span style="color: #ff0000;">display</span>: <span
-     style="color: #0451a5;">inline</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">vertical-align</span>: <span
-     style="color: #0451a5;">middle</span>;</div>
+  <div>&nbsp;<span style="color: #ff0000;">text-align</span>: <span
+     style="color: #0451a5;">center</span>;</div>
+  <div>&nbsp;<span style="color: #ff0000;">margin</span>: <span
+     style="color: #098658;">0</span>;</div>
+  <div>&nbsp;<span style="color: #ff0000;">padding</span>: <span
+     style="color: #098658;">1.125rem</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">font-size</span>: <span
      style="color: #098658;">1.375rem</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">line-height</span>: <span
@@ -2378,23 +2399,13 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >28. lib/css/mi-nav.css</h1><muestra-codigo>
+         <h1 >28. lib/css/nav-tabs.css</h1><muestra-codigo>
  <div>
-  <div><span style="color: #800000;">mi-nav</span> {</div>
-  <div>&nbsp;<span style="color: #ff0000;">position</span>: <span
-     style="color: #0451a5;">fixed</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">left</span>: <span
-     style="color: #098658;">0</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">right</span>: <span
-     style="color: #098658;">0</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">bottom</span>: <span
-     style="color: #098658;">0</span>;</div>
+  <div><span style="color: #800000;">nav-tabs</span> {</div>
   <div>&nbsp;<span style="color: #ff0000;">display</span>: <span
      style="color: #0451a5;">flex</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">list-style-type</span>: <span
      style="color: #0451a5;">none</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">justify-content</span>: <span
-     style="color: #0451a5;">center</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">align-items</span>: <span
      style="color: #0451a5;">stretch</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">margin</span>: <span
@@ -2404,41 +2415,38 @@
   <div>&nbsp;<span style="color: #ff0000;">color</span>: <span
      style="color: #795e26;">var</span>(<span
      style="color: #001080;">--colNv</span>);</div>
-  <div>&nbsp;<span style="color: #ff0000;">background-color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--colNvBg</span>)</div>
+  <div>&nbsp;<span style="color: #ff0000;">background-color</span>:</div>
+  <div>&nbsp; <span style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--colNvBg</span>);</div>
   <div>}</div><br>
-  <div><span style="color: #800000;">mi-nav</span> <span
+  <div><span style="color: #800000;">nav-tabs</span> <span
      style="color: #800000;">a</span> {</div>
+  <div>&nbsp;<span style="color: #ff0000;">flex</span>: <span
+     style="color: #098658;">1</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">display</span>: <span
      style="color: #0451a5;">block</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">color</span>: <span
      style="color: #795e26;">var</span>(<span
      style="color: #001080;">--colNv</span>);</div>
-  <div>&nbsp;<span style="color: #ff0000;">font-size</span>: <span
-     style="color: #098658;">0.75rem</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">font-weight</span>: <span
-     style="color: #098658;">500</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">text-decoration</span>: <span
      style="color: #0451a5;">none</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">padding-top</span>: <span
-     style="color: #098658;">0.5rem</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">padding-bottom</span>: <span
-     style="color: #098658;">0.75rem</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">padding-left</span>: <span
-     style="color: #098658;">0.75rem</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">padding-right</span>: <span
-     style="color: #098658;">0.75rem</span>;</div>
+  <div>&nbsp;<span style="color: #ff0000;">text-transform</span>: <span
+     style="color: #0451a5;">uppercase</span>;</div>
+  <div>&nbsp;<span style="color: #ff0000;">font-size</span>: <span
+     style="color: #098658;">0.875rem</span>;</div>
+  <div>&nbsp;<span style="color: #ff0000;">padding</span>: <span
+     style="color: #098658;">1rem</span> <span
+     style="color: #098658;">1rem</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">text-align</span>: <span
      style="color: #0451a5;">center</span>;</div>
   <div>}</div><br>
-  <div><span style="color: #800000;">mi-nav</span> <span
+  <div><span style="color: #800000;">nav-tabs</span> <span
      style="color: #800000;">a:hover</span> {</div>
   <div>&nbsp;<span style="color: #ff0000;">background-color</span>:</div>
   <div>&nbsp; <span style="color: #795e26;">var</span>(<span
      style="color: #001080;">--colNvBgHv</span>);</div>
   <div>}</div><br>
-  <div><span style="color: #800000;">mi-nav</span> <span
+  <div><span style="color: #800000;">nav-tabs</span> <span
      style="color: #800000;">a:focus</span> {</div>
   <div>&nbsp;<span style="color: #ff0000;">outline</span>: <span
      style="color: #0451a5;">none</span>;</div>
@@ -2446,28 +2454,30 @@
   <div>&nbsp; <span style="color: #795e26;">var</span>(<span
      style="color: #001080;">--colNvBgFc</span>);</div>
   <div>}</div><br>
-  <div><span style="color: #800000;">mi-nav</span> <span
+  <div><span style="color: #800000;">nav-tabs</span> <span
      style="color: #800000;">a:active</span> {</div>
   <div>&nbsp;<span style="color: #ff0000;">background-color</span>:</div>
   <div>&nbsp; <span style="color: #795e26;">var</span>(<span
      style="color: #001080;">--colNvBgAc</span>);</div>
   <div>}</div><br>
-  <div><span style="color: #800000;">mi-nav</span> <span
+  <div><span style="color: #800000;">nav-tabs</span> <span
+     style="color: #800000;">a.sel</span> {</div>
+  <div>&nbsp;<span style="color: #ff0000;">font-weight</span>: <span
+     style="color: #0451a5;">bold</span>;</div>
+  <div>&nbsp;<span style="color: #ff0000;">border-bottom</span>:</div>
+  <div>&nbsp; <span style="color: #098658;">2px</span> <span
+     style="color: #0451a5;">solid</span> <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--colNvSel</span>);</div>
+  <div>}</div><br>
+  <div><span style="color: #800000;">nav-tabs</span> <span
      style="color: #800000;">.material-icons</span> {</div>
   <div>&nbsp;<span style="color: #ff0000;">display</span>: <span
      style="color: #0451a5;">block</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">box-sizing</span>: <span
-     style="color: #0451a5;">border-box</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">margin-left</span>: <span
      style="color: #0451a5;">auto</span>;</div>
   <div>&nbsp;<span style="color: #ff0000;">margin-right</span>: <span
      style="color: #0451a5;">auto</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">padding-left</span>: <span
-     style="color: #098658;">1rem</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">padding-right</span>: <span
-     style="color: #098658;">1rem</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">border-radius</span>: <span
-     style="color: #098658;">1rem</span>;</div>
   <div>}</div>
  </div>
 </muestra-codigo>

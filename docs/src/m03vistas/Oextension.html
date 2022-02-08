@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Menú de Extensión</title>
+ <link rel="preconnect"
+   href="https://fonts.googleapis.com">
+ <link rel="preconnect"
+   href="https://fonts.gstatic.com"
+   crossorigin>
+ <link rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+ <link rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Material+Icons">
+ <style>
+  html {
+   --colOnBg: #1C1B1F;
+   --colBg: #FFFBFE;
+   --colSrf: #FFFBFE;
+   --colBgAc: #4646462c;
+   --colOnSrf: #1C1B1F;
+   --colSrf: #FFFBFE;
+   --color-ext: white;
+   --colSh: #00000055;
+   font-family: sans-serif;
+   color: var(--color-letra);
+   --fntFam: -apple-system,
+    BlinkMacSystemFont, Roboto,
+    sans-serif;
+   color: var(--colOnBg);
+   font-family: var(--fntFam);
+   background-color: var(--colBg);
+  }
+ </style>
+ <script>
+  const CLASE_ELEVACION2 =
+   "elevacion2"
+
+  class CnAppBar
+   extends HTMLElement {
+   constructor() {
+    super()
+    /** @type {number} */
+    this.posY = 0
+    /** @type {boolean} */
+    this.procesando = false
+   }
+   connectedCallback() {
+    window.addEventListener(
+     "scroll",
+     () => this.onScroll())
+   }
+   onScroll() {
+    this.posY = window.scrollY
+    if (!this.procesando) {
+     window.requestAnimationFrame(
+      () => this.avanza())
+    }
+    this.procesando = true
+   }
+   avanza() {
+    if (this.posY === 0) {
+     this.classList.
+      remove(CLASE_ELEVACION2)
+    } else {
+     this.classList.
+      add(CLASE_ELEVACION2)
+    }
+    this.procesando = false
+   }
+  }
+  customElements.
+   define("cn-app-bar", CnAppBar)
+ </script>
+ <style>
+  body {
+   margin: 0;
+   scroll-padding-top: 3rem;
+  }
+
+  .elevacion2 {
+   box-shadow:
+    0 6px 12px var(--colSh);
+  }
+
+  cn-app-bar {
+   position: sticky;
+   top: 0;
+   display: block;
+   color: var(--colOnSrf);
+   background-color: var(--colSrf)
+  }
+
+  h1 {
+   text-align: center;
+   margin: 0;
+   padding: 1.125rem;
+   font-size: 1.375rem;
+   line-height: 1.75rem;
+   font-weight: normal;
+  }
+
+  p {
+   margin: 1rem;
+  }
+ </style>
+ <style>
+  cn-app-bar button {
+   border: none;
+   padding: 0;
+   margin: 0 0 0 1.5rem;
+   background-color: transparent;
+  }
+
+  cn-app-bar button:active {
+   background-color:
+    var(--colBgAc);
+  }
+
+  cn-app-bar .ext>button {
+   position: absolute;
+   top: 1.25rem;
+   right: 1rem;
+  }
+
+  cn-app-bar .ext ul {
+   display: none;
+   position: absolute;
+   overflow: auto;
+   list-style-type: none;
+   margin: 0;
+   padding: 0.5rem 0;
+   top: 2.5rem;
+   right: 1rem;
+   background-color:
+    var(--color-ext);
+   box-shadow:
+    -1px 5px 7px 0px var(--colSh);
+  }
+
+  cn-app-bar .ext ul.muestra {
+   display: block;
+  }
+
+  cn-app-bar .ext ul button {
+   margin: 0;
+   padding: 1rem;
+  }
+
+  cn-app-bar li button {
+   display: block;
+   width: 100%;
+  }
+ </style>
+</head>
+
+<body>
+ <cn-app-bar>
+  <h1>Extensión</h1>
+  <div class="ext">
+   <button type="button"
+     onclick="extension.classList.
+       toggle('muestra')">
+    <span id="extBtn"
+      class="material-icons">
+     more_vert
+    </span>
+   </button>
+   <ul id="extension">
+    <li>
+     <button type="button"
+       onclick="extension.
+         classList.
+         remove('muestra')">
+      Guardar
+     </button>
+    </li>
+   </ul>
+  </div>
+ </cn-app-bar>
+ <script>
+  if (/.*android.*/i.
+   test(navigator.userAgent)) {
+   document.body.classList
+    .add("android")
+  }
+  if (
+   /.*(iPad|iPhone|iPod|Mac).*/.
+    test(navigator.userAgent)) {
+   document.body.classList.
+    add('ios')
+   extBtn.textContent =
+    "more_horiz"
+  }
+ </script>
+</body>
+
+</html>
