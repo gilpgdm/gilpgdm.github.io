@@ -239,7 +239,7 @@ const ARCHIVOS = [
    "/src/m05pwaMaterial/pwamd.zip",
    "/src/m05pwaMaterial/roboto-v29-latin-regular.woff",
    "/src/m05pwaMaterial/roboto-v29-latin-regular.woff2",
-   "/src/m07iot/composer.zip""/" ]
+   "/src/m07iot/composer.zip" ]
 
 if (self instanceof ServiceWorkerGlobalScope) {
  self.addEventListener("install", installListener)
