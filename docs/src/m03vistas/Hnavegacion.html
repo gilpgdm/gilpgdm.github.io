@@ -27,9 +27,9 @@
    --colNv: #49454F;
    --colNvSel: #1C1B1F;
    --colNvBg: #FFFBFE;
-   --colNvBgHv: #E7E0ECDD;
+   --colNvBgHv: #bdbdbddd;
    --colNvBgFc: #E7E0EC99;
-   --colNvBgAc: #E7E0EC;
+   --colNvBgAc: #E7E0ECDD;
    --colNvIc: #49454F;
    --colNvIcSel: #1D192B;
    --colNvIcBgSel: #E8DEF8;
@@ -45,7 +45,8 @@
   class MiNav extends HTMLElement {
    connectedCallback() {
     this.innerHTML = /* html */
-     `<a href="index.html">
+     `<a href="index.html"
+       class="sel">
       <span class="material-icons">
        home
       </span>
@@ -124,6 +125,16 @@
    padding-left: 1rem;
    padding-right: 1rem;
    border-radius: 1rem;
+  }
+
+  mi-nav a.sel {
+   color: var(--colNvSel);
+  }
+
+  mi-nav a.sel .material-icons {
+   color: var(--colNvIcSel);
+   background-color:
+    var(--colNvIcBgSel);
   }
  </style>
 </head>

@@ -22,6 +22,11 @@
    --colFilBgHv: #6750A4;
    --colFilBgFc: #6750A4DD;
    --colFilBgAc: #6750A4EE;
+   --colFilTon: #1D192B;
+   --colFilTonBg: #E8DEF8;
+   --colFilTonBgHv: #E8DEF8;
+   --colFilTonBgFc: #E8DEF8DD;
+   --colFilTonBgAc: #E8DEF8EE;
    --colSh: #00000055;
    --fntFam: -apple-system,
     BlinkMacSystemFont, Roboto,
@@ -63,6 +68,28 @@
    background-color:
     var(--colFilBgAc);
   }
+
+  .filled.tonal {
+   color: var(--colFilTon);
+   background-color:
+    var(--colFilTonBg);
+  }
+
+  .filled.tonal:hover {
+   background-color:
+    var(--colFilTonBgHv);
+  }
+
+  .filled.tonal:focus {
+   outline: none;
+   background-color:
+    var(--colFilTonBgFc);
+  }
+
+  .filled.tonal:active {
+   background-color:
+    var(--colFilTonBgAc);
+  }
  </style>
 </head>
 
@@ -70,7 +97,10 @@
  <h1>Botones</h1>
  <p>
   <button class="filled">
-   Haz Clic
+   Primario
+  </button>
+  <button class="filled tonal">
+   Secundario
   </button>
  </p>
 </body>
