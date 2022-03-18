@@ -240,7 +240,8 @@ const ARCHIVOS = [
    "/src/m05pwaMaterial/roboto-v29-latin-regular.woff",
    "/src/m05pwaMaterial/roboto-v29-latin-regular.woff2",
    "/src/m07iot/composer.zip",
-   "/src/m08esp8266/Blink.ino" ]
+   "/src/m08esp8266/Blink.ino",
+   "/src/m08esp8266/Button.ino" ]
 
 if (self instanceof ServiceWorkerGlobalScope) {
  self.addEventListener("install", installListener)

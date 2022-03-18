@@ -413,82 +413,71 @@
 <muestra-codigo>
  <div>
   <div><span
-     style="color: #008000;">/*&nbsp;Este&nbsp;es&nbsp;un&nbsp;derivado&nbsp;de&nbsp;Button</span>
-  </div>
+     style="color: #008000;">/* Este es un derivado de Button</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;por&nbsp;DojoDave&nbsp;y&nbsp;Tom&nbsp;Igoe&nbsp;*/</span>
+     style="color: #008000;">&nbsp; &nbsp;por DojoDave y Tom Igoe */</span>
   </div><br>
-  <div><span
-     style="color: #008000;">/*&nbsp;Pin&nbsp;para&nbsp;el&nbsp;botón.&nbsp;*/</span>
-  </div>
-  <div><span style="color: #0000ff;">const</span>&nbsp;<span
-     style="color: #0000ff;">int</span>&nbsp;<span
-     style="color: #001080;">BOTON</span>&nbsp;=&nbsp;<span
+  <div><span style="color: #008000;">/* Pin para el botón. */</span></div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0000ff;">int</span> <span
+     style="color: #001080;">BOTON</span> = <span
      style="color: #098658;">0</span>;</div><br>
-  <div><span style="color: #0000ff;">int</span>&nbsp;<span
-     style="color: #001080;">estadoDelBoton</span>&nbsp;=&nbsp;<span
+  <div><span style="color: #0000ff;">int</span> <span
+     style="color: #001080;">estadoDelBoton</span> = <span
      style="color: #098658;">0</span>;</div><br>
-  <div><span style="color: #0000ff;">void</span>&nbsp;<span
-     style="color: #795e26;">setup</span>()&nbsp;{</div>
+  <div><span style="color: #0000ff;">void</span> <span
+     style="color: #795e26;">setup</span>() {</div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Inicializa&nbsp;el&nbsp;pin&nbsp;para</span>
-  </div>
+     style="color: #008000;">&nbsp; /* Inicializa el pin para</span></div>
   <div><span
      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LED_BUILTIN&nbsp;como&nbsp;salida.&nbsp;*/</span>
   </div>
-  <div>&nbsp;&nbsp;<span style="color: #795e26;">pinMode</span>(<span
-     style="color: #0000ff;">LED_BUILTIN</span>,&nbsp;<span
-     style="color: #0000ff;">OUTPUT</span>);</div>
+  <div>&nbsp; <span
+     style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Initializa&nbsp;el&nbsp;pin&nbsp;para</span>
-  </div>
+     style="color: #008000;">&nbsp; /* Initializa el pin para</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BOTON&nbsp;como&nbsp;entrada.&nbsp;*/</span>
+     style="color: #008000;">&nbsp; &nbsp; &nbsp;BOTON como entrada. */</span>
   </div>
-  <div>&nbsp;&nbsp;<span style="color: #795e26;">pinMode</span>(<span
-     style="color: #001080;">BOTON</span>,&nbsp;<span
-     style="color: #0000ff;">INPUT</span>);</div>
+  <div>&nbsp; <span style="color: #795e26;">pinMode</span>(<span
+     style="color: #001080;">BOTON</span>, INPUT);</div>
+  <div><span
+     style="color: #008000;">&nbsp; // Apaga el LED_BUILTIN.</span></div>
+  <div>&nbsp; <span
+     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN,</div>
+  <div>&nbsp; &nbsp; &nbsp;HIGH);</div>
   <div>}</div><br>
-  <div><span style="color: #0000ff;">void</span>&nbsp;<span
-     style="color: #795e26;">loop</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">estadoDelBoton</span>&nbsp;=</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">digitalRead</span>(<span
+  <div><span style="color: #0000ff;">void</span> <span
+     style="color: #795e26;">loop</span>() {</div>
+  <div>&nbsp; <span style="color: #001080;">estadoDelBoton</span> =</div>
+  <div>&nbsp; &nbsp; <span style="color: #795e26;">digitalRead</span>(<span
      style="color: #001080;">BOTON</span>);</div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;/*&nbsp;Checa&nbsp;si&nbsp;el&nbsp;botón&nbsp;está</span>
+     style="color: #008000;">&nbsp; /* Checa si el botón está</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp; &nbsp;presionado. Esto es, si</span>
   </div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;presionado.&nbsp;Esto&nbsp;es,&nbsp;si</span>
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;estadoDelBotón&nbsp;es&nbsp;HIGH:&nbsp;*/</span>
   </div>
+  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">estadoDelBoton</span> == HIGH) {</div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;estadoDelBotón&nbsp;es&nbsp;LOW:&nbsp;*/</span>
+     style="color: #008000;">&nbsp; &nbsp; // Enciende el LED_BUILTIN.</span>
   </div>
-  <div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(<span
-     style="color: #001080;">estadoDelBoton</span>&nbsp;==&nbsp;<span
-     style="color: #0000ff;">LOW</span>)&nbsp;{</div>
+  <div>&nbsp; &nbsp; <span
+     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN,</div>
+  <div>&nbsp; &nbsp; &nbsp; LOW);</div>
+  <div>&nbsp; } <span style="color: #af00db;">else</span> {</div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Enciende&nbsp;el&nbsp;LED_BUILTIN.</span>
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">digitalWrite</span>(<span
-     style="color: #0000ff;">LED_BUILTIN</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">LOW</span>);</div>
-  <div>&nbsp;&nbsp;}&nbsp;<span style="color: #af00db;">else</span>&nbsp;{
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Apaga&nbsp;el&nbsp;LED_BUILTIN.</span>
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">digitalWrite</span>(<span
-     style="color: #0000ff;">LED_BUILTIN</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">HIGH</span>);</div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>}</div><br>
+     style="color: #008000;">&nbsp; &nbsp; // Apaga el LED_BUILTIN.</span></div>
+  <div>&nbsp; &nbsp; <span
+     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN,</div>
+  <div>&nbsp; &nbsp; &nbsp; HIGH);</div>
+  <div>&nbsp; }</div>
+  <div>}</div>
  </div>
+</muestra-codigo>
  <footer>
  <p>
   <a rel="license"
@@ -522,7 +511,7 @@
     <a class="paginaAnterior" href="/m07iot/mYresumen.html"
       title="W. Resumen">▲</a>
    </p>
-     <h1><a href="/m08esp8266/index.html">8. ESP8266 Y ESP32</a></h1>
+     <h1><a href="/m08esp8266/index.html">8. ESP32</a></h1>
    <ol type="A">
     <li>
      <p>
