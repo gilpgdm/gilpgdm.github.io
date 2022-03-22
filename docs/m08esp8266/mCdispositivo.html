@@ -411,17 +411,16 @@
   <li>
    <p>
     En el siguiente código, sustituye la configuración por los datos de
-    tu red WiFi. La URL y la huella digital deben correspponder a tu
+    tu red WiFi. La URL y el certificado deben corresponder a tu
     proyecto de IoT.
    </p>
   </li>
   <li>
-   <p>Las siguientes instrucciones son para obtener la huella digital:</p>
+   <p>Las siguientes instrucciones son para obtener el certificado:</p>
    <ol>
     <li>
      <p>
-      Usa Chrome para abrir la URL del código de la lección IoT. En este caso
-      es
+      Usa Chrome para abrir la URL del código de la lección IoT. En este caso es
       <a href="https://iot2.gilbertopacheco.repl.co/" rel="nooper"
         target="_blank">https://iot2.gilbertopacheco.repl.co/</a>.
      </p>
@@ -434,18 +433,93 @@
     </li>
     <li>
      <p>
-      Haz clic en donde dice <q>Certificado (válido)</q>. Aparece
-      un cuadro de diálogo. Observa hasta cuando puedes usar esta
-      información. Despues de la fecha indicada, debes actualizar tu
-      código.
+      Haz clic en donde dice <q>La conexión es segura</q>. Aparece
+      un cuadro de diálogo.
      </p>
     </li>
     <li>
      <p>
-      Selecciona la pestaña <q>Detalles</q>. Haz scroll hasta que
-      aparezca la <q>Huella digital</q>. Haz clic en esta propiedad
-      y abajo se muestra su valor. Copia y pega este valor a tu
-      código.
+      Haz clic en donde dice <q>El certificado es válido</q>. Aparece
+      un cuadro de diálogo.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en la pestaña que dice <q>Ruta de certificación</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en la la raíz del árbol, que en este caso dice
+      <q>ISGR Root X1</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en el botón que dice <q>Ver certificado</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Observa las fechas de validez para que sepas cuando caduca. En ese caso
+      tendrás que repetir este procedimiento.
+     </p>
+    </li>
+    <li>
+     <p>
+      Selecciona la pestaña <q>Detalles</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en <q>copiar en archivo&hellip;</q>. Aparece un asistente.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en <q>Siguiente</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en el botón de radio que dice
+      <q>X.509 codificado base 64 (.CER)</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en el botón que dice <q>Siguiente</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en el botón que dice <q>Examinar</q> para que selecciones la ruta
+      del archivo e introduzcas su nombre. En este ejemplo se selecciona la
+      carpeta de descargas y se le pone por nombre <q>isgr.cer</q>
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en el botón que dice <q>Siguiente</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en el botón que dice <q>Finalizar</q>. Si todo sale bien aparece
+      un cuadro de diálogo informando que la exportación se realizó
+      correctamente.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en el botón que dice <q>Aceptar</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Copia línea por línea el contenido del archivo generado en las cadenas de
+      la constante <var>CERTIFICADO</var>. Conserva las comillas y la secuencia
+      \n antes de cerrar comillas.
      </p>
     </li>
    </ol>
@@ -475,44 +549,14 @@
  <div>
   <div><span style="color: #af00db;">#include</span><span
      style="color: #0000ff;"> </span><span
-     style="color: #a31515;">&lt;ESP8266WiFi.h&gt;</span></div>
+     style="color: #a31515;">&lt;ArduinoWebsockets.h&gt;</span></div>
   <div><span style="color: #af00db;">#include</span><span
      style="color: #0000ff;"> </span><span
-     style="color: #a31515;">&lt;ESP8266WiFiMulti.h&gt;</span></div>
-  <div><span style="color: #af00db;">#include</span><span
-     style="color: #0000ff;"> </span><span
-     style="color: #a31515;">&lt;ArduinoWebsockets.h&gt;</span></div><br>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0000ff;">char</span>* <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #001080;">SSID</span> =</div>
-  <div>&nbsp;<span style="color: #a31515;">"*******"</span>;</div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0000ff;">char</span>* <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #001080;">PASS</span> =</div>
-  <div>&nbsp;<span style="color: #a31515;">"*******"</span>;</div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0000ff;">char</span>* <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #001080;">HUELLA_DIGITAL</span> =</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"*************"</span>;
-  </div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0000ff;">char</span>* <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #001080;">URL</span> =</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"wss://phpws.gilbertopacheco.repl.co/"</span>;
-  </div>
-  <br>
+     style="color: #a31515;">&lt;WiFi.h&gt;</span></div><br>
   <div><span style="color: #af00db;">using</span> <span
      style="color: #0000ff;">namespace</span> <span
-     style="color: #267f99;">websockets</span>;</div>
-  <div>ESP8266WiFiMulti <span style="color: #001080;">WiFiMulti</span>;</div>
-  <div>WebsocketsClient &nbsp;<span style="color: #001080;">client</span>;
-  </div><br>
+     style="color: #267f99;">websockets</span>;</div><br>
+  <div>WebsocketsClient &nbsp;<span style="color: #001080;">client</span>;</div>
   <div><span style="color: #0000ff;">const</span> <span
      style="color: #0000ff;">int</span> <span
      style="color: #001080;">BOTON</span> = <span
@@ -523,8 +567,161 @@
   <div><span style="color: #0000ff;">bool</span> <span
      style="color: #001080;">conectado</span> = <span
      style="color: #0000ff;">false</span>;</div>
-  <div><span style="color: #0000ff;">String</span> <span
-     style="color: #001080;">valor</span>;</div><br>
+  <div>String <span style="color: #001080;">valor</span>;</div><br>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0000ff;">char</span>* <span
+     style="color: #0000ff;">const</span> <span
+     style="color: #001080;">SSID</span> =</div>
+  <div>&nbsp;<span style="color: #a31515;">"Galaxy A723C85"</span>;</div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0000ff;">char</span>* <span
+     style="color: #0000ff;">const</span> <span
+     style="color: #001080;">PASS</span> =</div>
+  <div>&nbsp;<span style="color: #a31515;">"bdoi1764"</span>;</div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0000ff;">char</span>* <span
+     style="color: #0000ff;">const</span> <span
+     style="color: #001080;">URL</span> =</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"wss://phpws.gilbertopacheco.repl.co"</span>;</div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0000ff;">char</span> <span
+     style="color: #001080;">CERTIFICADO</span>[] PROGMEM = <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"-----BEGIN CERTIFICATE-----</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"MIIFazCCA1OgAwIBAgIRAIIQz7DSQONZRGPgu2OCiwAwDQYJKoZIhvcNAQELBQAwTzELMAkGA1UE</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"BhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2VhcmNoIEdyb3VwMRUwEwYDVQQD</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"EwxJU1JHIFJvb3QgWDEwHhcNMTUwNjA0MTEwNDM4WhcNMzUwNjA0MTEwNDM4WjBPMQswCQYDVQQG</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"EwJVUzEpMCcGA1UEChMgSW50ZXJuZXQgU2VjdXJpdHkgUmVzZWFyY2ggR3JvdXAxFTATBgNVBAMT</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"DElTUkcgUm9vdCBYMTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAK3oJHP0FDfzm54r</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"Vygch77ct984kIxuPOZXoHj3dcKi/vVqbvYATyjb3miGbESTtrFj/RQSa78f0uoxmyF+0TM8ukj1</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"3Xnfs7j/EvEhmkvBioZxaUpmZmyPfjxwv60pIgbz5MDmgK7iS4+3mX6UA5/TR5d8mUgjU+g4rk8K</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"b4Mu0UlXjIB0ttov0DiNewNwIRt18jA8+o+u3dpjq+sWT8KOEUt+zwvo/7V3LvSye0rgTBIlDHCN</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"Aymg4VMk7BPZ7hm/ELNKjD+Jo2FR3qyHB5T0Y3HsLuJvW5iB4YlcNHlsdu87kGJ55tukmi8mxdAQ</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"4Q7e2RCOFvu396j3x+UCB5iPNgiV5+I3lg02dZ77DnKxHZu8A/lJBdiB3QW0KtZB6awBdpUKD9jf</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"1b0SHzUvKBds0pjBqAlkd25HN7rOrFleaJ1/ctaJxQZBKT5ZPt0m9STJEadao0xAH0ahmbWnOlFu</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"hjuefXKnEgV4We0+UXgVCwOPjdAvBbI+e0ocS3MFEvzG6uBQE3xDk3SzynTnjh8BCNAw1FtxNrQH</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"usEwMFxIt4I7mKZ9YIqioymCzLq9gwQbooMDQaHWBfEbwrbwqHyGO0aoSCqI3Haadr8faqU9GY/r</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"OPNk3sgrDQoo//fb4hVC1CLQJ13hef4Y53CIrU7m2Ys6xt0nUW7/vGT1M0NPAgMBAAGjQjBAMA4G</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"A1UdDwEB/wQEAwIBBjAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBR5tFnme7bl5AFzgAiIyBpY</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"9umbbjANBgkqhkiG9w0BAQsFAAOCAgEAVR9YqbyyqFDQDLHYGmkgJykIrGF1XIpu+ILlaS/V9lZL</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"ubhzEFnTIZd+50xx+7LSYK05qAvqFyFWhfFQDlnrzuBZ6brJFe+GnY+EgPbk6ZGQ3BebYhtF8GaV</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"0nxvwuo77x/Py9auJ/GpsMiu/X1+mvoiBOv/2X/qkSsisRcOj/KKNFtY2PwByVS5uCbMiogziUwt</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"hDyC3+6WVwW6LLv3xLfHTjuCvjHIInNzktHCgKQ5ORAzI4JMPJ+GslWYHb4phowim57iaztXOoJw</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"TdwJx4nLCgdNbOhdjsnvzqvHu7UrTkXWStAmzOVyyghqpZXjFaH3pO3JLF+l+/+sKAIuvtd7u+Nx</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"e5AW0wdeRlN8NwdCjNPElpzVmbUq4JUagEiuTDkHzsxHpFKVK7q4+63SM1N95R1NbdWhscdCb+ZA</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"JzVcoyi3B43njTOQ5yOf+1CceWxG1bQVs5ZufpsMljq4Ui0/1lvh+wjChP4kqKOJ2qxq4RgqsahD</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"YVvTH9w7jXbyLeiNdd8XM2w9U/t7y0Ff/9yi0GE44Za4rF2LN9d11TPAmRGunUHBcnWEvgJBQl9n</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"JEiU0Zsnvgc/ubhPgXRR4Xq37Z0j4r7g1SgEEzwxA57demyPxgcYxn/eR44/KJ4EBs+lVDR3veyJ</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"m+kXQ99b21/+jh5Xos1AnX5iItreGCc=</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"-----END CERTIFICATE-----</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span>;</div><br>
   <div><span style="color: #0000ff;">void</span> <span
      style="color: #795e26;">onMessageCallback</span>(</div>
   <div>&nbsp; <span style="color: #267f99;">WebsocketsMessage</span> <span
@@ -536,9 +733,9 @@
      style="color: #001080;">message</span>.<span
      style="color: #795e26;">data</span>();</div>
   <div>&nbsp;<span
-     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, </div>
+     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN,</div>
   <div>&nbsp; <span style="color: #001080;">valor</span> == <span
-     style="color: #a31515;">"1"</span> ? LOW : HIGH);</div>
+     style="color: #a31515;">"1"</span> ? HIGH : LOW);</div>
   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
      style="color: #795e26;">println</span>(<span
      style="color: #001080;">message</span>.<span
@@ -551,9 +748,9 @@
   <div>&nbsp; <span style="color: #267f99;">String</span> <span
      style="color: #001080;">data</span>) {</div>
   <div>&nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">event</span> ==</div>
-  <div>&nbsp; &nbsp;<span
-     style="color: #267f99;">WebsocketsEvent</span>::ConnectionOpened) {</div>
+     style="color: #001080;">event</span> == <span
+     style="color: #267f99;">WebsocketsEvent</span>::</div>
+  <div>&nbsp; &nbsp;ConnectionOpened) {</div>
   <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
      style="color: #795e26;">println</span>(<span
      style="color: #a31515;">"Conectado."</span>);</div>
@@ -562,8 +759,8 @@
   <div>&nbsp;} <span style="color: #af00db;">else</span> <span
      style="color: #af00db;">if</span> (<span
      style="color: #001080;">event</span> ==</div>
-  <div>&nbsp; &nbsp;<span
-     style="color: #267f99;">WebsocketsEvent</span>::ConnectionClosed) {</div>
+  <div>&nbsp; &nbsp;<span style="color: #267f99;">WebsocketsEvent</span>::</div>
+  <div>&nbsp; &nbsp;ConnectionClosed) {</div>
   <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
      style="color: #795e26;">println</span>(<span
      style="color: #a31515;">"Desconectado."</span>);</div>
@@ -576,101 +773,109 @@
   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
      style="color: #795e26;">begin</span>(<span
      style="color: #098658;">115200</span>);</div>
-  <div><span
-     style="color: #008000;">&nbsp;// Serial.setDebugOutput(true);</span></div>
-  <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
-     style="color: #795e26;">println</span>();</div>
-  <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
-     style="color: #795e26;">println</span>();</div>
-  <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
-     style="color: #795e26;">println</span>();</div>
   <div>&nbsp;<span
      style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
   <div>&nbsp;<span style="color: #795e26;">pinMode</span>(<span
      style="color: #001080;">BOTON</span>, INPUT);</div>
+  <div>&nbsp;<span style="color: #001080;">WiFi</span>.<span
+     style="color: #795e26;">begin</span>(<span
+     style="color: #001080;">SSID</span>, <span
+     style="color: #001080;">PASS</span>);</div>
+  <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">print</span>(<span
+     style="color: #a31515;">"Conectando WiFi."</span>);</div>
   <div>&nbsp;<span style="color: #af00db;">for</span> (<span
-     style="color: #0000ff;">uint8_t</span> <span
-     style="color: #001080;">t</span> = <span
-     style="color: #098658;">4</span>; <span
-     style="color: #001080;">t</span> &gt; <span
-     style="color: #098658;">0</span>;</div>
-  <div>&nbsp; <span style="color: #001080;">t</span>--) {</div>
+     style="color: #0000ff;">int</span> <span
+     style="color: #001080;">i</span> = <span
+     style="color: #098658;">0</span>; <span
+     style="color: #001080;">i</span> &lt; <span
+     style="color: #098658;">10</span> &amp;&amp;</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">WiFi</span>.<span
+     style="color: #795e26;">status</span>() != WL_CONNECTED;</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">i</span>++) {</div>
   <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
-     style="color: #795e26;">printf</span>(</div>
-  <div>&nbsp; &nbsp;<span style="color: #a31515;">"ESPERANDO </span><span
-     style="color: #001080;">%d</span><span
-     style="color: #a31515;">...</span><span
-     style="color: #ee0000;">\n</span><span
-     style="color: #a31515;">"</span>, <span
-     style="color: #001080;">t</span>);</div>
-  <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
-     style="color: #795e26;">flush</span>();</div>
+     style="color: #795e26;">print</span>(<span
+     style="color: #a31515;">"."</span>);</div>
   <div>&nbsp; <span style="color: #795e26;">delay</span>(<span
      style="color: #098658;">1000</span>);</div>
   <div>&nbsp;}</div>
   <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
-     style="color: #795e26;">println</span>(</div>
-  <div>&nbsp; <span
-     style="color: #a31515;">"Conectando WiFi..."</span>);</div>
-  <div>&nbsp;<span style="color: #001080;">WiFi</span>.<span
-     style="color: #795e26;">mode</span>(WIFI_STA);</div>
-  <div>&nbsp;<span style="color: #001080;">WiFiMulti</span>.<span
-     style="color: #795e26;">addAP</span>(<span
-     style="color: #001080;">SSID</span>, <span
-     style="color: #001080;">PASS</span>);</div>
-  <div>&nbsp;<span style="color: #af00db;">while</span> (<span
-     style="color: #001080;">WiFiMulti</span>.<span
-     style="color: #795e26;">run</span>() !=</div>
+     style="color: #795e26;">println</span>();</div>
+  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">WiFi</span>.<span
+     style="color: #795e26;">status</span>() !=</div>
   <div>&nbsp; &nbsp;WL_CONNECTED) {</div>
-  <div>&nbsp; <span style="color: #795e26;">delay</span>(<span
-     style="color: #098658;">500</span>);</div>
-  <div>&nbsp;}</div>
-  <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
-     style="color: #795e26;">println</span>(<span
+  <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">println</span>(</div>
+  <div>&nbsp; &nbsp; <span
+     style="color: #a31515;">"WiFi desconectado."</span>);</div>
+  <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
+  <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">println</span>(</div>
+  <div>&nbsp; &nbsp; <span
      style="color: #a31515;">"WiFi conectado."</span>);</div>
-  <div>&nbsp;<span style="color: #001080;">client</span>.</div>
+  <div>&nbsp; <span style="color: #001080;">client</span>.</div>
   <div>&nbsp; &nbsp;<span style="color: #795e26;">onMessage</span>(<span
      style="color: #795e26;">onMessageCallback</span>);</div>
-  <div>&nbsp;<span style="color: #001080;">client</span>.<span
+  <div>&nbsp; <span style="color: #001080;">client</span>.<span
      style="color: #795e26;">onEvent</span>(<span
      style="color: #795e26;">onEventsCallback</span>);</div>
-  <div>&nbsp;<span style="color: #001080;">client</span>.</div>
-  <div>&nbsp; &nbsp;<span
-     style="color: #795e26;">setFingerprint</span>(<span
-     style="color: #001080;">HUELLA_DIGITAL</span>);</div>
-  <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
+  <div>&nbsp; <span style="color: #001080;">client</span>.<span
+     style="color: #795e26;">setCACert</span>(<span
+     style="color: #001080;">CERTIFICADO</span>);</div>
+  <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
      style="color: #795e26;">println</span>(<span
      style="color: #a31515;">"Conectando WS."</span>);</div>
-  <div>&nbsp;<span style="color: #001080;">client</span>.<span
+  <div>&nbsp; <span style="color: #0000ff;">bool</span> <span
+     style="color: #001080;">conectado</span> =</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">client</span>.<span
      style="color: #795e26;">connect</span>(<span
      style="color: #001080;">URL</span>);</div>
+  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">conectado</span>) {</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">println</span>(</div>
+  <div>&nbsp; &nbsp; &nbsp; <span
+     style="color: #a31515;">"WS Conectado."</span>); &nbsp; &nbsp;</div>
+  <div>&nbsp; } <span style="color: #af00db;">else</span> {</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">println</span>(</div>
+  <div>&nbsp; &nbsp; &nbsp; <span
+     style="color: #a31515;">"WS NO Conectado."</span>); &nbsp; &nbsp;</div>
+  <div>&nbsp; }</div>
+  <div>&nbsp;}</div>
   <div>}</div><br>
   <div><span style="color: #0000ff;">void</span> <span
      style="color: #795e26;">loop</span>() {</div>
-  <div>&nbsp;<span style="color: #001080;">client</span>.<span
-     style="color: #795e26;">poll</span>();</div>
   <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">client</span>.<span
+     style="color: #795e26;">available</span>()) {</div>
+  <div>&nbsp; <span style="color: #001080;">client</span>.<span
+     style="color: #795e26;">poll</span>();</div>
+  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
      style="color: #001080;">conectado</span>) {</div>
-  <div>&nbsp; <span style="color: #0000ff;">bool</span> <span
-     style="color: #001080;">actual</span> = <span
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">bool</span> <span
+     style="color: #001080;">actual</span> =</div>
+  <div>&nbsp; &nbsp; &nbsp;<span
      style="color: #795e26;">digitalRead</span>(<span
      style="color: #001080;">BOTON</span>);</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (!<span
+  <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (!<span
      style="color: #001080;">presionado</span> &amp;&amp;</div>
-  <div>&nbsp; &nbsp; <span
+  <div>&nbsp; &nbsp; &nbsp;<span
      style="color: #001080;">actual</span> == LOW) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">client</span>.<span
+  <div>&nbsp; &nbsp; <span style="color: #001080;">client</span>.<span
      style="color: #795e26;">send</span>(<span
      style="color: #001080;">valor</span>);</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">Serial</span>.<span
+  <div>&nbsp; &nbsp; <span style="color: #001080;">Serial</span>.<span
      style="color: #795e26;">print</span>(<span
-     style="color: #a31515;">"Envía"</span>);</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">Serial</span>.<span
+     style="color: #a31515;">"Envía "</span>);</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">Serial</span>.<span
      style="color: #795e26;">println</span>(<span
      style="color: #001080;">valor</span>);</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp; <span style="color: #001080;">presionado</span> = (<span
+  <div>&nbsp; &nbsp;}</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">presionado</span> = (<span
      style="color: #001080;">actual</span> == LOW);</div>
+  <div>&nbsp; }</div>
   <div>&nbsp;}</div>
   <div>}</div><br>
  </div>

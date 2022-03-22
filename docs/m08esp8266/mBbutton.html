@@ -428,54 +428,44 @@
   <div><span style="color: #0000ff;">void</span> <span
      style="color: #795e26;">setup</span>() {</div>
   <div><span
-     style="color: #008000;">&nbsp; /* Inicializa el pin para</span></div>
+     style="color: #008000;">&nbsp;/* Inicializa el pin para</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LED_BUILTIN&nbsp;como&nbsp;salida.&nbsp;*/</span>
+     style="color: #008000;">&nbsp; &nbsp; LED_BUILTIN como salida. */</span>
   </div>
-  <div>&nbsp; <span
+  <div>&nbsp;<span
      style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
   <div><span
-     style="color: #008000;">&nbsp; /* Initializa el pin para</span></div>
+     style="color: #008000;">&nbsp;/* Initializa el pin para</span></div>
   <div><span
-     style="color: #008000;">&nbsp; &nbsp; &nbsp;BOTON como entrada. */</span>
-  </div>
-  <div>&nbsp; <span style="color: #795e26;">pinMode</span>(<span
+     style="color: #008000;">&nbsp; &nbsp; BOTON como entrada. */</span></div>
+  <div>&nbsp;<span style="color: #795e26;">pinMode</span>(<span
      style="color: #001080;">BOTON</span>, INPUT);</div>
-  <div><span
-     style="color: #008000;">&nbsp; // Apaga el LED_BUILTIN.</span></div>
-  <div>&nbsp; <span
-     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN,</div>
-  <div>&nbsp; &nbsp; &nbsp;HIGH);</div>
   <div>}</div><br>
   <div><span style="color: #0000ff;">void</span> <span
      style="color: #795e26;">loop</span>() {</div>
-  <div>&nbsp; <span style="color: #001080;">estadoDelBoton</span> =</div>
-  <div>&nbsp; &nbsp; <span style="color: #795e26;">digitalRead</span>(<span
+  <div>&nbsp;<span style="color: #001080;">estadoDelBoton</span> =</div>
+  <div>&nbsp; &nbsp;<span style="color: #795e26;">digitalRead</span>(<span
      style="color: #001080;">BOTON</span>);</div>
   <div><span
-     style="color: #008000;">&nbsp; /* Checa si el botón está</span></div>
+     style="color: #008000;">&nbsp;/* Checa si el botón está</span></div>
   <div><span
-     style="color: #008000;">&nbsp; &nbsp; &nbsp;presionado. Esto es, si</span>
+     style="color: #008000;">&nbsp; &nbsp; presionado. Esto es, si</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp; estadoDelBotón es LOW. */</span>
   </div>
+  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">estadoDelBoton</span> == LOW) {</div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;estadoDelBotón&nbsp;es&nbsp;HIGH:&nbsp;*/</span>
-  </div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">estadoDelBoton</span> == HIGH) {</div>
+     style="color: #008000;">&nbsp; // Enciende el LED_BUILTIN.</span></div>
+  <div>&nbsp; <span
+     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, HIGH);</div>
+  <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
   <div><span
-     style="color: #008000;">&nbsp; &nbsp; // Enciende el LED_BUILTIN.</span>
-  </div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN,</div>
-  <div>&nbsp; &nbsp; &nbsp; LOW);</div>
-  <div>&nbsp; } <span style="color: #af00db;">else</span> {</div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; // Apaga el LED_BUILTIN.</span></div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN,</div>
-  <div>&nbsp; &nbsp; &nbsp; HIGH);</div>
-  <div>&nbsp; }</div>
-  <div>}</div>
+     style="color: #008000;">&nbsp; // Apaga el LED_BUILTIN.</span></div>
+  <div>&nbsp; <span
+     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, LOW);</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
  </div>
 </muestra-codigo>
  <footer>
