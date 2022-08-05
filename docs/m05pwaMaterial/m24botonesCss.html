@@ -12,6 +12,7 @@
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
+  --padTop: 2rem;
   --introDuracion: 2s;
   --introFuncion: ease-out;
   --padCont: 0.5rem;
@@ -233,8 +234,8 @@
  }
 </style>
  <style>
- #principal {
-  transition: margin-left 0.7s ease-in-out;
+ body {
+  scroll-padding-top: var(--padTop);
  }
 
  body:not(.sinTransicion) #principal {
@@ -254,13 +255,30 @@
   }
  }
 
- #principal>.controles {
-  display: flex;
-  gap: var(--gap);
+ #principal {
+  padding-top: var(--padTop);
+  box-sizing: border-box;
+  transition: margin-left 0.7s ease-in-out;
  }
 
- #principal>.controles>.siguiente {
-  margin-left: auto
+ #principal>#abre {
+  position: fixed;
+  top: var(--gap);
+  left: var(--gap);
+ }
+
+ #principal>.anterior {
+  position: fixed;
+  top: var(--gap);
+  background-color: var(--colFondo);
+  transition: left 0.7s ease-in-out;
+ }
+
+ #principal>.siguiente {
+  position: fixed;
+  top: var(--gap);
+  right: var(--gap);
+  background-color: var(--colFondo);
  }
 
  #principal h1:not(.default) {
@@ -333,6 +351,10 @@
  }
 
  @media screen and (max-width: 999px) {
+  #principal {
+   max-width: 100vw;
+  }
+
   #cierra {
    position: fixed;
    top: 0;
@@ -357,6 +379,10 @@
   .menu>#nav {
    transform: translateX(0);
   }
+
+  #principal>.anterior {
+   left: calc(2 * var(--gap) + 2rem);
+  }
  }
 
  @media screen and (min-width: 1000px) {
@@ -376,15 +402,22 @@
    margin-left: var(--anchoNav)
   }
 
-  .xmenu #abre {
-   display: none
+  .menu>#principal>.anterior {
+   left: calc(2 * var(--gap) + 2rem);
+  }
+
+  .xmenu>#principal>.anterior {
+   top: var(--gap);
+   left: calc(var(--anchoNav) + var(--gap));
   }
  }
 
  @media print {
 
   #nav,
-  #principal>.controles {
+  #principal>#abre,
+  #principal>.anterior,
+  #principal>.siguiente {
    display: none;
   }
  }
@@ -393,13 +426,11 @@
 </head>
 <body class="xmenu">
  <div id="principal">
- <div class="controles">
-  <button id="abre" type="button" title="Menú" class="cambiaMenu">
-   &#x2630;
-  </button>
-  <a class="anterior" href="/m05pwaMaterial/m23jsconfigJson.html" title="23. jsconfig.json">◀</a>
-  <a class="siguiente" href="/m05pwaMaterial/m25cm-dinCss.html" title="25. lib/css/cm-din.css">▶</a>
- </div>
+ <button id="abre" type="button" title="Menú" class="cambiaMenu">
+  &#x2630;
+ </button>
+ <a class="anterior" href="/m05pwaMaterial/m23jsconfigJson.html" title="23. jsconfig.json">◀</a>
+ <a class="siguiente" href="/m05pwaMaterial/m25cm-dinCss.html" title="25. lib/css/cm-din.css">▶</a>
    <h1 >24. lib/css/botones.css</h1><muestra-codigo><div><div><span style="color: #800000;">.filled</span> {</div><div>&nbsp;<span style="color: #ff0000;">font-family</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--fntFam</span>);</div><div>&nbsp;<span style="color: #ff0000;">color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFil</span>);</div><div>&nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilBg</span>);</div><div>&nbsp;<span style="color: #ff0000;">font-size</span>: <span style="color: #098658;">0.875rem</span>;</div><div>&nbsp;<span style="color: #ff0000;">padding</span>: <span style="color: #098658;">0.5rem</span> <span style="color: #098658;">1rem</span>;</div><div>&nbsp;<span style="color: #ff0000;">border</span>: <span style="color: #0451a5;">none</span>;</div><div>&nbsp;<span style="color: #ff0000;">border-radius</span>: <span style="color: #098658;">1.5rem</span>;</div><div>}</div><br><div><span style="color: #800000;">.filled:hover</span> {</div><div>&nbsp;<span style="color: #ff0000;">box-shadow</span>:</div><div>&nbsp; <span style="color: #098658;">0</span> <span style="color: #098658;">3px</span> <span style="color: #098658;">6px</span> <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colSh</span>);</div><div>}</div><br><div><span style="color: #800000;">.filled:hover</span> {</div><div>&nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilBgHv</span>);</div><div>}</div><br><div><span style="color: #800000;">.filled:focus</span> {</div><div>&nbsp;<span style="color: #ff0000;">outline</span>: <span style="color: #0451a5;">none</span>;</div><div>&nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilBgFc</span>);</div><div>}</div><br><div><span style="color: #800000;">.filled:active</span> {</div><div>&nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilBgAc</span>);</div><div>}</div><br><div><span style="color: #800000;">.filled.tonal</span> {</div><div>&nbsp;<span style="color: #ff0000;">color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilTon</span>);</div><div>&nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilTonBg</span>);</div><div>}</div><br><div><span style="color: #800000;">.filled.tonal:hover</span> {</div><div>&nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilTonBgHv</span>);</div><div>}</div><br><div><span style="color: #800000;">.filled.tonal:focus</span> {</div><div>&nbsp;<span style="color: #ff0000;">outline</span>: <span style="color: #0451a5;">none</span>;</div><div>&nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilTonBgFc</span>);</div><div>}</div><br><div><span style="color: #800000;">.filled.tonal:active</span> {</div><div>&nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilTonBgAc</span>);</div><div>}</div></div></muestra-codigo>
  <footer>
  <p>
