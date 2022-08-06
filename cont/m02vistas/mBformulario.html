@@ -26,7 +26,7 @@
   </p>
   <p class="noPrint">
    <a target="_blank" rel="nooper"
-     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EFormulario%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%20id%3D%22form%22%20novalidate%0A%20%20%20action%3D%22javascript%3Aprocesa()%22%3E%0A%20%20%3Ch1%3EFormulario%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%20for%3D%22inGenero%22%3E%0A%20%20%20%20*G%C3%A9nero%0A%20%20%20%3C%2Flabel%3E%0A%20%20%20%3Cselect%20id%3D%22inGenero%22%20required%0A%20%20%20%20%20oninput%3D%22copiaMensajes()%22%3E%0A%20%20%20%20%3Coption%20value%3D%22%22%3E%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22pop%22%3E%0A%20%20%20%20%20Pop%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%3Coption%0A%20%20%20%20%20%20value%3D%22reg%22%3E%0A%20%20%20%20%20Reguet%C3%B3n%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22tango%22%3E%0A%20%20%20%20%20Tango%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%3C%2Fselect%3E%0A%20%20%20%3Csmall%3E%0A%20%20%20%20%3Coutput%20id%3D%22msgGenero%22%3E%0A%20%20%20%20%20*Requerido%0A%20%20%20%20%3C%2Foutput%3E%0A%20%20%20%3C%2Fsmall%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cbutton%3ERecomendar%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%20for%3D%22outSalida%22%3E%0A%20%20%20%20Resultado%0A%20%20%20%3C%2Flabel%3E%0A%20%20%20%3Coutput%20id%3D%22outSalida%22%3E%0A%20%20%20%3C%2Foutput%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20const%20REQUERIDO%20%3D%20%22*Requerido%22%0A%0A%20%20function%20procesa()%20%7B%0A%20%20%20try%20%7B%0A%20%20%20%20copiaMensajes()%0A%20%20%20%20if%20(inGenero.validity.valid)%20%7B%0A%20%20%20%20%20const%20genero%20%3D%20inGenero.value%0A%20%20%20%20%20outSalida.value%20%3D%0A%20%20%20%20%20%20recomienda(genero)%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20outSalida.value%20%3D%20%22%22%0A%20%20%20%20%7D%0A%20%20%20%7D%20catch%20(e)%20%7B%0A%20%20%20%20console.error(e)%0A%20%20%20%20outSalida.value%20%3D%20e.message%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20%2F**%20%40param%20%7Bstring%7D%20genero%20*%2F%0A%20%20function%20recomienda(genero)%20%7B%0A%20%20%20if%20(genero%20%3D%3D%3D%20%22pop%22)%20%7B%0A%20%20%20%20return%20%22Ariana%20Grande.%22%0A%20%20%20%7D%20else%20if%20(genero%20%3D%3D%3D%20%22reg%22)%20%7B%0A%20%20%20%20return%20%22Bad%20Bunny.%22%0A%20%20%20%7D%20else%20%7B%0A%20%20%20%20return%20%22De%20eso%20no%20conozco.%22%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20function%20copiaMensajes()%20%7B%0A%20%20%20msg(inGenero%2C%20msgGenero%2C%0A%20%20%20%20REQUERIDO)%0A%20%20%7D%0A%0A%20%20%2F**%20Si%20un%20elemento%20tiene%20un%0A%20%20%20*%20mensaje%20de%20validaci%C3%B3n%2C%20lo%0A%20%20%20*%20muestra%20en%20su%20elemento%20de%0A%20%20%20*%20ayuda%20y%20si%20no%2C%20muestra%20un%0A%20%20%20*%20texto%20de%20ayuda.%0A%20%20%20*%20%40param%20%7BHTMLInputElement%7C%0A%20%20%20*%20%20HTMLTextAreaElement%7C%0A%20%20%20*%20%20HTMLSelectElement%7C%0A%20%20%20*%20%20HTMLOutputElement%7Cnull%7D%20e%0A%20%20%20*%20%20%20referencia%20a%20un%20elemento%0A%20%20%20*%20%20%20que%20contiene%20datos.%0A%20%20%20*%20%40param%20%7BHTMLOutputElement%7C%0A%20%20%20*%20%20null%7D%20out%20referencia%20a%20un%0A%20%20%20*%20%20%20elemento%20de%20ayuda%20para%20e.%0A%20%20%20*%20%40param%20%7Bstring%7D%20ok%20mensaje%20de%0A%20%20%20*%20%20%20ayuda%20cuando%20el%20estado%20de%20e%0A%20%20%20*%20%20%20es%20v%C3%A1lido.%20*%2F%0A%20%20function%20msg(e%2C%20out%2C%20ok)%20%7B%0A%20%20%20if%20(e%20%26%26%20out)%20%7B%0A%20%20%20%20if%20(e.validity.valid)%20%7B%0A%20%20%20%20%20out.value%20%3D%20ok%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20out.value%20%3D%0A%20%20%20%20%20%20e.validationMessage%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EFormulario%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%20id%3D%22form%22%20novalidate%0A%20%20%20action%3D%22javascript%3Aprocesa()%22%3E%0A%20%20%3Ch1%3EFormulario%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%20for%3D%22inGenero%22%3E%0A%20%20%20%20*G%C3%A9nero%0A%20%20%20%3C%2Flabel%3E%0A%20%20%20%3Cselect%20id%3D%22inGenero%22%20required%0A%20%20%20%20%20oninput%3D%22copiaMensajes()%22%3E%0A%20%20%20%20%3Coption%20value%3D%22%22%3E%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22pop%22%3E%0A%20%20%20%20%20Pop%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22reg%22%3E%0A%20%20%20%20%20Reguet%C3%B3n%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22tango%22%3E%0A%20%20%20%20%20Tango%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%3C%2Fselect%3E%0A%20%20%20%3Csmall%3E%0A%20%20%20%20%3Coutput%20id%3D%22msgGenero%22%3E%0A%20%20%20%20%20*Requerido%0A%20%20%20%20%3C%2Foutput%3E%0A%20%20%20%3C%2Fsmall%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cbutton%3ERecomendar%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%20for%3D%22outSalida%22%3E%0A%20%20%20%20Resultado%0A%20%20%20%3C%2Flabel%3E%0A%20%20%20%3Coutput%20id%3D%22outSalida%22%3E%0A%20%20%20%3C%2Foutput%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20const%20REQUERIDO%20%3D%20%22*Requerido%22%0A%0A%20%20function%20procesa()%20%7B%0A%20%20%20try%20%7B%0A%20%20%20%20copiaMensajes()%0A%20%20%20%20if%20(inGenero.validity.valid)%20%7B%0A%20%20%20%20%20const%20genero%20%3D%20inGenero.value%0A%20%20%20%20%20outSalida.value%20%3D%0A%20%20%20%20%20%20recomienda(genero)%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20outSalida.value%20%3D%20%22%22%0A%20%20%20%20%7D%0A%20%20%20%7D%20catch%20(e)%20%7B%0A%20%20%20%20console.error(e)%0A%20%20%20%20outSalida.value%20%3D%20e.message%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20%2F**%20%40param%20%7Bstring%7D%20genero%20*%2F%0A%20%20function%20recomienda(genero)%20%7B%0A%20%20%20if%20(genero%20%3D%3D%3D%20%22pop%22)%20%7B%0A%20%20%20%20return%20%22Ariana%20Grande.%22%0A%20%20%20%7D%20else%20if%20(genero%20%3D%3D%3D%20%22reg%22)%20%7B%0A%20%20%20%20return%20%22Bad%20Bunny.%22%0A%20%20%20%7D%20else%20%7B%0A%20%20%20%20return%20%22De%20eso%20no%20conozco.%22%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20function%20copiaMensajes()%20%7B%0A%20%20%20msg(inGenero%2C%20msgGenero%2C%0A%20%20%20%20REQUERIDO)%0A%20%20%7D%0A%0A%20%20%2F**%0A%20%20%20*%20Sin%20un%20elemento%20tiene%20un%0A%20%20%20*%20mensaje%20de%20validaci%C3%B3n%2C%20lo%0A%20%20%20*%20muestra%20en%20su%20elemento%20de%0A%20%20%20*%20ayuda%20y%20si%20no%2C%20muestra%20un%0A%20%20%20*%20texto%20de%20ayuda.%0A%20%20%20*%20%40param%20%7BHTMLInputElement%7C%0A%20%20%20*%20%20HTMLTextAreaElement%7C%0A%20%20%20*%20%20HTMLSelectElement%7C%0A%20%20%20*%20%20HTMLOutputElement%7Cnull%7D%20e%0A%20%20%20*%20referencia%20a%20un%20elemento%20que%0A%20%20%20*%20contiene%20datos.%0A%20%20%20*%20%40param%20%7BHTMLOutputElement%7C%0A%20%20%20*%20%20null%7D%20out%0A%20%20%20*%20elemento%20de%20ayuda%20para%20e.%0A%20%20%20*%20%40param%20%7Bstring%7D%20ok%20mensaje%20de%0A%20%20%20*%20ayuda%20cuando%20el%20estado%20de%20e%20es%0A%20%20%20*%20v%C3%A1lido.%0A%20%20%20*%2F%0A%20%20function%20msg(e%2C%20out%2C%20ok)%20%7B%0A%20%20%20if%20(e%20!%3D%3D%20null%0A%20%20%20%20%26%26%20out%20!%3D%3D%20null)%20%7B%0A%20%20%20%20if%20(e.validity.valid)%20%7B%0A%20%20%20%20%20out.value%20%3D%20ok%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20out.value%20%3D%0A%20%20%20%20%20%20e.validationMessage%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
  </section>
@@ -50,7 +50,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
       style="color: #0000ff;">"width=device-width"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Formulario<span
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span>Formulario<span
       style="color: #800000;">&lt;/title&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
    <div><span style="color: #800000;">&lt;body&gt;</span></div>
@@ -69,44 +70,36 @@
       style="color: #0000ff;">"inGenero"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; *Género</div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;select</span> <span
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;select</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"inGenero"</span> <span
       style="color: #ff0000;">required</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">oninput</span>=<span
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">oninput</span>=<span
       style="color: #0000ff;">"</span><span
       style="color: #795e26;">copiaMensajes</span><span
       style="color: #0000ff;">()</span><span
       style="color: #0000ff;">"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; <span
-      style="color: #800000;">&lt;option</span> <span
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;option</span> <span
       style="color: #ff0000;">value</span>=<span
       style="color: #0000ff;">""</span><span
       style="color: #800000;">&gt;&lt;/option&gt;</span></div>
-   <div>&nbsp; &nbsp; <span
-      style="color: #800000;">&lt;option</span> <span
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;option</span> <span
       style="color: #ff0000;">value</span>=<span
       style="color: #0000ff;">"pop"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp;Pop</div>
    <div>&nbsp; &nbsp; <span
       style="color: #800000;">&lt;/option&gt;</span></div>
-   <div>&nbsp; &nbsp; <span
-      style="color: #800000;">&lt;option</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;option</span> <span
       style="color: #ff0000;">value</span>=<span
       style="color: #0000ff;">"reg"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp;Reguetón</div>
    <div>&nbsp; &nbsp; <span
       style="color: #800000;">&lt;/option&gt;</span></div>
-   <div>&nbsp; &nbsp; <span
-      style="color: #800000;">&lt;option</span> <span
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;option</span> <span
       style="color: #ff0000;">value</span>=<span
       style="color: #0000ff;">"tango"</span><span
       style="color: #800000;">&gt;</span></div>
@@ -115,18 +108,15 @@
       style="color: #800000;">&lt;/option&gt;</span></div>
    <div>&nbsp; &nbsp;<span
       style="color: #800000;">&lt;/select&gt;</span></div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;small&gt;</span></div>
-   <div>&nbsp; &nbsp; <span
-      style="color: #800000;">&lt;output</span> <span
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;small&gt;</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;output</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"msgGenero"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp;*Requerido</div>
    <div>&nbsp; &nbsp; <span
       style="color: #800000;">&lt;/output&gt;</span></div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/small&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/small&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
    <div>&nbsp; &nbsp;<span
@@ -139,10 +129,8 @@
       style="color: #0000ff;">"outSalida"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; Resultado</div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;output</span> <span
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;output</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"outSalida"</span><span
       style="color: #800000;">&gt;</span></div>
@@ -163,8 +151,7 @@
       style="color: #001080;">inGenero</span>.<span
       style="color: #001080;">validity</span>.<span
       style="color: #001080;">valid</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #0000ff;">const</span> <span
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">genero</span> = <span
       style="color: #001080;">inGenero</span>.<span
       style="color: #001080;">value</span></div>
@@ -174,22 +161,18 @@
    <div>&nbsp; &nbsp; &nbsp; <span
       style="color: #795e26;">recomienda</span>(<span
       style="color: #0070c1;">genero</span>)</div>
-   <div>&nbsp; &nbsp; } <span
-      style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
    <div>&nbsp; &nbsp; &nbsp;<span
       style="color: #001080;">outSalida</span>.<span
       style="color: #001080;">value</span> = <span
       style="color: #a31515;">""</span></div>
    <div>&nbsp; &nbsp; }</div>
-   <div>&nbsp; &nbsp;} <span
-      style="color: #af00db;">catch</span> (<span
+   <div>&nbsp; &nbsp;} <span style="color: #af00db;">catch</span> (<span
       style="color: #001080;">e</span>) {</div>
-   <div>&nbsp; &nbsp; <span
-      style="color: #001080;">console</span>.<span
+   <div>&nbsp; &nbsp; <span style="color: #001080;">console</span>.<span
       style="color: #795e26;">error</span>(<span
       style="color: #001080;">e</span>)</div>
-   <div>&nbsp; &nbsp; <span
-      style="color: #001080;">outSalida</span>.<span
+   <div>&nbsp; &nbsp; <span style="color: #001080;">outSalida</span>.<span
       style="color: #001080;">value</span> = <span
       style="color: #001080;">e</span>.<span
       style="color: #001080;">message</span></div>
@@ -221,11 +204,12 @@
    <div>&nbsp; &nbsp;<span style="color: #795e26;">msg</span>(<span
       style="color: #001080;">inGenero</span>, <span
       style="color: #001080;">msgGenero</span>,</div>
-   <div>&nbsp; &nbsp; <span
-      style="color: #0070c1;">REQUERIDO</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #0070c1;">REQUERIDO</span>)</div>
    <div>&nbsp; }</div><br>
-   <div>&nbsp; <span
-      style="color: #008000;">/** Si un elemento tiene un</span></div>
+   <div>&nbsp; <span style="color: #008000;">/**</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;* Sin un elemento tiene un</span>
+   </div>
    <div><span
       style="color: #008000;">&nbsp; &nbsp;* mensaje de validación, lo</span>
    </div>
@@ -250,41 +234,42 @@
       style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;HTMLOutputElement|null}&nbsp;e</span>
    </div>
    <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;referencia&nbsp;a&nbsp;un&nbsp;elemento</span>
+      style="color: #008000;">&nbsp; &nbsp;* referencia a un elemento que</span>
    </div>
    <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;que&nbsp;contiene&nbsp;datos.</span>
-   </div>
+      style="color: #008000;">&nbsp; &nbsp;* contiene datos.</span></div>
    <div><span
       style="color: #008000;">&nbsp; &nbsp;* @param {HTMLOutputElement|</span>
    </div>
    <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;null}&nbsp;out&nbsp;referencia&nbsp;a&nbsp;un</span>
-   </div>
+      style="color: #008000;">&nbsp; &nbsp;* &nbsp;null} out</span></div>
    <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;elemento&nbsp;de&nbsp;ayuda&nbsp;para&nbsp;e.</span>
+      style="color: #008000;">&nbsp; &nbsp;* elemento de ayuda para e.</span>
    </div>
    <div><span
       style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{string}&nbsp;ok&nbsp;mensaje&nbsp;de</span>
    </div>
    <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;ayuda&nbsp;cuando&nbsp;el&nbsp;estado&nbsp;de&nbsp;e</span>
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;ayuda&nbsp;cuando&nbsp;el&nbsp;estado&nbsp;de&nbsp;e&nbsp;es</span>
    </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;es&nbsp;válido.&nbsp;*/</span>
-   </div>
-   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+   <div><span style="color: #008000;">&nbsp; &nbsp;* válido.</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; <span
+      style="color: #0000ff;">function</span> <span
       style="color: #795e26;">msg</span>(<span
       style="color: #001080;">e</span>, <span
       style="color: #001080;">out</span>, <span
       style="color: #001080;">ok</span>) {</div>
    <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
-      style="color: #001080;">e</span> &amp;&amp; <span
-      style="color: #001080;">out</span>) {</div>
+      style="color: #001080;">e</span> !== <span
+      style="color: #0000ff;">null</span></div>
+   <div>&nbsp; &nbsp; &amp;&amp; <span
+      style="color: #001080;">out</span> !== <span
+      style="color: #0000ff;">null</span>) {</div>
    <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
       style="color: #001080;">e</span>.<span
       style="color: #001080;">validity</span>.<span
-      style="color: #0070c1;">valid</span>) {</div>
+      style="color: #001080;">valid</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">out</span>.<span
       style="color: #001080;">value</span> = <span
       style="color: #001080;">ok</span></div>

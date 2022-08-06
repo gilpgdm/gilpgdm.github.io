@@ -22,8 +22,7 @@
     <option value="pop">
      Pop
     </option>
-    <option
-      value="reg">
+    <option value="reg">
      Reguetón
     </option>
     <option value="tango">
@@ -82,7 +81,8 @@
     REQUERIDO)
   }
 
-  /** Si un elemento tiene un
+  /**
+   * Sin un elemento tiene un
    * mensaje de validación, lo
    * muestra en su elemento de
    * ayuda y si no, muestra un
@@ -91,16 +91,18 @@
    *  HTMLTextAreaElement|
    *  HTMLSelectElement|
    *  HTMLOutputElement|null} e
-   *   referencia a un elemento
-   *   que contiene datos.
+   * referencia a un elemento que
+   * contiene datos.
    * @param {HTMLOutputElement|
-   *  null} out referencia a un
-   *   elemento de ayuda para e.
+   *  null} out
+   * elemento de ayuda para e.
    * @param {string} ok mensaje de
-   *   ayuda cuando el estado de e
-   *   es válido. */
+   * ayuda cuando el estado de e es
+   * válido.
+   */
   function msg(e, out, ok) {
-   if (e && out) {
+   if (e !== null
+    && out !== null) {
     if (e.validity.valid) {
      out.value = ok
     } else {
