@@ -444,6 +444,10 @@
     <a href="https://material.io/" target="_blank"
       rel="nooper">https://material.io/</a>
    </p>
+   <p>
+    <a href="https://m3.material.io/" target="_blank"
+      rel="nooper">https://m3.material.io/</a>
+   </p>
   </dd>
   <dt>Material Icons</dt>
   <dd>
@@ -455,8 +459,8 @@
   <dt>Material Theme Builder</dt>
   <dd>
    <p>
-    <a href="https://material-foundation.github.io/material-theme-builder/" rel="nooper"
-      target="_blank">https://material-foundation.github.io/material-theme-builder/</a>
+    <a href="https://m3.material.io/theme-builder/" rel="nooper"
+      target="_blank">https://m3.material.io/theme-builder/</a>
    </p>
   </dd>
   <dt>Navegación entre formas</dt>
@@ -772,19 +776,19 @@
  <ul>
   <li>
    <p>
-    Las barras de aplicación en Material Design están definidas en
-    <a href="https://material.io/components/app-bars-top" rel="nooper"
-      target="_blank">https://material.io/components/app-bars-top</a>.
-   </p>
-  </li>
-  <li>
-   <p>
     La distribución básica de las aplicaciónes móviles incluye una barra de
     aplicación.
    </p>
   </li>
   <li>
    <p>En iOS el título se muestra centrado.</p>
+  </li>
+  <li>
+   <p>
+    Para que el contenido se muestra adecuadamente, se define el elemento
+    personalizado <dfn>cn-app-bar</dfn> y su comportamiento lo definimos con
+    la clase <dfn>CnAppBar</dfn>.
+   </p>
   </li>
  </ul>
 </div>
@@ -802,26 +806,294 @@
     Revísalo en gilpgedit.</a>
   </p>
  </section>
- <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>App<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;link</span> <span style="color: #ff0000;">rel</span>=<span style="color: #0000ff;">"preconnect"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span style="color: #0000ff;">"https://fonts.googleapis.com"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;link</span> <span style="color: #ff0000;">rel</span>=<span style="color: #0000ff;">"preconnect"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span style="color: #0000ff;">"https://fonts.gstatic.com"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">crossorigin</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;link</span> <span style="color: #ff0000;">rel</span>=<span style="color: #0000ff;">"stylesheet"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #008000;">/* Custom properties */</span></div><div>&nbsp; <span style="color: #800000;">html</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colOnBg</span>: <span style="color: #0451a5;">#1C1B1F</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colBg</span>: <span style="color: #0451a5;">#FFFBFE</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colOnSrf</span>: <span style="color: #0451a5;">#1C1B1F</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colSrf</span>: <span style="color: #0451a5;">#FFFBFE</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colSh</span>: <span style="color: #0451a5;">#00000055</span>;</div><div>&nbsp; &nbsp;<span style="color: #008000;">/* Los 2 primeros fonts son</span></div><div><span style="color: #008000;">&nbsp; &nbsp; * para apple. */</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--fntFam</span>: -apple-system,</div><div>&nbsp; &nbsp; BlinkMacSystemFont, Roboto,</div><div>&nbsp; &nbsp; <span style="color: #0451a5;">sans-serif</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colOnBg</span>);</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--fntFam</span>);</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colBg</span>);</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">CLASE_ELEVACION2</span> =</div><div>&nbsp; &nbsp;<span style="color: #a31515;">"elevacion2"</span></div><br><div>&nbsp; <span style="color: #0000ff;">class</span> <span style="color: #267f99;">CnAppBar</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span style="color: #267f99;">HTMLElement</span> {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">constructor</span>() {</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">super</span>()</div><div>&nbsp; &nbsp; <span style="color: #008000;">/** </span><span style="color: #0000ff;">@type</span><span style="color: #008000;"> </span><span style="color: #267f99;">{number}</span><span style="color: #008000;"> */</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">posY</span> = <span style="color: #098658;">0</span></div><div>&nbsp; &nbsp; <span style="color: #008000;">/** </span><span style="color: #0000ff;">@type</span><span style="color: #008000;"> </span><span style="color: #267f99;">{boolean}</span><span style="color: #008000;"> */</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">procesando</span> = <span style="color: #0000ff;">false</span></div><div>&nbsp; &nbsp;}</div><div>&nbsp; &nbsp;<span style="color: #795e26;">connectedCallback</span>() {</div><div>&nbsp; &nbsp; <span style="color: #001080;">window</span>.<span style="color: #795e26;">addEventListener</span>(</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"scroll"</span>,</div><div>&nbsp; &nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span style="color: #0000ff;">this</span>.<span style="color: #795e26;">onScroll</span>())</div><div>&nbsp; &nbsp;}</div><div>&nbsp; &nbsp;<span style="color: #795e26;">onScroll</span>() {</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">posY</span> = <span style="color: #001080;">window</span>.<span style="color: #001080;">scrollY</span></div><div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (!<span style="color: #0000ff;">this</span>.<span style="color: #001080;">procesando</span>) {</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">window</span>.<span style="color: #795e26;">requestAnimationFrame</span>(</div><div>&nbsp; &nbsp; &nbsp; () <span style="color: #0000ff;">=&gt;</span> <span style="color: #0000ff;">this</span>.<span style="color: #795e26;">avanza</span>())</div><div>&nbsp; &nbsp; }</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">procesando</span> = <span style="color: #0000ff;">true</span></div><div>&nbsp; &nbsp;}</div><div>&nbsp; &nbsp;<span style="color: #795e26;">avanza</span>() {</div><div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span style="color: #0000ff;">this</span>.<span style="color: #001080;">posY</span> === <span style="color: #098658;">0</span>) {</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">classList</span>.</div><div>&nbsp; &nbsp; &nbsp; <span style="color: #795e26;">remove</span>(<span style="color: #0070c1;">CLASE_ELEVACION2</span>)</div><div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">classList</span>.</div><div>&nbsp; &nbsp; &nbsp; <span style="color: #795e26;">add</span>(<span style="color: #0070c1;">CLASE_ELEVACION2</span>)</div><div>&nbsp; &nbsp; }</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">procesando</span> = <span style="color: #0000ff;">false</span></div><div>&nbsp; &nbsp;}</div><div>&nbsp; }</div><div>&nbsp; <span style="color: #001080;">customElements</span>.</div><div>&nbsp; &nbsp;<span style="color: #795e26;">define</span>(<span style="color: #a31515;">"cn-app-bar"</span>, <span style="color: #267f99;">CnAppBar</span>)</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">body</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span style="color: #098658;">0</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">scroll-padding-top</span>: <span style="color: #098658;">3rem</span>;</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">.elevacion2</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div><div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span style="color: #098658;">6px</span> <span style="color: #098658;">12px</span> <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colSh</span>);</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">cn-app-bar</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span style="color: #0451a5;">sticky</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">top</span>: <span style="color: #098658;">0</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">z-index</span>: <span style="color: #098658;">1</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span style="color: #0451a5;">block</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colOnSrf</span>);</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colSrf</span>)</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">h1</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">text-align</span>: <span style="color: #0451a5;">center</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span style="color: #098658;">0</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">padding</span>: <span style="color: #098658;">1.125rem</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span style="color: #098658;">1.375rem</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">line-height</span>: <span style="color: #098658;">1.75rem</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-weight</span>: <span style="color: #0451a5;">normal</span>;</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">p</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span style="color: #098658;">1rem</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;cn-app-bar&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>App<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;/cn-app-bar&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span style="color: #800000;">&lt;/p&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span> <span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>App<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"preconnect"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.googleapis.com"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"preconnect"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.gstatic.com"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">crossorigin</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp; <span style="color: #008000;">/* Custom properties */</span>
+   </div>
+   <div>&nbsp; <span style="color: #800000;">html</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colOnBg</span>: <span
+      style="color: #0451a5;">#1C1B1F</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colBg</span>: <span
+      style="color: #0451a5;">#FFFBFE</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colOnSrf</span>: <span
+      style="color: #0451a5;">#1C1B1F</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colSrf</span>: <span
+      style="color: #0451a5;">#FFFBFE</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colSh</span>: <span
+      style="color: #0451a5;">#00000055</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/* Los 2 primeros fonts
+     son</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * para apple. */</span>
+   </div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--fntFam</span>:
+    -apple-system,</div>
+   <div>&nbsp; &nbsp; BlinkMacSystemFont, Roboto,</div>
+   <div>&nbsp; &nbsp; <span style="color: #0451a5;">sans-serif</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colOnBg</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--fntFam</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:
+    <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colBg</span>);
+   </div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">CLASE_ELEVACION2</span> =</div>
+   <div>&nbsp; &nbsp;<span style="color: #a31515;">"elevacion2"</span></div><br>
+   <div class="resaltado">&nbsp; <span
+      style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">CnAppBar</span></div>
+   <div class="resaltado">&nbsp; &nbsp;<span
+      style="color: #0000ff;">extends</span> <span
+      style="color: #267f99;">HTMLElement</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">constructor</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">super</span>()</div>
+   <div>&nbsp; &nbsp; <span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@type</span><span style="color: #008000;">
+    </span><span style="color: #267f99;">{number}</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">posY</span> = <span
+      style="color: #098658;">0</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@type</span><span style="color: #008000;">
+    </span><span style="color: #267f99;">{boolean}</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">procesando</span> = <span
+      style="color: #0000ff;">false</span></div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">connectedCallback</span>() {
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #001080;">window</span>.<span
+      style="color: #795e26;">addEventListener</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"scroll"</span>,</div>
+   <div>&nbsp; &nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">onScroll</span>())</div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">onScroll</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">posY</span> = <span
+      style="color: #001080;">window</span>.<span
+      style="color: #001080;">scrollY</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (!<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">procesando</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">window</span>.<span
+      style="color: #795e26;">requestAnimationFrame</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp; () <span style="color: #0000ff;">=&gt;</span> <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">avanza</span>())</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">procesando</span> = <span
+      style="color: #0000ff;">true</span></div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">avanza</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">posY</span> === <span
+      style="color: #098658;">0</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #795e26;">remove</span>(<span
+      style="color: #0070c1;">CLASE_ELEVACION2</span>)</div>
+   <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #795e26;">add</span>(<span
+      style="color: #0070c1;">CLASE_ELEVACION2</span>)</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">procesando</span> = <span
+      style="color: #0000ff;">false</span></div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp; <span style="color: #001080;">customElements</span>.</div>
+   <div class="resaltado">&nbsp; &nbsp;<span
+      style="color: #795e26;">define</span>(<span
+      style="color: #a31515;">"cn-app-bar"</span>, <span
+      style="color: #267f99;">CnAppBar</span>)</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">body</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">scroll-padding-top</span>:
+    <span style="color: #098658;">3rem</span>;
+   </div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">.elevacion2</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
+      style="color: #098658;">6px</span> <span
+      style="color: #098658;">12px</span> <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colSh</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div class="resaltado">&nbsp; <span
+      style="color: #800000;">cn-app-bar</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
+      style="color: #0451a5;">sticky</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">top</span>: <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">z-index</span>: <span
+      style="color: #098658;">1</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">block</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colOnSrf</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:
+    <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colSrf</span>)
+   </div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">h1</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">text-align</span>: <span
+      style="color: #0451a5;">center</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">padding</span>: <span
+      style="color: #098658;">1.125rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span
+      style="color: #098658;">1.375rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">line-height</span>: <span
+      style="color: #098658;">1.75rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-weight</span>: <span
+      style="color: #0451a5;">normal</span>;</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">p</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
+      style="color: #098658;">1rem</span>;</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div class="resaltado2"><span
+      style="color: #800000;">&lt;body&gt;</span></div>
+   <div class="resaltado">&nbsp;<span
+      style="color: #800000;">&lt;cn-app-bar&gt;</span></div>
+   <div class="resaltado">&nbsp; <span
+      style="color: #800000;">&lt;h1&gt;</span>App<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div class="resaltado">&nbsp;<span
+      style="color: #800000;">&lt;/cn-app-bar&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+<div class="lectura">
+ <h1>Solo para los más rudos</h1>
+ <ul>
+  <li>
+   <p>
+    Las barras de aplicación en Material Design están definidas en
+    <a href="https://m3.material.io/components/top-app-bar/overview"
+      rel="nooper"
+      target="_blank">https://m3.material.io/components/top-app-bar/overview</a>.
+   </p>
+  </li>
+ </ul>
 </div>
       </section>
      <section >
          <h1 >D. Campos</h1><div class="lectura">
  <ul>
-  <li>
-   <p>
-    Los campos de texto en Material Design están definidas en
-    <a href="https://material.io/components/text-fields" rel="nooper"
-      target="_blank">https://material.io/components/text-fields</a>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Los menús en Material Design están definidos en
-    <a href="https://material.io/components/menus" rel="nooper"
-      target="_blank">https://material.io/components/menus</a>.
-   </p>
-  </li>
   <li>
    <p>
     Se usa una etiqueta flotante que se muestra grande cuando el contenido de
@@ -833,7 +1105,7 @@
    <p>
     Para que el contenido se muestra adecuadamente, se define el elemento
     personalizado <dfn>cm-din</dfn> y su comportamiento lo definimos con
-    la clase <dfn>CmDin</dfn> localizada al final del código.
+    la clase <dfn>CmDin</dfn>.
    </p>
   </li>
  </ul>
@@ -940,7 +1212,8 @@
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">class</span> <span
+   <div class="resaltado">&nbsp; <span
+      style="color: #0000ff;">class</span> <span
       style="color: #267f99;">CmDin</span> <span
       style="color: #0000ff;">extends</span> <span
       style="color: #267f99;">HTMLElement</span> {</div>
@@ -1019,7 +1292,8 @@
    <div>&nbsp; &nbsp;}</div>
    <div>&nbsp; }</div>
    <div>&nbsp; <span style="color: #001080;">customElements</span>.</div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">define</span>(<span
+   <div class="resaltado">&nbsp; &nbsp;<span
+      style="color: #795e26;">define</span>(<span
       style="color: #a31515;">"cm-din"</span>, <span
       style="color: #267f99;">CmDin</span>)</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
@@ -1234,7 +1508,8 @@
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div class="resaltado2"><span
+      style="color: #800000;">&lt;body&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Campos<span
       style="color: #800000;">&lt;/h1&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;cm-din&gt;</span></div>
@@ -1320,14 +1595,46 @@
   </div>
  </muestra-codigo>
 </div>
+<div class="lectura">
+ <h1>Solo para los más rudos</h1>
+ <ul>
+  <li>
+   <p>
+    Los campos de texto en Material Design están definidos en
+    <a href="https://material.io/components/text-fields" rel="nooper"
+      target="_blank">https://material.io/components/text-fields</a>
+    y en
+    <a href="https://m3.material.io/components/text-fields/overview"
+      rel="nooper"
+      target="_blank">https://m3.material.io/components/text-fields/overview</a>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Los menús en Material Design están definidos en
+    <a href="https://material.io/components/menus" rel="nooper"
+      target="_blank">https://material.io/components/menus</a>
+    y en
+    <a href="https://m3.material.io/components/menus/overview" rel="nooper"
+      target="_blank">https://m3.material.io/components/menus/overview</a>.
+   </p>
+  </li>
+ </ul>
+</div>
       </section>
      <section >
          <h1 >E. Botones</h1><div class="lectura">
- <p>
-  Los botones en Material Design están definidos en
-  <a href="https://material.io/components/buttons" rel="nooper"
-    target="_blank">https://material.io/components/buttons</a>.
- </p>
+ <ul>
+  <li>
+   <p>
+    Los botones principales deben usar la clase <dfn>filled</dfn>,
+   </p>
+  </li>
+  <li>
+   <p>
+    Los botones secundarios deben usar la clase <dfn>filled tonal</dfn>,
+  </li>
+ </ul>
 </div>
 <div class="horizontal">
  <section>
@@ -1343,7 +1650,208 @@
     Revísalo en gilpgedit.</a>
   </p>
  </section>
- <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Botones<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;link</span> <span style="color: #ff0000;">rel</span>=<span style="color: #0000ff;">"preconnect"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span style="color: #0000ff;">"https://fonts.googleapis.com"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;link</span> <span style="color: #ff0000;">rel</span>=<span style="color: #0000ff;">"preconnect"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span style="color: #0000ff;">"https://fonts.gstatic.com"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">crossorigin</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;link</span> <span style="color: #ff0000;">rel</span>=<span style="color: #0000ff;">"stylesheet"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">html</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colOnBg</span>: <span style="color: #0451a5;">#1C1B1F</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colBg</span>: <span style="color: #0451a5;">#FFFBFE</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFil</span>: <span style="color: #0451a5;">white</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilBg</span>: <span style="color: #0451a5;">#6750A4</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilBgHv</span>: <span style="color: #0451a5;">#6750A4</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilBgFc</span>: <span style="color: #0451a5;">#6750A4DD</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilBgAc</span>: <span style="color: #0451a5;">#6750A4EE</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilTon</span>: <span style="color: #0451a5;">#1D192B</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilTonBg</span>: <span style="color: #0451a5;">#E8DEF8</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilTonBgHv</span>: <span style="color: #0451a5;">#E8DEF8</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilTonBgFc</span>: <span style="color: #0451a5;">#E8DEF8DD</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilTonBgAc</span>: <span style="color: #0451a5;">#E8DEF8EE</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colSh</span>: <span style="color: #0451a5;">#00000055</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--fntFam</span>: -apple-system,</div><div>&nbsp; &nbsp; BlinkMacSystemFont, Roboto,</div><div>&nbsp; &nbsp; <span style="color: #0451a5;">sans-serif</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colOnBg</span>);</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--fntFam</span>);</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colBg</span>);</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">.filled</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--fntFam</span>);</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFil</span>);</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilBg</span>);</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span style="color: #098658;">0.875rem</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">padding</span>: <span style="color: #098658;">0.5rem</span> <span style="color: #098658;">1rem</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">border</span>: <span style="color: #0451a5;">none</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">border-radius</span>: <span style="color: #098658;">1.5rem</span>;</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">.filled:hover</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div><div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span style="color: #098658;">3px</span> <span style="color: #098658;">6px</span> <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colSh</span>);</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">.filled:hover</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilBgHv</span>);</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">.filled:focus</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">outline</span>: <span style="color: #0451a5;">none</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilBgFc</span>);</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">.filled:active</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilBgAc</span>);</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">.filled.tonal</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilTon</span>);</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilTonBg</span>);</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">.filled.tonal:hover</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilTonBgHv</span>);</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">.filled.tonal:focus</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">outline</span>: <span style="color: #0451a5;">none</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilTonBgFc</span>);</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">.filled.tonal:active</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colFilTonBgAc</span>);</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Botones<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;button</span> <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"filled"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp;Primario</div><div>&nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;button</span> <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"filled tonal"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp;Secundario</div><div>&nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span> <span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Botones<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"preconnect"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.googleapis.com"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"preconnect"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.gstatic.com"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">crossorigin</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">html</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colOnBg</span>: <span
+      style="color: #0451a5;">#1C1B1F</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colBg</span>: <span
+      style="color: #0451a5;">#FFFBFE</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFil</span>: <span
+      style="color: #0451a5;">white</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilBg</span>: <span
+      style="color: #0451a5;">#6750A4</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilBgHv</span>: <span
+      style="color: #0451a5;">#6750A4</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilBgFc</span>: <span
+      style="color: #0451a5;">#6750A4DD</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilBgAc</span>: <span
+      style="color: #0451a5;">#6750A4EE</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilTon</span>: <span
+      style="color: #0451a5;">#1D192B</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilTonBg</span>: <span
+      style="color: #0451a5;">#E8DEF8</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilTonBgHv</span>: <span
+      style="color: #0451a5;">#E8DEF8</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilTonBgFc</span>: <span
+      style="color: #0451a5;">#E8DEF8DD</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colFilTonBgAc</span>: <span
+      style="color: #0451a5;">#E8DEF8EE</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colSh</span>: <span
+      style="color: #0451a5;">#00000055</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--fntFam</span>:
+    -apple-system,</div>
+   <div>&nbsp; &nbsp; BlinkMacSystemFont, Roboto,</div>
+   <div>&nbsp; &nbsp; <span style="color: #0451a5;">sans-serif</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colOnBg</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--fntFam</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:
+    <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colBg</span>);
+   </div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">.filled</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--fntFam</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colFil</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colFilBg</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span
+      style="color: #098658;">0.875rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">padding</span>: <span
+      style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">1rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">border</span>: <span
+      style="color: #0451a5;">none</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-radius</span>: <span
+      style="color: #098658;">1.5rem</span>;</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">.filled:hover</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
+      style="color: #098658;">3px</span> <span
+      style="color: #098658;">6px</span> <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colSh</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">.filled:hover</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colFilBgHv</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">.filled:focus</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">outline</span>: <span
+      style="color: #0451a5;">none</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colFilBgFc</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">.filled:active</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colFilBgAc</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">.filled.tonal</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colFilTon</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colFilTonBg</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">.filled.tonal:hover</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colFilTonBgHv</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">.filled.tonal:focus</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">outline</span>: <span
+      style="color: #0451a5;">none</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colFilTonBgFc</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">.filled.tonal:active</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colFilTonBgAc</span>);</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div class="resaltado2"><span
+      style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Botones<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;button</span> <span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"filled"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp;Primario</div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;button</span> <span
+      style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"filled
+     tonal"</span><span style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp;Secundario</div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+<div class="lectura">
+ <h1>Solo para los más rudos</h1>
+ <ul>
+  <li>
+   <p>
+    Los botones en Material Design están definidos en
+    <a href="https://material.io/components/buttons" rel="nooper"
+      target="_blank">https://material.io/components/buttons</a>.
+    y en
+    <a href="https://m3.material.io/components/buttons/overview" rel="nooper"
+      target="_blank">https://m3.material.io/components/buttons/overview</a>.
+   </p>
+  </li>
+ </ul>
 </div>
       </section>
      <section >
@@ -1351,9 +1859,9 @@
  <ul>
   <li>
    <p>
-    Los interruptores en Material Design están defnidos en
-    <a href="https://material.io/components/switches" rel="nooper"
-      target="_blank">https://material.io/components/switches</a>.
+    Para que el contenido se muestra adecuadamente, se define el elemento
+    personalizado <dfn>cm-int</dfn> y su comportamiento lo definimos con
+    la clase <dfn>CmInt</dfn> localizada al final del código.
    </p>
   </li>
  </ul>
@@ -1490,9 +1998,10 @@
    <div>&nbsp; <span style="color: #800000;">body:not</span>(<span
       style="color: #800000;">.ios</span>) <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input::-webkit-slider-runnable-track</span> {</div>
+      style="color: #800000;">input::-webkit-slider-runnable-track</span> {
+   </div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOnBk</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-radius</span>: <span
@@ -1503,9 +2012,10 @@
    <div>&nbsp; <span style="color: #800000;">body:not</span>(<span
       style="color: #800000;">.ios</span>) <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input.off::-webkit-slider-runnable-track</span> {</div>
+      style="color: #800000;">input.off::-webkit-slider-runnable-track</span> {
+   </div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOffBk</span>);</div>
    <div>&nbsp; }</div><br>
@@ -1514,10 +2024,10 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input::-webkit-slider-thumb</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">-webkit-appearance</span>: <span
+      style="color: #ff0000;">-webkit-appearance</span>: <span
       style="color: #0451a5;">none</span>;</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOn</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin-top</span>: <span
@@ -1536,8 +2046,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOnHv</span>);</div>
    <div>&nbsp; }</div><br>
@@ -1548,8 +2058,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOnFc</span>);</div>
    <div>&nbsp; }</div><br>
@@ -1560,8 +2070,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOnAct</span>)</div>
    <div>&nbsp; }</div><br>
@@ -1570,7 +2080,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input.off::-webkit-slider-thumb</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOff</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-width</span>: <span
@@ -1584,35 +2094,39 @@
    <div>&nbsp; <span style="color: #800000;">body:not</span>(<span
       style="color: #800000;">.ios</span>) <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input.off:hover::-webkit-slider-thumb</span> {</div>
+      style="color: #800000;">input.off:hover::-webkit-slider-thumb</span> {
+   </div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOffHv</span>)</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body:not</span>(<span
       style="color: #800000;">.ios</span>) <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input.off:focus::-webkit-slider-thumb</span> {</div>
+      style="color: #800000;">input.off:focus::-webkit-slider-thumb</span> {
+   </div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span style="color: #098658;">0</span>
     <span style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--colIntOffFc</span>)</div>
+      style="color: #001080;">--colIntOffFc</span>)
+   </div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body:not</span>(<span
       style="color: #800000;">.ios</span>) <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input.off:active::-webkit-slider-thumb</span> {</div>
+      style="color: #800000;">input.off:active::-webkit-slider-thumb</span> {
+   </div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOffAct</span>)</div>
    <div>&nbsp; }</div><br>
@@ -1621,7 +2135,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input::-moz-range-track</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOnBk</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-radius</span>: <span
@@ -1634,7 +2148,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input.off::-moz-range-track</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOffBk</span>)</div>
    <div>&nbsp; }</div><br>
@@ -1643,7 +2157,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input::-moz-range-thumb</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOn</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin-top</span>: <span
@@ -1664,8 +2178,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOnHv</span>)</div>
    <div>&nbsp; }</div><br>
@@ -1678,7 +2192,8 @@
       style="color: #098658;">0</span> <span style="color: #098658;">0</span>
     <span style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--colIntOnFc</span>)</div>
+      style="color: #001080;">--colIntOnFc</span>)
+   </div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body:not</span>(<span
       style="color: #800000;">.ios</span>) <span
@@ -1687,8 +2202,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOnAct</span>)</div>
    <div>&nbsp; }</div><br>
@@ -1697,7 +2212,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input.off::-moz-range-thumb</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOff</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-width</span>: <span
@@ -1715,8 +2230,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOffHv</span>)</div>
    <div>&nbsp; }</div><br>
@@ -1727,8 +2242,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOffFc</span>)</div>
    <div>&nbsp; }</div><br>
@@ -1739,8 +2254,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOffAct</span>)</div>
    <div>&nbsp; }</div><br>
@@ -1752,38 +2267,42 @@
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body.ios</span> <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input::-webkit-slider-runnable-track</span> {</div>
+      style="color: #800000;">input::-webkit-slider-runnable-track</span> {
+   </div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOnBk</span>);</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">border-radius</span>: <span
+      style="color: #ff0000;">border-radius</span>: <span
       style="color: #098658;">14px</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">height</span>: <span
       style="color: #098658;">28px</span>;</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body.ios</span> <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input:focus::-webkit-slider-runnable-track</span> {</div>
+      style="color: #800000;">input:focus::-webkit-slider-runnable-track</span>
+    {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOnBkFc</span>);</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body.ios</span> <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input.off::-webkit-slider-runnable-track</span> {</div>
+      style="color: #800000;">input.off::-webkit-slider-runnable-track</span> {
+   </div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOffBk</span>);</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body.ios</span> <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input.off:focus::-webkit-slider-runnable-track</span> {</div>
+      style="color: #800000;">input.off:focus::-webkit-slider-runnable-track</span>
+    {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOffBkFc</span>);</div>
    <div>&nbsp; }</div><br>
@@ -1797,7 +2316,7 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">height</span>: <span
       style="color: #098658;">26px</span>;</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIos</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-width</span>: <span
@@ -1810,7 +2329,7 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-radius</span>: <span
       style="color: #098658;">13px</span>;</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">-webkit-appearance</span>: <span
+      style="color: #ff0000;">-webkit-appearance</span>: <span
       style="color: #0451a5;">none</span>;</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body.ios</span> <span
@@ -1829,7 +2348,8 @@
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body.ios</span> <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input.off:focus::-webkit-slider-thumb</span> {</div>
+      style="color: #800000;">input.off:focus::-webkit-slider-thumb</span> {
+   </div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOffBkFc</span>);</div>
@@ -1838,7 +2358,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input::-moz-range-track</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOnBk</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-radius</span>: <span
@@ -1850,7 +2370,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input:focus::-moz-range-track</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOnBkFc</span>);</div>
    <div>&nbsp; }</div><br>
@@ -1858,7 +2378,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input.off::-moz-range-track</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOffBk</span>);</div>
    <div>&nbsp; }</div><br>
@@ -1866,7 +2386,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input.off:focus::-moz-range-track</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOffBkFc</span>);</div>
    <div>&nbsp; }</div><br>
@@ -1878,7 +2398,7 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">height</span>: <span
       style="color: #098658;">26px</span>;</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIos</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-width</span>: <span
@@ -1914,9 +2434,9 @@
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div class="resaltado2"><span style="color: #800000;">&lt;body&gt;</span></div>
    <div>&nbsp;<span
-     style="color: #800000;">&lt;h1&gt;</span>Interruptores<span
+      style="color: #800000;">&lt;h1&gt;</span>Interruptores<span
       style="color: #800000;">&lt;/h1&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;cm-int&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;label&gt;</span></div>
@@ -1932,7 +2452,7 @@
       style="color: #811f3f;">/.</span>*<span
       style="color: #811f3f;">android.</span>*<span
       style="color: #811f3f;">/</span><span
-       style="color: #0000ff;">i</span>.</div>
+      style="color: #0000ff;">i</span>.</div>
    <div>&nbsp; &nbsp;<span style="color: #795e26;">test</span>(<span
       style="color: #001080;">navigator</span>.<span
       style="color: #0070c1;">userAgent</span>)) {</div>
@@ -1954,7 +2474,7 @@
       style="color: #811f3f;">Mac</span><span
       style="color: #d16969;">)</span><span
       style="color: #811f3f;">.</span>*<span
-       style="color: #811f3f;">/</span>.</div>
+      style="color: #811f3f;">/</span>.</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">test</span>(<span
       style="color: #001080;">navigator</span>.<span
       style="color: #0070c1;">userAgent</span>)) {</div>
@@ -1964,12 +2484,13 @@
    <div>&nbsp; &nbsp; <span style="color: #795e26;">add</span>(<span
       style="color: #a31515;">'ios'</span>);</div>
    <div>&nbsp; }</div>
-   <div>&nbsp; <span style="color: #0000ff;">class</span> <span
+   <div class="resaltado">&nbsp; <span
+      style="color: #0000ff;">class</span> <span
       style="color: #267f99;">CmInt</span> <span
       style="color: #0000ff;">extends</span> <span
       style="color: #267f99;">HTMLElement</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #795e26;">connectedCallback</span>() {</div>
+      style="color: #795e26;">connectedCallback</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">setTimeout</span>(</div>
    <div>&nbsp; &nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
       style="color: #0000ff;">this</span>.<span
@@ -1979,7 +2500,7 @@
    <div>&nbsp; &nbsp;<span style="color: #795e26;">prepara</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #008000;">/** </span><span
       style="color: #0000ff;">@private</span><span
-       style="color: #008000;"> */</span></div>
+      style="color: #008000;"> */</span></div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
       style="color: #001080;">_input</span> =</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
@@ -2035,7 +2556,8 @@
    <div>&nbsp; &nbsp;}</div>
    <div>&nbsp; }</div>
    <div>&nbsp; <span style="color: #001080;">customElements</span>.</div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">define</span>(<span
+   <div class="resaltado">&nbsp; &nbsp;<span
+      style="color: #795e26;">define</span>(<span
       style="color: #a31515;">"cm-int"</span>, <span
       style="color: #267f99;">CmInt</span>);</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
@@ -2043,6 +2565,18 @@
    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
   </div>
  </muestra-codigo>
+</div>
+<div class="lectura">
+ <h1>Solo para los más rudos</h1>
+ <ul>
+  <li>
+   <p>
+    Los interruptores en Material Design están defnidos en
+    <a href="https://m3.material.io/components/switch/overview" rel="nooper"
+      target="_blank">https://m3.material.io/components/switch/overview</a>.
+   </p>
+  </li>
+ </ul>
 </div>
       </section>
      <section >
@@ -2054,6 +2588,17 @@
     <a href="https://https://fonts.google.com/icons?selected=Material+Icons"
       rel="nooper"
       target="_blank">https://https://fonts.google.com/icons?selected=Material+Icons</a>.
+   </p>
+  </li>
+  <li>
+   <p>
+    En el sitio oficial te aparecen los íconos en diferentes estilos.
+   </p>
+  </li>
+  <li>
+   <p>
+    Si seleccionas un ícono y su estilo, te aparecen las instrucciones de como
+    añadirlo a tu código.
    </p>
   </li>
  </ul>
@@ -2146,9 +2691,9 @@
  <ul>
   <li>
    <p>
-    La navegación inferior está definida en
-    <a href="https://material.io/components/bottom-navigation" rel="nooper"
-      target="_blank">https://material.io/components/bottom-navigation</a>.
+    Para que el contenido se muestra adecuadamente, se define el elemento
+    personalizado <dfn>mi-nav</dfn> y su comportamiento lo definimos con
+    la clase <dfn>MiNav</dfn>.
    </p>
   </li>
  </ul>
@@ -2168,7 +2713,308 @@
     Revísalo en gilpgedit.</a>
   </p>
  </section>
- <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Navegación<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;link</span> <span style="color: #ff0000;">rel</span>=<span style="color: #0000ff;">"preconnect"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span style="color: #0000ff;">"https://fonts.googleapis.com"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;link</span> <span style="color: #ff0000;">rel</span>=<span style="color: #0000ff;">"preconnect"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span style="color: #0000ff;">"https://fonts.gstatic.com"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">crossorigin</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;link</span> <span style="color: #ff0000;">rel</span>=<span style="color: #0000ff;">"stylesheet"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #008000;">&lt;!--</span></div><div><span style="color: #008000;">&nbsp; Carga los íconos oficiales de</span></div><div><span style="color: #008000;">&nbsp; Material Design.</span></div><div><span style="color: #008000;">&nbsp;--&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;link</span> <span style="color: #ff0000;">rel</span>=<span style="color: #0000ff;">"stylesheet"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Material+Icons"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #008000;">/* Custom properties */</span></div><div>&nbsp; <span style="color: #800000;">html</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colOnBg</span>: <span style="color: #0451a5;">#1C1B1F</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colBg</span>: <span style="color: #0451a5;">#FFFBFE</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNv</span>: <span style="color: #0451a5;">#49454F</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvSel</span>: <span style="color: #0451a5;">#1C1B1F</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvBg</span>: <span style="color: #0451a5;">#FFFBFE</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvBgHv</span>: <span style="color: #0451a5;">#bdbdbddd</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvBgFc</span>: <span style="color: #0451a5;">#E7E0EC99</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvBgAc</span>: <span style="color: #0451a5;">#E7E0ECDD</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvIc</span>: <span style="color: #0451a5;">#49454F</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvIcSel</span>: <span style="color: #0451a5;">#1D192B</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvIcBgSel</span>: <span style="color: #0451a5;">#E8DEF8</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">--fntFam</span>: -apple-system,</div><div>&nbsp; &nbsp; BlinkMacSystemFont, Roboto,</div><div>&nbsp; &nbsp; <span style="color: #0451a5;">sans-serif</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colOnBg</span>);</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--fntFam</span>);</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colBg</span>);</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">class</span> <span style="color: #267f99;">MiNav</span> <span style="color: #0000ff;">extends</span> <span style="color: #267f99;">HTMLElement</span> {</div><div>&nbsp; &nbsp;<span style="color: #795e26;">connectedCallback</span>() {</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">innerHTML</span> = <span style="color: #008000;">/* html */</span></div><div>&nbsp; &nbsp; &nbsp;`<span style="color: #800000;">&lt;a</span> <span style="color: #ff0000;">href</span>=<span style="color: #0000ff;">"index.html"</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"sel"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;span</span> <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"material-icons"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp;home</div><div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;/span&gt;</span></div><div>&nbsp; &nbsp; &nbsp; Inicio</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/a&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;a</span> <span style="color: #ff0000;">href</span>=<span style="color: #0000ff;">"ayuda.html"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;span</span> <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"material-icons"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp;help</div><div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;/span&gt;</span></div><div>&nbsp; &nbsp; &nbsp; Ayuda</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/a&gt;</span>`;</div><div>&nbsp; &nbsp;}</div><div>&nbsp; }</div><div>&nbsp; <span style="color: #001080;">customElements</span>.</div><div>&nbsp; &nbsp;<span style="color: #795e26;">define</span>(<span style="color: #a31515;">"mi-nav"</span>, <span style="color: #267f99;">MiNav</span>);</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #008000;">/* El margin-bottom es más grande</span></div><div><span style="color: #008000;">&nbsp; &nbsp;* para que no lo tape la barra</span></div><div><span style="color: #008000;">&nbsp; &nbsp;* de navegación. */</span></div><div>&nbsp; <span style="color: #800000;">body</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span style="color: #098658;">0</span> <span style="color: #098658;">0</span> <span style="color: #098658;">5rem</span> <span style="color: #098658;">0</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">scroll-padding-top</span>: <span style="color: #098658;">3rem</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">scroll-padding-bottom</span>: <span style="color: #098658;">5rem</span>;</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">mi-nav</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span style="color: #0451a5;">fixed</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">left</span>: <span style="color: #098658;">0</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">right</span>: <span style="color: #098658;">0</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">bottom</span>: <span style="color: #098658;">0</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span style="color: #0451a5;">flex</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">list-style-type</span>: <span style="color: #0451a5;">none</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">justify-content</span>: <span style="color: #0451a5;">center</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">align-items</span>: <span style="color: #0451a5;">stretch</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span style="color: #098658;">0</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">padding</span>: <span style="color: #098658;">0</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colNv</span>);</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colNvBg</span>)</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">mi-nav</span> <span style="color: #800000;">a</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span style="color: #0451a5;">block</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colNv</span>);</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span style="color: #098658;">0.75rem</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-weight</span>: <span style="color: #098658;">500</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">text-decoration</span>: <span style="color: #0451a5;">none</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">padding-top</span>: <span style="color: #098658;">0.5rem</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">padding-bottom</span>: <span style="color: #098658;">0.75rem</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">padding-left</span>: <span style="color: #098658;">0.75rem</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">padding-right</span>: <span style="color: #098658;">0.75rem</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">text-align</span>: <span style="color: #0451a5;">center</span>;</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">mi-nav</span> <span style="color: #800000;">a:hover</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colNvBgHv</span>);</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">mi-nav</span> <span style="color: #800000;">a:focus</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">outline</span>: <span style="color: #0451a5;">none</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colNvBgFc</span>);</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">mi-nav</span> <span style="color: #800000;">a:active</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colNvBgAc</span>);</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">mi-nav</span> <span style="color: #800000;">.material-icons</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span style="color: #0451a5;">block</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">box-sizing</span>: <span style="color: #0451a5;">border-box</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">margin-left</span>: <span style="color: #0451a5;">auto</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">margin-right</span>: <span style="color: #0451a5;">auto</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">padding-left</span>: <span style="color: #098658;">1rem</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">padding-right</span>: <span style="color: #098658;">1rem</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">border-radius</span>: <span style="color: #098658;">1rem</span>;</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">mi-nav</span> <span style="color: #800000;">a.sel</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colNvSel</span>);</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">mi-nav</span> <span style="color: #800000;">a.sel</span> <span style="color: #800000;">.material-icons</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colNvIcSel</span>);</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:</div><div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span style="color: #001080;">--colNvIcBgSel</span>);</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;mi-nav&gt;&lt;/mi-nav&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span> <span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Navegación<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"preconnect"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.googleapis.com"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"preconnect"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.gstatic.com"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">crossorigin</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #008000;">&lt;!--</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; Carga los íconos oficiales de</span></div>
+   <div><span style="color: #008000;">&nbsp; Material Design.</span></div>
+   <div><span style="color: #008000;">&nbsp;--&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Material+Icons"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp; <span
+      style="color: #008000;">/* Custom properties */</span></div>
+   <div>&nbsp; <span style="color: #800000;">html</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colOnBg</span>: <span
+      style="color: #0451a5;">#1C1B1F</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colBg</span>: <span
+      style="color: #0451a5;">#FFFBFE</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNv</span>: <span
+      style="color: #0451a5;">#49454F</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvSel</span>: <span
+      style="color: #0451a5;">#1C1B1F</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvBg</span>: <span
+      style="color: #0451a5;">#FFFBFE</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvBgHv</span>: <span
+      style="color: #0451a5;">#bdbdbddd</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvBgFc</span>: <span
+      style="color: #0451a5;">#E7E0EC99</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvBgAc</span>: <span
+      style="color: #0451a5;">#E7E0ECDD</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvIc</span>: <span
+      style="color: #0451a5;">#49454F</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvIcSel</span>: <span
+      style="color: #0451a5;">#1D192B</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvIcBgSel</span>: <span
+      style="color: #0451a5;">#E8DEF8</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">--fntFam</span>: -apple-system,</div>
+   <div>&nbsp; &nbsp; BlinkMacSystemFont, Roboto,</div>
+   <div>&nbsp; &nbsp; <span style="color: #0451a5;">sans-serif</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colOnBg</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--fntFam</span>);</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colBg</span>);</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div class="resaltado">&nbsp; <span
+      style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">MiNav</span> <span
+      style="color: #0000ff;">extends</span> <span
+      style="color: #267f99;">HTMLElement</span> {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #795e26;">connectedCallback</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">innerHTML</span> = <span
+      style="color: #008000;">/* html */</span></div>
+   <div>&nbsp; &nbsp; &nbsp;`<span style="color: #800000;">&lt;a</span> <span
+      style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"index.html"</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"sel"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;span</span> <span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"material-icons"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;home</div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; Inicio</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/a&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;a</span> <span
+      style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"ayuda.html"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;span</span> <span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"material-icons"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;help</div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; Ayuda</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/a&gt;</span>`;</div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp; <span style="color: #001080;">customElements</span>.</div>
+   <div class="resaltado">&nbsp; &nbsp;<span
+      style="color: #795e26;">define</span>(<span
+      style="color: #a31515;">"mi-nav"</span>, <span
+      style="color: #267f99;">MiNav</span>);</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp; <span
+      style="color: #008000;">/* El margin-bottom es más grande</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;* para que no lo tape la barra</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;* de navegación. */</span>
+   </div>
+   <div>&nbsp; <span style="color: #800000;">body</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">5rem</span> <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">scroll-padding-top</span>: <span
+      style="color: #098658;">3rem</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">scroll-padding-bottom</span>: <span
+      style="color: #098658;">5rem</span>;</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">mi-nav</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
+      style="color: #0451a5;">fixed</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">left</span>: <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">right</span>: <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">bottom</span>: <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">flex</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">list-style-type</span>: <span
+      style="color: #0451a5;">none</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">justify-content</span>: <span
+      style="color: #0451a5;">center</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">align-items</span>: <span
+      style="color: #0451a5;">stretch</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">padding</span>: <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colNv</span>);</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colNvBg</span>)</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">mi-nav</span> <span
+      style="color: #800000;">a</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">block</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colNv</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span
+      style="color: #098658;">0.75rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-weight</span>: <span
+      style="color: #098658;">500</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">text-decoration</span>: <span
+      style="color: #0451a5;">none</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">padding-top</span>: <span
+      style="color: #098658;">0.5rem</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">padding-bottom</span>: <span
+      style="color: #098658;">0.75rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">padding-left</span>: <span
+      style="color: #098658;">0.75rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">padding-right</span>: <span
+      style="color: #098658;">0.75rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">text-align</span>: <span
+      style="color: #0451a5;">center</span>;</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">mi-nav</span> <span
+      style="color: #800000;">a:hover</span> {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colNvBgHv</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">mi-nav</span> <span
+      style="color: #800000;">a:focus</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">outline</span>: <span
+      style="color: #0451a5;">none</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colNvBgFc</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">mi-nav</span> <span
+      style="color: #800000;">a:active</span> {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colNvBgAc</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">mi-nav</span> <span
+      style="color: #800000;">.material-icons</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">block</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-sizing</span>: <span
+      style="color: #0451a5;">border-box</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin-left</span>: <span
+      style="color: #0451a5;">auto</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin-right</span>: <span
+      style="color: #0451a5;">auto</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">padding-left</span>: <span
+      style="color: #098658;">1rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">padding-right</span>: <span
+      style="color: #098658;">1rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-radius</span>: <span
+      style="color: #098658;">1rem</span>;</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">mi-nav</span> <span
+      style="color: #800000;">a.sel</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colNvSel</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">mi-nav</span> <span
+      style="color: #800000;">a.sel</span> <span
+      style="color: #800000;">.material-icons</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colNvIcSel</span>);</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colNvIcBgSel</span>);</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div class="resaltado2"><span
+      style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;mi-nav&gt;&lt;/mi-nav&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+<div class="lectura">
+ <h1>Solo para los más rudos</h1>
+ <ul>
+  <li>
+   <p>
+    La navegación inferior está definida en
+    <a href="https://m3.material.io/components/navigation-bar/overview"
+      rel="nooper"
+      target="_blank">https://m3.material.io/components/navigation-bar/overview</a>.
+   </p>
+  </li>
+ </ul>
 </div>
       </section>
      <section >
@@ -2372,10 +3218,28 @@
  <ul>
   <li>
    <p>
-    Las listas están definida en
-    <a href="https://material.io/components/lists" rel="nooper"
-      target="_blank">https://material.io/components/lists</a>.
+    Las listas tienen los siguientes elementos:
    </p>
+   <ul>
+    <li>
+     <p>
+      Un elemento principal que muestra texto grande y en negritas.
+     </p>
+    </li>
+    <li>
+     <p>
+      Opcionalmente un elemento secundario que muestra texto mas pequeño y de
+      ancho normal.
+     </p>
+    </li>
+    <li>
+     <p>
+      Opcionalmente muestran una imagen a la izquierda dentro de un rectángulo.
+      Si la imagen corresponde al ávatar de un usuario, se muestra dentro de un
+      círculo.
+     </p>
+    </li>
+   </ul>
   </li>
  </ul>
 </div>
@@ -2628,7 +3492,8 @@
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div class="resaltado"><span
+      style="color: #800000;">&lt;body&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;div</span> <span
       style="color: #ff0000;">class</span>=<span
       style="color: #0000ff;">"lista"</span><span
@@ -2972,6 +3837,18 @@
    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
   </div>
  </muestra-codigo>
+</div>
+<div class="lectura">
+ <h1>Solo para los más rudos</h1>
+ <ul>
+  <li>
+   <p>
+    Las listas están definida en
+    <a href="https://material.io/components/lists" rel="nooper"
+      target="_blank">https://material.io/components/lists</a>.
+   </p>
+  </li>
+ </ul>
 </div>
       </section>
      <section >

@@ -2,9 +2,9 @@
  <ul>
   <li>
    <p>
-    Los interruptores en Material Design están defnidos en
-    <a href="https://material.io/components/switches" rel="nooper"
-      target="_blank">https://material.io/components/switches</a>.
+    Para que el contenido se muestra adecuadamente, se define el elemento
+    personalizado <dfn>cm-int</dfn> y su comportamiento lo definimos con
+    la clase <dfn>CmInt</dfn> localizada al final del código.
    </p>
   </li>
  </ul>
@@ -141,9 +141,10 @@
    <div>&nbsp; <span style="color: #800000;">body:not</span>(<span
       style="color: #800000;">.ios</span>) <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input::-webkit-slider-runnable-track</span> {</div>
+      style="color: #800000;">input::-webkit-slider-runnable-track</span> {
+   </div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOnBk</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-radius</span>: <span
@@ -154,9 +155,10 @@
    <div>&nbsp; <span style="color: #800000;">body:not</span>(<span
       style="color: #800000;">.ios</span>) <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input.off::-webkit-slider-runnable-track</span> {</div>
+      style="color: #800000;">input.off::-webkit-slider-runnable-track</span> {
+   </div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOffBk</span>);</div>
    <div>&nbsp; }</div><br>
@@ -165,10 +167,10 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input::-webkit-slider-thumb</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">-webkit-appearance</span>: <span
+      style="color: #ff0000;">-webkit-appearance</span>: <span
       style="color: #0451a5;">none</span>;</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOn</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin-top</span>: <span
@@ -187,8 +189,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOnHv</span>);</div>
    <div>&nbsp; }</div><br>
@@ -199,8 +201,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOnFc</span>);</div>
    <div>&nbsp; }</div><br>
@@ -211,8 +213,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOnAct</span>)</div>
    <div>&nbsp; }</div><br>
@@ -221,7 +223,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input.off::-webkit-slider-thumb</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOff</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-width</span>: <span
@@ -235,35 +237,39 @@
    <div>&nbsp; <span style="color: #800000;">body:not</span>(<span
       style="color: #800000;">.ios</span>) <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input.off:hover::-webkit-slider-thumb</span> {</div>
+      style="color: #800000;">input.off:hover::-webkit-slider-thumb</span> {
+   </div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOffHv</span>)</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body:not</span>(<span
       style="color: #800000;">.ios</span>) <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input.off:focus::-webkit-slider-thumb</span> {</div>
+      style="color: #800000;">input.off:focus::-webkit-slider-thumb</span> {
+   </div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span style="color: #098658;">0</span>
     <span style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--colIntOffFc</span>)</div>
+      style="color: #001080;">--colIntOffFc</span>)
+   </div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body:not</span>(<span
       style="color: #800000;">.ios</span>) <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input.off:active::-webkit-slider-thumb</span> {</div>
+      style="color: #800000;">input.off:active::-webkit-slider-thumb</span> {
+   </div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOffAct</span>)</div>
    <div>&nbsp; }</div><br>
@@ -272,7 +278,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input::-moz-range-track</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOnBk</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-radius</span>: <span
@@ -285,7 +291,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input.off::-moz-range-track</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOffBk</span>)</div>
    <div>&nbsp; }</div><br>
@@ -294,7 +300,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input::-moz-range-thumb</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOn</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin-top</span>: <span
@@ -315,8 +321,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOnHv</span>)</div>
    <div>&nbsp; }</div><br>
@@ -329,7 +335,8 @@
       style="color: #098658;">0</span> <span style="color: #098658;">0</span>
     <span style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--colIntOnFc</span>)</div>
+      style="color: #001080;">--colIntOnFc</span>)
+   </div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body:not</span>(<span
       style="color: #800000;">.ios</span>) <span
@@ -338,8 +345,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOnAct</span>)</div>
    <div>&nbsp; }</div><br>
@@ -348,7 +355,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input.off::-moz-range-thumb</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOff</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-width</span>: <span
@@ -366,8 +373,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOffHv</span>)</div>
    <div>&nbsp; }</div><br>
@@ -378,8 +385,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOffFc</span>)</div>
    <div>&nbsp; }</div><br>
@@ -390,8 +397,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
       style="color: #098658;">0</span> <span
-       style="color: #098658;">0</span> <span
-        style="color: #098658;">0.5rem</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0.5rem</span> <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntOffAct</span>)</div>
    <div>&nbsp; }</div><br>
@@ -403,38 +410,42 @@
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body.ios</span> <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input::-webkit-slider-runnable-track</span> {</div>
+      style="color: #800000;">input::-webkit-slider-runnable-track</span> {
+   </div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOnBk</span>);</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">border-radius</span>: <span
+      style="color: #ff0000;">border-radius</span>: <span
       style="color: #098658;">14px</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">height</span>: <span
       style="color: #098658;">28px</span>;</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body.ios</span> <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input:focus::-webkit-slider-runnable-track</span> {</div>
+      style="color: #800000;">input:focus::-webkit-slider-runnable-track</span>
+    {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOnBkFc</span>);</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body.ios</span> <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input.off::-webkit-slider-runnable-track</span> {</div>
+      style="color: #800000;">input.off::-webkit-slider-runnable-track</span> {
+   </div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOffBk</span>);</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body.ios</span> <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input.off:focus::-webkit-slider-runnable-track</span> {</div>
+      style="color: #800000;">input.off:focus::-webkit-slider-runnable-track</span>
+    {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOffBkFc</span>);</div>
    <div>&nbsp; }</div><br>
@@ -448,7 +459,7 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">height</span>: <span
       style="color: #098658;">26px</span>;</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIos</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-width</span>: <span
@@ -461,7 +472,7 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-radius</span>: <span
       style="color: #098658;">13px</span>;</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">-webkit-appearance</span>: <span
+      style="color: #ff0000;">-webkit-appearance</span>: <span
       style="color: #0451a5;">none</span>;</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body.ios</span> <span
@@ -480,7 +491,8 @@
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">body.ios</span> <span
       style="color: #800000;">cm-int</span> <span
-      style="color: #800000;">input.off:focus::-webkit-slider-thumb</span> {</div>
+      style="color: #800000;">input.off:focus::-webkit-slider-thumb</span> {
+   </div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOffBkFc</span>);</div>
@@ -489,7 +501,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input::-moz-range-track</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOnBk</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-radius</span>: <span
@@ -501,7 +513,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input:focus::-moz-range-track</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOnBkFc</span>);</div>
    <div>&nbsp; }</div><br>
@@ -509,7 +521,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input.off::-moz-range-track</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOffBk</span>);</div>
    <div>&nbsp; }</div><br>
@@ -517,7 +529,7 @@
       style="color: #800000;">cm-int</span> <span
       style="color: #800000;">input.off:focus::-moz-range-track</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIosOffBkFc</span>);</div>
    <div>&nbsp; }</div><br>
@@ -529,7 +541,7 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">height</span>: <span
       style="color: #098658;">26px</span>;</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
+      style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colIntIos</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-width</span>: <span
@@ -565,9 +577,9 @@
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div class="resaltado2"><span style="color: #800000;">&lt;body&gt;</span></div>
    <div>&nbsp;<span
-     style="color: #800000;">&lt;h1&gt;</span>Interruptores<span
+      style="color: #800000;">&lt;h1&gt;</span>Interruptores<span
       style="color: #800000;">&lt;/h1&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;cm-int&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;label&gt;</span></div>
@@ -583,7 +595,7 @@
       style="color: #811f3f;">/.</span>*<span
       style="color: #811f3f;">android.</span>*<span
       style="color: #811f3f;">/</span><span
-       style="color: #0000ff;">i</span>.</div>
+      style="color: #0000ff;">i</span>.</div>
    <div>&nbsp; &nbsp;<span style="color: #795e26;">test</span>(<span
       style="color: #001080;">navigator</span>.<span
       style="color: #0070c1;">userAgent</span>)) {</div>
@@ -605,7 +617,7 @@
       style="color: #811f3f;">Mac</span><span
       style="color: #d16969;">)</span><span
       style="color: #811f3f;">.</span>*<span
-       style="color: #811f3f;">/</span>.</div>
+      style="color: #811f3f;">/</span>.</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">test</span>(<span
       style="color: #001080;">navigator</span>.<span
       style="color: #0070c1;">userAgent</span>)) {</div>
@@ -615,12 +627,13 @@
    <div>&nbsp; &nbsp; <span style="color: #795e26;">add</span>(<span
       style="color: #a31515;">'ios'</span>);</div>
    <div>&nbsp; }</div>
-   <div>&nbsp; <span style="color: #0000ff;">class</span> <span
+   <div class="resaltado">&nbsp; <span
+      style="color: #0000ff;">class</span> <span
       style="color: #267f99;">CmInt</span> <span
       style="color: #0000ff;">extends</span> <span
       style="color: #267f99;">HTMLElement</span> {</div>
    <div>&nbsp; &nbsp;<span
-     style="color: #795e26;">connectedCallback</span>() {</div>
+      style="color: #795e26;">connectedCallback</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">setTimeout</span>(</div>
    <div>&nbsp; &nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
       style="color: #0000ff;">this</span>.<span
@@ -630,7 +643,7 @@
    <div>&nbsp; &nbsp;<span style="color: #795e26;">prepara</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #008000;">/** </span><span
       style="color: #0000ff;">@private</span><span
-       style="color: #008000;"> */</span></div>
+      style="color: #008000;"> */</span></div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
       style="color: #001080;">_input</span> =</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
@@ -686,7 +699,8 @@
    <div>&nbsp; &nbsp;}</div>
    <div>&nbsp; }</div>
    <div>&nbsp; <span style="color: #001080;">customElements</span>.</div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">define</span>(<span
+   <div class="resaltado">&nbsp; &nbsp;<span
+      style="color: #795e26;">define</span>(<span
       style="color: #a31515;">"cm-int"</span>, <span
       style="color: #267f99;">CmInt</span>);</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
@@ -694,4 +708,16 @@
    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
   </div>
  </muestra-codigo>
+</div>
+<div class="lectura">
+ <h1>Solo para los más rudos</h1>
+ <ul>
+  <li>
+   <p>
+    Los interruptores en Material Design están defnidos en
+    <a href="https://m3.material.io/components/switch/overview" rel="nooper"
+      target="_blank">https://m3.material.io/components/switch/overview</a>.
+   </p>
+  </li>
+ </ul>
 </div>
