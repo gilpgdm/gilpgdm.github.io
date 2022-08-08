@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>24. js/srvSuscripcionProxy.js - GilPG DM</title>
- <meta name="description" content="Código de «js/srvSuscripcionProxy.js».">
+ <title>31. lib/js/getSuscripcionDto.js - GilPG DM</title>
+ <meta name="description" content="Código de «js/js/getSuscripcionDto.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -429,18 +429,10 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m10push/m16indexJs.html" title="23. js/index.js">◀</a>
- <a class="siguiente" href="/m10push/m18notificaJs.html" title="25. js/notifica.js">▶</a>
-   <h1 >24. js/srvSuscripcionProxy.js</h1><muestra-codigo>
+ <a class="anterior" href="/m10push/m25getSuscripcionJs.html" title="30. lib/js/getSuscripcion.js">◀</a>
+ <a class="siguiente" href="/m10push/m26Method.html" title="32. lib/js/Method.js">▶</a>
+   <h1 >31. lib/js/getSuscripcionDto.js</h1><muestra-codigo>
  <div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">enviaJson</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/enviaJson.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">Method</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/Method.js"</span></div><br>
   <div><span style="color: #008000;">/**</span></div>
   <div><span style="color: #008000;">* </span><span
      style="color: #0000ff;">@param</span><span
@@ -450,19 +442,11 @@
      style="color: #267f99;"> &nbsp; &nbsp; &nbsp; &nbsp;}</span><span
      style="color: #008000;"> </span><span
      style="color: #001080;">suscripcion</span></div>
-  <div><span style="color: #008000;">* </span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{Method}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">method</span></div>
   <div><span style="color: #008000;">*/</span></div>
   <div><span style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">async</span> <span
      style="color: #0000ff;">function</span></div>
-  <div>&nbsp;<span style="color: #795e26;">srvSuscripcionProyx</span>(<span
-     style="color: #001080;">suscripcion</span>,</div>
-  <div>&nbsp; <span style="color: #001080;">method</span>) {</div>
+  <div>&nbsp;<span style="color: #795e26;">getSuscripcionDto</span>(<span
+     style="color: #001080;">suscripcion</span>) {</div>
   <div>&nbsp;<span style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">key</span> =</div>
   <div>&nbsp; <span style="color: #001080;">suscripcion</span>.<span
@@ -474,49 +458,60 @@
      style="color: #795e26;">getKey</span>(<span
      style="color: #a31515;">"auth"</span>)</div>
   <div>&nbsp;<span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">encodings</span> = <span
+     style="color: #0070c1;">supported</span> = <span
      style="color: #267f99;">PushManager</span></div>
   <div>&nbsp; .<span
-     style="color: #0070c1;">supportedContentEncodings</span> ||</div>
-  <div>&nbsp; [<span style="color: #a31515;">"aesgcm"</span>]</div>
-  <div>&nbsp;<span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">enviaJson</span>({</div>
-  <div>&nbsp; <span style="color: #001080;">endpoint</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #001080;">suscripcion</span>.<span
-     style="color: #0070c1;">endpoint</span>,</div>
-  <div>&nbsp; <span style="color: #001080;">publicKey</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #0070c1;">key</span></div>
-  <div>&nbsp; &nbsp;? <span style="color: #795e26;">btoa</span>(</div>
-  <div>&nbsp; &nbsp; <span style="color: #267f99;">String</span>.<span
+     style="color: #0070c1;">supportedContentEncodings</span></div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">encodings</span> =</div>
+  <div>&nbsp; <span style="color: #267f99;">Array</span>.<span
+     style="color: #795e26;">isArray</span>(<span
+     style="color: #0070c1;">supported</span>) &amp;&amp;</div>
+  <div>&nbsp; &nbsp;<span style="color: #0070c1;">supported</span>.<span
+     style="color: #001080;">length</span> &gt; <span
+     style="color: #098658;">0</span> ?</div>
+  <div>&nbsp; &nbsp;<span style="color: #0070c1;">supported</span></div>
+  <div>&nbsp; &nbsp;: [<span style="color: #a31515;">"aesgcm"</span>]</div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">endpoint</span> =</div>
+  <div>&nbsp; <span style="color: #001080;">suscripcion</span>.<span
+     style="color: #0070c1;">endpoint</span></div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">publicKey</span> = <span
+     style="color: #0070c1;">key</span> === <span
+     style="color: #0000ff;">null</span> ?</div>
+  <div>&nbsp; <span style="color: #0000ff;">null</span></div>
+  <div>&nbsp; : <span style="color: #795e26;">btoa</span>(<span
+     style="color: #267f99;">String</span>.<span
      style="color: #795e26;">fromCharCode</span>.<span
      style="color: #795e26;">apply</span>(</div>
-  <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">null</span>, <span
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">null</span>, <span
      style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Uint8Array</span>(<span
      style="color: #0070c1;">key</span>)))</div>
-  <div>&nbsp; &nbsp;: <span style="color: #0000ff;">null</span>,</div>
-  <div>&nbsp; <span style="color: #001080;">authToken</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #0070c1;">token</span></div>
-  <div>&nbsp; &nbsp;? <span style="color: #795e26;">btoa</span>(</div>
-  <div>&nbsp; &nbsp; <span style="color: #267f99;">String</span>.<span
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">authToken</span> = <span
+     style="color: #0070c1;">token</span> === <span
+     style="color: #0000ff;">null</span> ?</div>
+  <div>&nbsp; <span style="color: #0000ff;">null</span></div>
+  <div>&nbsp; : <span style="color: #795e26;">btoa</span>(<span
+     style="color: #267f99;">String</span>.<span
      style="color: #795e26;">fromCharCode</span>.<span
      style="color: #795e26;">apply</span>(</div>
-  <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">null</span>,</div>
-  <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">new</span> <span
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">null</span>, <span
+     style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Uint8Array</span>(<span
      style="color: #0070c1;">token</span>)))</div>
-  <div>&nbsp; &nbsp;: <span style="color: #0000ff;">null</span>,</div>
-  <div>&nbsp; <span style="color: #001080;">contentEncoding</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #0070c1;">encodings</span>[<span
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">contentEncoding</span> =</div>
+  <div>&nbsp; <span style="color: #0070c1;">encodings</span>[<span
      style="color: #098658;">0</span>]</div>
-  <div>&nbsp;},</div>
-  <div>&nbsp; <span style="color: #001080;">method</span>,</div>
-  <div>&nbsp; <span
-     style="color: #a31515;">"srv/SrvSuscripcion.php"</span>)</div>
+  <div>&nbsp;<span style="color: #af00db;">return</span> {</div>
+  <div>&nbsp; <span style="color: #001080;">endpoint</span>,</div>
+  <div>&nbsp; <span style="color: #001080;">publicKey</span>,</div>
+  <div>&nbsp; <span style="color: #001080;">authToken</span>,</div>
+  <div>&nbsp; <span style="color: #001080;">contentEncoding</span></div>
+  <div>&nbsp;}</div>
   <div>}</div><br>
  </div>
 </muestra-codigo>
@@ -647,12 +642,12 @@
     </li>
     <li>
      <p>
-      <a href="/m10push/m13SrvSuscripcionPhp.html">srv/SrvSuscripcion.php</a>
+      <a href="/m10push/m14generallavesPhp.html">srv/generallaves.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m10push/m14generallavesPhp.html">srv/generallaves.php</a>
+      <a href="/m10push/m13SrvSuscripcionPhp.html">srv/SrvSuscripcion.php</a>
      </p>
     </li>
     <li>
@@ -663,21 +658,6 @@
     <li>
      <p>
       <a href="/m10push/m15indexHtml.html">index.html</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m10push/m16indexJs.html">js/index.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m10push/m17srvSuscripcionProxyJs.html" class="actual">js/srvSuscripcionProxy.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m10push/m18notificaJs.html">js/notifica.js</a>
      </p>
     </li>
     <li>
@@ -718,6 +698,11 @@
     <li>
      <p>
       <a href="/m10push/m25getSuscripcionJs.html">lib/js/getSuscripcion.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m10push/m25getSuscripcionDtoJs.html" class="actual">lib/js/getSuscripcionDto.js</a>
      </p>
     </li>
     <li>
@@ -769,9 +754,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m10push/m16indexJs.html"
+ let urlAnterior = "/m10push/m25getSuscripcionJs.html"
  /**@type {string} */
- let urlSiguiente = "/m10push/m18notificaJs.html"
+ let urlSiguiente = "/m10push/m26Method.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

@@ -444,12 +444,12 @@
     </li>
     <li>
      <p>
-      <a href="/m10push/m13SrvSuscripcionPhp.html">srv/SrvSuscripcion.php</a>
+      <a href="/m10push/m14generallavesPhp.html">srv/generallaves.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m10push/m14generallavesPhp.html">srv/generallaves.php</a>
+      <a href="/m10push/m13SrvSuscripcionPhp.html">srv/SrvSuscripcion.php</a>
      </p>
     </li>
     <li>
@@ -460,21 +460,6 @@
     <li>
      <p>
       <a href="/m10push/m15indexHtml.html">index.html</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m10push/m16indexJs.html">js/index.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m10push/m17srvSuscripcionProxyJs.html">js/srvSuscripcionProxy.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m10push/m18notificaJs.html">js/notifica.js</a>
      </p>
     </li>
     <li>
@@ -515,6 +500,11 @@
     <li>
      <p>
       <a href="/m10push/m25getSuscripcionJs.html">lib/js/getSuscripcion.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m10push/m25getSuscripcionDtoJs.html">lib/js/getSuscripcionDto.js</a>
      </p>
     </li>
     <li>
@@ -655,20 +645,6 @@
          <h1 >2. Archivos</h1><div class="lectura">
  <ul>
   <li>
-   <p>js</p>
-   <ul>
-    <li>
-     <p><a href="m16indexJs.html">index.js</a></p>
-    </li>
-    <li>
-     <p><a href="m18notificaJs.html">notifica.js</a></p>
-    </li>
-    <li>
-     <p><a href="m17srvSuscripcionProxyJs.html">srvSuscripcionProyx.js</a></p>
-    </li>
-   </ul>
-  </li>
-  <li>
    <p>lib</p>
    <ul>
     <li>
@@ -710,6 +686,9 @@
       </li>
       <li>
        <p><a href="m25getSuscripcionJs.html">getSuscripcion.js</a></p>
+      </li>
+      <li>
+       <p><a href="m25getSuscripcionDtoJs.html">getSuscripcionDto.js</a></p>
       </li>
       <li>
        <p><a href="m26Method.html">Method.js</a></p>
@@ -1415,120 +1394,7 @@
          <h1 >18. Funcionalidad</h1>
       </section>
      <section >
-         <h1 >19. srv/SrvSuscripcion.php</h1><muestra-codigo>
- <div>
-  <div><span style="color: #800000;">&lt;?php</span></div>
-  <div><span style="color: #af00db;">require</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/../vendor/autoload.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/modelo/Suscripcion.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/dao/suscripcionAgrega.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/dao/suscripcionBusca.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/dao/suscripcionModifica.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/dao/suscripcionElimina.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/../lib/php/Servicio.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/../lib/php/leeJson.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/../lib/php/copiaCampos.php"</span>;</div><br>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">leeSuscripcion</span>()</div>
-  <div>{</div>
-  <div>&nbsp;<span style="color: #001080;">$json</span> = <span
-     style="color: #795e26;">leeJson</span>();</div>
-  <div>&nbsp;<span style="color: #001080;">$modelo</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Suscripcion</span>();</div>
-  <div>&nbsp;<span style="color: #795e26;">copiaCampos</span>(<span
-     style="color: #001080;">$modelo</span>, <span
-     style="color: #001080;">$json</span>);</div>
-  <div>&nbsp;<span style="color: #af00db;">return</span> <span
-     style="color: #001080;">$modelo</span>;</div>
-  <div>}</div><br>
-  <div><span style="color: #0000ff;">class</span> <span
-     style="color: #267f99;">SrvSuscripcion</span></div>
-  <div><span style="color: #0000ff;">extends</span> <span
-     style="color: #267f99;">Servicio</span></div>
-  <div>{</div>
-  <div>&nbsp;<span style="color: #0000ff;">protected</span></div>
-  <div>&nbsp;<span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">implementacion</span>()</div>
-  <div>&nbsp;{</div>
-  <div>&nbsp; <span style="color: #001080;">$modelo</span> = <span
-     style="color: #795e26;">leeSuscripcion</span>();</div>
-  <div>&nbsp; <span style="color: #001080;">$method</span> =</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">$_SERVER</span>[<span
-     style="color: #a31515;">"REQUEST_METHOD"</span>];</div><br>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">$method</span> === <span
-     style="color: #a31515;">"POST"</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #795e26;">suscripcionAgrega</span>(<span
-     style="color: #001080;">$modelo</span>);</div>
-  <div>&nbsp; } <span style="color: #af00db;">elseif</span> (<span
-     style="color: #001080;">$method</span> === <span
-     style="color: #a31515;">"PUT"</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">$registrado</span> = <span
-     style="color: #795e26;">suscripcionBusca</span>(</div>
-  <div>&nbsp; &nbsp; <span style="color: #001080;">$modelo</span>-&gt;<span
-     style="color: #001080;">endpoint</span></div>
-  <div>&nbsp; &nbsp;);</div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">$registrado</span>) {</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #795e26;">suscripcionModifica</span>(<span
-     style="color: #001080;">$modelo</span>);</div>
-  <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #795e26;">suscripcionAgrega</span>(<span
-     style="color: #001080;">$modelo</span>);</div>
-  <div>&nbsp; &nbsp;}</div>
-  <div>&nbsp; } <span style="color: #af00db;">elseif</span> (<span
-     style="color: #001080;">$method</span> === <span
-     style="color: #a31515;">"</span><span
-     style="color: #0000ff;">DELETE</span><span
-     style="color: #a31515;">"</span>) {</div>
-  <div>&nbsp; &nbsp;<span
-     style="color: #795e26;">suscripcionElimina</span>(</div>
-  <div>&nbsp; &nbsp; <span style="color: #001080;">$modelo</span>-&gt;<span
-     style="color: #001080;">endpoint</span></div>
-  <div>&nbsp; &nbsp;);</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp; <span style="color: #af00db;">return</span> [];</div>
-  <div>&nbsp;}</div>
-  <div>}</div>
-  <div><span style="color: #001080;">$servicio</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">SrvSuscripcion</span>();</div>
-  <div><span style="color: #001080;">$servicio</span>-&gt;<span
-     style="color: #795e26;">ejecuta</span>();</div><br>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >20. srv/generallaves.php</h1><muestra-codigo>
+         <h1 >19. srv/generallaves.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require</span> <span
@@ -1656,6 +1522,119 @@
   <div><span style="color: #001080;">$servicio</span> = <span
      style="color: #0000ff;">new</span> <span
      style="color: #267f99;">SrvNotifica</span>();</div>
+  <div><span style="color: #001080;">$servicio</span>-&gt;<span
+     style="color: #795e26;">ejecuta</span>();</div><br>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >20. srv/SrvSuscripcion.php</h1><muestra-codigo>
+ <div>
+  <div><span style="color: #800000;">&lt;?php</span></div>
+  <div><span style="color: #af00db;">require</span> <span
+     style="color: #0000ff;">__DIR__</span> .</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"/../vendor/autoload.php"</span>;</div>
+  <div><span style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> .</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"/modelo/Suscripcion.php"</span>;</div>
+  <div><span style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> .</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"/dao/suscripcionAgrega.php"</span>;</div>
+  <div><span style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> .</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"/dao/suscripcionBusca.php"</span>;</div>
+  <div><span style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> .</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"/dao/suscripcionModifica.php"</span>;</div>
+  <div><span style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> .</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"/dao/suscripcionElimina.php"</span>;</div>
+  <div><span style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> .</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"/../lib/php/Servicio.php"</span>;</div>
+  <div><span style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> .</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"/../lib/php/leeJson.php"</span>;</div>
+  <div><span style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> .</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"/../lib/php/copiaCampos.php"</span>;</div><br>
+  <div><span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">leeSuscripcion</span>()</div>
+  <div>{</div>
+  <div>&nbsp;<span style="color: #001080;">$json</span> = <span
+     style="color: #795e26;">leeJson</span>();</div>
+  <div>&nbsp;<span style="color: #001080;">$modelo</span> = <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Suscripcion</span>();</div>
+  <div>&nbsp;<span style="color: #795e26;">copiaCampos</span>(<span
+     style="color: #001080;">$modelo</span>, <span
+     style="color: #001080;">$json</span>);</div>
+  <div>&nbsp;<span style="color: #af00db;">return</span> <span
+     style="color: #001080;">$modelo</span>;</div>
+  <div>}</div><br>
+  <div><span style="color: #0000ff;">class</span> <span
+     style="color: #267f99;">SrvSuscripcion</span></div>
+  <div><span style="color: #0000ff;">extends</span> <span
+     style="color: #267f99;">Servicio</span></div>
+  <div>{</div>
+  <div>&nbsp;<span style="color: #0000ff;">protected</span></div>
+  <div>&nbsp;<span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">implementacion</span>()</div>
+  <div>&nbsp;{</div>
+  <div>&nbsp; <span style="color: #001080;">$modelo</span> = <span
+     style="color: #795e26;">leeSuscripcion</span>();</div>
+  <div>&nbsp; <span style="color: #001080;">$method</span> =</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">$_SERVER</span>[<span
+     style="color: #a31515;">"REQUEST_METHOD"</span>];</div><br>
+  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">$method</span> === <span
+     style="color: #a31515;">"POST"</span>) {</div>
+  <div>&nbsp; &nbsp;<span style="color: #795e26;">suscripcionAgrega</span>(<span
+     style="color: #001080;">$modelo</span>);</div>
+  <div>&nbsp; } <span style="color: #af00db;">elseif</span> (<span
+     style="color: #001080;">$method</span> === <span
+     style="color: #a31515;">"PUT"</span>) {</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">$registrado</span> = <span
+     style="color: #795e26;">suscripcionBusca</span>(</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">$modelo</span>-&gt;<span
+     style="color: #001080;">endpoint</span></div>
+  <div>&nbsp; &nbsp;);</div>
+  <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">$registrado</span>) {</div>
+  <div>&nbsp; &nbsp; <span
+     style="color: #795e26;">suscripcionModifica</span>(<span
+     style="color: #001080;">$modelo</span>);</div>
+  <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
+  <div>&nbsp; &nbsp; <span
+     style="color: #795e26;">suscripcionAgrega</span>(<span
+     style="color: #001080;">$modelo</span>);</div>
+  <div>&nbsp; &nbsp;}</div>
+  <div>&nbsp; } <span style="color: #af00db;">elseif</span> (<span
+     style="color: #001080;">$method</span> === <span
+     style="color: #a31515;">"</span><span
+     style="color: #0000ff;">DELETE</span><span
+     style="color: #a31515;">"</span>) {</div>
+  <div>&nbsp; &nbsp;<span
+     style="color: #795e26;">suscripcionElimina</span>(</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">$modelo</span>-&gt;<span
+     style="color: #001080;">endpoint</span></div>
+  <div>&nbsp; &nbsp;);</div>
+  <div>&nbsp; }</div>
+  <div>&nbsp; <span style="color: #af00db;">return</span> [];</div>
+  <div>&nbsp;}</div>
+  <div>}</div>
+  <div><span style="color: #001080;">$servicio</span> = <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">SrvSuscripcion</span>();</div>
   <div><span style="color: #001080;">$servicio</span>-&gt;<span
      style="color: #795e26;">ejecuta</span>();</div><br>
  </div>
@@ -1816,13 +1795,11 @@
   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
      style="color: #0000ff;">"width=device-width"</span><span
      style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;title&gt;</span>Web Push<span
+  <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Web Push<span
      style="color: #800000;">&lt;/title&gt;</span></div>
   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;h1&gt;</span>Web Push<span
+  <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Web Push<span
      style="color: #800000;">&lt;/h1&gt;</span></div>
   <div>&nbsp;<span style="color: #800000;">&lt;button</span> <span
      style="color: #ff0000;">id</span>=<span
@@ -1847,8 +1824,7 @@
      style="color: #ff0000;">id</span>=<span
      style="color: #0000ff;">"outEstado"</span><span
      style="color: #800000;">&gt;</span></div>
-  <div>&nbsp; &nbsp;<span
-     style="color: #800000;">&lt;progress</span> <span
+  <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;progress</span> <span
      style="color: #ff0000;">max</span>=<span
      style="color: #0000ff;">"100"</span><span
      style="color: #800000;">&gt;</span></div>
@@ -1856,460 +1832,337 @@
      style="color: #0000ff;">&amp;hellip;</span></div>
   <div>&nbsp; &nbsp;<span
      style="color: #800000;">&lt;/progress&gt;</span></div>
-  <div>&nbsp; <span
-     style="color: #800000;">&lt;/output&gt;</span></div>
+  <div>&nbsp; <span style="color: #800000;">&lt;/output&gt;</span></div>
   <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
   <div>&nbsp;<span style="color: #800000;">&lt;script</span> <span
      style="color: #ff0000;">type</span>=<span
-     style="color: #0000ff;">"module"</span></div>
-  <div>&nbsp; &nbsp;<span style="color: #ff0000;">src</span>=<span
-     style="color: #0000ff;">"./js/index.js"</span><span
-     style="color: #800000;">&gt;&lt;/script&gt;</span></div>
+     style="color: #0000ff;">"module"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp; <span style="color: #af00db;">import</span> {</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">detecta</span></div>
+  <div>&nbsp; } <span style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/detecta.js"</span></div>
+  <div>&nbsp; <span style="color: #af00db;">import</span> {</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">getSuscripcion</span></div>
+  <div>&nbsp; } <span style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/getSuscripcion.js"</span></div>
+  <div>&nbsp; <span style="color: #af00db;">import</span> {</div>
+  <div>&nbsp; &nbsp;<span
+     style="color: #001080;">getSuscripcionDto</span></div>
+  <div>&nbsp; } <span style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/getSuscripcionDto.js"</span></div>
+  <div>&nbsp; <span style="color: #af00db;">import</span> {</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">ejecuta</span></div>
+  <div>&nbsp; } <span style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../lib/js/ejecuta.js"</span></div>
+  <div>&nbsp; <span style="color: #af00db;">import</span> {</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">enviaJson</span></div>
+  <div>&nbsp; } <span style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../lib/js/enviaJson.js"</span></div>
+  <div>&nbsp; <span style="color: #af00db;">import</span> {</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">Method</span></div>
+  <div>&nbsp; } <span style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/Method.js"</span></div>
+  <div>&nbsp; <span style="color: #af00db;">import</span> {</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">muestraError</span></div>
+  <div>&nbsp; } <span style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/muestraError.js"</span></div>
+  <div>&nbsp; <span style="color: #af00db;">import</span> {</div>
+  <div>&nbsp; &nbsp;<span
+     style="color: #001080;">urlBase64ToUint8Array</span></div>
+  <div>&nbsp; } <span style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/urlBase64ToUint8Array.js"</span></div>
+  <br>
+  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">applicationServerKey</span> =</div>
+  <div>&nbsp; &nbsp;<span
+     style="color: #795e26;">urlBase64ToUint8Array</span>(</div>
+  <div>&nbsp; &nbsp; <span
+     style="color: #a31515;">"BMBlr6YznhYMX3NgcWIDRxZXs0sh7tCv7_YCsWcww0ZCv9WGg-tRCXfMEHTiBPCksSqeve1twlbmVAZFv7GSuj0"</span>)
+  </div><br>
+  <div>&nbsp; <span style="color: #008000;">/** @enum {string} */</span></div>
+  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+     style="color: #267f99;">Estado</span> = {</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">CALCULANDO</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #a31515;">"Calculando…"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">SUSCRITO</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #a31515;">"Suscrito"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">DESUSCRITO</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #a31515;">"Sin suscripción"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">INCOMPATIBLE</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #a31515;">"Incompatible"</span></div>
+  <div>&nbsp; }</div><br>
+  <div>&nbsp; <span style="color: #795e26;">configura</span>()</div><br>
+  <div>&nbsp; <span style="color: #0000ff;">export</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">configura</span>() {</div>
+  <div>&nbsp; &nbsp;<span style="color: #af00db;">try</span> {</div>
+  <div>&nbsp; &nbsp; <span style="color: #795e26;">cambiaEstado</span>(</div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">INCOMPATIBLE</span>)</div><br>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">btnSuscribe</span>.<span
+     style="color: #795e26;">addEventListener</span>(</div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"click"</span>, <span
+     style="color: #795e26;">suscribe</span>)</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">btnCancela</span>.<span
+     style="color: #795e26;">addEventListener</span>(</div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"click"</span>, <span
+     style="color: #795e26;">cancela</span>)</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">btnNotifica</span>.<span
+     style="color: #795e26;">addEventListener</span>(</div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"click"</span>, <span
+     style="color: #795e26;">notifica</span>)</div><br>
+  <div>&nbsp; &nbsp; <span style="color: #af00db;">await</span> <span
+     style="color: #795e26;">detecta</span>(<span
+     style="color: #a31515;">"sw.js"</span>)</div>
+  <div>&nbsp; &nbsp; <span style="color: #af00db;">await</span> <span
+     style="color: #795e26;">actualiza</span>()</div>
+  <div>&nbsp; &nbsp;} <span style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">e</span>) {</div>
+  <div>&nbsp; &nbsp; <span style="color: #795e26;">muestraError</span>(<span
+     style="color: #001080;">e</span>)</div>
+  <div>&nbsp; &nbsp;}</div>
+  <div>&nbsp; }</div><br>
+  <div>&nbsp; <span style="color: #0000ff;">export</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">notifica</span>() {</div>
+  <div>&nbsp; &nbsp;<span style="color: #af00db;">try</span> {</div>
+  <div>&nbsp; &nbsp; <span style="color: #af00db;">await</span> <span
+     style="color: #795e26;">ejecuta</span>(<span
+     style="color: #795e26;">fetch</span>(</div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #a31515;">"srv/SrvNotifica.php"</span>))</div>
+  <div>&nbsp; &nbsp;} <span style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">e</span>) {</div>
+  <div>&nbsp; &nbsp; <span style="color: #795e26;">muestraError</span>(<span
+     style="color: #001080;">e</span>)</div>
+  <div>&nbsp; &nbsp;}</div>
+  <div>&nbsp; }</div><br>
+  <div>&nbsp; <span style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; * @param {PushSubscription</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;suscripcion</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp; * @param {Method} method</span></div>
+  <div><span style="color: #008000;">&nbsp; */</span></div>
+  <div>&nbsp; <span style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span></div>
+  <div>&nbsp; &nbsp;<span
+     style="color: #795e26;">srvSuscripcionProyx</span>(<span
+     style="color: #001080;">suscripcion</span>,</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">method</span>) {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">dto</span> =</div>
+  <div>&nbsp; &nbsp; <span
+     style="color: #795e26;">getSuscripcionDto</span>(<span
+     style="color: #001080;">suscripcion</span>)</div>
+  <div>&nbsp; &nbsp;<span style="color: #af00db;">await</span> <span
+     style="color: #795e26;">enviaJson</span>(<span
+     style="color: #0070c1;">dto</span>, <span
+     style="color: #001080;">method</span>,</div>
+  <div>&nbsp; &nbsp; <span
+     style="color: #a31515;">"srv/SrvSuscripcion.php"</span>)</div>
+  <div>&nbsp; }</div><br>
+  <div>&nbsp; <span style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">actualiza</span>() {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">suscripcion</span> =</div>
+  <div>&nbsp; &nbsp; <span style="color: #af00db;">await</span> <span
+     style="color: #795e26;">getSuscripcion</span>()</div>
+  <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">suscripcion</span> === <span
+     style="color: #0000ff;">null</span>) {</div>
+  <div>&nbsp; &nbsp; <span style="color: #795e26;">cambiaEstado</span>(<span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">DESUSCRITO</span>)</div>
+  <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
+  <div>&nbsp; &nbsp; <span style="color: #af00db;">await</span> <span
+     style="color: #795e26;">srvSuscripcionProyx</span>(</div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #0070c1;">suscripcion</span>, <span
+     style="color: #001080;">Method</span>.<span
+     style="color: #0070c1;">PUT</span>)</div>
+  <div>&nbsp; &nbsp; <span style="color: #795e26;">cambiaEstado</span>(<span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">SUSCRITO</span>)</div>
+  <div>&nbsp; &nbsp;}</div>
+  <div>&nbsp; }</div><br>
+  <div>&nbsp; <span style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">suscribe</span>() {</div>
+  <div>&nbsp; &nbsp;<span style="color: #af00db;">try</span> {</div>
+  <div>&nbsp; &nbsp; <span style="color: #795e26;">cambiaEstado</span>(<span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">CALCULANDO</span>)</div>
+  <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">registro</span> =</div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">await</span> <span
+     style="color: #001080;">navigator</span>.<span
+     style="color: #001080;">serviceWorker</span>.</div>
+  <div>&nbsp; &nbsp; &nbsp; <span style="color: #001080;">ready</span></div>
+  <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">suscripcion</span> =</div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">await</span> <span
+     style="color: #0070c1;">registro</span>.<span
+     style="color: #001080;">pushManager</span>.</div>
+  <div>&nbsp; &nbsp; &nbsp; <span
+     style="color: #795e26;">subscribe</span>({</div>
+  <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+     style="color: #001080;">userVisibleOnly</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #0000ff;">true</span>,</div>
+  <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+     style="color: #001080;">applicationServerKey</span></div>
+  <div>&nbsp; &nbsp; &nbsp; })</div>
+  <div>&nbsp; &nbsp; <span style="color: #af00db;">await</span> <span
+     style="color: #795e26;">srvSuscripcionProyx</span>(</div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #0070c1;">suscripcion</span>, <span
+     style="color: #001080;">Method</span>.<span
+     style="color: #0070c1;">POST</span>)</div>
+  <div>&nbsp; &nbsp; <span style="color: #795e26;">cambiaEstado</span>(<span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">SUSCRITO</span>)</div>
+  <div>&nbsp; &nbsp;} <span style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">e</span>) {</div>
+  <div>&nbsp; &nbsp; <span style="color: #795e26;">muestraError</span>(<span
+     style="color: #001080;">e</span>)</div>
+  <div>&nbsp; &nbsp;}</div>
+  <div>&nbsp; }</div><br>
+  <div>&nbsp; <span style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">cancela</span>() {</div>
+  <div>&nbsp; &nbsp;<span style="color: #af00db;">try</span> {</div>
+  <div>&nbsp; &nbsp; <span style="color: #795e26;">cambiaEstado</span>(<span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">CALCULANDO</span>)</div>
+  <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">suscripcion</span> =</div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">await</span> <span
+     style="color: #795e26;">getSuscripcion</span>()</div>
+  <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">suscripcion</span> !== <span
+     style="color: #0000ff;">null</span></div>
+  <div>&nbsp; &nbsp; &nbsp;&amp;&amp; <span
+     style="color: #af00db;">await</span> <span
+     style="color: #0070c1;">suscripcion</span>.</div>
+  <div>&nbsp; &nbsp; &nbsp; <span
+     style="color: #795e26;">unsubscribe</span>()) {</div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">await</span> <span
+     style="color: #795e26;">srvSuscripcionProyx</span>(</div>
+  <div>&nbsp; &nbsp; &nbsp; <span
+     style="color: #0070c1;">suscripcion</span>, <span
+     style="color: #001080;">Method</span>.<span
+     style="color: #0070c1;">DELETE</span>)</div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #795e26;">cambiaEstado</span>(</div>
+  <div>&nbsp; &nbsp; &nbsp; <span style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">DESUSCRITO</span>)</div>
+  <div>&nbsp; &nbsp; }</div>
+  <div>&nbsp; &nbsp;} <span style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">e</span>) {</div>
+  <div>&nbsp; &nbsp; <span style="color: #795e26;">muestraError</span>(<span
+     style="color: #001080;">e</span>)</div>
+  <div>&nbsp; &nbsp;}</div>
+  <div>&nbsp; }</div><br>
+  <div>&nbsp; <span
+     style="color: #008000;">/** @param {Estado} estado */</span></div>
+  <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">cambiaEstado</span>(<span
+     style="color: #001080;">estado</span>) {</div>
+  <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">outEstado</span> !== <span
+     style="color: #0000ff;">null</span></div>
+  <div>&nbsp; &nbsp; &amp;&amp; <span
+     style="color: #001080;">btnSuscribe</span> !== <span
+     style="color: #0000ff;">null</span></div>
+  <div>&nbsp; &nbsp; &amp;&amp; <span
+     style="color: #001080;">btnNotifica</span> !== <span
+     style="color: #0000ff;">null</span></div>
+  <div>&nbsp; &nbsp; &amp;&amp; <span
+     style="color: #001080;">btnCancela</span> !== <span
+     style="color: #0000ff;">null</span>) {</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">outEstado</span>.<span
+     style="color: #001080;">value</span> = <span
+     style="color: #001080;">estado</span></div>
+  <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">estado</span></div>
+  <div>&nbsp; &nbsp; &nbsp;=== <span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">INCOMPATIBLE</span> ||</div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">estado</span></div>
+  <div>&nbsp; &nbsp; &nbsp;=== <span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">CALCULANDO</span>) {</div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #001080;">btnSuscribe</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">true</span></div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #001080;">btnCancela</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">true</span></div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #001080;">btnNotifica</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">true</span></div>
+  <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> <span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">estado</span></div>
+  <div>&nbsp; &nbsp; &nbsp;=== <span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">SUSCRITO</span>) {</div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #001080;">btnSuscribe</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">true</span></div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #001080;">btnCancela</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">false</span></div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #001080;">btnNotifica</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">false</span></div>
+  <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> <span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">estado</span></div>
+  <div>&nbsp; &nbsp; &nbsp;=== <span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">DESUSCRITO</span>) {</div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #001080;">btnSuscribe</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">false</span></div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #001080;">btnCancela</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">true</span></div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #001080;">btnNotifica</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">true</span></div>
+  <div>&nbsp; &nbsp; }</div>
+  <div>&nbsp; &nbsp;}</div>
+  <div>&nbsp; }</div>
+  <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
  </div>
 </muestra-codigo>
       </section>
      <section >
-         <h1 >23. js/index.js</h1><muestra-codigo>
- <div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">Method</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/Method.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">muestraError</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/muestraError.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">detecta</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/detecta.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">getSuscripcion</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/getSuscripcion.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">notifica</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./notifica.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">srvSuscripcionProyx</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./srvSuscripcionProyx.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">urlBase64ToUint8Array</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/urlBase64ToUint8Array.js"</span></div>
-  <br>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">applicationServerKey</span> =</div>
-  <div>&nbsp;<span style="color: #795e26;">urlBase64ToUint8Array</span>(</div>
-  <div>&nbsp; <span
-     style="color: #a31515;">"BMBlr6YznhYMX3NgcWIDRxZXs0sh7tCv7_YCsWcww0ZCv9WGg-tRCXfMEHTiBPCksSqeve1twlbmVAZFv7GSuj0"</span>)
-  </div><br>
-  <div><span style="color: #008000;">/** </span><span
-     style="color: #0000ff;">@enum</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
-     style="color: #008000;"> */</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #267f99;">Estado</span> = {</div>
-  <div>&nbsp;<span style="color: #001080;">CALCULANDO</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #a31515;">"Calculando…"</span>,</div>
-  <div>&nbsp;<span style="color: #001080;">SUSCRITO</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #a31515;">"Suscrito"</span>,</div>
-  <div>&nbsp;<span style="color: #001080;">DESUSCRITO</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #a31515;">"Sin suscripción"</span>,</div>
-  <div>&nbsp;<span style="color: #001080;">INCOMPATIBLE</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #a31515;">"Incompatible"</span></div>
-  <div>};</div><br>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{HTMLButtonElement|null}</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">btnSuscribe</span> = <span
-     style="color: #001080;">document</span>.</div>
-  <div>&nbsp;<span style="color: #795e26;">querySelector</span>(<span
-     style="color: #a31515;">"#btnSuscribe"</span>)</div>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{HTMLButtonElement|null}</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">btnCancela</span> = <span
-     style="color: #001080;">document</span>.</div>
-  <div>&nbsp;<span style="color: #795e26;">querySelector</span>(<span
-     style="color: #a31515;">"#btnCancela"</span>)</div>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{HTMLButtonElement|null}</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">btnNotifica</span> = <span
-     style="color: #001080;">document</span>.</div>
-  <div>&nbsp;<span style="color: #795e26;">querySelector</span>(<span
-     style="color: #a31515;">"#btnNotifica"</span>)</div>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{HTMLOutputElement|null}</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">outEstado</span> = <span
-     style="color: #001080;">document</span>.</div>
-  <div>&nbsp;<span style="color: #795e26;">querySelector</span>(<span
-     style="color: #a31515;">"#outEstado"</span>)</div><br>
-  <div><span style="color: #795e26;">configura</span>()</div><br>
-  <div><span style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">configura</span>() {</div>
-  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
-  <div>&nbsp; <span style="color: #795e26;">cambiaEstado</span>(</div>
-  <div>&nbsp; &nbsp;<span style="color: #267f99;">Estado</span>.<span
-     style="color: #001080;">INCOMPATIBLE</span>)</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">btnSuscribe</span> != <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">btnSuscribe</span>.<span
-     style="color: #795e26;">addEventListener</span>(</div>
-  <div>&nbsp; &nbsp; <span style="color: #a31515;">"click"</span>, <span
-     style="color: #795e26;">suscribe</span>)</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">btnCancela</span> != <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">btnCancela</span>.<span
-     style="color: #795e26;">addEventListener</span>(</div>
-  <div>&nbsp; &nbsp; <span style="color: #a31515;">"click"</span>, <span
-     style="color: #795e26;">cancela</span>)</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">btnNotifica</span> != <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">btnNotifica</span>.<span
-     style="color: #795e26;">addEventListener</span>(</div>
-  <div>&nbsp; &nbsp; <span style="color: #a31515;">"click"</span>, <span
-     style="color: #795e26;">notifica</span>)</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp; <span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">detecta</span>(<span
-     style="color: #a31515;">"sw.js"</span>)</div>
-  <div>&nbsp; <span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">actualiza</span>()</div>
-  <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">e</span>) {</div>
-  <div>&nbsp; <span style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">e</span>)</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">actualiza</span>() {</div>
-  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">suscripcion</span> =</div>
-  <div>&nbsp; <span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">getSuscripcion</span>()</div>
-  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">suscripcion</span> === <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; <span style="color: #795e26;">cambiaEstado</span>(<span
-     style="color: #267f99;">Estado</span>.<span
-     style="color: #001080;">DESUSCRITO</span>)</div>
-  <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
-  <div>&nbsp; <span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">srvSuscripcionProyx</span>(</div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">suscripcion</span>, <span
-     style="color: #267f99;">Method</span>.<span
-     style="color: #001080;">PUT</span>)</div>
-  <div>&nbsp; <span style="color: #795e26;">cambiaEstado</span>(<span
-     style="color: #267f99;">Estado</span>.<span
-     style="color: #001080;">SUSCRITO</span>)</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">suscribe</span>() {</div>
-  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
-  <div>&nbsp; <span style="color: #795e26;">cambiaEstado</span>(<span
-     style="color: #001080;">Estado</span>.<span
-     style="color: #0070c1;">CALCULANDO</span>)</div>
-  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">registro</span> =</div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">await</span> <span
-     style="color: #001080;">navigator</span>.<span
-     style="color: #0070c1;">serviceWorker</span>.</div>
-  <div>&nbsp; &nbsp; <span style="color: #0070c1;">ready</span></div>
-  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">suscripcion</span> =</div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">await</span> <span
-     style="color: #0070c1;">registro</span>.<span
-     style="color: #0070c1;">pushManager</span>.</div>
-  <div>&nbsp; &nbsp; <span style="color: #795e26;">subscribe</span>({</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #001080;">userVisibleOnly</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #0000ff;">true</span>,</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #001080;">applicationServerKey</span></div>
-  <div>&nbsp; &nbsp; })</div>
-  <div>&nbsp; <span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">srvSuscripcionProyx</span>(</div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">suscripcion</span>, <span
-     style="color: #267f99;">Method</span>.<span
-     style="color: #001080;">POST</span>)</div>
-  <div>&nbsp; <span style="color: #795e26;">cambiaEstado</span>(<span
-     style="color: #267f99;">Estado</span>.<span
-     style="color: #001080;">SUSCRITO</span>)</div>
-  <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">e</span>) {</div>
-  <div>&nbsp; <span style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">e</span>)</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">cancela</span>() {</div>
-  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
-  <div>&nbsp; <span style="color: #795e26;">cambiaEstado</span>(<span
-     style="color: #267f99;">Estado</span>.<span
-     style="color: #001080;">CALCULANDO</span>)</div>
-  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">suscripcion</span> =</div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">getSuscripcion</span>()</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">suscripcion</span> !== <span
-     style="color: #0000ff;">null</span></div>
-  <div>&nbsp; &nbsp;&amp;&amp; <span style="color: #af00db;">await</span> <span
-     style="color: #0070c1;">suscripcion</span>.</div>
-  <div>&nbsp; &nbsp; <span style="color: #795e26;">unsubscribe</span>()) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">srvSuscripcionProyx</span>(</div>
-  <div>&nbsp; &nbsp; <span style="color: #0070c1;">suscripcion</span>, <span
-     style="color: #267f99;">Method</span>.<span
-     style="color: #001080;">DELETE</span>)</div>
-  <div>&nbsp; &nbsp;<span style="color: #795e26;">cambiaEstado</span>(<span
-     style="color: #267f99;">Estado</span>.<span
-     style="color: #001080;">DESUSCRITO</span>)</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">e</span>) {</div>
-  <div>&nbsp; <span style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">e</span>)</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span style="color: #008000;">/** </span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{Estado}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">estado</span><span
-     style="color: #008000;"> */</span></div>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">cambiaEstado</span>(<span
-     style="color: #001080;">estado</span>) {</div>
-  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">outEstado</span> !== <span
-     style="color: #0000ff;">null</span></div>
-  <div>&nbsp; &amp;&amp; <span
-     style="color: #0070c1;">btnSuscribe</span> !== <span
-     style="color: #0000ff;">null</span></div>
-  <div>&nbsp; &amp;&amp; <span
-     style="color: #0070c1;">btnNotifica</span> !== <span
-     style="color: #0000ff;">null</span></div>
-  <div>&nbsp; &amp;&amp; <span
-     style="color: #0070c1;">btnCancela</span> !== <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; <span style="color: #0070c1;">outEstado</span>.<span
-     style="color: #001080;">value</span> = <span
-     style="color: #001080;">estado</span></div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">estado</span></div>
-  <div>&nbsp; &nbsp;=== <span style="color: #267f99;">Estado</span>.<span
-     style="color: #001080;">INCOMPATIBLE</span> ||</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">estado</span> === <span
-     style="color: #267f99;">Estado</span>.<span
-     style="color: #001080;">CALCULANDO</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">btnSuscribe</span>.<span
-     style="color: #001080;">hidden</span> = <span
-     style="color: #0000ff;">true</span></div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">btnCancela</span>.<span
-     style="color: #001080;">hidden</span> = <span
-     style="color: #0000ff;">true</span></div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">btnNotifica</span>.<span
-     style="color: #001080;">hidden</span> = <span
-     style="color: #0000ff;">true</span></div>
-  <div>&nbsp; } <span style="color: #af00db;">else</span> <span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">estado</span></div>
-  <div>&nbsp; &nbsp;=== <span style="color: #267f99;">Estado</span>.<span
-     style="color: #001080;">SUSCRITO</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">btnSuscribe</span>.<span
-     style="color: #001080;">hidden</span> = <span
-     style="color: #0000ff;">true</span></div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">btnCancela</span>.<span
-     style="color: #001080;">hidden</span> = <span
-     style="color: #0000ff;">false</span></div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">btnNotifica</span>.<span
-     style="color: #001080;">hidden</span> = <span
-     style="color: #0000ff;">false</span></div>
-  <div>&nbsp; } <span style="color: #af00db;">else</span> <span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">estado</span></div>
-  <div>&nbsp; &nbsp;=== <span style="color: #267f99;">Estado</span>.<span
-     style="color: #001080;">DESUSCRITO</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">btnSuscribe</span>.<span
-     style="color: #001080;">hidden</span> = <span
-     style="color: #0000ff;">false</span></div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">btnCancela</span>.<span
-     style="color: #001080;">hidden</span> = <span
-     style="color: #0000ff;">true</span></div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">btnNotifica</span>.<span
-     style="color: #001080;">hidden</span> = <span
-     style="color: #0000ff;">true</span></div>
-  <div>&nbsp; }</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >24. js/srvSuscripcionProxy.js</h1><muestra-codigo>
- <div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">enviaJson</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/enviaJson.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">Method</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/Method.js"</span></div><br>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">* </span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{PushSubscription</span></div>
-  <div><span style="color: #008000;">*</span><span
-     style="color: #267f99;"> &nbsp; &nbsp; &nbsp; &nbsp;}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">suscripcion</span></div>
-  <div><span style="color: #008000;">* </span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{Method}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">method</span></div>
-  <div><span style="color: #008000;">*/</span></div>
-  <div><span style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span></div>
-  <div>&nbsp;<span style="color: #795e26;">srvSuscripcionProyx</span>(<span
-     style="color: #001080;">suscripcion</span>,</div>
-  <div>&nbsp; <span style="color: #001080;">method</span>) {</div>
-  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">key</span> =</div>
-  <div>&nbsp; <span style="color: #001080;">suscripcion</span>.<span
-     style="color: #795e26;">getKey</span>(<span
-     style="color: #a31515;">"p256dh"</span>)</div>
-  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">token</span> =</div>
-  <div>&nbsp; <span style="color: #001080;">suscripcion</span>.<span
-     style="color: #795e26;">getKey</span>(<span
-     style="color: #a31515;">"auth"</span>)</div>
-  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">encodings</span> = <span
-     style="color: #267f99;">PushManager</span></div>
-  <div>&nbsp; .<span
-     style="color: #0070c1;">supportedContentEncodings</span> ||</div>
-  <div>&nbsp; [<span style="color: #a31515;">"aesgcm"</span>]</div>
-  <div>&nbsp;<span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">enviaJson</span>({</div>
-  <div>&nbsp; <span style="color: #001080;">endpoint</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #001080;">suscripcion</span>.<span
-     style="color: #0070c1;">endpoint</span>,</div>
-  <div>&nbsp; <span style="color: #001080;">publicKey</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #0070c1;">key</span></div>
-  <div>&nbsp; &nbsp;? <span style="color: #795e26;">btoa</span>(</div>
-  <div>&nbsp; &nbsp; <span style="color: #267f99;">String</span>.<span
-     style="color: #795e26;">fromCharCode</span>.<span
-     style="color: #795e26;">apply</span>(</div>
-  <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">null</span>, <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Uint8Array</span>(<span
-     style="color: #0070c1;">key</span>)))</div>
-  <div>&nbsp; &nbsp;: <span style="color: #0000ff;">null</span>,</div>
-  <div>&nbsp; <span style="color: #001080;">authToken</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #0070c1;">token</span></div>
-  <div>&nbsp; &nbsp;? <span style="color: #795e26;">btoa</span>(</div>
-  <div>&nbsp; &nbsp; <span style="color: #267f99;">String</span>.<span
-     style="color: #795e26;">fromCharCode</span>.<span
-     style="color: #795e26;">apply</span>(</div>
-  <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">null</span>,</div>
-  <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Uint8Array</span>(<span
-     style="color: #0070c1;">token</span>)))</div>
-  <div>&nbsp; &nbsp;: <span style="color: #0000ff;">null</span>,</div>
-  <div>&nbsp; <span style="color: #001080;">contentEncoding</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #0070c1;">encodings</span>[<span
-     style="color: #098658;">0</span>]</div>
-  <div>&nbsp;},</div>
-  <div>&nbsp; <span style="color: #001080;">method</span>,</div>
-  <div>&nbsp; <span
-     style="color: #a31515;">"srv/SrvSuscripcion.php"</span>)</div>
-  <div>}</div><br>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >25. js/notifica.js</h1><muestra-codigo>
- <div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">ejecuta</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/ejecuta.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">muestraError</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/muestraError.js"</span></div><br>
-  <div><span style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">notifica</span>() {</div>
-  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
-  <div>&nbsp; <span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">ejecuta</span>(<span
-     style="color: #795e26;">fetch</span>(</div>
-  <div>&nbsp; &nbsp;<span style="color: #a31515;">"srv/SrvNotifica.php"</span>))
-  </div>
-  <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">e</span>) {</div>
-  <div>&nbsp; <span style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">e</span>)</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >26. sw.js</h1><muestra-codigo>
+         <h1 >23. sw.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">if</span> (<span
      style="color: #001080;">self</span> <span
@@ -2363,10 +2216,10 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >27. Archivos frecuentes</h1>
+         <h1 >24. Archivos frecuentes</h1>
       </section>
      <section >
-         <h1 >28. jsconfig.json</h1><muestra-codigo>
+         <h1 >25. jsconfig.json</h1><muestra-codigo>
  <div>
   <div>{</div>
   <div>&nbsp;<span style="color: #0451a5;">"compilerOptions"</span>: {</div>
@@ -2389,7 +2242,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >29. lib/js/activaNotificaciones.js</h1><muestra-codigo>
+         <h1 >26. lib/js/activaNotificaciones.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">txtNoNots</span></div>
@@ -2440,7 +2293,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >30. lib/js/detecta.js</h1><muestra-codigo>
+         <h1 >27. lib/js/detecta.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">activaNotificaciones</span></div>
@@ -2522,7 +2375,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >31. lib/js/ejecuta.js</h1><muestra-codigo>
+         <h1 >28. lib/js/ejecuta.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span
@@ -2588,7 +2441,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >32. lib/js/enviaJson.js</h1><muestra-codigo>
+         <h1 >29. lib/js/enviaJson.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">ejecuta</span></div>
@@ -2644,7 +2497,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >33. lib/js/getSuscripcion.js</h1><muestra-codigo>
+         <h1 >30. lib/js/getSuscripcion.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #0000ff;">export</span></div>
   <div>&nbsp;<span style="color: #0000ff;">async</span> <span
@@ -2665,7 +2518,93 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >34. lib/js/Method.js</h1><muestra-codigo>
+         <h1 >31. lib/js/getSuscripcionDto.js</h1><muestra-codigo>
+ <div>
+  <div><span style="color: #008000;">/**</span></div>
+  <div><span style="color: #008000;">* </span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{PushSubscription</span></div>
+  <div><span style="color: #008000;">*</span><span
+     style="color: #267f99;"> &nbsp; &nbsp; &nbsp; &nbsp;}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">suscripcion</span></div>
+  <div><span style="color: #008000;">*/</span></div>
+  <div><span style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">function</span></div>
+  <div>&nbsp;<span style="color: #795e26;">getSuscripcionDto</span>(<span
+     style="color: #001080;">suscripcion</span>) {</div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">key</span> =</div>
+  <div>&nbsp; <span style="color: #001080;">suscripcion</span>.<span
+     style="color: #795e26;">getKey</span>(<span
+     style="color: #a31515;">"p256dh"</span>)</div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">token</span> =</div>
+  <div>&nbsp; <span style="color: #001080;">suscripcion</span>.<span
+     style="color: #795e26;">getKey</span>(<span
+     style="color: #a31515;">"auth"</span>)</div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">supported</span> = <span
+     style="color: #267f99;">PushManager</span></div>
+  <div>&nbsp; .<span
+     style="color: #0070c1;">supportedContentEncodings</span></div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">encodings</span> =</div>
+  <div>&nbsp; <span style="color: #267f99;">Array</span>.<span
+     style="color: #795e26;">isArray</span>(<span
+     style="color: #0070c1;">supported</span>) &amp;&amp;</div>
+  <div>&nbsp; &nbsp;<span style="color: #0070c1;">supported</span>.<span
+     style="color: #001080;">length</span> &gt; <span
+     style="color: #098658;">0</span> ?</div>
+  <div>&nbsp; &nbsp;<span style="color: #0070c1;">supported</span></div>
+  <div>&nbsp; &nbsp;: [<span style="color: #a31515;">"aesgcm"</span>]</div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">endpoint</span> =</div>
+  <div>&nbsp; <span style="color: #001080;">suscripcion</span>.<span
+     style="color: #0070c1;">endpoint</span></div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">publicKey</span> = <span
+     style="color: #0070c1;">key</span> === <span
+     style="color: #0000ff;">null</span> ?</div>
+  <div>&nbsp; <span style="color: #0000ff;">null</span></div>
+  <div>&nbsp; : <span style="color: #795e26;">btoa</span>(<span
+     style="color: #267f99;">String</span>.<span
+     style="color: #795e26;">fromCharCode</span>.<span
+     style="color: #795e26;">apply</span>(</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">null</span>, <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Uint8Array</span>(<span
+     style="color: #0070c1;">key</span>)))</div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">authToken</span> = <span
+     style="color: #0070c1;">token</span> === <span
+     style="color: #0000ff;">null</span> ?</div>
+  <div>&nbsp; <span style="color: #0000ff;">null</span></div>
+  <div>&nbsp; : <span style="color: #795e26;">btoa</span>(<span
+     style="color: #267f99;">String</span>.<span
+     style="color: #795e26;">fromCharCode</span>.<span
+     style="color: #795e26;">apply</span>(</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">null</span>, <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Uint8Array</span>(<span
+     style="color: #0070c1;">token</span>)))</div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">contentEncoding</span> =</div>
+  <div>&nbsp; <span style="color: #0070c1;">encodings</span>[<span
+     style="color: #098658;">0</span>]</div>
+  <div>&nbsp;<span style="color: #af00db;">return</span> {</div>
+  <div>&nbsp; <span style="color: #001080;">endpoint</span>,</div>
+  <div>&nbsp; <span style="color: #001080;">publicKey</span>,</div>
+  <div>&nbsp; <span style="color: #001080;">authToken</span>,</div>
+  <div>&nbsp; <span style="color: #001080;">contentEncoding</span></div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >32. lib/js/Method.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span
@@ -2696,7 +2635,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >35. lib/js/muestraError.js</h1><muestra-codigo>
+         <h1 >33. lib/js/muestraError.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span
@@ -2729,7 +2668,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >36. lib/js/submit.js</h1><muestra-codigo>
+         <h1 >34. lib/js/submit.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">ejecuta</span></div>
@@ -2795,7 +2734,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >37. lib/js/urlBase64ToUint8Array.js</h1><muestra-codigo>
+         <h1 >35. lib/js/urlBase64ToUint8Array.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span style="color: #008000;">* </span><span
@@ -2867,7 +2806,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >38. lib/php/copiaCampos.php</h1><muestra-codigo>
+         <h1 >36. lib/php/copiaCampos.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
@@ -2888,7 +2827,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >39. lib/php/leeJson.php</h1><muestra-codigo>
+         <h1 >37. lib/php/leeJson.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
@@ -2907,7 +2846,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >40. lib/php/Servicio.php</h1><muestra-codigo>
+         <h1 >38. lib/php/Servicio.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">abstract</span> <span
