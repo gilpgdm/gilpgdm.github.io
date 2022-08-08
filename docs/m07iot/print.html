@@ -379,17 +379,17 @@
     </li>
     <li>
      <p>
-      <a href="/m07iot/mHmensajes.html">Mensajes</a>
+      <a href="/m07iot/mHtextos.html">Textos</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m07iot/mImsgFaltaElIdPhp.html">mensajes/msgFaltaElId.php</a>
+      <a href="/m07iot/mItxtFaltaElIdPhp.html">textos/txtFaltaElId.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m07iot/mJmsgFaltaElValorPhp.html">mensajes/msgFaltaElValor.php</a>
+      <a href="/m07iot/mJtxtFaltaElValorPhp.html">textos/txtFaltaElValor.php</a>
      </p>
     </li>
     <li>
@@ -587,7 +587,8 @@
   <li>
    <p>
     <a href="https://drive.google.com/file/d/1LphPNEygv1rV2Bx0fEJQH5O88e7u5dvJ/view?usp=sharing"
-      target="_blank" rel="nooper">Crea la página de spotlight del proyecto.</a>
+      target="_blank" rel="nooper">Crea la <b>cover page</b> o página de
+     spotlight del proyecto.</a>
    </p>
   </li>
  </ol>
@@ -623,21 +624,21 @@
    </ul>
   </li>
   <li>
-   <p>mensajes</p>
-   <ul>
-    <li>
-     <p><a href="mImsgFaltaElIdPhp.html">msgFaltaElId.php</a></p>
-    </li>
-    <li>
-     <p><a href="mJmsgFaltaElValorPhp.html">msgFaltaElValor.php</a></p>
-    </li>
-   </ul>
-  </li>
-  <li>
    <p>modelo</p>
    <ul>
     <li>
      <p><a href="mLDispositivoPhp.html">Dispositivo.php</a></p>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <p>textos</p>
+   <ul>
+    <li>
+     <p><a href="mItxtFaltaElIdPhp.html">txtFaltaElId.php</a></p>
+    </li>
+    <li>
+     <p><a href="mJtxtFaltaElValorPhp.html">txtFaltaElValor.php</a></p>
     </li>
    </ul>
   </li>
@@ -663,14 +664,14 @@
 </div>
       </section>
      <section >
-         <h1 >F. Mensajes</h1>
+         <h1 >F. Textos</h1>
       </section>
      <section >
-         <h1 >G. mensajes/msgFaltaElId.php</h1><muestra-codigo>
+         <h1 >G. textos/txtFaltaElId.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">msgFaltaElId</span>()</div>
+     style="color: #795e26;">txtFaltaElId</span>()</div>
   <div>{</div>
   <div>&nbsp;<span style="color: #af00db;">return</span> <span
      style="color: #a31515;">"Falta el id."</span>;</div>
@@ -679,11 +680,11 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >H. mensajes/msgFaltaElValor.php</h1><muestra-codigo>
+         <h1 >H. textos/txtFaltaElValor.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">msgFaltaElValor</span>()</div>
+     style="color: #795e26;">txtFaltaElValor</span>()</div>
   <div>{</div>
   <div>&nbsp;<span style="color: #af00db;">return</span> <span
      style="color: #a31515;">"Falta el valor."</span>;</div>
@@ -701,12 +702,11 @@
   <div><span style="color: #af00db;">require_once</span> <span
      style="color: #0000ff;">__DIR__</span> .</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"/../mensajes/msgFaltaElId.php"</span>;</div>
+     style="color: #a31515;">"/../textos/txtFaltaElId.php"</span>;</div>
   <div><span style="color: #af00db;">require_once</span> <span
      style="color: #0000ff;">__DIR__</span> .</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"/../mensajes/msgFaltaElValor.php"</span>;</div>
-  <br>
+     style="color: #a31515;">"/../textos/txtFaltaElValor.php"</span>;</div><br>
   <div><span style="color: #0000ff;">class</span> <span
      style="color: #267f99;">Dispositivo</span></div>
   <div>{</div>
@@ -718,15 +718,19 @@
      style="color: #0000ff;">function</span> <span
      style="color: #795e26;">valida</span>()</div>
   <div>&nbsp;{</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0000ff;">$this</span>-&gt;<span
+  <div>&nbsp; <span style="color: #af00db;">if</span> (</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">$this</span>-&gt;<span
      style="color: #001080;">valor</span> === <span
-     style="color: #0000ff;">null</span>) {</div>
+     style="color: #0000ff;">null</span></div>
+  <div>&nbsp; &nbsp;|| <span style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #001080;">valor</span> === <span
+     style="color: #a31515;">""</span></div>
+  <div>&nbsp; ) {</div>
   <div>&nbsp; &nbsp;<span style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Exception</span>(</div>
   <div>&nbsp; &nbsp; <span
-     style="color: #795e26;">msgFaltaElValor</span>()</div>
+     style="color: #795e26;">txtFaltaElValor</span>()</div>
   <div>&nbsp; &nbsp;);</div>
   <div>&nbsp; }</div>
   <div>&nbsp;}</div>
@@ -734,26 +738,33 @@
      style="color: #0000ff;">function</span> <span
      style="color: #795e26;">validaCambio</span>()</div>
   <div>&nbsp;{</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0000ff;">$this</span>-&gt;<span
+  <div>&nbsp; <span style="color: #af00db;">if</span> (</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">$this</span>-&gt;<span
      style="color: #001080;">id</span> === <span
-     style="color: #0000ff;">null</span>) {</div>
+     style="color: #0000ff;">null</span></div>
+  <div>&nbsp; &nbsp;|| <span style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #001080;">id</span> === <span
+     style="color: #a31515;">""</span></div>
+  <div>&nbsp; ) {</div>
   <div>&nbsp; &nbsp;<span style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Exception</span>(</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #795e26;">msgFaltaElId</span>()</div>
+  <div>&nbsp; &nbsp; <span style="color: #795e26;">txtFaltaElId</span>()</div>
   <div>&nbsp; &nbsp;);</div>
   <div>&nbsp; }</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0000ff;">$this</span>-&gt;<span
+  <div>&nbsp; <span style="color: #af00db;">if</span> (</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">$this</span>-&gt;<span
      style="color: #001080;">valor</span> === <span
-     style="color: #0000ff;">null</span>) {</div>
+     style="color: #0000ff;">null</span></div>
+  <div>&nbsp; &nbsp;|| <span style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #001080;">valor</span> === <span
+     style="color: #a31515;">""</span></div>
+  <div>&nbsp; ) {</div>
   <div>&nbsp; &nbsp;<span style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Exception</span>(</div>
   <div>&nbsp; &nbsp; <span
-     style="color: #795e26;">msgFaltaElValor</span>()</div>
+     style="color: #795e26;">txtFaltaElValor</span>()</div>
   <div>&nbsp; &nbsp;);</div>
   <div>&nbsp; }</div>
   <div>&nbsp;}</div>
@@ -872,16 +883,18 @@
   <div>{</div>
   <div>&nbsp;<span style="color: #0000ff;">private</span> <span
      style="color: #0000ff;">static</span> <span
-     style="color: #001080;">$con</span>;</div><br>
+     style="color: #001080;">$con</span> = <span
+     style="color: #0000ff;">null</span>;</div><br>
   <div>&nbsp;<span style="color: #0000ff;">public</span> <span
      style="color: #0000ff;">static</span></div>
   <div>&nbsp;<span style="color: #0000ff;">function</span> <span
      style="color: #795e26;">getCon</span>(): <span
      style="color: #267f99;">\PDO</span></div>
   <div>&nbsp;{</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (!<span
+  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
      style="color: #0000ff;">self</span>::<span
-     style="color: #001080;">$con</span>) {</div>
+     style="color: #001080;">$con</span> === <span
+     style="color: #0000ff;">null</span>) {</div>
   <div>&nbsp; &nbsp;<span style="color: #0000ff;">self</span>::<span
      style="color: #001080;">$con</span> = <span
      style="color: #0000ff;">self</span>::<span
@@ -926,8 +939,7 @@
      style="color: #a31515;">"1"</span>);</div>
   <div>&nbsp; <span style="color: #af00db;">if</span> (!<span
      style="color: #001080;">$dispositivo</span>) {</div>
-  <div>&nbsp; &nbsp;<span
-     style="color: #001080;">$dispositivo</span> =</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">$dispositivo</span> =</div>
   <div>&nbsp; &nbsp; <span style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Dispositivo</span>();</div>
   <div>&nbsp; &nbsp;<span

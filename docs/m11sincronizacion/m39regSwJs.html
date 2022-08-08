@@ -433,13 +433,17 @@
  <a class="siguiente" href="/m11sincronizacion/m36leeJsonPhp.html" title="40. lib/php/leeJson.php">▶</a>
    <h1 >39. lib/js/regSw.js</h1><muestra-codigo>
  <div>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@param</span><span style="color: #008000;">
-   </span><span style="color: #267f99;">{string | URL}</span><span
+  <div><span style="color: #af00db;">import</span> {</div>
+  <div>&nbsp;<span style="color: #001080;">muestraError</span></div>
+  <div>} <span style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./muestraError.js"</span></div><br>
+  <div><span style="color: #008000;">/** </span><span
+     style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">sw</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
+     style="color: #267f99;">{string | URL}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">sw</span><span
+     style="color: #008000;"> */</span></div>
   <div><span style="color: #af00db;">export</span> <span
      style="color: #0000ff;">async</span> <span
      style="color: #0000ff;">function</span> <span
@@ -449,7 +453,8 @@
   <div>&nbsp; <span
      style="color: #008000;">/* Registra el service worker,</span></div>
   <div><span
-    style="color: #008000;">&nbsp; &nbsp;* que debe estar en la carpeta</span></div>
+     style="color: #008000;">&nbsp; &nbsp;* que debe estar en la carpeta</span>
+  </div>
   <div><span style="color: #008000;">&nbsp; &nbsp;* principal. */</span></div>
   <div>&nbsp; <span style="color: #af00db;">if</span> (<span
      style="color: #a31515;">"serviceWorker"</span></div>
@@ -460,27 +465,23 @@
   <div>&nbsp; &nbsp; <span style="color: #af00db;">await</span> <span
      style="color: #001080;">navigator</span>.</div>
   <div>&nbsp; &nbsp; &nbsp;<span
-    style="color: #0070c1;">serviceWorker</span>.</div>
+     style="color: #0070c1;">serviceWorker</span>.</div>
   <div>&nbsp; &nbsp; &nbsp;<span style="color: #795e26;">register</span>(<span
      style="color: #001080;">sw</span>)</div>
   <div>&nbsp; &nbsp;<span style="color: #001080;">console</span>.<span
      style="color: #795e26;">log</span>(<span
-      style="color: #001080;">sw</span>, <span
-       style="color: #a31515;">"registrado."</span>)</div>
+     style="color: #001080;">sw</span>, <span
+     style="color: #a31515;">"registrado."</span>)</div>
   <div>&nbsp; &nbsp;<span style="color: #001080;">console</span>.<span
      style="color: #795e26;">log</span>(<span
      style="color: #0070c1;">registro</span>)</div>
   <div>&nbsp; }</div>
   <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
      style="color: #001080;">e</span>) {</div>
-  <div>&nbsp; <span style="color: #001080;">console</span>.<span
-     style="color: #795e26;">error</span>(<span
+  <div>&nbsp; <span style="color: #795e26;">muestraError</span>(<span
      style="color: #001080;">e</span>)</div>
-  <div>&nbsp; <span style="color: #795e26;">alert</span>(<span
-     style="color: #001080;">e</span>.<span
-     style="color: #001080;">message</span>)</div>
   <div>&nbsp;}</div>
-  <div>}</div><br>
+  <div>}</div>
  </div>
 </muestra-codigo>
  <footer>
@@ -514,7 +515,7 @@
       data-logo="true">GilPG DM</a>
    </p><p>
     <a class="paginaAnterior" href="/m10push/m32ServicioPhp.html"
-      title="32. lib/php/Servicio.php">▲</a>
+      title="40. lib/php/Servicio.php">▲</a>
    </p>
      <h1><a href="/m11sincronizacion/index.html">11. Sincronización</a></h1>
    <ol type="1">

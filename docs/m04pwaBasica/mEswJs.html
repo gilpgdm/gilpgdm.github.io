@@ -430,7 +430,7 @@
   &#x2630;
  </button>
  <a class="anterior" href="/m04pwaBasica/mDsiteWebmanifest.html" title="D. site.webmanifest">◀</a>
- <a class="siguiente" href="/m04pwaBasica/mFregSwJs.html" title="F. lib/js/regSw.js">▶</a>
+ <a class="siguiente" href="/m04pwaBasica/mFmuestraErrorJs.html" title="F. lib/js/muestraError.js">▶</a>
    <h1 >E. sw.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/* Este archivo debe estar</span></div>
@@ -461,11 +461,11 @@
   <div><span style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">CACHE</span> = <span
      style="color: #a31515;">"ejemploPWA"</span></div><br>
+  <div><span style="color: #008000;">/**</span></div>
+  <div><span style="color: #008000;">&nbsp;* Archivos requeridos para que
+    la</span></div>
   <div><span
-     style="color: #008000;">/** Archivos requeridos para que</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;* la aplicación funcione fuera de</span>
-  </div>
+     style="color: #008000;">&nbsp;* aplicación funcione fuera de</span></div>
   <div><span style="color: #008000;">&nbsp;* línea.</span></div>
   <div><span style="color: #008000;">&nbsp;*/</span></div>
   <div><span style="color: #0000ff;">const</span> <span
@@ -526,13 +526,13 @@
   <div>&nbsp; <span
      style="color: #a31515;">"Service Worker activo."</span>)</div>
   <div>}</div><br>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@param</span><span style="color: #008000;">
-   </span><span style="color: #267f99;">{ExtendableEvent}</span><span
+  <div><span style="color: #008000;">/** </span><span
+     style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">evt</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
+     style="color: #267f99;">{ExtendableEvent}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">evt</span><span
+     style="color: #008000;"> */</span></div>
   <div><span style="color: #0000ff;">function</span> <span
      style="color: #795e26;">instala</span>(<span
      style="color: #001080;">evt</span>) {</div>
@@ -544,14 +544,13 @@
      style="color: #795e26;">waitUntil</span>(<span
      style="color: #795e26;">cargaCache</span>());</div>
   <div>}</div><br>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
+  <div><span style="color: #008000;">/** </span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
      style="color: #267f99;">{FetchEvent}</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">evt</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
+     style="color: #001080;">evt</span><span
+     style="color: #008000;"> */</span></div>
   <div><span style="color: #0000ff;">function</span> <span
      style="color: #795e26;">descargaDatos</span>(<span
      style="color: #001080;">evt</span>) {</div>
@@ -585,11 +584,11 @@
      style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">key</span> <span
      style="color: #0000ff;">of</span> <span
-     style="color: #001080;">keys</span>) {</div>
+     style="color: #0070c1;">keys</span>) {</div>
   <div>&nbsp; <span style="color: #af00db;">await</span> <span
      style="color: #001080;">caches</span>.<span
      style="color: #795e26;">delete</span>(<span
-     style="color: #001080;">key</span>)</div>
+     style="color: #0070c1;">key</span>)</div>
   <div>&nbsp;}</div>
   <div>&nbsp;<span
      style="color: #008000;">// Carga el nuevo contenido.</span></div>
@@ -600,7 +599,7 @@
      style="color: #795e26;">open</span>(<span
      style="color: #0070c1;">CACHE</span>)</div>
   <div>&nbsp;<span style="color: #af00db;">await</span> <span
-     style="color: #001080;">cache</span>.<span
+     style="color: #0070c1;">cache</span>.<span
      style="color: #795e26;">addAll</span>(<span
      style="color: #0070c1;">ARCHIVOS</span>)</div>
   <div>&nbsp;<span style="color: #001080;">console</span>.</div>
@@ -634,32 +633,35 @@
   <div>&nbsp;<span style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">response</span> =</div>
   <div>&nbsp; <span style="color: #af00db;">await</span> <span
-     style="color: #001080;">cache</span>.<span
+     style="color: #0070c1;">cache</span>.<span
      style="color: #795e26;">match</span>(<span
      style="color: #001080;">evt</span>.<span
-     style="color: #001080;">request</span>,</div>
-  <div>&nbsp; &nbsp;{ <span style="color: #001080;">ignoreSearch:</span> <span
+     style="color: #0070c1;">request</span>,</div>
+  <div>&nbsp; &nbsp;{ <span style="color: #001080;">ignoreSearch</span><span
+     style="color: #001080;">:</span> <span
      style="color: #0000ff;">true</span> })</div>
   <div>&nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">response</span>) {</div>
+     style="color: #0070c1;">response</span> !== <span
+     style="color: #0000ff;">undefined</span>) {</div>
   <div>&nbsp; <span
      style="color: #008000;">/* Si lo encuentra, devuelve el</span></div>
   <div><span
      style="color: #008000;">&nbsp; &nbsp;* archivo del cache. */</span></div>
   <div>&nbsp; <span style="color: #af00db;">return</span> <span
-     style="color: #001080;">response</span></div>
+     style="color: #0070c1;">response</span></div>
   <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
   <div>&nbsp; <span
      style="color: #008000;">/* Si no lo encuentra, lo</span></div>
-  <div><span style="color: #008000;">&nbsp; &nbsp;* empieza a descargar de la
-    red</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp;* empieza a descargar de la red</span>
+  </div>
   <div><span
      style="color: #008000;">&nbsp; &nbsp;* y devuelve la promesa. */</span>
   </div>
   <div>&nbsp; <span style="color: #af00db;">return</span> <span
      style="color: #795e26;">fetch</span>(<span
      style="color: #001080;">evt</span>.<span
-     style="color: #001080;">request</span>)</div>
+     style="color: #0070c1;">request</span>)</div>
   <div>&nbsp;}</div>
   <div>}</div>
  </div>
@@ -726,27 +728,27 @@
     </li>
     <li>
      <p>
-      <a href="/m04pwaBasica/mFregSwJs.html">lib/js/regSw.js</a>
+      <a href="/m04pwaBasica/mFmuestraErrorJs.html">lib/js/muestraError.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04pwaBasica/mGconfigJs.html">js/config.js</a>
+      <a href="/m04pwaBasica/mGregSwJs.html">lib/js/regSw.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04pwaBasica/mHindexHtml.html">index.html</a>
+      <a href="/m04pwaBasica/mHconfigJs.html">js/config.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04pwaBasica/mIestilosCss.html">css/estilos.css</a>
+      <a href="/m04pwaBasica/mIindexHtml.html">index.html</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04pwaBasica/mJfaviconIco.html">favicon.ico</a>
+      <a href="/m04pwaBasica/mJestilosCss.html">css/estilos.css</a>
      </p>
     </li>
     <li>
@@ -756,52 +758,57 @@
     </li>
     <li>
      <p>
-      <a href="/m04pwaBasica/mLmaskable_icon_x48png.html">img/maskable_icon_x48.png</a>
+      <a href="/m04pwaBasica/mLfaviconIco.html">favicon.ico</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04pwaBasica/mMmaskable_icon_x72png.html">img/maskable_icon_x72.png</a>
+      <a href="/m04pwaBasica/mMmaskable_iconPng.html">img/maskable_icon.png</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04pwaBasica/mNmaskable_icon_x96png.html">img/maskable_icon_x96.png</a>
+      <a href="/m04pwaBasica/mNmaskable_icon_x48png.html">img/maskable_icon_x48.png</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04pwaBasica/mOmaskable_icon_x128png.html">img/maskable_icon_x128.png</a>
+      <a href="/m04pwaBasica/mOmaskable_icon_x72png.html">img/maskable_icon_x72.png</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04pwaBasica/mPmaskable_icon_x192png.html">img/maskable_icon_x192.png</a>
+      <a href="/m04pwaBasica/mPmaskable_icon_x96png.html">img/maskable_icon_x96.png</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04pwaBasica/mQmaskable_icon_x384png.html">img/maskable_icon_x384.png</a>
+      <a href="/m04pwaBasica/mQmaskable_icon_x128png.html">img/maskable_icon_x128.png</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04pwaBasica/mRmaskable_icon_x512png.html">img/maskable_icon_x512.png</a>
+      <a href="/m04pwaBasica/mRmaskable_icon_x192png.html">img/maskable_icon_x192.png</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04pwaBasica/mSmaskable_iconPng.html">img/maskable_icon.png</a>
+      <a href="/m04pwaBasica/mSmaskable_icon_x384png.html">img/maskable_icon_x384.png</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04pwaBasica/mTresumen.html">Resumen</a>
+      <a href="/m04pwaBasica/mTmaskable_icon_x512png.html">img/maskable_icon_x512.png</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04pwaBasica/mUresumen.html">Resumen</a>
      </p>
     </li>
    </ol><p>
     <a class="paginaSiguiente" href="/m05pwaMaterial/index.html"
-      title="5. PWA con Material You">▼</a>
+      title="5. PWA con Material Design">▼</a>
    </p>
 </nav>
  <script>
@@ -815,7 +822,7 @@
  /**@type {string} */
  let urlAnterior = "/m04pwaBasica/mDsiteWebmanifest.html"
  /**@type {string} */
- let urlSiguiente = "/m04pwaBasica/mFregSwJs.html"
+ let urlSiguiente = "/m04pwaBasica/mFmuestraErrorJs.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

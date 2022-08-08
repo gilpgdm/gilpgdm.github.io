@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>17. js/srvSuscripcionProxy.js - GilPG DM</title>
+ <title>24. js/srvSuscripcionProxy.js - GilPG DM</title>
  <meta name="description" content="Código de «js/srvSuscripcionProxy.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -429,14 +429,14 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m10push/m16indexJs.html" title="16. js/index.js">◀</a>
- <a class="siguiente" href="/m10push/m18notificaJs.html" title="18. js/notifica.js">▶</a>
-   <h1 >17. js/srvSuscripcionProxy.js</h1><muestra-codigo>
+ <a class="anterior" href="/m10push/m16indexJs.html" title="23. js/index.js">◀</a>
+ <a class="siguiente" href="/m10push/m18notificaJs.html" title="25. js/notifica.js">▶</a>
+   <h1 >24. js/srvSuscripcionProxy.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">ejecuta</span></div>
+  <div>&nbsp;<span style="color: #001080;">enviaJson</span></div>
   <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/ejecuta.js"</span></div>
+     style="color: #a31515;">"../lib/js/enviaJson.js"</span></div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">Method</span></div>
   <div>} <span style="color: #af00db;">from</span> <span
@@ -480,49 +480,43 @@
      style="color: #0070c1;">supportedContentEncodings</span> ||</div>
   <div>&nbsp; [<span style="color: #a31515;">"aesgcm"</span>]</div>
   <div>&nbsp;<span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">ejecuta</span>(<span
-     style="color: #795e26;">fetch</span>(</div>
-  <div>&nbsp; <span
-     style="color: #a31515;">"srv/SrvSuscripcion.php"</span>, {</div>
-  <div>&nbsp; <span style="color: #001080;">method</span>,</div>
-  <div>&nbsp; <span style="color: #001080;">body</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #001080;">JSON</span>.<span
-     style="color: #795e26;">stringify</span>({</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">endpoint</span><span
+     style="color: #795e26;">enviaJson</span>({</div>
+  <div>&nbsp; <span style="color: #001080;">endpoint</span><span
      style="color: #001080;">:</span> <span
      style="color: #001080;">suscripcion</span>.<span
      style="color: #0070c1;">endpoint</span>,</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">publicKey</span><span
+  <div>&nbsp; <span style="color: #001080;">publicKey</span><span
      style="color: #001080;">:</span> <span
      style="color: #0070c1;">key</span></div>
-  <div>&nbsp; &nbsp; ? <span style="color: #795e26;">btoa</span>(</div>
-  <div>&nbsp; &nbsp; &nbsp;<span style="color: #267f99;">String</span>.<span
+  <div>&nbsp; &nbsp;? <span style="color: #795e26;">btoa</span>(</div>
+  <div>&nbsp; &nbsp; <span style="color: #267f99;">String</span>.<span
      style="color: #795e26;">fromCharCode</span>.<span
      style="color: #795e26;">apply</span>(</div>
-  <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">null</span>, <span
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">null</span>, <span
      style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Uint8Array</span>(<span
      style="color: #0070c1;">key</span>)))</div>
-  <div>&nbsp; &nbsp; : <span style="color: #0000ff;">null</span>,</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">authToken</span><span
+  <div>&nbsp; &nbsp;: <span style="color: #0000ff;">null</span>,</div>
+  <div>&nbsp; <span style="color: #001080;">authToken</span><span
      style="color: #001080;">:</span> <span
-      style="color: #0070c1;">token</span></div>
-  <div>&nbsp; &nbsp; ? <span style="color: #795e26;">btoa</span>(</div>
-  <div>&nbsp; &nbsp; &nbsp;<span style="color: #267f99;">String</span>.<span
+     style="color: #0070c1;">token</span></div>
+  <div>&nbsp; &nbsp;? <span style="color: #795e26;">btoa</span>(</div>
+  <div>&nbsp; &nbsp; <span style="color: #267f99;">String</span>.<span
      style="color: #795e26;">fromCharCode</span>.<span
      style="color: #795e26;">apply</span>(</div>
-  <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">null</span>,</div>
-  <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">new</span> <span
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">null</span>,</div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Uint8Array</span>(<span
      style="color: #0070c1;">token</span>)))</div>
-  <div>&nbsp; &nbsp; : <span style="color: #0000ff;">null</span>,</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">contentEncoding</span><span
+  <div>&nbsp; &nbsp;: <span style="color: #0000ff;">null</span>,</div>
+  <div>&nbsp; <span style="color: #001080;">contentEncoding</span><span
      style="color: #001080;">:</span> <span
      style="color: #0070c1;">encodings</span>[<span
      style="color: #098658;">0</span>]</div>
-  <div>&nbsp; })</div>
-  <div>&nbsp;}))</div>
+  <div>&nbsp;},</div>
+  <div>&nbsp; <span style="color: #001080;">method</span>,</div>
+  <div>&nbsp; <span
+     style="color: #a31515;">"srv/SrvSuscripcion.php"</span>)</div>
   <div>}</div><br>
  </div>
 </muestra-codigo>
@@ -569,6 +563,36 @@
     <li>
      <p>
       <a href="/m10push/m02archivos.html">Archivos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m10push/m02btextos.html">Textos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m10push/m02ctxtNoNotsJs.html">lib/js/textos/txtNoNots.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m10push/m02dtxtNoPushJs.html">lib/js/textos/txtNoPush.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m10push/m02etxtNoSwJs.html">lib/js/textos/txtNoSw.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m10push/m02ftxtNotsBloqsJs.html">lib/js/textos/txtNotsBloqs.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m10push/m02gtxtRegistradoJs.html">lib/js/textos/txtRegistrado.js</a>
      </p>
     </li>
     <li>
@@ -628,6 +652,11 @@
     </li>
     <li>
      <p>
+      <a href="/m10push/m14generallavesPhp.html">srv/generallaves.php</a>
+     </p>
+    </li>
+    <li>
+     <p>
       <a href="/m10push/m14SrvNotificaPhp.html">srv/SrvNotifica.php</a>
      </p>
     </li>
@@ -668,7 +697,7 @@
     </li>
     <li>
      <p>
-      <a href="/m10push/m22habilitaNotificacionesJs.html">lib/js/habilitaNotificaciones.js</a>
+      <a href="/m10push/m22activaNotificacionesJs.html">lib/js/activaNotificaciones.js</a>
      </p>
     </li>
     <li>
@@ -679,6 +708,11 @@
     <li>
      <p>
       <a href="/m10push/m24ejecutaJs.html">lib/js/ejecuta.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m10push/m24enviaJsonJs.html">lib/js/enviaJson.js</a>
      </p>
     </li>
     <li>

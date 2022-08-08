@@ -437,12 +437,11 @@
   <div><span style="color: #af00db;">require_once</span> <span
      style="color: #0000ff;">__DIR__</span> .</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"/../mensajes/msgFaltaElId.php"</span>;</div>
+     style="color: #a31515;">"/../textos/txtFaltaElId.php"</span>;</div>
   <div><span style="color: #af00db;">require_once</span> <span
      style="color: #0000ff;">__DIR__</span> .</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"/../mensajes/msgFaltaElValor.php"</span>;</div>
-  <br>
+     style="color: #a31515;">"/../textos/txtFaltaElValor.php"</span>;</div><br>
   <div><span style="color: #0000ff;">class</span> <span
      style="color: #267f99;">Dispositivo</span></div>
   <div>{</div>
@@ -454,15 +453,19 @@
      style="color: #0000ff;">function</span> <span
      style="color: #795e26;">valida</span>()</div>
   <div>&nbsp;{</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0000ff;">$this</span>-&gt;<span
+  <div>&nbsp; <span style="color: #af00db;">if</span> (</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">$this</span>-&gt;<span
      style="color: #001080;">valor</span> === <span
-     style="color: #0000ff;">null</span>) {</div>
+     style="color: #0000ff;">null</span></div>
+  <div>&nbsp; &nbsp;|| <span style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #001080;">valor</span> === <span
+     style="color: #a31515;">""</span></div>
+  <div>&nbsp; ) {</div>
   <div>&nbsp; &nbsp;<span style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Exception</span>(</div>
   <div>&nbsp; &nbsp; <span
-     style="color: #795e26;">msgFaltaElValor</span>()</div>
+     style="color: #795e26;">txtFaltaElValor</span>()</div>
   <div>&nbsp; &nbsp;);</div>
   <div>&nbsp; }</div>
   <div>&nbsp;}</div>
@@ -470,26 +473,33 @@
      style="color: #0000ff;">function</span> <span
      style="color: #795e26;">validaCambio</span>()</div>
   <div>&nbsp;{</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0000ff;">$this</span>-&gt;<span
+  <div>&nbsp; <span style="color: #af00db;">if</span> (</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">$this</span>-&gt;<span
      style="color: #001080;">id</span> === <span
-     style="color: #0000ff;">null</span>) {</div>
+     style="color: #0000ff;">null</span></div>
+  <div>&nbsp; &nbsp;|| <span style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #001080;">id</span> === <span
+     style="color: #a31515;">""</span></div>
+  <div>&nbsp; ) {</div>
   <div>&nbsp; &nbsp;<span style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Exception</span>(</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #795e26;">msgFaltaElId</span>()</div>
+  <div>&nbsp; &nbsp; <span style="color: #795e26;">txtFaltaElId</span>()</div>
   <div>&nbsp; &nbsp;);</div>
   <div>&nbsp; }</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0000ff;">$this</span>-&gt;<span
+  <div>&nbsp; <span style="color: #af00db;">if</span> (</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">$this</span>-&gt;<span
      style="color: #001080;">valor</span> === <span
-     style="color: #0000ff;">null</span>) {</div>
+     style="color: #0000ff;">null</span></div>
+  <div>&nbsp; &nbsp;|| <span style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #001080;">valor</span> === <span
+     style="color: #a31515;">""</span></div>
+  <div>&nbsp; ) {</div>
   <div>&nbsp; &nbsp;<span style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Exception</span>(</div>
   <div>&nbsp; &nbsp; <span
-     style="color: #795e26;">msgFaltaElValor</span>()</div>
+     style="color: #795e26;">txtFaltaElValor</span>()</div>
   <div>&nbsp; &nbsp;);</div>
   <div>&nbsp; }</div>
   <div>&nbsp;}</div>
@@ -526,8 +536,8 @@
     <a href="/index.html"
       data-logo="true">GilPG DM</a>
    </p><p>
-    <a class="paginaAnterior" href="/m06sesion/mZresumen.html"
-      title="Z. Resumen">▲</a>
+    <a class="paginaAnterior" href="/m06sesion/mZbresumen.html"
+      title="27. Resumen">▲</a>
    </p>
      <h1><a href="/m07iot/index.html">7. IoT</a></h1>
    <ol type="A">
@@ -558,17 +568,17 @@
     </li>
     <li>
      <p>
-      <a href="/m07iot/mHmensajes.html">Mensajes</a>
+      <a href="/m07iot/mHtextos.html">Textos</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m07iot/mImsgFaltaElIdPhp.html">mensajes/msgFaltaElId.php</a>
+      <a href="/m07iot/mItxtFaltaElIdPhp.html">textos/txtFaltaElId.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m07iot/mJmsgFaltaElValorPhp.html">mensajes/msgFaltaElValor.php</a>
+      <a href="/m07iot/mJtxtFaltaElValorPhp.html">textos/txtFaltaElValor.php</a>
      </p>
     </li>
     <li>

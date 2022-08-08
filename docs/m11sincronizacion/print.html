@@ -599,7 +599,8 @@
   <li>
    <p>
     <a href="https://drive.google.com/file/d/1LphPNEygv1rV2Bx0fEJQH5O88e7u5dvJ/view?usp=sharing"
-      target="_blank" rel="nooper">Crea la página de spotlight del proyecto.</a>
+      target="_blank" rel="nooper">Crea la <b>cover page</b> o página de
+     spotlight del proyecto.</a>
    </p>
   </li>
  </ol>
@@ -1025,23 +1026,24 @@
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
      style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/bdCrea.php"</span>;</div><br>
+  <div>&nbsp;<span style="color: #a31515;">"/bdCrea.php"</span>;</div><br>
   <div><span style="color: #0000ff;">class</span> <span
      style="color: #267f99;">AccesoBd</span></div>
   <div>{</div>
   <div>&nbsp;<span style="color: #0000ff;">private</span> <span
      style="color: #0000ff;">static</span> <span
-     style="color: #001080;">$con</span>;</div><br>
+     style="color: #001080;">$con</span> = <span
+     style="color: #0000ff;">null</span>;</div><br>
   <div>&nbsp;<span style="color: #0000ff;">public</span> <span
      style="color: #0000ff;">static</span></div>
   <div>&nbsp;<span style="color: #0000ff;">function</span> <span
      style="color: #795e26;">getCon</span>(): <span
      style="color: #267f99;">\PDO</span></div>
   <div>&nbsp;{</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (!<span
+  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
      style="color: #0000ff;">self</span>::<span
-     style="color: #001080;">$con</span>) {</div>
+     style="color: #001080;">$con</span> === <span
+     style="color: #0000ff;">null</span>) {</div>
   <div>&nbsp; &nbsp;<span style="color: #0000ff;">self</span>::<span
      style="color: #001080;">$con</span> = <span
      style="color: #0000ff;">self</span>::<span
@@ -2426,8 +2428,7 @@
   </div>
   <div><span style="color: #008000;">&nbsp;* sitio.</span></div>
   <div><span style="color: #008000;">&nbsp;* </span></div>
-  <div><span
-     style="color: #008000;">&nbsp;* Cualquier cambio en el</span></div>
+  <div><span style="color: #008000;">&nbsp;* Cualquier cambio en el</span></div>
   <div><span
      style="color: #008000;">&nbsp;* contenido de este archivo hace</span></div>
   <div><span
@@ -2444,16 +2445,17 @@
   <div><span style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">VERSION</span> = <span
      style="color: #a31515;">"1.00"</span></div><br>
-  <div><span
-     style="color: #008000;">/** Nombre del archivo de cache. */</span></div>
+  <div><span style="color: #008000;">/** Nombre del archivo de cache. */</span>
+  </div>
   <div><span style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">CACHE</span> = <span
      style="color: #a31515;">"sincro"</span></div><br>
+  <div><span style="color: #008000;">/**</span></div>
   <div><span
-     style="color: #008000;">/** Archivos requeridos para que</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;* la aplicación funcione fuera de</span>
+     style="color: #008000;">&nbsp;* Archivos requeridos para que la</span>
   </div>
+  <div><span
+     style="color: #008000;">&nbsp;* aplicación funcione fuera de</span></div>
   <div><span style="color: #008000;">&nbsp;* línea.</span></div>
   <div><span style="color: #008000;">&nbsp;*/</span></div>
   <div><span style="color: #0000ff;">const</span> <span
@@ -2519,16 +2521,14 @@
   <div>&nbsp;<span style="color: #001080;">console</span>.<span
      style="color: #795e26;">log</span>(</div>
   <div>&nbsp; <span
-     style="color: #a31515;">"Service Worker activo."</span>) </div>
+     style="color: #a31515;">"Service Worker activo."</span>)</div>
   <div>}</div><br>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@param</span><span
+  <div><span style="color: #008000;">/** </span><span
+     style="color: #0000ff;">@param</span><span style="color: #008000;">
+   </span><span style="color: #267f99;">{ExtendableEvent}</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{ExtendableEvent}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">evt</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
+     style="color: #001080;">evt</span><span
+     style="color: #008000;"> */</span></div>
   <div><span style="color: #0000ff;">function</span> <span
      style="color: #795e26;">instala</span>(<span
      style="color: #001080;">evt</span>) {</div>
@@ -2540,21 +2540,20 @@
      style="color: #795e26;">waitUntil</span>(<span
      style="color: #795e26;">cargaCache</span>());</div>
   <div>}</div><br>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
+  <div><span style="color: #008000;">/** </span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
      style="color: #267f99;">{FetchEvent}</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">evt</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
+     style="color: #001080;">evt</span><span
+     style="color: #008000;"> */</span></div>
   <div><span style="color: #0000ff;">function</span> <span
      style="color: #795e26;">descargaDatos</span>(<span
      style="color: #001080;">evt</span>) {</div>
   <div>&nbsp;<span style="color: #af00db;">if</span> (</div>
   <div>&nbsp; <span style="color: #001080;">evt</span>.<span
-     style="color: #0070c1;">request</span>.<span
-     style="color: #0070c1;">method</span> === <span
+     style="color: #001080;">request</span>.<span
+     style="color: #001080;">method</span> === <span
      style="color: #a31515;">"GET"</span>) {</div>
   <div>&nbsp; <span style="color: #001080;">evt</span>.<span
      style="color: #795e26;">respondWith</span>(<span
@@ -2581,11 +2580,11 @@
      style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">key</span> <span
      style="color: #0000ff;">of</span> <span
-     style="color: #0070c1;">keys</span>) {</div>
+     style="color: #001080;">keys</span>) {</div>
   <div>&nbsp; <span style="color: #af00db;">await</span> <span
      style="color: #001080;">caches</span>.<span
      style="color: #795e26;">delete</span>(<span
-     style="color: #0070c1;">key</span>)</div>
+     style="color: #001080;">key</span>)</div>
   <div>&nbsp;}</div>
   <div>&nbsp;<span
      style="color: #008000;">// Carga el nuevo contenido.</span></div>
@@ -2596,7 +2595,7 @@
      style="color: #795e26;">open</span>(<span
      style="color: #0070c1;">CACHE</span>)</div>
   <div>&nbsp;<span style="color: #af00db;">await</span> <span
-     style="color: #0070c1;">cache</span>.<span
+     style="color: #001080;">cache</span>.<span
      style="color: #795e26;">addAll</span>(<span
      style="color: #0070c1;">ARCHIVOS</span>)</div>
   <div>&nbsp;<span style="color: #001080;">console</span>.</div>
@@ -2630,21 +2629,21 @@
   <div>&nbsp;<span style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">response</span> =</div>
   <div>&nbsp; <span style="color: #af00db;">await</span> <span
-     style="color: #0070c1;">cache</span>.<span
+     style="color: #001080;">cache</span>.<span
      style="color: #795e26;">match</span>(<span
      style="color: #001080;">evt</span>.<span
-     style="color: #0070c1;">request</span>,</div>
-  <div>&nbsp; &nbsp;{ <span style="color: #001080;">ignoreSearch</span><span
-     style="color: #001080;">:</span> <span
+     style="color: #001080;">request</span>,</div>
+  <div>&nbsp; &nbsp;{ <span style="color: #001080;">ignoreSearch:</span> <span
      style="color: #0000ff;">true</span> })</div>
   <div>&nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">response</span>) {</div>
+     style="color: #001080;">response</span> !== <span
+     style="color: #0000ff;">undefined</span>) {</div>
   <div>&nbsp; <span
      style="color: #008000;">/* Si lo encuentra, devuelve el</span></div>
   <div><span
      style="color: #008000;">&nbsp; &nbsp;* archivo del cache. */</span></div>
   <div>&nbsp; <span style="color: #af00db;">return</span> <span
-     style="color: #0070c1;">response</span></div>
+     style="color: #001080;">response</span></div>
   <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
   <div>&nbsp; <span
      style="color: #008000;">/* Si no lo encuentra, lo</span></div>
@@ -2657,7 +2656,7 @@
   <div>&nbsp; <span style="color: #af00db;">return</span> <span
      style="color: #795e26;">fetch</span>(<span
      style="color: #001080;">evt</span>.<span
-     style="color: #0070c1;">request</span>)</div>
+     style="color: #001080;">request</span>)</div>
   <div>&nbsp;}</div>
   <div>}</div>
  </div>
@@ -3010,35 +3009,40 @@
      <section >
          <h1 >35. lib/js/cod.js</h1><muestra-codigo>
  <div>
-  <div><span style="color: #008000;">/** Codifica un texto para que</span></div>
+  <div><span style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;* Codifica un texto para que</span></div>
   <div><span style="color: #008000;">&nbsp;* escape los caracteres</span></div>
-  <div><span style="color: #008000;">&nbsp;* especiales y no se pueda</span>
-  </div>
-  <div><span style="color: #008000;">&nbsp;* interpretar como HTML. Esta</span>
-  </div>
-  <div><span style="color: #008000;">&nbsp;* técnica evita la inyección
-    de</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;* especiales y no se pueda</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;* interpretar como HTML. Esta</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;* técnica evita la inyección de</span></div>
   <div><span style="color: #008000;">&nbsp;* código.</span></div>
   <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@param</span><span style="color: #008000;">
-   </span><span style="color: #267f99;">{string}</span><span
-     style="color: #008000;"> </span><span style="color: #001080;">texto</span>
-  </div>
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">texto</span></div>
   <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@returns</span><span style="color: #008000;">
-   </span><span style="color: #267f99;">{string}</span><span
+     style="color: #0000ff;">@returns</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
      style="color: #008000;"> un texto que</span></div>
-  <div><span style="color: #008000;">&nbsp;* &nbsp;no puede interpretarse
-    como</span></div>
-  <div><span style="color: #008000;">&nbsp;* &nbsp;HTML. */</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;* &nbsp;no puede interpretarse como</span>
+  </div>
+  <div><span style="color: #008000;">&nbsp;* &nbsp;HTML.</span></div>
+  <div><span style="color: #008000;">&nbsp;*/</span></div>
   <div><span style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
      style="color: #795e26;">cod</span>(<span
      style="color: #001080;">texto</span>) {</div>
-  <div>&nbsp;<span style="color: #af00db;">return</span> (<span
-     style="color: #001080;">texto</span> || <span
-     style="color: #a31515;">""</span>).</div>
-  <div>&nbsp; <span style="color: #795e26;">toString</span>().</div>
+  <div>&nbsp;<span style="color: #af00db;">return</span> <span
+     style="color: #001080;">texto</span>.<span
+     style="color: #795e26;">toString</span>().</div>
   <div>&nbsp; <span style="color: #795e26;">replace</span>(<span
      style="color: #811f3f;">/</span><span style="color: #d16969;">[</span><span
      style="color: #811f3f;">&lt;&gt;"'</span><span
@@ -3047,11 +3051,12 @@
      style="color: #795e26;">reemplaza</span>)</div>
   <div>}</div><br>
   <div><span style="color: #008000;">/** </span><span
-     style="color: #0000ff;">@param</span><span style="color: #008000;">
-   </span><span style="color: #267f99;">{string}</span><span
+     style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">letra</span><span style="color: #008000;">
-    */</span></div>
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">letra</span><span
+     style="color: #008000;"> */</span></div>
   <div><span style="color: #0000ff;">function</span> <span
      style="color: #795e26;">reemplaza</span>(<span
      style="color: #001080;">letra</span>) {</div>
@@ -3099,8 +3104,9 @@
      style="color: #008000;">&nbsp;* la convierte en una literal de</span></div>
   <div><span style="color: #008000;">&nbsp;* objeto. </span></div>
   <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@param</span><span style="color: #008000;">
-   </span><span style="color: #267f99;">{Promise&lt;Response&gt;}</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{Promise&lt;Response&gt;}</span><span
      style="color: #008000;"> </span><span
      style="color: #001080;">fetch</span></div>
   <div><span style="color: #008000;">&nbsp;* </span><span
@@ -3138,8 +3144,8 @@
   <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
   <div>&nbsp; <span style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Error</span>(</div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">resp</span>.<span
+     style="color: #267f99;">Error</span>(<span
+     style="color: #0070c1;">resp</span>.<span
      style="color: #0070c1;">statusText</span>)</div>
   <div>&nbsp;}</div>
   <div>}</div>
@@ -3149,11 +3155,15 @@
      <section >
          <h1 >37. lib/js/Method.js</h1><muestra-codigo>
  <div>
-  <div><span style="color: #008000;">/** </span><span
+  <div><span style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;* Métodos para enviar datos por</span></div>
+  <div><span style="color: #008000;">&nbsp;* HTTP.</span></div>
+  <div><span style="color: #008000;">&nbsp;* </span><span
      style="color: #0000ff;">@enum</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
-     style="color: #008000;"> */</span></div>
+     style="color: #267f99;">{string}</span></div>
+  <div><span style="color: #008000;">&nbsp;*/</span></div>
   <div><span style="color: #af00db;">export</span> <span
      style="color: #0000ff;">const</span> <span
      style="color: #267f99;">Method</span> = {</div>
@@ -3209,13 +3219,17 @@
      <section >
          <h1 >39. lib/js/regSw.js</h1><muestra-codigo>
  <div>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@param</span><span style="color: #008000;">
-   </span><span style="color: #267f99;">{string | URL}</span><span
+  <div><span style="color: #af00db;">import</span> {</div>
+  <div>&nbsp;<span style="color: #001080;">muestraError</span></div>
+  <div>} <span style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./muestraError.js"</span></div><br>
+  <div><span style="color: #008000;">/** </span><span
+     style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">sw</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
+     style="color: #267f99;">{string | URL}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">sw</span><span
+     style="color: #008000;"> */</span></div>
   <div><span style="color: #af00db;">export</span> <span
      style="color: #0000ff;">async</span> <span
      style="color: #0000ff;">function</span> <span
@@ -3225,7 +3239,8 @@
   <div>&nbsp; <span
      style="color: #008000;">/* Registra el service worker,</span></div>
   <div><span
-    style="color: #008000;">&nbsp; &nbsp;* que debe estar en la carpeta</span></div>
+     style="color: #008000;">&nbsp; &nbsp;* que debe estar en la carpeta</span>
+  </div>
   <div><span style="color: #008000;">&nbsp; &nbsp;* principal. */</span></div>
   <div>&nbsp; <span style="color: #af00db;">if</span> (<span
      style="color: #a31515;">"serviceWorker"</span></div>
@@ -3236,27 +3251,23 @@
   <div>&nbsp; &nbsp; <span style="color: #af00db;">await</span> <span
      style="color: #001080;">navigator</span>.</div>
   <div>&nbsp; &nbsp; &nbsp;<span
-    style="color: #0070c1;">serviceWorker</span>.</div>
+     style="color: #0070c1;">serviceWorker</span>.</div>
   <div>&nbsp; &nbsp; &nbsp;<span style="color: #795e26;">register</span>(<span
      style="color: #001080;">sw</span>)</div>
   <div>&nbsp; &nbsp;<span style="color: #001080;">console</span>.<span
      style="color: #795e26;">log</span>(<span
-      style="color: #001080;">sw</span>, <span
-       style="color: #a31515;">"registrado."</span>)</div>
+     style="color: #001080;">sw</span>, <span
+     style="color: #a31515;">"registrado."</span>)</div>
   <div>&nbsp; &nbsp;<span style="color: #001080;">console</span>.<span
      style="color: #795e26;">log</span>(<span
      style="color: #0070c1;">registro</span>)</div>
   <div>&nbsp; }</div>
   <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
      style="color: #001080;">e</span>) {</div>
-  <div>&nbsp; <span style="color: #001080;">console</span>.<span
-     style="color: #795e26;">error</span>(<span
+  <div>&nbsp; <span style="color: #795e26;">muestraError</span>(<span
      style="color: #001080;">e</span>)</div>
-  <div>&nbsp; <span style="color: #795e26;">alert</span>(<span
-     style="color: #001080;">e</span>.<span
-     style="color: #001080;">message</span>)</div>
   <div>&nbsp;}</div>
-  <div>}</div><br>
+  <div>}</div>
  </div>
 </muestra-codigo>
       </section>
