@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>29. sw.js - GilPG DM</title>
+ <title>27. sw.js - GilPG DM</title>
  <meta name="description" content="Código de «sw.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -429,9 +429,9 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m11sincronizacion/m38configJs.html" title="28. js/config.js">◀</a>
- <a class="siguiente" href="/m11sincronizacion/m28frecuentes.html" title="30. Archivos frecuentes">▶</a>
-   <h1 >29. sw.js</h1><muestra-codigo>
+ <a class="anterior" href="/m11sincronizacion/m26modificaHtml.html" title="26. modifica.html">◀</a>
+ <a class="siguiente" href="/m11sincronizacion/m38configJs.html" title="28. js/config.js">▶</a>
+   <h1 >27. sw.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/* Este archivo debe estar</span></div>
   <div><span
@@ -439,7 +439,8 @@
   </div>
   <div><span style="color: #008000;">&nbsp;* sitio.</span></div>
   <div><span style="color: #008000;">&nbsp;* </span></div>
-  <div><span style="color: #008000;">&nbsp;* Cualquier cambio en el</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;* Cualquier cambio en el</span></div>
   <div><span
      style="color: #008000;">&nbsp;* contenido de este archivo hace</span></div>
   <div><span
@@ -456,8 +457,8 @@
   <div><span style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">VERSION</span> = <span
      style="color: #a31515;">"1.00"</span></div><br>
-  <div><span style="color: #008000;">/** Nombre del archivo de cache. */</span>
-  </div>
+  <div><span
+     style="color: #008000;">/** Nombre del archivo de cache. */</span></div>
   <div><span style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">CACHE</span> = <span
      style="color: #a31515;">"sincro"</span></div><br>
@@ -465,8 +466,9 @@
   <div><span
      style="color: #008000;">&nbsp;* Archivos requeridos para que la</span>
   </div>
-  <div><span
-     style="color: #008000;">&nbsp;* aplicación funcione fuera de</span></div>
+  <div>
+   <span style="color: #008000;">&nbsp;* aplicación funcione fuera de</span>
+  </div>
   <div><span style="color: #008000;">&nbsp;* línea.</span></div>
   <div><span style="color: #008000;">&nbsp;*/</span></div>
   <div><span style="color: #0000ff;">const</span> <span
@@ -485,14 +487,15 @@
   <div>&nbsp;<span
      style="color: #a31515;">"js/dao/pasatiempoModifica.js"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"js/dao/reemplaza.js"</span>,</div>
-  <div>&nbsp;<span style="color: #a31515;">"js/agrega.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"js/textos/txtConfirmaEliminacion.js"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"js/config.js"</span>,</div>
-  <div>&nbsp;<span style="color: #a31515;">"js/index.js"</span>,</div>
-  <div>&nbsp;<span style="color: #a31515;">"js/modifica.js"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"lib/css/lista.css"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"lib/js/cod.js"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"lib/js/ejecuta.js"</span>,</div>
-  <div>&nbsp;<span style="color: #a31515;">"lib/js/idbExecute.js"</span>,</div>
+  <div>&nbsp;<span style="color: #a31515;">"lib/js/enviaJson.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/idbExecute.js"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"lib/js/idbQuery.js"</span>,</div>
   <div>&nbsp;<span style="color: #a31515;">"lib/js/Method.js"</span>,</div>
   <div>&nbsp;<span
@@ -535,8 +538,9 @@
      style="color: #a31515;">"Service Worker activo."</span>)</div>
   <div>}</div><br>
   <div><span style="color: #008000;">/** </span><span
-     style="color: #0000ff;">@param</span><span style="color: #008000;">
-   </span><span style="color: #267f99;">{ExtendableEvent}</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ExtendableEvent}</span><span
      style="color: #008000;"> </span><span
      style="color: #001080;">evt</span><span
      style="color: #008000;"> */</span></div>
@@ -644,7 +648,8 @@
      style="color: #795e26;">match</span>(<span
      style="color: #001080;">evt</span>.<span
      style="color: #001080;">request</span>,</div>
-  <div>&nbsp; &nbsp;{ <span style="color: #001080;">ignoreSearch:</span> <span
+  <div>&nbsp; &nbsp;{ <span
+     style="color: #001080;">ignoreSearch:</span> <span
      style="color: #0000ff;">true</span> })</div>
   <div>&nbsp;<span style="color: #af00db;">if</span> (<span
      style="color: #001080;">response</span> !== <span
@@ -715,6 +720,16 @@
     <li>
      <p>
       <a href="/m11sincronizacion/m02archivos.html">Archivos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m11sincronizacion/m03Atextos.html">Textos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m11sincronizacion/m03BtxtConfirmaEliminacionJs.html">js/textos/txtConfirmaEliminacion.js</a>
      </p>
     </li>
     <li>
@@ -819,17 +834,7 @@
     </li>
     <li>
      <p>
-      <a href="/m11sincronizacion/m23indexJs.html">js/index.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
       <a href="/m11sincronizacion/m24agregaHtml.html">agrega.html</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11sincronizacion/m25agregaJs.html">js/agrega.js</a>
      </p>
     </li>
     <li>
@@ -839,17 +844,12 @@
     </li>
     <li>
      <p>
-      <a href="/m11sincronizacion/m27modificaJs.html">js/modifica.js</a>
+      <a href="/m11sincronizacion/m41swJs.html" class="actual">sw.js</a>
      </p>
     </li>
     <li>
      <p>
       <a href="/m11sincronizacion/m38configJs.html">js/config.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11sincronizacion/m41swJs.html" class="actual">sw.js</a>
      </p>
     </li>
     <li>
@@ -885,6 +885,11 @@
     <li>
      <p>
       <a href="/m11sincronizacion/m31ejecutaJs.html">lib/js/ejecuta.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m11sincronizacion/m31enviaJsonJs.html">lib/js/enviaJson.js</a>
      </p>
     </li>
     <li>
@@ -926,9 +931,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m11sincronizacion/m38configJs.html"
+ let urlAnterior = "/m11sincronizacion/m26modificaHtml.html"
  /**@type {string} */
- let urlSiguiente = "/m11sincronizacion/m28frecuentes.html"
+ let urlSiguiente = "/m11sincronizacion/m38configJs.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

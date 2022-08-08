@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>27. js/modifica.js - GilPG DM</title>
- <meta name="description" content="Código de «js/modifica.js».">
+ <title>36. lib/js/enviaJson.js - GilPG DM</title>
+ <meta name="description" content="Código de «lib/js/enviaJson.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -429,158 +429,60 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m11sincronizacion/m26modificaHtml.html" title="26. modifica.html">◀</a>
- <a class="siguiente" href="/m11sincronizacion/m38configJs.html" title="28. js/config.js">▶</a>
-   <h1 >27. js/modifica.js</h1><muestra-codigo>
+ <a class="anterior" href="/m11sincronizacion/m31ejecutaJs.html" title="35. lib/js/ejecuta.js">◀</a>
+ <a class="siguiente" href="/m11sincronizacion/m33Method.html" title="37. lib/js/Method.js">▶</a>
+   <h1 >36. lib/js/enviaJson.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">muestraError</span></div>
+  <div>&nbsp;<span style="color: #001080;">ejecuta</span></div>
   <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/muestraError.js"</span></div>
-  <div><span style="color: #af00db;">import</span> <span
-     style="color: #a31515;">"./config.js"</span></div>
+     style="color: #a31515;">"./ejecuta.js"</span></div>
   <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">pasatiempoBusca</span></div>
+  <div>&nbsp;<span style="color: #001080;">Method</span></div>
   <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./dao/pasatiempoBusca.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">pasatiempoElimina</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./dao/pasatiempoElimina.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">pasatiempoModifica</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./dao/pasatiempoModifica.js"</span></div><br>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">params</span> =</div>
-  <div>&nbsp;<span style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">URL</span>(<span
-     style="color: #001080;">location</span>.<span
-     style="color: #001080;">href</span>).</div>
-  <div>&nbsp; <span style="color: #0070c1;">searchParams</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">uuid</span> = <span
-     style="color: #0070c1;">params</span>.<span
-     style="color: #795e26;">get</span>(<span
-     style="color: #a31515;">"uuid"</span>)</div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">form</span> =</div>
-  <div>&nbsp;<span style="color: #001080;">document</span>.<span
-     style="color: #795e26;">querySelector</span>(<span
-     style="color: #a31515;">"form"</span>)</div><br>
-  <div><span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">form</span> !== <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp;<span style="color: #0070c1;">form</span>.<span
-     style="color: #795e26;">addEventListener</span>(<span
-     style="color: #a31515;">"submit"</span>,</div>
-  <div>&nbsp; <span style="color: #795e26;">guarda</span>)</div>
-  <div>&nbsp;<span style="color: #0070c1;">form</span>.<span
-     style="color: #001080;">elimina</span>.<span
-     style="color: #795e26;">addEventListener</span>(</div>
-  <div>&nbsp; <span style="color: #a31515;">"click"</span>, <span
-     style="color: #795e26;">elimina</span>)</div>
-  <div>}</div>
-  <div><span style="color: #795e26;">busca</span>()</div><br>
-  <div><span style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">busca</span>() {</div>
-  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">form</span> !== <span
-     style="color: #0000ff;">null</span></div>
-  <div>&nbsp; &nbsp;&amp;&amp; <span
-     style="color: #0070c1;">uuid</span> !== <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">modelo</span> =</div>
-  <div>&nbsp; &nbsp; <span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">pasatiempoBusca</span>(<span
-     style="color: #0070c1;">uuid</span>)</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">document</span>.<span
-     style="color: #001080;">title</span> = <span
-     style="color: #0070c1;">modelo</span>.<span
-     style="color: #001080;">nombre</span></div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">form</span>.<span
-     style="color: #001080;">nombre</span>.<span
-     style="color: #001080;">value</span> =</div>
-  <div>&nbsp; &nbsp; <span style="color: #0070c1;">modelo</span>.<span
-     style="color: #001080;">nombre</span></div>
-  <div>&nbsp; }</div>
-  <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">e</span>) {</div>
-  <div>&nbsp; <span style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">e</span>);</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span style="color: #008000;">/** </span><span
+     style="color: #a31515;">"./Method.js"</span></div><br>
+  <div><span style="color: #008000;">/**</span></div>
+  <div><span style="color: #008000;">* </span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{Event}</span><span
+     style="color: #267f99;">{Object}</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">evt</span><span
-     style="color: #008000;"> */</span></div>
-  <div><span style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">guarda</span>(<span
-     style="color: #001080;">evt</span>) {</div>
-  <div>&nbsp;<span style="color: #001080;">evt</span>.<span
-     style="color: #795e26;">preventDefault</span>();</div>
-  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">form</span> !== <span
-     style="color: #0000ff;">null</span></div>
-  <div>&nbsp; &nbsp;&amp;&amp; <span
-     style="color: #0070c1;">uuid</span> !== <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">nombre</span> =</div>
-  <div>&nbsp; &nbsp; <span style="color: #0070c1;">form</span>.<span
-     style="color: #001080;">nombre</span>.<span
-     style="color: #001080;">value</span>.<span
-     style="color: #795e26;">trim</span>()</div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">modelo</span> =</div>
-  <div>&nbsp; &nbsp; { <span style="color: #001080;">uuid</span>, <span
-     style="color: #001080;">nombre</span>, <span
-     style="color: #001080;">eliminado</span><span
+     style="color: #001080;">datos</span></div>
+  <div><span style="color: #008000;">* </span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{Method}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">metodo</span></div>
+  <div><span style="color: #008000;">* </span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">url</span></div>
+  <div><span style="color: #008000;">*/</span></div>
+  <div><span style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span></div>
+  <div>&nbsp;<span style="color: #795e26;">enviaJson</span>(<span
+     style="color: #001080;">datos</span>, <span
+     style="color: #001080;">metodo</span>, <span
+     style="color: #001080;">url</span>) {</div>
+  <div>&nbsp;<span style="color: #af00db;">return</span> <span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">ejecuta</span>(<span
+     style="color: #795e26;">fetch</span>(<span
+     style="color: #001080;">url</span>, {</div>
+  <div>&nbsp; <span style="color: #001080;">method</span><span
      style="color: #001080;">:</span> <span
-     style="color: #098658;">0</span> }</div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">pasatiempoModifica</span>(<span
-     style="color: #0070c1;">modelo</span>)</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">location</span>.<span
-     style="color: #001080;">href</span> = <span
-     style="color: #a31515;">"index.html"</span></div>
-  <div>&nbsp; }</div>
-  <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">e</span>) {</div>
-  <div>&nbsp; <span style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">e</span>);</div>
-  <div>&nbsp;}</div>
+     style="color: #001080;">metodo</span>,</div>
+  <div>&nbsp; <span style="color: #001080;">body</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #001080;">JSON</span>.<span
+     style="color: #795e26;">stringify</span>(<span
+     style="color: #001080;">datos</span>)</div>
+  <div>&nbsp;}))</div>
   <div>}</div><br>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">elimina</span>() {</div>
-  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">uuid</span> !== <span
-     style="color: #0000ff;">null</span> &amp;&amp; <span
-     style="color: #795e26;">confirm</span>(</div>
-  <div>&nbsp; &nbsp;<span
-     style="color: #a31515;">"Confirma la eliminación"</span>)) {</div>
-  <div>&nbsp; &nbsp;<span
-     style="color: #795e26;">pasatiempoElimina</span>(<span
-     style="color: #0070c1;">uuid</span>)</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">location</span>.<span
-     style="color: #001080;">href</span> = <span
-     style="color: #a31515;">"index.html"</span></div>
-  <div>&nbsp; }</div>
-  <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">e</span>) {</div>
-  <div>&nbsp; <span style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">e</span>);</div>
-  <div>&nbsp;}</div>
-  <div>}</div>
  </div>
 </muestra-codigo>
  <footer>
@@ -626,6 +528,16 @@
     <li>
      <p>
       <a href="/m11sincronizacion/m02archivos.html">Archivos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m11sincronizacion/m03Atextos.html">Textos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m11sincronizacion/m03BtxtConfirmaEliminacionJs.html">js/textos/txtConfirmaEliminacion.js</a>
      </p>
     </li>
     <li>
@@ -730,17 +642,7 @@
     </li>
     <li>
      <p>
-      <a href="/m11sincronizacion/m23indexJs.html">js/index.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
       <a href="/m11sincronizacion/m24agregaHtml.html">agrega.html</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11sincronizacion/m25agregaJs.html">js/agrega.js</a>
      </p>
     </li>
     <li>
@@ -750,17 +652,12 @@
     </li>
     <li>
      <p>
-      <a href="/m11sincronizacion/m27modificaJs.html" class="actual">js/modifica.js</a>
+      <a href="/m11sincronizacion/m41swJs.html">sw.js</a>
      </p>
     </li>
     <li>
      <p>
       <a href="/m11sincronizacion/m38configJs.html">js/config.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11sincronizacion/m41swJs.html">sw.js</a>
      </p>
     </li>
     <li>
@@ -796,6 +693,11 @@
     <li>
      <p>
       <a href="/m11sincronizacion/m31ejecutaJs.html">lib/js/ejecuta.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m11sincronizacion/m31enviaJsonJs.html" class="actual">lib/js/enviaJson.js</a>
      </p>
     </li>
     <li>
@@ -837,9 +739,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m11sincronizacion/m26modificaHtml.html"
+ let urlAnterior = "/m11sincronizacion/m31ejecutaJs.html"
  /**@type {string} */
- let urlSiguiente = "/m11sincronizacion/m38configJs.html"
+ let urlSiguiente = "/m11sincronizacion/m33Method.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

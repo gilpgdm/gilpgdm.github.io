@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>23. js/index.js - GilPG DM</title>
- <meta name="description" content="Código de «js/index.js».">
+ <title>4. js/textos/txtConfirmaEliminacion.js - GilPG DM</title>
+ <meta name="description" content="Código de «js/textos/txtConfirmaEliminacion.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -429,175 +429,15 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m11sincronizacion/m22indexHtml.html" title="22. index.html">◀</a>
- <a class="siguiente" href="/m11sincronizacion/m24agregaHtml.html" title="24. agrega.html">▶</a>
-   <h1 >23. js/index.js</h1><muestra-codigo>
+ <a class="anterior" href="/m11sincronizacion/m03Atextos.html" title="3. Textos">◀</a>
+ <a class="siguiente" href="/m11sincronizacion/m03servidor.html" title="5. Servidor">▶</a>
+   <h1 >4. js/textos/txtConfirmaEliminacion.js</h1><muestra-codigo>
  <div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">cod</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/cod.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">ejecuta</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/ejecuta.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">Method</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/Method.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">muestraError</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/muestraError.js"</span></div>
-  <div><span style="color: #af00db;">import</span> <span
-     style="color: #a31515;">"./config.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">pasatiempoConsulta</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./dao/pasatiempoConsulta.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">pasatiempoConsultaTodos</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./dao/pasatiempoConsultaTodos.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">reemplaza</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./dao/reemplaza.js"</span></div><br>
-  <div><span style="color: #008000;">/** </span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{HTMLDivElement|null}</span><span
-     style="color: #008000;"> */</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">lista</span> =</div>
-  <div>&nbsp;<span style="color: #001080;">document</span>.<span
-     style="color: #795e26;">querySelector</span>(<span
-     style="color: #a31515;">"#lista"</span>)</div><br>
-  <div><span style="color: #795e26;">consulta</span>()</div>
-  <div><span
-     style="color: #008000;">// Sincroniza cada 20 segundos.</span></div>
-  <div><span style="color: #795e26;">setInterval</span>(<span
-     style="color: #795e26;">sincroniza</span>, <span
-     style="color: #098658;">20000</span>)</div><br>
-  <div><span style="color: #0000ff;">async</span> <span
+  <div><span style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">consulta</span>() {</div>
-  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
-  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">consulta</span> =</div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">pasatiempoConsulta</span>()</div>
-  <div>&nbsp; <span style="color: #795e26;">render</span>(<span
-     style="color: #0070c1;">consulta</span>)</div>
-  <div>&nbsp; <span style="color: #795e26;">sincroniza</span>()</div>
-  <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">e</span>) {</div>
-  <div>&nbsp; <span style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">e</span>)</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">sincroniza</span>() {</div>
-  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">navigator</span>.<span
-     style="color: #0070c1;">onLine</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">todos</span> =</div>
-  <div>&nbsp; &nbsp; <span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">pasatiempoConsultaTodos</span>()</div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">body</span> =</div>
-  <div>&nbsp; &nbsp; <span style="color: #001080;">JSON</span>.<span
-     style="color: #795e26;">stringify</span>(<span
-     style="color: #0070c1;">todos</span>)</div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">json</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #795e26;">ejecuta</span>(</div>
-  <div>&nbsp; &nbsp; <span style="color: #795e26;">fetch</span>(<span
-     style="color: #a31515;">"srv/SrvSincro.php"</span>,</div>
-  <div>&nbsp; &nbsp; &nbsp;{</div>
-  <div>&nbsp; &nbsp; &nbsp; <span style="color: #001080;">method</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #267f99;">Method</span>.<span
-     style="color: #001080;">POST</span>,</div>
-  <div>&nbsp; &nbsp; &nbsp; <span style="color: #001080;">body</span></div>
-  <div>&nbsp; &nbsp; &nbsp;}))</div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">consulta</span> =</div>
-  <div>&nbsp; &nbsp; <span style="color: #0070c1;">json</span>.<span
-     style="color: #001080;">lista</span> || []</div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">reemplaza</span>(<span
-     style="color: #0070c1;">consulta</span>)</div>
-  <div>&nbsp; &nbsp;<span style="color: #795e26;">render</span>(<span
-     style="color: #0070c1;">consulta</span>)</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">e</span>) {</div>
-  <div>&nbsp; <span style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">e</span>);</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span style="color: #008000;">/** </span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{Array}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">consulta</span><span
-     style="color: #008000;"> */</span></div>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">render</span>(<span
-     style="color: #001080;">consulta</span>) {</div>
-  <div>&nbsp;<span style="color: #0000ff;">let</span> <span
-     style="color: #001080;">render</span> = <span
-     style="color: #a31515;">""</span>;</div>
-  <div>&nbsp;<span style="color: #af00db;">for</span> (<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">modelo</span> <span
-     style="color: #0000ff;">of</span> <span
-     style="color: #001080;">consulta</span>) {</div>
-  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">params</span> =</div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">new</span> <span
-     style="color: #795e26;">URLSearchParams</span>(</div>
-  <div>&nbsp; &nbsp; [[<span style="color: #a31515;">"uuid"</span>, <span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">uuid</span>]])</div>
-  <div>&nbsp; <span style="color: #001080;">render</span> += <span
-     style="color: #008000;">/* html */</span></div>
-  <div>&nbsp; &nbsp;`<span style="color: #800000;">&lt;a</span> <span
-     style="color: #ff0000;">class</span>=<span
-     style="color: #0000ff;">"simple"</span></div>
-  <div>&nbsp; &nbsp; <span style="color: #ff0000;">href</span>=<span
-     style="color: #0000ff;">"modifica.html?</span><span
-     style="color: #0000ff;">${</span><span
-     style="color: #001080;">params</span><span
-     style="color: #0000ff;">}</span><span
-     style="color: #0000ff;">"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;span</span> <span
-     style="color: #ff0000;">class</span>=<span
-     style="color: #0000ff;">'primario'</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">${</span><span
-     style="color: #795e26;">cod</span>(<span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">nombre</span>)<span
-     style="color: #800000;">}</span></div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #800000;">&lt;/span&gt;</span></div>
-  <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/a&gt;</span>`;</div>
-  <div>&nbsp;}</div>
-  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">lista</span> != <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; <span style="color: #001080;">lista</span>.<span
-     style="color: #001080;">innerHTML</span> = <span
-     style="color: #001080;">render</span></div>
-  <div>&nbsp;}</div>
+     style="color: #795e26;">txtConfirmaEliminacion</span>() {</div>
+  <div>&nbsp;<span style="color: #af00db;">return</span> <span
+     style="color: #a31515;">"Confirma la eliminación"</span></div>
   <div>}</div>
  </div>
 </muestra-codigo>
@@ -644,6 +484,16 @@
     <li>
      <p>
       <a href="/m11sincronizacion/m02archivos.html">Archivos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m11sincronizacion/m03Atextos.html">Textos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m11sincronizacion/m03BtxtConfirmaEliminacionJs.html" class="actual">js/textos/txtConfirmaEliminacion.js</a>
      </p>
     </li>
     <li>
@@ -748,17 +598,7 @@
     </li>
     <li>
      <p>
-      <a href="/m11sincronizacion/m23indexJs.html" class="actual">js/index.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
       <a href="/m11sincronizacion/m24agregaHtml.html">agrega.html</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11sincronizacion/m25agregaJs.html">js/agrega.js</a>
      </p>
     </li>
     <li>
@@ -768,17 +608,12 @@
     </li>
     <li>
      <p>
-      <a href="/m11sincronizacion/m27modificaJs.html">js/modifica.js</a>
+      <a href="/m11sincronizacion/m41swJs.html">sw.js</a>
      </p>
     </li>
     <li>
      <p>
       <a href="/m11sincronizacion/m38configJs.html">js/config.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11sincronizacion/m41swJs.html">sw.js</a>
      </p>
     </li>
     <li>
@@ -814,6 +649,11 @@
     <li>
      <p>
       <a href="/m11sincronizacion/m31ejecutaJs.html">lib/js/ejecuta.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m11sincronizacion/m31enviaJsonJs.html">lib/js/enviaJson.js</a>
      </p>
     </li>
     <li>
@@ -855,9 +695,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m11sincronizacion/m22indexHtml.html"
+ let urlAnterior = "/m11sincronizacion/m03Atextos.html"
  /**@type {string} */
- let urlSiguiente = "/m11sincronizacion/m24agregaHtml.html"
+ let urlSiguiente = "/m11sincronizacion/m03servidor.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
