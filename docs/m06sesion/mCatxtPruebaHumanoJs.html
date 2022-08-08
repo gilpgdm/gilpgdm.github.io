@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>19. js/sesion.js - GilPG DM</title>
- <meta name="description" content="Código de «lib/sesion.js».">
+ <title>4. js/textos/txtPruebaHumano.js - GilPG DM</title>
+ <meta name="description" content="Código de «js/textos/txtPruebaHumano.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -429,238 +429,16 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m06sesion/mRindexHtml.html" title="18. index.html">◀</a>
- <a class="siguiente" href="/m06sesion/mTfrecuentes.html" title="20. Archivos frecuentes">▶</a>
-   <h1 >19. js/sesion.js</h1><muestra-codigo>
+ <a class="anterior" href="/m06sesion/mCtextos.html" title="3. Textos">◀</a>
+ <a class="siguiente" href="/m06sesion/mDtxtDatosIncorrectosPhp.html" title="5. srv/textos/txtDatosIncorrectos.php">▶</a>
+   <h1 >4. js/textos/txtPruebaHumano.js</h1><muestra-codigo>
  <div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">ejecuta</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/ejecuta.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">muestraError</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/muestraError.js"</span></div>
-  <div><span style="color: #af00db;">import</span> {</div>
-  <div>&nbsp;<span style="color: #001080;">submit</span></div>
-  <div>} <span style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/submit.js"</span></div><br>
-  <div><span style="color: #008000;">/** </span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{HTMLFormElement|null}</span><span
-     style="color: #008000;"> */</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">sesion</span> = <span
-     style="color: #001080;">document</span>[<span
-     style="color: #a31515;">"sesion"</span>]</div>
-  <div><span style="color: #008000;">/** </span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{HTMLFormElement|null}</span><span
-     style="color: #008000;"> */</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">login</span> = <span
-     style="color: #001080;">document</span>[<span
-     style="color: #a31515;">"login"</span>]</div><br>
-  <div><span style="color: #0000ff;">let</span> <span
-     style="color: #001080;">esHumano</span> = <span
-     style="color: #0000ff;">false</span></div><br>
-  <div><span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">sesion</span> !== <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp;<span style="color: #0070c1;">sesion</span>.<span
-     style="color: #001080;">terminar</span>.<span
-     style="color: #795e26;">addEventListener</span>(</div>
-  <div>&nbsp; <span style="color: #a31515;">"click"</span>, <span
-     style="color: #795e26;">terminaSesión</span>)</div>
-  <div>}</div>
-  <div><span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">login</span> !== <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp;<span style="color: #0070c1;">login</span>.<span
-     style="color: #795e26;">addEventListener</span>(<span
-     style="color: #a31515;">"submit"</span>,</div>
-  <div>&nbsp; <span style="color: #795e26;">iniciaSesión</span>)</div>
-  <div>&nbsp;<span style="color: #0070c1;">login</span>.<span
-     style="color: #001080;">humano</span>.<span
-     style="color: #795e26;">addEventListener</span>(</div>
-  <div>&nbsp; <span style="color: #a31515;">"input"</span>, <span
-     style="color: #795e26;">calculaQueSeaHumano</span>)</div>
-  <div>}</div><br>
-  <div><span style="color: #795e26;">recuperaSesion</span>();</div><br>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">calculaQueSeaHumano</span>() {</div>
-  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">login</span> !== <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; <span style="color: #001080;">esHumano</span> =</div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">login</span>.<span
-     style="color: #001080;">humano</span>.<span
-     style="color: #001080;">valueAsNumber</span> &gt; <span
-     style="color: #098658;">0</span></div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span style="color: #0000ff;">async</span> <span
+  <div><span style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">recuperaSesion</span>() {</div>
-  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">sesion</span> !== <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">json</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #795e26;">ejecuta</span>(</div>
-  <div>&nbsp; &nbsp; <span style="color: #795e26;">fetch</span>(<span
-     style="color: #a31515;">"srv/SrvSesion.php"</span>))</div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">json</span>.<span
-     style="color: #001080;">cue</span> === <span
-     style="color: #a31515;">""</span>) {</div>
-  <div>&nbsp; &nbsp; <span style="color: #795e26;">muestraLogin</span>()</div>
-  <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
-  <div>&nbsp; &nbsp; <span style="color: #795e26;">muestraSesion</span>(<span
-     style="color: #001080;">json</span>.<span
-     style="color: #001080;">cue</span>)</div>
-  <div>&nbsp; &nbsp;}</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">e</span>) {</div>
-  <div>&nbsp; <span style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">e</span>)</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span style="color: #008000;">/** </span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{Event}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">evt</span><span
-     style="color: #008000;"> */</span></div>
-  <div><span style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">iniciaSesión</span>(<span
-     style="color: #001080;">evt</span>) {</div>
-  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
-  <div>&nbsp; <span style="color: #001080;">evt</span>.<span
-     style="color: #795e26;">preventDefault</span>();</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (!<span
-     style="color: #001080;">esHumano</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">throw</span> <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Error</span>(</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #a31515;">"Comprueba que eres humano."</span>)</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">login</span> !== <span
-     style="color: #0000ff;">null</span></div>
-  <div>&nbsp; &nbsp;&amp;&amp; <span
-     style="color: #001080;">sesion</span> !== <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">json</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #795e26;">submit</span>(<span
-     style="color: #001080;">evt</span>,</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #a31515;">"srv/SrvLogin.php"</span>, <span
-     style="color: #001080;">login</span>)</div>
-  <div>&nbsp; &nbsp;<span style="color: #795e26;">muestraSesion</span>(<span
-     style="color: #001080;">json</span>.<span
-     style="color: #001080;">cue</span>)</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">e</span>) {</div>
-  <div>&nbsp; <span style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">e</span>)</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">terminaSesión</span>() {</div>
-  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
-  <div>&nbsp; <span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">ejecuta</span>(</div>
-  <div>&nbsp; &nbsp;<span style="color: #795e26;">fetch</span>(<span
-     style="color: #a31515;">"srv/SrvLogout.php"</span>))</div>
-  <div>&nbsp; <span style="color: #795e26;">muestraLogin</span>()</div>
-  <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">e</span>) {</div>
-  <div>&nbsp; <span style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">e</span>)</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">muestraLogin</span>() {</div>
-  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">sesion</span> !== <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; <span style="color: #001080;">sesion</span>.<span
-     style="color: #001080;">hidden</span> = <span
-     style="color: #0000ff;">true</span></div>
-  <div>&nbsp; <span style="color: #001080;">sesion</span>.<span
-     style="color: #001080;">cue</span>.<span
-     style="color: #001080;">value</span> = <span
-     style="color: #a31515;">""</span></div>
-  <div>&nbsp;}</div>
-  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">login</span> !== <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; <span style="color: #001080;">login</span>.<span
-     style="color: #001080;">cue</span>.<span
-     style="color: #001080;">value</span> = <span
-     style="color: #a31515;">""</span></div>
-  <div>&nbsp; <span style="color: #001080;">login</span>.<span
-     style="color: #001080;">match</span>.<span
-     style="color: #001080;">value</span> = <span
-     style="color: #a31515;">""</span></div>
-  <div>&nbsp; <span style="color: #001080;">login</span>.<span
-     style="color: #001080;">humano</span>.<span
-     style="color: #001080;">valueAsNumber</span> = <span
-     style="color: #098658;">0</span></div>
-  <div>&nbsp; <span style="color: #001080;">esHumano</span> = <span
-     style="color: #0000ff;">false</span></div>
-  <div>&nbsp; <span style="color: #001080;">login</span>.<span
-     style="color: #001080;">hidden</span> = <span
-     style="color: #0000ff;">false</span></div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp;* </span><span
-     style="color: #0000ff;">@param</span><span style="color: #008000;">
-   </span><span style="color: #267f99;">{string}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">usuario</span></div>
-  <div><span style="color: #008000;">&nbsp;*/</span></div>
-  <div><span style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span></div>
-  <div>&nbsp;<span style="color: #795e26;">muestraSesion</span>(<span
-     style="color: #001080;">usuario</span>) {</div>
-  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">sesion</span> !== <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; <span style="color: #001080;">sesion</span>.<span
-     style="color: #001080;">hidden</span> = <span
-     style="color: #0000ff;">false</span></div>
-  <div>&nbsp; <span style="color: #001080;">sesion</span>.<span
-     style="color: #001080;">cue</span>.<span
-     style="color: #001080;">value</span> = <span
-     style="color: #001080;">usuario</span></div>
-  <div>&nbsp;}</div>
-  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">login</span> !== <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; <span style="color: #001080;">login</span>.<span
-     style="color: #001080;">match</span>.<span
-     style="color: #001080;">value</span> = <span
-     style="color: #a31515;">""</span></div>
-  <div>&nbsp; <span style="color: #001080;">login</span>.<span
-     style="color: #001080;">hidden</span> = <span
-     style="color: #0000ff;">true</span></div>
-  <div>&nbsp;}</div>
+     style="color: #795e26;">txtPruebaHumano</span>() {</div>
+  <div>&nbsp;<span style="color: #af00db;">return</span> <span
+     style="color: #a31515;">"Comprueba que eres "</span> +</div>
+  <div>&nbsp; <span style="color: #a31515;">"humano."</span></div>
   <div>}</div>
  </div>
 </muestra-codigo>
@@ -712,6 +490,11 @@
     <li>
      <p>
       <a href="/m06sesion/mCtextos.html">Textos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06sesion/mCatxtPruebaHumanoJs.html" class="actual">js/textos/txtPruebaHumano.js</a>
      </p>
     </li>
     <li>
@@ -791,11 +574,6 @@
     </li>
     <li>
      <p>
-      <a href="/m06sesion/mSsesionJs.html" class="actual">js/sesion.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
       <a href="/m06sesion/mTfrecuentes.html">Archivos frecuentes</a>
      </p>
     </li>
@@ -848,9 +626,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m06sesion/mRindexHtml.html"
+ let urlAnterior = "/m06sesion/mCtextos.html"
  /**@type {string} */
- let urlSiguiente = "/m06sesion/mTfrecuentes.html"
+ let urlSiguiente = "/m06sesion/mDtxtDatosIncorrectosPhp.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
