@@ -103,8 +103,10 @@
    <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">CLASE_ELEVACION2</span> =</div>
-   <div>&nbsp; &nbsp;<span style="color: #a31515;">"elevacion2"</span></div><br>
-   <div>&nbsp; <span style="color: #0000ff;">class</span> <span
+   <div>&nbsp; &nbsp;<span
+      style="color: #a31515;">"elevacion2"</span></div><br>
+   <div class="resaltado">&nbsp; <span
+      style="color: #0000ff;">class</span> <span
       style="color: #267f99;">CnAppBar</span></div>
    <div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span
       style="color: #267f99;">HTMLElement</span> {</div>
@@ -131,8 +133,10 @@
       style="color: #795e26;">connectedCallback</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #001080;">window</span>.<span
       style="color: #795e26;">addEventListener</span>(</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"scroll"</span>,</div>
-   <div>&nbsp; &nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #a31515;">"scroll"</span>,</div>
+   <div>&nbsp; &nbsp; &nbsp;() <span
+      style="color: #0000ff;">=&gt;</span> <span
       style="color: #0000ff;">this</span>.<span
       style="color: #795e26;">onScroll</span>())</div>
    <div>&nbsp; &nbsp;}</div>
@@ -146,7 +150,8 @@
       style="color: #001080;">procesando</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">window</span>.<span
       style="color: #795e26;">requestAnimationFrame</span>(</div>
-   <div>&nbsp; &nbsp; &nbsp; () <span style="color: #0000ff;">=&gt;</span> <span
+   <div>&nbsp; &nbsp; &nbsp; () <span
+      style="color: #0000ff;">=&gt;</span> <span
       style="color: #0000ff;">this</span>.<span
       style="color: #795e26;">avanza</span>())</div>
    <div>&nbsp; &nbsp; }</div>
@@ -160,12 +165,13 @@
       style="color: #001080;">posY</span> === <span
       style="color: #098658;">0</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-      style="color: #0070c1;">classList</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #795e26;">remove</span>(<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">remove</span>(<span
       style="color: #0070c1;">CLASE_ELEVACION2</span>)</div>
    <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-      style="color: #0070c1;">classList</span>.</div>
+      style="color: #001080;">classList</span>.</div>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #795e26;">add</span>(<span
       style="color: #0070c1;">CLASE_ELEVACION2</span>)</div>
    <div>&nbsp; &nbsp; }</div>
@@ -175,7 +181,8 @@
    <div>&nbsp; &nbsp;}</div>
    <div>&nbsp; }</div>
    <div>&nbsp; <span style="color: #001080;">customElements</span>.</div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">define</span>(<span
+   <div class="resaltado">&nbsp; &nbsp;<span
+      style="color: #795e26;">define</span>(<span
       style="color: #a31515;">"cn-app-bar"</span>, <span
       style="color: #267f99;">CnAppBar</span>)</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
@@ -185,7 +192,8 @@
       style="color: #098658;">0</span>;</div>
    <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">scroll-padding-top</span>: <span
-      style="color: #098658;">3rem</span>;</div>
+      style="color: #098658;">3rem</span>;
+   </div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">.elevacion2</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
@@ -195,7 +203,8 @@
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colSh</span>);</div>
    <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span> {</div>
+   <div class="resaltado">&nbsp; <span
+      style="color: #800000;">cn-app-bar</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
       style="color: #0451a5;">sticky</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">top</span>: <span
@@ -230,7 +239,8 @@
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span>&gt;<span
+   <div class="resaltado">&nbsp; <span
+      style="color: #800000;">cn-app-bar</span>&gt;<span
       style="color: #800000;">nav</span>&gt;<span
       style="color: #800000;">button</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
@@ -290,9 +300,12 @@
       style="color: #098658;">0</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">padding</span>: <span
       style="color: #098658;">1rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-radius</span>: <span
+      style="color: #098658;">1rem</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">overflow</span>: <span
       style="color: #0451a5;">auto</span>;</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">list-style-type</span>: <span
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">list-style-type</span>: <span
       style="color: #0451a5;">none</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">text-align</span>: <span
       style="color: #0451a5;">left</span>;</div>
@@ -368,7 +381,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colOnSrf</span>);</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">text-decoration</span>: <span
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">text-decoration</span>: <span
       style="color: #0451a5;">none</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">white-space</span>: <span
       style="color: #0451a5;">nowrap</span>;</div>
@@ -389,9 +403,11 @@
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div class="resaltado2"><span
+      style="color: #800000;">&lt;body&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;cn-app-bar&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;nav&gt;</span></div>
+   <div class="resaltado">&nbsp; <span
+      style="color: #800000;">&lt;nav&gt;</span></div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;button</span> <span
       style="color: #ff0000;">type</span>=<span
       style="color: #0000ff;">"button"</span></div>
@@ -414,22 +430,24 @@
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp;menu</div>
    <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;ul</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">cajon</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;li&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;h2&gt;</span>Cajón de Navegación<span
-      style="color: #800000;">&lt;/h2&gt;</span></div>
+      style="color: #800000;">&lt;h2&gt;</span>Cajón
+    de Navegación<span style="color: #800000;">&lt;/h2&gt;</span></div>
    <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/li&gt;</span></div>
    <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;li&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;a</span> <span
       style="color: #ff0000;">href</span>=<span
       style="color: #0000ff;">"inicio.html"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;span</span> <span
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;span</span> <span
       style="color: #ff0000;">class</span>=<span
       style="color: #0000ff;">"material-icons"</span><span
       style="color: #800000;">&gt;</span></div>
@@ -445,7 +463,8 @@
       style="color: #ff0000;">href</span>=<span
       style="color: #0000ff;">"contactos.html"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;span</span> <span
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;span</span> <span
       style="color: #ff0000;">class</span>=<span
       style="color: #0000ff;">"material-icons"</span><span
       style="color: #800000;">&gt;</span></div>
@@ -461,7 +480,8 @@
       style="color: #ff0000;">href</span>=<span
       style="color: #0000ff;">"carrito.html"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;span</span> <span
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;span</span> <span
       style="color: #ff0000;">class</span>=<span
       style="color: #0000ff;">"material-icons"</span><span
       style="color: #800000;">&gt;</span></div>
@@ -477,7 +497,8 @@
       style="color: #ff0000;">href</span>=<span
       style="color: #0000ff;">"algo.html"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;span</span> <span
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;span</span> <span
       style="color: #ff0000;">class</span>=<span
       style="color: #0000ff;">"material-icons"</span><span
       style="color: #800000;">&gt;</span></div>
@@ -495,7 +516,8 @@
       style="color: #ff0000;">href</span>=<span
       style="color: #0000ff;">"ayuda.html"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;span</span> <span
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;span</span> <span
       style="color: #ff0000;">class</span>=<span
       style="color: #0000ff;">"material-icons"</span><span
       style="color: #800000;">&gt;</span></div>
@@ -511,7 +533,8 @@
       style="color: #ff0000;">href</span>=<span
       style="color: #0000ff;">"ajustes.html"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;span</span> <span
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;span</span> <span
       style="color: #ff0000;">class</span>=<span
       style="color: #0000ff;">"material-icons"</span><span
       style="color: #800000;">&gt;</span></div>
@@ -519,8 +542,8 @@
    <div>&nbsp; &nbsp; &nbsp; <span
       style="color: #800000;">&lt;/span&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp; Ajustes</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/a&gt;</span>
-   </div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/a&gt;</span></div>
    <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/li&gt;</span></div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/ul&gt;</span></div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;div</span> <span
@@ -547,7 +570,8 @@
       style="color: #800000;">&lt;/h1&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;/cn-app-bar&gt;</span></div>
    <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;/html&gt;</span></div>
   </div>
  </muestra-codigo>
 </div>
@@ -557,7 +581,8 @@
   <li>
    <p>
     El cajón de navegación está definido en
-    <a href="https://m3.material.io/components/navigation-drawer/overview" rel="nooper"
+    <a href="https://m3.material.io/components/navigation-drawer/overview"
+      rel="nooper"
       target="_blank">https://m3.material.io/components/navigation-drawer/overview</a>.
    </p>
   </li>
