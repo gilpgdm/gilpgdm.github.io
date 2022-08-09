@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
  <meta charset="UTF-8">
  <meta name="viewport"
@@ -9,16 +10,16 @@
   html {
    --colTxt: black;
    --colBk: white;
-   --colIntOn: #0039cb;
-   --colIntOnHv: #0039cb22;
-   --colIntOnFc: #0039cb44;
-   --colIntOnAct: #0039cb66;
-   --colIntOnBk: #768fff;
-   --colIntOff: #f0f0f0;
+   --colIntOn: #FFFFFF;
+   --colIntOnHv: #6750A422;
+   --colIntOnFc: #6750A444;
+   --colIntOnAct: #6750A466;
+   --colIntOnBk: #6750A4;
+   --colIntOff: #6750A4;
    --colIntOffHv: #e0e0e088;
    --colIntOffFc: #d0d0d077;
    --colIntOffAct: #c0c0c077;
-   --colIntOffBk: #BDBDBD;
+   --colIntOffBk: #E7E0EC;
    --colIntIos: white;
    --colIntIosOnBk: #2acc2a;
    --colIntIosOnBkFc: #1bbb1b;
@@ -43,7 +44,7 @@
   }
 
   body:not(.ios) cm-int input {
-   width: 2rem;
+   width: 3.25rem;
   }
 
   cm-int input:focus {
@@ -53,11 +54,15 @@
   body:not(.ios) cm-int input::-webkit-slider-runnable-track {
    background-color:
     var(--colIntOnBk);
-   border-radius: 5px;
-   height: 10px;
+   height: 2rem;
+   border-radius: 1rem;
   }
 
   body:not(.ios) cm-int input.off::-webkit-slider-runnable-track {
+   border-width: thin;
+   border-style: solid;
+   border-color:
+    var(--colIntOnBk);
    background-color:
     var(--colIntOffBk);
   }
@@ -66,10 +71,11 @@
    -webkit-appearance: none;
    background-color:
     var(--colIntOn);
-   margin-top: -5px;
-   width: 20px;
-   height: 20px;
-   border-radius: 10px;
+   margin-top: 0.25rem;
+   margin-left: -0.2rem;
+   width: 1.5rem;
+   height: 1.5rem;
+   border-radius: 0.75rem;
   }
 
   body:not(.ios) cm-int input:hover::-webkit-slider-thumb {
@@ -84,15 +90,22 @@
 
   body:not(.ios) cm-int input:active::-webkit-slider-thumb {
    box-shadow:
-    0 0 0 0.5rem var(--colIntOnAct)
+    0 0 0 0.5rem var(--colIntOnAct);
+   margin-top: 0.25rem;
+   margin-left: -0.2rem;
+   width: 1.6rem;
+   height: 1.6rem;
+   border-radius: 0.8rem;
   }
 
   body:not(.ios) cm-int input.off::-webkit-slider-thumb {
    background-color:
     var(--colIntOff);
-   border-width: thin;
-   border-style: solid;
-   border-color: var(--colIntOffBk)
+   margin-top: 0.375rem;
+   margin-left: 0.375rem;
+   width: 1rem;
+   height: 1rem;
+   border-radius: 0.5rem;
   }
 
 
@@ -108,17 +121,26 @@
 
   body:not(.ios) cm-int input.off:active::-webkit-slider-thumb {
    box-shadow:
-    0 0 0 0.5rem var(--colIntOffAct)
+    0 0 0 0.5rem var(--colIntOffAct);
+   margin-top: 0.1rem;
+   margin-left: 0.1rem;
+   width: 1.7rem;
+   height: 1.7rem;
+   border-radius: 0.85rem;
   }
 
   body:not(.ios) cm-int input::-moz-range-track {
    background-color:
     var(--colIntOnBk);
-   border-radius: 5px;
-   height: 10px;
+   height: 2rem;
+   border-radius: 1rem;
   }
 
   body:not(.ios) cm-int input.off::-moz-range-track {
+   border-width: thin;
+   border-style: solid;
+   border-color:
+    var(--colIntOnBk);
    background-color:
     var(--colIntOffBk)
   }
@@ -126,11 +148,12 @@
   body:not(.ios) cm-int input::-moz-range-thumb {
    background-color:
     var(--colIntOn);
-   margin-top: -5px;
-   width: 20px;
-   height: 20px;
-   border: none;
-   border-radius: 10px;
+   margin-top: 0.25rem;
+   margin-right: 0.2rem;
+   width: 1.5rem;
+   height: 1.5rem;
+   border-radius: 0.75rem;
+   box-sizing: border-box;
   }
 
   body:not(.ios) cm-int input:hover::-moz-range-thumb {
@@ -145,15 +168,20 @@
 
   body:not(.ios) cm-int input:active::-moz-range-thumb {
    box-shadow:
-    0 0 0 0.5rem var(--colIntOnAct)
+    0 0 0 0.5rem var(--colIntOnAct);
+   width: 1.6rem;
+   height: 1.6rem;
+   border-radius: 0.8rem;
   }
 
   body:not(.ios) cm-int input.off::-moz-range-thumb {
    background-color:
     var(--colIntOff);
-   border-width: thin;
-   border-style: solid;
-   border-color: var(--colIntOffBk)
+   margin-top: 0.375rem;
+   margin-left: 0.375rem;
+   width: 1rem;
+   height: 1rem;
+   border-radius: 0.5rem;
   }
 
   body:not(.ios) cm-int input.off:hover::-moz-range-thumb {
@@ -168,7 +196,12 @@
 
   body:not(.ios) cm-int input.off:active::-moz-range-thumb {
    box-shadow:
-    0 0 0 0.5rem var(--colIntOffAct)
+    0 0 0 0.5rem var(--colIntOffAct);
+   margin-top: 0.1rem;
+   margin-left: 0.1rem;
+   width: 1.7rem;
+   height: 1.7rem;
+   border-radius: 0.85rem;
   }
 
   body.ios cm-int input {
@@ -276,6 +309,7 @@
   }
  </style>
 </head>
+
 <body>
  <h1>Interruptores</h1>
  <cm-int>
@@ -331,4 +365,5 @@
    define("cm-int", CmInt);
  </script>
 </body>
+
 </html>
