@@ -457,24 +457,24 @@
   <dd>
    <p>
     <a href="https://material.io/" target="_blank"
-      rel="nooper">https://material.io/</a>
+      rel="noopener">https://material.io/</a>
    </p>
    <p>
     <a href="https://m3.material.io/" target="_blank"
-      rel="nooper">https://m3.material.io/</a>
+      rel="noopener">https://m3.material.io/</a>
    </p>
   </dd>
   <dt>Material Icons</dt>
   <dd>
    <p>
-    <a href="https://material.io/resources/icons" rel="nooper"
-      target="_blank" rel="nooper">https://material.io/resources/icons</a>
+    <a href="https://material.io/resources/icons" rel="noopener"
+      target="_blank" rel="noopener">https://material.io/resources/icons</a>
    </p>
   </dd>
   <dt>Material Theme Builder</dt>
   <dd>
    <p>
-    <a href="https://m3.material.io/theme-builder/" rel="nooper"
+    <a href="https://m3.material.io/theme-builder/" rel="noopener"
       target="_blank">https://m3.material.io/theme-builder/</a>
    </p>
   </dd>
@@ -482,14 +482,14 @@
   <dd>
    <p>
     <a href="https://material.io/design/navigation/understanding-navigation.html"
-      target="_blank" rel="nooper">https://material.io/design/navigation/understanding-navigation.html</a>
+      target="_blank" rel="noopener">https://material.io/design/navigation/understanding-navigation.html</a>
    </p>
   </dd>
   <dt>Adaptación multiplataforma</dt>
   <dd>
    <p>
     <a href="https://material.io/design/platform-guidance/cross-platform-adaptation.html"
-      target="_blank" rel="nooper">https://material.io/design/platform-guidance/cross-platform-adaptation.html</a>
+      target="_blank" rel="noopener">https://material.io/design/platform-guidance/cross-platform-adaptation.html</a>
    </p>
   </dd>
  </dl>
@@ -500,9 +500,16 @@
  <ul>
   <li>
    <p>
-    Los formularios móviles muestran los mensajes de error del componente en
-    otro componente conocido como texto de ayuda y que en este ejemplo se
-    muestra con el id <var>msgGenero</var>.
+    Los mensajes de error de de un componente, se muestran en otro componente
+    conocido como <dfn>texto de ayuda</dfn>.
+   </p>
+  </li>
+  <li>
+   <p>
+    En este ejemplo, se muestra un texto de ayuda con el aributo
+    <code class="language-html">id="msgGenero"</code>,
+    colocado dentro de un elemento
+    <code class="language-html">small</code>
    </p>
   </li>
   <li>
@@ -519,11 +526,12 @@
   <iframe src="/src/m03vistas/Aformulario.html" height="250"
     title="Forrmulario para móvil"></iframe>
   <p class="noPrint">
-   <a href="/src/m03vistas/Aformulario.html" target="_blank" rel="nooper">Ábrelo
+   <a href="/src/m03vistas/Aformulario.html" target="_blank"
+     rel="noopener">Ábrelo
     en otra pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="nooper"
+   <a target="_blank" rel="noopener"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EFormulario%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%20id%3D%22form%22%20novalidate%0A%20%20%20action%3D%22javascript%3Aprocesa()%22%3E%0A%20%20%3Ch1%3EFormulario%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%20for%3D%22inGenero%22%3E%0A%20%20%20%20*G%C3%A9nero%0A%20%20%20%3C%2Flabel%3E%0A%20%20%20%3Cselect%20id%3D%22inGenero%22%20required%0A%20%20%20%20%20oninput%3D%22copiaMensajes()%22%3E%0A%20%20%20%20%3Coption%20value%3D%22%22%3E%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22pop%22%3E%0A%20%20%20%20%20Pop%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22reg%22%3E%0A%20%20%20%20%20Reguet%C3%B3n%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22tango%22%3E%0A%20%20%20%20%20Tango%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%3C%2Fselect%3E%0A%20%20%20%3Csmall%3E%0A%20%20%20%20%3Coutput%20id%3D%22msgGenero%22%3E%0A%20%20%20%20%20*Requerido%0A%20%20%20%20%3C%2Foutput%3E%0A%20%20%20%3C%2Fsmall%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cbutton%3ERecomendar%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%20for%3D%22outSalida%22%3E%0A%20%20%20%20Resultado%0A%20%20%20%3C%2Flabel%3E%0A%20%20%20%3Coutput%20id%3D%22outSalida%22%3E%0A%20%20%20%3C%2Foutput%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20const%20REQUERIDO%20%3D%20%22*Requerido%22%0A%0A%20%20function%20procesa()%20%7B%0A%20%20%20try%20%7B%0A%20%20%20%20copiaMensajes()%0A%20%20%20%20if%20(inGenero.validity.valid)%20%7B%0A%20%20%20%20%20const%20genero%20%3D%20inGenero.value%0A%20%20%20%20%20outSalida.value%20%3D%0A%20%20%20%20%20%20recomienda(genero)%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20outSalida.value%20%3D%20%22%22%0A%20%20%20%20%7D%0A%20%20%20%7D%20catch%20(e)%20%7B%0A%20%20%20%20console.error(e)%0A%20%20%20%20outSalida.value%20%3D%20e.message%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20%2F**%20%40param%20%7Bstring%7D%20genero%20*%2F%0A%20%20function%20recomienda(genero)%20%7B%0A%20%20%20if%20(genero%20%3D%3D%3D%20%22pop%22)%20%7B%0A%20%20%20%20return%20%22Ariana%20Grande.%22%0A%20%20%20%7D%20else%20if%20(genero%20%3D%3D%3D%20%22reg%22)%20%7B%0A%20%20%20%20return%20%22Bad%20Bunny.%22%0A%20%20%20%7D%20else%20%7B%0A%20%20%20%20return%20%22De%20eso%20no%20conozco.%22%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20function%20copiaMensajes()%20%7B%0A%20%20%20msg(inGenero%2C%20msgGenero%2C%0A%20%20%20%20REQUERIDO)%0A%20%20%7D%0A%0A%20%20%2F**%0A%20%20%20*%20Sin%20un%20elemento%20tiene%20un%0A%20%20%20*%20mensaje%20de%20validaci%C3%B3n%2C%20lo%0A%20%20%20*%20muestra%20en%20su%20elemento%20de%0A%20%20%20*%20ayuda%20y%20si%20no%2C%20muestra%20un%0A%20%20%20*%20texto%20de%20ayuda.%0A%20%20%20*%20%40param%20%7BHTMLInputElement%7C%0A%20%20%20*%20%20HTMLTextAreaElement%7C%0A%20%20%20*%20%20HTMLSelectElement%7C%0A%20%20%20*%20%20HTMLOutputElement%7Cnull%7D%20e%0A%20%20%20*%20referencia%20a%20un%20elemento%20que%0A%20%20%20*%20contiene%20datos.%0A%20%20%20*%20%40param%20%7BHTMLOutputElement%7C%0A%20%20%20*%20%20null%7D%20out%0A%20%20%20*%20elemento%20de%20ayuda%20para%20e.%0A%20%20%20*%20%40param%20%7Bstring%7D%20ok%20mensaje%20de%0A%20%20%20*%20ayuda%20cuando%20el%20estado%20de%20e%20es%0A%20%20%20*%20v%C3%A1lido.%0A%20%20%20*%2F%0A%20%20function%20msg(e%2C%20out%2C%20ok)%20%7B%0A%20%20%20if%20(e%20!%3D%3D%20null%0A%20%20%20%20%26%26%20out%20!%3D%3D%20null)%20%7B%0A%20%20%20%20if%20(e.validity.valid)%20%7B%0A%20%20%20%20%20out.value%20%3D%20ok%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20out.value%20%3D%0A%20%20%20%20%20%20e.validationMessage%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
@@ -553,11 +561,13 @@
       style="color: #800000;">&lt;/title&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
    <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;form</span> <span
+   <div class="resaltado">&nbsp;<span
+      style="color: #800000;">&lt;form</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"form"</span> <span
       style="color: #ff0000;">novalidate</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">action</span>=<span
+   <div class="resaltado">&nbsp; &nbsp;<span
+      style="color: #ff0000;">action</span>=<span
       style="color: #0000ff;">"javascript:procesa()"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>Formulario<span
@@ -569,7 +579,8 @@
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; *Género</div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;select</span> <span
+   <div class="resaltado">&nbsp; &nbsp;<span
+      style="color: #800000;">&lt;select</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"inGenero"</span> <span
       style="color: #ff0000;">required</span></div>
@@ -606,7 +617,8 @@
       style="color: #800000;">&lt;/option&gt;</span></div>
    <div>&nbsp; &nbsp;<span
       style="color: #800000;">&lt;/select&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;small&gt;</span></div>
+   <div class="resaltado">&nbsp; &nbsp;<span
+      style="color: #800000;">&lt;small&gt;</span></div>
    <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;output</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"msgGenero"</span><span
@@ -628,7 +640,8 @@
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; Resultado</div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;output</span> <span
+   <div class="resaltado">&nbsp; &nbsp;<span
+      style="color: #800000;">&lt;output</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"outSalida"</span><span
       style="color: #800000;">&gt;</span></div>
@@ -636,7 +649,8 @@
       style="color: #800000;">&lt;/output&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+     style="color: #800000;">&lt;script&gt;</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">REQUERIDO</span> = <span
       style="color: #a31515;">"*Requerido"</span></div><br>
@@ -785,6 +799,23 @@
   </div>
  </muestra-codigo>
 </div>
+<div class="lectura">
+ <section>
+  <h1>Solo para los más rudos</h1>
+  <ul>
+   <li>
+    <p>
+     La especificación técnica del elemento
+     <code class="language-html">title</code>
+     está en
+     <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element"
+       rel="noopener"
+       target="_blank">https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element</a>
+    </p>
+   </li>
+  </ul>
+ </section>
+</div>
       </section>
      <section >
          <h1 >C. Vistas con Material Design</h1>
@@ -796,7 +827,7 @@
    <p>
     El sitio oficial de los íconos de Material Design es
     <a href="https://https://fonts.google.com/icons?selected=Material+Icons"
-      rel="nooper"
+      rel="noopener"
       target="_blank">https://https://fonts.google.com/icons?selected=Material+Icons</a>.
    </p>
   </li>
@@ -820,10 +851,10 @@
     title="Ejemplo con íconos oficiales"></iframe>
   <p class="noPrint">
    <a href="/src/m03vistas/Jiconos.html" target="_blank"
-     rel="nooper">Ábrelo en otra pestaña.</a>
+     rel="noopener">Ábrelo en otra pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="nooper"
+   <a target="_blank" rel="noopener"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3Econos%3C%2Ftitle%3E%0A%20%3C!--%0A%20%20Carga%20los%20%C3%ADconos%20oficiales%20de%0A%20%20Material%20Design.%0A%20--%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMaterial%2BIcons%22%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3E%C3%8Dconos%3C%2Fh1%3E%0A%20%3Cbutton%3E%0A%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20fingerprint%0A%20%20%3C%2Fspan%3E%0A%20%3C%2Fbutton%3E%0A%20%3Ca%20href%3D%22https%3A%2F%2Fgoogle.com%22%3E%0A%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20shopping_cart%0A%20%20%3C%2Fspan%3E%3C%2Fa%3E%0A%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20thumb_up%0A%20%3C%2Fspan%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
@@ -922,11 +953,11 @@
   <h1>Salida</h1>
   <iframe src="/src/m03vistas/Bapp.html" title="App básica"></iframe>
   <p class="noPrint">
-   <a href="/src/m03vistas/Bapp.html" target="_blank" rel="nooper">Ábrelo en
+   <a href="/src/m03vistas/Bapp.html" target="_blank" rel="noopener">Ábrelo en
     otra pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="nooper"
+   <a target="_blank" rel="noopener"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EApp%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Cstyle%3E%0A%20%20%2F*%20Custom%20properties%20*%2F%0A%20%20html%20%7B%0A%20%20%20--colOnBg%3A%20%231C1B1F%3B%0A%20%20%20--colBg%3A%20%23FFFBFE%3B%0A%20%20%20--colOnSrf%3A%20%231C1B1F%3B%0A%20%20%20--colSrf%3A%20%23FFFBFE%3B%0A%20%20%20--colSh%3A%20%2300000055%3B%0A%20%20%20%2F*%20Los%202%20primeros%20fonts%20son%0A%20%20%20%20*%20para%20apple.%20*%2F%0A%20%20%20--fntFam%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20color%3A%20var(--colOnBg)%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cscript%3E%0A%20%20const%20CLASE_ELEVACION2%20%3D%0A%20%20%20%22elevacion2%22%0A%0A%20%20class%20CnAppBar%0A%20%20%20extends%20HTMLElement%20%7B%0A%20%20%20constructor()%20%7B%0A%20%20%20%20super()%0A%20%20%20%20%2F**%20%40type%20%7Bnumber%7D%20*%2F%0A%20%20%20%20this.posY%20%3D%200%0A%20%20%20%20%2F**%20%40type%20%7Bboolean%7D%20*%2F%0A%20%20%20%20this.procesando%20%3D%20false%0A%20%20%20%7D%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20window.addEventListener(%0A%20%20%20%20%20%22scroll%22%2C%0A%20%20%20%20%20()%20%3D%3E%20this.onScroll())%0A%20%20%20%7D%0A%20%20%20onScroll()%20%7B%0A%20%20%20%20this.posY%20%3D%20window.scrollY%0A%20%20%20%20if%20(!this.procesando)%20%7B%0A%20%20%20%20%20window.requestAnimationFrame(%0A%20%20%20%20%20%20()%20%3D%3E%20this.avanza())%0A%20%20%20%20%7D%0A%20%20%20%20this.procesando%20%3D%20true%0A%20%20%20%7D%0A%20%20%20avanza()%20%7B%0A%20%20%20%20if%20(this.posY%20%3D%3D%3D%200)%20%7B%0A%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20remove(CLASE_ELEVACION2)%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20add(CLASE_ELEVACION2)%0A%20%20%20%20%7D%0A%20%20%20%20this.procesando%20%3D%20false%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.%0A%20%20%20define(%22cn-app-bar%22%2C%20CnAppBar)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20body%20%7B%0A%20%20%20margin%3A%200%3B%0A%20%20%20scroll-padding-top%3A%203rem%3B%0A%20%20%7D%0A%0A%20%20.elevacion2%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%206px%2012px%20var(--colSh)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20%7B%0A%20%20%20position%3A%20sticky%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20display%3A%20block%3B%0A%20%20%20color%3A%20var(--colOnSrf)%3B%0A%20%20%20background-color%3A%20var(--colSrf)%0A%20%20%7D%0A%0A%20%20h1%20%7B%0A%20%20%20text-align%3A%20center%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%201.125rem%3B%0A%20%20%20font-size%3A%201.375rem%3B%0A%20%20%20line-height%3A%201.75rem%3B%0A%20%20%20font-weight%3A%20normal%3B%0A%20%20%7D%0A%0A%20%20p%20%7B%0A%20%20%20margin%3A%201rem%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ccn-app-bar%3E%0A%20%20%3Ch1%3EApp%3C%2Fh1%3E%0A%20%3C%2Fcn-app-bar%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
@@ -972,7 +1003,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
       style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #008000;">/* Custom properties */</span>
    </div>
    <div>&nbsp; <span style="color: #800000;">html</span> {</div>
@@ -1006,7 +1038,8 @@
    </div>
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;script&gt;</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">CLASE_ELEVACION2</span> =</div>
    <div>&nbsp; &nbsp;<span style="color: #a31515;">"elevacion2"</span></div><br>
@@ -1086,7 +1119,8 @@
       style="color: #a31515;">"cn-app-bar"</span>, <span
       style="color: #267f99;">CnAppBar</span>)</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">body</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
       style="color: #098658;">0</span>;</div>
@@ -1209,7 +1243,7 @@
    <p>
     Las barras de aplicación en Material Design están definidas en
     <a href="https://m3.material.io/components/top-app-bar/overview"
-      rel="nooper"
+      rel="noopener"
       target="_blank">https://m3.material.io/components/top-app-bar/overview</a>.
    </p>
   </li>
@@ -1217,17 +1251,32 @@
 </div>
       </section>
      <section >
-         <h1 >F. Menú de extensión</h1><div class="horizontal">
+         <h1 >F. Menú de extensión</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Despliega las operaciones válidas para una forma.
+   </p>
+  </li>
+  <li>
+   <p>
+    El bótón que lo abre tiene el ícono <strong>⁝</strong> en Android y
+    <strong>⋯</strong> en iOS.
+   </p>
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
  <section>
   <h1>Salida</h1>
   <iframe src="/src/m03vistas/Oextension.html" height="350"
     title="Navegación inferior para móvil"></iframe>
   <p class="noPrint">
    <a href="/src/m03vistas/Oextension.html" target="_blank"
-     rel="nooper">Ábrelo en otra pestaña.</a>
+     rel="noopener">Ábrelo en otra pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="nooper"
+   <a target="_blank" rel="noopener"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EMen%C3%BA%20de%20Extensi%C3%B3n%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMaterial%2BIcons%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--colOnBg%3A%20%231C1B1F%3B%0A%20%20%20--colBg%3A%20%23FFFBFE%3B%0A%20%20%20--colSrf%3A%20%23FFFBFE%3B%0A%20%20%20--colBgAc%3A%20%234646462c%3B%0A%20%20%20--colOnSrf%3A%20%231C1B1F%3B%0A%20%20%20--colSrf%3A%20%23FFFBFE%3B%0A%20%20%20--color-ext%3A%20white%3B%0A%20%20%20--colSh%3A%20%2300000055%3B%0A%20%20%20font-family%3A%20sans-serif%3B%0A%20%20%20color%3A%20var(--color-letra)%3B%0A%20%20%20--fntFam%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20color%3A%20var(--colOnBg)%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cscript%3E%0A%20%20const%20CLASE_ELEVACION2%20%3D%0A%20%20%20%22elevacion2%22%0A%0A%20%20class%20CnAppBar%0A%20%20%20extends%20HTMLElement%20%7B%0A%20%20%20constructor()%20%7B%0A%20%20%20%20super()%0A%20%20%20%20%2F**%20%40type%20%7Bnumber%7D%20*%2F%0A%20%20%20%20this.posY%20%3D%200%0A%20%20%20%20%2F**%20%40type%20%7Bboolean%7D%20*%2F%0A%20%20%20%20this.procesando%20%3D%20false%0A%20%20%20%7D%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20window.addEventListener(%0A%20%20%20%20%20%22scroll%22%2C%0A%20%20%20%20%20()%20%3D%3E%20this.onScroll())%0A%20%20%20%7D%0A%20%20%20onScroll()%20%7B%0A%20%20%20%20this.posY%20%3D%20window.scrollY%0A%20%20%20%20if%20(!this.procesando)%20%7B%0A%20%20%20%20%20window.requestAnimationFrame(%0A%20%20%20%20%20%20()%20%3D%3E%20this.avanza())%0A%20%20%20%20%7D%0A%20%20%20%20this.procesando%20%3D%20true%0A%20%20%20%7D%0A%20%20%20avanza()%20%7B%0A%20%20%20%20if%20(this.posY%20%3D%3D%3D%200)%20%7B%0A%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20remove(CLASE_ELEVACION2)%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20add(CLASE_ELEVACION2)%0A%20%20%20%20%7D%0A%20%20%20%20this.procesando%20%3D%20false%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.%0A%20%20%20define(%22cn-app-bar%22%2C%20CnAppBar)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20body%20%7B%0A%20%20%20margin%3A%200%3B%0A%20%20%20scroll-padding-top%3A%203rem%3B%0A%20%20%7D%0A%0A%20%20.elevacion2%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%206px%2012px%20var(--colSh)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20%7B%0A%20%20%20position%3A%20sticky%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20display%3A%20block%3B%0A%20%20%20color%3A%20var(--colOnSrf)%3B%0A%20%20%20background-color%3A%20var(--colSrf)%0A%20%20%7D%0A%0A%20%20h1%20%7B%0A%20%20%20text-align%3A%20center%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%201.125rem%3B%0A%20%20%20font-size%3A%201.375rem%3B%0A%20%20%20line-height%3A%201.75rem%3B%0A%20%20%20font-weight%3A%20normal%3B%0A%20%20%7D%0A%0A%20%20p%20%7B%0A%20%20%20margin%3A%201rem%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cstyle%3E%0A%20%20cn-app-bar%20button%20%7B%0A%20%20%20border%3A%20none%3B%0A%20%20%20padding%3A%200%3B%0A%20%20%20margin%3A%200%200%200%201.5rem%3B%0A%20%20%20background-color%3A%20transparent%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20button%3Aactive%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colBgAc)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20.ext%3Ebutton%20%7B%0A%20%20%20position%3A%20absolute%3B%0A%20%20%20top%3A%201.25rem%3B%0A%20%20%20right%3A%201rem%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20.ext%20ul%20%7B%0A%20%20%20display%3A%20none%3B%0A%20%20%20position%3A%20absolute%3B%0A%20%20%20overflow%3A%20auto%3B%0A%20%20%20list-style-type%3A%20none%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%200.5rem%200%3B%0A%20%20%20top%3A%202.5rem%3B%0A%20%20%20right%3A%201rem%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--color-ext)%3B%0A%20%20%20box-shadow%3A%0A%20%20%20%20-1px%205px%207px%200px%20var(--colSh)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20.ext%20ul.muestra%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20.ext%20ul%20button%20%7B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%201rem%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20li%20button%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20width%3A%20100%25%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ccn-app-bar%3E%0A%20%20%3Ch1%3EExtensi%C3%B3n%3C%2Fh1%3E%0A%20%20%3Cdiv%20class%3D%22ext%22%3E%0A%20%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20onclick%3D%22extension.classList.%0A%20%20%20%20%20%20%20toggle('muestra')%22%3E%0A%20%20%20%20%3Cspan%20id%3D%22extBtn%22%0A%20%20%20%20%20%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20more_vert%0A%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%20%3Cul%20id%3D%22extension%22%3E%0A%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20%20%20onclick%3D%22extension.%0A%20%20%20%20%20%20%20%20%20classList.%0A%20%20%20%20%20%20%20%20%20remove('muestra')%22%3E%0A%20%20%20%20%20%20Guardar%0A%20%20%20%20%20%3C%2Fbutton%3E%0A%20%20%20%20%3C%2Fli%3E%0A%20%20%20%3C%2Ful%3E%0A%20%20%3C%2Fdiv%3E%0A%20%3C%2Fcn-app-bar%3E%0A%20%3Cscript%3E%0A%20%20if%20(%2F.*android.*%2Fi.%0A%20%20%20test(navigator.userAgent))%20%7B%0A%20%20%20document.body.classList%0A%20%20%20%20.add(%22android%22)%0A%20%20%7D%0A%20%20if%20(%0A%20%20%20%2F.*(iPad%7CiPhone%7CiPod%7CMac).*%2F.%0A%20%20%20%20test(navigator.userAgent))%20%7B%0A%20%20%20document.body.classList.%0A%20%20%20%20add('ios')%0A%20%20%20extBtn.textContent%20%3D%0A%20%20%20%20%22more_horiz%22%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
@@ -1280,7 +1329,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
       style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Material+Icons"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">html</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colOnBg</span>: <span
       style="color: #0451a5;">#1C1B1F</span>;</div>
@@ -1319,7 +1369,8 @@
       style="color: #001080;">--colBg</span>);</div>
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;script&gt;</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">CLASE_ELEVACION2</span> =</div>
    <div>&nbsp; &nbsp;<span style="color: #a31515;">"elevacion2"</span></div><br>
@@ -1400,7 +1451,8 @@
       style="color: #a31515;">"cn-app-bar"</span>, <span
       style="color: #267f99;">CnAppBar</span>)</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">body</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
       style="color: #098658;">0</span>;</div>
@@ -1451,7 +1503,8 @@
       style="color: #098658;">1rem</span>;</div>
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div class="resaltado">&nbsp; <span
       style="color: #800000;">cn-app-bar</span> <span
       style="color: #800000;">button</span> {</div>
@@ -1663,7 +1716,7 @@
    <p>
     Las barras de aplicación en Material Design están definidas en
     <a href="https://m3.material.io/components/top-app-bar/overview"
-      rel="nooper"
+      rel="noopener"
       target="_blank">https://m3.material.io/components/top-app-bar/overview</a>.
    </p>
   </li>
@@ -1671,17 +1724,17 @@
    <p>
     Las barras de aplicación en Material Design están definidas en
     <a href="https://m3.material.io/components/top-app-bar/overview"
-      rel="nooper"
+      rel="noopener"
       target="_blank">https://m3.material.io/components/top-app-bar/overview</a>.
    </p>
   </li>
   <li>
    <p>
     Los menús en Material Design están definidos en
-    <a href="https://material.io/components/menus" rel="nooper"
+    <a href="https://material.io/components/menus" rel="noopener"
       target="_blank">https://material.io/components/menus</a>
     y en
-    <a href="https://m3.material.io/components/menus/overview" rel="nooper"
+    <a href="https://m3.material.io/components/menus/overview" rel="noopener"
       target="_blank">https://m3.material.io/components/menus/overview</a>.
    </p>
   </li>
@@ -1694,8 +1747,8 @@
   <li>
    <p>
     Se usa una etiqueta flotante que se muestra grande cuando el contenido de
-    campo es una cadena vacía y se muestra pequeña cuando el elemento está
-    en uso o cuando su contenido no está vacío.
+    campo es una cadena vacía y se muestra pequeña cuando el elemento se está
+    capturando o cuando su contenido no está vacío.
    </p>
   </li>
   <li>
@@ -1713,11 +1766,12 @@
   <iframe src="/src/m03vistas/Ccampos.html" height="420"
     title="Campos de captura para móvil"></iframe>
   <p class="noPrint">
-   <a href="/src/m03vistas/Ccampos.html" target="_blank" rel="nooper">Ábrelo en
+   <a href="/src/m03vistas/Ccampos.html" target="_blank" rel="noopener">Ábrelo
+    en
     otra pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="nooper"
+   <a target="_blank" rel="noopener"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ECampos%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--colOnBg%3A%20%231C1B1F%3B%0A%20%20%20--colBg%3A%20%23FFFBFE%3B%0A%20%20%20--colCm%3A%20%2379747E%3B%0A%20%20%20--colCmFc%3A%20%236750A4%3B%0A%20%20%20--colCmEr%3A%20%23B3261E%3B%0A%20%20%20--colCmBg%3A%20%23E7E0EC44%3B%0A%20%20%20--colCmBgHv%3A%20%23E7E0EC88%3B%0A%20%20%20--colCmBgFc%3A%20%23E7E0EC%3B%0A%20%20%20--colCmOp%3A%20white%3B%0A%20%20%20--colCmOpBg%3A%20%236750A4%3B%0A%20%20%20--fntFam%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20color%3A%20var(--colOnBg)%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%0A%20%20%2F*%20Quita%20un%20borde%20rojo%20que%20coloca%0A%20%20%20*%20Firefox.%20*%2F%0A%20%20%3A-moz-ui-invalid%20%7B%0A%20%20%20box-shadow%3A%20none%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cscript%3E%0A%20%20class%20CmDin%20extends%20HTMLElement%20%7B%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20setTimeout(%0A%20%20%20%20%20()%20%3D%3E%20this.prepara()%2C%0A%20%20%20%20%20100)%0A%20%20%20%7D%0A%20%20%20prepara()%20%7B%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BHTMLInputElement%7C%0A%20%20%20%20%20*%20%20HTMLSelectElement%7C%0A%20%20%20%20%20*%20%20HTMLOutputElement%7C%0A%20%20%20%20%20*%20%20null%7D%20*%2F%0A%20%20%20%20this._elem%20%3D%20this.%0A%20%20%20%20%20querySelector(%0A%20%20%20%20%20%20%22input%2C%20select%2C%20output%22)%0A%20%20%20%20if%20(this._elem%20!%3D%20null)%20%7B%0A%20%20%20%20%20this.addEventListener(%22input%22%2C%0A%20%20%20%20%20%20()%20%3D%3E%20this.analiza())%0A%20%20%20%20%7D%0A%20%20%20%20this.analiza()%3B%0A%20%20%20%7D%0A%20%20%20analiza()%20%7B%0A%20%20%20%20const%20e%20%3D%20this._elem%3B%0A%20%20%20%20if%20(e%20!%3D%20null)%20%7B%0A%20%20%20%20%20if%20(!e.validity.badInput%20%26%26%0A%20%20%20%20%20%20e.value%20%3D%3D%3D%20%22%22)%20%7B%0A%20%20%20%20%20%20e.classList.remove(%22valor%22)%0A%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20e.classList.add(%22valor%22)%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.%0A%20%20%20define(%22cm-din%22%2C%20CmDin)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20cm-din%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20position%3A%20relative%3B%0A%20%20%20color%3A%20var(--colCm)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colCmBg)%3B%0A%20%20%20border-top-left-radius%3A%204px%3B%0A%20%20%20border-top-right-radius%3A%204px%3B%0A%20%20%20margin%3A%201rem%3B%0A%20%20%20padding%3A%201.25rem%200%200%200%3B%0A%20%20%7D%0A%0A%20%20cm-din%3Ahover%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colCmBgHv)%3B%0A%20%20%7D%0A%0A%20%20cm-din%3Afocus-within%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colCmBgFc)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20label%20%7B%0A%20%20%20position%3A%20absolute%3B%0A%20%20%20top%3A%201.75rem%3B%0A%20%20%20left%3A%201rem%3B%0A%20%20%20font-size%3A%201rem%3B%0A%20%20%20color%3A%20var(--colCm)%3B%0A%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%7D%0A%0A%20%20cm-din%20.valor%2Blabel%2C%0A%20%20cm-din%20%3Afocus%2Blabel%2C%0A%20%20cm-din%20%5Btype%3Dfile%5D%2Blabel%20%7B%0A%20%20%20top%3A%200.5rem%3B%0A%20%20%20font-size%3A%200.75rem%3B%0A%20%20%7D%0A%0A%20%20cm-din%3Eoutput%2C%0A%20%20cm-din%20select%2C%0A%20%20cm-din%20input%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20font-size%3A%201rem%3B%0A%20%20%20padding%3A%200.5rem%201rem%200.5rem%201rem%0A%20%20%7D%0A%0A%20%20cm-din%20select%2C%0A%20%20cm-din%20input%20%7B%0A%20%20%20background-color%3A%20transparent%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20border-top%3A%20none%3B%0A%20%20%20border-left%3A%20none%3B%0A%20%20%20border-right%3A%20none%3B%0A%20%20%20border-bottom-width%3A%201px%3B%0A%20%20%20border-bottom-style%3A%20solid%3B%0A%20%20%20border-bottom-color%3A%0A%20%20%20%20var(--colCm)%3B%0A%20%20%20resize%3A%20none%3B%0A%20%20%20outline%3A%20none%3B%0A%20%20%20width%3A%20100%25%3B%0A%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Afocus%20%7B%0A%20%20%20border-bottom-width%3A%202px%3B%0A%20%20%7D%0A%0A%20%20cm-din%20small%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20height%3A%201em%3B%0A%20%20%20font-size%3A%200.75rem%3B%0A%20%20%20padding-left%3A%201rem%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Afocus%2Blabel%20%7B%0A%20%20%20color%3A%20var(--colCmFc)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Afocus%20%7B%0A%20%20%20border-bottom-color%3A%0A%20%20%20%20var(--colCmFc)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Ainvalid%2C%0A%20%20cm-din%20%3Afocus%3Ainvalid%20%7B%0A%20%20%20border-bottom-color%3A%0A%20%20%20%20var(--colCmEr)%3B%0A%20%20%20outline%3A%20none%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Ainvalid%2Blabel%20%7B%0A%20%20%20color%3A%20var(--colCmEr)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20%3Ainvalid~small%20%7B%0A%20%20%20color%3A%20var(--colCmEr)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20option%20%7B%0A%20%20%20padding%3A%200.3rem%201rem%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%0A%20%20cm-din%20option%3Achecked%20%7B%0A%20%20%20color%3A%20var(--colCmOp)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colCmOpBg)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3ECampos%3C%2Fh1%3E%0A%20%3Ccm-din%3E%0A%20%20%3Coutput%20id%3D%22saludo%22%3E%0A%20%20%20Hola%0A%20%20%3C%2Foutput%3E%0A%20%20%3Clabel%20for%3D%22Saludo%22%3E%0A%20%20%20Saludo%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fcm-din%3E%0A%20%3Ccm-din%3E%0A%20%20%3Cinput%20id%3D%22nombre%22%20required%3E%0A%20%20%3Clabel%20for%3D%22nombre%22%3E%0A%20%20%20Nombre*%0A%20%20%3C%2Flabel%3E%0A%20%20%3Csmall%3E*Requerido%3C%2Fsmall%3E%0A%20%3C%2Fcm-din%3E%0A%20%3Ccm-din%3E%0A%20%20%3Cinput%20id%3D%22email%22%20type%3D%22email%22%3E%0A%20%20%3Clabel%20for%3D%22email%22%3EEmail%3C%2Flabel%3E%0A%20%3C%2Fcm-din%3E%0A%20%3Ccm-din%3E%0A%20%20%3Cselect%20id%3D%22grupo%22%3E%0A%20%20%20%3Coption%20value%3D%22%22%3E%3C%2Foption%3E%0A%20%20%20%3Coption%20value%3D%22IC21%22%3E%0A%20%20%20%20IC-21%0A%20%20%20%3C%2Foption%3E%0A%20%20%20%3Coption%20value%3D%22IC22%22%3E%0A%20%20%20%20IC-22%0A%20%20%20%3C%2Foption%3E%0A%20%20%20%3Coption%20value%3D%22IC23%22%3E%0A%20%20%20%20IC-23%0A%20%20%20%3C%2Foption%3E%0A%20%20%3C%2Fselect%3E%0A%20%20%3Clabel%20for%3D%22grupo%22%3EGrupo%3C%2Flabel%3E%0A%20%3C%2Fcm-din%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
@@ -1763,7 +1817,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
       style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">html</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colOnBg</span>: <span
       style="color: #0451a5;">#1C1B1F</span>;</div>
@@ -1808,7 +1863,8 @@
       style="color: #0451a5;">none</span>;</div>
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;script&gt;</span></div>
    <div class="resaltado">&nbsp; <span
       style="color: #0000ff;">class</span> <span
       style="color: #267f99;">CmDin</span> <span
@@ -1894,8 +1950,9 @@
       style="color: #a31515;">"cm-din"</span>, <span
       style="color: #267f99;">CmDin</span>)</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">cm-din</span> {</div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado">&nbsp; <span style="color: #800000;">cm-din</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span
       style="color: #0451a5;">block</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
@@ -2198,21 +2255,21 @@
   <li>
    <p>
     Los campos de texto en Material Design están definidos en
-    <a href="https://material.io/components/text-fields" rel="nooper"
+    <a href="https://material.io/components/text-fields" rel="noopener"
       target="_blank">https://material.io/components/text-fields</a>
     y en
     <a href="https://m3.material.io/components/text-fields/overview"
-      rel="nooper"
+      rel="noopener"
       target="_blank">https://m3.material.io/components/text-fields/overview</a>.
    </p>
   </li>
   <li>
    <p>
     Los menús en Material Design están definidos en
-    <a href="https://material.io/components/menus" rel="nooper"
+    <a href="https://material.io/components/menus" rel="noopener"
       target="_blank">https://material.io/components/menus</a>
     y en
-    <a href="https://m3.material.io/components/menus/overview" rel="nooper"
+    <a href="https://m3.material.io/components/menus/overview" rel="noopener"
       target="_blank">https://m3.material.io/components/menus/overview</a>.
    </p>
   </li>
@@ -2238,11 +2295,12 @@
   <h1>Salida</h1>
   <iframe src="/src/m03vistas/Dbotones.html" title="Botón para movil"></iframe>
   <p class="noPrint">
-   <a href="/src/m03vistas/Dbotones.html" target="_blank" rel="nooper">Ábrelo en
+   <a href="/src/m03vistas/Dbotones.html" target="_blank" rel="noopener">Ábrelo
+    en
     otra pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="nooper"
+   <a target="_blank" rel="noopener"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EBotones%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--colOnBg%3A%20%231C1B1F%3B%0A%20%20%20--colBg%3A%20%23FFFBFE%3B%0A%20%20%20--colFil%3A%20white%3B%0A%20%20%20--colFilBg%3A%20%236750A4%3B%0A%20%20%20--colFilBgHv%3A%20%236750A4%3B%0A%20%20%20--colFilBgFc%3A%20%236750A4DD%3B%0A%20%20%20--colFilBgAc%3A%20%236750A4EE%3B%0A%20%20%20--colFilTon%3A%20%231D192B%3B%0A%20%20%20--colFilTonBg%3A%20%23E8DEF8%3B%0A%20%20%20--colFilTonBgHv%3A%20%23E8DEF8%3B%0A%20%20%20--colFilTonBgFc%3A%20%23E8DEF8DD%3B%0A%20%20%20--colFilTonBgAc%3A%20%23E8DEF8EE%3B%0A%20%20%20--colSh%3A%20%2300000055%3B%0A%20%20%20--fntFam%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20color%3A%20var(--colOnBg)%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cstyle%3E%0A%20%20.filled%20%7B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20color%3A%20var(--colFil)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colFilBg)%3B%0A%20%20%20font-size%3A%200.875rem%3B%0A%20%20%20padding%3A%200.5rem%201rem%3B%0A%20%20%20border%3A%20none%3B%0A%20%20%20border-radius%3A%201.5rem%3B%0A%20%20%7D%0A%0A%20%20.filled%3Ahover%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%203px%206px%20var(--colSh)%3B%0A%20%20%7D%0A%0A%20%20.filled%3Ahover%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colFilBgHv)%3B%0A%20%20%7D%0A%0A%20%20.filled%3Afocus%20%7B%0A%20%20%20outline%3A%20none%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colFilBgFc)%3B%0A%20%20%7D%0A%0A%20%20.filled%3Aactive%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colFilBgAc)%3B%0A%20%20%7D%0A%0A%20%20.filled.tonal%20%7B%0A%20%20%20color%3A%20var(--colFilTon)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colFilTonBg)%3B%0A%20%20%7D%0A%0A%20%20.filled.tonal%3Ahover%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colFilTonBgHv)%3B%0A%20%20%7D%0A%0A%20%20.filled.tonal%3Afocus%20%7B%0A%20%20%20outline%3A%20none%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colFilTonBgFc)%3B%0A%20%20%7D%0A%0A%20%20.filled.tonal%3Aactive%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colFilTonBgAc)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3EBotones%3C%2Fh1%3E%0A%20%3Cp%3E%0A%20%20%3Cbutton%20class%3D%22filled%22%3E%0A%20%20%20Primario%0A%20%20%3C%2Fbutton%3E%0A%20%20%3Cbutton%20class%3D%22filled%20tonal%22%3E%0A%20%20%20Secundario%0A%20%20%3C%2Fbutton%3E%0A%20%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
@@ -2288,7 +2346,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
       style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">html</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colOnBg</span>: <span
       style="color: #0451a5;">#1C1B1F</span>;</div>
@@ -2332,7 +2391,8 @@
    </div>
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">.filled</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span
       style="color: #795e26;">var</span>(<span
@@ -2441,10 +2501,10 @@
   <li>
    <p>
     Los botones en Material Design están definidos en
-    <a href="https://material.io/components/buttons" rel="nooper"
+    <a href="https://material.io/components/buttons" rel="noopener"
       target="_blank">https://material.io/components/buttons</a>.
     y en
-    <a href="https://m3.material.io/components/buttons/overview" rel="nooper"
+    <a href="https://m3.material.io/components/buttons/overview" rel="noopener"
       target="_blank">https://m3.material.io/components/buttons/overview</a>.
    </p>
   </li>
@@ -2470,10 +2530,10 @@
     title="Interruptor para móvil"></iframe>
   <p class="noPrint">
    <a href="/src/m03vistas/Einterruptor.html" target="_blank"
-     rel="nooper">Ábrelo en otra pestaña.</a>
+     rel="noopener">Ábrelo en otra pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="nooper"
+   <a target="_blank" rel="noopener"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EInterruptores%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--colTxt%3A%20black%3B%0A%20%20%20--colBk%3A%20white%3B%0A%20%20%20--colIntOn%3A%20%230039cb%3B%0A%20%20%20--colIntOnHv%3A%20%230039cb22%3B%0A%20%20%20--colIntOnFc%3A%20%230039cb44%3B%0A%20%20%20--colIntOnAct%3A%20%230039cb66%3B%0A%20%20%20--colIntOnBk%3A%20%23768fff%3B%0A%20%20%20--colIntOff%3A%20%23f0f0f0%3B%0A%20%20%20--colIntOffHv%3A%20%23e0e0e088%3B%0A%20%20%20--colIntOffFc%3A%20%23d0d0d077%3B%0A%20%20%20--colIntOffAct%3A%20%23c0c0c077%3B%0A%20%20%20--colIntOffBk%3A%20%23BDBDBD%3B%0A%20%20%20--colIntIos%3A%20white%3B%0A%20%20%20--colIntIosOnBk%3A%20%232acc2a%3B%0A%20%20%20--colIntIosOnBkFc%3A%20%231bbb1b%3B%0A%20%20%20--colIntIosOffBk%3A%20%23dbdbdb%3B%0A%20%20%20--colIntIosOffBkFc%3A%20%23BDBDBD%3B%0A%20%20%20--fntFam%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20color%3A%20var(--colTxt)%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20background-color%3A%20var(--colBk)%3B%0A%20%20%7D%0A%0A%20%20cm-int%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20margin%3A%201rem%200%3B%0A%20%20%7D%0A%0A%20%20cm-int%20input%20%7B%0A%20%20%20vertical-align%3A%20middle%3B%0A%20%20%20-webkit-appearance%3A%20none%3B%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input%20%7B%0A%20%20%20width%3A%202rem%3B%0A%20%20%7D%0A%0A%20%20cm-int%20input%3Afocus%20%7B%0A%20%20%20outline%3A%20none%3B%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input%3A%3A-webkit-slider-runnable-track%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntOnBk)%3B%0A%20%20%20border-radius%3A%205px%3B%0A%20%20%20height%3A%2010px%3B%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input.off%3A%3A-webkit-slider-runnable-track%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntOffBk)%3B%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input%3A%3A-webkit-slider-thumb%20%7B%0A%20%20%20-webkit-appearance%3A%20none%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntOn)%3B%0A%20%20%20margin-top%3A%20-5px%3B%0A%20%20%20width%3A%2020px%3B%0A%20%20%20height%3A%2020px%3B%0A%20%20%20border-radius%3A%2010px%3B%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input%3Ahover%3A%3A-webkit-slider-thumb%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%200%200%200.5rem%20var(--colIntOnHv)%3B%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input%3Afocus%3A%3A-webkit-slider-thumb%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%200%200%200.5rem%20var(--colIntOnFc)%3B%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input%3Aactive%3A%3A-webkit-slider-thumb%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%200%200%200.5rem%20var(--colIntOnAct)%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input.off%3A%3A-webkit-slider-thumb%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntOff)%3B%0A%20%20%20border-width%3A%20thin%3B%0A%20%20%20border-style%3A%20solid%3B%0A%20%20%20border-color%3A%20var(--colIntOffBk)%0A%20%20%7D%0A%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input.off%3Ahover%3A%3A-webkit-slider-thumb%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%200%200%200.5rem%20var(--colIntOffHv)%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input.off%3Afocus%3A%3A-webkit-slider-thumb%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%200%200%200.5rem%20var(--colIntOffFc)%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input.off%3Aactive%3A%3A-webkit-slider-thumb%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%200%200%200.5rem%20var(--colIntOffAct)%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input%3A%3A-moz-range-track%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntOnBk)%3B%0A%20%20%20border-radius%3A%205px%3B%0A%20%20%20height%3A%2010px%3B%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input.off%3A%3A-moz-range-track%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntOffBk)%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input%3A%3A-moz-range-thumb%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntOn)%3B%0A%20%20%20margin-top%3A%20-5px%3B%0A%20%20%20width%3A%2020px%3B%0A%20%20%20height%3A%2020px%3B%0A%20%20%20border%3A%20none%3B%0A%20%20%20border-radius%3A%2010px%3B%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input%3Ahover%3A%3A-moz-range-thumb%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%200%200%200.5rem%20var(--colIntOnHv)%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input%3Afocus%3A%3A-moz-range-thumb%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%200%200%200.5rem%20var(--colIntOnFc)%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input%3Aactive%3A%3A-moz-range-thumb%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%200%200%200.5rem%20var(--colIntOnAct)%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input.off%3A%3A-moz-range-thumb%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntOff)%3B%0A%20%20%20border-width%3A%20thin%3B%0A%20%20%20border-style%3A%20solid%3B%0A%20%20%20border-color%3A%20var(--colIntOffBk)%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input.off%3Ahover%3A%3A-moz-range-thumb%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%200%200%200.5rem%20var(--colIntOffHv)%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input.off%3Afocus%3A%3A-moz-range-thumb%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%200%200%200.5rem%20var(--colIntOffFc)%0A%20%20%7D%0A%0A%20%20body%3Anot(.ios)%20cm-int%20input.off%3Aactive%3A%3A-moz-range-thumb%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%200%200%200.5rem%20var(--colIntOffAct)%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input%20%7B%0A%20%20%20width%3A%203rem%3B%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input%3A%3A-webkit-slider-runnable-track%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntIosOnBk)%3B%0A%20%20%20border-radius%3A%2014px%3B%0A%20%20%20height%3A%2028px%3B%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input%3Afocus%3A%3A-webkit-slider-runnable-track%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntIosOnBkFc)%3B%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input.off%3A%3A-webkit-slider-runnable-track%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntIosOffBk)%3B%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input.off%3Afocus%3A%3A-webkit-slider-runnable-track%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntIosOffBkFc)%3B%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input%3A%3A-webkit-slider-thumb%20%7B%0A%20%20%20margin-top%3A%201px%3B%0A%20%20%20width%3A%2026px%3B%0A%20%20%20height%3A%2026px%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntIos)%3B%0A%20%20%20border-width%3A%20thin%3B%0A%20%20%20border-style%3A%20solid%3B%0A%20%20%20border-color%3A%0A%20%20%20%20var(--colIntIosOnBk)%3B%0A%20%20%20border-radius%3A%2013px%3B%0A%20%20%20-webkit-appearance%3A%20none%3B%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input%3Afocus%3A%3A-webkit-slider-thumb%20%7B%0A%20%20%20border-color%3A%0A%20%20%20%20var(--colIntIosOnBkFc)%3B%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input.off%3A%3A-webkit-slider-thumb%20%7B%0A%20%20%20border-color%3A%0A%20%20%20%20var(--colIntIosOffBk)%3B%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input.off%3Afocus%3A%3A-webkit-slider-thumb%20%7B%0A%20%20%20border-color%3A%0A%20%20%20%20var(--colIntIosOffBkFc)%3B%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input%3A%3A-moz-range-track%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntIosOnBk)%3B%0A%20%20%20border-radius%3A%2014px%3B%0A%20%20%20height%3A%2028px%3B%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input%3Afocus%3A%3A-moz-range-track%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntIosOnBkFc)%3B%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input.off%3A%3A-moz-range-track%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntIosOffBk)%3B%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input.off%3Afocus%3A%3A-moz-range-track%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntIosOffBkFc)%3B%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input%3A%3A-moz-range-thumb%20%7B%0A%20%20%20width%3A%2026px%3B%0A%20%20%20height%3A%2026px%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colIntIos)%3B%0A%20%20%20border-width%3A%20thin%3B%0A%20%20%20border-style%3A%20solid%3B%0A%20%20%20border-color%3A%0A%20%20%20%20var(--colIntIosOnBk)%3B%0A%20%20%20border-radius%3A%2013px%3B%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input%3Afocus%3A%3A-moz-range-thumb%20%7B%0A%20%20%20border-color%3A%0A%20%20%20%20var(--colIntIosOnBkFc)%3B%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input.off%3A%3A-moz-range-thumb%20%7B%0A%20%20%20border-color%3A%0A%20%20%20%20var(--colIntIosOffBk)%3B%0A%20%20%7D%0A%0A%20%20body.ios%20cm-int%20input.off%3Afocus%3A%3A-moz-range-thumb%20%7B%0A%20%20%20border-color%3A%0A%20%20%20%20var(--colIntIosOffBkFc)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3EInterruptores%3C%2Fh1%3E%0A%20%3Ccm-int%3E%0A%20%20%3Clabel%3E%0A%20%20%20Muestra%20resultados%0A%20%20%20%3Cinput%20type%3D%22range%22%3E%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fcm-int%3E%0A%20%3Cscript%3E%0A%20%20if%20(%2F.*android.*%2Fi.%0A%20%20%20test(navigator.userAgent))%20%7B%0A%20%20%20document.body.classList%0A%20%20%20%20.add(%22android%22)%3B%0A%20%20%7D%0A%20%20if%20(%0A%20%20%20%2F.*(iPad%7CiPhone%7CiPod%7CMac).*%2F.%0A%20%20%20%20test(navigator.userAgent))%20%7B%0A%20%20%20document.body.classList.%0A%20%20%20%20add('ios')%3B%0A%20%20%7D%0A%20%20class%20CmInt%20extends%20HTMLElement%20%7B%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20setTimeout(%0A%20%20%20%20%20()%20%3D%3E%20this.prepara()%2C%0A%20%20%20%20%20100)%3B%0A%20%20%20%7D%0A%20%20%20prepara()%20%7B%0A%20%20%20%20%2F**%20%40private%20*%2F%0A%20%20%20%20this._input%20%3D%0A%20%20%20%20%20this.querySelector(%22input%22)%3B%0A%20%20%20%20const%20i%20%3D%20this._input%3B%0A%20%20%20%20if%20(i)%20%7B%0A%20%20%20%20%20i.type%20%3D%20%22range%22%3B%0A%20%20%20%20%20i.min%20%3D%20%220%22%3B%0A%20%20%20%20%20i.max%20%3D%20%221%22%3B%0A%20%20%20%20%20i.addEventListener(%22change%22%2C%0A%20%20%20%20%20%20()%20%3D%3E%20this.analiza())%3B%0A%20%20%20%20%20this.analiza()%3B%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%20%20%20analiza()%20%7B%0A%20%20%20%20const%20i%20%3D%20this._input%3B%0A%20%20%20%20if%20(i)%20%7B%0A%20%20%20%20%20if%20(i.valueAsNumber%20%3D%3D%3D%200)%20%7B%0A%20%20%20%20%20%20i.classList.add(%22off%22)%3B%0A%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20i.classList.remove(%22off%22)%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.%0A%20%20%20define(%22cm-int%22%2C%20CmInt)%3B%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
@@ -2563,7 +2623,8 @@
       style="color: #001080;">--colBk</span>);
    </div>
    <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">cm-int</span> {</div>
+   <div class="resaltado">&nbsp; <span
+      style="color: #800000;">cm-int</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span
       style="color: #0451a5;">block</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
@@ -3091,7 +3152,8 @@
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div class="resaltado2"><span
+      style="color: #800000;">&lt;body&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Interruptores<span
       style="color: #800000;">&lt;/h1&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;cm-int&gt;</span></div>
@@ -3103,7 +3165,8 @@
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;/label&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;/cm-int&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;script&gt;</span></div>
    <div>&nbsp; <span style="color: #af00db;">if</span> (<span
       style="color: #811f3f;">/.</span>*<span
       style="color: #811f3f;">android.</span>*<span
@@ -3140,7 +3203,8 @@
    <div>&nbsp; &nbsp; <span style="color: #795e26;">add</span>(<span
       style="color: #a31515;">'ios'</span>);</div>
    <div>&nbsp; }</div>
-   <div>&nbsp; <span style="color: #0000ff;">class</span> <span
+   <div class="resaltado">&nbsp; <span
+      style="color: #0000ff;">class</span> <span
       style="color: #267f99;">CmInt</span> <span
       style="color: #0000ff;">extends</span> <span
       style="color: #267f99;">HTMLElement</span> {</div>
@@ -3211,7 +3275,8 @@
    <div>&nbsp; &nbsp;}</div>
    <div>&nbsp; }</div>
    <div>&nbsp; <span style="color: #001080;">customElements</span>.</div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">define</span>(<span
+   <div class="resaltado">&nbsp; &nbsp;<span
+      style="color: #795e26;">define</span>(<span
       style="color: #a31515;">"cm-int"</span>, <span
       style="color: #267f99;">CmInt</span>);</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
@@ -3226,7 +3291,7 @@
   <li>
    <p>
     Los interruptores en Material Design están defnidos en
-    <a href="https://m3.material.io/components/switch/overview" rel="nooper"
+    <a href="https://m3.material.io/components/switch/overview" rel="noopener"
       target="_blank">https://m3.material.io/components/switch/overview</a>.
    </p>
   </li>
@@ -3261,6 +3326,12 @@
     </li>
    </ul>
   </li>
+  <li>
+   <p>
+    Las listas deben usar la class
+    <var>lista</var>.
+   </p>
+  </li>
  </ul>
 </div>
 <div class="horizontal">
@@ -3270,10 +3341,10 @@
     title="Navegación inferior para móvil"></iframe>
   <p class="noPrint">
    <a href="/src/m03vistas/Klista.html" target="_blank"
-     rel="nooper">Ábrelo en otra pestaña.</a>
+     rel="noopener">Ábrelo en otra pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="nooper"
+   <a target="_blank" rel="noopener"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ELista%20Simple%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMaterial%2BIcons%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--colOnBg%3A%20%231C1B1F%3B%0A%20%20%20--colBg%3A%20%23FFFBFE%3B%0A%20%20%20--colLs%3A%20%231C1B1F%3B%0A%20%20%20--colLsBg%3A%20%23FFFBFE%3B%0A%20%20%20--colLsBgHv%3A%20%2399999966%3B%0A%20%20%20--colLsBgAc%3A%20%23999999dd%3B%0A%20%20%20--fntFam%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20color%3A%20var(--colOnBg)%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%0A%20%20body%20%7B%0A%20%20%20margin%3A%200%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cstyle%3E%0A%20%20.lista%20%7B%0A%20%20%20margin%3A%200.5rem%200%3B%0A%20%20%20color%3A%20var(--colLs)%3B%0A%20%20%7D%0A%0A%20%20.lista%3E*%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20text-decoration%3A%20none%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colLsBg)%3B%0A%20%20%7D%0A%0A%20%20.lista%3E*%3Ahover%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colLsBgHv)%3B%0A%20%20%7D%0A%0A%20%20.lista%20a%3Aactive%20%7B%0A%20%20%20color%3A%20var(--colLs)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colLsBgAc)%3B%0A%20%20%7D%0A%0A%20%20.lista%3E.simple%20%7B%0A%20%20%20padding%3A%201rem%3B%0A%20%20%7D%0A%0A%20%20.lista%3E.avatar%20%7B%0A%20%20%20padding%3A%200.5rem%201rem%3B%0A%20%20%7D%0A%0A%20%20.lista%3E.imagen%20%7B%0A%20%20%20padding%3A%200.5rem%201rem%200.5rem%200%3B%0A%20%20%7D%0A%0A%20%20.lista%20.textos%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20overflow%3A%20hidden%3B%0A%20%20%7D%0A%0A%20%20.lista%20.tresElem%20%7B%0A%20%20%20display%3A%20flex%3B%0A%20%20%20align-items%3A%20center%3B%0A%20%20%7D%0A%0A%20%20.lista%20.primario%20%7B%0A%20%20%20display%3A%20inline-block%3B%0A%20%20%20vertical-align%3A%20middle%3B%0A%20%20%20font-size%3A%201rem%3B%0A%20%20%20font-weight%3A%20bold%3B%0A%20%20%20overflow%3A%20hidden%3B%0A%20%20%20white-space%3A%20nowrap%3B%0A%20%20%20text-overflow%3A%20ellipsis%3B%0A%20%20%7D%0A%0A%20%20.lista%20a%20.primario%20%7B%0A%20%20%20text-decoration%3A%20underline%3B%0A%20%20%7D%0A%0A%20%20.lista%20.material-icons%20%7B%0A%20%20%20vertical-align%3A%20middle%3B%0A%20%20%20margin-right%3A%202rem%3B%0A%20%20%7D%0A%0A%20%20.lista%20img%20%7B%0A%20%20%20vertical-align%3A%20middle%3B%0A%20%20%7D%0A%0A%20%20.lista%3E.simple%20img%20%7B%0A%20%20%20width%3A%202.5rem%3B%0A%20%20%20height%3A%202.5rem%3B%0A%20%20%20margin-right%3A%201rem%3B%0A%20%20%7D%0A%0A%20%20.lista%3E.avatar%20img%20%7B%0A%20%20%20width%3A%202.5rem%3B%0A%20%20%20height%3A%202.5rem%3B%0A%20%20%20border-radius%3A%201.25rem%3B%0A%20%20%20margin-right%3A%201rem%3B%0A%20%20%7D%0A%0A%20%20.lista%3E.imagen%20img%20%7B%0A%20%20%20width%3A%206.25rem%3B%0A%20%20%20margin-right%3A%201rem%3B%0A%20%20%7D%0A%0A%20%20.lista%20.unRenglon%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20height%3A%201rem%3B%0A%20%20%20font-size%3A%200.75rem%3B%0A%20%20%20overflow%3A%20hidden%3B%0A%20%20%20white-space%3A%20nowrap%3B%0A%20%20%20text-overflow%3A%20ellipsis%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cdiv%20class%3D%22lista%22%3E%0A%20%20%3Cdiv%20class%3D%22simple%22%3E%0A%20%20%20%3Cdiv%20class%3D%22primario%22%3E%0A%20%20%20%20Ciudad%20de%20M%C3%A9xico%0A%20%20%20%3C%2Fdiv%3E%0A%20%20%3C%2Fdiv%3E%0A%20%20%3Cdiv%20class%3D%22simple%22%3E%0A%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20account_balance%0A%20%20%20%3C%2Fspan%3E%0A%20%20%20%3Cdiv%20class%3D%22primario%22%3E%0A%20%20%20%20Atenas%0A%20%20%20%3C%2Fdiv%3E%0A%20%20%3C%2Fdiv%3E%0A%20%20%3Cdiv%20class%3D%22simple%22%3E%0A%20%20%20%3Cimg%0A%20%20%20%20%20alt%3D%22Coyote%20de%20Neza%22%0A%20%20%20%20%20src%3D%22https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FOIP.bZA2kAXC_CgPvhJS5RGwGwHaFj%3Fw%3D200%26h%3D180%26c%3D7%26r%3D0%26o%3D5%26pid%3D1.7%22%3E%0A%20%20%20%3Cdiv%20class%3D%22primario%22%3E%0A%20%20%20%20Neza%0A%20%20%20%3C%2Fdiv%3E%0A%20%20%3C%2Fdiv%3E%0A%20%20%3Cdiv%20class%3D%22avatar%22%3E%0A%20%20%20%3Cimg%0A%20%20%20%20%20alt%3D%22Avatar%20de%20Ana%22%0A%20%20%20%20%20src%3D%22https%3A%2F%2Fimages.pexels.com%2Fphotos%2F6501925%2Fpexels-photo-6501925.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500%22%3E%0A%20%20%20%3Cdiv%20class%3D%22primario%22%3E%0A%20%20%20%20Ana%0A%20%20%20%3C%2Fdiv%3E%0A%20%20%3C%2Fdiv%3E%0A%20%20%3Cdiv%20class%3D%22imagen%22%3E%0A%20%20%20%3Cimg%0A%20%20%20%20%20alt%3D%22Ciudad%20de%20San%20Francisco%22%0A%20%20%20%20%20src%3D%22https%3A%2F%2Fimages.pexels.com%2Fphotos%2F3701822%2Fpexels-photo-3701822.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500%22%3E%0A%20%20%20%3Cdiv%20class%3D%22primario%22%3E%0A%20%20%20%20San%20Francisco%0A%20%20%20%3C%2Fdiv%3E%0A%20%20%3C%2Fdiv%3E%0A%20%20%3Cdiv%20class%3D%22simple%22%3E%0A%20%20%20%3Cdiv%20class%3D%22primario%22%3E%0A%20%20%20%20Ciudad%20de%20M%C3%A9xico%202%0A%20%20%20%3C%2Fdiv%3E%0A%20%20%20%3Cdiv%20class%3D%22unRenglon%22%3E%0A%20%20%20%20Lorem%20ipsum%20dolor%20sit%20amet%0A%20%20%20%20consectetur%20adipisicing%20elit.%0A%20%20%20%20Laboriosam%20eaque%20unde%0A%20%20%20%20voluptates%20tempore%20ad%20suscipit%0A%20%20%20%20libero%2C%20saepe%20neque%20illo%20amet%2C%0A%20%20%20%20eos%20ea%20similique%20quia%2C%20maiores%0A%20%20%20%20tenetur%20modi%20nobis%20expedita%0A%20%20%20%20alias!%0A%20%20%20%3C%2Fdiv%3E%0A%20%20%3C%2Fdiv%3E%0A%20%20%3Cdiv%20class%3D%22simple%20tresElem%22%3E%0A%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20account_balance%0A%20%20%20%3C%2Fspan%3E%0A%20%20%20%3Cdiv%20class%3D%22textos%22%3E%0A%20%20%20%20%3Cdiv%20class%3D%22primario%22%3E%0A%20%20%20%20%20Atenas2%0A%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3Cdiv%20class%3D%22unRenglon%22%3E%0A%20%20%20%20%20Lorem%20ipsum%20dolor%20sit%20amet%0A%20%20%20%20%20consectetur%20adipisicing%20elit.%0A%20%20%20%20%20Laboriosam%20eaque%20unde%0A%20%20%20%20%20voluptates%20tempore%20ad%20suscipit%0A%20%20%20%20%20libero%2C%20saepe%20neque%20illo%20amet%2C%0A%20%20%20%20%20eos%20ea%20similique%20quia%2C%20maiores%0A%20%20%20%20%20tenetur%20modi%20nobis%20expedita%0A%20%20%20%20%20alias!%0A%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%3C%2Fdiv%3E%0A%20%20%3C%2Fdiv%3E%0A%20%20%3Cdiv%20class%3D%22simple%20tresElem%22%3E%0A%20%20%20%3Cimg%0A%20%20%20%20%20alt%3D%22Coyote%20de%20Neza%22%0A%20%20%20%20%20src%3D%22https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FOIP.bZA2kAXC_CgPvhJS5RGwGwHaFj%3Fw%3D200%26h%3D180%26c%3D7%26r%3D0%26o%3D5%26pid%3D1.7%22%3E%0A%20%20%20%3Cdiv%20class%3D%22textos%22%3E%0A%20%20%20%20%3Cdiv%20class%3D%22primario%22%3E%0A%20%20%20%20%20Neza2%0A%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3Cdiv%20class%3D%22unRenglon%22%3E%0A%20%20%20%20%20Lorem%20ipsum%20dolor%20sit%20amet%0A%20%20%20%20%20consectetur%20adipisicing%20elit.%0A%20%20%20%20%20Laboriosam%20eaque%20unde%0A%20%20%20%20%20voluptates%20tempore%20ad%20suscipit%0A%20%20%20%20%20libero%2C%20saepe%20neque%20illo%20amet%2C%0A%20%20%20%20%20eos%20ea%20similique%20quia%2C%20maiores%0A%20%20%20%20%20tenetur%20modi%20nobis%20expedita%0A%20%20%20%20%20alias!%0A%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%3C%2Fdiv%3E%0A%20%20%3C%2Fdiv%3E%0A%20%20%3Cdiv%20class%3D%22avatar%20tresElem%22%3E%0A%20%20%20%3Cimg%0A%20%20%20%20%20alt%3D%22Avatar%20de%20Ana%22%0A%20%20%20%20%20src%3D%22https%3A%2F%2Fimages.pexels.com%2Fphotos%2F6501925%2Fpexels-photo-6501925.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500%22%3E%0A%20%20%20%3Cdiv%20class%3D%22textos%22%3E%0A%20%20%20%20%3Cdiv%20class%3D%22primario%22%3E%0A%20%20%20%20%20Ana%202%0A%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3Cdiv%20class%3D%22unRenglon%22%3E%0A%20%20%20%20%20Lorem%20ipsum%20dolor%20sit%20amet%0A%20%20%20%20%20consectetur%20adipisicing%20elit.%0A%20%20%20%20%20Laboriosam%20eaque%20unde%0A%20%20%20%20%20voluptates%20tempore%20ad%20suscipit%0A%20%20%20%20%20libero%2C%20saepe%20neque%20illo%20amet%2C%0A%20%20%20%20%20eos%20ea%20similique%20quia%2C%20maiores%0A%20%20%20%20%20tenetur%20modi%20nobis%20expedita%0A%20%20%20%20%20alias!%0A%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%3C%2Fdiv%3E%0A%20%20%3C%2Fdiv%3E%0A%20%20%3Cdiv%20class%3D%22imagen%20tresElem%22%3E%0A%20%20%20%3Cimg%0A%20%20%20%20%20alt%3D%22Ciudad%20de%20San%20Francisco%22%0A%20%20%20%20%20src%3D%22https%3A%2F%2Fimages.pexels.com%2Fphotos%2F3701822%2Fpexels-photo-3701822.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500%22%3E%0A%20%20%20%3Cdiv%20class%3D%22textos%22%3E%0A%20%20%20%20%3Cdiv%20class%3D%22primario%22%3E%0A%20%20%20%20%20San%20Francisco%202%0A%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3Cdiv%20class%3D%22unRenglon%22%3E%0A%20%20%20%20%20Lorem%20ipsum%20dolor%20sit%20amet%0A%20%20%20%20%20consectetur%20adipisicing%20elit.%0A%20%20%20%20%20Laboriosam%20eaque%20unde%0A%20%20%20%20%20voluptates%20tempore%20ad%20suscipit%0A%20%20%20%20%20libero%2C%20saepe%20neque%20illo%20amet%2C%0A%20%20%20%20%20eos%20ea%20similique%20quia%2C%20maiores%0A%20%20%20%20%20tenetur%20modi%20nobis%20expedita%0A%20%20%20%20%20alias!%0A%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%3C%2Fdiv%3E%0A%20%20%3C%2Fdiv%3E%0A%20%20%3Ca%20class%3D%22simple%20tresElem%22%0A%20%20%20%20href%3D%22https%3A%2F%2Ffenixkike.blogspot.com%2F2010%2F06%2Fel-gran-coyote-del-escultor-av.html%22%3E%0A%20%20%20%3Cimg%0A%20%20%20%20%20alt%3D%22Coyote%20de%20Neza%22%0A%20%20%20%20%20src%3D%22https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FOIP.bZA2kAXC_CgPvhJS5RGwGwHaFj%3Fw%3D200%26h%3D180%26c%3D7%26r%3D0%26o%3D5%26pid%3D1.7%22%3E%0A%20%20%20%3Cspan%20class%3D%22textos%22%3E%0A%20%20%20%20%3Cspan%20class%3D%22primario%22%3E%0A%20%20%20%20%20Neza%203%0A%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22unRenglon%22%3E%0A%20%20%20%20%20Lorem%20ipsum%20dolor%20sit%20amet%0A%20%20%20%20%20consectetur%20adipisicing%20elit.%0A%20%20%20%20%20Laboriosam%20eaque%20unde%0A%20%20%20%20%20voluptates%20tempore%20ad%20suscipit%0A%20%20%20%20%20libero%2C%20saepe%20neque%20illo%20amet%2C%0A%20%20%20%20%20eos%20ea%20similique%20quia%2C%20maiores%0A%20%20%20%20%20tenetur%20modi%20nobis%20expedita%0A%20%20%20%20%20alias!%0A%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%3C%2Fspan%3E%0A%20%20%3C%2Fa%3E%0A%20%3C%2Fdiv%3E%0A%20%3Cfooter%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Csmall%3E%0A%20%20%20%20La%20fotograf%C3%ADa%20de%20la%20ni%C3%B1a%20es%0A%20%20%20%20%3Ca%20target%3D%22_blank%22%0A%20%20%20%20%20%20href%3D%22https%3A%2F%2Fwww.pexels.com%2Fes-es%2Ffoto%2Fnina-sonriente-nino-clinica-6501925%2F%22%0A%20%20%20%20%20%20rel%3D%22nooper%22%3EFoto%20de%0A%20%20%20%20%20cottonbro%20en%20Pexels%3C%2Fa%3E.%0A%20%20%20%3C%2Fsmall%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Csmall%3E%0A%20%20%20%20La%20fotograf%C3%ADa%20de%20San%20Francisco%0A%20%20%20%20es%0A%20%20%20%20%3Ca%20target%3D%22_blank%22%0A%20%20%20%20%20%20href%3D%22https%3A%2F%2Fwww.pexels.com%2Fes-es%2Ffoto%2Fpuente-golden-gate-san-francisco-california-3701822%2F%22%0A%20%20%20%20%20%20rel%3D%22nooper%22%3EFoto%20de%20Craig%0A%20%20%20%20%20Dennis%20en%20Pexels%3C%2Fa%3E.%0A%20%20%20%3C%2Fsmall%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Csmall%3E%0A%20%20%20%20La%20imagen%20del%20coyote%20de%0A%20%20%20%20Nezahualc%C3%B3toyl%20es%20de%20Oscar%0A%20%20%20%20Estrada%20G.%20publicada%20en%0A%20%20%20%20%3Ca%20href%3D%22https%3A%2F%2Ffenixkike.blogspot.com%2F2010%2F06%2Fel-gran-coyote-del-escultor-av.html%22%0A%20%20%20%20%20%20target%3D%22_blank%22%20rel%3D%22nooper%22%3E%0A%0A%20%20%20%20%20%20%20%20%20https%3A%2F%2Ffenixkike.blogspot.com%2F2010%2F06%2Fel-gran-coyote-del-escultor-av.html%3C%2Fa%3E%0A%0A%20%20%20%3C%2Fsmall%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Ffooter%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
@@ -3326,7 +3397,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
       style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Material+Icons"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">html</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colOnBg</span>: <span
       style="color: #0451a5;">#1C1B1F</span>;</div>
@@ -3360,8 +3432,10 @@
       style="color: #098658;">0</span>;</div>
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">.lista</span> {</div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado">&nbsp; <span
+      style="color: #800000;">.lista</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
       style="color: #098658;">0.5rem</span> <span
       style="color: #098658;">0</span>;</div>
@@ -3512,7 +3586,7 @@
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div class="resaltado"><span
+   <div class="resaltado2"><span
       style="color: #800000;">&lt;body&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;div</span> <span
       style="color: #ff0000;">class</span>=<span
@@ -3810,7 +3884,7 @@
       style="color: #0000ff;">"https://www.pexels.com/es-es/foto/nina-sonriente-nino-clinica-6501925/"</span>
    </div>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">rel</span>=<span
-      style="color: #0000ff;">"nooper"</span><span
+      style="color: #0000ff;">"noopener"</span><span
       style="color: #800000;">&gt;</span>Foto de</div>
    <div>&nbsp; &nbsp; &nbsp;cottonbro en Pexels<span
       style="color: #800000;">&lt;/a&gt;</span>.</div>
@@ -3827,7 +3901,7 @@
       style="color: #0000ff;">"https://www.pexels.com/es-es/foto/puente-golden-gate-san-francisco-california-3701822/"</span>
    </div>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">rel</span>=<span
-      style="color: #0000ff;">"nooper"</span><span
+      style="color: #0000ff;">"noopener"</span><span
       style="color: #800000;">&gt;</span>Foto de Craig</div>
    <div>&nbsp; &nbsp; &nbsp;Dennis en Pexels<span
       style="color: #800000;">&lt;/a&gt;</span>.</div>
@@ -3845,7 +3919,7 @@
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">target</span>=<span
       style="color: #0000ff;">"_blank"</span> <span
       style="color: #ff0000;">rel</span>=<span
-      style="color: #0000ff;">"nooper"</span><span
+      style="color: #0000ff;">"noopener"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://fenixkike.blogspot.com/2010/06/el-gran-coyote-del-escultor-av.html<span
@@ -3864,7 +3938,7 @@
   <li>
    <p>
     Las listas están definida en
-    <a href="https://material.io/components/lists" rel="nooper"
+    <a href="https://material.io/components/lists" rel="noopener"
       target="_blank">https://material.io/components/lists</a>.
    </p>
   </li>
@@ -3872,17 +3946,27 @@
 </div>
       </section>
      <section >
-         <h1 >K. Tarjetas</h1><div class="horizontal">
+         <h1 >K. Tarjetas</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Las listas de tarjetas deben usar la class
+    <var>cards</var>.
+   </p>
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
  <section>
   <h1>Salida</h1>
   <iframe src="/src/m03vistas/Lcards.html" height="350"
     title="Navegación inferior para móvil"></iframe>
   <p class="noPrint">
    <a href="/src/m03vistas/Lcards.html" target="_blank"
-     rel="nooper">Ábrelo en otra pestaña.</a>
+     rel="noopener">Ábrelo en otra pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="nooper"
+   <a target="_blank" rel="noopener"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ETarjetas%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMaterial%2BIcons%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--colOnBg%3A%20%231C1B1F%3B%0A%20%20%20--colBg%3A%20%23FFFBFE%3B%0A%20%20%20--colLs%3A%20%231C1B1F%3B%0A%20%20%20--colLsBg%3A%20%23FFFBFE%3B%0A%20%20%20--colLsBgHv%3A%20%2399999966%3B%0A%20%20%20--colLsBgAc%3A%20%23999999dd%3B%0A%20%20%20--heightLs%3A%2016rem%3B%0A%20%20%20--fntFam%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20color%3A%20var(--colOnBg)%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%0A%20%20body%20%7B%0A%20%20%20margin%3A%200%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cstyle%3E%0A%20%20.cards%20%7B%0A%20%20%20margin%3A%200.5rem%3B%0A%20%20%20display%3A%20grid%3B%0A%20%20%20gap%3A%200.5rem%3B%0A%20%20%20grid-auto-rows%3A%20var(--heightLs)%3B%0A%20%20%20grid-template-columns%3A%0A%20%20%20%20repeat(auto-fill%2C%0A%20%20%20%20%20minmax(15rem%2C%201fr))%3B%0A%20%20%7D%0A%0A%20%20.cards%3E*%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20text-decoration%3A%20none%3B%0A%20%20%20color%3A%20var(--colLs)%3B%0A%20%20%20overflow%3A%20hidden%3B%0A%20%20%7D%0A%0A%20%20.cards%3E*%3Ahover%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colLsBgHv)%3B%0A%20%20%7D%0A%0A%20%20.cards%20a%3Aactive%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colLsBgAc)%3B%0A%20%20%7D%0A%0A%20%20.cards%3E*%3E*%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%7D%0A%0A%20%20.cards%20img%20%7B%0A%20%20%20margin-left%3A%20auto%3B%0A%20%20%20margin-right%3A%20auto%3B%0A%20%20%20max-width%3A%20100%25%3B%0A%20%20%20max-height%3A%0A%20%20%20%20calc(var(--heightLs)%20-%205rem)%3B%0A%20%20%7D%0A%0A%20%20.cards%20.primario%20%7B%0A%20%20%20margin%3A%201rem%3B%0A%20%20%20font-size%3A%201rem%3B%0A%20%20%20font-weight%3A%20bold%3B%0A%20%20%7D%0A%0A%20%20.cards%20a%20.primario%20%7B%0A%20%20%20text-decoration%3A%20underline%3B%0A%20%20%7D%0A%0A%20%20.cards%20.secundario%20%7B%0A%20%20%20margin%3A%201rem%3B%0A%20%20%20font-size%3A%200.75rem%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cdiv%20class%3D%22cards%22%3E%0A%20%20%3Ca%20href%3D%22https%3A%2F%2Fwww.pexels.com%2Fes-es%2Ffoto%2Flobo-blanco-y-negro-397857%2F%22%3E%0A%20%20%20%3Cimg%20alt%3D%22Lobo%22%0A%20%20%20%20%20src%3D%22https%3A%2F%2Fimages.pexels.com%2Fphotos%2F397857%2Fpexels-photo-397857.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500%22%3E%0A%20%20%20%3Cspan%20class%3D%22primario%22%3E%0A%20%20%20%20Lobo%0A%20%20%20%3C%2Fspan%3E%0A%20%20%20%3Cspan%20class%3D%22secundario%22%3E%0A%20%20%20%20Foto%20de%20Steve%20en%20Pexels.%0A%20%20%20%3C%2Fspan%3E%0A%20%20%3C%2Fa%3E%0A%20%20%3Ca%20href%3D%22https%3A%2F%2Fwww.pexels.com%2Fes-es%2Ffoto%2Ffoto-de-buho-ural-3732453%2F%22%3E%0A%20%20%20%3Cimg%20alt%3D%22Buho%22%0A%20%20%20%20%20src%3D%22https%3A%2F%2Fimages.pexels.com%2Fphotos%2F3732453%2Fpexels-photo-3732453.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500%22%3E%0A%20%20%20%3Cspan%20class%3D%22primario%22%3E%0A%20%20%20%20Buho%0A%20%20%20%3C%2Fspan%3E%0A%20%20%20%3Cspan%20class%3D%22secundario%22%3E%0A%20%20%20%20Foto%20de%20Erik%20Karits%20en%20Pexels%0A%20%20%20%3C%2Fspan%3E%0A%20%20%3C%2Fa%3E%0A%20%20%3Ca%0A%20%20%20%20href%3D%22https%3A%2F%2Fwww.pexels.com%2Fes-es%2Ffoto%2Fperro-de-pelo-corto-marron-y-blanco-acostado-3978352%2F%22%3E%0A%20%20%20%3Cimg%20alt%3D%22Perro%22%0A%20%20%20%20%20src%3D%22https%3A%2F%2Fimages.pexels.com%2Fphotos%2F3978352%2Fpexels-photo-3978352.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500%22%3E%0A%20%20%20%3Cspan%20class%3D%22primario%22%3E%0A%20%20%20%20Perro%0A%20%20%20%3C%2Fspan%3E%0A%20%20%20%3Cspan%20class%3D%22secundario%22%3E%0A%20%20%20%20Foto%20de%20Creative%20Workshop%20en%0A%20%20%20%20Pexels%0A%20%20%20%3C%2Fspan%3E%0A%20%20%3C%2Fa%3E%0A%20%20%3Ca%0A%20%20%20%20href%3D%22https%3A%2F%2Fwww.pexels.com%2Fes-es%2Ffoto%2Fgatito-gris-en-bolsa-de-papel-plateada-141496%2F%22%3E%0A%20%20%20%3Cimg%20alt%3D%22Gato%22%0A%20%20%20%20%20src%3D%22https%3A%2F%2Fimages.pexels.com%2Fphotos%2F141496%2Fpexels-photo-141496.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500%22%3E%0A%20%20%20%3Cspan%20class%3D%22primario%22%3E%0A%20%20%20%20Gato%0A%20%20%20%3C%2Fspan%3E%0A%20%20%20%3Cspan%20class%3D%22secundario%22%3E%0A%20%20%20%20Foto%20de%20Vadim%20B%20en%20Pexels%0A%20%20%20%3C%2Fspan%3E%0A%20%20%3C%2Fa%3E%0A%20%20%3Ca%0A%20%20%20%20href%3D%22https%3A%2F%2Fwww.pexels.com%2Fes-es%2Ffoto%2Fleon-marron-2270848%2F%22%3E%0A%20%20%20%3Cimg%20alt%3D%22Le%C3%B3n%22%0A%20%20%20%20%20src%3D%22https%3A%2F%2Fimages.pexels.com%2Fphotos%2F2270848%2Fpexels-photo-2270848.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500%22%3E%0A%20%20%20%3Cspan%20class%3D%22primario%22%3E%0A%20%20%20%20Le%C3%B3n%0A%20%20%20%3C%2Fspan%3E%0A%20%20%20%3Cspan%20class%3D%22secundario%22%3E%0A%20%20%20%20Foto%20de%20Ralph%20en%20Pexels%0A%20%20%20%3C%2Fspan%3E%0A%20%20%3C%2Fa%3E%0A%20%20%3Ca%0A%20%20%20%20href%3D%22https%3A%2F%2Fwww.pexels.com%2Fes-es%2Ffoto%2Foso-cafe-35435%2F%22%3E%0A%20%20%20%3Cimg%20alt%3D%22Oso%22%0A%20%20%20%20%20src%3D%22https%3A%2F%2Fimages.pexels.com%2Fphotos%2F35435%2Fpexels-photo.jpg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500%22%3E%0A%20%20%20%3Cspan%20class%3D%22primario%22%3E%0A%20%20%20%20Oso%0A%20%20%20%3C%2Fspan%3E%0A%20%20%20%3Cspan%20class%3D%22secundario%22%3E%0A%20%20%20%20Foto%20de%20Rasmus%20Svinding%20en%0A%20%20%20%20Pexels%0A%20%20%20%3C%2Fspan%3E%0A%20%20%3C%2Fa%3E%0A%20%20%3Ca%0A%20%20%20%20href%3D%22https%3A%2F%2Fwww.pexels.com%2Fes-es%2Ffoto%2Fanimal-perro-mono-hierba-10226903%2F%22%3E%0A%20%20%20%3Cimg%0A%20%20%20%20%20alt%3D%22Coyote%22%0A%20%20%20%20%20src%3D%22https%3A%2F%2Fimages.pexels.com%2Fphotos%2F10226903%2Fpexels-photo-10226903.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500%22%3E%0A%20%20%20%3Cspan%20class%3D%22primario%22%3E%0A%20%20%20%20Coyote%0A%20%20%20%3C%2Fspan%3E%0A%20%20%20%3Cspan%20class%3D%22secundario%22%3E%0A%20%20%20%20Foto%20de%20Esteban%20Arango%20en%0A%20%20%20%20Pexels%0A%20%20%20%3C%2Fspan%3E%0A%20%20%3C%2Fa%3E%0A%20%3C%2Fdiv%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
@@ -3934,7 +4018,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
       style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Material+Icons"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">html</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colOnBg</span>: <span
       style="color: #0451a5;">#1C1B1F</span>;</div>
@@ -3970,8 +4055,10 @@
       style="color: #098658;">0</span>;</div>
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">.cards</span> {</div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado">&nbsp; <span
+      style="color: #800000;">.cards</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
       style="color: #098658;">0.5rem</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span
@@ -4060,7 +4147,8 @@
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div class="resaltado2"><span
+      style="color: #800000;">&lt;body&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;div</span> <span
       style="color: #ff0000;">class</span>=<span
       style="color: #0000ff;">"cards"</span><span
@@ -4241,7 +4329,7 @@
   <li>
    <p>
     Las tarjetas están definida en
-    <a href="https://m3.material.io/components/cards/specs" rel="nooper"
+    <a href="https://m3.material.io/components/cards/specs" rel="noopener"
       target="_blank">https://m3.material.io/components/cards/specs</a>.
    </p>
   </li>
@@ -4252,17 +4340,48 @@
          <h1 >L. Navegación entre vistas</h1>
       </section>
      <section >
-         <h1 >M. Navegación con pestañas</h1><div class="horizontal">
+         <h1 >M. Navegación con pestañas</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Se usa para seleccionar entre 2 o más vistas.
+   </p>
+  </li>
+  <li>
+   <p>
+    Se usa en:
+   </p>
+   <ul>
+    <li>
+     <p>Móvil</p>
+    </li>
+    <li>
+     <p>Tablet</p>
+    </li>
+    <li>
+     <p>Escritorio</p>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <p>
+    Utiliza un elemento <code class="language-html">nav</code> dentro de
+    una <code class="language-html">cn-app-bar</code>.
+   </p>
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
  <section>
   <h1>Salida</h1>
   <iframe src="/src/m03vistas/NnavTab.html" height="350"
     title="Navegación inferior para móvil"></iframe>
   <p class="noPrint">
    <a href="/src/m03vistas/NnavTab.html" target="_blank"
-     rel="nooper">Ábrelo en otra pestaña.</a>
+     rel="noopener">Ábrelo en otra pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="nooper"
+   <a target="_blank" rel="noopener"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EPesta%C3%B1as%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMaterial%2BIcons%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--colOnBg%3A%20%231C1B1F%3B%0A%20%20%20--colBg%3A%20%23FFFBFE%3B%0A%20%20%20--colSrf%3A%20%23FFFBFE%3B%0A%20%20%20--colOnSrf%3A%20%231C1B1F%3B%0A%20%20%20--colSrf%3A%20%23FFFBFE%3B%0A%20%20%20--colSh%3A%20%2300000055%3B%0A%20%20%20--colNv%3A%20%2349454F%3B%0A%20%20%20--colNvSel%3A%20%231C1B1F%3B%0A%20%20%20--colNvBg%3A%20%23FFFBFE%3B%0A%20%20%20--colNvBgHv%3A%20%23E7E0ECDD%3B%0A%20%20%20--colNvBgFc%3A%20%23E7E0EC99%3B%0A%20%20%20--colNvBgAc%3A%20%23E7E0EC%3B%0A%20%20%20font-family%3A%20sans-serif%3B%0A%20%20%20color%3A%20var(--color-letra)%3B%0A%20%20%20--fntFam%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20color%3A%20var(--colOnBg)%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cscript%3E%0A%20%20%2F%2F%20%40ts-check%0A%20%20const%20CLASE_ELEVACION2%20%3D%0A%20%20%20%22elevacion2%22%0A%0A%20%20class%20CnAppBar%0A%20%20%20extends%20HTMLElement%20%7B%0A%20%20%20constructor()%20%7B%0A%20%20%20%20super()%0A%20%20%20%20%2F**%20%40type%20%7Bnumber%7D%20*%2F%0A%20%20%20%20this.posY%20%3D%200%0A%20%20%20%20%2F**%20%40type%20%7Bboolean%7D%20*%2F%0A%20%20%20%20this.procesando%20%3D%20false%0A%20%20%20%7D%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20window.addEventListener(%0A%20%20%20%20%20%22scroll%22%2C%0A%20%20%20%20%20()%20%3D%3E%20this.onScroll())%0A%20%20%20%7D%0A%20%20%20onScroll()%20%7B%0A%20%20%20%20this.posY%20%3D%20window.scrollY%0A%20%20%20%20if%20(!this.procesando)%20%7B%0A%20%20%20%20%20window.requestAnimationFrame(%0A%20%20%20%20%20%20()%20%3D%3E%20this.avanza())%0A%20%20%20%20%7D%0A%20%20%20%20this.procesando%20%3D%20true%0A%20%20%20%7D%0A%20%20%20avanza()%20%7B%0A%20%20%20%20if%20(this.posY%20%3D%3D%3D%200)%20%7B%0A%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20remove(CLASE_ELEVACION2)%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20add(CLASE_ELEVACION2)%0A%20%20%20%20%7D%0A%20%20%20%20this.procesando%20%3D%20false%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.%0A%20%20%20define(%22cn-app-bar%22%2C%20CnAppBar)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20body%20%7B%0A%20%20%20margin%3A%200%3B%0A%20%20%20scroll-padding-top%3A%203rem%3B%0A%20%20%7D%0A%0A%20%20.elevacion2%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%206px%2012px%20var(--colSh)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20%7B%0A%20%20%20position%3A%20sticky%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20display%3A%20block%3B%0A%20%20%20color%3A%20var(--colOnSrf)%3B%0A%20%20%20background-color%3A%20var(--colSrf)%0A%20%20%7D%0A%0A%20%20h1%20%7B%0A%20%20%20text-align%3A%20center%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%201.125rem%3B%0A%20%20%20font-size%3A%201.375rem%3B%0A%20%20%20line-height%3A%201.75rem%3B%0A%20%20%20font-weight%3A%20normal%3B%0A%20%20%7D%0A%0A%20%20p%20%7B%0A%20%20%20margin%3A%201rem%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cstyle%3E%0A%20%20cn-app-bar%3Enav%20%7B%0A%20%20%20display%3A%20flex%3B%0A%20%20%20list-style-type%3A%20none%3B%0A%20%20%20align-items%3A%20stretch%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%200%3B%0A%20%20%20color%3A%20var(--colNv)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colNvBg)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20a%20%7B%0A%20%20%20flex%3A%201%3B%0A%20%20%20display%3A%20block%3B%0A%20%20%20color%3A%20var(--colNv)%3B%0A%20%20%20text-decoration%3A%20none%3B%0A%20%20%20text-transform%3A%20uppercase%3B%0A%20%20%20font-size%3A%200.875rem%3B%0A%20%20%20padding%3A%201rem%201rem%3B%0A%20%20%20text-align%3A%20center%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20a%3Ahover%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colNvBgHv)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20a%3Afocus%20%7B%0A%20%20%20outline%3A%20none%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colNvBgFc)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20a%3Aactive%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colNvBgAc)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20a.sel%20%7B%0A%20%20%20font-weight%3A%20bold%3B%0A%20%20%20border-bottom%3A%0A%20%20%20%202px%20solid%20var(--colNvSel)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20.material-icons%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20margin-left%3A%20auto%3B%0A%20%20%20margin-right%3A%20auto%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ccn-app-bar%3E%0A%20%20%3Ch1%3EPesta%C3%B1as%3C%2Fh1%3E%0A%20%20%3Cnav%3E%0A%20%20%20%3Ca%20class%3D%22sel%22%0A%20%20%20%20%20href%3D%22inicio.html%22%3E%0A%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20home%0A%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20Inicio%0A%20%20%20%3C%2Fa%3E%0A%20%20%20%3Ca%20href%3D%22contactos.html%22%3E%0A%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20contacts%0A%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20Contactos%0A%20%20%20%3C%2Fa%3E%0A%20%20%3C%2Fnav%3E%0A%20%3C%2Fcn-app-bar%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
@@ -4314,7 +4433,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
       style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Material+Icons"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">html</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colOnBg</span>: <span
       style="color: #0451a5;">#1C1B1F</span>;</div>
@@ -4361,13 +4481,16 @@
       style="color: #001080;">--colBg</span>);</div>
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;script&gt;</span></div>
    <div>&nbsp; <span style="color: #008000;">// @ts-check</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">CLASE_ELEVACION2</span> =</div>
    <div>&nbsp; &nbsp;<span style="color: #a31515;">"elevacion2"</span></div><br>
-   <div>&nbsp; <span style="color: #0000ff;">class</span> <span
-      style="color: #267f99;">CnAppBar</span></div>
+   <div class="resaltado">&nbsp; <span style="color: #0000ff;">class</span>
+    <span
+      style="color: #267f99;">CnAppBar</span>
+   </div>
    <div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span
       style="color: #267f99;">HTMLElement</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #0000ff;">constructor</span>() {</div>
@@ -4437,11 +4560,13 @@
    <div>&nbsp; &nbsp;}</div>
    <div>&nbsp; }</div>
    <div>&nbsp; <span style="color: #001080;">customElements</span>.</div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">define</span>(<span
+   <div class="resaltado">&nbsp; &nbsp;<span
+      style="color: #795e26;">define</span>(<span
       style="color: #a31515;">"cn-app-bar"</span>, <span
       style="color: #267f99;">CnAppBar</span>)</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">body</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
       style="color: #098658;">0</span>;</div>
@@ -4457,7 +4582,8 @@
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colSh</span>);</div>
    <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span> {</div>
+   <div class="resaltado">&nbsp; <span
+      style="color: #800000;">cn-app-bar</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
       style="color: #0451a5;">sticky</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">top</span>: <span
@@ -4491,8 +4617,10 @@
       style="color: #098658;">1rem</span>;</div>
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span>&gt;<span
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado">&nbsp; <span
+      style="color: #800000;">cn-app-bar</span>&gt;<span
       style="color: #800000;">nav</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span
       style="color: #0451a5;">flex</span>;</div>
@@ -4583,11 +4711,13 @@
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div class="resaltado2"><span
+      style="color: #800000;">&lt;body&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;cn-app-bar&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>Pestañas<span
       style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;nav&gt;</span></div>
+   <div class="resaltado">&nbsp; <span
+      style="color: #800000;">&lt;nav&gt;</span></div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;a</span> <span
       style="color: #ff0000;">class</span>=<span
       style="color: #0000ff;">"sel"</span></div>
@@ -4627,7 +4757,7 @@
   <li>
    <p>
     Las pestañas están definida en
-    <a href="https://material.io/components/tabs" rel="nooper"
+    <a href="https://material.io/components/tabs" rel="noopener"
       target="_blank">https://material.io/components/tabs</a>.
    </p>
   </li>
@@ -4637,6 +4767,32 @@
      <section >
          <h1 >N. Barra de navegación</h1><div class="lectura">
  <ul>
+  <li>
+   <p>
+    Se usa para seleccionar entre 3 a 5 vistas.
+   </p>
+  </li>
+  <li>
+   <p>
+    Se usa en:
+   </p>
+   <ul>
+    <li>
+     <p>Móvil</p>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <p>
+    Cuando el número de vistas es mayor a 5, el último botón se puede conviertir
+    en un menú de hamburqguesa.
+   </p>
+  </li>
+  <li>
+   <p>
+    En tablet y móvil se convierte en un menú lateral.
+   </p>
+  </li>
   <li>
    <p>
     Para que el contenido se muestra adecuadamente, se define el elemento
@@ -4653,10 +4809,10 @@
     title="Navegación inferior para móvil"></iframe>
   <p class="noPrint">
    <a href="/src/m03vistas/Hnavegacion.html" target="_blank"
-     rel="nooper">Ábrelo en otra pestaña.</a>
+     rel="noopener">Ábrelo en otra pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="nooper"
+   <a target="_blank" rel="noopener"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ENavegaci%C3%B3n%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3C!--%0A%20%20Carga%20los%20%C3%ADconos%20oficiales%20de%0A%20%20Material%20Design.%0A%20--%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMaterial%2BIcons%22%3E%0A%20%3Cstyle%3E%0A%20%20%2F*%20Custom%20properties%20*%2F%0A%20%20html%20%7B%0A%20%20%20--colOnBg%3A%20%231C1B1F%3B%0A%20%20%20--colBg%3A%20%23FFFBFE%3B%0A%20%20%20--colNv%3A%20%2349454F%3B%0A%20%20%20--colNvSel%3A%20%231C1B1F%3B%0A%20%20%20--colNvBg%3A%20%23FFFBFE%3B%0A%20%20%20--colNvBgHv%3A%20%23bdbdbddd%3B%0A%20%20%20--colNvBgFc%3A%20%23E7E0EC99%3B%0A%20%20%20--colNvBgAc%3A%20%23E7E0ECDD%3B%0A%20%20%20--colNvIc%3A%20%2349454F%3B%0A%20%20%20--colNvIcSel%3A%20%231D192B%3B%0A%20%20%20--colNvIcBgSel%3A%20%23E8DEF8%3B%0A%20%20%20--fntFam%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20color%3A%20var(--colOnBg)%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cscript%3E%0A%20%20class%20MiNav%20extends%20HTMLElement%20%7B%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20this.innerHTML%20%3D%20%2F*%20html%20*%2F%0A%20%20%20%20%20%60%3Ca%20href%3D%22index.html%22%0A%20%20%20%20%20%20%20class%3D%22sel%22%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20%20%20home%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20Inicio%0A%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%20%3Ca%20href%3D%22ayuda.html%22%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20%20%20help%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20Ayuda%0A%20%20%20%20%20%3C%2Fa%3E%60%3B%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.%0A%20%20%20define(%22mi-nav%22%2C%20MiNav)%3B%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20%2F*%20El%20margin-bottom%20es%20m%C3%A1s%20grande%0A%20%20%20*%20para%20que%20no%20lo%20tape%20la%20barra%0A%20%20%20*%20de%20navegaci%C3%B3n.%20*%2F%0A%20%20body%20%7B%0A%20%20%20margin%3A%200%200%205rem%200%3B%0A%20%20%20scroll-padding-top%3A%203rem%3B%0A%20%20%20scroll-padding-bottom%3A%205rem%3B%0A%20%20%7D%0A%0A%20%20mi-nav%20%7B%0A%20%20%20position%3A%20fixed%3B%0A%20%20%20left%3A%200%3B%0A%20%20%20right%3A%200%3B%0A%20%20%20bottom%3A%200%3B%0A%20%20%20display%3A%20flex%3B%0A%20%20%20list-style-type%3A%20none%3B%0A%20%20%20justify-content%3A%20center%3B%0A%20%20%20align-items%3A%20stretch%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%200%3B%0A%20%20%20color%3A%20var(--colNv)%3B%0A%20%20%20background-color%3A%20var(--colNvBg)%0A%20%20%7D%0A%0A%20%20mi-nav%20a%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20color%3A%20var(--colNv)%3B%0A%20%20%20font-size%3A%200.75rem%3B%0A%20%20%20font-weight%3A%20500%3B%0A%20%20%20text-decoration%3A%20none%3B%0A%20%20%20padding-top%3A%200.5rem%3B%0A%20%20%20padding-bottom%3A%200.75rem%3B%0A%20%20%20padding-left%3A%200.75rem%3B%0A%20%20%20padding-right%3A%200.75rem%3B%0A%20%20%20text-align%3A%20center%3B%0A%20%20%7D%0A%0A%20%20mi-nav%20a%3Ahover%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colNvBgHv)%3B%0A%20%20%7D%0A%0A%20%20mi-nav%20a%3Afocus%20%7B%0A%20%20%20outline%3A%20none%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colNvBgFc)%3B%0A%20%20%7D%0A%0A%20%20mi-nav%20a%3Aactive%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colNvBgAc)%3B%0A%20%20%7D%0A%0A%20%20mi-nav%20.material-icons%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20margin-left%3A%20auto%3B%0A%20%20%20margin-right%3A%20auto%3B%0A%20%20%20padding-left%3A%201rem%3B%0A%20%20%20padding-right%3A%201rem%3B%0A%20%20%20border-radius%3A%201rem%3B%0A%20%20%7D%0A%0A%20%20mi-nav%20a.sel%20%7B%0A%20%20%20color%3A%20var(--colNvSel)%3B%0A%20%20%7D%0A%0A%20%20mi-nav%20a.sel%20.material-icons%20%7B%0A%20%20%20color%3A%20var(--colNvIcSel)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colNvIcBgSel)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cmi-nav%3E%3C%2Fmi-nav%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
@@ -4713,7 +4869,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
       style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Material+Icons"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span
       style="color: #008000;">/* Custom properties */</span></div>
    <div>&nbsp; <span style="color: #800000;">html</span> {</div>
@@ -4755,7 +4912,8 @@
       style="color: #001080;">--colBg</span>);</div>
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;script&gt;</span></div>
    <div class="resaltado">&nbsp; <span
       style="color: #0000ff;">class</span> <span
       style="color: #267f99;">MiNav</span> <span
@@ -4805,7 +4963,8 @@
       style="color: #a31515;">"mi-nav"</span>, <span
       style="color: #267f99;">MiNav</span>);</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span
       style="color: #008000;">/* El margin-bottom es más grande</span></div>
    <div><span
@@ -4826,7 +4985,8 @@
       style="color: #ff0000;">scroll-padding-bottom</span>: <span
       style="color: #098658;">5rem</span>;</div>
    <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">mi-nav</span> {</div>
+   <div class="resaltado">&nbsp; <span
+      style="color: #800000;">mi-nav</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
       style="color: #0451a5;">fixed</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">left</span>: <span
@@ -4958,7 +5118,7 @@
    <p>
     La navegación inferior está definida en
     <a href="https://m3.material.io/components/navigation-bar/overview"
-      rel="nooper"
+      rel="noopener"
       target="_blank">https://m3.material.io/components/navigation-bar/overview</a>.
    </p>
   </li>
@@ -4966,17 +5126,54 @@
 </div>
       </section>
      <section >
-         <h1 >O. Cajón de navegación</h1><div class="horizontal">
+         <h1 >O. Cajón de navegación</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Se usa para seleccionar entre 5 o más vistas.
+   </p>
+  </li>
+  <li>
+   <p>
+    Se usa en:
+   </p>
+   <ul>
+    <li>
+     <p>Móvil</p>
+    </li>
+    <li>
+     <p>Tablet</p>
+    </li>
+    <li>
+     <p>Escritorio</p>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <p>
+    Algunos diseñadores prefieren usar pestañas, barras de navegación o
+    <em>navigation rail</em>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Utiliza un elemento <code class="language-html">nav</code> dentro de
+    una <code class="language-html">cn-app-bar</code>.
+   </p>
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
  <section>
   <h1>Salida</h1>
   <iframe src="/src/m03vistas/Mhamburguesa.html" height="350"
     title="Navegación inferior para móvil"></iframe>
   <p class="noPrint">
    <a href="/src/m03vistas/Mhamburguesa.html" target="_blank"
-     rel="nooper">Ábrelo en otra pestaña.</a>
+     rel="noopener">Ábrelo en otra pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="nooper"
+   <a target="_blank" rel="noopener"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ECaj%C3%B3n%20de%20Navegaci%C3%B3n%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMaterial%2BIcons%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--colOnBg%3A%20%231C1B1F%3B%0A%20%20%20--colBg%3A%20%23FFFBFE%3B%0A%20%20%20--colSrf%3A%20%23FFFBFE%3B%0A%20%20%20--colBgAc%3A%20%234646462c%3B%0A%20%20%20--colOnSrf%3A%20%231C1B1F%3B%0A%20%20%20--colSrf%3A%20%23FFFBFE%3B%0A%20%20%20--colSh%3A%20%2300000055%3B%0A%20%20%20--anchoNav%3A%20300px%3B%0A%20%20%20font-family%3A%20sans-serif%3B%0A%20%20%20color%3A%20var(--color-letra)%3B%0A%20%20%20--fntFam%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20color%3A%20var(--colOnBg)%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cscript%3E%0A%20%20const%20CLASE_ELEVACION2%20%3D%0A%20%20%20%22elevacion2%22%0A%0A%20%20class%20CnAppBar%0A%20%20%20extends%20HTMLElement%20%7B%0A%20%20%20constructor()%20%7B%0A%20%20%20%20super()%0A%20%20%20%20%2F**%20%40type%20%7Bnumber%7D%20*%2F%0A%20%20%20%20this.posY%20%3D%200%0A%20%20%20%20%2F**%20%40type%20%7Bboolean%7D%20*%2F%0A%20%20%20%20this.procesando%20%3D%20false%0A%20%20%20%7D%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20window.addEventListener(%0A%20%20%20%20%20%22scroll%22%2C%0A%20%20%20%20%20()%20%3D%3E%20this.onScroll())%0A%20%20%20%7D%0A%20%20%20onScroll()%20%7B%0A%20%20%20%20this.posY%20%3D%20window.scrollY%0A%20%20%20%20if%20(!this.procesando)%20%7B%0A%20%20%20%20%20window.requestAnimationFrame(%0A%20%20%20%20%20%20()%20%3D%3E%20this.avanza())%0A%20%20%20%20%7D%0A%20%20%20%20this.procesando%20%3D%20true%0A%20%20%20%7D%0A%20%20%20avanza()%20%7B%0A%20%20%20%20if%20(this.posY%20%3D%3D%3D%200)%20%7B%0A%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20remove(CLASE_ELEVACION2)%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20add(CLASE_ELEVACION2)%0A%20%20%20%20%7D%0A%20%20%20%20this.procesando%20%3D%20false%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.%0A%20%20%20define(%22cn-app-bar%22%2C%20CnAppBar)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20body%20%7B%0A%20%20%20margin%3A%200%3B%0A%20%20%20scroll-padding-top%3A%203rem%3B%0A%20%20%7D%0A%0A%20%20.elevacion2%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%206px%2012px%20var(--colSh)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20%7B%0A%20%20%20position%3A%20sticky%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20display%3A%20block%3B%0A%20%20%20color%3A%20var(--colOnSrf)%3B%0A%20%20%20background-color%3A%20var(--colSrf)%0A%20%20%7D%0A%0A%20%20h1%20%7B%0A%20%20%20text-align%3A%20center%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%201.125rem%3B%0A%20%20%20font-size%3A%201.375rem%3B%0A%20%20%20line-height%3A%201.75rem%3B%0A%20%20%20font-weight%3A%20normal%3B%0A%20%20%7D%0A%0A%20%20p%20%7B%0A%20%20%20margin%3A%201rem%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cstyle%3E%0A%20%20cn-app-bar%3Enav%3Ebutton%20%7B%0A%20%20%20position%3A%20absolute%3B%0A%20%20%20border%3A%20none%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%200%3B%0A%20%20%20top%3A%201.25rem%3B%0A%20%20%20left%3A%201rem%3B%0A%20%20%20color%3A%20var(--colOnSrf)%3B%0A%20%20%20background-color%3A%20var(--colSrf)%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%3Ebutton%3Aactive%2C%0A%20%20cn-app-bar%3Enav%20li%20a%3Aactive%20%7B%0A%20%20%20background-color%3A%20var(--colBgAc)%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20ul%20%7B%0A%20%20%20position%3A%20fixed%3B%0A%20%20%20z-index%3A%202%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20left%3A%0A%20%20%20%20calc(-1rem%20-%20var(--anchoNav))%3B%0A%20%20%20bottom%3A%200%3B%0A%20%20%20width%3A%20var(--anchoNav)%3B%0A%20%20%20max-width%3A%2070%25%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%201rem%3B%0A%20%20%20overflow%3A%20auto%3B%0A%20%20%20list-style-type%3A%20none%3B%0A%20%20%20text-align%3A%20left%3B%0A%20%20%20color%3A%20var(--colOnSrf)%3B%0A%20%20%20background-color%3A%20var(--colSrf)%3B%0A%20%20%20transition%3A%20left%200.7s%20ease-out%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20ul%20h2%20%7B%0A%20%20%20margin%3A%200%200%201rem%200%3B%0A%20%20%20padding%3A%200%3B%0A%20%20%20font-size%3A%201.25rem%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20ul.muestra%20%7B%0A%20%20%20left%3A%200%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20ul.muestra%2B.bloqueo%20%7B%0A%20%20%20position%3A%20fixed%3B%0A%20%20%20z-index%3A%201%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20left%3A%200%3B%0A%20%20%20bottom%3A%200%3B%0A%20%20%20right%3A%200%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%200%3B%0A%20%20%20background-color%3A%20var(--colSh)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20li%20a%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20font-size%3A%200.875rem%3B%0A%20%20%20height%3A%203rem%3B%0A%20%20%20line-height%3A%203rem%3B%0A%20%20%20color%3A%20var(--colOnSrf)%3B%0A%20%20%20text-decoration%3A%20none%3B%0A%20%20%20white-space%3A%20nowrap%3B%0A%20%20%20overflow%3A%20hidden%3B%0A%20%20%20text-overflow%3A%20ellipsis%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20li%20a%20span.material-icons%20%7B%0A%20%20%20margin-right%3A%202rem%3B%0A%20%20%20vertical-align%3A%20middle%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ccn-app-bar%3E%0A%20%20%3Cnav%3E%0A%20%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20onclick%3D%22cajon.classList.%0A%20%20%20%20%20%20add('muestra')%22%3E%0A%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20menu%0A%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%20%3Cul%20id%3Dcajon%3E%0A%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%3Ch2%3ECaj%C3%B3n%20de%20Navegaci%C3%B3n%3C%2Fh2%3E%0A%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%3Ca%20href%3D%22inicio.html%22%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20%20%20home%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20Inicio%0A%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%3Ca%20href%3D%22contactos.html%22%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20%20%20contacts%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20Contactos%0A%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%3Ca%20href%3D%22carrito.html%22%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20%20%20shopping_cart%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20Carrito%20de%20Compras%0A%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%3Ca%20href%3D%22algo.html%22%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20%20%20subject%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20Lorem%20ipsum%20dolor%20sit%20amet%0A%20%20%20%20%20%20consectetur%20adipisicing%0A%20%20%20%20%20%20elit.%0A%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%3Ca%20href%3D%22ayuda.html%22%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20%20%20help%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20Ayuda%0A%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%3Ca%20href%3D%22ajustes.html%22%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20%20%20settings%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20Ajustes%0A%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%3C%2Fli%3E%0A%20%20%20%3C%2Ful%3E%0A%20%20%20%3Cdiv%20class%3D%22bloqueo%22%0A%20%20%20%20%20type%3D%22button%22%0A%20%20%20%20%20onclick%3D%22cajon.classList.%0A%20%20%20%20%20%20remove('muestra')%22%3E%3C%2Fdiv%3E%0A%20%20%3C%2Fnav%3E%0A%20%20%3Ch1%3ECaj%C3%B3n%20de%20Navegaci%C3%B3n%3C%2Fh1%3E%0A%20%3C%2Fcn-app-bar%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
@@ -5029,7 +5226,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
       style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Material+Icons"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">html</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colOnBg</span>: <span
       style="color: #0451a5;">#1C1B1F</span>;</div>
@@ -5068,7 +5266,8 @@
       style="color: #001080;">--colBg</span>);</div>
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;script&gt;</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">CLASE_ELEVACION2</span> =</div>
    <div>&nbsp; &nbsp;<span
@@ -5154,7 +5353,8 @@
       style="color: #a31515;">"cn-app-bar"</span>, <span
       style="color: #267f99;">CnAppBar</span>)</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">body</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
       style="color: #098658;">0</span>;</div>
@@ -5206,7 +5406,8 @@
       style="color: #098658;">1rem</span>;</div>
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
    <div class="resaltado">&nbsp; <span
       style="color: #800000;">cn-app-bar</span>&gt;<span
       style="color: #800000;">nav</span>&gt;<span
@@ -5550,8 +5751,16 @@
    <p>
     El cajón de navegación está definido en
     <a href="https://m3.material.io/components/navigation-drawer/overview"
-      rel="nooper"
+      rel="noopener"
       target="_blank">https://m3.material.io/components/navigation-drawer/overview</a>.
+   </p>
+  </li>
+  <li>
+   <p>
+    El <dfn>navigation rail</dfn> está definido en
+    <a href="https://m3.material.io/components/navigation-rail/overview"
+      rel="noopener"
+      target="_blank">https://m3.material.io/components/navigation-rail/overview</a>.
    </p>
   </li>
  </ul>
@@ -5567,11 +5776,12 @@
   <iframe src="/src/m03vistas/Fgps.html" height="200"
     title="Uso de geolocalización"></iframe>
   <p class="noPrint">
-   <a href="/src/m03vistas/Fgps.html" target="_blank" rel="nooper">Ábrelo en otra
+   <a href="/src/m03vistas/Fgps.html" target="_blank" rel="noopener">Ábrelo en
+    otra
     pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="nooper"
+   <a target="_blank" rel="noopener"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EGPS%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3FGPS%3C%2Fh1%3E%0A%20%3Cp%3E%0A%20%20%3Clabel%3E%0A%20%20%20Latitud%0A%20%20%20%3Coutput%20id%3D%22latitud%22%3E%3C%2Foutput%3E%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fp%3E%0A%20%3Cp%3E%0A%20%20%3Clabel%3E%0A%20%20%20Longitud%0A%20%20%20%3Coutput%20id%3D%22longitud%22%3E%3C%2Foutput%3E%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fp%3E%0A%20%3Cscript%3E%0A%20%20navigator.geolocation.%0A%20%20%20watchPosition(p%20%3D%3E%20%7B%0A%20%20%20%20latitud.value%20%3D%0A%20%20%20%20%20p.coords.latitude%3B%0A%20%20%20%20longitud.value%20%3D%0A%20%20%20%20%20p.coords.longitude%3B%0A%20%20%20%7D)%3B%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
@@ -5599,7 +5809,8 @@
    <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>GPS<span
       style="color: #800000;">&lt;/title&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div class="resaltado2"><span
+      style="color: #800000;">&lt;body&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>GPS<span
       style="color: #800000;">&lt;/h1&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
@@ -5622,7 +5833,8 @@
       style="color: #800000;">&gt;&lt;/output&gt;</span></div>
    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;script&gt;</span></div>
    <div>&nbsp;&nbsp;<span style="color: #001080;">navigator</span>.<span
       style="color: #0070c1;">geolocation</span>.</div>
    <div>&nbsp;&nbsp;&nbsp;<span
@@ -5658,21 +5870,21 @@
   <iframe src="/src/m03vistas/Garchivos.html" height="300"
     title="Uso de archivos"></iframe>
   <p class="noPrint">
-   <a href="/src/m03vistas/Garchivos.html" target="_blank" rel="nooper">Ábrelo
+   <a href="/src/m03vistas/Garchivos.html" target="_blank" rel="noopener">Ábrelo
     en otra pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="nooper"
+   <a target="_blank" rel="noopener"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EArchivos%20y%20C%C3%A1mara%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3EArchivos%20y%20C%C3%A1mara%3C%2Fh1%3E%0A%20%3Cp%3E%0A%20%20%3Clabel%3E%0A%20%20%20Foto%20de%20M%C3%B3vil%0A%20%20%20%3Cinput%20type%3D%22file%22%0A%20%20%20%20%20accept%3D%22image%2F*%22%0A%20%20%20%20%20capture%3D%22camera%22%3E%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fp%3E%0A%20%3Cp%3E%0A%20%20%3Clabel%3E%0A%20%20%20Video%20de%20M%C3%B3vil%0A%20%20%20%3Cinput%20type%3D%22file%22%0A%20%20%20%20%20accept%3D%22video%2F*%22%0A%20%20%20%20%20capture%3D%22%22%3E%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fp%3E%0A%20%3Cp%3E%0A%20%20%3Clabel%20for%3D%22archivo%22%3E%0A%20%20%20Archivo%0A%20%20%20%3Cinput%20type%3D%22file%22%3E%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="nooper"
+   <a target="_blank" rel="noopener"
      href="https://drive.google.com/file/d/1LZ0BjQB2Hlt4df2ksrJp2QdA9Ky1oghw/view?usp=sharing">
     Observa como funciona en Android.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="nooper"
+   <a target="_blank" rel="noopener"
      href="https://drive.google.com/file/d/1JKaeJaWg0VepcuaDGc0j7S-7CphTtulN/view?usp=sharing">
     Observa como funciona en iOS.</a>
   </p>
