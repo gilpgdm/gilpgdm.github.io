@@ -14,21 +14,22 @@
  <link rel="stylesheet"
    href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
  <link rel="stylesheet"
-   href="https://fonts.googleapis.com/css2?family=Material+Icons">
+   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
  <style>
   html {
    --colOnBg: #1C1B1F;
    --colBg: #FFFBFE;
-   --colSrf: #FFFBFE;
-   --colOnSrf: #1C1B1F;
-   --colSrf: #FFFBFE;
-   --colSh: #00000055;
    --colNv: #49454F;
-   --colNvSel: #1C1B1F;
+   --colNvSel: #29292955;
    --colNvBg: #FFFBFE;
    --colNvBgHv: #E7E0ECDD;
    --colNvBgFc: #E7E0EC99;
-   --colNvBgAc: #E7E0EC;
+   --colNvBgAc: #4646462c;
+   --colOnSrf: #1C1B1F;
+   --colSrf: #FFFBFE;
+   --colSrf: #FFFBFE;
+   --colSrfElv: #E7E0EC;
+   --colSh: #00000055;
    font-family: sans-serif;
    color: var(--color-letra);
    --fntFam: -apple-system,
@@ -39,6 +40,30 @@
    background-color: var(--colBg);
   }
  </style>
+ <script>
+  class MiNav extends HTMLElement {
+   connectedCallback() {
+    this.innerHTML = /* html */
+    `<a href="index.html"
+       class="sel">
+      <span
+        class="material-symbols-outlined">
+       home
+      </span>
+      Inicio
+     </a>
+     <a href="ayuda.html">
+      <span
+        class="material-symbols-outlined">
+       help
+      </span>
+      Ayuda
+     </a>`
+   }
+  }
+  customElements.
+   define("mi-nav", MiNav);
+ </script>
  <script>
   // @ts-check
   const CLASE_ELEVACION2 =
@@ -87,22 +112,29 @@
   }
 
   .elevacion2 {
-   box-shadow:
-    0 6px 12px var(--colSh);
+   background-color:
+    var(--colSrfElv);
   }
 
   cn-app-bar {
    position: sticky;
    top: 0;
+   z-index: 1;
    display: block;
    color: var(--colOnSrf);
    background-color: var(--colSrf)
   }
 
+  cn-app-bar>div {
+   height: 4rem;
+   display: flex;
+   align-items: center;
+  }
+
   h1 {
    text-align: center;
    margin: 0;
-   padding: 1.125rem;
+   flex: 1 0;
    font-size: 1.375rem;
    line-height: 1.75rem;
    font-weight: normal;
@@ -113,51 +145,52 @@
   }
  </style>
  <style>
-  cn-app-bar>nav {
+  mi-nav {
    display: flex;
+   gap: 1rem;
    list-style-type: none;
    align-items: stretch;
    margin: 0;
-   padding: 0;
+   padding: 0 1rem;
    color: var(--colNv);
    background-color:
     var(--colNvBg);
   }
 
-  cn-app-bar>nav a {
+  mi-nav a {
    flex: 1;
    display: block;
    color: var(--colNv);
    text-decoration: none;
-   text-transform: uppercase;
    font-size: 0.875rem;
    padding: 1rem 1rem;
    text-align: center;
+   border-radius: 1rem;
   }
 
-  cn-app-bar>nav a:hover {
+  mi-nav a:hover {
    background-color:
     var(--colNvBgHv);
   }
 
-  cn-app-bar>nav a:focus {
+  mi-nav a:focus {
    outline: none;
    background-color:
     var(--colNvBgFc);
   }
 
-  cn-app-bar>nav a:active {
+  mi-nav a:active {
    background-color:
     var(--colNvBgAc);
   }
 
-  cn-app-bar>nav a.sel {
+  mi-nav a.sel {
    font-weight: bold;
-   border-bottom:
-    2px solid var(--colNvSel);
+   background-color:
+    var(--colNvSel);
   }
 
-  cn-app-bar>nav .material-icons {
+  mi-nav .material-symbols-outlined {
    display: block;
    margin-left: auto;
    margin-right: auto;
@@ -167,22 +200,10 @@
 
 <body>
  <cn-app-bar>
-  <h1>Pestañas</h1>
-  <nav>
-   <a class="sel"
-     href="inicio.html">
-    <span class="material-icons">
-     home
-    </span>
-    Inicio
-   </a>
-   <a href="contactos.html">
-    <span class="material-icons">
-     contacts
-    </span>
-    Contactos
-   </a>
-  </nav>
+  <div>
+   <h1>Pestañas</h1>
+  </div>
+  <mi-nav></mi-nav>
  </cn-app-bar>
 </body>
 

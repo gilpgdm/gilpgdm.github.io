@@ -18,7 +18,7 @@
   Material Design.
  -->
  <link rel="stylesheet"
-   href="https://fonts.googleapis.com/css2?family=Material+Icons">
+   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
  <style>
   /* Custom properties */
   html {
@@ -26,13 +26,13 @@
    --colBg: #FFFBFE;
    --colNv: #49454F;
    --colNvSel: #1C1B1F;
-   --colNvBg: #FFFBFE;
+   --colNvBg: #E7E0EC;
    --colNvBgHv: #bdbdbddd;
    --colNvBgFc: #E7E0EC99;
    --colNvBgAc: #E7E0ECDD;
    --colNvIc: #49454F;
    --colNvIcSel: #1D192B;
-   --colNvIcBgSel: #E8DEF8;
+   --colNvIcBgSel: #29292955;
    --fntFam: -apple-system,
     BlinkMacSystemFont, Roboto,
     sans-serif;
@@ -45,19 +45,27 @@
   class MiNav extends HTMLElement {
    connectedCallback() {
     this.innerHTML = /* html */
-     `<a href="index.html"
-       class="sel">
-      <span class="material-icons">
-       home
-      </span>
-      Inicio
-     </a>
-     <a href="ayuda.html">
-      <span class="material-icons">
-       help
-      </span>
-      Ayuda
-     </a>`;
+     `<a href="index.html">
+       <span
+         class="material-symbols-outlined">
+        home
+       </span>
+       Inicio
+      </a>
+      <a href="index.html"
+        class="sel">
+        <span class="material-symbols-outlined">
+         analytics
+        </span>
+       Analizar
+      </a>
+      <a href="ayuda.html">
+       <span
+         class="material-symbols-outlined">
+        help
+       </span>
+       Ayuda
+      </a>`
    }
   }
   customElements.
@@ -117,7 +125,7 @@
     var(--colNvBgAc);
   }
 
-  mi-nav .material-icons {
+  mi-nav .material-symbols-outlined {
    display: block;
    box-sizing: border-box;
    margin-left: auto;
@@ -131,7 +139,7 @@
    color: var(--colNvSel);
   }
 
-  mi-nav a.sel .material-icons {
+  mi-nav a.sel .material-symbols-outlined {
    color: var(--colNvIcSel);
    background-color:
     var(--colNvIcBgSel);

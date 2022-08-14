@@ -29,8 +29,10 @@
   </li>
   <li>
    <p>
-    Utiliza un elemento <code class="language-html">nav</code> dentro de
-    una <code class="language-html">cn-app-bar</code>.
+    Se crea el elemento personalizado
+    <code class="language-html">mi-nav</code>,
+    que puede usarse en todas las vistas de la app, colocándose dentro de una
+    <code class="language-html">cn-app-bar</code>.
    </p>
   </li>
  </ul>
@@ -46,7 +48,7 @@
   </p>
   <p class="noPrint">
    <a target="_blank" rel="noopener"
-     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ECaj%C3%B3n%20de%20Navegaci%C3%B3n%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMaterial%2BIcons%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--colOnBg%3A%20%231C1B1F%3B%0A%20%20%20--colBg%3A%20%23FFFBFE%3B%0A%20%20%20--colSrf%3A%20%23FFFBFE%3B%0A%20%20%20--colBgAc%3A%20%234646462c%3B%0A%20%20%20--colOnSrf%3A%20%231C1B1F%3B%0A%20%20%20--colSrf%3A%20%23FFFBFE%3B%0A%20%20%20--colSh%3A%20%2300000055%3B%0A%20%20%20--anchoNav%3A%20300px%3B%0A%20%20%20font-family%3A%20sans-serif%3B%0A%20%20%20color%3A%20var(--color-letra)%3B%0A%20%20%20--fntFam%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20color%3A%20var(--colOnBg)%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cscript%3E%0A%20%20const%20CLASE_ELEVACION2%20%3D%0A%20%20%20%22elevacion2%22%0A%0A%20%20class%20CnAppBar%0A%20%20%20extends%20HTMLElement%20%7B%0A%20%20%20constructor()%20%7B%0A%20%20%20%20super()%0A%20%20%20%20%2F**%20%40type%20%7Bnumber%7D%20*%2F%0A%20%20%20%20this.posY%20%3D%200%0A%20%20%20%20%2F**%20%40type%20%7Bboolean%7D%20*%2F%0A%20%20%20%20this.procesando%20%3D%20false%0A%20%20%20%7D%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20window.addEventListener(%0A%20%20%20%20%20%22scroll%22%2C%0A%20%20%20%20%20()%20%3D%3E%20this.onScroll())%0A%20%20%20%7D%0A%20%20%20onScroll()%20%7B%0A%20%20%20%20this.posY%20%3D%20window.scrollY%0A%20%20%20%20if%20(!this.procesando)%20%7B%0A%20%20%20%20%20window.requestAnimationFrame(%0A%20%20%20%20%20%20()%20%3D%3E%20this.avanza())%0A%20%20%20%20%7D%0A%20%20%20%20this.procesando%20%3D%20true%0A%20%20%20%7D%0A%20%20%20avanza()%20%7B%0A%20%20%20%20if%20(this.posY%20%3D%3D%3D%200)%20%7B%0A%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20remove(CLASE_ELEVACION2)%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20add(CLASE_ELEVACION2)%0A%20%20%20%20%7D%0A%20%20%20%20this.procesando%20%3D%20false%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.%0A%20%20%20define(%22cn-app-bar%22%2C%20CnAppBar)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20body%20%7B%0A%20%20%20margin%3A%200%3B%0A%20%20%20scroll-padding-top%3A%203rem%3B%0A%20%20%7D%0A%0A%20%20.elevacion2%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%206px%2012px%20var(--colSh)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20%7B%0A%20%20%20position%3A%20sticky%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20display%3A%20block%3B%0A%20%20%20color%3A%20var(--colOnSrf)%3B%0A%20%20%20background-color%3A%20var(--colSrf)%0A%20%20%7D%0A%0A%20%20h1%20%7B%0A%20%20%20text-align%3A%20center%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%201.125rem%3B%0A%20%20%20font-size%3A%201.375rem%3B%0A%20%20%20line-height%3A%201.75rem%3B%0A%20%20%20font-weight%3A%20normal%3B%0A%20%20%7D%0A%0A%20%20p%20%7B%0A%20%20%20margin%3A%201rem%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cstyle%3E%0A%20%20cn-app-bar%3Enav%3Ebutton%20%7B%0A%20%20%20position%3A%20absolute%3B%0A%20%20%20border%3A%20none%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%200%3B%0A%20%20%20top%3A%201.25rem%3B%0A%20%20%20left%3A%201rem%3B%0A%20%20%20color%3A%20var(--colOnSrf)%3B%0A%20%20%20background-color%3A%20var(--colSrf)%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%3Ebutton%3Aactive%2C%0A%20%20cn-app-bar%3Enav%20li%20a%3Aactive%20%7B%0A%20%20%20background-color%3A%20var(--colBgAc)%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20ul%20%7B%0A%20%20%20position%3A%20fixed%3B%0A%20%20%20z-index%3A%202%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20left%3A%0A%20%20%20%20calc(-1rem%20-%20var(--anchoNav))%3B%0A%20%20%20bottom%3A%200%3B%0A%20%20%20width%3A%20var(--anchoNav)%3B%0A%20%20%20max-width%3A%2070%25%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%201rem%3B%0A%20%20%20overflow%3A%20auto%3B%0A%20%20%20list-style-type%3A%20none%3B%0A%20%20%20text-align%3A%20left%3B%0A%20%20%20color%3A%20var(--colOnSrf)%3B%0A%20%20%20background-color%3A%20var(--colSrf)%3B%0A%20%20%20transition%3A%20left%200.7s%20ease-out%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20ul%20h2%20%7B%0A%20%20%20margin%3A%200%200%201rem%200%3B%0A%20%20%20padding%3A%200%3B%0A%20%20%20font-size%3A%201.25rem%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20ul.muestra%20%7B%0A%20%20%20left%3A%200%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20ul.muestra%2B.bloqueo%20%7B%0A%20%20%20position%3A%20fixed%3B%0A%20%20%20z-index%3A%201%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20left%3A%200%3B%0A%20%20%20bottom%3A%200%3B%0A%20%20%20right%3A%200%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%200%3B%0A%20%20%20background-color%3A%20var(--colSh)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20li%20a%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20font-size%3A%200.875rem%3B%0A%20%20%20height%3A%203rem%3B%0A%20%20%20line-height%3A%203rem%3B%0A%20%20%20color%3A%20var(--colOnSrf)%3B%0A%20%20%20text-decoration%3A%20none%3B%0A%20%20%20white-space%3A%20nowrap%3B%0A%20%20%20overflow%3A%20hidden%3B%0A%20%20%20text-overflow%3A%20ellipsis%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Enav%20li%20a%20span.material-icons%20%7B%0A%20%20%20margin-right%3A%202rem%3B%0A%20%20%20vertical-align%3A%20middle%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ccn-app-bar%3E%0A%20%20%3Cnav%3E%0A%20%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20onclick%3D%22cajon.classList.%0A%20%20%20%20%20%20add('muestra')%22%3E%0A%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20menu%0A%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%20%3Cul%20id%3Dcajon%3E%0A%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%3Ch2%3ECaj%C3%B3n%20de%20Navegaci%C3%B3n%3C%2Fh2%3E%0A%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%3Ca%20href%3D%22inicio.html%22%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20%20%20home%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20Inicio%0A%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%3Ca%20href%3D%22contactos.html%22%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20%20%20contacts%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20Contactos%0A%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%3Ca%20href%3D%22carrito.html%22%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20%20%20shopping_cart%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20Carrito%20de%20Compras%0A%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%3Ca%20href%3D%22algo.html%22%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20%20%20subject%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20Lorem%20ipsum%20dolor%20sit%20amet%0A%20%20%20%20%20%20consectetur%20adipisicing%0A%20%20%20%20%20%20elit.%0A%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%3Ca%20href%3D%22ayuda.html%22%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20%20%20help%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20Ayuda%0A%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%3Ca%20href%3D%22ajustes.html%22%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22material-icons%22%3E%0A%20%20%20%20%20%20%20settings%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20Ajustes%0A%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%3C%2Fli%3E%0A%20%20%20%3C%2Ful%3E%0A%20%20%20%3Cdiv%20class%3D%22bloqueo%22%0A%20%20%20%20%20type%3D%22button%22%0A%20%20%20%20%20onclick%3D%22cajon.classList.%0A%20%20%20%20%20%20remove('muestra')%22%3E%3C%2Fdiv%3E%0A%20%20%3C%2Fnav%3E%0A%20%20%3Ch1%3ECaj%C3%B3n%20de%20Navegaci%C3%B3n%3C%2Fh1%3E%0A%20%3C%2Fcn-app-bar%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ECaj%C3%B3n%20de%20Navegaci%C3%B3n%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMaterial%2BSymbols%2BOutlined%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--colOnBg%3A%20%231C1B1F%3B%0A%20%20%20--colBg%3A%20%23FFFBFE%3B%0A%20%20%20--colOnSrf%3A%20%231C1B1F%3B%0A%20%20%20--colSrf%3A%20%23FFFBFE%3B%0A%20%20%20--colSrfElv%3A%20%23E7E0EC%3B%0A%20%20%20--colNvSel%3A%20%2329292955%3B%0A%20%20%20--colBgAc%3A%20%234646462c%3B%0A%20%20%20--colSh%3A%20%2300000055%3B%0A%20%20%20--anchomi-Nav%3A%20300px%3B%0A%20%20%20font-family%3A%20sans-serif%3B%0A%20%20%20color%3A%20var(--color-letra)%3B%0A%20%20%20--fntFam%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20color%3A%20var(--colOnBg)%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cscript%3E%0A%20%20class%20MiNav%20extends%20HTMLElement%20%7B%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20this.innerHTML%20%3D%20%2F*%20html%20*%2F%0A%20%20%20%20%20%60%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20%20%20%20onclick%3D%22cajon.classList.%0A%20%20%20%20%20%20%20%20%20add('muestra')%22%3E%0A%20%20%20%20%20%20%20%3Cspan%0A%20%20%20%20%20%20%20%20%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20%20%20%20%20menu%0A%20%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20%3C%2Fbutton%3E%0A%20%20%20%20%20%20%3Cul%20id%3Dcajon%3E%0A%20%20%20%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%20%20%20%3Ch2%3ECaj%C3%B3n%20de%20Navegaci%C3%B3n%3C%2Fh2%3E%0A%20%20%20%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%20%20%20%3Ca%20href%3D%22inicio.html%22%3E%0A%20%20%20%20%20%20%20%20%20%3Cspan%0A%20%20%20%20%20%20%20%20%20%20%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20%20%20%20%20%20%20home%0A%20%20%20%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20Inicio%0A%20%20%20%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%20%20%20%3Ca%20href%3D%22contactos.html%22%3E%0A%20%20%20%20%20%20%20%20%20%3Cspan%0A%20%20%20%20%20%20%20%20%20%20%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20%20%20%20%20%20%20contacts%0A%20%20%20%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20Contactos%0A%20%20%20%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%20%20%20%3Ca%20href%3D%22algo.html%22%3E%0A%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20%20%20%20%20%20%20subject%0A%20%20%20%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20Lorem%20ipsum%20dolor%20sit%20amet%0A%20%20%20%20%20%20%20%20%20consectetur%20adipisicing%0A%20%20%20%20%20%20%20%20%20elit.%0A%20%20%20%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%20%20%20%3Ca%20href%3D%22ayuda.html%22%3E%0A%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20%20%20%20%20%20%20help%0A%20%20%20%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20Ayuda%0A%20%20%20%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%20%20%20%3Ca%20class%3D%22sel%22%0A%20%20%20%20%20%20%20%20%20%20href%3D%22ajustes.html%22%3E%0A%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20%20%20%20%20%20%20settings%0A%20%20%20%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20Ajustes%0A%20%20%20%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%20%20%20%3C%2Fli%3E%0A%20%20%20%20%20%20%3C%2Ful%3E%0A%20%20%20%20%20%20%3Cdiv%20class%3D%22bloqueo%22%0A%20%20%20%20%20%20%20%20type%3D%22button%22%0A%20%20%20%20%20%20%20%20onclick%3D%22cajon.classList.%0A%20%20%20%20%20%20%20%20%20remove('muestra')%22%3E%3C%2Fdiv%3E%60%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.%0A%20%20%20define(%22mi-nav%22%2C%20MiNav)%3B%0A%20%3C%2Fscript%3E%0A%20%3Cscript%3E%0A%20%20const%20CLASE_ELEVACION2%20%3D%0A%20%20%20%22elevacion2%22%0A%0A%20%20class%20CnAppBar%0A%20%20%20extends%20HTMLElement%20%7B%0A%20%20%20constructor()%20%7B%0A%20%20%20%20super()%0A%20%20%20%20%2F**%20%40type%20%7Bnumber%7D%20*%2F%0A%20%20%20%20this.posY%20%3D%200%0A%20%20%20%20%2F**%20%40type%20%7Bboolean%7D%20*%2F%0A%20%20%20%20this.procesando%20%3D%20false%0A%20%20%20%7D%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20window.addEventListener(%0A%20%20%20%20%20%22scroll%22%2C%0A%20%20%20%20%20()%20%3D%3E%20this.onScroll())%0A%20%20%20%7D%0A%20%20%20onScroll()%20%7B%0A%20%20%20%20this.posY%20%3D%20window.scrollY%0A%20%20%20%20if%20(!this.procesando)%20%7B%0A%20%20%20%20%20window.requestAnimationFrame(%0A%20%20%20%20%20%20()%20%3D%3E%20this.avanza())%0A%20%20%20%20%7D%0A%20%20%20%20this.procesando%20%3D%20true%0A%20%20%20%7D%0A%20%20%20avanza()%20%7B%0A%20%20%20%20if%20(this.posY%20%3D%3D%3D%200)%20%7B%0A%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20remove(CLASE_ELEVACION2)%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20add(CLASE_ELEVACION2)%0A%20%20%20%20%7D%0A%20%20%20%20this.procesando%20%3D%20false%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.%0A%20%20%20define(%22cn-app-bar%22%2C%20CnAppBar)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20body%20%7B%0A%20%20%20margin%3A%200%3B%0A%20%20%20scroll-padding-top%3A%203rem%3B%0A%20%20%7D%0A%0A%20%20.elevacion2%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%206px%2012px%20var(--colSh)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20%7B%0A%20%20%20position%3A%20sticky%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20display%3A%20block%3B%0A%20%20%20color%3A%20var(--colOnSrf)%3B%0A%20%20%20background-color%3A%20var(--colSrf)%0A%20%20%7D%0A%0A%20%20h1%20%7B%0A%20%20%20text-align%3A%20center%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%201.125rem%3B%0A%20%20%20font-size%3A%201.375rem%3B%0A%20%20%20line-height%3A%201.75rem%3B%0A%20%20%20font-weight%3A%20normal%3B%0A%20%20%7D%0A%0A%20%20p%20%7B%0A%20%20%20margin%3A%201rem%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cstyle%3E%0A%20%20cn-app-bar%20mi-nav%3Ebutton%20%7B%0A%20%20%20position%3A%20absolute%3B%0A%20%20%20border%3A%20none%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%200%3B%0A%20%20%20top%3A%201.25rem%3B%0A%20%20%20left%3A%201rem%3B%0A%20%20%20color%3A%20var(--colOnSrf)%3B%0A%20%20%20background-color%3A%20var(--colSrf)%0A%20%20%7D%0A%0A%20%20cn-app-bar%20mi-nav%3Ebutton%3Aactive%2C%0A%20%20cn-app-bar%20mi-nav%20li%20a%3Aactive%20%7B%0A%20%20%20background-color%3A%20var(--colBgAc)%0A%20%20%7D%0A%0A%20%20cn-app-bar%20mi-nav%20ul%20%7B%0A%20%20%20position%3A%20fixed%3B%0A%20%20%20z-index%3A%202%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20left%3A%0A%20%20%20%20calc(-10rem%20-%20var(--anchomi-Nav))%3B%0A%20%20%20bottom%3A%200%3B%0A%20%20%20width%3A%20var(--anchomi-Nav)%3B%0A%20%20%20max-width%3A%2070%25%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%201rem%3B%0A%20%20%20border-radius%3A%201rem%3B%0A%20%20%20overflow%3A%20auto%3B%0A%20%20%20list-style-type%3A%20none%3B%0A%20%20%20text-align%3A%20left%3B%0A%20%20%20color%3A%20var(--colOnSrf)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colSrfElv)%3B%0A%20%20%20transition%3A%20left%200.7s%20ease-out%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20mi-nav%20ul%20h2%20%7B%0A%20%20%20margin%3A%200%200%201rem%200%3B%0A%20%20%20padding%3A%200%3B%0A%20%20%20font-size%3A%201.25rem%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20mi-nav%20ul.muestra%20%7B%0A%20%20%20left%3A%200%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20mi-nav%20ul.muestra%2B.bloqueo%20%7B%0A%20%20%20position%3A%20fixed%3B%0A%20%20%20z-index%3A%201%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20left%3A%200%3B%0A%20%20%20bottom%3A%200%3B%0A%20%20%20right%3A%200%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%200%3B%0A%20%20%20background-color%3A%20var(--colSh)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20mi-nav%20li%20a%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20font-size%3A%200.875rem%3B%0A%20%20%20height%3A%203rem%3B%0A%20%20%20line-height%3A%203rem%3B%0A%20%20%20border-radius%3A%201.5rem%3B%0A%20%20%20color%3A%20var(--colOnSrf)%3B%0A%20%20%20text-decoration%3A%20none%3B%0A%20%20%20white-space%3A%20nowrap%3B%0A%20%20%20overflow%3A%20hidden%3B%0A%20%20%20text-overflow%3A%20ellipsis%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20mi-nav%20li%20a.sel%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colNvSel)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20mi-nav%20li%20a%20span.material-symbols-outlined%20%7B%0A%20%20%20margin-right%3A%201rem%3B%0A%20%20%20margin-left%3A%201rem%3B%0A%20%20%20padding-right%3A%201rem%3B%0A%20%20%20padding-left%3A%201rem%3B%0A%20%20%20border-radius%3A%201rem%3B%0A%20%20%20vertical-align%3A%20middle%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ccn-app-bar%3E%0A%20%20%3Cdiv%3E%0A%20%20%20%3Cmi-nav%3E%3C%2Fmi-nav%3E%0A%20%20%20%3Ch1%3ECaj%C3%B3n%20de%20Navegaci%C3%B3n%3C%2Fh1%3E%0A%20%20%3C%2Fdiv%3E%0A%20%3C%2Fcn-app-bar%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
  </section>
@@ -96,7 +98,7 @@
       style="color: #ff0000;">rel</span>=<span
       style="color: #0000ff;">"stylesheet"</span></div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
-      style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Material+Icons"</span><span
+      style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"</span><span
       style="color: #800000;">&gt;</span></div>
    <div class="resaltado2">&nbsp;<span
       style="color: #800000;">&lt;style&gt;</span></div>
@@ -105,17 +107,19 @@
       style="color: #0451a5;">#1C1B1F</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colBg</span>: <span
       style="color: #0451a5;">#FFFBFE</span>;</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colSrf</span>: <span
-      style="color: #0451a5;">#FFFBFE</span>;</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colBgAc</span>: <span
-      style="color: #0451a5;">#4646462c</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colOnSrf</span>: <span
       style="color: #0451a5;">#1C1B1F</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colSrf</span>: <span
       style="color: #0451a5;">#FFFBFE</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colSrfElv</span>: <span
+      style="color: #0451a5;">#E7E0EC</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colNvSel</span>: <span
+      style="color: #0451a5;">#29292955</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colBgAc</span>: <span
+      style="color: #0451a5;">#4646462c</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--colSh</span>: <span
       style="color: #0451a5;">#00000055</span>;</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--anchoNav</span>: <span
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--anchomi-Nav</span>: <span
       style="color: #098658;">300px</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span
       style="color: #0451a5;">sans-serif</span>;</div>
@@ -140,16 +144,207 @@
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div class="resaltado2">&nbsp;<span
       style="color: #800000;">&lt;script&gt;</span></div>
+   <div class="resaltado">&nbsp; <span
+      style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">MiNav</span> <span
+      style="color: #0000ff;">extends</span> <span
+      style="color: #267f99;">HTMLElement</span> {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #795e26;">connectedCallback</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">innerHTML</span> = <span
+      style="color: #008000;">/* html */</span></div>
+   <div>&nbsp; &nbsp; &nbsp;`<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #ff0000;">type</span>=<span
+      style="color: #0000ff;">"button"</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #ff0000;">onclick</span>=<span
+      style="color: #0000ff;">"</span><span
+      style="color: #001080;">cajon</span><span
+      style="color: #0000ff;">.</span><span
+      style="color: #001080;">classList</span><span
+      style="color: #0000ff;">.</span></div>
+   <div><span
+      style="color: #0000ff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span
+      style="color: #795e26;">add</span><span
+      style="color: #0000ff;">(</span><span
+      style="color: #a31515;">'muestra'</span><span
+      style="color: #0000ff;">)"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;span</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; menu</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;ul</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">cajon</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;li&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;h2&gt;</span>Cajón de Navegación<span
+      style="color: #800000;">&lt;/h2&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;li&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;a</span> <span
+      style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"inicio.html"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;span</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; home</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Inicio</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;/a&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;li&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;a</span> <span
+      style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"contactos.html"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;span</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; contacts</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Contactos</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;/a&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;li&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;a</span> <span
+      style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"algo.html"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; subject</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Lorem ipsum dolor sit amet</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;consectetur adipisicing</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;elit.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;/a&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;li&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;a</span> <span
+      style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"ayuda.html"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; help</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Ayuda</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;/a&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;li&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;a</span> <span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"sel"</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"ajustes.html"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; settings</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Ajustes</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;/a&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;/ul&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;div</span> <span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"bloqueo"</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #ff0000;">type</span>=<span
+      style="color: #0000ff;">"button"</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #ff0000;">onclick</span>=<span
+      style="color: #0000ff;">"</span><span
+      style="color: #001080;">cajon</span><span
+      style="color: #0000ff;">.</span><span
+      style="color: #001080;">classList</span><span
+      style="color: #0000ff;">.</span></div>
+   <div><span
+      style="color: #0000ff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span
+      style="color: #795e26;">remove</span><span
+      style="color: #0000ff;">(</span><span
+      style="color: #a31515;">'muestra'</span><span
+      style="color: #0000ff;">)"</span><span
+      style="color: #800000;">&gt;&lt;/div&gt;</span>`</div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; }</div>
+   <div class="resaltado">&nbsp; <span
+      style="color: #001080;">customElements</span>.</div>
+   <div class="resaltado">&nbsp; &nbsp;<span
+      style="color: #795e26;">define</span>(<span
+      style="color: #a31515;">"mi-nav"</span>, <span
+      style="color: #267f99;">MiNav</span>);</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+   <div class="resaltado2">&nbsp;<span
+      style="color: #800000;">&lt;script&gt;</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">CLASE_ELEVACION2</span> =</div>
    <div>&nbsp; &nbsp;<span
       style="color: #a31515;">"elevacion2"</span></div><br>
-   <div class="resaltado">&nbsp; <span
-      style="color: #0000ff;">class</span> <span
+   <div>&nbsp; <span style="color: #0000ff;">class</span> <span
       style="color: #267f99;">CnAppBar</span></div>
    <div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span
       style="color: #267f99;">HTMLElement</span> {</div>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">constructor</span>() {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #0000ff;">constructor</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">super</span>()</div>
    <div>&nbsp; &nbsp; <span style="color: #008000;">/** </span><span
       style="color: #0000ff;">@type</span><span
@@ -205,8 +400,7 @@
       style="color: #098658;">0</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
       style="color: #001080;">classList</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #795e26;">remove</span>(<span
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #795e26;">remove</span>(<span
       style="color: #0070c1;">CLASE_ELEVACION2</span>)</div>
    <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
@@ -220,8 +414,7 @@
    <div>&nbsp; &nbsp;}</div>
    <div>&nbsp; }</div>
    <div>&nbsp; <span style="color: #001080;">customElements</span>.</div>
-   <div class="resaltado">&nbsp; &nbsp;<span
-      style="color: #795e26;">define</span>(<span
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">define</span>(<span
       style="color: #a31515;">"cn-app-bar"</span>, <span
       style="color: #267f99;">CnAppBar</span>)</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
@@ -232,8 +425,7 @@
       style="color: #098658;">0</span>;</div>
    <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">scroll-padding-top</span>: <span
-      style="color: #098658;">3rem</span>;
-   </div>
+      style="color: #098658;">3rem</span>;</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">.elevacion2</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
@@ -243,8 +435,7 @@
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colSh</span>);</div>
    <div>&nbsp; }</div><br>
-   <div class="resaltado">&nbsp; <span
-      style="color: #800000;">cn-app-bar</span> {</div>
+   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
       style="color: #0451a5;">sticky</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">top</span>: <span
@@ -281,8 +472,8 @@
    <div class="resaltado2">&nbsp;<span
       style="color: #800000;">&lt;style&gt;</span></div>
    <div class="resaltado">&nbsp; <span
-      style="color: #800000;">cn-app-bar</span>&gt;<span
-      style="color: #800000;">nav</span>&gt;<span
+      style="color: #800000;">cn-app-bar</span> <span
+      style="color: #800000;">mi-nav</span>&gt;<span
       style="color: #800000;">button</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
       style="color: #0451a5;">absolute</span>;</div>
@@ -304,11 +495,11 @@
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colSrf</span>)</div>
    <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span>&gt;<span
-      style="color: #800000;">nav</span>&gt;<span
+   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span> <span
+      style="color: #800000;">mi-nav</span>&gt;<span
       style="color: #800000;">button:active</span>,</div>
-   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span>&gt;<span
-      style="color: #800000;">nav</span> <span
+   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span> <span
+      style="color: #800000;">mi-nav</span> <span
       style="color: #800000;">li</span> <span
       style="color: #800000;">a:active</span> {</div>
    <div>&nbsp; &nbsp;<span
@@ -316,8 +507,8 @@
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colBgAc</span>)</div>
    <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span>&gt;<span
-      style="color: #800000;">nav</span> <span
+   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span> <span
+      style="color: #800000;">mi-nav</span> <span
       style="color: #800000;">ul</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
       style="color: #0451a5;">fixed</span>;</div>
@@ -327,14 +518,14 @@
       style="color: #098658;">0</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">left</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">calc</span>(<span
-      style="color: #098658;">-1rem</span> - <span
+      style="color: #098658;">-10rem</span> - <span
       style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--anchoNav</span>));</div>
+      style="color: #001080;">--anchomi-Nav</span>));</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">bottom</span>: <span
       style="color: #098658;">0</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">width</span>: <span
       style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--anchoNav</span>);</div>
+      style="color: #001080;">--anchomi-Nav</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">max-width</span>: <span
       style="color: #098658;">70%</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
@@ -354,16 +545,16 @@
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colOnSrf</span>);</div>
    <div>&nbsp; &nbsp;<span
-      style="color: #ff0000;">background-color</span>: <span
-      style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--colSrf</span>);</div>
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colSrfElv</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">transition</span>: <span
       style="color: #0451a5;">left</span> <span
       style="color: #098658;">0.7s</span> <span
       style="color: #0451a5;">ease-out</span>;</div>
    <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span>&gt;<span
-      style="color: #800000;">nav</span> <span
+   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span> <span
+      style="color: #800000;">mi-nav</span> <span
       style="color: #800000;">ul</span> <span
       style="color: #800000;">h2</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
@@ -376,14 +567,14 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span
       style="color: #098658;">1.25rem</span>;</div>
    <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span>&gt;<span
-      style="color: #800000;">nav</span> <span
+   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span> <span
+      style="color: #800000;">mi-nav</span> <span
       style="color: #800000;">ul.muestra</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">left</span>: <span
       style="color: #098658;">0</span>;</div>
    <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span>&gt;<span
-      style="color: #800000;">nav</span> <span
+   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span> <span
+      style="color: #800000;">mi-nav</span> <span
       style="color: #800000;">ul.muestra</span>+<span
       style="color: #800000;">.bloqueo</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
@@ -407,18 +598,22 @@
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colSh</span>);</div>
    <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span>&gt;<span
-      style="color: #800000;">nav</span> <span
+   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span> <span
+      style="color: #800000;">mi-nav</span> <span
       style="color: #800000;">li</span> <span
       style="color: #800000;">a</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span
       style="color: #0451a5;">block</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-sizing</span>: <span
+      style="color: #0451a5;">border-box</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span
       style="color: #098658;">0.875rem</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">height</span>: <span
       style="color: #098658;">3rem</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">line-height</span>: <span
       style="color: #098658;">3rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-radius</span>: <span
+      style="color: #098658;">1.5rem</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--colOnSrf</span>);</div>
@@ -432,13 +627,30 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">text-overflow</span>: <span
       style="color: #0451a5;">ellipsis</span>;</div>
    <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span>&gt;<span
-      style="color: #800000;">nav</span> <span
+   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span> <span
+      style="color: #800000;">mi-nav</span> <span
+      style="color: #800000;">li</span> <span
+      style="color: #800000;">a.sel</span> {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colNvSel</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">cn-app-bar</span> <span
+      style="color: #800000;">mi-nav</span> <span
       style="color: #800000;">li</span> <span
       style="color: #800000;">a</span> <span
-      style="color: #800000;">span.material-icons</span> {</div>
+      style="color: #800000;">span.material-symbols-outlined</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin-right</span>: <span
-      style="color: #098658;">2rem</span>;</div>
+      style="color: #098658;">1rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin-left</span>: <span
+      style="color: #098658;">1rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">padding-right</span>: <span
+      style="color: #098658;">1rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">padding-left</span>: <span
+      style="color: #098658;">1rem</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-radius</span>: <span
+      style="color: #098658;">1rem</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">vertical-align</span>: <span
       style="color: #0451a5;">middle</span>;</div>
    <div>&nbsp; }</div>
@@ -446,173 +658,18 @@
    <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
    <div class="resaltado2"><span
       style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;cn-app-bar&gt;</span></div>
-   <div class="resaltado">&nbsp; <span
-      style="color: #800000;">&lt;nav&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;button</span> <span
-      style="color: #ff0000;">type</span>=<span
-      style="color: #0000ff;">"button"</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">onclick</span>=<span
-      style="color: #0000ff;">"</span><span
-      style="color: #001080;">cajon</span><span
-      style="color: #0000ff;">.</span><span
-      style="color: #001080;">classList</span><span
-      style="color: #0000ff;">.</span></div>
-   <div><span style="color: #0000ff;">&nbsp; &nbsp; &nbsp; </span><span
-      style="color: #795e26;">add</span><span
-      style="color: #0000ff;">(</span><span
-      style="color: #a31515;">'muestra'</span><span
-      style="color: #0000ff;">)</span><span
-      style="color: #0000ff;">"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;span</span> <span
-      style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"material-icons"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;menu</div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/span&gt;</span></div>
+   <div class="resaltado">&nbsp;<span
+      style="color: #800000;">&lt;cn-app-bar&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;div&gt;</span></div>
    <div>&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/button&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;ul</span> <span
-      style="color: #ff0000;">id</span>=<span
-      style="color: #0000ff;">cajon</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;li&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;h2&gt;</span>Cajón
-    de Navegación<span style="color: #800000;">&lt;/h2&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/li&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;li&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;a</span> <span
-      style="color: #ff0000;">href</span>=<span
-      style="color: #0000ff;">"inicio.html"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">&lt;span</span> <span
-      style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"material-icons"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;home</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; Inicio</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/a&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/li&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;li&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;a</span> <span
-      style="color: #ff0000;">href</span>=<span
-      style="color: #0000ff;">"contactos.html"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">&lt;span</span> <span
-      style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"material-icons"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;contacts</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; Contactos</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/a&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/li&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;li&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;a</span> <span
-      style="color: #ff0000;">href</span>=<span
-      style="color: #0000ff;">"carrito.html"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">&lt;span</span> <span
-      style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"material-icons"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;shopping_cart</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; Carrito de Compras</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/a&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/li&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;li&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;a</span> <span
-      style="color: #ff0000;">href</span>=<span
-      style="color: #0000ff;">"algo.html"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">&lt;span</span> <span
-      style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"material-icons"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;subject</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; Lorem ipsum dolor sit amet</div>
-   <div>&nbsp; &nbsp; &nbsp; consectetur adipisicing</div>
-   <div>&nbsp; &nbsp; &nbsp; elit.</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/a&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/li&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;li&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;a</span> <span
-      style="color: #ff0000;">href</span>=<span
-      style="color: #0000ff;">"ayuda.html"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">&lt;span</span> <span
-      style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"material-icons"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;help</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; Ayuda</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/a&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/li&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;li&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;a</span> <span
-      style="color: #ff0000;">href</span>=<span
-      style="color: #0000ff;">"ajustes.html"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">&lt;span</span> <span
-      style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"material-icons"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;settings</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; Ajustes</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/a&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/li&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/ul&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;div</span> <span
-      style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"bloqueo"</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">type</span>=<span
-      style="color: #0000ff;">"button"</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">onclick</span>=<span
-      style="color: #0000ff;">"</span><span
-      style="color: #001080;">cajon</span><span
-      style="color: #0000ff;">.</span><span
-      style="color: #001080;">classList</span><span
-      style="color: #0000ff;">.</span></div>
-   <div><span style="color: #0000ff;">&nbsp; &nbsp; &nbsp; </span><span
-      style="color: #795e26;">remove</span><span
-      style="color: #0000ff;">(</span><span
-      style="color: #a31515;">'muestra'</span><span
-      style="color: #0000ff;">)</span><span
-      style="color: #0000ff;">"</span><span
-      style="color: #800000;">&gt;&lt;/div&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;/nav&gt;</span></div>
-   <div>&nbsp; <span
+      style="color: #800000;">&lt;mi-nav&gt;&lt;/mi-nav&gt;</span></div>
+   <div>&nbsp; &nbsp;<span
       style="color: #800000;">&lt;h1&gt;</span>Cajón de Navegación<span
       style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/div&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;/cn-app-bar&gt;</span></div>
    <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;/html&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
   </div>
  </muestra-codigo>
 </div>

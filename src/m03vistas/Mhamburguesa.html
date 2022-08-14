@@ -14,17 +14,18 @@
  <link rel="stylesheet"
    href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
  <link rel="stylesheet"
-   href="https://fonts.googleapis.com/css2?family=Material+Icons">
+   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
  <style>
   html {
    --colOnBg: #1C1B1F;
    --colBg: #FFFBFE;
-   --colSrf: #FFFBFE;
-   --colBgAc: #4646462c;
    --colOnSrf: #1C1B1F;
    --colSrf: #FFFBFE;
+   --colSrfElv: #E7E0EC;
+   --colNvSel: #29292955;
+   --colBgAc: #4646462c;
    --colSh: #00000055;
-   --anchoNav: 300px;
+   --anchomi-Nav: 300px;
    font-family: sans-serif;
    color: var(--color-letra);
    --fntFam: -apple-system,
@@ -35,6 +36,77 @@
    background-color: var(--colBg);
   }
  </style>
+ <script>
+  class MiNav extends HTMLElement {
+   connectedCallback() {
+    this.innerHTML = /* html */
+     `<button type="button"
+        onclick="cajon.classList.
+         add('muestra')">
+       <span
+         class="material-symbols-outlined">
+        menu
+       </span>
+      </button>
+      <ul id=cajon>
+       <li>
+        <h2>Cajón de Navegación</h2>
+       </li>
+       <li>
+        <a href="inicio.html">
+         <span
+           class="material-symbols-outlined">
+          home
+         </span>
+         Inicio
+        </a>
+       </li>
+       <li>
+        <a href="contactos.html">
+         <span
+           class="material-symbols-outlined">
+          contacts
+         </span>
+         Contactos
+        </a>
+       </li>
+       <li>
+        <a href="algo.html">
+         <span class="material-symbols-outlined">
+          subject
+         </span>
+         Lorem ipsum dolor sit amet
+         consectetur adipisicing
+         elit.
+        </a>
+       </li>
+       <li>
+        <a href="ayuda.html">
+         <span class="material-symbols-outlined">
+          help
+         </span>
+         Ayuda
+        </a>
+       </li>
+       <li>
+        <a class="sel"
+          href="ajustes.html">
+         <span class="material-symbols-outlined">
+          settings
+         </span>
+         Ajustes
+        </a>
+       </li>
+      </ul>
+      <div class="bloqueo"
+        type="button"
+        onclick="cajon.classList.
+         remove('muestra')"></div>`
+   }
+  }
+  customElements.
+   define("mi-nav", MiNav);
+ </script>
  <script>
   const CLASE_ELEVACION2 =
    "elevacion2"
@@ -108,7 +180,7 @@
   }
  </style>
  <style>
-  cn-app-bar>nav>button {
+  cn-app-bar mi-nav>button {
    position: absolute;
    border: none;
    margin: 0;
@@ -119,19 +191,19 @@
    background-color: var(--colSrf)
   }
 
-  cn-app-bar>nav>button:active,
-  cn-app-bar>nav li a:active {
+  cn-app-bar mi-nav>button:active,
+  cn-app-bar mi-nav li a:active {
    background-color: var(--colBgAc)
   }
 
-  cn-app-bar>nav ul {
+  cn-app-bar mi-nav ul {
    position: fixed;
    z-index: 2;
    top: 0;
    left:
-    calc(-1rem - var(--anchoNav));
+    calc(-10rem - var(--anchomi-Nav));
    bottom: 0;
-   width: var(--anchoNav);
+   width: var(--anchomi-Nav);
    max-width: 70%;
    margin: 0;
    padding: 1rem;
@@ -140,21 +212,22 @@
    list-style-type: none;
    text-align: left;
    color: var(--colOnSrf);
-   background-color: var(--colSrf);
+   background-color:
+    var(--colSrfElv);
    transition: left 0.7s ease-out;
   }
 
-  cn-app-bar>nav ul h2 {
+  cn-app-bar mi-nav ul h2 {
    margin: 0 0 1rem 0;
    padding: 0;
    font-size: 1.25rem;
   }
 
-  cn-app-bar>nav ul.muestra {
+  cn-app-bar mi-nav ul.muestra {
    left: 0;
   }
 
-  cn-app-bar>nav ul.muestra+.bloqueo {
+  cn-app-bar mi-nav ul.muestra+.bloqueo {
    position: fixed;
    z-index: 1;
    top: 0;
@@ -166,11 +239,13 @@
    background-color: var(--colSh);
   }
 
-  cn-app-bar>nav li a {
+  cn-app-bar mi-nav li a {
    display: block;
+   box-sizing: border-box;
    font-size: 0.875rem;
    height: 3rem;
    line-height: 3rem;
+   border-radius: 1.5rem;
    color: var(--colOnSrf);
    text-decoration: none;
    white-space: nowrap;
@@ -178,8 +253,17 @@
    text-overflow: ellipsis;
   }
 
-  cn-app-bar>nav li a span.material-icons {
-   margin-right: 2rem;
+  cn-app-bar mi-nav li a.sel {
+   background-color:
+    var(--colNvSel);
+  }
+
+  cn-app-bar mi-nav li a span.material-symbols-outlined {
+   margin-right: 1rem;
+   margin-left: 1rem;
+   padding-right: 1rem;
+   padding-left: 1rem;
+   border-radius: 1rem;
    vertical-align: middle;
   }
  </style>
@@ -187,75 +271,10 @@
 
 <body>
  <cn-app-bar>
-  <nav>
-   <button type="button"
-     onclick="cajon.classList.
-      add('muestra')">
-    <span class="material-icons">
-     menu
-    </span>
-   </button>
-   <ul id=cajon>
-    <li>
-     <h2>Cajón de Navegación</h2>
-    </li>
-    <li>
-     <a href="inicio.html">
-      <span class="material-icons">
-       home
-      </span>
-      Inicio
-     </a>
-    </li>
-    <li>
-     <a href="contactos.html">
-      <span class="material-icons">
-       contacts
-      </span>
-      Contactos
-     </a>
-    </li>
-    <li>
-     <a href="carrito.html">
-      <span class="material-icons">
-       shopping_cart
-      </span>
-      Carrito de Compras
-     </a>
-    </li>
-    <li>
-     <a href="algo.html">
-      <span class="material-icons">
-       subject
-      </span>
-      Lorem ipsum dolor sit amet
-      consectetur adipisicing
-      elit.
-     </a>
-    </li>
-    <li>
-     <a href="ayuda.html">
-      <span class="material-icons">
-       help
-      </span>
-      Ayuda
-     </a>
-    </li>
-    <li>
-     <a href="ajustes.html">
-      <span class="material-icons">
-       settings
-      </span>
-      Ajustes
-     </a>
-    </li>
-   </ul>
-   <div class="bloqueo"
-     type="button"
-     onclick="cajon.classList.
-      remove('muestra')"></div>
-  </nav>
-  <h1>Cajón de Navegación</h1>
+  <div>
+   <mi-nav></mi-nav>
+   <h1>Cajón de Navegación</h1>
+  </div>
  </cn-app-bar>
 </body>
 

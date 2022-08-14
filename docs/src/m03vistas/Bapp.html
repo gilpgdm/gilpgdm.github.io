@@ -20,6 +20,7 @@
    --colBg: #FFFBFE;
    --colOnSrf: #1C1B1F;
    --colSrf: #FFFBFE;
+   --colSrfElv: #E7E0EC;
    --colSh: #00000055;
    /* Los 2 primeros fonts son
     * para apple. */
@@ -78,8 +79,8 @@
   }
 
   .elevacion2 {
-   box-shadow:
-    0 6px 12px var(--colSh);
+   background-color:
+    var(--colSrfElv);
   }
 
   cn-app-bar {
@@ -91,10 +92,16 @@
    background-color: var(--colSrf)
   }
 
+  cn-app-bar>div {
+   height: 4rem;
+   display: flex;
+   align-items: center;
+  }
+
   h1 {
    text-align: center;
    margin: 0;
-   padding: 1.125rem;
+   flex: 1 0;
    font-size: 1.375rem;
    line-height: 1.75rem;
    font-weight: normal;
@@ -108,7 +115,9 @@
 
 <body>
  <cn-app-bar>
-  <h1>App</h1>
+  <div>
+   <h1>App</h1>
+  </div>
  </cn-app-bar>
  <p>x</p>
  <p>x</p>
