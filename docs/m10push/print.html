@@ -348,10 +348,29 @@
  <p>
   En esta lección se muestra un ejemplo de notificaciones push.
  </p>
+ <p>
+  Puedes probar la app desde varios navegadores y dispositivos en
+  <a rel="noopener" href="https://phppush--gilbertopacheco.repl.co/"
+    target="_blank">https://phppush--gilbertopacheco.repl.co/</a>
+ </p>
+ <p>
+  Primero suscríbete y luego envía notificaciones a todos los que estén
+  conectados.
+ </p>
  <nav>
   <h1>Contenido</h1>
   
    <ol type="1">
+    <li>
+     <p>
+      <a href="/m10push/m01aer.html">Diagrama entidad relación</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m10push/m01bdeploy.html">Diagrama de despliegue</a>
+     </p>
+    </li>
     <li>
      <p>
       <a href="/m10push/m01instrucciones.html">Instrucciones</a>
@@ -546,7 +565,21 @@
  </nav>
 </div>
      <section >
-         <h1 >1. Instrucciones</h1><div class="lectura">
+         <h1 >1. Diagrama entidad relación</h1><figure>
+ <img style="max-height: none;"
+   src="/img/m10push/pushentity.drawio.svg"
+   alt="Diagrama entidad relación">
+</figure>
+      </section>
+     <section >
+         <h1 >2. Diagrama de despliegue</h1><figure>
+ <img style="max-height: none;"
+   src="/img/m10push/pushdistribucion.drawio.svg"
+   alt="Diagrama de despliegue">
+</figure>
+      </section>
+     <section >
+         <h1 >3. Instrucciones</h1><div class="lectura">
  <ul>
   <li>
    <p>
@@ -642,7 +675,7 @@
 </div>
       </section>
      <section >
-         <h1 >2. Archivos</h1><div class="lectura">
+         <h1 >4. Archivos</h1><div class="lectura">
  <ul>
   <li>
    <p>lib</p>
@@ -793,10 +826,10 @@
 </div>
       </section>
      <section >
-         <h1 >3. Textos</h1>
+         <h1 >5. Textos</h1>
       </section>
      <section >
-         <h1 >4. lib/js/textos/txtNoNots.js</h1><muestra-codigo>
+         <h1 >6. lib/js/textos/txtNoNots.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
@@ -810,7 +843,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >5. lib/js/textos/txtNoPush.js</h1><muestra-codigo>
+         <h1 >7. lib/js/textos/txtNoPush.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
@@ -824,7 +857,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >6. lib/js/textos/txtNoSw.js</h1><muestra-codigo>
+         <h1 >8. lib/js/textos/txtNoSw.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
@@ -838,7 +871,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >7. lib/js/textos/txtNotsBloqs.js</h1><muestra-codigo>
+         <h1 >9. lib/js/textos/txtNotsBloqs.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
@@ -851,7 +884,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >8. lib/js/textos/txtRegistrado.js</h1><muestra-codigo>
+         <h1 >10. lib/js/textos/txtRegistrado.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
@@ -863,10 +896,10 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >9. Base de datos</h1>
+         <h1 >11. Base de datos</h1>
       </section>
      <section >
-         <h1 >10. srv/modelo/Suscripcion.php</h1><muestra-codigo>
+         <h1 >12. srv/modelo/Suscripcion.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div><br>
   <div><span style="color: #0000ff;">use</span> Minishlink\WebPush\<span
@@ -956,7 +989,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >11. srv/dao/bdCrea.php</h1><muestra-codigo>
+         <h1 >13. srv/dao/bdCrea.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
@@ -1016,7 +1049,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >12. srv/dao/AccesoBd.php</h1><muestra-codigo>
+         <h1 >14. srv/dao/AccesoBd.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1083,7 +1116,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >13. srv/dao/suscripcionAgrega.php</h1><muestra-codigo>
+         <h1 >15. srv/dao/suscripcionAgrega.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1149,7 +1182,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >14. srv/dao/suscripcionBusca.php</h1><muestra-codigo>
+         <h1 >16. srv/dao/suscripcionBusca.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1220,7 +1253,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >15. srv/dao/suscripcionConsulta.php</h1><muestra-codigo>
+         <h1 >17. srv/dao/suscripcionConsulta.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1277,7 +1310,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >16. srv/dao/suscripcionElimina.php</h1><muestra-codigo>
+         <h1 >18. srv/dao/suscripcionElimina.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1321,7 +1354,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >17. srv/dao/suscripcionModifica.php</h1><muestra-codigo>
+         <h1 >19. srv/dao/suscripcionModifica.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1391,10 +1424,10 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >18. Funcionalidad</h1>
+         <h1 >20. Funcionalidad</h1>
       </section>
      <section >
-         <h1 >19. srv/generallaves.php</h1><muestra-codigo>
+         <h1 >21. srv/generallaves.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require</span> <span
@@ -1528,7 +1561,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >20. srv/SrvSuscripcion.php</h1><muestra-codigo>
+         <h1 >22. srv/SrvSuscripcion.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require</span> <span
@@ -1641,7 +1674,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >21. srv/SrvNotifica.php</h1><muestra-codigo>
+         <h1 >23. srv/SrvNotifica.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require</span> <span
@@ -1775,7 +1808,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >22. index.html</h1><muestra-codigo>
+         <h1 >24. index.html</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
      style="color: #ff0000;">html</span><span
@@ -2162,7 +2195,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >23. sw.js</h1><muestra-codigo>
+         <h1 >25. sw.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">if</span> (<span
      style="color: #001080;">self</span> <span
@@ -2216,10 +2249,10 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >24. Archivos frecuentes</h1>
+         <h1 >26. Archivos frecuentes</h1>
       </section>
      <section >
-         <h1 >25. jsconfig.json</h1><muestra-codigo>
+         <h1 >27. jsconfig.json</h1><muestra-codigo>
  <div>
   <div>{</div>
   <div>&nbsp;<span style="color: #0451a5;">"compilerOptions"</span>: {</div>
@@ -2242,7 +2275,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >26. lib/js/activaNotificaciones.js</h1><muestra-codigo>
+         <h1 >28. lib/js/activaNotificaciones.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">txtNoNots</span></div>
@@ -2293,7 +2326,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >27. lib/js/detecta.js</h1><muestra-codigo>
+         <h1 >29. lib/js/detecta.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">activaNotificaciones</span></div>
@@ -2375,7 +2408,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >28. lib/js/ejecuta.js</h1><muestra-codigo>
+         <h1 >30. lib/js/ejecuta.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span
@@ -2441,7 +2474,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >29. lib/js/enviaJson.js</h1><muestra-codigo>
+         <h1 >31. lib/js/enviaJson.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">ejecuta</span></div>
@@ -2497,7 +2530,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >30. lib/js/getSuscripcion.js</h1><muestra-codigo>
+         <h1 >32. lib/js/getSuscripcion.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #0000ff;">export</span></div>
   <div>&nbsp;<span style="color: #0000ff;">async</span> <span
@@ -2518,7 +2551,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >31. lib/js/getSuscripcionDto.js</h1><muestra-codigo>
+         <h1 >33. lib/js/getSuscripcionDto.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span style="color: #008000;">* </span><span
@@ -2604,7 +2637,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >32. lib/js/Method.js</h1><muestra-codigo>
+         <h1 >34. lib/js/Method.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span
@@ -2635,7 +2668,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >33. lib/js/muestraError.js</h1><muestra-codigo>
+         <h1 >35. lib/js/muestraError.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span
@@ -2668,7 +2701,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >34. lib/js/submit.js</h1><muestra-codigo>
+         <h1 >36. lib/js/submit.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">ejecuta</span></div>
@@ -2734,7 +2767,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >35. lib/js/urlBase64ToUint8Array.js</h1><muestra-codigo>
+         <h1 >37. lib/js/urlBase64ToUint8Array.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span style="color: #008000;">* </span><span
@@ -2806,7 +2839,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >36. lib/php/copiaCampos.php</h1><muestra-codigo>
+         <h1 >38. lib/php/copiaCampos.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
@@ -2827,7 +2860,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >37. lib/php/leeJson.php</h1><muestra-codigo>
+         <h1 >39. lib/php/leeJson.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
@@ -2846,7 +2879,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >38. lib/php/Servicio.php</h1><muestra-codigo>
+         <h1 >40. lib/php/Servicio.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">abstract</span> <span

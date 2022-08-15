@@ -346,12 +346,34 @@
    </div>
 <div class="lectura">
  <p>
-  En esta lección se presentan las propiedades básicas de CSS.
+  En esta lección se construye un sistema para validar el acceso a una app.
  </p>
+ <p>
+  Puedes probar la app en
+  <a rel="noopener" href="https://phpaut.gilbertopacheco.repl.co/"
+    target="_blank">https://phpaut.gilbertopacheco.repl.co/</a>
+  usando los siguientes datos:
+ </p>
+ <dl>
+  <dt>Cue</dt>
+  <dd>pepito</dd>
+  <dt>Match</dt>
+  <dd>cuentos</dd>
+ </dl>
  <nav>
   <h1>Contenido</h1>
   
    <ol type="1">
+    <li>
+     <p>
+      <a href="/m06sesion/mAbd.html">Diagrama entidad relación</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06sesion/mAdeployment.html">Diagrama de despliegue</a>
+     </p>
+    </li>
     <li>
      <p>
       <a href="/m06sesion/mAinstrucciones.html">Instrucciones</a>
@@ -491,7 +513,19 @@
  </nav>
 </div>
      <section >
-         <h1 >1. Instrucciones</h1><div class="lectura">
+         <h1 >1. Diagrama entidad relación</h1><figure>
+ <img style="max-height: none;" alt="Diagrama entidad relación"
+   src="/img/m04sesion/sesionentity.drawio.svg">
+</figure>
+      </section>
+     <section >
+         <h1 >2. Diagrama de despliegue</h1><figure>
+ <img style="max-height: none;" alt="Diagrama de despliegue"
+   src="/img/m04sesion/sesiondistribucion.drawio.svg">
+</figure>
+      </section>
+     <section >
+         <h1 >3. Instrucciones</h1><div class="lectura">
 
  <ol>
   <li>
@@ -539,7 +573,7 @@
 </div>
       </section>
      <section >
-         <h1 >2. Archivos</h1><div class="lectura">
+         <h1 >4. Archivos</h1><div class="lectura">
  <ul>
   <li>
    <p>js</p>
@@ -651,10 +685,10 @@
 </div>
       </section>
      <section >
-         <h1 >3. Textos</h1>
+         <h1 >5. Textos</h1>
       </section>
      <section >
-         <h1 >4. js/textos/txtPruebaHumano.js</h1><muestra-codigo>
+         <h1 >6. js/textos/txtPruebaHumano.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
@@ -667,7 +701,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >5. srv/textos/txtDatosIncorrectos.php</h1><muestra-codigo>
+         <h1 >7. srv/textos/txtDatosIncorrectos.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
@@ -680,7 +714,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >6. srv/textos/txtFaltaElCue.php</h1><muestra-codigo>
+         <h1 >8. srv/textos/txtFaltaElCue.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
@@ -693,7 +727,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >7. srv/textos/txtFaltaElMatch.php</h1><muestra-codigo>
+         <h1 >9. srv/textos/txtFaltaElMatch.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
@@ -706,10 +740,10 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >8. Base de datos</h1>
+         <h1 >10. Base de datos</h1>
       </section>
      <section >
-         <h1 >9. srv/modelo/Usuario.php</h1><muestra-codigo>
+         <h1 >11. srv/modelo/Usuario.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -768,7 +802,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >10. srv/dao/bdCrea.php</h1><muestra-codigo>
+         <h1 >12. srv/dao/bdCrea.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
@@ -819,7 +853,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >11. srv/dao/AccesoBd.php</h1><muestra-codigo>
+         <h1 >13. srv/dao/AccesoBd.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -914,7 +948,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >12. srv/dao/usuarioBusca.php</h1><muestra-codigo>
+         <h1 >14. srv/dao/usuarioBusca.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -976,7 +1010,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >13. srv/dao/usuarioAgrega.php</h1><muestra-codigo>
+         <h1 >15. srv/dao/usuarioAgrega.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1029,10 +1063,10 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >14. Funcionalidad</h1>
+         <h1 >16. Funcionalidad</h1>
       </section>
      <section >
-         <h1 >15. srv/dao/usuarioVerifica.php</h1><muestra-codigo>
+         <h1 >17. srv/dao/usuarioVerifica.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1074,7 +1108,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >16. srv/SrvLogin.php</h1><muestra-codigo>
+         <h1 >18. srv/SrvLogin.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1136,7 +1170,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >17. srv/SrvSesion.php</h1><muestra-codigo>
+         <h1 >19. srv/SrvSesion.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1174,7 +1208,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >18. srv/SrvLogout.php</h1><muestra-codigo>
+         <h1 >20. srv/SrvLogout.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1212,7 +1246,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >19. index.html</h1><muestra-codigo>
+         <h1 >21. index.html</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
      style="color: #ff0000;">html</span><span
@@ -1494,10 +1528,10 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >20. Archivos frecuentes</h1>
+         <h1 >22. Archivos frecuentes</h1>
       </section>
      <section >
-         <h1 >21. jsconfig.json</h1><muestra-codigo>
+         <h1 >23. jsconfig.json</h1><muestra-codigo>
  <div>
   <div>{</div>
   <div>&nbsp;<span style="color: #0451a5;">"compilerOptions"</span>: {</div>
@@ -1520,7 +1554,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >22. lib/js/ejecuta.js</h1><muestra-codigo>
+         <h1 >24. lib/js/ejecuta.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span
@@ -1586,7 +1620,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >23. lib/js/muestraError.js</h1><muestra-codigo>
+         <h1 >25. lib/js/muestraError.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span
@@ -1619,7 +1653,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >24. lib/js/submit.js</h1><muestra-codigo>
+         <h1 >26. lib/js/submit.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">ejecuta</span></div>
@@ -1685,7 +1719,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >25. lib/php/leeValor.php</h1><muestra-codigo>
+         <h1 >27. lib/php/leeValor.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #008000;">/**</span></div>
@@ -1715,7 +1749,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >26. lib/php/Servicio.php</h1><muestra-codigo>
+         <h1 >28. lib/php/Servicio.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">abstract</span> <span
@@ -1755,7 +1789,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >27. Resumen</h1><div class="lectura">
+         <h1 >29. Resumen</h1><div class="lectura">
  <ul>
   <li>
    <p>En esta lección se presentó un ejemplo de control de sesión.</p>

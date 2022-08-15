@@ -346,12 +346,36 @@
    </div>
 <div class="lectura">
  <p>
-  En esta lección se muestra un ejemplo de notificaciones push.
+  En esta lección se muestra un ejemplo de sincronización de bases de datos.
+ </p>
+ <p>
+  Puedes probar la app desde varios navegadores y dispositivos en
+  <a rel="noopener" href="https://sincro--gilbertopacheco.repl.co/"
+    target="_blank">https://sincro--gilbertopacheco.repl.co/</a>
+ </p>
+ <p>
+  Las modificaciones que realices en dispositivo o navegador se verán reflejados
+  en los otros dispositivos, en un máximo de 20 segundos.
+ </p>
+ <p>
+  Puedes trabajar sin conexión en algunos dispositivos y con conexión en otros.
+  Si conectas todos los dispositivos, estos mostrarán los mismos datos después
+  de un tiempo.
  </p>
  <nav>
   <h1>Contenido</h1>
   
    <ol type="1">
+    <li>
+     <p>
+      <a href="/m11sincronizacion/m01aer.html">Diagrama entidad relación</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m11sincronizacion/m01bdeploy.html">Diagrama de despliegue</a>
+     </p>
+    </li>
     <li>
      <p>
       <a href="/m11sincronizacion/m01instrucciones.html">Instrucciones</a>
@@ -561,7 +585,21 @@
  </nav>
 </div>
      <section >
-         <h1 >1. Instrucciones</h1><div class="lectura">
+         <h1 >1. Diagrama entidad relación</h1><figure>
+ <img style="max-height: none;"
+   src="/img/m11sincro/sincroentity.drawio.svg"
+   alt="Diagrama entidad relación">
+</figure>
+      </section>
+     <section >
+         <h1 >2. Diagrama de despliegue</h1><figure>
+ <img style="max-height: none;"
+   src="/img/m11sincro/sincrodistribucion.drawio.svg"
+   alt="Diagrama de despliegue">
+</figure>
+      </section>
+     <section >
+         <h1 >3. Instrucciones</h1><div class="lectura">
  <ol>
   <li>
    <p>
@@ -607,7 +645,7 @@
 </div>
       </section>
      <section >
-         <h1 >2. Archivos</h1><div class="lectura">
+         <h1 >4. Archivos</h1><div class="lectura">
  <ul>
   <li>
    <p>js</p>
@@ -775,10 +813,10 @@
 </div>
       </section>
      <section >
-         <h1 >3. Textos</h1>
+         <h1 >5. Textos</h1>
       </section>
      <section >
-         <h1 >4. js/textos/txtConfirmaEliminacion.js</h1><muestra-codigo>
+         <h1 >6. js/textos/txtConfirmaEliminacion.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
@@ -790,10 +828,10 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >5. Servidor</h1>
+         <h1 >7. Servidor</h1>
       </section>
      <section >
-         <h1 >6. srv/modelo/Pasatiempo.php</h1><muestra-codigo>
+         <h1 >8. srv/modelo/Pasatiempo.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">class</span> <span
@@ -812,7 +850,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >7. srv/SrvSincro.php</h1><muestra-codigo>
+         <h1 >9. srv/SrvSincro.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -982,7 +1020,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >8. srv/dao/bdCrea.php</h1><muestra-codigo>
+         <h1 >10. srv/dao/bdCrea.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
@@ -1039,7 +1077,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >9. srv/dao/AccesoBd.php</h1><muestra-codigo>
+         <h1 >11. srv/dao/AccesoBd.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1106,7 +1144,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >10. srv/dao/pasatiempoAgrega.php</h1><muestra-codigo>
+         <h1 >12. srv/dao/pasatiempoAgrega.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1167,7 +1205,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >11. srv/dao/pasatiempoBusca.php</h1><muestra-codigo>
+         <h1 >13. srv/dao/pasatiempoBusca.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1230,7 +1268,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >12. srv/dao/pasatiempoConsulta.php</h1><muestra-codigo>
+         <h1 >14. srv/dao/pasatiempoConsulta.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1284,7 +1322,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >13. srv/dao/pasatiempoModifica.php</h1><muestra-codigo>
+         <h1 >15. srv/dao/pasatiempoModifica.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #af00db;">require_once</span> <span
@@ -1344,10 +1382,10 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >14. Base de datos en el cliente</h1>
+         <h1 >16. Base de datos en el cliente</h1>
       </section>
      <section >
-         <h1 >15. js/dao/conn.js</h1><muestra-codigo>
+         <h1 >17. js/dao/conn.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">export</span> <span
      style="color: #0000ff;">const</span> <span
@@ -1441,7 +1479,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >16. js/dao/pasatiempoAgrega.js</h1><muestra-codigo>
+         <h1 >18. js/dao/pasatiempoAgrega.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">idbExecute</span></div>
@@ -1491,7 +1529,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >17. js/dao/pasatiempoBusca.js</h1><muestra-codigo>
+         <h1 >19. js/dao/pasatiempoBusca.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">idbQuery</span></div>
@@ -1540,7 +1578,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >18. js/dao/pasatiempoConsulta.js</h1><muestra-codigo>
+         <h1 >20. js/dao/pasatiempoConsulta.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">idbQuery</span></div>
@@ -1610,7 +1648,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >19. js/dao/pasatiempoConsultaTodos.js</h1><muestra-codigo>
+         <h1 >21. js/dao/pasatiempoConsultaTodos.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">idbQuery</span></div>
@@ -1674,7 +1712,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >20. js/dao/pasatiempoElimina.js</h1><muestra-codigo>
+         <h1 >22. js/dao/pasatiempoElimina.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">pasatiempoBusca</span></div>
@@ -1719,7 +1757,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >21. js/dao/pasatiempoModifica.js</h1><muestra-codigo>
+         <h1 >23. js/dao/pasatiempoModifica.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">idbExecute</span></div>
@@ -1766,7 +1804,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >22. js/dao/reemplaza.js</h1><muestra-codigo>
+         <h1 >24. js/dao/reemplaza.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">idbExecute</span></div>
@@ -1825,10 +1863,10 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >23. Funcionalidad</h1>
+         <h1 >25. Funcionalidad</h1>
       </section>
      <section >
-         <h1 >24. index.html</h1><muestra-codigo>
+         <h1 >26. index.html</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
      style="color: #ff0000;">html</span><span
@@ -2042,7 +2080,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >25. agrega.html</h1><muestra-codigo>
+         <h1 >27. agrega.html</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
      style="color: #ff0000;">html</span><span
@@ -2165,7 +2203,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >26. modifica.html</h1><muestra-codigo>
+         <h1 >28. modifica.html</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
      style="color: #ff0000;">html</span><span
@@ -2381,7 +2419,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >27. sw.js</h1><muestra-codigo>
+         <h1 >29. sw.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/* Este archivo debe estar</span></div>
   <div><span
@@ -2629,7 +2667,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >28. js/config.js</h1><muestra-codigo>
+         <h1 >30. js/config.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">regSw</span></div>
@@ -2641,10 +2679,10 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >29. Archivos frecuentes</h1>
+         <h1 >31. Archivos frecuentes</h1>
       </section>
      <section >
-         <h1 >30. jsconfig.json</h1><muestra-codigo>
+         <h1 >32. jsconfig.json</h1><muestra-codigo>
  <div>
   <div>{</div>
   <div>&nbsp;<span style="color: #0451a5;">"compilerOptions"</span>: {</div>
@@ -2667,7 +2705,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >31. lib/css/lista.css</h1><muestra-codigo>
+         <h1 >33. lib/css/lista.css</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">.lista</span> {</div>
   <div>&nbsp;<span style="color: #ff0000;">margin</span>: <span
@@ -2822,7 +2860,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >32. lib/js/idbExecute.js</h1><muestra-codigo>
+         <h1 >34. lib/js/idbExecute.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span style="color: #008000;">&nbsp;* </span><span
@@ -2904,7 +2942,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >33. lib/js/idbQuery.js</h1><muestra-codigo>
+         <h1 >35. lib/js/idbQuery.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span style="color: #008000;">&nbsp;* </span><span
@@ -2985,7 +3023,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >34. lib/js/cod.js</h1><muestra-codigo>
+         <h1 >36. lib/js/cod.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span
@@ -3065,7 +3103,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >35. lib/js/ejecuta.js</h1><muestra-codigo>
+         <h1 >37. lib/js/ejecuta.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span
@@ -3131,7 +3169,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >36. lib/js/enviaJson.js</h1><muestra-codigo>
+         <h1 >38. lib/js/enviaJson.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">ejecuta</span></div>
@@ -3187,7 +3225,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >37. lib/js/Method.js</h1><muestra-codigo>
+         <h1 >39. lib/js/Method.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span
@@ -3218,7 +3256,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >38. lib/js/muestraError.js</h1><muestra-codigo>
+         <h1 >40. lib/js/muestraError.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #008000;">/**</span></div>
   <div><span
@@ -3251,7 +3289,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >39. lib/js/regSw.js</h1><muestra-codigo>
+         <h1 >41. lib/js/regSw.js</h1><muestra-codigo>
  <div>
   <div><span style="color: #af00db;">import</span> {</div>
   <div>&nbsp;<span style="color: #001080;">muestraError</span></div>
@@ -3306,7 +3344,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >40. lib/php/leeJson.php</h1><muestra-codigo>
+         <h1 >42. lib/php/leeJson.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
@@ -3325,7 +3363,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >41. lib/php/Servicio.php</h1><muestra-codigo>
+         <h1 >43. lib/php/Servicio.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">abstract</span> <span
