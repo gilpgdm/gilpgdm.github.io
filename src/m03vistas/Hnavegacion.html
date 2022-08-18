@@ -44,6 +44,7 @@
  <script>
   class MiNav extends HTMLElement {
    connectedCallback() {
+    this.classList.add("navBar")
     this.innerHTML = /* html */
      `<a href="index.html">
        <span
@@ -81,7 +82,7 @@
    scroll-padding-bottom: 5rem;
   }
 
-  mi-nav {
+  .navBar {
    position: fixed;
    left: 0;
    right: 0;
@@ -96,7 +97,7 @@
    background-color: var(--colNvBg)
   }
 
-  mi-nav a {
+  .navBar a {
    display: block;
    color: var(--colNv);
    font-size: 0.75rem;
@@ -109,23 +110,23 @@
    text-align: center;
   }
 
-  mi-nav a:hover {
+  .navBar a:hover {
    background-color:
     var(--colNvBgHv);
   }
 
-  mi-nav a:focus {
+  .navBar a:focus {
    outline: none;
    background-color:
     var(--colNvBgFc);
   }
 
-  mi-nav a:active {
+  .navBar a:active {
    background-color:
     var(--colNvBgAc);
   }
 
-  mi-nav .material-symbols-outlined {
+  .navBar .material-symbols-outlined {
    display: block;
    box-sizing: border-box;
    margin-left: auto;
@@ -135,11 +136,11 @@
    border-radius: 1rem;
   }
 
-  mi-nav a.sel {
+  .navBar a.sel {
    color: var(--colNvSel);
   }
 
-  mi-nav a.sel .material-symbols-outlined {
+  .navBar a.sel .material-symbols-outlined {
    color: var(--colNvIcSel);
    background-color:
     var(--colNvIcBgSel);

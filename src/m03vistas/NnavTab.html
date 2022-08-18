@@ -21,7 +21,7 @@
    --colBg: #FFFBFE;
    --colNv: #49454F;
    --colNvSel: #29292955;
-   --colNvBg: #FFFBFE;
+   --colNvBg: transparent;
    --colNvBgHv: #E7E0ECDD;
    --colNvBgFc: #E7E0EC99;
    --colNvBgAc: #4646462c;
@@ -43,6 +43,7 @@
  <script>
   class MiNav extends HTMLElement {
    connectedCallback() {
+    this.classList.add("navTab")
     this.innerHTML = /* html */
     `<a href="index.html"
        class="sel">
@@ -145,55 +146,47 @@
   }
  </style>
  <style>
-  mi-nav {
+  .navTab {
    display: flex;
    gap: 1rem;
-   list-style-type: none;
-   align-items: stretch;
-   margin: 0;
-   padding: 0 1rem;
+   justify-content: center;
    color: var(--colNv);
    background-color:
     var(--colNvBg);
   }
 
-  mi-nav a {
-   flex: 1;
-   display: block;
+  .navTab a {
    color: var(--colNv);
    text-decoration: none;
    font-size: 0.875rem;
-   padding: 1rem 1rem;
-   text-align: center;
-   border-radius: 1rem;
+   padding: 0.5rem 1rem;
+   border-radius: 1.5rem;
   }
 
-  mi-nav a:hover {
+  .navTab a:hover {
    background-color:
     var(--colNvBgHv);
   }
 
-  mi-nav a:focus {
+  .navTab a:focus {
    outline: none;
    background-color:
     var(--colNvBgFc);
   }
 
-  mi-nav a:active {
+  .navTab a:active {
    background-color:
     var(--colNvBgAc);
   }
 
-  mi-nav a.sel {
+  .navTab a.sel {
    font-weight: bold;
    background-color:
     var(--colNvSel);
   }
 
-  mi-nav .material-symbols-outlined {
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
+  .navTab .material-symbols-outlined {
+   vertical-align: middle;
   }
  </style>
 </head>

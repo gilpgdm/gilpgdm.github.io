@@ -41,26 +41,32 @@
  </style>
  <script>
   class CmDin extends HTMLElement {
+   constructor() {
+    super()
+    /**
+     * @private
+     * @type {HTMLInputElement|
+     *  HTMLSelectElement|
+     *  HTMLOutputElement|
+     *  null}
+     */
+    this._elem = null
+   }
+
    connectedCallback() {
     setTimeout(
      () => this.prepara(),
      100)
    }
    prepara() {
-    /**
-     * @private
-     * @type {HTMLInputElement|
-     *  HTMLSelectElement|
-     *  HTMLOutputElement|
-     *  null} */
     this._elem = this.
      querySelector(
       "input, select, output")
-    if (this._elem != null) {
+    if (this._elem !== null) {
      this.addEventListener("input",
       () => this.analiza())
     }
-    this.analiza();
+    this.analiza()
    }
    analiza() {
     const e = this._elem;

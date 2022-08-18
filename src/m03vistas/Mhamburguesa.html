@@ -39,6 +39,7 @@
  <script>
   class MiNav extends HTMLElement {
    connectedCallback() {
+    this.classList.add("navCaj")
     this.innerHTML = /* html */
      `<button type="button"
         onclick="cajon.classList.
@@ -180,7 +181,7 @@
   }
  </style>
  <style>
-  cn-app-bar mi-nav>button {
+  .navCaj>button {
    position: absolute;
    border: none;
    margin: 0;
@@ -191,12 +192,12 @@
    background-color: var(--colSrf)
   }
 
-  cn-app-bar mi-nav>button:active,
-  cn-app-bar mi-nav li a:active {
+  .navCaj>button:active,
+  .navCaj li a:active {
    background-color: var(--colBgAc)
   }
 
-  cn-app-bar mi-nav ul {
+  .navCaj ul {
    position: fixed;
    z-index: 2;
    top: 0;
@@ -217,17 +218,17 @@
    transition: left 0.7s ease-out;
   }
 
-  cn-app-bar mi-nav ul h2 {
+  .navCaj ul h2 {
    margin: 0 0 1rem 0;
    padding: 0;
    font-size: 1.25rem;
   }
 
-  cn-app-bar mi-nav ul.muestra {
+  .navCaj ul.muestra {
    left: 0;
   }
 
-  cn-app-bar mi-nav ul.muestra+.bloqueo {
+  .navCaj ul.muestra+.bloqueo {
    position: fixed;
    z-index: 1;
    top: 0;
@@ -239,7 +240,7 @@
    background-color: var(--colSh);
   }
 
-  cn-app-bar mi-nav li a {
+  .navCaj li a {
    display: block;
    box-sizing: border-box;
    font-size: 0.875rem;
@@ -253,12 +254,12 @@
    text-overflow: ellipsis;
   }
 
-  cn-app-bar mi-nav li a.sel {
+  .navCaj li a.sel {
    background-color:
     var(--colNvSel);
   }
 
-  cn-app-bar mi-nav li a span.material-symbols-outlined {
+  .navCaj li a span.material-symbols-outlined {
    margin-right: 1rem;
    margin-left: 1rem;
    padding-right: 1rem;
