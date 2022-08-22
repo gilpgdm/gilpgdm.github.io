@@ -29,10 +29,8 @@
      Tango
     </option>
    </select>
-   <small>
-    <output id="msgGenero">
-     *Requerido
-    </output>
+   <small id="msgGenero">
+    *Requerido
    </small>
   </p>
   <p>
@@ -47,6 +45,7 @@
   </p>
  </form>
  <script>
+  // @ts-check
   const REQUERIDO = "*Requerido"
 
   function procesa() {
@@ -54,8 +53,9 @@
     copiaMensajes()
     if (inGenero.validity.valid) {
      const genero = inGenero.value
-     outSalida.value =
+     const resultado =
       recomienda(genero)
+     outSalida.value = resultado
     } else {
      outSalida.value = ""
     }
@@ -93,8 +93,7 @@
    *  HTMLOutputElement|null} e
    * referencia a un elemento que
    * contiene datos.
-   * @param {HTMLOutputElement|
-   *  null} out
+   * @param {HTMLElement|null} out
    * elemento de ayuda para e.
    * @param {string} ok mensaje de
    * ayuda cuando el estado de e es
@@ -104,9 +103,9 @@
    if (e !== null
     && out !== null) {
     if (e.validity.valid) {
-     out.value = ok
+     out.textContent = ok
     } else {
-     out.value =
+     out.textContent =
       e.validationMessage
     }
    }

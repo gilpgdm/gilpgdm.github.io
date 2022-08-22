@@ -16,6 +16,23 @@
   </li>
   <li>
    <p>
+    La forma usa el atributo
+    <code class="language-html">novalidate</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    El campo
+    <code class="language-html">select</code>
+    usa el atributo
+    <code class="language-html">oninput</code>.
+    para invocar la función
+    <code class="language-html">copiaMensajes</code>.
+    y copiar los mensajes de error del campo de captura al texto de ayuda.
+   </p>
+  </li>
+  <li>
+   <p>
     En el resto de la lección se muestra como dar apariencia móvil a la interfaz
     gráfica.
    </p>
@@ -62,14 +79,14 @@
       style="color: #800000;">&lt;title&gt;</span>Formulario<span
       style="color: #800000;">&lt;/title&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div class="resaltado2"><span
+      style="color: #800000;">&lt;body&gt;</span></div>
    <div class="resaltado">&nbsp;<span
       style="color: #800000;">&lt;form</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"form"</span> <span
       style="color: #ff0000;">novalidate</span></div>
-   <div class="resaltado">&nbsp; &nbsp;<span
-      style="color: #ff0000;">action</span>=<span
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">action</span>=<span
       style="color: #0000ff;">"javascript:procesa()"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>Formulario<span
@@ -81,12 +98,12 @@
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; *Género</div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
-   <div class="resaltado">&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;select</span> <span
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;select</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"inGenero"</span> <span
       style="color: #ff0000;">required</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">oninput</span>=<span
+   <div class="resaltado">&nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">oninput</span>=<span
       style="color: #0000ff;">"</span><span
       style="color: #795e26;">copiaMensajes</span><span
       style="color: #0000ff;">()</span><span
@@ -120,14 +137,11 @@
    <div>&nbsp; &nbsp;<span
       style="color: #800000;">&lt;/select&gt;</span></div>
    <div class="resaltado">&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;small&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;output</span> <span
+      style="color: #800000;">&lt;small</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"msgGenero"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;*Requerido</div>
-   <div>&nbsp; &nbsp; <span
-      style="color: #800000;">&lt;/output&gt;</span></div>
+   <div>&nbsp; &nbsp; *Requerido</div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/small&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
@@ -142,8 +156,7 @@
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; Resultado</div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
-   <div class="resaltado">&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;output</span> <span
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;output</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"outSalida"</span><span
       style="color: #800000;">&gt;</span></div>
@@ -152,16 +165,18 @@
    <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div>
    <div class="resaltado2">&nbsp;<span
-     style="color: #800000;">&lt;script&gt;</span></div>
+      style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp; <span style="color: #008000;">// @ts-check</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">REQUERIDO</span> = <span
       style="color: #a31515;">"*Requerido"</span></div><br>
    <div>&nbsp; <span style="color: #0000ff;">function</span> <span
       style="color: #795e26;">procesa</span>() {</div>
    <div>&nbsp; &nbsp;<span style="color: #af00db;">try</span> {</div>
-   <div>&nbsp; &nbsp; <span
+   <div class="resaltado">&nbsp; &nbsp; <span
       style="color: #795e26;">copiaMensajes</span>()</div>
-   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+   <div class="resaltado">&nbsp; &nbsp; <span
+      style="color: #af00db;">if</span> (<span
       style="color: #001080;">inGenero</span>.<span
       style="color: #001080;">validity</span>.<span
       style="color: #001080;">valid</span>) {</div>
@@ -169,12 +184,15 @@
       style="color: #0070c1;">genero</span> = <span
       style="color: #001080;">inGenero</span>.<span
       style="color: #001080;">value</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #001080;">outSalida</span>.<span
-      style="color: #001080;">value</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">resultado</span> =</div>
    <div>&nbsp; &nbsp; &nbsp; <span
       style="color: #795e26;">recomienda</span>(<span
       style="color: #0070c1;">genero</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #001080;">outSalida</span>.<span
+      style="color: #001080;">value</span> = <span
+      style="color: #0070c1;">resultado</span></div>
    <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
    <div>&nbsp; &nbsp; &nbsp;<span
       style="color: #001080;">outSalida</span>.<span
@@ -213,12 +231,15 @@
       style="color: #a31515;">"De eso no conozco."</span></div>
    <div>&nbsp; &nbsp;}</div>
    <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+   <div class="resaltado">&nbsp; <span
+      style="color: #0000ff;">function</span> <span
       style="color: #795e26;">copiaMensajes</span>() {</div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">msg</span>(<span
+   <div class="resaltado">&nbsp; &nbsp;<span
+      style="color: #795e26;">msg</span>(<span
       style="color: #001080;">inGenero</span>, <span
       style="color: #001080;">msgGenero</span>,</div>
-   <div>&nbsp; &nbsp; <span style="color: #0070c1;">REQUERIDO</span>)</div>
+   <div class="resaltado">&nbsp; &nbsp; <span
+      style="color: #0070c1;">REQUERIDO</span>)</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #008000;">/**</span></div>
    <div><span
@@ -253,10 +274,8 @@
    <div><span
       style="color: #008000;">&nbsp; &nbsp;* contiene datos.</span></div>
    <div><span
-      style="color: #008000;">&nbsp; &nbsp;* @param {HTMLOutputElement|</span>
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{HTMLElement|null}&nbsp;out</span>
    </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp;* &nbsp;null} out</span></div>
    <div><span
       style="color: #008000;">&nbsp; &nbsp;* elemento de ayuda para e.</span>
    </div>
@@ -268,7 +287,7 @@
    </div>
    <div><span style="color: #008000;">&nbsp; &nbsp;* válido.</span></div>
    <div><span style="color: #008000;">&nbsp; &nbsp;*/</span></div>
-   <div>&nbsp; <span
+   <div class="resaltado">&nbsp; <span
       style="color: #0000ff;">function</span> <span
       style="color: #795e26;">msg</span>(<span
       style="color: #001080;">e</span>, <span
@@ -285,11 +304,11 @@
       style="color: #001080;">validity</span>.<span
       style="color: #001080;">valid</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">out</span>.<span
-      style="color: #001080;">value</span> = <span
+      style="color: #001080;">textContent</span> = <span
       style="color: #001080;">ok</span></div>
    <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">out</span>.<span
-      style="color: #001080;">value</span> =</div>
+      style="color: #001080;">textContent</span> =</div>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #001080;">e</span>.<span
       style="color: #001080;">validationMessage</span></div>
    <div>&nbsp; &nbsp; }</div>

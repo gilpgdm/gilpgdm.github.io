@@ -13,112 +13,288 @@
    crossorigin>
  <link rel="stylesheet"
    href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+ <link rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
  <style>
-  /* Custom properties */
   html {
-   --colOnBg: #1C1B1F;
-   --colBg: #FFFBFE;
-   --colOnSrf: #1C1B1F;
-   --colSrf: #FFFBFE;
-   --colSrfElv: #E7E0EC;
-   --colSh: #00000055;
-   /* Los 2 primeros fonts son
-    * para apple. */
-   --fntFam: -apple-system,
+   /* Custom properties */
+   --Font: -apple-system,
     BlinkMacSystemFont, Roboto,
     sans-serif;
-   color: var(--colOnBg);
-   font-family: var(--fntFam);
-   background-color: var(--colBg);
+   --TitleLargeFont: var(--Font);
+   --TitleLargeFontSize: 22px;
+   --TitleLargeFontWeight: 400;
+   --Background: #FFFBFE;
+   --OnBackground: #1C1B1F;
+   --Surface: #FFFBFE;
+   --OnSurface: #1C1B1F;
+   --OnSurfaceVariant: #49454F;
+   --OnSurfaceHover: #1C1B1F14;
+   --OnSurfaceFocus: #1C1B1F19;
+   --OnSurfacePressed: #1C1B1F1E;
+   --DisabledContent: #1C1B1F60;
+   --DisabledContainer:
+    #1C1B1F1E;
+   --Elevation: #F5EEFA;
+   /* Configuración */
+   font-size: 16px;
+   font-family: var(--Font);
+   color: var(--color-letra);
+   color: var(--OnBackground);
+   background-color:
+    var(--Background);
   }
  </style>
  <script>
-  const CLASE_ELEVACION2 =
-   "elevacion2"
+  // @ts-check
+  const CLASE_ELEVATION =
+   "elevation"
+  const EVENTO_CAJON = "cajon"
 
-  class CnAppBar
+  function alternaCajon() {
+   window.dispatchEvent(
+    new Event(EVENTO_CAJON))
+  }
+
+  class MenuButton
    extends HTMLElement {
    constructor() {
     super()
-    /** @type {number} */
-    this.posY = 0
-    /** @type {boolean} */
-    this.procesando = false
+    /**
+     * @private
+     * @type {ShadowRoot}
+     */
+    this._shadow =
+     this.attachShadow(
+      { mode: "open" })
+    this._shadow.innerHTML =
+     /* html */
+     `<style>
+      :host {
+       display: flex;
+      }
+     </style>
+     <slot></slot>`
+    /**
+     * @private
+     * @type {HTMLButtonElement|
+     *        null}
+     */
+    this._button = null
+    /**
+     * @private
+     * @type {HTMLSlotElement|
+     *        null}
+     */
+    this._slotElem = this._shadow.
+     querySelector("slot")
+    if (this._slotElem !== null) {
+     this._slotElem.
+      addEventListener(
+       "slotchange",
+       () => this.prepara())
+    }
    }
-   connectedCallback() {
+
+   prepara() {
+    if (this._slotElem !== null) {
+     for (const e of this._slotElem
+      .assignedElements()) {
+      if (e instanceof
+       HTMLButtonElement) {
+       this._elem = e
+       e.addEventListener(
+        "click",
+        () => this.click())
+      }
+     }
+    }
+   }
+
+   click() {
+    alternaCajon()
+   }
+  }
+
+  customElements.define(
+   "menu-button", MenuButton)
+
+  class CenterAlignedTopAppBar
+   extends HTMLElement {
+   constructor() {
+    super()
+    /**
+     * @private
+     * @type {ShadowRoot}
+     */
+    this._shadow =
+     this.attachShadow(
+      { mode: "open" })
+    this._shadow.innerHTML =
+     /* html */
+     `<style>
+      :host {
+       position: sticky;
+       top: 0;
+       display: block;
+       color: var(--OnSurface);
+       background-color:
+        var(--Surface)
+      }
+
+      :host(.elevation) {
+       background-color:
+        var(--Elevation);
+      }
+
+      ::slotted(h1) {
+       margin: 0 70px;
+       line-height: 64px;
+       text-align: center;
+      }
+
+      [name="navigation"]::slotted(*) {
+       position: absolute;
+       top: 8px;
+       left: 4px
+      }
+
+      [name="avatar"]::slotted(*) {
+       position: absolute;
+       top: 8px;
+       right: 7px
+      }
+     </style>
+     <slot></slot>
+     <slot name="navigation"></slot>
+     <slot name="avatar"></slot>
+     <slot
+      name="adicional"></slot>`
+    /**
+     * @private
+     * @type {number}
+     */
+    this._posY = 0
+    /**
+     * @private
+     * @type {boolean}
+     */
+    this._procesando = false
     window.addEventListener(
      "scroll",
      () => this.onScroll())
    }
    onScroll() {
-    this.posY = window.scrollY
-    if (!this.procesando) {
+    this._posY = window.scrollY
+    if (!this._procesando) {
      window.requestAnimationFrame(
       () => this.avanza())
     }
-    this.procesando = true
+    this._procesando = true
    }
    avanza() {
-    if (this.posY === 0) {
+    if (this._posY === 0) {
      this.classList.
-      remove(CLASE_ELEVACION2)
+      remove(CLASE_ELEVATION)
     } else {
      this.classList.
-      add(CLASE_ELEVACION2)
+      add(CLASE_ELEVATION)
     }
-    this.procesando = false
+    this._procesando = false
    }
   }
   customElements.
-   define("cn-app-bar", CnAppBar)
+   define(
+    "center-aligned-top-app-bar",
+    CenterAlignedTopAppBar)
  </script>
  <style>
   body {
    margin: 0;
-   scroll-padding-top: 3rem;
-  }
-
-  .elevacion2 {
-   background-color:
-    var(--colSrfElv);
-  }
-
-  cn-app-bar {
-   position: sticky;
-   top: 0;
-   z-index: 1;
-   display: block;
-   color: var(--colOnSrf);
-   background-color: var(--colSrf)
-  }
-
-  cn-app-bar>div {
-   height: 4rem;
-   display: flex;
-   align-items: center;
-  }
-
-  h1 {
-   text-align: center;
-   margin: 0;
-   flex: 1 0;
-   font-size: 1.375rem;
-   line-height: 1.75rem;
-   font-weight: normal;
+   scroll-padding-top: 64px;
   }
 
   p {
    margin: 1rem;
   }
+
+  h1 {
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   font-family:
+    var(--TitleLargeFont);
+   font-size:
+    var(--TitleLargeFontSize);
+   font-weight:
+    var(--TitleLargeFontWeight);
+  }
+
+  button.icono {
+   padding: 4px;
+   border: none;
+   background-color: transparent;
+  }
+
+  button.icono:focus {
+   outline: none;
+  }
+
+  button.icono span {
+   border-radius: 50%;
+   padding: 8px;
+   color: var(--OnSurface);
+  }
+
+  button.icono[slot="avatar"] span {
+   padding: 5px;
+   font-size: 30px;
+   color: var(--OnSurfaceVariant);
+  }
+
+  button.icono:hover .material-symbols-outlined {
+   background-color:
+    var(--OnSurfaceHover);
+  }
+
+  button.icono:focus .material-symbols-outlined {
+   background-color:
+    var(--OnSurfaceFocus);
+  }
+
+  button.icono:active .material-symbols-outlined {
+   background-color:
+    var(--OnSurfacePressed);
+  }
+
+  button.icono:disabled .material-symbols-outlined {
+   color: var(--DisabledContent);
+   background-color:
+    var(--DisabledContainer);
+  }
  </style>
 </head>
 
 <body>
- <cn-app-bar>
-  <div>
-   <h1>App</h1>
-  </div>
- </cn-app-bar>
+ <center-aligned-top-app-bar>
+  <h1>App</h1>
+  <menu-button slot="navigation">
+   <button type="button"
+     class="icono">
+    <span
+      class="material-symbols-outlined">
+     menu
+    </span>
+   </button>
+  </menu-button>
+  <button type="button"
+    class="icono" slot="avatar">
+   <span
+     class="material-symbols-outlined">
+    account_circle
+   </span>
+  </button>
+ </center-aligned-top-app-bar>
  <p>x</p>
  <p>x</p>
  <p>x</p>

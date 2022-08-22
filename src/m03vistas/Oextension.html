@@ -5,7 +5,7 @@
  <meta charset="UTF-8">
  <meta name="viewport"
    content="width=device-width">
- <title>Menú de Extensión</title>
+ <title>Otra</title>
  <link rel="preconnect"
    href="https://fonts.googleapis.com">
  <link rel="preconnect"
@@ -17,197 +17,499 @@
    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
  <style>
   html {
-   --colOnBg: #1C1B1F;
-   --colBg: #FFFBFE;
-   --colOnSrf: #1C1B1F;
-   --colSrf: #FFFBFE;
-   --colSrfElv: #E7E0EC;
-   --colSh: #00000055;
-   --colBgAc: #4646462c;
-   --color-ext: #E7E0EC;
-   font-family: sans-serif;
-   color: var(--color-letra);
-   --fntFam: -apple-system,
+   /* Custom properties */
+   --Font: -apple-system,
     BlinkMacSystemFont, Roboto,
     sans-serif;
-   color: var(--colOnBg);
-   font-family: var(--fntFam);
-   background-color: var(--colBg);
+   --TitleLargeFont: var(--Font);
+   --TitleLargeFontSize: 22px;
+   --TitleLargeFontWeight: 400;
+   --LabelLargeFont: var(--Font);
+   --LabelLargeFontSize: 14px;
+   --LabelLargeFontWeight: 500;
+   --Background: #FFFBFE;
+   --OnBackground: #1C1B1F;
+   --Surface: #FFFBFE;
+   --OnSurface: #1C1B1F;
+   --OnSurfaceVariant: #49454F;
+   --OnSurfaceHover: #1C1B1F14;
+   --OnSurfaceFocus: #1C1B1F19;
+   --OnSurfacePressed: #1C1B1F1E;
+   --OnSurfaceShadow: #1C1B1F99;
+   --DisabledContent: #1C1B1F60;
+   --DisabledContainer:
+    #1C1B1F1E;
+   --Elevation: #F5EEFA;
+   /* Configuración */
+   font-size: 16px;
+   font-family: var(--Font);
+   color: var(--color-letra);
+   color: var(--OnBackground);
+   background-color:
+    var(--Background);
   }
  </style>
  <script>
-  const CLASE_ELEVACION2 =
-   "elevacion2"
+  // @ts-check
+  const CLASE_ELEVATION =
+   "elevation"
+  const EVENTO_CAJON = "cajon"
+  const TAG_H1 = "H1"
+  const CLASE_IOS = "ios"
+  const CLASE_NOIOS = "noios"
+  const CLASE_TOGGLE = "toggle"
+  const CLASE_MUESTA = "muestra"
 
-  class CnAppBar
+  function esApple() {
+   return /.*(iPad|iPhone|iPod|Mac).*/.
+    test(navigator.userAgent)
+  }
+
+  function alternaCajon() {
+   window.dispatchEvent(
+    new Event(EVENTO_CAJON))
+  }
+
+  class MenuButton
    extends HTMLElement {
    constructor() {
     super()
-    /** @type {number} */
-    this.posY = 0
-    /** @type {boolean} */
-    this.procesando = false
+    /**
+     * @private
+     * @type {ShadowRoot}
+     */
+    this._shadow =
+     this.attachShadow(
+      { mode: "open" })
+    this._shadow.innerHTML =
+     /* html */
+     `<style>
+      :host {
+       display: flex;
+      }
+     </style>
+     <slot></slot>`
+    /**
+     * @private
+     * @type {HTMLButtonElement|
+     *        null}
+     */
+    this._button = null
+    /**
+     * @private
+     * @type {HTMLSlotElement|
+     *        null}
+     */
+    this._slotElem = this._shadow.
+     querySelector("slot")
+    if (this._slotElem !== null) {
+     this._slotElem.
+      addEventListener(
+       "slotchange",
+       () => this.prepara())
+    }
    }
-   connectedCallback() {
+
+   prepara() {
+    if (this._slotElem !== null) {
+     for (const e of this._slotElem
+      .assignedElements()) {
+      if (e instanceof
+       HTMLButtonElement) {
+       this._elem = e
+       e.addEventListener(
+        "click",
+        () => this.click())
+      }
+     }
+    }
+   }
+
+   click() {
+    alternaCajon()
+   }
+  }
+
+  customElements.define(
+   "menu-button", MenuButton)
+
+  class TopAppBar
+   extends HTMLElement {
+   constructor() {
+    super()
+    /**
+     * @private
+     * @type {ShadowRoot}
+     */
+    this._shadow =
+     this.attachShadow(
+      { mode: "open" })
+    this._shadow.innerHTML =
+     /* html */
+     `<style>
+      :host {
+       position: sticky;
+       top: 0;
+       display: block;
+       color: var(--OnSurface);
+       background-color:
+        var(--Surface)
+      }
+
+      :host(.elevation) {
+       background-color:
+        var(--Elevation);
+      }
+
+      #base {
+       display: flex;
+       align-items: center;
+       height: 64px;
+       padding-left: 4px;
+       padding-right: 4px;
+      }
+
+      :host(.ios) ::slotted(h1) {
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       margin: 0 70px;
+       line-height: 64px;
+       text-align: center;
+      }
+
+      :host(.noios) ::slotted(h1) {
+       flex: 1 0;
+       margin: 0;
+       padding-left: 4px;
+       padding-right: 12px;
+       line-height: 64px;
+      }
+
+      ::slotted(h1:first-child) {
+       padding-left: 12px;
+      }
+
+      #extensiones {
+       display: none;
+       position: absolute;
+       top: 3rem;
+       right: 1rem;
+       margin: 0;
+       padding: 4px 0;
+       border-radius: 4px;
+       background-color:
+        var(--Elevation);
+       box-shadow:
+        0 1px 2px 0px var(--OnSurfaceShadow);
+      }
+
+      #extensiones.muestra {
+       display: block;
+      }
+
+      [name=extension]::slotted(button) {
+       display: block;
+       border: none;
+       background-color:
+        transparent;
+       color: var(--OnSurface);
+       font-family:
+        var(--LabelLargeFont);
+       font-size:
+        var(--LabelLargeFontSize);
+       font-weight:
+        var(--LabelLargeFontWeight);
+       line-height: 48px;
+       font-size: 0.875rem;
+       padding: 0 12px;
+       min-width: 112px;
+       max-width: 280px;
+       white-space: nowrap;
+       text-overflow: ellipsis;
+       overflow: hidden;
+       text-align: start;
+      }
+
+      [name=extension]::slotted(button:hover) {
+       background-color:
+        var(--OnSurfaceHover);
+      }
+
+      [name=extension]::slotted(button:focus) {
+       background-color:
+        var(--OnSurfaceFocus);
+      }
+
+      [name=extension]::slotted(button:active) {
+       background-color:
+        var(--OnSurfacePressed);
+      }
+     </style>
+     <div id="base">
+      <slot id="slotElem"></slot>
+     </div>
+     <div id="extensiones">
+      <slot
+       name="extension"></slot>
+     </div>
+     <slot
+      name="adicional"></slot>`
+    /**
+     * @private
+     * @type {number}
+     */
+    this._posY = 0
+    /**
+     * @private
+     * @type {boolean}
+     */
+    this._procesando = false
+    /**
+     * @private
+     * @type {HTMLSlotElement|
+     *        null}
+     */
+    this._slotElem = this.
+     _shadow.
+     querySelector("#slotElem")
+    /**
+     * @private
+     * @type {HTMLDivElement|null}
+     */
+    this._extensiones =
+     this._shadow.
+      querySelector("#extensiones")
+    /**
+     * @private
+     * @type {HTMLSlotElement|
+     *        null}
+     */
+    this._slotExt = this._shadow.
+     querySelector(
+      "[name=extension]")
+    if (this._slotElem !== null) {
+     this._slotElem.
+      addEventListener(
+       "slotchange",
+       () => this.confBase())
+    }
+    if (this._slotExt !== null) {
+     this._slotExt.
+      addEventListener(
+       "slotchange",
+       () => this.confExt())
+    }
     window.addEventListener(
      "scroll",
      () => this.onScroll())
    }
+   connectedCallback() {
+    if (esApple()) {
+     this.classList.
+      add(CLASE_IOS)
+    } else {
+     this.classList.
+      add(CLASE_NOIOS)
+    }
+   }
+   confBase() {
+    if (this._slotElem) {
+     for (const e of this
+      ._slotElem
+      .assignedElements()) {
+      if (e.classList
+       .contains(CLASE_TOGGLE)) {
+       e.addEventListener("click",
+        () => this.alterna())
+      }
+     }
+    }
+   }
+
+   confExt() {
+    if (this._slotExt) {
+     for (const e of this._slotExt
+      .assignedElements()) {
+      e.addEventListener("click",
+       () => this.alterna())
+     }
+    }
+   }
+
+   alterna() {
+    if (this._extensiones
+     !== null) {
+     this._extensiones.classList.
+      toggle(CLASE_MUESTA)
+    }
+   }
+
    onScroll() {
-    this.posY = window.scrollY
-    if (!this.procesando) {
+    this._posY = window.scrollY
+    if (!this._procesando) {
      window.requestAnimationFrame(
       () => this.avanza())
     }
-    this.procesando = true
+    this._procesando = true
    }
+
    avanza() {
-    if (this.posY === 0) {
+    if (this._posY === 0) {
      this.classList.
-      remove(CLASE_ELEVACION2)
+      remove(CLASE_ELEVATION)
     } else {
      this.classList.
-      add(CLASE_ELEVACION2)
+      add(CLASE_ELEVATION)
     }
-    this.procesando = false
+    this._procesando = false
    }
   }
+
   customElements.
-   define("cn-app-bar", CnAppBar)
+   define("top-app-bar", TopAppBar)
  </script>
  <style>
   body {
    margin: 0;
-   scroll-padding-top: 3rem;
-  }
-
-  .elevacion2 {
-   box-shadow:
-    0 6px 12px var(--colSh);
-  }
-
-  cn-app-bar {
-   position: sticky;
-   top: 0;
-   z-index: 1;
-   display: block;
-   color: var(--colOnSrf);
-   background-color: var(--colSrf)
-  }
-
-  cn-app-bar>div {
-   height: 4rem;
-   display: flex;
-   align-items: center;
-  }
-
-  h1 {
-   text-align: center;
-   margin: 0;
-   flex: 1 0;
-   font-size: 1.375rem;
-   line-height: 1.75rem;
-   font-weight: normal;
+   scroll-padding-top: 4rem;
   }
 
   p {
    margin: 1rem;
   }
- </style>
- <style>
-  cn-app-bar button {
+
+  h1 {
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   font-family:
+    var(--TitleLargeFont);
+   font-size:
+    var(--TitleLargeFontSize);
+   font-weight:
+    var(--TitleLargeFontWeight);
+  }
+
+  button.icono {
+   padding: 4px;
    border: none;
    background-color: transparent;
   }
 
-  cn-app-bar button:active {
-   background-color:
-    var(--colBgAc);
+  button.icono:focus {
+   outline: none;
   }
 
-  .btnext {
-   padding: 0.5rem;
+  button.icono span {
    border-radius: 50%;
-   margin: 0 0.5rem 0 1rem;
+   padding: 8px;
+   color: var(--OnSurface);
   }
 
-  .ext ul {
-   display: none;
-   position: absolute;
-   overflow: auto;
-   list-style-type: none;
-   margin: 0;
-   padding: 0.25rem 0;
-   top: 3rem;
-   right: 1rem;
+  .noios button.icono.toggle span:before {
+   content: "more_vert";
+  }
+
+  .ios button.icono.toggle span:before {
+   content: "more_horiz";
+  }
+
+  h1+button.icono {
+   margin-left: auto;
+  }
+
+  button.icono.toggle span,
+  button.icono.accion span {
+   color: var(--OnSurfaceVariant);
+  }
+
+  button.icono:hover .material-symbols-outlined {
    background-color:
-    var(--color-ext);
-   border-radius: 0.5rem;
-   box-shadow:
-    -1px 1px 2px 0px var(--colSh);
+    var(--OnSurfaceHover);
   }
 
-  .ext ul.muestra {
-   display: block;
+  button.icono:focus .material-symbols-outlined {
+   background-color:
+    var(--OnSurfaceFocus);
   }
 
-  .ext ul button {
-   margin: 0;
+  button.icono:active .material-symbols-outlined {
+   background-color:
+    var(--OnSurfacePressed);
   }
 
-  .ext li button {
-   display: block;
-   line-height: 3em;
-   font-size: 0.875rem;
-   width: 100%;
-   padding: 0 0.75rem;
+  button.icono:disabled .material-symbols-outlined {
+   color: var(--DisabledContent);
+   background-color:
+    var(--DisabledContainer);
   }
  </style>
 </head>
 
 <body>
- <cn-app-bar>
-  <div>
-   <span style="width: 3rem;"></span>
-   <h1>Extensión</h1>
+ <top-app-bar>
+  <menu-button>
    <button type="button"
-     class="btnext"
-     onclick="extension.classList.
-    toggle('muestra')">
-    <span id="extBtn"
+     class="icono">
+    <span
       class="material-symbols-outlined">
-     more_vert
+     menu
     </span>
    </button>
+  </menu-button>
+  <h1>Otra</h1>
+  <button type="button"
+    class="icono accion">
+   <span
+     class="material-symbols-outlined">
+    save
+   </span>
+  </button>
+  <button type="button"
+    class="icono accion">
+   <span
+     class="material-symbols-outlined">
+    delete
+   </span>
+  </button>
+  <button type="button"
+    class="icono toggle">
+   <span
+     class="material-symbols-outlined">
+   </span>
+  </button>
+  <button type="button"
+    slot="extension">
+   Guardar
+  </button>
   </div>
-  <div class="ext">
-   <ul id="extension">
-    <li>
-     <button type="button"
-       onclick="extension.
-       classList.
-       remove('muestra')">
-      Guardar
-     </button>
-    </li>
-   </ul>
-  </div>
- </cn-app-bar>
- <script>
-  if (/.*android.*/i.
-   test(navigator.userAgent)) {
-   document.body.classList
-    .add("android")
-  }
-  if (
-   /.*(iPad|iPhone|iPod|Mac).*/.
-    test(navigator.userAgent)) {
-   document.body.classList.
-    add('ios')
-   extBtn.textContent =
-    "more_horiz"
-  }
- </script>
+ </top-app-bar>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
+ <p>x</p>
 </body>
 
 </html>

@@ -359,9 +359,13 @@ const ARCHIVOS = [
    "/src/m05pwaBasica/pwa.zip",
    "/src/m05pwaMaterial/MaterialIcons-Regular.codepoints",
    "/src/m05pwaMaterial/MaterialIcons-Regular.ttf",
+   "/src/m05pwaMaterial/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints",
+   "/src/m05pwaMaterial/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf",
    "/src/m05pwaMaterial/pwamd.zip",
    "/src/m05pwaMaterial/roboto-v29-latin-regular.woff",
    "/src/m05pwaMaterial/roboto-v29-latin-regular.woff2",
+   "/src/m05pwaMaterial/roboto-v30-latin-regular.woff",
+   "/src/m05pwaMaterial/roboto-v30-latin-regular.woff2",
    "/src/m07iot/composer.zip" ]
 
 if (self instanceof ServiceWorkerGlobalScope) {
