@@ -22,28 +22,33 @@
     BlinkMacSystemFont, Roboto,
     sans-serif;
    --TitleLargeFont: var(--Font);
-   --TitleLargeFontSize: 22px;
-   --TitleLargeFontWeight: 400;
+   --TitleLargeSize: 22px;
+   --TitleLargeWeight: 400;
    --LabelLargeFont: var(--Font);
-   --LabelLargeFontSize: 14px;
-   --LabelLargeFontWeight: 500;
+   --LabelLargeSize: 14px;
+   --LabelLargeWeight: 500;
    --Background: #FFFBFE;
    --OnBackground: #1C1B1F;
    --Surface: #FFFBFE;
    --OnSurface: #1C1B1F;
-   --OnSurfaceVariant: #49454F;
    --OnSurfaceHover: #1C1B1F14;
    --OnSurfaceFocus: #1C1B1F19;
    --OnSurfacePressed: #1C1B1F1E;
    --OnSurfaceShadow: #1C1B1F99;
+   --SurfaceVariant: #E7E0EC;
+   --OnSurfaceVariant: #49454F;
+   --Primary: #6750A4;
+   --OnPrimary: #FFFFFF;
+   --Elevation: #F5EEFA;
+   --ShapeCornerMedium: 12px;
    --DisabledContent: #1C1B1F60;
    --DisabledContainer:
     #1C1B1F1E;
-   --Elevation: #F5EEFA;
+   --ElevationLevel2:
+    0 3px 6px 0px var(--OnSurfaceShadow);
    /* Configuración */
    font-size: 16px;
    font-family: var(--Font);
-   color: var(--color-letra);
    color: var(--OnBackground);
    background-color:
     var(--Background);
@@ -51,82 +56,45 @@
  </style>
  <script>
   // @ts-check
-  const CLASE_ELEVATION =
+  const ELEVATION_CLASS =
    "elevation"
-  const EVENTO_CAJON = "cajon"
-  const TAG_H1 = "H1"
-  const CLASE_IOS = "ios"
-  const CLASE_NOIOS = "noios"
-  const CLASE_TOGGLE = "toggle"
-  const CLASE_MUESTA = "muestra"
-
-  function esApple() {
-   return /.*(iPad|iPhone|iPod|Mac).*/.
+  const DRAWER_EVENT = "drawer"
+  const CLASS_CENTRADO = "centrado"
+  const CLASS_JUSTIFICADO =
+   "justificado"
+  const ACTION_NAME =
+   'name="action"'
+  const TOGGLE_NAME =
+   'name="toggle"'
+  const MENU_NAME = 'name="menu"'
+  const OPEN_CLASS = "open"
+  const ES_APPLE =
+   /.*(iPad|iPhone|iPod|Mac).*/.
     test(navigator.userAgent)
-  }
 
   function alternaCajon() {
-   window.dispatchEvent(
-    new Event(EVENTO_CAJON))
+   dispatchEvent(
+    new Event(DRAWER_EVENT))
   }
 
   class MenuButton
    extends HTMLElement {
-   constructor() {
-    super()
-    /**
-     * @private
-     * @type {ShadowRoot}
-     */
-    this._shadow =
-     this.attachShadow(
-      { mode: "open" })
-    this._shadow.innerHTML =
-     /* html */
-     `<style>
-      :host {
-       display: flex;
-      }
-     </style>
-     <slot></slot>`
-    /**
-     * @private
-     * @type {HTMLButtonElement|
-     *        null}
-     */
-    this._button = null
-    /**
-     * @private
-     * @type {HTMLSlotElement|
-     *        null}
-     */
-    this._slotElem = this._shadow.
-     querySelector("slot")
-    if (this._slotElem !== null) {
-     this._slotElem.
-      addEventListener(
-       "slotchange",
-       () => this.prepara())
-    }
-   }
 
-   prepara() {
-    if (this._slotElem !== null) {
-     for (const e of this._slotElem
-      .assignedElements()) {
-      if (e instanceof
-       HTMLButtonElement) {
-       this._elem = e
-       e.addEventListener(
-        "click",
-        () => this.click())
-      }
-     }
+   connectedCallback() {
+    this.innerHTML = /* HTML */
+     `<button type="button"
+       class="icono">
+      <span
+        class="material-symbols-outlined">
+       menu
+      </span>
+     </button>`
+    const button =
+     this.querySelector("button")
+    if (button !== null) {
+     button.addEventListener(
+      "click", alternaCajon)
     }
-   }
-
-   click() {
-    alternaCajon()
    }
   }
 
@@ -141,13 +109,13 @@
      * @private
      * @type {ShadowRoot}
      */
-    this._shadow =
-     this.attachShadow(
-      { mode: "open" })
+    this._shadow = this.
+     attachShadow({ mode: "open" })
     this._shadow.innerHTML =
      /* html */
      `<style>
       :host {
+       z-index: 2;
        position: sticky;
        top: 0;
        display: block;
@@ -156,7 +124,7 @@
         var(--Surface)
       }
 
-      :host(.elevation) {
+      :host(.${ELEVATION_CLASS}) {
        background-color:
         var(--Elevation);
       }
@@ -169,7 +137,7 @@
        padding-right: 4px;
       }
 
-      :host(.ios) ::slotted(h1) {
+      :host(.${CLASS_CENTRADO}) ::slotted(h1) {
        position: absolute;
        top: 0;
        left: 0;
@@ -179,7 +147,7 @@
        text-align: center;
       }
 
-      :host(.noios) ::slotted(h1) {
+      :host(.${CLASS_JUSTIFICADO}) ::slotted(h1) {
        flex: 1 0;
        margin: 0;
        padding-left: 4px;
@@ -191,71 +159,28 @@
        padding-left: 12px;
       }
 
-      #extensiones {
-       display: none;
+      [${TOGGLE_NAME}]::slotted(*) {
+       margin-left: auto;
+      }
+
+      [${MENU_NAME}]::slotted(*) {
        position: absolute;
-       top: 3rem;
-       right: 1rem;
-       margin: 0;
-       padding: 4px 0;
-       border-radius: 4px;
-       background-color:
-        var(--Elevation);
-       box-shadow:
-        0 1px 2px 0px var(--OnSurfaceShadow);
-      }
-
-      #extensiones.muestra {
-       display: block;
-      }
-
-      [name=extension]::slotted(button) {
-       display: block;
-       border: none;
-       background-color:
-        transparent;
-       color: var(--OnSurface);
-       font-family:
-        var(--LabelLargeFont);
-       font-size:
-        var(--LabelLargeFontSize);
-       font-weight:
-        var(--LabelLargeFontWeight);
-       line-height: 48px;
-       font-size: 0.875rem;
-       padding: 0 12px;
        min-width: 112px;
        max-width: 280px;
-       white-space: nowrap;
-       text-overflow: ellipsis;
-       overflow: hidden;
-       text-align: start;
-      }
-
-      [name=extension]::slotted(button:hover) {
-       background-color:
-        var(--OnSurfaceHover);
-      }
-
-      [name=extension]::slotted(button:focus) {
-       background-color:
-        var(--OnSurfaceFocus);
-      }
-
-      [name=extension]::slotted(button:active) {
-       background-color:
-        var(--OnSurfacePressed);
+       top: 3rem;
+       right: 1rem;
       }
      </style>
      <div id="base">
-      <slot id="slotElem"></slot>
+      <slot id="slot"></slot>
+      <slot ${ACTION_NAME}></slot>
+      <slot ${TOGGLE_NAME}></slot>
      </div>
-     <div id="extensiones">
-      <slot
-       name="extension"></slot>
-     </div>
+     <slot ${MENU_NAME}></slot>
      <slot
-      name="adicional"></slot>`
+       name="adicional"></slot>`
+    this._alterna =
+     this._alterna.bind(this)
     /**
      * @private
      * @type {number}
@@ -265,110 +190,197 @@
      * @private
      * @type {boolean}
      */
-    this._procesando = false
+    this._scrolling = false
     /**
      * @private
      * @type {HTMLSlotElement|
      *        null}
      */
-    this._slotElem = this.
-     _shadow.
-     querySelector("#slotElem")
-    /**
-     * @private
-     * @type {HTMLDivElement|null}
-     */
-    this._extensiones =
-     this._shadow.
-      querySelector("#extensiones")
-    /**
-     * @private
-     * @type {HTMLSlotElement|
-     *        null}
-     */
-    this._slotExt = this._shadow.
+    this._action = this._shadow.
      querySelector(
-      "[name=extension]")
-    if (this._slotElem !== null) {
-     this._slotElem.
-      addEventListener(
-       "slotchange",
-       () => this.confBase())
+      `[${ACTION_NAME}]`)
+    /**
+     * @private
+     * @type {HTMLSlotElement|
+     *        null}
+     */
+    this._toggle = this._shadow.
+     querySelector(
+      `[${TOGGLE_NAME}]`)
+    /**
+     * @private
+     * @type {HTMLSlotElement|
+     *        null}
+     */
+    this._menu = this._shadow.
+     querySelector(
+      `[${MENU_NAME}]`)
+    /**
+     * @private
+     * @type {Element|null}
+     */
+    this._toggleElement = null
+    /**
+     * @private
+     * @type {Element|null}
+     */
+    this._menuElement = null
+    if (this._action !== null) {
+     this._action.addEventListener(
+      "slotchange",
+      () => this._configAction())
     }
-    if (this._slotExt !== null) {
-     this._slotExt.
-      addEventListener(
-       "slotchange",
-       () => this.confExt())
+    if (this._toggle !== null) {
+     this._toggle.addEventListener(
+      "slotchange",
+      () => this._configToggle())
     }
-    window.addEventListener(
-     "scroll",
-     () => this.onScroll())
+    if (this._menu !== null) {
+     this._menu.
+      addEventListener(
+       "slotchange", () =>
+       this._configMenu())
+    }
+    document.addEventListener(
+     "click",
+     evt => this._clickCierra(evt))
+    addEventListener("scroll",
+     () => this._onScroll())
    }
+
    connectedCallback() {
-    if (esApple()) {
-     this.classList.
-      add(CLASE_IOS)
-    } else {
-     this.classList.
-      add(CLASE_NOIOS)
-    }
+    this._configAction()
    }
-   confBase() {
-    if (this._slotElem) {
-     for (const e of this
-      ._slotElem
-      .assignedElements()) {
-      if (e.classList
-       .contains(CLASE_TOGGLE)) {
-       e.addEventListener("click",
-        () => this.alterna())
+
+   /** @private */
+   _configAction() {
+    if (this._action !== null) {
+     const elements = this.
+      _action.assignedElements()
+     if (ES_APPLE
+      && elements.length === 0) {
+      this.classList.
+       add(CLASS_CENTRADO)
+      this.classList.
+       remove(CLASS_JUSTIFICADO)
+     } else {
+      this.classList.
+       add(CLASS_JUSTIFICADO)
+      this.classList.
+       remove(CLASS_CENTRADO)
+     }
+     for (const e of elements) {
+      const span =
+       e.querySelector("span")
+      if (span !== null) {
+       span.style.color =
+        "var(--OnSurfaceVariant)"
       }
      }
     }
    }
 
-   confExt() {
-    if (this._slotExt) {
-     for (const e of this._slotExt
+   /** @private */
+   _configToggle() {
+    if (this._toggle !== null) {
+     for (const e of this._toggle
       .assignedElements()) {
+      if (this._toggleElement
+       !== null) {
+       this._toggleElement.
+        removeEventListener(
+         "click", this._alterna)
+      }
+      this._toggleElement = e
+      const span =
+       e.querySelector("span")
+      if (span !== null) {
+       span.style.color =
+        "var(--OnSurfaceVariant)"
+      }
       e.addEventListener("click",
-       () => this.alterna())
+       this._alterna)
+      e.innerHTML =
+       ES_APPLE ? /* html */
+        `<span
+           class="material-symbols-outlined">
+           more_horiz
+         </span>`
+        : /* html */
+        `<span
+           class="material-symbols-outlined">
+           more_vert
+         </span>`
      }
     }
    }
 
-   alterna() {
-    if (this._extensiones
+   /** @private */
+   _configMenu() {
+    if (this._menu !== null) {
+     for (const e of this._menu
+      .assignedElements()) {
+      this._menuElement = e
+     }
+    }
+   }
+
+   /** @private */
+   _alterna() {
+    if (this._menuElement
      !== null) {
-     this._extensiones.classList.
-      toggle(CLASE_MUESTA)
+     this._menuElement.classList.
+      toggle(OPEN_CLASS)
     }
    }
 
-   onScroll() {
-    this._posY = window.scrollY
-    if (!this._procesando) {
-     window.requestAnimationFrame(
-      () => this.avanza())
+   /**
+    * @private
+    * @param {Event} evt
+    */
+   _clickCierra(evt) {
+    const target = evt.target
+    if (target
+     instanceof HTMLElement) {
+     if (this._toggleElement
+      !== null
+      && !this._toggleElement.
+       contains(target)
+      && this._menuElement
+       .classList
+       .contains(OPEN_CLASS)) {
+      this._menuElement.classList
+       .remove(OPEN_CLASS)
+     }
     }
-    this._procesando = true
    }
 
-   avanza() {
+   /** @private */
+   _onScroll() {
+    this._posY = scrollY
+    if (!this._scrolling) {
+     requestAnimationFrame(
+      () => this._avanza())
+    }
+    this._scrolling = true
+   }
+
+   /** @private */
+   _avanza() {
     if (this._posY === 0) {
      this.classList.
-      remove(CLASE_ELEVATION)
+      remove(ELEVATION_CLASS)
     } else {
      this.classList.
-      add(CLASE_ELEVATION)
+      add(ELEVATION_CLASS)
     }
-    this._procesando = false
+    this._scrolling = false
    }
   }
 
   customElements.
    define("top-app-bar", TopAppBar)
+
  </script>
  <style>
   body {
@@ -387,9 +399,91 @@
    font-family:
     var(--TitleLargeFont);
    font-size:
-    var(--TitleLargeFontSize);
+    var(--TitleLargeSize);
    font-weight:
-    var(--TitleLargeFontWeight);
+    var(--TitleLargeWeight);
+  }
+
+  [slot="menu"] {
+   display: block;
+   pointer-events: none;
+   transform: translateY(-50%) scaleY(0);
+   transition: transform 0.5s;
+   box-sizing: border-box;
+   padding: 4px 0;
+   border-radius:
+    var(--ShapeCornerMedium);
+   background-color:
+    var(--Elevation);
+   cursor: default;
+   box-shadow:
+    var(--ElevationLevel2);
+  }
+
+  [slot="menu"].open {
+   pointer-events: all;
+   transform: translateY(0) scaleY(1);
+  }
+
+  [slot="menu"]>* {
+   display: block;
+   border: none;
+   background-color:
+    transparent;
+   color: var(--OnSurface);
+   font-family:
+    var(--LabelLargeFont);
+   font-size:
+    var(--LabelLargeSize);
+   font-weight:
+    var(--LabelLargeWeight);
+   box-sizing: border-box;
+   width: 100%;
+   height: 48px;
+   line-height: 48px;
+   padding: 0 12px;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   text-align: start;
+  }
+
+  [slot="menu"]>*:hover {
+   background-color:
+    var(--OnSurfaceHover);
+  }
+
+  [slot="menu"]>*:focus {
+   background-color:
+    var(--OnSurfaceFocus);
+  }
+
+  [slot="menu"]>*:active {
+   background-color:
+    var(--Primary);
+   background-position: center;
+   background-image: radial-gradient(circle, transparent 1%, var(--SurfaceVariant) 1%);
+   background-size: 100%;
+   animation-fill-mode: forwards;
+   animation-name: ripple;
+   animation-duration: 0.5s;
+  }
+
+  @keyframes ripple {
+   from {
+    color: var(--OnSurfaceVariant);
+    background-size: 100%;
+   }
+
+   to {
+    color: var(--OnPrimary);
+    background-size: 15000%;
+   }
+  }
+
+  [slot="menu"] span {
+   vertical-align: middle;
+   margin-right: 12px;
   }
 
   button.icono {
@@ -408,39 +502,22 @@
    color: var(--OnSurface);
   }
 
-  .noios button.icono.toggle span:before {
-   content: "more_vert";
-  }
-
-  .ios button.icono.toggle span:before {
-   content: "more_horiz";
-  }
-
-  h1+button.icono {
-   margin-left: auto;
-  }
-
-  button.icono.toggle span,
-  button.icono.accion span {
-   color: var(--OnSurfaceVariant);
-  }
-
-  button.icono:hover .material-symbols-outlined {
+  button.icono:hover span {
    background-color:
     var(--OnSurfaceHover);
   }
 
-  button.icono:focus .material-symbols-outlined {
+  button.icono:focus span {
    background-color:
     var(--OnSurfaceFocus);
   }
 
-  button.icono:active .material-symbols-outlined {
+  button.icono:active span {
    background-color:
     var(--OnSurfacePressed);
   }
 
-  button.icono:disabled .material-symbols-outlined {
+  button.icono:disabled span {
    color: var(--DisabledContent);
    background-color:
     var(--DisabledContainer);
@@ -450,40 +527,42 @@
 
 <body>
  <top-app-bar>
-  <menu-button>
-   <button type="button"
-     class="icono">
-    <span
-      class="material-symbols-outlined">
-     menu
-    </span>
-   </button>
-  </menu-button>
+  <menu-button></menu-button>
   <h1>Otra</h1>
   <button type="button"
-    class="icono accion">
+    class="icono" slot="action"
+    title="Agregar">
    <span
      class="material-symbols-outlined">
-    save
+    add
    </span>
   </button>
   <button type="button"
-    class="icono accion">
+    class="icono" slot="action"
+    title="Editar">
    <span
      class="material-symbols-outlined">
-    delete
+    edit
    </span>
   </button>
   <button type="button"
-    class="icono toggle">
-   <span
-     class="material-symbols-outlined">
-   </span>
+    class="icono" slot="toggle">
   </button>
-  <button type="button"
-    slot="extension">
-   Guardar
-  </button>
+  <div slot="menu">
+   <button type="button">
+    <span
+      class="material-symbols-outlined">
+     star
+    </span>
+    Marcar favorito
+   </button>
+   <button type="button">
+    <span
+      class="material-symbols-outlined">
+     delete
+    </span>
+    Eliminar
+   </button>
   </div>
  </top-app-bar>
  <p>x</p>

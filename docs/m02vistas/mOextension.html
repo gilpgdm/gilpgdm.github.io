@@ -430,18 +430,71 @@
   &#x2630;
  </button>
  <a class="anterior" href="/m02vistas/mCapp.html" title="E. App básica">◀</a>
- <a class="siguiente" href="/m02vistas/mDcampos.html" title="G. Campos">▶</a>
+ <a class="siguiente" href="/m02vistas/mDcampos.html" title="G. Campos de texto">▶</a>
    <h1 >F. Vista secundaria</h1><div class="lectura">
  <ul>
   <li>
    <p>
-    Despliega las operaciones válidas para una forma.
+    Cuando la barra de aplicación no está en la página principal, puede mostrar
+    hasta 3 botones de ícono a la derecha. Deben ser las acciones más usadas.
    </p>
   </li>
   <li>
    <p>
-    El bótón que lo abre tiene el ícono <strong>⁝</strong> en Android y
+    Cuando hay más de 3 acciones, coloca las menos usadas en un menú que se
+    despliega con un botón con el ícono <strong>⁝</strong> en Android y
     <strong>⋯</strong> en iOS.
+   </p>
+  </li>
+  <li>
+   <p>
+    Cuando en iOS no hay íconos de acción, el título debe ir centrado.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para que el contenido se muestra adecuadamente, se define el elemento
+    personalizado
+    <dfn>top-app-bar</dfn>
+    y su comportamiento lo definimos con la clase
+    <dfn>TopAppBar</dfn>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para el título se usa un elemento de tipo
+    <code class="language-html">h1</code>
+    dentro de la barra de aplicación.
+   </p>
+  </li>
+  <li>
+   <p>
+    El botón de navegación opcional, debe llevar al atributo
+    <code class="language-html">slot="navigation"</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Los botones de acción deben llevar al atributo
+    <code class="language-html">slot="action"</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    El botón que abre y cierra el menú debe llevar al atributo
+    <code class="language-html">slot="toggle"</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    El menú desplegable debe llevar al atributo
+    <code class="language-html">slot="menu"</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para añadir elementos debajo del título, usa el atributo
+    <code class="language-html">slot="adicional"</code>.
    </p>
   </li>
  </ul>
@@ -457,7 +510,7 @@
   </p>
   <p class="noPrint">
    <a target="_blank" rel="noopener"
-     href=https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EMen%C3%BA%20de%20Extensi%C3%B3n%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMaterial%2BSymbols%2BOutlined%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--colOnBg%3A%20%231C1B1F%3B%0A%20%20%20--colBg%3A%20%23FFFBFE%3B%0A%20%20%20--colOnSrf%3A%20%231C1B1F%3B%0A%20%20%20--colSrf%3A%20%23FFFBFE%3B%0A%20%20%20--colSrfElv%3A%20%23E7E0EC%3B%0A%20%20%20--colSh%3A%20%2300000055%3B%0A%20%20%20--colBgAc%3A%20%234646462c%3B%0A%20%20%20--color-ext%3A%20%23E7E0EC%3B%0A%20%20%20font-family%3A%20sans-serif%3B%0A%20%20%20color%3A%20var(--color-letra)%3B%0A%20%20%20--fntFam%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20color%3A%20var(--colOnBg)%3B%0A%20%20%20font-family%3A%20var(--fntFam)%3B%0A%20%20%20background-color%3A%20var(--colBg)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cscript%3E%0A%20%20const%20CLASE_ELEVACION2%20%3D%0A%20%20%20%22elevacion2%22%0A%0A%20%20class%20CnAppBar%0A%20%20%20extends%20HTMLElement%20%7B%0A%20%20%20constructor()%20%7B%0A%20%20%20%20super()%0A%20%20%20%20%2F**%20%40type%20%7Bnumber%7D%20*%2F%0A%20%20%20%20this.posY%20%3D%200%0A%20%20%20%20%2F**%20%40type%20%7Bboolean%7D%20*%2F%0A%20%20%20%20this.procesando%20%3D%20false%0A%20%20%20%7D%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20window.addEventListener(%0A%20%20%20%20%20%22scroll%22%2C%0A%20%20%20%20%20()%20%3D%3E%20this.onScroll())%0A%20%20%20%7D%0A%20%20%20onScroll()%20%7B%0A%20%20%20%20this.posY%20%3D%20window.scrollY%0A%20%20%20%20if%20(!this.procesando)%20%7B%0A%20%20%20%20%20window.requestAnimationFrame(%0A%20%20%20%20%20%20()%20%3D%3E%20this.avanza())%0A%20%20%20%20%7D%0A%20%20%20%20this.procesando%20%3D%20true%0A%20%20%20%7D%0A%20%20%20avanza()%20%7B%0A%20%20%20%20if%20(this.posY%20%3D%3D%3D%200)%20%7B%0A%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20remove(CLASE_ELEVACION2)%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20add(CLASE_ELEVACION2)%0A%20%20%20%20%7D%0A%20%20%20%20this.procesando%20%3D%20false%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.%0A%20%20%20define(%22cn-app-bar%22%2C%20CnAppBar)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20body%20%7B%0A%20%20%20margin%3A%200%3B%0A%20%20%20scroll-padding-top%3A%203rem%3B%0A%20%20%7D%0A%0A%20%20.elevacion2%20%7B%0A%20%20%20box-shadow%3A%0A%20%20%20%200%206px%2012px%20var(--colSh)%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20%7B%0A%20%20%20position%3A%20sticky%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20z-index%3A%201%3B%0A%20%20%20display%3A%20block%3B%0A%20%20%20color%3A%20var(--colOnSrf)%3B%0A%20%20%20background-color%3A%20var(--colSrf)%0A%20%20%7D%0A%0A%20%20cn-app-bar%3Ediv%20%7B%0A%20%20%20height%3A%204rem%3B%0A%20%20%20display%3A%20flex%3B%0A%20%20%20align-items%3A%20center%3B%0A%20%20%7D%0A%0A%20%20h1%20%7B%0A%20%20%20text-align%3A%20center%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20flex%3A%201%200%3B%0A%20%20%20font-size%3A%201.375rem%3B%0A%20%20%20line-height%3A%201.75rem%3B%0A%20%20%20font-weight%3A%20normal%3B%0A%20%20%7D%0A%0A%20%20p%20%7B%0A%20%20%20margin%3A%201rem%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cstyle%3E%0A%20%20cn-app-bar%20button%20%7B%0A%20%20%20border%3A%20none%3B%0A%20%20%20background-color%3A%20transparent%3B%0A%20%20%7D%0A%0A%20%20cn-app-bar%20button%3Aactive%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colBgAc)%3B%0A%20%20%7D%0A%0A%20%20.btnext%20%7B%0A%20%20%20padding%3A%200.5rem%3B%0A%20%20%20border-radius%3A%2050%25%3B%0A%20%20%20margin%3A%200%200.5rem%200%201rem%3B%0A%20%20%7D%0A%0A%20%20.ext%20ul%20%7B%0A%20%20%20display%3A%20none%3B%0A%20%20%20position%3A%20absolute%3B%0A%20%20%20overflow%3A%20auto%3B%0A%20%20%20list-style-type%3A%20none%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%200.25rem%200%3B%0A%20%20%20top%3A%203rem%3B%0A%20%20%20right%3A%201rem%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--color-ext)%3B%0A%20%20%20border-radius%3A%200.5rem%3B%0A%20%20%20box-shadow%3A%0A%20%20%20%20-1px%201px%202px%200px%20var(--colSh)%3B%0A%20%20%7D%0A%0A%20%20.ext%20ul.muestra%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%7D%0A%0A%20%20.ext%20ul%20button%20%7B%0A%20%20%20margin%3A%200%3B%0A%20%20%7D%0A%0A%20%20.ext%20li%20button%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20line-height%3A%203em%3B%0A%20%20%20font-size%3A%200.875rem%3B%0A%20%20%20width%3A%20100%25%3B%0A%20%20%20padding%3A%200%200.75rem%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ccn-app-bar%3E%0A%20%20%3Cdiv%3E%0A%20%20%20%3Cspan%20style%3D%22width%3A%203rem%3B%22%3E%3C%2Fspan%3E%0A%20%20%20%3Ch1%3EExtensi%C3%B3n%3C%2Fh1%3E%0A%20%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20class%3D%22btnext%22%0A%20%20%20%20%20onclick%3D%22extension.classList.%0A%20%20%20%20toggle('muestra')%22%3E%0A%20%20%20%20%3Cspan%20id%3D%22extBtn%22%0A%20%20%20%20%20%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20%20more_vert%0A%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%3C%2Fdiv%3E%0A%20%20%3Cdiv%20class%3D%22ext%22%3E%0A%20%20%20%3Cul%20id%3D%22extension%22%3E%0A%20%20%20%20%3Cli%3E%0A%20%20%20%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20%20%20onclick%3D%22extension.%0A%20%20%20%20%20%20%20classList.%0A%20%20%20%20%20%20%20remove('muestra')%22%3E%0A%20%20%20%20%20%20Guardar%0A%20%20%20%20%20%3C%2Fbutton%3E%0A%20%20%20%20%3C%2Fli%3E%0A%20%20%20%3C%2Ful%3E%0A%20%20%3C%2Fdiv%3E%0A%20%3C%2Fcn-app-bar%3E%0A%20%3Cscript%3E%0A%20%20if%20(%2F.*android.*%2Fi.%0A%20%20%20test(navigator.userAgent))%20%7B%0A%20%20%20document.body.classList%0A%20%20%20%20.add(%22android%22)%0A%20%20%7D%0A%20%20if%20(%0A%20%20%20%2F.*(iPad%7CiPhone%7CiPod%7CMac).*%2F.%0A%20%20%20%20test(navigator.userAgent))%20%7B%0A%20%20%20document.body.classList.%0A%20%20%20%20add('ios')%0A%20%20%20extBtn.textContent%20%3D%0A%20%20%20%20%22more_horiz%22%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EOtra%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMaterial%2BSymbols%2BOutlined%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20%2F*%20Custom%20properties%20*%2F%0A%20%20%20--Font%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20--TitleLargeFont%3A%20var(--Font)%3B%0A%20%20%20--TitleLargeSize%3A%2022px%3B%0A%20%20%20--TitleLargeWeight%3A%20400%3B%0A%20%20%20--LabelLargeFont%3A%20var(--Font)%3B%0A%20%20%20--LabelLargeSize%3A%2014px%3B%0A%20%20%20--LabelLargeWeight%3A%20500%3B%0A%20%20%20--Background%3A%20%23FFFBFE%3B%0A%20%20%20--OnBackground%3A%20%231C1B1F%3B%0A%20%20%20--Surface%3A%20%23FFFBFE%3B%0A%20%20%20--OnSurface%3A%20%231C1B1F%3B%0A%20%20%20--OnSurfaceHover%3A%20%231C1B1F14%3B%0A%20%20%20--OnSurfaceFocus%3A%20%231C1B1F19%3B%0A%20%20%20--OnSurfacePressed%3A%20%231C1B1F1E%3B%0A%20%20%20--OnSurfaceShadow%3A%20%231C1B1F99%3B%0A%20%20%20--SurfaceVariant%3A%20%23E7E0EC%3B%0A%20%20%20--OnSurfaceVariant%3A%20%2349454F%3B%0A%20%20%20--Primary%3A%20%236750A4%3B%0A%20%20%20--OnPrimary%3A%20%23FFFFFF%3B%0A%20%20%20--Elevation%3A%20%23F5EEFA%3B%0A%20%20%20--ShapeCornerMedium%3A%2012px%3B%0A%20%20%20--DisabledContent%3A%20%231C1B1F60%3B%0A%20%20%20--DisabledContainer%3A%0A%20%20%20%20%231C1B1F1E%3B%0A%20%20%20--ElevationLevel2%3A%0A%20%20%20%200%203px%206px%200px%20var(--OnSurfaceShadow)%3B%0A%20%20%20%2F*%20Configuraci%C3%B3n%20*%2F%0A%20%20%20font-size%3A%2016px%3B%0A%20%20%20font-family%3A%20var(--Font)%3B%0A%20%20%20color%3A%20var(--OnBackground)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--Background)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cscript%3E%0A%20%20%2F%2F%20%40ts-check%0A%20%20const%20ELEVATION_CLASS%20%3D%0A%20%20%20%22elevation%22%0A%20%20const%20DRAWER_EVENT%20%3D%20%22drawer%22%0A%20%20const%20CLASS_CENTRADO%20%3D%20%22centrado%22%0A%20%20const%20CLASS_JUSTIFICADO%20%3D%0A%20%20%20%22justificado%22%0A%20%20const%20ACTION_NAME%20%3D%0A%20%20%20'name%3D%22action%22'%0A%20%20const%20TOGGLE_NAME%20%3D%0A%20%20%20'name%3D%22toggle%22'%0A%20%20const%20MENU_NAME%20%3D%20'name%3D%22menu%22'%0A%20%20const%20OPEN_CLASS%20%3D%20%22open%22%0A%20%20const%20ES_APPLE%20%3D%0A%20%20%20%2F.*(iPad%7CiPhone%7CiPod%7CMac).*%2F.%0A%20%20%20%20test(navigator.userAgent)%0A%0A%20%20function%20alternaCajon()%20%7B%0A%20%20%20dispatchEvent(%0A%20%20%20%20new%20Event(DRAWER_EVENT))%0A%20%20%7D%0A%0A%20%20class%20MenuButton%0A%20%20%20extends%20HTMLElement%20%7B%0A%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20this.innerHTML%20%3D%20%2F*%20HTML%20*%2F%0A%20%20%20%20%20%60%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20%20%20class%3D%22icono%22%3E%0A%20%20%20%20%20%20%3Cspan%0A%20%20%20%20%20%20%20%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20%20%20%20menu%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%3C%2Fbutton%3E%60%0A%20%20%20%20const%20button%20%3D%0A%20%20%20%20%20this.querySelector(%22button%22)%0A%20%20%20%20if%20(button%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20button.addEventListener(%0A%20%20%20%20%20%20%22click%22%2C%20alternaCajon)%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20customElements.define(%0A%20%20%20%22menu-button%22%2C%20MenuButton)%0A%0A%20%20class%20TopAppBar%0A%20%20%20extends%20HTMLElement%20%7B%0A%20%20%20constructor()%20%7B%0A%20%20%20%20super()%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BShadowRoot%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._shadow%20%3D%20this.%0A%20%20%20%20%20attachShadow(%7B%20mode%3A%20%22open%22%20%7D)%0A%20%20%20%20this._shadow.innerHTML%20%3D%0A%20%20%20%20%20%2F*%20html%20*%2F%0A%20%20%20%20%20%60%3Cstyle%3E%0A%20%20%20%20%20%20%3Ahost%20%7B%0A%20%20%20%20%20%20%20z-index%3A%202%3B%0A%20%20%20%20%20%20%20position%3A%20sticky%3B%0A%20%20%20%20%20%20%20top%3A%200%3B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20color%3A%20var(--OnSurface)%3B%0A%20%20%20%20%20%20%20background-color%3A%0A%20%20%20%20%20%20%20%20var(--Surface)%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BELEVATION_CLASS%7D)%20%7B%0A%20%20%20%20%20%20%20background-color%3A%0A%20%20%20%20%20%20%20%20var(--Elevation)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%23base%20%7B%0A%20%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20%20align-items%3A%20center%3B%0A%20%20%20%20%20%20%20height%3A%2064px%3B%0A%20%20%20%20%20%20%20padding-left%3A%204px%3B%0A%20%20%20%20%20%20%20padding-right%3A%204px%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BCLASS_CENTRADO%7D)%20%3A%3Aslotted(h1)%20%7B%0A%20%20%20%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20%20%20%20top%3A%200%3B%0A%20%20%20%20%20%20%20left%3A%200%3B%0A%20%20%20%20%20%20%20right%3A%200%3B%0A%20%20%20%20%20%20%20margin%3A%200%2070px%3B%0A%20%20%20%20%20%20%20line-height%3A%2064px%3B%0A%20%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BCLASS_JUSTIFICADO%7D)%20%3A%3Aslotted(h1)%20%7B%0A%20%20%20%20%20%20%20flex%3A%201%200%3B%0A%20%20%20%20%20%20%20margin%3A%200%3B%0A%20%20%20%20%20%20%20padding-left%3A%204px%3B%0A%20%20%20%20%20%20%20padding-right%3A%2012px%3B%0A%20%20%20%20%20%20%20line-height%3A%2064px%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3A%3Aslotted(h1%3Afirst-child)%20%7B%0A%20%20%20%20%20%20%20padding-left%3A%2012px%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BTOGGLE_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20margin-left%3A%20auto%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BMENU_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20%20%20%20min-width%3A%20112px%3B%0A%20%20%20%20%20%20%20max-width%3A%20280px%3B%0A%20%20%20%20%20%20%20top%3A%203rem%3B%0A%20%20%20%20%20%20%20right%3A%201rem%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%3C%2Fstyle%3E%0A%20%20%20%20%20%3Cdiv%20id%3D%22base%22%3E%0A%20%20%20%20%20%20%3Cslot%20id%3D%22slot%22%3E%3C%2Fslot%3E%0A%20%20%20%20%20%20%3Cslot%20%24%7BACTION_NAME%7D%3E%3C%2Fslot%3E%0A%20%20%20%20%20%20%3Cslot%20%24%7BTOGGLE_NAME%7D%3E%3C%2Fslot%3E%0A%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%3Cslot%20%24%7BMENU_NAME%7D%3E%3C%2Fslot%3E%0A%20%20%20%20%20%3Cslot%0A%20%20%20%20%20%20%20name%3D%22adicional%22%3E%3C%2Fslot%3E%60%0A%20%20%20%20this._alterna%20%3D%0A%20%20%20%20%20this._alterna.bind(this)%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7Bnumber%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._posY%20%3D%200%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7Bboolean%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._scrolling%20%3D%20false%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BHTMLSlotElement%7C%0A%20%20%20%20%20*%20%20%20%20%20%20%20%20null%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._action%20%3D%20this._shadow.%0A%20%20%20%20%20querySelector(%0A%20%20%20%20%20%20%60%5B%24%7BACTION_NAME%7D%5D%60)%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BHTMLSlotElement%7C%0A%20%20%20%20%20*%20%20%20%20%20%20%20%20null%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._toggle%20%3D%20this._shadow.%0A%20%20%20%20%20querySelector(%0A%20%20%20%20%20%20%60%5B%24%7BTOGGLE_NAME%7D%5D%60)%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BHTMLSlotElement%7C%0A%20%20%20%20%20*%20%20%20%20%20%20%20%20null%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._menu%20%3D%20this._shadow.%0A%20%20%20%20%20querySelector(%0A%20%20%20%20%20%20%60%5B%24%7BMENU_NAME%7D%5D%60)%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BElement%7Cnull%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._toggleElement%20%3D%20null%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BElement%7Cnull%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._menuElement%20%3D%20null%0A%20%20%20%20if%20(this._action%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20this._action.addEventListener(%0A%20%20%20%20%20%20%22slotchange%22%2C%0A%20%20%20%20%20%20()%20%3D%3E%20this._configAction())%0A%20%20%20%20%7D%0A%20%20%20%20if%20(this._toggle%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20this._toggle.addEventListener(%0A%20%20%20%20%20%20%22slotchange%22%2C%0A%20%20%20%20%20%20()%20%3D%3E%20this._configToggle())%0A%20%20%20%20%7D%0A%20%20%20%20if%20(this._menu%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20this._menu.%0A%20%20%20%20%20%20addEventListener(%0A%20%20%20%20%20%20%20%22slotchange%22%2C%20()%20%3D%3E%0A%20%20%20%20%20%20%20this._configMenu())%0A%20%20%20%20%7D%0A%20%20%20%20document.addEventListener(%0A%20%20%20%20%20%22click%22%2C%0A%20%20%20%20%20evt%20%3D%3E%20this._clickCierra(evt))%0A%20%20%20%20addEventListener(%22scroll%22%2C%0A%20%20%20%20%20()%20%3D%3E%20this._onScroll())%0A%20%20%20%7D%0A%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20this._configAction()%0A%20%20%20%7D%0A%0A%20%20%20%2F**%20%40private%20*%2F%0A%20%20%20_configAction()%20%7B%0A%20%20%20%20if%20(this._action%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20const%20elements%20%3D%20this.%0A%20%20%20%20%20%20_action.assignedElements()%0A%20%20%20%20%20if%20(ES_APPLE%0A%20%20%20%20%20%20%26%26%20elements.length%20%3D%3D%3D%200)%20%7B%0A%20%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20%20add(CLASS_CENTRADO)%0A%20%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20%20remove(CLASS_JUSTIFICADO)%0A%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20%20add(CLASS_JUSTIFICADO)%0A%20%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20%20remove(CLASS_CENTRADO)%0A%20%20%20%20%20%7D%0A%20%20%20%20%20for%20(const%20e%20of%20elements)%20%7B%0A%20%20%20%20%20%20const%20span%20%3D%0A%20%20%20%20%20%20%20e.querySelector(%22span%22)%0A%20%20%20%20%20%20if%20(span%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20%20%20span.style.color%20%3D%0A%20%20%20%20%20%20%20%20%22var(--OnSurfaceVariant)%22%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20%2F**%20%40private%20*%2F%0A%20%20%20_configToggle()%20%7B%0A%20%20%20%20if%20(this._toggle%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20for%20(const%20e%20of%20this._toggle%0A%20%20%20%20%20%20.assignedElements())%20%7B%0A%20%20%20%20%20%20if%20(this._toggleElement%0A%20%20%20%20%20%20%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20%20%20this._toggleElement.%0A%20%20%20%20%20%20%20%20removeEventListener(%0A%20%20%20%20%20%20%20%20%20%22click%22%2C%20this._alterna)%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20this._toggleElement%20%3D%20e%0A%20%20%20%20%20%20const%20span%20%3D%0A%20%20%20%20%20%20%20e.querySelector(%22span%22)%0A%20%20%20%20%20%20if%20(span%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20%20%20span.style.color%20%3D%0A%20%20%20%20%20%20%20%20%22var(--OnSurfaceVariant)%22%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20e.addEventListener(%22click%22%2C%0A%20%20%20%20%20%20%20this._alterna)%0A%20%20%20%20%20%20e.innerHTML%20%3D%0A%20%20%20%20%20%20%20ES_APPLE%20%3F%20%2F*%20html%20*%2F%0A%20%20%20%20%20%20%20%20%60%3Cspan%0A%20%20%20%20%20%20%20%20%20%20%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20more_horiz%0A%20%20%20%20%20%20%20%20%20%3C%2Fspan%3E%60%0A%20%20%20%20%20%20%20%20%3A%20%2F*%20html%20*%2F%0A%20%20%20%20%20%20%20%20%60%3Cspan%0A%20%20%20%20%20%20%20%20%20%20%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20more_vert%0A%20%20%20%20%20%20%20%20%20%3C%2Fspan%3E%60%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20%2F**%20%40private%20*%2F%0A%20%20%20_configMenu()%20%7B%0A%20%20%20%20if%20(this._menu%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20for%20(const%20e%20of%20this._menu%0A%20%20%20%20%20%20.assignedElements())%20%7B%0A%20%20%20%20%20%20this._menuElement%20%3D%20e%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20%2F**%20%40private%20*%2F%0A%20%20%20_alterna()%20%7B%0A%20%20%20%20if%20(this._menuElement%0A%20%20%20%20%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20this._menuElement.classList.%0A%20%20%20%20%20%20toggle(OPEN_CLASS)%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20%2F**%0A%20%20%20%20*%20%40private%0A%20%20%20%20*%20%40param%20%7BEvent%7D%20evt%0A%20%20%20%20*%2F%0A%20%20%20_clickCierra(evt)%20%7B%0A%20%20%20%20const%20target%20%3D%20evt.target%0A%20%20%20%20if%20(target%0A%20%20%20%20%20instanceof%20HTMLElement)%20%7B%0A%20%20%20%20%20if%20(this._toggleElement%0A%20%20%20%20%20%20!%3D%3D%20null%0A%20%20%20%20%20%20%26%26%20!this._toggleElement.%0A%20%20%20%20%20%20%20contains(target)%0A%20%20%20%20%20%20%26%26%20this._menuElement%0A%20%20%20%20%20%20%20.classList%0A%20%20%20%20%20%20%20.contains(OPEN_CLASS))%20%7B%0A%20%20%20%20%20%20this._menuElement.classList%0A%20%20%20%20%20%20%20.remove(OPEN_CLASS)%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20%2F**%20%40private%20*%2F%0A%20%20%20_onScroll()%20%7B%0A%20%20%20%20this._posY%20%3D%20scrollY%0A%20%20%20%20if%20(!this._scrolling)%20%7B%0A%20%20%20%20%20requestAnimationFrame(%0A%20%20%20%20%20%20()%20%3D%3E%20this._avanza())%0A%20%20%20%20%7D%0A%20%20%20%20this._scrolling%20%3D%20true%0A%20%20%20%7D%0A%0A%20%20%20%2F**%20%40private%20*%2F%0A%20%20%20_avanza()%20%7B%0A%20%20%20%20if%20(this._posY%20%3D%3D%3D%200)%20%7B%0A%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20remove(ELEVATION_CLASS)%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20add(ELEVATION_CLASS)%0A%20%20%20%20%7D%0A%20%20%20%20this._scrolling%20%3D%20false%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20customElements.%0A%20%20%20define(%22top-app-bar%22%2C%20TopAppBar)%0A%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20body%20%7B%0A%20%20%20margin%3A%200%3B%0A%20%20%20scroll-padding-top%3A%204rem%3B%0A%20%20%7D%0A%0A%20%20p%20%7B%0A%20%20%20margin%3A%201rem%3B%0A%20%20%7D%0A%0A%20%20h1%20%7B%0A%20%20%20white-space%3A%20nowrap%3B%0A%20%20%20text-overflow%3A%20ellipsis%3B%0A%20%20%20overflow%3A%20hidden%3B%0A%20%20%20font-family%3A%0A%20%20%20%20var(--TitleLargeFont)%3B%0A%20%20%20font-size%3A%0A%20%20%20%20var(--TitleLargeSize)%3B%0A%20%20%20font-weight%3A%0A%20%20%20%20var(--TitleLargeWeight)%3B%0A%20%20%7D%0A%0A%20%20%5Bslot%3D%22menu%22%5D%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20pointer-events%3A%20none%3B%0A%20%20%20transform%3A%20translateY(-50%25)%20scaleY(0)%3B%0A%20%20%20transition%3A%20transform%200.5s%3B%0A%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20padding%3A%204px%200%3B%0A%20%20%20border-radius%3A%0A%20%20%20%20var(--ShapeCornerMedium)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--Elevation)%3B%0A%20%20%20cursor%3A%20default%3B%0A%20%20%20box-shadow%3A%0A%20%20%20%20var(--ElevationLevel2)%3B%0A%20%20%7D%0A%0A%20%20%5Bslot%3D%22menu%22%5D.open%20%7B%0A%20%20%20pointer-events%3A%20all%3B%0A%20%20%20transform%3A%20translateY(0)%20scaleY(1)%3B%0A%20%20%7D%0A%0A%20%20%5Bslot%3D%22menu%22%5D%3E*%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20border%3A%20none%3B%0A%20%20%20background-color%3A%0A%20%20%20%20transparent%3B%0A%20%20%20color%3A%20var(--OnSurface)%3B%0A%20%20%20font-family%3A%0A%20%20%20%20var(--LabelLargeFont)%3B%0A%20%20%20font-size%3A%0A%20%20%20%20var(--LabelLargeSize)%3B%0A%20%20%20font-weight%3A%0A%20%20%20%20var(--LabelLargeWeight)%3B%0A%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20width%3A%20100%25%3B%0A%20%20%20height%3A%2048px%3B%0A%20%20%20line-height%3A%2048px%3B%0A%20%20%20padding%3A%200%2012px%3B%0A%20%20%20white-space%3A%20nowrap%3B%0A%20%20%20text-overflow%3A%20ellipsis%3B%0A%20%20%20overflow%3A%20hidden%3B%0A%20%20%20text-align%3A%20start%3B%0A%20%20%7D%0A%0A%20%20%5Bslot%3D%22menu%22%5D%3E*%3Ahover%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--OnSurfaceHover)%3B%0A%20%20%7D%0A%0A%20%20%5Bslot%3D%22menu%22%5D%3E*%3Afocus%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--OnSurfaceFocus)%3B%0A%20%20%7D%0A%0A%20%20%5Bslot%3D%22menu%22%5D%3E*%3Aactive%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--Primary)%3B%0A%20%20%20background-position%3A%20center%3B%0A%20%20%20background-image%3A%20radial-gradient(circle%2C%20transparent%201%25%2C%20var(--SurfaceVariant)%201%25)%3B%0A%20%20%20background-size%3A%20100%25%3B%0A%20%20%20animation-fill-mode%3A%20forwards%3B%0A%20%20%20animation-name%3A%20ripple%3B%0A%20%20%20animation-duration%3A%200.5s%3B%0A%20%20%7D%0A%0A%20%20%40keyframes%20ripple%20%7B%0A%20%20%20from%20%7B%0A%20%20%20%20color%3A%20var(--OnSurfaceVariant)%3B%0A%20%20%20%20background-size%3A%20100%25%3B%0A%20%20%20%7D%0A%0A%20%20%20to%20%7B%0A%20%20%20%20color%3A%20var(--OnPrimary)%3B%0A%20%20%20%20background-size%3A%2015000%25%3B%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20%5Bslot%3D%22menu%22%5D%20span%20%7B%0A%20%20%20vertical-align%3A%20middle%3B%0A%20%20%20margin-right%3A%2012px%3B%0A%20%20%7D%0A%0A%20%20button.icono%20%7B%0A%20%20%20padding%3A%204px%3B%0A%20%20%20border%3A%20none%3B%0A%20%20%20background-color%3A%20transparent%3B%0A%20%20%7D%0A%0A%20%20button.icono%3Afocus%20%7B%0A%20%20%20outline%3A%20none%3B%0A%20%20%7D%0A%0A%20%20button.icono%20span%20%7B%0A%20%20%20border-radius%3A%2050%25%3B%0A%20%20%20padding%3A%208px%3B%0A%20%20%20color%3A%20var(--OnSurface)%3B%0A%20%20%7D%0A%0A%20%20button.icono%3Ahover%20span%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--OnSurfaceHover)%3B%0A%20%20%7D%0A%0A%20%20button.icono%3Afocus%20span%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--OnSurfaceFocus)%3B%0A%20%20%7D%0A%0A%20%20button.icono%3Aactive%20span%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--OnSurfacePressed)%3B%0A%20%20%7D%0A%0A%20%20button.icono%3Adisabled%20span%20%7B%0A%20%20%20color%3A%20var(--DisabledContent)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--DisabledContainer)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ctop-app-bar%3E%0A%20%20%3Cmenu-button%3E%3C%2Fmenu-button%3E%0A%20%20%3Ch1%3EOtra%3C%2Fh1%3E%0A%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20class%3D%22icono%22%20slot%3D%22action%22%0A%20%20%20%20title%3D%22Agregar%22%3E%0A%20%20%20%3Cspan%0A%20%20%20%20%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20add%0A%20%20%20%3C%2Fspan%3E%0A%20%20%3C%2Fbutton%3E%0A%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20class%3D%22icono%22%20slot%3D%22action%22%0A%20%20%20%20title%3D%22Editar%22%3E%0A%20%20%20%3Cspan%0A%20%20%20%20%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20edit%0A%20%20%20%3C%2Fspan%3E%0A%20%20%3C%2Fbutton%3E%0A%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20class%3D%22icono%22%20slot%3D%22toggle%22%3E%0A%20%20%3C%2Fbutton%3E%0A%20%20%3Cdiv%20slot%3D%22menu%22%3E%0A%20%20%20%3Cbutton%20type%3D%22button%22%3E%0A%20%20%20%20%3Cspan%0A%20%20%20%20%20%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20%20star%0A%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20Marcar%20favorito%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%20%3Cbutton%20type%3D%22button%22%3E%0A%20%20%20%20%3Cspan%0A%20%20%20%20%20%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20%20delete%0A%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20Eliminar%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%3C%2Fdiv%3E%0A%20%3C%2Ftop-app-bar%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%20%3Cp%3Ex%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
  </section>
@@ -508,8 +561,7 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
       style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div class="resaltado2">&nbsp;<span
-      style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">html</span> {</div>
    <div>&nbsp; &nbsp;<span
       style="color: #008000;">/* Custom properties */</span></div>
@@ -522,20 +574,20 @@
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--Font</span>);</div>
    <div>&nbsp; &nbsp;<span
-      style="color: #ff0000;">--TitleLargeFontSize</span>: <span
+      style="color: #ff0000;">--TitleLargeSize</span>: <span
       style="color: #098658;">22px</span>;</div>
    <div>&nbsp; &nbsp;<span
-      style="color: #ff0000;">--TitleLargeFontWeight</span>: <span
+      style="color: #ff0000;">--TitleLargeWeight</span>: <span
       style="color: #098658;">400</span>;</div>
    <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">--LabelLargeFont</span>: <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--Font</span>);</div>
    <div>&nbsp; &nbsp;<span
-      style="color: #ff0000;">--LabelLargeFontSize</span>: <span
+      style="color: #ff0000;">--LabelLargeSize</span>: <span
       style="color: #098658;">14px</span>;</div>
    <div>&nbsp; &nbsp;<span
-      style="color: #ff0000;">--LabelLargeFontWeight</span>: <span
+      style="color: #ff0000;">--LabelLargeWeight</span>: <span
       style="color: #098658;">500</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--Background</span>: <span
       style="color: #0451a5;">#FFFBFE</span>;</div>
@@ -546,9 +598,6 @@
       style="color: #0451a5;">#FFFBFE</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--OnSurface</span>: <span
       style="color: #0451a5;">#1C1B1F</span>;</div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #ff0000;">--OnSurfaceVariant</span>: <span
-      style="color: #0451a5;">#49454F</span>;</div>
    <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">--OnSurfaceHover</span>: <span
       style="color: #0451a5;">#1C1B1F14</span>;</div>
@@ -562,14 +611,34 @@
       style="color: #ff0000;">--OnSurfaceShadow</span>: <span
       style="color: #0451a5;">#1C1B1F99</span>;</div>
    <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">--SurfaceVariant</span>: <span
+      style="color: #0451a5;">#E7E0EC</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">--OnSurfaceVariant</span>: <span
+      style="color: #0451a5;">#49454F</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--Primary</span>: <span
+      style="color: #0451a5;">#6750A4</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--OnPrimary</span>: <span
+      style="color: #0451a5;">#FFFFFF</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--Elevation</span>: <span
+      style="color: #0451a5;">#F5EEFA</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">--ShapeCornerMedium</span>: <span
+      style="color: #098658;">12px</span>;</div>
+   <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">--DisabledContent</span>: <span
       style="color: #0451a5;">#1C1B1F60</span>;</div>
    <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">--DisabledContainer</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #0451a5;">#1C1B1F1E</span>;</div>
    <div>&nbsp; &nbsp;<span
-      style="color: #ff0000;">--Elevation</span>: <span
-      style="color: #0451a5;">#F5EEFA</span>;</div>
+      style="color: #ff0000;">--ElevationLevel2</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
+      style="color: #098658;">3px</span> <span
+      style="color: #098658;">6px</span> <span
+      style="color: #098658;">0px</span> <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurfaceShadow</span>);</div>
    <div>&nbsp; &nbsp;<span
       style="color: #008000;">/* Configuración */</span></div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span
@@ -579,9 +648,6 @@
       style="color: #001080;">--Font</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
       style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--color-letra</span>);</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
-      style="color: #795e26;">var</span>(<span
       style="color: #001080;">--OnBackground</span>);</div>
    <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">background-color</span>:</div>
@@ -589,34 +655,37 @@
       style="color: #001080;">--Background</span>);</div>
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div class="resaltado2">&nbsp;<span
-      style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
    <div>&nbsp; <span style="color: #008000;">// @ts-check</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">CLASE_ELEVATION</span> =</div>
+      style="color: #0070c1;">ELEVATION_CLASS</span> =</div>
    <div>&nbsp; &nbsp;<span style="color: #a31515;">"elevation"</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">EVENTO_CAJON</span> = <span
-      style="color: #a31515;">"cajon"</span></div>
+      style="color: #0070c1;">DRAWER_EVENT</span> = <span
+      style="color: #a31515;">"drawer"</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">TAG_H1</span> = <span
-      style="color: #a31515;">"H1"</span></div>
+      style="color: #0070c1;">CLASS_CENTRADO</span> = <span
+      style="color: #a31515;">"centrado"</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">CLASE_IOS</span> = <span
-      style="color: #a31515;">"ios"</span></div>
+      style="color: #0070c1;">CLASS_JUSTIFICADO</span> =</div>
+   <div>&nbsp; &nbsp;<span style="color: #a31515;">"justificado"</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">CLASE_NOIOS</span> = <span
-      style="color: #a31515;">"noios"</span></div>
+      style="color: #0070c1;">ACTION_NAME</span> =</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #a31515;">'name="action"'</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">CLASE_TOGGLE</span> = <span
-      style="color: #a31515;">"toggle"</span></div>
+      style="color: #0070c1;">TOGGLE_NAME</span> =</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #a31515;">'name="toggle"'</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">CLASE_MUESTA</span> = <span
-      style="color: #a31515;">"muestra"</span></div><br>
-   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">esApple</span>() {</div>
-   <div>&nbsp; &nbsp;<span style="color: #af00db;">return</span><span
-      style="color: #811f3f;"> /.</span>*<span
+      style="color: #0070c1;">MENU_NAME</span> = <span
+      style="color: #a31515;">'name="menu"'</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">OPEN_CLASS</span> = <span
+      style="color: #a31515;">"open"</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">ES_APPLE</span> =</div>
+   <div>&nbsp; &nbsp;<span style="color: #811f3f;">/.</span>*<span
       style="color: #d16969;">(</span><span
       style="color: #811f3f;">iPad</span><span
       style="color: #ee0000;">|</span><span
@@ -630,156 +699,65 @@
       style="color: #811f3f;">/</span>.</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">test</span>(<span
       style="color: #001080;">navigator</span>.<span
-      style="color: #001080;">userAgent</span>)</div>
-   <div>&nbsp; }</div><br>
+      style="color: #001080;">userAgent</span>)</div><br>
    <div>&nbsp; <span style="color: #0000ff;">function</span> <span
       style="color: #795e26;">alternaCajon</span>() {</div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">window</span>.<span
-      style="color: #795e26;">dispatchEvent</span>(</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">dispatchEvent</span>(</div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">new</span> <span
       style="color: #267f99;">Event</span>(<span
-      style="color: #0070c1;">EVENTO_CAJON</span>))</div>
+      style="color: #0070c1;">DRAWER_EVENT</span>))</div>
    <div>&nbsp; }</div><br>
-   <div class="resaltado">&nbsp; <span
-      style="color: #0000ff;">class</span> <span
+   <div>&nbsp; <span style="color: #0000ff;">class</span> <span
       style="color: #267f99;">MenuButton</span></div>
-   <div class="resaltado">&nbsp; &nbsp;<span
-      style="color: #0000ff;">extends</span> <span
-      style="color: #267f99;">HTMLElement</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span
+      style="color: #267f99;">HTMLElement</span> {</div><br>
    <div>&nbsp; &nbsp;<span
-      style="color: #0000ff;">constructor</span>() {</div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">super</span>()</div>
-   <div>&nbsp; &nbsp; <span style="color: #008000;">/**</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
-      style="color: #0000ff;">@private</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
-      style="color: #0000ff;">@type</span><span
-      style="color: #008000;"> </span><span
-      style="color: #267f99;">{ShadowRoot}</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
+      style="color: #795e26;">connectedCallback</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_shadow</span> =</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">attachShadow</span>(</div>
-   <div>&nbsp; &nbsp; &nbsp; { <span style="color: #001080;">mode</span><span
-      style="color: #001080;">:</span> <span
-      style="color: #a31515;">"open"</span> })</div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_shadow</span>.<span
-      style="color: #001080;">innerHTML</span> =</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #008000;">/* html */</span></div>
-   <div class="resaltado2">&nbsp; &nbsp; &nbsp;`<span
-      style="color: #800000;">&lt;style&gt;</span></div>
+      style="color: #001080;">innerHTML</span> = <span
+      style="color: #008000;">/* HTML */</span></div>
+   <div>&nbsp; &nbsp; &nbsp;`<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #ff0000;">type</span>=<span
+      style="color: #0000ff;">"button"</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"icono"</span><span
+      style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">:host</span> {</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">display</span>: <span
-      style="color: #0451a5;">flex</span>;</div>
-   <div>&nbsp; &nbsp; &nbsp; }</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/style&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;slot&gt;&lt;/slot&gt;</span>`</div>
-   <div>&nbsp; &nbsp; <span style="color: #008000;">/**</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
-      style="color: #0000ff;">@private</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
-      style="color: #0000ff;">@type</span><span
-      style="color: #008000;"> </span><span
-      style="color: #267f99;">{HTMLButtonElement|</span></div>
-   <div><span
-      style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null}</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_button</span> = <span
-      style="color: #0000ff;">null</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #008000;">/**</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
-      style="color: #0000ff;">@private</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
-      style="color: #0000ff;">@type</span><span
-      style="color: #008000;"> </span><span
-      style="color: #267f99;">{HTMLSlotElement|</span></div>
-   <div><span
-      style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null}</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_slotElem</span> = <span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_shadow</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #795e26;">querySelector</span>(<span
-      style="color: #a31515;">"slot"</span>)</div>
-   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_slotElem</span> !== <span
-      style="color: #0000ff;">null</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_slotElem</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #795e26;">addEventListener</span>(</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #a31515;">"slotchange"</span>,</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;() <span
-      style="color: #0000ff;">=&gt;</span> <span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">prepara</span>())</div>
-   <div>&nbsp; &nbsp; }</div>
-   <div>&nbsp; &nbsp;}</div><br>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">prepara</span>() {</div>
-   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_slotElem</span> !== <span
-      style="color: #0000ff;">null</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">for</span> (<span
-      style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">e</span> <span
-      style="color: #0000ff;">of</span> <span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_slotElem</span></div>
-   <div>&nbsp; &nbsp; &nbsp; .<span
-      style="color: #795e26;">assignedElements</span>()) {</div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
-      style="color: #0070c1;">e</span> <span
-      style="color: #0000ff;">instanceof</span></div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #267f99;">HTMLButtonElement</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_elem</span> = <span
-      style="color: #0070c1;">e</span></div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #0070c1;">e</span>.<span
-      style="color: #795e26;">addEventListener</span>(</div>
+      style="color: #800000;">&lt;span</span></div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
-      style="color: #a31515;">"click"</span>,</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; () <span
-      style="color: #0000ff;">=&gt;</span> <span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">click</span>())</div>
-   <div>&nbsp; &nbsp; &nbsp; }</div>
-   <div>&nbsp; &nbsp; &nbsp;}</div>
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;menu</div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span>`</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">button</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">querySelector</span>(<span
+      style="color: #a31515;">"button"</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">button</span> !== <span
+      style="color: #0000ff;">null</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">button</span>.<span
+      style="color: #795e26;">addEventListener</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #a31515;">"click"</span>, <span
+      style="color: #795e26;">alternaCajon</span>)</div>
    <div>&nbsp; &nbsp; }</div>
-   <div>&nbsp; &nbsp;}</div><br>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">click</span>() {</div>
-   <div>&nbsp; &nbsp; <span
-      style="color: #795e26;">alternaCajon</span>()</div>
    <div>&nbsp; &nbsp;}</div>
    <div>&nbsp; }</div><br>
-   <div class="resaltado">&nbsp; <span
-      style="color: #001080;">customElements</span>.<span
+   <div>&nbsp; <span style="color: #001080;">customElements</span>.<span
       style="color: #795e26;">define</span>(</div>
-   <div class="resaltado">&nbsp; &nbsp;<span
-      style="color: #a31515;">"menu-button"</span>, <span
+   <div>&nbsp; &nbsp;<span style="color: #a31515;">"menu-button"</span>, <span
       style="color: #267f99;">MenuButton</span>)</div><br>
-   <div class="resaltado">&nbsp; <span
-      style="color: #0000ff;">class</span> <span
+   <div>&nbsp; <span style="color: #0000ff;">class</span> <span
       style="color: #267f99;">TopAppBar</span></div>
-   <div class="resaltado">&nbsp; &nbsp;<span
-      style="color: #0000ff;">extends</span> <span
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span
       style="color: #267f99;">HTMLElement</span> {</div>
    <div>&nbsp; &nbsp;<span
       style="color: #0000ff;">constructor</span>() {</div>
@@ -793,10 +771,11 @@
       style="color: #267f99;">{ShadowRoot}</span></div>
    <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_shadow</span> =</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">attachShadow</span>(</div>
-   <div>&nbsp; &nbsp; &nbsp; { <span style="color: #001080;">mode</span><span
+      style="color: #001080;">_shadow</span> = <span
+      style="color: #0000ff;">this</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">attachShadow</span>({ <span
+      style="color: #001080;">mode</span><span
       style="color: #001080;">:</span> <span
       style="color: #a31515;">"open"</span> })</div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
@@ -804,10 +783,13 @@
       style="color: #001080;">innerHTML</span> =</div>
    <div>&nbsp; &nbsp; &nbsp;<span
       style="color: #008000;">/* html */</span></div>
-   <div class="resaltado2">&nbsp; &nbsp; &nbsp;`<span
+   <div>&nbsp; &nbsp; &nbsp;`<span
       style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp; <span
       style="color: #800000;">:host</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">z-index</span>: <span
+      style="color: #098658;">2</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">position</span>: <span
       style="color: #0451a5;">sticky</span>;</div>
@@ -827,8 +809,10 @@
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--Surface</span>)</div>
    <div>&nbsp; &nbsp; &nbsp; }</div><br>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(<span
-      style="color: #800000;">.elevation</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">ELEVATION_CLASS</span><span
+      style="color: #800000;">}</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
@@ -853,8 +837,10 @@
       style="color: #ff0000;">padding-right</span>: <span
       style="color: #098658;">4px</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; }</div><br>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(<span
-      style="color: #800000;">.ios</span>) ::slotted(<span
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">CLASS_CENTRADO</span><span
+      style="color: #800000;">}</span>) ::slotted(<span
       style="color: #800000;">h1</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">position</span>: <span
@@ -879,8 +865,10 @@
       style="color: #ff0000;">text-align</span>: <span
       style="color: #0451a5;">center</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; }</div><br>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(<span
-      style="color: #800000;">.noios</span>) ::slotted(<span
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">CLASS_JUSTIFICADO</span><span
+      style="color: #800000;">}</span>) ::slotted(<span
       style="color: #800000;">h1</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">flex</span>: <span
@@ -905,94 +893,21 @@
       style="color: #ff0000;">padding-left</span>: <span
       style="color: #098658;">12px</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; }</div><br>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">#extensiones</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; [<span style="color: #800000;">${</span><span
+      style="color: #0070c1;">TOGGLE_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">display</span>: <span
-      style="color: #0451a5;">none</span>;</div>
+      style="color: #ff0000;">margin-left</span>: <span
+      style="color: #0451a5;">auto</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; [<span style="color: #800000;">${</span><span
+      style="color: #0070c1;">MENU_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">position</span>: <span
       style="color: #0451a5;">absolute</span>;</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">top</span>: <span
-      style="color: #098658;">3rem</span>;</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">right</span>: <span
-      style="color: #098658;">1rem</span>;</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">margin</span>: <span
-      style="color: #098658;">0</span>;</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">padding</span>: <span
-      style="color: #098658;">4px</span> <span
-      style="color: #098658;">0</span>;</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">border-radius</span>: <span
-      style="color: #098658;">4px</span>;</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">background-color</span>:</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
-      style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--Elevation</span>);</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">box-shadow</span>:</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
-      style="color: #098658;">0</span> <span
-      style="color: #098658;">1px</span> <span
-      style="color: #098658;">2px</span> <span
-      style="color: #098658;">0px</span> <span
-      style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--OnSurfaceShadow</span>);</div>
-   <div>&nbsp; &nbsp; &nbsp; }</div><br>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">#extensiones.muestra</span> {</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">display</span>: <span
-      style="color: #0451a5;">block</span>;</div>
-   <div>&nbsp; &nbsp; &nbsp; }</div><br>
-   <div>&nbsp; &nbsp; &nbsp; [<span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #a31515;">extension</span>]::slotted(<span
-      style="color: #800000;">button</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">display</span>: <span
-      style="color: #0451a5;">block</span>;</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">border</span>: <span
-      style="color: #0451a5;">none</span>;</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">background-color</span>:</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
-      style="color: #0451a5;">transparent</span>;</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">color</span>: <span
-      style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--OnSurface</span>);</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">font-family</span>:</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
-      style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--LabelLargeFont</span>);</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">font-size</span>:</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
-      style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--LabelLargeFontSize</span>);</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">font-weight</span>:</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
-      style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--LabelLargeFontWeight</span>);</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">line-height</span>: <span
-      style="color: #098658;">48px</span>;</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">font-size</span>: <span
-      style="color: #098658;">0.875rem</span>;</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">padding</span>: <span
-      style="color: #098658;">0</span> <span
-      style="color: #098658;">12px</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">min-width</span>: <span
       style="color: #098658;">112px</span>;</div>
@@ -1000,44 +915,11 @@
       style="color: #ff0000;">max-width</span>: <span
       style="color: #098658;">280px</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">white-space</span>: <span
-      style="color: #0451a5;">nowrap</span>;</div>
+      style="color: #ff0000;">top</span>: <span
+      style="color: #098658;">3rem</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">text-overflow</span>: <span
-      style="color: #0451a5;">ellipsis</span>;</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">overflow</span>: <span
-      style="color: #0451a5;">hidden</span>;</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">text-align</span>: <span
-      style="color: #0451a5;">start</span>;</div>
-   <div>&nbsp; &nbsp; &nbsp; }</div><br>
-   <div>&nbsp; &nbsp; &nbsp; [<span style="color: #ff0000;">name</span>=<span
-      style="color: #a31515;">extension</span>]::slotted(<span
-      style="color: #800000;">button:hover</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">background-color</span>:</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
-      style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--OnSurfaceHover</span>);</div>
-   <div>&nbsp; &nbsp; &nbsp; }</div><br>
-   <div>&nbsp; &nbsp; &nbsp; [<span style="color: #ff0000;">name</span>=<span
-      style="color: #a31515;">extension</span>]::slotted(<span
-      style="color: #800000;">button:focus</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">background-color</span>:</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
-      style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--OnSurfaceFocus</span>);</div>
-   <div>&nbsp; &nbsp; &nbsp; }</div><br>
-   <div>&nbsp; &nbsp; &nbsp; [<span style="color: #ff0000;">name</span>=<span
-      style="color: #a31515;">extension</span>]::slotted(<span
-      style="color: #800000;">button:active</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">background-color</span>:</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
-      style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--OnSurfacePressed</span>);</div>
+      style="color: #ff0000;">right</span>: <span
+      style="color: #098658;">1rem</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; }</div>
    <div>&nbsp; &nbsp; &nbsp;<span
       style="color: #800000;">&lt;/style&gt;</span></div>
@@ -1048,34 +930,44 @@
    <div>&nbsp; &nbsp; &nbsp; <span
       style="color: #800000;">&lt;slot</span> <span
       style="color: #ff0000;">id</span>=<span
-      style="color: #0000ff;">"slotElem"</span><span
+      style="color: #0000ff;">"slot"</span><span
       style="color: #800000;">&gt;&lt;/slot&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;slot</span> <span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">ACTION_NAME</span><span
+      style="color: #800000;">}&gt;&lt;/slot&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;slot</span> <span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">TOGGLE_NAME</span><span
+      style="color: #800000;">}&gt;&lt;/slot&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp;<span
       style="color: #800000;">&lt;/div&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;div</span> <span
-      style="color: #ff0000;">id</span>=<span
-      style="color: #0000ff;">"extensiones"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #800000;">&lt;slot</span> <span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">MENU_NAME</span><span
+      style="color: #800000;">}&gt;&lt;/slot&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span
       style="color: #800000;">&lt;slot</span></div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"extension"</span><span
-      style="color: #800000;">&gt;&lt;/slot&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/div&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;slot</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">name</span>=<span
       style="color: #0000ff;">"adicional"</span><span
       style="color: #800000;">&gt;&lt;/slot&gt;</span>`</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_alterna</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_alterna</span>.<span
+      style="color: #795e26;">bind</span>(<span
+      style="color: #0000ff;">this</span>)</div>
    <div>&nbsp; &nbsp; <span style="color: #008000;">/**</span></div>
    <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
       style="color: #0000ff;">@private</span></div>
    <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
-      style="color: #0000ff;">@type</span><span style="color: #008000;">
-    </span><span style="color: #267f99;">{number}</span></div>
+      style="color: #0000ff;">@type</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{number}</span></div>
    <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
       style="color: #001080;">_posY</span> = <span
@@ -1089,7 +981,7 @@
       style="color: #267f99;">{boolean}</span></div>
    <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_procesando</span> = <span
+      style="color: #001080;">_scrolling</span> = <span
       style="color: #0000ff;">false</span></div>
    <div>&nbsp; &nbsp; <span style="color: #008000;">/**</span></div>
    <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
@@ -1103,181 +995,406 @@
    </div>
    <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_slotElem</span> = <span
-      style="color: #0000ff;">this</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #001080;">_action</span> = <span
+      style="color: #0000ff;">this</span>.<span
       style="color: #001080;">_shadow</span>.</div>
    <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #795e26;">querySelector</span>(<span
-      style="color: #a31515;">"#slotElem"</span>)</div>
+      style="color: #795e26;">querySelector</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #a31515;">`[</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">ACTION_NAME</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">]`</span>)</div>
    <div>&nbsp; &nbsp; <span style="color: #008000;">/**</span></div>
    <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
       style="color: #0000ff;">@private</span></div>
    <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
-      style="color: #0000ff;">@type</span><span style="color: #008000;">
-    </span><span style="color: #267f99;">{HTMLDivElement|null}</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_extensiones</span> =</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_shadow</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #795e26;">querySelector</span>(<span
-      style="color: #a31515;">"#extensiones"</span>)</div>
-   <div>&nbsp; &nbsp; <span style="color: #008000;">/**</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
-      style="color: #0000ff;">@private</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
-      style="color: #0000ff;">@type</span><span style="color: #008000;">
-    </span><span style="color: #267f99;">{HTMLSlotElement|</span></div>
+      style="color: #0000ff;">@type</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{HTMLSlotElement|</span></div>
    <div><span
       style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null}</span>
    </div>
    <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_slotExt</span> = <span
+      style="color: #001080;">_toggle</span> = <span
       style="color: #0000ff;">this</span>.<span
       style="color: #001080;">_shadow</span>.</div>
    <div>&nbsp; &nbsp; &nbsp;<span
       style="color: #795e26;">querySelector</span>(</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #a31515;">"[name=extension]"</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #a31515;">`[</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">TOGGLE_NAME</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">]`</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@type</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{HTMLSlotElement|</span></div>
+   <div><span
+      style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null}</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menu</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_shadow</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">querySelector</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #a31515;">`[</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">MENU_NAME</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">]`</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@type</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{Element|null}</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_toggleElement</span> = <span
+      style="color: #0000ff;">null</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@type</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{Element|null}</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menuElement</span> = <span
+      style="color: #0000ff;">null</span></div>
    <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
       style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_slotElem</span> !== <span
+      style="color: #001080;">_action</span> !== <span
       style="color: #0000ff;">null</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_slotElem</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #001080;">_action</span>.<span
       style="color: #795e26;">addEventListener</span>(</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+   <div>&nbsp; &nbsp; &nbsp; <span
       style="color: #a31515;">"slotchange"</span>,</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;() <span
+   <div>&nbsp; &nbsp; &nbsp; () <span
       style="color: #0000ff;">=&gt;</span> <span
       style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">confBase</span>())</div>
+      style="color: #795e26;">_configAction</span>())</div>
    <div>&nbsp; &nbsp; }</div>
    <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
       style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_slotExt</span> !== <span
+      style="color: #001080;">_toggle</span> !== <span
       style="color: #0000ff;">null</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_slotExt</span>.</div>
+      style="color: #001080;">_toggle</span>.<span
+      style="color: #795e26;">addEventListener</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #a31515;">"slotchange"</span>,</div>
+   <div>&nbsp; &nbsp; &nbsp; () <span
+      style="color: #0000ff;">=&gt;</span> <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_configToggle</span>())</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menu</span> !== <span
+      style="color: #0000ff;">null</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menu</span>.</div>
    <div>&nbsp; &nbsp; &nbsp; <span
       style="color: #795e26;">addEventListener</span>(</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #a31515;">"slotchange"</span>,</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;() <span
+      style="color: #a31515;">"slotchange"</span>, () <span
+      style="color: #0000ff;">=&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_configMenu</span>())</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; <span style="color: #001080;">document</span>.<span
+      style="color: #795e26;">addEventListener</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #a31515;">"click"</span>,</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">evt</span> <span
       style="color: #0000ff;">=&gt;</span> <span
       style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">confExt</span>())</div>
-   <div>&nbsp; &nbsp; }</div>
-   <div>&nbsp; &nbsp; <span style="color: #001080;">window</span>.<span
-      style="color: #795e26;">addEventListener</span>(</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"scroll"</span>,</div>
-   <div>&nbsp; &nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
+      style="color: #795e26;">_clickCierra</span>(<span
+      style="color: #001080;">evt</span>))</div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #795e26;">addEventListener</span>(<span
+      style="color: #a31515;">"scroll"</span>,</div>
+   <div>&nbsp; &nbsp; &nbsp;() <span
+      style="color: #0000ff;">=&gt;</span> <span
       style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">onScroll</span>())</div>
-   <div>&nbsp; &nbsp;}</div>
+      style="color: #795e26;">_onScroll</span>())</div>
+   <div>&nbsp; &nbsp;}</div><br>
    <div>&nbsp; &nbsp;<span
       style="color: #795e26;">connectedCallback</span>() {</div>
-   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
-      style="color: #795e26;">esApple</span>()) {</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">classList</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #795e26;">add</span>(<span
-      style="color: #0070c1;">CLASE_IOS</span>)</div>
-   <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">classList</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #795e26;">add</span>(<span
-      style="color: #0070c1;">CLASE_NOIOS</span>)</div>
-   <div>&nbsp; &nbsp; }</div>
-   <div>&nbsp; &nbsp;}</div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">confBase</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_configAction</span>()</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@private</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #795e26;">_configAction</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
       style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_slotElem</span>) {</div>
+      style="color: #001080;">_action</span> !== <span
+      style="color: #0000ff;">null</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">elements</span> = <span
+      style="color: #0000ff;">this</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #001080;">_action</span>.<span
+      style="color: #795e26;">assignedElements</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">ES_APPLE</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &amp;&amp; <span
+      style="color: #0070c1;">elements</span>.<span
+      style="color: #001080;">length</span> === <span
+      style="color: #098658;">0</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">add</span>(<span
+      style="color: #0070c1;">CLASS_CENTRADO</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">remove</span>(<span
+      style="color: #0070c1;">CLASS_JUSTIFICADO</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">add</span>(<span
+      style="color: #0070c1;">CLASS_JUSTIFICADO</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">remove</span>(<span
+      style="color: #0070c1;">CLASS_CENTRADO</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp;}</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">for</span> (<span
       style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">e</span> <span
       style="color: #0000ff;">of</span> <span
-      style="color: #0000ff;">this</span></div>
-   <div>&nbsp; &nbsp; &nbsp; .<span
-      style="color: #001080;">_slotElem</span></div>
-   <div>&nbsp; &nbsp; &nbsp; .<span
-      style="color: #795e26;">assignedElements</span>()) {</div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
-      style="color: #0070c1;">e</span>.<span
-      style="color: #001080;">classList</span></div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;.<span
-      style="color: #795e26;">contains</span>(<span
-      style="color: #0070c1;">CLASE_TOGGLE</span>)) {</div>
+      style="color: #0070c1;">elements</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">span</span> =</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">e</span>.<span
-      style="color: #795e26;">addEventListener</span>(<span
-      style="color: #a31515;">"click"</span>,</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; () <span
-      style="color: #0000ff;">=&gt;</span> <span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">alterna</span>())</div>
+      style="color: #795e26;">querySelector</span>(<span
+      style="color: #a31515;">"span"</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">span</span> !== <span
+      style="color: #0000ff;">null</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0070c1;">span</span>.<span
+      style="color: #001080;">style</span>.<span
+      style="color: #001080;">color</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #a31515;">"var(--OnSurfaceVariant)"</span></div>
    <div>&nbsp; &nbsp; &nbsp; }</div>
    <div>&nbsp; &nbsp; &nbsp;}</div>
    <div>&nbsp; &nbsp; }</div>
    <div>&nbsp; &nbsp;}</div><br>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">confExt</span>() {</div>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@private</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #795e26;">_configToggle</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
       style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_slotExt</span>) {</div>
+      style="color: #001080;">_toggle</span> !== <span
+      style="color: #0000ff;">null</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">for</span> (<span
       style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">e</span> <span
       style="color: #0000ff;">of</span> <span
       style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_slotExt</span></div>
+      style="color: #001080;">_toggle</span></div>
    <div>&nbsp; &nbsp; &nbsp; .<span
       style="color: #795e26;">assignedElements</span>()) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_toggleElement</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;!== <span
+      style="color: #0000ff;">null</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_toggleElement</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">removeEventListener</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #a31515;">"click"</span>, <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_alterna</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_toggleElement</span> = <span
+      style="color: #0070c1;">e</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">span</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">e</span>.<span
+      style="color: #795e26;">querySelector</span>(<span
+      style="color: #a31515;">"span"</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">span</span> !== <span
+      style="color: #0000ff;">null</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0070c1;">span</span>.<span
+      style="color: #001080;">style</span>.<span
+      style="color: #001080;">color</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #a31515;">"var(--OnSurfaceVariant)"</span></div>
+   <div>&nbsp; &nbsp; &nbsp; }</div>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">e</span>.<span
       style="color: #795e26;">addEventListener</span>(<span
       style="color: #a31515;">"click"</span>,</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;() <span
-      style="color: #0000ff;">=&gt;</span> <span
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">alterna</span>())</div>
+      style="color: #795e26;">_alterna</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">e</span>.<span
+      style="color: #001080;">innerHTML</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0070c1;">ES_APPLE</span> ? <span
+      style="color: #008000;">/* html */</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; `<span
+      style="color: #800000;">&lt;span</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;more_horiz</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span>`</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; : <span
+      style="color: #008000;">/* html */</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; `<span
+      style="color: #800000;">&lt;span</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;more_vert</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span>`</div>
    <div>&nbsp; &nbsp; &nbsp;}</div>
    <div>&nbsp; &nbsp; }</div>
    <div>&nbsp; &nbsp;}</div><br>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">alterna</span>() {</div>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@private</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_configMenu</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
       style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_extensiones</span></div>
+      style="color: #001080;">_menu</span> !== <span
+      style="color: #0000ff;">null</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">for</span> (<span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">e</span> <span
+      style="color: #0000ff;">of</span> <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menu</span></div>
+   <div>&nbsp; &nbsp; &nbsp; .<span
+      style="color: #795e26;">assignedElements</span>()) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menuElement</span> = <span
+      style="color: #0070c1;">e</span></div>
+   <div>&nbsp; &nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@private</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_alterna</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menuElement</span></div>
    <div>&nbsp; &nbsp; &nbsp;!== <span
       style="color: #0000ff;">null</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_extensiones</span>.<span
+      style="color: #001080;">_menuElement</span>.<span
       style="color: #001080;">classList</span>.</div>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #795e26;">toggle</span>(<span
-      style="color: #0070c1;">CLASE_MUESTA</span>)</div>
+      style="color: #0070c1;">OPEN_CLASS</span>)</div>
    <div>&nbsp; &nbsp; }</div>
    <div>&nbsp; &nbsp;}</div><br>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">onScroll</span>() {</div>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{Event}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">evt</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_clickCierra</span>(<span
+      style="color: #001080;">evt</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">target</span> = <span
+      style="color: #001080;">evt</span>.<span
+      style="color: #001080;">target</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">target</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">instanceof</span> <span
+      style="color: #267f99;">HTMLElement</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_toggleElement</span></div>
+   <div>&nbsp; &nbsp; &nbsp; !== <span style="color: #0000ff;">null</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &amp;&amp; !<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_toggleElement</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">contains</span>(<span
+      style="color: #0070c1;">target</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp; &amp;&amp; <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menuElement</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;.<span
+      style="color: #001080;">classList</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;.<span
+      style="color: #795e26;">contains</span>(<span
+      style="color: #0070c1;">OPEN_CLASS</span>)) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menuElement</span>.<span
+      style="color: #001080;">classList</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;.<span
+      style="color: #795e26;">remove</span>(<span
+      style="color: #0070c1;">OPEN_CLASS</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@private</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_onScroll</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
       style="color: #001080;">_posY</span> = <span
-      style="color: #001080;">window</span>.<span
       style="color: #001080;">scrollY</span></div>
    <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (!<span
       style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_procesando</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">window</span>.<span
+      style="color: #001080;">_scrolling</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
       style="color: #795e26;">requestAnimationFrame</span>(</div>
    <div>&nbsp; &nbsp; &nbsp; () <span style="color: #0000ff;">=&gt;</span> <span
       style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">avanza</span>())</div>
+      style="color: #795e26;">_avanza</span>())</div>
    <div>&nbsp; &nbsp; }</div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_procesando</span> = <span
+      style="color: #001080;">_scrolling</span> = <span
       style="color: #0000ff;">true</span></div>
    <div>&nbsp; &nbsp;}</div><br>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">avanza</span>() {</div>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@private</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_avanza</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
       style="color: #0000ff;">this</span>.<span
       style="color: #001080;">_posY</span> === <span
@@ -1285,27 +1402,24 @@
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
       style="color: #001080;">classList</span>.</div>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #795e26;">remove</span>(<span
-      style="color: #0070c1;">CLASE_ELEVATION</span>)</div>
+      style="color: #0070c1;">ELEVATION_CLASS</span>)</div>
    <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
       style="color: #001080;">classList</span>.</div>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #795e26;">add</span>(<span
-      style="color: #0070c1;">CLASE_ELEVATION</span>)</div>
+      style="color: #0070c1;">ELEVATION_CLASS</span>)</div>
    <div>&nbsp; &nbsp; }</div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_procesando</span> = <span
+      style="color: #001080;">_scrolling</span> = <span
       style="color: #0000ff;">false</span></div>
    <div>&nbsp; &nbsp;}</div>
    <div>&nbsp; }</div><br>
-   <div class="resaltado">&nbsp; <span
-      style="color: #001080;">customElements</span>.</div>
-   <div class="resaltado">&nbsp; &nbsp;<span
-      style="color: #795e26;">define</span>(<span
+   <div>&nbsp; <span style="color: #001080;">customElements</span>.</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">define</span>(<span
       style="color: #a31515;">"top-app-bar"</span>, <span
-      style="color: #267f99;">TopAppBar</span>)</div>
+      style="color: #267f99;">TopAppBar</span>)</div><br>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div class="resaltado2">&nbsp;<span
-      style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">body</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
       style="color: #098658;">0</span>;</div>
@@ -1329,13 +1443,170 @@
       style="color: #001080;">--TitleLargeFont</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--TitleLargeFontSize</span>);</div>
+      style="color: #001080;">--TitleLargeSize</span>);</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-weight</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--TitleLargeFontWeight</span>);</div>
+      style="color: #001080;">--TitleLargeWeight</span>);</div>
    <div>&nbsp; }</div><br>
-   <div class="resaltado">&nbsp; <span
-      style="color: #800000;">button.icono</span> {</div>
+   <div>&nbsp; [<span style="color: #ff0000;">slot</span>=<span
+      style="color: #a31515;">"menu"</span>] {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">block</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">pointer-events</span>: <span
+      style="color: #0451a5;">none</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">transform</span>: <span
+      style="color: #795e26;">translateY</span>(<span
+      style="color: #098658;">-50%</span>) <span
+      style="color: #795e26;">scaleY</span>(<span
+      style="color: #098658;">0</span>);</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">transition</span>: transform <span
+      style="color: #098658;">0.5s</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-sizing</span>: <span
+      style="color: #0451a5;">border-box</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">padding</span>: <span
+      style="color: #098658;">4px</span> <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">border-radius</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--ShapeCornerMedium</span>);</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Elevation</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">cursor</span>: <span
+      style="color: #0451a5;">default</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--ElevationLevel2</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; [<span style="color: #ff0000;">slot</span>=<span
+      style="color: #a31515;">"menu"</span>]<span
+      style="color: #800000;">.open</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">pointer-events</span>: <span
+      style="color: #0451a5;">all</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">transform</span>: <span
+      style="color: #795e26;">translateY</span>(<span
+      style="color: #098658;">0</span>) <span
+      style="color: #795e26;">scaleY</span>(<span
+      style="color: #098658;">1</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; [<span style="color: #ff0000;">slot</span>=<span
+      style="color: #a31515;">"menu"</span>]&gt;<span
+      style="color: #800000;">*</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">block</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">border</span>: <span
+      style="color: #0451a5;">none</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #0451a5;">transparent</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurface</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--LabelLargeFont</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--LabelLargeSize</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-weight</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--LabelLargeWeight</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-sizing</span>: <span
+      style="color: #0451a5;">border-box</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">width</span>: <span
+      style="color: #098658;">100%</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">height</span>: <span
+      style="color: #098658;">48px</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">line-height</span>: <span
+      style="color: #098658;">48px</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">padding</span>: <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">12px</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">white-space</span>: <span
+      style="color: #0451a5;">nowrap</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">text-overflow</span>: <span
+      style="color: #0451a5;">ellipsis</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">overflow</span>: <span
+      style="color: #0451a5;">hidden</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">text-align</span>: <span
+      style="color: #0451a5;">start</span>;</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; [<span style="color: #ff0000;">slot</span>=<span
+      style="color: #a31515;">"menu"</span>]&gt;<span
+      style="color: #800000;">*:hover</span> {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurfaceHover</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; [<span style="color: #ff0000;">slot</span>=<span
+      style="color: #a31515;">"menu"</span>]&gt;<span
+      style="color: #800000;">*:focus</span> {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurfaceFocus</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; [<span style="color: #ff0000;">slot</span>=<span
+      style="color: #a31515;">"menu"</span>]&gt;<span
+      style="color: #800000;">*:active</span> {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Primary</span>);</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">background-position</span>: <span
+      style="color: #0451a5;">center</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">background-image</span>: <span
+      style="color: #795e26;">radial-gradient</span>(<span
+      style="color: #0451a5;">circle</span>, <span
+      style="color: #0451a5;">transparent</span> <span
+      style="color: #098658;">1%</span>, <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--SurfaceVariant</span>) <span
+      style="color: #098658;">1%</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">background-size</span>: <span
+      style="color: #098658;">100%</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">animation-fill-mode</span>: <span
+      style="color: #0451a5;">forwards</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">animation-name</span>: ripple;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">animation-duration</span>: <span
+      style="color: #098658;">0.5s</span>;</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #af00db;">@keyframes</span> <span
+      style="color: #001080;">ripple</span> {</div>
+   <div>&nbsp; &nbsp;from {</div>
+   <div>&nbsp; &nbsp; <span style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurfaceVariant</span>);</div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #ff0000;">background-size</span>: <span
+      style="color: #098658;">100%</span>;</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;to {</div>
+   <div>&nbsp; &nbsp; <span style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnPrimary</span>);</div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #ff0000;">background-size</span>: <span
+      style="color: #098658;">15000%</span>;</div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; [<span style="color: #ff0000;">slot</span>=<span
+      style="color: #a31515;">"menu"</span>] <span
+      style="color: #800000;">span</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">vertical-align</span>: <span
+      style="color: #0451a5;">middle</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin-right</span>: <span
+      style="color: #098658;">12px</span>;</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">button.icono</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">padding</span>: <span
       style="color: #098658;">4px</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">border</span>: <span
@@ -1358,54 +1629,30 @@
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--OnSurface</span>);</div>
    <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">.noios</span> <span
-      style="color: #800000;">button.icono.toggle</span> <span
-      style="color: #800000;">span:before</span> {</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>: <span
-      style="color: #a31515;">"more_vert"</span>;</div>
-   <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">.ios</span> <span
-      style="color: #800000;">button.icono.toggle</span> <span
-      style="color: #800000;">span:before</span> {</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>: <span
-      style="color: #a31515;">"more_horiz"</span>;</div>
-   <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">h1</span>+<span
-      style="color: #800000;">button.icono</span> {</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin-left</span>: <span
-      style="color: #0451a5;">auto</span>;</div>
-   <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">button.icono.toggle</span> <span
-      style="color: #800000;">span</span>,</div>
-   <div>&nbsp; <span style="color: #800000;">button.icono.accion</span> <span
+   <div>&nbsp; <span
+      style="color: #800000;">button.icono:hover</span> <span
       style="color: #800000;">span</span> {</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
-      style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--OnSurfaceVariant</span>);</div>
-   <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">button.icono:hover</span> <span
-      style="color: #800000;">.material-symbols-outlined</span> {</div>
    <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--OnSurfaceHover</span>);</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">button.icono:focus</span> <span
-      style="color: #800000;">.material-symbols-outlined</span> {</div>
+      style="color: #800000;">span</span> {</div>
    <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--OnSurfaceFocus</span>);</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">button.icono:active</span> <span
-      style="color: #800000;">.material-symbols-outlined</span> {</div>
+      style="color: #800000;">span</span> {</div>
    <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--OnSurfacePressed</span>);</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #800000;">button.icono:disabled</span> <span
-      style="color: #800000;">.material-symbols-outlined</span> {</div>
+      style="color: #800000;">span</span> {</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--DisabledContent</span>);</div>
@@ -1416,87 +1663,84 @@
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div class="resaltado2"><span
-      style="color: #800000;">&lt;body&gt;</span></div>
-   <div class="resaltado">&nbsp;<span
-      style="color: #800000;">&lt;top-app-bar&gt;</span></div>
-   <div class="resaltado">&nbsp; <span
-      style="color: #800000;">&lt;menu-button&gt;</span></div>
-   <div class="resaltado">&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;button</span> <span
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;top-app-bar&gt;</span></div>
+   <div>&nbsp; <span
+      style="color: #800000;">&lt;menu-button&gt;&lt;/menu-button&gt;</span>
+   </div>
+   <div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>Otra<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;button</span> <span
       style="color: #ff0000;">type</span>=<span
       style="color: #0000ff;">"button"</span></div>
-   <div class="resaltado">&nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"icono"</span><span
+   <div>&nbsp; &nbsp; <span style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"icono"</span> <span
+      style="color: #ff0000;">slot</span>=<span
+      style="color: #0000ff;">"action"</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #ff0000;">title</span>=<span
+      style="color: #0000ff;">"Agregar"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; add</div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;button</span> <span
+      style="color: #ff0000;">type</span>=<span
+      style="color: #0000ff;">"button"</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"icono"</span> <span
+      style="color: #ff0000;">slot</span>=<span
+      style="color: #0000ff;">"action"</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #ff0000;">title</span>=<span
+      style="color: #0000ff;">"Editar"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; edit</div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;button</span> <span
+      style="color: #ff0000;">type</span>=<span
+      style="color: #0000ff;">"button"</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"icono"</span> <span
+      style="color: #ff0000;">slot</span>=<span
+      style="color: #0000ff;">"toggle"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;div</span> <span
+      style="color: #ff0000;">slot</span>=<span
+      style="color: #0000ff;">"menu"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;button</span> <span
+      style="color: #ff0000;">type</span>=<span
+      style="color: #0000ff;">"button"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;span</span></div>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">class</span>=<span
       style="color: #0000ff;">"material-symbols-outlined"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;menu</div>
+   <div>&nbsp; &nbsp; &nbsp;star</div>
    <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp; &nbsp; Marcar favorito</div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/button&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;/menu-button&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>Otra<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div class="resaltado">&nbsp; <span
-      style="color: #800000;">&lt;button</span> <span
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;button</span> <span
       style="color: #ff0000;">type</span>=<span
-      style="color: #0000ff;">"button"</span></div>
-   <div class="resaltado">&nbsp; &nbsp; <span
-      style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"icono accion"</span><span
+      style="color: #0000ff;">"button"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">class</span>=<span
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;span</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">class</span>=<span
       style="color: #0000ff;">"material-symbols-outlined"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; save</div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div>
-   <div class="resaltado">&nbsp; <span
-      style="color: #800000;">&lt;button</span> <span
-      style="color: #ff0000;">type</span>=<span
-      style="color: #0000ff;">"button"</span></div>
-   <div class="resaltado">&nbsp; &nbsp; <span
-      style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"icono accion"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"material-symbols-outlined"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; delete</div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div>
-   <div class="resaltado">&nbsp; <span
-      style="color: #800000;">&lt;button</span> <span
-      style="color: #ff0000;">type</span>=<span
-      style="color: #0000ff;">"button"</span></div>
-   <div class="resaltado">&nbsp; &nbsp; <span
-      style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"icono toggle"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div class="resaltado">&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;span</span></div>
-   <div class="resaltado">&nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"material-symbols-outlined"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div class="resaltado">&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div>
-   <div class="resaltado">&nbsp; <span
-      style="color: #800000;">&lt;button</span> <span
-      style="color: #ff0000;">type</span>=<span
-      style="color: #0000ff;">"button"</span></div>
-   <div class="resaltado">&nbsp; &nbsp; <span
-      style="color: #ff0000;">slot</span>=<span
-      style="color: #0000ff;">"extension"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp;Guardar</div>
-   <div>&nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp;delete</div>
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp; &nbsp; Eliminar</div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/button&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;/div&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;/top-app-bar&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>x<span
@@ -1602,10 +1846,10 @@
     <a href="/index.html"
       data-logo="true">GilPG DM</a>
    </p><p>
-    <a class="paginaAnterior" href="/m03pwa/mEresumen.html"
-      title="E. Resumen">▲</a>
+    <a class="paginaAnterior" href="/m04pwaBasica/mUresumen.html"
+      title="U. Resumen">▲</a>
    </p>
-     <h1><a href="/m02vistas/index.html">3. Vistas móviles</a></h1>
+     <h1><a href="/m02vistas/index.html">4. Vistas móviles</a></h1>
    <ol type="A">
     <li>
      <p>
@@ -1639,7 +1883,7 @@
     </li>
     <li>
      <p>
-      <a href="/m02vistas/mDcampos.html">Campos</a>
+      <a href="/m02vistas/mDcampos.html">Campos de texto</a>
      </p>
     </li>
     <li>
@@ -1703,8 +1947,8 @@
      </p>
     </li>
    </ol><p>
-    <a class="paginaSiguiente" href="/m04pwaBasica/index.html"
-      title="4. PWA básica">▼</a>
+    <a class="paginaSiguiente" href="/m05pwaMaterial/index.html"
+      title="5. PWA con Material Design">▼</a>
    </p>
 </nav>
  <script>
