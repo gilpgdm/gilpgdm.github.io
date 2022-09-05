@@ -154,55 +154,55 @@
     this._shadow.innerHTML =
      /* html */
      `<style>
-      :host {
-       z-index: 2;
-       position: sticky;
-       top: 0;
-       display: block;
-       color: var(--OnSurface);
-       background-color:
-        var(--Surface)
-      }
+   :host {
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    display: block;
+    color: var(--OnSurface);
+    background-color:
+     var(--Surface)
+   }
 
-      :host(.${ELEVATION_CLASS}) {
-       background-color:
-        var(--Elevation);
-      }
+   :host(.${ELEVATION_CLASS}) {
+    background-color:
+     var(--Elevation);
+   }
 
-      [${HEADLINE_NAME}]::slotted(*) {
-       margin: 0 70px;
-       line-height: 64px;
-       text-align: center;
-       white-space: nowrap;
-       text-overflow: ellipsis;
-       overflow: hidden;
-       font-family:
-        var(--TitleLargeFont);
-       font-size:
-        var(--TitleLargeSize);
-       font-weight:
-        var(--TitleLargeWeight);
-      }
+   [${HEADLINE_NAME}]::slotted(*) {
+    margin: 0 70px;
+    line-height: 64px;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family:
+     var(--TitleLargeFont);
+    font-size:
+     var(--TitleLargeSize);
+    font-weight:
+     var(--TitleLargeWeight);
+   }
 
-      [${NAVIGATION_NAME}]::slotted(*) {
-       position: absolute;
-       top: 8px;
-       left: 4px
-      }
+   [${NAVIGATION_NAME}]::slotted(*) {
+    position: absolute;
+    top: 8px;
+    left: 4px
+   }
 
-      [${AVATAR_NAME}]::slotted(*) {
-       position: absolute;
-       top: 8px;
-       right: 7px
-      }
-     </style>
-     <slot
-       ${HEADLINE_NAME}></slot>
-     <slot
-       ${NAVIGATION_NAME}></slot>
-     <slot ${AVATAR_NAME}></slot>
-     <slot
-       name="adicional"></slot>`
+   [${AVATAR_NAME}]::slotted(*) {
+    position: absolute;
+    top: 8px;
+    right: 7px
+   }
+  </style>
+  <slot
+    ${HEADLINE_NAME}></slot>
+  <slot
+    ${NAVIGATION_NAME}></slot>
+  <slot ${AVATAR_NAME}></slot>
+  <slot
+    name="adicional"></slot>`
     /**
      * @private
      * @type {number}
@@ -269,7 +269,6 @@
     this._scrolling = false
    }
   }
-
   customElements.define(
    "center-aligned-top-app-bar",
    CenterAlignedTopAppBar)

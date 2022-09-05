@@ -93,87 +93,87 @@
     this._shadow.innerHTML =
      /* html */
      `<style>
-      :host {
-       position: relative;
-      }
+   :host {
+    position: relative;
+   }
 
-      div {
-       position: absolute;
-       min-width: 112px;
-       max-width: 280px;
-       top: 3rem;
-       right: 1rem;
-       display: block;
-       pointer-events: none;
-       transform:
-        translateY(-50%) scaleY(0);
-       transition: transform 0.5s;
-       box-sizing: border-box;
-       padding: 4px 0;
-       border-radius:
-        var(--ShapeCornerMedium);
-       background-color:
-        var(--Elevation);
-       cursor: default;
-       box-shadow:
-        var(--ElevationLevel2);
-      }
+   div {
+    position: absolute;
+    min-width: 112px;
+    max-width: 280px;
+    top: 3rem;
+    right: 1rem;
+    display: block;
+    pointer-events: none;
+    transform:
+     translateY(-50%) scaleY(0);
+    transition: transform 0.5s;
+    box-sizing: border-box;
+    padding: 4px 0;
+    border-radius:
+     var(--ShapeCornerMedium);
+    background-color:
+     var(--Elevation);
+    cursor: default;
+    box-shadow:
+     var(--ElevationLevel2);
+   }
 
-      :host(.${OPEN_CLASS}) div {
-       pointer-events: all;
-       transform:
-        translateY(0) scaleY(1);
-      }
+   :host(.${OPEN_CLASS}) div {
+    pointer-events: all;
+    transform:
+     translateY(0) scaleY(1);
+   }
 
-      #${MENU_ID}::slotted(*) {
-       display: block;
-       border: none;
-       background-color:
-        transparent;
-       color: var(--OnSurface);
-       font-family:
-        var(--LabelLargeFont);
-       font-size:
-        var(--LabelLargeSize);
-       font-weight:
-        var(--LabelLargeWeight);
-       box-sizing: border-box;
-       width: 100%;
-       height: 48px;
-       line-height: 48px;
-       padding: 0 12px;
-       white-space: nowrap;
-       text-overflow: ellipsis;
-       overflow: hidden;
-       text-align: start;
-      }
+   #${MENU_ID}::slotted(*) {
+    display: block;
+    border: none;
+    background-color:
+     transparent;
+    color: var(--OnSurface);
+    font-family:
+     var(--LabelLargeFont);
+    font-size:
+     var(--LabelLargeSize);
+    font-weight:
+     var(--LabelLargeWeight);
+    box-sizing: border-box;
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: start;
+   }
 
-      #${MENU_ID}::slotted(:hover) {
-       background-color:
-        var(--OnSurfaceHover);
-      }
+   #${MENU_ID}::slotted(:hover) {
+    background-color:
+     var(--OnSurfaceHover);
+   }
 
-      #${MENU_ID}::slotted(:focus) {
-       background-color:
-        var(--OnSurfaceFocus);
-      }
+   #${MENU_ID}::slotted(:focus) {
+    background-color:
+     var(--OnSurfaceFocus);
+   }
 
-      #${MENU_ID}::slotted(:active) {
-       background-color:
-        var(--Primary);
-       background-position: center;
-       background-image: radial-gradient(circle, transparent 1%, var(--SurfaceVariant) 1%);
-       background-size: 100%;
-       animation-fill-mode:
-        forwards;
-       animation-name: rippleMenu;
-       animation-duration: 0.5s;
-      }
-     </style>
-     <slot ${ICON_NAME}></slot>
-     <div>
-      <slot id="${MENU_ID}"></slot>
-     </div>`
+   #${MENU_ID}::slotted(:active) {
+    background-color:
+     var(--Primary);
+    background-position: center;
+    background-image: radial-gradient(circle, transparent 1%, var(--SurfaceVariant) 1%);
+    background-size: 100%;
+    animation-fill-mode:
+     forwards;
+    animation-name: rippleMenu;
+    animation-duration: 0.5s;
+   }
+  </style>
+  <slot ${ICON_NAME}></slot>
+  <div>
+   <slot id="${MENU_ID}"></slot>
+  </div>`
     this._alterna =
      this._alterna.bind(this)
     this._clickCierra =
@@ -229,16 +229,16 @@
       e.innerHTML =
        ES_APPLE ? /* html */
         `<span style="color:
-           var(--OnSurfaceVariant)"
-           class="material-symbols-outlined">
-           more_horiz
-         </span>`
+        var(--OnSurfaceVariant)"
+        class="material-symbols-outlined">
+        more_horiz
+      </span>`
         : /* html */
         `<span style="color:
-           var(--OnSurfaceVariant)"
-           class="material-symbols-outlined">
-           more_vert
-         </span>`
+        var(--OnSurfaceVariant)"
+        class="material-symbols-outlined">
+        more_vert
+      </span>`
      }
     }
    }
@@ -312,120 +312,120 @@
     this._shadow.innerHTML =
      /* html */
      `<style>
-      :host {
-       z-index: 2;
-       position: sticky;
-       top: 0;
-       display: block;
-       color: var(--OnSurface);
-       background-color:
-        var(--Surface)
-      }
+   :host {
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    display: block;
+    color: var(--OnSurface);
+    background-color:
+     var(--Surface)
+   }
 
-      :host(.${ELEVATION_CLASS}) {
-       background-color:
-        var(--Elevation);
-      }
+   :host(.${ELEVATION_CLASS}) {
+    background-color:
+     var(--Elevation);
+   }
 
-      #base {
-       display: flex;
-       align-items: center;
-       padding-left: 4px;
-       padding-right: 4px;
-      }
+   #base {
+    display: flex;
+    align-items: center;
+    padding-left: 4px;
+    padding-right: 4px;
+   }
 
-      #navigation {
-       min-height: 24px;
-       min-width: 12px;
-      }
+   #navigation {
+    min-height: 24px;
+    min-width: 12px;
+   }
 
-      [${HEADLINE_NAME}]::slotted(*) {
-       height: 64px;
-       line-height: 64px;
-       white-space: nowrap;
-       text-overflow: ellipsis;
-       overflow: hidden;
-       font-family:
-        var(--TitleLargeFont);
-       font-size:
-        var(--TitleLargeSize);
-       font-weight:
-        var(--TitleLargeWeight);
-      }
+   [${HEADLINE_NAME}]::slotted(*) {
+    height: 64px;
+    line-height: 64px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family:
+     var(--TitleLargeFont);
+    font-size:
+     var(--TitleLargeSize);
+    font-weight:
+     var(--TitleLargeWeight);
+   }
 
-      :host(.${MEDIUM_CLASS}) [${HEADLINE_NAME}]::slotted(*) {
-       height: 24px;
-       pointer-events: none;
-       transform:
-        translateY(50%) scaleY(0);
-       transition: 0.5s;
-      }
+   :host(.${MEDIUM_CLASS}) [${HEADLINE_NAME}]::slotted(*) {
+    height: 24px;
+    pointer-events: none;
+    transform:
+     translateY(50%) scaleY(0);
+    transition: 0.5s;
+   }
 
-      :host(.${MEDIUM_CLASS}.${ELEVATION_CLASS}) [${HEADLINE_NAME}]::slotted(*) {
-       height: 64px;
-       pointer-events: all;
-       transform:
-        translateY(0) scaleY(1);
-      }
+   :host(.${MEDIUM_CLASS}.${ELEVATION_CLASS}) [${HEADLINE_NAME}]::slotted(*) {
+    height: 64px;
+    pointer-events: all;
+    transform:
+     translateY(0) scaleY(1);
+   }
 
-      [${HEADLINE_SMALL_NAME}]::slotted(*) {
-       box-sizing: border-box;
-       margin: 0;
-       padding: 0 16px 16px 16px;
-       font-family:
-        var(--TitleLargeFont);
-       font-size:
-        var(--TitleLargeSize);
-       font-weight:
-        var(--TitleLargeWeight);
-       transform: scaleY(1);
-       transition: 0.5s;
-      }
+   [${HEADLINE_SMALL_NAME}]::slotted(*) {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 16px 16px 16px;
+    font-family:
+     var(--TitleLargeFont);
+    font-size:
+     var(--TitleLargeSize);
+    font-weight:
+     var(--TitleLargeWeight);
+    transform: scaleY(1);
+    transition: 0.5s;
+   }
 
-      :host(.${ELEVATION_CLASS}) [${HEADLINE_SMALL_NAME}]::slotted(*) {
-       height: 0;
-       padding: 0;
-       pointer-events: none;
-       transform: scaleY(0);
-      }
+   :host(.${ELEVATION_CLASS}) [${HEADLINE_SMALL_NAME}]::slotted(*) {
+    height: 0;
+    padding: 0;
+    pointer-events: none;
+    transform: scaleY(0);
+   }
 
-      :host(.${CLASS_CENTRADO}) [${HEADLINE_NAME}]::slotted(*) {
-       position: absolute;
-       top: 0;
-       left: 0;
-       right: 0;
-       margin: 0 70px;
-       line-height: 64px;
-       text-align: center;
-      }
+   :host(.${CLASS_CENTRADO}) [${HEADLINE_NAME}]::slotted(*) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 70px;
+    line-height: 64px;
+    text-align: center;
+   }
 
-      :host(.${CLASS_JUSTIFICADO}) [${HEADLINE_NAME}]::slotted(*) {
-       flex: 1 0;
-       margin: 0;
-       padding-left: 4px;
-       padding-right: 12px;
-       line-height: 64px;
-      }
+   :host(.${CLASS_JUSTIFICADO}) [${HEADLINE_NAME}]::slotted(*) {
+    flex: 1 0;
+    margin: 0;
+    padding-left: 4px;
+    padding-right: 12px;
+    line-height: 64px;
+   }
 
-      [${OVERFLOW_NAME}]::slotted(*) {
-       margin-left: auto;
-      }
-     </style>
-     <div id="base">
-      <div id="navigation">
-       <slot
-         ${NAVIGATION_NAME}></slot>
-      </div>
-      <slot
-       ${HEADLINE_NAME}></slot>
-      <slot ${ACTION_NAME}></slot>
-      <slot
-       ${OVERFLOW_NAME}></slot>
-     </div>
-     <slot ${HEADLINE_SMALL_NAME}>
-     </slot>
-     <slot
-       name="adicional"></slot>`
+   [${OVERFLOW_NAME}]::slotted(*) {
+    margin-left: auto;
+   }
+  </style>
+  <div id="base">
+   <div id="navigation">
+    <slot
+      ${NAVIGATION_NAME}></slot>
+   </div>
+   <slot
+    ${HEADLINE_NAME}></slot>
+   <slot ${ACTION_NAME}></slot>
+   <slot
+    ${OVERFLOW_NAME}></slot>
+  </div>
+  <slot ${HEADLINE_SMALL_NAME}>
+  </slot>
+  <slot
+    name="adicional"></slot>`
     /**
      * @private
      * @type {number}

@@ -79,6 +79,7 @@
    "required"
   const SELECT_MENU_TAG =
    "select-menu"
+  const INVALID_EVENT = "invalid"
 
   /**
    * @param {HTMLElement} element
@@ -107,6 +108,11 @@
    } else {
     element.removeAttribute(name)
    }
+  }
+
+  function txtObligatorio() {
+   return "Este campo es " +
+    "obligatorio"
   }
 
   class MenuOption
@@ -216,7 +222,9 @@
     border-top-right-radius:
      var(
       --ShapeCornerExtraSmall);
-     position: relative;
+    position: relative;
+    height: 56px;
+    box-sizing: border-box;
     display: block;
     cursor: pointer;
     padding: 24px 0 0 0;
@@ -454,6 +462,16 @@
     this._cierra =
      this._cierra.bind(this)
     /**
+     * @readonly
+     * @type {{valid:boolean}}
+     */
+    this.validity = { valid: true }
+    /**
+     * @private
+     * @type {string}
+     */
+    this._customValidity = ""
+    /**
      * @private
      * @type {HTMLLabelElement|
      *        null}
@@ -559,6 +577,18 @@
      VALUE_PROPERTY, value)
    }
 
+   get validationMessage() {
+    if (this._customValidity
+     !== "") {
+     return this._customValidity
+    } else if (this.required
+     && this.value === "") {
+     return txtObligatorio()
+    } else {
+     return ""
+    }
+   }
+
    analiza() {
     const t = this._target
     if (t !== null) {
@@ -580,10 +610,27 @@
     }
    }
 
+   /** @param {string} error */
+   setCustomValidity(error) {
+    this._customValidity = error
+    this.checkValidity()
+   }
+
    /** @returns {boolean} */
    checkValidity() {
-    return !this.required ||
-     this.value !== ""
+    if (this._customValidity !== ""
+     || (this.required
+      && this.value === "")) {
+     this.validity.valid = false
+     this.dispatchEvent(new Event(
+      INVALID_EVENT,
+      { cancelable: true }
+     ))
+     return false
+    } else {
+     this.validity.valid = true
+     return true
+    }
    }
 
    /** @private */
@@ -696,6 +743,7 @@
     * @returns {MenuOption[]}
     */
    get _opciones() {
+    /** @type {MenuOption[]} */
     const arr = []
     const m = this._menuSlot
     if (m !== null) {
@@ -805,8 +853,8 @@
      IC-23
     </menu-option>
    </select-menu>
+   <p><button>Enviar</button></p>
   </section>
-  <p><button>Enviar</button></p>
  </form>
 </body>
 
