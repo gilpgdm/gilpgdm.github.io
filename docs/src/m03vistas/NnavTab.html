@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Pestañas</title>
+ <link rel="preconnect"
+   href="https://fonts.googleapis.com">
+ <link rel="preconnect"
+   href="https://fonts.gstatic.com"
+   crossorigin>
+ <link rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+ <link rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+ <style>
+  html {
+   --Font: -apple-system,
+    BlinkMacSystemFont, Roboto,
+    sans-serif;
+   --TitleLargeFont: var(--Font);
+   --TitleLargeSize: 22px;
+   --TitleLargeWeight: 400;
+   --LabelLargeFont: var(--Font);
+   --LabelLargeSize: 14px;
+   --LabelLargeWeight: 500;
+   --Background: #FFFBFE;
+   --OnBackground: #1C1B1F;
+   --Surface: #FFFBFE;
+   --OnSurface: #1C1B1F;
+   --OnSurfaceHover: #1C1B1F14;
+   --OnSurfaceFocus: #1C1B1F19;
+   --OnSurfacePressed: #1C1B1F1E;
+   --OnSurfaceVariant: #49454F;
+   --OnSurfaceShadow: #1C1B1F99;
+   --Primary: #6750A4;
+   --PrimaryHover: #6750A414;
+   --PrimaryFocus: #6750A419;
+   --PrimaryPressed: #6750A41E;
+   --OnPrimary: #FFFFFF;
+   --OnPrimaryHover: #FFFFFF14;
+   --OnPrimaryFocus: #FFFFFF19;
+   --OnPrimaryPressed: #FFFFFF1E;
+   --Elevation: #F5EEFA;
+   --Shadow: #000000;
+   --ElevationLevel0: none;
+   --ElevationLevel0Shadow: none;
+   --ElevationLevel1Shadow:
+    0 1px 1px 1px var(--Shadow);
+   font-size: 16px;
+   font-family: var(--Font);
+   color: var(--OnBackground);
+   background-color:
+    var(--Background);
+  }
+ </style>
+ <script>
+  const ELEVATION_CLASS =
+   "elevation"
+  const HEADLINE_NAME =
+   'name="headline"'
+  const NAVIGATION_NAME =
+   'name="navigation"'
+  const AVATAR_NAME =
+   'name="avatar"'
+
+  class MiNav extends HTMLElement {
+   connectedCallback() {
+    this.classList.add("navTab")
+    this.innerHTML = /* html */
+     `<a href="index.html"
+       class="selected">
+      <span
+        class="material-symbols-outlined">
+       home
+      </span>
+      Inicio
+     </a>
+     <a href="ayuda.html">
+      <span
+        class="material-symbols-outlined">
+       help
+      </span>
+      Ayuda
+     </a>`
+   }
+  }
+  customElements.
+   define("mi-nav", MiNav);
+
+  class CenterAlignedTopAppBar
+   extends HTMLElement {
+
+   constructor() {
+    super()
+    /**
+     * @private
+     * @type {ShadowRoot}
+     */
+    this._shadow = this.
+     attachShadow({ mode: "open" })
+    this._shadow.innerHTML =
+     /* html */
+     `<style>
+      :host {
+       z-index: 2;
+       position: sticky;
+       top: 0;
+       display: block;
+       color: var(--OnSurface);
+       background-color:
+        var(--Surface)
+      }
+
+      :host(.${ELEVATION_CLASS}) {
+       background-color:
+        var(--Elevation);
+      }
+
+      [${HEADLINE_NAME}]::slotted(*) {
+       margin: 0 70px;
+       line-height: 64px;
+       text-align: center;
+       white-space: nowrap;
+       text-overflow: ellipsis;
+       overflow: hidden;
+       font-family:
+        var(--TitleLargeFont);
+       font-size:
+        var(--TitleLargeSize);
+       font-weight:
+        var(--TitleLargeWeight);
+      }
+
+      [${NAVIGATION_NAME}]::slotted(*) {
+       position: absolute;
+       top: 8px;
+       left: 4px
+      }
+
+      [${AVATAR_NAME}]::slotted(*) {
+       position: absolute;
+       top: 8px;
+       right: 7px
+      }
+     </style>
+     <slot
+       ${HEADLINE_NAME}></slot>
+     <slot
+       ${NAVIGATION_NAME}></slot>
+     <slot ${AVATAR_NAME}></slot>
+     <slot
+       name="adicional"></slot>`
+    /**
+     * @private
+     * @type {number}
+     */
+    this._posY = 0
+    /**
+     * @private
+     * @type {boolean}
+     */
+    this._scrolling = false
+    /**
+     * @private
+     * @type {HTMLSlotElement|
+     *        null}
+     */
+    this._avatar = this._shadow.
+     querySelector(
+      `[${AVATAR_NAME}]`)
+    if (this._avatar !== null) {
+     this._avatar.addEventListener(
+      "slotchange",
+      () => this._avatarConfig())
+    }
+    addEventListener("scroll",
+     () => this._onScroll())
+   }
+
+   /** @private */
+   _avatarConfig() {
+    if (this._avatar !== null) {
+     for (const e of this._avatar
+      .assignedElements()) {
+      const span =
+       e.querySelector("span")
+      if (span !== null) {
+       span.style.color =
+        "var(--OnSurfaceVariant)"
+       span.style.padding = "5px"
+       span.style.fontSize = "30px"
+      }
+     }
+    }
+   }
+
+   /** @private */
+   _onScroll() {
+    this._posY = scrollY
+    if (!this._scrolling) {
+     requestAnimationFrame(
+      () => this._avanza())
+    }
+    this._scrolling = true
+   }
+
+   /** @private */
+   _avanza() {
+    if (this._posY === 0) {
+     this.classList.
+      remove(ELEVATION_CLASS)
+    } else {
+     this.classList.
+      add(ELEVATION_CLASS)
+    }
+    this._scrolling = false
+   }
+  }
+
+  customElements.define(
+   "center-aligned-top-app-bar",
+   CenterAlignedTopAppBar)
+ </script>
+ <style>
+  body {
+   margin: 0;
+   scroll-padding-top: 8rem;
+  }
+
+  p {
+   margin: 1rem;
+  }
+
+  .navTab {
+   display: flex;
+   padding-bottom: 16px;
+   gap: 16px;
+   justify-content: center;
+  }
+
+  .navTab a {
+   position: relative;
+   text-decoration: none;
+   color: var(--Primary);
+   font-family:
+    var(--LabelLargeFont);
+   font-size:
+    var(--LabelLargeSize);
+   font-weight:
+    var(--LabelLargeWeight);
+   box-sizing: border-box;
+   height: 40px;
+   line-height: 40px;
+   padding: 0 24px;
+   border-radius: 20px;
+   overflow: hidden;
+  }
+
+  .navTab a:hover {
+   background-color:
+    var(--PrimaryHover);
+   box-shadow:
+    var(--ElevationLevel1Shadow);
+  }
+
+  .navTab a:focus {
+   outline: none;
+   background-color:
+    var(--PrimaryFocus);
+  }
+
+  .navTab a:active {
+   background-color:
+    var(--PrimaryPressed);
+   background-image: radial-gradient(circle, transparent 1%, var(--PrimaryHover) 1%);
+   background-position: center;
+   background-size: 100%;
+   animation-fill-mode: forwards;
+   animation-name: ripple;
+   animation-duration: 0.5s;
+  }
+
+  .navTab a.selected::after {
+   content: "";
+   background-color:
+    var(--Primary);
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+  }
+
+  .navTab a.selected {
+   background-color: transparent;
+   box-shadow:
+    var(--ElevationLevel0Shadow);
+   color: var(--OnPrimary);
+  }
+
+  .navTab a.selected:hover {
+   background-color:
+    var(--OnPrimaryHover);
+   box-shadow:
+    var(--ElevationLevel1Shadow);
+  }
+
+  .navTab a.selected:focus {
+   background-color:
+    var(--OnPrimaryFocus);
+  }
+
+  .navTab a.selected:active {
+   background-color:
+    var(--OnPrimaryPressed);
+  }
+
+  .navTab span {
+   vertical-align: middle;
+  }
+
+  @keyframes ripple {
+   from {
+    background-size: 100%;
+   }
+
+   to {
+    background-size: 15000%;
+   }
+  }
+ </style>
+</head>
+
+<body>
+ <center-aligned-top-app-bar>
+  <h1 slot="headline">Pestañas</h1>
+  <mi-nav
+    slot="adicional"></mi-nav>
+ </center-aligned-top-app-bar>
+</body>
+
+</html>

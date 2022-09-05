@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Navegación</title>
+ <link rel="preconnect"
+   href="https://fonts.googleapis.com">
+ <link rel="preconnect"
+   href="https://fonts.gstatic.com"
+   crossorigin>
+ <link rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+ <link rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+ <style>
+  html {
+   --Font: -apple-system,
+    BlinkMacSystemFont, Roboto,
+    sans-serif;
+   --LabelMediumFont: var(--Font);
+   --LabelMediumSize: 12px;
+   --LabelMediumWeight: 500;
+   --Background: #FFFBFE;
+   --OnBackground: #1C1B1F;
+   --OnSurface: #1C1B1F;
+   --OnSurfaceHover: #1C1B1F14;
+   --OnSurfaceFocus: #1C1B1F19;
+   --OnSurfacePressed: #1C1B1F1E;
+   --OnSurfaceVariant: #49454F;
+   --OnSurfaceVariantHover:
+    #49454F14;
+   --OnSurfaceVariantFocus:
+    #49454F19;
+   --OnSurfaceVariantPressed:
+    #49454F1E;
+   --SecondaryContainer: #E8DEF8;
+   --OnSecondaryContainer:
+    #1D192B;
+   --Elevation: #F5EEFA;
+   font-size: 16px;
+   font-family: var(--Font);
+   color: var(--OnBackground);
+   background-color:
+    var(--Background);
+  }
+ </style>
+ <script>
+  class MiNav extends HTMLElement {
+   connectedCallback() {
+    this.classList.add("navBar")
+    this.innerHTML = /* html */
+     `<a href="index.html">
+       <span
+         class="material-symbols-outlined">
+        home
+       </span>
+       Inicio
+      </a>
+      <a href="index.html"
+        class="selected">
+       <span
+        class="material-symbols-outlined">
+         analytics
+        </span>
+       Analizar
+      </a>
+      <a href="ayuda.html">
+       <span
+         class="material-symbols-outlined">
+        help
+       </span>
+       Ayuda
+      </a>`
+   }
+  }
+  customElements.
+   define("mi-nav", MiNav);
+ </script>
+ <style>
+  /* El margin-bottom es más grande
+   * para que no lo tape la barra
+   * de navegación. */
+  body {
+   margin: 0 0 5rem 0;
+   scroll-padding-top: 3rem;
+   scroll-padding-bottom: 5rem;
+  }
+
+  .navBar {
+   display: flex;
+   position: fixed;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color:
+    var(--Elevation)
+  }
+
+  .navBar a {
+   display: block;
+   flex: 1;
+   color: var(--OnSurfaceVariant);
+   line-height: 16px;
+   font-family:
+    var(--LabelMediumFont);
+   font-size:
+    var(--LabelMediumSize);
+   font-weight:
+    var(--LabelMediumWeight);
+   text-decoration: none;
+   padding-top: 12px;
+   padding-bottom: 16px;
+   padding-left: 4px;
+   padding-right: 4px;
+   text-align: center;
+  }
+
+  .navBar a.selected {
+   color: var(--OnSurface);
+  }
+
+  .navBar a:hover {
+   background-color:
+    var(--OnSurfaceVariantHover);
+  }
+
+  .navBar a.selected:hover {
+   background-color:
+    var(--OnSurfaceHover);
+  }
+
+  .navBar a:focus {
+   outline: none;
+   background-color:
+    var(--OnSurfaceVariantFocus);
+  }
+
+  .navBar a.selected:focus {
+   background-color:
+    var(--OnSurfaceFocus);
+  }
+
+  .navBar a:active {
+   background-color:
+    var(--OnSurfaceVariantPressed);
+  }
+
+  .navBar a.selected:active {
+   background-color:
+    var(--OnSurfacePressed);
+  }
+
+  .navBar span {
+   color: var(--OnSurfaceVariant);
+   position: relative;
+   display: block;
+   height: 32px;
+   width: 64px;
+   line-height: 32px;
+   margin-bottom: 4px;
+   box-sizing: border-box;
+   margin-left: auto;
+   margin-right: auto;
+   overflow: hidden;
+  }
+
+  .navBar a.selected span {
+   color:
+    var(--OnSecondaryContainer);
+  }
+
+  .navBar a.selected:not(:focus, :active) {
+   font-variation-settings:
+    'FILL' 1, 'wght' 700, 'GRAD' 0,
+    'opsz' 48;
+  }
+
+  .navBar span::after {
+   content: "";
+   background-color:
+    var(--SecondaryContainer);
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   height: 32px;
+   width: 64px;
+   border-radius: 16px;
+   box-sizing: border-box;
+   transform: scaleX(0);
+   transition: transform 0.5s;
+  }
+
+  .navBar a.selected span::after,
+  .navBar a:active span::after {
+   transform: scaleX(1);
+  }
+ </style>
+</head>
+
+<body>
+ <mi-nav></mi-nav>
+</body>
+
+</html>

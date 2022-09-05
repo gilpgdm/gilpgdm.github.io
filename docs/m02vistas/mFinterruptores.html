@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="es" prefix="og: https://ogp.me/ns#">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>J. Botones segmentados - GilPG DM</title>
+ <meta name="description" content="Botones segmentados con HTML y CSS.">
+ <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
+ <style>
+ :root {
+  --padTop: 2rem;
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --colScrollbar: #CFD8DC;
+  --colThumb: #90a4ae;
+  --colThumbActivo: #3f3f3f;
+  --anchoThumb: 7px;
+  --borderRadiusThumb: 3.5px;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ body::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ body::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+
+  .pruebaDeEscritorio {
+   page-break-before: always;
+  }
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ muestra-codigo>div>div {
+  white-space: nowrap;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ body {
+  scroll-padding-top: var(--padTop);
+ }
+
+ body:not(.sinTransicion) #principal {
+  animation-timing-function: var(--introFuncion);
+  animation-duration: var(--introDuracion);
+  animation-fill-mode: forwards;
+  animation-name: aparece;
+ }
+
+ @keyframes aparece {
+  from {
+   opacity: 0;
+  }
+
+  to {
+   opacity: 1;
+  }
+ }
+
+ #principal {
+  padding-top: var(--padTop);
+  box-sizing: border-box;
+  transition: margin-left 0.7s ease-in-out;
+ }
+
+ #principal>#abre {
+  position: fixed;
+  top: var(--gap);
+  left: var(--gap);
+ }
+
+ #principal>.anterior {
+  position: fixed;
+  top: var(--gap);
+  background-color: var(--colFondo);
+  transition: left 0.7s ease-in-out;
+ }
+
+ #principal>.siguiente {
+  position: fixed;
+  top: var(--gap);
+  right: var(--gap);
+  background-color: var(--colFondo);
+ }
+
+ #principal h1:not(.default) {
+  text-shadow: var(--colTituloShadow);
+ }
+
+ #nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  overflow: auto;
+  color: var(--colLetra);
+  background-color: var(--colFondoNav);
+  padding: var(--padCont);
+  transition: transform 0.7s ease-in-out;
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ #nav::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ #nav::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ #nav::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ #nav::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ #nav p {
+  margin: 0;
+ }
+
+ #nav a:not([data-logo]) {
+  display: block;
+  padding: var(--padNav);
+ }
+
+ #nav a.actual code,
+ #nav a.actual strong {
+  color: var(--colTituloStrongSel);
+ }
+
+ #nav h1 a {
+  color: var(--colTituloLetra);
+ }
+
+ #nav a.actual {
+  color: var(--colFondo);
+  background-color: var(--colNavResaltada);
+ }
+
+ #nav a.paginaAnterior,
+ #nav a.paginaSiguiente {
+  text-align: center;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ @media screen and (max-width: 999px) {
+  #principal {
+   max-width: 100vw;
+  }
+
+  #cierra {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: var(--colSombra);
+   transform: translateX(-120%);
+   transition: transform 0.7s ease-out;
+  }
+
+  #nav {
+   width: min(var(--anchoNav), 70%);
+   box-shadow: var(--navSombra);
+  }
+
+  .xmenu>#nav {
+   transform: translateX(-120%);
+  }
+
+  .menu>#cierra,
+  .menu>#nav {
+   transform: translateX(0);
+  }
+
+  #principal>.anterior {
+   left: calc(2 * var(--gap) + 2rem);
+  }
+ }
+
+ @media screen and (min-width: 1000px) {
+  #cierra {
+   display: none;
+  }
+
+  #nav {
+   width: var(--anchoNav);
+  }
+
+  .menu>#nav {
+   transform: translateX(-120%);
+  }
+
+  .xmenu>#principal {
+   margin-left: var(--anchoNav)
+  }
+
+  .menu>#principal>.anterior {
+   left: calc(2 * var(--gap) + 2rem);
+  }
+
+  .xmenu>#principal>.anterior {
+   top: var(--gap);
+   left: calc(var(--anchoNav) + var(--gap));
+  }
+ }
+
+ @media print {
+
+  #nav,
+  #principal>#abre,
+  #principal>.anterior,
+  #principal>.siguiente {
+   display: none;
+  }
+ }
+</style>
+ 
+</head>
+<body class="xmenu">
+ <div id="principal">
+ <button id="abre" type="button" title="Menú" class="cambiaMenu">
+  &#x2630;
+ </button>
+ <a class="anterior" href="/m02vistas/mEbotones.html" title="I. Botones">◀</a>
+ <a class="siguiente" href="/m02vistas/mKlistas.html" title="K. Listas">▶</a>
+   <h1 >J. Botones segmentados</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Permiten selecionar de entre 2 a 5 opciones.
+   </p>
+  </li>
+  <li>
+   <p>
+    La base es un elemento con
+    <code class="language-html">class="segmented"</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Puedes usar
+    <code class="language-html">type="radio"</code>
+    para seleccionar una sola opción para un mismo valor del atributo
+    <code class="language-html">name</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Puedes usar
+    <code class="language-html">type="checkbox"</code>
+    para seleccionar varias opciones con un mismo valor del atributo
+    <code class="language-html">name</code>.
+   </p>
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m03vistas/Einterruptor.html" height="200"
+    title="Botón segmentado para móvil"></iframe>
+  <p class="noPrint">
+   <a href="/src/m03vistas/Einterruptor.html" target="_blank"
+     rel="noopener">Ábrelo en otra pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EBotones%20segmentados%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMaterial%2BSymbols%2BOutlined%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--Font%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20--LabelLargeFont%3A%20var(--Font)%3B%0A%20%20%20--LabelLargeSize%3A%2014px%3B%0A%20%20%20--LabelLargeWeight%3A%20500%3B%0A%20%20%20--Background%3A%20%23FFFBFE%3B%0A%20%20%20--OnBackground%3A%20%231C1B1F%3B%0A%20%20%20--Surface%3A%20%23FFFBFE%3B%0A%20%20%20--OnSurface%3A%20%231C1B1F%3B%0A%20%20%20--OnSurfaceHover%3A%20%231C1B1F14%3B%0A%20%20%20--OnSurfaceFocus%3A%20%231C1B1F19%3B%0A%20%20%20--OnSurfacePressed%3A%20%231C1B1F1E%3B%0A%20%20%20--Outline%3A%20%2379747E%3B%0A%20%20%20--SecondaryContainer%3A%20%23E8DEF8%3B%0A%20%20%20--OnSecondaryContainer%3A%0A%20%20%20%20%231D192B%3B%0A%20%20%20--OnSecondaryContainerHover%3A%0A%20%20%20%20%231D192B14%3B%0A%20%20%20--OnSecondaryContainerFocus%3A%0A%20%20%20%20%231D192B19%3B%0A%20%20%20--OnSecondaryContainerPressed%3A%0A%20%20%20%20%231D192B1E%3B%0A%20%20%20font-size%3A%2016px%3B%0A%20%20%20font-family%3A%20var(--Font)%3B%0A%20%20%20color%3A%20var(--OnBackground)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--Background)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cstyle%3E%0A%20%20p%20%7B%0A%20%20%20margin%3A%201rem%3B%0A%20%20%7D%0A%0A%20%20.segmented%20%7B%0A%20%20%20display%3A%20flex%3B%0A%20%20%20align-items%3A%20stretch%3B%0A%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%7D%0A%0A%20%20.segmented%20input%20%7B%0A%20%20%20display%3A%20none%3B%0A%20%20%7D%0A%0A%20%20.segmented%20label%20%7B%0A%20%20%20position%3A%20relative%3B%0A%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20border%3A%0A%20%20%20%201px%20solid%20var(--Outline)%3B%0A%20%20%20border-left%3A%20none%3B%0A%20%20%20color%3A%20var(--OnSurface)%3B%0A%20%20%20font-family%3A%0A%20%20%20%20var(--LabelLargeFont)%3B%0A%20%20%20font-size%3A%0A%20%20%20%20var(--LabelLargeSize)%3B%0A%20%20%20font-weight%3A%0A%20%20%20%20var(--LabelLargeWeight)%3B%0A%20%20%20flex%3A%201%3B%0A%20%20%20display%3A%20inline-block%3B%0A%20%20%20height%3A%2040px%3B%0A%20%20%20line-height%3A%2040px%3B%0A%20%20%20text-align%3A%20center%3B%0A%20%20%20padding%3A%200%2012px%3B%0A%20%20%20overflow%3A%20hidden%3B%0A%20%20%20white-space%3A%20nowrap%3B%0A%20%20%20text-overflow%3A%20ellipsis%3B%0A%20%20%20overflow%3A%20hidden%3B%0A%20%20%7D%0A%0A%20%20.segmented%20label%3Afirst-of-type%20%7B%0A%20%20%20border-top-left-radius%3A%2020px%3B%0A%20%20%20border-bottom-left-radius%3A%2020px%3B%0A%20%20%20border-left%3A%0A%20%20%20%201px%20solid%20var(--Outline)%3B%0A%20%20%7D%0A%0A%20%20.segmented%20label%3Alast-of-type%20%7B%0A%20%20%20border-top-right-radius%3A%2020px%3B%0A%20%20%20border-bottom-right-radius%3A%0A%20%20%20%2020px%3B%0A%20%20%7D%0A%0A%20%20.segmented%20label%3Ahover%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--OnSurfaceHover)%3B%0A%20%20%7D%0A%0A%20%20.segmented%20%3Afocus%2Blabel%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--OnSurfaceFocus)%3B%0A%20%20%7D%0A%0A%20%20.segmented%20%3Aactive%2Blabel%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--OnSurfacePressed)%3B%0A%20%20%20background-image%3A%20radial-gradient(circle%2C%20transparent%201%25%2C%20var(--OnSurfaceHover)%201%25)%3B%0A%20%20%20background-position%3A%20center%3B%0A%20%20%20background-size%3A%20100%25%3B%0A%20%20%20animation-fill-mode%3A%20forwards%3B%0A%20%20%20animation-name%3A%20ripple%3B%0A%20%20%20animation-duration%3A%200.5s%3B%0A%20%20%7D%0A%0A%20%20.segmented%20%3Achecked%2Blabel%20%7B%0A%20%20%20color%3A%0A%20%20%20%20var(--OnSecondaryContainer)%3B%0A%20%20%7D%0A%0A%20%20.segmented%20%3Achecked%2Blabel%3Aafter%20%7B%0A%20%20%20content%3A%20%22%22%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--SecondaryContainer)%3B%0A%20%20%20position%3A%20absolute%3B%0A%20%20%20z-index%3A%20-1%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20right%3A%200%3B%0A%20%20%20left%3A%200%3B%0A%20%20%20bottom%3A%200%3B%0A%20%20%7D%0A%0A%20%20.segmented%20%3Achecked%2Blabel%3Ahover%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--OnSecondaryContainerHover)%3B%0A%20%20%7D%0A%0A%20%20.segmented%20%3Achecked%3Afocus%2Blabel%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--OnSecondaryContainerFocus)%3B%0A%20%20%7D%0A%0A%20%20.segmented%20%3Achecked%3Aactive%2Blabel%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--OnSecondaryContainerPressed)%3B%0A%20%20%20background-image%3A%20radial-gradient(circle%2C%20transparent%201%25%2C%20var(--OnSecondaryContainerHover)%201%25)%3B%0A%20%20%20background-position%3A%20center%3B%0A%20%20%20background-size%3A%20100%25%3B%0A%20%20%20animation-fill-mode%3A%20forwards%3B%0A%20%20%20animation-name%3A%20ripple%3B%0A%20%20%20animation-duration%3A%200.5s%3B%0A%20%20%7D%0A%0A%20%20%40keyframes%20ripple%20%7B%0A%20%20%20from%20%7B%0A%20%20%20%20background-size%3A%20100%25%3B%0A%20%20%20%7D%0A%0A%20%20%20to%20%7B%0A%20%20%20%20background-size%3A%2015000%25%3B%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20.segmented%20span%3Afirst-child%20%7B%0A%20%20%20vertical-align%3A%20middle%3B%0A%20%20%20visibility%3A%20hidden%3B%0A%20%20%20font-size%3A%2018px%3B%0A%20%20%20margin-right%3A%208px%3B%0A%20%20%7D%0A%0A%20%20.segmented%20%3Achecked%2Blabel%20span%3Afirst-child%20%7B%0A%20%20%20visibility%3A%20visible%3B%0A%20%20%20color%3A%0A%20%20%20%20var(--OnSecondaryContainer)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3EBotones%20segmentados%3C%2Fh1%3E%0A%20%3Cp%20class%3D%22segmented%22%3E%0A%20%20%3Cinput%20id%3D%22bueno%22%20checked%0A%20%20%20%20type%3D%22radio%22%20name%3D%22estado%22%0A%20%20%20%20value%3D%222%22%3E%0A%20%20%3Clabel%20for%3D%22bueno%22%3E%0A%20%20%20%3Cspan%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20done%0A%20%20%20%3C%2Fspan%3E%0A%20%20%20Bueno%0A%20%20%3C%2Flabel%3E%0A%20%20%3Cinput%20id%3D%22intermedio%22%0A%20%20%20%20type%3D%22radio%22%20name%3D%22estado%22%0A%20%20%20%20value%3D%221%22%3E%0A%20%20%3Clabel%20for%3D%22intermedio%22%3E%0A%20%20%20%3Cspan%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20done%0A%20%20%20%3C%2Fspan%3E%0A%20%20%20Intermedio%0A%20%20%3C%2Flabel%3E%0A%20%20%3Cinput%20id%3D%22malo%22%0A%20%20%20%20type%3D%22radio%22%20name%3D%22estado%22%0A%20%20%20%20value%3D%220%22%3E%0A%20%20%3Clabel%20for%3D%22malo%22%3E%0A%20%20%20%3Cspan%20class%3D%22material-symbols-outlined%22%3E%0A%20%20%20%20done%0A%20%20%20%3C%2Fspan%3E%0A%20%20%20Malo%0A%20%20%3C%2Flabel%3E%0A%20%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.</a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span
+      style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;html</span> <span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span>Botones segmentados<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"preconnect"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.googleapis.com"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"preconnect"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.gstatic.com"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">crossorigin</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">html</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--Font</span>: -apple-system,</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;BlinkMacSystemFont, Roboto,</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #0451a5;">sans-serif</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--LabelLargeFont</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Font</span>);</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--LabelLargeSize</span>: <span
+      style="color: #098658;">14px</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--LabelLargeWeight</span>: <span
+      style="color: #098658;">500</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--Background</span>: <span
+      style="color: #0451a5;">#FFFBFE</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--OnBackground</span>: <span
+      style="color: #0451a5;">#1C1B1F</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--Surface</span>: <span
+      style="color: #0451a5;">#FFFBFE</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--OnSurface</span>: <span
+      style="color: #0451a5;">#1C1B1F</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--OnSurfaceHover</span>: <span
+      style="color: #0451a5;">#1C1B1F14</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--OnSurfaceFocus</span>: <span
+      style="color: #0451a5;">#1C1B1F19</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--OnSurfacePressed</span>: <span
+      style="color: #0451a5;">#1C1B1F1E</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--Outline</span>: <span
+      style="color: #0451a5;">#79747E</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--SecondaryContainer</span>: <span
+      style="color: #0451a5;">#E8DEF8</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--OnSecondaryContainer</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #0451a5;">#1D192B</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--OnSecondaryContainerHover</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #0451a5;">#1D192B14</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--OnSecondaryContainerFocus</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #0451a5;">#1D192B19</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--OnSecondaryContainerPressed</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #0451a5;">#1D192B1E</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">font-size</span>: <span
+      style="color: #098658;">16px</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">font-family</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Font</span>);</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnBackground</span>);</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Background</span>);</div>
+   <div>&nbsp;&nbsp;}</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/style&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">p</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">margin</span>: <span
+      style="color: #098658;">1rem</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">.segmented</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">flex</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">align-items</span>: <span
+      style="color: #0451a5;">stretch</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">box-sizing</span>: <span
+      style="color: #0451a5;">border-box</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">.segmented</span> <span
+      style="color: #800000;">input</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">none</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">.segmented</span> <span
+      style="color: #800000;">label</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">position</span>: <span
+      style="color: #0451a5;">relative</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">box-sizing</span>: <span
+      style="color: #0451a5;">border-box</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">border</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #098658;">1px</span> <span
+      style="color: #0451a5;">solid</span> <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Outline</span>);</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">border-left</span>: <span
+      style="color: #0451a5;">none</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurface</span>);</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">font-family</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--LabelLargeFont</span>);</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">font-size</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--LabelLargeSize</span>);</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">font-weight</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--LabelLargeWeight</span>);</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">flex</span>: <span
+      style="color: #098658;">1</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">inline-block</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">height</span>: <span
+      style="color: #098658;">40px</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">line-height</span>: <span
+      style="color: #098658;">40px</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">text-align</span>: <span
+      style="color: #0451a5;">center</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">padding</span>: <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">12px</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">overflow</span>: <span
+      style="color: #0451a5;">hidden</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">white-space</span>: <span
+      style="color: #0451a5;">nowrap</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">text-overflow</span>: <span
+      style="color: #0451a5;">ellipsis</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">overflow</span>: <span
+      style="color: #0451a5;">hidden</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">.segmented</span> <span
+      style="color: #800000;">label:first-of-type</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">border-top-left-radius</span>: <span
+      style="color: #098658;">20px</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">border-bottom-left-radius</span>: <span
+      style="color: #098658;">20px</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">border-left</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #098658;">1px</span> <span
+      style="color: #0451a5;">solid</span> <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Outline</span>);</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">.segmented</span> <span
+      style="color: #800000;">label:last-of-type</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">border-top-right-radius</span>: <span
+      style="color: #098658;">20px</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">border-bottom-right-radius</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #098658;">20px</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">.segmented</span> <span
+      style="color: #800000;">label:hover</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurfaceHover</span>);</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">.segmented</span> <span
+      style="color: #800000;">:focus</span>+<span
+      style="color: #800000;">label</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurfaceFocus</span>);</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">.segmented</span> <span
+      style="color: #800000;">:active</span>+<span
+      style="color: #800000;">label</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurfacePressed</span>);</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-image</span>: <span
+      style="color: #795e26;">radial-gradient</span>(<span
+      style="color: #0451a5;">circle</span>, <span
+      style="color: #0451a5;">transparent</span> <span
+      style="color: #098658;">1%</span>, <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurfaceHover</span>) <span
+      style="color: #098658;">1%</span>);</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-position</span>: <span
+      style="color: #0451a5;">center</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-size</span>: <span
+      style="color: #098658;">100%</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">animation-fill-mode</span>: <span
+      style="color: #0451a5;">forwards</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">animation-name</span>: ripple;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">animation-duration</span>: <span
+      style="color: #098658;">0.5s</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">.segmented</span> <span
+      style="color: #800000;">:checked</span>+<span
+      style="color: #800000;">label</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">color</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSecondaryContainer</span>);</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">.segmented</span> <span
+      style="color: #800000;">:checked</span>+<span
+      style="color: #800000;">label:after</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">content</span>: <span
+      style="color: #a31515;">""</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--SecondaryContainer</span>);</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">position</span>: <span
+      style="color: #0451a5;">absolute</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">z-index</span>: <span
+      style="color: #098658;">-1</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">top</span>: <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">right</span>: <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">left</span>: <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">bottom</span>: <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">.segmented</span> <span
+      style="color: #800000;">:checked</span>+<span
+      style="color: #800000;">label:hover</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSecondaryContainerHover</span>);</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">.segmented</span> <span
+      style="color: #800000;">:checked:focus</span>+<span
+      style="color: #800000;">label</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSecondaryContainerFocus</span>);</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">.segmented</span> <span
+      style="color: #800000;">:checked:active</span>+<span
+      style="color: #800000;">label</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSecondaryContainerPressed</span>);</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-image</span>: <span
+      style="color: #795e26;">radial-gradient</span>(<span
+      style="color: #0451a5;">circle</span>, <span
+      style="color: #0451a5;">transparent</span> <span
+      style="color: #098658;">1%</span>, <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSecondaryContainerHover</span>) <span
+      style="color: #098658;">1%</span>);</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-position</span>: <span
+      style="color: #0451a5;">center</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-size</span>: <span
+      style="color: #098658;">100%</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">animation-fill-mode</span>: <span
+      style="color: #0451a5;">forwards</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">animation-name</span>: ripple;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">animation-duration</span>: <span
+      style="color: #098658;">0.5s</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #af00db;">@keyframes</span> <span
+      style="color: #001080;">ripple</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;from&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-size</span>: <span
+      style="color: #098658;">100%</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;&nbsp;to&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-size</span>: <span
+      style="color: #098658;">15000%</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;}</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">.segmented</span> <span
+      style="color: #800000;">span:first-child</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">vertical-align</span>: <span
+      style="color: #0451a5;">middle</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">visibility</span>: <span
+      style="color: #0451a5;">hidden</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">font-size</span>: <span
+      style="color: #098658;">18px</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">margin-right</span>: <span
+      style="color: #098658;">8px</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">.segmented</span> <span
+      style="color: #800000;">:checked</span>+<span
+      style="color: #800000;">label</span> <span
+      style="color: #800000;">span:first-child</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">visibility</span>: <span
+      style="color: #0451a5;">visible</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">color</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSecondaryContainer</span>);</div>
+   <div>&nbsp;&nbsp;}</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>Botones segmentados<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;p</span> <span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"segmented"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;input</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"bueno"</span> <span
+      style="color: #ff0000;">checked</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">type</span>=<span
+      style="color: #0000ff;">"radio"</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"estado"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">"2"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label</span> <span
+      style="color: #ff0000;">for</span>=<span
+      style="color: #0000ff;">"bueno"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;done</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;Bueno</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;input</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"intermedio"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">type</span>=<span
+      style="color: #0000ff;">"radio"</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"estado"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">"1"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label</span> <span
+      style="color: #ff0000;">for</span>=<span
+      style="color: #0000ff;">"intermedio"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;done</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;Intermedio</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;input</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"malo"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">type</span>=<span
+      style="color: #0000ff;">"radio"</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"estado"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">"0"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label</span> <span
+      style="color: #ff0000;">for</span>=<span
+      style="color: #0000ff;">"malo"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;done</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;Malo</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+<div class="lectura">
+ <h1>Solo para los más rudos</h1>
+ <ul>
+  <li>
+   <p>
+    Los botones segmentados de Material Design están defnidos en
+    <a href="https://m3.material.io/components/segmented-buttons/overview"
+      rel="noopener"
+      target="_blank">https://m3.material.io/components/segmented-buttons/overview</a>.
+   </p>
+  </li>
+ </ul>
+</div>
+ <footer>
+ <p>
+  <a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/"><img
+     alt="Licencia Creative Commons" style="border-width:0"
+     src="/img/icono/160x30.webp" width="80" height="15" /></a>
+  <br />Esta
+  <span xmlns:dct="http://purl.org/dc/terms/"
+    href="http://purl.org/dc/dcmitype/InteractiveResource"
+    rel="dct:type">obra</span>
+  de
+  <a xmlns:cc="http://creativecommons.org/ns#"
+    href="https://gilpgijs.github.io" property="cc:attributionName"
+    rel="cc:attributionURL">Gilberto Pacheco Gallegos</a>
+  está bajo una
+  <a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/">Licencia
+   Creative Commons Atribución 4.0 Internacional</a>.
+ </p>
+</footer>
+</div>
+<div id="cierra" class="cambiaMenu"></div>
+<nav id="nav">
+ <button type="button" title="Cierra" class="cambiaMenu">
+  &#x2715;
+ </button>
+ <p>
+    <a href="/index.html"
+      data-logo="true">GilPG DM</a>
+   </p><p>
+    <a class="paginaAnterior" href="/m04pwaBasica/mUresumen.html"
+      title="U. Resumen">▲</a>
+   </p>
+     <h1><a href="/m02vistas/index.html">4. Vistas móviles</a></h1>
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m02vistas/mAreferencias.html">Referencias</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mBformulario.html">Formulario para móvil</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mCaamaterial.html">Vistas con Material Design</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mGiconos.html">Íconos oficiales</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mCapp.html">App básica</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mOextension.html">Vista secundaria</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mDcampos.html">Campos de texto</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mDselect.html">Select</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mEbotones.html">Botones</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mFinterruptores.html" class="actual">Botones segmentados</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mKlistas.html">Listas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mLcards.html">Tarjetas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mHANav.html">Navegación entre vistas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mNnavTab.html">Navegación con pestañas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mHnavegacion.html">Barra de navegación</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mMhamburguesa.html">Cajón de navegación</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mIAacceso.html">Acceso a la plataforma</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mIgps.html">Geolocalización</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mJarchivos.html">Archivos y cámara</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02vistas/mPresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol><p>
+    <a class="paginaSiguiente" href="/m05pwaMaterial/index.html"
+      title="5. PWA con Material Design">▼</a>
+   </p>
+</nav>
+ <script>
+ registraServiceWorker("/sw.js")
+ const LOCAL_STORAGE_MENU = "menu"
+ const MENU = "menu"
+ const XMENU = "xmenu"
+ const nav = document.querySelector("#nav")
+ const abre = document.querySelector("#abre")
+
+ /**@type {string} */
+ let urlAnterior = "/m02vistas/mEbotones.html"
+ /**@type {string} */
+ let urlSiguiente = "/m02vistas/mKlistas.html"
+ /**@type {number|null} */
+ let iniciaX = null
+ /**@type {number|null} */
+ let iniciaY = null
+
+ document.addEventListener("keydown", teclas)
+ document.addEventListener("touchstart", iniciaTouch)
+ document.addEventListener("touchmove", desplazaTouch)
+ if (abre) {
+  abre.addEventListener("click", cambiaMenu)
+ }
+ const cambian = Array.from(document.querySelectorAll(".cambiaMenu"))
+ for (const c of cambian) {
+  c.addEventListener("click", cambiaMenu)
+ }
+ const menu = localStorage.getItem(LOCAL_STORAGE_MENU)
+ if (menu) {
+  if (menu === MENU) {
+   document.body.classList.remove(XMENU)
+   document.body.classList.add(MENU)
+  } else {
+   document.body.classList.remove(MENU)
+   document.body.classList.add(XMENU)
+  }
+ }
+
+ function registraServiceWorker(url) {
+  if (navigator.serviceWorker) {
+   navigator.serviceWorker.register(url).
+    then(registro => {
+     console.log("Service Worker registrado.")
+     console.log(registro)
+    }).
+    catch(muestraError)
+  }
+ }
+ function muestraError(e) {
+  console.error(e)
+  alert(e.message)
+ }
+ function cambiaMenu() {
+  document.body.classList.toggle(XMENU)
+  document.body.classList.toggle(MENU)
+  if (document.body.classList.contains(MENU)) {
+   localStorage.setItem(LOCAL_STORAGE_MENU, MENU)
+  } else {
+   localStorage.setItem(LOCAL_STORAGE_MENU, XMENU)
+  }
+ }
+ /** @param {KeyboardEvent} ev*/
+ function teclas(ev) {
+  switch (ev.key) {
+   case "ArrowLeft":
+    retrocede()
+    break
+   case "ArrowRight":
+    avanza()
+    break
+  }
+ }
+ function retrocede() {
+  if (urlAnterior) {
+   location.href = urlAnterior
+  }
+ }
+ function avanza() {
+  if (urlSiguiente) {
+   location.href = urlSiguiente
+  }
+ }
+ /** @param {TouchEvent} ev*/
+ function iniciaTouch(ev) {
+  const toqueInicial = ev.touches[0]
+  iniciaX = toqueInicial.clientX
+  iniciaY = toqueInicial.clientY
+ }
+ /** @param {TouchEvent} ev*/
+ function desplazaTouch(ev) {
+  if (iniciaX && iniciaY) {
+   const desplazamiento = ev.touches[0]
+   var desplazamientoX = desplazamiento.clientX
+   var desplazamientoY = desplazamiento.clientY
+   var difX = desplazamientoX - iniciaX
+   var difY = desplazamientoY - iniciaY
+   // Checa que el movimiento no sea muy corto.
+   if (Math.abs(difX) + Math.abs(difY) > 90) {
+    if (Math.abs(difX) > Math.abs(difY)) {
+     if (difX > 70) {
+      retrocede()
+     } else {
+      avanza()
+     }
+     // Reinicia valores.
+     iniciaX = null
+     iniciaY = null
+    }
+   }
+  }
+ }
+</script>
+</body>
+</html>

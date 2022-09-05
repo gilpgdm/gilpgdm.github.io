@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Botones</title>
+ <link rel="preconnect"
+   href="https://fonts.googleapis.com">
+ <link rel="preconnect"
+   href="https://fonts.gstatic.com"
+   crossorigin>
+ <link rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+ <style>
+  html {
+   --Font: -apple-system,
+    BlinkMacSystemFont, Roboto,
+    sans-serif;
+   --LabelLargeFont: var(--Font);
+   --LabelLargeSize: 14px;
+   --LabelLargeWeight: 500;
+   --Background: #FFFBFE;
+   --OnBackground: #1C1B1F;
+   --OnSurface: #1C1B1F;
+   --OnSurfaceShadow: #1C1B1F99;
+   --Primary: #6750A4;
+   --PrimaryHover: #6750A414;
+   --PrimaryFocus: #6750A419;
+   --PrimaryPressed: #6750A41E;
+   --OnPrimary: #FFFFFF;
+   --OnPrimaryHover: #FFFFFF14;
+   --OnPrimaryFocus: #FFFFFF19;
+   --OnPrimaryPressed: #FFFFFF1E;
+   --Outline: #79747E;
+   --Shadow: #000000;
+   --DisabledContent: #1C1B1F60;
+   --DisabledContainer:
+    #1C1B1F1E;
+   --ElevationLevel0: none;
+   --ElevationLevel0Shadow: none;
+   --ElevationLevel1Shadow:
+    0 1px 1px 1px var(--Shadow);
+   font-size: 16px;
+   font-family: var(--Font);
+   color: var(--OnBackground);
+   background-color:
+    var(--Background);
+  }
+
+.filled::after {
+   content: "";
+   background-color:
+    var(--Primary);
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+  }
+
+  .filled {
+   position: relative;
+   background-color: transparent;
+   box-shadow:
+    var(--ElevationLevel0Shadow);
+   color: var(--OnPrimary);
+   font-family:
+    var(--LabelLargeFont);
+   font-size:
+    var(--LabelLargeSize);
+   font-weight:
+    var(--LabelLargeWeight);
+   box-sizing: border-box;
+   width: 100%;
+   height: 40px;
+   padding: 0 24px;
+   border: none;
+   border-radius: 20px;
+   overflow: hidden;
+  }
+
+  .filled:hover {
+   background-color:
+    var(--OnPrimaryHover);
+   box-shadow:
+    var(--ElevationLevel1Shadow);
+  }
+
+  .filled:focus {
+   outline: none;
+   background-color:
+    var(--OnPrimaryFocus);
+  }
+
+  .filled:active {
+   background-color:
+    var(--OnPrimaryPressed);
+  }
+
+  .filled:disabled {
+   color: var(--DisabledContent);
+  }
+
+  .filled:disabled:after {
+   background-color:
+    var(--DisabledContainer);
+  }
+
+  .outline {
+   border:
+    1px solid var(--Outline);
+   background-color: transparent;
+   box-shadow:
+    var(--ElevationLevel0);
+   color: var(--Primary);
+   font-family:
+    var(--LabelLargeFont);
+   font-size:
+    var(--LabelLargeSize);
+   font-weight:
+    var(--LabelLargeWeight);
+   box-sizing: border-box;
+   height: 40px;
+   padding: 0 24px;
+   border-radius: 20px;
+   overflow: hidden;
+  }
+
+  .outline:hover {
+   background-color:
+    var(--PrimaryHover);
+  }
+
+  .outline:focus {
+   outline: none;
+   background-color:
+    var(--PrimaryFocus);
+  }
+
+  .outline:active {
+   background-color:
+    var(--PrimaryPressed);
+  }
+
+  .outline:disabled {
+   color: var(--DisabledContent);
+   border:
+    1px solid var(--DisabledContainer);
+  }
+ </style>
+</head>
+
+<body>
+ <h1>Botones</h1>
+ <section style="max-width: 600px;
+   margin: 0 auto">
+  <p>
+   <button class="filled">
+    Primario
+   </button>
+  </p>
+  <p>
+   <button class="outline">
+    Secundario
+   </button>
+  </p>
+ </section>
+</body>
+
+</html>

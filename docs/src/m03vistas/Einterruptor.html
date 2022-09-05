@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Botones segmentados</title>
+ <link rel="preconnect"
+   href="https://fonts.googleapis.com">
+ <link rel="preconnect"
+   href="https://fonts.gstatic.com"
+   crossorigin>
+ <link rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+ <link rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+ <style>
+  html {
+   --Font: -apple-system,
+    BlinkMacSystemFont, Roboto,
+    sans-serif;
+   --LabelLargeFont: var(--Font);
+   --LabelLargeSize: 14px;
+   --LabelLargeWeight: 500;
+   --Background: #FFFBFE;
+   --OnBackground: #1C1B1F;
+   --Surface: #FFFBFE;
+   --OnSurface: #1C1B1F;
+   --OnSurfaceHover: #1C1B1F14;
+   --OnSurfaceFocus: #1C1B1F19;
+   --OnSurfacePressed: #1C1B1F1E;
+   --Outline: #79747E;
+   --SecondaryContainer: #E8DEF8;
+   --OnSecondaryContainer:
+    #1D192B;
+   --OnSecondaryContainerHover:
+    #1D192B14;
+   --OnSecondaryContainerFocus:
+    #1D192B19;
+   --OnSecondaryContainerPressed:
+    #1D192B1E;
+   font-size: 16px;
+   font-family: var(--Font);
+   color: var(--OnBackground);
+   background-color:
+    var(--Background);
+  }
+
+  p {
+   margin: 1rem;
+  }
+
+  .segmented {
+   display: flex;
+   align-items: stretch;
+   box-sizing: border-box;
+  }
+
+  .segmented input {
+   display: none;
+  }
+
+  .segmented label {
+   position: relative;
+   box-sizing: border-box;
+   border:
+    1px solid var(--Outline);
+   border-left: none;
+   color: var(--OnSurface);
+   font-family:
+    var(--LabelLargeFont);
+   font-size:
+    var(--LabelLargeSize);
+   font-weight:
+    var(--LabelLargeWeight);
+   flex: 1;
+   display: inline-block;
+   height: 40px;
+   line-height: 40px;
+   text-align: center;
+   padding: 0 12px;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+  }
+
+  .segmented label:first-of-type {
+   border-top-left-radius: 20px;
+   border-bottom-left-radius: 20px;
+   border-left:
+    1px solid var(--Outline);
+  }
+
+  .segmented label:last-of-type {
+   border-top-right-radius: 20px;
+   border-bottom-right-radius:
+    20px;
+  }
+
+  .segmented label:hover {
+   background-color:
+    var(--OnSurfaceHover);
+  }
+
+  .segmented :focus+label {
+   background-color:
+    var(--OnSurfaceFocus);
+  }
+
+  .segmented :active+label {
+   background-color:
+    var(--OnSurfacePressed);
+   background-image: radial-gradient(circle, transparent 1%, var(--OnSurfaceHover) 1%);
+   background-position: center;
+   background-size: 100%;
+   animation-fill-mode: forwards;
+   animation-name: ripple;
+   animation-duration: 0.5s;
+  }
+
+  .segmented :checked+label {
+   color:
+    var(--OnSecondaryContainer);
+  }
+
+  .segmented :checked+label:after {
+   content: "";
+   background-color:
+    var(--SecondaryContainer);
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+  }
+
+  .segmented :checked+label:hover {
+   background-color:
+    var(--OnSecondaryContainerHover);
+  }
+
+  .segmented :checked:focus+label {
+   background-color:
+    var(--OnSecondaryContainerFocus);
+  }
+
+  .segmented :checked:active+label {
+   background-color:
+    var(--OnSecondaryContainerPressed);
+   background-image: radial-gradient(circle, transparent 1%, var(--OnSecondaryContainerHover) 1%);
+   background-position: center;
+   background-size: 100%;
+   animation-fill-mode: forwards;
+   animation-name: ripple;
+   animation-duration: 0.5s;
+  }
+
+  @keyframes ripple {
+   from {
+    background-size: 100%;
+   }
+
+   to {
+    background-size: 15000%;
+   }
+  }
+
+  .segmented span:first-child {
+   visibility: hidden;
+   font-size: 18px;
+   margin-right: 8px;
+  }
+
+  .segmented :checked+label span:first-child {
+   visibility: visible;
+   color:
+    var(--OnSecondaryContainer);
+  }
+ </style>
+</head>
+
+<body>
+ <h1>Botones segmentados</h1>
+ <p class="segmented">
+  <input id="bueno" checked
+    type="radio" name="estado"
+    value="2">
+  <label for="bueno">
+   <span class="material-symbols-outlined">
+    done
+   </span>
+   Bueno
+  </label>
+  <input id="intermedio"
+    type="radio" name="estado"
+    value="1">
+  <label for="intermedio">
+   <span class="material-symbols-outlined">
+    done
+   </span>
+   Intermedio
+  </label>
+  <input id="malo"
+    type="radio" name="estado"
+    value="0">
+  <label for="malo">
+   <span class="material-symbols-outlined">
+    done
+   </span>
+   Malo
+  </label>
+ </p>
+</body>
+
+</html>
