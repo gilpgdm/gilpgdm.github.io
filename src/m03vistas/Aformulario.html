@@ -13,19 +13,19 @@
    action="javascript:procesa()">
   <h1>Formulario</h1>
   <p>
-   <label for="inGenero">
+   <label>
     *Género
+    <select id="inGenero" required
+      oninput="copiaMensajes()">
+     <option value=""></option>
+     <option value="pop">
+      Pop
+     </option>
+     <option value="reg">
+      Reguetón
+     </option>
+    </select>
    </label>
-   <select id="inGenero" required
-     oninput="copiaMensajes()">
-    <option value=""></option>
-    <option value="pop">
-     Pop
-    </option>
-    <option value="reg">
-     Reguetón
-    </option>
-   </select>
    <small id="msgGenero">
     * Obligatorio
    </small>
