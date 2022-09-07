@@ -18,7 +18,7 @@
   --padCont: 0.5rem;
   --padNav: 0.75rem 0.5rem;
   --anchoNav: 300px;
-  --anchoNavNeg: -300px;
+  --anchoNavNeg: 450px;
   --anchoLectura: 900px;
   --colLetra: black;
   --colFondo: white;
@@ -387,6 +387,10 @@
  }
 
  @media screen and (min-width: 1000px) {
+
+  body.xmenu {
+   scroll-padding-right: var(--anchoNavNeg);
+  }
   #cierra {
    display: none;
   }
@@ -431,87 +435,214 @@
   &#x2630;
  </button>
  <a class="anterior" href="/m05pwaMaterial/m09swJs.html" title="9. sw.js">◀</a>
- <a class="siguiente" href="/m05pwaMaterial/m11iconos.html" title="11. Íconos">▶</a>
+ <a class="siguiente" href="/m05pwaMaterial/m23jsconfigJson.html" title="11. jsconfig.json">▶</a>
    <h1 >10. css/estilos.css</h1><muestra-codigo>
  <div>
-  <div><span style="color: #800000;">html</span> {</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colOnBg</span>: <span
-     style="color: #0451a5;">#1C1B1F</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colBg</span>: <span
+  <div><span
+     style="color: #800000;">html</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--Font</span>: -apple-system,</div>
+  <div>&nbsp;&nbsp;BlinkMacSystemFont, Roboto,</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">sans-serif</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--Background</span>: <span
      style="color: #0451a5;">#FFFBFE</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colOnSrf</span>: <span
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnBackground</span>: <span
      style="color: #0451a5;">#1C1B1F</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colSrf</span>: <span
+  <div>&nbsp;<span
+     style="color: #ff0000;">--Surface</span>: <span
      style="color: #0451a5;">#FFFBFE</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colSh</span>: <span
-     style="color: #0451a5;">#00000055</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colCm</span>: <span
-     style="color: #0451a5;">#79747E</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colCmFc</span>: <span
-     style="color: #0451a5;">#6750A4</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colCmEr</span>: <span
-     style="color: #0451a5;">#B3261E</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colCmBg</span>: <span
-     style="color: #0451a5;">#E7E0EC44</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colCmBgHv</span>: <span
-     style="color: #0451a5;">#E7E0EC88</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colCmBgFc</span>: <span
-     style="color: #0451a5;">#E7E0EC</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colCmOp</span>: <span
-     style="color: #0451a5;">white</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colCmOpBg</span>: <span
-     style="color: #0451a5;">#6750A4</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colFil</span>: <span
-     style="color: #0451a5;">white</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colFilBg</span>: <span
-     style="color: #0451a5;">#6750A4</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colFilBgHv</span>: <span
-     style="color: #0451a5;">#6750A4</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colFilBgFc</span>: <span
-     style="color: #0451a5;">#6750A4DD</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colFilBgAc</span>: <span
-     style="color: #0451a5;">#6750A4EE</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colFilTon</span>: <span
-     style="color: #0451a5;">#1D192B</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colFilTonBg</span>: <span
-     style="color: #0451a5;">#E8DEF8</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colFilTonBgHv</span>: <span
-     style="color: #0451a5;">#E8DEF8</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colFilTonBgFc</span>: <span
-     style="color: #0451a5;">#E8DEF8DD</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colFilTonBgAc</span>: <span
-     style="color: #0451a5;">#E8DEF8EE</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colNv</span>: <span
-     style="color: #0451a5;">#49454F</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colNvSel</span>: <span
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnSurface</span>: <span
      style="color: #0451a5;">#1C1B1F</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colNvBg</span>: <span
-     style="color: #0451a5;">#FFFBFE</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colNvBgHv</span>: <span
-     style="color: #0451a5;">#E7E0ECDD</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colNvBgFc</span>: <span
-     style="color: #0451a5;">#E7E0EC99</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">--colNvBgAc</span>: <span
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnSurfaceHover</span>: <span
+     style="color: #0451a5;">#1C1B1F14</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnSurfaceFocus</span>: <span
+     style="color: #0451a5;">#1C1B1F19</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnSurfacePressed</span>: <span
+     style="color: #0451a5;">#1C1B1F1E</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnSurfaceShadow</span>: <span
+     style="color: #0451a5;">#1C1B1F99</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--SurfaceVariant</span>: <span
      style="color: #0451a5;">#E7E0EC</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">--fntFam</span>: -apple-system,</div>
-  <div>&nbsp; BlinkMacSystemFont, Roboto,</div>
-  <div>&nbsp; <span style="color: #0451a5;">sans-serif</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">color</span>: <span
+     style="color: #ff0000;">--SurfaceVariantHover</span>:</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">#CAC4D0</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnSurfaceVariant</span>: <span
+     style="color: #0451a5;">#49454F</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnSurfaceVariantHover</span>:</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">#49454F14</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnSurfaceVariantFocus</span>:</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">#49454F19</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnSurfaceVariantPressed</span>:</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">#49454F1E</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--Primary</span>: <span
+     style="color: #0451a5;">#6750A4</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--PrimaryHover</span>: <span
+     style="color: #0451a5;">#6750A414</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--PrimaryFocus</span>: <span
+     style="color: #0451a5;">#6750A419</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--PrimaryPressed</span>: <span
+     style="color: #0451a5;">#6750A41E</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnPrimary</span>: <span
+     style="color: #0451a5;">#FFFFFF</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnPrimaryHover</span>: <span
+     style="color: #0451a5;">#FFFFFF14</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnPrimaryFocus</span>: <span
+     style="color: #0451a5;">#FFFFFF19</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnPrimaryPressed</span>: <span
+     style="color: #0451a5;">#FFFFFF1E</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--Outline</span>: <span
+     style="color: #0451a5;">#79747E</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--SecondaryContainer</span>: <span
+     style="color: #0451a5;">#E8DEF8</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnSecondaryContainer</span>:</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">#1D192B</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnSecondaryContainerHover</span>:</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">#1D192B14</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnSecondaryContainerFocus</span>:</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">#1D192B19</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnSecondaryContainerPressed</span>:</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">#1D192B1E</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--Shadow</span>: <span
+     style="color: #0451a5;">#000000</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--Error</span>: <span
+     style="color: #0451a5;">#B3261E</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--OnErrorContainer</span>: <span
+     style="color: #0451a5;">#F2B8B5</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--Elevation</span>: <span
+     style="color: #0451a5;">#F5EEFA</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--DisabledContent</span>: <span
+     style="color: #0451a5;">#1C1B1F60</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--DisabledContainer</span>:</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">#1C1B1F1E</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--ElevationLevel0</span>: <span
+     style="color: #0451a5;">none</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--ElevationLevel0Shadow</span>: <span
+     style="color: #0451a5;">none</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--ElevationLevel1Shadow</span>:</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #098658;">0</span> <span
+     style="color: #098658;">1px</span> <span
+     style="color: #098658;">1px</span> <span
+     style="color: #098658;">1px</span> <span
      style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--colOnBg</span>);</div>
-  <div>&nbsp;<span style="color: #ff0000;">font-family</span>: <span
+     style="color: #001080;">--Shadow</span>);</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">--ElevationLevel2</span>:</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #098658;">0</span> <span
+     style="color: #098658;">3px</span> <span
+     style="color: #098658;">6px</span> <span
+     style="color: #098658;">0px</span> <span
      style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--fntFam</span>);</div>
-  <div>&nbsp;<span style="color: #ff0000;">background-color</span>: <span
+     style="color: #001080;">--OnSurfaceShadow</span>);</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">font-size</span>: <span
+     style="color: #098658;">16px</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">font-family</span>: <span
      style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--colBg</span>);</div>
+     style="color: #001080;">--Font</span>);</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--OnBackground</span>);</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--Background</span>);</div>
   <div>}</div><br>
-  <div><span style="color: #800000;">body</span> {</div>
-  <div>&nbsp;<span style="color: #ff0000;">margin</span>: <span
+  <div><span
+     style="color: #800000;">body</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">scroll-padding-top</span>: <span
+     style="color: #098658;">8rem</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">opacity</span>: <span
      style="color: #098658;">0</span>;</div>
-  <div>&nbsp;<span style="color: #ff0000;">scroll-padding-top</span>: <span
-     style="color: #098658;">139px</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">animation-name</span>: fouc;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">animation-fill-mode</span>: <span
+     style="color: #0451a5;">forwards</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">animation-duration</span>: <span
+     style="color: #098658;">0.5s</span>;</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #af00db;">@keyframes</span> <span
+     style="color: #001080;">fouc</span>&nbsp;{</div>
+  <div>&nbsp;from&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #ff0000;">opacity</span>: <span
+     style="color: #098658;">0</span></div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;to&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #ff0000;">opacity</span>: <span
+     style="color: #098658;">1</span></div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #800000;">form</span>&gt;<span
+     style="color: #800000;">section</span>,</div>
+  <div><span
+     style="color: #800000;">body</span>&gt;<span
+     style="color: #800000;">section</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">max-width</span>: <span
+     style="color: #098658;">600px</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">margin-left</span>: <span
+     style="color: #0451a5;">auto</span>;</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">margin-right</span>: <span
+     style="color: #0451a5;">auto</span>;</div>
   <div>}</div>
  </div>
 </muestra-codigo>
@@ -572,7 +703,7 @@
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m05nav-tabsJs.html">js/nav-tabs.js</a>
+      <a href="/m05pwaMaterial/m05mi-navJs.html">js/mi-nav.js</a>
      </p>
     </li>
     <li>
@@ -598,6 +729,11 @@
     <li>
      <p>
       <a href="/m05pwaMaterial/m10estilosCss.html" class="actual">css/estilos.css</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m23jsconfigJson.html">jsconfig.json</a>
      </p>
     </li>
     <li>
@@ -662,32 +798,52 @@
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m23jsconfigJson.html">jsconfig.json</a>
+      <a href="/m05pwaMaterial/m24cardsCss.html">lib/css/cards.css</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m24botonesCss.html">lib/css/botones.css</a>
+      <a href="/m05pwaMaterial/m24filledCss.html">lib/css/filled.css</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m25cm-dinCss.html">lib/css/cm-din.css</a>
+      <a href="/m05pwaMaterial/m24iconCss.html">lib/css/icon.css</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m26cn-app-barCss.html">lib/css/cn-app-bar.css</a>
+      <a href="/m05pwaMaterial/m24listCss.html">lib/css/list.css</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m27material-iconsCss.html">lib/css/material-icons.css</a>
+      <a href="/m05pwaMaterial/m27material-symbols-outlinedCss.html">lib/css/material-symbols-outlined.css</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m28nav-tabsCss.html">lib/css/nav-tabs.css</a>
+      <a href="/m05pwaMaterial/m25md3Css.html">lib/css/md3.css</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m26navBarCss.html">lib/css/navBar.css</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m26navDrwCss.html">lib/css/navDrw.css</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m28navTabCss.html">lib/css/navTab.css</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m24outlineCss.html">lib/css/outline.css</a>
      </p>
     </li>
     <li>
@@ -697,37 +853,82 @@
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m30MaterialIcons-RegularCodepoints.html">lib/fonts/MaterialIcons-Regular.codepoints</a>
+      <a href="/m05pwaMaterial/m24segmentedCss.html">lib/css/segmented.css</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m31MaterialIconsRegularTtf.html">lib/fonts/MaterialIcons-Regular.ttf</a>
+      <a href="/m05pwaMaterial/m30MaterialSymbolsOutlinedCodepoints.html">lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m32robotoV29LatinRegularWoff.html">lib/fonts/roboto-v29-latin-regular.woff</a>
+      <a href="/m05pwaMaterial/m31MaterialSymbolsOutlinedTtf.html">lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m33robotoV29LatinRegularWoff2.html">lib/fonts/roboto-v29-latin-regular.woff2</a>
+      <a href="/m05pwaMaterial/m32robotoV30LatinRegularWoff.html">lib/fonts/roboto-v30-latin-regular.woff</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m34cm-dinJs.html">lib/js/cm-din.js</a>
+      <a href="/m05pwaMaterial/m33robotoV30LatinRegularWoff2.html">lib/fonts/roboto-v30-latin-regular.woff2</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m35cn-app-bar.html">lib/js/cn-app-bar.js</a>
+      <a href="/m05pwaMaterial/m34center-aligned-top-app-barJs.html">lib/js/center-aligned-top-app-bar.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m34menu-optionJs.html">lib/js/menu-option.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m34overflow-menuJs.html">lib/js/overflow-menu.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m34select-menuJs.html">lib/js/select-menu.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m34text-fieldJs.html">lib/js/text-field.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m35top-app-barJs.html">lib/js/top-app-bar.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m35txtObligatorioJs.html">lib/js/textos/txtObligatorio.js</a>
      </p>
     </li>
     <li>
      <p>
       <a href="/m05pwaMaterial/m36detectaJs.html">lib/js/detecta.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m37constantesJs.html">lib/js/constantes.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m37getAttributeJs.html">lib/js/getAttribute.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m37md3Js.html">lib/js/md3.js</a>
      </p>
     </li>
     <li>
@@ -743,6 +944,11 @@
     <li>
      <p>
       <a href="/m05pwaMaterial/m39regSwJs.html">lib/js/regSw.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m37setBooleanAttributeJs.html">lib/js/setBooleanAttribute.js</a>
      </p>
     </li>
     <li>
@@ -766,7 +972,7 @@
  /**@type {string} */
  let urlAnterior = "/m05pwaMaterial/m09swJs.html"
  /**@type {string} */
- let urlSiguiente = "/m05pwaMaterial/m11iconos.html"
+ let urlSiguiente = "/m05pwaMaterial/m23jsconfigJson.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

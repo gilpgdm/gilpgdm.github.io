@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>27. lib/css/material-icons.css - GilPG DM</title>
- <meta name="description" content="Código del archivo «lib/css/material-icons.css» del ejemplo de PWA con Material Design.">
+ <title>42. lib/js/overflow-menu.js - GilPG DM</title>
+ <meta name="description" content="Código del archivo «lib/overflow-menu.js» del ejemplo de PWA con Material Design.">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -18,7 +18,7 @@
   --padCont: 0.5rem;
   --padNav: 0.75rem 0.5rem;
   --anchoNav: 300px;
-  --anchoNavNeg: -300px;
+  --anchoNavNeg: 450px;
   --anchoLectura: 900px;
   --colLetra: black;
   --colFondo: white;
@@ -387,6 +387,10 @@
  }
 
  @media screen and (min-width: 1000px) {
+
+  body.xmenu {
+   scroll-padding-right: var(--anchoNavNeg);
+  }
   #cierra {
    display: none;
   }
@@ -430,75 +434,89 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m05pwaMaterial/m26cn-app-barCss.html" title="26. lib/css/cn-app-bar.css">◀</a>
- <a class="siguiente" href="/m05pwaMaterial/m28nav-tabsCss.html" title="28. lib/css/nav-tabs.css">▶</a>
-   <h1 >27. lib/css/material-icons.css</h1><muestra-codigo>
+ <a class="anterior" href="/m05pwaMaterial/m34menu-optionJs.html" title="41. lib/js/menu-option.js">◀</a>
+ <a class="siguiente" href="/m05pwaMaterial/m34select-menuJs.html" title="43. lib/js/select-menu.js">▶</a>
+   <h1 >42. lib/js/overflow-menu.js</h1><muestra-codigo>
  <div>
-  <div><span style="color: #af00db;">@font-face</span> {</div>
-  <div>&nbsp; <span style="color: #ff0000;">font-family</span>: <span
-     style="color: #a31515;">'Material Icons'</span>;</div>
-  <div>&nbsp; <span style="color: #ff0000;">font-style</span>: <span
-     style="color: #0451a5;">normal</span>;</div>
-  <div>&nbsp; <span style="color: #ff0000;">font-weight</span>: <span
-     style="color: #098658;">400</span>;</div>
-  <div>&nbsp; <span style="color: #ff0000;">src</span>: <span
-     style="color: #795e26;">local</span>(<span
-     style="color: #a31515;">'Material Icons'</span>),</div>
-  <div>&nbsp; &nbsp; <span style="color: #795e26;">local</span>(<span
-     style="color: #a31515;">'MaterialIcons-Regular'</span>),</div>
-  <div>&nbsp; &nbsp; <span style="color: #795e26;">url</span>(<span
-     style="color: #001080;">../fonts/MaterialIcons-Regular.ttf</span>) <span
-     style="color: #795e26;">format</span>(<span
-     style="color: #a31515;">'truetype'</span>);</div>
-  <div>}</div><br>
-  <div><span style="color: #800000;">.material-icons</span> {</div>
-  <div>&nbsp; <span style="color: #ff0000;">font-family</span>: <span
-     style="color: #a31515;">'Material Icons'</span>;</div>
-  <div>&nbsp; <span style="color: #ff0000;">font-weight</span>: <span
-     style="color: #0451a5;">normal</span>;</div>
-  <div>&nbsp; <span style="color: #ff0000;">font-style</span>: <span
-     style="color: #0451a5;">normal</span>;</div>
-  <div>&nbsp; <span style="color: #ff0000;">font-size</span>: <span
-     style="color: #098658;">24px</span>;</div>
-  <div>&nbsp; <span style="color: #ff0000;">display</span>: <span
-     style="color: #0451a5;">inline-block</span>;</div>
-  <div>&nbsp; <span style="color: #ff0000;">line-height</span>: <span
-     style="color: #098658;">1</span>;</div>
-  <div>&nbsp; <span style="color: #ff0000;">text-transform</span>: <span
-     style="color: #0451a5;">none</span>;</div>
-  <div>&nbsp; <span style="color: #ff0000;">letter-spacing</span>: <span
-     style="color: #0451a5;">normal</span>;</div>
-  <div>&nbsp; <span style="color: #ff0000;">word-wrap</span>: <span
-     style="color: #0451a5;">normal</span>;</div>
-  <div>&nbsp; <span style="color: #ff0000;">white-space</span>: <span
-     style="color: #0451a5;">nowrap</span>;</div>
-  <div>&nbsp; <span style="color: #ff0000;">direction</span>: <span
-     style="color: #0451a5;">ltr</span>;</div><br>
-  <div>&nbsp; <span
-     style="color: #008000;">/* Soporte para todos los</span></div>
+  <div><span style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">class</span> <span
+     style="color: #267f99;">CmDin</span></div>
+  <div>&nbsp;<span style="color: #0000ff;">extends</span> <span
+     style="color: #267f99;">HTMLElement</span> {</div>
+  <div>&nbsp;<span
+     style="color: #795e26;">connectedCallback</span>() {</div>
+  <div>&nbsp; <span style="color: #795e26;">setTimeout</span>(</div>
+  <div>&nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">prepara</span>(),</div>
+  <div>&nbsp; &nbsp;<span style="color: #098658;">100</span>)</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span style="color: #795e26;">prepara</span>() {</div>
+  <div>&nbsp; <span style="color: #008000;">/**</span></div>
+  <div><span style="color: #008000;">&nbsp; &nbsp;* </span><span
+     style="color: #0000ff;">@private</span></div>
+  <div><span style="color: #008000;">&nbsp; &nbsp;* </span><span
+     style="color: #0000ff;">@type</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{HTMLInputElement|</span></div>
+  <div><span style="color: #008000;">&nbsp; &nbsp;*</span><span
+     style="color: #267f99;"> &nbsp;HTMLSelectElement|</span></div>
+  <div><span style="color: #008000;">&nbsp; &nbsp;*</span><span
+     style="color: #267f99;"> &nbsp;HTMLOutputElement|</span></div>
   <div><span
-     style="color: #008000;">&nbsp; &nbsp;* navegadores basados en</span></div>
-  <div><span style="color: #008000;">&nbsp; &nbsp;* WebKit. */</span></div>
-  <div>&nbsp; <span style="color: #ff0000;">-webkit-font-smoothing</span>:</div>
-  <div>&nbsp; &nbsp; <span style="color: #0451a5;">antialiased</span>;</div>
-  <div>&nbsp; <span
-     style="color: #008000;">/* Soporte para Safari y</span></div>
-  <div><span style="color: #008000;">&nbsp; &nbsp;* Chrome. */</span></div>
-  <div>&nbsp; <span style="color: #ff0000;">text-rendering</span>:</div>
+     style="color: #008000;">&nbsp; &nbsp;* &nbsp;null} */</span></div>
+  <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_elem</span> = <span
+     style="color: #0000ff;">this</span>.</div>
+  <div>&nbsp; &nbsp;<span style="color: #795e26;">querySelector</span>(</div>
   <div>&nbsp; &nbsp; <span
-     style="color: #0451a5;">optimizeLegibility</span>;</div><br>
-  <div>&nbsp; <span
-     style="color: #008000;">/* Soporte para Firefox. */</span></div>
-  <div>&nbsp; <span
-     style="color: #ff0000;">-moz-osx-font-smoothing</span>:</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #0451a5;">grayscale</span>;</div><br>
-  <div>&nbsp; <span
-     style="color: #008000;">/* Soporte para IE. */</span></div>
-  <div>&nbsp; <span
-     style="color: #ff0000;">font-feature-settings</span>: <span
-     style="color: #a31515;">'liga'</span>;</div>
+     style="color: #a31515;">"input, select, output"</span>)</div>
+  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_elem</span> != <span
+     style="color: #0000ff;">null</span>) {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">addEventListener</span>(<span
+     style="color: #a31515;">"input"</span>,</div>
+  <div>&nbsp; &nbsp; () <span style="color: #0000ff;">=&gt;</span> <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">analiza</span>())</div>
+  <div>&nbsp; }</div>
+  <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">analiza</span>();</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span style="color: #795e26;">analiza</span>() {</div>
+  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">e</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_elem</span>;</div>
+  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">e</span> != <span
+     style="color: #0000ff;">null</span>) {</div>
+  <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (!<span
+     style="color: #0070c1;">e</span>.<span
+     style="color: #001080;">validity</span>.<span
+     style="color: #0070c1;">badInput</span> &amp;&amp;</div>
+  <div>&nbsp; &nbsp; <span style="color: #0070c1;">e</span>.<span
+     style="color: #001080;">value</span> === <span
+     style="color: #a31515;">""</span>) {</div>
+  <div>&nbsp; &nbsp; <span style="color: #0070c1;">e</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">remove</span>(<span
+     style="color: #a31515;">"valor"</span>)</div>
+  <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
+  <div>&nbsp; &nbsp; <span style="color: #0070c1;">e</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"valor"</span>)</div>
+  <div>&nbsp; &nbsp;}</div>
+  <div>&nbsp; }</div>
+  <div>&nbsp;}</div>
   <div>}</div>
+  <div><span style="color: #001080;">customElements</span>.</div>
+  <div>&nbsp;<span style="color: #795e26;">define</span>(<span
+     style="color: #a31515;">"cm-din"</span>, <span
+     style="color: #267f99;">CmDin</span>)</div>
  </div>
 </muestra-codigo>
  <footer>
@@ -558,7 +576,7 @@
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m05nav-tabsJs.html">js/nav-tabs.js</a>
+      <a href="/m05pwaMaterial/m05mi-navJs.html">js/mi-nav.js</a>
      </p>
     </li>
     <li>
@@ -584,6 +602,11 @@
     <li>
      <p>
       <a href="/m05pwaMaterial/m10estilosCss.html">css/estilos.css</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m23jsconfigJson.html">jsconfig.json</a>
      </p>
     </li>
     <li>
@@ -648,32 +671,52 @@
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m23jsconfigJson.html">jsconfig.json</a>
+      <a href="/m05pwaMaterial/m24cardsCss.html">lib/css/cards.css</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m24botonesCss.html">lib/css/botones.css</a>
+      <a href="/m05pwaMaterial/m24filledCss.html">lib/css/filled.css</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m25cm-dinCss.html">lib/css/cm-din.css</a>
+      <a href="/m05pwaMaterial/m24iconCss.html">lib/css/icon.css</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m26cn-app-barCss.html">lib/css/cn-app-bar.css</a>
+      <a href="/m05pwaMaterial/m24listCss.html">lib/css/list.css</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m27material-iconsCss.html" class="actual">lib/css/material-icons.css</a>
+      <a href="/m05pwaMaterial/m27material-symbols-outlinedCss.html">lib/css/material-symbols-outlined.css</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m28nav-tabsCss.html">lib/css/nav-tabs.css</a>
+      <a href="/m05pwaMaterial/m25md3Css.html">lib/css/md3.css</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m26navBarCss.html">lib/css/navBar.css</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m26navDrwCss.html">lib/css/navDrw.css</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m28navTabCss.html">lib/css/navTab.css</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m24outlineCss.html">lib/css/outline.css</a>
      </p>
     </li>
     <li>
@@ -683,37 +726,82 @@
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m30MaterialIcons-RegularCodepoints.html">lib/fonts/MaterialIcons-Regular.codepoints</a>
+      <a href="/m05pwaMaterial/m24segmentedCss.html">lib/css/segmented.css</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m31MaterialIconsRegularTtf.html">lib/fonts/MaterialIcons-Regular.ttf</a>
+      <a href="/m05pwaMaterial/m30MaterialSymbolsOutlinedCodepoints.html">lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m32robotoV29LatinRegularWoff.html">lib/fonts/roboto-v29-latin-regular.woff</a>
+      <a href="/m05pwaMaterial/m31MaterialSymbolsOutlinedTtf.html">lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m33robotoV29LatinRegularWoff2.html">lib/fonts/roboto-v29-latin-regular.woff2</a>
+      <a href="/m05pwaMaterial/m32robotoV30LatinRegularWoff.html">lib/fonts/roboto-v30-latin-regular.woff</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m34cm-dinJs.html">lib/js/cm-din.js</a>
+      <a href="/m05pwaMaterial/m33robotoV30LatinRegularWoff2.html">lib/fonts/roboto-v30-latin-regular.woff2</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m35cn-app-bar.html">lib/js/cn-app-bar.js</a>
+      <a href="/m05pwaMaterial/m34center-aligned-top-app-barJs.html">lib/js/center-aligned-top-app-bar.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m34menu-optionJs.html">lib/js/menu-option.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m34overflow-menuJs.html" class="actual">lib/js/overflow-menu.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m34select-menuJs.html">lib/js/select-menu.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m34text-fieldJs.html">lib/js/text-field.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m35top-app-barJs.html">lib/js/top-app-bar.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m35txtObligatorioJs.html">lib/js/textos/txtObligatorio.js</a>
      </p>
     </li>
     <li>
      <p>
       <a href="/m05pwaMaterial/m36detectaJs.html">lib/js/detecta.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m37constantesJs.html">lib/js/constantes.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m37getAttributeJs.html">lib/js/getAttribute.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m37md3Js.html">lib/js/md3.js</a>
      </p>
     </li>
     <li>
@@ -729,6 +817,11 @@
     <li>
      <p>
       <a href="/m05pwaMaterial/m39regSwJs.html">lib/js/regSw.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05pwaMaterial/m37setBooleanAttributeJs.html">lib/js/setBooleanAttribute.js</a>
      </p>
     </li>
     <li>
@@ -750,9 +843,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m05pwaMaterial/m26cn-app-barCss.html"
+ let urlAnterior = "/m05pwaMaterial/m34menu-optionJs.html"
  /**@type {string} */
- let urlSiguiente = "/m05pwaMaterial/m28nav-tabsCss.html"
+ let urlSiguiente = "/m05pwaMaterial/m34select-menuJs.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
