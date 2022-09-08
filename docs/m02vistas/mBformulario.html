@@ -524,14 +524,14 @@
       style="color: #800000;">&lt;/title&gt;</span></div>
    <div><span
       style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div class="resaltado2"><span
+   <div><span
       style="color: #800000;">&lt;body&gt;</span></div>
    <div class="resaltado">&nbsp;<span
       style="color: #800000;">&lt;form</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"form"</span> <span
       style="color: #ff0000;">novalidate</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
+   <div class="resaltado">&nbsp;&nbsp;&nbsp;<span
       style="color: #ff0000;">action</span>=<span
       style="color: #0000ff;">"javascript:procesa()"</span><span
       style="color: #800000;">&gt;</span></div>
@@ -543,7 +543,7 @@
    <div>&nbsp;&nbsp;&nbsp;<span
       style="color: #800000;">&lt;label&gt;</span></div>
    <div>&nbsp;&nbsp;&nbsp;&nbsp;*Género</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+   <div class="resaltado">&nbsp;&nbsp;&nbsp;&nbsp;<span
       style="color: #800000;">&lt;select</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"inGenero"</span> <span
@@ -585,7 +585,7 @@
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"msgGenero"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Obligatorio</div>
+   <div class="resaltado">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Obligatorio</div>
    <div>&nbsp;&nbsp;&nbsp;<span
       style="color: #800000;">&lt;/small&gt;</span></div>
    <div>&nbsp;&nbsp;<span
@@ -599,7 +599,7 @@
       style="color: #800000;">&lt;/p&gt;</span></div>
    <div>&nbsp;<span
       style="color: #800000;">&lt;/form&gt;</span></div>
-   <div class="resaltado2">&nbsp;<span
+   <div>&nbsp;<span
       style="color: #800000;">&lt;script&gt;</span></div>
    <div>&nbsp;&nbsp;<span
       style="color: #008000;">// @ts-check</span></div>
@@ -608,7 +608,7 @@
       style="color: #0070c1;">OBLIGATORIO</span> =</div>
    <div>&nbsp;&nbsp;&nbsp;<span
       style="color: #a31515;">"*&nbsp;Obligatorio"</span></div><br>
-   <div>&nbsp;&nbsp;<span
+   <div class="resaltado">&nbsp;&nbsp;<span
       style="color: #0000ff;">function</span> <span
       style="color: #795e26;">procesa</span>()&nbsp;{</div>
    <div>&nbsp;&nbsp;&nbsp;<span
@@ -674,7 +674,7 @@
    <div class="resaltado">&nbsp;&nbsp;<span
       style="color: #0000ff;">function</span> <span
       style="color: #795e26;">copiaMensajes</span>()&nbsp;{</div>
-   <div  class="resaltado">&nbsp;&nbsp;&nbsp;<span
+   <div class="resaltado">&nbsp;&nbsp;&nbsp;<span
       style="color: #795e26;">msg</span>(<span
       style="color: #001080;">inGenero</span>, <span
       style="color: #001080;">msgGenero</span>,</div>
@@ -730,79 +730,46 @@
       style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;texto de ayuda. </span>
    </div>
    <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{HTMLInputElement|</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;HTMLTextAreaElement|</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;HTMLSelectElement|</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;HTMLOutputElement|null}&nbsp;e</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;referencia&nbsp;a&nbsp;un&nbsp;elemento&nbsp;que</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;contiene datos.</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{HTMLElement|null}&nbsp;out</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;elemento&nbsp;de&nbsp;ayuda&nbsp;para&nbsp;e.</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{string}&nbsp;ok&nbsp;mensaje&nbsp;de</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;ayuda&nbsp;cuando&nbsp;el&nbsp;estado&nbsp;de&nbsp;e&nbsp;es</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;válido.</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*/</span></div>
-   <div class="resaltado">&nbsp;&nbsp;<span
-      style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">msg</span>(<span
-      style="color: #001080;">e</span>, <span
-      style="color: #001080;">out</span>, <span
-      style="color: #001080;">ok</span>)&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #af00db;">if</span> (<span
-      style="color: #001080;">e</span> !== <span
-      style="color: #0000ff;">null</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp; <span
-      style="color: #001080;">out</span> !== <span
-      style="color: #0000ff;">null</span>)&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #af00db;">if</span> (<span
-      style="color: #001080;">e</span>.<span
-      style="color: #001080;">validity</span>.<span
-      style="color: #001080;">valid</span>)&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">out</span>.<span
-      style="color: #001080;">textContent</span> = <span
-      style="color: #001080;">ok</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
-      style="color: #af00db;">else</span>&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">out</span>.<span
-      style="color: #001080;">textContent</span> =</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">e</span>.<span
-      style="color: #001080;">validationMessage</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-   <div>&nbsp;&nbsp;&nbsp;}</div>
-   <div>&nbsp;&nbsp;}</div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/script&gt;</span></div>
-   <div><span
-      style="color: #800000;">&lt;/body&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{{</span></div>
+       <div><span
+  style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;validity:{valid:boolean};</span></div><div><span
+  style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;validationMessage: string</span></div><div><span
+  style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}|</span></div><div><span
+  style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null}&nbsp;e</span></div><div><span
+  style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;referencia a un elemento que</span></div><div><span
+  style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;contiene datos.</span></div><div><span
+  style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{HTMLElement|null}&nbsp;out</span></div><div><span
+  style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;elemento de ayuda para e.</span></div><div><span
+  style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{string}&nbsp;ok mensaje de</span></div><div><span
+  style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;ayuda cuando el estado de e es</span></div><div><span
+  style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;válido.</span></div><div><span
+  style="color: #008000;">&nbsp;&nbsp;&nbsp;*/</span></div><div class="resaltado">&nbsp;&nbsp;<span
+  style="color: #0000ff;">function</span> <span
+  style="color: #795e26;">msg</span>(<span
+  style="color: #001080;">e</span>, <span
+  style="color: #001080;">out</span>, <span
+  style="color: #001080;">ok</span>)&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;<span
+  style="color: #af00db;">if</span> (<span
+  style="color: #001080;">e</span> !== <span
+  style="color: #0000ff;">null</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp; <span
+  style="color: #001080;">out</span> !== <span
+  style="color: #0000ff;">null</span>)&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  style="color: #af00db;">if</span> (<span
+  style="color: #001080;">e</span>.<span
+  style="color: #001080;">validity</span>.<span
+  style="color: #001080;">valid</span>)&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+  style="color: #001080;">out</span>.<span
+  style="color: #001080;">textContent</span> = <span
+  style="color: #001080;">ok</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+  style="color: #af00db;">else</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+  style="color: #001080;">out</span>.<span
+  style="color: #001080;">textContent</span> =</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+  style="color: #001080;">e</span>.<span
+  style="color: #001080;">validationMessage</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;}</div><div>&nbsp;<span
+  style="color: #800000;">&lt;/script&gt;</span></div><div><span
+  style="color: #800000;">&lt;/body&gt;</span></div><br><div><span
+  style="color: #800000;">&lt;/html&gt;</span></div>
+ </div>
  </muestra-codigo>
 </div>
 <div class="lectura">

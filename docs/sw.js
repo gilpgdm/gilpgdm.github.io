@@ -165,7 +165,6 @@ const ARCHIVOS = [
    "/m05pwaMaterial/m34text-fieldJs.html",
    "/m05pwaMaterial/m35top-app-barJs.html",
    "/m05pwaMaterial/m35txtObligatorioJs.html",
-   "/m05pwaMaterial/m36detectaJs.html",
    "/m05pwaMaterial/m37constantesJs.html",
    "/m05pwaMaterial/m37getAttributeJs.html",
    "/m05pwaMaterial/m37md3Js.html",
@@ -202,6 +201,7 @@ const ARCHIVOS = [
    "/m06sesion/mUjsconfigJson.html",
    "/m06sesion/mVejecutaJs.html",
    "/m06sesion/mWmuestraErrorJs.html",
+   "/m06sesion/mXMethodJs.html",
    "/m06sesion/mXsubmitJs.html",
    "/m06sesion/mYleeValorPhp.html",
    "/m06sesion/mZaServicioPhp.html",
@@ -357,6 +357,7 @@ const ARCHIVOS = [
    "/src/m01notificaciones/",
    "/src/m01notificaciones/index.html",
    "/src/m02push/composer.zip",
+   "/src/m02push/push.zip",
    "/src/m03vistas/Aformulario.html",
    "/src/m03vistas/Bapp.html",
    "/src/m03vistas/Ccampos.html",
@@ -381,6 +382,7 @@ const ARCHIVOS = [
    "/src/m05pwaMaterial/pwamd.zip",
    "/src/m05pwaMaterial/roboto-v30-latin-regular.woff",
    "/src/m05pwaMaterial/roboto-v30-latin-regular.woff2",
+   "/src/m06sesion/phpauth.zip",
    "/src/m07iot/composer.zip" ]
 
 if (self instanceof ServiceWorkerGlobalScope) {

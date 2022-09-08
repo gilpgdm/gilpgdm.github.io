@@ -435,87 +435,17 @@
   &#x2630;
  </button>
  <a class="anterior" href="/m05pwaMaterial/m35top-app-barJs.html" title="45. lib/js/top-app-bar.js">◀</a>
- <a class="siguiente" href="/m05pwaMaterial/m36detectaJs.html" title="47. lib/js/detecta.js">▶</a>
+ <a class="siguiente" href="/m05pwaMaterial/m37constantesJs.html" title="47. lib/js/constantes.js">▶</a>
    <h1 >46. lib/js/textos/txtObligatorio.js</h1><muestra-codigo>
  <div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">CLASE_ELEVACION2</span> =</div>
-  <div>&nbsp;<span style="color: #a31515;">"elevacion2"</span></div><br>
-  <div><span style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">class</span> <span
-     style="color: #267f99;">CnAppBar</span></div>
-  <div>&nbsp;<span style="color: #0000ff;">extends</span> <span
-     style="color: #267f99;">HTMLElement</span> {</div>
-  <div>&nbsp;<span style="color: #0000ff;">constructor</span>() {</div>
-  <div>&nbsp; <span style="color: #0000ff;">super</span>()</div>
-  <div>&nbsp; <span style="color: #008000;">/** </span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{number}</span><span
-     style="color: #008000;"> */</span></div>
-  <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">posY</span> = <span
-     style="color: #098658;">0</span></div>
-  <div>&nbsp; <span style="color: #008000;">/** </span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{boolean}</span><span
-     style="color: #008000;"> */</span></div>
-  <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">procesando</span> = <span
-     style="color: #0000ff;">false</span></div>
-  <div>&nbsp;}</div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">txtObligatorio</span>()&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #795e26;">connectedCallback</span>() {</div>
-  <div>&nbsp; <span style="color: #001080;">window</span>.<span
-     style="color: #795e26;">addEventListener</span>(</div>
-  <div>&nbsp; &nbsp;<span style="color: #a31515;">"scroll"</span>,</div>
-  <div>&nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #795e26;">onScroll</span>())</div>
-  <div>&nbsp;}</div>
-  <div>&nbsp;<span style="color: #795e26;">onScroll</span>() {</div>
-  <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">posY</span> = <span
-     style="color: #001080;">window</span>.<span
-     style="color: #001080;">scrollY</span></div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (!<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">procesando</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">window</span>.<span
-     style="color: #795e26;">requestAnimationFrame</span>(</div>
-  <div>&nbsp; &nbsp; () <span style="color: #0000ff;">=&gt;</span> <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #795e26;">avanza</span>())</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">procesando</span> = <span
-     style="color: #0000ff;">true</span></div>
-  <div>&nbsp;}</div>
-  <div>&nbsp;<span style="color: #795e26;">avanza</span>() {</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">posY</span> === <span
-     style="color: #098658;">0</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-     style="color: #0070c1;">classList</span>.</div>
-  <div>&nbsp; &nbsp; <span style="color: #795e26;">remove</span>(<span
-     style="color: #0070c1;">CLASE_ELEVACION2</span>)</div>
-  <div>&nbsp; } <span style="color: #af00db;">else</span> {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-     style="color: #0070c1;">classList</span>.</div>
-  <div>&nbsp; &nbsp; <span style="color: #795e26;">add</span>(<span
-     style="color: #0070c1;">CLASE_ELEVACION2</span>)</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">procesando</span> = <span
-     style="color: #0000ff;">false</span></div>
-  <div>&nbsp;}</div>
+     style="color: #af00db;">return</span> <span
+     style="color: #a31515;">"Este campo es obligatorio"</span></div>
   <div>}</div>
-  <div><span style="color: #001080;">customElements</span>.</div>
-  <div>&nbsp;<span style="color: #795e26;">define</span>(<span
-     style="color: #a31515;">"cn-app-bar"</span>, <span
-     style="color: #267f99;">CnAppBar</span>)</div>
  </div>
 </muestra-codigo>
  <footer>
@@ -785,11 +715,6 @@
     </li>
     <li>
      <p>
-      <a href="/m05pwaMaterial/m36detectaJs.html">lib/js/detecta.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
       <a href="/m05pwaMaterial/m37constantesJs.html">lib/js/constantes.js</a>
      </p>
     </li>
@@ -844,7 +769,7 @@
  /**@type {string} */
  let urlAnterior = "/m05pwaMaterial/m35top-app-barJs.html"
  /**@type {string} */
- let urlSiguiente = "/m05pwaMaterial/m36detectaJs.html"
+ let urlSiguiente = "/m05pwaMaterial/m37constantesJs.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

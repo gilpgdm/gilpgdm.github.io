@@ -1,83 +1,172 @@
 <muestra-codigo>
  <div>
-  <div><span style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">class</span> <span
-     style="color: #267f99;">CmDin</span></div>
-  <div>&nbsp;<span style="color: #0000ff;">extends</span> <span
-     style="color: #267f99;">HTMLElement</span> {</div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #795e26;">connectedCallback</span>() {</div>
-  <div>&nbsp; <span style="color: #795e26;">setTimeout</span>(</div>
-  <div>&nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #795e26;">prepara</span>(),</div>
-  <div>&nbsp; &nbsp;<span style="color: #098658;">100</span>)</div>
-  <div>&nbsp;}</div>
-  <div>&nbsp;<span style="color: #795e26;">prepara</span>() {</div>
-  <div>&nbsp; <span style="color: #008000;">/**</span></div>
-  <div><span style="color: #008000;">&nbsp; &nbsp;* </span><span
+     style="color: #001080;">VALUE_PROPERTY</span></div>
+  <div>}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../constantes.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #001080;">getAttribute</span></div>
+  <div>}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../getAttribute.js"</span></div><br>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">class</span> <span
+     style="color: #267f99;">MenuOption</span></div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">extends</span> <span
+     style="color: #267f99;">HTMLElement</span>&nbsp;{</div><br>
+  <div>&nbsp;<span
+     style="color: #001080;">static</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">get</span> <span
+     style="color: #001080;">observedAttributes</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> [<span
+     style="color: #0070c1;">VALUE_PROPERTY</span>]</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">constructor</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">super</span>()</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@private</span></div>
-  <div><span style="color: #008000;">&nbsp; &nbsp;* </span><span
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@type</span><span
      style="color: #008000;"> </span><span
      style="color: #267f99;">{HTMLInputElement|</span></div>
-  <div><span style="color: #008000;">&nbsp; &nbsp;*</span><span
-     style="color: #267f99;"> &nbsp;HTMLSelectElement|</span></div>
-  <div><span style="color: #008000;">&nbsp; &nbsp;*</span><span
-     style="color: #267f99;"> &nbsp;HTMLOutputElement|</span></div>
   <div><span
-     style="color: #008000;">&nbsp; &nbsp;* &nbsp;null} */</span></div>
-  <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_elem</span> = <span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*</span><span
+     style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null}</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*/</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_radio</span> = <span
+     style="color: #0000ff;">null</span></div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">name</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">_oldValue</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">newValue</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*/</span></div>
+  <div>&nbsp;<span
+     style="color: #795e26;">attributeChangedCallback</span>(<span
+     style="color: #001080;">name</span>,</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">_oldValue</span>, <span
+     style="color: #001080;">newValue</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">name</span> === <span
+     style="color: #0070c1;">VALUE_PROPERTY</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">radio</span>.<span
+     style="color: #001080;">value</span> = <span
+     style="color: #001080;">newValue</span></div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">get</span> <span
+     style="color: #001080;">radio</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_radio</span> === <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_radio</span> = <span
      style="color: #0000ff;">this</span>.</div>
-  <div>&nbsp; &nbsp;<span style="color: #795e26;">querySelector</span>(</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #a31515;">"input, select, output"</span>)</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">appendChild</span>(<span
+     style="color: #001080;">document</span>.</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">createElement</span>(<span
+     style="color: #a31515;">"input"</span>))</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_elem</span> != <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-     style="color: #795e26;">addEventListener</span>(<span
-     style="color: #a31515;">"input"</span>,</div>
-  <div>&nbsp; &nbsp; () <span style="color: #0000ff;">=&gt;</span> <span
+     style="color: #001080;">_radio</span>.<span
+     style="color: #001080;">type</span> = <span
+     style="color: #a31515;">"radio"</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #795e26;">analiza</span>())</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
-     style="color: #795e26;">analiza</span>();</div>
-  <div>&nbsp;}</div>
-  <div>&nbsp;<span style="color: #795e26;">analiza</span>() {</div>
-  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">e</span> = <span
+     style="color: #001080;">radio</span>.<span
+     style="color: #001080;">style</span>.<span
+     style="color: #001080;">transform</span> =</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #a31515;">"scaleY(0)"</span></div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_elem</span>;</div>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">e</span> != <span
-     style="color: #0000ff;">null</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (!<span
-     style="color: #0070c1;">e</span>.<span
-     style="color: #001080;">validity</span>.<span
-     style="color: #0070c1;">badInput</span> &amp;&amp;</div>
-  <div>&nbsp; &nbsp; <span style="color: #0070c1;">e</span>.<span
-     style="color: #001080;">value</span> === <span
-     style="color: #a31515;">""</span>) {</div>
-  <div>&nbsp; &nbsp; <span style="color: #0070c1;">e</span>.<span
-     style="color: #0070c1;">classList</span>.<span
-     style="color: #795e26;">remove</span>(<span
-     style="color: #a31515;">"valor"</span>)</div>
-  <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
-  <div>&nbsp; &nbsp; <span style="color: #0070c1;">e</span>.<span
-     style="color: #0070c1;">classList</span>.<span
-     style="color: #795e26;">add</span>(<span
-     style="color: #a31515;">"valor"</span>)</div>
-  <div>&nbsp; &nbsp;}</div>
-  <div>&nbsp; }</div>
+     style="color: #001080;">_radio</span></div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">get</span> <span
+     style="color: #795e26;">value</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #795e26;">getAttribute</span>(<span
+     style="color: #0000ff;">this</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">VALUE_PROPERTY</span>)</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">/**&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">value</span><span
+     style="color: #008000;"> */</span></div>
+  <div>&nbsp;<span
+     style="color: #795e26;">setValue</span>(<span
+     style="color: #001080;">value</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">setAttribute</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">VALUE_PROPERTY</span>, <span
+     style="color: #001080;">value</span>)</div>
   <div>&nbsp;}</div>
   <div>}</div>
-  <div><span style="color: #001080;">customElements</span>.</div>
-  <div>&nbsp;<span style="color: #795e26;">define</span>(<span
-     style="color: #a31515;">"cm-din"</span>, <span
-     style="color: #267f99;">CmDin</span>)</div>
+  <div><span
+     style="color: #001080;">customElements</span>.<span
+     style="color: #795e26;">define</span>(</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"menu-option"</span>, <span
+     style="color: #001080;">MenuOption</span>)</div>
  </div>
 </muestra-codigo>
