@@ -99,6 +99,7 @@
 
    div {
     position: absolute;
+    z-index: 3;
     min-width: 112px;
     max-width: 280px;
     top: 3rem;
@@ -330,6 +331,8 @@
    #base {
     display: flex;
     align-items: center;
+    height: 64px;
+    box-sizing: border-box;
     padding-left: 4px;
     padding-right: 4px;
    }
@@ -353,12 +356,21 @@
      var(--TitleLargeWeight);
    }
 
+   :host(.${MEDIUM_CLASS}) #base {
+    height: 48px;
+    transition: 0.5s;
+   }
+
    :host(.${MEDIUM_CLASS}) [${HEADLINE_NAME}]::slotted(*) {
     height: 24px;
     pointer-events: none;
     transform:
      translateY(50%) scaleY(0);
     transition: 0.5s;
+   }
+
+   :host(.${MEDIUM_CLASS}.${ELEVATION_CLASS}) #base {
+    height: 64px;
    }
 
    :host(.${MEDIUM_CLASS}.${ELEVATION_CLASS}) [${HEADLINE_NAME}]::slotted(*) {
@@ -395,7 +407,6 @@
     left: 0;
     right: 0;
     margin: 0 70px;
-    line-height: 64px;
     text-align: center;
    }
 
@@ -404,7 +415,6 @@
     margin: 0;
     padding-left: 4px;
     padding-right: 12px;
-    line-height: 64px;
    }
 
    [${OVERFLOW_NAME}]::slotted(*) {
@@ -416,16 +426,13 @@
     <slot
       ${NAVIGATION_NAME}></slot>
    </div>
-   <slot
-    ${HEADLINE_NAME}></slot>
+   <slot ${HEADLINE_NAME}></slot>
    <slot ${ACTION_NAME}></slot>
-   <slot
-    ${OVERFLOW_NAME}></slot>
+   <slot ${OVERFLOW_NAME}></slot>
   </div>
   <slot ${HEADLINE_SMALL_NAME}>
   </slot>
-  <slot
-    name="adicional"></slot>`
+  <slot name="adicional"></slot>`
     /**
      * @private
      * @type {number}
@@ -441,6 +448,14 @@
      * @type {HTMLSlotElement|
      *        null}
      */
+    this._headlineSmall = this.
+     _shadow.querySelector(
+      `[${HEADLINE_SMALL_NAME}]`)
+    /**
+     * @private
+     * @type {HTMLSlotElement|
+     *        null}
+     */
     this._action = this._shadow.
      querySelector(
       `[${ACTION_NAME}]`)
@@ -450,12 +465,39 @@
        "slotchange", () =>
        this._configAction())
     }
+    if (this._headlineSmall
+     !== null) {
+     this._headlineSmall.
+      addEventListener(
+       "slotchange", () =>
+       this._configHeadlineSmall())
+    }
     addEventListener("scroll",
      () => this._onScroll())
    }
 
    connectedCallback() {
+    this._configHeadlineSmall()
     this._configAction()
+   }
+
+   /** @private */
+   _configHeadlineSmall() {
+    if (this._headlineSmall
+     !== null) {
+     const elements = this.
+      _headlineSmall.
+      assignedElements()
+     if (this.isConnected) {
+      if (elements.length === 0) {
+       this.classList.
+        remove(MEDIUM_CLASS)
+      } else {
+       this.classList.
+        add(MEDIUM_CLASS)
+      }
+     }
+    }
    }
 
    /** @private */
@@ -577,7 +619,7 @@
 </head>
 
 <body>
- <top-app-bar class="medium">
+ <top-app-bar>
   <h1 slot="headline">Otra</h1>
   <h1 slot="headline-small">
    Otra página con título largo
