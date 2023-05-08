@@ -20,6 +20,9 @@
    --Font: -apple-system,
     BlinkMacSystemFont, Roboto,
     sans-serif;
+   --TitleSmallFont: var(--Font);
+   --TitleSmallSize: 14px;
+   --TitleSmallWeight: 500;
    --TitleLargeFont: var(--Font);
    --TitleLargeSize: 22px;
    --TitleLargeWeight: 400;
@@ -71,7 +74,7 @@
     this.classList.add("navTab")
     this.innerHTML = /* html */
      `<a href="index.html"
-       class="selected">
+       class="active">
       <span
         class="material-symbols-outlined">
        home
@@ -221,6 +224,12 @@
    CenterAlignedTopAppBar)
  </script>
  <style>
+  html {
+   --navTabHeight: 64px;
+   --minTabWidth: 64px;
+   --iconSize: 24px;
+  }
+
   body {
    margin: 0;
    scroll-padding-top: 8rem;
@@ -232,34 +241,65 @@
 
   .navTab {
    display: flex;
-   padding-bottom: 16px;
-   gap: 16px;
    justify-content: center;
+   height: var(--navTabHeight);
+   background-color: var(--Surface);
+   align-items: stretch;
+  }
+
+  .navTab span {
+   font-size: var(--iconSize);
+   height: var(--iconSize);
+   width: var(--iconSize);
+   color: var(--OnSurfaceVariant);
+  }
+
+  .navTab .active span {
+   color: var(--Primary);
   }
 
   .navTab a {
-   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
    text-decoration: none;
-   color: var(--Primary);
+   color: var(--OnSurfaceVariant);
    font-family:
-    var(--LabelLargeFont);
+    var(--TitleSmallFont);
    font-size:
-    var(--LabelLargeSize);
+    var(--TitleSmallSize);
    font-weight:
-    var(--LabelLargeWeight);
+    var(--TitleSmallWeight);
+   line-height:
+    var(--TitleSmallSize);
    box-sizing: border-box;
-   height: 40px;
-   line-height: 40px;
-   padding: 0 24px;
-   border-radius: 20px;
-   overflow: hidden;
+   border-bottom: 3px solid var(--Surface);
+   min-width: var(--minTabWidth);
   }
 
   .navTab a:hover {
    background-color:
+    var(--OnSurfaceHover);
+   color: var(--OnSurface);
+  }
+
+  .navTab a.active {
+   border-bottom-color: var(--Primary);
+  }
+
+  .navTab a.active:hover {
+   color: var(--Primary);
+   background-color:
     var(--PrimaryHover);
-   box-shadow:
-    var(--ElevationLevel1Shadow);
+  }
+
+  .navTab a:hover span {
+   color: var(--OnSurface);
+  }
+
+  .navTab a.active:hover span {
+   color: var(--Primary);
   }
 
   .navTab a:focus {
@@ -277,46 +317,6 @@
    animation-fill-mode: forwards;
    animation-name: ripple;
    animation-duration: 0.5s;
-  }
-
-  .navTab a.selected::after {
-   content: "";
-   background-color:
-    var(--Primary);
-   position: absolute;
-   z-index: -1;
-   top: 0;
-   right: 0;
-   left: 0;
-   bottom: 0;
-  }
-
-  .navTab a.selected {
-   background-color: transparent;
-   box-shadow:
-    var(--ElevationLevel0Shadow);
-   color: var(--OnPrimary);
-  }
-
-  .navTab a.selected:hover {
-   background-color:
-    var(--OnPrimaryHover);
-   box-shadow:
-    var(--ElevationLevel1Shadow);
-  }
-
-  .navTab a.selected:focus {
-   background-color:
-    var(--OnPrimaryFocus);
-  }
-
-  .navTab a.selected:active {
-   background-color:
-    var(--OnPrimaryPressed);
-  }
-
-  .navTab span {
-   vertical-align: middle;
   }
 
   @keyframes ripple {

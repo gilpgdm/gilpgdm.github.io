@@ -1446,38 +1446,31 @@
          <h1 >5. js / mi-nav.js</h1><muestra-codigo>
  <div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">SELECTED_CLASS</span></div>
+     style="color: #0000ff;">import</span>&nbsp;{</div>
+  <div>&nbsp;ACTIVE_CLASS</div>
   <div>}&nbsp;<span
-     style="color: #af00db;">from</span> <span
+     style="color: #0000ff;">from</span> <span
      style="color: #a31515;">"../lib/js/constantes.js"</span></div><br>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">class</span> <span
-     style="color: #267f99;">MiNav</span></div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">class</span> MiNav</div>
   <div>&nbsp;<span
-     style="color: #0000ff;">extends</span> <span
-     style="color: #267f99;">HTMLElement</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
+     style="color: #0000ff;">extends</span> HTMLElement&nbsp;{</div>
+  <div>&nbsp;connectedCallback()&nbsp;{</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #0070c1;">classList</span>.<span
-     style="color: #795e26;">add</span>(<span
+     style="color: #0000ff;">this</span>.classList.add(<span
      style="color: #a31515;">"navTab"</span>)</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">innerHTML</span> = <span
+     style="color: #0000ff;">this</span>.innerHTML = <span
      style="color: #008000;">/*&nbsp;html */</span></div>
   <div>&nbsp;&nbsp;&nbsp;`<span
      style="color: #800000;">&lt;a</span> <span
-     style="color: #ff0000;">href</span>=<span
+     style="color: #e50000;">href</span>=<span
      style="color: #0000ff;">"index.html"</span><span
      style="color: #800000;">&gt;</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #800000;">&lt;span</span> <span
-     style="color: #ff0000;">class</span>=<span
+     style="color: #e50000;">class</span>=<span
      style="color: #0000ff;">"material-symbols-outlined"</span><span
      style="color: #800000;">&gt;</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;home</div>
@@ -1488,12 +1481,12 @@
      style="color: #800000;">&lt;/a&gt;</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #800000;">&lt;a</span> <span
-     style="color: #ff0000;">href</span>=<span
+     style="color: #e50000;">href</span>=<span
      style="color: #0000ff;">"ayuda.html"</span><span
      style="color: #800000;">&gt;</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #800000;">&lt;span</span> <span
-     style="color: #ff0000;">class</span>=<span
+     style="color: #e50000;">class</span>=<span
      style="color: #0000ff;">"material-symbols-outlined"</span><span
      style="color: #800000;">&gt;</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;help</div>
@@ -1503,58 +1496,36 @@
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #800000;">&lt;/a&gt;</span>`</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">href</span> = <span
-     style="color: #001080;">location</span>.<span
-     style="color: #001080;">href</span></div>
+     style="color: #0000ff;">const</span> href = location.href</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">index</span> = <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #795e26;">querySelector</span>(</div>
+     style="color: #0000ff;">const</span> index = <span
+     style="color: #0000ff;">this</span>.querySelector(</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #a31515;">"[href='index.html']"</span>)</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">ayuda</span> = <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #795e26;">querySelector</span>(</div>
+     style="color: #0000ff;">const</span> ayuda = <span
+     style="color: #0000ff;">this</span>.querySelector(</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #a31515;">"[href='ayuda.html']"</span>)</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">ayuda</span> != <span
+     style="color: #0000ff;">if</span> (ayuda != <span
      style="color: #0000ff;">null</span> &amp;&amp;</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">href</span>.<span
-     style="color: #795e26;">endsWith</span>(<span
+  <div>&nbsp;&nbsp;&nbsp;href.endsWith(<span
      style="color: #a31515;">"ayuda.html"</span>))&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">ayuda</span>.<span
-     style="color: #0070c1;">classList</span>.</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">add</span>(<span
-     style="color: #0070c1;">SELECTED_CLASS</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;ayuda.classList.</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;add(ACTIVE_CLASS)</div>
   <div>&nbsp;&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span> <span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">index</span> != <span
+     style="color: #0000ff;">else</span> <span
+     style="color: #0000ff;">if</span> (index != <span
      style="color: #0000ff;">null</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">index</span>.<span
-     style="color: #0070c1;">classList</span>.</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">add</span>(<span
-     style="color: #0070c1;">SELECTED_CLASS</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;index.classList.</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;add(ACTIVE_CLASS)</div>
   <div>&nbsp;&nbsp;}</div>
   <div>&nbsp;}</div>
   <div>}</div>
-  <div><span
-     style="color: #001080;">customElements</span>.<span
-     style="color: #795e26;">define</span>(</div>
+  <div>customElements.define(</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"mi-nav"</span>, <span
-     style="color: #267f99;">MiNav</span>)</div>
+     style="color: #a31515;">"mi-nav"</span>, MiNav)</div>
  </div>
 </muestra-codigo>
       </section>
@@ -2120,7 +2091,8 @@
   <div><span
      style="color: #008000;">/*&nbsp;Este archivo debe estar</span></div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;colocado en la carpeta raíz del</span></div>
+     style="color: #008000;">&nbsp;*&nbsp;colocado en la carpeta raíz del</span>
+  </div>
   <div><span
      style="color: #008000;">&nbsp;*&nbsp;sitio.</span></div>
   <div><span
@@ -2128,7 +2100,8 @@
   <div><span
      style="color: #008000;">&nbsp;*&nbsp;Cualquier cambio en el</span></div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;contenido de este archivo hace</span></div>
+     style="color: #008000;">&nbsp;*&nbsp;contenido de este archivo hace</span>
+  </div>
   <div><span
      style="color: #008000;">&nbsp;*&nbsp;que el service worker se</span></div>
   <div><span
@@ -2142,10 +2115,11 @@
      style="color: #008000;">&nbsp;*&nbsp;de la versión cuando cambia el</span>
   </div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;contenido de los archivos. */</span></div>
+     style="color: #008000;">&nbsp;*&nbsp;contenido de los archivos. */</span>
+  </div>
   <div><span
      style="color: #0000ff;">const</span> VERSION = <span
-     style="color: #a31515;">"1.6"</span></div><br>
+     style="color: #a31515;">"1.7"</span></div><br>
   <div><span
      style="color: #008000;">/**&nbsp;Nombre del archivo de cache. */</span>
   </div>
@@ -2155,9 +2129,11 @@
   <div><span
      style="color: #008000;">/**</span></div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Archivos requeridos para que la</span></div>
+     style="color: #008000;">&nbsp;*&nbsp;Archivos requeridos para que la</span>
+  </div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;aplicación funcione fuera de</span></div>
+     style="color: #008000;">&nbsp;*&nbsp;aplicación funcione fuera de</span>
+  </div>
   <div><span
      style="color: #008000;">&nbsp;*&nbsp;línea.</span></div>
   <div><span
@@ -2199,7 +2175,8 @@
   <div>&nbsp;<span
      style="color: #a31515;">"lib/css/list.css"</span>,</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"lib/css/material-symbols-outlined.css"</span>,</div>
+     style="color: #a31515;">"lib/css/material-symbols-outlined.css"</span>,
+  </div>
   <div>&nbsp;<span
      style="color: #a31515;">"lib/css/md3.css"</span>,</div>
   <div>&nbsp;<span
@@ -2215,17 +2192,23 @@
   <div>&nbsp;<span
      style="color: #a31515;">"lib/css/segmented.css"</span>,</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints"</span>,</div>
+     style="color: #a31515;">"lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints"</span>,
+  </div>
   <div>&nbsp;<span
-     style="color: #a31515;">"lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf"</span>,</div>
+     style="color: #a31515;">"lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf"</span>,
+  </div>
   <div>&nbsp;<span
-     style="color: #a31515;">"lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].wof22"</span>,</div>
+     style="color: #a31515;">"lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2"</span>,
+  </div>
   <div>&nbsp;<span
-     style="color: #a31515;">"lib/fonts/roboto-v30-latin-regular.woff"</span>,</div>
+     style="color: #a31515;">"lib/fonts/roboto-v30-latin-regular.woff"</span>,
+  </div>
   <div>&nbsp;<span
-     style="color: #a31515;">"lib/fonts/roboto-v30-latin-regular.woff2"</span>,</div>
+     style="color: #a31515;">"lib/fonts/roboto-v30-latin-regular.woff2"</span>,
+  </div>
   <div>&nbsp;<span
-     style="color: #a31515;">"lib/js/custom/center-aligned-top-app-bar.js"</span>,</div>
+     style="color: #a31515;">"lib/js/custom/center-aligned-top-app-bar.js"</span>,
+  </div>
   <div>&nbsp;<span
      style="color: #a31515;">"lib/js/custom/menu-option.js"</span>,</div>
   <div>&nbsp;<span
@@ -2387,7 +2370,8 @@
   <div>&nbsp;&nbsp;<span
      style="color: #008000;">/*&nbsp;Si lo encuentra, devuelve el</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;archivo del cache.&nbsp;*/</span></div>
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;archivo del cache.
+    */</span></div>
   <div>&nbsp;&nbsp;<span
      style="color: #0000ff;">return</span> response</div>
   <div>&nbsp;}&nbsp;<span
@@ -2395,9 +2379,11 @@
   <div>&nbsp;&nbsp;<span
      style="color: #008000;">/*&nbsp;Si no lo encuentra, lo</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;empieza&nbsp;a&nbsp;descargar&nbsp;de&nbsp;la&nbsp;red</span></div>
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;empieza a descargar de la
+    red</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;y&nbsp;devuelve&nbsp;la&nbsp;promesa.&nbsp;*/</span></div>
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;y devuelve la promesa.
+    */</span></div>
   <div>&nbsp;&nbsp;<span
      style="color: #0000ff;">return</span> fetch(evt.request)</div>
   <div>&nbsp;}</div>
@@ -2410,6 +2396,9 @@
  <div>
   <div><span
      style="color: #800000;">html</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">--tabWidth</span>: <span
+     style="color: #098658;">100px</span>;</div>
   <div>&nbsp;<span
      style="color: #e50000;">--Font</span>: -apple-system,</div>
   <div>&nbsp;&nbsp;BlinkMacSystemFont, Roboto,</div>
@@ -3982,6 +3971,12 @@
      style="color: #e50000;">--ShapeCornerExtraSmall</span>: <span
      style="color: #098658;">4px</span>;</div>
   <div>&nbsp;<span
+     style="color: #e50000;">--navTabHeight</span>: <span
+     style="color: #098658;">64px</span>;</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">--minTabWidth</span>: <span
+     style="color: #098658;">64px</span>;</div>
+  <div>&nbsp;<span
      style="color: #e50000;">--iconSize</span>: <span
      style="color: #098658;">24px</span>;</div>
   <div>&nbsp;<span
@@ -4081,196 +4076,168 @@
   <div><span
      style="color: #800000;">.navBar</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">display</span>: <span
+     style="color: #e50000;">display</span>: <span
      style="color: #0451a5;">flex</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">position</span>: <span
+     style="color: #e50000;">position</span>: <span
      style="color: #0451a5;">fixed</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">left</span>: <span
+     style="color: #e50000;">left</span>: <span
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">right</span>: <span
+     style="color: #e50000;">right</span>: <span
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">bottom</span>: <span
+     style="color: #e50000;">bottom</span>: <span
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--Elevation</span>)</div>
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--Elevation)</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navBar</span> <span
      style="color: #800000;">a</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">display</span>: <span
+     style="color: #e50000;">display</span>: <span
      style="color: #0451a5;">block</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">flex</span>: <span
+     style="color: #e50000;">flex</span>: <span
      style="color: #098658;">1</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurfaceVariant</span>);</div>
+     style="color: #e50000;">color</span>: var(--OnSurfaceVariant);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">line-height</span>: <span
+     style="color: #e50000;">line-height</span>: <span
      style="color: #098658;">16px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">font-family</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--LabelMediumFont</span>);</div>
+     style="color: #e50000;">font-family</span>:</div>
+  <div>&nbsp;&nbsp;var(--LabelMediumFont);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">font-size</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--LabelMediumSize</span>);</div>
+     style="color: #e50000;">font-size</span>:</div>
+  <div>&nbsp;&nbsp;var(--LabelMediumSize);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">font-weight</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--LabelMediumWeight</span>);</div>
+     style="color: #e50000;">font-weight</span>:</div>
+  <div>&nbsp;&nbsp;var(--LabelMediumWeight);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">text-decoration</span>: <span
+     style="color: #e50000;">text-decoration</span>: <span
      style="color: #0451a5;">none</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">padding-top</span>: <span
+     style="color: #e50000;">padding-top</span>: <span
      style="color: #098658;">12px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">padding-bottom</span>: <span
+     style="color: #e50000;">padding-bottom</span>: <span
      style="color: #098658;">16px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">padding-left</span>: <span
+     style="color: #e50000;">padding-left</span>: <span
      style="color: #098658;">4px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">padding-right</span>: <span
+     style="color: #e50000;">padding-right</span>: <span
      style="color: #098658;">4px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">text-align</span>: <span
+     style="color: #e50000;">text-align</span>: <span
      style="color: #0451a5;">center</span>;</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navBar</span> <span
-     style="color: #800000;">a.selected</span>&nbsp;{</div>
+     style="color: #800000;">a.active</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurface</span>);</div>
+     style="color: #e50000;">color</span>: var(--OnSurface);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navBar</span> <span
      style="color: #800000;">a:hover</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurfaceVariantHover</span>);</div>
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--OnSurfaceVariantHover);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navBar</span> <span
-     style="color: #800000;">a.selected:hover</span>&nbsp;{</div>
+     style="color: #800000;">a.active:hover</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurfaceHover</span>);</div>
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--OnSurfaceHover);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navBar</span> <span
      style="color: #800000;">a:focus</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">outline</span>: <span
+     style="color: #e50000;">outline</span>: <span
      style="color: #0451a5;">none</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurfaceVariantFocus</span>);</div>
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--OnSurfaceVariantFocus);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navBar</span> <span
-     style="color: #800000;">a.selected:focus</span>&nbsp;{</div>
+     style="color: #800000;">a.active:focus</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurfaceFocus</span>);</div>
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--OnSurfaceFocus);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navBar</span> <span
      style="color: #800000;">a:active</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurfaceVariantPressed</span>);</div>
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--OnSurfaceVariantPressed);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navBar</span> <span
-     style="color: #800000;">a.selected:active</span>&nbsp;{</div>
+     style="color: #800000;">a.active:active</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurfacePressed</span>);</div>
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--OnSurfacePressed);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navBar</span> <span
      style="color: #800000;">span</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurfaceVariant</span>);</div>
+     style="color: #e50000;">color</span>: var(--OnSurfaceVariant);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">position</span>: <span
+     style="color: #e50000;">position</span>: <span
      style="color: #0451a5;">relative</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">display</span>: <span
+     style="color: #e50000;">display</span>: <span
      style="color: #0451a5;">block</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">height</span>: <span
+     style="color: #e50000;">height</span>: <span
      style="color: #098658;">32px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">width</span>: <span
+     style="color: #e50000;">width</span>: <span
      style="color: #098658;">64px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">line-height</span>: <span
+     style="color: #e50000;">line-height</span>: <span
      style="color: #098658;">32px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">margin-bottom</span>: <span
+     style="color: #e50000;">margin-bottom</span>: <span
      style="color: #098658;">4px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">box-sizing</span>: <span
+     style="color: #e50000;">box-sizing</span>: <span
      style="color: #0451a5;">border-box</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">margin-left</span>: <span
+     style="color: #e50000;">margin-left</span>: <span
      style="color: #0451a5;">auto</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">margin-right</span>: <span
+     style="color: #e50000;">margin-right</span>: <span
      style="color: #0451a5;">auto</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">overflow</span>: <span
+     style="color: #e50000;">overflow</span>: <span
      style="color: #0451a5;">hidden</span>;</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navBar</span> <span
-     style="color: #800000;">a.selected</span> <span
+     style="color: #800000;">a.active</span> <span
      style="color: #800000;">span</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSecondaryContainer</span>);</div>
+     style="color: #e50000;">color</span>:</div>
+  <div>&nbsp;&nbsp;var(--OnSecondaryContainer);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navBar</span> <span
-     style="color: #800000;">a.selected:not</span>(<span
+     style="color: #800000;">a.active:not</span>(<span
      style="color: #800000;">:focus</span>, <span
      style="color: #800000;">:active</span>)&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">font-variation-settings</span>:</div>
+     style="color: #e50000;">font-variation-settings</span>:</div>
   <div>&nbsp;&nbsp;<span
      style="color: #a31515;">'FILL'</span><span
      style="color: #098658;">1</span>, <span
@@ -4286,56 +4253,52 @@
      style="color: #800000;">.navBar</span> <span
      style="color: #800000;">span::after</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">content</span>: <span
+     style="color: #e50000;">content</span>: <span
      style="color: #a31515;">""</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--SecondaryContainer</span>);</div>
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--SecondaryContainer);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">position</span>: <span
+     style="color: #e50000;">position</span>: <span
      style="color: #0451a5;">absolute</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">z-index</span>: <span
+     style="color: #e50000;">z-index</span>: <span
      style="color: #098658;">-1</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">top</span>: <span
+     style="color: #e50000;">top</span>: <span
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">left</span>: <span
+     style="color: #e50000;">left</span>: <span
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">height</span>: <span
+     style="color: #e50000;">height</span>: <span
      style="color: #098658;">32px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">width</span>: <span
+     style="color: #e50000;">width</span>: <span
      style="color: #098658;">64px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">border-radius</span>: <span
+     style="color: #e50000;">border-radius</span>: <span
      style="color: #098658;">16px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">box-sizing</span>: <span
+     style="color: #e50000;">box-sizing</span>: <span
      style="color: #0451a5;">border-box</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">transform</span>: <span
-     style="color: #795e26;">scaleX</span>(<span
+     style="color: #e50000;">transform</span>: scaleX(<span
      style="color: #098658;">0</span>);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">transition</span>: transform <span
+     style="color: #e50000;">transition</span>: transform <span
      style="color: #098658;">0.5s</span>;</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navBar</span> <span
-     style="color: #800000;">a.selected</span> <span
+     style="color: #800000;">a.active</span> <span
      style="color: #800000;">span::after</span>,</div>
   <div><span
      style="color: #800000;">.navBar</span> <span
      style="color: #800000;">a:active</span> <span
      style="color: #800000;">span::after</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">transform</span>: <span
-     style="color: #795e26;">scaleX</span>(<span
+     style="color: #e50000;">transform</span>: scaleX(<span
      style="color: #098658;">1</span>);</div>
   <div>}</div>
  </div>
@@ -4348,60 +4311,53 @@
      style="color: #800000;">.navDrw</span> <span
      style="color: #800000;">ul</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">position</span>: <span
+     style="color: #e50000;">position</span>: <span
      style="color: #0451a5;">fixed</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">z-index</span>: <span
+     style="color: #e50000;">z-index</span>: <span
      style="color: #098658;">2</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">top</span>: <span
+     style="color: #e50000;">top</span>: <span
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">bottom</span>: <span
+     style="color: #e50000;">bottom</span>: <span
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">left</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">calc</span>(<span
-     style="color: #098658;">-10rem</span> - <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--anchoNav</span>));</div>
+     style="color: #e50000;">left</span>:</div>
+  <div>&nbsp;&nbsp;calc(<span
+     style="color: #098658;">-10rem</span> - var(--anchoNav));</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">box-sizing</span>: <span
+     style="color: #e50000;">box-sizing</span>: <span
      style="color: #0451a5;">border-box</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">width</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--anchoNav</span>);</div>
+     style="color: #e50000;">width</span>: var(--anchoNav);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">max-width</span>: <span
+     style="color: #e50000;">max-width</span>: <span
      style="color: #098658;">80vw</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">margin</span>: <span
+     style="color: #e50000;">margin</span>: <span
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">padding</span>: <span
+     style="color: #e50000;">padding</span>: <span
      style="color: #098658;">12px</span> <span
      style="color: #098658;">16px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">border-radius</span>: <span
+     style="color: #e50000;">border-radius</span>: <span
      style="color: #098658;">1rem</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">overflow</span>: <span
+     style="color: #e50000;">overflow</span>: <span
      style="color: #0451a5;">auto</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">list-style-type</span>: <span
+     style="color: #e50000;">list-style-type</span>: <span
      style="color: #0451a5;">none</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">text-align</span>: <span
+     style="color: #e50000;">text-align</span>: <span
      style="color: #0451a5;">left</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--Elevation</span>);</div>
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--Elevation);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">transition</span>: <span
+     style="color: #e50000;">transition</span>: <span
      style="color: #0451a5;">left</span> <span
      style="color: #098658;">0.7s</span> <span
      style="color: #0451a5;">ease-out</span>;</div>
@@ -4410,125 +4366,105 @@
      style="color: #800000;">.navDrw</span> <span
      style="color: #800000;">ul.open</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">left</span>: <span
+     style="color: #e50000;">left</span>: <span
      style="color: #098658;">0</span>;</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navDrw</span> <span
      style="color: #800000;">h1</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">margin</span>: <span
+     style="color: #e50000;">margin</span>: <span
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">padding</span>: <span
+     style="color: #e50000;">padding</span>: <span
      style="color: #098658;">0</span> <span
      style="color: #098658;">0</span> <span
      style="color: #098658;">0</span> <span
      style="color: #098658;">12px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">height</span>: <span
+     style="color: #e50000;">height</span>: <span
      style="color: #098658;">56px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">line-height</span>: <span
+     style="color: #e50000;">line-height</span>: <span
      style="color: #098658;">56px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">white-space</span>: <span
+     style="color: #e50000;">white-space</span>: <span
      style="color: #0451a5;">nowrap</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">text-overflow</span>: <span
+     style="color: #e50000;">text-overflow</span>: <span
      style="color: #0451a5;">ellipsis</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">overflow</span>: <span
+     style="color: #e50000;">overflow</span>: <span
      style="color: #0451a5;">hidden</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurfaceVariant</span>);</div>
+     style="color: #e50000;">color</span>: var(--OnSurfaceVariant);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">font-family</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--TitleSmallFont</span>);</div>
+     style="color: #e50000;">font-family</span>:</div>
+  <div>&nbsp;&nbsp;var(--TitleSmallFont);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">font-size</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--TitleSmallSize</span>);</div>
+     style="color: #e50000;">font-size</span>:</div>
+  <div>&nbsp;&nbsp;var(--TitleSmallSize);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">font-weight</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--TitleSmallWeight</span>);</div>
+     style="color: #e50000;">font-weight</span>:</div>
+  <div>&nbsp;&nbsp;var(--TitleSmallWeight);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navDrw</span> <span
      style="color: #800000;">li</span> <span
      style="color: #800000;">a</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">display</span>: <span
+     style="color: #e50000;">display</span>: <span
      style="color: #0451a5;">block</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">box-sizing</span>: <span
+     style="color: #e50000;">box-sizing</span>: <span
      style="color: #0451a5;">border-box</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">height</span>: <span
+     style="color: #e50000;">height</span>: <span
      style="color: #098658;">56px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">line-height</span>: <span
+     style="color: #e50000;">line-height</span>: <span
      style="color: #098658;">56px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">padding</span>: <span
+     style="color: #e50000;">padding</span>: <span
      style="color: #098658;">0</span> <span
      style="color: #098658;">12px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">border-radius</span>: <span
+     style="color: #e50000;">border-radius</span>: <span
      style="color: #098658;">28px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurfaceVariant</span>);</div>
+     style="color: #e50000;">color</span>: var(--OnSurfaceVariant);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">font-family</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--LabelLargeFont</span>);</div>
+     style="color: #e50000;">font-family</span>:</div>
+  <div>&nbsp;&nbsp;var(--LabelLargeFont);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">font-size</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--LabelLargeSize</span>);</div>
+     style="color: #e50000;">font-size</span>:</div>
+  <div>&nbsp;&nbsp;var(--LabelLargeSize);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">font-weight</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--LabelLargeWeight</span>);</div>
+     style="color: #e50000;">font-weight</span>:</div>
+  <div>&nbsp;&nbsp;var(--LabelLargeWeight);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">text-decoration</span>: <span
+     style="color: #e50000;">text-decoration</span>: <span
      style="color: #0451a5;">none</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">white-space</span>: <span
+     style="color: #e50000;">white-space</span>: <span
      style="color: #0451a5;">nowrap</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">overflow</span>: <span
+     style="color: #e50000;">overflow</span>: <span
      style="color: #0451a5;">hidden</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">text-overflow</span>: <span
+     style="color: #e50000;">text-overflow</span>: <span
      style="color: #0451a5;">ellipsis</span>;</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navDrw</span> <span
      style="color: #800000;">li</span> <span
-     style="color: #800000;">a.selected</span>&nbsp;{</div>
+     style="color: #800000;">a.active</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSecondaryContainer</span>);</div>
+     style="color: #e50000;">color</span>:</div>
+  <div>&nbsp;&nbsp;var(--OnSecondaryContainer);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--SecondaryContainer</span>);</div>
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--SecondaryContainer);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navDrw</span> <span
@@ -4536,10 +4472,10 @@
      style="color: #800000;">a</span> <span
      style="color: #800000;">span</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">margin-right</span>: <span
+     style="color: #e50000;">margin-right</span>: <span
      style="color: #098658;">12px</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">vertical-align</span>: <span
+     style="color: #e50000;">vertical-align</span>: <span
      style="color: #0451a5;">middle</span>;</div>
   <div>}</div><br>
   <div><span
@@ -4547,14 +4483,10 @@
      style="color: #800000;">li</span> <span
      style="color: #800000;">a:hover</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurface</span>);</div>
+     style="color: #e50000;">color</span>: var(--OnSurface);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurfaceHover</span>);</div>
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--OnSurfaceHover);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navDrw</span> <span
@@ -4562,34 +4494,26 @@
      style="color: #800000;">a:hover</span> <span
      style="color: #800000;">span</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurface</span>);</div>
+     style="color: #e50000;">color</span>: var(--OnSurface);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navDrw</span> <span
      style="color: #800000;">li</span> <span
-     style="color: #800000;">a.selected:hover</span> <span
+     style="color: #800000;">a.active:hover</span> <span
      style="color: #800000;">span</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSecondaryContainer</span>);</div>
+     style="color: #e50000;">color</span>:</div>
+  <div>&nbsp;&nbsp;var(--OnSecondaryContainer);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navDrw</span> <span
      style="color: #800000;">li</span> <span
      style="color: #800000;">a:focus</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurface</span>);</div>
+     style="color: #e50000;">color</span>: var(--OnSurface);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurfaceFocus</span>);</div>
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--OnSurfaceFocus);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navDrw</span> <span
@@ -4597,56 +4521,45 @@
      style="color: #800000;">a:focus</span> <span
      style="color: #800000;">span</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurface</span>);</div>
+     style="color: #e50000;">color</span>: var(--OnSurface);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navDrw</span> <span
      style="color: #800000;">li</span> <span
-     style="color: #800000;">a.selected:focus</span> <span
+     style="color: #800000;">a.active:focus</span> <span
      style="color: #800000;">span</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurface</span>);</div>
+     style="color: #e50000;">color</span>: var(--OnSurface);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navDrw</span> <span
      style="color: #800000;">li</span> <span
      style="color: #800000;">a:active</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurface</span>);</div>
+     style="color: #e50000;">color</span>: var(--OnSurface);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurfacePressed</span>);</div>
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--OnSurfacePressed);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-position</span>: <span
+     style="color: #e50000;">background-position</span>: <span
      style="color: #0451a5;">center</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-image</span>: <span
-     style="color: #795e26;">radial-gradient</span>(<span
+     style="color: #e50000;">background-image</span>: radial-gradient(<span
      style="color: #0451a5;">circle</span>, <span
      style="color: #0451a5;">transparent</span> <span
-     style="color: #098658;">1%</span>, <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurfaceHover</span>) <span
+     style="color: #098658;">1%</span>, var(--OnSurfaceHover) <span
      style="color: #098658;">1%</span>);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-size</span>: <span
+     style="color: #e50000;">background-size</span>: <span
      style="color: #098658;">100%</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">animation-fill-mode</span>:</div>
+     style="color: #e50000;">animation-fill-mode</span>:</div>
   <div>&nbsp;&nbsp;<span
      style="color: #0451a5;">forwards</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">animation-name</span>: rippleMenu;</div>
+     style="color: #e50000;">animation-name</span>: rippleMenu;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">animation-duration</span>: <span
+     style="color: #e50000;">animation-duration</span>: <span
      style="color: #098658;">0.5s</span>;</div>
   <div>}</div><br>
   <div><span
@@ -4655,9 +4568,7 @@
      style="color: #800000;">a:active</span> <span
      style="color: #800000;">span</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurface</span>);</div>
+     style="color: #e50000;">color</span>: var(--OnSurface);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navDrw</span> <span
@@ -4665,47 +4576,42 @@
      style="color: #800000;">a.active:focus</span> <span
      style="color: #800000;">span</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurface</span>);</div>
+     style="color: #e50000;">color</span>: var(--OnSurface);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navDrw</span> <span
      style="color: #800000;">.scrim</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">position</span>: <span
+     style="color: #e50000;">position</span>: <span
      style="color: #0451a5;">fixed</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">z-index</span>: <span
+     style="color: #e50000;">z-index</span>: <span
      style="color: #098658;">1</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">top</span>: <span
+     style="color: #e50000;">top</span>: <span
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">left</span>: <span
+     style="color: #e50000;">left</span>: <span
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">bottom</span>: <span
+     style="color: #e50000;">bottom</span>: <span
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">right</span>: <span
+     style="color: #e50000;">right</span>: <span
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">margin</span>: <span
+     style="color: #e50000;">margin</span>: <span
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">transform</span>: <span
-     style="color: #795e26;">translateX</span>(<span
+     style="color: #e50000;">transform</span>: translateX(<span
      style="color: #098658;">-200vw</span>);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">pointer-events</span>: <span
+     style="color: #e50000;">pointer-events</span>: <span
      style="color: #0451a5;">none</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--Scrim</span>);</div>
+     style="color: #e50000;">background-color</span>: var(--Scrim);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">transition</span>: <span
+     style="color: #e50000;">transition</span>: <span
      style="color: #098658;">0.7s</span> <span
      style="color: #0451a5;">ease-out</span>;</div>
   <div>}</div><br>
@@ -4714,11 +4620,10 @@
      style="color: #800000;">.open</span>+<span
      style="color: #800000;">.scrim</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">transform</span>: <span
-     style="color: #795e26;">translateX</span>(<span
+     style="color: #e50000;">transform</span>: translateX(<span
      style="color: #098658;">0</span>);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">pointer-events</span>: <span
+     style="color: #e50000;">pointer-events</span>: <span
      style="color: #0451a5;">all</span>;</div>
   <div>}</div>
  </div>
@@ -4730,208 +4635,156 @@
   <div><span
      style="color: #800000;">.navTab</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">display</span>: <span
+     style="color: #e50000;">display</span>: <span
      style="color: #0451a5;">flex</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">padding-bottom</span>: <span
-     style="color: #098658;">16px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">gap</span>: <span
-     style="color: #098658;">16px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">justify-content</span>: <span
-     style="color: #0451a5;">center</span>;</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.navTab</span> <span
-     style="color: #800000;">a</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">position</span>: <span
-     style="color: #0451a5;">relative</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">text-decoration</span>: <span
-     style="color: #0451a5;">none</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--Primary</span>);</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">font-family</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--LabelLargeFont</span>);</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">font-size</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--LabelLargeSize</span>);</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">font-weight</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--LabelLargeWeight</span>);</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">box-sizing</span>: <span
-     style="color: #0451a5;">border-box</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">height</span>: <span
-     style="color: #098658;">40px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">line-height</span>: <span
-     style="color: #098658;">40px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">padding</span>: <span
-     style="color: #098658;">0</span> <span
-     style="color: #098658;">24px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">border-radius</span>: <span
-     style="color: #098658;">20px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">overflow</span>: <span
-     style="color: #0451a5;">hidden</span>;</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.navTab</span> <span
-     style="color: #800000;">a:hover</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--PrimaryHover</span>);</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">box-shadow</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--ElevationLevel1Shadow</span>);</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.navTab</span> <span
-     style="color: #800000;">a:focus</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">outline</span>: <span
-     style="color: #0451a5;">none</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--PrimaryFocus</span>);</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.navTab</span> <span
-     style="color: #800000;">a:active</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--PrimaryPressed</span>);</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">background-image</span>: <span
-     style="color: #795e26;">radial-gradient</span>(<span
-     style="color: #0451a5;">circle</span>, <span
-     style="color: #0451a5;">transparent</span> <span
-     style="color: #098658;">1%</span>, <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--PrimaryHover</span>) <span
-     style="color: #098658;">1%</span>);</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">background-position</span>: <span
+     style="color: #e50000;">justify-content</span>: <span
      style="color: #0451a5;">center</span>;</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">background-size</span>: <span
-     style="color: #098658;">100%</span>;</div>
+     style="color: #e50000;">height</span>: var(--navTabHeight);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">animation-fill-mode</span>: <span
-     style="color: #0451a5;">forwards</span>;</div>
+     style="color: #e50000;">background-color</span>: var(--Surface);</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">animation-name</span>: ripple;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">animation-duration</span>: <span
-     style="color: #098658;">0.5s</span>;</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.navTab</span> <span
-     style="color: #800000;">a.selected::after</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">content</span>: <span
-     style="color: #a31515;">""</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--Primary</span>);</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">position</span>: <span
-     style="color: #0451a5;">absolute</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">z-index</span>: <span
-     style="color: #098658;">-1</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">top</span>: <span
-     style="color: #098658;">0</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">right</span>: <span
-     style="color: #098658;">0</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">left</span>: <span
-     style="color: #098658;">0</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">bottom</span>: <span
-     style="color: #098658;">0</span>;</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.navTab</span> <span
-     style="color: #800000;">a.selected</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>: <span
-     style="color: #0451a5;">transparent</span>;</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">box-shadow</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--ElevationLevel0Shadow</span>);</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnPrimary</span>);</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.navTab</span> <span
-     style="color: #800000;">a.selected:hover</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnPrimaryHover</span>);</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">box-shadow</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--ElevationLevel1Shadow</span>);</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.navTab</span> <span
-     style="color: #800000;">a.selected:focus</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnPrimaryFocus</span>);</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.navTab</span> <span
-     style="color: #800000;">a.selected:active</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #ff0000;">background-color</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnPrimaryPressed</span>);</div>
+     style="color: #e50000;">align-items</span>: <span
+     style="color: #0451a5;">stretch</span>;</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navTab</span> <span
      style="color: #800000;">span</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #ff0000;">vertical-align</span>: <span
-     style="color: #0451a5;">middle</span>;</div>
+     style="color: #e50000;">font-size</span>: var(--iconSize);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">height</span>: var(--iconSize);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">width</span>: var(--iconSize);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">color</span>: var(--OnSurfaceVariant);</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #800000;">.navTab</span> <span
+     style="color: #800000;">.active</span> <span
+     style="color: #800000;">span</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">color</span>: var(--Primary);</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #800000;">.navTab</span> <span
+     style="color: #800000;">a</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">display</span>: <span
+     style="color: #0451a5;">flex</span>;</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">flex-direction</span>: <span
+     style="color: #0451a5;">column</span>;</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">justify-content</span>: <span
+     style="color: #0451a5;">center</span>;</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">align-items</span>: <span
+     style="color: #0451a5;">center</span>;</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">text-decoration</span>: <span
+     style="color: #0451a5;">none</span>;</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">color</span>: var(--OnSurfaceVariant);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">font-family</span>:</div>
+  <div>&nbsp;&nbsp;var(--TitleSmallFont);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">font-size</span>:</div>
+  <div>&nbsp;&nbsp;var(--TitleSmallSize);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">font-weight</span>:</div>
+  <div>&nbsp;&nbsp;var(--TitleSmallWeight);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">line-height</span>:</div>
+  <div>&nbsp;&nbsp;var(--TitleSmallSize);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">box-sizing</span>: <span
+     style="color: #0451a5;">border-box</span>;</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">border-bottom</span>: <span
+     style="color: #098658;">3px</span> <span
+     style="color: #0451a5;">solid</span> var(--Surface);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">min-width</span>: var(--minTabWidth);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">width</span>: var(--tabWidth);</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #800000;">.navTab</span> <span
+     style="color: #800000;">a:hover</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--OnSurfaceHover);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">color</span>: var(--OnSurface);</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #800000;">.navTab</span> <span
+     style="color: #800000;">a.active</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">border-bottom-color</span>: var(--Primary);</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #800000;">.navTab</span> <span
+     style="color: #800000;">a.active:hover</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">color</span>: var(--Primary);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--PrimaryHover);</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #800000;">.navTab</span> <span
+     style="color: #800000;">a:hover</span> <span
+     style="color: #800000;">span</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">color</span>: var(--OnSurface);</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #800000;">.navTab</span> <span
+     style="color: #800000;">a.active:hover</span> <span
+     style="color: #800000;">span</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">color</span>: var(--Primary);</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #800000;">.navTab</span> <span
+     style="color: #800000;">a:focus</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">outline</span>: <span
+     style="color: #0451a5;">none</span>;</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--PrimaryFocus);</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #800000;">.navTab</span> <span
+     style="color: #800000;">a:active</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">background-color</span>:</div>
+  <div>&nbsp;&nbsp;var(--PrimaryPressed);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">background-image</span>: radial-gradient(<span
+     style="color: #0451a5;">circle</span>, <span
+     style="color: #0451a5;">transparent</span> <span
+     style="color: #098658;">1%</span>, var(--PrimaryHover) <span
+     style="color: #098658;">1%</span>);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">background-position</span>: <span
+     style="color: #0451a5;">center</span>;</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">background-size</span>: <span
+     style="color: #098658;">100%</span>;</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">animation-fill-mode</span>: <span
+     style="color: #0451a5;">forwards</span>;</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">animation-name</span>: ripple;</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">animation-duration</span>: <span
+     style="color: #098658;">0.5s</span>;</div>
   <div>}</div>
  </div>
 </muestra-codigo>
@@ -10144,198 +9997,164 @@
          <h1 >48. lib / js / constantes.js</h1><muestra-codigo>
  <div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">ELEVATION_CLASS</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> ELEVATION_CLASS =</div>
   <div>&nbsp;<span
      style="color: #a31515;">"elevation"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">INVALID_CLASS</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> INVALID_CLASS =</div>
   <div>&nbsp;<span
      style="color: #a31515;">"invalid"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">POPULATED_CLASS</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> POPULATED_CLASS =</div>
   <div>&nbsp;<span
      style="color: #a31515;">"populated"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">OPEN_CLASS</span> = <span
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> OPEN_CLASS = <span
      style="color: #a31515;">"open"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">SELECTED_CLASS</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> SELECTED_CLASS =</div>
   <div>&nbsp;<span
      style="color: #a31515;">"selected"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">MEDIUM_CLASS</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> ACTIVE_CLASS =</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"active"</span></div>
+  <div><span
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> MEDIUM_CLASS =</div>
   <div>&nbsp;<span
      style="color: #a31515;">"medium"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">FUOC_CLASS</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> FUOC_CLASS =</div>
   <div>&nbsp;<span
      style="color: #a31515;">"fouc"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">CLASS_CENTRADO</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> CLASS_CENTRADO =</div>
   <div>&nbsp;<span
      style="color: #a31515;">"centrado"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">CLASS_JUSTIFICADO</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> CLASS_JUSTIFICADO =</div>
   <div>&nbsp;<span
      style="color: #a31515;">"justificado"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">HEADLINE_NAME</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> HEADLINE_NAME =</div>
   <div>&nbsp;<span
      style="color: #a31515;">'name="headline"'</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">HEADLINE_SMALL_NAME</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> HEADLINE_SMALL_NAME =</div>
   <div>&nbsp;<span
      style="color: #a31515;">'name="headline-small"'</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">NAVIGATION_NAME</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> NAVIGATION_NAME =</div>
   <div>&nbsp;<span
      style="color: #a31515;">'name="navigation"'</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">AVATAR_NAME</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> AVATAR_NAME =</div>
   <div>&nbsp;<span
      style="color: #a31515;">'name="avatar"'</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">ACTION_NAME</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> ACTION_NAME =</div>
   <div>&nbsp;<span
      style="color: #a31515;">'name="action"'</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">LABEL_NAME</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> LABEL_NAME =</div>
   <div>&nbsp;<span
      style="color: #a31515;">'name="label"'</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">TARGET_NAME</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> TARGET_NAME =</div>
   <div>&nbsp;<span
      style="color: #a31515;">'name="target"'</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">SUPPORTING_NAME</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> SUPPORTING_NAME =</div>
   <div>&nbsp;<span
      style="color: #a31515;">'name="supporting"'</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">ICON_NAME</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> ICON_NAME =</div>
   <div>&nbsp;<span
      style="color: #a31515;">'name="icon"'</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">OVERFLOW_NAME</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> OVERFLOW_NAME =</div>
   <div>&nbsp;<span
      style="color: #a31515;">'name="overflow"'</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">MENU_NAME</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> MENU_NAME =</div>
   <div>&nbsp;<span
      style="color: #a31515;">'name="menu"'</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">MENU_ID</span> = <span
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> MENU_ID = <span
      style="color: #a31515;">"menu"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">MENU_SLOT_ID</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> MENU_SLOT_ID =</div>
   <div>&nbsp;<span
      style="color: #a31515;">"menuSlot"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">NAME_PROPERTY</span> = <span
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> NAME_PROPERTY = <span
      style="color: #a31515;">"name"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">REQUIRED_PROPERTY</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> REQUIRED_PROPERTY =</div>
   <div>&nbsp;<span
      style="color: #a31515;">"required"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">SELECT_MENU_TAG</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> SELECT_MENU_TAG =</div>
   <div>&nbsp;<span
      style="color: #a31515;">"select-menu"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">VALUE_PROPERTY</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> VALUE_PROPERTY =</div>
   <div>&nbsp;<span
      style="color: #a31515;">"value"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">GET_VALUE_PROPERTY</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> GET_VALUE_PROPERTY =</div>
   <div>&nbsp;<span
      style="color: #a31515;">"getValue"</span></div>
   <div><span
      style="color: #0000ff;">export</span></div>
   <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">CHECK_VALIDITY_PROPERTY</span> =</div>
+     style="color: #0000ff;">const</span> CHECK_VALIDITY_PROPERTY =</div>
   <div>&nbsp;&nbsp;<span
      style="color: #a31515;">"checkValidity"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">INVALID_EVENT</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> INVALID_EVENT =</div>
   <div>&nbsp;<span
      style="color: #a31515;">"invalid"</span></div>
   <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">ES_APPLE</span> =</div>
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">const</span> ES_APPLE =</div>
   <div>&nbsp;<span
      style="color: #811f3f;">/.</span>*<span
-     style="color: #d16969;">(</span><span
-     style="color: #811f3f;">iPad</span><span
-     style="color: #ee0000;">|</span><span
-     style="color: #811f3f;">iPhone</span><span
-     style="color: #ee0000;">|</span><span
-     style="color: #811f3f;">iPod</span><span
-     style="color: #ee0000;">|</span><span
-     style="color: #811f3f;">Mac</span><span
-     style="color: #d16969;">)</span><span
-     style="color: #811f3f;">.</span>*<span
+     style="color: #811f3f;">(iPad</span>|<span
+     style="color: #811f3f;">iPhone</span>|<span
+     style="color: #811f3f;">iPod</span>|<span
+     style="color: #811f3f;">Mac).</span>*<span
      style="color: #811f3f;">/</span>.</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">test</span>(<span
-     style="color: #001080;">navigator</span>.<span
-     style="color: #0070c1;">userAgent</span>)</div>
+  <div>&nbsp;&nbsp;test(navigator.userAgent)</div>
  </div>
 </muestra-codigo>
       </section>
