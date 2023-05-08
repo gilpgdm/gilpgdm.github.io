@@ -3,8 +3,7 @@
   <div><span
      style="color: #008000;">/*&nbsp;Este archivo debe estar</span></div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;colocado en la carpeta raíz del</span>
-  </div>
+     style="color: #008000;">&nbsp;*&nbsp;colocado en la carpeta raíz del</span></div>
   <div><span
      style="color: #008000;">&nbsp;*&nbsp;sitio.</span></div>
   <div><span
@@ -12,8 +11,7 @@
   <div><span
      style="color: #008000;">&nbsp;*&nbsp;Cualquier cambio en el</span></div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;contenido de este archivo hace</span>
-  </div>
+     style="color: #008000;">&nbsp;*&nbsp;contenido de este archivo hace</span></div>
   <div><span
      style="color: #008000;">&nbsp;*&nbsp;que el service worker se</span></div>
   <div><span
@@ -27,34 +25,28 @@
      style="color: #008000;">&nbsp;*&nbsp;de la versión cuando cambia el</span>
   </div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;contenido de los archivos. */</span>
-  </div>
+     style="color: #008000;">&nbsp;*&nbsp;contenido de los archivos. */</span></div>
   <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">VERSION</span> = <span
-     style="color: #a31515;">"1.4"</span></div><br>
+     style="color: #0000ff;">const</span> VERSION = <span
+     style="color: #a31515;">"1.6"</span></div><br>
   <div><span
      style="color: #008000;">/**&nbsp;Nombre del archivo de cache. */</span>
   </div>
   <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">CACHE</span> = <span
+     style="color: #0000ff;">const</span> CACHE = <span
      style="color: #a31515;">"Rcm"</span></div><br>
   <div><span
      style="color: #008000;">/**</span></div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Archivos requeridos para que la</span>
-  </div>
+     style="color: #008000;">&nbsp;*&nbsp;Archivos requeridos para que la</span></div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;aplicación funcione fuera de</span>
-  </div>
+     style="color: #008000;">&nbsp;*&nbsp;aplicación funcione fuera de</span></div>
   <div><span
      style="color: #008000;">&nbsp;*&nbsp;línea.</span></div>
   <div><span
      style="color: #008000;">&nbsp;*/</span></div>
   <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">ARCHIVOS</span> = [</div>
+     style="color: #0000ff;">const</span> ARCHIVOS = [</div>
   <div>&nbsp;<span
      style="color: #a31515;">"css/estilos.css"</span>,</div>
   <div>&nbsp;<span
@@ -90,8 +82,7 @@
   <div>&nbsp;<span
      style="color: #a31515;">"lib/css/list.css"</span>,</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"lib/css/material-symbols-outlined.css"</span>,
-  </div>
+     style="color: #a31515;">"lib/css/material-symbols-outlined.css"</span>,</div>
   <div>&nbsp;<span
      style="color: #a31515;">"lib/css/md3.css"</span>,</div>
   <div>&nbsp;<span
@@ -107,20 +98,17 @@
   <div>&nbsp;<span
      style="color: #a31515;">"lib/css/segmented.css"</span>,</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints"</span>,
-  </div>
+     style="color: #a31515;">"lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints"</span>,</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf"</span>,
-  </div>
+     style="color: #a31515;">"lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf"</span>,</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"lib/fonts/roboto-v30-latin-regular.woff"</span>,
-  </div>
+     style="color: #a31515;">"lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].wof22"</span>,</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"lib/fonts/roboto-v30-latin-regular.woff2"</span>,
-  </div>
+     style="color: #a31515;">"lib/fonts/roboto-v30-latin-regular.woff"</span>,</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"lib/js/custom/center-aligned-top-app-bar.js"</span>,
-  </div>
+     style="color: #a31515;">"lib/fonts/roboto-v30-latin-regular.woff2"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/custom/center-aligned-top-app-bar.js"</span>,</div>
   <div>&nbsp;<span
      style="color: #a31515;">"lib/js/custom/menu-option.js"</span>,</div>
   <div>&nbsp;<span
@@ -157,42 +145,28 @@
      style="color: #a31515;">"/"</span></div>
   <div>]</div><br>
   <div><span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">self</span> <span
+     style="color: #0000ff;">if</span> (self <span
      style="color: #0000ff;">instanceof</span></div>
-  <div>&nbsp;<span
-     style="color: #001080;">ServiceWorkerGlobalScope</span>)&nbsp;{</div>
+  <div>&nbsp;ServiceWorkerGlobalScope)&nbsp;{</div>
   <div>&nbsp;<span
      style="color: #008000;">// Evento al empezar a instalar</span></div>
-  <div>&nbsp;<span
-     style="color: #001080;">self</span>.<span
-     style="color: #795e26;">addEventListener</span>(<span
+  <div>&nbsp;self.addEventListener(<span
      style="color: #a31515;">"install"</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">instala</span>)</div><br>
+  <div>&nbsp;&nbsp;instala)</div><br>
   <div>&nbsp;<span
      style="color: #008000;">// Evento al solicitar a la red</span></div>
-  <div>&nbsp;<span
-     style="color: #001080;">self</span>.<span
-     style="color: #795e26;">addEventListener</span>(<span
+  <div>&nbsp;self.addEventListener(<span
      style="color: #a31515;">"fetch"</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">descargaDatos</span>)</div><br>
+  <div>&nbsp;&nbsp;descargaDatos)</div><br>
   <div>&nbsp;<span
      style="color: #008000;">// Evento cuando está activo.</span></div>
-  <div>&nbsp;<span
-     style="color: #001080;">self</span>.<span
-     style="color: #795e26;">addEventListener</span>(<span
+  <div>&nbsp;self.addEventListener(<span
      style="color: #a31515;">"activate"</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">activo</span>)</div>
+  <div>&nbsp;&nbsp;activo)</div>
   <div>}</div><br>
   <div><span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">activo</span>()&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(</div>
+     style="color: #0000ff;">function</span> activo()&nbsp;{</div>
+  <div>&nbsp;console.log(</div>
   <div>&nbsp;&nbsp;<span
      style="color: #a31515;">"Service Worker activo."</span>)</div>
   <div>}</div><br>
@@ -202,24 +176,17 @@
      style="color: #008000;">&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{ExtendableEvent}</span><span
+     style="color: #008000;">{ExtendableEvent}</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">evt</span></div>
+     style="color: #008000;">evt</span></div>
   <div><span
      style="color: #008000;">&nbsp;*/</span></div>
   <div><span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">instala</span>(<span
-     style="color: #001080;">evt</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(</div>
+     style="color: #0000ff;">function</span> instala(evt)&nbsp;{</div>
+  <div>&nbsp;console.log(</div>
   <div>&nbsp;&nbsp;<span
      style="color: #a31515;">"Service Worker instalando."</span>)</div>
-  <div>&nbsp;<span
-     style="color: #001080;">evt</span>.<span
-     style="color: #795e26;">waitUntil</span>(<span
-     style="color: #795e26;">cargaCache</span>())</div>
+  <div>&nbsp;evt.waitUntil(cargaCache())</div>
   <div>}</div><br>
   <div><span
      style="color: #008000;">/**</span></div>
@@ -227,149 +194,95 @@
      style="color: #008000;">&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{FetchEvent}</span><span
+     style="color: #008000;">{FetchEvent}</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">evt</span></div>
+     style="color: #008000;">evt</span></div>
   <div><span
      style="color: #008000;">&nbsp;*/</span></div>
   <div><span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">descargaDatos</span>(<span
-     style="color: #001080;">evt</span>)&nbsp;{</div>
+     style="color: #0000ff;">function</span> descargaDatos(evt)&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">evt</span>.<span
-     style="color: #001080;">request</span>.<span
-     style="color: #001080;">method</span> === <span
+     style="color: #0000ff;">if</span> (</div>
+  <div>&nbsp;&nbsp;evt.request.method === <span
      style="color: #a31515;">"GET"</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">evt</span>.<span
-     style="color: #795e26;">respondWith</span>(<span
-     style="color: #795e26;">usaCache</span>(<span
-     style="color: #001080;">evt</span>))</div>
+  <div>&nbsp;&nbsp;evt.respondWith(usaCache(evt))</div>
   <div>&nbsp;}</div>
   <div>}</div><br>
   <div><span
      style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">cargaCache</span>()&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(</div>
+     style="color: #0000ff;">function</span> cargaCache()&nbsp;{</div>
+  <div>&nbsp;console.log(</div>
   <div>&nbsp;&nbsp;<span
      style="color: #a31515;">"Intentando cargar cache:"</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0070c1;">CACHE</span>)</div>
+  <div>&nbsp;&nbsp;CACHE)</div>
   <div>&nbsp;<span
      style="color: #008000;">// Borra todos los chaches.</span></div>
   <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">keys</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">caches</span>.<span
-     style="color: #795e26;">keys</span>()</div>
+     style="color: #0000ff;">const</span> keys = <span
+     style="color: #0000ff;">await</span> caches.keys()</div>
   <div>&nbsp;<span
-     style="color: #af00db;">for</span> (<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">key</span> <span
-     style="color: #0000ff;">of</span> <span
-     style="color: #001080;">keys</span>)&nbsp;{</div>
+     style="color: #0000ff;">for</span> (<span
+     style="color: #0000ff;">const</span> key <span
+     style="color: #0000ff;">of</span> keys)&nbsp;{</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">caches</span>.<span
-     style="color: #795e26;">delete</span>(<span
-     style="color: #001080;">key</span>)</div>
+     style="color: #0000ff;">await</span> caches.delete(key)</div>
   <div>&nbsp;}</div>
   <div>&nbsp;<span
      style="color: #008000;">// Carga el nuevo contenido.</span></div>
   <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">cache</span> =</div>
+     style="color: #0000ff;">const</span> cache =</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">caches</span>.<span
-     style="color: #795e26;">open</span>(<span
-     style="color: #0070c1;">CACHE</span>)</div>
+     style="color: #0000ff;">await</span> caches.open(CACHE)</div>
   <div>&nbsp;<span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">cache</span>.<span
-     style="color: #795e26;">addAll</span>(<span
-     style="color: #0070c1;">ARCHIVOS</span>)</div>
-  <div>&nbsp;<span
-     style="color: #001080;">console</span>.</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"Cache cargado:"</span>, <span
-     style="color: #0070c1;">CACHE</span>)</div>
-  <div>&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"Versión:"</span>, <span
-     style="color: #0070c1;">VERSION</span>)</div>
+     style="color: #0000ff;">await</span> cache.addAll(ARCHIVOS)</div>
+  <div>&nbsp;console.</div>
+  <div>&nbsp;&nbsp;log(<span
+     style="color: #a31515;">"Cache cargado:"</span>, CACHE)</div>
+  <div>&nbsp;console.log(<span
+     style="color: #a31515;">"Versión:"</span>, VERSION)</div>
   <div>}</div><br>
   <div><span
      style="color: #008000;">/**&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{FetchEvent}</span><span
+     style="color: #008000;">{FetchEvent}</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">evt</span><span
+     style="color: #008000;">evt</span><span
      style="color: #008000;"> */</span></div>
   <div><span
      style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">usaCache</span>(<span
-     style="color: #001080;">evt</span>)&nbsp;{</div>
+     style="color: #0000ff;">function</span> usaCache(evt)&nbsp;{</div>
   <div>&nbsp;<span
      style="color: #008000;">// Busca el contenido del cache.</span></div>
   <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">cache</span> =</div>
+     style="color: #0000ff;">const</span> cache =</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">caches</span>.<span
-     style="color: #795e26;">open</span>(<span
-     style="color: #0070c1;">CACHE</span>)</div>
+     style="color: #0000ff;">await</span> caches.open(CACHE)</div>
   <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">response</span> =</div>
+     style="color: #0000ff;">const</span> response =</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">cache</span>.<span
-     style="color: #795e26;">match</span>(<span
-     style="color: #001080;">evt</span>.<span
-     style="color: #001080;">request</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;{ <span
-     style="color: #001080;">ignoreSearch:</span> <span
+     style="color: #0000ff;">await</span> cache.match(evt.request,</div>
+  <div>&nbsp;&nbsp;&nbsp;{ ignoreSearch: <span
      style="color: #0000ff;">true</span> })</div>
   <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">response</span> !== <span
+     style="color: #0000ff;">if</span> (response !== <span
      style="color: #0000ff;">undefined</span>)&nbsp;{</div>
   <div>&nbsp;&nbsp;<span
      style="color: #008000;">/*&nbsp;Si lo encuentra, devuelve el</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;archivo del cache.
-    */</span></div>
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;archivo del cache.&nbsp;*/</span></div>
   <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #001080;">response</span></div>
+     style="color: #0000ff;">return</span> response</div>
   <div>&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span>&nbsp;{</div>
+     style="color: #0000ff;">else</span>&nbsp;{</div>
   <div>&nbsp;&nbsp;<span
      style="color: #008000;">/*&nbsp;Si no lo encuentra, lo</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;empieza a descargar de la
-    red</span></div>
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;empieza&nbsp;a&nbsp;descargar&nbsp;de&nbsp;la&nbsp;red</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;y devuelve la promesa.
-    */</span></div>
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;y&nbsp;devuelve&nbsp;la&nbsp;promesa.&nbsp;*/</span></div>
   <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #795e26;">fetch</span>(<span
-     style="color: #001080;">evt</span>.<span
-     style="color: #001080;">request</span>)</div>
+     style="color: #0000ff;">return</span> fetch(evt.request)</div>
   <div>&nbsp;}</div>
   <div>}</div>
  </div>

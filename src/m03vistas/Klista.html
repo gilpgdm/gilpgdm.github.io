@@ -20,12 +20,15 @@
    --Font: -apple-system,
     BlinkMacSystemFont, Roboto,
     sans-serif;
+   --BodyLargeFont: var(--Font);
+   --BodyLargeSize: 16px;
+   --BodyLargeWeight: 400;
+   --BodyMediumFont: var(--Font);
+   --BodyMediumSize: 14px;
+   --BodyMediumWeight: 400;
    --TitleMediumFont: var(--Font);
    --TitleMediumSize: 16px;
    --TitleMediumWeight: 500;
-   --BodySmallFont: var(--Font);
-   --BodySmallSize: 12px;
-   --BodySmallWeight: 400;
    --Background: #FFFBFE;
    --OnBackground: #1C1B1F;
    --Surface: #FFFBFE;
@@ -33,6 +36,15 @@
    --OnSurfaceHover: #1C1B1F14;
    --OnSurfaceFocus: #1C1B1F19;
    --OnSurfacePressed: #1C1B1F1E;
+   --SurfaceVariant: #E7E0EC;
+   --OnSurfaceVariant: #49454F;
+   --PrimaryContainer: #EADDFF;
+   --OnPrimaryContainer: #21005D;
+   --iconSize: 24px;
+   --avatarSize: 40px;
+   --imageSize: 56px;
+   --videoWidth: 114px;
+   --videoHeight: 64px;
    font-size: 16px;
    font-family: var(--Font);
    color: var(--OnBackground);
@@ -50,7 +62,110 @@
    list-style-type: none;
   }
 
-  .list a:focus {
+  .list .one-line,
+  .list .two-line,
+  .list .three-line {
+   display: flex;
+   background-color:
+    var(--Surface);
+   overflow: hidden;
+   box-sizing: border-box;
+  }
+
+  .list .one-line:hover,
+  .list .two-line:hover,
+  .list .three-line:hover {
+   background-color:
+    var(--OnSurfaceHover);
+  }
+
+  .list .one-line {
+   align-items: center;
+   gap: 16px;
+   min-height: 56px;
+   padding: 8px 24px 8px 16px;
+  }
+
+  .list .one-line.video,
+  .list .two-line.video {
+   padding: 12px 24px 12px 0;
+  }
+
+  .list .two-line,
+  .list .three-line {
+   flex-flow: column;
+  }
+
+  .list .two-line {
+   justify-content: center;
+   min-height: 72px;
+   padding: 8px 24px 8px 16px;
+  }
+
+  .list .two-line.icon,
+  .list .two-line.avatar,
+  .list .two-line.image,
+  .list .two-line.video,
+  .list .three-line.icon,
+  .list .three-line.avatar,
+  .list .three-line.image,
+  .list .three-line.video {
+   display: grid;
+   column-gap: 16px;
+   row-gap: 0;
+   grid-template-areas:
+    "img headline"
+    "img supporting";
+  }
+
+  .list .two-line.icon,
+  .list .two-line.avatar,
+  .list .two-line.image,
+  .list .two-line.video {
+   align-content: center;
+   grid-template-rows: 1fr 1fr;
+  }
+
+  .list .two-line.icon,
+  .list .three-line.icon {
+   grid-template-columns: var(--iconSize) 1fr;
+  }
+
+  .list .two-line.avatar,
+  .list .three-line.avatar {
+   grid-template-columns: var(--avatarSize) 1fr;
+  }
+
+  .list .two-line.image,
+  .list .three-line.image {
+   grid-template-columns: var(--imageSize) 1fr;
+  }
+
+  .list .two-line.video,
+  .list .three-line.video {
+   grid-template-columns: var(--videoWidth) 1fr;
+  }
+
+  .list .three-line {
+   align-content: flex-start;
+   min-height: 88px;
+   padding: 12px 24px 12px 16px;
+  }
+
+  .list .three-line.video {
+   padding: 12px 24px 12px 0;
+  }
+
+  .list .three-line.icon,
+  .list .three-line.avatar,
+  .list .three-line.image,
+  .list .three-line.video {
+   align-content: start;
+   grid-template-rows: var(--BodyLargeSize) 1fr;
+  }
+
+  .list a:focus,
+  .list a:focus-visible {
    background-color:
     var(--OnSurfaceFocus);
    outline: none;
@@ -59,179 +174,193 @@
   .list a:active {
    background-color:
     var(--OnSurfacePressed);
+   background-image: radial-gradient(circle, transparent 1%, var(--SurfaceVariant) 1%);
+   background-position: center;
+   background-size: 100%;
+   animation-fill-mode: forwards;
+   animation-name: ripple;
+   animation-duration: 0.5s;
   }
 
-  .list .one-line {
-   display: block;
-   background-color:
-    var(--Surface);
-   color: var(--OnSurface);
-   padding: 16px;
-   font-family:
-    var(--TitleMediumFont);
-   font-size:
-    var(--TitleMediumSize);
-   font-weight:
-    var(--TitleMediumWeight);
-   line-height: 16px;
-   white-space: nowrap;
-   text-overflow: ellipsis;
-   overflow: hidden;
-  }
-
-  .list .one-line:hover {
-   background-color:
-    var(--OnSurfaceHover);
-  }
-
-  .list .one-line.avatar,
-  .list .one-line.square {
-   padding: 8px 16px;
-  }
-
-  .list .one-line.rectangle {
-   padding: 8px 16px 8px 0;
-  }
-
-  .list img,
-  .list span {
-   vertical-align: middle;
-  }
-
-  .list .icon .material-symbols-outlined:first-child {
-   margin-right: 32px;
-  }
-
-  .list .icon img {
-   width: 24px;
-   height: 24px;
-   margin-right: 32px;
-  }
-
-  .list .avatar .material-symbols-outlined:first-child {
-   font-size: 40px;
-   border-radius: 50%;
-   margin-right: 16px;
-  }
-
-  .list .avatar img {
-   width: 40px;
-   height: 40px;
-   border-radius: 50%;
-   margin-right: 16px;
-  }
-
-  .list .square .material-symbols-outlined:first-child {
-   font-size: 56px;
-   margin-right: 16px;
-  }
-
-  .list .square img {
-   width: 56px;
-   height: 56px;
-   margin-right: 16px;
-  }
-
-  .list .rectangle img {
-   width: 100px;
-   height: 56px;
-   margin-right: 16px;
-  }
-
-  .list .two-line {
-   display: block;
-   background-color:
-    var(--Surface);
-   color: var(--OnSurface);
-   padding: 16px;
-   font-family:
-    var(--TitleMediumFont);
-   font-size:
-    var(--TitleMediumSize);
-   font-weight:
-    var(--TitleMediumWeight);
-  }
-
-  .list .two-line:hover {
-   background-color:
-    var(--OnSurfaceHover);
-  }
-
-  .list a.two-line {
+  .list a.two-line,
+  .list a.three-line {
    text-decoration: none;
   }
 
-  .list .two-line .title {
-   grid-area: title;
+  .list a.two-line .headline,
+  .list a.three-line .headline {
+   text-decoration: underline;
+  }
+
+  @keyframes ripple {
+   from {
+    background-size: 100%;
+   }
+
+   to {
+    background-size: 15000%;
+   }
+  }
+
+  .list .headline {
+   display: block;
+   box-sizing: border-box;
+   grid-area: headline;
+   color: var(--OnSurface);
+   font-family:
+    var(--BodyLargeFont);
+   font-size: var(--BodyLargeSize);
+   font-weight:
+    var(--BodyLargeWeight);
+   line-height:
+    var(--BodyLargeSize);
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+  }
+
+  .list .two-line.icon .headline,
+  .list .two-line.avatar .headline,
+  .list .two-line.image .headline,
+  .list .two-line.video .headline,
+  .list .three-line.icon .headline,
+  .list .three-line.avatar .headline,
+  .list .three-line.image .headline,
+  .list .three-line.video .headline {
+   align-self: end;
+  }
+
+  .list .supporting {
+   grid-area: supporting;
+   align-self: start;
+   color: var(--OnSurfaceVariant);
+   font-family:
+    var(--BodyMediumFont);
+   font-size:
+    var(--BodyMediumSize);
+   font-weight:
+    var(--BodyMediumWeight);
+   line-height:
+    var(--BodyMediumSize);
+  }
+
+  .list .two-line .supporting {
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+  }
+
+  .list .three-line .supporting {
+   max-height: calc(2 * var(--BodyMediumSize));
+   text-overflow: ellipsis;
+   overflow: hidden;
+  }
+
+  .list .avatar img,
+  .list .avatar label,
+  .list .avatar .material-symbols-outlined:first-child {
+   flex-shrink: 0;
+   background-color: var(--PrimaryContainer);
+   color: var(--OnPrimaryContainer);
+   border-radius: 50%;
+   width: var(--avatarSize);
+   height: var(--avatarSize);
+  }
+
+  .list .avatar label {
+   display: inline-block;
    font-family:
     var(--TitleMediumFont);
    font-size:
     var(--TitleMediumSize);
    font-weight:
     var(--TitleMediumWeight);
-   line-height: 16px;
-   white-space: nowrap;
-   text-overflow: ellipsis;
+   line-height:
+    var(--TitleMediumSize);
    overflow: hidden;
   }
 
-  .list a.two-line .title {
-   text-decoration: underline;
+  .list .avatar .material-symbols-outlined:first-child {
+   font-size: var(--avatarSize);
   }
 
-  .list .two-line .secondary {
-   grid-area: secondary;
-   display: block;
-   font-family:
-    var(--BodySmallFont);
-   font-size:
-    var(--BodySmallSize);
-   font-weight:
-    var(--BodySmallWeight);
-   line-height: 20px;
-   white-space: nowrap;
-   text-overflow: ellipsis;
-   overflow: hidden;
-  }
-
-  .list .two-line img .list .two-line .material-symbols-outlined:first-child {
+  .list .avatar.two-line img,
+  .list .avatar.two-line label,
+  .list .avatar.two-line .material-symbols-outlined:first-child {
    grid-area: img;
+   align-self: center;
   }
 
-  .list .two-line.icon,
-  .list .two-line.avatar,
-  .list .two-line.square,
-  .list .two-line.rectangle {
-   box-sizing: border-box;
-   display: grid;
-   grid-template-columns: 56px 1fr;
-   grid-template-rows: 16px 1fr;
-   grid-template-areas:
-    "img title"
-    "img secondary";
+  .list .avatar.three-line img,
+  .list .avatar.three-line label,
+  .list .avatar.three-line .material-symbols-outlined:first-child {
+   grid-area: img;
+   align-self: start;
   }
 
-  .list .two-line.rectangle {
-   padding: 8px 16px 8px 0;
-   grid-template-columns: 116px 1fr;
-   grid-template-rows: 24px 1fr;
+  .list .icon img,
+  .list .icon .material-symbols-outlined:first-child {
+   flex-shrink: 0;
+   color: var(--OnSurfaceVariant);
+   width: var(--iconSize);
+   height: var(--iconSize);
   }
 
-  .list .two-line.rectangle .title {
-   padding-top: 8px;
+  .list .icon .material-symbols-outlined:first-child {
+   font-size: var(--iconSize);
   }
 
-  .list .two-line.rectangle .secondary {
-   padding-bottom: 12px;
+  .list .icon.two-line img,
+  .list .icon.two-line .material-symbols-outlined:first-child {
+   grid-area: img;
+   align-self: center;
   }
 
-  .list .two-line.square .material-symbols-outlined:first-child {
-   font-size: 40px;
+  .list .icon.three-line img,
+  .list .icon.three-line .material-symbols-outlined:first-child {
+   grid-area: img;
+   align-self: start;
   }
 
-  .list .two-line.square img {
-   width: 40px;
-   height: 40px;
+  .list .video img {
+   flex-shrink: 0;
+   color: var(--OnSurfaceVariant);
+   width: var(--videoWidth);
+   height: var(--videoHeight);
+  }
+
+  .list .video.two-line img {
+   grid-area: img;
+   align-self: center;
+  }
+
+  .list .video.three-line img {
+   grid-area: img;
+   align-self: start;
+  }
+
+  .list .image img,
+  .list .image .material-symbols-outlined:first-child {
+   flex-shrink: 0;
+   color: var(--OnSurfaceVariant);
+   width: var(--imageSize);
+   height: var(--imageSize);
+  }
+
+  .list .image .material-symbols-outlined:first-child {
+   font-size: var(--imageSize);
+  }
+
+  .list .image.two-line img,
+  .list .image.two-line .material-symbols-outlined:first-child {
+   grid-area: img;
+   align-self: center;
+  }
+
+  .list .image.three-line img,
+  .list .image.three-line .material-symbols-outlined:first-child {
+   grid-area: img;
+   align-self: start;
   }
  </style>
 </head>
@@ -240,60 +369,86 @@
  <h1>Listas</h1>
  <ul class="list">
   <li class="one-line">
-   Ciudad de México
+   <span class="headline">
+    Ciudad de México
+   </span>
   </li>
   <li class="one-line">
-   Lorem ipsum dolor sit amet
-   consectetur adipisicing elit.
-   Laboriosam eaque unde
-   voluptates tempore ad suscipit
-   libero, saepe neque illo amet,
-   eos ea similique quia, maiores
-   tenetur modi nobis expedita
-   alias!
+   <span class="headline">
+    Lorem ipsum dolor sit amet
+    consectetur adipisicing elit.
+    Laboriosam eaque unde
+    voluptates tempore ad suscipit
+    libero, saepe neque illo amet,
+    eos ea similique quia, maiores
+    tenetur modi nobis expedita
+    alias!
+   </span>
   </li>
   <li class="one-line icon">
-   <span class="material-symbols-outlined">
+   <span
+     class="material-symbols-outlined">
     account_balance
    </span>
-   Atenas
+   <span class="headline">
+    Atenas
+   </span>
   </li>
   <li class="one-line avatar">
    <img alt="Avatar de Ana"
      src="https://images.pexels.com/photos/6501925/pexels-photo-6501925.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-   Ana
+   <span class="headline">
+    Ana
+   </span>
   </li>
-  <li class="one-line square">
+  <li class="one-line image">
    <img alt="Coyote de Neza"
      src="https://th.bing.com/th/id/OIP.bZA2kAXC_CgPvhJS5RGwGwHaFj?w=200&h=180&c=7&r=0&o=5&pid=1.7">
-   Neza
+   <span class="headline">
+    Neza
+   </span>
   </li>
   <li
-    class="one-line rectangle">
+    class="one-line video">
    <img
      alt="Ciudad de San Francisco"
      src="https://images.pexels.com/photos/3701822/pexels-photo-3701822.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-   San Francisco
+   <span class="headline">
+    San Francisco
+   </span>
   </li>
   <li
-    class="one-line rectangle">
+    class="one-line video">
    <img
      alt="Ciudad de San Francisco"
      src="https://images.pexels.com/photos/3701822/pexels-photo-3701822.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-   Lorem ipsum dolor sit amet
-   consectetur adipisicing elit.
-   Laboriosam eaque unde
-   voluptates tempore ad suscipit
-   libero, saepe neque illo amet,
-   eos ea similique quia, maiores
-   tenetur modi nobis expedita
-   alias!
+   <span class="headline">
+    Lorem ipsum dolor sit amet
+    consectetur adipisicing elit.
+    Laboriosam eaque unde
+    voluptates tempore ad suscipit
+    libero, saepe neque illo amet,
+    eos ea similique quia, maiores
+    tenetur modi nobis expedita
+    alias!
+   </span>
+  </li>
+  <li>
+   <a class="one-line image"
+     href="https://fenixkike.blogspot.com/2010/06/el-gran-coyote-del-escultor-av.html">
+    <img
+      alt="Coyote de Neza"
+      src="https://th.bing.com/th/id/OIP.bZA2kAXC_CgPvhJS5RGwGwHaFj?w=200&h=180&c=7&r=0&o=5&pid=1.7">
+    <span class="headline">
+     Neza Link
+    </span>
+   </a>
   </li>
   <li class="two-line">
-   <span class="title">
+   <span class="headline">
     Ciudad de México 2
    </span>
-   <span class="secondary">
+   <span class="supporting">
     Lorem ipsum dolor sit amet
     consectetur adipisicing elit.
     Laboriosam eaque unde
@@ -308,10 +463,10 @@
    <span class="material-symbols-outlined">
     account_balance
    </span>
-   <span class="title">
-    Atenas2
+   <span class="headline">
+    Atenas 2
    </span>
-   <span class="secondary">
+   <span class="supporting">
     Lorem ipsum dolor sit amet
     consectetur adipisicing elit.
     Laboriosam eaque unde
@@ -326,10 +481,10 @@
    <img
      alt="Avatar de Ana"
      src="https://images.pexels.com/photos/6501925/pexels-photo-6501925.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-   <span class="title">
+   <span class="headline">
     Ana 2
    </span>
-   <span class="secondary">
+   <span class="supporting">
     Lorem ipsum dolor sit amet
     consectetur adipisicing elit.
     Laboriosam eaque unde
@@ -340,14 +495,14 @@
     alias!
    </span>
   </li>
-  <li class="two-line square">
+  <li class="two-line image">
    <img
      alt="Coyote de Neza"
      src="https://th.bing.com/th/id/OIP.bZA2kAXC_CgPvhJS5RGwGwHaFj?w=200&h=180&c=7&r=0&o=5&pid=1.7">
-   <span class="title">
-    Neza2
+   <span class="headline">
+    Neza 2
    </span>
-   <span class="secondary">
+   <span class="supporting">
     Lorem ipsum dolor sit amet
     consectetur adipisicing elit.
     Laboriosam eaque unde
@@ -358,14 +513,14 @@
     alias!
    </span>
   </li>
-  <li class="two-line rectangle">
+  <li class="two-line video">
    <img
      alt="Ciudad de San Francisco"
      src="https://images.pexels.com/photos/3701822/pexels-photo-3701822.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-   <span class="title">
+   <span class="headline">
     San Francisco 2
    </span>
-   <span class="secondary">
+   <span class="supporting">
     Lorem ipsum dolor sit amet
     consectetur adipisicing elit.
     Laboriosam eaque unde
@@ -377,15 +532,123 @@
    </span>
   </li>
   <li>
-   <a class="two-line square"
+   <a class="two-line image"
      href="https://fenixkike.blogspot.com/2010/06/el-gran-coyote-del-escultor-av.html">
     <img
       alt="Coyote de Neza"
       src="https://th.bing.com/th/id/OIP.bZA2kAXC_CgPvhJS5RGwGwHaFj?w=200&h=180&c=7&r=0&o=5&pid=1.7">
-    <span class="title">
-     Neza 3
+    <span class="headline">
+     Neza Link 2
     </span>
-    <span class="secondary">
+    <span class="supporting">
+     Lorem ipsum dolor sit amet
+     consectetur adipisicing elit.
+     Laboriosam eaque unde
+     voluptates tempore ad suscipit
+     libero, saepe neque illo amet,
+     eos ea similique quia, maiores
+     tenetur modi nobis expedita
+     alias!
+    </span>
+   </a>
+  </li>
+  <li class="three-line">
+   <span class="headline">
+    Ciudad de México 3
+   </span>
+   <span class="supporting">
+    Lorem ipsum dolor sit amet
+    consectetur adipisicing elit.
+    Laboriosam eaque unde
+    voluptates tempore ad suscipit
+    libero, saepe neque illo amet,
+    eos ea similique quia, maiores
+    tenetur modi nobis expedita
+    alias!
+   </span>
+  </li>
+  <li class="three-line icon">
+   <span class="material-symbols-outlined">
+    account_balance
+   </span>
+   <span class="headline">
+    Atenas 3
+   </span>
+   <span class="supporting">
+    Lorem ipsum dolor sit amet
+    consectetur adipisicing elit.
+    Laboriosam eaque unde
+    voluptates tempore ad suscipit
+    libero, saepe neque illo amet,
+    eos ea similique quia, maiores
+    tenetur modi nobis expedita
+    alias!
+   </span>
+  </li>
+  <li class="three-line avatar">
+   <img
+     alt="Avatar de Ana"
+     src="https://images.pexels.com/photos/6501925/pexels-photo-6501925.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+   <span class="headline">
+    Ana 3
+   </span>
+   <span class="supporting">
+    Lorem ipsum dolor sit amet
+    consectetur adipisicing elit.
+    Laboriosam eaque unde
+    voluptates tempore ad suscipit
+    libero, saepe neque illo amet,
+    eos ea similique quia, maiores
+    tenetur modi nobis expedita
+    alias!
+   </span>
+  </li>
+  <li class="three-line image">
+   <img
+     alt="Coyote de Neza"
+     src="https://th.bing.com/th/id/OIP.bZA2kAXC_CgPvhJS5RGwGwHaFj?w=200&h=180&c=7&r=0&o=5&pid=1.7">
+   <span class="headline">
+    Neza 3
+   </span>
+   <span class="supporting">
+    Lorem ipsum dolor sit amet
+    consectetur adipisicing elit.
+    Laboriosam eaque unde
+    voluptates tempore ad suscipit
+    libero, saepe neque illo amet,
+    eos ea similique quia, maiores
+    tenetur modi nobis expedita
+    alias!
+   </span>
+  </li>
+  <li class="three-line video">
+   <img
+     alt="Ciudad de San Francisco"
+     src="https://images.pexels.com/photos/3701822/pexels-photo-3701822.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+   <span class="headline">
+    San Francisco 3
+   </span>
+   <span class="supporting">
+    Lorem ipsum dolor sit amet
+    consectetur adipisicing elit.
+    Laboriosam eaque unde
+    voluptates tempore ad suscipit
+    libero, saepe neque illo amet,
+    eos ea similique quia, maiores
+    tenetur modi nobis expedita
+    alias!
+   </span>
+  </li>
+  <li>
+   <a class="three-line image"
+     href="https://fenixkike.blogspot.com/2010/06/el-gran-coyote-del-escultor-av.html">
+    <img
+      alt="Coyote de Neza"
+      src="https://th.bing.com/th/id/OIP.bZA2kAXC_CgPvhJS5RGwGwHaFj?w=200&h=180&c=7&r=0&o=5&pid=1.7">
+    <span class="headline">
+     Neza Link 3
+    </span>
+    <span class="supporting">
      Lorem ipsum dolor sit amet
      consectetur adipisicing elit.
      Laboriosam eaque unde
