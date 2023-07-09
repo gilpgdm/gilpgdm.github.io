@@ -181,7 +181,6 @@ const ARCHIVOS = [
    "/m06sesion/mAdeployment.html",
    "/m06sesion/mAinstrucciones.html",
    "/m06sesion/mBarchivos.html",
-   "/m06sesion/mCatxtPruebaHumanoJs.html",
    "/m06sesion/mCtextos.html",
    "/m06sesion/mDtxtDatosIncorrectosPhp.html",
    "/m06sesion/mEtxtFaltaElCuePhp.html",
