@@ -6,50 +6,32 @@
      style="color: #e50000;">display</span>: <span
      style="color: #0451a5;">flex</span>;</div>
   <div>&nbsp;<span
-     style="color: #e50000;">justify-content</span>: <span
-     style="color: #0451a5;">center</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">height</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--navTabHeight</span>);</div>
-  <div>&nbsp;<span
      style="color: #e50000;">background-color</span>: <span
      style="color: #0451a5;">transparent</span>;</div>
   <div>&nbsp;<span
      style="color: #e50000;">align-items</span>: <span
      style="color: #0451a5;">stretch</span>;</div>
   <div>&nbsp;<span
+     style="color: #e50000;">flex-wrap</span>: <span
+     style="color: #0451a5;">nowrap</span>;</div>
+  <div>&nbsp;<span
      style="color: #e50000;">overflow-x</span>: <span
      style="color: #0451a5;">auto</span>;</div>
   <div>}</div><br>
   <div><span
-     style="color: #800000;">.navTab</span> <span
-     style="color: #800000;">span</span>&nbsp;{</div>
+     style="color: #800000;">.navTab.fixed</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #e50000;">font-size</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--iconSize</span>);</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">height</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--iconSize</span>);</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">width</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--iconSize</span>);</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--OnSurfaceVariant</span>);</div>
+     style="color: #e50000;">justify-content</span>: <span
+     style="color: #0451a5;">center</span>;</div>
   <div>}</div><br>
   <div><span
-     style="color: #800000;">.navTab</span> <span
-     style="color: #800000;">.active</span> <span
-     style="color: #800000;">span</span>&nbsp;{</div>
+     style="color: #800000;">.navTab.scrollable</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #e50000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--Primary</span>);</div>
+     style="color: #e50000;">padding-left</span>: <span
+     style="color: #098658;">2rem</span>;</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">gap</span>: <span
+     style="color: #098658;">1rem</span>;</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navTab</span> <span
@@ -60,10 +42,6 @@
   <div>&nbsp;<span
      style="color: #e50000;">flex-direction</span>: <span
      style="color: #0451a5;">column</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">flex</span>: <span
-     style="color: #098658;">0</span> <span
-     style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span
      style="color: #e50000;">justify-content</span>: <span
      style="color: #0451a5;">center</span>;</div>
@@ -106,10 +84,25 @@
      style="color: #0451a5;">solid</span> <span
      style="color: #795e26;">var</span>(<span
      style="color: #001080;">--Surface</span>);</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #800000;">.navTab.fixed</span> <span
+     style="color: #800000;">a</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #e50000;">min-width</span>: <span
+     style="color: #e50000;">flex</span>: <span
+     style="color: #098658;">0</span> <span
+     style="color: #098658;">0</span> <span
      style="color: #795e26;">var</span>(<span
      style="color: #001080;">--tabWidth</span>);</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #800000;">.navTab.scrollable</span> <span
+     style="color: #800000;">a</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">flex</span>: <span
+     style="color: #098658;">0</span> <span
+     style="color: #098658;">0</span> <span
+     style="color: #0451a5;">auto</span>;</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.navTab</span> <span
@@ -206,6 +199,35 @@
   <div>&nbsp;<span
      style="color: #e50000;">animation-duration</span>: <span
      style="color: #098658;">0.5s</span>;</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #800000;">.navTab</span> <span
+     style="color: #800000;">span</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">font-size</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--iconSize</span>);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">height</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--iconSize</span>);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">width</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--iconSize</span>);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--OnSurfaceVariant</span>);</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #800000;">.navTab</span> <span
+     style="color: #800000;">.active</span> <span
+     style="color: #800000;">span</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--Primary</span>);</div>
   <div>}</div>
  </div>
 </muestra-codigo>
