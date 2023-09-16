@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/js/config.js"></script>
+  <link rel="icon" sizes="32x32" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script type="module" src="/lib/muestra-codigo.js"></script>
+</head>
+<body>
+  <layout-cajon>
+    <mi-nav slot="nav"></mi-nav>
+    <h1>Sliders</h1>
+    <div class="marco-lectura">
+      <p>
+        <a href="https://material.io/components/sliders"
+            target="_blank">Sliders en Material Design.</a>
+      </p>
+    </div>
+    <div class="horizontal">
+      <div>
+        <h2>Salida</h2>
+        <iframe src="src/slider.html"></iframe>
+        <p><a href="src/slider.html" target="_blank">Ábrelo en otra
+            pestaña.</a></p>
+      </div>
+      <muestra-codigo>
+        <div>
+          <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+                style="color: #ff0000;">html</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+                style="color: #ff0000;">lang</span>=<span
+                style="color: #0000ff;">"es"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div><span style="color: #800000;">&lt;head&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;meta</span>&nbsp;<span
+                style="color: #ff0000;">charset</span>=<span
+                style="color: #0000ff;">"UTF-8"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;meta</span>&nbsp;<span
+                style="color: #ff0000;">name</span>=<span
+                style="color: #0000ff;">"viewport"</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">content</span>=<span
+                style="color: #0000ff;">"width=device-width,</span></div>
+          <div><span
+                style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initial-scale=1.0"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;title&gt;</span>Sliders<span
+                style="color: #800000;">&lt;/title&gt;</span></div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;style&gt;</span>
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">html</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colTxt</span>:&nbsp;<span
+                style="color: #0451a5;">black</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colBk</span>:&nbsp;<span
+                style="color: #0451a5;">white</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colSld</span>:&nbsp;<span
+                style="color: #0451a5;">#6a0080</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colSldHv</span>:&nbsp;<span
+                style="color: #0451a5;">#6a008033</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colSldFc</span>:&nbsp;<span
+                style="color: #0451a5;">#6a008044</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colSldAc</span>:&nbsp;<span
+                style="color: #0451a5;">#6a008055</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--colSldBk</span>:&nbsp;<span
+                style="color: #0451a5;">#d05ce3</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">--fntFam</span>:&nbsp;-apple-system,
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BlinkMacSystemFont,
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Roboto,&nbsp;<span
+                style="color: #0451a5;">sans-serif</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">color</span>:&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colTxt</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">font-family</span>:&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--fntFam</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-color</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colBk</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">cmp-sld</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">display</span>:&nbsp;<span
+                style="color: #0451a5;">block</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">margin</span>:&nbsp;<span
+                style="color: #098658;">1rem</span>&nbsp;<span
+                style="color: #098658;">0</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">cmp-sld</span>&nbsp;<span
+                style="color: #800000;">input</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">vertical-align</span>:&nbsp;<span
+                style="color: #0451a5;">middle</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">-webkit-appearance</span>:&nbsp;<span
+                style="color: #0451a5;">none</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-image</span>:&nbsp;<span
+                style="color: #795e26;">linear-gradient</span>(to&nbsp;<span
+                style="color: #0451a5;">right</span>,&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colSld</span>)&nbsp;<span
+                style="color: #098658;">0%</span>,&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colSld</span>)&nbsp;<span
+                style="color: #098658;">50%</span>,&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colSldBk</span>)&nbsp;<span
+                style="color: #098658;">50%</span>,&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colSldBk</span>)&nbsp;<span
+                style="color: #098658;">100%</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">border-radius</span>:&nbsp;<span
+                style="color: #098658;">3px</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">height</span>:&nbsp;<span
+                style="color: #098658;">6px</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">cmp-sld</span>&nbsp;<span
+                style="color: #800000;">input:focus</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">outline</span>:&nbsp;<span
+                style="color: #0451a5;">none</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">cmp-sld</span>&nbsp;<span
+                style="color: #800000;">input::-webkit-slider-thumb</span>&nbsp;{
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">-webkit-appearance</span>:&nbsp;<span
+                style="color: #0451a5;">none</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-color</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colSld</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">width</span>:&nbsp;<span
+                style="color: #098658;">20px</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">height</span>:&nbsp;<span
+                style="color: #098658;">20px</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">border-radius</span>:&nbsp;<span
+                style="color: #098658;">10px</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">cmp-sld</span>&nbsp;<span
+                style="color: #800000;">input:hover::-webkit-slider-thumb</span>&nbsp;{
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">box-shadow</span>:&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0.5rem</span>&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colSldHv</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">cmp-sld</span>&nbsp;<span
+                style="color: #800000;">input:focus::-webkit-slider-thumb</span>&nbsp;{
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">box-shadow</span>:&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0.5rem</span>&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colSldFc</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">cmp-sld</span>&nbsp;<span
+                style="color: #800000;">input:active::-webkit-slider-thumb</span>&nbsp;{
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">box-shadow</span>:&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0.5rem</span>&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colSldAc</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">cmp-sld</span>&nbsp;<span
+                style="color: #800000;">input::-moz-range-thumb</span>&nbsp;{
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">background-color</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colSld</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">width</span>:&nbsp;<span
+                style="color: #098658;">20px</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">height</span>:&nbsp;<span
+                style="color: #098658;">20px</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">border</span>:&nbsp;<span
+                style="color: #0451a5;">none</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">border-radius</span>:&nbsp;<span
+                style="color: #098658;">10px</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">cmp-sld</span>&nbsp;<span
+                style="color: #800000;">input:hover::-moz-range-thumb</span>&nbsp;{
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">box-shadow</span>:&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0.5rem</span>&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colSldHv</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">cmp-sld</span>&nbsp;<span
+                style="color: #800000;">input:focus::-moz-range-thumb</span>&nbsp;{
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">box-shadow</span>:&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0.5rem</span>&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colSldFc</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">cmp-sld</span>&nbsp;<span
+                style="color: #800000;">input:active::-moz-range-thumb</span>&nbsp;{
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">box-shadow</span>:&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0</span>&nbsp;<span
+                style="color: #098658;">0.5rem</span>&nbsp;<span
+                style="color: #795e26;">var</span>(<span
+                style="color: #001080;">--colSldAc</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/style&gt;</span>
+          </div>
+          <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+          <div><span style="color: #800000;">&lt;body&gt;</span></div>
+          <div>&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;h1&gt;</span>Sliders<span
+                style="color: #800000;">&lt;/h1&gt;</span></div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;cmp-sld&gt;</span>
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;label&gt;</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Muestra&nbsp;resultados</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;input</span>&nbsp;<span
+                style="color: #ff0000;">type</span>=<span
+                style="color: #0000ff;">"range"</span>&nbsp;<span
+                style="color: #ff0000;">min</span>=<span
+                style="color: #0000ff;">"1"</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #ff0000;">max</span>=<span
+                style="color: #0000ff;">"10"</span><span
+                style="color: #800000;">&gt;</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #800000;">&lt;/label&gt;</span></div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/cmp-sld&gt;</span>
+          </div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;script&gt;</span>
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0000ff;">class</span>&nbsp;<span
+                style="color: #267f99;">CmpSld</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0000ff;">extends</span>&nbsp;<span
+                style="color: #267f99;">HTMLElement</span>&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">setTimeout</span>(</div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;()&nbsp;<span
+                style="color: #0000ff;">=&gt;</span>&nbsp;<span
+                style="color: #0000ff;">this</span>.<span
+                style="color: #795e26;">prepara</span>(),</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #098658;">100</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">prepara</span>()&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #008000;">/**&nbsp;</span><span
+                style="color: #0000ff;">@private</span><span
+                style="color: #008000;">&nbsp;*/</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0000ff;">this</span>.<span
+                style="color: #001080;">_input</span>&nbsp;=</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0000ff;">this</span>.<span
+                style="color: #795e26;">querySelector</span>(</div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #a31515;">"input"</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #af00db;">if</span>&nbsp;(<span
+                style="color: #0000ff;">this</span>.<span
+                style="color: #001080;">_input</span>)&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0000ff;">this</span>.<span
+                style="color: #001080;">_input</span>.</div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">addEventListener</span>(</div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #a31515;">"input"</span>,&nbsp;()&nbsp;<span
+                style="color: #0000ff;">=&gt;</span></div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0000ff;">this</span>.<span
+                style="color: #795e26;">analiza</span>());</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0000ff;">this</span>.<span
+                style="color: #795e26;">analiza</span>();</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">analiza</span>()&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0000ff;">const</span>&nbsp;<span
+                style="color: #0070c1;">i</span>&nbsp;=&nbsp;<span
+                style="color: #0000ff;">this</span>.<span
+                style="color: #001080;">_input</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #af00db;">if</span>&nbsp;(<span
+                style="color: #0070c1;">i</span>)&nbsp;{</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0000ff;">const</span>&nbsp;<span
+                style="color: #0070c1;">v</span>&nbsp;=</div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0070c1;">i</span>.<span
+                style="color: #001080;">valueAsNumber</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0000ff;">const</span>&nbsp;<span
+                style="color: #0070c1;">min</span>&nbsp;=</div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">parseFloat</span>(<span
+                style="color: #0070c1;">i</span>.<span
+                style="color: #001080;">min</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0000ff;">const</span>&nbsp;<span
+                style="color: #0070c1;">max</span>&nbsp;=</div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #795e26;">parseFloat</span>(<span
+                style="color: #0070c1;">i</span>.<span
+                style="color: #001080;">max</span>);</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0000ff;">const</span>&nbsp;<span
+                style="color: #0070c1;">value</span>&nbsp;=</div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span
+                style="color: #0070c1;">v</span>&nbsp;-&nbsp;<span
+                style="color: #0070c1;">min</span>)&nbsp;/</div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span
+                style="color: #0070c1;">max</span>&nbsp;-&nbsp;<span
+                style="color: #0070c1;">min</span>)&nbsp;*&nbsp;<span
+                style="color: #098658;">100</span>;</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #0070c1;">i</span>.<span
+                style="color: #0070c1;">style</span>.<span
+                style="color: #001080;">background</span>&nbsp;=&nbsp;<span
+                style="color: #a31515;">`linear-gradient(to&nbsp;right,&nbsp;var(--colSld)&nbsp;0%,&nbsp;var(--colSld)&nbsp;</span><span
+                style="color: #0000ff;">${</span><span
+                style="color: #0070c1;">value</span><span
+                style="color: #0000ff;">}</span><span
+                style="color: #a31515;">%,&nbsp;var(--colSldBk)&nbsp;</span><span
+                style="color: #0000ff;">${</span><span
+                style="color: #0070c1;">value</span><span
+                style="color: #0000ff;">}</span><span
+                style="color: #a31515;">%,&nbsp;var(--colSldBk)&nbsp;100%)`</span>;
+          </div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #001080;">customElements</span>.<span
+                style="color: #795e26;">define</span>(</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #a31515;">"cmp-sld"</span>,&nbsp;<span
+                style="color: #267f99;">CmpSld</span>);</div>
+          <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/script&gt;</span>
+          </div>
+          <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+          <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+        </div>
+      </muestra-codigo>
+    </div>
+    <mi-footer></mi-footer>
+  </layout-cajon>
+</body>
+</html>
