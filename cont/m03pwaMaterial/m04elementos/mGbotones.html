@@ -1,0 +1,221 @@
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Los botones principales deben usar la clase <dfn>filled</dfn>,
+   </p>
+  </li>
+  <li>
+   <p>
+    Los botones secundarios deben usar la clase <dfn>outline</dfn>,
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="https://pwamd.gilbertopachec2.repl.co/botones.html" height="230"
+    title="Botón para movil"></iframe>
+  <p class="noPrint">
+   <a href="https://pwamd.gilbertopachec2.repl.co/botones.html" target="_blank"
+     rel="noopener">Ábrelo en otra pestaña.</a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span
+      style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #e50000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;html</span> <span
+      style="color: #e50000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span></div>
+   <div>&nbsp;&nbsp;Botones - PWA con Material Design</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"theme-color"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"#6a0080"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"icon"</span> <span
+      style="color: #e50000;">sizes</span>=<span
+      style="color: #0000ff;">"32x32"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"favicon.ico"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"manifest"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"site.webmanifest"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span><span
+      style="color: #000000;"> </span><span
+      style="color: #e50000;">type</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"module"</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #e50000;">src</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"js/configura.js"</span><span
+      style="color: #800000;">&gt;&lt;/script&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span><span
+      style="color: #000000;"> </span><span
+      style="color: #e50000;">type</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"module"</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #e50000;">src</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"js/nav-drw.js"</span><span
+      style="color: #800000;">&gt;&lt;/script&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"css/estilos.css"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"lib/css/md3.css"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;body&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;top-app-bar&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;h1</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span>Botones<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;nav-drw</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"navigation"</span><span
+      style="color: #800000;">&gt;&lt;/nav-drw&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/top-app-bar&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;section&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"filled"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;Primario</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"outline"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;Secundario</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/section&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span><span
+      style="color: #000000;"> </span><span
+      style="color: #e50000;">type</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"module"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #af00db;">import</span><span
+      style="color: #000000;">&nbsp;{</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #001080;">ACTIVE_CLASS</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;}&nbsp;</span><span
+      style="color: #af00db;">from</span><span
+      style="color: #000000;"> </span><span
+      style="color: #a31515;">"./lib/js/constantes.js"</span></div><br>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #001080;">aBotones</span><span
+      style="color: #000000;">.</span><span
+      style="color: #001080;">classList</span><span
+      style="color: #000000;">.</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #795e26;">add</span><span
+      style="color: #000000;">(</span><span
+      style="color: #0070c1;">ACTIVE_CLASS</span><span
+      style="color: #000000;">)&nbsp;&nbsp;</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;</span><span
+      style="color: #800000;">&lt;/script&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+<div class="lectura">
+ <h1>Solo para los más rudos</h1>
+ <ul>
+  <li>
+   <p>
+    Los botones en Material Design están definidos en
+    <a href="https://m3.material.io/components/buttons/overview" rel="noopener"
+      target="_blank">https://m3.material.io/components/buttons/overview</a>.
+   </p>
+  </li>
+ </ul>
+</div>

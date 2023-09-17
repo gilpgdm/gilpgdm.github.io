@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>9. js / nav-tab-fixed.js - GilPG DM</title>
- <meta name="description" content="Código del archivo «js/nav-tab-fixed.js» del ejemplo de PWA con Material Design.">
+ <title>F. js / nav-tab-fixed.js - Implementación de pestañas fijas - GilPG DM</title>
+ <meta name="description" content="Código de «js/nav-tab-fixed.js», implementación de pestañas fijas con HTML, CSS y JavaScripts.">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -445,91 +445,99 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m03pwaMaterial/m05nav-tab-fixedJs.html" title="8. js / nav-tab-fixed.js">◀</a>
- <a class="siguiente" href="/m03pwaMaterial/m07ayudaHtml.html" title="10. ayuda.html">▶</a>
-   <h1 >9. js / nav-tab-fixed.js</h1><muestra-codigo>
+ <a class="anterior" href="/m03pwaMaterial/m05navegacion/mEnavTabFixed.html" title="E. navTabFixed.html - Navegación con pestañas fijas">◀</a>
+ <a class="siguiente" href="/m03pwaMaterial/m05navegacion/mGnavbar.html" title="G. navbar.html - Barra de navegación">▶</a>
+   <h1 >F. js / nav-tab-fixed.js - Implementación de pestañas fijas</h1><muestra-codigo>
  <div>
   <div><span
-     style="color: #0000ff;">import</span>&nbsp;{</div>
-  <div>&nbsp;ACTIVE_CLASS</div>
-  <div>}&nbsp;<span
-     style="color: #0000ff;">from</span> <span
-     style="color: #a31515;">"../lib/js/constantes.js"</span></div><br>
-  <div><span
-     style="color: #0000ff;">export</span> <span
-     style="color: #0000ff;">class</span> MiNav</div>
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">class</span> <span
+     style="color: #267f99;">NavTabFixed</span></div>
   <div>&nbsp;<span
-     style="color: #0000ff;">extends</span> HTMLElement&nbsp;{</div>
-  <div>&nbsp;connectedCallback()&nbsp;{</div>
+     style="color: #0000ff;">extends</span> <span
+     style="color: #267f99;">HTMLElement</span>&nbsp;{</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.classList.add(<span
-     style="color: #a31515;">"navTab"</span>)</div>
+     style="color: #0000ff;">this</span>.<span
+     style="color: #0070c1;">classList</span></div>
+  <div>&nbsp;&nbsp;&nbsp;.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"navTab"</span>, <span
+     style="color: #a31515;">"fixed"</span>)</div><br>
   <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.innerHTML = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">innerHTML</span> <span
+     style="color: #000000;">=</span> <span
      style="color: #008000;">/*&nbsp;html */</span></div>
   <div>&nbsp;&nbsp;&nbsp;`<span
      style="color: #800000;">&lt;a</span> <span
+     style="color: #e50000;">id</span>=<span
+     style="color: #0000ff;">"aIndex"</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #e50000;">href</span>=<span
      style="color: #0000ff;">"index.html"</span><span
      style="color: #800000;">&gt;</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;span</span> <span
+     style="color: #800000;">&lt;span</span></div>
+  <div>&nbsp;<span
      style="color: #e50000;">class</span>=<span
      style="color: #0000ff;">"material-symbols-outlined"</span><span
      style="color: #800000;">&gt;</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;home</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #800000;">&lt;/span&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recomiendo</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inicio</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/a&gt;</span></div>
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #800000;">&lt;a</span> <span
+     style="color: #e50000;">id</span>=<span
+     style="color: #0000ff;">"aNavTabFixed"</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"ayuda.html"</span><span
+     style="color: #0000ff;">"navTabFixed.html"</span><span
      style="color: #800000;">&gt;</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;span</span> <span
+     style="color: #800000;">&lt;span</span></div>
+  <div><span
      style="color: #e50000;">class</span>=<span
      style="color: #0000ff;">"material-symbols-outlined"</span><span
      style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;help</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tabs</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #800000;">&lt;/span&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ayuda</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pestañas fijas</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/a&gt;</span>`</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> href = location.href</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> index = <span
-     style="color: #0000ff;">this</span>.querySelector(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"[href='index.html']"</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> ayuda = <span
-     style="color: #0000ff;">this</span>.querySelector(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"[href='ayuda.html']"</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">if</span> (ayuda != <span
-     style="color: #0000ff;">null</span> &amp;&amp;</div>
-  <div>&nbsp;&nbsp;&nbsp;href.endsWith(<span
-     style="color: #a31515;">"ayuda.html"</span>))&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;ayuda.classList.</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;add(ACTIVE_CLASS)</div>
-  <div>&nbsp;&nbsp;}&nbsp;<span
-     style="color: #0000ff;">else</span> <span
-     style="color: #0000ff;">if</span> (index != <span
-     style="color: #0000ff;">null</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;index.classList.</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;add(ACTIVE_CLASS)</div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;}</div>
-  <div>}</div>
-  <div>customElements.define(</div>
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #e50000;">id</span>=<span
+     style="color: #0000ff;">"aNavBar"</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"navbar.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span></div>
+  <div><span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bottom_navigation</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Barra de navegación</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span>`</div><br>
+  <div>&nbsp;}</div><br>
+  <div>}</div><br>
+  <div><span
+     style="color: #001080;">customElements</span>.<span
+     style="color: #795e26;">define</span>(</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"mi-nav"</span>, MiNav)</div>
+     style="color: #a31515;">"nav-tab-fixed"</span>, <span
+     style="color: #267f99;">NavTabFixed</span>)</div>
  </div>
 </muestra-codigo>
  <footer>
@@ -562,359 +570,54 @@
     <a href="/index.html"
       data-logo="true">GilPG DM</a>
    </p><p>
-    <a class="paginaAnterior" href="/m04pwaBasica/mXresumen.html"
-      title="X. Resumen">▲</a>
+    <a class="paginaAnterior" href="/m03pwaMaterial/m04elementos/mJtarjetas.html"
+      title="J. tarjetas.html - Tarjetas">▲</a>
    </p>
-     <h1><a href="/m03pwaMaterial/index.html">3. PWA con Material Design</a></h1>
-   <ol type="1">
+     <h1><a href="/m03pwaMaterial/m05navegacion/index.html">5. Navegación</a></h1>
+   <ol type="A">
     <li>
      <p>
-      <a href="/m03pwaMaterial/m01referencias.html">Referencias</a>
+      <a href="/m03pwaMaterial/m05navegacion/mAdrawer.html">Cajón de navegación</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03pwaMaterial/m02instrucciones.html">Instrucciones</a>
+      <a href="/m03pwaMaterial/m05navegacion/mBnav-drw.html">js / nav-drw.js - Implementación de cajón de navegación</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03pwaMaterial/m03archivos.html">Archivos</a>
+      <a href="/m03pwaMaterial/m05navegacion/mCnavtab.html">navtab.html - Navegación con pestañas scrollable</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03pwaMaterial/m04elementos/">Elementos de las vistas móviles</a>
+      <a href="/m03pwaMaterial/m05navegacion/mDnav-tab-scrollable.html">js / nav-tab-scrollable.js - Implementación de pestañas scrollable</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03pwaMaterial/m06configuraJs.html">js / configura.js</a>
+      <a href="/m03pwaMaterial/m05navegacion/mEnavTabFixed.html">navTabFixed.html - Navegación con pestañas fijas</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03pwaMaterial/m05nav-barJs.html">js / nav-bar.js</a>
+      <a href="/m03pwaMaterial/m05navegacion/mFnav-tab-fixed.html" class="actual">js / nav-tab-fixed.js - Implementación de pestañas fijas</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03pwaMaterial/m05nav-drwJs.html">js / nav-drw.js</a>
+      <a href="/m03pwaMaterial/m05navegacion/mGnavbar.html">navbar.html - Barra de navegación</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03pwaMaterial/m05nav-tab-fixedJs.html">js / nav-tab-fixed.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m05nav-tab-scrollableJs.html" class="actual">js / nav-tab-fixed.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m07ayudaHtml.html">ayuda.html</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m08siteWebmanifest.html">site.webmanifest</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m09swJs.html">sw.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m10estilosCss.html">css / estilos.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m23jsconfigJson.html">jsconfig.json</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m13faviconIco.html">favicon.ico</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m41Escultura_de_coyoteJpeg.html">img / Escultura_de_coyote.jpeg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m12icono2048Png.html">img / icono2048.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m15maskable_icon_x48png.html">img / maskable_icon_x48.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m16maskable_icon_x72png.html">img / maskable_icon_x72.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m17maskable_icon_x96png.html">img / maskable_icon_x96.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m18maskable_icon_x128png.html">img / maskable_icon_x128.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m19maskable_icon_x192png.html">img / maskable_icon_x192.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m20maskable_icon_x384png.html">img / maskable_icon_x384.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m21maskable_icon_x512png.html">img / maskable_icon_x512.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m14maskable_iconPng.html">img / maskable_icon.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m42pexels-craig-dennis-3701822Jpg.html">img / pexels-craig-dennis-3701822.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m43pexels-creative-workshop-3978352Jpg.html">img / pexels-creative-workshop-3978352.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m44pexels-erik-karits-3732453Jpg.html">img / pexels-erik-karits-3732453.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m45pexels-esteban-arango-10226903Jpg.html">img / pexels-esteban-arango-10226903.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m46pexels-moises-patrício-10961948Jpg.html">img / pexels-moises-patrício-10961948.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m47pexels-ralph-2270848Jpg.html">img / pexels-ralph-2270848.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m48pexels-rasmus-svinding-35435Jpg.html">img / pexels-ralph-2270848.jpg.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m49pexels-steve-397857Jpg.html">img / pexels-steve-397857.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m50pexels-vadim-b-141496Jpg.html">img /pexels-vadim-b-141496.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m24cardsCss.html">lib / css / cards.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m24filledCss.html">lib / css / filled.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m24iconCss.html">lib / css / icon.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m24listCss.html">lib / css / list.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m27material-symbols-outlinedCss.html">lib / css / material-symbols-outlined.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m25md3Css.html">lib / css / md3.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m26navBarCss.html">lib / css / navBar.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m26navDrwCss.html">lib / css / navDrw.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m28navTabCss.html">lib / css / navTab.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m24outlineCss.html">lib / css / outline.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m29robotoCss.html">lib / css / roboto.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m24segmentedCss.html">lib / css / segmented.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m24sliderCss.html">lib / css / slider.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m30MaterialSymbolsOutlinedCodepoints.html">lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m31MaterialSymbolsOutlinedTtf.html">lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m31MaterialSymbolsOutlinedWoff2.html">lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m32robotoV30LatinRegularTtf.html">lib / fonts / roboto-v30-latin-regular.ttf</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m33robotoV30LatinRegularWoff2.html">lib / fonts / roboto-v30-latin-regular.woff2</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m34center-aligned-top-app-barJs.html">lib / js / center-aligned-top-app-bar.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m34menu-optionJs.html">lib / js / menu-option.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m34overflow-menuJs.html">lib / js / overflow-menu.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m34select-menuJs.html">lib / js / select-menu.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m34slider-fieldJs.html">lib / js / slider-field.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m34text-fieldJs.html">lib / js / text-field.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m35top-app-barJs.html">lib / js / top-app-bar.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m35txtObligatorioJs.html">lib / js / txt/ txtObligatorio.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m35txtRegistradoJs.html">lib / js / txt/ txtRegistrado.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m37constantesJs.html">lib / js / constantes.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m37getAttributeJs.html">lib / js / getAttribute.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m37md3Js.html">lib / js / md3.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m37msgJs.html">lib / js / msg.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m38muestraErrorJs.html">lib / js / muestraError.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m39registraServiceWorkerSiEsSoportadoJs.html">lib / js / registraServiceWorkerSiEsSoportado.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m37setBooleanAttributeJs.html">lib / js / setBooleanAttribute.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m40resumen.html">Resumen</a>
+      <a href="/m03pwaMaterial/m05navegacion/mHnav-bar.html">js / nav-bar.js - Implementación de barra de navegación</a>
      </p>
     </li>
    </ol><p>
-    <a class="paginaSiguiente" href="/m04dispositivo/index.html"
-      title="4. Acceso al dispositivo">▼</a>
+    <a class="paginaSiguiente" href="/m03pwaMaterial/m06configuraJs.html"
+      title="6. js / configura.js">▼</a>
    </p>
 </nav>
  <script>
@@ -927,9 +630,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m03pwaMaterial/m05nav-tab-fixedJs.html"
+ let urlAnterior = "/m03pwaMaterial/m05navegacion/mEnavTabFixed.html"
  /**@type {string} */
- let urlSiguiente = "/m03pwaMaterial/m07ayudaHtml.html"
+ let urlSiguiente = "/m03pwaMaterial/m05navegacion/mGnavbar.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>6. js / nav-bar.js - GilPG DM</title>
- <meta name="description" content="Código del archivo «js/nav-bar.js» del ejemplo de PWA con Material Design.">
+ <title>G. botones.html - Botones - GilPG DM</title>
+ <meta name="description" content="Código y explicación de «botones.html», botones con HTML, CSS y JavaScripts.">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -445,47 +445,229 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m03pwaMaterial/m06configuraJs.html" title="5. js / configura.js">◀</a>
- <a class="siguiente" href="/m03pwaMaterial/m05nav-drwJs.html" title="7. js / nav-drw.js">▶</a>
-   <h1 >6. js / nav-bar.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/**&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">genero</span><span
-     style="color: #008000;"> */</span></div>
-  <div><span
-     style="color: #0000ff;">export</span></div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">recomienda</span>(<span
-     style="color: #001080;">genero</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">genero</span> === <span
-     style="color: #a31515;">"pop"</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #a31515;">"Para el pop te "</span> +</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"recomiendo a Dua Lipa."</span></div>
-  <div>&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span> <span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">genero</span> === <span
-     style="color: #a31515;">"reg"</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #a31515;">"Para el reguetón te "</span> +</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"recomiendo a Bad Bunny."</span></div>
-  <div>&nbsp;}</div>
-  <div>}</div>
- </div>
-</muestra-codigo>
+ <a class="anterior" href="/m03pwaMaterial/m04elementos/mFselect.html" title="F. select.html - Selects">◀</a>
+ <a class="siguiente" href="/m03pwaMaterial/m04elementos/mHsegmentados.html" title="H. segmentado.html - Botones segmentados">▶</a>
+   <h1 >G. botones.html - Botones</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Los botones principales deben usar la clase <dfn>filled</dfn>,
+   </p>
+  </li>
+  <li>
+   <p>
+    Los botones secundarios deben usar la clase <dfn>outline</dfn>,
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="https://pwamd.gilbertopachec2.repl.co/botones.html" height="230"
+    title="Botón para movil"></iframe>
+  <p class="noPrint">
+   <a href="https://pwamd.gilbertopachec2.repl.co/botones.html" target="_blank"
+     rel="noopener">Ábrelo en otra pestaña.</a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span
+      style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #e50000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;html</span> <span
+      style="color: #e50000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span></div>
+   <div>&nbsp;&nbsp;Botones - PWA con Material Design</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"theme-color"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"#6a0080"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"icon"</span> <span
+      style="color: #e50000;">sizes</span>=<span
+      style="color: #0000ff;">"32x32"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"favicon.ico"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"manifest"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"site.webmanifest"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span><span
+      style="color: #000000;"> </span><span
+      style="color: #e50000;">type</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"module"</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #e50000;">src</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"js/configura.js"</span><span
+      style="color: #800000;">&gt;&lt;/script&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span><span
+      style="color: #000000;"> </span><span
+      style="color: #e50000;">type</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"module"</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #e50000;">src</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"js/nav-drw.js"</span><span
+      style="color: #800000;">&gt;&lt;/script&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"css/estilos.css"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"lib/css/md3.css"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;body&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;top-app-bar&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;h1</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span>Botones<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;nav-drw</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"navigation"</span><span
+      style="color: #800000;">&gt;&lt;/nav-drw&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/top-app-bar&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;section&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"filled"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;Primario</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"outline"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;Secundario</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/section&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span><span
+      style="color: #000000;"> </span><span
+      style="color: #e50000;">type</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"module"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #af00db;">import</span><span
+      style="color: #000000;">&nbsp;{</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #001080;">ACTIVE_CLASS</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;}&nbsp;</span><span
+      style="color: #af00db;">from</span><span
+      style="color: #000000;"> </span><span
+      style="color: #a31515;">"./lib/js/constantes.js"</span></div><br>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #001080;">aBotones</span><span
+      style="color: #000000;">.</span><span
+      style="color: #001080;">classList</span><span
+      style="color: #000000;">.</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #795e26;">add</span><span
+      style="color: #000000;">(</span><span
+      style="color: #0070c1;">ACTIVE_CLASS</span><span
+      style="color: #000000;">)&nbsp;&nbsp;</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;</span><span
+      style="color: #800000;">&lt;/script&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+<div class="lectura">
+ <h1>Solo para los más rudos</h1>
+ <ul>
+  <li>
+   <p>
+    Los botones en Material Design están definidos en
+    <a href="https://m3.material.io/components/buttons/overview" rel="noopener"
+      target="_blank">https://m3.material.io/components/buttons/overview</a>.
+   </p>
+  </li>
+ </ul>
+</div>
  <footer>
  <p>
   <a rel="license"
@@ -516,359 +698,64 @@
     <a href="/index.html"
       data-logo="true">GilPG DM</a>
    </p><p>
-    <a class="paginaAnterior" href="/m04pwaBasica/mXresumen.html"
-      title="X. Resumen">▲</a>
+    <a class="paginaAnterior" href="/m03pwaMaterial/m03archivos.html"
+      title="3. Archivos">▲</a>
    </p>
-     <h1><a href="/m03pwaMaterial/index.html">3. PWA con Material Design</a></h1>
-   <ol type="1">
+     <h1><a href="/m03pwaMaterial/m04elementos/index.html">4. Elementos de las vistas móviles</a></h1>
+   <ol type="A">
     <li>
      <p>
-      <a href="/m03pwaMaterial/m01referencias.html">Referencias</a>
+      <a href="/m03pwaMaterial/m04elementos/mAindex.html">index.html - Página principal</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03pwaMaterial/m02instrucciones.html">Instrucciones</a>
+      <a href="/m03pwaMaterial/m04elementos/mBsecundaria.html">secudaria.html - Vista secundaria</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03pwaMaterial/m03archivos.html">Archivos</a>
+      <a href="/m03pwaMaterial/m04elementos/mCiconos.html">iconos.html - Íconos oficiales</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03pwaMaterial/m04elementos/">Elementos de las vistas móviles</a>
+      <a href="/m03pwaMaterial/m04elementos/mDcampos.html">campos.html - Campos de texto</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03pwaMaterial/m06configuraJs.html">js / configura.js</a>
+      <a href="/m03pwaMaterial/m04elementos/mEsliders.html">slider.html - Sliders</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03pwaMaterial/m05nav-barJs.html" class="actual">js / nav-bar.js</a>
+      <a href="/m03pwaMaterial/m04elementos/mFselect.html">select.html - Selects</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03pwaMaterial/m05nav-drwJs.html">js / nav-drw.js</a>
+      <a href="/m03pwaMaterial/m04elementos/mGbotones.html" class="actual">botones.html - Botones</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03pwaMaterial/m05nav-tab-fixedJs.html">js / nav-tab-fixed.js</a>
+      <a href="/m03pwaMaterial/m04elementos/mHsegmentados.html">segmentado.html - Botones segmentados</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03pwaMaterial/m05nav-tab-scrollableJs.html">js / nav-tab-fixed.js</a>
+      <a href="/m03pwaMaterial/m04elementos/mIlistas.html">listas.html - Listas</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03pwaMaterial/m07ayudaHtml.html">ayuda.html</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m08siteWebmanifest.html">site.webmanifest</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m09swJs.html">sw.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m10estilosCss.html">css / estilos.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m23jsconfigJson.html">jsconfig.json</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m13faviconIco.html">favicon.ico</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m41Escultura_de_coyoteJpeg.html">img / Escultura_de_coyote.jpeg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m12icono2048Png.html">img / icono2048.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m15maskable_icon_x48png.html">img / maskable_icon_x48.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m16maskable_icon_x72png.html">img / maskable_icon_x72.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m17maskable_icon_x96png.html">img / maskable_icon_x96.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m18maskable_icon_x128png.html">img / maskable_icon_x128.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m19maskable_icon_x192png.html">img / maskable_icon_x192.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m20maskable_icon_x384png.html">img / maskable_icon_x384.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m21maskable_icon_x512png.html">img / maskable_icon_x512.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m14maskable_iconPng.html">img / maskable_icon.png</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m42pexels-craig-dennis-3701822Jpg.html">img / pexels-craig-dennis-3701822.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m43pexels-creative-workshop-3978352Jpg.html">img / pexels-creative-workshop-3978352.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m44pexels-erik-karits-3732453Jpg.html">img / pexels-erik-karits-3732453.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m45pexels-esteban-arango-10226903Jpg.html">img / pexels-esteban-arango-10226903.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m46pexels-moises-patrício-10961948Jpg.html">img / pexels-moises-patrício-10961948.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m47pexels-ralph-2270848Jpg.html">img / pexels-ralph-2270848.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m48pexels-rasmus-svinding-35435Jpg.html">img / pexels-ralph-2270848.jpg.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m49pexels-steve-397857Jpg.html">img / pexels-steve-397857.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m50pexels-vadim-b-141496Jpg.html">img /pexels-vadim-b-141496.jpg</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m24cardsCss.html">lib / css / cards.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m24filledCss.html">lib / css / filled.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m24iconCss.html">lib / css / icon.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m24listCss.html">lib / css / list.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m27material-symbols-outlinedCss.html">lib / css / material-symbols-outlined.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m25md3Css.html">lib / css / md3.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m26navBarCss.html">lib / css / navBar.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m26navDrwCss.html">lib / css / navDrw.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m28navTabCss.html">lib / css / navTab.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m24outlineCss.html">lib / css / outline.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m29robotoCss.html">lib / css / roboto.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m24segmentedCss.html">lib / css / segmented.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m24sliderCss.html">lib / css / slider.css</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m30MaterialSymbolsOutlinedCodepoints.html">lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m31MaterialSymbolsOutlinedTtf.html">lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m31MaterialSymbolsOutlinedWoff2.html">lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m32robotoV30LatinRegularTtf.html">lib / fonts / roboto-v30-latin-regular.ttf</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m33robotoV30LatinRegularWoff2.html">lib / fonts / roboto-v30-latin-regular.woff2</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m34center-aligned-top-app-barJs.html">lib / js / center-aligned-top-app-bar.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m34menu-optionJs.html">lib / js / menu-option.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m34overflow-menuJs.html">lib / js / overflow-menu.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m34select-menuJs.html">lib / js / select-menu.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m34slider-fieldJs.html">lib / js / slider-field.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m34text-fieldJs.html">lib / js / text-field.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m35top-app-barJs.html">lib / js / top-app-bar.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m35txtObligatorioJs.html">lib / js / txt/ txtObligatorio.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m35txtRegistradoJs.html">lib / js / txt/ txtRegistrado.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m37constantesJs.html">lib / js / constantes.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m37getAttributeJs.html">lib / js / getAttribute.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m37md3Js.html">lib / js / md3.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m37msgJs.html">lib / js / msg.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m38muestraErrorJs.html">lib / js / muestraError.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m39registraServiceWorkerSiEsSoportadoJs.html">lib / js / registraServiceWorkerSiEsSoportado.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m37setBooleanAttributeJs.html">lib / js / setBooleanAttribute.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/m40resumen.html">Resumen</a>
+      <a href="/m03pwaMaterial/m04elementos/mJtarjetas.html">tarjetas.html - Tarjetas</a>
      </p>
     </li>
    </ol><p>
-    <a class="paginaSiguiente" href="/m04dispositivo/index.html"
-      title="4. Acceso al dispositivo">▼</a>
+    <a class="paginaSiguiente" href="/m03pwaMaterial/m05navegacion/index.html"
+      title="5. Navegación">▼</a>
    </p>
 </nav>
  <script>
@@ -881,9 +768,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m03pwaMaterial/m06configuraJs.html"
+ let urlAnterior = "/m03pwaMaterial/m04elementos/mFselect.html"
  /**@type {string} */
- let urlSiguiente = "/m03pwaMaterial/m05nav-drwJs.html"
+ let urlSiguiente = "/m03pwaMaterial/m04elementos/mHsegmentados.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
