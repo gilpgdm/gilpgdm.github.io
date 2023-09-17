@@ -81,7 +81,6 @@ const ARCHIVOS = [
    "/m03pwaMaterial/m03archivos.html",
    "/m03pwaMaterial/m04elementos/",
    "/m03pwaMaterial/m04elementos/index.html",
-   "/m03pwaMaterial/m04elementos/",
    "/m03pwaMaterial/m04elementos/mAindex.html",
    "/m03pwaMaterial/m04elementos/mBsecundaria.html",
    "/m03pwaMaterial/m04elementos/mCiconos.html",
