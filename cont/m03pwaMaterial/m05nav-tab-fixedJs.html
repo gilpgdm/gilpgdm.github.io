@@ -1,0 +1,85 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #0000ff;">import</span>&nbsp;{</div>
+  <div>&nbsp;ACTIVE_CLASS</div>
+  <div>}&nbsp;<span
+     style="color: #0000ff;">from</span> <span
+     style="color: #a31515;">"../lib/js/constantes.js"</span></div><br>
+  <div><span
+     style="color: #0000ff;">export</span> <span
+     style="color: #0000ff;">class</span> MiNav</div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">extends</span> HTMLElement&nbsp;{</div>
+  <div>&nbsp;connectedCallback()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.classList.add(<span
+     style="color: #a31515;">"navTab"</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.innerHTML = <span
+     style="color: #008000;">/*&nbsp;html */</span></div>
+  <div>&nbsp;&nbsp;&nbsp;`<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"index.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;home</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recomiendo</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"ayuda.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;help</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ayuda</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span>`</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> href = location.href</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> index = <span
+     style="color: #0000ff;">this</span>.querySelector(</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #a31515;">"[href='index.html']"</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> ayuda = <span
+     style="color: #0000ff;">this</span>.querySelector(</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #a31515;">"[href='ayuda.html']"</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">if</span> (ayuda != <span
+     style="color: #0000ff;">null</span> &amp;&amp;</div>
+  <div>&nbsp;&nbsp;&nbsp;href.endsWith(<span
+     style="color: #a31515;">"ayuda.html"</span>))&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;ayuda.classList.</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;add(ACTIVE_CLASS)</div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #0000ff;">else</span> <span
+     style="color: #0000ff;">if</span> (index != <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;index.classList.</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;add(ACTIVE_CLASS)</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;}</div>
+  <div>}</div>
+  <div>customElements.define(</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"mi-nav"</span>, MiNav)</div>
+ </div>
+</muestra-codigo>

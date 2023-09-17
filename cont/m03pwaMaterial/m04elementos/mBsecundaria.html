@@ -1,0 +1,489 @@
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Cuando la barra de aplicación no está en la página principal, puede mostrar
+    hasta 3 botones de ícono a la derecha. Deben ser las acciones más usadas.
+   </p>
+  </li>
+  <li>
+   <p>
+    Cuando hay más de 3 acciones, coloca las menos usadas en el
+    <dfn>overflow menu</dfn>,
+    que se despliega cliqueando el botón con el ícono <strong>⋯</strong> en iOS,
+    y el ícono <strong>⁝</strong> en otros sistemas operativos.
+   </p>
+  </li>
+  <li>
+   <p>
+    Cuando en iOS no hay íconos de acción, el título debe ir centrado.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para que el contenido se muestra adecuadamente, se define el elemento
+    personalizado
+    <dfn>top-app-bar</dfn>
+    para este tipo de páginas. Su comportamiento lo definimos con la clase
+    <dfn>TopAppBar</dfn>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para el overflow menu, se define el elemento personalizado
+    <dfn>overflow-menu</dfn> y su comportamiento lo definimos con la clase
+    <dfn>OverflowMenu</dfn>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para el título, dentro de la la barra de aplicación se usa un elemento de
+    tipo
+    <code class="language-html">h1</code>
+    con el atributo
+    <code class="language-html">slot="headline"</code>.
+    El texto debe ser corto y caber en un solo renglón, o de lo conrario se
+    cortará.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para mostrar un título más largo, hay que poner a la barra de aplicación la
+    clase
+    <code class="language-html">medium</code>,
+    agregar en esta barra, otro elemento de tipo
+    <code class="language-html">h1</code>
+    con el atributo
+    <code class="language-html">slot="headline-small"</code>.
+    Cuando la página tenga el scroll hasta arriba, se despliega este encabezado.
+    Al hacer scroll, este título se compacta y se muestra el título definido con
+    <code class="language-html">slot="headline"</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    El botón de navegación opcional, debe llevar al atributo
+    <code class="language-html">slot="navigation"</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Los botones de acción deben llevar al atributo
+    <code class="language-html">slot="action"</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    El overflow menú debe llevar al atributo
+    <code class="language-html">slot="overflow"</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para añadir elementos debajo del título, usa el atributo
+    <code class="language-html">slot="adicional"</code>.
+   </p>
+  <li>
+   <p>
+    El botón de ícono para abrir el overflow menu, se coloca dentro de este menú
+    usando el atributo
+    <code class="language-html">slot="icon"</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Los botones de acción se colocan dentro del overflow menu sin ningún
+    atributo
+    <code class="language-html">slot</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Hasta el final del archivo se selecciona el ancla de la varra de navegación
+    que corresponde a esta página.
+   </p>
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m03vistas/Oextension.html" height="350"
+    title="Vista secundaria"></iframe>
+  <p class="noPrint">
+   <a href="/src/m03vistas/Oextension.html" target="_blank"
+     rel="noopener">Ábrelo en otra pestaña.</a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span
+      style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #e50000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;html</span> <span
+      style="color: #e50000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span></div>
+   <div>&nbsp;&nbsp;Vista secundaria</div>
+   <div>&nbsp;&nbsp;- PWA con Material Design</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"theme-color"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"#6a0080"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"icon"</span> <span
+      style="color: #e50000;">sizes</span>=<span
+      style="color: #0000ff;">"32x32"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"favicon.ico"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"manifest"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"site.webmanifest"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span><span
+      style="color: #000000;"> </span><span
+      style="color: #e50000;">type</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"module"</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #e50000;">src</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"js/configura.js"</span><span
+      style="color: #800000;">&gt;&lt;/script&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span><span
+      style="color: #000000;"> </span><span
+      style="color: #e50000;">type</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"module"</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #e50000;">src</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"js/nav-drw.js"</span><span
+      style="color: #800000;">&gt;&lt;/script&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"css/estilos.css"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"lib/css/md3.css"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;body&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;top-app-bar&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;h1</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;Vista secundaria</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;h1</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"headline-small"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;Vista secundaria con título</div>
+   <div>&nbsp;&nbsp;&nbsp;largo</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/h1&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;nav-drw</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"navigation"</span><span
+      style="color: #800000;">&gt;&lt;/nav-drw&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"button"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"icon"</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"action"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">title</span>=<span
+      style="color: #0000ff;">"Agregar"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;add</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"button"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"icon"</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"action"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">title</span>=<span
+      style="color: #0000ff;">"Editar"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;edit</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;overflow-menu</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"overflow"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"button"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"icon"</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"icon"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"button"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;star</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;Marcar favorito</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"button"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delete</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;Eliminar</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/overflow-menu&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/top-app-bar&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;section&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;Esta es una página secundaria de</div>
+   <div>&nbsp;&nbsp;&nbsp;la app. Las X que siguen son</div>
+   <div>&nbsp;&nbsp;&nbsp;para que veas como se comporta</div>
+   <div>&nbsp;&nbsp;&nbsp;cuando se hace scroll.</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/section&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span><span
+      style="color: #000000;"> </span><span
+      style="color: #e50000;">type</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"module"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #af00db;">import</span><span
+      style="color: #000000;">&nbsp;{</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #001080;">ACTIVE_CLASS</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;}&nbsp;</span><span
+      style="color: #af00db;">from</span><span
+      style="color: #000000;"> </span><span
+      style="color: #a31515;">"./lib/js/constantes.js"</span></div><br>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #001080;">aSecundario</span><span
+      style="color: #000000;">.</span><span
+      style="color: #001080;">classList</span><span
+      style="color: #000000;">.</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #795e26;">add</span><span
+      style="color: #000000;">(</span><span
+      style="color: #0070c1;">ACTIVE_CLASS</span><span
+      style="color: #000000;">)&nbsp;&nbsp;</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;</span><span
+      style="color: #800000;">&lt;/script&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+<div class="lectura">
+ <h1>Solo para los más rudos</h1>
+ <ul>
+  <li>
+   <p>
+    Las barras de aplicación en Material Design están definidas en
+    <a href="https://m3.material.io/components/top-app-bar/overview"
+      rel="noopener"
+      target="_blank">https://m3.material.io/components/top-app-bar/overview</a>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Los menús en Material Design están definidos en
+    <a href="https://m3.material.io/components/menus/overview" rel="noopener"
+      target="_blank">https://m3.material.io/components/menus/overview</a>.
+   </p>
+  </li>
+ </ul>
+</div>

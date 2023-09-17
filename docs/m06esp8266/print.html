@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>ESP32 - GilPG DM</title>
+ <meta name="description" content="Página para imprimir de la lección «ESP32».">
+ <style>
+ :root {
+  --padTop: 2rem;
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --colScrollbar: #CFD8DC;
+  --colThumb: #90a4ae;
+  --colThumbActivo: #3f3f3f;
+  --anchoThumb: 7px;
+  --borderRadiusThumb: 3.5px;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ body::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ body::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+
+  .pruebaDeEscritorio {
+   page-break-before: always;
+  }
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ .resaltado3 {
+  background-color: rgb(235, 234, 233);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ .pruebaDeEscritorio section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1em;
+ }
+
+ .pruebaDeEscritorio section pre {
+  margin: 0;
+ }
+
+ .pruebaDeEscritorio samp {
+  font-weight: bold;
+ }
+
+ .pruebaDeEscritorio .activo {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  vertical-align: top;
+  background-color: var(--colSecundario);
+  border: 1px solid var(--colSecundario);
+ }
+
+ .pruebaDeEscritorio :target,
+ .pruebaDeEscritorio :target caption {
+  background-color: var(--colTarget);
+ }
+
+ .pruebaDeEscritorio .numero1 {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  color: var(--colStack1);
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio .numero2 {
+  display: inline-block;
+  color: var(--colStack2);
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio .numero3 {
+  display: inline-block;
+  color: var(--colStack3);
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio a.parametro1,
+ .pruebaDeEscritorio .parametro1 {
+  color: var(--colPar1);
+ }
+
+ .pruebaDeEscritorio a.parametro2,
+ .pruebaDeEscritorio .parametro2 {
+  color: var(--colPar2);
+ }
+
+ .pruebaDeEscritorio .descongela {
+  color: var(--colDescongela);
+ }
+
+ .pruebaDeEscritorio table.tabla1,
+ .pruebaDeEscritorio table.tabla1 th,
+ .pruebaDeEscritorio table.tabla1 td {
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio table.tabla3,
+ .pruebaDeEscritorio table.tabla3 th,
+ .pruebaDeEscritorio table.tabla3 td {
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio .frame {
+  font-family: var(--fontMono);
+  border-collapse: collapse;
+ }
+
+ .pruebaDeEscritorio .frame,
+ .pruebaDeEscritorio .frame th,
+ .pruebaDeEscritorio .frame td {
+  border: thin solid;
+ }
+
+ .pruebaDeEscritorio .frame caption {
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .objeto caption {
+  text-decoration: underline;
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .creación {
+  display: flex;
+ }
+</style>
+</head>
+<body class="print">
+   <h1 class="leccion">6. ESP32</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presentan programas para el NODE MCU ESP32 y como
+  interactuar con el sistema de IoT.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m06esp8266/m01software.html">Software a instalar</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06esp8266/mAblink.html">Blink.ino</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06esp8266/mBbutton.html">Button.ino</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06esp8266/mCdispositivo.html">Dispositivo.ino</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06esp8266/mDresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. Software a instalar</h1><div class="lectura">
+ <dl>
+  <dt>Microsoft Edge Chromium</dt>
+  <dd>
+   <ul>
+    <li>
+     <p>
+      Ya viene instalado en las computadoras más nuevas, pero si la tuya
+      no lo tiene, lo puedes descargar de
+      <a href="https://www.microsoft.com/es-es/edge" rel="noopener"
+        target="_blank">https://www.microsoft.com/es-es/edge</a>.
+     </p>
+    </li>
+    <li class="noPrint">
+     <p>
+      <a href="https://drive.google.com/file/d/1Wwsq6D3MaX8CDPpCIu53p9Lvx_42D5ou/view?usp=sharing"
+        target="_blank" rel="noopener">Video de instalación.</a>
+     </p>
+    </li>
+   </ul>
+  </dd>
+  <dt>Mozilla Firefox</dt>
+  <dd>
+   <ul>
+    <li>
+     <p>
+      Lo puedes descargar de
+      <a href="https://www.mozilla.org"
+        target="_blank" rel="noopener">https://www.mozilla.org</a>.
+     </p>
+    </li>
+    <li class="noPrint">
+     <p>
+      <a href="https://drive.google.com/file/d/1Wr5AZUh1isg2qH0GtzQrz-MwjCfm2ZJC/view?usp=sharing"
+        target="_blank" rel="noopener">Video de Instalación.</a>
+     </p>
+    </li>
+   </ul>
+  </dd>
+  <dt>Google Chrome</dt>
+  <dd>
+   <ul>
+    <li>
+     <p>
+      Lo puedes descargar de
+      <a href="https://google.com/chrome"
+        target="_blank" rel="noopener">https://google.com/chrome</a>.
+     </p>
+    </li>
+    <li class="noPrint">
+     <p>
+      <a href="https://drive.google.com/file/d/1DvSCM9GSypdK1GEI7EpBnIp9olPG3zNE/view?usp=sharing"
+        target="_blank" rel="noopener">Video de Instalación.</a>
+     </p>
+    </li>
+   </ul>
+  </dd>
+  <dt>CP210x USB to UART Bridge VCP Drivers</dt>
+  <dd>
+   <ul>
+    <li>
+     <p>
+      Lo puedes descargar de
+      <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers"
+        target="_blank"
+        rel="noopener">https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers</a>.
+     </p>
+    </li>
+    <li class="noPrint">
+     <p>
+      <a href="https://drive.google.com/file/d/1YWudSvdMMRe2xJcYwDO88CFIeeEJZqRH/view?usp=sharing"
+        target="_blank" rel="noopener">Video de Instalación.</a>
+     </p>
+    </li>
+    <li>
+     <p>Las instrucciones de instalación son los siguientes:</p>
+     <ol>
+      <li>
+       <p>
+        Selecciona la pestaña DOWNLOADS y descarga el archivo
+        <q>CP210x Universal Windows Driver</q>.
+       </p>
+      </li>
+      <li>
+       <p>
+        Descompácta el archivo, haz clic derecho en
+        <q>silabser.inf</q>
+        y selecciona instalar.
+       </p>
+      </li>
+     </ol>
+    </li>
+   </ul>
+  </dd>
+  <dt>Arduino IDE</dt>
+  <dt>Arduino core for ESP8266 WiFi chip</dt>
+  <dt>Arduino core for ESP32 WiFi chip</dt>
+  <dt>ArduinoWebSockets</dt>
+  <dd>
+   <ul>
+    <li>
+     <p>
+      Puedes descargar Arduino IDE desde
+      <a href="https://www.arduino.cc/" rel="noopener"
+        target="_blank">https://www.arduino.cc/</a>.
+     </p>
+    </li>
+    <li class="noPrint">
+     <p>
+      <a href="https://drive.google.com/file/d/19lBZ4e1B93WksD9OUUmrnJeIPn9H18Zc/view?usp=sharing"
+        target="_blank" rel="noopener">Video de Instalación de Arduino IDE +
+       ESP8266 + ESP32 + ArduinoWebSockets.</a>
+     </p>
+    </li>
+    <li>
+     <p>Las instrucciones de instalación son los siguientes:</p>
+     <ol>
+      <li>
+       <p>
+        Selecciona la pestaña SOFTWARE y busca el DOWNLOAD para tu sistema
+        operativo.
+       </p>
+      </li>
+      <li>
+       <p>
+        Una vez instalado Arduino IDE, entra a esta aplicación, selecciona el
+        menú
+        <q>Archivo > Preferencias</q>.
+        Se abre un cuadro de diálogo y en el campo
+        <q>Gestor de URLs Adicionales de Tarjetas</q>
+        introduce el valor
+       </p>
+       <blockquote style="overflow: auto;">
+        https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json,https://arduino.esp8266.com/stable/package_esp8266com_index.json
+       </blockquote>
+      </li>
+      <li>
+       <p>
+        Selecciona el menú
+        <q>Herramientas > Placa:xxx > Gestor de tarjetas&hellip;</q>.
+        En ocasiones el gestor de tarjetas tarda un poco en habilitarse, por
+        lo que tendrás que cerrar el menú y volver a abrirlo posiblemente unas
+        cuantas veces.
+       </p>
+      </li>
+      <li>
+       <p>
+        Instala las tarjetas esp32 y esp8266.
+       </p>
+      </li>
+      <li>
+       <p>
+        Selecciona el menú
+        <q>Herramientas > Administrar bibliotecas&hellip;</q>.
+        En ocasiones el gestor de tarjetas tarda un poco en habilitarse, por
+        lo que tendrás que cerrar el menú y volver a abrirlo posiblemente unas
+        cuantas veces.
+       </p>
+      </li>
+      <li>
+       <p>
+        Instala las biblioteca ArduinoWebSockets.
+       </p>
+      </li>
+     </ol>
+    </li>
+   </ul>
+  </dd>
+ </dl>
+</div>
+      </section>
+     <section >
+         <h1 >B. Blink.ino</h1><figure>
+ <img src="/img/m06esp8266/Video-Blink.gif" alt="Video de la placa">
+</figure>
+<div class="lectura">
+ <p class="noPrint">
+  <a href="https://drive.google.com/file/d/1ijC-1CC9V_Ua1nApAcRuQmXYp9wgaKBH/view?usp=sharing"
+    target="_blank" rel="noopener">Ve como capturar y ejecutar este ejemplo.</a>
+ </p>
+ <p class="noPrint">
+  <a href="https://drive.google.com/file/d/1yqVaTYYt8BxQLhvmZW2bwdiTkqxPQKcB/view?usp=sharing"
+    target="_blank" rel="noopener">Ve como desplegar este ejemplo en Tinkercad y
+   compartirlo.</a>
+ </p>
+</div>
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #008000;">/* Este programa es un derivado de</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp;ESP8266 Blink by Simon Peter */</span>
+  </div><br>
+  <div><span
+     style="color: #008000;">/** Función que se invoca una sola</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp; vez al inicio del programa. */</span>
+  </div>
+  <div><span style="color: #0000ff;">void</span> <span
+     style="color: #795e26;">setup</span>() {</div>
+  <div><span
+     style="color: #008000;">&nbsp;/* Todas las placas compatibles</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp; con Arduino incluyen un led</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp; de prueba ligado a un pin</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp; cuyo número está definido por</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp; la constante LED_BUILTIN.</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp; Inicializa el pin para</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp; LED_BUILTIN como salida. */</span>
+  </div>
+  <div>&nbsp;<span
+     style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
+  <div>}</div><br>
+  <div><span style="color: #008000;">/* Función que se invoca</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp;repetidamente mientras el</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp;programa esté activo. */</span></div>
+  <div><span style="color: #0000ff;">void</span> <span
+     style="color: #795e26;">loop</span>() {</div>
+  <div><span
+     style="color: #008000;">&nbsp;/* Enciende el LED_BUILTIN (HIGH</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp; es el nivel de voltaje). */</span>
+  </div>
+  <div>&nbsp;<span
+     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, HIGH);</div>
+  <div>&nbsp;<span style="color: #795e26;">delay</span>(<span
+     style="color: #098658;">1000</span>);<span
+     style="color: #008000;"> // Espera 1 segundo</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;/* Apaga el LED_BUILTIN haciendo</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp; que el nivel de voltaje sea</span>
+  </div>
+  <div><span style="color: #008000;">&nbsp; &nbsp; LOW. */</span></div>
+  <div>&nbsp;<span
+     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, LOW);</div>
+  <div>&nbsp;<span style="color: #795e26;">delay</span>(<span
+     style="color: #098658;">1000</span>);</div>
+  <div>}</div><br>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >C. Button.ino</h1><figure>
+ <img src="/img/m06esp8266/Video-Button.gif" alt="Video de la placa">
+</figure>
+<div class="lectura">
+ <p class="noPrint">
+  <a href="https://drive.google.com/file/d/1dFU-A3HvWAyTSyquOT1C2N5b6dUyQywq/view?usp=sharing"
+    target="_blank" rel="noopener">Ve como desplegar este ejemplo en Tinkercad y
+   compartirlo.</a>
+ </p>
+</div>
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #008000;">/* Este es un derivado de Button</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp;por DojoDave y Tom Igoe */</span>
+  </div><br>
+  <div><span style="color: #008000;">/* Pin para el botón. */</span></div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0000ff;">int</span> <span
+     style="color: #001080;">BOTON</span> = <span
+     style="color: #098658;">0</span>;</div><br>
+  <div><span style="color: #0000ff;">int</span> <span
+     style="color: #001080;">estadoDelBoton</span> = <span
+     style="color: #098658;">0</span>;</div><br>
+  <div><span style="color: #0000ff;">void</span> <span
+     style="color: #795e26;">setup</span>() {</div>
+  <div><span
+     style="color: #008000;">&nbsp;/* Inicializa el pin para</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp; LED_BUILTIN como salida. */</span>
+  </div>
+  <div>&nbsp;<span
+     style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
+  <div><span
+     style="color: #008000;">&nbsp;/* Initializa el pin para</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp; BOTON como entrada. */</span></div>
+  <div>&nbsp;<span style="color: #795e26;">pinMode</span>(<span
+     style="color: #001080;">BOTON</span>, INPUT);</div>
+  <div>}</div><br>
+  <div><span style="color: #0000ff;">void</span> <span
+     style="color: #795e26;">loop</span>() {</div>
+  <div>&nbsp;<span style="color: #001080;">estadoDelBoton</span> =</div>
+  <div>&nbsp; &nbsp;<span style="color: #795e26;">digitalRead</span>(<span
+     style="color: #001080;">BOTON</span>);</div>
+  <div><span
+     style="color: #008000;">&nbsp;/* Checa si el botón está</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp; presionado. Esto es, si</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp; estadoDelBotón es LOW. */</span>
+  </div>
+  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">estadoDelBoton</span> == LOW) {</div>
+  <div><span
+     style="color: #008000;">&nbsp; // Enciende el LED_BUILTIN.</span></div>
+  <div>&nbsp; <span
+     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, HIGH);</div>
+  <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
+  <div><span
+     style="color: #008000;">&nbsp; // Apaga el LED_BUILTIN.</span></div>
+  <div>&nbsp; <span
+     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, LOW);</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >D. Dispositivo.ino</h1><figure>
+ <img src="/img/m06esp8266/dispositivo.gif" alt="Video del dispositivo">
+ <figcaption>
+  Implementación del ejemplo de IoT con web sockets en Arduino IDE.
+ </figcaption>
+</figure>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En el siguiente código, sustituye la configuración por los datos de
+    tu red WiFi. La URL y el certificado deben corresponder a tu
+    proyecto de IoT.
+   </p>
+  </li>
+  <li>
+   <p>Las siguientes instrucciones son para obtener el certificado:</p>
+   <ol>
+    <li>
+     <p>
+      Usa Chrome para abrir la URL del código de la lección IoT. En este caso es
+      <a href="https://iot2.gilbertopacheco.repl.co/" rel="noopener"
+        target="_blank">https://iot2.gilbertopacheco.repl.co/</a>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en el candadito que está junto a la URL. Se abre un menú
+      contextual.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en donde dice <q>La conexión es segura</q>. Aparece
+      un cuadro de diálogo.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en donde dice <q>El certificado es válido</q>. Aparece
+      un cuadro de diálogo.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en la pestaña que dice <q>Ruta de certificación</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en la la raíz del árbol, que en este caso dice
+      <q>ISGR Root X1</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en el botón que dice <q>Ver certificado</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Observa las fechas de validez para que sepas cuando caduca. En ese caso
+      tendrás que repetir este procedimiento.
+     </p>
+    </li>
+    <li>
+     <p>
+      Selecciona la pestaña <q>Detalles</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en <q>copiar en archivo&hellip;</q>. Aparece un asistente.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en <q>Siguiente</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en el botón de radio que dice
+      <q>X.509 codificado base 64 (.CER)</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en el botón que dice <q>Siguiente</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en el botón que dice <q>Examinar</q> para que selecciones la ruta
+      del archivo e introduzcas su nombre. En este ejemplo se selecciona la
+      carpeta de descargas y se le pone por nombre <q>isgr.cer</q>
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en el botón que dice <q>Siguiente</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en el botón que dice <q>Finalizar</q>. Si todo sale bien aparece
+      un cuadro de diálogo informando que la exportación se realizó
+      correctamente.
+     </p>
+    </li>
+    <li>
+     <p>
+      Haz clic en el botón que dice <q>Aceptar</q>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Copia línea por línea el contenido del archivo generado en las cadenas de
+      la constante <var>CERTIFICADO</var>. Conserva las comillas y la secuencia
+      \n antes de cerrar comillas.
+     </p>
+    </li>
+   </ol>
+  </li>
+  <li>
+   <p>
+    Para monitorear su funcionamiento, debes hacer clic en el botón de
+    arriba a la derecha en la ventana de Arduino, que tiene una lupa y
+    tiene el mensaje flotante que dice <strong>Monitor Serie</strong>.
+    Debes ajustar los baudios a la misma velocidad que en el código,
+    donde dice
+    <code class="language-cpp">Serial.begin(115200);</code>
+    que en este caso es 115200 baudios. Si no se ven los mensajes,
+    baja la velocidad tanto en el código, como en el monitor.
+   </p>
+  </li>
+  <li class="noPrint">
+   <p class="noPrint">
+    <a href="https://drive.google.com/file/d/14oEAQS2mP7EDtQAA7ydS4O4QWbXHmTGQ/view?usp=sharing"
+      target="_blank" rel="noopener">Ve como configurar y ejecutar este
+     ejemplo.</a>
+   </p>
+  </li>
+ </ul>
+</div>
+<muestra-codigo>
+ <div>
+  <div><span style="color: #af00db;">#include</span><span
+     style="color: #0000ff;"> </span><span
+     style="color: #a31515;">&lt;ArduinoWebsockets.h&gt;</span></div>
+  <div><span style="color: #af00db;">#include</span><span
+     style="color: #0000ff;"> </span><span
+     style="color: #a31515;">&lt;WiFi.h&gt;</span></div><br>
+  <div><span style="color: #af00db;">using</span> <span
+     style="color: #0000ff;">namespace</span> <span
+     style="color: #267f99;">websockets</span>;</div><br>
+  <div>WebsocketsClient &nbsp;<span style="color: #001080;">client</span>;</div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0000ff;">int</span> <span
+     style="color: #001080;">BOTON</span> = <span
+     style="color: #098658;">0</span>;</div>
+  <div><span style="color: #0000ff;">bool</span> <span
+     style="color: #001080;">presionado</span> = <span
+     style="color: #0000ff;">false</span>;</div>
+  <div><span style="color: #0000ff;">bool</span> <span
+     style="color: #001080;">conectado</span> = <span
+     style="color: #0000ff;">false</span>;</div>
+  <div>String <span style="color: #001080;">valor</span>;</div><br>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0000ff;">char</span>* <span
+     style="color: #0000ff;">const</span> <span
+     style="color: #001080;">SSID</span> =</div>
+  <div>&nbsp;<span style="color: #a31515;">"Galaxy A723C85"</span>;</div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0000ff;">char</span>* <span
+     style="color: #0000ff;">const</span> <span
+     style="color: #001080;">PASS</span> =</div>
+  <div>&nbsp;<span style="color: #a31515;">"bdoi1764"</span>;</div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0000ff;">char</span>* <span
+     style="color: #0000ff;">const</span> <span
+     style="color: #001080;">URL</span> =</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"wss://phpws.gilbertopacheco.repl.co"</span>;</div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0000ff;">char</span> <span
+     style="color: #001080;">CERTIFICADO</span>[] PROGMEM = <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"-----BEGIN CERTIFICATE-----</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"MIIFazCCA1OgAwIBAgIRAIIQz7DSQONZRGPgu2OCiwAwDQYJKoZIhvcNAQELBQAwTzELMAkGA1UE</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"BhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2VhcmNoIEdyb3VwMRUwEwYDVQQD</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"EwxJU1JHIFJvb3QgWDEwHhcNMTUwNjA0MTEwNDM4WhcNMzUwNjA0MTEwNDM4WjBPMQswCQYDVQQG</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"EwJVUzEpMCcGA1UEChMgSW50ZXJuZXQgU2VjdXJpdHkgUmVzZWFyY2ggR3JvdXAxFTATBgNVBAMT</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"DElTUkcgUm9vdCBYMTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAK3oJHP0FDfzm54r</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"Vygch77ct984kIxuPOZXoHj3dcKi/vVqbvYATyjb3miGbESTtrFj/RQSa78f0uoxmyF+0TM8ukj1</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"3Xnfs7j/EvEhmkvBioZxaUpmZmyPfjxwv60pIgbz5MDmgK7iS4+3mX6UA5/TR5d8mUgjU+g4rk8K</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"b4Mu0UlXjIB0ttov0DiNewNwIRt18jA8+o+u3dpjq+sWT8KOEUt+zwvo/7V3LvSye0rgTBIlDHCN</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"Aymg4VMk7BPZ7hm/ELNKjD+Jo2FR3qyHB5T0Y3HsLuJvW5iB4YlcNHlsdu87kGJ55tukmi8mxdAQ</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"4Q7e2RCOFvu396j3x+UCB5iPNgiV5+I3lg02dZ77DnKxHZu8A/lJBdiB3QW0KtZB6awBdpUKD9jf</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"1b0SHzUvKBds0pjBqAlkd25HN7rOrFleaJ1/ctaJxQZBKT5ZPt0m9STJEadao0xAH0ahmbWnOlFu</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"hjuefXKnEgV4We0+UXgVCwOPjdAvBbI+e0ocS3MFEvzG6uBQE3xDk3SzynTnjh8BCNAw1FtxNrQH</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"usEwMFxIt4I7mKZ9YIqioymCzLq9gwQbooMDQaHWBfEbwrbwqHyGO0aoSCqI3Haadr8faqU9GY/r</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"OPNk3sgrDQoo//fb4hVC1CLQJ13hef4Y53CIrU7m2Ys6xt0nUW7/vGT1M0NPAgMBAAGjQjBAMA4G</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"A1UdDwEB/wQEAwIBBjAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBR5tFnme7bl5AFzgAiIyBpY</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"9umbbjANBgkqhkiG9w0BAQsFAAOCAgEAVR9YqbyyqFDQDLHYGmkgJykIrGF1XIpu+ILlaS/V9lZL</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"ubhzEFnTIZd+50xx+7LSYK05qAvqFyFWhfFQDlnrzuBZ6brJFe+GnY+EgPbk6ZGQ3BebYhtF8GaV</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"0nxvwuo77x/Py9auJ/GpsMiu/X1+mvoiBOv/2X/qkSsisRcOj/KKNFtY2PwByVS5uCbMiogziUwt</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"hDyC3+6WVwW6LLv3xLfHTjuCvjHIInNzktHCgKQ5ORAzI4JMPJ+GslWYHb4phowim57iaztXOoJw</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"TdwJx4nLCgdNbOhdjsnvzqvHu7UrTkXWStAmzOVyyghqpZXjFaH3pO3JLF+l+/+sKAIuvtd7u+Nx</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"e5AW0wdeRlN8NwdCjNPElpzVmbUq4JUagEiuTDkHzsxHpFKVK7q4+63SM1N95R1NbdWhscdCb+ZA</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"JzVcoyi3B43njTOQ5yOf+1CceWxG1bQVs5ZufpsMljq4Ui0/1lvh+wjChP4kqKOJ2qxq4RgqsahD</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"YVvTH9w7jXbyLeiNdd8XM2w9U/t7y0Ff/9yi0GE44Za4rF2LN9d11TPAmRGunUHBcnWEvgJBQl9n</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"JEiU0Zsnvgc/ubhPgXRR4Xq37Z0j4r7g1SgEEzwxA57demyPxgcYxn/eR44/KJ4EBs+lVDR3veyJ</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"m+kXQ99b21/+jh5Xos1AnX5iItreGCc=</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span> <span
+     style="color: #ee0000;">\</span></div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"-----END CERTIFICATE-----</span><span
+     style="color: #ee0000;">\n</span><span
+     style="color: #a31515;">"</span>;</div><br>
+  <div><span style="color: #0000ff;">void</span> <span
+     style="color: #795e26;">onMessageCallback</span>(</div>
+  <div>&nbsp; <span style="color: #267f99;">WebsocketsMessage</span> <span
+     style="color: #001080;">message</span>) {</div>
+  <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">print</span>(<span
+     style="color: #a31515;">"Recibe "</span>);</div>
+  <div>&nbsp;<span style="color: #001080;">valor</span> = <span
+     style="color: #001080;">message</span>.<span
+     style="color: #795e26;">data</span>();</div>
+  <div>&nbsp;<span
+     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN,</div>
+  <div>&nbsp; <span style="color: #001080;">valor</span> == <span
+     style="color: #a31515;">"1"</span> ? HIGH : LOW);</div>
+  <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">println</span>(<span
+     style="color: #001080;">message</span>.<span
+     style="color: #795e26;">data</span>());</div>
+  <div>}</div><br>
+  <div><span style="color: #0000ff;">void</span> <span
+     style="color: #795e26;">onEventsCallback</span>(</div>
+  <div>&nbsp; <span style="color: #267f99;">WebsocketsEvent</span> <span
+     style="color: #001080;">event</span>,</div>
+  <div>&nbsp; <span style="color: #267f99;">String</span> <span
+     style="color: #001080;">data</span>) {</div>
+  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">event</span> == <span
+     style="color: #267f99;">WebsocketsEvent</span>::</div>
+  <div>&nbsp; &nbsp;ConnectionOpened) {</div>
+  <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">println</span>(<span
+     style="color: #a31515;">"Conectado."</span>);</div>
+  <div>&nbsp; <span style="color: #001080;">conectado</span> = <span
+     style="color: #0000ff;">true</span>;</div>
+  <div>&nbsp;} <span style="color: #af00db;">else</span> <span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">event</span> ==</div>
+  <div>&nbsp; &nbsp;<span style="color: #267f99;">WebsocketsEvent</span>::</div>
+  <div>&nbsp; &nbsp;ConnectionClosed) {</div>
+  <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">println</span>(<span
+     style="color: #a31515;">"Desconectado."</span>);</div>
+  <div>&nbsp; <span style="color: #001080;">conectado</span> = <span
+     style="color: #0000ff;">false</span>;</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+  <div><span style="color: #0000ff;">void</span> <span
+     style="color: #795e26;">setup</span>() {</div>
+  <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">begin</span>(<span
+     style="color: #098658;">115200</span>);</div>
+  <div>&nbsp;<span
+     style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
+  <div>&nbsp;<span style="color: #795e26;">pinMode</span>(<span
+     style="color: #001080;">BOTON</span>, INPUT);</div>
+  <div>&nbsp;<span style="color: #001080;">WiFi</span>.<span
+     style="color: #795e26;">begin</span>(<span
+     style="color: #001080;">SSID</span>, <span
+     style="color: #001080;">PASS</span>);</div>
+  <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">print</span>(<span
+     style="color: #a31515;">"Conectando WiFi."</span>);</div>
+  <div>&nbsp;<span style="color: #af00db;">for</span> (<span
+     style="color: #0000ff;">int</span> <span
+     style="color: #001080;">i</span> = <span
+     style="color: #098658;">0</span>; <span
+     style="color: #001080;">i</span> &lt; <span
+     style="color: #098658;">10</span> &amp;&amp;</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">WiFi</span>.<span
+     style="color: #795e26;">status</span>() != WL_CONNECTED;</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">i</span>++) {</div>
+  <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">print</span>(<span
+     style="color: #a31515;">"."</span>);</div>
+  <div>&nbsp; <span style="color: #795e26;">delay</span>(<span
+     style="color: #098658;">1000</span>);</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">println</span>();</div>
+  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">WiFi</span>.<span
+     style="color: #795e26;">status</span>() !=</div>
+  <div>&nbsp; &nbsp;WL_CONNECTED) {</div>
+  <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">println</span>(</div>
+  <div>&nbsp; &nbsp; <span
+     style="color: #a31515;">"WiFi desconectado."</span>);</div>
+  <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
+  <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">println</span>(</div>
+  <div>&nbsp; &nbsp; <span
+     style="color: #a31515;">"WiFi conectado."</span>);</div>
+  <div>&nbsp; <span style="color: #001080;">client</span>.</div>
+  <div>&nbsp; &nbsp;<span style="color: #795e26;">onMessage</span>(<span
+     style="color: #795e26;">onMessageCallback</span>);</div>
+  <div>&nbsp; <span style="color: #001080;">client</span>.<span
+     style="color: #795e26;">onEvent</span>(<span
+     style="color: #795e26;">onEventsCallback</span>);</div>
+  <div>&nbsp; <span style="color: #001080;">client</span>.<span
+     style="color: #795e26;">setCACert</span>(<span
+     style="color: #001080;">CERTIFICADO</span>);</div>
+  <div>&nbsp; <span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">println</span>(<span
+     style="color: #a31515;">"Conectando WS."</span>);</div>
+  <div>&nbsp; <span style="color: #0000ff;">bool</span> <span
+     style="color: #001080;">conectado</span> =</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">client</span>.<span
+     style="color: #795e26;">connect</span>(<span
+     style="color: #001080;">URL</span>);</div>
+  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">conectado</span>) {</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">println</span>(</div>
+  <div>&nbsp; &nbsp; &nbsp; <span
+     style="color: #a31515;">"WS Conectado."</span>); &nbsp; &nbsp;</div>
+  <div>&nbsp; } <span style="color: #af00db;">else</span> {</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">println</span>(</div>
+  <div>&nbsp; &nbsp; &nbsp; <span
+     style="color: #a31515;">"WS NO Conectado."</span>); &nbsp; &nbsp;</div>
+  <div>&nbsp; }</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+  <div><span style="color: #0000ff;">void</span> <span
+     style="color: #795e26;">loop</span>() {</div>
+  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">client</span>.<span
+     style="color: #795e26;">available</span>()) {</div>
+  <div>&nbsp; <span style="color: #001080;">client</span>.<span
+     style="color: #795e26;">poll</span>();</div>
+  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">conectado</span>) {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">bool</span> <span
+     style="color: #001080;">actual</span> =</div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #795e26;">digitalRead</span>(<span
+     style="color: #001080;">BOTON</span>);</div>
+  <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (!<span
+     style="color: #001080;">presionado</span> &amp;&amp;</div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #001080;">actual</span> == LOW) {</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">client</span>.<span
+     style="color: #795e26;">send</span>(<span
+     style="color: #001080;">valor</span>);</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">print</span>(<span
+     style="color: #a31515;">"Envía "</span>);</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">Serial</span>.<span
+     style="color: #795e26;">println</span>(<span
+     style="color: #001080;">valor</span>);</div>
+  <div>&nbsp; &nbsp;}</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">presionado</span> = (<span
+     style="color: #001080;">actual</span> == LOW);</div>
+  <div>&nbsp; }</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >E. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En esta lección se presentaron los siguientes archivos:
+   </p>
+   <ul>
+    <li>
+     <p>Blinkt.ino</p>
+    </li>
+    <li>
+     <p>Button.ino</p>
+    </li>
+    <li>
+     <p>Dispositivo.ino</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+</body>
+</html>
