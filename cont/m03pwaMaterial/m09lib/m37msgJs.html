@@ -1,0 +1,78 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;Sin un elemento tiene un</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;mensaje de validación, lo</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;muestra en su elemento de</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;ayuda y si no, muestra un</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;texto de ayuda. </span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{{</span></div><div><span
+  style="color: #008000;">&nbsp;*</span><span
+  style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;validity:{valid:boolean};</span></div><div><span
+  style="color: #008000;">&nbsp;*</span><span
+  style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;validationMessage: string</span></div><div><span
+  style="color: #008000;">&nbsp;*</span><span
+  style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}|</span></div><div><span
+  style="color: #008000;">&nbsp;*</span><span
+  style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null}</span><span
+  style="color: #008000;"> </span><span
+  style="color: #001080;">e</span></div><div><span
+  style="color: #008000;">&nbsp;*&nbsp;referencia a un elemento que</span></div><div><span
+  style="color: #008000;">&nbsp;*&nbsp;contiene datos.</span></div><div><span
+  style="color: #008000;">&nbsp;*&nbsp;</span><span
+  style="color: #0000ff;">@param</span><span
+  style="color: #008000;"> </span><span
+  style="color: #267f99;">{HTMLElement|null}</span><span
+  style="color: #008000;"> </span><span
+  style="color: #001080;">out</span></div><div><span
+  style="color: #008000;">&nbsp;*&nbsp;elemento de ayuda para e.</span></div><div><span
+  style="color: #008000;">&nbsp;*&nbsp;</span><span
+  style="color: #0000ff;">@param</span><span
+  style="color: #008000;"> </span><span
+  style="color: #267f99;">{string}</span><span
+  style="color: #008000;"> </span><span
+  style="color: #001080;">ok</span><span
+  style="color: #008000;"> mensaje de</span></div><div><span
+  style="color: #008000;">&nbsp;*&nbsp;ayuda cuando el estado de e es</span></div><div><span
+  style="color: #008000;">&nbsp;*&nbsp;válido.</span></div><div><span
+  style="color: #008000;">&nbsp;*/</span></div><div><span
+  style="color: #af00db;">export</span> <span
+  style="color: #0000ff;">function</span> <span
+  style="color: #795e26;">msg</span>(<span
+  style="color: #001080;">e</span>, <span
+  style="color: #001080;">out</span>, <span
+  style="color: #001080;">ok</span>)&nbsp;{</div><div>&nbsp;<span
+  style="color: #af00db;">if</span> (<span
+  style="color: #001080;">e</span> <span
+  style="color: #000000;">!==</span> <span
+  style="color: #0000ff;">null</span></div><div>&nbsp;&nbsp;<span
+  style="color: #000000;">&amp;&amp;</span> <span
+  style="color: #001080;">out</span> <span
+  style="color: #000000;">!==</span> <span
+  style="color: #0000ff;">null</span>)&nbsp;{</div><div>&nbsp;&nbsp;<span
+  style="color: #af00db;">if</span> (<span
+  style="color: #001080;">e</span>.<span
+  style="color: #001080;">validity</span>.<span
+  style="color: #001080;">valid</span>)&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;<span
+  style="color: #001080;">out</span>.<span
+  style="color: #001080;">textContent</span> <span
+  style="color: #000000;">=</span> <span
+  style="color: #001080;">ok</span></div><div>&nbsp;&nbsp;}&nbsp;<span
+  style="color: #af00db;">else</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;<span
+  style="color: #001080;">out</span>.<span
+  style="color: #001080;">textContent</span> <span
+  style="color: #000000;">=</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  style="color: #001080;">e</span>.<span
+  style="color: #001080;">validationMessage</span></div><div>&nbsp;&nbsp;}</div><div>&nbsp;}</div><div>}</div>
+ </div>
+</muestra-codigo>

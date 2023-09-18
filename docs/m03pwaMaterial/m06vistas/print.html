@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>VIstas móviles típicas - GilPG DM</title>
+ <meta name="description" content="Página para imprimir que vistas móviles típicas.">
+ <style>
+ :root {
+  --padTop: 2rem;
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --colScrollbar: #CFD8DC;
+  --colThumb: #90a4ae;
+  --colThumbActivo: #3f3f3f;
+  --anchoThumb: 7px;
+  --borderRadiusThumb: 3.5px;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ body::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ body::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+
+  .pruebaDeEscritorio {
+   page-break-before: always;
+  }
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ .resaltado3 {
+  background-color: rgb(235, 234, 233);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ .pruebaDeEscritorio section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1em;
+ }
+
+ .pruebaDeEscritorio section pre {
+  margin: 0;
+ }
+
+ .pruebaDeEscritorio samp {
+  font-weight: bold;
+ }
+
+ .pruebaDeEscritorio .activo {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  vertical-align: top;
+  background-color: var(--colSecundario);
+  border: 1px solid var(--colSecundario);
+ }
+
+ .pruebaDeEscritorio :target,
+ .pruebaDeEscritorio :target caption {
+  background-color: var(--colTarget);
+ }
+
+ .pruebaDeEscritorio .numero1 {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  color: var(--colStack1);
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio .numero2 {
+  display: inline-block;
+  color: var(--colStack2);
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio .numero3 {
+  display: inline-block;
+  color: var(--colStack3);
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio a.parametro1,
+ .pruebaDeEscritorio .parametro1 {
+  color: var(--colPar1);
+ }
+
+ .pruebaDeEscritorio a.parametro2,
+ .pruebaDeEscritorio .parametro2 {
+  color: var(--colPar2);
+ }
+
+ .pruebaDeEscritorio .descongela {
+  color: var(--colDescongela);
+ }
+
+ .pruebaDeEscritorio table.tabla1,
+ .pruebaDeEscritorio table.tabla1 th,
+ .pruebaDeEscritorio table.tabla1 td {
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio table.tabla3,
+ .pruebaDeEscritorio table.tabla3 th,
+ .pruebaDeEscritorio table.tabla3 td {
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio .frame {
+  font-family: var(--fontMono);
+  border-collapse: collapse;
+ }
+
+ .pruebaDeEscritorio .frame,
+ .pruebaDeEscritorio .frame th,
+ .pruebaDeEscritorio .frame td {
+  border: thin solid;
+ }
+
+ .pruebaDeEscritorio .frame caption {
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .objeto caption {
+  text-decoration: underline;
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .creación {
+  display: flex;
+ }
+</style>
+</head>
+<body class="print">
+   <h1 >F. VIstas móviles típicas</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  A continuación se presentan vistas móviles típicas con Material Design 3,
+  usando HTML, CSS y JavaScript.
+ </p>
+ <nav>
+  
+   <ol type="1">
+    <li>
+     <p>
+      <a href="/m03pwaMaterial/m06vistas/mAformulario.html">formulario.html - Formulario típico</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03pwaMaterial/m06vistas/mBayudaHtml.html">ayuda.html - Vista de ayuda</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >1. formulario.html - Formulario típico</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Los mensajes de error de de un componente, se muestran en otro componente
+    conocido como <dfn>texto de ayuda</dfn>.
+   </p>
+  </li>
+  <li>
+   <p>
+    En algunos de los custom elements mostrados, se indica el texto de ayuda
+    usando un elemento
+    <code class="language-html">small</code>
+    con el atributo
+    <code class="language-html">slot="supporting"</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    La forma usa el atributo
+    <code class="language-html">novalidate</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    En este ejemplo, el campo
+    <code class="language-html">select-menu</code>
+    con el id
+    <code class="language-html">inGenero</code>
+    usa el evento
+    <code class="language-html">input</code>.
+    para invocar la función
+    <code class="language-html">copiaMensajes</code>.
+    y copiar los mensajes de error del campo de captura al texto de ayuda.
+   </p>
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="https://pwamd.gilbertopachec2.repl.co/formulario.html"
+    height="330" title="Formulario para móvil"></iframe>
+  <p class="noPrint">
+   <a href="https://pwamd.gilbertopachec2.repl.co/formulario.html"
+     target="_blank" rel="noopener">Ábrelo en otra pestaña.</a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span
+      style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #e50000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;html</span> <span
+      style="color: #e50000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span></div>
+   <div>&nbsp;&nbsp;Formulario - PWA con Material</div>
+   <div>&nbsp;&nbsp;Design</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"theme-color"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"#fffbfe"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"icon"</span> <span
+      style="color: #e50000;">sizes</span>=<span
+      style="color: #0000ff;">"32x32"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"favicon.ico"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"manifest"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"site.webmanifest"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span><span
+      style="color: #000000;"> </span><span
+      style="color: #e50000;">type</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"module"</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #e50000;">src</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"js/configura.js"</span><span
+      style="color: #800000;">&gt;&lt;/script&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span><span
+      style="color: #000000;"> </span><span
+      style="color: #e50000;">type</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"module"</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #e50000;">src</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"js/nav-drw.js"</span><span
+      style="color: #800000;">&gt;&lt;/script&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"css/estilos.css"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"lib/css/md3.css"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;body&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;form</span> <span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"form"</span> <span
+      style="color: #e50000;">novalidate</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;center-aligned-top-app-bar&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;h1</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;Recomiendo</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;nav-drw</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"navigation"</span><span
+      style="color: #800000;">&gt;&lt;/nav-drw&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/center-aligned-top-app-bar&gt;</span></div>
+   <br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;section&gt;</span></div><br>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;select-menu</span> <span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"inGenero"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">required</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"genero"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"label"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Género</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;small</span> <span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"msgGenero"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"supporting"</span><span
+      style="color: #800000;">&gt;&lt;/small&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;menu-option</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">value</span>=<span
+      style="color: #0000ff;">""</span><span
+      style="color: #800000;">&gt;&lt;/menu-option&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;menu-option</span> <span
+      style="color: #e50000;">value</span>=<span
+      style="color: #0000ff;">"pop"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pop</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/menu-option&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;menu-option</span> <span
+      style="color: #e50000;">value</span>=<span
+      style="color: #0000ff;">"reg"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reguetón</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/menu-option&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/select-menu&gt;</span></div><br>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"filled"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recomendar</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/section&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/form&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span><span
+      style="color: #000000;"> </span><span
+      style="color: #e50000;">type</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"module"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #af00db;">import</span><span
+      style="color: #000000;">&nbsp;{</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #001080;">muestraError</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;}&nbsp;</span><span
+      style="color: #af00db;">from</span><span
+      style="color: #000000;"> </span><span
+      style="color: #a31515;">"./lib/js/muestraError.js"</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #af00db;">import</span><span
+      style="color: #000000;">&nbsp;{</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #001080;">msg</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;}&nbsp;</span><span
+      style="color: #af00db;">from</span><span
+      style="color: #000000;"> </span><span
+      style="color: #a31515;">"./lib/js/msg.js"</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #af00db;">import</span><span
+      style="color: #000000;">&nbsp;{</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #001080;">ACTIVE_CLASS</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;}&nbsp;</span><span
+      style="color: #af00db;">from</span><span
+      style="color: #000000;"> </span><span
+      style="color: #a31515;">"./lib/js/constantes.js"</span></div><br>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #001080;">aFormulario</span><span
+      style="color: #000000;">.</span><span
+      style="color: #001080;">classList</span><span
+      style="color: #000000;">.</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #795e26;">add</span><span
+      style="color: #000000;">(</span><span
+      style="color: #0070c1;">ACTIVE_CLASS</span><span
+      style="color: #000000;">)</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #0000ff;">const</span><span
+      style="color: #000000;"> </span><span
+      style="color: #0070c1;">OBLIGATORIO</span><span
+      style="color: #000000;"> =</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #a31515;">"*&nbsp;Obligatorio"</span></div><br>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #001080;">msgGenero</span><span
+      style="color: #000000;">.</span><span
+      style="color: #001080;">textContent</span><span
+      style="color: #000000;"> =</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #0070c1;">OBLIGATORIO</span></div><br>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #001080;">form</span><span
+      style="color: #000000;">.</span><span
+      style="color: #795e26;">addEventListener</span><span
+      style="color: #000000;">(</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #a31515;">"submit"</span><span
+      style="color: #000000;">, </span><span
+      style="color: #795e26;">procesa</span><span
+      style="color: #000000;">)</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #001080;">inGenero</span><span
+      style="color: #000000;">.</span><span
+      style="color: #795e26;">addEventListener</span><span
+      style="color: #000000;">(</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #a31515;">"input"</span><span
+      style="color: #000000;">, </span><span
+      style="color: #795e26;">copiaMensajes</span><span
+      style="color: #000000;">)</span></div><br>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #0000ff;">function</span><span
+      style="color: #000000;"> </span><span
+      style="color: #795e26;">copiaMensajes</span><span
+      style="color: #000000;">()&nbsp;{</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #795e26;">msg</span><span
+      style="color: #000000;">(</span><span
+      style="color: #001080;">inGenero</span><span
+      style="color: #000000;">, </span><span
+      style="color: #001080;">msgGenero</span><span
+      style="color: #000000;">,</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #0070c1;">OBLIGATORIO</span><span
+      style="color: #000000;">)</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;}</span></div><br>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #008000;">/**</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{SubmitEvent}&nbsp;evt</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*/</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #0000ff;">function</span><span
+      style="color: #000000;"> </span><span
+      style="color: #795e26;">procesa</span><span
+      style="color: #000000;">(</span><span
+      style="color: #001080;">evt</span><span
+      style="color: #000000;">)&nbsp;{</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #001080;">evt</span><span
+      style="color: #000000;">.</span><span
+      style="color: #795e26;">preventDefault</span><span
+      style="color: #000000;">()</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #af00db;">try</span><span
+      style="color: #000000;">&nbsp;{</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #795e26;">copiaMensajes</span><span
+      style="color: #000000;">()</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #af00db;">if</span><span
+      style="color: #000000;"> (</span><span
+      style="color: #001080;">inGenero</span><span
+      style="color: #000000;">.</span><span
+      style="color: #001080;">validity</span><span
+      style="color: #000000;">.</span><span
+      style="color: #001080;">valid</span><span
+      style="color: #000000;">)&nbsp;{</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #0000ff;">const</span><span
+      style="color: #000000;"> </span><span
+      style="color: #0070c1;">genero</span><span
+      style="color: #000000;"> = </span><span
+      style="color: #001080;">inGenero</span><span
+      style="color: #000000;">.</span><span
+      style="color: #001080;">value</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #0000ff;">const</span><span
+      style="color: #000000;"> </span><span
+      style="color: #0070c1;">resultado</span><span
+      style="color: #000000;"> =</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #795e26;">recomienda</span><span
+      style="color: #000000;">(</span><span
+      style="color: #0070c1;">genero</span><span
+      style="color: #000000;">)</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #795e26;">alert</span><span
+      style="color: #000000;">(</span><span
+      style="color: #0070c1;">resultado</span><span
+      style="color: #000000;">)</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;}&nbsp;</span><span
+      style="color: #af00db;">catch</span><span
+      style="color: #000000;"> (</span><span
+      style="color: #001080;">e</span><span
+      style="color: #000000;">)&nbsp;{</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #795e26;">muestraError</span><span
+      style="color: #000000;">(</span><span
+      style="color: #001080;">e</span><span
+      style="color: #000000;">)</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;}</span></div><br>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #008000;">/**&nbsp;@param&nbsp;{string}&nbsp;genero
+     */</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #0000ff;">export</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #0000ff;">function</span><span
+      style="color: #000000;"> </span><span
+      style="color: #795e26;">recomienda</span><span
+      style="color: #000000;">(</span><span
+      style="color: #001080;">genero</span><span
+      style="color: #000000;">)&nbsp;{</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #af00db;">if</span><span
+      style="color: #000000;"> (</span><span
+      style="color: #001080;">genero</span><span
+      style="color: #000000;"> === </span><span
+      style="color: #a31515;">"pop"</span><span
+      style="color: #000000;">)&nbsp;{</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #af00db;">return</span><span
+      style="color: #000000;"> </span><span
+      style="color: #a31515;">"Para el pop te "</span><span
+      style="color: #000000;"> +</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #a31515;">"recomiendo a Dua Lipa."</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;}&nbsp;</span><span
+      style="color: #af00db;">else</span><span
+      style="color: #000000;"> </span><span
+      style="color: #af00db;">if</span><span
+      style="color: #000000;"> (</span><span
+      style="color: #001080;">genero</span><span
+      style="color: #000000;"> === </span><span
+      style="color: #a31515;">"reg"</span><span
+      style="color: #000000;">)&nbsp;{</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #af00db;">return</span><span
+      style="color: #000000;"> </span><span
+      style="color: #a31515;">"Para el reguetón te "</span><span
+      style="color: #000000;"> +</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #a31515;">"recomiendo a Bad Bunny."</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;}</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;</span><span
+      style="color: #800000;">&lt;/script&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+<div class="lectura">
+ <section>
+  <h1>Solo para los más rudos</h1>
+  <ul>
+   <li>
+    <p>
+     La especificación técnica del elemento
+     <code class="language-html">small</code>
+     está en
+     <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element"
+       rel="noopener"
+       target="_blank">https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element</a>
+    </p>
+   </li>
+  </ul>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >2. ayuda.html - Vista de ayuda</h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="https://pwamd.gilbertopachec2.repl.co/ayuda.html"
+    height="330" title="Vista de ayuda"></iframe>
+  <p class="noPrint">
+   <a href="https://pwamd.gilbertopachec2.repl.co/ayuda.html"
+     target="_blank" rel="noopener">Ábrelo en otra pestaña.</a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span
+      style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #e50000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;html</span> <span
+      style="color: #e50000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span></div>
+   <div>&nbsp;&nbsp;Ayuda - PWA con Material Design</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"theme-color"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"#6a0080"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"icon"</span> <span
+      style="color: #e50000;">sizes</span>=<span
+      style="color: #0000ff;">"32x32"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"favicon.ico"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"manifest"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"site.webmanifest"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span><span
+      style="color: #000000;"> </span><span
+      style="color: #e50000;">type</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"module"</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #e50000;">src</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"js/configura.js"</span><span
+      style="color: #800000;">&gt;&lt;/script&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span><span
+      style="color: #000000;"> </span><span
+      style="color: #e50000;">type</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"module"</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #e50000;">src</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"js/nav-drw.js"</span><span
+      style="color: #800000;">&gt;&lt;/script&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"css/estilos.css"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"lib/css/md3.css"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;body&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;top-app-bar&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;h1</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span>Ayuda<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;nav-drw</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"navigation"</span><span
+      style="color: #800000;">&gt;&lt;/nav-drw&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/top-app-bar&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;section&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;ul</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"list"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;li</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"two-line"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Título</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"supporting"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PWA con Material Design</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;li</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"two-line"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Descripción</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"supporting"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ejemplos de vistas móviles.</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;li</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"two-line"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Autor</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"supporting"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gilberto Pacheco Gallegos</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;li</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"two-line"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Derechos de autor</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"supporting"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #0000ff;">&amp;copy;</span> 2023</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gilberto Pacheco Gallegos</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;li</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"three-line"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Este software usa la librería</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;para PWA</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"supporting"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Desarrollada por</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gilberto Pacheco Gallegos</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bajo una Licencia</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creative Commons</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Atribución 4.0 Internacional.</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;li</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"two-line"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;También usa Material Symbols</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"supporting"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Desarrollada por Google bajo</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;licencia Apache 2.0</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/ul&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/section&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span><span
+      style="color: #000000;"> </span><span
+      style="color: #e50000;">type</span><span
+      style="color: #000000;">=</span><span
+      style="color: #0000ff;">"module"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #af00db;">import</span><span
+      style="color: #000000;">&nbsp;{</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #001080;">ACTIVE_CLASS</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;}&nbsp;</span><span
+      style="color: #af00db;">from</span><span
+      style="color: #000000;"> </span><span
+      style="color: #a31515;">"./lib/js/constantes.js"</span></div><br>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;</span><span
+      style="color: #001080;">aAyuda</span><span
+      style="color: #000000;">.</span><span
+      style="color: #001080;">classList</span><span
+      style="color: #000000;">.</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #795e26;">add</span><span
+      style="color: #000000;">(</span><span
+      style="color: #0070c1;">ACTIVE_CLASS</span><span
+      style="color: #000000;">)&nbsp;&nbsp;</span></div>
+   <div><span
+      style="color: #000000;">&nbsp;</span><span
+      style="color: #800000;">&lt;/script&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+<div class="lectura">
+ <section>
+  <h1>Solo para los más rudos</h1>
+  <ul>
+   <li>
+    <p>
+     La especificación técnica del elemento
+     <code class="language-html">small</code>
+     está en
+     <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element"
+       rel="noopener"
+       target="_blank">https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element</a>
+    </p>
+   </li>
+  </ul>
+ </section>
+</div>
+      </section>
+</body>
+</html>
