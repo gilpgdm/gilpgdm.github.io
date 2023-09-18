@@ -364,7 +364,7 @@ const ARCHIVOS = [
    "/src/m01notificaciones/",
    "/src/m01notificaciones/index.html",
    "/src/m02push/composer.zip",
-   "/src/m02push/push.zip",
+   "/src/m02push/notificacionespush.zip",
    "/src/m03pwaMaterial/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints",
    "/src/m03pwaMaterial/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf",
    "/src/m03pwaMaterial/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2",
