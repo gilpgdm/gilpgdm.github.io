@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>5. IoT - GilPG DM</title>
- <meta name="description" content="Contenido de la lección «IoT».">
+ <title>10. srv / dao / historicoAgrega.php - GilPG DM</title>
+ <meta name="description" content="Contenido del archivo «srv/dao/historicoAgrega.php».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -445,72 +445,59 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m04dispositivo/mCresumen.html" title="C. Resumen">◀</a>
- <a class="siguiente" href="/m05iot/mAer.html" title="A. Diagrama entidad relación">▶</a>
-   <h1 class="leccion">5. IoT</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
-    </p>
-   </div>
-<div class="lectura">
- <p>
-  En esta lección se presenta el ejemplo base para IoT.
- </p>
- <p>
-  Primero levanta el servidor de websockets ejecutando la app en
-  <a rel="noopener" href="https://replit.com/@GilbertoPachec2/iotwss?v=1"
-   target="_blank">https://replit.com/@GilbertoPachec2/iotwss?v=1</a>
-  (no es un website)
- </p>
- <p>
-  Luego lanza el control móvil ejecutano la app en
-  <a rel="noopener" href="https://iothtml.gilbertopachec2.repl.co/"
-   target="_blank">https://iothtml.gilbertopachec2.repl.co/</a>
- </p>
- <nav>
-  <h1>Contenido</h1>
-  
-   <ol type="A">
-    <li>
-     <p>
-      <a href="/m05iot/mAer.html">Diagrama entidad relación</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mBrel.html">Diagrama relacional</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mCdeploy.html">Diagrama de despliegue</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mDinstrucciones.html">Instrucciones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mEiothtml/">iothtml</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mFiotwss/">chatwss</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mGresumen.html">Resumen</a>
-     </p>
-    </li>
-   </ol>
- </nav>
-</div>
+ <a class="anterior" href="/m05iot/mFiotwss/mQdispositivoModificaPhp.html" title="9. srv / dao / dispositivoModifica.php">◀</a>
+ <a class="siguiente" href="/m05iot/mFiotwss/mItxtFaltaElIdPhp.html" title="11. lib / php / txt / txtFaltaElId.php">▶</a>
+   <h1 >10. srv / dao / historicoAgrega.php</h1><muestra-codigo>
+ <div>
+  <div><span style="color: #800000;">&lt;?php</span></div>
+  <div><span style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> .</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"/../modelo/Dispositivo.php"</span>;</div>
+  <div>&nbsp;<span style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> .</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"/AccesoBd.php"</span>;</div><br>
+  <div><span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">historicoAgrega</span>(</div>
+  <div>&nbsp;<span style="color: #267f99;">Dispositivo</span> <span
+     style="color: #001080;">$dispositivo</span></div>
+  <div>) {</div>
+  <div>&nbsp;<span style="color: #001080;">$con</span> = <span
+     style="color: #267f99;">AccesoBd</span>::<span
+     style="color: #795e26;">getCon</span>();</div>
+  <div>&nbsp;<span style="color: #001080;">$stmt</span> = <span
+     style="color: #001080;">$con</span>-&gt;<span
+     style="color: #795e26;">prepare</span>(</div>
+  <div>&nbsp; <span style="color: #a31515;">"</span><span
+     style="color: #0000ff;">INSERT</span><span
+     style="color: #a31515;"> </span><span
+     style="color: #0000ff;">INTO</span><span
+     style="color: #a31515;"> HISTORICO</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp; &nbsp; (DIS_ID, HIS_VALOR,</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp; &nbsp; &nbsp;HIS_TIMESTAMP)</span></div>
+  <div><span style="color: #a31515;">&nbsp; &nbsp; </span><span
+     style="color: #0000ff;">VALUES</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp; &nbsp; &nbsp;(:dis, :valor, </span><span
+     style="color: #0000ff;">date</span><span
+     style="color: #a31515;">('now'))</span><span
+     style="color: #a31515;">"</span></div>
+  <div>&nbsp;);</div>
+  <div>&nbsp;<span style="color: #001080;">$stmt</span>-&gt;<span
+     style="color: #795e26;">execute</span>([</div>
+  <div>&nbsp; <span style="color: #a31515;">":dis"</span> =&gt; <span
+     style="color: #001080;">$dispositivo</span>-&gt;<span
+     style="color: #001080;">id</span>,</div>
+  <div>&nbsp; <span style="color: #a31515;">":valor"</span> =&gt; <span
+     style="color: #001080;">$dispositivo</span>-&gt;<span
+     style="color: #001080;">valor</span></div>
+  <div>&nbsp;]);</div>
+  <div>}</div><br>
+ </div>
+</muestra-codigo>
  <footer>
  <p>
   <a rel="license"
@@ -541,49 +528,119 @@
     <a href="/index.html"
       data-logo="true">GilPG DM</a>
    </p><p>
-    <a class="paginaAnterior" href="/m04dispositivo/mCresumen.html"
-      title="C. Resumen">▲</a>
+    <a class="paginaAnterior" href="/m05iot/mEiothtml/m53muestraErrorJs.html"
+      title="8. lib / js / muestraError.js">▲</a>
    </p>
-     <h1><a href="/m05iot/index.html" class="actual">5. IoT</a></h1>
-   <ol type="A">
+     <h1><a href="/m05iot/mFiotwss/index.html">F. chatwss</a></h1>
+   <ol type="1">
     <li>
      <p>
-      <a href="/m05iot/mAer.html">Diagrama entidad relación</a>
+      <a href="/m05iot/mFiotwss/mAarchivos.html">Archivos</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05iot/mBrel.html">Diagrama relacional</a>
+      <a href="/m05iot/mFiotwss/mUiotwssPhp.html">srv / iotwss.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05iot/mCdeploy.html">Diagrama de despliegue</a>
+      <a href="/m05iot/mFiotwss/mVmainPhp.html">main.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05iot/mDinstrucciones.html">Instrucciones</a>
+      <a href="/m05iot/mFiotwss/mMbdCreaPhp.html">srv / dao / bdCrea.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05iot/mEiothtml/">iothtml</a>
+      <a href="/m05iot/mFiotwss/mLDispositivoPhp.html">srv / modelo / Dispositivo.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05iot/mFiotwss/">chatwss</a>
+      <a href="/m05iot/mFiotwss/mNAccesoBdPhp.html">srv / dao / AccesoBd.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05iot/mGresumen.html">Resumen</a>
+      <a href="/m05iot/mFiotwss/mOdispositivoAgregaPhp.html">srv / dao / dispositivoAgrega.php</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mPdispositivoBuscaPhp.html">srv / dao / dispositivoBusca.php</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mQdispositivoModificaPhp.html">srv / dao / dispositivoModifica.php</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mRhistoricoAgregaPhp.html" class="actual">srv / dao / historicoAgrega.php</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mItxtFaltaElIdPhp.html">lib / php / txt / txtFaltaElId.php</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mJtxtFaltaElValorPhp.html">srv / txt / txtFaltaElValor.php</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mDComposerJson.html">composer.json</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mBReplit.html">.replit</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mCreplitNix.html">replit.nix</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mQautoloadPhp.html">lib / php / autoload.php</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mRpathPhp.html">lib / php / path.php</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mWvalidaPhp.html">lib / php / valida.php</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mXvalidaIdNoVacioPhp.html">lib / php / validaIdNoVacio.php</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mYvalidaTextoNoVacioPhp.html">lib / php / validaTextoNoVacio.php</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mTguardaPhp.html">guarda.php</a>
      </p>
     </li>
    </ol><p>
-    <a class="paginaSiguiente" href="/m06esp8266/index.html"
-      title="6. ESP32">▼</a>
+    <a class="paginaSiguiente" href="/m05iot/mGresumen.html"
+      title="G. Resumen">▼</a>
    </p>
 </nav>
  <script>
@@ -596,9 +653,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m04dispositivo/mCresumen.html"
+ let urlAnterior = "/m05iot/mFiotwss/mQdispositivoModificaPhp.html"
  /**@type {string} */
- let urlSiguiente = "/m05iot/mAer.html"
+ let urlSiguiente = "/m05iot/mFiotwss/mItxtFaltaElIdPhp.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
