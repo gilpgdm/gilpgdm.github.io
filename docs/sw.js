@@ -375,7 +375,8 @@ const ARCHIVOS = [
    "/src/m04dispositivos/gps.html",
    "/src/m04pruebas/composer.zip",
    "/src/m05pwaBasica/pwa.zip",
-   "/src/m07iot/composer.zip" ]
+   "/src/m07iot/iothtml.zip",
+   "/src/m07iot/iotwss.zip" ]
 
 if (self instanceof ServiceWorkerGlobalScope) {
  self.addEventListener("install", installListener)
