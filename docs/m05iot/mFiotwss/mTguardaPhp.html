@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>21. guarda.php - GilPG DM</title>
+ <title>3. guarda.php - GilPG DM</title>
  <meta name="description" content="Contenido del archivo «guarda.php».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -445,47 +445,101 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m05iot/mFiotwss/mYvalidaTextoNoVacioPhp.html" title="20. lib / php / validaTextoNoVacio.php">◀</a>
- <a class="siguiente" href="/m05iot/mGresumen.html" title="G. Resumen">▶</a>
-   <h1 >21. guarda.php</h1><muestra-codigo>
+ <a class="anterior" href="/m05iot/mFiotwss/mUiotwssPhp.html" title="2. srv / iotwss.php">◀</a>
+ <a class="siguiente" href="/m05iot/mFiotwss/mVmainPhp.html" title="4. main.php">▶</a>
+   <h1 >3. guarda.php</h1><muestra-codigo>
  <div>
-  <div><span style="color: #800000;">&lt;?php</span></div>
-  <div><span style="color: #af00db;">require_once</span></div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"./modelo/Dispositivo.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span></div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"./dao/dispositivoModifica.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span></div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"./dao/historicoAgrega.php"</span>;</div><br>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">guarda</span>(<span
-     style="color: #001080;">$valor</span>)</div>
-  <div>{</div>
-  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
-  <div>&nbsp; <span style="color: #001080;">$dispositivo</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Dispositivo</span>();</div>
-  <div>&nbsp; <span style="color: #001080;">$dispositivo</span>-&gt;<span
-     style="color: #001080;">id</span> = <span
-     style="color: #a31515;">"1"</span>;</div>
-  <div>&nbsp; <span style="color: #001080;">$dispositivo</span>-&gt;<span
-     style="color: #001080;">valor</span> = <span
-     style="color: #001080;">$valor</span>;</div>
-  <div>&nbsp; <span style="color: #795e26;">dispositivoModifica</span>(</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">$dispositivo</span></div>
-  <div>&nbsp; );</div>
-  <div>&nbsp; <span style="color: #795e26;">historicoAgrega</span>(<span
-     style="color: #001080;">$dispositivo</span>);</div>
-  <div>&nbsp;} <span style="color: #af00db;">catch</span> (\<span
-     style="color: #267f99;">Throwable</span> <span
-     style="color: #001080;">$e</span>) {</div>
-  <div>&nbsp; <span style="color: #795e26;">echo</span> <span
-     style="color: #001080;">$e</span>-&gt;<span
-     style="color: #795e26;">getMessage</span>();</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #af00db;">require_once</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #a31515;">"srv/dao/dispositivoModifica.php"</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #af00db;">require_once</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #a31515;">"srv/dao/historicoAgrega.php"</span><span
+     style="color: #000000;">;</span></div><br>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> srv\modelo\</span><span
+     style="color: #267f99;">Dispositivo</span><span
+     style="color: #000000;">;</span></div><br>
+  <div><span
+     style="color: #0000ff;">function</span><span
+     style="color: #000000;"> </span><span
+     style="color: #795e26;">guarda</span><span
+     style="color: #000000;">(</span><span
+     style="color: #001080;">$valor</span><span
+     style="color: #000000;">)</span></div>
+  <div><span
+     style="color: #000000;">{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #af00db;">try</span><span
+     style="color: #000000;">&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$dispositivo</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #0000ff;">new</span><span
+     style="color: #000000;"> </span><span
+     style="color: #267f99;">Dispositivo</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$dispositivo</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #001080;">id</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #a31515;">"1"</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$dispositivo</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #001080;">valor</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #001080;">$valor</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #795e26;">dispositivoModifica</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$dispositivo</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #795e26;">historicoAgrega</span><span
+     style="color: #000000;">(</span><span
+     style="color: #001080;">$dispositivo</span><span
+     style="color: #000000;">);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;}&nbsp;</span><span
+     style="color: #af00db;">catch</span><span
+     style="color: #000000;"> (\</span><span
+     style="color: #267f99;">Throwable</span><span
+     style="color: #000000;"> </span><span
+     style="color: #001080;">$e</span><span
+     style="color: #000000;">)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #795e26;">echo</span><span
+     style="color: #000000;"> </span><span
+     style="color: #001080;">$e</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">getMessage</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;}</span></div>
+  <div><span
+     style="color: #000000;">}</span></div><br>
  </div>
 </muestra-codigo>
  <footer>
@@ -531,6 +585,11 @@
     <li>
      <p>
       <a href="/m05iot/mFiotwss/mUiotwssPhp.html">srv / iotwss.php</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mTguardaPhp.html" class="actual">guarda.php</a>
      </p>
     </li>
     <li>
@@ -585,21 +644,6 @@
     </li>
     <li>
      <p>
-      <a href="/m05iot/mFiotwss/mDComposerJson.html">composer.json</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mFiotwss/mBReplit.html">.replit</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mFiotwss/mCreplitNix.html">replit.nix</a>
-     </p>
-    </li>
-    <li>
-     <p>
       <a href="/m05iot/mFiotwss/mQautoloadPhp.html">lib / php / autoload.php</a>
      </p>
     </li>
@@ -625,7 +669,17 @@
     </li>
     <li>
      <p>
-      <a href="/m05iot/mFiotwss/mTguardaPhp.html" class="actual">guarda.php</a>
+      <a href="/m05iot/mFiotwss/mDComposerJson.html">composer.json</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mBReplit.html">.replit</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mCreplitNix.html">replit.nix</a>
      </p>
     </li>
    </ol><p>
@@ -643,9 +697,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m05iot/mFiotwss/mYvalidaTextoNoVacioPhp.html"
+ let urlAnterior = "/m05iot/mFiotwss/mUiotwssPhp.html"
  /**@type {string} */
- let urlSiguiente = "/m05iot/mGresumen.html"
+ let urlSiguiente = "/m05iot/mFiotwss/mVmainPhp.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

@@ -360,6 +360,11 @@
     </li>
     <li>
      <p>
+      <a href="/m05iot/mFiotwss/mTguardaPhp.html">guarda.php</a>
+     </p>
+    </li>
+    <li>
+     <p>
       <a href="/m05iot/mFiotwss/mVmainPhp.html">main.php</a>
      </p>
     </li>
@@ -410,21 +415,6 @@
     </li>
     <li>
      <p>
-      <a href="/m05iot/mFiotwss/mDComposerJson.html">composer.json</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mFiotwss/mBReplit.html">.replit</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mFiotwss/mCreplitNix.html">replit.nix</a>
-     </p>
-    </li>
-    <li>
-     <p>
       <a href="/m05iot/mFiotwss/mQautoloadPhp.html">lib / php / autoload.php</a>
      </p>
     </li>
@@ -450,7 +440,17 @@
     </li>
     <li>
      <p>
-      <a href="/m05iot/mFiotwss/mTguardaPhp.html">guarda.php</a>
+      <a href="/m05iot/mFiotwss/mDComposerJson.html">composer.json</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mBReplit.html">.replit</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mFiotwss/mCreplitNix.html">replit.nix</a>
      </p>
     </li>
    </ol>
@@ -898,7 +898,104 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >3. main.php</h1><muestra-codigo>
+         <h1 >3. guarda.php</h1><muestra-codigo>
+ <div>
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #af00db;">require_once</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #a31515;">"srv/dao/dispositivoModifica.php"</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #af00db;">require_once</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #a31515;">"srv/dao/historicoAgrega.php"</span><span
+     style="color: #000000;">;</span></div><br>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> srv\modelo\</span><span
+     style="color: #267f99;">Dispositivo</span><span
+     style="color: #000000;">;</span></div><br>
+  <div><span
+     style="color: #0000ff;">function</span><span
+     style="color: #000000;"> </span><span
+     style="color: #795e26;">guarda</span><span
+     style="color: #000000;">(</span><span
+     style="color: #001080;">$valor</span><span
+     style="color: #000000;">)</span></div>
+  <div><span
+     style="color: #000000;">{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #af00db;">try</span><span
+     style="color: #000000;">&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$dispositivo</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #0000ff;">new</span><span
+     style="color: #000000;"> </span><span
+     style="color: #267f99;">Dispositivo</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$dispositivo</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #001080;">id</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #a31515;">"1"</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$dispositivo</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #001080;">valor</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #001080;">$valor</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #795e26;">dispositivoModifica</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$dispositivo</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #795e26;">historicoAgrega</span><span
+     style="color: #000000;">(</span><span
+     style="color: #001080;">$dispositivo</span><span
+     style="color: #000000;">);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;}&nbsp;</span><span
+     style="color: #af00db;">catch</span><span
+     style="color: #000000;"> (\</span><span
+     style="color: #267f99;">Throwable</span><span
+     style="color: #000000;"> </span><span
+     style="color: #001080;">$e</span><span
+     style="color: #000000;">)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #795e26;">echo</span><span
+     style="color: #000000;"> </span><span
+     style="color: #001080;">$e</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">getMessage</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;}</span></div>
+  <div><span
+     style="color: #000000;">}</span></div><br>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >4. main.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
@@ -1039,7 +1136,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >4. srv / dao / bdCrea.php</h1><muestra-codigo>
+         <h1 >5. srv / dao / bdCrea.php</h1><muestra-codigo>
  <div>
   <div><span style="color: #800000;">&lt;?php</span></div>
   <div><span style="color: #0000ff;">function</span> <span
@@ -1131,7 +1228,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >5. srv / modelo / dispositivo.php</h1><muestra-codigo>
+         <h1 >6. srv / modelo / dispositivo.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
@@ -1238,7 +1335,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >6. srv / dao / accesobd.php</h1><muestra-codigo>
+         <h1 >7. srv / dao / accesobd.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
@@ -1481,279 +1578,445 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >7. srv / dao / dispositivoAgrega.php</h1><muestra-codigo>
+         <h1 >8. srv / dao / dispositivoAgrega.php</h1><muestra-codigo>
  <div>
-  <div><span style="color: #800000;">&lt;?php</span></div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/../modelo/Dispositivo.php"</span>;</div>
-  <div>&nbsp;<span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/AccesoBd.php"</span>;</div><br>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">dispositivoAgrega</span>(</div>
-  <div>&nbsp;<span style="color: #267f99;">Dispositivo</span> <span
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> srv\dao\</span><span
+     style="color: #267f99;">AccesoBd</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> srv\modelo\</span><span
+     style="color: #267f99;">Dispositivo</span><span
+     style="color: #000000;">;</span></div><br>
+  <div><span
+     style="color: #0000ff;">function</span><span
+     style="color: #000000;"> </span><span
+     style="color: #795e26;">dispositivoAgrega</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #267f99;">Dispositivo</span><span
+     style="color: #000000;"> </span><span
      style="color: #001080;">$dispositivo</span></div>
-  <div>) {</div>
-  <div>&nbsp;<span style="color: #001080;">$dispositivo</span>-&gt;<span
-     style="color: #795e26;">valida</span>();</div>
-  <div>&nbsp;<span style="color: #001080;">$con</span> = <span
-     style="color: #267f99;">AccesoBd</span>::<span
-     style="color: #795e26;">getCon</span>();</div>
-  <div>&nbsp;<span style="color: #001080;">$stmt</span> = <span
-     style="color: #001080;">$con</span>-&gt;<span
-     style="color: #795e26;">prepare</span>(</div>
-  <div>&nbsp; <span style="color: #a31515;">"</span><span
-     style="color: #0000ff;">INSERT</span><span
-     style="color: #a31515;"> </span><span
-     style="color: #0000ff;">INTO</span><span
+  <div><span
+     style="color: #000000;">)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$dispositivo</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">valida</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$con</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #267f99;">AccesoBd</span><span
+     style="color: #000000;">::</span><span
+     style="color: #795e26;">getCon</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$stmt</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #001080;">$con</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">prepare</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">"</span><span
+     style="color: #0000ff;">INSERT INTO</span><span
      style="color: #a31515;"> DISPOSITIVO</span></div>
   <div><span
-     style="color: #a31515;">&nbsp; &nbsp; (DIS_ID, DIS_VALOR)</span></div>
-  <div><span style="color: #a31515;">&nbsp; &nbsp;</span><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;(DIS_ID, DIS_VALOR)</span>
+  </div>
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;</span><span
      style="color: #0000ff;">VALUES</span></div>
   <div><span
-     style="color: #a31515;">&nbsp; &nbsp; (:id, :valor)</span><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;(:id, :valor)</span><span
      style="color: #a31515;">"</span></div>
-  <div>&nbsp;);</div>
-  <div>&nbsp;<span style="color: #001080;">$stmt</span>-&gt;<span
-     style="color: #795e26;">execute</span>([</div>
-  <div>&nbsp; <span style="color: #a31515;">":id"</span> =&gt; <span
-     style="color: #001080;">$dispositivo</span>-&gt;<span
-     style="color: #001080;">id</span>,</div>
-  <div>&nbsp; <span style="color: #a31515;">":valor"</span> =&gt; <span
-     style="color: #001080;">$dispositivo</span>-&gt;<span
+  <div><span
+     style="color: #000000;">&nbsp;);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$stmt</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">execute</span><span
+     style="color: #000000;">([</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">":id"</span><span
+     style="color: #000000;"> =&gt; </span><span
+     style="color: #001080;">$dispositivo</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #001080;">id</span><span
+     style="color: #000000;">,</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">":valor"</span><span
+     style="color: #000000;"> =&gt; </span><span
+     style="color: #001080;">$dispositivo</span><span
+     style="color: #000000;">-&gt;</span><span
      style="color: #001080;">valor</span></div>
-  <div>&nbsp;]);</div>
-  <div>}</div><br>
+  <div><span
+     style="color: #000000;">&nbsp;]);</span></div>
+  <div><span
+     style="color: #000000;">}</span></div><br>
  </div>
 </muestra-codigo>
       </section>
      <section >
-         <h1 >8. srv / dao / dispositivoBusca.php</h1><muestra-codigo>
+         <h1 >9. srv / dao / dispositivoBusca.php</h1><muestra-codigo>
  <div>
-  <div><span style="color: #800000;">&lt;?php</span></div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/../modelo/Dispositivo.php"</span>;</div>
-  <div>&nbsp;<span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span style="color: #a31515;">"/AccesoBd.php"</span>;</div><br>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">dispositivoBusca</span>(<span
-     style="color: #001080;">$id</span>)</div>
-  <div>{</div>
-  <div>&nbsp;<span style="color: #001080;">$con</span> = <span
-     style="color: #267f99;">AccesoBd</span>::<span
-     style="color: #795e26;">getCon</span>();</div>
-  <div>&nbsp;<span style="color: #001080;">$stmt</span> = <span
-     style="color: #001080;">$con</span>-&gt;<span
-     style="color: #795e26;">prepare</span>(</div>
-  <div>&nbsp; <span style="color: #a31515;">"</span><span
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br><br>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> srv\dao\</span><span
+     style="color: #267f99;">AccesoBd</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> srv\modelo\</span><span
+     style="color: #267f99;">Dispositivo</span><span
+     style="color: #000000;">;</span></div><br>
+  <div><span
+     style="color: #0000ff;">function</span><span
+     style="color: #000000;"> </span><span
+     style="color: #795e26;">dispositivoBusca</span><span
+     style="color: #000000;">(</span><span
+     style="color: #001080;">$id</span><span
+     style="color: #000000;">)</span></div>
+  <div><span
+     style="color: #000000;">{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$con</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #267f99;">AccesoBd</span><span
+     style="color: #000000;">::</span><span
+     style="color: #795e26;">getCon</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$stmt</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #001080;">$con</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">prepare</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">"</span><span
      style="color: #0000ff;">SELECT</span></div>
-  <div><span style="color: #a31515;">&nbsp; &nbsp; &nbsp;DIS_ID </span><span
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DIS_ID </span><span
      style="color: #0000ff;">as</span><span
      style="color: #a31515;"> id,</span></div>
   <div><span
-     style="color: #a31515;">&nbsp; &nbsp; &nbsp;DIS_VALOR </span><span
-     style="color: #0000ff;">as&nbsp;</span><span
-     style="color: #a31515;">valor</span></div>
-  <div><span style="color: #a31515;">&nbsp; &nbsp;</span><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DIS_VALOR
+   </span><span
+     style="color: #0000ff;">as</span><span
+     style="color: #a31515;"> valor</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;</span><span
      style="color: #0000ff;">FROM</span><span
      style="color: #a31515;"> DISPOSITIVO</span></div>
-  <div><span style="color: #a31515;">&nbsp; &nbsp;</span><span
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;</span><span
      style="color: #0000ff;">WHERE</span><span
-     style="color: #a31515;"> DIS_ID </span>=<span
+     style="color: #a31515;"> DIS_ID </span><span
+     style="color: #000000;">=</span><span
      style="color: #a31515;"> :id</span><span
      style="color: #a31515;">"</span></div>
-  <div>&nbsp;);</div>
-  <div>&nbsp;<span style="color: #001080;">$stmt</span>-&gt;<span
-     style="color: #795e26;">execute</span>([</div>
-  <div>&nbsp; <span style="color: #a31515;">":id"</span> =&gt; <span
+  <div><span
+     style="color: #000000;">&nbsp;);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$stmt</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">execute</span><span
+     style="color: #000000;">([</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">":id"</span><span
+     style="color: #000000;"> =&gt; </span><span
      style="color: #001080;">$id</span></div>
-  <div>&nbsp;]);</div>
-  <div>&nbsp;<span style="color: #001080;">$stmt</span>-&gt;<span
-     style="color: #795e26;">setFetchMode</span>(</div>
-  <div>&nbsp; <span style="color: #267f99;">PDO</span>::FETCH_CLASS,</div>
-  <div>&nbsp; <span style="color: #a31515;">"Dispositivo"</span></div>
-  <div>&nbsp;);</div>
-  <div>&nbsp;<span style="color: #af00db;">return</span> <span
-     style="color: #001080;">$stmt</span>-&gt;<span
-     style="color: #795e26;">fetch</span>();</div>
-  <div>}</div><br>
+  <div><span
+     style="color: #000000;">&nbsp;]);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$stmt</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">setFetchMode</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #267f99;">PDO</span><span
+     style="color: #000000;">::FETCH_CLASS,</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #267f99;">Dispositivo</span><span
+     style="color: #000000;">::</span><span
+     style="color: #0000ff;">class</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #af00db;">return</span><span
+     style="color: #000000;"> </span><span
+     style="color: #001080;">$stmt</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">fetch</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">}</span></div><br>
  </div>
 </muestra-codigo>
       </section>
      <section >
-         <h1 >9. srv / dao / dispositivoModifica.php</h1><muestra-codigo>
+         <h1 >10. srv / dao / dispositivoModifica.php</h1><muestra-codigo>
  <div>
-  <div><span style="color: #800000;">&lt;?php</span></div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/../modelo/Dispositivo.php"</span>;</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/AccesoBd.php"</span>;</div><br>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">dispositivoModifica</span>(</div>
-  <div>&nbsp;<span style="color: #267f99;">Dispositivo</span> <span
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> srv\dao\</span><span
+     style="color: #267f99;">AccesoBd</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> srv\modelo\</span><span
+     style="color: #267f99;">Dispositivo</span><span
+     style="color: #000000;">;</span></div><br>
+  <div><span
+     style="color: #0000ff;">function</span><span
+     style="color: #000000;"> </span><span
+     style="color: #795e26;">dispositivoModifica</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #267f99;">Dispositivo</span><span
+     style="color: #000000;"> </span><span
      style="color: #001080;">$dispositivo</span></div>
-  <div>) {</div>
-  <div>&nbsp;<span style="color: #001080;">$dispositivo</span>-&gt;<span
-     style="color: #795e26;">validaCambio</span>();</div>
-  <div>&nbsp;<span style="color: #001080;">$con</span> = <span
-     style="color: #267f99;">AccesoBd</span>::<span
-     style="color: #795e26;">getCon</span>();</div>
-  <div>&nbsp;<span style="color: #001080;">$stmt</span> = <span
-     style="color: #001080;">$con</span>-&gt;<span
-     style="color: #795e26;">prepare</span>(</div>
-  <div>&nbsp; <span style="color: #a31515;">"</span><span
+  <div><span
+     style="color: #000000;">)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$dispositivo</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">valida</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$con</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #267f99;">AccesoBd</span><span
+     style="color: #000000;">::</span><span
+     style="color: #795e26;">getCon</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$stmt</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #001080;">$con</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">prepare</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">"</span><span
      style="color: #0000ff;">UPDATE</span><span
      style="color: #a31515;"> DISPOSITIVO</span></div>
-  <div><span style="color: #a31515;">&nbsp; &nbsp;</span><span
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;</span><span
      style="color: #0000ff;">SET</span><span
-     style="color: #a31515;"> DIS_VALOR </span>=<span
+     style="color: #a31515;"> DIS_VALOR </span><span
+     style="color: #000000;">=</span><span
      style="color: #a31515;"> :valor</span></div>
-  <div><span style="color: #a31515;">&nbsp; &nbsp;</span><span
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;</span><span
      style="color: #0000ff;">WHERE</span><span
-     style="color: #a31515;"> DIS_ID </span>=<span
+     style="color: #a31515;"> DIS_ID </span><span
+     style="color: #000000;">=</span><span
      style="color: #a31515;"> :id</span><span
      style="color: #a31515;">"</span></div>
-  <div>&nbsp;);</div>
-  <div>&nbsp;<span style="color: #001080;">$stmt</span>-&gt;<span
-     style="color: #795e26;">execute</span>([</div>
-  <div>&nbsp; <span style="color: #a31515;">":id"</span> =&gt; <span
-     style="color: #001080;">$dispositivo</span>-&gt;<span
-     style="color: #001080;">id</span>,</div>
-  <div>&nbsp; <span style="color: #a31515;">":valor"</span> =&gt; <span
-     style="color: #001080;">$dispositivo</span>-&gt;<span
+  <div><span
+     style="color: #000000;">&nbsp;);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$stmt</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">execute</span><span
+     style="color: #000000;">([</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">":id"</span><span
+     style="color: #000000;"> =&gt; </span><span
+     style="color: #001080;">$dispositivo</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #001080;">id</span><span
+     style="color: #000000;">,</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">":valor"</span><span
+     style="color: #000000;"> =&gt; </span><span
+     style="color: #001080;">$dispositivo</span><span
+     style="color: #000000;">-&gt;</span><span
      style="color: #001080;">valor</span></div>
-  <div>&nbsp;]);</div>
-  <div>}</div><br>
+  <div><span
+     style="color: #000000;">&nbsp;]);</span></div>
+  <div><span
+     style="color: #000000;">}</span></div><br>
  </div>
 </muestra-codigo>
       </section>
      <section >
-         <h1 >10. srv / dao / historicoAgrega.php</h1><muestra-codigo>
+         <h1 >11. srv / dao / historicoAgrega.php</h1><muestra-codigo>
  <div>
-  <div><span style="color: #800000;">&lt;?php</span></div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/../modelo/Dispositivo.php"</span>;</div>
-  <div>&nbsp;<span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/AccesoBd.php"</span>;</div><br>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">historicoAgrega</span>(</div>
-  <div>&nbsp;<span style="color: #267f99;">Dispositivo</span> <span
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> srv\dao\</span><span
+     style="color: #267f99;">AccesoBd</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> srv\modelo\</span><span
+     style="color: #267f99;">Dispositivo</span><span
+     style="color: #000000;">;</span></div><br>
+  <div><span
+     style="color: #0000ff;">function</span><span
+     style="color: #000000;"> </span><span
+     style="color: #795e26;">historicoAgrega</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #267f99;">Dispositivo</span><span
+     style="color: #000000;"> </span><span
      style="color: #001080;">$dispositivo</span></div>
-  <div>) {</div>
-  <div>&nbsp;<span style="color: #001080;">$con</span> = <span
-     style="color: #267f99;">AccesoBd</span>::<span
-     style="color: #795e26;">getCon</span>();</div>
-  <div>&nbsp;<span style="color: #001080;">$stmt</span> = <span
-     style="color: #001080;">$con</span>-&gt;<span
-     style="color: #795e26;">prepare</span>(</div>
-  <div>&nbsp; <span style="color: #a31515;">"</span><span
-     style="color: #0000ff;">INSERT</span><span
-     style="color: #a31515;"> </span><span
-     style="color: #0000ff;">INTO</span><span
+  <div><span
+     style="color: #000000;">)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$con</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #267f99;">AccesoBd</span><span
+     style="color: #000000;">::</span><span
+     style="color: #795e26;">getCon</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$stmt</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #001080;">$con</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">prepare</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">"</span><span
+     style="color: #0000ff;">INSERT INTO</span><span
      style="color: #a31515;"> HISTORICO</span></div>
   <div><span
-     style="color: #a31515;">&nbsp; &nbsp; (DIS_ID, HIS_VALOR,</span></div>
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;(DIS_ID, HIS_VALOR,</span>
+  </div>
   <div><span
-     style="color: #a31515;">&nbsp; &nbsp; &nbsp;HIS_TIMESTAMP)</span></div>
-  <div><span style="color: #a31515;">&nbsp; &nbsp; </span><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HIS_TIMESTAMP)</span>
+  </div>
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
      style="color: #0000ff;">VALUES</span></div>
   <div><span
-     style="color: #a31515;">&nbsp; &nbsp; &nbsp;(:dis, :valor, </span><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(:dis, :valor,
+   </span><span
      style="color: #0000ff;">date</span><span
      style="color: #a31515;">('now'))</span><span
      style="color: #a31515;">"</span></div>
-  <div>&nbsp;);</div>
-  <div>&nbsp;<span style="color: #001080;">$stmt</span>-&gt;<span
-     style="color: #795e26;">execute</span>([</div>
-  <div>&nbsp; <span style="color: #a31515;">":dis"</span> =&gt; <span
-     style="color: #001080;">$dispositivo</span>-&gt;<span
-     style="color: #001080;">id</span>,</div>
-  <div>&nbsp; <span style="color: #a31515;">":valor"</span> =&gt; <span
-     style="color: #001080;">$dispositivo</span>-&gt;<span
+  <div><span
+     style="color: #000000;">&nbsp;);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$stmt</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">execute</span><span
+     style="color: #000000;">([</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">":dis"</span><span
+     style="color: #000000;"> =&gt; </span><span
+     style="color: #001080;">$dispositivo</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #001080;">id</span><span
+     style="color: #000000;">,</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">":valor"</span><span
+     style="color: #000000;"> =&gt; </span><span
+     style="color: #001080;">$dispositivo</span><span
+     style="color: #000000;">-&gt;</span><span
      style="color: #001080;">valor</span></div>
-  <div>&nbsp;]);</div>
-  <div>}</div><br>
+  <div><span
+     style="color: #000000;">&nbsp;]);</span></div>
+  <div><span
+     style="color: #000000;">}</span></div><br>
  </div>
 </muestra-codigo>
       </section>
      <section >
-         <h1 >11. lib / php / txt / txtFaltaElId.php</h1><muestra-codigo>
+         <h1 >12. lib / php / txt / txtFaltaElId.php</h1><muestra-codigo>
  <div>
-  <div><span style="color: #800000;">&lt;?php</span></div>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">txtFaltaElId</span>()</div>
-  <div>{</div>
-  <div>&nbsp;<span style="color: #af00db;">return</span> <span
-     style="color: #a31515;">"Falta el id."</span>;</div>
-  <div>}</div><br>
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #0000ff;">function</span><span
+     style="color: #000000;"> </span><span
+     style="color: #795e26;">txtFaltaElId</span><span
+     style="color: #000000;">()</span></div>
+  <div><span
+     style="color: #000000;">{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #af00db;">return</span><span
+     style="color: #000000;"> </span><span
+     style="color: #a31515;">"Falta el id."</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #000000;">}</span></div><br>
  </div>
 </muestra-codigo>
       </section>
      <section >
-         <h1 >12. srv / txt / txtFaltaElValor.php</h1><muestra-codigo>
+         <h1 >13. srv / txt / txtFaltaElValor.php</h1><muestra-codigo>
  <div>
-  <div><span style="color: #800000;">&lt;?php</span></div>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">txtFaltaElValor</span>()</div>
-  <div>{</div>
-  <div>&nbsp;<span style="color: #af00db;">return</span> <span
-     style="color: #a31515;">"Falta el valor."</span>;</div>
-  <div>}</div><br>
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #0000ff;">function</span><span
+     style="color: #000000;"> </span><span
+     style="color: #795e26;">txtFaltaElValor</span><span
+     style="color: #000000;">()</span></div>
+  <div><span
+     style="color: #000000;">{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #af00db;">return</span><span
+     style="color: #000000;"> </span><span
+     style="color: #a31515;">"Falta el valor."</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #000000;">}</span></div><br>
  </div>
 </muestra-codigo>
       </section>
      <section >
-         <h1 >13. composer.json</h1><muestra-codigo>
- <div>
-  <div>{</div>
-  <div>&nbsp;<span
-     style="color: #0451a5;">"require"</span>:&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0451a5;">"cboden/ratchet"</span>: <span
-     style="color: #a31515;">"^0.4.4"</span></div>
-  <div>&nbsp;}</div>
-  <div>}</div>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >14. .replit</h1><muestra-codigo>
- <div>run = ["php", "main.php"]</div>
- <div><br></div>
- <div>entrypoint = "main.php"</div>
- <div><br></div>
- <div>[nix]</div>
- <div>channel = "stable-22_11"</div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >15. replit.nix</h1><muestra-codigo>
- <div>{ pkgs }:&nbsp;{</div>
- <div>&nbsp;&nbsp;deps = [</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;pkgs.php82</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;pkgs.php82Packages.composer</div>
- <div>&nbsp;&nbsp;];</div>
- <div>}</div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >16. lib / php / autoload.php</h1><muestra-codigo>
+         <h1 >14. lib / php / autoload.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
@@ -1800,7 +2063,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >17. lib / php / path.php</h1><muestra-codigo>
+         <h1 >15. lib / php / path.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
@@ -1875,7 +2138,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >18. lib / php / valida.php</h1><muestra-codigo>
+         <h1 >16. lib / php / valida.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
@@ -1924,7 +2187,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >19. lib / php / validaIdNoVacio.php</h1><muestra-codigo>
+         <h1 >17. lib / php / validaIdNoVacio.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
@@ -1976,7 +2239,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >20. lib / php / validaTextoNoVacio.php</h1><muestra-codigo>
+         <h1 >18. lib / php / validaTextoNoVacio.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
@@ -2024,46 +2287,37 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >21. guarda.php</h1><muestra-codigo>
+         <h1 >19. composer.json</h1><muestra-codigo>
  <div>
-  <div><span style="color: #800000;">&lt;?php</span></div>
-  <div><span style="color: #af00db;">require_once</span></div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"./modelo/Dispositivo.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span></div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"./dao/dispositivoModifica.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span></div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"./dao/historicoAgrega.php"</span>;</div><br>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">guarda</span>(<span
-     style="color: #001080;">$valor</span>)</div>
   <div>{</div>
-  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
-  <div>&nbsp; <span style="color: #001080;">$dispositivo</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Dispositivo</span>();</div>
-  <div>&nbsp; <span style="color: #001080;">$dispositivo</span>-&gt;<span
-     style="color: #001080;">id</span> = <span
-     style="color: #a31515;">"1"</span>;</div>
-  <div>&nbsp; <span style="color: #001080;">$dispositivo</span>-&gt;<span
-     style="color: #001080;">valor</span> = <span
-     style="color: #001080;">$valor</span>;</div>
-  <div>&nbsp; <span style="color: #795e26;">dispositivoModifica</span>(</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">$dispositivo</span></div>
-  <div>&nbsp; );</div>
-  <div>&nbsp; <span style="color: #795e26;">historicoAgrega</span>(<span
-     style="color: #001080;">$dispositivo</span>);</div>
-  <div>&nbsp;} <span style="color: #af00db;">catch</span> (\<span
-     style="color: #267f99;">Throwable</span> <span
-     style="color: #001080;">$e</span>) {</div>
-  <div>&nbsp; <span style="color: #795e26;">echo</span> <span
-     style="color: #001080;">$e</span>-&gt;<span
-     style="color: #795e26;">getMessage</span>();</div>
+  <div>&nbsp;<span
+     style="color: #0451a5;">"require"</span>:&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">"cboden/ratchet"</span>: <span
+     style="color: #a31515;">"^0.4.4"</span></div>
   <div>&nbsp;}</div>
-  <div>}</div><br>
+  <div>}</div>
  </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >20. .replit</h1><muestra-codigo>
+ <div>run = ["php", "main.php"]</div>
+ <div><br></div>
+ <div>entrypoint = "main.php"</div>
+ <div><br></div>
+ <div>[nix]</div>
+ <div>channel = "stable-22_11"</div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >21. replit.nix</h1><muestra-codigo>
+ <div>{ pkgs }:&nbsp;{</div>
+ <div>&nbsp;&nbsp;deps = [</div>
+ <div>&nbsp;&nbsp;&nbsp;&nbsp;pkgs.php82</div>
+ <div>&nbsp;&nbsp;&nbsp;&nbsp;pkgs.php82Packages.composer</div>
+ <div>&nbsp;&nbsp;];</div>
+ <div>}</div>
 </muestra-codigo>
       </section>
 </body>
