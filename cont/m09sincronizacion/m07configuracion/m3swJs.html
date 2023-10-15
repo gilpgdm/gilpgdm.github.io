@@ -1,0 +1,512 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #008000;">/*&nbsp;Este archivo debe estar</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;colocado en la carpeta raíz del</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;sitio.</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;Cualquier cambio en el</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;contenido de este archivo hace</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;que el service worker se</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;reinstale.</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;Normalmente se cambia el número</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;de la versión cuando cambia el</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;contenido de los archivos. */</span>
+  </div>
+  <div><span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">VERSION</span> <span
+     style="color: #000000;">=</span> <span
+     style="color: #a31515;">"1.00"</span></div><br>
+  <div><span
+     style="color: #008000;">/**&nbsp;Nombre del archivo de cache. */</span>
+  </div>
+  <div><span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">CACHE</span> <span
+     style="color: #000000;">=</span> <span
+     style="color: #a31515;">"pwamd"</span></div><br>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;Archivos requeridos para que la</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;aplicación funcione fuera de</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;línea.</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">ARCHIVOS</span> <span
+     style="color: #000000;">=</span> [</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"ayuda.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"botones.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"campos.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"favicon.ico"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"formulario.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"iconos.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"index.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"listas.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"navbar.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"navtab.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"navTabFixed.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"secundaria.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"segmentado.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"select.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"site.webmanifest"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"slider.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"tarjetas.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"css/estilos.css"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/Escultura_de_coyote.jpeg"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/icono2048.png"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/maskable_icon.png"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/maskable_icon_x128.png"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/maskable_icon_x192.png"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/maskable_icon_x384.png"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/maskable_icon_x48.png"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/maskable_icon_x512.png"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/maskable_icon_x72.png"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/maskable_icon_x96.png"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/pexels-craig-dennis-3701822.jpg"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/pexels-creative-workshop-3978352.jpg"</span>,
+  </div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/pexels-erik-karits-3732453.jpg"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/pexels-esteban-arango-10226903.jpg"</span>,
+  </div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/pexels-moises-patrício-10961948.jpg"</span>,
+  </div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/pexels-ralph-2270848.jpg"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/pexels-rasmus-svinding-35435.jpg"</span>,
+  </div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/pexels-steve-397857.jpg"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"img/pexels-vadim-b-141496.jpg"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"js/configura.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"js/nav-bar.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"js/nav-drw.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"js/nav-tab-fixed.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"js/nav-tab-scrollable.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/css/cards.css"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/css/filled.css"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/css/icon.css"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/css/list.css"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/css/material-symbols-outlined.css"</span>,
+  </div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/css/md3.css"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/css/navBar.css"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/css/navDrw.css"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/css/navTab.css"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/css/outline.css"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/css/roboto.css"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/css/segmented.css"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/css/slider.css"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints"</span>,
+  </div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf"</span>,
+  </div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2"</span>,
+  </div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/fonts/roboto-v30-latin-regular.ttf"</span>,
+  </div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/fonts/roboto-v30-latin-regular.woff2"</span>,
+  </div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/constantes.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/getAttribute.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/md3.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/msg.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/muestraError.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/registraServiceWorkerSiEsSoportado.js"</span>,
+  </div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/setBooleanAttribute.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/custom/center-aligned-top-app-bar.js"</span>,
+  </div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/custom/menu-option.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/custom/overflow-menu.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/custom/select-menu.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/custom/slider-field.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/custom/text-field.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/custom/top-app-bar.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/txt/txtObligatorio.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"lib/js/txt/txtRegistrado.js"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"/"</span></div>
+  <div>]</div><br>
+  <div><span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">self</span> <span
+     style="color: #0000ff;">instanceof</span></div>
+  <div>&nbsp;<span
+     style="color: #001080;">ServiceWorkerGlobalScope</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #008000;">// Evento al empezar a instalar</span></div>
+  <div>&nbsp;<span
+     style="color: #001080;">self</span>.<span
+     style="color: #795e26;">addEventListener</span>(<span
+     style="color: #a31515;">"install"</span>,</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">instala</span>)</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">/*&nbsp;Evento al solicitar información</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;a la red */</span></div>
+  <div>&nbsp;<span
+     style="color: #001080;">self</span>.<span
+     style="color: #795e26;">addEventListener</span>(<span
+     style="color: #a31515;">"fetch"</span>,</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">descargaDatosDeLaRed</span>)</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">// Evento cuando está activo.</span></div>
+  <div>&nbsp;<span
+     style="color: #001080;">self</span>.<span
+     style="color: #795e26;">addEventListener</span>(<span
+     style="color: #a31515;">"activate"</span>,</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">activo</span>)</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">activo</span>()&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #a31515;">"Service Worker activo."</span>)</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">/**&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ExtendableEvent}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">evt</span><span
+     style="color: #008000;"> */</span></div>
+  <div><span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">instala</span>(<span
+     style="color: #001080;">evt</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #a31515;">"Service Worker instalando."</span>)</div>
+  <div>&nbsp;<span
+     style="color: #001080;">evt</span>.<span
+     style="color: #795e26;">waitUntil</span>(<span
+     style="color: #795e26;">llenaElCache</span>())</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">/**&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{FetchEvent}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">evt</span><span
+     style="color: #008000;"> */</span></div>
+  <div><span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">descargaDatosDeLaRed</span>(</div>
+  <div>&nbsp;<span
+     style="color: #001080;">evt</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">evt</span>.<span
+     style="color: #001080;">request</span>.<span
+     style="color: #001080;">method</span> <span
+     style="color: #000000;">===</span> <span
+     style="color: #a31515;">"GET"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">evt</span>.<span
+     style="color: #795e26;">respondWith</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">buscaEnElCache</span>(<span
+     style="color: #001080;">evt</span>))</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">llenaElCache</span>()&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #a31515;">"Intentando cargar cache:"</span>,</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0070c1;">CACHE</span>)</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">borraTodosLosCaches</span>()</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">cargaElListadoDeARCHIVOS</span>()</div>
+  <div>&nbsp;<span
+     style="color: #001080;">console</span>.</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #a31515;">"Cache cargado:"</span>, <span
+     style="color: #0070c1;">CACHE</span>)</div>
+  <div>&nbsp;<span
+     style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #a31515;">"Versión:"</span>, <span
+     style="color: #0070c1;">VERSION</span>)</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span></div>
+  <div>&nbsp;<span
+     style="color: #795e26;">borraTodosLosCaches</span>()&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">keys</span> <span
+     style="color: #000000;">=</span> <span
+     style="color: #af00db;">await</span> <span
+     style="color: #001080;">caches</span>.<span
+     style="color: #795e26;">keys</span>()</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">for</span> (<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">key</span> <span
+     style="color: #0000ff;">of</span> <span
+     style="color: #001080;">keys</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">await</span> <span
+     style="color: #001080;">caches</span>.<span
+     style="color: #795e26;">delete</span>(<span
+     style="color: #001080;">key</span>)</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span></div>
+  <div>&nbsp;<span
+     style="color: #795e26;">cargaElListadoDeARCHIVOS</span>()&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">cache</span> <span
+     style="color: #000000;">=</span> <span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">abreElCache</span>()</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">await</span> <span
+     style="color: #001080;">cache</span>.<span
+     style="color: #795e26;">addAll</span>(<span
+     style="color: #0070c1;">ARCHIVOS</span>)</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">abreElCache</span>()&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">caches</span>.<span
+     style="color: #795e26;">open</span>(<span
+     style="color: #0070c1;">CACHE</span>)</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">/**&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{FetchEvent}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">evt</span><span
+     style="color: #008000;"> */</span></div>
+  <div><span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">buscaEnElCache</span>(</div>
+  <div>&nbsp;<span
+     style="color: #001080;">evt</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #008000;">// Busca el contenido del cache.</span></div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">cache</span> <span
+     style="color: #000000;">=</span> <span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">abreElCache</span>()</div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">request</span> <span
+     style="color: #000000;">=</span> <span
+     style="color: #001080;">evt</span>.<span
+     style="color: #001080;">request</span></div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">response</span> <span
+     style="color: #000000;">=</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">buscaLaPeticionEnElCache</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">cache</span>, <span
+     style="color: #001080;">request</span>)</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">response</span> <span
+     style="color: #000000;">===</span> <span
+     style="color: #0000ff;">undefined</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;Si no lo encuentra, lo</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;empieza a descargar de la
+    red</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;y devuelve la promesa.
+    */</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #795e26;">fetch</span>(<span
+     style="color: #001080;">request</span>)</div>
+  <div>&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;Si lo encuentra, devuelve la</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;respuesta que encontró en
+    el</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;cache. */</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">response</span></div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{Cache}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">cache</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{Request}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">request</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">buscaLaPeticionEnElCache</span>(</div>
+  <div>&nbsp;<span
+     style="color: #001080;">cache</span>, <span
+     style="color: #001080;">request</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #008000;">/*&nbsp;Al buscar no toma en cuenta la</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;parte después del símbolo ?
+    en</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;la URL. */</span></div>
+  <div>&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">cache</span>.<span
+     style="color: #795e26;">match</span>(<span
+     style="color: #001080;">request</span>,</div>
+  <div>&nbsp;&nbsp;{ <span
+     style="color: #001080;">ignoreSearch:</span> <span
+     style="color: #0000ff;">true</span> })</div>
+  <div>}</div>
+ </div>
+</muestra-codigo>

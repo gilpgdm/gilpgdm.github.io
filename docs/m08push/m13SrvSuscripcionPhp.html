@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>22. srv / SrvSuscripcion.php - GilPG DM</title>
+ <title>8. srv / SrvSuscripcion.php - GilPG DM</title>
  <meta name="description" content="Código de «srv/SrvSuscripcion.php».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -113,6 +113,20 @@
  code {
   color: var(--colTituloStrong);
   font-family: var(--fontMono);
+ }
+
+ .tree {
+  font-family: var(--fontSans);
+ }
+
+ .tree summary {
+  text-decoration: underline;
+  cursor: pointer;
+ }
+
+ .tree li {
+  margin-top: 1em;
+  margin-bottom: 1em;
  }
 
  h1:not(.default) {
@@ -445,117 +459,261 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m08push/m14generallavesPhp.html" title="21. srv / generallaves.php">◀</a>
- <a class="siguiente" href="/m08push/m14SrvNotificaPhp.html" title="23. srv / SrvNotifica.php">▶</a>
-   <h1 >22. srv / SrvSuscripcion.php</h1><muestra-codigo>
+ <a class="anterior" href="/m08push/m15proxySrvSuscripcionJs.html" title="7. js / proxySrvSuscripcion.js">◀</a>
+ <a class="siguiente" href="/m08push/m14SrvNotificaPhp.html" title="9. srv / SrvNotifica.php">▶</a>
+   <h1 >8. srv / SrvSuscripcion.php</h1><muestra-codigo>
  <div>
-  <div><span style="color: #800000;">&lt;?php</span></div>
-  <div><span style="color: #af00db;">require</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/../vendor/autoload.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/modelo/Suscripcion.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/dao/suscripcionAgrega.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/dao/suscripcionBusca.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/dao/suscripcionModifica.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/dao/suscripcionElimina.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/../lib/php/Servicio.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/../lib/php/leeJson.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/../lib/php/copiaCampos.php"</span>;</div><br>
-  <div><span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">leeSuscripcion</span>()</div>
-  <div>{</div>
-  <div>&nbsp;<span style="color: #001080;">$json</span> = <span
-     style="color: #795e26;">leeJson</span>();</div>
-  <div>&nbsp;<span style="color: #001080;">$modelo</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Suscripcion</span>();</div>
-  <div>&nbsp;<span style="color: #795e26;">copiaCampos</span>(<span
-     style="color: #001080;">$modelo</span>, <span
-     style="color: #001080;">$json</span>);</div>
-  <div>&nbsp;<span style="color: #af00db;">return</span> <span
-     style="color: #001080;">$modelo</span>;</div>
-  <div>}</div><br>
-  <div><span style="color: #0000ff;">class</span> <span
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #af00db;">require_once</span><span
+     style="color: #000000;"> </span><span
+     style="color: #0000ff;">__DIR__</span><span
+     style="color: #000000;"> </span><span
+     style="color: #000000;">.</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #a31515;">"/../lib/php/autoload.php"</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #af00db;">require</span><span
+     style="color: #000000;"> </span><span
+     style="color: #0000ff;">__DIR__</span><span
+     style="color: #000000;"> </span><span
+     style="color: #000000;">.</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #a31515;">"/../vendor/autoload.php"</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #af00db;">require_once</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #a31515;">"srv/dao/suscripcionAgrega.php"</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #af00db;">require_once</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #a31515;">"srv/dao/suscripcionBusca.php"</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #af00db;">require_once</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #a31515;">"srv/dao/suscripcionModifica.php"</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #af00db;">require_once</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #a31515;">"srv/dao/suscripcionElimina.php"</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #af00db;">require_once</span><span
+     style="color: #000000;"> </span><span
+     style="color: #a31515;">"lib/php/leeJson.php"</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #af00db;">require_once</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #a31515;">"lib/php/copiaCampos.php"</span><span
+     style="color: #000000;">;</span></div><br>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> lib\php\</span><span
+     style="color: #267f99;">Servicio</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> srv\modelo\</span><span
+     style="color: #267f99;">Suscripcion</span><span
+     style="color: #000000;">;</span></div><br>
+  <div><span
+     style="color: #0000ff;">class</span><span
+     style="color: #000000;"> </span><span
      style="color: #267f99;">SrvSuscripcion</span></div>
-  <div><span style="color: #0000ff;">extends</span> <span
+  <div><span
+     style="color: #0000ff;">extends</span><span
+     style="color: #000000;"> </span><span
      style="color: #267f99;">Servicio</span></div>
-  <div>{</div>
-  <div>&nbsp;<span style="color: #0000ff;">protected</span></div>
-  <div>&nbsp;<span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">implementacion</span>()</div>
-  <div>&nbsp;{</div>
-  <div>&nbsp; <span style="color: #001080;">$modelo</span> = <span
-     style="color: #795e26;">leeSuscripcion</span>();</div>
-  <div>&nbsp; <span style="color: #001080;">$method</span> =</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">$_SERVER</span>[<span
-     style="color: #a31515;">"REQUEST_METHOD"</span>];</div><br>
-  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">$method</span> === <span
-     style="color: #a31515;">"POST"</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #795e26;">suscripcionAgrega</span>(<span
-     style="color: #001080;">$modelo</span>);</div>
-  <div>&nbsp; } <span style="color: #af00db;">elseif</span> (<span
-     style="color: #001080;">$method</span> === <span
-     style="color: #a31515;">"PUT"</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">$registrado</span> = <span
-     style="color: #795e26;">suscripcionBusca</span>(</div>
-  <div>&nbsp; &nbsp; <span style="color: #001080;">$modelo</span>-&gt;<span
+  <div><span
+     style="color: #000000;">{</span></div><br>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #0000ff;">protected</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #0000ff;">function</span><span
+     style="color: #000000;"> </span><span
+     style="color: #795e26;">implementacion</span><span
+     style="color: #000000;">()</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$modelo</span><span
+     style="color: #000000;"> =</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #0000ff;">$this</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">leeSuscripcion</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$metodoHttp</span><span
+     style="color: #000000;"> =</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$_SERVER</span><span
+     style="color: #000000;">[</span><span
+     style="color: #a31515;">"REQUEST_METHOD"</span><span
+     style="color: #000000;">];</span></div><br>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #af00db;">if</span><span
+     style="color: #000000;"> (</span><span
+     style="color: #001080;">$metodoHttp</span><span
+     style="color: #000000;"> === </span><span
+     style="color: #a31515;">"POST"</span><span
+     style="color: #000000;">)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #795e26;">suscripcionAgrega</span><span
+     style="color: #000000;">(</span><span
+     style="color: #001080;">$modelo</span><span
+     style="color: #000000;">);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;}&nbsp;</span><span
+     style="color: #af00db;">elseif</span><span
+     style="color: #000000;"> (</span><span
+     style="color: #001080;">$metodoHttp</span><span
+     style="color: #000000;"> === </span><span
+     style="color: #a31515;">"PUT"</span><span
+     style="color: #000000;">)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$registrado</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #795e26;">suscripcionBusca</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$modelo</span><span
+     style="color: #000000;">-&gt;</span><span
      style="color: #001080;">endpoint</span></div>
-  <div>&nbsp; &nbsp;);</div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">$registrado</span>) {</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #795e26;">suscripcionModifica</span>(<span
-     style="color: #001080;">$modelo</span>);</div>
-  <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #795e26;">suscripcionAgrega</span>(<span
-     style="color: #001080;">$modelo</span>);</div>
-  <div>&nbsp; &nbsp;}</div>
-  <div>&nbsp; } <span style="color: #af00db;">elseif</span> (<span
-     style="color: #001080;">$method</span> === <span
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #af00db;">if</span><span
+     style="color: #000000;"> (</span><span
+     style="color: #001080;">$registrado</span><span
+     style="color: #000000;">)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #795e26;">suscripcionModifica</span><span
+     style="color: #000000;">(</span><span
+     style="color: #001080;">$modelo</span><span
+     style="color: #000000;">);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;}&nbsp;</span><span
+     style="color: #af00db;">else</span><span
+     style="color: #000000;">&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #795e26;">suscripcionAgrega</span><span
+     style="color: #000000;">(</span><span
+     style="color: #001080;">$modelo</span><span
+     style="color: #000000;">);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;}&nbsp;</span><span
+     style="color: #af00db;">elseif</span><span
+     style="color: #000000;"> (</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$metodoHttp</span><span
+     style="color: #000000;"> === </span><span
      style="color: #a31515;">"</span><span
      style="color: #0000ff;">DELETE</span><span
-     style="color: #a31515;">"</span>) {</div>
-  <div>&nbsp; &nbsp;<span
-     style="color: #795e26;">suscripcionElimina</span>(</div>
-  <div>&nbsp; &nbsp; <span style="color: #001080;">$modelo</span>-&gt;<span
+     style="color: #a31515;">"</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #795e26;">suscripcionElimina</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$modelo</span><span
+     style="color: #000000;">-&gt;</span><span
      style="color: #001080;">endpoint</span></div>
-  <div>&nbsp; &nbsp;);</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp; <span style="color: #af00db;">return</span> [];</div>
-  <div>&nbsp;}</div>
-  <div>}</div>
-  <div><span style="color: #001080;">$servicio</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">SrvSuscripcion</span>();</div>
-  <div><span style="color: #001080;">$servicio</span>-&gt;<span
-     style="color: #795e26;">ejecuta</span>();</div><br>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;}</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #af00db;">return</span><span
+     style="color: #000000;"> [];</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;}</span></div><br>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #0000ff;">function</span><span
+     style="color: #000000;"> </span><span
+     style="color: #795e26;">leeSuscripcion</span><span
+     style="color: #000000;">()</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$json</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #795e26;">leeJson</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$modelo</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #0000ff;">new</span><span
+     style="color: #000000;"> </span><span
+     style="color: #267f99;">Suscripcion</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #795e26;">copiaCampos</span><span
+     style="color: #000000;">(</span><span
+     style="color: #001080;">$modelo</span><span
+     style="color: #000000;">, </span><span
+     style="color: #001080;">$json</span><span
+     style="color: #000000;">);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #af00db;">return</span><span
+     style="color: #000000;"> </span><span
+     style="color: #001080;">$modelo</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;}</span></div>
+  <div><span
+     style="color: #000000;">}</span></div><br>
+  <div><span
+     style="color: #001080;">$servicio</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #0000ff;">new</span><span
+     style="color: #000000;"> </span><span
+     style="color: #267f99;">SrvSuscripcion</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #001080;">$servicio</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">ejecuta</span><span
+     style="color: #000000;">();</span></div><br>
  </div>
 </muestra-codigo>
  <footer>
@@ -610,92 +768,22 @@
     </li>
     <li>
      <p>
-      <a href="/m08push/m02archivos.html">Archivos (En desarrollo a partir e aquí)</a>
+      <a href="/m08push/m02archivos.html">Archivos</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m08push/m02btextos.html">Textos</a>
+      <a href="/m08push/m15indexHtml.html">index.html</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m08push/m02ctxtNoNotsJs.html">lib / js/ textos / txtNoNots.js</a>
+      <a href="/m08push/m15SuscripcionEnServidorJs.html">js / SuscripcionEnServidor.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m08push/m02dtxtNoPushJs.html">lib / js / textos / txtNoPush.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m02etxtNoSwJs.html">lib / js / textos / txtNoSw.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m02ftxtNotsBloqsJs.html">lib / js / textos / txtNotsBloqs.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m02gtxtRegistradoJs.html">lib / js / textos / txtRegistrado.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m03bd.html">Base de datos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m04SuscripcionPhp.html">srv / modelo / Suscripcion.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m05bdCreaPhp.html">srv / dao / bdCrea.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m06AccesoBdPhp.html">srv / dao / AccesoBd.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m07suscripcionAgregaPhp.html">srv / dao / suscripcionAgrega.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m08suscripcionBuscaPhp.html">srv / dao / suscripcionBusca.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m09suscripcionConsultaPhp.html">srv / dao / suscripcionConsulta.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m10suscripcionEliminaPhp.html">srv / dao / suscripcionElimina.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m11suscripcionModificaPhp.html">srv / dao / suscripcionModifica.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m12funcionalidad.html">Funcionalidad</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m14generallavesPhp.html">srv / generallaves.php</a>
+      <a href="/m08push/m15proxySrvSuscripcionJs.html">js / proxySrvSuscripcion.js</a>
      </p>
     </li>
     <li>
@@ -710,87 +798,27 @@
     </li>
     <li>
      <p>
-      <a href="/m08push/m15indexHtml.html">index.html</a>
+      <a href="/m08push/mGtextos/">Textos que se mustran al usuario</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m08push/m19swJs.html">sw.js</a>
+      <a href="/m08push/mHbd/">Archivos relacionados con la estructura de los datos</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m08push/m20frecuentes.html">Archivos frecuentes</a>
+      <a href="/m08push/mHconfig/">Archivos de configuración</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m08push/m21jsconfigJson.html">jsconfig.json</a>
+      <a href="/m08push/mMlibjs/">librería de JavaScript</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m08push/m22activaNotificacionesJs.html">lib / js / activaNotificaciones.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m23detectaJs.html">lib / js / detecta.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m24ejecutaJs.html">lib / js / ejecuta.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m24enviaJsonJs.html">lib / js / enviaJson.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m25getSuscripcionJs.html">lib / js / getSuscripcion.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m25getSuscripcionDtoJs.html">lib / js / getSuscripcionDto.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m26Method.html">lib / js / Method.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m27muestraErrorJs.html">lib / js / muestraError.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m28submitJs.html">lib / js / submit.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m29urlBase64ToUint8ArrayJs.html">lib / js / urlBase64ToUint8Array.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m30copiaCamposPhp.html">lib / php / copiaCampos.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m31leeJsonPhp.html">lib / php / leeJson.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m32ServicioPhp.html">lib / php / Servicio.php</a>
+      <a href="/m08push/mNlibphp/">librería de PHP</a>
      </p>
     </li>
    </ol><p>
@@ -808,7 +836,7 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m08push/m14generallavesPhp.html"
+ let urlAnterior = "/m08push/m15proxySrvSuscripcionJs.html"
  /**@type {string} */
  let urlSiguiente = "/m08push/m14SrvNotificaPhp.html"
  /**@type {number|null} */

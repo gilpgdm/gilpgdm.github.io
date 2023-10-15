@@ -1,0 +1,76 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #001080;">getPermisoParaUsarNotificaciones</span></div>
+  <div>}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./getPermisoParaUsarNotificaciones.js"</span>
+  </div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #001080;">pideAutorizarNotificaciones</span></div>
+  <div>}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./pideAutorizarNotificaciones.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #001080;">txtNotificacionesBloqueadas</span></div>
+  <div>}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./txt/txtNotificacionesBloqueadas.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #001080;">validaQueUsaNotificaciones</span></div>
+  <div>}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./validaQueUsaNotificaciones.js"</span></div><br>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span></div>
+  <div>&nbsp;<span
+     style="color: #795e26;">activaNotificaciones</span>()&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #795e26;">validaQueUsaNotificaciones</span>()</div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">let</span> <span
+     style="color: #001080;">permiso</span> <span
+     style="color: #000000;">=</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">getPermisoParaUsarNotificaciones</span>()</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">permiso</span> <span
+     style="color: #000000;">===</span> <span
+     style="color: #a31515;">"default"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">// Permiso no asignado.</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">permiso</span> <span
+     style="color: #000000;">=</span> <span
+     style="color: #af00db;">await</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">pideAutorizarNotificaciones</span>()</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">permiso</span> <span
+     style="color: #000000;">===</span> <span
+     style="color: #a31515;">"denied"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">// Permiso rechazado.</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">txtNotificacionesBloqueadas</span>())</div>
+  <div>&nbsp;}</div>
+  <div>}</div>
+ </div>
+</muestra-codigo>

@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>23. srv / SrvNotifica.php - GilPG DM</title>
+ <title>9. srv / SrvNotifica.php - GilPG DM</title>
  <meta name="description" content="Código de «srv/SrvNotifica.php».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -113,6 +113,20 @@
  code {
   color: var(--colTituloStrong);
   font-family: var(--fontMono);
+ }
+
+ .tree {
+  font-family: var(--fontSans);
+ }
+
+ .tree summary {
+  text-decoration: underline;
+  cursor: pointer;
+ }
+
+ .tree li {
+  margin-top: 1em;
+  margin-bottom: 1em;
  }
 
  h1:not(.default) {
@@ -445,138 +459,552 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m08push/m13SrvSuscripcionPhp.html" title="22. srv / SrvSuscripcion.php">◀</a>
- <a class="siguiente" href="/m08push/m15indexHtml.html" title="24. index.html">▶</a>
-   <h1 >23. srv / SrvNotifica.php</h1><muestra-codigo>
+ <a class="anterior" href="/m08push/m13SrvSuscripcionPhp.html" title="8. srv / SrvSuscripcion.php">◀</a>
+ <a class="siguiente" href="/m08push/mGtextos/index.html" title="10. Textos que se mustran al usuario">▶</a>
+   <h1 >9. srv / SrvNotifica.php</h1><muestra-codigo>
  <div>
-  <div><span style="color: #800000;">&lt;?php</span></div>
-  <div><span style="color: #af00db;">require</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/../vendor/autoload.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/modelo/Suscripcion.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/dao/suscripcionConsulta.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/dao/suscripcionElimina.php"</span>;</div>
-  <div><span style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/../lib/php/Servicio.php"</span>;</div><br>
-  <div><span style="color: #0000ff;">use</span> Minishlink\WebPush\<span
-     style="color: #267f99;">WebPush</span>;</div><br>
-  <div><span style="color: #0000ff;">class</span> <span
-     style="color: #267f99;">SrvNotifica</span> <span
-     style="color: #0000ff;">extends</span> <span
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #af00db;">require_once</span><span
+     style="color: #000000;"> </span><span
+     style="color: #0000ff;">__DIR__</span><span
+     style="color: #000000;"> </span><span
+     style="color: #000000;">.</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #a31515;">"/../lib/php/autoload.php"</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #af00db;">require</span><span
+     style="color: #000000;"> </span><span
+     style="color: #0000ff;">__DIR__</span><span
+     style="color: #000000;"> </span><span
+     style="color: #000000;">.</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #a31515;">"/../vendor/autoload.php"</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #af00db;">require_once</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #a31515;">"srv/dao/suscripcionConsulta.php"</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #af00db;">require_once</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #a31515;">"srv/dao/suscripcionElimina.php"</span><span
+     style="color: #000000;">;</span></div><br>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> lib\php\</span><span
+     style="color: #267f99;">Servicio</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> Minishlink\WebPush\</span><span
+     style="color: #267f99;">MessageSentReport</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> Minishlink\WebPush\</span><span
+     style="color: #267f99;">WebPush</span><span
+     style="color: #000000;">;</span></div><br>
+  <div><span
+     style="color: #0000ff;">class</span><span
+     style="color: #000000;"> </span><span
+     style="color: #267f99;">SrvNotifica</span><span
+     style="color: #000000;"> </span><span
+     style="color: #0000ff;">extends</span><span
+     style="color: #000000;"> </span><span
      style="color: #267f99;">Servicio</span></div>
-  <div>{</div>
-  <div>&nbsp;<span style="color: #0000ff;">protected</span></div>
-  <div>&nbsp;<span style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">implementacion</span>()</div>
-  <div>&nbsp;{</div>
-  <div>&nbsp; <span style="color: #001080;">$suscripciones</span> =</div>
-  <div>&nbsp; &nbsp;<span
-     style="color: #795e26;">suscripcionConsulta</span>();</div><br>
-  <div>&nbsp; <span style="color: #001080;">$auth</span> = [</div>
-  <div>&nbsp; &nbsp;<span style="color: #a31515;">"VAPID"</span> =&gt; [</div>
-  <div>&nbsp; &nbsp; <span style="color: #a31515;">"subject"</span> =&gt;</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #a31515;">"https://phppush--gilbertopacheco.repl.co/"</span>,
-  </div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #a31515;">"publicKey"</span> =&gt;</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #a31515;">"BMBlr6YznhYMX3NgcWIDRxZXs0sh7tCv7_YCsWcww0ZCv9WGg-tRCXfMEHTiBPCksSqeve1twlbmVAZFv7GSuj0"</span>,
-  </div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #a31515;">"privateKey"</span> =&gt;</div>
-  <div>&nbsp; &nbsp; <span
+  <div><span
+     style="color: #000000;">{</span></div><br>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #0000ff;">const</span><span
+     style="color: #000000;"> AUTH = [</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">"VAPID"</span><span
+     style="color: #000000;"> =&gt; [</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #a31515;">"subject"</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;=&gt; </span><span
+     style="color: #a31515;">"https://notificacionesphp.gilbertopachec2.repl.co/"</span><span
+     style="color: #000000;">,</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #a31515;">"publicKey"</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;=&gt; </span><span
+     style="color: #a31515;">"BMBlr6YznhYMX3NgcWIDRxZXs0sh7tCv7_YCsWcww0ZCv9WGg-tRCXfMEHTiBPCksSqeve1twlbmVAZFv7GSuj0"</span><span
+     style="color: #000000;">,</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #a31515;">"privateKey"</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;=&gt; </span><span
      style="color: #a31515;">"vplfkITvu0cwHqzK9Kj-DYStbCH_9AhGx9LqMyaeI6w"</span>
   </div>
-  <div>&nbsp; &nbsp;]</div>
-  <div>&nbsp; ];</div><br>
-  <div>&nbsp; <span style="color: #001080;">$webPush</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">WebPush</span>(<span
-     style="color: #001080;">$auth</span>);</div><br>
-  <div>&nbsp; <span style="color: #af00db;">foreach</span> (<span
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;]</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;];</span></div><br>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #0000ff;">protected</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #0000ff;">function</span><span
+     style="color: #000000;"> </span><span
+     style="color: #795e26;">implementacion</span><span
+     style="color: #000000;">()</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$webPush</span><span
+     style="color: #000000;"> =</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #0000ff;">new</span><span
+     style="color: #000000;"> </span><span
+     style="color: #267f99;">WebPush</span><span
+     style="color: #000000;">(</span><span
+     style="color: #0000ff;">self</span><span
+     style="color: #000000;">::AUTH);</span></div><br>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$mensaje</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #a31515;">"Hola! 👋"</span><span
+     style="color: #000000;">;</span></div><br>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$reportes</span><span
+     style="color: #000000;"> =</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #0000ff;">$this</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">enviaMensajeATodasLasSuscripciones</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$webPush</span><span
+     style="color: #000000;">,</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$mensaje</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$reporteDeEnvios</span><span
+     style="color: #000000;"> =</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #0000ff;">$this</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">generaReporteDeEnvioACadaSuscripcion</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$reportes</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #af00db;">return</span><span
+     style="color: #000000;"> </span><span
+     style="color: #001080;">$reporteDeEnvios</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;}</span></div><br>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #0000ff;">private</span><span
+     style="color: #000000;"> </span><span
+     style="color: #0000ff;">function</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #795e26;">enviaMensajeATodasLasSuscripciones</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;WebPush </span><span
+     style="color: #001080;">$webPush</span><span
+     style="color: #000000;">,</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #0000ff;">string</span><span
+     style="color: #000000;"> </span><span
+     style="color: #001080;">$mensaje</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$suscripciones</span><span
+     style="color: #000000;"> =</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #795e26;">suscripcionConsulta</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #af00db;">foreach</span><span
+     style="color: #000000;"> (</span><span
      style="color: #001080;">$suscripciones</span></div>
-  <div>&nbsp; &nbsp;as <span
-     style="color: #001080;">$suscripcion</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">$webPush</span>-&gt;<span
-     style="color: #795e26;">queueNotification</span>(</div>
-  <div>&nbsp; &nbsp; <span style="color: #001080;">$suscripcion</span>,</div>
-  <div>&nbsp; &nbsp; <span style="color: #a31515;">"Hola! 👋"</span></div>
-  <div>&nbsp; &nbsp;);</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp; <span style="color: #001080;">$reportes</span> = <span
-     style="color: #001080;">$webPush</span>-&gt;<span
-     style="color: #795e26;">flush</span>();</div>
-  <div>&nbsp; <span style="color: #001080;">$resultados</span> = [];</div>
-  <div>&nbsp; <span style="color: #af00db;">foreach</span> (<span
-     style="color: #001080;">$reportes</span> as <span
-     style="color: #001080;">$reporte</span>) {</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">$endpoint</span> = <span
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;as </span><span
+     style="color: #001080;">$suscripcion</span><span
+     style="color: #000000;">)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$webPush</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">queueNotification</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$suscripcion</span><span
+     style="color: #000000;">,</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$mensaje</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;}</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$reportes</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #001080;">$webPush</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">flush</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #af00db;">return</span><span
+     style="color: #000000;"> </span><span
+     style="color: #001080;">$reportes</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;}</span></div><br>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">Generator</span><span
+     style="color: #008000;">&lt;</span><span
+     style="color: #0000ff;">array</span><span
+     style="color: #008000;">-</span><span
+     style="color: #267f99;">key</span><span
+     style="color: #008000;">,</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;&nbsp;MessageSentReport&gt;
+    $reportes</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*/</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #0000ff;">private</span><span
+     style="color: #000000;"> </span><span
+     style="color: #0000ff;">function</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #795e26;">generaReporteDeEnvioACadaSuscripcion</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;Generator </span><span
+     style="color: #001080;">$reportes</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$reporteDeEnvios</span><span
+     style="color: #000000;"> = [];</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #af00db;">foreach</span><span
+     style="color: #000000;"> (</span><span
+     style="color: #001080;">$reportes</span><span
+     style="color: #000000;"> as </span><span
+     style="color: #001080;">$reporte</span><span
+     style="color: #000000;">)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #af00db;">if</span><span
+     style="color: #000000;"> (</span><span
+     style="color: #001080;">$reporte</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">isSuccess</span><span
+     style="color: #000000;">())&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$reporteDeEnvios</span><span
+     style="color: #000000;">[] =</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #0000ff;">$this</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">reporteDeExito</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
      style="color: #001080;">$reporte</span></div>
-  <div>&nbsp; &nbsp; -&gt;<span
-     style="color: #795e26;">getRequest</span>()-&gt;<span
-     style="color: #795e26;">getUri</span>()</div>
-  <div>&nbsp; &nbsp; -&gt;<span
-     style="color: #795e26;">__toString</span>();</div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">$reporte</span>-&gt;<span
-     style="color: #795e26;">isSuccess</span>()) {</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #001080;">$resultados</span>[] = [</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #a31515;">"endpoint"</span> =&gt; <span
-     style="color: #001080;">$endpoint</span>,</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #a31515;">"resultado"</span> =&gt; <span
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;}&nbsp;</span><span
+     style="color: #af00db;">else</span><span
+     style="color: #000000;">&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #0000ff;">$this</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span
+     style="color: #795e26;">eliminaSuscripcionSiYaExpiro</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$reporte</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$reporteDeEnvios</span><span
+     style="color: #000000;">[] =</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #0000ff;">$this</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">reporteDeFallo</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$reporte</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;}</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #af00db;">return</span><span
+     style="color: #000000;"> </span><span
+     style="color: #001080;">$reporteDeEnvios</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;}</span></div><br>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #0000ff;">private</span><span
+     style="color: #000000;"> </span><span
+     style="color: #0000ff;">function</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #795e26;">reporteDeExito</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;MessageSentReport </span><span
+     style="color: #001080;">$reporte</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$endpoint</span><span
+     style="color: #000000;"> =</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #0000ff;">$this</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">getEndpoint</span><span
+     style="color: #000000;">(</span><span
+     style="color: #001080;">$reporte</span><span
+     style="color: #000000;">);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #af00db;">return</span><span
+     style="color: #000000;"> [</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #a31515;">"endpoint"</span><span
+     style="color: #000000;"> =&gt; </span><span
+     style="color: #001080;">$endpoint</span><span
+     style="color: #000000;">,</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #a31515;">"resultado"</span><span
+     style="color: #000000;"> =&gt; </span><span
      style="color: #a31515;">"Éxito"</span></div>
-  <div>&nbsp; &nbsp; ];</div>
-  <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
-  <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;];</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;}</span></div><br>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #0000ff;">private</span><span
+     style="color: #000000;"> </span><span
+     style="color: #0000ff;">function</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #795e26;">getEndpoint</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;MessageSentReport </span><span
      style="color: #001080;">$reporte</span></div>
-  <div>&nbsp; &nbsp; &nbsp;-&gt;<span
-     style="color: #795e26;">isSubscriptionExpired</span>()</div>
-  <div>&nbsp; &nbsp; ) {</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #795e26;">suscripcionElimina</span>(<span
-     style="color: #001080;">$endpoint</span>);</div>
-  <div>&nbsp; &nbsp; }</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #001080;">$resultados</span>[] = [</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #a31515;">"endpoint"</span> =&gt; <span
-     style="color: #001080;">$endpoint</span>,</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #a31515;">"resultado"</span> =&gt; <span
-     style="color: #a31515;">"Fallo"</span>,</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #a31515;">"explicacion"</span> =&gt;</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #001080;">$reporte</span>-&gt;<span
-     style="color: #795e26;">getReason</span>()</div>
-  <div>&nbsp; &nbsp; ];</div>
-  <div>&nbsp; &nbsp;}</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp; <span style="color: #af00db;">return</span> <span
-     style="color: #001080;">$resultados</span>;</div>
-  <div>&nbsp;}</div>
-  <div>}</div>
-  <div><span style="color: #001080;">$servicio</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">SrvNotifica</span>();</div>
-  <div><span style="color: #001080;">$servicio</span>-&gt;<span
-     style="color: #795e26;">ejecuta</span>();</div><br>
+  <div><span
+     style="color: #000000;">&nbsp;)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$endpoint</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #001080;">$reporte</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;-&gt;</span><span
+     style="color: #795e26;">getRequest</span><span
+     style="color: #000000;">()-&gt;</span><span
+     style="color: #795e26;">getUri</span><span
+     style="color: #000000;">()</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;-&gt;</span><span
+     style="color: #795e26;">__toString</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #af00db;">return</span><span
+     style="color: #000000;"> </span><span
+     style="color: #001080;">$endpoint</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;}</span></div><br>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #0000ff;">private</span><span
+     style="color: #000000;"> </span><span
+     style="color: #0000ff;">function</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #795e26;">eliminaSuscripcionSiYaExpiro</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;MessageSentReport </span><span
+     style="color: #001080;">$reporte</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #af00db;">if</span><span
+     style="color: #000000;"> (</span><span
+     style="color: #001080;">$reporte</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;-&gt;</span><span
+     style="color: #795e26;">isSubscriptionExpired</span><span
+     style="color: #000000;">()</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$endpoint</span><span
+     style="color: #000000;"> =</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #0000ff;">$this</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">getEndpoint</span><span
+     style="color: #000000;">(</span><span
+     style="color: #001080;">$reporte</span><span
+     style="color: #000000;">);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #795e26;">suscripcionElimina</span><span
+     style="color: #000000;">(</span><span
+     style="color: #001080;">$endpoint</span><span
+     style="color: #000000;">);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;}</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;}</span></div><br>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #0000ff;">private</span><span
+     style="color: #000000;"> </span><span
+     style="color: #0000ff;">function</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #795e26;">reporteDeFallo</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;MessageSentReport </span><span
+     style="color: #001080;">$reporte</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$endpoint</span><span
+     style="color: #000000;"> =</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #0000ff;">$this</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">getEndpoint</span><span
+     style="color: #000000;">(</span><span
+     style="color: #001080;">$reporte</span><span
+     style="color: #000000;">);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #af00db;">return</span><span
+     style="color: #000000;"> [</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #a31515;">"endpoint"</span><span
+     style="color: #000000;"> =&gt; </span><span
+     style="color: #001080;">$endpoint</span><span
+     style="color: #000000;">,</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #a31515;">"resultado"</span><span
+     style="color: #000000;"> =&gt; </span><span
+     style="color: #a31515;">"Fallo"</span><span
+     style="color: #000000;">,</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #a31515;">"explicacion"</span><span
+     style="color: #000000;"> =&gt;</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">$reporte</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">getReason</span><span
+     style="color: #000000;">()</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;];</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;}</span></div>
+  <div><span
+     style="color: #000000;">}</span></div><br>
+  <div><span
+     style="color: #001080;">$servicio</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #0000ff;">new</span><span
+     style="color: #000000;"> </span><span
+     style="color: #267f99;">SrvNotifica</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #001080;">$servicio</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">ejecuta</span><span
+     style="color: #000000;">();</span></div><br>
  </div>
 </muestra-codigo>
  <footer>
@@ -631,92 +1059,22 @@
     </li>
     <li>
      <p>
-      <a href="/m08push/m02archivos.html">Archivos (En desarrollo a partir e aquí)</a>
+      <a href="/m08push/m02archivos.html">Archivos</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m08push/m02btextos.html">Textos</a>
+      <a href="/m08push/m15indexHtml.html">index.html</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m08push/m02ctxtNoNotsJs.html">lib / js/ textos / txtNoNots.js</a>
+      <a href="/m08push/m15SuscripcionEnServidorJs.html">js / SuscripcionEnServidor.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m08push/m02dtxtNoPushJs.html">lib / js / textos / txtNoPush.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m02etxtNoSwJs.html">lib / js / textos / txtNoSw.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m02ftxtNotsBloqsJs.html">lib / js / textos / txtNotsBloqs.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m02gtxtRegistradoJs.html">lib / js / textos / txtRegistrado.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m03bd.html">Base de datos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m04SuscripcionPhp.html">srv / modelo / Suscripcion.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m05bdCreaPhp.html">srv / dao / bdCrea.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m06AccesoBdPhp.html">srv / dao / AccesoBd.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m07suscripcionAgregaPhp.html">srv / dao / suscripcionAgrega.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m08suscripcionBuscaPhp.html">srv / dao / suscripcionBusca.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m09suscripcionConsultaPhp.html">srv / dao / suscripcionConsulta.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m10suscripcionEliminaPhp.html">srv / dao / suscripcionElimina.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m11suscripcionModificaPhp.html">srv / dao / suscripcionModifica.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m12funcionalidad.html">Funcionalidad</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m14generallavesPhp.html">srv / generallaves.php</a>
+      <a href="/m08push/m15proxySrvSuscripcionJs.html">js / proxySrvSuscripcion.js</a>
      </p>
     </li>
     <li>
@@ -731,87 +1089,27 @@
     </li>
     <li>
      <p>
-      <a href="/m08push/m15indexHtml.html">index.html</a>
+      <a href="/m08push/mGtextos/">Textos que se mustran al usuario</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m08push/m19swJs.html">sw.js</a>
+      <a href="/m08push/mHbd/">Archivos relacionados con la estructura de los datos</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m08push/m20frecuentes.html">Archivos frecuentes</a>
+      <a href="/m08push/mHconfig/">Archivos de configuración</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m08push/m21jsconfigJson.html">jsconfig.json</a>
+      <a href="/m08push/mMlibjs/">librería de JavaScript</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m08push/m22activaNotificacionesJs.html">lib / js / activaNotificaciones.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m23detectaJs.html">lib / js / detecta.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m24ejecutaJs.html">lib / js / ejecuta.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m24enviaJsonJs.html">lib / js / enviaJson.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m25getSuscripcionJs.html">lib / js / getSuscripcion.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m25getSuscripcionDtoJs.html">lib / js / getSuscripcionDto.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m26Method.html">lib / js / Method.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m27muestraErrorJs.html">lib / js / muestraError.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m28submitJs.html">lib / js / submit.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m29urlBase64ToUint8ArrayJs.html">lib / js / urlBase64ToUint8Array.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m30copiaCamposPhp.html">lib / php / copiaCampos.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m31leeJsonPhp.html">lib / php / leeJson.php</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/m32ServicioPhp.html">lib / php / Servicio.php</a>
+      <a href="/m08push/mNlibphp/">librería de PHP</a>
      </p>
     </li>
    </ol><p>
@@ -831,7 +1129,7 @@
  /**@type {string} */
  let urlAnterior = "/m08push/m13SrvSuscripcionPhp.html"
  /**@type {string} */
- let urlSiguiente = "/m08push/m15indexHtml.html"
+ let urlSiguiente = "/m08push/mGtextos/index.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
