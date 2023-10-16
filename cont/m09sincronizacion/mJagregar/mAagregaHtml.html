@@ -148,18 +148,6 @@
      style="color: #000000;">&nbsp;{</span></div>
   <div><span
      style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
-     style="color: #001080;">submit</span></div>
-  <div><span
-     style="color: #000000;">&nbsp;&nbsp;}&nbsp;</span><span
-     style="color: #af00db;">from</span><span
-     style="color: #000000;"> </span><span
-     style="color: #a31515;">"./lib/js/submit.js"</span></div>
-  <div><span
-     style="color: #000000;">&nbsp;&nbsp;</span><span
-     style="color: #af00db;">import</span><span
-     style="color: #000000;">&nbsp;{</span></div>
-  <div><span
-     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
      style="color: #001080;">muestraError</span></div>
   <div><span
      style="color: #000000;">&nbsp;&nbsp;}&nbsp;</span><span
@@ -178,6 +166,23 @@
      style="color: #af00db;">from</span><span
      style="color: #000000;"> </span><span
      style="color: #a31515;">"./lib/js/saltaAIndex.js"</span></div><br>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #af00db;">import</span><span
+     style="color: #000000;"> </span><span
+     style="color: #a31515;">"./js/configura.js"</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #af00db;">import</span><span
+     style="color: #000000;">&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">pasatiempoAgrega</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;}&nbsp;</span><span
+     style="color: #af00db;">from</span><span
+     style="color: #000000;"> </span><span
+     style="color: #a31515;">"./js/dao/pasatiempoAgrega.js"</span></div><br>
   <div><span
      style="color: #000000;">&nbsp;&nbsp;</span><span
      style="color: #795e26;">preparaVista</span><span
@@ -220,23 +225,44 @@
      style="color: #000000;">&nbsp;{</span></div>
   <div><span
      style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">evt</span><span
+     style="color: #000000;">.</span><span
+     style="color: #795e26;">preventDefault</span><span
+     style="color: #000000;">()</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
      style="color: #0000ff;">const</span><span
      style="color: #000000;"> </span><span
-     style="color: #0070c1;">m</span><span
-     style="color: #000000;"> = </span><span
-     style="color: #af00db;">await</span><span
-     style="color: #000000;"> </span><span
-     style="color: #795e26;">submit</span><span
-     style="color: #000000;">(</span><span
-     style="color: #001080;">evt</span><span
-     style="color: #000000;">,</span></div>
-  <div><span
-     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-     style="color: #a31515;">"srv/SrvPasatiempoAgrega.php"</span><span
-     style="color: #000000;">,</span></div>
+     style="color: #0070c1;">nombre</span><span
+     style="color: #000000;"> =</span></div>
   <div><span
      style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
      style="color: #001080;">forma</span><span
+     style="color: #000000;">.</span><span
+     style="color: #001080;">nombre</span><span
+     style="color: #000000;">.</span><span
+     style="color: #001080;">value</span><span
+     style="color: #000000;">.</span><span
+     style="color: #795e26;">trim</span><span
+     style="color: #000000;">()</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #0000ff;">const</span><span
+     style="color: #000000;"> </span><span
+     style="color: #0070c1;">modelo</span><span
+     style="color: #000000;"> =&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #001080;">nombre</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #af00db;">await</span><span
+     style="color: #000000;"> </span><span
+     style="color: #795e26;">pasatiempoAgrega</span><span
+     style="color: #000000;">(</span><span
+     style="color: #0070c1;">modelo</span><span
      style="color: #000000;">)</span></div>
   <div><span
      style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
