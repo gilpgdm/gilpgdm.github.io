@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" prefix="og: https://ogp.me/ns#">
 <head>
  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +7,9 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>IoT - GilPG DM</title>
- <meta name="description" content="Página para imprimir de la lección «IoT».">
+ <title>D. index.html - GilPG DM</title>
+ <meta name="description" content="Código de «index.html».">
+ <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
   --padTop: 2rem;
@@ -247,347 +248,220 @@
  }
 </style>
  <style>
- .pruebaDeEscritorio section {
-  display: inline-block;
-  vertical-align: top;
-  margin: 1em;
+ body {
+  scroll-padding-top: var(--padTop);
  }
 
- .pruebaDeEscritorio section pre {
+ body:not(.sinTransicion) #principal {
+  animation-timing-function: var(--introFuncion);
+  animation-duration: var(--introDuracion);
+  animation-fill-mode: forwards;
+  animation-name: aparece;
+ }
+
+ @keyframes aparece {
+  from {
+   opacity: 0;
+  }
+
+  to {
+   opacity: 1;
+  }
+ }
+
+ #principal {
+  padding-top: var(--padTop);
+  box-sizing: border-box;
+  transition: margin-left 0.7s ease-in-out;
+ }
+
+ #principal a {
+  word-wrap: break-word;
+ }
+
+ #principal>#abre {
+  position: fixed;
+  top: var(--gap);
+  left: var(--gap);
+  transition: 0.7s ease-in-out;
+ }
+
+ #principal>.anterior {
+  position: fixed;
+  top: var(--gap);
+  background-color: var(--colFondo);
+  transition: 0.7s ease-in-out;
+ }
+
+ #principal>.siguiente {
+  position: fixed;
+  top: var(--gap);
+  right: var(--gap);
+  background-color: var(--colFondo);
+  transition: 0.7s ease-in-out;
+ }
+
+ .scroll #principal>#abre,
+ .scroll #principal>.anterior,
+ .scroll #principal>.siguiente {
+  top: -10rem;
+ }
+
+ #principal h1:not(.default) {
+  text-shadow: var(--colTituloShadow);
+ }
+
+ #nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  overflow: auto;
+  color: var(--colLetra);
+  background-color: var(--colFondoNav);
+  padding: var(--padCont);
+  transition: transform 0.7s ease-in-out;
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ #nav::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ #nav::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ #nav::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ #nav::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ #nav p {
   margin: 0;
  }
 
- .pruebaDeEscritorio samp {
-  font-weight: bold;
+ #nav a:not([data-logo]) {
+  display: block;
+  padding: var(--padNav);
  }
 
- .pruebaDeEscritorio .activo {
-  display: inline-block;
-  margin: 0 0.2rem 0 0;
-  vertical-align: top;
-  background-color: var(--colSecundario);
-  border: 1px solid var(--colSecundario);
+ #nav a.actual code,
+ #nav a.actual strong {
+  color: var(--colTituloStrongSel);
  }
 
- .pruebaDeEscritorio :target,
- .pruebaDeEscritorio :target caption {
-  background-color: var(--colTarget);
+ #nav h1 a {
+  color: var(--colTituloLetra);
  }
 
- .pruebaDeEscritorio .numero1 {
-  display: inline-block;
-  margin: 0 0.2rem 0 0;
-  color: var(--colStack1);
-  border: 1px solid var(--colStack1);
+ #nav a.actual {
+  color: var(--colFondo);
+  background-color: var(--colNavResaltada);
  }
 
- .pruebaDeEscritorio .numero2 {
-  display: inline-block;
-  color: var(--colStack2);
-  border: 1px solid var(--colStack2);
+ #nav a.paginaAnterior,
+ #nav a.paginaSiguiente {
+  text-align: center;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
  }
 
- .pruebaDeEscritorio .numero3 {
-  display: inline-block;
-  color: var(--colStack3);
-  border: 1px solid var(--colStack3);
+ @media screen and (max-width: 999px) {
+  #principal {
+   max-width: 100vw;
+  }
+
+  #cierra {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: var(--colSombra);
+   transform: translateX(-120%);
+   transition: transform 0.7s ease-out;
+  }
+
+  #nav {
+   width: min(var(--anchoNav), 70%);
+   box-shadow: var(--navSombra);
+  }
+
+  .xmenu>#nav {
+   transform: translateX(-120%);
+  }
+
+  .menu>#cierra,
+  .menu>#nav {
+   transform: translateX(0);
+  }
+
+  #principal>.anterior {
+   left: calc(2 * var(--gap) + 2rem);
+  }
  }
 
- .pruebaDeEscritorio a.parametro1,
- .pruebaDeEscritorio .parametro1 {
-  color: var(--colPar1);
+ @media screen and (min-width: 1000px) {
+  #cierra {
+   display: none;
+  }
+
+  #nav {
+   width: var(--anchoNav);
+  }
+
+  .menu>#nav {
+   transform: translateX(-120%);
+  }
+
+  .xmenu>#principal {
+   margin-left: var(--anchoNav)
+  }
+
+  .menu>#principal>.anterior {
+   left: calc(2 * var(--gap) + 2rem);
+  }
+
+  .xmenu>#principal>.anterior {
+   top: var(--gap);
+   left: calc(var(--anchoNav) + var(--gap));
+  }
+
+  .xmenu.scroll #principal>.anterior {
+   top: -10rem;
+  }
  }
 
- .pruebaDeEscritorio a.parametro2,
- .pruebaDeEscritorio .parametro2 {
-  color: var(--colPar2);
- }
+ @media print {
 
- .pruebaDeEscritorio .descongela {
-  color: var(--colDescongela);
- }
-
- .pruebaDeEscritorio table.tabla1,
- .pruebaDeEscritorio table.tabla1 th,
- .pruebaDeEscritorio table.tabla1 td {
-  border: 1px solid var(--colStack1);
- }
-
- .pruebaDeEscritorio table.tabla2,
- .pruebaDeEscritorio table.tabla2 th,
- .pruebaDeEscritorio table.tabla2 td {
-  border: 1px solid var(--colStack2);
- }
-
- .pruebaDeEscritorio table.tabla3,
- .pruebaDeEscritorio table.tabla3 th,
- .pruebaDeEscritorio table.tabla3 td {
-  border: 1px solid var(--colStack3);
- }
-
- .pruebaDeEscritorio .frame {
-  font-family: var(--fontMono);
-  border-collapse: collapse;
- }
-
- .pruebaDeEscritorio .frame,
- .pruebaDeEscritorio .frame th,
- .pruebaDeEscritorio .frame td {
-  border: thin solid;
- }
-
- .pruebaDeEscritorio .frame caption {
-  font-style: italic;
- }
-
- .pruebaDeEscritorio .objeto caption {
-  text-decoration: underline;
-  font-style: italic;
- }
-
- .pruebaDeEscritorio .creación {
-  display: flex;
+  #nav,
+  #principal>#abre,
+  #principal>.anterior,
+  #principal>.siguiente {
+   display: none;
+  }
  }
 </style>
+ 
 </head>
-<body class="print">
-   <h1 class="leccion">5. IoT</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
-    </p>
-   </div>
-<div class="lectura">
- <p>
-  En esta lección se presenta el ejemplo base para IoT.
- </p>
- <p>
-  Lanza el control móvil ejecutano la app en
-  <a rel="noopener" href="https://iothtml.gilbertopachec2.repl.co/"
-   target="_blank">https://iothtml.gilbertopachec2.repl.co/</a>
- </p>
- <nav>
-  <h1>Contenido</h1>
-  
-   <ol type="A">
-    <li>
-     <p>
-      <a href="/m05iot/mCdeploy.html">Diagrama de despliegue</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mDinstrucciones.html">Instrucciones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mAarchivos.html">Archivos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mAindexHtml.html">index.html</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/m44indicador-cargandoJs.html">lib / js / custom / indicador-cargando.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mBplantillaConexionPerdidaJs.html">lib /js / plantilla / plantillaConexionPerdida.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mBplantillaFalloEnConexionJs.html">lib /js / plantilla / plantillaFalloEnConexion.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mBtxtConectadoJs.html">lib /js / txt / txtConectado.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/m53creaClientIdJs.html">lib / js / creaClientId.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/m53falloEnLaConexionJs.html">lib / js / falloEnLaConexion.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/m53muestraErrorJs.html">lib / js / muestraError.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/mGresumen.html">Resumen</a>
-     </p>
-    </li>
-   </ol>
- </nav>
-</div>
-     <section >
-         <h1 >A. Diagrama de despliegue</h1><figure>
- <img style="max-height: none;"
-   src="/img/m05iot/iotdistribucion.drawio.svg"
-   alt="Diagrama de despliegue">
-</figure>
-      </section>
-     <section >
-         <h1 >B. Instrucciones</h1><div class="lectura">
- <ol>
-  <li>
-   <p>
-    Revisa el proyecto iothtml en Replit con la URl
-    <a href="https://replit.com/@GilbertoPachec2/iothtml?v=1" rel="noopener"
-      target="_blank">https://replit.com/@GilbertoPachec2/iothtml?v=1</a>
-   </p>
-  </li>
-  <li>
-   <p>
-    <a href="/src/m07iot/iothtml.zip" download>Descarga iothtml.</a>
-   </p>
-  </li>
-  <li>
-   <p>
-    iothtml puede correr simultáneamente en varios navegadores y computadoras,
-    todos interactuan con el servidor
-    <a href="https://test.mosquitto.org" target="_blank"
-      rel="noopener">test.mosquitto.org</a>.
-   </p>
-  </li>
-  <li>
-   <p>
-    <a href="https://drive.google.com/file/d/1ujeNp8TaHjqqRXl_TFT0omUGymmFWTLm/view?usp=sharing"
-      target="_blank" rel="noopener">Usa o crea una cuenta de Google.</a>
-   </p>
-  </li>
-  <li>
-   <p>
-    <a href="https://drive.google.com/file/d/1dmifWNqm_gRmQuMEe67HqKBYzzDTwEHt/view?usp=sharing"
-      target="_blank" rel="noopener">Crea una cuenta de Replit usando la cuenta
-     de Google.</a>
-   </p>
-  </li>
-  <li>
-   <p>
-    <a href="https://drive.google.com/file/d/1XgYDkmFqbFlCgkcCNEnW8O2AL5HfKyy-/view?usp=sharing"
-      target="_blank" rel="noopener">Crea el proyecto iothtml con la categoría
-     <em>HTML, CSS, JS</em> en Replit y edita o sube los archivos de
-     iothtml.</a>
-   </p>
-  </li>
-  <li>
-   <p>
-    <a href="https://drive.google.com/file/d/1F3sHMnear4JOu1NVKIkkjVBKFg-eoMX4/view?usp=sharing"
-      target="_blank" rel="noopener">Depura el proyecto.</a>
-   </p>
-  </li>
-  <li>
-   <p>
-    <a href="https://drive.google.com/file/d/1LphPNEygv1rV2Bx0fEJQH5O88e7u5dvJ/view?usp=sharing"
-      target="_blank" rel="noopener">Crea la <b>cover page</b> o página de
-     spotlight del proyecto.</a>
-   </p>
-  </li>
- </ol>
-</div>
-      </section>
-     <section >
-         <h1 >C. Archivos</h1><div class="lectura">
- <p>Haz clic en los triángulos para expandir las carpetas</p>
- <ul class="tree">
-  <li>
-   <p>lib</p>
-   <ul>
-    <li>
-     <details>
-      <summary>js</summary>
-      <ul>
-       <li>
-        <details>
-         <summary>custom</summary>
-         <ul>
-          <li>
-           <p><a
-              href="m44indicador-cargandoJs.html">indicador-cargando.js</a>
-           </p>
-          </li>
-         </ul>
-        </details>
-       </li>
-       <li>
-        <details>
-         <summary>plantilla</summary>
-         <ul>
-          <li>
-           <p><a
-              href="mBplantillaConexionPerdidaJs.html">plantillaConexionPerdida.js</a>
-           </p>
-          </li>
-          <li>
-           <p><a
-              href="mBplantillaFalloEnConexionJs.html">plantillaFalloEnConexion.js</a>
-           </p>
-          </li>
-         </ul>
-        </details>
-       </li>
-       <li>
-        <details>
-         <summary>txt</summary>
-         <ul>
-          <li>
-           <p><a
-              href="mBtxtConectadoJs.html">txtConectado.js</a>
-           </p>
-          </li>
-         </ul>
-        </details>
-       </li>
-       <li>
-        <p><a href="m53creaClientIdJs.html">creaClientId.js</a></p>
-       </li>
-       <li>
-        <p><a href="m53falloEnLaConexionJs.html">falloEnLaConexion.js</a></p>
-       </li>
-       <li>
-        <p><a href="m53muestraErrorJs.html">muestraError.js</a></p>
-       </li>
-       <li>
-        <details>
-         <summary>paho.javascript-1.0.3</summary>
-         <ul>
-          <li>
-           <p>paho-mqtt-min.js <em>(No se muestra el contenido)</em></p>
-          </li>
-          <li>
-           <p><em>No se muestra el resto de la carpeta</em></p>
-          </li>
-         </ul>
-        </details>
-       </li>
-      </ul>
-     </details>
-    </li>
-   </ul>
-  </li>
-  <li>
-   <p><a href="mAindexHtml.html">index.html</a></p>
-  </li>
- </ul>
-</div>
-      </section>
-     <section >
-         <h1 >D. index.html</h1><muestra-codigo>
+<body class="xmenu">
+ <div id="principal">
+ <button id="abre" type="button" title="Menú" class="cambiaMenu">
+  &#x2630;
+ </button>
+ <a class="anterior" href="/m05iot/mAarchivos.html" title="C. Archivos">◀</a>
+ <a class="siguiente" href="/m05iot/m44indicador-cargandoJs.html" title="E. lib / js / custom / indicador-cargando.js">▶</a>
+   <h1 >D. index.html</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;!DOCTYPE</span> <span
@@ -1194,296 +1068,243 @@
      style="color: #800000;">&lt;/html&gt;</span></div>
  </div>
 </muestra-codigo>
-      </section>
-     <section >
-         <h1 >E. lib / js / custom / indicador-cargando.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">class</span> <span
-     style="color: #267f99;">IndicadorCargando</span></div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">extends</span> <span
-     style="color: #267f99;">HTMLElement</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #795e26;">connectedCallback</span>()&nbsp;{</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">innerHTML</span> <span
-     style="color: #000000;">=</span> <span
-     style="color: #008000;">/*&nbsp;HTML */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;`<span
-     style="color: #800000;">&lt;progress</span> <span
-     style="color: #e50000;">max</span>=<span
-     style="color: #0000ff;">"100"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cargando<span
-     style="color: #0000ff;">&amp;hellip;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/progress&gt;</span>`</div>
-  <div>&nbsp;}</div><br>
-  <div>}</div><br>
-  <div><span
-     style="color: #001080;">customElements</span>.<span
-     style="color: #795e26;">define</span>(</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"indicador-cargando"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #267f99;">IndicadorCargando</span>)</div>
- </div>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >F. lib /js / plantilla / plantillaConexionPerdida.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{{</span></div><div><span
-  style="color: #008000;">*</span><span
-  style="color: #267f99;">&nbsp;&nbsp;errorCode: number;</span></div><div><span
-  style="color: #008000;">*</span><span
-  style="color: #267f99;">&nbsp;&nbsp;errorMessage: string</span></div><div><span
-  style="color: #008000;">*</span><span
-  style="color: #267f99;"> }}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">responseObject</span></div>
-  <div><span
-     style="color: #008000;">*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">function</span></div>
-  <div>&nbsp;<span
-     style="color: #795e26;">plantillaConexionPerdida</span>(</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">responseObject</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #a31515;">"Conexión terminada "</span> <span
-     style="color: #000000;">+</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">responseObject</span>.<span
-     style="color: #001080;">errorMessage</span></div>
-  <div>}</div>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >G. lib /js / plantilla / plantillaFalloEnConexion.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{{</span></div><div><span
-  style="color: #008000;">&nbsp;*</span><span
-  style="color: #267f99;">&nbsp;&nbsp;errorMessage: string</span></div><div><span
-  style="color: #008000;">&nbsp;*</span><span
-  style="color: #267f99;">&nbsp;&nbsp;}}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">res</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">function</span></div>
-  <div>&nbsp;<span
-     style="color: #795e26;">plantillaFalloEnConexion</span>(<span
-     style="color: #001080;">res</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #a31515;">"Fallo en conexión:"</span> <span
-     style="color: #000000;">+</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">res</span>.<span
-     style="color: #001080;">errorMessage</span></div>
-  <div>}</div><br>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >H. lib /js / txt / txtConectado.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">txtConectado</span>()&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #a31515;">"Conectado"</span></div>
-  <div>}</div>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >I. lib / js / creaClientId.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Añade caracteres al azar a una</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;raíz, para obtener un clientId</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;único por cada instancia que se</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;conecte al servidor de mqtt.</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">raiz</span><span
-     style="color: #008000;"> </span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">creaClientId</span>(<span
-     style="color: #001080;">raiz</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">chars</span> <span
-     style="color: #000000;">=</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #a31515;">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"</span>
-  </div>
-  <div>&nbsp;<span
-     style="color: #af00db;">for</span> (<span
-     style="color: #0000ff;">var</span> <span
-     style="color: #001080;">i</span> <span
-     style="color: #000000;">=</span> <span
-     style="color: #098658;">0</span>; <span
-     style="color: #001080;">i</span> <span
-     style="color: #000000;">&lt;</span> <span
-     style="color: #098658;">15</span>; <span
-     style="color: #001080;">i</span><span
-     style="color: #000000;">++</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">raiz</span> <span
-     style="color: #000000;">+=</span> <span
-     style="color: #0070c1;">chars</span>.<span
-     style="color: #795e26;">charAt</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">Math</span>.<span
-     style="color: #795e26;">floor</span>(<span
-     style="color: #001080;">Math</span>.<span
-     style="color: #795e26;">random</span>()</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #000000;">*</span> <span
-     style="color: #0070c1;">chars</span>.<span
-     style="color: #0070c1;">length</span>))</div>
-  <div>&nbsp;}</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #001080;">raiz</span></div>
-  <div>}</div>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >J. lib / js / falloEnLaConexion.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">plantillaFalloEnConexion</span></div>
-  <div>}&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./plantilla/plantillaFalloEnConexion.js"</span>
-  </div><br>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{{</span></div><div><span
-  style="color: #008000;">&nbsp;*</span><span
-  style="color: #267f99;">&nbsp;&nbsp;errorMessage:string</span></div><div><span
-  style="color: #008000;">&nbsp;*</span><span
-  style="color: #267f99;"> }}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">res</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">falloEnLaConexion</span>(</div>
-  <div>&nbsp;<span
-     style="color: #001080;">res</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">mensaje</span> <span
-     style="color: #000000;">=</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">plantillaFalloEnConexion</span>(<span
-     style="color: #001080;">res</span>)</div>
-  <div>&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">error</span>(<span
-     style="color: #0070c1;">mensaje</span>)</div>
-  <div>&nbsp;<span
-     style="color: #795e26;">alert</span>(<span
-     style="color: #0070c1;">mensaje</span>)</div>
-  <div>}</div>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >K. lib / js / muestraError.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Muestra un error en la consola
-    y</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;en un cuadro de alerta el</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;mensaje de una excepción.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #008000;">{Error}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #008000;">e</span><span
-     style="color: #008000;"> descripción</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;&nbsp;del error.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #0000ff;">export</span> <span
-     style="color: #0000ff;">function</span> muestraError(e)&nbsp;{</div>
-  <div>&nbsp;console.error(e)</div>
-  <div>&nbsp;alert(e.message)</div>
-  <div>}</div>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >L. Resumen</h1><div class="lectura">
- <ul>
-  <li>
-   <p>En esta lección se presentó el proyecto base para IoT.</p>
-  </li>
- </ul>
+ <footer>
+ <p>
+  <a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/"><img
+     alt="Licencia Creative Commons" style="border-width:0"
+     src="/img/icono/160x30.webp" width="80" height="15" /></a>
+  <br />Esta
+  <span xmlns:dct="http://purl.org/dc/terms/"
+    href="http://purl.org/dc/dcmitype/InteractiveResource"
+    rel="dct:type">obra</span>
+  de
+  <a xmlns:cc="http://creativecommons.org/ns#"
+    href="https://gilpgijs.github.io" property="cc:attributionName"
+    rel="cc:attributionURL">Gilberto Pacheco Gallegos</a>
+  está bajo una
+  <a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/">Licencia
+   Creative Commons Atribución 4.0 Internacional</a>.
+ </p>
+</footer>
 </div>
-      </section>
+<div id="cierra" class="cambiaMenu"></div>
+<nav id="nav">
+ <button type="button" title="Cierra" class="cambiaMenu">
+  &#x2715;
+ </button>
+ <p>
+    <a href="/index.html"
+      data-logo="true">GilPG DM</a>
+   </p><p>
+    <a class="paginaAnterior" href="/m04dispositivo/mCresumen.html"
+      title="C. Resumen">▲</a>
+   </p>
+     <h1><a href="/m05iot/index.html">5. IoT</a></h1>
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m05iot/mCdeploy.html">Diagrama de despliegue</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mDinstrucciones.html">Instrucciones</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mAarchivos.html">Archivos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mAindexHtml.html" class="actual">index.html</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/m44indicador-cargandoJs.html">lib / js / custom / indicador-cargando.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mBplantillaConexionPerdidaJs.html">lib /js / plantilla / plantillaConexionPerdida.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mBplantillaFalloEnConexionJs.html">lib /js / plantilla / plantillaFalloEnConexion.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mBtxtConectadoJs.html">lib /js / txt / txtConectado.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/m53creaClientIdJs.html">lib / js / creaClientId.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/m53falloEnLaConexionJs.html">lib / js / falloEnLaConexion.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/m53muestraErrorJs.html">lib / js / muestraError.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mGresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol><p>
+    <a class="paginaSiguiente" href="/m06esp8266/index.html"
+      title="6. ESP32">▼</a>
+   </p>
+</nav>
+ <script>
+ registraServiceWorker("/sw.js")
+ const LOCAL_STORAGE_MENU = "menu"
+ const MENU = "menu"
+ const XMENU = "xmenu"
+ const SCROLL = "scroll"
+ const nav = document.querySelector("#nav")
+ const abre = document.querySelector("#abre")
+
+ /**@type {string} */
+ let urlAnterior = "/m05iot/mAarchivos.html"
+ /**@type {string} */
+ let urlSiguiente = "/m05iot/m44indicador-cargandoJs.html"
+ /**@type {number|null} */
+ let iniciaX = null
+ /**@type {number|null} */
+ let iniciaY = null
+ /** @type {number} */
+ let posY = 0
+ /** @type {number} */
+ let dy = 0
+ /** @type {boolean} */
+  let scrolling = false
+
+ document.addEventListener("keydown", teclas)
+ document.addEventListener("touchstart", iniciaTouch)
+ document.addEventListener("touchmove", desplazaTouch)
+ addEventListener("scroll", onScroll)
+ if (abre) {
+  abre.addEventListener("click", cambiaMenu)
+ }
+ const cambian = Array.from(document.querySelectorAll(".cambiaMenu"))
+ for (const c of cambian) {
+  c.addEventListener("click", cambiaMenu)
+ }
+ const menu = localStorage.getItem(LOCAL_STORAGE_MENU)
+ if (menu) {
+  if (menu === MENU) {
+   document.body.classList.remove(XMENU)
+   document.body.classList.add(MENU)
+  } else {
+   document.body.classList.remove(MENU)
+   document.body.classList.add(XMENU)
+  }
+ }
+
+ function registraServiceWorker(url) {
+  if (navigator.serviceWorker) {
+   navigator.serviceWorker.register(url).
+    then(registro => {
+     console.log("Service Worker registrado.")
+     console.log(registro)
+    }).
+    catch(muestraError)
+  }
+ }
+ function muestraError(e) {
+  console.error(e)
+  alert(e.message)
+ }
+ function cambiaMenu() {
+  document.body.classList.toggle(XMENU)
+  document.body.classList.toggle(MENU)
+  if (document.body.classList.contains(MENU)) {
+   localStorage.setItem(LOCAL_STORAGE_MENU, MENU)
+  } else {
+   localStorage.setItem(LOCAL_STORAGE_MENU, XMENU)
+  }
+ }
+ /** @param {KeyboardEvent} ev*/
+ function teclas(ev) {
+  switch (ev.key) {
+   case "ArrowLeft":
+    retrocede()
+    break
+   case "ArrowRight":
+    avanza()
+    break
+  }
+ }
+ function retrocede() {
+  if (urlAnterior) {
+   location.href = urlAnterior
+  }
+ }
+ function avanza() {
+  if (urlSiguiente) {
+   location.href = urlSiguiente
+  }
+ }
+ /** @param {TouchEvent} ev*/
+ function iniciaTouch(ev) {
+  const toqueInicial = ev.touches[0]
+  iniciaX = toqueInicial.clientX
+  iniciaY = toqueInicial.clientY
+ }
+ /** @param {TouchEvent} ev*/
+ function desplazaTouch(ev) {
+  if (iniciaX && iniciaY) {
+   const desplazamiento = ev.touches[0]
+   var desplazamientoX = desplazamiento.clientX
+   var desplazamientoY = desplazamiento.clientY
+   var difX = desplazamientoX - iniciaX
+   var difY = desplazamientoY - iniciaY
+   // Checa que el movimiento no sea muy corto.
+   if (Math.abs(difX) + Math.abs(difY) > 90) {
+    if (Math.abs(difX) > Math.abs(difY)) {
+     if (difX > 70) {
+      retrocede()
+     } else {
+      avanza()
+     }
+     // Reinicia valores.
+     iniciaX = null
+     iniciaY = null
+    }
+   }
+  }
+ }
+ function onScroll() {
+  dy = scrollY - posY
+  posY = scrollY
+  if (!scrolling) {
+   requestAnimationFrame(avanzaScroll)
+  }
+  scrolling = true
+ }
+ function avanzaScroll() {
+  if (posY === 0) {
+   document.body.classList.remove(SCROLL)
+  } else if (dy < 0){
+   document.body.classList.remove(SCROLL)
+  } else if (dy > 0){
+   document.body.classList.add(SCROLL)
+  }
+  scrolling = false
+ }
+</script>
 </body>
 </html>

@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>B. Blink.ino - GilPG DM</title>
- <meta name="description" content="Código de «Blink.ino».">
+ <title>F. lib /js / plantilla / plantillaConexionPerdida.js - GilPG DM</title>
+ <meta name="description" content="Código de «lib/js/plantilla/plantillaConexionPerdida.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -459,86 +459,42 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m06esp8266/m01software.html" title="A. Software a instalar">◀</a>
- <a class="siguiente" href="/m06esp8266/mBbutton.html" title="C. Button.ino">▶</a>
-   <h1 >B. Blink.ino</h1><figure>
- <img src="/img/m06esp8266/Video-Blink.gif" alt="Video de la placa">
-</figure>
-<div class="lectura">
- <p class="noPrint">
-  <a href="https://drive.google.com/file/d/1ijC-1CC9V_Ua1nApAcRuQmXYp9wgaKBH/view?usp=sharing"
-    target="_blank" rel="noopener">Ve como capturar y ejecutar este ejemplo.</a>
- </p>
- <p class="noPrint">
-  <a href="https://drive.google.com/file/d/1yqVaTYYt8BxQLhvmZW2bwdiTkqxPQKcB/view?usp=sharing"
-    target="_blank" rel="noopener">Ve como desplegar este ejemplo en Tinkercad y
-   compartirlo.</a>
- </p>
-</div>
-<muestra-codigo>
+ <a class="anterior" href="/m05iot/m44indicador-cargandoJs.html" title="E. lib / js / custom / indicador-cargando.js">◀</a>
+ <a class="siguiente" href="/m05iot/mBplantillaFalloEnConexionJs.html" title="G. lib /js / plantilla / plantillaFalloEnConexion.js">▶</a>
+   <h1 >F. lib /js / plantilla / plantillaConexionPerdida.js</h1><muestra-codigo>
  <div>
   <div><span
-     style="color: #008000;">/* Este programa es un derivado de</span></div>
+     style="color: #008000;">/**</span></div>
   <div><span
-     style="color: #008000;">&nbsp; &nbsp;ESP8266 Blink by Simon Peter */</span>
-  </div><br>
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{{</span></div><div><span
+  style="color: #008000;">*</span><span
+  style="color: #267f99;">&nbsp;&nbsp;errorCode: number;</span></div><div><span
+  style="color: #008000;">*</span><span
+  style="color: #267f99;">&nbsp;&nbsp;errorMessage: string</span></div><div><span
+  style="color: #008000;">*</span><span
+  style="color: #267f99;"> }}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">responseObject</span></div>
   <div><span
-     style="color: #008000;">/** Función que se invoca una sola</span></div>
+     style="color: #008000;">*/</span></div>
   <div><span
-     style="color: #008000;">&nbsp; &nbsp; vez al inicio del programa. */</span>
-  </div>
-  <div><span style="color: #0000ff;">void</span> <span
-     style="color: #795e26;">setup</span>() {</div>
-  <div><span
-     style="color: #008000;">&nbsp;/* Todas las placas compatibles</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; con Arduino incluyen un led</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; de prueba ligado a un pin</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; cuyo número está definido por</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; la constante LED_BUILTIN.</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; Inicializa el pin para</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; LED_BUILTIN como salida. */</span>
-  </div>
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">function</span></div>
   <div>&nbsp;<span
-     style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
-  <div>}</div><br>
-  <div><span style="color: #008000;">/* Función que se invoca</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp;repetidamente mientras el</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp;programa esté activo. */</span></div>
-  <div><span style="color: #0000ff;">void</span> <span
-     style="color: #795e26;">loop</span>() {</div>
-  <div><span
-     style="color: #008000;">&nbsp;/* Enciende el LED_BUILTIN (HIGH</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; es el nivel de voltaje). */</span>
-  </div>
+     style="color: #795e26;">plantillaConexionPerdida</span>(</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">responseObject</span>)&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, HIGH);</div>
-  <div>&nbsp;<span style="color: #795e26;">delay</span>(<span
-     style="color: #098658;">1000</span>);<span
-     style="color: #008000;"> // Espera 1 segundo</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;/* Apaga el LED_BUILTIN haciendo</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; que el nivel de voltaje sea</span>
-  </div>
-  <div><span style="color: #008000;">&nbsp; &nbsp; LOW. */</span></div>
-  <div>&nbsp;<span
-     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, LOW);</div>
-  <div>&nbsp;<span style="color: #795e26;">delay</span>(<span
-     style="color: #098658;">1000</span>);</div>
-  <div>}</div><br>
+     style="color: #af00db;">return</span> <span
+     style="color: #a31515;">"Conexión terminada "</span> <span
+     style="color: #000000;">+</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">responseObject</span>.<span
+     style="color: #001080;">errorMessage</span></div>
+  <div>}</div>
  </div>
 </muestra-codigo>
  <footer>
@@ -571,39 +527,74 @@
     <a href="/index.html"
       data-logo="true">GilPG DM</a>
    </p><p>
-    <a class="paginaAnterior" href="/m05iot/mGresumen.html"
-      title="L. Resumen">▲</a>
+    <a class="paginaAnterior" href="/m04dispositivo/mCresumen.html"
+      title="C. Resumen">▲</a>
    </p>
-     <h1><a href="/m06esp8266/index.html">6. ESP32</a></h1>
+     <h1><a href="/m05iot/index.html">5. IoT</a></h1>
    <ol type="A">
     <li>
      <p>
-      <a href="/m06esp8266/m01software.html">Software a instalar</a>
+      <a href="/m05iot/mCdeploy.html">Diagrama de despliegue</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m06esp8266/mAblink.html" class="actual">Blink.ino</a>
+      <a href="/m05iot/mDinstrucciones.html">Instrucciones</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m06esp8266/mBbutton.html">Button.ino</a>
+      <a href="/m05iot/mAarchivos.html">Archivos</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m06esp8266/mCdispositivo.html">Dispositivo.ino</a>
+      <a href="/m05iot/mAindexHtml.html">index.html</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m06esp8266/mDresumen.html">Resumen</a>
+      <a href="/m05iot/m44indicador-cargandoJs.html">lib / js / custom / indicador-cargando.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mBplantillaConexionPerdidaJs.html" class="actual">lib /js / plantilla / plantillaConexionPerdida.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mBplantillaFalloEnConexionJs.html">lib /js / plantilla / plantillaFalloEnConexion.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mBtxtConectadoJs.html">lib /js / txt / txtConectado.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/m53creaClientIdJs.html">lib / js / creaClientId.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/m53falloEnLaConexionJs.html">lib / js / falloEnLaConexion.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/m53muestraErrorJs.html">lib / js / muestraError.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05iot/mGresumen.html">Resumen</a>
      </p>
     </li>
    </ol><p>
-    <a class="paginaSiguiente" href="/m07notificaciones.html"
-      title="7. Notificaciones">▼</a>
+    <a class="paginaSiguiente" href="/m06esp8266/index.html"
+      title="6. ESP32">▼</a>
    </p>
 </nav>
  <script>
@@ -616,9 +607,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m06esp8266/m01software.html"
+ let urlAnterior = "/m05iot/m44indicador-cargandoJs.html"
  /**@type {string} */
- let urlSiguiente = "/m06esp8266/mBbutton.html"
+ let urlSiguiente = "/m05iot/mBplantillaFalloEnConexionJs.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

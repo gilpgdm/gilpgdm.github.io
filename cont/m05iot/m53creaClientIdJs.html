@@ -1,0 +1,70 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;Añade caracteres al azar a una</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;raíz, para obtener un clientId</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;único por cada instancia que se</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;conecte al servidor de mqtt.</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">raiz</span><span
+     style="color: #008000;"> </span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">creaClientId</span>(<span
+     style="color: #001080;">raiz</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">chars</span> <span
+     style="color: #000000;">=</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #a31515;">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"</span>
+  </div>
+  <div>&nbsp;<span
+     style="color: #af00db;">for</span> (<span
+     style="color: #0000ff;">var</span> <span
+     style="color: #001080;">i</span> <span
+     style="color: #000000;">=</span> <span
+     style="color: #098658;">0</span>; <span
+     style="color: #001080;">i</span> <span
+     style="color: #000000;">&lt;</span> <span
+     style="color: #098658;">15</span>; <span
+     style="color: #001080;">i</span><span
+     style="color: #000000;">++</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">raiz</span> <span
+     style="color: #000000;">+=</span> <span
+     style="color: #0070c1;">chars</span>.<span
+     style="color: #795e26;">charAt</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">Math</span>.<span
+     style="color: #795e26;">floor</span>(<span
+     style="color: #001080;">Math</span>.<span
+     style="color: #795e26;">random</span>()</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #000000;">*</span> <span
+     style="color: #0070c1;">chars</span>.<span
+     style="color: #0070c1;">length</span>))</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">raiz</span></div>
+  <div>}</div>
+ </div>
+</muestra-codigo>
