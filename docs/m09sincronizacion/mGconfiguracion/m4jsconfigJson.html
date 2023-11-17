@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>9. Sincronización - GilPG DM</title>
- <meta name="description" content="Contenido de la lección «Sincronización».">
+ <title>3. jsconfig.json - GilPG DM</title>
+ <meta name="description" content="Código del archivo «jsconfig.json» del ejemplo de PWA con Material Design.">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -459,78 +459,61 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m08push/mNlibphp/mSservicioPhp.html" title="5. lib / php / servicio.php">◀</a>
- <a class="siguiente" href="/m09sincronizacion/mAintro.html" title="A. Introducción">▶</a>
-   <h1 class="leccion">9. Sincronización</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
-    </p>
-   </div>
-<div class="lectura">
- <nav>
-  <h1>Contenido</h1>
-  
-   <ol type="A">
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mAintro.html">Introducción</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mBder.html">Diagrama entidad relación</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mCbdeploy.html">Diagrama de despliegue</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mDinstrucciones.html">Instrucciones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mEarchivos.html">Archivos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mFcliente/">Funcionalidad del cliente</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mGconfiguracion/">Archivos de configuración</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mHservidor/">Listados y sincronización</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mIlibjs/">librería de JavaScript</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mJlibphp/">librería de PHP</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mKresumen.html">Resumen</a>
-     </p>
-    </li>
-   </ol>
- </nav>
+ <a class="anterior" href="/m09sincronizacion/mGconfiguracion/m3swJs.html" title="2. sw.js">◀</a>
+ <a class="siguiente" href="/m09sincronizacion/mGconfiguracion/m5instruccionesListadoSwTxt.html" title="4. instruccionesListadoSw.txt">▶</a>
+   <h1 >3. jsconfig.json</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Este archivo ayuda a detectar errores en los archivos del proyecto.
+   </p>
+  </li>
+  <li>
+   <p>
+    Lo utiliza principalmente Visual Studio Code.
+   </p>
+  </li>
+  <li>
+   <p>
+    No se explica aquí su estructura, pero puede encontrarse la explicación de
+    todo en la documentación del sitio de Visual Studio Code.
+   </p>
+  </li>
+ </ul>
 </div>
+<muestra-codigo>
+ <div>
+  <div>{</div>
+  <div>&nbsp;<span
+     style="color: #0451a5;">"compilerOptions"</span>:&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">"checkJs"</span>: <span
+     style="color: #0000ff;">true</span>,</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">"strictNullChecks"</span>: <span
+     style="color: #0000ff;">true</span>,</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">"target"</span>: <span
+     style="color: #a31515;">"ES6"</span>,</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">"module"</span>: <span
+     style="color: #a31515;">"ES6"</span>,</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">"moduleResolution"</span>: <span
+     style="color: #a31515;">"classic"</span>,</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0451a5;">"lib"</span>: [</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #a31515;">"ES2017"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #a31515;">"WebWorker"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #a31515;">"DOM"</span></div>
+  <div>&nbsp;&nbsp;]</div>
+  <div>&nbsp;}</div>
+  <div>}</div>
+ </div>
+</muestra-codigo>
  <footer>
  <p>
   <a rel="license"
@@ -561,67 +544,40 @@
     <a href="/index.html"
       data-logo="true">GilPG DM</a>
    </p><p>
-    <a class="paginaAnterior" href="/m08push/mNlibphp/mSservicioPhp.html"
-      title="5. lib / php / servicio.php">▲</a>
+    <a class="paginaAnterior" href="/m09sincronizacion/mFcliente/m14pasatiempoEliminaJs.html"
+      title="14. js / dao / pasatiempoElimina.js">▲</a>
    </p>
-     <h1><a href="/m09sincronizacion/index.html" class="actual">9. Sincronización</a></h1>
-   <ol type="A">
+     <h1><a href="/m09sincronizacion/mGconfiguracion/index.html">G. Archivos de configuración</a></h1>
+   <ol type="1">
     <li>
      <p>
-      <a href="/m09sincronizacion/mAintro.html">Introducción</a>
+      <a href="/m09sincronizacion/mGconfiguracion/m1configuraJs.html">js / configura.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mBder.html">Diagrama entidad relación</a>
+      <a href="/m09sincronizacion/mGconfiguracion/m3swJs.html">sw.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mCbdeploy.html">Diagrama de despliegue</a>
+      <a href="/m09sincronizacion/mGconfiguracion/m4jsconfigJson.html" class="actual">jsconfig.json</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mDinstrucciones.html">Instrucciones</a>
+      <a href="/m09sincronizacion/mGconfiguracion/m5instruccionesListadoSwTxt.html">instruccionesListadoSw.txt</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mEarchivos.html">Archivos</a>
+      <a href="/m09sincronizacion/mGconfiguracion/m6archivosTxt.html">archivos.txt</a>
      </p>
     </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mFcliente/">Funcionalidad del cliente</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mGconfiguracion/">Archivos de configuración</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mHservidor/">Listados y sincronización</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mIlibjs/">librería de JavaScript</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mJlibphp/">librería de PHP</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mKresumen.html">Resumen</a>
-     </p>
-    </li>
-   </ol>
+   </ol><p>
+    <a class="paginaSiguiente" href="/m09sincronizacion/mHservidor/index.html"
+      title="H. Listados y sincronización">▼</a>
+   </p>
 </nav>
  <script>
  registraServiceWorker("/sw.js")
@@ -633,9 +589,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m08push/mNlibphp/mSservicioPhp.html"
+ let urlAnterior = "/m09sincronizacion/mGconfiguracion/m3swJs.html"
  /**@type {string} */
- let urlSiguiente = "/m09sincronizacion/mAintro.html"
+ let urlSiguiente = "/m09sincronizacion/mGconfiguracion/m5instruccionesListadoSwTxt.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

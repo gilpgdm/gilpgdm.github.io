@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>9. Sincronización - GilPG DM</title>
- <meta name="description" content="Contenido de la lección «Sincronización».">
+ <title>8. srv / dao / pasatiempoModifica.php - GilPG DM</title>
+ <meta name="description" content="Código de «srv/dao/pasatiempoModifica.php».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -459,78 +459,131 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m08push/mNlibphp/mSservicioPhp.html" title="5. lib / php / servicio.php">◀</a>
- <a class="siguiente" href="/m09sincronizacion/mAintro.html" title="A. Introducción">▶</a>
-   <h1 class="leccion">9. Sincronización</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
-    </p>
-   </div>
-<div class="lectura">
- <nav>
-  <h1>Contenido</h1>
-  
-   <ol type="A">
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mAintro.html">Introducción</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mBder.html">Diagrama entidad relación</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mCbdeploy.html">Diagrama de despliegue</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mDinstrucciones.html">Instrucciones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mEarchivos.html">Archivos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mFcliente/">Funcionalidad del cliente</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mGconfiguracion/">Archivos de configuración</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mHservidor/">Listados y sincronización</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mIlibjs/">librería de JavaScript</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mJlibphp/">librería de PHP</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mKresumen.html">Resumen</a>
-     </p>
-    </li>
-   </ol>
- </nav>
-</div>
+ <a class="anterior" href="/m09sincronizacion/mHservidor/m10pasatiempoConsultaNoEliminadosPhp.html" title="7. srv / dao / pasatiempoConsultaNoEliminados.php">◀</a>
+ <a class="siguiente" href="/m09sincronizacion/mIlibjs/index.html" title="I. librería de JavaScript">▶</a>
+   <h1 >8. srv / dao / pasatiempoModifica.php</h1><muestra-codigo>
+ <div>
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> srv\dao\</span><span
+     style="color: #267f99;">AccesoBd</span><span
+     style="color: #000000;">;</span></div>
+  <div><span
+     style="color: #0000ff;">use</span><span
+     style="color: #000000;"> srv\modelo\</span><span
+     style="color: #267f99;">Pasatiempo</span><span
+     style="color: #000000;">;</span></div><br>
+  <div><span
+     style="color: #0000ff;">function</span><span
+     style="color: #000000;"> </span><span
+     style="color: #795e26;">pasatiempoModifica</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #267f99;">Pasatiempo</span><span
+     style="color: #000000;"> </span><span
+     style="color: #001080;">$modelo</span></div>
+  <div><span
+     style="color: #000000;">)&nbsp;{</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$modelo</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">valida</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$con</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #267f99;">AccesoBd</span><span
+     style="color: #000000;">::</span><span
+     style="color: #795e26;">getCon</span><span
+     style="color: #000000;">();</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$stmt</span><span
+     style="color: #000000;"> = </span><span
+     style="color: #001080;">$con</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">prepare</span><span
+     style="color: #000000;">(</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">"</span><span
+     style="color: #0000ff;">UPDATE</span><span
+     style="color: #a31515;"> PASATIEMPO</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp;</span><span
+     style="color: #0000ff;">SET</span><span
+     style="color: #a31515;"> PAS_NOMBRE </span><span
+     style="color: #000000;">=</span><span
+     style="color: #a31515;"> :nombre,</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;PAS_MODIFICACION </span><span
+     style="color: #000000;">=</span><span
+     style="color: #a31515;"> :modificacion,</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;PAS_ELIMINADO </span><span
+     style="color: #000000;">=</span><span
+     style="color: #a31515;"> :eliminado</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp;</span><span
+     style="color: #0000ff;">WHERE</span><span
+     style="color: #a31515;"> PAS_UUID </span><span
+     style="color: #000000;">=</span><span
+     style="color: #a31515;"> :uuid</span><span
+     style="color: #a31515;">"</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;);</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;</span><span
+     style="color: #001080;">$stmt</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #795e26;">execute</span><span
+     style="color: #000000;">([</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">":uuid"</span><span
+     style="color: #000000;"> =&gt; </span><span
+     style="color: #001080;">$modelo</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #001080;">uuid</span><span
+     style="color: #000000;">,</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">":nombre"</span><span
+     style="color: #000000;"> =&gt; </span><span
+     style="color: #001080;">$modelo</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #001080;">nombre</span><span
+     style="color: #000000;">,</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">":modificacion"</span><span
+     style="color: #000000;"> =&gt;</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$modelo</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #001080;">modificacion</span><span
+     style="color: #000000;">,</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #a31515;">":eliminado"</span><span
+     style="color: #000000;"> =&gt;</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;&nbsp;</span><span
+     style="color: #001080;">$modelo</span><span
+     style="color: #000000;">-&gt;</span><span
+     style="color: #001080;">eliminado</span></div>
+  <div><span
+     style="color: #000000;">&nbsp;]);</span></div>
+  <div><span
+     style="color: #000000;">}</span></div><br>
+ </div>
+</muestra-codigo>
  <footer>
  <p>
   <a rel="license"
@@ -561,67 +614,55 @@
     <a href="/index.html"
       data-logo="true">GilPG DM</a>
    </p><p>
-    <a class="paginaAnterior" href="/m08push/mNlibphp/mSservicioPhp.html"
-      title="5. lib / php / servicio.php">▲</a>
+    <a class="paginaAnterior" href="/m09sincronizacion/mGconfiguracion/m6archivosTxt.html"
+      title="5. archivos.txt">▲</a>
    </p>
-     <h1><a href="/m09sincronizacion/index.html" class="actual">9. Sincronización</a></h1>
-   <ol type="A">
+     <h1><a href="/m09sincronizacion/mHservidor/index.html">H. Listados y sincronización</a></h1>
+   <ol type="1">
     <li>
      <p>
-      <a href="/m09sincronizacion/mAintro.html">Introducción</a>
+      <a href="/m09sincronizacion/mHservidor/m04PasatiempoPhp.html">srv / modelo / pasatiempo.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mBder.html">Diagrama entidad relación</a>
+      <a href="/m09sincronizacion/mHservidor/m06bdCreaPhp.html">srv / dao / bdCrea.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mCbdeploy.html">Diagrama de despliegue</a>
+      <a href="/m09sincronizacion/mHservidor/m07AccesoBdPhp.html">srv / dao / accesobd.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mDinstrucciones.html">Instrucciones</a>
+      <a href="/m09sincronizacion/mHservidor/m05SrvSincroPhp.html">srv / SrvSincro.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mEarchivos.html">Archivos</a>
+      <a href="/m09sincronizacion/mHservidor/m08pasatiempoAgregaPhp.html">srv / dao / pasatiempoAgrega.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mFcliente/">Funcionalidad del cliente</a>
+      <a href="/m09sincronizacion/mHservidor/m09pasatiempoBuscaPhp.html">srv / dao / pasatiempoBusca.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mGconfiguracion/">Archivos de configuración</a>
+      <a href="/m09sincronizacion/mHservidor/m10pasatiempoConsultaNoEliminadosPhp.html">srv / dao / pasatiempoConsultaNoEliminados.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mHservidor/">Listados y sincronización</a>
+      <a href="/m09sincronizacion/mHservidor/m11pasatiempoModificaPhp.html" class="actual">srv / dao / pasatiempoModifica.php</a>
      </p>
     </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mIlibjs/">librería de JavaScript</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mJlibphp/">librería de PHP</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mKresumen.html">Resumen</a>
-     </p>
-    </li>
-   </ol>
+   </ol><p>
+    <a class="paginaSiguiente" href="/m09sincronizacion/mIlibjs/index.html"
+      title="I. librería de JavaScript">▼</a>
+   </p>
 </nav>
  <script>
  registraServiceWorker("/sw.js")
@@ -633,9 +674,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m08push/mNlibphp/mSservicioPhp.html"
+ let urlAnterior = "/m09sincronizacion/mHservidor/m10pasatiempoConsultaNoEliminadosPhp.html"
  /**@type {string} */
- let urlSiguiente = "/m09sincronizacion/mAintro.html"
+ let urlSiguiente = "/m09sincronizacion/mIlibjs/index.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

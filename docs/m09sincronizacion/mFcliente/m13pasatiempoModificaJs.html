@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>9. Sincronización - GilPG DM</title>
- <meta name="description" content="Contenido de la lección «Sincronización».">
+ <title>13. js / dao / pasatiempoModifica.js - GilPG DM</title>
+ <meta name="description" content="Código de «js/dao/pasatiempoModifica.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -459,78 +459,92 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m08push/mNlibphp/mSservicioPhp.html" title="5. lib / php / servicio.php">◀</a>
- <a class="siguiente" href="/m09sincronizacion/mAintro.html" title="A. Introducción">▶</a>
-   <h1 class="leccion">9. Sincronización</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
-    </p>
-   </div>
-<div class="lectura">
- <nav>
-  <h1>Contenido</h1>
-  
-   <ol type="A">
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mAintro.html">Introducción</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mBder.html">Diagrama entidad relación</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mCbdeploy.html">Diagrama de despliegue</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mDinstrucciones.html">Instrucciones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mEarchivos.html">Archivos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mFcliente/">Funcionalidad del cliente</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mGconfiguracion/">Archivos de configuración</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mHservidor/">Listados y sincronización</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mIlibjs/">librería de JavaScript</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mJlibphp/">librería de PHP</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mKresumen.html">Resumen</a>
-     </p>
-    </li>
-   </ol>
- </nav>
-</div>
+ <a class="anterior" href="/m09sincronizacion/mFcliente/m12pasatiempoBuscaJs.html" title="12. js / dao / pasatiempoBusca.js">◀</a>
+ <a class="siguiente" href="/m09sincronizacion/mFcliente/m14pasatiempoEliminaJs.html" title="14. js / dao / pasatiempoElimina.js">▶</a>
+   <h1 >13. js / dao / pasatiempoModifica.js</h1><muestra-codigo>
+ <div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #001080;">bdEjecuta</span></div>
+  <div>}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../../lib/js/bdEjecuta.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #001080;">conn</span>,</div>
+  <div>&nbsp;<span
+     style="color: #001080;">PASATIEMPO</span></div>
+  <div>}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./conn.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #001080;">pasatiempoValida</span></div>
+  <div>}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./pasatiempoValida.js"</span></div><br>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{{</span></div><div><span
+  style="color: #008000;">&nbsp;*</span><span
+  style="color: #267f99;">&nbsp;&nbsp;uuid?:string,</span></div><div><span
+  style="color: #008000;">&nbsp;*</span><span
+  style="color: #267f99;">&nbsp;&nbsp;nombre: string</span></div><div><span
+  style="color: #008000;">&nbsp;*</span><span
+  style="color: #267f99;">&nbsp;&nbsp;modificacion?: number</span></div><div><span
+  style="color: #008000;">&nbsp;*</span><span
+  style="color: #267f99;">&nbsp;&nbsp;eliminado?: number}}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">modelo</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span></div>
+  <div>&nbsp;<span
+     style="color: #795e26;">pasatiempoModifica</span>(<span
+     style="color: #001080;">modelo</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #795e26;">pasatiempoValida</span>(<span
+     style="color: #001080;">modelo</span>)</div>
+  <div>&nbsp;<span
+     style="color: #001080;">modelo</span>.<span
+     style="color: #001080;">modificacion</span> <span
+     style="color: #000000;">=</span> <span
+     style="color: #267f99;">Date</span>.<span
+     style="color: #795e26;">now</span>()</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #795e26;">bdEjecuta</span>(<span
+     style="color: #0070c1;">conn</span>,</div>
+  <div>&nbsp;&nbsp;[<span
+     style="color: #0070c1;">PASATIEMPO</span>], <span
+     style="color: #001080;">tx</span> <span
+     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">store</span> <span
+     style="color: #000000;">=</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">tx</span>.<span
+     style="color: #795e26;">objectStore</span>(<span
+     style="color: #0070c1;">PASATIEMPO</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">store</span>.<span
+     style="color: #795e26;">put</span>(<span
+     style="color: #001080;">modelo</span>)</div>
+  <div>&nbsp;&nbsp;})</div>
+  <div>}</div>
+ </div>
+</muestra-codigo>
  <footer>
  <p>
   <a rel="license"
@@ -561,67 +575,85 @@
     <a href="/index.html"
       data-logo="true">GilPG DM</a>
    </p><p>
-    <a class="paginaAnterior" href="/m08push/mNlibphp/mSservicioPhp.html"
-      title="5. lib / php / servicio.php">▲</a>
+    <a class="paginaAnterior" href="/m09sincronizacion/mEarchivos.html"
+      title="E. Archivos">▲</a>
    </p>
-     <h1><a href="/m09sincronizacion/index.html" class="actual">9. Sincronización</a></h1>
-   <ol type="A">
+     <h1><a href="/m09sincronizacion/mFcliente/index.html">F. Funcionalidad del cliente</a></h1>
+   <ol type="1">
     <li>
      <p>
-      <a href="/m09sincronizacion/mAintro.html">Introducción</a>
+      <a href="/m09sincronizacion/mFcliente/m01PasatiempoJs.html">js / modelo / Pasatiempo.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mBder.html">Diagrama entidad relación</a>
+      <a href="/m09sincronizacion/mFcliente/m02leePasatiempoJs.html">js / modelo / leePasatiempo.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mCbdeploy.html">Diagrama de despliegue</a>
+      <a href="/m09sincronizacion/mFcliente/m03accesoBdJs.html">js / dao / accesoBd.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mDinstrucciones.html">Instrucciones</a>
+      <a href="/m09sincronizacion/mFcliente/m04generaHtmlDePasatiemposJs.html">js / generaHtmlDePasatiempos.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mEarchivos.html">Archivos</a>
+      <a href="/m09sincronizacion/mFcliente/m05indexHtml.html">index.html</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mFcliente/">Funcionalidad del cliente</a>
+      <a href="/m09sincronizacion/mFcliente/m06pasatiempoConsultaNoEliminadosJs.html">js / dao / pasatiempoConsultaNoEliminados.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mGconfiguracion/">Archivos de configuración</a>
+      <a href="/m09sincronizacion/mFcliente/m07pasatiempoConsultaTodosJs.html">js / dao / pasatiempoConsultaTodos.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mHservidor/">Listados y sincronización</a>
+      <a href="/m09sincronizacion/mFcliente/m08pasatiemposReemplazaJs.html">js / dao / pasatiemposReemplaza.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mIlibjs/">librería de JavaScript</a>
+      <a href="/m09sincronizacion/mFcliente/m09agregaHtml.html">agrega.html</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mJlibphp/">librería de PHP</a>
+      <a href="/m09sincronizacion/mFcliente/m10pasatiempoAgregaJs.html">js / dao / pasatiempoAgrega.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mKresumen.html">Resumen</a>
+      <a href="/m09sincronizacion/mFcliente/m11modificaHtml.html">modifica.html</a>
      </p>
     </li>
-   </ol>
+    <li>
+     <p>
+      <a href="/m09sincronizacion/mFcliente/m12pasatiempoBuscaJs.html">js / dao / pasatiempoBusca.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m09sincronizacion/mFcliente/m13pasatiempoModificaJs.html" class="actual">js / dao / pasatiempoModifica.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m09sincronizacion/mFcliente/m14pasatiempoEliminaJs.html">js / dao / pasatiempoElimina.js</a>
+     </p>
+    </li>
+   </ol><p>
+    <a class="paginaSiguiente" href="/m09sincronizacion/mGconfiguracion/index.html"
+      title="G. Archivos de configuración">▼</a>
+   </p>
 </nav>
  <script>
  registraServiceWorker("/sw.js")
@@ -633,9 +665,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m08push/mNlibphp/mSservicioPhp.html"
+ let urlAnterior = "/m09sincronizacion/mFcliente/m12pasatiempoBuscaJs.html"
  /**@type {string} */
- let urlSiguiente = "/m09sincronizacion/mAintro.html"
+ let urlSiguiente = "/m09sincronizacion/mFcliente/m14pasatiempoEliminaJs.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

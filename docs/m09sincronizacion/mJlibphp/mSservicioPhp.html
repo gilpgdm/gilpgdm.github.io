@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>9. Sincronización - GilPG DM</title>
- <meta name="description" content="Contenido de la lección «Sincronización».">
+ <title>6. lib / php / servicio.php - GilPG DM</title>
+ <meta name="description" content="Código de «lib/php/servicio.php».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -459,78 +459,110 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m08push/mNlibphp/mSservicioPhp.html" title="5. lib / php / servicio.php">◀</a>
- <a class="siguiente" href="/m09sincronizacion/mAintro.html" title="A. Introducción">▶</a>
-   <h1 class="leccion">9. Sincronización</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
-    </p>
-   </div>
-<div class="lectura">
- <nav>
-  <h1>Contenido</h1>
-  
-   <ol type="A">
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mAintro.html">Introducción</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mBder.html">Diagrama entidad relación</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mCbdeploy.html">Diagrama de despliegue</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mDinstrucciones.html">Instrucciones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mEarchivos.html">Archivos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mFcliente/">Funcionalidad del cliente</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mGconfiguracion/">Archivos de configuración</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mHservidor/">Listados y sincronización</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mIlibjs/">librería de JavaScript</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mJlibphp/">librería de PHP</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mKresumen.html">Resumen</a>
-     </p>
-    </li>
-   </ol>
- </nav>
-</div>
+ <a class="anterior" href="/m09sincronizacion/mJlibphp/mVrecibeFetchAllPhp.html" title="5. lib / php / recibeFetchAll.php">◀</a>
+ <a class="siguiente" href="/m09sincronizacion/mJlibphp/mWvalidaPhp.html" title="7. lib / php / valida.php">▶</a>
+   <h1 >6. lib / php / servicio.php</h1><muestra-codigo>
+ <div>
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;Declara el espacio de nombre de</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;la clase. Es como la carpeta,</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;pero desde el punto de vista
+    del</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;código.</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #0000ff;">namespace</span> lib\php;</div><br>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;Clase base para implementar</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;servicios. Las clases derivadas</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;deben extender esta clase y</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;proporcionar el código para la</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;función llamada implementacion.</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #0000ff;">abstract</span> <span
+     style="color: #0000ff;">class</span> Servicio</div>
+  <div>{</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">abstract</span> <span
+     style="color: #0000ff;">protected</span></div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">function</span> implementacion();</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">public</span> <span
+     style="color: #0000ff;">function</span> ejecuta()</div>
+  <div>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">try</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">$this</span>-&gt;usaUtf8();</div>
+  <div>&nbsp;&nbsp;&nbsp;$resultado =</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">$this</span>-&gt;implementacion();</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">$this</span>-&gt;devuelveJson($resultado);</div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #0000ff;">catch</span> (\Throwable $t)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">$this</span>-&gt;devuelveError($t);</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">private</span> <span
+     style="color: #0000ff;">function</span> usaUtf8()</div>
+  <div>&nbsp;{</div>
+  <div>&nbsp;&nbsp;mb_internal_encoding(<span
+     style="color: #a31515;">"UTF-8"</span>);</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">private</span> <span
+     style="color: #0000ff;">function</span> devuelveJson(</div>
+  <div>&nbsp;&nbsp;$resultado</div>
+  <div>&nbsp;)&nbsp;{</div>
+  <div>&nbsp;&nbsp;header(<span
+     style="color: #a31515;">"Content-Type: "</span></div>
+  <div>&nbsp;&nbsp;&nbsp;. <span
+     style="color: #a31515;">"application/json"</span>);</div>
+  <div>&nbsp;&nbsp;echo json_encode($resultado);</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">private</span> <span
+     style="color: #0000ff;">function</span> devuelveError(</div>
+  <div>&nbsp;&nbsp;\Throwable $t</div>
+  <div>&nbsp;)&nbsp;{</div>
+  <div>&nbsp;&nbsp;header(</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #a31515;">"Content-Type: text/plain"</span></div>
+  <div>&nbsp;&nbsp;);</div>
+  <div>&nbsp;&nbsp;http_response_code(<span
+     style="color: #098658;">500</span>);</div>
+  <div>&nbsp;&nbsp;echo $t-&gt;getMessage();</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+ </div>
+</muestra-codigo>
  <footer>
  <p>
   <a rel="license"
@@ -561,67 +593,65 @@
     <a href="/index.html"
       data-logo="true">GilPG DM</a>
    </p><p>
-    <a class="paginaAnterior" href="/m08push/mNlibphp/mSservicioPhp.html"
-      title="5. lib / php / servicio.php">▲</a>
+    <a class="paginaAnterior" href="/m09sincronizacion/mIlibjs/m62validaUuidNoVacioJs.html"
+      title="19. lib / js / validaUuidNoVacio.js">▲</a>
    </p>
-     <h1><a href="/m09sincronizacion/index.html" class="actual">9. Sincronización</a></h1>
-   <ol type="A">
+     <h1><a href="/m09sincronizacion/mJlibphp/index.html">J. librería de PHP</a></h1>
+   <ol type="1">
     <li>
      <p>
-      <a href="/m09sincronizacion/mAintro.html">Introducción</a>
+      <a href="/m09sincronizacion/mJlibphp/mQautoloadPhp.html">lib / php / autoload.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mBder.html">Diagrama entidad relación</a>
+      <a href="/m09sincronizacion/mJlibphp/m30copiaCamposPhp.html">lib / php / copiaCampos.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mCbdeploy.html">Diagrama de despliegue</a>
+      <a href="/m09sincronizacion/mJlibphp/m31leeJsonPhp.html">lib / php / leeJson.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mDinstrucciones.html">Instrucciones</a>
+      <a href="/m09sincronizacion/mJlibphp/mRpathPhp.html">lib / php / path.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mEarchivos.html">Archivos</a>
+      <a href="/m09sincronizacion/mJlibphp/mVrecibeFetchAllPhp.html">lib / php / recibeFetchAll.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mFcliente/">Funcionalidad del cliente</a>
+      <a href="/m09sincronizacion/mJlibphp/mSservicioPhp.html" class="actual">lib / php / servicio.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mGconfiguracion/">Archivos de configuración</a>
+      <a href="/m09sincronizacion/mJlibphp/mWvalidaPhp.html">lib / php / valida.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mHservidor/">Listados y sincronización</a>
+      <a href="/m09sincronizacion/mJlibphp/mXvalidaNombreNoVacioPhp.html">lib / php / validaNombreNoVacio.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mIlibjs/">librería de JavaScript</a>
+      <a href="/m09sincronizacion/mJlibphp/mYvalidaTextoNoVacioPhp.html">lib / php / validaTextoNoVacio.php</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mJlibphp/">librería de PHP</a>
+      <a href="/m09sincronizacion/mJlibphp/mYvalidaUuidNoVacioPhp.html">lib / php / validaUuidNoVacio.php</a>
      </p>
     </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mKresumen.html">Resumen</a>
-     </p>
-    </li>
-   </ol>
+   </ol><p>
+    <a class="paginaSiguiente" href="/m09sincronizacion/mKresumen.html"
+      title="K. Resumen">▼</a>
+   </p>
 </nav>
  <script>
  registraServiceWorker("/sw.js")
@@ -633,9 +663,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m08push/mNlibphp/mSservicioPhp.html"
+ let urlAnterior = "/m09sincronizacion/mJlibphp/mVrecibeFetchAllPhp.html"
  /**@type {string} */
- let urlSiguiente = "/m09sincronizacion/mAintro.html"
+ let urlSiguiente = "/m09sincronizacion/mJlibphp/mWvalidaPhp.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

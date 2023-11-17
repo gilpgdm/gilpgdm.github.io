@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>9. Sincronización - GilPG DM</title>
- <meta name="description" content="Contenido de la lección «Sincronización».">
+ <title>1. lib / js / bdConsulta.js - GilPG DM</title>
+ <meta name="description" content="Código de «lib/js/bdConsulta.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -459,78 +459,115 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m08push/mNlibphp/mSservicioPhp.html" title="5. lib / php / servicio.php">◀</a>
- <a class="siguiente" href="/m09sincronizacion/mAintro.html" title="A. Introducción">▶</a>
-   <h1 class="leccion">9. Sincronización</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
-    </p>
-   </div>
-<div class="lectura">
- <nav>
-  <h1>Contenido</h1>
-  
-   <ol type="A">
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mAintro.html">Introducción</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mBder.html">Diagrama entidad relación</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mCbdeploy.html">Diagrama de despliegue</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mDinstrucciones.html">Instrucciones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mEarchivos.html">Archivos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mFcliente/">Funcionalidad del cliente</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mGconfiguracion/">Archivos de configuración</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mHservidor/">Listados y sincronización</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mIlibjs/">librería de JavaScript</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mJlibphp/">librería de PHP</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/mKresumen.html">Resumen</a>
-     </p>
-    </li>
-   </ol>
- </nav>
-</div>
+ <a class="anterior" href="/m09sincronizacion/mIlibjs/index.html" title="I. librería de JavaScript">◀</a>
+ <a class="siguiente" href="/m09sincronizacion/mIlibjs/m32bdEjecutaJs.html" title="2. lib / js / bdEjecuta.js">▶</a>
+   <h1 >1. lib / js / bdConsulta.js</h1><muestra-codigo>
+ <div>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{Promise&lt;IDBDatabase&gt;}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">bd</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string[]}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">entidades</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ (</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*</span><span
+     style="color: #267f99;">&nbsp;&nbsp;tx:</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*</span><span
+     style="color: #267f99;">&nbsp;&nbsp;&nbsp;IDBTransaction,</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*</span><span
+     style="color: #267f99;">&nbsp;&nbsp;resolve:</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*</span><span
+     style="color: #267f99;">&nbsp;&nbsp;&nbsp;(value: any)=&gt;void</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*</span><span
+     style="color: #267f99;">&nbsp;&nbsp;) =&gt; void }</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">funcion</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">bdConsulta</span>(</div>
+  <div>&nbsp;<span
+     style="color: #001080;">bd</span>, <span
+     style="color: #001080;">entidades</span>, <span
+     style="color: #795e26;">funcion</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">con</span> <span
+     style="color: #000000;">=</span> <span
+     style="color: #af00db;">await</span> <span
+     style="color: #001080;">bd</span></div>
+  <div>&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Promise</span>(</div>
+  <div>&nbsp;&nbsp;(<span
+     style="color: #795e26;">resolve</span>, <span
+     style="color: #795e26;">reject</span>) <span
+     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;Inicia una transacción de</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;solo lectura.
+    */</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">tx</span> <span
+     style="color: #000000;">=</span> <span
+     style="color: #0070c1;">con</span>.<span
+     style="color: #795e26;">transaction</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">entidades</span>, <span
+     style="color: #a31515;">"readonly"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;Al terminar con error ejecuta</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;la función reject.
+    */</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">tx</span>.<span
+     style="color: #795e26;">onerror</span> <span
+     style="color: #000000;">=</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;() <span
+     style="color: #0000ff;">=&gt;</span> <span
+     style="color: #795e26;">reject</span>(<span
+     style="color: #0070c1;">tx</span>.<span
+     style="color: #0070c1;">error</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;Estas son las operaciones de</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;la transacción.
+    */</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">funcion</span>(<span
+     style="color: #0070c1;">tx</span>, <span
+     style="color: #795e26;">resolve</span>)</div>
+  <div>&nbsp;&nbsp;})</div>
+  <div>}</div><br>
+ </div>
+</muestra-codigo>
  <footer>
  <p>
   <a rel="license"
@@ -561,67 +598,110 @@
     <a href="/index.html"
       data-logo="true">GilPG DM</a>
    </p><p>
-    <a class="paginaAnterior" href="/m08push/mNlibphp/mSservicioPhp.html"
-      title="5. lib / php / servicio.php">▲</a>
+    <a class="paginaAnterior" href="/m09sincronizacion/mHservidor/m11pasatiempoModificaPhp.html"
+      title="8. srv / dao / pasatiempoModifica.php">▲</a>
    </p>
-     <h1><a href="/m09sincronizacion/index.html" class="actual">9. Sincronización</a></h1>
-   <ol type="A">
+     <h1><a href="/m09sincronizacion/mIlibjs/index.html">I. librería de JavaScript</a></h1>
+   <ol type="1">
     <li>
      <p>
-      <a href="/m09sincronizacion/mAintro.html">Introducción</a>
+      <a href="/m09sincronizacion/mIlibjs/m35bdConsultaJs.html" class="actual">lib / js / bdConsulta.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mBder.html">Diagrama entidad relación</a>
+      <a href="/m09sincronizacion/mIlibjs/m32bdEjecutaJs.html">lib / js / bdEjecuta.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mCbdeploy.html">Diagrama de despliegue</a>
+      <a href="/m09sincronizacion/mIlibjs/m48confirmaEliminarJs.html">lib / js / confirmaEliminar.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mDinstrucciones.html">Instrucciones</a>
+      <a href="/m09sincronizacion/mIlibjs/m49ejecutaJs.html">lib / js / ejecuta.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mEarchivos.html">Archivos</a>
+      <a href="/m09sincronizacion/mIlibjs/m31enviaJsonJs.html">lib / js / enviaJson.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mFcliente/">Funcionalidad del cliente</a>
+      <a href="/m09sincronizacion/mIlibjs/m50escuchaEventosAgregaJs.html">lib / js / escuchaEventosAgrega.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mGconfiguracion/">Archivos de configuración</a>
+      <a href="/m09sincronizacion/mIlibjs/m51escuchaEventosModificaJs.html">lib / js / escuchaEventosModifica.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mHservidor/">Listados y sincronización</a>
+      <a href="/m09sincronizacion/mIlibjs/m30htmlentitiesJs.html">lib / js / htmlentities.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mIlibjs/">librería de JavaScript</a>
+      <a href="/m09sincronizacion/mIlibjs/m52MetodoHttpJs.html">lib / js / MetodoHttp.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mJlibphp/">librería de PHP</a>
+      <a href="/m09sincronizacion/mIlibjs/m53muestraErrorJs.html">lib / js / muestraError.js</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09sincronizacion/mKresumen.html">Resumen</a>
+      <a href="/m09sincronizacion/mIlibjs/m55muestraRenderJs.html">lib / js / muestraRender.js</a>
      </p>
     </li>
-   </ol>
+    <li>
+     <p>
+      <a href="/m09sincronizacion/mIlibjs/m56muestraTextoJs.html">lib / js / muestraTexto.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m09sincronizacion/mIlibjs/m57parametrosDePaginaJs.html">lib / js / parametrosDePagina.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m09sincronizacion/mIlibjs/m39registraServiceWorkerSiEsSoportadoJs.html">lib / js / registraServiceWorkerSiEsSoportado.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m09sincronizacion/mIlibjs/m58saltaAIndexJs.html">lib / js / saltaAIndex.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m09sincronizacion/mIlibjs/m59validaJs.html">lib / js / valida.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m09sincronizacion/mIlibjs/m60validaNombreNoVacioJs.html">lib / js / validaNombreNoVacio.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m09sincronizacion/mIlibjs/m61validaTextoNoVacioJs.html">lib / js / validaTextoNoVacio.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m09sincronizacion/mIlibjs/m62validaUuidNoVacioJs.html">lib / js / validaUuidNoVacio.js</a>
+     </p>
+    </li>
+   </ol><p>
+    <a class="paginaSiguiente" href="/m09sincronizacion/mJlibphp/index.html"
+      title="J. librería de PHP">▼</a>
+   </p>
 </nav>
  <script>
  registraServiceWorker("/sw.js")
@@ -633,9 +713,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m08push/mNlibphp/mSservicioPhp.html"
+ let urlAnterior = "/m09sincronizacion/mIlibjs/index.html"
  /**@type {string} */
- let urlSiguiente = "/m09sincronizacion/mAintro.html"
+ let urlSiguiente = "/m09sincronizacion/mIlibjs/m32bdEjecutaJs.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
