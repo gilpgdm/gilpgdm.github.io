@@ -1,0 +1,103 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #001080;">htmlentities</span></div>
+  <div>}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../lib/js/htmlentities.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #001080;">Pasatiempo</span></div>
+  <div>}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./modelo/Pasatiempo.js"</span></div><br>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{Pasatiempo[]</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*</span><span
+     style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">pasatiempos</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">function</span></div>
+  <div>&nbsp;<span
+     style="color: #795e26;">generaHtmlDePasatiempos</span>(</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">pasatiempos</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">let</span> <span
+     style="color: #001080;">render</span> = <span
+     style="color: #a31515;">""</span></div>
+  <div>&nbsp;<span
+     style="color: #af00db;">for</span> (<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">modelo</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">of</span> <span
+     style="color: #001080;">pasatiempos</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">nombre</span> =</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">htmlentities</span>(<span
+     style="color: #0070c1;">modelo</span>.<span
+     style="color: #001080;">nombre</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">searchParams</span> =</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">URLSearchParams</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;[[<span
+     style="color: #a31515;">"uuid"</span>, <span
+     style="color: #0070c1;">modelo</span>.<span
+     style="color: #001080;">uuid</span>]])</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">params</span> = <span
+     style="color: #795e26;">htmlentities</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">searchParams</span>.<span
+     style="color: #795e26;">toString</span>())</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">render</span> += <span
+     style="color: #008000;">/*&nbsp;HTML */</span></div>
+  <div>&nbsp;&nbsp;&nbsp;`<span
+     style="color: #800000;">&lt;li&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;p&gt;</span></div>
+  <div><span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"modifica.html?</span><span
+     style="color: #0000ff;">${</span><span
+     style="color: #0070c1;">params</span><span
+     style="color: #0000ff;">}</span><span
+     style="color: #0000ff;">"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">${</span><span
+     style="color: #0070c1;">nombre</span><span
+     style="color: #800000;">}&lt;/a&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/p&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/li&gt;</span>`</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">render</span></div>
+  <div>}</div><br>
+ </div>
+</muestra-codigo>

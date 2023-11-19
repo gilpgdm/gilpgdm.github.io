@@ -1,0 +1,113 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;Clase base para implementar</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;servicios. Las clases derivadas</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;deben extender esta clase y</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;proporcionar el código para la</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;función llamada implementacion.</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #0000ff;">abstract</span> <span
+     style="color: #0000ff;">class</span> <span
+     style="color: #267f99;">Servicio</span></div>
+  <div>{</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">abstract</span> <span
+     style="color: #0000ff;">protected</span></div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">implementacion</span>();</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">public</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">ejecuta</span>()</div>
+  <div>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">try</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #795e26;">usaUtf8</span>();</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">$resultado</span> =</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #795e26;">implementacion</span>();</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #795e26;">devuelveJson</span>(<span
+     style="color: #001080;">$resultado</span>);</div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">catch</span> (\<span
+     style="color: #267f99;">Throwable</span> <span
+     style="color: #001080;">$t</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #795e26;">devuelveError</span>(<span
+     style="color: #001080;">$t</span>);</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">private</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">usaUtf8</span>()</div>
+  <div>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">mb_internal_encoding</span>(<span
+     style="color: #a31515;">"UTF-8"</span>);</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">private</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">devuelveJson</span>(</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">$resultado</span></div>
+  <div>&nbsp;)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">header</span>(<span
+     style="color: #a31515;">"Content-Type: "</span></div>
+  <div>&nbsp;&nbsp;&nbsp;. <span
+     style="color: #a31515;">"application/json"</span>);</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">echo</span> <span
+     style="color: #795e26;">json_encode</span>(<span
+     style="color: #001080;">$resultado</span>);</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">private</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">devuelveError</span>(</div>
+  <div>&nbsp;&nbsp;\<span
+     style="color: #267f99;">Throwable</span> <span
+     style="color: #001080;">$t</span></div>
+  <div>&nbsp;)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">header</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #a31515;">"Content-Type: text/plain"</span></div>
+  <div>&nbsp;&nbsp;);</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">http_response_code</span>(<span
+     style="color: #098658;">500</span>);</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">echo</span> <span
+     style="color: #001080;">$t</span>-&gt;<span
+     style="color: #795e26;">getMessage</span>();</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+ </div>
+</muestra-codigo>

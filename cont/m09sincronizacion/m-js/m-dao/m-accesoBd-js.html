@@ -1,0 +1,112 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">ALMACEN_PASATIEMPO</span> =</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"Pasatiempo"</span></div>
+  <div><span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">BD_NOMBRE</span> = <span
+     style="color: #a31515;">"sincronizacion"</span></div>
+  <div><span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">BD_VERSION</span> = <span
+     style="color: #098658;">1</span></div><br>
+  <div><span
+     style="color: #008000;">/**&nbsp;</span><span
+     style="color: #0000ff;">@type</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{Promise&lt;IDBDatabase&gt;}</span><span
+     style="color: #008000;"> */</span></div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">accesoBd</span> =</div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Promise</span>((<span
+     style="color: #795e26;">resolve</span>, <span
+     style="color: #795e26;">reject</span>) <span
+     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">solicitud</span> = <span
+     style="color: #001080;">indexedDB</span>.<span
+     style="color: #795e26;">open</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">BD_NOMBRE</span>, <span
+     style="color: #0070c1;">BD_VERSION</span>)</div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0070c1;">solicitud</span>.<span
+     style="color: #795e26;">onerror</span> =</div>
+  <div>&nbsp;&nbsp;&nbsp;() <span
+     style="color: #0000ff;">=&gt;</span> <span
+     style="color: #795e26;">reject</span>(<span
+     style="color: #0070c1;">solicitud</span>.<span
+     style="color: #0070c1;">error</span>)</div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0070c1;">solicitud</span>.<span
+     style="color: #795e26;">onsuccess</span> =</div>
+  <div>&nbsp;&nbsp;&nbsp;() <span
+     style="color: #0000ff;">=&gt;</span> <span
+     style="color: #795e26;">resolve</span>(<span
+     style="color: #0070c1;">solicitud</span>.<span
+     style="color: #0070c1;">result</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;Automáticamente se inicia una</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;transacción para cambio
+    de</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;versión. */</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0070c1;">solicitud</span>.<span
+     style="color: #795e26;">onupgradeneeded</span> =</div>
+  <div>&nbsp;&nbsp;&nbsp;() <span
+     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">bd</span> = <span
+     style="color: #0070c1;">solicitud</span>.<span
+     style="color: #0070c1;">result</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;Como hay cambio de versión,</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;borra el
+    almacén si es que</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;existe.
+    */</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">bd</span>.<span
+     style="color: #0070c1;">objectStoreNames</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span
+     style="color: #795e26;">contains</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">ALMACEN_PASATIEMPO</span>))&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">bd</span>.<span
+     style="color: #795e26;">deleteObjectStore</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">ALMACEN_PASATIEMPO</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;Crea el almacén "Pasatiempo"</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;con el campo
+    llave "uuid".*/</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">bd</span>.<span
+     style="color: #795e26;">createObjectStore</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">ALMACEN_PASATIEMPO</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <span
+     style="color: #001080;">keyPath:</span> <span
+     style="color: #a31515;">"uuid"</span> })</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;})</div>
+ </div>
+</muestra-codigo>

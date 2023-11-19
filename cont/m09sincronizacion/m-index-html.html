@@ -1,0 +1,321 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #800000;">&lt;!DOCTYPE</span> <span
+     style="color: #e50000;">html</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div><span
+     style="color: #800000;">&lt;html</span> <span
+     style="color: #e50000;">lang</span>=<span
+     style="color: #0000ff;">"es"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div><span
+     style="color: #800000;">&lt;head&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;meta</span> <span
+     style="color: #e50000;">charset</span>=<span
+     style="color: #0000ff;">"UTF-8"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;meta</span> <span
+     style="color: #e50000;">name</span>=<span
+     style="color: #0000ff;">"viewport"</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">content</span>=<span
+     style="color: #0000ff;">"width=device-width"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;title&gt;</span>Sincronizacion<span
+     style="color: #800000;">&lt;/title&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;script</span> <span
+     style="color: #e50000;">type</span>=<span
+     style="color: #0000ff;">"module"</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">src</span>=<span
+     style="color: #0000ff;">"js/configura.js"</span><span
+     style="color: #800000;">&gt;&lt;/script&gt;</span></div>
+  <div><span
+     style="color: #800000;">&lt;/head&gt;</span></div><br>
+  <div><span
+     style="color: #800000;">&lt;body&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;h1&gt;</span>Sincronizacion<span
+     style="color: #800000;">&lt;/h1&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;p&gt;</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"agrega.html"</span><span
+     style="color: #800000;">&gt;</span>Agregar<span
+     style="color: #800000;">&lt;/a&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;/p&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;ul</span> <span
+     style="color: #e50000;">id</span>=<span
+     style="color: #0000ff;">"lista"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;progress</span> <span
+     style="color: #e50000;">max</span>=<span
+     style="color: #0000ff;">"100"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;Cargando<span
+     style="color: #0000ff;">&amp;hellip;</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/progress&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;/ul&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;script</span> <span
+     style="color: #e50000;">type</span>=<span
+     style="color: #0000ff;">"module"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">muestraError</span></div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/muestraError.js"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">enviaJson</span></div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/enviaJson.js"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">MetodoHttp</span></div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/MetodoHttp.js"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">Pasatiempo</span></div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./js/modelo/Pasatiempo.js"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">leePasatiempo</span></div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./js/modelo/leePasatiempo.js"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">generaHtmlDePasatiempos</span></div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./js/generaHtmlDePasatiempos.js"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">pasatiempoConsultaNoEliminados</span></div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./js/dao/pasatiempoConsultaNoEliminados.js"</span>
+  </div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">pasatiempoConsultaTodos</span></div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./js/dao/pasatiempoConsultaTodos.js"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">pasatiemposReemplaza</span></div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./js/dao/pasatiemposReemplaza.js"</span></div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;Cada 20 segundos
+    (2000</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;milisegundos) después de
+    la</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;última sincronización,
+    los</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;datos se envían al
+    servidor</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;para volver a
+    sincronizarse</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;con los datos del
+    servidor.</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*/</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">FRECUENCIA_DE_SINCRONIZACION</span> =</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #098658;">20000</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">preparaVista</span>()</div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">preparaVista</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">try</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/**&nbsp;</span><span
+     style="color: #0000ff;">@type</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{Pasatiempo[]}</span><span
+     style="color: #008000;"> */</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">pasatiempos</span> = <span
+     style="color: #af00db;">await</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">pasatiempoConsultaNoEliminados</span>()</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">render</span> =</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">generaHtmlDePasatiempos</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">pasatiempos</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">lista</span>.<span
+     style="color: #001080;">innerHTML</span> = <span
+     style="color: #0070c1;">render</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">sincroniza</span>()</div>
+  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">e</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">muestraError</span>(<span
+     style="color: #001080;">e</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">sincroniza</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">try</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">navigator</span>.<span
+     style="color: #001080;">onLine</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">todos</span> = <span
+     style="color: #af00db;">await</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">pasatiempoConsultaTodos</span>()</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">datosNuevos</span> =</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">enviaJson</span>(<span
+     style="color: #0070c1;">todos</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">MetodoHttp</span>.<span
+     style="color: #0070c1;">POST</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #a31515;">"srv/SrvSincro.php"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!<span
+     style="color: #267f99;">Array</span>.<span
+     style="color: #795e26;">isArray</span>(<span
+     style="color: #0070c1;">datosNuevos</span>))</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #a31515;">"No se recibió un arreglo."</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/**&nbsp;</span><span
+     style="color: #0000ff;">@type</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{Pasatiempo[]}</span><span
+     style="color: #008000;"> */</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">pasatiempos</span> = []</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">for</span> (<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">objeto</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">of</span> <span
+     style="color: #0070c1;">datosNuevos</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">modelo</span> =</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">leePasatiempo</span>(<span
+     style="color: #0070c1;">objeto</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">pasatiempos</span>.<span
+     style="color: #795e26;">push</span>(<span
+     style="color: #0070c1;">modelo</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">pasatiemposReemplaza</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">datosNuevos</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">render</span> =</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">generaHtmlDePasatiempos</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">pasatiempos</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">lista</span>.<span
+     style="color: #001080;">innerHTML</span> = <span
+     style="color: #0070c1;">render</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">e</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">muestraError</span>(<span
+     style="color: #001080;">e</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">finally</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;Espera un poco y lanza otra</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;sincronización.
+    */</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">setTimeout</span>(<span
+     style="color: #795e26;">sincroniza</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">FRECUENCIA_DE_SINCRONIZACION</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;/script&gt;</span></div>
+  <div><span
+     style="color: #800000;">&lt;/body&gt;</span></div><br>
+  <div><span
+     style="color: #800000;">&lt;/html&gt;</span></div>
+ </div>
+</muestra-codigo>

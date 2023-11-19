@@ -1,0 +1,74 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@template</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ HTMLFormElement &amp;</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*</span><span
+     style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{value:string}&nbsp;}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">E</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{E}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">elemento</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{any}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">valor</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">muestraTexto</span>(</div>
+  <div>&nbsp;<span
+     style="color: #001080;">elemento</span>, <span
+     style="color: #001080;">valor</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">typeof</span> <span
+     style="color: #001080;">valor</span> === <span
+     style="color: #a31515;">"string"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">elemento</span>.<span
+     style="color: #001080;">value</span> = <span
+     style="color: #001080;">valor</span></div>
+  <div>&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">name</span> = <span
+     style="color: #001080;">elemento</span>.<span
+     style="color: #001080;">name</span> === <span
+     style="color: #a31515;">""</span></div>
+  <div>&nbsp;&nbsp;&nbsp;? <span
+     style="color: #001080;">elemento</span>.<span
+     style="color: #001080;">id</span></div>
+  <div>&nbsp;&nbsp;&nbsp;: <span
+     style="color: #001080;">elemento</span>.<span
+     style="color: #001080;">name</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(<span
+     style="color: #a31515;">"El valor de "</span></div>
+  <div>&nbsp;&nbsp;&nbsp;+ <span
+     style="color: #0070c1;">name</span> +</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #a31515;">" debe ser un texto y no lo es."</span></div>
+  <div>&nbsp;&nbsp;)</div>
+  <div>&nbsp;}</div>
+  <div>}</div>
+ </div>
+</muestra-codigo>
