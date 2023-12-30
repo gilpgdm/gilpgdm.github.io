@@ -1,0 +1,225 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #800000;">&lt;!DOCTYPE</span> <span
+     style="color: #e50000;">html</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div><span
+     style="color: #800000;">&lt;html</span> <span
+     style="color: #e50000;">lang</span>=<span
+     style="color: #0000ff;">"es"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div><span
+     style="color: #800000;">&lt;head&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;meta</span> <span
+     style="color: #e50000;">charset</span>=<span
+     style="color: #0000ff;">"UTF-8"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;meta</span> <span
+     style="color: #e50000;">name</span>=<span
+     style="color: #0000ff;">"viewport"</span> <span
+     style="color: #e50000;">content</span>=<span
+     style="color: #0000ff;">"width=device-width"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;title&gt;</span>PWA Básica<span
+     style="color: #800000;">&lt;/title&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">&lt;!-- Resumen para los motores de búsqueda.
+    --&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;meta</span> <span
+     style="color: #e50000;">name</span>=<span
+     style="color: #0000ff;">"description"</span> <span
+     style="color: #e50000;">content</span>=<span
+     style="color: #0000ff;">"Ejemplo de PWA"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">&lt;!-- Color de la barra de navegación de Chrome
+    en dispositivos móviles. --&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;meta</span> <span
+     style="color: #e50000;">name</span>=<span
+     style="color: #0000ff;">"theme-color"</span> <span
+     style="color: #e50000;">content</span>=<span
+     style="color: #0000ff;">"#cbc693"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">&lt;!-- Ícono para la página web, que normalmente
+    se pone en la raíz del sitio.</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;Puede ser diferente para cada página.
+    --&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;link</span> <span
+     style="color: #e50000;">rel</span>=<span
+     style="color: #0000ff;">"icon"</span> <span
+     style="color: #e50000;">sizes</span>=<span
+     style="color: #0000ff;">"32x32"</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"favicon.ico"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">&lt;!-- Configuración de la PWA para Chrome y Edge.
+    Debe ponerse en todas las</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;páginas. --&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;link</span> <span
+     style="color: #e50000;">rel</span>=<span
+     style="color: #0000ff;">"manifest"</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"site.webmanifest"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">&lt;!-- Configuración para Web Clip en Safari
+    (iOS). Solo se pone en la</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;página principal. --&gt;</span></div>
+  <br>
+  <div>&nbsp;<span
+     style="color: #008000;">&lt;!-- Indica que este sitio se puede instalar en
+    iOS para usarse sin abrir el</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;navegador. --&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;meta</span> <span
+     style="color: #e50000;">name</span>=<span
+     style="color: #0000ff;">"apple-mobile-web-app-capable"</span> <span
+     style="color: #e50000;">content</span>=<span
+     style="color: #0000ff;">"yes"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">&lt;!-- Título en la página de aplicaciones de iOS.
+    Debe ser un texto corto de</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;maximo 20 caracteres. Pede llevar
+    espacio, lo que ayuda a distribuír el</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;texto. Debe coincidir con el short_name
+    del archivo "site.webmanifest", --&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;meta</span> <span
+     style="color: #e50000;">name</span>=<span
+     style="color: #0000ff;">"apple-mobile-web-app-title"</span> <span
+     style="color: #e50000;">content</span>=<span
+     style="color: #0000ff;">"PWA"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">&lt;!-- Indica que la barra de estado cuando no se
+    abre la app, debe ser como</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;las demás app. --&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;meta</span> <span
+     style="color: #e50000;">name</span>=<span
+     style="color: #0000ff;">"apple-mobile-web-app-status-bar-style"</span>
+   <span
+     style="color: #e50000;">content</span>=<span
+     style="color: #0000ff;">"default"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">&lt;!-- Íconos de la app en distintas
+    resoluciones--&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;link</span> <span
+     style="color: #e50000;">rel</span>=<span
+     style="color: #0000ff;">"apple-touch-icon"</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"img/maskable_icon.png"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;link</span> <span
+     style="color: #e50000;">rel</span>=<span
+     style="color: #0000ff;">"apple-touch-icon"</span> <span
+     style="color: #e50000;">sizes</span>=<span
+     style="color: #0000ff;">"48x48"</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"img/maskable_icon_x48.png"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;link</span> <span
+     style="color: #e50000;">rel</span>=<span
+     style="color: #0000ff;">"apple-touch-icon"</span> <span
+     style="color: #e50000;">sizes</span>=<span
+     style="color: #0000ff;">"72x72"</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"img/maskable_icon_x72.png"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;link</span> <span
+     style="color: #e50000;">rel</span>=<span
+     style="color: #0000ff;">"apple-touch-icon"</span> <span
+     style="color: #e50000;">sizes</span>=<span
+     style="color: #0000ff;">"96x96"</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"img/maskable_icon_x96.png"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;link</span> <span
+     style="color: #e50000;">rel</span>=<span
+     style="color: #0000ff;">"apple-touch-icon"</span> <span
+     style="color: #e50000;">sizes</span>=<span
+     style="color: #0000ff;">"128x128"</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"img/maskable_icon_x128.png"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;link</span> <span
+     style="color: #e50000;">rel</span>=<span
+     style="color: #0000ff;">"apple-touch-icon"</span> <span
+     style="color: #e50000;">sizes</span>=<span
+     style="color: #0000ff;">"192x192"</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"img/maskable_icon_x192.png"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;link</span> <span
+     style="color: #e50000;">rel</span>=<span
+     style="color: #0000ff;">"apple-touch-icon"</span> <span
+     style="color: #e50000;">sizes</span>=<span
+     style="color: #0000ff;">"384x384"</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"img/maskable_icon_x384.png"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;link</span> <span
+     style="color: #e50000;">rel</span>=<span
+     style="color: #0000ff;">"apple-touch-icon"</span> <span
+     style="color: #e50000;">sizes</span>=<span
+     style="color: #0000ff;">"512x512"</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"img/maskable_icon_x512.png"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;link</span> <span
+     style="color: #e50000;">rel</span>=<span
+     style="color: #0000ff;">"stylesheet"</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"css/estilos.css"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;script</span> <span
+     style="color: #e50000;">type</span>=<span
+     style="color: #0000ff;">"module"</span> <span
+     style="color: #e50000;">src</span>=<span
+     style="color: #0000ff;">"js/configura.js"</span><span
+     style="color: #800000;">&gt;&lt;/script&gt;</span></div><br>
+  <div><span
+     style="color: #800000;">&lt;/head&gt;</span></div><br>
+  <div><span
+     style="color: #800000;">&lt;body&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;h1&gt;</span>PWA Básica<span
+     style="color: #800000;">&lt;/h1&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;p&gt;</span>Hola mundo.<span
+     style="color: #800000;">&lt;/p&gt;</span></div><br>
+  <div><span
+     style="color: #800000;">&lt;/body&gt;</span></div><br>
+  <div><span
+     style="color: #800000;">&lt;/html&gt;</span></div>
+ </div>
+</muestra-codigo>

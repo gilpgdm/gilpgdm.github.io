@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" sizes="32x32" href="/favicon.ico">
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
-<script src="/js/muestra-codigo.js"></script>
+<script src="/lib/js/muestra-codigo.js"></script>
  <title>Desarrollo multiplataforma - GilPG DM</title>
  <meta name="description" content="Página de inicio de GilPG DM, que introduce conceptos de desarrollo multiplataforma.">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
@@ -145,13 +146,12 @@
  }
 
  figure img {
-  max-width: 100%;
-  max-height: 65vh;
+  width: 100%;
  }
-
+/* 
  figure img.med {
   max-height: 55vh;
- }
+ } */
 
  figcaption {
   font-family: var(--fontMono);
@@ -453,7 +453,7 @@
  }
 </style>
  
- <meta name="apple-mobile-web-app-title" content="ijs">
+ <meta name="apple-mobile-web-app-title" content="GilPG DM">
  <meta name="apple-mobile-web-app-capable" content="yes">
  <meta name="apple-mobile-web-app-status-bar-style" content="default">
  <link rel="apple-touch-icon" href="/img/icono/maskable_icon_x192.png">
@@ -472,13 +472,9 @@
  <link rel="apple-touch-icon" sizes="512x512"
    href="/img/icono/maskable_icon_x512.png">
 </head>
-<body class="xmenu">
+
+<body  class="xmenu">
  <div id="principal">
- <button id="abre" type="button" title="Menú" class="cambiaMenu">
-  &#x2630;
- </button>
- 
- <a class="siguiente" href="/m01pwa/index.html" title="1. Introducción a las PWA">▶</a>
    <h1 class="sitio">Desarrollo multiplataforma</h1>
    <div class="lectura"> 
     <p class="noPrint">
@@ -491,161 +487,87 @@
  <ul>
   <li>
    <p>
+    Este curso trata sobre PWA, que permite crear aplicaciones web de alto
+    rendimiento, que se pueden instalar y comportarse com app casi nativas. </p>
+  </li>
+  <li>
+   <p>
     Haz clic en este enlace
-    <a href="https://pwamd.gilbertopachec2.repl.co/" rel="noopener"
-      target="_blank">https://pwamd.gilbertopachec2.repl.co/</a>
-    para instalar la app pwaamd y quede instalada, pues la lección 3 inserta
-    vistas de dicha app.
+    <a href="https://replit.com/@GilbertoPachec2/pwamd?v=1" rel="noopener"
+      target="_blank">https://replit.com/@GilbertoPachec2/pwamd?v=1</a>.
+    Usa el botón <q>Open in new tab</q>par para instalar la app pwaamd, pues la
+    lección 3 inserta vistas de dicha app.
    </p>
   </li>
   <li>
    <p>
-    Este sitio es continuación de
-    <a href="https://gilpgiti.github.io" rel="noopener"
-      target="_blank">https://gilpgiti.github.io</a>,
-    <a href="https://gilpgijs.github.io" rel="noopener"
-      target="_blank">https://gilpgijs.github.io</a>,
-    <a href="https://gilpgpoojs.github.io" rel="noopener"
-      target="_blank">https://gilpgpoojs.github.io</a>,
-    <a href="https://gilpgihc.github.io" rel="noopener"
-      target="_blank">https://gilpgihc.github.io</a>,
-    <a href="https://gilpgawoas.github.io" rel="noopener"
-      target="_blank">https://gilpgawoas.github.io</a>,
-    <a href="https://gilpgdam.github.io" rel="noopener"
-      target="_blank">https://gilpgdam.github.io</a>
-    y
-    <a href="https://gilpgad.github.io" rel="noopener"
-      target="_blank">https://gilpgad.github.io</a>
-   </p>
-  </li>
-  <li>
-   <p><b>
-     El contenido sobre pruebas se ha desplazado a
-     <a href="https://gilpgawoas.github.io" rel="noopener"
-       target="_blank">https://gilpgawoas.github.io</a>
-    </b>
-   </p>
-  </li>
-  <li>
-   <p>
-    El contenido sobre multmedia se ha desplazado a
-    <a href="https://gilpgihc.github.io" rel="noopener"
-      target="_blank">https://gilpgihc.github.io</a>
-   </p>
-  </li>
-  <li>
-   <p>
-    El contenido sobre aplicaciones nativas y multiplataforma se ha desplazado a
-    <a href="https://gilpgiti.github.io" rel="noopener"
-      target="_blank">https://gilpgiti.github.io</a>
-   </p>
-  </li>
-  <li>
-   <p>
-    Puedes ver el listado de mis sitios educativos en
-    <a href="https://gilpgcl.github.io" target="_blank"
-      rel="noopener">https://gilpgcl.github.io</a>.
+    Utiliza el botón &#x2630; para mostrar el menú de navegación, o el botón
+    ▶ para avanzar a las siguietes paginas. La página
+    <a href="m00instrucciones.html">Instrucciones de navegación</a>
+    te muestra otras opciones para desplazarte por el sitio.
    </p>
   </li>
  </ul>
- <section class="noPrint">
- <h1>Instrucciones de navegación</h1>
- <ul>
-  <li>
-   <p>
-    Los siguientes controles te permitirán navegar por todo el contenido del
-    sitio.
-   </p>
-   <dl>
-    <dt>
-     <button type="button" title="Cierra">&#x2715;</button>
-    </dt>
-    <dd>
-     <p>Oculta el menú de navegación.</p>
-    </dd>
-    <dt>
-     <button type="button" title="Menú">&#x2630;</button>
-    </dt>
-    <dd>
-     <p>Muestra el menú de navegación.</p>
-    </dd>
-    <dt>
-     <span class="anterior" title="Página anterior">◀</span>
-    </dt>
-    <dt>
-     <kbd>←</kbd> (Tecla flecha a la izquierda)
-    </dt>
-    <dt>
-     Swipe hacia la derecha
-    </dt>
-    <dd>
-     <p>Regresa a la página anterior.</p>
-    </dd>
-    <dt>
-     <span class="siguiente" title="Página siguiente">▶</span>
-    </dt>
-    <dt>
-     <kbd>→</kbd> (Tecla flecha a la derecha)
-    </dt>
-    <dt>
-     Swipe hacia la izquierda
-    </dt>
-    <dd>
-     <p>Avanza a la página siguiente.</p>
-    </dd>
-   </dl>
-  </li>
- </ul>
-</section>
  <nav>
   <h1>Lecciones</h1>
   
    <ol type="1">
-    <li>
-     <p>
-      <a href="/m01pwa/">Introducción a las PWA</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m04pwaBasica/">PWA básica</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/">PWA con Material Design</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m04dispositivo/">Acceso al dispositivo</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/">IoT</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m06esp8266/">ESP32</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m07notificaciones.html">Notificaciones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/">Notificaciones push</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/">Sincronización</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m00previos.html">Conocimientos requeridos</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m00instrucciones.html">Instrucciones de navegación</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01pwa/">Introducción a las PWA</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/">PWA básica</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/">PWA con Material Design</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04dispositivo/">Acceso al dispositivo</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m05iot/">IoT</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m06esp8266/">ESP32</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m07notificaciones.html">Notificaciones</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m08push/">Notificaciones push</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/">Sincronización</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
@@ -669,64 +591,86 @@
    Creative Commons Atribución 4.0 Internacional</a>.
  </p>
 </footer>
+ <button id="abre" type="button" title="Menú" class="cambiaMenu">
+  &#x2630;
+ </button>
+ 
+ <a class="siguiente" href="/m00previos.html" title="1. Conocimientos requeridos">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
  <button type="button" title="Cierra" class="cambiaMenu">
   &#x2715;
  </button>
- <p>
-    <a href="/index.html" class="actual"
+ 
+   <p>
+    <a href="/" class="actual"
       data-logo="true">GilPG DM</a>
    </p>
-     <h1>Lecciones</h1>
+   
+   
+   <h1>Lecciones</h1>
+   
    <ol type="1">
-    <li>
-     <p>
-      <a href="/m01pwa/">Introducción a las PWA</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m04pwaBasica/">PWA básica</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03pwaMaterial/">PWA con Material Design</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m04dispositivo/">Acceso al dispositivo</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05iot/">IoT</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m06esp8266/">ESP32</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m07notificaciones.html">Notificaciones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08push/">Notificaciones push</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09sincronizacion/">Sincronización</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m00previos.html">Conocimientos requeridos</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m00instrucciones.html">Instrucciones de navegación</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01pwa/">Introducción a las PWA</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/">PWA básica</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/">PWA con Material Design</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04dispositivo/">Acceso al dispositivo</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m05iot/">IoT</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m06esp8266/">ESP32</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m07notificaciones.html">Notificaciones</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m08push/">Notificaciones push</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/">Sincronización</a>
+    </p>
+   </li>
    </ol>
+   
+ 
 </nav>
  <script>
  registraServiceWorker("/sw.js")
@@ -740,7 +684,7 @@
  /**@type {string} */
  let urlAnterior = ""
  /**@type {string} */
- let urlSiguiente = "/m01pwa/index.html"
+ let urlSiguiente = "/m00previos.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
@@ -750,7 +694,7 @@
  /** @type {number} */
  let dy = 0
  /** @type {boolean} */
-  let scrolling = false
+ let scrolling = false
 
  document.addEventListener("keydown", teclas)
  document.addEventListener("touchstart", iniciaTouch)
@@ -784,10 +728,12 @@
     catch(muestraError)
   }
  }
+
  function muestraError(e) {
   console.error(e)
   alert(e.message)
  }
+
  function cambiaMenu() {
   document.body.classList.toggle(XMENU)
   document.body.classList.toggle(MENU)
@@ -797,6 +743,7 @@
    localStorage.setItem(LOCAL_STORAGE_MENU, XMENU)
   }
  }
+
  /** @param {KeyboardEvent} ev*/
  function teclas(ev) {
   switch (ev.key) {
@@ -808,22 +755,26 @@
     break
   }
  }
+
  function retrocede() {
   if (urlAnterior) {
    location.href = urlAnterior
   }
  }
+
  function avanza() {
   if (urlSiguiente) {
    location.href = urlSiguiente
   }
  }
+
  /** @param {TouchEvent} ev*/
  function iniciaTouch(ev) {
   const toqueInicial = ev.touches[0]
   iniciaX = toqueInicial.clientX
   iniciaY = toqueInicial.clientY
  }
+
  /** @param {TouchEvent} ev*/
  function desplazaTouch(ev) {
   if (iniciaX && iniciaY) {
@@ -847,6 +798,7 @@
    }
   }
  }
+
  function onScroll() {
   dy = scrollY - posY
   posY = scrollY
@@ -855,16 +807,19 @@
   }
   scrolling = true
  }
+
  function avanzaScroll() {
   if (posY === 0) {
    document.body.classList.remove(SCROLL)
-  } else if (dy < 0){
+  } else if (dy < 0) {
    document.body.classList.remove(SCROLL)
-  } else if (dy > 0){
+  } else if (dy > 0) {
    document.body.classList.add(SCROLL)
   }
   scrolling = false
  }
+
 </script>
 </body>
+
 </html>
