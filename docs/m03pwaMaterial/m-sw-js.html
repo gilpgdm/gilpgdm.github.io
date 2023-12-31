@@ -612,9 +612,9 @@
   <div>&nbsp;<span
      style="color: #a31515;">"img/pexels-vadim-b-141496.jpg"</span>,</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"img/pwamd_screenshot.png"</span>,</div>
+     style="color: #a31515;">"img/screenshot_horizontal.png"</span>,</div>
   <div>&nbsp;<span
-     style="color: #a31515;">"img/pwamd_screenshot_vertical.png"</span>,</div>
+     style="color: #a31515;">"img/screenshot_vertical.png"</span>,</div>
   <div>&nbsp;<span
      style="color: #a31515;">"js/configura.js"</span>,</div>
   <div>&nbsp;<span
@@ -901,7 +901,7 @@
      style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">request</span> = <span
      style="color: #001080;">evt</span>.<span
-     style="color: #001080;">request</span></div>
+     style="color: #0070c1;">request</span></div>
   <div>&nbsp;<span
      style="color: #008000;">/*&nbsp;Busca la respuesta a la solicitud en el
     contenido del caché, sin</span></div>
@@ -912,14 +912,15 @@
      style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">response</span> = <span
      style="color: #af00db;">await</span> <span
-     style="color: #001080;">cache</span>.<span
+     style="color: #0070c1;">cache</span>.<span
      style="color: #795e26;">match</span>(<span
-     style="color: #001080;">request</span>,&nbsp;{ <span
-     style="color: #001080;">ignoreSearch:</span> <span
+     style="color: #0070c1;">request</span>,&nbsp;{ <span
+     style="color: #001080;">ignoreSearch</span><span
+     style="color: #001080;">:</span> <span
      style="color: #0000ff;">true</span> })</div>
   <div>&nbsp;<span
      style="color: #af00db;">if</span> (<span
-     style="color: #001080;">response</span> === <span
+     style="color: #0070c1;">response</span> === <span
      style="color: #0000ff;">undefined</span>)&nbsp;{</div>
   <div>&nbsp;&nbsp;<span
      style="color: #008000;">/*&nbsp;Si no la encuentra, empieza a descargar de
@@ -930,7 +931,7 @@
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">return</span> <span
      style="color: #795e26;">fetch</span>(<span
-     style="color: #001080;">request</span>)</div>
+     style="color: #0070c1;">request</span>)</div>
   <div>&nbsp;}&nbsp;<span
      style="color: #af00db;">else</span>&nbsp;{</div>
   <div>&nbsp;&nbsp;<span
@@ -938,7 +939,7 @@
     encontrada en el caché.</span></div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">return</span> <span
-     style="color: #001080;">response</span></div>
+     style="color: #0070c1;">response</span></div>
   <div>&nbsp;}</div>
   <div>}</div>
  </div>

@@ -3135,6 +3135,9 @@
      style="color: #e50000;">justify-content</span>: <span
      style="color: #0451a5;">center</span>;</div>
   <div>&nbsp;<span
+     style="color: #e50000;">align-items</span>: <span
+     style="color: #0451a5;">stretch</span>;</div>
+  <div>&nbsp;<span
      style="color: #e50000;">position</span>: <span
      style="color: #0451a5;">fixed</span>;</div>
   <div>&nbsp;<span
@@ -3162,9 +3165,9 @@
      style="color: #0451a5;">block</span>;</div>
   <div>&nbsp;<span
      style="color: #e50000;">flex</span>: <span
-     style="color: #098658;">0</span> <span
-     style="color: #098658;">0</span> <span
-     style="color: #0451a5;">auto</span>;</div>
+     style="color: #098658;">1</span> <span
+     style="color: #098658;">1</span> <span
+     style="color: #098658;">0</span>;</div>
   <div>&nbsp;<span
      style="color: #e50000;">color</span>: <span
      style="color: #795e26;">var</span>(<span
@@ -3225,6 +3228,12 @@
   <div>&nbsp;<span
      style="color: #e50000;">text-align</span>: <span
      style="color: #0451a5;">center</span>;</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">overflow</span>: <span
+     style="color: #0451a5;">hidden</span>;</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">box-sizing</span>: <span
+     style="color: #0451a5;">border-box</span>;</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.md-navigation-bar</span> <span
@@ -5403,6 +5412,9 @@
   <div>&nbsp;<span
      style="color: #e50000;">overflow-x</span>: <span
      style="color: #0451a5;">auto</span>;</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">position</span>: <span
+     style="color: #0451a5;">sticky</span>;</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.md-tab.fixed</span>&nbsp;{</div>
@@ -5420,6 +5432,13 @@
      style="color: #098658;">16px</span>;</div>
   <div>}</div><br>
   <div><span
+     style="color: #800000;">.md-tab.scroll</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">background-color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-surface-container-low</span>);</div>
+  <div>}</div><br>
+  <div><span
      style="color: #800000;">.md-tab</span> <span
      style="color: #800000;">a</span>&nbsp;{</div>
   <div>&nbsp;<span
@@ -5433,13 +5452,10 @@
      style="color: #0451a5;">column</span>;</div>
   <div>&nbsp;<span
      style="color: #e50000;">justify-content</span>: <span
-     style="color: #0451a5;">center</span>;</div>
+     style="color: #0451a5;">start</span>;</div>
   <div>&nbsp;<span
      style="color: #e50000;">align-items</span>: <span
      style="color: #0451a5;">center</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">text-decoration</span>: <span
-     style="color: #0451a5;">none</span>;</div>
   <div>&nbsp;<span
      style="color: #e50000;">color</span>: <span
      style="color: #795e26;">var</span>(<span
@@ -5690,7 +5706,7 @@
      style="color: #0451a5;">center</span>;</div>
   <div>&nbsp;<span
      style="color: #e50000;">background-image</span>:</div>
-  <div>&nbsp;&nbsp;<span
+  <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #795e26;">radial-gradient</span>(<span
      style="color: #0451a5;">circle</span>, <span
      style="color: #795e26;">var</span>(<span
@@ -5737,7 +5753,7 @@
      style="color: #795e26;">var</span>(<span
      style="color: #001080;">--md-sys-state-pressed-state-layer-opacity</span>);
   </div>
-  <div>}</div><br>
+  <div>}</div>
  </div>
 </muestra-codigo>
       </section>
@@ -5761,11 +5777,23 @@
      style="color: #795e26;">var</span>(<span
      style="color: #001080;">--md-sys-color-surface</span>);</div>
   <div>&nbsp;<span
-     style="color: #e50000;">transition-property</span>: opacity;</div>
+     style="color: #e50000;">transition-property</span>: <span
+     style="color: #0451a5;">color</span>;</div>
   <div>&nbsp;<span
      style="color: #e50000;">transition-duration</span>: <span
      style="color: #795e26;">var</span>(<span
      style="color: #001080;">--md-sys-motion-duration-700</span>);</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #800000;">.md-headline.scroll</span>&nbsp;{</div>
+  <div><span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-surface-container-low</span>);</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">background-color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-surface-container-low</span>);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.md-headline.headline-small</span>&nbsp;{</div>

@@ -4120,7 +4120,7 @@
      style="color: #e50000;">onslotchange</span>=<span
      style="color: #0000ff;">"</span><span
      style="color: #0000ff;">${this</span>.<span
-     style="color: #001080;">configuraAction</span><span
+     style="color: #795e26;">configuraAction</span><span
      style="color: #0000ff;">}</span><span
      style="color: #0000ff;">"</span><span
      style="color: #800000;">&gt;&lt;/slot&gt;</span></div>
@@ -4147,10 +4147,11 @@
      style="color: #0070c1;">shadow</span> = <span
      style="color: #0000ff;">this</span>.<span
      style="color: #795e26;">attachShadow</span>({ <span
-     style="color: #001080;">mode:</span> <span
+     style="color: #001080;">mode</span><span
+     style="color: #001080;">:</span> <span
      style="color: #a31515;">"open"</span> })</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #001080;">shadow</span>.<span
+     style="color: #0070c1;">shadow</span>.<span
      style="color: #001080;">innerHTML</span> = <span
      style="color: #0000ff;">this</span>.<span
      style="color: #795e26;">getContent</span>()</div>
@@ -4202,7 +4203,7 @@
      style="color: #0000ff;">this</span>.<span
      style="color: #001080;">_navigation</span> = <span
      style="color: #795e26;">querySelector</span>(<span
-     style="color: #001080;">shadow</span>, <span
+     style="color: #0070c1;">shadow</span>, <span
      style="color: #a31515;">'[name="navigation"]'</span>)</div>
   <div>&nbsp;&nbsp;<span
      style="color: #008000;">/**</span></div>
@@ -4220,7 +4221,7 @@
      style="color: #0000ff;">this</span>.<span
      style="color: #001080;">_action</span> = <span
      style="color: #795e26;">querySelector</span>(<span
-     style="color: #001080;">shadow</span>, <span
+     style="color: #0070c1;">shadow</span>, <span
      style="color: #a31515;">'[name="action"]'</span>)</div>
   <div>&nbsp;&nbsp;<span
      style="color: #008000;">/**</span></div>
@@ -4239,6 +4240,22 @@
      style="color: #001080;">_headline</span> = <span
      style="color: #0000ff;">null</span></div>
   <div>&nbsp;&nbsp;<span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@private</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@type</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ HTMLElement | null }</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_adicional</span> = <span
+     style="color: #0000ff;">null</span></div>
+  <div>&nbsp;&nbsp;<span
      style="color: #795e26;">addEventListener</span>(<span
      style="color: #a31515;">"scroll"</span>, () <span
      style="color: #0000ff;">=&gt;</span> <span
@@ -4246,10 +4263,10 @@
      style="color: #795e26;">_onScroll</span>())</div>
   <div>&nbsp;&nbsp;<span
      style="color: #795e26;">addEventListener</span>(<span
-     style="color: #a31515;">"DOMContentLoaded"</span>, () <span
+     style="color: #a31515;">"load"</span>, () <span
      style="color: #0000ff;">=&gt;</span> <span
      style="color: #0000ff;">this</span>.<span
-     style="color: #795e26;">configuraHeadline</span>())</div>
+     style="color: #795e26;">configurOtros</span>())</div>
   <div>&nbsp;}</div><br>
   <div>&nbsp;<span
      style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
@@ -4262,7 +4279,7 @@
      style="color: #795e26;">configuraAction</span>()</div>
   <div>&nbsp;}</div><br>
   <div>&nbsp;<span
-     style="color: #795e26;">configuraHeadline</span>()&nbsp;{</div>
+     style="color: #795e26;">configurOtros</span>()&nbsp;{</div>
   <div>&nbsp;&nbsp;<span
      style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">idHeadline</span> = <span
@@ -4270,49 +4287,98 @@
      style="color: #0000ff;">this</span>, <span
      style="color: #a31515;">"headline"</span>)</div>
   <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">idHeadline</span> !== <span
+     style="color: #a31515;">""</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">headline</span> = <span
      style="color: #001080;">document</span>.<span
      style="color: #795e26;">getElementById</span>(<span
-     style="color: #001080;">idHeadline</span>)</div>
-  <div>&nbsp;&nbsp;<span
+     style="color: #0070c1;">idHeadline</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #af00db;">if</span> (<span
-     style="color: #001080;">headline</span> <span
+     style="color: #0070c1;">headline</span> <span
      style="color: #0000ff;">instanceof</span> <span
      style="color: #267f99;">HTMLHeadingElement</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
      style="color: #001080;">_headline</span> = <span
-     style="color: #001080;">headline</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">headline</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">classList</span>.<span
+     style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">add</span>(<span
      style="color: #a31515;">"headline"</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #af00db;">if</span> (<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">classList</span>.<span
+     style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">contains</span>(<span
      style="color: #a31515;">"apple"</span>) || <span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">classList</span>.<span
+     style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">contains</span>(<span
      style="color: #a31515;">"medium"</span>))&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">headline</span>.<span
-     style="color: #001080;">classList</span>.<span
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">headline</span>.<span
+     style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">add</span>(<span
      style="color: #a31515;">"md-headline"</span>, <span
      style="color: #a31515;">"headline-small"</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
      style="color: #af00db;">else</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">headline</span>.<span
-     style="color: #001080;">classList</span>.<span
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">headline</span>.<span
+     style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">add</span>(<span
      style="color: #a31515;">"md-headline"</span>, <span
      style="color: #a31515;">"headline-medium"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">idAdicional</span> = <span
+     style="color: #795e26;">getAttribute</span>(<span
+     style="color: #0000ff;">this</span>, <span
+     style="color: #a31515;">"adicional"</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">idAdicional</span> !== <span
+     style="color: #a31515;">""</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_adicional</span> = <span
+     style="color: #001080;">document</span>.<span
+     style="color: #795e26;">getElementById</span>(<span
+     style="color: #0070c1;">idAdicional</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_adicional</span> !== <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">contains</span>(<span
+     style="color: #a31515;">"apple"</span>))&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_adicional</span>.<span
+     style="color: #0070c1;">style</span>.<span
+     style="color: #001080;">top</span> = <span
+     style="color: #a31515;">"env(titlebar-area-height, 48px)"</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_adicional</span>.<span
+     style="color: #0070c1;">style</span>.<span
+     style="color: #001080;">top</span> = <span
+     style="color: #a31515;">"env(titlebar-area-height, 64px)"</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
   <div>&nbsp;&nbsp;&nbsp;}</div>
   <div>&nbsp;&nbsp;}</div>
   <div>&nbsp;}</div><br>
@@ -4327,37 +4393,37 @@
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">if</span> (<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">isConnected</span>)&nbsp;{</div>
+     style="color: #0070c1;">isConnected</span>)&nbsp;{</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #af00db;">if</span> (<span
      style="color: #0070c1;">ES_APPLE</span>)&nbsp;{</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">classList</span>.<span
+     style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">add</span>(<span
      style="color: #a31515;">"apple"</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
      style="color: #af00db;">else</span>&nbsp;{</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">classList</span>.<span
+     style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">remove</span>(<span
      style="color: #a31515;">"apple"</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;}</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #af00db;">if</span> (<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">classList</span>.<span
+     style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">contains</span>(<span
      style="color: #a31515;">"center-aligned"</span>))&nbsp;{</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">classList</span>.<span
+     style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">remove</span>(<span
      style="color: #a31515;">"centrado"</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">classList</span>.<span
+     style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">remove</span>(<span
      style="color: #a31515;">"justificado"</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
@@ -4365,29 +4431,29 @@
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #af00db;">if</span> (<span
      style="color: #0070c1;">ES_APPLE</span> &amp;&amp; <span
-     style="color: #001080;">assignedElements</span>.<span
+     style="color: #0070c1;">assignedElements</span>.<span
      style="color: #001080;">length</span> &lt;= <span
      style="color: #098658;">1</span>)&nbsp;{</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">classList</span>.<span
+     style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">add</span>(<span
      style="color: #a31515;">"centrado"</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">classList</span>.<span
+     style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">remove</span>(<span
      style="color: #a31515;">"justificado"</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
      style="color: #af00db;">else</span>&nbsp;{</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">classList</span>.<span
+     style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">add</span>(<span
      style="color: #a31515;">"justificado"</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">classList</span>.<span
+     style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">remove</span>(<span
      style="color: #a31515;">"centrado"</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
@@ -4432,7 +4498,7 @@
      style="color: #098658;">0</span>)&nbsp;{</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">classList</span>.<span
+     style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">remove</span>(<span
      style="color: #a31515;">"scroll"</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;<span
@@ -4443,15 +4509,27 @@
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
      style="color: #001080;">_headline</span>.<span
-     style="color: #001080;">style</span>.<span
-     style="color: #001080;">opacity</span> = <span
-     style="color: #a31515;">"1"</span></div>
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">remove</span>(<span
+     style="color: #a31515;">"scroll"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_adicional</span> !== <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_adicional</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">remove</span>(<span
+     style="color: #a31515;">"scroll"</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;}</div>
   <div>&nbsp;&nbsp;}&nbsp;<span
      style="color: #af00db;">else</span>&nbsp;{</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">classList</span>.<span
+     style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">add</span>(<span
      style="color: #a31515;">"scroll"</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;<span
@@ -4462,9 +4540,21 @@
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
      style="color: #001080;">_headline</span>.<span
-     style="color: #001080;">style</span>.<span
-     style="color: #001080;">opacity</span> = <span
-     style="color: #a31515;">"0"</span></div>
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"scroll"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_adicional</span> !== <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_adicional</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"scroll"</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;}</div>
   <div>&nbsp;&nbsp;}</div>
   <div>&nbsp;&nbsp;<span
@@ -4477,7 +4567,7 @@
      style="color: #001080;">customElements</span>.<span
      style="color: #795e26;">define</span>(<span
      style="color: #a31515;">"md-top-app-bar"</span>, <span
-     style="color: #001080;">MdTopAppBar</span>)</div>
+     style="color: #267f99;">MdTopAppBar</span>)</div>
  </div>
 </muestra-codigo>
       </section>

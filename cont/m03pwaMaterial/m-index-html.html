@@ -2,57 +2,66 @@
  <ul>
   <li>
    <p>
-    Página principal de las aplicaciónes móviles incluye una barra de
-    aplicación que contiene el título de la aplicación y botones de acción.
+    La página principal de las aplicaciónes móviles incluye una <dfn>barra de
+     aplicación centrada</dfn>, cuyo nombre oficial es <dfn>centered aligned top
+     app bar</dfn>, que contiene:
    </p>
+   <ul>
+    <li>
+     <p>El título de la aplicación, que se muestra centrado,</p>
+    </li>
+    <li>
+     <p>al inicio, de manera opcional, un botón de ícono navegación y</p>
+    </li>
+    <li>
+     <p>
+      al final, un botón de acción, mostrando un ícono, que puede servir para
+      acceder al perfil del usuario, mostrando su avatar, acceder a la
+      configuración de la app, mostrando un engrane, o alguna otra acción.
+     </p>
+    </li>
+   </ul>
   </li>
   <li>
    <p>
-    La página principal de la aplicación muestra el título centrado y
-    opcionalmente, solo botones para navegación y acceso al perfil, mostrando el
-    avatar del usuario.
-   </p>
-  </li>
-  <li>
-   <p>
-    Para que el contenido se muestra adecuadamente, se define el elemento
+    Para que el contenido se muestra adecuadamente, se usa el elemento
     personalizado
-    <dfn>center-aligned-top-app-bar</dfn>
-    y su comportamiento lo definimos con la clase
-    <dfn>CenterAlignedTopAppBar</dfn>.
+    <dfn>md-top-app-bar</dfn>,
+    cuyo comportamiento está definido en la clase
+    <dfn>MdTopAppBar</dfn>.
+    Hay que añadirle <code class="language-html">class="center-aligned"</code>
    </p>
   </li>
   <li>
    <p>
     Para el título, dentro de la la barra de aplicación se usa un elemento de
     tipo
-    <code class="language-html">h1</code>
-    con el atributo
-    <code class="language-html">slot="headline"</code>.
+    <code class="language-html">h1</code>.
    </p>
   </li>
   <li>
    <p>
-    El botón de navegación opcional, debe llevar al atributo
+    El botón opcional de navegación debe llevar al atributo
     <code class="language-html">slot="navigation"</code>.
    </p>
   </li>
   <li>
    <p>
-    El botón de perfil opcional, debe llevar al atributo
-    <code class="language-html">slot="avatar"</code>.
+    El botón opcional de acción debe llevar al atributo
+    <code class="language-html">slot="action"</code>.
+    En los ejemplos con pestañas se muestra su uso.
+   </p>
+  </li>
+  <li>
+   <p>
+    El botón de perfil debe llevar la clase
+    <code class="language-html">avatar</code>.
    </p>
   </li>
   <li>
    <p>
     Para añadir elementos debajo del título, usa el atributo
-    <code class="language-html">slot="adicional"</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Hasta el final del archivo se selecciona el ancla de la varra de navegación
-    que corresponde a esta página.
+    <code class="language-html">adicional</code>.
    </p>
   </li>
  </ul>
