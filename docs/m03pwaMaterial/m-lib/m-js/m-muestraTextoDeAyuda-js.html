@@ -457,7 +457,97 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >9. lib / js / muestraTextoDeAyuda.js</h1><muestra-codigo></muestra-codigo>
+   <h1 >9. lib / js / muestraTextoDeAyuda.js</h1><muestra-codigo>
+ <div>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;Si un elemento HTML tiene un mensaje
+    de validación, lo</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;muestra en su elemento de ayuda; en
+    caso contrario, muestra</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;un mensaje de ayuda. </span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{&nbsp;{</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*</span><span
+     style="color: #267f99;">&nbsp;&nbsp;&nbsp;validity:&nbsp;{ valid: boolean
+    };</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*</span><span
+     style="color: #267f99;">&nbsp;&nbsp;&nbsp;validationMessage: string</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*</span><span
+     style="color: #267f99;">&nbsp;&nbsp;}&nbsp;}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">elementoHtml</span><span
+     style="color: #008000;"> elemento que contiene datos de validación.</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ HTMLElement }</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">elementoDeAyuda</span><span
+     style="color: #008000;"> elemento fonde</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;se muestran los elementos de
+    validación para elementoHtml.</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ string }</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">mensajeDeAyuda</span><span
+     style="color: #008000;"> mensaje de ayuda cuando el estado de</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;&nbsp;elementoHtml es válido.</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">muestraTextoDeAyuda</span>(<span
+     style="color: #001080;">elementoHtml</span>, <span
+     style="color: #001080;">elementoDeAyuda</span>,</div>
+  <div>&nbsp;<span
+     style="color: #001080;">mensajeDeAyuda</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">elementoHtml</span>.<span
+     style="color: #001080;">validity</span>.<span
+     style="color: #001080;">valid</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">elementoDeAyuda</span>.<span
+     style="color: #001080;">textContent</span> = <span
+     style="color: #001080;">mensajeDeAyuda</span></div>
+  <div>&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">elementoDeAyuda</span>.<span
+     style="color: #001080;">textContent</span> = <span
+     style="color: #001080;">elementoHtml</span>.<span
+     style="color: #001080;">validationMessage</span></div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div><span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"muestraTextoDeAyuda"</span>] = <span
+     style="color: #795e26;">muestraTextoDeAyuda</span></div>
+ </div>
+</muestra-codigo>
  <footer>
  <p>
   <a rel="license"
@@ -499,7 +589,7 @@
     <a href="/m03pwaMaterial/">5. PWA con Material Design</a>
    </p>
    <p>
-    <a href="/m03pwaMaterial/m-lib/">f. Carpeta « lib »</a>
+    <a href="/m03pwaMaterial/m-lib/">e. Carpeta « lib »</a>
    </p>
    
      <p>
@@ -589,7 +679,7 @@
    
     <p>
      <a class="paginaSiguiente" href="/m03pwaMaterial/m-ungap/index.html"
-       title="g. Carpeta « ungap »">▼</a>
+       title="f. Carpeta « ungap »">▼</a>
     </p>
  
 </nav>

@@ -1,1 +1,229 @@
-<muestra-codigo></muestra-codigo>
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #af00db;">import</span> <span
+     style="color: #a31515;">"./ejecutaMetodo.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">htmlentities</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./htmlentities.js"</span></div><br>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;Función tag que analiza una plantilla
+    de texto y devuelve in objeto con un</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;texto sanitizado en la propiedad
+    &lt;q&gt;htmlTxt&lt;/q&gt;.</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ TemplateStringsArray }</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">strings</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ any[] }</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">values</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@returns</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{&nbsp;{ htmlTxt: string }&nbsp;}</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">html</span>(<span
+     style="color: #001080;">strings</span>, ...<span
+     style="color: #001080;">values</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">let</span> <span
+     style="color: #001080;">htmlTxt</span> = <span
+     style="color: #a31515;">""</span></div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">let</span> <span
+     style="color: #001080;">i</span> = <span
+     style="color: #098658;">0</span>, <span
+     style="color: #001080;">sLen</span> = <span
+     style="color: #001080;">strings</span>.<span
+     style="color: #0070c1;">length</span>, <span
+     style="color: #001080;">vLen</span> = <span
+     style="color: #001080;">values</span>.<span
+     style="color: #001080;">length</span></div>
+  <div>&nbsp;<span
+     style="color: #af00db;">for</span> (; <span
+     style="color: #001080;">i</span> &lt; <span
+     style="color: #001080;">sLen</span> &amp;&amp; <span
+     style="color: #001080;">i</span> &lt; <span
+     style="color: #001080;">vLen</span>; <span
+     style="color: #001080;">i</span>++)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">htmlTxt</span> += <span
+     style="color: #001080;">strings</span>[<span
+     style="color: #001080;">i</span>]</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">value</span> = <span
+     style="color: #001080;">values</span>[<span
+     style="color: #001080;">i</span>]</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">htmlTxt</span> += <span
+     style="color: #795e26;">sanitizaValor</span>(<span
+     style="color: #0070c1;">value</span>)</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">for</span> (; <span
+     style="color: #001080;">i</span> &lt; <span
+     style="color: #001080;">sLen</span>; <span
+     style="color: #001080;">i</span>++)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">htmlTxt</span> += <span
+     style="color: #001080;">strings</span>[<span
+     style="color: #001080;">i</span>]</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">for</span> (; <span
+     style="color: #001080;">i</span> &lt; <span
+     style="color: #001080;">vLen</span>; <span
+     style="color: #001080;">i</span>++)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">value</span> = <span
+     style="color: #001080;">values</span>[<span
+     style="color: #001080;">i</span>]</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">htmlTxt</span> += <span
+     style="color: #795e26;">sanitizaValor</span>(<span
+     style="color: #0070c1;">value</span>)</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">return</span>&nbsp;{ <span
+     style="color: #001080;">htmlTxt</span> }</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ any }</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">value</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@returns</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ string }</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">sanitizaValor</span>(<span
+     style="color: #001080;">value</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">switch</span> (<span
+     style="color: #0000ff;">typeof</span> <span
+     style="color: #001080;">value</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">case</span> <span
+     style="color: #a31515;">"string"</span>:</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #795e26;">htmlentities</span>(<span
+     style="color: #001080;">value</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">case</span> <span
+     style="color: #a31515;">"function"</span>:&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">names</span> = <span
+     style="color: #001080;">value</span>.<span
+     style="color: #001080;">name</span>.<span
+     style="color: #795e26;">split</span>(<span
+     style="color: #811f3f;">/\s</span>+<span
+     style="color: #811f3f;">/</span><span
+     style="color: #0000ff;">g</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">name</span> = <span
+     style="color: #795e26;">htmlentities</span>(<span
+     style="color: #001080;">names</span>[<span
+     style="color: #001080;">names</span>.<span
+     style="color: #001080;">length</span> - <span
+     style="color: #098658;">1</span>])</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #a31515;">`ejecutaMetodo(this,&amp;quot;</span><span
+     style="color: #0000ff;">${</span><span
+     style="color: #001080;">name</span><span
+     style="color: #0000ff;">}</span><span
+     style="color: #a31515;">&amp;quot;,event)`</span></div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">case</span> <span
+     style="color: #a31515;">"boolean"</span>:</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">case</span> <span
+     style="color: #a31515;">"number"</span>:</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">value</span>.<span
+     style="color: #795e26;">toString</span>()</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">case</span> <span
+     style="color: #a31515;">"undefined"</span>:</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #a31515;">""</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">default</span>:</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #a31515;">"htmlTxt"</span> <span
+     style="color: #0000ff;">in</span> <span
+     style="color: #001080;">value</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">value</span>[<span
+     style="color: #a31515;">"htmlTxt"</span>]</div>
+  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span> <span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">Array</span>.<span
+     style="color: #795e26;">isArray</span>(<span
+     style="color: #001080;">value</span>))&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">value</span>.<span
+     style="color: #795e26;">map</span>(<span
+     style="color: #001080;">sanitizaValor</span>).<span
+     style="color: #795e26;">join</span>(<span
+     style="color: #a31515;">""</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span> <span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">typeof</span> <span
+     style="color: #001080;">value</span>.<span
+     style="color: #001080;">toString</span> === <span
+     style="color: #a31515;">"function"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">value</span>.<span
+     style="color: #795e26;">toString</span>()</div>
+  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #a31515;">""</span></div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+ </div>
+</muestra-codigo>

@@ -1,1 +1,270 @@
-<muestra-codigo></muestra-codigo>
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">abreElementoHtml</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../abreElementoHtml.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">cierraElementoHtmo</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../cierraElementoHtmo.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">html</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../html.js"</span></div><br>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">class</span> <span
+     style="color: #267f99;">MdOverflowMenu</span> <span
+     style="color: #0000ff;">extends</span> <span
+     style="color: #267f99;">HTMLElement</span>&nbsp;{</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">getContent</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span><span
+     style="color: #008000;"> </span><span
+     style="color: #795e26;">html</span>`</div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;style&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">position</span>: <span
+     style="color: #0451a5;">fixed</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">min-width</span>: <span
+     style="color: #098658;">112px</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">max-width</span>: <span
+     style="color: #098658;">280px</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;::slotted(<span
+     style="color: #800000;">*</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">text-align</span>: <span
+     style="color: #0451a5;">start</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">width</span>: <span
+     style="color: #098658;">100%</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">border</span>: <span
+     style="color: #0451a5;">none</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">background-color</span>: <span
+     style="color: #0451a5;">transparent</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/style&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;slot&gt;&lt;/slot&gt;</span>`.<span
+     style="color: #001080;">htmlTxt</span></div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">constructor</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">super</span>()</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">shadow</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">attachShadow</span>({ <span
+     style="color: #001080;">mode</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #a31515;">"open"</span> })</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0070c1;">shadow</span>.<span
+     style="color: #001080;">innerHTML</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">getContent</span>()</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">clicCierra</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">clicCierra</span>.<span
+     style="color: #795e26;">bind</span>(<span
+     style="color: #0000ff;">this</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@private</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@type</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{HTMLButtonElement| null}</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*/</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_toggleButton</span> = <span
+     style="color: #0000ff;">null</span></div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"md-menu"</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">true</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">role</span> = <span
+     style="color: #a31515;">"menu"</span></div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{HTMLButtonElement}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">toggleButton</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*/</span></div>
+  <div>&nbsp;<span
+     style="color: #795e26;">alterna</span>(<span
+     style="color: #001080;">toggleButton</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_toggleButton</span> = <span
+     style="color: #001080;">toggleButton</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">top</span> = <span
+     style="color: #001080;">toggleButton</span>.<span
+     style="color: #001080;">offsetTop</span> + <span
+     style="color: #001080;">toggleButton</span>.<span
+     style="color: #001080;">offsetHeight</span> - <span
+     style="color: #098658;">4</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">right</span> =</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">innerWidth</span> - (<span
+     style="color: #001080;">toggleButton</span>.<span
+     style="color: #001080;">offsetLeft</span> + <span
+     style="color: #001080;">toggleButton</span>.<span
+     style="color: #001080;">offsetWidth</span>) - <span
+     style="color: #098658;">3</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">style</span>.<span
+     style="color: #001080;">top</span> = <span
+     style="color: #a31515;">`</span><span
+     style="color: #0000ff;">${</span><span
+     style="color: #001080;">top</span><span
+     style="color: #0000ff;">}</span><span
+     style="color: #a31515;">px`</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">style</span>.<span
+     style="color: #001080;">right</span> = <span
+     style="color: #a31515;">`</span><span
+     style="color: #0000ff;">${</span><span
+     style="color: #001080;">right</span><span
+     style="color: #0000ff;">}</span><span
+     style="color: #a31515;">px`</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">list</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">classList</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">list</span>.<span
+     style="color: #795e26;">contains</span>(<span
+     style="color: #a31515;">"open"</span>))&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">cierra</span>()</div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">abre</span>()</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">abre</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">document</span>.<span
+     style="color: #795e26;">addEventListener</span>(<span
+     style="color: #a31515;">"click"</span>, <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">clicCierra</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">abreElementoHtml</span>(<span
+     style="color: #0000ff;">this</span>)</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">cierra</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">document</span>.<span
+     style="color: #795e26;">removeEventListener</span>(<span
+     style="color: #a31515;">"click"</span>, <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">clicCierra</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">cierraElementoHtmo</span>(<span
+     style="color: #0000ff;">this</span>)</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{Event}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">evt</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*/</span></div>
+  <div>&nbsp;<span
+     style="color: #795e26;">clicCierra</span>(<span
+     style="color: #001080;">evt</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">target</span> = <span
+     style="color: #001080;">evt</span>.<span
+     style="color: #001080;">target</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">classList</span>.<span
+     style="color: #795e26;">contains</span>(<span
+     style="color: #a31515;">"open"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&amp;&amp; <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_toggleButton</span> !== <span
+     style="color: #0000ff;">null</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&amp;&amp; <span
+     style="color: #001080;">target</span> <span
+     style="color: #0000ff;">instanceof</span> <span
+     style="color: #267f99;">HTMLElement</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&amp;&amp; !<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_toggleButton</span>.<span
+     style="color: #795e26;">contains</span>(<span
+     style="color: #001080;">target</span>))&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">cierra</span>()</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #001080;">customElements</span>.<span
+     style="color: #795e26;">define</span>(<span
+     style="color: #a31515;">"md-overflow-menu"</span>, <span
+     style="color: #001080;">MdOverflowMenu</span>)</div>
+ </div>
+</muestra-codigo>

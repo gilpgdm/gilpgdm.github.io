@@ -457,7 +457,1112 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >A. lib / js / custom / md-filled-text-field.js</h1><muestra-codigo></muestra-codigo>
+   <h1 >A. lib / js / custom / md-filled-text-field.js</h1><muestra-codigo>
+ <div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">getAttribute</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../getAttribute.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">html</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../html.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">querySelector</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../querySelector.js"</span></div><br>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">class</span> <span
+     style="color: #267f99;">MdFilledTextField</span> <span
+     style="color: #0000ff;">extends</span> <span
+     style="color: #267f99;">HTMLElement</span>&nbsp;{</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">static</span> <span
+     style="color: #0000ff;">get</span> <span
+     style="color: #795e26;">observedAttributes</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> [<span
+     style="color: #a31515;">"value"</span>]</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">getContent</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span><span
+     style="color: #008000;"> html</span>`</div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;link</span> <span
+     style="color: #e50000;">rel</span>=<span
+     style="color: #0000ff;">"stylesheet"</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"/lib/css/shape.css"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;style&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">display</span>: <span
+     style="color: #0451a5;">block</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">position</span>: <span
+     style="color: #0451a5;">relative</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">margin</span>: <span
+     style="color: #098658;">16px</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>([<span
+     style="color: #e50000;">hidden</span>])&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">display</span>: <span
+     style="color: #0451a5;">none</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">#container</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">position</span>: <span
+     style="color: #0451a5;">relative</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">background-color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-surface-container-highest</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">overflow</span>: <span
+     style="color: #0451a5;">hidden</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">#stateLayer</span>&nbsp;{ <span
+     style="color: #008000;">/*&nbsp;state layer */</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">content</span>: <span
+     style="color: #a31515;">""</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">position</span>: <span
+     style="color: #0451a5;">absolute</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">top</span>: <span
+     style="color: #098658;">0</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">right</span>: <span
+     style="color: #098658;">0</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">left</span>: <span
+     style="color: #098658;">0</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">bottom</span>: <span
+     style="color: #098658;">0</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">#cabecera</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">position</span>: <span
+     style="color: #0451a5;">relative</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">padding</span>: <span
+     style="color: #098658;">8px</span> <span
+     style="color: #098658;">16px</span> <span
+     style="color: #098658;">0</span> <span
+     style="color: #098658;">16px</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">height</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-line-height</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.select</span>) <span
+     style="color: #800000;">#cabecera</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">padding-right</span>: <span
+     style="color: #098658;">48px</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">#label</span>::slotted(<span
+     style="color: #800000;">*</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">display</span>: <span
+     style="color: #0451a5;">block</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">transform</span>: <span
+     style="color: #795e26;">translateY</span>(<span
+     style="color: #098658;">16px</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">transition-property</span>: transform;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">transition-duration</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-motion-duration-300</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">white-space</span>: <span
+     style="color: #0451a5;">nowrap</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">text-overflow</span>: <span
+     style="color: #0451a5;">ellipsis</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">overflow</span>: <span
+     style="color: #0451a5;">hidden</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-on-surface-variant</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">font-family</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-large-font</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">font-weight</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-large-weight</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">font-size</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-large-size</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">font-style</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-large-font-style</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">letter-spacing</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-large-tracking</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">line-height</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-large-line-height</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">text-transform</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-large-text-transform</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">text-decoration</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-large-text-decoration</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">:focus-within</span>) <span
+     style="color: #800000;">#label</span>::slotted(<span
+     style="color: #800000;">*</span>),</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.populated</span>) <span
+     style="color: #800000;">#label</span>::slotted(<span
+     style="color: #800000;">*</span>),</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.float</span>) <span
+     style="color: #800000;">#label</span>::slotted(<span
+     style="color: #800000;">*</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">transform</span>: <span
+     style="color: #795e26;">translateY</span>(<span
+     style="color: #098658;">0</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">:focus-within</span>) <span
+     style="color: #800000;">#label</span>::slotted(<span
+     style="color: #800000;">*</span>),</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.populated</span>) <span
+     style="color: #800000;">#label</span>::slotted(<span
+     style="color: #800000;">*</span>),</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.float</span>) <span
+     style="color: #800000;">#label</span>::slotted(<span
+     style="color: #800000;">*</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">font-family</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-font</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">font-weight</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-weight</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">font-size</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-size</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">font-style</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-font-style</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">letter-spacing</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-tracking</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">line-height</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-line-height</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">text-transform</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-text-transform</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">text-decoration</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-text-decoration</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">#relleno</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">position</span>: <span
+     style="color: #0451a5;">relative</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">display</span>: <span
+     style="color: #0451a5;">flex</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">flex-direction</span>: <span
+     style="color: #0451a5;">column</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">align-items</span>: <span
+     style="color: #0451a5;">stretch</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">padding</span>: <span
+     style="color: #098658;">0</span> <span
+     style="color: #098658;">16px</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.select</span>) <span
+     style="color: #800000;">#relleno</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">padding-right</span>: <span
+     style="color: #098658;">48px</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;[<span
+     style="color: #e50000;">name</span>=<span
+     style="color: #a31515;">"input-text"</span>]::slotted(<span
+     style="color: #800000;">*</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">caret-color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-primary</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">min-height</span>: <span
+     style="color: #098658;">24px</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">border</span>: <span
+     style="color: #0451a5;">none</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">padding</span>: <span
+     style="color: #098658;">0</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">resize</span>: <span
+     style="color: #0451a5;">none</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-on-surface</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">font-family</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-large-font</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">font-weight</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-large-weight</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">font-size</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-large-size</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">font-style</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-large-font-style</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">letter-spacing</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-large-tracking</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">line-height</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-large-line-height</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">text-transform</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-large-text-transform</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">text-decoration</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-large-text-decoration</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">background-color</span>: <span
+     style="color: #0451a5;">transparent</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">outline</span>: <span
+     style="color: #0451a5;">none</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">#activeIndicator</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">box-sizing</span>: <span
+     style="color: #0451a5;">border-box</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">height</span>: <span
+     style="color: #098658;">8px</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">border-bottom-width</span>: <span
+     style="color: #098658;">1px</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">border-bottom-style</span>: <span
+     style="color: #0451a5;">solid</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">border-bottom-color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-on-surface-variant</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;[<span
+     style="color: #e50000;">name</span>=<span
+     style="color: #a31515;">"supporting"</span>]::slotted(<span
+     style="color: #800000;">*</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">display</span>: <span
+     style="color: #0451a5;">block</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-on-surface-variant</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">font-family</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-font</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">font-weight</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-weight</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">font-size</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-size</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">font-style</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-font-style</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">letter-spacing</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-tracking</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">line-height</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-line-height</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">text-transform</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-text-transform</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">text-decoration</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-typescale-body-small-text-decoration</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">padding</span>: <span
+     style="color: #098658;">4px</span> <span
+     style="color: #098658;">16px</span> <span
+     style="color: #098658;">0</span> <span
+     style="color: #098658;">16px</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">white-space</span>: <span
+     style="color: #0451a5;">nowrap</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">text-overflow</span>: <span
+     style="color: #0451a5;">ellipsis</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">overflow</span>: <span
+     style="color: #0451a5;">hidden</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">:hover</span>) <span
+     style="color: #800000;">#label</span>::slotted(<span
+     style="color: #800000;">*</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-on-surface-variant</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">:hover</span>) <span
+     style="color: #800000;">#stateLayer</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.invalid:hover</span>) <span
+     style="color: #800000;">#stateLayer</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">background-color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-on-surface</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">opacity</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-state-hover-state-layer-opacity</span>);
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">:hover</span>) [<span
+     style="color: #e50000;">name</span>=<span
+     style="color: #a31515;">"input-text"</span>]::slotted(<span
+     style="color: #800000;">*</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-on-surface</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">:hover</span>) <span
+     style="color: #800000;">#activeIndicator</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">border-bottom-width</span>: <span
+     style="color: #098658;">1px</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">border-bottom-color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-on-surface</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">:hover</span>) [<span
+     style="color: #e50000;">name</span>=<span
+     style="color: #a31515;">"supporting"</span>]::slotted(<span
+     style="color: #800000;">*</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-on-surface-variant</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">:focus-within</span>) <span
+     style="color: #800000;">#label</span>::slotted(<span
+     style="color: #800000;">*</span>)&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-primary</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;[<span
+     style="color: #e50000;">name</span>=<span
+     style="color: #a31515;">"input-text"</span>]::slotted(<span
+     style="color: #800000;">:focus</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-on-surface</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">outline</span>: <span
+     style="color: #0451a5;">none</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">:focus-within</span>)&nbsp;&nbsp;<span
+     style="color: #800000;">#activeIndicator</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">border-bottom-width</span>: <span
+     style="color: #098658;">2px</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">border-bottom-color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-primary</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">:focus-within</span>) [<span
+     style="color: #e50000;">name</span>=<span
+     style="color: #a31515;">"supporting"</span>]::slotted(<span
+     style="color: #800000;">*</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-on-surface-variant</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.invalid</span>) [<span
+     style="color: #e50000;">name</span>=<span
+     style="color: #a31515;">"input-text"</span>]::slotted(<span
+     style="color: #800000;">*</span>),</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.invalid:focus-within</span>) [<span
+     style="color: #e50000;">name</span>=<span
+     style="color: #a31515;">"input-text"</span>]::slotted(<span
+     style="color: #800000;">*</span>),</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;[<span
+     style="color: #e50000;">name</span>=<span
+     style="color: #a31515;">"input-text"</span>]::slotted(<span
+     style="color: #800000;">:invalid</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-on-surface</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.invalid</span>) <span
+     style="color: #800000;">#activeIndicator</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.invalid:focus-within</span>) <span
+     style="color: #800000;">#activeIndicator</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">border-bottom-color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-error</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.invalid</span>) <span
+     style="color: #800000;">#label</span>::slotted(<span
+     style="color: #800000;">*</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-error</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.invalid</span>) [<span
+     style="color: #e50000;">name</span>=<span
+     style="color: #a31515;">"supporting"</span>]::slotted(<span
+     style="color: #800000;">*</span>),</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.invalid:hover</span>) [<span
+     style="color: #e50000;">name</span>=<span
+     style="color: #a31515;">"supporting"</span>]::slotted(<span
+     style="color: #800000;">*</span>),</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.invalid:focus-within</span>) [<span
+     style="color: #e50000;">name</span>=<span
+     style="color: #a31515;">"supporting"</span>]::slotted(<span
+     style="color: #800000;">*</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-error</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;[<span
+     style="color: #e50000;">name</span>=<span
+     style="color: #a31515;">"input-text"</span>]::slotted(<span
+     style="color: #800000;">:focus:invalid</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">caret-color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-error</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.invalid:hover</span>) [<span
+     style="color: #e50000;">name</span>=<span
+     style="color: #a31515;">"input-text"</span>]::slotted(<span
+     style="color: #800000;">*</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-on-surface</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.invalid:hover</span>) <span
+     style="color: #800000;">#activeIndicator</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">border-bottom-color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-on-error-container</span>) <span
+     style="color: #0000ff;">!important</span>;</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">:host</span>(<span
+     style="color: #800000;">.invalid:hover</span>) <span
+     style="color: #800000;">#label</span>::slotted(<span
+     style="color: #800000;">*</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-on-error-container</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/style&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;div</span> <span
+     style="color: #e50000;">id</span>=<span
+     style="color: #0000ff;">"container"</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"extra-small-top"</span> <span
+     style="color: #e50000;">oninput</span>=<span
+     style="color: #0000ff;">"</span><span
+     style="color: #0000ff;">${this</span>.<span
+     style="color: #001080;">entradaDeDatos</span><span
+     style="color: #0000ff;">}</span><span
+     style="color: #0000ff;">"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;div</span> <span
+     style="color: #e50000;">id</span>=<span
+     style="color: #0000ff;">"stateLayer"</span><span
+     style="color: #800000;">&gt;&lt;/div&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;div</span> <span
+     style="color: #e50000;">id</span>=<span
+     style="color: #0000ff;">"cabecera"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;slot</span> <span
+     style="color: #e50000;">id</span>=<span
+     style="color: #0000ff;">"label"</span><span
+     style="color: #800000;">&gt;&lt;/slot&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/div&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;div</span> <span
+     style="color: #e50000;">id</span>=<span
+     style="color: #0000ff;">"relleno"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;slot</span> <span
+     style="color: #e50000;">name</span>=<span
+     style="color: #0000ff;">"input-text"</span> <span
+     style="color: #e50000;">onslotchange</span>=<span
+     style="color: #0000ff;">"</span><span
+     style="color: #0000ff;">${this</span>.<span
+     style="color: #001080;">configuraTarget</span><span
+     style="color: #0000ff;">}</span><span
+     style="color: #0000ff;">"</span><span
+     style="color: #800000;">&gt;&lt;/slot&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/div&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;div</span> <span
+     style="color: #e50000;">id</span>=<span
+     style="color: #0000ff;">"activeIndicator"</span><span
+     style="color: #800000;">&gt;&lt;/div&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/div&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;slot</span> <span
+     style="color: #e50000;">name</span>=<span
+     style="color: #0000ff;">"supporting"</span><span
+     style="color: #800000;">&gt;&lt;/slot&gt;</span>`.<span
+     style="color: #001080;">htmlTxt</span></div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">constructor</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">super</span>()</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">shadow</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">attachShadow</span>({ <span
+     style="color: #001080;">mode:</span> <span
+     style="color: #a31515;">"open"</span>, <span
+     style="color: #001080;">delegatesFocus:</span> <span
+     style="color: #0000ff;">true</span> })</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">shadow</span>.<span
+     style="color: #001080;">innerHTML</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">getContent</span>()</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">muestraValue</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">muestraValue</span>.<span
+     style="color: #795e26;">bind</span>(<span
+     style="color: #0000ff;">this</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@private</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@type</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ HTMLSlotElement }</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*/</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_inputText</span> = <span
+     style="color: #795e26;">querySelector</span>(<span
+     style="color: #001080;">shadow</span>, <span
+     style="color: #a31515;">'[name="input-text"]'</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@private</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@type</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ Element | null }</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*/</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_inputTextElement</span> = <span
+     style="color: #0000ff;">null</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">addEventListener</span>(<span
+     style="color: #a31515;">"load"</span>, <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">muestraValue</span>)</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">configuraTarget</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">assignedElements</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_inputText</span>.<span
+     style="color: #795e26;">assignedElements</span>()</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">assignedElements</span>.<span
+     style="color: #001080;">length</span> &gt; <span
+     style="color: #098658;">0</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_inputTextElement</span> = <span
+     style="color: #001080;">assignedElements</span>[<span
+     style="color: #098658;">0</span>]</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">nombreDelAtributo</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">_valrAnterior</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">_nuevoValor</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*/</span></div>
+  <div>&nbsp;<span
+     style="color: #795e26;">attributeChangedCallback</span>(<span
+     style="color: #001080;">nombreDelAtributo</span>,</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">_valrAnterior</span>, <span
+     style="color: #001080;">_nuevoValor</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">nombreDelAtributo</span> === <span
+     style="color: #a31515;">"value"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">muestraValue</span>()</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">entradaDeDatos</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">value</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">getValue</span>()</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">analiza</span>()</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@returns</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*/</span></div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">get</span> <span
+     style="color: #795e26;">value</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #795e26;">getAttribute</span>(<span
+     style="color: #0000ff;">this</span>, <span
+     style="color: #a31515;">"value"</span>)</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">set</span> <span
+     style="color: #795e26;">value</span>(<span
+     style="color: #001080;">value</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">setAttribute</span>(<span
+     style="color: #a31515;">"value"</span>, <span
+     style="color: #001080;">value</span>)</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">muestraValue</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">value</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">value</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">inputTextValue</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">getValue</span>()</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">inputTextValue</span> !== <span
+     style="color: #001080;">value</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">setValue</span>(<span
+     style="color: #001080;">value</span>)</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">analiza</span>()</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">getValue</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">inputTextElement</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_inputTextElement</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">inputTextElement</span> !== <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">getValue</span> = <span
+     style="color: #001080;">inputTextElement</span>[<span
+     style="color: #a31515;">"getValue"</span>]</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">typeof</span> <span
+     style="color: #001080;">getValue</span> === <span
+     style="color: #a31515;">"function"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">value</span> = <span
+     style="color: #001080;">getValue</span>.<span
+     style="color: #795e26;">call</span>(<span
+     style="color: #001080;">inputTextElement</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">typeof</span> <span
+     style="color: #001080;">value</span> === <span
+     style="color: #a31515;">"string"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">value</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #a31515;">"value"</span> <span
+     style="color: #0000ff;">in</span> <span
+     style="color: #001080;">inputTextElement</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">value</span> = <span
+     style="color: #001080;">inputTextElement</span>.<span
+     style="color: #001080;">value</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">typeof</span> <span
+     style="color: #001080;">value</span> === <span
+     style="color: #a31515;">"string"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">value</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #a31515;">""</span></div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">value</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*/</span></div>
+  <div>&nbsp;<span
+     style="color: #795e26;">setValue</span>(<span
+     style="color: #001080;">value</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">inputTextElement</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_inputTextElement</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">inputTextElement</span> !== <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">setValue</span> = <span
+     style="color: #001080;">inputTextElement</span>[<span
+     style="color: #a31515;">"setValue"</span>]</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">typeof</span> <span
+     style="color: #001080;">setValue</span> === <span
+     style="color: #a31515;">"function"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">setValue</span>.<span
+     style="color: #795e26;">call</span>(<span
+     style="color: #001080;">inputTextElement</span>, <span
+     style="color: #001080;">value</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span> <span
+     style="color: #af00db;">if</span> (<span
+     style="color: #a31515;">"value"</span> <span
+     style="color: #0000ff;">in</span> <span
+     style="color: #001080;">inputTextElement</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">inputTextElement</span>.<span
+     style="color: #001080;">value</span> = <span
+     style="color: #001080;">value</span></div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">analiza</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">value</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">value</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">value</span> === <span
+     style="color: #a31515;">""</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">classList</span>.<span
+     style="color: #795e26;">remove</span>(<span
+     style="color: #a31515;">"populated"</span>)</div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"populated"</span>)</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">checkValidity</span>())&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">classList</span>.<span
+     style="color: #795e26;">remove</span>(<span
+     style="color: #a31515;">"invalid"</span>)</div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"invalid"</span>)</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">checkValidity</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">inputTextElement</span> = <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_inputTextElement</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">inputTextElement</span> !== <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">checkValidity</span> = <span
+     style="color: #001080;">inputTextElement</span>[<span
+     style="color: #a31515;">"checkValidity"</span>]</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">typeof</span> <span
+     style="color: #001080;">checkValidity</span> === <span
+     style="color: #a31515;">"function"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">checkValidity</span>.<span
+     style="color: #795e26;">call</span>(<span
+     style="color: #001080;">inputTextElement</span>) === <span
+     style="color: #0000ff;">true</span></div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #0000ff;">true</span></div>
+  <div>&nbsp;}</div><br>
+  <div>}</div><br>
+  <div><span
+     style="color: #001080;">customElements</span>.<span
+     style="color: #795e26;">define</span>(<span
+     style="color: #a31515;">"md-filled-text-field"</span>, <span
+     style="color: #001080;">MdFilledTextField</span>)</div>
+ </div>
+</muestra-codigo>
  <footer>
  <p>
   <a rel="license"
@@ -499,7 +1604,7 @@
     <a href="/m03pwaMaterial/">5. PWA con Material Design</a>
    </p>
    <p>
-    <a href="/m03pwaMaterial/m-lib/">f. Carpeta « lib »</a>
+    <a href="/m03pwaMaterial/m-lib/">e. Carpeta « lib »</a>
    </p>
    <p>
     <a href="/m03pwaMaterial/m-lib/m-js/">C. Carpeta « lib / js »</a>
@@ -567,7 +1672,7 @@
    
     <p>
      <a class="paginaSiguiente" href="/m03pwaMaterial/m-ungap/index.html"
-       title="g. Carpeta « ungap »">▼</a>
+       title="f. Carpeta « ungap »">▼</a>
     </p>
  
 </nav>

@@ -1,1 +1,143 @@
-<muestra-codigo></muestra-codigo>
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">muestraError</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./muestraError.js"</span></div><br>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ HTMLElement }</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">elementoHtmlQueInvoca</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ string }</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">nombreDelMetodo</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ Event }</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">event</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">ejecutaMetodo</span>(<span
+     style="color: #001080;">elementoHtmlQueInvoca</span>, <span
+     style="color: #001080;">nombreDelMetodo</span>, <span
+     style="color: #001080;">event</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">try</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">let</span> <span
+     style="color: #001080;">nodoPadre</span> = <span
+     style="color: #795e26;">getNodoPadre</span>(<span
+     style="color: #001080;">elementoHtmlQueInvoca</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">while</span> (<span
+     style="color: #001080;">nodoPadre</span> !== <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">metodo</span> = <span
+     style="color: #001080;">nodoPadre</span>[<span
+     style="color: #001080;">nombreDelMetodo</span>]</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">typeof</span> <span
+     style="color: #0070c1;">metodo</span> === <span
+     style="color: #a31515;">"function"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">metodo</span>.<span
+     style="color: #795e26;">call</span>(<span
+     style="color: #001080;">nodoPadre</span>, <span
+     style="color: #001080;">event</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">break</span></div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">nodoPadre</span> = <span
+     style="color: #795e26;">getNodoPadre</span>(<span
+     style="color: #001080;">nodoPadre</span>)</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">nodoPadre</span> === <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">metodo</span> = <span
+     style="color: #001080;">window</span>[<span
+     style="color: #001080;">nombreDelMetodo</span>]</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">typeof</span> <span
+     style="color: #0070c1;">metodo</span> === <span
+     style="color: #a31515;">"function"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">metodo</span>.<span
+     style="color: #795e26;">call</span>(<span
+     style="color: #001080;">window</span>, <span
+     style="color: #001080;">event</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;}&nbsp;<span
+     style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">error</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">muestraError</span>(<span
+     style="color: #001080;">error</span>)</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ Node }</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">nodo</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">getNodoPadre</span>(<span
+     style="color: #001080;">nodo</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">nodo</span> <span
+     style="color: #0000ff;">instanceof</span> <span
+     style="color: #267f99;">ShadowRoot</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">nodo</span>.<span
+     style="color: #0070c1;">host</span></div>
+  <div>&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">nodo</span>.<span
+     style="color: #0070c1;">parentNode</span></div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div><span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"ejecutaMetodo"</span>] = <span
+     style="color: #001080;">ejecutaMetodo</span></div>
+ </div>
+</muestra-codigo>

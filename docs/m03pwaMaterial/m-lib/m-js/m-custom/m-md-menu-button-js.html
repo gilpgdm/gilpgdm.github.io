@@ -457,7 +457,47 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >B. lib / js / custom / md-menu-button.js</h1><muestra-codigo></muestra-codigo>
+   <h1 >B. lib / js / custom / md-menu-button.js</h1><muestra-codigo>
+ <div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">class</span> <span
+     style="color: #267f99;">MdMenuButton</span> <span
+     style="color: #0000ff;">extends</span> <span
+     style="color: #267f99;">HTMLButtonElement</span>&nbsp;{</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">type</span> = <span
+     style="color: #a31515;">"button"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"md-standard-icon-button"</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">innerHTML</span> = <span
+     style="color: #008000;">/*&nbsp;html */</span></div>
+  <div>&nbsp;&nbsp;&nbsp;`<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>menu<span
+     style="color: #800000;">&lt;/span&gt;</span>`</div>
+  <div>&nbsp;}</div><br>
+  <div>}</div><br>
+  <div><span
+     style="color: #001080;">customElements</span>.<span
+     style="color: #795e26;">define</span>(<span
+     style="color: #a31515;">"md-menu-button"</span>, <span
+     style="color: #267f99;">MdMenuButton</span>,&nbsp;{ <span
+     style="color: #001080;">extends</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #a31515;">"button"</span> })</div>
+ </div>
+</muestra-codigo>
  <footer>
  <p>
   <a rel="license"
@@ -499,7 +539,7 @@
     <a href="/m03pwaMaterial/">5. PWA con Material Design</a>
    </p>
    <p>
-    <a href="/m03pwaMaterial/m-lib/">f. Carpeta « lib »</a>
+    <a href="/m03pwaMaterial/m-lib/">e. Carpeta « lib »</a>
    </p>
    <p>
     <a href="/m03pwaMaterial/m-lib/m-js/">C. Carpeta « lib / js »</a>
@@ -567,7 +607,7 @@
    
     <p>
      <a class="paginaSiguiente" href="/m03pwaMaterial/m-ungap/index.html"
-       title="g. Carpeta « ungap »">▼</a>
+       title="f. Carpeta « ungap »">▼</a>
     </p>
  
 </nav>

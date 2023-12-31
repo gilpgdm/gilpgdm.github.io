@@ -1,1 +1,86 @@
-<muestra-codigo></muestra-codigo>
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">ES_APPLE</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../const/ES_APPLE.js"</span></div><br>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">class</span> <span
+     style="color: #267f99;">MdSwitch</span> <span
+     style="color: #0000ff;">extends</span> <span
+     style="color: #267f99;">HTMLInputElement</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">ES_APPLE</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"apple"</span>)</div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"material"</span>)</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">type</span> = <span
+     style="color: #a31515;">"range"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">min</span> = <span
+     style="color: #a31515;">"0"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">max</span> = <span
+     style="color: #a31515;">"1"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">addEventListener</span>(<span
+     style="color: #a31515;">"input"</span>, () <span
+     style="color: #0000ff;">=&gt;</span> <span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">analiza</span>())</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #795e26;">analiza</span>()</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">analiza</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">valueAsNumber</span> === <span
+     style="color: #098658;">0</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"unselected"</span>)</div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">remove</span>(<span
+     style="color: #a31515;">"unselected"</span>)</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #001080;">customElements</span>.<span
+     style="color: #795e26;">define</span>(<span
+     style="color: #a31515;">"md-switch"</span>, <span
+     style="color: #267f99;">MdSwitch</span>,&nbsp;{<span
+     style="color: #001080;">extends</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #a31515;">"input"</span>})</div><br>
+ </div>
+</muestra-codigo>
