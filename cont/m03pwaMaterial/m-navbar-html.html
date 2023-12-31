@@ -1,1 +1,322 @@
-<muestra-codigo></muestra-codigo>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Se usa para seleccionar entre 3 a 5 vistas.
+   </p>
+  </li>
+  <li>
+   <p>
+    Se usa en:
+   </p>
+   <ul>
+    <li>
+     <p>Móvil</p>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <p>
+    Aunque no lo especifica Material Design, cuando el número de vistas es mayor
+    a 5, algunos diseñadores prefieren seguir usando una barra de navegación y
+    convertir el último botón en un cajón de navegación para las vistas
+    restantes.
+   </p>
+  </li>
+  <li>
+   <p>
+    En tablet y móvil se convierte en un menú lateral o en un navigation reel.
+   </p>
+  </li>
+  <li>
+   <p>
+    Se crea el elemento personalizado
+    <code class="language-html">nav-bar</code>.
+    En el método
+    <code class="language-javascript">connectedCallback</code>,
+    añade la instrucción
+    <code class="language-html">this.classList.add("navBar")</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Coloca
+    <code class="language-html">nav-bar</code>
+    al final de tu forma.
+   </p>
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="https://pwamd.gilbertopachec2.repl.co/navbar.html" height="280"
+    title="Navegación inferior para móvil"></iframe>
+  <p class="noPrint">
+   <a href="https://pwamd.gilbertopachec2.repl.co/navbar.html" target="_blank"
+     rel="noopener">Ábrelo en otra pestaña.</a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span
+      style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #e50000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;html</span> <span
+      style="color: #e50000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span></div>
+   <div>&nbsp;&nbsp;Barra de Navegación - PWA con MD</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/title&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"theme-color"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"#fffbfe"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"icon"</span> <span
+      style="color: #e50000;">sizes</span>=<span
+      style="color: #0000ff;">"32x32"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"favicon.ico"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"manifest"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"site.webmanifest"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"css/estilos.css"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">src</span>=<span
+      style="color: #0000ff;">"ungap/custom-elements.js"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/script&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"module"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">src</span>=<span
+      style="color: #0000ff;">"js/configura.js"</span><span
+      style="color: #800000;">&gt;&lt;/script&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;body</span> <span
+      style="color: #e50000;">style</span>=<span
+      style="color: #0000ff;">"</span><span
+      style="color: #0000ff;">padding-bottom: 80px;"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;md-top-app-bar</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">headline</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>navegación<span
+      style="color: #800000;">&lt;/h1&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"button"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">title</span>=<span
+      style="color: #0000ff;">"Agregar"</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"action"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"md-standard-icon-button"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;add</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"button"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">title</span>=<span
+      style="color: #0000ff;">"Editar"</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"action"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"md-standard-icon-button"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;edit</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/md-top-app-bar&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;h1</span> <span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;Barra de navegación</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/h1&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;section&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;Esta página usa barra de</div>
+   <div>&nbsp;&nbsp;&nbsp;navegación. Las X que siguen son</div>
+   <div>&nbsp;&nbsp;&nbsp;para que veas como se comporta</div>
+   <div>&nbsp;&nbsp;&nbsp;cuando se hace scroll.</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/section&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;nav-bar</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">actual</span>=<span
+      style="color: #0000ff;">"navbar"</span><span
+      style="color: #800000;">&gt;&lt;/nav-bar&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+<div class="lectura">
+ <h1>Solo para los más rudos</h1>
+ <ul>
+  <li>
+   <p>
+    La barra de navegación está definida en
+    <a href="https://m3.material.io/components/navigation-bar/overview"
+      rel="noopener"
+      target="_blank">https://m3.material.io/components/navigation-bar/overview</a>.
+   </p>
+  </li>
+ </ul>
+</div>

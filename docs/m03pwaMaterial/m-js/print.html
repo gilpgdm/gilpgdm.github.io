@@ -352,7 +352,7 @@
 </head>
 
 <body class="print">
-   <h1 >c. Carpeta « js »</h1>
+   <h1 >24. Carpeta « js »</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -373,22 +373,22 @@
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-js/m-nav-drw-js.html">js / nav-drw.js</a>
+     <a href="/m03pwaMaterial/m-js/m-nav-drw-js.html">js / nav-drw.js - Implementación de cajón de navegación</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-js/m-nav-tab-fixed-js.html">js / nav-tab-fixed.js</a>
+     <a href="/m03pwaMaterial/m-js/m-nav-tab-scrollable-js.html">js / nav-tab-scrollable.js - Implementación de pestañas scrollable</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-js/m-nav-tab-scrollable-js.html">js / nav-tab-scrollable.js</a>
+     <a href="/m03pwaMaterial/m-js/m-nav-tab-fixed-js.html">navTabFixed.html - Navegación con pestañas fijas</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-js/m-nav-bar-js.html">js / nav-bar.js</a>
+     <a href="/m03pwaMaterial/m-js/m-nav-bar-js.html">js / nav-bar.js - Implementación de barra de navegación</a>
     </p>
    </li>
    </ol>
@@ -472,7 +472,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >B. js / nav-drw.js</h1><muestra-codigo>
+         <h1 >B. js / nav-drw.js - Implementación de cajón de navegación</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #af00db;">import</span>&nbsp;{ <span
@@ -962,121 +962,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >C. js / nav-tab-fixed.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">calculaClase</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/calculaClase.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">getAttribute</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/getAttribute.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">html</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/html.js"</span></div><br>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">class</span> <span
-     style="color: #267f99;">NavTabFixed</span> <span
-     style="color: #0000ff;">extends</span> <span
-     style="color: #267f99;">HTMLElement</span>&nbsp;{</div><br>
-  <div>&nbsp;<span
-     style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #0070c1;">classList</span>.<span
-     style="color: #795e26;">add</span>(<span
-     style="color: #a31515;">"md-tab"</span>, <span
-     style="color: #a31515;">"fixed"</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">paginaActual</span> = <span
-     style="color: #795e26;">getAttribute</span>(<span
-     style="color: #0000ff;">this</span>, <span
-     style="color: #a31515;">"actual"</span>)</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">innerHTML</span> =<span
-     style="color: #008000;"> </span><span
-     style="color: #795e26;">html</span>`</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;a</span> <span
-     style="color: #800000;">${</span><span
-     style="color: #795e26;">calculaClase</span>(<span
-     style="color: #a31515;">"index"</span>, <span
-     style="color: #0070c1;">paginaActual</span>)<span
-     style="color: #800000;">}</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"index.html"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;span</span> <span
-     style="color: #e50000;">class</span>=<span
-     style="color: #0000ff;">"material-symbols-outlined"</span><span
-     style="color: #800000;">&gt;</span>home<span
-     style="color: #800000;">&lt;/span&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;Inicio</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/a&gt;</span></div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;a</span> <span
-     style="color: #800000;">${</span><span
-     style="color: #795e26;">calculaClase</span>(<span
-     style="color: #a31515;">"navTabFixed"</span>, <span
-     style="color: #0070c1;">paginaActual</span>)<span
-     style="color: #800000;">}</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"navTabFixed.html"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;span</span> <span
-     style="color: #e50000;">class</span>=<span
-     style="color: #0000ff;">"material-symbols-outlined"</span><span
-     style="color: #800000;">&gt;</span>tabs<span
-     style="color: #800000;">&lt;/span&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;Pestañas fijas</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/a&gt;</span></div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;a</span> <span
-     style="color: #800000;">${</span><span
-     style="color: #795e26;">calculaClase</span>(<span
-     style="color: #a31515;">"navbar"</span>, <span
-     style="color: #0070c1;">paginaActual</span>)<span
-     style="color: #800000;">}</span> </div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"navbar.html"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;span</span> <span
-     style="color: #e50000;">class</span>=<span
-     style="color: #0000ff;">"material-symbols-outlined"</span><span
-     style="color: #800000;">&gt;</span>bottom_navigation<span
-     style="color: #800000;">&lt;/span&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;Barra de navegación</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/a&gt;</span>`.<span
-     style="color: #001080;">htmlTxt</span></div><br>
-  <div>&nbsp;}</div><br>
-  <div>}</div><br>
-  <div><span
-     style="color: #001080;">customElements</span>.<span
-     style="color: #795e26;">define</span>(<span
-     style="color: #a31515;">"nav-tab-fixed"</span>, <span
-     style="color: #267f99;">NavTabFixed</span>)</div>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >D. js / nav-tab-scrollable.js</h1><muestra-codigo>
+         <h1 >C. js / nav-tab-scrollable.js - Implementación de pestañas scrollable</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #af00db;">import</span>&nbsp;{ <span
@@ -1490,7 +1376,121 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >E. js / nav-bar.js</h1><muestra-codigo>
+         <h1 >D. navTabFixed.html - Navegación con pestañas fijas</h1><muestra-codigo>
+ <div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">calculaClase</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../lib/js/calculaClase.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">getAttribute</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../lib/js/getAttribute.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">html</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../lib/js/html.js"</span></div><br>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">class</span> <span
+     style="color: #267f99;">NavTabFixed</span> <span
+     style="color: #0000ff;">extends</span> <span
+     style="color: #267f99;">HTMLElement</span>&nbsp;{</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"md-tab"</span>, <span
+     style="color: #a31515;">"fixed"</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">paginaActual</span> = <span
+     style="color: #795e26;">getAttribute</span>(<span
+     style="color: #0000ff;">this</span>, <span
+     style="color: #a31515;">"actual"</span>)</div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">innerHTML</span> =<span
+     style="color: #008000;"> </span><span
+     style="color: #795e26;">html</span>`</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"index"</span>, <span
+     style="color: #0070c1;">paginaActual</span>)<span
+     style="color: #800000;">}</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"index.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>home<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Inicio</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"navTabFixed"</span>, <span
+     style="color: #0070c1;">paginaActual</span>)<span
+     style="color: #800000;">}</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"navTabFixed.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>tabs<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Pestañas fijas</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"navbar"</span>, <span
+     style="color: #0070c1;">paginaActual</span>)<span
+     style="color: #800000;">}</span> </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"navbar.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>bottom_navigation<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Barra de navegación</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span>`.<span
+     style="color: #001080;">htmlTxt</span></div><br>
+  <div>&nbsp;}</div><br>
+  <div>}</div><br>
+  <div><span
+     style="color: #001080;">customElements</span>.<span
+     style="color: #795e26;">define</span>(<span
+     style="color: #a31515;">"nav-tab-fixed"</span>, <span
+     style="color: #267f99;">NavTabFixed</span>)</div>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >E. js / nav-bar.js - Implementación de barra de navegación</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #af00db;">import</span>&nbsp;{ <span

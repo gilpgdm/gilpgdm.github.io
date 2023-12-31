@@ -1,1 +1,338 @@
-<muestra-codigo></muestra-codigo>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Este control se adapta mejor a Material Designe que el select de HTML.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para que el contenido se muestra adecuadamente, se define el elemento
+    personalizado <dfn>select-menu</dfn> y su comportamiento lo definimos con
+    la clase <dfn>SelectMenu</dfn>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para las opciones se define el elemento personalizado
+    <dfn>menu-option</dfn>
+    y su comportamiento lo definimos con la clase
+    <dfn>MenuOption</dfn>.
+    Deben colocarse dentro de un elemento
+    <dfn>select-menu</dfn>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Las etiquetas deben llevar al atributo
+    <code class="language-html">slot="label"</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para asignar un valor inicial, usa el atributo
+    <code class="language-html">value</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Los textos de ayuda deben llevar al atributo
+    <code class="language-html">slot="supporting"</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para que forzosamente se deba seleccionar una opción, agrega el atributo
+    booleano
+    <code class="language-html">required</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para que el valor de este elemento se incluya al hacer submit, agrega el
+    atributo
+    <code class="language-html">name</code>.
+   </p>
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="https://pwamd.gilbertopachec2.repl.co/select.html" height="400"
+    title="Select para móvil"></iframe>
+  <p class="noPrint">
+   <a href="https://pwamd.gilbertopachec2.repl.co/select.html" target="_blank"
+     rel="noopener">Ábrelo
+    en
+    otra pestaña.</a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span
+      style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #e50000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;html</span> <span
+      style="color: #e50000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span></div>
+   <div>&nbsp;&nbsp;Select - PWA con MD</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/title&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"theme-color"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"#fffbfe"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"icon"</span> <span
+      style="color: #e50000;">sizes</span>=<span
+      style="color: #0000ff;">"32x32"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"favicon.ico"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"manifest"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"site.webmanifest"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"css/estilos.css"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">src</span>=<span
+      style="color: #0000ff;">"ungap/custom-elements.js"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/script&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"module"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">src</span>=<span
+      style="color: #0000ff;">"js/configura.js"</span><span
+      style="color: #800000;">&gt;&lt;/script&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;body&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;md-top-app-bar&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>Select<span
+      style="color: #800000;">&lt;/h1&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #e50000;">is</span>=<span
+      style="color: #0000ff;">"md-menu-button"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"navigation"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">onclick</span>=<span
+      style="color: #0000ff;">"</span><span
+      style="color: #001080;">nav</span><span
+      style="color: #0000ff;">.</span><span
+      style="color: #795e26;">abre</span><span
+      style="color: #0000ff;">()"</span><span
+      style="color: #800000;">&gt;&lt;/button&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/md-top-app-bar&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;main&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;md-filled-text-field</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"campoGrupo"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"nopadding"</span> <span
+      style="color: #e50000;">value</span>=<span
+      style="color: #0000ff;">"IC22"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span> <span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"etiquetaGrupo"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">accesskey</span>=<span
+      style="color: #0000ff;">"G"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;Grupo*</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;md-select-menu</span> <span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"selectGrupo"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"input-text"</span> <span
+      style="color: #e50000;">required</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">aria-labelledby</span>=<span
+      style="color: #0000ff;">"etiquetaGrupo"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">options</span>=<span
+      style="color: #0000ff;">"opcionesDeGrupo"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/md-select-menu&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;small</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"supporting"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;*Requerido</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/small&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/md-filled-text-field&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/main&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;md-options-menu</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"opcionesDeGrupo"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">aria-label</span>=<span
+      style="color: #0000ff;">"Opciones de grupo"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;input</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"radio"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"grupo"</span> <span
+      style="color: #e50000;">value</span>=<span
+      style="color: #0000ff;">""</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">title</span>=<span
+      style="color: #0000ff;">"Selecciona opción"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;input</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"radio"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"grupo"</span> <span
+      style="color: #e50000;">value</span>=<span
+      style="color: #0000ff;">"IC21"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;IC-21</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;input</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"radio"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"grupo"</span> <span
+      style="color: #e50000;">value</span>=<span
+      style="color: #0000ff;">"IC22"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;IC-22</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;input</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"radio"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"grupo"</span> <span
+      style="color: #e50000;">value</span>=<span
+      style="color: #0000ff;">"IC23"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;IC-23</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/md-options-menu&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;nav-drw</span> <span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"nav"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">actual</span>=<span
+      style="color: #0000ff;">"select"</span><span
+      style="color: #800000;">&gt;&lt;/nav-drw&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+<div class="lectura">
+ <h1>Solo para los más rudos</h1>
+ <ul>
+  <li>
+   <p>
+    Los campos de texto en Material Design están definidos en
+    <a href="https://m3.material.io/components/text-fields/overview"
+      rel="noopener"
+      target="_blank">https://m3.material.io/components/text-fields/overview</a>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Los menús en Material Design están definidos en
+    <a href="https://m3.material.io/components/menus/overview" rel="noopener"
+      target="_blank">https://m3.material.io/components/menus/overview</a>.
+   </p>
+  </li>
+ </ul>
+</div>

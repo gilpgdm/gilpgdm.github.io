@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>\. site.webmanifest - GilPG DM</title>
- <meta name="description" content="Código de «site.webmanifest».">
+ <title>25. site.webmanifest - GilPG DM</title>
+ <meta name="description" content="Código del archivo «site.webmanifest» del ejemplo de PWA con Material Design.">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -457,7 +457,484 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >\. site.webmanifest</h1><muestra-codigo></muestra-codigo>
+   <h1 >25. site.webmanifest</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Este archivo sirve para configurar los instaladores de la aplicación.</p>
+  </li>
+ </ul>
+</div>
+<section class="lectura">
+ <h1>Explicación de las propiedades</h1>
+ <dl>
+  <dt><code><dfn>short_name</dfn></code></dt>
+  <dd>
+   <p>
+    Nombre corto. Normalmente se despliega en dispositivos móviles.
+    Máximo 20 caracteres.
+   </p>
+  </dd>
+  <dt><code><dfn>name</dfn></code></dt>
+  <dd>
+   <p>
+    Nombre largo. Normalmente se despliega en computadoras de escritorio.
+    Máximo 30 caracteres.
+   </p>
+  </dd>
+  <dt><code><dfn>id</dfn></code></dt>
+  <dd>
+   <p>
+    Identificador del archivo de instalación. Normalmente es la ruta del archivo
+    inicial de la app.
+   </p>
+  </dd>
+  <dt><code><dfn>start_url</dfn></code></dt>
+  <dd>
+   <p>
+    Ruta del archivo inicial de la app.
+   </p>
+  </dd>
+  <dt><code><dfn>display</dfn></code></dt>
+  <dd>
+   <p>
+    Forma de mostrar la app. El término <code>standalone</code> significa que no
+    se muestra la barra de navegación del navegador web.
+   </p>
+  </dd>
+  <dt><code><dfn>theme_color</dfn></code></dt>
+  <dd>
+   <p>
+    Color de la barra de estado (en dispositivos móviles) o de título (en
+    computadoras de escritorio) de la app.
+   </p>
+  </dd>
+  <dt><code><dfn>background_color</dfn></code></dt>
+  <dd>
+   <p>
+    Color de fondo de la pantalla desplah en dispositivos móviles.
+   </p>
+  </dd>
+  <dt><code><dfn>description</dfn></code></dt>
+  <dd>
+   <p>
+    Describe el propósito de la aplicación. Aparece en el cuadro de diálogo que
+    muestra el navegador al instalar la app.
+   </p>
+  </dd>
+  <dt><code><dfn>screenshots</dfn></code></dt>
+  <dd>
+   <p>
+    Listado de máximo 8 capturas de pantalla. Aparecen en el cuadro de diálogo
+    que muestra el navegador al instalar la app. Debes incluir al menos una con
+    <code>"form_factor": "wide"</code>
+    y otra con
+    <code>"form_factor": "narrow"</code>.
+   </p>
+  </dd>
+  <dt><code><dfn>icons</dfn></code></dt>
+  <dd>
+   <p>
+    Listado de íconos en distintas resoluciones para los instaladores de la app.
+    Se selecciona el que se vea mejor según las característocas del dispositivo.
+   </p>
+  </dd>
+  <dt><code><dfn>src</dfn></code></dt>
+  <dd>
+   <p>
+    Url de la imagen dentro de la app.
+   </p>
+  </dd>
+  <dt><code><dfn>sizes</dfn></code></dt>
+  <dd>
+   <p>
+    Dimensiones en pixeles de la imagen, <em>ancho</em>x<em>alto</em>.
+   </p>
+  </dd>
+  <dt><code><dfn>type</dfn></code></dt>
+  <dd>
+   <p>
+    Tipo mime de la imagen.
+   </p>
+  </dd>
+  <dt><code><dfn>purpose</dfn></code></dt>
+  <dd>
+   <p>
+    Forma en que se usa la imagen.
+   </p>
+   <dl>
+    <dt><code><dfn>maskable</dfn></code></dt>
+    <dd>
+     <p>
+      La imagen puede recortarse de forma segura para tomar distintas formas,
+      como círculos, gotas, cuadrados con esquinas redondeadas, etc. Normalmente
+      se usa para dispositivos móviles.
+     </p>
+    </dd>
+    <dt><code><dfn>any</dfn></code></dt>
+    <dd>
+     <p>
+      No se puede asegurar nada sobre la imagen. Normalmente se usa para
+      dispositivos de escritorio.
+     </p>
+    </dd>
+   </dl>
+   <p>
+    Normalmente debe proporcionarse un juego de íconos con <code>purpose</code>
+    <code>any</code> y otro juego de íconos con <code>purpose</code>
+    <code>maskable</code>.
+   </p>
+  </dd>
+  <dt><code><dfn>form_factor</dfn></code></dt>
+  <dd>
+   <p>
+    Orientación de una screenshot.
+   </p>
+   <dl>
+    <dt><code><dfn>wide</dfn></code></dt>
+    <dd>
+     <p>
+      La screenshot tiene una orientación horizontal. Normalmente la creenshot
+      se usa para dispositivos de escritorio.
+     </p>
+    </dd>
+    <dt><code><dfn>narrow</dfn></code></dt>
+    <dd>
+     <p>
+      La screenshot tiene una orientación vertical. Normalmente la creenshot
+      se usa para dispositivos móviles.
+     </p>
+    </dd>
+   </dl>
+   <p>
+    Debes incluir al menos una screenshot con
+    <code>"form_factor": "wide"</code>
+    y otra con
+    <code>"form_factor": "narrow"</code>.
+   </p>
+  </dd>
+  <dt><code><dfn>label</dfn></code></dt>
+  <dd>
+   <p>
+    Descripción de una screenshot. Aparece en el cuadro de diálogo que
+    muestra el navegador al instalar la app.
+   </p>
+  </dd>
+ </dl>
+</section>
+<muestra-codigo>
+ <div>
+  <div>{</div>
+  <div>&nbsp;<span
+     style="color: #0451a5;">"short_name"</span>: <span
+     style="color: #a31515;">"PWA con MD"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #0451a5;">"name"</span>: <span
+     style="color: #a31515;">"PWA con Material Design"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #0451a5;">"id"</span>: <span
+     style="color: #a31515;">"/index.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #0451a5;">"start_url"</span>: <span
+     style="color: #a31515;">"/index.html"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #0451a5;">"display"</span>: <span
+     style="color: #a31515;">"standalone"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #0451a5;">"theme_color"</span>: <span
+     style="color: #a31515;">"#fffbfe"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #0451a5;">"background_color"</span>: <span
+     style="color: #a31515;">"#fffbfe"</span>,</div>
+  <div>&nbsp;<span
+     style="color: #0451a5;">"display_override"</span>: [</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #a31515;">"window-controls-overlay"</span></div>
+  <div>&nbsp;],</div>
+  <div>&nbsp;<span
+     style="color: #0451a5;">"description"</span>: <span
+     style="color: #a31515;">"Ejemplos de PWA con múltiples componentes de
+    Material Design."</span>,</div>
+  <div>&nbsp;<span
+     style="color: #0451a5;">"screenshots"</span>: [</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/screenshot_horizontal.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"1257x646"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"form_factor"</span>: <span
+     style="color: #a31515;">"wide"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"label"</span>: <span
+     style="color: #a31515;">"Componentes de MD"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/screenshot_vertical.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"595x644"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"form_factor"</span>: <span
+     style="color: #a31515;">"narrow"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"label"</span>: <span
+     style="color: #a31515;">"Componentes de MD (2)"</span></div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;],</div>
+  <div>&nbsp;<span
+     style="color: #0451a5;">"icons"</span>: [</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x48.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"48x48"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"any"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x72.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"72x72"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"any"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x96.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"96x96"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x128.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"128x128"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"any"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x192.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"192x192"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"any"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x384.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"384x384"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"any"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x512.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"512x512"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"any"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"2730x2730"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"any"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/icono2048.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"2048x2048"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"any"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x48.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"48x48"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x72.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"72x72"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x96.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"96x96"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x128.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"128x128"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x192.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"192x192"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x384.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"384x384"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x512.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"512x512"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp;&nbsp;},</div>
+  <div>&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon.png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"2730x2730"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;]</div>
+  <div>}</div>
+ </div>
+</muestra-codigo>
  <footer>
  <p>
   <a rel="license"
@@ -481,8 +958,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m03pwaMaterial/m-ayuda-html.html" title="[. ayuda.html">◀</a>
- <a class="siguiente" href="/m03pwaMaterial/m-instruccionesListadoSw-txt.html" title="]. instruccionesListadoSw.txt">▶</a>
+ <a class="anterior" href="/m03pwaMaterial/m-js/m-nav-bar-js.html" title="E. js / nav-bar.js - Implementación de barra de navegación">◀</a>
+ <a class="siguiente" href="/m03pwaMaterial/m-instruccionesListadoSw-txt.html" title="26. instruccionesListadoSw.txt">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -502,7 +979,7 @@
      </p>
    <h1><a href="/m03pwaMaterial/index.html">5. PWA con Material Design</a></h1>
    
-   <ol type="A">
+   <ol type="1">
     
    <li>
     <p>
@@ -521,67 +998,42 @@
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m03archivos.html">Archivos</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m03pwaMaterial/m04elementos/">Elementos de las vistas móviles</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m03pwaMaterial/m05navegacion/">Navegación</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m03pwaMaterial/m06vistas/">VIstas móviles típicas</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m03pwaMaterial/m07configuracion/">Archivos de configuración</a>
-    </p>
-   </li>
-   <li>
-    <p>
      <a href="/m03pwaMaterial/mArchivos.html">Archivos</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-index-html.html">index.html</a>
+     <a href="/m03pwaMaterial/m-index-html.html">index.html - Página principal</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-secundaria-html.html">secundaria.html</a>
+     <a href="/m03pwaMaterial/m-secundaria-html.html">secundaria.html - Vista secundaria</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-iconos-html.html">iconos.html</a>
+     <a href="/m03pwaMaterial/m-iconos-html.html">iconos.html - Íconos oficiales</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-botones-html.html">botones.html</a>
+     <a href="/m03pwaMaterial/m-botones-html.html">botones.html - Botones</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-campos-html.html">campos.html</a>
+     <a href="/m03pwaMaterial/m-campos-html.html">campos.html - Campos de texto</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-select-html.html">select.html</a>
+     <a href="/m03pwaMaterial/m-select-html.html">select.html - Selects</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-interruptor-html.html">interruptor.html</a>
+     <a href="/m03pwaMaterial/m-interruptor-html.html">interruptor.html - Interruptores</a>
     </p>
    </li>
    <li>
@@ -591,52 +1043,62 @@
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-segmentado-html.html">segmentado.html</a>
+     <a href="/m03pwaMaterial/m-segmentado-html.html">segmentado.html - Botones segmentados</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-one-line-html.html">one-line.html</a>
+     <a href="/m03pwaMaterial/m-one-line-html.html">one-line.html - Listas con elementos one-line</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-two-line-html.html">two-line.html</a>
+     <a href="/m03pwaMaterial/m-two-line-html.html">two-line.html - Listas con elementos two-line</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-three-line-html.html">three-line.html</a>
+     <a href="/m03pwaMaterial/m-three-line-html.html">three-line.html - Listas con elementos three-line</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-tarjetas-html.html">tarjetas.html</a>
+     <a href="/m03pwaMaterial/m-tarjetas-html.html">tarjetas.html - Tarjetas</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-navtab-html.html">navtab.html</a>
+     <a href="/m03pwaMaterial/mAdrawer.html">Cajón de navegación</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-navTabFixed-html.html">navTabFixed.html</a>
+     <a href="/m03pwaMaterial/m-navtab-html.html">navtab.html - Navegación con pestañas scrollable</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-navbar-html.html">navbar.html</a>
+     <a href="/m03pwaMaterial/m-navTabFixed-html.html">navTabFixed.html - Navegación con pestañas fijas</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-formulario-html.html">formulario.html</a>
+     <a href="/m03pwaMaterial/m-navbar-html.html">navbar.html - Barra de navegación</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-ayuda-html.html">ayuda.html</a>
+     <a href="/m03pwaMaterial/m-formulario-html.html">formulario.html - Formulario típico</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-ayuda-html.html">ayuda.html - Vista de ayuda</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-js/">Carpeta « js »</a>
     </p>
    </li>
    <li>
@@ -672,11 +1134,6 @@
    <li>
     <p>
      <a href="/m03pwaMaterial/m-img/">Carpeta « img »</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m03pwaMaterial/m-js/">Carpeta « js »</a>
     </p>
    </li>
    <li>
@@ -717,7 +1174,7 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m03pwaMaterial/m-ayuda-html.html"
+ let urlAnterior = "/m03pwaMaterial/m-js/m-nav-bar-js.html"
  /**@type {string} */
  let urlSiguiente = "/m03pwaMaterial/m-instruccionesListadoSw-txt.html"
  /**@type {number|null} */

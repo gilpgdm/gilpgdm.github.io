@@ -1,1 +1,290 @@
-<muestra-codigo></muestra-codigo>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Cuando son pocas pestañas, pueden mantenerse fijas.
+   </p>
+  </li>
+  <li>
+   <p>
+    Se crea el elemento personalizado
+    <code class="language-html">nav-tab-fixed</code>,
+    En el método
+    <code class="language-javascript">connectedCallback</code>,
+    añade la instrucción
+    <code
+      class="language-html">this.classList.add("navTab", "fixed")</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Coloca
+    <code class="language-html">mi-nav</code>,
+    usando el atributo
+    <code class="language-html">slot="adicional"</code>.
+    dentro de
+    <code class="language-html">center-aligned-top-app-bar</code> y
+    <code class="language-html">top-app-bar</code>
+   </p>
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="https://pwamd.gilbertopachec2.repl.co/navTabFixed.html"
+    height="250" title="Navegación con pestañas fixed"></iframe>
+  <p class="noPrint">
+   <a href="https://pwamd.gilbertopachec2.repl.co/navTabFixed.html"
+     target="_blank"
+     rel="noopener">Ábrelo en otra pestaña.</a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span
+      style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #e50000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;html</span> <span
+      style="color: #e50000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span></div>
+   <div>&nbsp;&nbsp;Pestañas fijas - PWA con MD</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/title&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"theme-color"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"#fffbfe"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"icon"</span> <span
+      style="color: #e50000;">sizes</span>=<span
+      style="color: #0000ff;">"32x32"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"favicon.ico"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"manifest"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"site.webmanifest"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;link</span> <span
+      style="color: #e50000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">href</span>=<span
+      style="color: #0000ff;">"css/estilos.css"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">src</span>=<span
+      style="color: #0000ff;">"ungap/custom-elements.js"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/script&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"module"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">src</span>=<span
+      style="color: #0000ff;">"js/configura.js"</span><span
+      style="color: #800000;">&gt;&lt;/script&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;body&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;md-top-app-bar</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">headline</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>fijas<span
+      style="color: #800000;">&lt;/h1&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"button"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">title</span>=<span
+      style="color: #0000ff;">"Agregar"</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"action"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"md-standard-icon-button"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;add</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"button"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">title</span>=<span
+      style="color: #0000ff;">"Editar"</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"action"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"md-standard-icon-button"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"material-symbols-outlined"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;edit</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/md-top-app-bar&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;h1</span> <span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;Pestañas fijas</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/h1&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;nav-tab-fixed</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">actual</span>=<span
+      style="color: #0000ff;">"navTabFixed"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/nav-tab-fixed&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;main&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;Esta página usa navegación por</div>
+   <div>&nbsp;&nbsp;&nbsp;pestañas filas. Las X que siguen</div>
+   <div>&nbsp;&nbsp;&nbsp;son para que veas como se</div>
+   <div>&nbsp;&nbsp;&nbsp;comporta cuando se hace scroll.</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>x<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/main&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
