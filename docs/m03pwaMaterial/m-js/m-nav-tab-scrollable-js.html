@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>E. js / nav-tab-scrollable.js - GilPG DM</title>
+ <title>D. js / nav-tab-scrollable.js - GilPG DM</title>
  <meta name="description" content="Código de «js/nav-tab-scrollable.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -457,7 +457,418 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >E. js / nav-tab-scrollable.js</h1><muestra-codigo></muestra-codigo>
+   <h1 >D. js / nav-tab-scrollable.js</h1><muestra-codigo>
+ <div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">calculaClase</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../lib/js/calculaClase.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">getAttribute</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../lib/js/getAttribute.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">html</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../lib/js/html.js"</span></div><br>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">class</span> <span
+     style="color: #267f99;">NavTabScrollable</span> <span
+     style="color: #0000ff;">extends</span> <span
+     style="color: #267f99;">HTMLElement</span>&nbsp;{</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"md-tab"</span>, <span
+     style="color: #a31515;">"scrollable"</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">paginaActual</span> = <span
+     style="color: #795e26;">getAttribute</span>(<span
+     style="color: #0000ff;">this</span>, <span
+     style="color: #a31515;">"actual"</span>)</div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">innerHTML</span> =<span
+     style="color: #008000;"> </span><span
+     style="color: #795e26;">html</span>`</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"index"</span>, <span
+     style="color: #0070c1;">paginaActual</span>)<span
+     style="color: #800000;">}</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"index.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>home<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Inicio</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"secundaria"</span>, <span
+     style="color: #0070c1;">paginaActual</span>)<span
+     style="color: #800000;">}</span> </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"secundaria.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>scrollable_header<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Página secundaria</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"iconos"</span>, <span
+     style="color: #0070c1;">paginaActual</span>)<span
+     style="color: #800000;">}</span> </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"iconos.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>sentiment_satisfied<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Íconos</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"botones"</span>, <span
+     style="color: #0070c1;">paginaActual</span>)<span
+     style="color: #800000;">}</span> </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"botones.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>right_click<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Botones</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"campos"</span>, <span
+     style="color: #0070c1;">paginaActual</span>)<span
+     style="color: #800000;">}</span> </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"campos.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>password<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Campos de texto</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"select"</span>, <span
+     style="color: #001080;">paginaActual</span>)<span
+     style="color: #800000;">}</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"select.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>bottom_panel_close<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Select</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"interruptor"</span>, <span
+     style="color: #001080;">paginaActual</span>)<span
+     style="color: #800000;">}</span> </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"interruptor.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>toggle_on<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Interruptores</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"slider"</span>, <span
+     style="color: #001080;">paginaActual</span>)<span
+     style="color: #800000;">}</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"slider.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>linear_scale<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Sliders</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"segmentado"</span>, <span
+     style="color: #001080;">paginaActual</span>)<span
+     style="color: #800000;">}</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"segmentado.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>splitscreen_left<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Botón segmentado</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"one-line"</span>, <span
+     style="color: #001080;">paginaActual</span>)<span
+     style="color: #800000;">}</span> </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"one-line.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>list<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Listas one-line</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"two-line"</span>, <span
+     style="color: #001080;">paginaActual</span>)<span
+     style="color: #800000;">}</span> </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"two-line.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>lists<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Listas two-line</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"three-line"</span>, <span
+     style="color: #001080;">paginaActual</span>)<span
+     style="color: #800000;">}</span> </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"three-line.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>receipt_long<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Listas three-line</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"tarjetas"</span>, <span
+     style="color: #001080;">paginaActual</span>)<span
+     style="color: #800000;">}</span> </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"tarjetas.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>cards<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Tarjetas</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"navtab"</span>, <span
+     style="color: #001080;">paginaActual</span>)<span
+     style="color: #800000;">}</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"navtab.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>swipe_left<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Pestañas scrollable</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"navTabFixed"</span>, <span
+     style="color: #001080;">paginaActual</span>)<span
+     style="color: #800000;">}</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"navTabFixed.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>tabs<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Pestañas fijas</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"navbar"</span>, <span
+     style="color: #001080;">paginaActual</span>)<span
+     style="color: #800000;">}</span> </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"navbar.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>bottom_navigation<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Barra de navegación</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"formulario"</span>, <span
+     style="color: #001080;">paginaActual</span>)<span
+     style="color: #800000;">}</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"formulario.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>newspaper<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Formulario</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"ayuda"</span>, <span
+     style="color: #001080;">paginaActual</span>)<span
+     style="color: #800000;">}</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"ayuda.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>help<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Ayuda</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span>`.<span
+     style="color: #001080;">htmlTxt</span></div><br>
+  <div>&nbsp;}</div><br>
+  <div>}</div><br>
+  <div><span
+     style="color: #001080;">customElements</span>.<span
+     style="color: #795e26;">define</span>(<span
+     style="color: #a31515;">"nav-tab-scrollable"</span>, <span
+     style="color: #001080;">NavTabScrollable</span>)</div>
+ </div>
+</muestra-codigo>
  <footer>
  <p>
   <a rel="license"
@@ -481,8 +892,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m03pwaMaterial/m-js/m-nav-tab-fixed-js.html" title="D. js / nav-tab-fixed.js">◀</a>
- <a class="siguiente" href="/m03pwaMaterial/m-lib/index.html" title="g. Carpeta « lib »">▶</a>
+ <a class="anterior" href="/m03pwaMaterial/m-js/m-nav-tab-fixed-js.html" title="C. js / nav-tab-fixed.js">◀</a>
+ <a class="siguiente" href="/m03pwaMaterial/m-js/m-nav-bar-js.html" title="E. js / nav-bar.js">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -503,18 +914,13 @@
       <a class="paginaAnterior" href="/m03pwaMaterial/m-img/m-screenshot_vertical-png.html"
         title="U. img / screenshot_vertical.png">▲</a>
      </p>
-   <h1><a href="/m03pwaMaterial/m-js/index.html">f. Carpeta « js »</a></h1>
+   <h1><a href="/m03pwaMaterial/m-js/index.html">d. Carpeta « js »</a></h1>
    
    <ol type="A">
     
    <li>
     <p>
      <a href="/m03pwaMaterial/m-js/m-configura-js.html">js / configura.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m03pwaMaterial/m-js/m-nav-bar-js.html">js / nav-bar.js</a>
     </p>
    </li>
    <li>
@@ -532,11 +938,16 @@
      <a href="/m03pwaMaterial/m-js/m-nav-tab-scrollable-js.html" class="actual">js / nav-tab-scrollable.js</a>
     </p>
    </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-js/m-nav-bar-js.html">js / nav-bar.js</a>
+    </p>
+   </li>
    </ol>
    
     <p>
-     <a class="paginaSiguiente" href="/m03pwaMaterial/m-lib/index.html"
-       title="g. Carpeta « lib »">▼</a>
+     <a class="paginaSiguiente" href="/m03pwaMaterial/m-jsconfig-json.html"
+       title="e. jsconfig.json">▼</a>
     </p>
  
 </nav>
@@ -552,7 +963,7 @@
  /**@type {string} */
  let urlAnterior = "/m03pwaMaterial/m-js/m-nav-tab-fixed-js.html"
  /**@type {string} */
- let urlSiguiente = "/m03pwaMaterial/m-lib/index.html"
+ let urlSiguiente = "/m03pwaMaterial/m-js/m-nav-bar-js.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

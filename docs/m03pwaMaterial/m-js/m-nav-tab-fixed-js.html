@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>D. js / nav-tab-fixed.js - GilPG DM</title>
+ <title>C. js / nav-tab-fixed.js - GilPG DM</title>
  <meta name="description" content="Código de «js/nav-tab-fixed.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -457,7 +457,118 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >D. js / nav-tab-fixed.js</h1><muestra-codigo></muestra-codigo>
+   <h1 >C. js / nav-tab-fixed.js</h1><muestra-codigo>
+ <div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">calculaClase</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../lib/js/calculaClase.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">getAttribute</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../lib/js/getAttribute.js"</span></div>
+  <div><span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">html</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../lib/js/html.js"</span></div><br>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">class</span> <span
+     style="color: #267f99;">NavTabFixed</span> <span
+     style="color: #0000ff;">extends</span> <span
+     style="color: #267f99;">HTMLElement</span>&nbsp;{</div><br>
+  <div>&nbsp;<span
+     style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"md-tab"</span>, <span
+     style="color: #a31515;">"fixed"</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">paginaActual</span> = <span
+     style="color: #795e26;">getAttribute</span>(<span
+     style="color: #0000ff;">this</span>, <span
+     style="color: #a31515;">"actual"</span>)</div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">innerHTML</span> =<span
+     style="color: #008000;"> </span><span
+     style="color: #795e26;">html</span>`</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"index"</span>, <span
+     style="color: #0070c1;">paginaActual</span>)<span
+     style="color: #800000;">}</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"index.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>home<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Inicio</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"navTabFixed"</span>, <span
+     style="color: #0070c1;">paginaActual</span>)<span
+     style="color: #800000;">}</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"navTabFixed.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>tabs<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Pestañas fijas</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #800000;">${</span><span
+     style="color: #795e26;">calculaClase</span>(<span
+     style="color: #a31515;">"navbar"</span>, <span
+     style="color: #0070c1;">paginaActual</span>)<span
+     style="color: #800000;">}</span> </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"navbar.html"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;span</span> <span
+     style="color: #e50000;">class</span>=<span
+     style="color: #0000ff;">"material-symbols-outlined"</span><span
+     style="color: #800000;">&gt;</span>bottom_navigation<span
+     style="color: #800000;">&lt;/span&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Barra de navegación</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/a&gt;</span>`.<span
+     style="color: #001080;">htmlTxt</span></div><br>
+  <div>&nbsp;}</div><br>
+  <div>}</div><br>
+  <div><span
+     style="color: #001080;">customElements</span>.<span
+     style="color: #795e26;">define</span>(<span
+     style="color: #a31515;">"nav-tab-fixed"</span>, <span
+     style="color: #267f99;">NavTabFixed</span>)</div>
+ </div>
+</muestra-codigo>
  <footer>
  <p>
   <a rel="license"
@@ -481,8 +592,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m03pwaMaterial/m-js/m-nav-drw-js.html" title="C. js / nav-drw.js">◀</a>
- <a class="siguiente" href="/m03pwaMaterial/m-js/m-nav-tab-scrollable-js.html" title="E. js / nav-tab-scrollable.js">▶</a>
+ <a class="anterior" href="/m03pwaMaterial/m-js/m-nav-drw-js.html" title="B. js / nav-drw.js">◀</a>
+ <a class="siguiente" href="/m03pwaMaterial/m-js/m-nav-tab-scrollable-js.html" title="D. js / nav-tab-scrollable.js">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -503,18 +614,13 @@
       <a class="paginaAnterior" href="/m03pwaMaterial/m-img/m-screenshot_vertical-png.html"
         title="U. img / screenshot_vertical.png">▲</a>
      </p>
-   <h1><a href="/m03pwaMaterial/m-js/index.html">f. Carpeta « js »</a></h1>
+   <h1><a href="/m03pwaMaterial/m-js/index.html">d. Carpeta « js »</a></h1>
    
    <ol type="A">
     
    <li>
     <p>
      <a href="/m03pwaMaterial/m-js/m-configura-js.html">js / configura.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m03pwaMaterial/m-js/m-nav-bar-js.html">js / nav-bar.js</a>
     </p>
    </li>
    <li>
@@ -532,11 +638,16 @@
      <a href="/m03pwaMaterial/m-js/m-nav-tab-scrollable-js.html">js / nav-tab-scrollable.js</a>
     </p>
    </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-js/m-nav-bar-js.html">js / nav-bar.js</a>
+    </p>
+   </li>
    </ol>
    
     <p>
-     <a class="paginaSiguiente" href="/m03pwaMaterial/m-lib/index.html"
-       title="g. Carpeta « lib »">▼</a>
+     <a class="paginaSiguiente" href="/m03pwaMaterial/m-jsconfig-json.html"
+       title="e. jsconfig.json">▼</a>
     </p>
  
 </nav>
