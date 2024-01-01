@@ -148,10 +148,6 @@
  figure img {
   width: 100%;
  }
-/* 
- figure img.med {
-  max-height: 55vh;
- } */
 
  figcaption {
   font-family: var(--fontMono);
@@ -173,7 +169,7 @@
 
  iframe {
   box-sizing: border-box;
-  width: 100%;
+  width: 300px;
  }
 
  .lectura {
@@ -186,19 +182,20 @@
   text-align: justify;
  }
 
- /* No funciona bien con display:flex en pantallas pequeñas. */
  .horizontal {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: start;
+  justify-content: center;
  }
 
- .horizontal>* {
-  display: inline-block;
-  vertical-align: top;
-  text-align: left;
+ .horizontal>*:first-child {
+  flex: 0 1 300px;
  }
 
- .horizontal>*:not(:first-child) {
-  margin-left: 1rem;
+ .horizontal>*:nth-child(2) {
+  flex: 1 1 auto;
  }
 
  .columnas4 {
@@ -468,15 +465,16 @@
   </li>
   <li>
    <p>
-    Para que el contenido se muestra adecuadamente, se define el elemento
-    personalizado <dfn>text-field</dfn> y su comportamiento lo definimos con
-    la clase <dfn>TextField</dfn>.
+    Se el elemento personalizado <dfn>md-filled-text-field</dfn>, definimos con
+    la clase <dfn>MdFilledTextField</dfn>.
    </p>
   </li>
   <li>
    <p>
-    Las etiquetas deben llevar al atributo
-    <code class="language-html">slot="label"</code>.
+    Las etiquetas deben ser
+    <code class="language-html">label</code>
+    o
+    <code class="language-html">span</code>.
    </p>
   </li>
   <li>
@@ -488,7 +486,9 @@
   <li>
    <p>
     Los textos de ayuda deben llevar al atributo
-    <code class="language-html">slot="supporting"</code>.
+    <code class="language-html">slot="supporting"</code>
+    y normalmente son de tipo
+    <code class="language-html">small</code>..
    </p>
   </li>
   <li>
@@ -537,7 +537,7 @@
       style="color: #800000;">&gt;</span></div><br>
    <div>&nbsp;<span
       style="color: #800000;">&lt;title&gt;</span></div>
-   <div>&nbsp;&nbsp;Botones - PWA con MD</div>
+   <div>&nbsp;&nbsp;Campos de texto - PWA con MD</div>
    <div>&nbsp;<span
       style="color: #800000;">&lt;/title&gt;</span></div><br>
    <div>&nbsp;<span
@@ -565,7 +565,7 @@
    <div>&nbsp;&nbsp;&nbsp;<span
       style="color: #e50000;">href</span>=<span
       style="color: #0000ff;">"site.webmanifest"</span><span
-      style="color: #800000;">&gt;</span></div><br><br>
+      style="color: #800000;">&gt;</span></div><br>
    <div>&nbsp;<span
       style="color: #800000;">&lt;link</span> <span
       style="color: #e50000;">rel</span>=<span
@@ -595,9 +595,13 @@
    <div><span
       style="color: #800000;">&lt;body&gt;</span></div><br>
    <div>&nbsp;<span
-      style="color: #800000;">&lt;md-top-app-bar&gt;</span></div><br>
+      style="color: #800000;">&lt;md-top-app-bar</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">headline</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span></div><br>
    <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span>Botones<span
+      style="color: #800000;">&lt;h1&gt;</span>Texto<span
       style="color: #800000;">&lt;/h1&gt;</span></div><br>
    <div>&nbsp;&nbsp;<span
       style="color: #800000;">&lt;button</span> <span
@@ -617,29 +621,165 @@
    <div>&nbsp;<span
       style="color: #800000;">&lt;/md-top-app-bar&gt;</span></div><br>
    <div>&nbsp;<span
+      style="color: #800000;">&lt;h1</span> <span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"headline"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;Campos de texto</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/h1&gt;</span></div><br>
+   <div>&nbsp;<span
       style="color: #800000;">&lt;main&gt;</span></div><br>
    <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span></div><br>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;button</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">class</span>=<span
-      style="color: #0000ff;">"md-filled-button"</span><span
+      style="color: #800000;">&lt;md-filled-text-field</span> <span
+      style="color: #e50000;">value</span>=<span
+      style="color: #0000ff;">"Saludo"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;Primario</div>
    <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/button&gt;</span></div><br>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;button</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">class</span>=<span
-      style="color: #0000ff;">"md-outline-button"</span><span
+      style="color: #800000;">&lt;label</span> <span
+      style="color: #e50000;">for</span>=<span
+      style="color: #0000ff;">"saludo"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;Secundario</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;Saludo</div>
    <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/button&gt;</span></div>
+      style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;output</span> <span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"saludo"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"input-text"</span><span
+      style="color: #800000;">&gt;&lt;/output&gt;</span></div>
    <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div><br>
+      style="color: #800000;">&lt;/md-filled-text-field&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;md-filled-text-field&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label</span> <span
+      style="color: #e50000;">for</span>=<span
+      style="color: #0000ff;">"nombre"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;Nombre*</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;input</span> <span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"nombre"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"input-text"</span> <span
+      style="color: #e50000;">required</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;small</span> <span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"supporting"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;*Requerido</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/small&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/md-filled-text-field&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;md-filled-text-field&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label</span> <span
+      style="color: #e50000;">for</span>=<span
+      style="color: #0000ff;">"email"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">accesskey</span>=<span
+      style="color: #0000ff;">"M"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;Email</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;input</span> <span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"email"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"input-text"</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"email"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">oninput</span>=<span
+      style="color: #0000ff;">"</span></div>
+   <div><span
+      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+      style="color: #001080;">campoDireccion</span><span
+      style="color: #0000ff;">.</span><span
+      style="color: #001080;">value</span><span
+      style="color: #0000ff;"> </span>=</div>
+   <div><span
+      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.</span><span
+      style="color: #001080;">value</span><span
+      style="color: #0000ff;">"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/md-filled-text-field&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #008000;">&lt;!-- Usa class="float" cuando</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;quieras que la etiqueta
+     esté</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;arriba todo el tiempo.
+     --&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;md-filled-text-field</span> <span
+      style="color: #e50000;">class</span>=<span
+      style="color: #0000ff;">"float"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label</span> <span
+      style="color: #e50000;">for</span>=<span
+      style="color: #0000ff;">"fecha"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;Fecha</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;input</span> <span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"fecha"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"input-text"</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"date"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/md-filled-text-field&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;md-filled-text-field</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"campoDireccion"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label</span> <span
+      style="color: #e50000;">for</span>=<span
+      style="color: #0000ff;">"direccion"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;Dirección</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;textarea</span> <span
+      style="color: #e50000;">id</span>=<span
+      style="color: #0000ff;">"direccion"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">rows</span>=<span
+      style="color: #0000ff;">"3"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">slot</span>=<span
+      style="color: #0000ff;">"input-text"</span><span
+      style="color: #800000;">&gt;&lt;/textarea&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/md-filled-text-field&gt;</span></div><br>
    <div>&nbsp;<span
       style="color: #800000;">&lt;/main&gt;</span></div><br>
    <div>&nbsp;<span
@@ -648,7 +788,7 @@
       style="color: #0000ff;">"nav"</span></div>
    <div>&nbsp;&nbsp;&nbsp;<span
       style="color: #e50000;">actual</span>=<span
-      style="color: #0000ff;">"botones"</span><span
+      style="color: #0000ff;">"campos"</span><span
       style="color: #800000;">&gt;&lt;/nav-drw&gt;</span></div><br>
    <div><span
       style="color: #800000;">&lt;/body&gt;</span></div><br>

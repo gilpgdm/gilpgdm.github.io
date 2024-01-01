@@ -148,10 +148,6 @@
  figure img {
   width: 100%;
  }
-/* 
- figure img.med {
-  max-height: 55vh;
- } */
 
  figcaption {
   font-family: var(--fontMono);
@@ -173,7 +169,7 @@
 
  iframe {
   box-sizing: border-box;
-  width: 100%;
+  width: 300px;
  }
 
  .lectura {
@@ -186,19 +182,20 @@
   text-align: justify;
  }
 
- /* No funciona bien con display:flex en pantallas pequeñas. */
  .horizontal {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: start;
+  justify-content: center;
  }
 
- .horizontal>* {
-  display: inline-block;
-  vertical-align: top;
-  text-align: left;
+ .horizontal>*:first-child {
+  flex: 0 1 300px;
  }
 
- .horizontal>*:not(:first-child) {
-  margin-left: 1rem;
+ .horizontal>*:nth-child(2) {
+  flex: 1 1 auto;
  }
 
  .columnas4 {
@@ -461,9 +458,11 @@
  <ul>
   <li>
    <p>
-    Para que el contenido se muestra adecuadamente, se define el elemento
-    personalizado <dfn>cm-int</dfn> y su comportamiento lo definimos con
-    la clase <dfn>CmInt</dfn> localizada al final del código.
+    Usa un elemento
+    <code class="language-html">input</code>
+    con el atribto
+    <code class="language-html">is="md-switch"</code>, definido con
+    la clase <code class="language-html">is="MdSwitch"</code>.
    </p>
   </li>
  </ul>
@@ -489,8 +488,7 @@
   </figure>
  </section>
  <muestra-codigo>
-  <div
-    style="background-color: rgb(255, 255, 255); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 18.2163px; line-height: 24px; white-space: pre;">
+  <div>
    <div><span
       style="color: #800000;">&lt;!DOCTYPE</span> <span
       style="color: #e50000;">html</span><span

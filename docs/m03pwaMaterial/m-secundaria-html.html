@@ -148,10 +148,6 @@
  figure img {
   width: 100%;
  }
-/* 
- figure img.med {
-  max-height: 55vh;
- } */
 
  figcaption {
   font-family: var(--fontMono);
@@ -173,7 +169,7 @@
 
  iframe {
   box-sizing: border-box;
-  width: 100%;
+  width: 300px;
  }
 
  .lectura {
@@ -186,19 +182,20 @@
   text-align: justify;
  }
 
- /* No funciona bien con display:flex en pantallas pequeñas. */
  .horizontal {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: start;
+  justify-content: center;
  }
 
- .horizontal>* {
-  display: inline-block;
-  vertical-align: top;
-  text-align: left;
+ .horizontal>*:first-child {
+  flex: 0 1 300px;
  }
 
- .horizontal>*:not(:first-child) {
-  margin-left: 1rem;
+ .horizontal>*:nth-child(2) {
+  flex: 1 1 auto;
  }
 
  .columnas4 {
@@ -480,60 +477,73 @@
   </li>
   <li>
    <p>
-    Para que el contenido se muestra adecuadamente, se define el elemento
+    Para que el contenido se muestra adecuadamente, se usa el elemento
     personalizado
-    <dfn>top-app-bar</dfn>
-    para este tipo de páginas. Su comportamiento lo definimos con la clase
-    <dfn>TopAppBar</dfn>.
+    <dfn>md-top-app-bar</dfn>,
+    cuyo comportamiento está definido en la clase
+    <dfn>MdTopAppBar</dfn>.
    </p>
   </li>
   <li>
    <p>
-    Para el overflow menu, se define el elemento personalizado
-    <dfn>overflow-menu</dfn> y su comportamiento lo definimos con la clase
-    <dfn>OverflowMenu</dfn>.
+    El boton de overflow debe ser el último con <code>slot="action"</code>. Usa
+    el atributo is="md-overflow-button". Su atributo <code>onclick</code> debe
+    alternar el overflow menu.
+   </p>
+  </li>
+  <li>
+   <p>
+    El overflow menu, se define con el elemento personalizado
+    <dfn>mdoverflow-menu</dfn>, cuyo comportamiento está definido en la clase
+    <dfn>MdOverflowMenu</dfn>.
    </p>
   </li>
   <li>
    <p>
     Para el título, dentro de la la barra de aplicación se usa un elemento de
     tipo
-    <code class="language-html">h1</code>
-    con el atributo
-    <code class="language-html">slot="headline"</code>.
+    <code class="language-html">h1</code>.
     El texto debe ser corto y caber en un solo renglón, o de lo conrario se
     cortará.
    </p>
   </li>
   <li>
    <p>
-    Para mostrar un título más largo, hay que poner a la barra de aplicación la
-    clase
-    <code class="language-html">medium</code>,
-    agregar en esta barra, otro elemento de tipo
-    <code class="language-html">h1</code>
-    con el atributo
-    <code class="language-html">slot="headline-small"</code>.
-    Cuando la página tenga el scroll hasta arriba, se despliega este encabezado.
+    Para mostrar un título más largo, hay que poner después de la barra de
+    aplicación otro <code class="language-html">h1</code> y ponerle un
+    <code class="language-html">id</code>. Ese
+    <code class="language-html">id</code> se pone como valor del atributo
+    <code class="language-html">headline</code>
+    dentro de la <code class="language-html">md-top-app-bar</code>.
+    Cuando la página tenga el scroll hasta arriba, se despliega el
+    <code class="language-html">h1</code> que está dentro del
+    <code class="language-html">md-top-app-bar</code>..
     Al hacer scroll, este título se compacta y se muestra el título definido con
-    <code class="language-html">slot="headline"</code>.
+    el atributo <code class="language-html">headline</code>.
    </p>
   </li>
   <li>
    <p>
-    El botón de navegación opcional, debe llevar al atributo
+    Si deseas que la letra del encabezado largo sea más pequeña, usa la
+    clase <code class="language-html">medium</code>
+    dentro de la <code class="language-html">md-top-app-bar</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    El botón de navegación opcional debe llevar el atributo
     <code class="language-html">slot="navigation"</code>.
    </p>
   </li>
   <li>
    <p>
-    Los botones de acción deben llevar al atributo
+    Los botones de acción deben llevar el atributo
     <code class="language-html">slot="action"</code>.
    </p>
   </li>
   <li>
    <p>
-    El overflow menú debe llevar al atributo
+    El overflow menú debe llevar el atributo
     <code class="language-html">slot="overflow"</code>.
    </p>
   </li>
@@ -554,12 +564,6 @@
     Los botones de acción se colocan dentro del overflow menu sin ningún
     atributo
     <code class="language-html">slot</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Hasta el final del archivo se selecciona el ancla de la varra de navegación
-    que corresponde a esta página.
    </p>
   </li>
  </ul>

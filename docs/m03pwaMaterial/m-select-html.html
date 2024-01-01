@@ -148,10 +148,6 @@
  figure img {
   width: 100%;
  }
-/* 
- figure img.med {
-  max-height: 55vh;
- } */
 
  figcaption {
   font-family: var(--fontMono);
@@ -173,7 +169,7 @@
 
  iframe {
   box-sizing: border-box;
-  width: 100%;
+  width: 300px;
  }
 
  .lectura {
@@ -186,19 +182,20 @@
   text-align: justify;
  }
 
- /* No funciona bien con display:flex en pantallas pequeñas. */
  .horizontal {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: start;
+  justify-content: center;
  }
 
- .horizontal>* {
-  display: inline-block;
-  vertical-align: top;
-  text-align: left;
+ .horizontal>*:first-child {
+  flex: 0 1 300px;
  }
 
- .horizontal>*:not(:first-child) {
-  margin-left: 1rem;
+ .horizontal>*:nth-child(2) {
+  flex: 1 1 auto;
  }
 
  .columnas4 {
@@ -466,51 +463,45 @@
   </li>
   <li>
    <p>
-    Para que el contenido se muestra adecuadamente, se define el elemento
-    personalizado <dfn>select-menu</dfn> y su comportamiento lo definimos con
-    la clase <dfn>SelectMenu</dfn>.
+    Usa el elemento personalizado <dfn>md-select-menu</dfn>, definido con la
+    clase <dfn>MdSelectMenu</dfn>.
    </p>
   </li>
   <li>
    <p>
-    Para las opciones se define el elemento personalizado
-    <dfn>menu-option</dfn>
-    y su comportamiento lo definimos con la clase
-    <dfn>MenuOption</dfn>.
-    Deben colocarse dentro de un elemento
-    <dfn>select-menu</dfn>.
+    Coloca el elemento <code class="language-html">md-select-menu</code> con
+    <code class="language-html">slot="input-text"</code>,
+    dentro de un <code class="language-html">md-filled-text-field</code>.
+    Usa un <code class="language-html">span</code> cono etiqueta.
    </p>
   </li>
   <li>
    <p>
-    Las etiquetas deben llevar al atributo
-    <code class="language-html">slot="label"</code>.
+    Para las opciones usa el elemento personalizado
+    <dfn>md-options-menu</dfn>, definido con la clase
+    <dfn>MdOptionMenu</dfn>.
+    Dentro de él coloca elementos tipo
+    <code class="language-html">label</code>
+    que en su interior llevan
+    <code class="language-html">input type="radio"</code> y el texto de la
+    opción.
    </p>
   </li>
   <li>
    <p>
     Para asignar un valor inicial, usa el atributo
-    <code class="language-html">value</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Los textos de ayuda deben llevar al atributo
-    <code class="language-html">slot="supporting"</code>.
+    <code class="language-html">value</code>
+    del
+    <code class="language-html">md-filled-text-field</code>.
    </p>
   </li>
   <li>
    <p>
     Para que forzosamente se deba seleccionar una opción, agrega el atributo
     booleano
-    <code class="language-html">required</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Para que el valor de este elemento se incluya al hacer submit, agrega el
-    atributo
-    <code class="language-html">name</code>.
+    <code class="language-html">required</code>
+    al
+    <code class="language-html">md-select-menu</code>.
    </p>
   </li>
  </ul>
