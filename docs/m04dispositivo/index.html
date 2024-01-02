@@ -135,6 +135,13 @@
   color: var(--colTituloLetra);
  }
 
+ h1,
+ .lectura a,
+ .lectura p,
+ .lectura blockquote {
+  overflow-wrap: anywhere;
+ }
+
  .autor {
   font-family: var(--fontSans);
   font-size: 1.5rem;
@@ -321,6 +328,7 @@
   transition: transform 0.7s ease-in-out;
   scrollbar-width: thin;
   scrollbar-color: var(--colThumb) var(--colScrollbar);
+  overflow-wrap: anywhere;
  }
 
  #nav::-webkit-scrollbar {
@@ -462,15 +470,16 @@
     </p>
    </div>
 <div class="lectura">
- <p>
-  En esta lección se muestra como aceder directamente a algunas funciones del
-  dispositivo.
- </p>
  <nav>
   <h1>Contenido</h1>
   
    <ol type="A">
     
+   <li>
+    <p>
+     <a href="/m04dispositivo/mAintro.html">Introduccion</a>
+    </p>
+   </li>
    <li>
     <p>
      <a href="/m04dispositivo/mAgps.html">Geolocalización</a>
@@ -513,7 +522,7 @@
   &#x2630;
  </button>
  <a class="anterior" href="/m03pwaMaterial/m40resumen.html" title="35. Resumen">◀</a>
- <a class="siguiente" href="/m04dispositivo/mAgps.html" title="A. Geolocalización">▶</a>
+ <a class="siguiente" href="/m04dispositivo/mAintro.html" title="A. Introduccion">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -535,6 +544,11 @@
    
    <ol type="A">
     
+   <li>
+    <p>
+     <a href="/m04dispositivo/mAintro.html">Introduccion</a>
+    </p>
+   </li>
    <li>
     <p>
      <a href="/m04dispositivo/mAgps.html">Geolocalización</a>
@@ -570,7 +584,7 @@
  /**@type {string} */
  let urlAnterior = "/m03pwaMaterial/m40resumen.html"
  /**@type {string} */
- let urlSiguiente = "/m04dispositivo/mAgps.html"
+ let urlSiguiente = "/m04dispositivo/mAintro.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

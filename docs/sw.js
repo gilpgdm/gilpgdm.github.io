@@ -226,6 +226,7 @@ const ARCHIVOS = [
  "/m04dispositivo/",
  "/m04dispositivo/index.html",
  "/m04dispositivo/mAgps.html",
+ "/m04dispositivo/mAintro.html",
  "/m04dispositivo/mBarchivos.html",
  "/m04dispositivo/mCresumen.html",
  "/m04dispositivo/print.html",
@@ -457,8 +458,8 @@ const ARCHIVOS = [
  "/src/m03pwaMaterial/roboto-v30-latin-regular.ttf",
  "/src/m03pwaMaterial/roboto-v30-latin-regular.woff2",
  "/src/m04dispositivos/archivos.html",
+ "/src/m04dispositivos/camara.html",
  "/src/m04dispositivos/gps.html",
- "/src/m04pruebas/composer.zip",
  "/src/m05pwaBasica/pwa.zip",
  "/src/m07iot/iothtml.zip",
  "/src/m09sincronizacion/sincronizacion.zip"

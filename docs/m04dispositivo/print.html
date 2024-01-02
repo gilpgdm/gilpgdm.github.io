@@ -134,6 +134,13 @@
   color: var(--colTituloLetra);
  }
 
+ h1,
+ .lectura a,
+ .lectura p,
+ .lectura blockquote {
+  overflow-wrap: anywhere;
+ }
+
  .autor {
   font-family: var(--fontSans);
   font-size: 1.5rem;
@@ -357,15 +364,16 @@
     </p>
    </div>
 <div class="lectura">
- <p>
-  En esta lección se muestra como aceder directamente a algunas funciones del
-  dispositivo.
- </p>
  <nav>
   <h1>Contenido</h1>
   
    <ol type="A">
     
+   <li>
+    <p>
+     <a href="/m04dispositivo/mAintro.html">Introduccion</a>
+    </p>
+   </li>
    <li>
     <p>
      <a href="/m04dispositivo/mAgps.html">Geolocalización</a>
@@ -385,96 +393,129 @@
  </nav>
 </div>
      <section >
-         <h1 >A. Geolocalización</h1><div class="horizontal">
+         <h1 >A. Introduccion</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En esta lección se muestra como aceder directamente a algunas funciones del
+    dispositivo.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >B. Geolocalización</h1><div class="horizontal">
  <section>
   <h1>Salida</h1>
   <iframe src="/src/m04dispositivos/gps.html" height="200"
     title="Uso de geolocalización"></iframe>
   <p class="noPrint">
-   <a href="/src/m04dispositivos/gps.html" target="_blank" rel="noopener">Ábrelo en
-    otra
-    pestaña.</a>
+   <a href="/src/m04dispositivos/gps.html" target="_blank" rel="noopener">Ábrelo
+    en
+    otra pestaña.</a>
   </p>
  </section>
  <muestra-codigo>
   <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
+   <div><span
+      style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #e50000;">html</span><span
       style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-      style="color: #ff0000;">lang</span>=<span
+   <div><span
+      style="color: #800000;">&lt;html</span> <span
+      style="color: #e50000;">lang</span>=<span
       style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">charset</span>=<span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;head&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">charset</span>=<span
       style="color: #0000ff;">"UTF-8"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">name</span>=<span
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
       style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
       style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>GPS<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-   <div class="resaltado2"><span
-      style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>GPS<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;label&gt;</span></div>
+      style="color: #800000;">&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span>GPS<span
+      style="color: #800000;">&lt;/title&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;body&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>GPS<span
+      style="color: #800000;">&lt;/h1&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label&gt;</span></div>
    <div>&nbsp;&nbsp;&nbsp;Latitud</div>
    <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;output</span>&nbsp;<span
-      style="color: #ff0000;">id</span>=<span
+      style="color: #800000;">&lt;output</span> <span
+      style="color: #e50000;">id</span>=<span
       style="color: #0000ff;">"latitud"</span><span
       style="color: #800000;">&gt;&lt;/output&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;label&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label&gt;</span></div>
    <div>&nbsp;&nbsp;&nbsp;Longitud</div>
    <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;output</span>&nbsp;<span
-      style="color: #ff0000;">id</span>=<span
+      style="color: #800000;">&lt;output</span> <span
+      style="color: #e50000;">id</span>=<span
       style="color: #0000ff;">"longitud"</span><span
       style="color: #800000;">&gt;&lt;/output&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div class="resaltado2">&nbsp;<span
-      style="color: #800000;">&lt;script&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #001080;">navigator</span>.<span
-      style="color: #0070c1;">geolocation</span>.</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #001080;">navigator</span>.<span
+      style="color: #001080;">geolocation</span>.</div>
    <div>&nbsp;&nbsp;&nbsp;<span
       style="color: #795e26;">watchPosition</span>(<span
-      style="color: #001080;">p</span>&nbsp;<span
-      style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+      style="color: #001080;">p</span> <span
+      style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
       style="color: #001080;">latitud</span>.<span
-      style="color: #001080;">value</span>&nbsp;=</div>
+      style="color: #001080;">value</span> =</div>
    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
       style="color: #001080;">p</span>.<span
-      style="color: #0070c1;">coords</span>.<span
-      style="color: #0070c1;">latitude</span>;</div>
+      style="color: #001080;">coords</span>.<span
+      style="color: #001080;">latitude</span></div><br>
    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
       style="color: #001080;">longitud</span>.<span
-      style="color: #001080;">value</span>&nbsp;=</div>
+      style="color: #001080;">value</span> =</div>
    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
       style="color: #001080;">p</span>.<span
-      style="color: #0070c1;">coords</span>.<span
-      style="color: #0070c1;">longitude</span>;</div>
-   <div>&nbsp;&nbsp;&nbsp;});</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+      style="color: #001080;">coords</span>.<span
+      style="color: #001080;">longitude</span></div><br>
+   <div>&nbsp;&nbsp;&nbsp;});</div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/script&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/html&gt;</span></div>
   </div>
  </muestra-codigo>
 </div>
       </section>
      <section >
-         <h1 >B. Archivos y cámara</h1><div class="horizontal">
+         <h1 >C. Archivos y cámara</h1><div class="horizontal">
  <section>
   <h1>Salida</h1>
   <iframe src="/src/m04dispositivos/archivos.html" height="300"
@@ -507,7 +548,7 @@
       style="color: #0000ff;">"es"</span><span
       style="color: #800000;">&gt;</span></div><br>
    <div><span
-      style="color: #800000;">&lt;head&gt;</span></div>
+      style="color: #800000;">&lt;head&gt;</span></div><br>
    <div>&nbsp;<span
       style="color: #800000;">&lt;meta</span> <span
       style="color: #e50000;">charset</span>=<span
@@ -520,17 +561,17 @@
    <div>&nbsp;&nbsp;&nbsp;<span
       style="color: #e50000;">content</span>=<span
       style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
+      style="color: #800000;">&gt;</span></div><br>
    <div>&nbsp;<span
       style="color: #800000;">&lt;title&gt;</span>Archivos y Cámara<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
+      style="color: #800000;">&lt;/title&gt;</span></div><br>
    <div><span
       style="color: #800000;">&lt;/head&gt;</span></div><br>
    <div><span
-      style="color: #800000;">&lt;body&gt;</span></div>
+      style="color: #800000;">&lt;body&gt;</span></div><br>
    <div>&nbsp;<span
       style="color: #800000;">&lt;h1&gt;</span>Archivos y Cámara<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
+      style="color: #800000;">&lt;/h1&gt;</span></div><br>
    <div>&nbsp;<span
       style="color: #800000;">&lt;p&gt;</span></div>
    <div>&nbsp;&nbsp;<span
@@ -550,7 +591,7 @@
    <div>&nbsp;&nbsp;<span
       style="color: #800000;">&lt;/label&gt;</span></div>
    <div>&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
+      style="color: #800000;">&lt;/p&gt;</span></div><br>
    <div>&nbsp;<span
       style="color: #800000;">&lt;p&gt;</span></div>
    <div>&nbsp;&nbsp;<span
@@ -570,7 +611,7 @@
    <div>&nbsp;&nbsp;<span
       style="color: #800000;">&lt;/label&gt;</span></div>
    <div>&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
+      style="color: #800000;">&lt;/p&gt;</span></div><br>
    <div>&nbsp;<span
       style="color: #800000;">&lt;p&gt;</span></div>
    <div>&nbsp;&nbsp;<span
@@ -584,7 +625,7 @@
    <div>&nbsp;&nbsp;<span
       style="color: #800000;">&lt;/label&gt;</span></div>
    <div>&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
+      style="color: #800000;">&lt;/p&gt;</span></div><br>
    <div><span
       style="color: #800000;">&lt;/body&gt;</span></div><br>
    <div><span
@@ -594,7 +635,7 @@
 </div>
       </section>
      <section >
-         <h1 >C. Resumen</h1><div class="lectura">
+         <h1 >D. Resumen</h1><div class="lectura">
  <ul>
   <li>
    <p>

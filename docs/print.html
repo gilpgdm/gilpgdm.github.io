@@ -134,6 +134,13 @@
   color: var(--colTituloLetra);
  }
 
+ h1,
+ .lectura a,
+ .lectura p,
+ .lectura blockquote {
+  overflow-wrap: anywhere;
+ }
+
  .autor {
   font-family: var(--fontSans);
   font-size: 1.5rem;
@@ -6354,136 +6361,152 @@
  <ul>
   <li>
    <p>
-    Las listas tienen los siguientes elementos:
+    Las listas de Material Design usan un
+    <code class="language-html">ul</code>
+    con la clase
+    <code class="language-html">md-list</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Las listas pueden usar
+    <code class="language-html">li</code>
+    con las clases
+    <code class="language-html">one-line</code>,
+    <code class="language-html">two-line</code>
+    o
+    <code class="language-html">three-line</code>
+   </p>
+  </li>
+  <li>
+   <p>
+    Si el elemento es un hipervínculo, el elemento
+    <code class="language-html">li</code>
+    no lleva clases y en su interior se pone una
+    <code class="language-html">a</code>
+    con la clase
+    <code class="language-html">one-line</code>,
+    <code class="language-html">two-line</code>
+    o
+    <code class="language-html">three-line</code>
+   </p>
+  </li>
+  <li>
+   <p>
+    Los elementos de la clase
+    <code class="language-html">one-line</code>,
+    tienen el siguiente contenido:
    </p>
    <ul>
     <li>
      <p>
-      Un encabezado que muestra texto en negritas.
-     </p>
-    </li>
-    <li>
-     <p>
-      Opcionalmente un texto secundario que muestra mas pequeño y de ancho
-      normal.
+      Un encabezado con un elemento
+      <code class="language-html">span class="headline"</code>
+      que muestra texto resaltado truncado a un renglón.
      </p>
     </li>
     <li>
      <p>
       Opcionalmente muestran una imagen a la izquierda, que puede ser:
      </p>
-     <ul>
-      <li>
-       <p>Un pequeño ícono cuadrado.</p>
-      </li>
-      <li>
-       <p>Una imagen cuadrada.</p>
-      </li>
-      <li>
-       <p>Una imagen rectangular.</p>
-      </li>
-      <li>
-       <p>El avatar de un usuario. (Se muestra dentro de un círculo.)</p>
-      </li>
-     </ul>
-    </li>
-   </ul>
-  </li>
-  <li>
-   <p>
-    Las listas deben usar un elemento
-    <code class="language-html">ul</code>
-    con la class
-    <code class="language-html">list</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Los elementos de la lista se colocan en elementos
-    <code class="language-html">li</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Si el elemento es un enlace, se coloca un elemento
-    <code class="language-html">a</code>
-    dentro del
-    <code class="language-html">li</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Si el elemento solo lleva un renglón, se coloca la class
-    <code class="language-html">one-line</code>
-    dentro del elemento
-    <code class="language-html">li</code>.
-    o dentro del elemento
-    <code class="language-html">a</code>,
-    si es un enlace.
-   </p>
-  </li>
-  <li>
-   <p>
-    Si el elemento es de 2 renglones, se coloca la class
-    <code class="language-html">two-line</code>
-    dentro del elemento
-    <code class="language-html">li</code>.
-    o dentro del elemento
-    <code class="language-html">a</code>,
-    si es un enlace.
-   </p>
-  </li>
-  <li>
-   <p>
-    Si el elemento es de 3 renglones, se coloca la class
-    <code class="language-html">three-line</code>
-    dentro del elemento
-    <code class="language-html">li</code>.
-    o dentro del elemento
-    <code class="language-html">a</code>,
-    si es un enlace.
-   </p>
-  </li>
-  <li>
-   <p>
-    Todos los elementos llevan un
-    <code class="language-html">span</code>
-    con la class
-    <code class="language-html">headline</code>.
-    para el título, así como un elemento
-    <code class="language-html">span</code>
-    con la class
-    <code class="language-html">supporting</code>,
-    para el texto secundario.
-   </p>
-  </li>
-  <li>
-   <p>
-    La imágenes se pueden agregar como un material symbol o como un elemento
-    <code class="language-html">img</code>.
-    El elemento debe añadir una clase para indicar el tipo de imagen que lleva,
-    que puede ser:
-   </p>
-   <ul>
-    <li>
-     <p>
-      <code class="language-html">icon</code>.
-     </p>
-    </li>
-    <li>
-     <p>
-      <code class="language-html">image</code>.
-     </p>
-    </li>
-    <li>
-     <p>
-      <code class="language-html">video</code>.
-     </p>
-    </li>
-    <li>
-     <p>
-      <code class="language-html">avatar</code>.
-     </p>
+     <dl>
+      <dt>Un pequeño ícono cuadrado</dt>
+      <dd>
+       <ul>
+        <li>
+         <p>
+          Se añade la clase
+          <code class="language-html">icon</code>
+          junto a la clase
+          <code class="language-html">one-line</code>.
+         </p>
+        </li>
+        <li>
+         <p>
+          Se añade un
+          <code class="language-html">img</code>
+          o un
+          <code
+            class="language-html">span class="material-symbols-outlined"</code>
+          dentro del elemento con la clase
+          <code class="language-html">one-line</code>.
+         </p>
+        </li>
+       </ul>
+      </dd>
+      <dt>Una imagen cuadrada</dt>
+      <dd>
+       <ul>
+        <li>
+         <p>
+          Se añade la clase
+          <code class="language-html">image</code>
+          junto a la clase
+          <code class="language-html">one-line</code>.
+         </p>
+        </li>
+        <li>
+         <p>
+          Se añade un
+          <code class="language-html">img</code>
+          o un
+          <code
+            class="language-html">span class="material-symbols-outlined"</code>
+          dentro del elemento con la clase
+          <code class="language-html">one-line</code>.
+         </p>
+        </li>
+       </ul>
+      </dd>
+      <dt>Una imagen rectangular</dt>
+      <dd>
+       <ul>
+        <li>
+         <p>
+          Se añade la clase
+          <code class="language-html">video</code>
+          junto a la clase
+          <code class="language-html">one-line</code>.
+         </p>
+        </li>
+        <li>
+         <p>
+          Se añade un
+          <code class="language-html">img</code>
+          dentro del elemento con la clase
+          <code class="language-html">one-line</code>.
+         </p>
+        </li>
+       </ul>
+      </dd>
+      <dt>El avatar de un usuario (se muestra dentro de un círculo)</dt>
+      <dd>
+       <ul>
+        <li>
+         <p>
+          Se añade la clase
+          <code class="language-html">avatar</code>
+          junto a la clase
+          <code class="language-html">one-line</code>.
+         </p>
+        </li>
+        <li>
+         <p>
+          Se añade un
+          <code class="language-html">img</code>,
+          un
+          <code class="language-html">label</code>
+          con las iniciales del usuario
+          o un
+          <code
+            class="language-html">span class="material-symbols-outlined"</code>
+          dentro del elemento con la clase
+          <code class="language-html">one-line</code>.
+         </p>
+        </li>
+       </ul>
+      </dd>
+     </dl>
     </li>
    </ul>
   </li>
@@ -6965,136 +6988,159 @@
  <ul>
   <li>
    <p>
-    Las listas tienen los siguientes elementos:
+    Las listas de Material Design usan un
+    <code class="language-html">ul</code>
+    con la clase
+    <code class="language-html">md-list</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Las listas pueden usar
+    <code class="language-html">li</code>
+    con las clases
+    <code class="language-html">one-line</code>,
+    <code class="language-html">two-line</code>
+    o
+    <code class="language-html">three-line</code>
+   </p>
+  </li>
+  <li>
+   <p>
+    Si el elemento es un hipervínculo, el elemento
+    <code class="language-html">li</code>
+    no lleva clases y en su interior se pone una
+    <code class="language-html">a</code>
+    con la clase
+    <code class="language-html">one-line</code>,
+    <code class="language-html">two-line</code>
+    o
+    <code class="language-html">three-line</code>
+   </p>
+  </li>
+  <li>
+   <p>
+    Los elementos de la clase
+    <code class="language-html">two-line</code>,
+    tienen el siguiente contenido:
    </p>
    <ul>
     <li>
      <p>
-      Un encabezado que muestra texto en negritas.
+      Un encabezado con un elemento
+      <code class="language-html">span class="headline"</code>
+      que muestra texto resaltado truncado a un renglón.
      </p>
     </li>
     <li>
      <p>
-      Opcionalmente un texto secundario que muestra mas pequeño y de ancho
-      normal.
+      Un elemento
+      <code class="language-html">span class="supporting"</code>
+      que muestra texto mas pequeño y truncado a un renglón.
      </p>
     </li>
     <li>
      <p>
       Opcionalmente muestran una imagen a la izquierda, que puede ser:
      </p>
-     <ul>
-      <li>
-       <p>Un pequeño ícono cuadrado.</p>
-      </li>
-      <li>
-       <p>Una imagen cuadrada.</p>
-      </li>
-      <li>
-       <p>Una imagen rectangular.</p>
-      </li>
-      <li>
-       <p>El avatar de un usuario. (Se muestra dentro de un círculo.)</p>
-      </li>
-     </ul>
-    </li>
-   </ul>
-  </li>
-  <li>
-   <p>
-    Las listas deben usar un elemento
-    <code class="language-html">ul</code>
-    con la class
-    <code class="language-html">list</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Los elementos de la lista se colocan en elementos
-    <code class="language-html">li</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Si el elemento es un enlace, se coloca un elemento
-    <code class="language-html">a</code>
-    dentro del
-    <code class="language-html">li</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Si el elemento solo lleva un renglón, se coloca la class
-    <code class="language-html">one-line</code>
-    dentro del elemento
-    <code class="language-html">li</code>.
-    o dentro del elemento
-    <code class="language-html">a</code>,
-    si es un enlace.
-   </p>
-  </li>
-  <li>
-   <p>
-    Si el elemento es de 2 renglones, se coloca la class
-    <code class="language-html">two-line</code>
-    dentro del elemento
-    <code class="language-html">li</code>.
-    o dentro del elemento
-    <code class="language-html">a</code>,
-    si es un enlace.
-   </p>
-  </li>
-  <li>
-   <p>
-    Si el elemento es de 3 renglones, se coloca la class
-    <code class="language-html">three-line</code>
-    dentro del elemento
-    <code class="language-html">li</code>.
-    o dentro del elemento
-    <code class="language-html">a</code>,
-    si es un enlace.
-   </p>
-  </li>
-  <li>
-   <p>
-    Todos los elementos llevan un
-    <code class="language-html">span</code>
-    con la class
-    <code class="language-html">headline</code>.
-    para el título, así como un elemento
-    <code class="language-html">span</code>
-    con la class
-    <code class="language-html">supporting</code>,
-    para el texto secundario.
-   </p>
-  </li>
-  <li>
-   <p>
-    La imágenes se pueden agregar como un material symbol o como un elemento
-    <code class="language-html">img</code>.
-    El elemento debe añadir una clase para indicar el tipo de imagen que lleva,
-    que puede ser:
-   </p>
-   <ul>
-    <li>
-     <p>
-      <code class="language-html">icon</code>.
-     </p>
-    </li>
-    <li>
-     <p>
-      <code class="language-html">image</code>.
-     </p>
-    </li>
-    <li>
-     <p>
-      <code class="language-html">video</code>.
-     </p>
-    </li>
-    <li>
-     <p>
-      <code class="language-html">avatar</code>.
-     </p>
+     <dl>
+      <dt>Un pequeño ícono cuadrado</dt>
+      <dd>
+       <ul>
+        <li>
+         <p>
+          Se añade la clase
+          <code class="language-html">icon</code>
+          junto a la clase
+          <code class="language-html">two-line</code>.
+         </p>
+        </li>
+        <li>
+         <p>
+          Se añade un
+          <code class="language-html">img</code>
+          o un
+          <code
+            class="language-html">span class="material-symbols-outlined"</code>
+          dentro del elemento con la clase
+          <code class="language-html">two-line</code>.
+         </p>
+        </li>
+       </ul>
+      </dd>
+      <dt>Una imagen cuadrada</dt>
+      <dd>
+       <ul>
+        <li>
+         <p>
+          Se añade la clase
+          <code class="language-html">image</code>
+          junto a la clase
+          <code class="language-html">two-line</code>.
+         </p>
+        </li>
+        <li>
+         <p>
+          Se añade un
+          <code class="language-html">img</code>
+          o un
+          <code
+            class="language-html">span class="material-symbols-outlined"</code>
+          dentro del elemento con la clase
+          <code class="language-html">two-line</code>.
+         </p>
+        </li>
+       </ul>
+      </dd>
+      <dt>Una imagen rectangular</dt>
+      <dd>
+       <ul>
+        <li>
+         <p>
+          Se añade la clase
+          <code class="language-html">video</code>
+          junto a la clase
+          <code class="language-html">two-line</code>.
+         </p>
+        </li>
+        <li>
+         <p>
+          Se añade un
+          <code class="language-html">img</code>
+          dentro del elemento con la clase
+          <code class="language-html">two-line</code>.
+         </p>
+        </li>
+       </ul>
+      </dd>
+      <dt>El avatar de un usuario (se muestra dentro de un círculo)</dt>
+      <dd>
+       <ul>
+        <li>
+         <p>
+          Se añade la clase
+          <code class="language-html">avatar</code>
+          junto a la clase
+          <code class="language-html">two-line</code>.
+         </p>
+        </li>
+        <li>
+         <p>
+          Se añade un
+          <code class="language-html">img</code>,
+          un
+          <code class="language-html">label</code>
+          con las iniciales del usuario
+          o un
+          <code
+            class="language-html">span class="material-symbols-outlined"</code>
+          dentro del elemento con la clase
+          <code class="language-html">two-line</code>.
+         </p>
+        </li>
+       </ul>
+      </dd>
+     </dl>
     </li>
    </ul>
   </li>
@@ -7612,136 +7658,159 @@
  <ul>
   <li>
    <p>
-    Las listas tienen los siguientes elementos:
+    Las listas de Material Design usan un
+    <code class="language-html">ul</code>
+    con la clase
+    <code class="language-html">md-list</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Las listas pueden usar
+    <code class="language-html">li</code>
+    con las clases
+    <code class="language-html">one-line</code>,
+    <code class="language-html">two-line</code>
+    o
+    <code class="language-html">three-line</code>
+   </p>
+  </li>
+  <li>
+   <p>
+    Si el elemento es un hipervínculo, el elemento
+    <code class="language-html">li</code>
+    no lleva clases y en su interior se pone una
+    <code class="language-html">a</code>
+    con la clase
+    <code class="language-html">one-line</code>,
+    <code class="language-html">two-line</code>
+    o
+    <code class="language-html">three-line</code>
+   </p>
+  </li>
+  <li>
+   <p>
+    Los elementos de la clase
+    <code class="language-html">three-line</code>,
+    tienen el siguiente contenido:
    </p>
    <ul>
     <li>
      <p>
-      Un encabezado que muestra texto en negritas.
+      Un encabezado con un elemento
+      <code class="language-html">span class="headline"</code>
+      que muestra texto resaltado truncado a un renglón.
      </p>
     </li>
     <li>
      <p>
-      Opcionalmente un texto secundario que muestra mas pequeño y de ancho
-      normal.
+      Un elemento
+      <code class="language-html">span class="supporting"</code>
+      que muestra texto mas pequeño y truncado 2 renglones.
      </p>
     </li>
     <li>
      <p>
       Opcionalmente muestran una imagen a la izquierda, que puede ser:
      </p>
-     <ul>
-      <li>
-       <p>Un pequeño ícono cuadrado.</p>
-      </li>
-      <li>
-       <p>Una imagen cuadrada.</p>
-      </li>
-      <li>
-       <p>Una imagen rectangular.</p>
-      </li>
-      <li>
-       <p>El avatar de un usuario. (Se muestra dentro de un círculo.)</p>
-      </li>
-     </ul>
-    </li>
-   </ul>
-  </li>
-  <li>
-   <p>
-    Las listas deben usar un elemento
-    <code class="language-html">ul</code>
-    con la class
-    <code class="language-html">list</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Los elementos de la lista se colocan en elementos
-    <code class="language-html">li</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Si el elemento es un enlace, se coloca un elemento
-    <code class="language-html">a</code>
-    dentro del
-    <code class="language-html">li</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Si el elemento solo lleva un renglón, se coloca la class
-    <code class="language-html">one-line</code>
-    dentro del elemento
-    <code class="language-html">li</code>.
-    o dentro del elemento
-    <code class="language-html">a</code>,
-    si es un enlace.
-   </p>
-  </li>
-  <li>
-   <p>
-    Si el elemento es de 2 renglones, se coloca la class
-    <code class="language-html">two-line</code>
-    dentro del elemento
-    <code class="language-html">li</code>.
-    o dentro del elemento
-    <code class="language-html">a</code>,
-    si es un enlace.
-   </p>
-  </li>
-  <li>
-   <p>
-    Si el elemento es de 3 renglones, se coloca la class
-    <code class="language-html">three-line</code>
-    dentro del elemento
-    <code class="language-html">li</code>.
-    o dentro del elemento
-    <code class="language-html">a</code>,
-    si es un enlace.
-   </p>
-  </li>
-  <li>
-   <p>
-    Todos los elementos llevan un
-    <code class="language-html">span</code>
-    con la class
-    <code class="language-html">headline</code>.
-    para el título, así como un elemento
-    <code class="language-html">span</code>
-    con la class
-    <code class="language-html">supporting</code>,
-    para el texto secundario.
-   </p>
-  </li>
-  <li>
-   <p>
-    La imágenes se pueden agregar como un material symbol o como un elemento
-    <code class="language-html">img</code>.
-    El elemento debe añadir una clase para indicar el tipo de imagen que lleva,
-    que puede ser:
-   </p>
-   <ul>
-    <li>
-     <p>
-      <code class="language-html">icon</code>.
-     </p>
-    </li>
-    <li>
-     <p>
-      <code class="language-html">image</code>.
-     </p>
-    </li>
-    <li>
-     <p>
-      <code class="language-html">video</code>.
-     </p>
-    </li>
-    <li>
-     <p>
-      <code class="language-html">avatar</code>.
-     </p>
+     <dl>
+      <dt>Un pequeño ícono cuadrado</dt>
+      <dd>
+       <ul>
+        <li>
+         <p>
+          Se añade la clase
+          <code class="language-html">icon</code>
+          junto a la clase
+          <code class="language-html">three-line</code>.
+         </p>
+        </li>
+        <li>
+         <p>
+          Se añade un
+          <code class="language-html">img</code>
+          o un
+          <code
+            class="language-html">span class="material-symbols-outlined"</code>
+          dentro del elemento con la clase
+          <code class="language-html">three-line</code>.
+         </p>
+        </li>
+       </ul>
+      </dd>
+      <dt>Una imagen cuadrada</dt>
+      <dd>
+       <ul>
+        <li>
+         <p>
+          Se añade la clase
+          <code class="language-html">image</code>
+          junto a la clase
+          <code class="language-html">three-line</code>.
+         </p>
+        </li>
+        <li>
+         <p>
+          Se añade un
+          <code class="language-html">img</code>
+          o un
+          <code
+            class="language-html">span class="material-symbols-outlined"</code>
+          dentro del elemento con la clase
+          <code class="language-html">three-line</code>.
+         </p>
+        </li>
+       </ul>
+      </dd>
+      <dt>Una imagen rectangular</dt>
+      <dd>
+       <ul>
+        <li>
+         <p>
+          Se añade la clase
+          <code class="language-html">video</code>
+          junto a la clase
+          <code class="language-html">three-line</code>.
+         </p>
+        </li>
+        <li>
+         <p>
+          Se añade un
+          <code class="language-html">img</code>
+          dentro del elemento con la clase
+          <code class="language-html">three-line</code>.
+         </p>
+        </li>
+       </ul>
+      </dd>
+      <dt>El avatar de un usuario (se muestra dentro de un círculo)</dt>
+      <dd>
+       <ul>
+        <li>
+         <p>
+          Se añade la clase
+          <code class="language-html">avatar</code>
+          junto a la clase
+          <code class="language-html">three-line</code>.
+         </p>
+        </li>
+        <li>
+         <p>
+          Se añade un
+          <code class="language-html">img</code>,
+          un
+          <code class="language-html">label</code>
+          con las iniciales del usuario
+          o un
+          <code
+            class="language-html">span class="material-symbols-outlined"</code>
+          dentro del elemento con la clase
+          <code class="language-html">three-line</code>.
+         </p>
+        </li>
+       </ul>
+      </dd>
+     </dl>
     </li>
    </ul>
   </li>
@@ -7750,10 +7819,12 @@
 <div class="horizontal">
  <section>
   <h1>Salida</h1>
-  <iframe src="https://pwamd.gilbertopachec2.repl.co/three-line.html" height="350"
+  <iframe src="https://pwamd.gilbertopachec2.repl.co/three-line.html"
+    height="350"
     title="Navegación inferior para móvil"></iframe>
   <p class="noPrint">
-   <a href="https://pwamd.gilbertopachec2.repl.co/three-line.html" target="_blank"
+   <a href="https://pwamd.gilbertopachec2.repl.co/three-line.html"
+     target="_blank"
      rel="noopener">Ábrelo en otra pestaña.</a>
   </p>
  </section>
@@ -8259,13 +8330,22 @@
  <ul>
   <li>
    <p>
-    Las listas de tarjetas deben usar la class
-    <code class="language-html">cards</code>.
+    Las listas de tarjetas deben usar un
+    <code class="language-html">div class="md-cards"</code>.
    </p>
   </li>
   <li>
    <p>
-    Pueden llevar multimedia debe colocarse dentro de un elemento de tipo
+    Los elementos de la lista de tarjetas pueden ser
+    <code class="language-html">div</code>,
+    <code class="language-html">span</code>
+    o
+    <code class="language-html">a</code>
+   </p>
+  </li>
+  <li>
+   <p>
+    Pueden llevar multimedia, que debe colocarse dentro de un elemento de tipo
     <code class="language-html">figure</code>.
    </p>
   </li>
@@ -8286,7 +8366,7 @@
 <div class="horizontal">
  <section>
   <h1>Salida</h1>
-  <iframe src="https://pwamd.gilbertopachec2.repl.co/tarjetas.html" height="350"
+  <iframe src="https://pwamd.gilbertopachec2.repl.co/tarjetas.html" height="400"
     title="Navegación inferior para móvil"></iframe>
   <p class="noPrint">
    <a href="https://pwamd.gilbertopachec2.repl.co/tarjetas.html" target="_blank"
@@ -8738,21 +8818,31 @@
    <p>
     Se crea el elemento personalizado
     <code class="language-html">nav-drw</code>.
-    En el método
-    <code class="language-javascript">connectedCallback</code>,
-    añade la instrucción
-    <code class="language-html">this.classList.add("navDrw")</code>.
+    Puedes ver su código en
+    <a href="m-js/m-nav-drw-js.html">m-js/m-nav-drw-js.html</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Coloca el botón
+    <code class="language-html">is="md-menu-button"</code>,
+    dentro del
+    <code class="language-html">md-top-app-bar</code>
+    con
+    <code class="language-html">slot="navigation"</code>.
+    Su método
+    <code class="language-html">onclick</code>
+    abre el cajón de navegación.
    </p>
   </li>
   <li>
    <p>
     Coloca
     <code class="language-html">nav-drw</code>,
-    usando el atributo
-    <code class="language-html">slot="navigation"</code>,
-    dentro de
-    <code class="language-html">center-aligned-top-app-bar</code> y
-    <code class="language-html">top-app-bar</code>
+    Hasta el final, ponle su 
+    <code class="language-html">id"</code>
+    y el nombre de la página actual con el atributo
+    <code class="language-html">actual</code>.
    </p>
   </li>
  </ul>
@@ -9161,22 +9251,33 @@
    <p>
     Se crea el elemento personalizado
     <code class="language-html">nav-tab-scrollable</code>.
-    En el método
-    <code class="language-javascript">connectedCallback</code>,
-    añade la instrucción
-    <code
-      class="language-html">this.classList.add("navTab", "scrollable")</code>.
+    Puedes ver su código en
+    <a
+      href="m-js/m-nav-tab-scrollable-js.html">m-js/m-nav-tab-scrollable-js.html</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Añade al
+    <code class="language-html">top-app-bar</code>
+    el atributo
+    <code class="language-html">adicional</code>
+    con el id para
+    <code class="language-html">nav-tab-scrollable</code>.
    </p>
   </li>
   <li>
    <p>
     Coloca
-    <code class="language-html">nav-tab-scrollable</code>,
-    usando el atributo
-    <code class="language-html">slot="adicional"</code>.
-    dentro de
-    <code class="language-html">center-aligned-top-app-bar</code> y
+    <code class="language-html">nav-tab-scrollable</code>.
+    después de
     <code class="language-html">top-app-bar</code>
+    y de
+    <code class="language-html">h1</code>.
+    Ponle su
+    <code class="language-html">id</code>
+    y el nombre de la página actual con el atributo
+    <code class="language-html">actual</code>.
    </p>
   </li>
  </ul>
@@ -9184,7 +9285,7 @@
 <div class="horizontal">
  <section>
   <h1>Salida</h1>
-  <iframe src="https://pwamd.gilbertopachec2.repl.co/navtab.html" height="250"
+  <iframe src="https://pwamd.gilbertopachec2.repl.co/navtab.html" height="350"
     title="Navegación con pestañas scrollable"></iframe>
   <p class="noPrint">
    <a href="https://pwamd.gilbertopachec2.repl.co/navtab.html" target="_blank"
@@ -9469,23 +9570,34 @@
   <li>
    <p>
     Se crea el elemento personalizado
-    <code class="language-html">nav-tab-fixed</code>,
-    En el método
-    <code class="language-javascript">connectedCallback</code>,
-    añade la instrucción
-    <code
-      class="language-html">this.classList.add("navTab", "fixed")</code>.
+    <code class="language-html">nav-tab-fixed</code>.
+    Puedes ver su código en
+    <a
+      href="m-js/m-nav-tab-fixed-js.html">m-js/m-nav-tab-fixed-js.html</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Añade al
+    <code class="language-html">top-app-bar</code>
+    el atributo
+    <code class="language-html">adicional</code>
+    con el id para
+    <code class="language-html">nav-tab-fixed</code>.
    </p>
   </li>
   <li>
    <p>
     Coloca
-    <code class="language-html">mi-nav</code>,
-    usando el atributo
-    <code class="language-html">slot="adicional"</code>.
-    dentro de
-    <code class="language-html">center-aligned-top-app-bar</code> y
+    <code class="language-html">nav-tab-fixed</code>,
+    después de
     <code class="language-html">top-app-bar</code>
+    y de
+    <code class="language-html">h1</code>.
+    Ponle su
+    <code class="language-html">id</code>
+    y el nombre de la página actual con el atributo
+    <code class="language-html">actual</code>.
    </p>
   </li>
  </ul>
@@ -9494,7 +9606,7 @@
  <section>
   <h1>Salida</h1>
   <iframe src="https://pwamd.gilbertopachec2.repl.co/navTabFixed.html"
-    height="250" title="Navegación con pestañas fixed"></iframe>
+    height="350" title="Navegación con pestañas fixed"></iframe>
   <p class="noPrint">
    <a href="https://pwamd.gilbertopachec2.repl.co/navTabFixed.html"
      target="_blank"
@@ -9789,10 +9901,8 @@
    <p>
     Se crea el elemento personalizado
     <code class="language-html">nav-bar</code>.
-    En el método
-    <code class="language-javascript">connectedCallback</code>,
-    añade la instrucción
-    <code class="language-html">this.classList.add("navBar")</code>.
+    Usa textos cortos. Puedes ver su código en
+    <a href="m-js/m-nav-bar-js.html">m-js/m-nav-bar-js.html</a>
    </p>
   </li>
   <li>
@@ -9800,6 +9910,8 @@
     Coloca
     <code class="language-html">nav-bar</code>
     al final de tu forma.
+    Ponle el nombre de la página actual con el atributo
+    <code class="language-html">actual</code>.
    </p>
   </li>
  </ul>
@@ -9807,7 +9919,7 @@
 <div class="horizontal">
  <section>
   <h1>Salida</h1>
-  <iframe src="https://pwamd.gilbertopachec2.repl.co/navbar.html" height="280"
+  <iframe src="https://pwamd.gilbertopachec2.repl.co/navbar.html" height="350"
     title="Navegación inferior para móvil"></iframe>
   <p class="noPrint">
    <a href="https://pwamd.gilbertopachec2.repl.co/navbar.html" target="_blank"
@@ -9971,7 +10083,7 @@
    <div>&nbsp;<span
       style="color: #800000;">&lt;/h1&gt;</span></div><br>
    <div>&nbsp;<span
-      style="color: #800000;">&lt;section&gt;</span></div>
+      style="color: #800000;">&lt;main&gt;</span></div>
    <div>&nbsp;&nbsp;<span
       style="color: #800000;">&lt;p&gt;</span></div>
    <div>&nbsp;&nbsp;&nbsp;Esta página usa barra de</div>
@@ -10050,7 +10162,7 @@
       style="color: #800000;">&lt;p&gt;</span>x<span
       style="color: #800000;">&lt;/p&gt;</span></div>
    <div>&nbsp;<span
-      style="color: #800000;">&lt;/section&gt;</span></div><br>
+      style="color: #800000;">&lt;/main&gt;</span></div><br>
    <div>&nbsp;<span
       style="color: #800000;">&lt;nav-bar</span></div>
    <div>&nbsp;&nbsp;&nbsp;<span
@@ -10083,14 +10195,8 @@
  <ul>
   <li>
    <p>
-    Los mensajes de error de de un componente, se muestran en otro componente
-    conocido como <dfn>texto de ayuda</dfn>.
-   </p>
-  </li>
-  <li>
-   <p>
-    En algunos de los custom elements mostrados, se indica el texto de ayuda
-    usando un elemento
+    Los mensajes de error de un componente, se muestran en otro conocido como
+    <dfn>texto de ayuda</dfn>, que normalmente usa un elemento
     <code class="language-html">small</code>
     con el atributo
     <code class="language-html">slot="supporting"</code>.
@@ -10107,7 +10213,7 @@
     En este ejemplo, el campo
     <code class="language-html">select-menu</code>
     con el id
-    <code class="language-html">inGenero</code>
+    <code class="language-html">selectGenero</code>
     usa el evento
     <code class="language-html">input</code>.
     para invocar la función
@@ -10895,7 +11001,7 @@
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-js/m-nav-tab-fixed-js.html">navTabFixed.html - Navegación con pestañas fijas</a>
+     <a href="/m03pwaMaterial/m-js/m-nav-tab-fixed-js.html">navTabFixed.html - Implementación de pestañas fijas</a>
     </p>
    </li>
    <li>
@@ -11888,7 +11994,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >D. navTabFixed.html - Navegación con pestañas fijas</h1><muestra-codigo>
+         <h1 >D. navTabFixed.html - Implementación de pestañas fijas</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #af00db;">import</span>&nbsp;{ <span
@@ -13473,7 +13579,7 @@
      style="color: #800000;">html</span>&nbsp;{</div>
   <div>&nbsp;&nbsp;<span
      style="color: #e50000;">--tabWidth</span>: <span
-     style="color: #098658;">90px</span>;</div>
+     style="color: #098658;">60px</span>;</div>
   <div>&nbsp;&nbsp;<span
      style="color: #e50000;">--anchoNav</span>: <span
      style="color: #098658;">360px</span>;</div>
@@ -15119,12 +15225,12 @@
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-lib/m-fonts/">Carpeta « lib / fonts »</a>
+     <a href="/m03pwaMaterial/m-lib/m-js/">Carpeta « lib / js »</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-lib/m-js/">Carpeta « lib / js »</a>
+     <a href="/m03pwaMaterial/m-lib/m-fonts/">Carpeta « lib / fonts »</a>
     </p>
    </li>
    </ol>
@@ -17944,9 +18050,9 @@
      style="color: #0451a5;">block</span>;</div>
   <div>&nbsp;<span
      style="color: #e50000;">flex</span>: <span
+     style="color: #098658;">0</span> <span
      style="color: #098658;">1</span> <span
-     style="color: #098658;">1</span> <span
-     style="color: #098658;">0</span>;</div>
+     style="color: #0451a5;">auto</span>;</div>
   <div>&nbsp;<span
      style="color: #e50000;">color</span>: <span
      style="color: #795e26;">var</span>(<span
@@ -19395,39 +19501,6 @@
      <section >
          <h1 >14. lib / css / md-switch.css</h1><muestra-codigo>
  <div>
-  <div><span
-     style="color: #800000;">html</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">--colIntOn</span>: <span
-     style="color: #0451a5;">#FFFFFF</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">--colIntOnHv</span>: <span
-     style="color: #0451a5;">#6750A422</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">--colIntOnFc</span>: <span
-     style="color: #0451a5;">#6750A444</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">--colIntOnAct</span>: <span
-     style="color: #0451a5;">#6750A466</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">--colIntOnBk</span>: <span
-     style="color: #0451a5;">#6750A4</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">--colIntOff</span>: <span
-     style="color: #0451a5;">#6750A4</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">--colIntOffHv</span>: <span
-     style="color: #0451a5;">#e0e0e088</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">--colIntOffFc</span>: <span
-     style="color: #0451a5;">#d0d0d077</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">--colIntOffAct</span>: <span
-     style="color: #0451a5;">#c0c0c077</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">--colIntOffBk</span>: <span
-     style="color: #0451a5;">#E7E0EC</span>;</div>
-  <div>}</div><br>
   <div>[<span
      style="color: #e50000;">is</span>=<span
      style="color: #a31515;">"md-switch"</span>]&nbsp;{</div>
@@ -20564,8 +20637,8 @@
      style="color: #001080;">--md-sys-motion-duration-700</span>);</div>
   <div>}</div><br>
   <div><span
-     style="color: #800000;">.md-headline.scroll</span>&nbsp;{</div>
-  <div><span
+     style="color: #800000;">.md-headline.scroll-adicional</span>&nbsp;{</div>
+  <div>&nbsp;<span
      style="color: #e50000;">color</span>: <span
      style="color: #795e26;">var</span>(<span
      style="color: #001080;">--md-sys-color-surface-container-low</span>);</div>
@@ -20573,6 +20646,13 @@
      style="color: #e50000;">background-color</span>: <span
      style="color: #795e26;">var</span>(<span
      style="color: #001080;">--md-sys-color-surface-container-low</span>);</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #800000;">.md-headline.scroll</span>&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #e50000;">color</span>: <span
+     style="color: #795e26;">var</span>(<span
+     style="color: #001080;">--md-sys-color-surface</span>);</div>
   <div>}</div><br>
   <div><span
      style="color: #800000;">.md-headline.headline-small</span>&nbsp;{</div>
@@ -23670,7 +23750,7 @@
       </section>
       </section>
      <section>
-         <h1 >B. Carpeta « lib / fonts »</h1>
+         <h1 >B. Carpeta « lib / js »</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -23686,88 +23766,9 @@
     
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-lib/m-fonts/m-MaterialSymbolsOutlined[FILL,GRAD,opsz,wght]-codepoints.html">lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints</a>
+     <a href="/m03pwaMaterial/m-lib/m-js/m-const/">Carpeta « lib / js / const »</a>
     </p>
    </li>
-   <li>
-    <p>
-     <a href="/m03pwaMaterial/m-lib/m-fonts/m-MaterialSymbolsOutlined[FILL,GRAD,opsz,wght]-ttf.html">lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m03pwaMaterial/m-lib/m-fonts/m-MaterialSymbolsOutlined[FILL,GRAD,opsz,wght]-woff2.html">lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m03pwaMaterial/m-lib/m-fonts/m-roboto-v30-latin-regular-ttf.html">lib / fonts / roboto-v30-latin-regular.ttf</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m03pwaMaterial/m-lib/m-fonts/m-roboto-v30-latin-regular-woff2.html">lib / fonts / roboto-v30-latin-regular.woff2</a>
-    </p>
-   </li>
-   </ol>
-   </nav>
-  </div>
-     <section >
-         <h1 >1. lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints</h1><div class="lectura">
- <p>
-   <a href="/src/m03pwaMaterial/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints"
-       download>Descarga el archivo.</a>
- </p>
-</div>
-      </section>
-     <section >
-         <h1 >2. lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf</h1><div class="lectura">
- <p>
-   <a href="/src/m03pwaMaterial/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf"
-       download>Descarga el archivo.</a>
- </p>
-</div>
-      </section>
-     <section >
-         <h1 >3. lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2</h1><div class="lectura">
- <p>
-   <a href="/src/m03pwaMaterial/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2"
-       download>Descarga el archivo.</a>
- </p>
-</div>
-      </section>
-     <section >
-         <h1 >4. lib / fonts / roboto-v30-latin-regular.ttf</h1><div class="lectura">
- <p>
-  <a href="/src/m03pwaMaterial/roboto-v30-latin-regular.ttf"
-    download>Descarga el archivo.</a>
- </p>
-</div>
-      </section>
-     <section >
-         <h1 >5. lib / fonts / roboto-v30-latin-regular.woff2</h1><div class="lectura">
- <p>
-   <a href="/src/m03pwaMaterial/roboto-v30-latin-regular.woff2"
-       download>Descarga el archivo.</a>
- </p>
-</div>
-      </section>
-      </section>
-     <section>
-         <h1 >C. Carpeta « lib / js »</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
-    </p>
-   </div>
-
-  <div class="lectura">
-   <nav>
-    <h1>Contenido</h1>
-    
-   <ol type="1">
-    
    <li>
     <p>
      <a href="/m03pwaMaterial/m-lib/m-js/m-abreElementoHtml-js.html">lib / js / abreElementoHtml.js</a>
@@ -23835,19 +23836,63 @@
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-lib/m-js/m-const/">Carpeta « lib / js / const »</a>
-    </p>
-   </li>
-   <li>
-    <p>
      <a href="/m03pwaMaterial/m-lib/m-js/m-custom/">Carpeta « lib / js / custom »</a>
     </p>
    </li>
    </ol>
    </nav>
   </div>
+     <section>
+         <h1 >1. Carpeta « lib / js / const »</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+
+  <div class="lectura">
+   <nav>
+    <h1>Contenido</h1>
+    
+   <ol type="A">
+    
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-lib/m-js/m-const/m-ES_APPLE-js.html">lib / js / const / ES_APPLE.js</a>
+    </p>
+   </li>
+   </ol>
+   </nav>
+  </div>
      <section >
-         <h1 >1. lib / js / abreElementoHtml.js</h1><muestra-codigo>
+         <h1 >A. lib / js / const / ES_APPLE.js</h1><muestra-codigo>
+ <div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">ES_APPLE</span> =<span
+     style="color: #811f3f;"> /.</span>*<span
+     style="color: #d16969;">(</span><span
+     style="color: #811f3f;">iPad</span><span
+     style="color: #ee0000;">|</span><span
+     style="color: #811f3f;">iPhone</span><span
+     style="color: #ee0000;">|</span><span
+     style="color: #811f3f;">iPod</span><span
+     style="color: #ee0000;">|</span><span
+     style="color: #811f3f;">Mac</span><span
+     style="color: #d16969;">)</span><span
+     style="color: #811f3f;">.</span>*<span
+     style="color: #811f3f;">/</span>.<span
+     style="color: #795e26;">test</span>(<span
+     style="color: #001080;">navigator</span>.<span
+     style="color: #0070c1;">userAgent</span>)</div>
+ </div>
+</muestra-codigo>
+      </section>
+      </section>
+     <section >
+         <h1 >2. lib / js / abreElementoHtml.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #008000;">/**</span></div>
@@ -23892,7 +23937,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >2. lib / js / calculaClase.js</h1><muestra-codigo>
+         <h1 >3. lib / js / calculaClase.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #af00db;">import</span>&nbsp;{ <span
@@ -23935,7 +23980,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >3. lib / js / cierraElementoHtmo.js</h1><muestra-codigo>
+         <h1 >4. lib / js / cierraElementoHtmo.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #008000;">/**</span></div>
@@ -23980,7 +24025,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >4. lib / js / ejecutaMetodo.js</h1><muestra-codigo>
+         <h1 >5. lib / js / ejecutaMetodo.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #af00db;">import</span>&nbsp;{ <span
@@ -24125,7 +24170,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >5. lib / js / getAttribute.js</h1><muestra-codigo>
+         <h1 >6. lib / js / getAttribute.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #008000;">/**</span></div>
@@ -24173,7 +24218,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >6. lib / js / html.js</h1><muestra-codigo>
+         <h1 >7. lib / js / html.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #af00db;">import</span> <span
@@ -24404,7 +24449,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >7. lib / js / htmlentities.js</h1><muestra-codigo>
+         <h1 >8. lib / js / htmlentities.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #008000;">/**</span></div>
@@ -24493,7 +24538,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >8. lib / js / muestraError.js</h1><muestra-codigo>
+         <h1 >9. lib / js / muestraError.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #008000;">/**</span></div>
@@ -24552,7 +24597,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >9. lib / js / muestraTextoDeAyuda.js</h1><muestra-codigo>
+         <h1 >10. lib / js / muestraTextoDeAyuda.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #008000;">/**</span></div>
@@ -24645,7 +24690,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >10. lib / js / querySelector.js</h1><muestra-codigo>
+         <h1 >11. lib / js / querySelector.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #008000;">/**</span></div>
@@ -24716,7 +24761,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >11. lib / js / querySelectorAll.js</h1><muestra-codigo>
+         <h1 >12. lib / js / querySelectorAll.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #008000;">/**</span></div>
@@ -24733,7 +24778,7 @@
      style="color: #008000;"> </span><span
      style="color: #267f99;">{ Document | Element | ShadowRoot }</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">raix</span></div>
+     style="color: #001080;">raiz</span></div>
   <div><span
      style="color: #008000;">&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
@@ -24752,13 +24797,13 @@
      style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
      style="color: #795e26;">querySelectorAll</span>(<span
-     style="color: #001080;">raix</span>, <span
+     style="color: #001080;">raiz</span>, <span
      style="color: #001080;">query</span>)&nbsp;{</div>
   <div>&nbsp;<span
      style="color: #af00db;">return</span> <span
      style="color: #267f99;">Array</span>.<span
      style="color: #795e26;">from</span>(<span
-     style="color: #001080;">raix</span>.<span
+     style="color: #001080;">raiz</span>.<span
      style="color: #795e26;">querySelectorAll</span>(<span
      style="color: #001080;">query</span>))</div>
   <div>}</div>
@@ -24766,7 +24811,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >12. lib / js / registraServiceWorkerSiEsSoportado.js</h1><muestra-codigo>
+         <h1 >13. lib / js / registraServiceWorkerSiEsSoportado.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #af00db;">import</span>&nbsp;{ <span
@@ -24827,7 +24872,7 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >13. lib / js / setBooleanAttribute.js</h1><muestra-codigo>
+         <h1 >14. lib / js / setBooleanAttribute.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #008000;">/**</span></div>
@@ -24879,55 +24924,6 @@
   <div>}</div>
  </div>
 </muestra-codigo>
-      </section>
-     <section>
-         <h1 >14. Carpeta « lib / js / const »</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
-    </p>
-   </div>
-
-  <div class="lectura">
-   <nav>
-    <h1>Contenido</h1>
-    
-   <ol type="A">
-    
-   <li>
-    <p>
-     <a href="/m03pwaMaterial/m-lib/m-js/m-const/m-ES_APPLE-js.html">lib / js / const / ES_APPLE.js</a>
-    </p>
-   </li>
-   </ol>
-   </nav>
-  </div>
-     <section >
-         <h1 >A. lib / js / const / ES_APPLE.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">ES_APPLE</span> =<span
-     style="color: #811f3f;"> /.</span>*<span
-     style="color: #d16969;">(</span><span
-     style="color: #811f3f;">iPad</span><span
-     style="color: #ee0000;">|</span><span
-     style="color: #811f3f;">iPhone</span><span
-     style="color: #ee0000;">|</span><span
-     style="color: #811f3f;">iPod</span><span
-     style="color: #ee0000;">|</span><span
-     style="color: #811f3f;">Mac</span><span
-     style="color: #d16969;">)</span><span
-     style="color: #811f3f;">.</span>*<span
-     style="color: #811f3f;">/</span>.<span
-     style="color: #795e26;">test</span>(<span
-     style="color: #001080;">navigator</span>.<span
-     style="color: #0070c1;">userAgent</span>)</div>
- </div>
-</muestra-codigo>
-      </section>
       </section>
      <section>
          <h1 >15. Carpeta « lib / js / custom »</h1>
@@ -28464,8 +28460,7 @@
      style="color: #795e26;">getContent</span>()&nbsp;{</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">return</span><span
-     style="color: #008000;"> </span><span
-     style="color: #795e26;">html</span>`</div>
+     style="color: #008000;"> html</span>`</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #800000;">&lt;style&gt;</span></div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -29085,11 +29080,25 @@
      style="color: #001080;">_headline</span> !== <span
      style="color: #0000ff;">null</span>)&nbsp;{</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_adicional</span> === <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
      style="color: #001080;">_headline</span>.<span
      style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">remove</span>(<span
      style="color: #a31515;">"scroll"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_headline</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">remove</span>(<span
+     style="color: #a31515;">"scroll-adicional"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
   <div>&nbsp;&nbsp;&nbsp;}</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #af00db;">if</span> (<span
@@ -29116,11 +29125,25 @@
      style="color: #001080;">_headline</span> !== <span
      style="color: #0000ff;">null</span>)&nbsp;{</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_adicional</span> === <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
      style="color: #001080;">_headline</span>.<span
      style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">add</span>(<span
      style="color: #a31515;">"scroll"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_headline</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"scroll-adicional"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
   <div>&nbsp;&nbsp;&nbsp;}</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #af00db;">if</span> (<span
@@ -29926,6 +29949,90 @@
       </section>
       </section>
       </section>
+     <section>
+         <h1 >C. Carpeta « lib / fonts »</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+
+  <div class="lectura">
+   <nav>
+    <h1>Contenido</h1>
+    
+   <ol type="1">
+    
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-lib/m-fonts/m-MaterialSymbolsOutlined[FILL,GRAD,opsz,wght]-codepoints.html">lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-lib/m-fonts/m-MaterialSymbolsOutlined[FILL,GRAD,opsz,wght]-ttf.html">lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-lib/m-fonts/m-MaterialSymbolsOutlined[FILL,GRAD,opsz,wght]-woff2.html">lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-lib/m-fonts/m-roboto-v30-latin-regular-ttf.html">lib / fonts / roboto-v30-latin-regular.ttf</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-lib/m-fonts/m-roboto-v30-latin-regular-woff2.html">lib / fonts / roboto-v30-latin-regular.woff2</a>
+    </p>
+   </li>
+   </ol>
+   </nav>
+  </div>
+     <section >
+         <h1 >1. lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints</h1><div class="lectura">
+ <p>
+   <a href="/src/m03pwaMaterial/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints"
+       download>Descarga el archivo.</a>
+ </p>
+</div>
+      </section>
+     <section >
+         <h1 >2. lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf</h1><div class="lectura">
+ <p>
+   <a href="/src/m03pwaMaterial/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf"
+       download>Descarga el archivo.</a>
+ </p>
+</div>
+      </section>
+     <section >
+         <h1 >3. lib / fonts / MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2</h1><div class="lectura">
+ <p>
+   <a href="/src/m03pwaMaterial/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2"
+       download>Descarga el archivo.</a>
+ </p>
+</div>
+      </section>
+     <section >
+         <h1 >4. lib / fonts / roboto-v30-latin-regular.ttf</h1><div class="lectura">
+ <p>
+  <a href="/src/m03pwaMaterial/roboto-v30-latin-regular.ttf"
+    download>Descarga el archivo.</a>
+ </p>
+</div>
+      </section>
+     <section >
+         <h1 >5. lib / fonts / roboto-v30-latin-regular.woff2</h1><div class="lectura">
+ <p>
+   <a href="/src/m03pwaMaterial/roboto-v30-latin-regular.woff2"
+       download>Descarga el archivo.</a>
+ </p>
+</div>
+      </section>
+      </section>
       </section>
      <section>
          <h1 >34. Carpeta « ungap »</h1>
@@ -29990,15 +30097,16 @@
     </p>
    </div>
 <div class="lectura">
- <p>
-  En esta lección se muestra como aceder directamente a algunas funciones del
-  dispositivo.
- </p>
  <nav>
   <h1>Contenido</h1>
   
    <ol type="A">
     
+   <li>
+    <p>
+     <a href="/m04dispositivo/mAintro.html">Introduccion</a>
+    </p>
+   </li>
    <li>
     <p>
      <a href="/m04dispositivo/mAgps.html">Geolocalización</a>
@@ -30018,96 +30126,129 @@
  </nav>
 </div>
      <section >
-         <h1 >A. Geolocalización</h1><div class="horizontal">
+         <h1 >A. Introduccion</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En esta lección se muestra como aceder directamente a algunas funciones del
+    dispositivo.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >B. Geolocalización</h1><div class="horizontal">
  <section>
   <h1>Salida</h1>
   <iframe src="/src/m04dispositivos/gps.html" height="200"
     title="Uso de geolocalización"></iframe>
   <p class="noPrint">
-   <a href="/src/m04dispositivos/gps.html" target="_blank" rel="noopener">Ábrelo en
-    otra
-    pestaña.</a>
+   <a href="/src/m04dispositivos/gps.html" target="_blank" rel="noopener">Ábrelo
+    en
+    otra pestaña.</a>
   </p>
  </section>
  <muestra-codigo>
   <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
+   <div><span
+      style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #e50000;">html</span><span
       style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-      style="color: #ff0000;">lang</span>=<span
+   <div><span
+      style="color: #800000;">&lt;html</span> <span
+      style="color: #e50000;">lang</span>=<span
       style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">charset</span>=<span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;head&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">charset</span>=<span
       style="color: #0000ff;">"UTF-8"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">name</span>=<span
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
       style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #e50000;">content</span>=<span
       style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>GPS<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-   <div class="resaltado2"><span
-      style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>GPS<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;label&gt;</span></div>
+      style="color: #800000;">&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span>GPS<span
+      style="color: #800000;">&lt;/title&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;body&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>GPS<span
+      style="color: #800000;">&lt;/h1&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label&gt;</span></div>
    <div>&nbsp;&nbsp;&nbsp;Latitud</div>
    <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;output</span>&nbsp;<span
-      style="color: #ff0000;">id</span>=<span
+      style="color: #800000;">&lt;output</span> <span
+      style="color: #e50000;">id</span>=<span
       style="color: #0000ff;">"latitud"</span><span
       style="color: #800000;">&gt;&lt;/output&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;label&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label&gt;</span></div>
    <div>&nbsp;&nbsp;&nbsp;Longitud</div>
    <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;output</span>&nbsp;<span
-      style="color: #ff0000;">id</span>=<span
+      style="color: #800000;">&lt;output</span> <span
+      style="color: #e50000;">id</span>=<span
       style="color: #0000ff;">"longitud"</span><span
       style="color: #800000;">&gt;&lt;/output&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div class="resaltado2">&nbsp;<span
-      style="color: #800000;">&lt;script&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #001080;">navigator</span>.<span
-      style="color: #0070c1;">geolocation</span>.</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #001080;">navigator</span>.<span
+      style="color: #001080;">geolocation</span>.</div>
    <div>&nbsp;&nbsp;&nbsp;<span
       style="color: #795e26;">watchPosition</span>(<span
-      style="color: #001080;">p</span>&nbsp;<span
-      style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+      style="color: #001080;">p</span> <span
+      style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
       style="color: #001080;">latitud</span>.<span
-      style="color: #001080;">value</span>&nbsp;=</div>
+      style="color: #001080;">value</span> =</div>
    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
       style="color: #001080;">p</span>.<span
-      style="color: #0070c1;">coords</span>.<span
-      style="color: #0070c1;">latitude</span>;</div>
+      style="color: #001080;">coords</span>.<span
+      style="color: #001080;">latitude</span></div><br>
    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
       style="color: #001080;">longitud</span>.<span
-      style="color: #001080;">value</span>&nbsp;=</div>
+      style="color: #001080;">value</span> =</div>
    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
       style="color: #001080;">p</span>.<span
-      style="color: #0070c1;">coords</span>.<span
-      style="color: #0070c1;">longitude</span>;</div>
-   <div>&nbsp;&nbsp;&nbsp;});</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+      style="color: #001080;">coords</span>.<span
+      style="color: #001080;">longitude</span></div><br>
+   <div>&nbsp;&nbsp;&nbsp;});</div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/script&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/html&gt;</span></div>
   </div>
  </muestra-codigo>
 </div>
       </section>
      <section >
-         <h1 >B. Archivos y cámara</h1><div class="horizontal">
+         <h1 >C. Archivos y cámara</h1><div class="horizontal">
  <section>
   <h1>Salida</h1>
   <iframe src="/src/m04dispositivos/archivos.html" height="300"
@@ -30140,7 +30281,7 @@
       style="color: #0000ff;">"es"</span><span
       style="color: #800000;">&gt;</span></div><br>
    <div><span
-      style="color: #800000;">&lt;head&gt;</span></div>
+      style="color: #800000;">&lt;head&gt;</span></div><br>
    <div>&nbsp;<span
       style="color: #800000;">&lt;meta</span> <span
       style="color: #e50000;">charset</span>=<span
@@ -30153,17 +30294,17 @@
    <div>&nbsp;&nbsp;&nbsp;<span
       style="color: #e50000;">content</span>=<span
       style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
+      style="color: #800000;">&gt;</span></div><br>
    <div>&nbsp;<span
       style="color: #800000;">&lt;title&gt;</span>Archivos y Cámara<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
+      style="color: #800000;">&lt;/title&gt;</span></div><br>
    <div><span
       style="color: #800000;">&lt;/head&gt;</span></div><br>
    <div><span
-      style="color: #800000;">&lt;body&gt;</span></div>
+      style="color: #800000;">&lt;body&gt;</span></div><br>
    <div>&nbsp;<span
       style="color: #800000;">&lt;h1&gt;</span>Archivos y Cámara<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
+      style="color: #800000;">&lt;/h1&gt;</span></div><br>
    <div>&nbsp;<span
       style="color: #800000;">&lt;p&gt;</span></div>
    <div>&nbsp;&nbsp;<span
@@ -30183,7 +30324,7 @@
    <div>&nbsp;&nbsp;<span
       style="color: #800000;">&lt;/label&gt;</span></div>
    <div>&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
+      style="color: #800000;">&lt;/p&gt;</span></div><br>
    <div>&nbsp;<span
       style="color: #800000;">&lt;p&gt;</span></div>
    <div>&nbsp;&nbsp;<span
@@ -30203,7 +30344,7 @@
    <div>&nbsp;&nbsp;<span
       style="color: #800000;">&lt;/label&gt;</span></div>
    <div>&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
+      style="color: #800000;">&lt;/p&gt;</span></div><br>
    <div>&nbsp;<span
       style="color: #800000;">&lt;p&gt;</span></div>
    <div>&nbsp;&nbsp;<span
@@ -30217,7 +30358,7 @@
    <div>&nbsp;&nbsp;<span
       style="color: #800000;">&lt;/label&gt;</span></div>
    <div>&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
+      style="color: #800000;">&lt;/p&gt;</span></div><br>
    <div><span
       style="color: #800000;">&lt;/body&gt;</span></div><br>
    <div><span
@@ -30227,7 +30368,7 @@
 </div>
       </section>
      <section >
-         <h1 >C. Resumen</h1><div class="lectura">
+         <h1 >D. Resumen</h1><div class="lectura">
  <ul>
   <li>
    <p>
@@ -32057,106 +32198,131 @@
       </section>
       </section>
      <section >
-         <h1 >9. Notificaciones</h1><div class="lectura noPrint">
- <p>
-  <a href="/src/m01notificaciones/index.html" target="_blank"
-    rel="noopener">Ábrelo en otra pestaña.</a>
- </p>
- <p>
-  <a target="_blank" rel="noopener"
-    href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ENotificaciones%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3ENotificaciones%3C%2Fh1%3E%0A%20%3Cbutton%20onclick%3D%22notifica()%22%3E%0A%20%20Muestra%0A%20%3C%2Fbutton%3E%0A%20%3Cscript%3E%0A%20%20const%20MENSAJE%20%3D%20%22Hola%22%0A%20%20async%20function%20notifica()%20%7B%0A%20%20%20let%20permitida%20%3D%20false%0A%20%20%20if%20(%22Notification%22%20in%20window)%20%7B%0A%20%20%20%20let%20permiso%20%3D%0A%20%20%20%20%20Notification.permission%0A%20%20%20%20if%20(permiso%20%3D%3D%3D%20%22default%22)%20%7B%0A%20%20%20%20%20permiso%20%3D%20await%20Notification.%0A%20%20%20%20%20%20requestPermission()%0A%20%20%20%20%7D%0A%20%20%20%20permitida%20%3D%0A%20%20%20%20%20permiso%20%3D%3D%3D%20%22granted%22%0A%20%20%20%7D%0A%20%20%20if%20(permitida)%20%7B%0A%20%20%20%20notificacion%20%3D%0A%20%20%20%20%20new%20Notification(MENSAJE)%0A%20%20%20%7D%20else%20%7B%0A%20%20%20%20alert(MENSAJE)%0A%20%20%20%7D%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
-   Revísalo en gilpgedit.</a>
- </p>
+         <h1 >9. Notificaciones</h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m01notificaciones/index.html" height="200"
+    title="Uso de notificaciones"></iframe>
+  <p>
+   <a href="/src/m01notificaciones/index.html" target="_blank"
+     rel="noopener">Ábrelo en otra pestaña.</a>
+  </p>
+  <p>
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%22%3E%0A%0A%20%3Ctitle%3ENotificaciones%3C%2Ftitle%3E%0A%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%0A%20%3Ch1%3ENotificaciones%3C%2Fh1%3E%0A%0A%20%3Cbutton%20type%3D%22button%22%20onclick%3D%22notifica()%22%3EMuestra%3C%2Fbutton%3E%0A%0A%20%3Cscript%3E%0A%0A%20%20const%20MENSAJE%20%3D%20%22Hola%22%0A%0A%20%20async%20function%20notifica()%20%7B%0A%20%20%20let%20permitida%20%3D%20false%0A%20%20%20if%20(%22Notification%22%20in%20window)%20%7B%0A%20%20%20%20let%20permiso%20%3D%20Notification.permission%0A%20%20%20%20if%20(permiso%20%3D%3D%3D%20%22default%22)%20%7B%0A%20%20%20%20%20permiso%20%3D%20await%20Notification.requestPermission()%0A%20%20%20%20%7D%0A%20%20%20%20permitida%20%3D%20permiso%20%3D%3D%3D%20%22granted%22%20%3F%20true%20%3A%20false%0A%20%20%20%7D%0A%20%20%20if%20(permitida)%20%7B%0A%20%20%20%20notificacion%20%3D%20new%20Notification(MENSAJE)%0A%20%20%20%7D%20else%20%7B%0A%20%20%20%20alert(MENSAJE)%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%3C%2Fscript%3E%0A%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.</a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span
+      style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #e50000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;html</span> <span
+      style="color: #e50000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;head&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
+      style="color: #e50000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span> <span
+      style="color: #e50000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span>Notificaciones<span
+      style="color: #800000;">&lt;/title&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;body&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>Notificaciones<span
+      style="color: #800000;">&lt;/h1&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #e50000;">type</span>=<span
+      style="color: #0000ff;">"button"</span> <span
+      style="color: #e50000;">onclick</span>=<span
+      style="color: #0000ff;">"</span><span
+      style="color: #795e26;">notifica</span><span
+      style="color: #0000ff;">()"</span><span
+      style="color: #800000;">&gt;</span>Muestra<span
+      style="color: #800000;">&lt;/button&gt;</span></div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script&gt;</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">MENSAJE</span> = <span
+      style="color: #a31515;">"Hola"</span></div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #0000ff;">async</span> <span
+      style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">notifica</span>()&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #0000ff;">let</span> <span
+      style="color: #001080;">permitida</span> = <span
+      style="color: #0000ff;">false</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #af00db;">if</span> (<span
+      style="color: #a31515;">"Notification"</span> <span
+      style="color: #0000ff;">in</span> <span
+      style="color: #001080;">window</span>)&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #0000ff;">let</span> <span
+      style="color: #001080;">permiso</span> = <span
+      style="color: #267f99;">Notification</span>.<span
+      style="color: #001080;">permission</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #af00db;">if</span> (<span
+      style="color: #001080;">permiso</span> === <span
+      style="color: #a31515;">"default"</span>)&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #001080;">permiso</span> = <span
+      style="color: #af00db;">await</span> <span
+      style="color: #267f99;">Notification</span>.<span
+      style="color: #795e26;">requestPermission</span>()</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #001080;">permitida</span> = <span
+      style="color: #001080;">permiso</span> === <span
+      style="color: #a31515;">"granted"</span> ? <span
+      style="color: #0000ff;">true</span> : <span
+      style="color: #0000ff;">false</span></div>
+   <div>&nbsp;&nbsp;&nbsp;}</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #af00db;">if</span> (<span
+      style="color: #001080;">permitida</span>)&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #001080;">notificacion</span> = <span
+      style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">Notification</span>(<span
+      style="color: #0070c1;">MENSAJE</span>)</div>
+   <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+      style="color: #af00db;">else</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">alert</span>(<span
+      style="color: #0070c1;">MENSAJE</span>)</div>
+   <div>&nbsp;&nbsp;&nbsp;}</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/script&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
 </div>
-<muestra-codigo>
- <div>
-  <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
-     style="color: #ff0000;">html</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div><span style="color: #800000;">&lt;html</span> <span
-     style="color: #ff0000;">lang</span>=<span
-     style="color: #0000ff;">"es"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div><span style="color: #800000;">&lt;head&gt;</span></div>
-  <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-     style="color: #ff0000;">charset</span>=<span
-     style="color: #0000ff;">"UTF-8"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-     style="color: #ff0000;">name</span>=<span
-     style="color: #0000ff;">"viewport"</span></div>
-  <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
-     style="color: #0000ff;">"width=device-width"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;title&gt;</span>Notificaciones<span
-     style="color: #800000;">&lt;/title&gt;</span></div>
-  <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-  <div><span style="color: #800000;">&lt;body&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;h1&gt;</span>Notificaciones<span
-     style="color: #800000;">&lt;/h1&gt;</span></div>
-  <div>&nbsp;<span style="color: #800000;">&lt;button</span> <span
-     style="color: #ff0000;">onclick</span>=<span
-     style="color: #0000ff;">"</span><span
-     style="color: #795e26;">notifica</span><span
-     style="color: #0000ff;">()</span><span
-     style="color: #0000ff;">"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp; Muestra</div>
-  <div>&nbsp;<span style="color: #800000;">&lt;/button&gt;</span></div>
-  <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
-  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">MENSAJE</span> = <span
-     style="color: #a31515;">"Hola"</span></div>
-  <div>&nbsp; <span style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">notifica</span>() {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">let</span> <span
-     style="color: #001080;">permitida</span> = <span
-     style="color: #0000ff;">false</span></div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #a31515;">"Notification"</span> <span
-     style="color: #0000ff;">in</span> <span
-     style="color: #001080;">window</span>) {</div>
-  <div>&nbsp; &nbsp; <span style="color: #0000ff;">let</span> <span
-     style="color: #001080;">permiso</span> =</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #267f99;">Notification</span>.<span
-     style="color: #0070c1;">permission</span></div>
-  <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">permiso</span> === <span
-     style="color: #a31515;">"default"</span>) {</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #001080;">permiso</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #267f99;">Notification</span>.</div>
-  <div>&nbsp; &nbsp; &nbsp; <span
-     style="color: #795e26;">requestPermission</span>()</div>
-  <div>&nbsp; &nbsp; }</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #001080;">permitida</span> =</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #001080;">permiso</span> === <span
-     style="color: #a31515;">"granted"</span></div>
-  <div>&nbsp; &nbsp;}</div>
-  <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">permitida</span>) {</div>
-  <div>&nbsp; &nbsp; <span
-     style="color: #001080;">notificacion</span> =</div>
-  <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Notification</span>(<span
-     style="color: #0070c1;">MENSAJE</span>)</div>
-  <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
-  <div>&nbsp; &nbsp; <span style="color: #795e26;">alert</span>(<span
-     style="color: #0070c1;">MENSAJE</span>)</div>
-  <div>&nbsp; &nbsp;}</div>
-  <div>&nbsp; }</div>
-  <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-  <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
-  <div><span style="color: #800000;">&lt;/html&gt;</span></div>
- </div>
-</muestra-codigo>
       </section>
      <section>
          <h1 >10. Notificaciones push</h1>

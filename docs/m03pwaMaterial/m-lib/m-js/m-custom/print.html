@@ -134,6 +134,13 @@
   color: var(--colTituloLetra);
  }
 
+ h1,
+ .lectura a,
+ .lectura p,
+ .lectura blockquote {
+  overflow-wrap: anywhere;
+ }
+
  .autor {
   font-family: var(--fontSans);
   font-size: 1.5rem;
@@ -3883,8 +3890,7 @@
      style="color: #795e26;">getContent</span>()&nbsp;{</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">return</span><span
-     style="color: #008000;"> </span><span
-     style="color: #795e26;">html</span>`</div>
+     style="color: #008000;"> html</span>`</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #800000;">&lt;style&gt;</span></div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -4504,11 +4510,25 @@
      style="color: #001080;">_headline</span> !== <span
      style="color: #0000ff;">null</span>)&nbsp;{</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_adicional</span> === <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
      style="color: #001080;">_headline</span>.<span
      style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">remove</span>(<span
      style="color: #a31515;">"scroll"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_headline</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">remove</span>(<span
+     style="color: #a31515;">"scroll-adicional"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
   <div>&nbsp;&nbsp;&nbsp;}</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #af00db;">if</span> (<span
@@ -4535,11 +4555,25 @@
      style="color: #001080;">_headline</span> !== <span
      style="color: #0000ff;">null</span>)&nbsp;{</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_adicional</span> === <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
      style="color: #001080;">_headline</span>.<span
      style="color: #0070c1;">classList</span>.<span
      style="color: #795e26;">add</span>(<span
      style="color: #a31515;">"scroll"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">this</span>.<span
+     style="color: #001080;">_headline</span>.<span
+     style="color: #0070c1;">classList</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #a31515;">"scroll-adicional"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
   <div>&nbsp;&nbsp;&nbsp;}</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #af00db;">if</span> (<span

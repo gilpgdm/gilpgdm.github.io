@@ -135,6 +135,13 @@
   color: var(--colTituloLetra);
  }
 
+ h1,
+ .lectura a,
+ .lectura p,
+ .lectura blockquote {
+  overflow-wrap: anywhere;
+ }
+
  .autor {
   font-family: var(--fontSans);
   font-size: 1.5rem;
@@ -321,6 +328,7 @@
   transition: transform 0.7s ease-in-out;
   scrollbar-width: thin;
   scrollbar-color: var(--colThumb) var(--colScrollbar);
+  overflow-wrap: anywhere;
  }
 
  #nav::-webkit-scrollbar {
@@ -458,14 +466,8 @@
  <ul>
   <li>
    <p>
-    Los mensajes de error de de un componente, se muestran en otro componente
-    conocido como <dfn>texto de ayuda</dfn>.
-   </p>
-  </li>
-  <li>
-   <p>
-    En algunos de los custom elements mostrados, se indica el texto de ayuda
-    usando un elemento
+    Los mensajes de error de un componente, se muestran en otro conocido como
+    <dfn>texto de ayuda</dfn>, que normalmente usa un elemento
     <code class="language-html">small</code>
     con el atributo
     <code class="language-html">slot="supporting"</code>.
@@ -482,7 +484,7 @@
     En este ejemplo, el campo
     <code class="language-html">select-menu</code>
     con el id
-    <code class="language-html">inGenero</code>
+    <code class="language-html">selectGenero</code>
     usa el evento
     <code class="language-html">input</code>.
     para invocar la función

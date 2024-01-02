@@ -135,6 +135,13 @@
   color: var(--colTituloLetra);
  }
 
+ h1,
+ .lectura a,
+ .lectura p,
+ .lectura blockquote {
+  overflow-wrap: anywhere;
+ }
+
  .autor {
   font-family: var(--fontSans);
   font-size: 1.5rem;
@@ -321,6 +328,7 @@
   transition: transform 0.7s ease-in-out;
   scrollbar-width: thin;
   scrollbar-color: var(--colThumb) var(--colScrollbar);
+  overflow-wrap: anywhere;
  }
 
  #nav::-webkit-scrollbar {
@@ -458,136 +466,152 @@
  <ul>
   <li>
    <p>
-    Las listas tienen los siguientes elementos:
+    Las listas de Material Design usan un
+    <code class="language-html">ul</code>
+    con la clase
+    <code class="language-html">md-list</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Las listas pueden usar
+    <code class="language-html">li</code>
+    con las clases
+    <code class="language-html">one-line</code>,
+    <code class="language-html">two-line</code>
+    o
+    <code class="language-html">three-line</code>
+   </p>
+  </li>
+  <li>
+   <p>
+    Si el elemento es un hipervínculo, el elemento
+    <code class="language-html">li</code>
+    no lleva clases y en su interior se pone una
+    <code class="language-html">a</code>
+    con la clase
+    <code class="language-html">one-line</code>,
+    <code class="language-html">two-line</code>
+    o
+    <code class="language-html">three-line</code>
+   </p>
+  </li>
+  <li>
+   <p>
+    Los elementos de la clase
+    <code class="language-html">one-line</code>,
+    tienen el siguiente contenido:
    </p>
    <ul>
     <li>
      <p>
-      Un encabezado que muestra texto en negritas.
-     </p>
-    </li>
-    <li>
-     <p>
-      Opcionalmente un texto secundario que muestra mas pequeño y de ancho
-      normal.
+      Un encabezado con un elemento
+      <code class="language-html">span class="headline"</code>
+      que muestra texto resaltado truncado a un renglón.
      </p>
     </li>
     <li>
      <p>
       Opcionalmente muestran una imagen a la izquierda, que puede ser:
      </p>
-     <ul>
-      <li>
-       <p>Un pequeño ícono cuadrado.</p>
-      </li>
-      <li>
-       <p>Una imagen cuadrada.</p>
-      </li>
-      <li>
-       <p>Una imagen rectangular.</p>
-      </li>
-      <li>
-       <p>El avatar de un usuario. (Se muestra dentro de un círculo.)</p>
-      </li>
-     </ul>
-    </li>
-   </ul>
-  </li>
-  <li>
-   <p>
-    Las listas deben usar un elemento
-    <code class="language-html">ul</code>
-    con la class
-    <code class="language-html">list</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Los elementos de la lista se colocan en elementos
-    <code class="language-html">li</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Si el elemento es un enlace, se coloca un elemento
-    <code class="language-html">a</code>
-    dentro del
-    <code class="language-html">li</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Si el elemento solo lleva un renglón, se coloca la class
-    <code class="language-html">one-line</code>
-    dentro del elemento
-    <code class="language-html">li</code>.
-    o dentro del elemento
-    <code class="language-html">a</code>,
-    si es un enlace.
-   </p>
-  </li>
-  <li>
-   <p>
-    Si el elemento es de 2 renglones, se coloca la class
-    <code class="language-html">two-line</code>
-    dentro del elemento
-    <code class="language-html">li</code>.
-    o dentro del elemento
-    <code class="language-html">a</code>,
-    si es un enlace.
-   </p>
-  </li>
-  <li>
-   <p>
-    Si el elemento es de 3 renglones, se coloca la class
-    <code class="language-html">three-line</code>
-    dentro del elemento
-    <code class="language-html">li</code>.
-    o dentro del elemento
-    <code class="language-html">a</code>,
-    si es un enlace.
-   </p>
-  </li>
-  <li>
-   <p>
-    Todos los elementos llevan un
-    <code class="language-html">span</code>
-    con la class
-    <code class="language-html">headline</code>.
-    para el título, así como un elemento
-    <code class="language-html">span</code>
-    con la class
-    <code class="language-html">supporting</code>,
-    para el texto secundario.
-   </p>
-  </li>
-  <li>
-   <p>
-    La imágenes se pueden agregar como un material symbol o como un elemento
-    <code class="language-html">img</code>.
-    El elemento debe añadir una clase para indicar el tipo de imagen que lleva,
-    que puede ser:
-   </p>
-   <ul>
-    <li>
-     <p>
-      <code class="language-html">icon</code>.
-     </p>
-    </li>
-    <li>
-     <p>
-      <code class="language-html">image</code>.
-     </p>
-    </li>
-    <li>
-     <p>
-      <code class="language-html">video</code>.
-     </p>
-    </li>
-    <li>
-     <p>
-      <code class="language-html">avatar</code>.
-     </p>
+     <dl>
+      <dt>Un pequeño ícono cuadrado</dt>
+      <dd>
+       <ul>
+        <li>
+         <p>
+          Se añade la clase
+          <code class="language-html">icon</code>
+          junto a la clase
+          <code class="language-html">one-line</code>.
+         </p>
+        </li>
+        <li>
+         <p>
+          Se añade un
+          <code class="language-html">img</code>
+          o un
+          <code
+            class="language-html">span class="material-symbols-outlined"</code>
+          dentro del elemento con la clase
+          <code class="language-html">one-line</code>.
+         </p>
+        </li>
+       </ul>
+      </dd>
+      <dt>Una imagen cuadrada</dt>
+      <dd>
+       <ul>
+        <li>
+         <p>
+          Se añade la clase
+          <code class="language-html">image</code>
+          junto a la clase
+          <code class="language-html">one-line</code>.
+         </p>
+        </li>
+        <li>
+         <p>
+          Se añade un
+          <code class="language-html">img</code>
+          o un
+          <code
+            class="language-html">span class="material-symbols-outlined"</code>
+          dentro del elemento con la clase
+          <code class="language-html">one-line</code>.
+         </p>
+        </li>
+       </ul>
+      </dd>
+      <dt>Una imagen rectangular</dt>
+      <dd>
+       <ul>
+        <li>
+         <p>
+          Se añade la clase
+          <code class="language-html">video</code>
+          junto a la clase
+          <code class="language-html">one-line</code>.
+         </p>
+        </li>
+        <li>
+         <p>
+          Se añade un
+          <code class="language-html">img</code>
+          dentro del elemento con la clase
+          <code class="language-html">one-line</code>.
+         </p>
+        </li>
+       </ul>
+      </dd>
+      <dt>El avatar de un usuario (se muestra dentro de un círculo)</dt>
+      <dd>
+       <ul>
+        <li>
+         <p>
+          Se añade la clase
+          <code class="language-html">avatar</code>
+          junto a la clase
+          <code class="language-html">one-line</code>.
+         </p>
+        </li>
+        <li>
+         <p>
+          Se añade un
+          <code class="language-html">img</code>,
+          un
+          <code class="language-html">label</code>
+          con las iniciales del usuario
+          o un
+          <code
+            class="language-html">span class="material-symbols-outlined"</code>
+          dentro del elemento con la clase
+          <code class="language-html">one-line</code>.
+         </p>
+        </li>
+       </ul>
+      </dd>
+     </dl>
     </li>
    </ul>
   </li>
