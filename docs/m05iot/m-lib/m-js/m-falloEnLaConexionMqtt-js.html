@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>I. lib / js / creaClientId.js - GilPG DM</title>
- <meta name="description" content="Código de «lib/js/creaClientId.js».">
+ <title>3. lib / js / falloEnLaConexionMqtt.js - GilPG DM</title>
+ <meta name="description" content="Código de «lib/js/falloEnLaConexionMqtt.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -463,74 +463,45 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >I. lib / js / creaClientId.js</h1><muestra-codigo>
+   <h1 >3. lib / js / falloEnLaConexionMqtt.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #008000;">/**</span></div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Añade caracteres al azar a una</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;raíz, para obtener un clientId</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;único por cada instancia que se</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;conecte al servidor de mqtt.</span>
-  </div>
-  <div><span
      style="color: #008000;">&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
+     style="color: #267f99;">{&nbsp;{ errorMessage: string }&nbsp;}</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">raiz</span><span
-     style="color: #008000;"> </span></div>
+     style="color: #001080;">res</span></div>
   <div><span
      style="color: #008000;">&nbsp;*/</span></div>
   <div><span
      style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">creaClientId</span>(<span
-     style="color: #001080;">raiz</span>)&nbsp;{</div>
+     style="color: #795e26;">falloEnLaConexionMqtt</span>(<span
+     style="color: #001080;">res</span>)&nbsp;{</div>
   <div>&nbsp;<span
      style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">chars</span> <span
-     style="color: #000000;">=</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #a31515;">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"</span>
-  </div>
+     style="color: #0070c1;">mensaje</span> = <span
+     style="color: #a31515;">"Fallo en conexión:"</span> + <span
+     style="color: #001080;">res</span>.<span
+     style="color: #001080;">errorMessage</span></div>
   <div>&nbsp;<span
-     style="color: #af00db;">for</span> (<span
-     style="color: #0000ff;">var</span> <span
-     style="color: #001080;">i</span> <span
-     style="color: #000000;">=</span> <span
-     style="color: #098658;">0</span>; <span
-     style="color: #001080;">i</span> <span
-     style="color: #000000;">&lt;</span> <span
-     style="color: #098658;">15</span>; <span
-     style="color: #001080;">i</span><span
-     style="color: #000000;">++</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">raiz</span> <span
-     style="color: #000000;">+=</span> <span
-     style="color: #0070c1;">chars</span>.<span
-     style="color: #795e26;">charAt</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">Math</span>.<span
-     style="color: #795e26;">floor</span>(<span
-     style="color: #001080;">Math</span>.<span
-     style="color: #795e26;">random</span>()</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #000000;">*</span> <span
-     style="color: #0070c1;">chars</span>.<span
-     style="color: #0070c1;">length</span>))</div>
-  <div>&nbsp;}</div>
+     style="color: #001080;">console</span>.<span
+     style="color: #795e26;">error</span>(<span
+     style="color: #0070c1;">mensaje</span>)</div>
   <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #001080;">raiz</span></div>
-  <div>}</div>
+     style="color: #795e26;">alert</span>(<span
+     style="color: #0070c1;">mensaje</span>)</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div><span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"falloEnLaConexionMqtt"</span>] = <span
+     style="color: #795e26;">falloEnLaConexionMqtt</span></div>
  </div>
 </muestra-codigo>
  <footer>
@@ -556,8 +527,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m05iot/mBtxtConectadoJs.html" title="H. lib /js / txt / txtConectado.js">◀</a>
- <a class="siguiente" href="/m05iot/m53falloEnLaConexionJs.html" title="J. lib / js / falloEnLaConexion.js">▶</a>
+ <a class="anterior" href="/m05iot/m-lib/m-js/m-creaClientIdMqtt-js.html" title="2. lib / js / creaClientIdMqtt.js">◀</a>
+ <a class="siguiente" href="/m05iot/m-lib/m-js/m-muestraError-js.html" title="4. lib / js / muestraError.js">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -570,80 +541,46 @@
       data-logo="true">GilPG DM</a>
    </p>
    
+   <p>
+    <a href="/m05iot/">7. IoT</a>
+   </p>
+   <p>
+    <a href="/m05iot/m-lib/">F. Carpeta « lib »</a>
+   </p>
    
      <p>
-      <a class="paginaAnterior" href="/m04dispositivo/mDresumen.html"
-        title="E. Resumen">▲</a>
+      <a class="paginaAnterior" href="/m05iot/m-lib/index.html"
+        title="F. Carpeta « lib »">▲</a>
      </p>
-   <h1><a href="/m05iot/index.html">7. IoT</a></h1>
+   <h1><a href="/m05iot/m-lib/m-js/index.html">A. Carpeta « lib / js »</a></h1>
    
-   <ol type="A">
+   <ol type="1">
     
    <li>
     <p>
-     <a href="/m05iot/mCdeploy.html">Diagrama de despliegue</a>
+     <a href="/m05iot/m-lib/m-js/m-conexionMqttPerdida-js.html">lib / js / conexionMqttPerdida.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m05iot/mDinstrucciones.html">Instrucciones</a>
+     <a href="/m05iot/m-lib/m-js/m-creaClientIdMqtt-js.html">lib / js / creaClientIdMqtt.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m05iot/mAarchivos.html">Archivos</a>
+     <a href="/m05iot/m-lib/m-js/m-falloEnLaConexionMqtt-js.html" class="actual">lib / js / falloEnLaConexionMqtt.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m05iot/mAindexHtml.html">index.html</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/m44indicador-cargandoJs.html">lib / js / custom / indicador-cargando.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/mBplantillaConexionPerdidaJs.html">lib /js / plantilla / plantillaConexionPerdida.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/mBplantillaFalloEnConexionJs.html">lib /js / plantilla / plantillaFalloEnConexion.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/mBtxtConectadoJs.html">lib /js / txt / txtConectado.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/m53creaClientIdJs.html" class="actual">lib / js / creaClientId.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/m53falloEnLaConexionJs.html">lib / js / falloEnLaConexion.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/m53muestraErrorJs.html">lib / js / muestraError.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/mGresumen.html">Resumen</a>
+     <a href="/m05iot/m-lib/m-js/m-muestraError-js.html">lib / js / muestraError.js</a>
     </p>
    </li>
    </ol>
    
     <p>
-     <a class="paginaSiguiente" href="/m06esp8266/index.html"
-       title="8. ESP32">▼</a>
+     <a class="paginaSiguiente" href="/m05iot/mGresumen.html"
+       title="G. Resumen">▼</a>
     </p>
  
 </nav>
@@ -657,9 +594,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m05iot/mBtxtConectadoJs.html"
+ let urlAnterior = "/m05iot/m-lib/m-js/m-creaClientIdMqtt-js.html"
  /**@type {string} */
- let urlSiguiente = "/m05iot/m53falloEnLaConexionJs.html"
+ let urlSiguiente = "/m05iot/m-lib/m-js/m-muestraError-js.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

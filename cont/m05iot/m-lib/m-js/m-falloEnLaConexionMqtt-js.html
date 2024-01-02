@@ -1,24 +1,12 @@
 <muestra-codigo>
  <div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">plantillaFalloEnConexion</span></div>
-  <div>}&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./plantilla/plantillaFalloEnConexion.js"</span>
-  </div><br>
-  <div><span
      style="color: #008000;">/**</span></div>
   <div><span
      style="color: #008000;">&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{{</span></div><div><span
-  style="color: #008000;">&nbsp;*</span><span
-  style="color: #267f99;">&nbsp;&nbsp;errorMessage:string</span></div><div><span
-  style="color: #008000;">&nbsp;*</span><span
-  style="color: #267f99;"> }}</span><span
+     style="color: #267f99;">{&nbsp;{ errorMessage: string }&nbsp;}</span><span
      style="color: #008000;"> </span><span
      style="color: #001080;">res</span></div>
   <div><span
@@ -26,16 +14,14 @@
   <div><span
      style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">falloEnLaConexion</span>(</div>
-  <div>&nbsp;<span
+     style="color: #795e26;">falloEnLaConexionMqtt</span>(<span
      style="color: #001080;">res</span>)&nbsp;{</div>
   <div>&nbsp;<span
      style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">mensaje</span> <span
-     style="color: #000000;">=</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">plantillaFalloEnConexion</span>(<span
-     style="color: #001080;">res</span>)</div>
+     style="color: #0070c1;">mensaje</span> = <span
+     style="color: #a31515;">"Fallo en conexión:"</span> + <span
+     style="color: #001080;">res</span>.<span
+     style="color: #001080;">errorMessage</span></div>
   <div>&nbsp;<span
      style="color: #001080;">console</span>.<span
      style="color: #795e26;">error</span>(<span
@@ -43,6 +29,13 @@
   <div>&nbsp;<span
      style="color: #795e26;">alert</span>(<span
      style="color: #0070c1;">mensaje</span>)</div>
-  <div>}</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div><span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"falloEnLaConexionMqtt"</span>] = <span
+     style="color: #795e26;">falloEnLaConexionMqtt</span></div>
  </div>
 </muestra-codigo>

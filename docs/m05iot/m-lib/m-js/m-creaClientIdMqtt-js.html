@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>E. lib / js / custom / indicador-cargando.js - GilPG DM</title>
- <meta name="description" content="Código de «lib/js/custom/indicador-cargando.js».">
+ <title>2. lib / js / creaClientIdMqtt.js - GilPG DM</title>
+ <meta name="description" content="Código de «lib/js/creaClientIdMqtt.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -463,41 +463,66 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >E. lib / js / custom / indicador-cargando.js</h1><muestra-codigo>
+   <h1 >2. lib / js / creaClientIdMqtt.js</h1><muestra-codigo>
  <div>
   <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;Añade caracteres al azar a una raíz,
+    para obtener un clientId único por cada</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;instancia que se conecte al servidor
+    de mqtt.</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">raiz</span><span
+     style="color: #008000;"> </span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
      style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">class</span> <span
-     style="color: #267f99;">IndicadorCargando</span></div>
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">creaClientIdMqtt</span>(<span
+     style="color: #001080;">raiz</span>)&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #0000ff;">extends</span> <span
-     style="color: #267f99;">HTMLElement</span>&nbsp;{</div>
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">chars</span> = <span
+     style="color: #a31515;">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"</span>
+  </div>
   <div>&nbsp;<span
-     style="color: #795e26;">connectedCallback</span>()&nbsp;{</div><br>
+     style="color: #af00db;">for</span> (<span
+     style="color: #0000ff;">var</span> <span
+     style="color: #001080;">i</span> = <span
+     style="color: #098658;">0</span>; <span
+     style="color: #001080;">i</span> &lt; <span
+     style="color: #098658;">15</span>; <span
+     style="color: #001080;">i</span>++)&nbsp;{</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">innerHTML</span> <span
-     style="color: #000000;">=</span> <span
-     style="color: #008000;">/*&nbsp;HTML */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;`<span
-     style="color: #800000;">&lt;progress</span> <span
-     style="color: #e50000;">max</span>=<span
-     style="color: #0000ff;">"100"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cargando<span
-     style="color: #0000ff;">&amp;hellip;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/progress&gt;</span>`</div>
-  <div>&nbsp;}</div><br>
+     style="color: #001080;">raiz</span> += <span
+     style="color: #0070c1;">chars</span>.<span
+     style="color: #795e26;">charAt</span>(<span
+     style="color: #001080;">Math</span>.<span
+     style="color: #795e26;">floor</span>(<span
+     style="color: #001080;">Math</span>.<span
+     style="color: #795e26;">random</span>() *&nbsp;<span
+     style="color: #0070c1;">chars</span>.<span
+     style="color: #0070c1;">length</span>))</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">raiz</span></div>
   <div>}</div><br>
   <div><span
-     style="color: #001080;">customElements</span>.<span
-     style="color: #795e26;">define</span>(</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"indicador-cargando"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #267f99;">IndicadorCargando</span>)</div>
- </div>
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div><span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"creaClientIdMqtt"</span>] = <span
+     style="color: #795e26;">creaClientIdMqtt</span></div>
  </div>
 </muestra-codigo>
  <footer>
@@ -523,8 +548,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m05iot/mAindexHtml.html" title="D. index.html">◀</a>
- <a class="siguiente" href="/m05iot/mBplantillaConexionPerdidaJs.html" title="F. lib /js / plantilla / plantillaConexionPerdida.js">▶</a>
+ <a class="anterior" href="/m05iot/m-lib/m-js/m-conexionMqttPerdida-js.html" title="1. lib / js / conexionMqttPerdida.js">◀</a>
+ <a class="siguiente" href="/m05iot/m-lib/m-js/m-falloEnLaConexionMqtt-js.html" title="3. lib / js / falloEnLaConexionMqtt.js">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -537,80 +562,46 @@
       data-logo="true">GilPG DM</a>
    </p>
    
+   <p>
+    <a href="/m05iot/">7. IoT</a>
+   </p>
+   <p>
+    <a href="/m05iot/m-lib/">F. Carpeta « lib »</a>
+   </p>
    
      <p>
-      <a class="paginaAnterior" href="/m04dispositivo/mDresumen.html"
-        title="E. Resumen">▲</a>
+      <a class="paginaAnterior" href="/m05iot/m-lib/index.html"
+        title="F. Carpeta « lib »">▲</a>
      </p>
-   <h1><a href="/m05iot/index.html">7. IoT</a></h1>
+   <h1><a href="/m05iot/m-lib/m-js/index.html">A. Carpeta « lib / js »</a></h1>
    
-   <ol type="A">
+   <ol type="1">
     
    <li>
     <p>
-     <a href="/m05iot/mCdeploy.html">Diagrama de despliegue</a>
+     <a href="/m05iot/m-lib/m-js/m-conexionMqttPerdida-js.html">lib / js / conexionMqttPerdida.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m05iot/mDinstrucciones.html">Instrucciones</a>
+     <a href="/m05iot/m-lib/m-js/m-creaClientIdMqtt-js.html" class="actual">lib / js / creaClientIdMqtt.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m05iot/mAarchivos.html">Archivos</a>
+     <a href="/m05iot/m-lib/m-js/m-falloEnLaConexionMqtt-js.html">lib / js / falloEnLaConexionMqtt.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m05iot/mAindexHtml.html">index.html</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/m44indicador-cargandoJs.html" class="actual">lib / js / custom / indicador-cargando.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/mBplantillaConexionPerdidaJs.html">lib /js / plantilla / plantillaConexionPerdida.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/mBplantillaFalloEnConexionJs.html">lib /js / plantilla / plantillaFalloEnConexion.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/mBtxtConectadoJs.html">lib /js / txt / txtConectado.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/m53creaClientIdJs.html">lib / js / creaClientId.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/m53falloEnLaConexionJs.html">lib / js / falloEnLaConexion.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/m53muestraErrorJs.html">lib / js / muestraError.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/mGresumen.html">Resumen</a>
+     <a href="/m05iot/m-lib/m-js/m-muestraError-js.html">lib / js / muestraError.js</a>
     </p>
    </li>
    </ol>
    
     <p>
-     <a class="paginaSiguiente" href="/m06esp8266/index.html"
-       title="8. ESP32">▼</a>
+     <a class="paginaSiguiente" href="/m05iot/mGresumen.html"
+       title="G. Resumen">▼</a>
     </p>
  
 </nav>
@@ -624,9 +615,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m05iot/mAindexHtml.html"
+ let urlAnterior = "/m05iot/m-lib/m-js/m-conexionMqttPerdida-js.html"
  /**@type {string} */
- let urlSiguiente = "/m05iot/mBplantillaConexionPerdidaJs.html"
+ let urlSiguiente = "/m05iot/m-lib/m-js/m-falloEnLaConexionMqtt-js.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

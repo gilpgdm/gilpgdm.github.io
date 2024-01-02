@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>H. lib /js / txt / txtConectado.js - GilPG DM</title>
- <meta name="description" content="Código de «lib/js/txt/txtConectado.js».">
+ <title>4. lib / js / muestraError.js - GilPG DM</title>
+ <meta name="description" content="Código de «lib/js/muestraError.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -463,16 +463,61 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >H. lib /js / txt / txtConectado.js</h1><muestra-codigo>
+   <h1 >4. lib / js / muestraError.js</h1><muestra-codigo>
  <div>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;Muestra un error en la consola y en un
+    cuadro de</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;alerta el mensaje de una
+    excepción.</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ Error | null }</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">error</span><span
+     style="color: #008000;"> descripción del error.</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
   <div><span
      style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">txtConectado</span>()&nbsp;{</div>
+     style="color: #795e26;">muestraError</span>(<span
+     style="color: #001080;">error</span>)&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #a31515;">"Conectado"</span></div>
-  <div>}</div>
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">error</span> === <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #a31515;">"Error"</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">alert</span>(<span
+     style="color: #a31515;">"Error"</span>)</div>
+  <div>&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">console</span>.<span
+     style="color: #795e26;">error</span>(<span
+     style="color: #001080;">error</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">alert</span>(<span
+     style="color: #001080;">error</span>.<span
+     style="color: #001080;">message</span>)</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div><span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"muestraError"</span>] = <span
+     style="color: #795e26;">muestraError</span></div>
  </div>
 </muestra-codigo>
  <footer>
@@ -498,8 +543,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m05iot/mBplantillaFalloEnConexionJs.html" title="G. lib /js / plantilla / plantillaFalloEnConexion.js">◀</a>
- <a class="siguiente" href="/m05iot/m53creaClientIdJs.html" title="I. lib / js / creaClientId.js">▶</a>
+ <a class="anterior" href="/m05iot/m-lib/m-js/m-falloEnLaConexionMqtt-js.html" title="3. lib / js / falloEnLaConexionMqtt.js">◀</a>
+ <a class="siguiente" href="/m05iot/mGresumen.html" title="G. Resumen">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -512,80 +557,46 @@
       data-logo="true">GilPG DM</a>
    </p>
    
+   <p>
+    <a href="/m05iot/">7. IoT</a>
+   </p>
+   <p>
+    <a href="/m05iot/m-lib/">F. Carpeta « lib »</a>
+   </p>
    
      <p>
-      <a class="paginaAnterior" href="/m04dispositivo/mDresumen.html"
-        title="E. Resumen">▲</a>
+      <a class="paginaAnterior" href="/m05iot/m-lib/index.html"
+        title="F. Carpeta « lib »">▲</a>
      </p>
-   <h1><a href="/m05iot/index.html">7. IoT</a></h1>
+   <h1><a href="/m05iot/m-lib/m-js/index.html">A. Carpeta « lib / js »</a></h1>
    
-   <ol type="A">
+   <ol type="1">
     
    <li>
     <p>
-     <a href="/m05iot/mCdeploy.html">Diagrama de despliegue</a>
+     <a href="/m05iot/m-lib/m-js/m-conexionMqttPerdida-js.html">lib / js / conexionMqttPerdida.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m05iot/mDinstrucciones.html">Instrucciones</a>
+     <a href="/m05iot/m-lib/m-js/m-creaClientIdMqtt-js.html">lib / js / creaClientIdMqtt.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m05iot/mAarchivos.html">Archivos</a>
+     <a href="/m05iot/m-lib/m-js/m-falloEnLaConexionMqtt-js.html">lib / js / falloEnLaConexionMqtt.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m05iot/mAindexHtml.html">index.html</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/m44indicador-cargandoJs.html">lib / js / custom / indicador-cargando.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/mBplantillaConexionPerdidaJs.html">lib /js / plantilla / plantillaConexionPerdida.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/mBplantillaFalloEnConexionJs.html">lib /js / plantilla / plantillaFalloEnConexion.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/mBtxtConectadoJs.html" class="actual">lib /js / txt / txtConectado.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/m53creaClientIdJs.html">lib / js / creaClientId.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/m53falloEnLaConexionJs.html">lib / js / falloEnLaConexion.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/m53muestraErrorJs.html">lib / js / muestraError.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/mGresumen.html">Resumen</a>
+     <a href="/m05iot/m-lib/m-js/m-muestraError-js.html" class="actual">lib / js / muestraError.js</a>
     </p>
    </li>
    </ol>
    
     <p>
-     <a class="paginaSiguiente" href="/m06esp8266/index.html"
-       title="8. ESP32">▼</a>
+     <a class="paginaSiguiente" href="/m05iot/mGresumen.html"
+       title="G. Resumen">▼</a>
     </p>
  
 </nav>
@@ -599,9 +610,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m05iot/mBplantillaFalloEnConexionJs.html"
+ let urlAnterior = "/m05iot/m-lib/m-js/m-falloEnLaConexionMqtt-js.html"
  /**@type {string} */
- let urlSiguiente = "/m05iot/m53creaClientIdJs.html"
+ let urlSiguiente = "/m05iot/mGresumen.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

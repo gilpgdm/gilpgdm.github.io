@@ -1,0 +1,56 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{&nbsp;{</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*</span><span
+     style="color: #267f99;">&nbsp;&nbsp;errorCode: number,</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*</span><span
+     style="color: #267f99;">&nbsp;&nbsp;errorMessage: string</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*</span><span
+     style="color: #267f99;"> }&nbsp;}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">responseObject</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">conexionMqttPerdida</span>(<span
+     style="color: #001080;">responseObject</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">responseObject</span>.<span
+     style="color: #001080;">errorCode</span> !== <span
+     style="color: #098658;">0</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">mensaje</span> = <span
+     style="color: #a31515;">"Conexión terminada "</span> + <span
+     style="color: #001080;">responseObject</span>.<span
+     style="color: #001080;">errorMessage</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">console</span>.<span
+     style="color: #795e26;">error</span>(<span
+     style="color: #0070c1;">mensaje</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">alert</span>(<span
+     style="color: #0070c1;">mensaje</span>)</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div><span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"conexionMqttPerdida"</span>] = <span
+     style="color: #795e26;">conexionMqttPerdida</span></div>
+ </div>
+</muestra-codigo>
