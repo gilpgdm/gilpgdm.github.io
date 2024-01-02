@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>K. lib / js / registraServiceWorkerSiEsSoportado.js - GilPG DM</title>
+ <title>20. lib / js / registraServiceWorkerSiEsSoportado.js - GilPG DM</title>
  <meta name="description" content="Código de «lib/js/registraServiceWorkerSiEsSoportado.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -463,13 +463,11 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >K. lib / js / registraServiceWorkerSiEsSoportado.js</h1><muestra-codigo>
+   <h1 >20. lib / js / registraServiceWorkerSiEsSoportado.js</h1><muestra-codigo>
  <div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">muestraError</span></div>
-  <div>}&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">muestraError</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
      style="color: #a31515;">"./muestraError.js"</span></div><br>
   <div><span
@@ -478,45 +476,36 @@
      style="color: #008000;">&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{string | URL}</span><span
+     style="color: #267f99;">{ string | URL }</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">sw</span><span
-     style="color: #008000;"> URL del</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;&nbsp;service worker</span></div>
+     style="color: #001080;">urlDeServiceWorker</span></div>
   <div><span
      style="color: #008000;">&nbsp;*/</span></div>
   <div><span
      style="color: #af00db;">export</span> <span
      style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span></div>
-  <div>&nbsp;<span
-     style="color: #795e26;">registraServiceWorkerSiEsSoportado</span>(</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">sw</span>)&nbsp;{</div>
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">registraServiceWorkerSiEsSoportado</span>(<span
+     style="color: #001080;">urlDeServiceWorker</span>)&nbsp;{</div>
   <div>&nbsp;<span
      style="color: #af00db;">try</span>&nbsp;{</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">if</span> (<span
-     style="color: #a31515;">"serviceWorker"</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #a31515;">"serviceWorker"</span> <span
      style="color: #0000ff;">in</span> <span
      style="color: #001080;">navigator</span>)&nbsp;{</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">registro</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">registro</span> = <span
      style="color: #af00db;">await</span> <span
-     style="color: #001080;">navigator</span>.</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">serviceWorker</span>.</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">navigator</span>.<span
+     style="color: #0070c1;">serviceWorker</span>.<span
      style="color: #795e26;">register</span>(<span
-     style="color: #001080;">sw</span>)</div>
+     style="color: #001080;">urlDeServiceWorker</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #001080;">console</span>.<span
      style="color: #795e26;">log</span>(<span
-     style="color: #001080;">sw</span>, <span
+     style="color: #001080;">urlDeServiceWorker</span>, <span
      style="color: #a31515;">"registrado."</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #001080;">console</span>.<span
@@ -525,10 +514,10 @@
   <div>&nbsp;&nbsp;}</div>
   <div>&nbsp;}&nbsp;<span
      style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">e</span>)&nbsp;{</div>
+     style="color: #001080;">error</span>)&nbsp;{</div>
   <div>&nbsp;&nbsp;<span
      style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">e</span>)</div>
+     style="color: #001080;">error</span>)</div>
   <div>&nbsp;}</div>
   <div>}</div>
  </div>
@@ -556,8 +545,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m09sincronizacion/m-lib/m-js/m-parametrosDePagina-js.html" title="J. lib / js / parametrosDePagina.js">◀</a>
- <a class="siguiente" href="/m09sincronizacion/m-lib/m-php/index.html" title="2. Carpeta «lib / php»">▶</a>
+ <a class="anterior" href="/m09sincronizacion/m-lib/m-js/m-muestraValor-js.html" title="19. lib / js / muestraValor.js">◀</a>
+ <a class="siguiente" href="/m09sincronizacion/m-lib/m-php/index.html" title="B. Carpeta « lib / php »">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -574,16 +563,16 @@
     <a href="/m09sincronizacion/">11. Sincronización</a>
    </p>
    <p>
-    <a href="/m09sincronizacion/m-lib/">L. Carpeta «lib»</a>
+    <a href="/m09sincronizacion/m-lib/">O. Carpeta « lib »</a>
    </p>
    
      <p>
       <a class="paginaAnterior" href="/m09sincronizacion/m-lib/index.html"
-        title="L. Carpeta «lib»">▲</a>
+        title="O. Carpeta « lib »">▲</a>
      </p>
-   <h1><a href="/m09sincronizacion/m-lib/m-js/index.html">1. Carpeta «lib / js»</a></h1>
+   <h1><a href="/m09sincronizacion/m-lib/m-js/index.html">A. Carpeta « lib / js »</a></h1>
    
-   <ol type="A">
+   <ol type="1">
     
    <li>
     <p>
@@ -593,6 +582,11 @@
    <li>
     <p>
      <a href="/m09sincronizacion/m-lib/m-js/m-bdEjecuta-js.html">lib / js / bdEjecuta.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-buscaElementoHtml-js.html">lib / js / buscaElementoHtml.js</a>
     </p>
    </li>
    <li>
@@ -612,12 +606,27 @@
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-htmlentities-js.html">lib / js / htmlentities.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-getArchivoSeleccionado-js.html">lib / js / getArchivoSeleccionado.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-MetodoHttp-js.html">lib / js / MetodoHttp.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-getDataUrlDeSeleccion-js.html">lib / js / getDataUrlDeSeleccion.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-getInputParaElementoHtml-js.html">lib / js / getInputParaElementoHtml.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraArray-js.html">lib / js / muestraArray.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraBoolean-js.html">lib / js / muestraBoolean.js</a>
     </p>
    </li>
    <li>
@@ -627,12 +636,37 @@
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-muestraTexto-js.html">lib / js / muestraTexto.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraImagen-js.html">lib / js / muestraImagen.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-parametrosDePagina-js.html">lib / js / parametrosDePagina.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraInnerHtml-js.html">lib / js / muestraInnerHtml.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraNumber-js.html">lib / js / muestraNumber.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraObjeto-js.html">lib / js / muestraObjeto.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraString-js.html">lib / js / muestraString.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraTextContent-js.html">lib / js / muestraTextContent.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraValor-js.html">lib / js / muestraValor.js</a>
     </p>
    </li>
    <li>
@@ -644,7 +678,7 @@
    
     <p>
      <a class="paginaSiguiente" href="/m09sincronizacion/m-lib/m-php/index.html"
-       title="2. Carpeta «lib / php»">▼</a>
+       title="B. Carpeta « lib / php »">▼</a>
     </p>
  
 </nav>
@@ -658,7 +692,7 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m09sincronizacion/m-lib/m-js/m-parametrosDePagina-js.html"
+ let urlAnterior = "/m09sincronizacion/m-lib/m-js/m-muestraValor-js.html"
  /**@type {string} */
  let urlSiguiente = "/m09sincronizacion/m-lib/m-php/index.html"
  /**@type {number|null} */

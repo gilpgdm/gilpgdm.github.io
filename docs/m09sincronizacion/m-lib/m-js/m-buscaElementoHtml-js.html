@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>F. lib / js / htmlentities.js - GilPG DM</title>
- <meta name="description" content="Código de «lib/js/htmlentities.js».">
+ <title>3. lib / js / buscaElementoHtml.js - GilPG DM</title>
+ <meta name="description" content="Código de «lib/js/buscaElementoHtml.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -463,116 +463,58 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >F. lib / js / htmlentities.js</h1><muestra-codigo>
+   <h1 >3. lib / js / buscaElementoHtml.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #008000;">/**</span></div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Codifica un texto para que</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;cambie los caracteres</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;especiales y no se pueda</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;interpretar como HTML. Esta</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;técnica evita la inyección de</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;código.</span></div>
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ Document | HTMLElement }</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">raizHtml</span></div>
   <div><span
      style="color: #008000;">&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
+     style="color: #267f99;">{ string }</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">texto</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@returns</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
-     style="color: #008000;"> un texto que</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;&nbsp;no puede interpretarse
-    como</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;&nbsp;HTML.</span></div>
+     style="color: #001080;">nombre</span></div>
   <div><span
      style="color: #008000;">&nbsp;*/</span></div>
   <div><span
      style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">htmlentities</span>(</div>
-  <div>&nbsp;<span
-     style="color: #001080;">texto</span>)&nbsp;{</div>
+     style="color: #795e26;">buscaElementoHtml</span>(<span
+     style="color: #001080;">raizHtml</span>, <span
+     style="color: #001080;">nombre</span>)&nbsp;{</div>
   <div>&nbsp;<span
      style="color: #af00db;">return</span> <span
-     style="color: #001080;">texto</span>.</div>
+     style="color: #001080;">raizHtml</span>.<span
+     style="color: #795e26;">querySelector</span>(</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">replace</span>(<span
-     style="color: #811f3f;">/</span><span
-     style="color: #d16969;">[</span><span
-     style="color: #811f3f;">&lt;&gt;"'</span><span
-     style="color: #d16969;">]</span><span
-     style="color: #811f3f;">/</span><span
-     style="color: #0000ff;">g</span>, <span
-     style="color: #795e26;">reemplaza</span>)</div>
+     style="color: #a31515;">`#</span><span
+     style="color: #0000ff;">${</span><span
+     style="color: #001080;">nombre</span><span
+     style="color: #0000ff;">}</span><span
+     style="color: #a31515;">,[name="</span><span
+     style="color: #0000ff;">${</span><span
+     style="color: #001080;">nombre</span><span
+     style="color: #0000ff;">}</span><span
+     style="color: #a31515;">"],[data-name="</span><span
+     style="color: #0000ff;">${</span><span
+     style="color: #001080;">nombre</span><span
+     style="color: #0000ff;">}</span><span
+     style="color: #a31515;">"]`</span>)</div>
   <div>}</div><br>
   <div><span
-     style="color: #008000;">/**</span></div>
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Devuelve una cadena de
-    reemplazo</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;para evitar que el texto se</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;interprete como HTML. </span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">texto</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">reemplaza</span>(<span
-     style="color: #001080;">texto</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">switch</span> (<span
-     style="color: #001080;">texto</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">case</span> <span
-     style="color: #a31515;">"&lt;"</span>: <span
-     style="color: #af00db;">return</span> <span
-     style="color: #a31515;">"&amp;lt;"</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">case</span> <span
-     style="color: #a31515;">"&gt;"</span>: <span
-     style="color: #af00db;">return</span> <span
-     style="color: #a31515;">"&amp;gt;"</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">case</span> <span
-     style="color: #a31515;">'"'</span>: <span
-     style="color: #af00db;">return</span> <span
-     style="color: #a31515;">"&amp;quot;"</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">case</span> <span
-     style="color: #a31515;">"'"</span>: <span
-     style="color: #af00db;">return</span> <span
-     style="color: #a31515;">"&amp;#039;"</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">default</span>: <span
-     style="color: #af00db;">return</span> <span
-     style="color: #001080;">texto</span></div>
-  <div>&nbsp;}</div>
-  <div>}</div>
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"buscaElementoHtml"</span>] = <span
+     style="color: #795e26;">buscaElementoHtml</span></div>
  </div>
 </muestra-codigo>
  <footer>
@@ -598,8 +540,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m09sincronizacion/m-lib/m-js/m-enviaJson-js.html" title="E. lib / js / enviaJson.js">◀</a>
- <a class="siguiente" href="/m09sincronizacion/m-lib/m-js/m-MetodoHttp-js.html" title="G. lib / js / MetodoHttp.js">▶</a>
+ <a class="anterior" href="/m09sincronizacion/m-lib/m-js/m-bdEjecuta-js.html" title="2. lib / js / bdEjecuta.js">◀</a>
+ <a class="siguiente" href="/m09sincronizacion/m-lib/m-js/m-confirmaEliminar-js.html" title="4. lib / js / confirmaEliminar.js">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -616,16 +558,16 @@
     <a href="/m09sincronizacion/">11. Sincronización</a>
    </p>
    <p>
-    <a href="/m09sincronizacion/m-lib/">L. Carpeta «lib»</a>
+    <a href="/m09sincronizacion/m-lib/">O. Carpeta « lib »</a>
    </p>
    
      <p>
       <a class="paginaAnterior" href="/m09sincronizacion/m-lib/index.html"
-        title="L. Carpeta «lib»">▲</a>
+        title="O. Carpeta « lib »">▲</a>
      </p>
-   <h1><a href="/m09sincronizacion/m-lib/m-js/index.html">1. Carpeta «lib / js»</a></h1>
+   <h1><a href="/m09sincronizacion/m-lib/m-js/index.html">A. Carpeta « lib / js »</a></h1>
    
-   <ol type="A">
+   <ol type="1">
     
    <li>
     <p>
@@ -635,6 +577,11 @@
    <li>
     <p>
      <a href="/m09sincronizacion/m-lib/m-js/m-bdEjecuta-js.html">lib / js / bdEjecuta.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-buscaElementoHtml-js.html" class="actual">lib / js / buscaElementoHtml.js</a>
     </p>
    </li>
    <li>
@@ -654,12 +601,27 @@
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-htmlentities-js.html" class="actual">lib / js / htmlentities.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-getArchivoSeleccionado-js.html">lib / js / getArchivoSeleccionado.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-MetodoHttp-js.html">lib / js / MetodoHttp.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-getDataUrlDeSeleccion-js.html">lib / js / getDataUrlDeSeleccion.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-getInputParaElementoHtml-js.html">lib / js / getInputParaElementoHtml.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraArray-js.html">lib / js / muestraArray.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraBoolean-js.html">lib / js / muestraBoolean.js</a>
     </p>
    </li>
    <li>
@@ -669,12 +631,37 @@
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-muestraTexto-js.html">lib / js / muestraTexto.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraImagen-js.html">lib / js / muestraImagen.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-parametrosDePagina-js.html">lib / js / parametrosDePagina.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraInnerHtml-js.html">lib / js / muestraInnerHtml.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraNumber-js.html">lib / js / muestraNumber.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraObjeto-js.html">lib / js / muestraObjeto.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraString-js.html">lib / js / muestraString.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraTextContent-js.html">lib / js / muestraTextContent.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraValor-js.html">lib / js / muestraValor.js</a>
     </p>
    </li>
    <li>
@@ -686,7 +673,7 @@
    
     <p>
      <a class="paginaSiguiente" href="/m09sincronizacion/m-lib/m-php/index.html"
-       title="2. Carpeta «lib / php»">▼</a>
+       title="B. Carpeta « lib / php »">▼</a>
     </p>
  
 </nav>
@@ -700,9 +687,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m09sincronizacion/m-lib/m-js/m-enviaJson-js.html"
+ let urlAnterior = "/m09sincronizacion/m-lib/m-js/m-bdEjecuta-js.html"
  /**@type {string} */
- let urlSiguiente = "/m09sincronizacion/m-lib/m-js/m-MetodoHttp-js.html"
+ let urlSiguiente = "/m09sincronizacion/m-lib/m-js/m-confirmaEliminar-js.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

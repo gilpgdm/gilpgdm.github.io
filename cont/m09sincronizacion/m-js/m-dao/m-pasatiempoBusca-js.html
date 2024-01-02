@@ -1,65 +1,64 @@
 <muestra-codigo>
  <div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">bdConsulta</span></div>
-  <div>}&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">bdConsulta</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
      style="color: #a31515;">"../../lib/js/bdConsulta.js"</span></div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">leePasatiempo</span></div>
-  <div>}&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">leePasatiempo</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
      style="color: #a31515;">"../modelo/leePasatiempo.js"</span></div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">Pasatiempo</span></div>
-  <div>}&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">Pasatiempo</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
      style="color: #a31515;">"../modelo/Pasatiempo.js"</span></div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
      style="color: #001080;">accesoBd</span>, <span
-     style="color: #001080;">ALMACEN_PASATIEMPO</span></div>
-  <div>}&nbsp;<span
+     style="color: #001080;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
      style="color: #a31515;">"./accesoBd.js"</span></div><br>
   <div><span
-     style="color: #008000;">/**&nbsp;</span><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
+     style="color: #267f99;">{ string | null }</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">uuid</span><span
-     style="color: #008000;"> */</span></div>
+     style="color: #001080;">uuid</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
   <div><span
      style="color: #af00db;">export</span> <span
      style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span></div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">function</span> <span
      style="color: #795e26;">pasatiempoBusca</span>(<span
-     style="color: #001080;">uuid</span>)&nbsp;{</div>
+     style="color: #001080;">uuid</span>)&nbsp;{</div><br>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">uuid</span> === <span
+     style="color: #0000ff;">null</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(<span
+     style="color: #a31515;">"Falta el uuid"</span>)</div><br>
   <div>&nbsp;<span
      style="color: #af00db;">return</span> <span
      style="color: #795e26;">bdConsulta</span>(<span
-     style="color: #0070c1;">accesoBd</span>,</div>
-  <div>&nbsp;&nbsp;[<span
-     style="color: #0070c1;">ALMACEN_PASATIEMPO</span>],</div>
+     style="color: #0070c1;">accesoBd</span>, [<span
+     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>],</div>
   <div>&nbsp;&nbsp;<span
      style="color: #008000;">/**</span></div>
   <div><span
      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{IDBTransaction</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span
+     style="color: #267f99;">{ IDBTransaction }</span><span
      style="color: #008000;"> </span><span
      style="color: #001080;">transaccion</span><span
      style="color: #008000;"> </span></div>
@@ -67,14 +66,8 @@
      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{(resultado:</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;Pasatiempo|undefined)=&gt;any</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span
+     style="color: #267f99;">{ (resultado: Pasatiempo|undefined) =&gt; any
+    }</span><span
      style="color: #008000;"> </span><span
      style="color: #001080;">resolve</span><span
      style="color: #008000;"> </span></div>
@@ -83,85 +76,76 @@
   <div>&nbsp;&nbsp;(<span
      style="color: #001080;">transaccion</span>, <span
      style="color: #795e26;">resolve</span>) <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+     style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
   <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Pide el primer registro de</span></div>
+     style="color: #008000;">/*&nbsp;Pide el primer registro de almacén
+    pasatiempo que tenga como</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ALMACEN_PASATIEMPO
-    que tenga</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;como llave primaria el
-    valor</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;del par+ametro uuid.
-    */</span></div>
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;llave primaria el
+    valor del parámetro uuid. */</span></div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">consulta</span> = <span
-     style="color: #001080;">transaccion</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;.<span
-     style="color: #795e26;">objectStore</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">ALMACEN_PASATIEMPO</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;.<span
+     style="color: #0070c1;">consulta</span> =</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">transaccion</span>.<span
+     style="color: #795e26;">objectStore</span>(<span
+     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>).<span
      style="color: #795e26;">get</span>(<span
-     style="color: #001080;">uuid</span>)</div>
+     style="color: #001080;">uuid</span>)</div><br>
   <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;onsuccess se invoca una vez</span></div>
+     style="color: #008000;">/*&nbsp;onsuccess se invoca solo una vez,
+    devolviendo el registro</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;con el registro
-    solicitado.*/</span></div>
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;solicitado. */</span>
+  </div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0070c1;">consulta</span>.<span
-     style="color: #001080;">onsuccess</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;() <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Se recupera el registro</span></div>
+     style="color: #795e26;">onsuccess</span> = () <span
+     style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;Se recupera el registro solicitado
+    usando</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;solicitado
-    con</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;consulta.result</span>
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;consulta.result</span>
   </div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Si el
-    registro no se</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;encuentra
-    se recupera</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;undefined,
-    */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Si el registro
+    no se encuentra se recupera undefined. */</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">objeto</span> = <span
-     style="color: #001080;">consulta</span>.<span
-     style="color: #001080;">result</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">consulta</span>.<span
+     style="color: #0070c1;">result</span></div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #af00db;">if</span> (<span
-     style="color: #001080;">objeto</span> !== <span
+     style="color: #0070c1;">objeto</span> !== <span
      style="color: #0000ff;">undefined</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">modelo</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">leePasatiempo</span>(<span
-     style="color: #001080;">objeto</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (!<span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">eliminado</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">resolve</span>(<span
-     style="color: #001080;">modelo</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">modelo</span> = <span
+     style="color: #795e26;">leePasatiempo</span>(<span
+     style="color: #0070c1;">objeto</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (!<span
+     style="color: #0070c1;">modelo</span>.<span
+     style="color: #001080;">eliminado</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #795e26;">resolve</span>(<span
-     style="color: #0000ff;">undefined</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;})</div>
-  <div>}</div>
+     style="color: #0070c1;">modelo</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">resolve</span>(<span
+     style="color: #0000ff;">undefined</span>)</div><br>
+  <div>&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;})</div><br>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div><span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"pasatiempoBusca"</span>] = <span
+     style="color: #001080;">pasatiempoBusca</span></div>
  </div>
 </muestra-codigo>

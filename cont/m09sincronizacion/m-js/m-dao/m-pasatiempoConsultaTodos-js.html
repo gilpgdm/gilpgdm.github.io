@@ -1,26 +1,21 @@
 <muestra-codigo>
  <div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">bdConsulta</span></div>
-  <div>}&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">bdConsulta</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
      style="color: #a31515;">"../../lib/js/bdConsulta.js"</span></div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">ALMACEN_PASATIEMPO</span>, <span
-     style="color: #001080;">accesoBd</span></div>
-  <div>}&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>, <span
+     style="color: #001080;">accesoBd</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
      style="color: #a31515;">"./accesoBd.js"</span></div><br>
   <div><span
      style="color: #008000;">/**</span></div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Lista todos los objetos,</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;incluyendo los que tienen</span></div>
+     style="color: #008000;">&nbsp;*&nbsp;Lista todos los objetos, incluyendo
+    los que tienen</span></div>
   <div><span
      style="color: #008000;">&nbsp;*&nbsp;borrado lógico.</span></div>
   <div><span
@@ -28,25 +23,20 @@
   <div><span
      style="color: #af00db;">export</span> <span
      style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span></div>
-  <div>&nbsp;<span
-     style="color: #795e26;">pasatiempoConsultaTodos</span>()&nbsp;{</div>
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">pasatiempoConsultaTodos</span>()&nbsp;{</div><br>
   <div>&nbsp;<span
      style="color: #af00db;">return</span> <span
      style="color: #795e26;">bdConsulta</span>(<span
-     style="color: #0070c1;">accesoBd</span>,</div>
-  <div>&nbsp;&nbsp;[<span
-     style="color: #0070c1;">ALMACEN_PASATIEMPO</span>],</div>
+     style="color: #0070c1;">accesoBd</span>, [<span
+     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>],</div>
   <div>&nbsp;&nbsp;<span
      style="color: #008000;">/**</span></div>
   <div><span
      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{IDBTransaction</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span
+     style="color: #267f99;">{ IDBTransaction }</span><span
      style="color: #008000;"> </span><span
      style="color: #001080;">transaccion</span><span
      style="color: #008000;"> </span></div>
@@ -54,10 +44,7 @@
      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{(result: any[])=&gt;any</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span
+     style="color: #267f99;">{ (result: any[]) =&gt; any }</span><span
      style="color: #008000;"> </span><span
      style="color: #001080;">resolve</span><span
      style="color: #008000;"> </span></div>
@@ -66,123 +53,95 @@
   <div>&nbsp;&nbsp;(<span
      style="color: #001080;">transaccion</span>, <span
      style="color: #795e26;">resolve</span>) <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+     style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">resultado</span> = []</div>
+     style="color: #0070c1;">resultado</span> = []</div><br>
   <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Pide un cursor para recorrer</span></div>
+     style="color: #008000;">/*&nbsp;Pide un cursor para recorrer cada uno de
+    los</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;cada uno de los
-    registristros</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;que devuelve la
-    consulta. */</span></div>
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;registristros que
+    devuelve la consulta. */</span></div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">consulta</span> = <span
-     style="color: #001080;">transaccion</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;.<span
-     style="color: #795e26;">objectStore</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">ALMACEN_PASATIEMPO</span>).</div>
+     style="color: #0070c1;">consulta</span> =</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">openCursor</span>()</div>
+     style="color: #001080;">transaccion</span>.<span
+     style="color: #795e26;">objectStore</span>(<span
+     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>).<span
+     style="color: #795e26;">openCursor</span>()</div><br>
   <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;onsuccess se invoca por cada</span></div>
+     style="color: #008000;">/*&nbsp;onsuccess se invoca por cada uno de los
+    registros de la</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;uno de los registros
-    de la</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;consulta y una vez
-    cuando se</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;acaban dichos
-    registros.. */</span></div>
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;consulta y una vez cuando
+    se acaban dichos registros. */</span></div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0070c1;">consulta</span>.<span
      style="color: #795e26;">onsuccess</span> = () <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+     style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;El cursor que corresponde al</span></div>
+     style="color: #008000;">/*&nbsp;El cursor que corresponde al registro se
+    recupera usando</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;registro se
-    recupera con</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;consulta.result
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;consulta.result
     */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">cursor</span> = <span
-     style="color: #001080;">consulta</span>.<span
-     style="color: #001080;">result</span></div>
+     style="color: #0070c1;">consulta</span>.<span
+     style="color: #0070c1;">result</span></div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #af00db;">if</span> (<span
-     style="color: #001080;">cursor</span> === <span
-     style="color: #0000ff;">null</span>)&nbsp;{</div>
+     style="color: #0070c1;">cursor</span> === <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Si el cursor es igual a</span></div>
+     style="color: #008000;">/*&nbsp;Si el cursor es igual a null, ya no hay más
+    registros que</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;null, ya
-    no hay más</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;registros
-    que procesar; por</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;lo
-    mismo, se devuelve el</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;resultado
-    con los</span></div>
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;procesar;
+    por lo mismo, se devuelve el resultado con los</span></div>
   <div><span
      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;pasatiempos
-    recuperados,</span></div>
+    recuperados, usando</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;usando
-    resolve(resultado).</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">resolve</span>(<span
-     style="color: #001080;">resultado</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Si el cursor es diferente a</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;null, si
-    hay más registros.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;El
-    registro que sigue se</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;obntiene
-    con cursor.value*/</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">resultado</span>.<span
-     style="color: #795e26;">push</span>(<span
-     style="color: #001080;">cursor</span>.<span
-     style="color: #001080;">value</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Busca el siguiente registro</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;de la
-    consulta, que se</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;obtiene
-    la siguiente vez</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;que se
-    invoque la función</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;unsuccess.
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;resolve(resultado).
     */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">cursor</span>.<span
-     style="color: #795e26;">continue</span>()</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;})</div>
+     style="color: #795e26;">resolve</span>(<span
+     style="color: #0070c1;">resultado</span>)</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;Si el cursor es diferente a null, si hay
+    más registros.</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;El
+    registro que sigue se obtiene con</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;cursor.value*/</span>
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">resultado</span>.<span
+     style="color: #795e26;">push</span>(<span
+     style="color: #0070c1;">cursor</span>.<span
+     style="color: #0070c1;">value</span>)</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;Busca el siguiente registro de la consulta,
+    que se obtiene</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;la
+    siguiente vez que se invoque la función</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;onsuccess.
+    */</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">cursor</span>.<span
+     style="color: #795e26;">continue</span>()</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;})</div><br>
   <div>}</div>
  </div>
 </muestra-codigo>

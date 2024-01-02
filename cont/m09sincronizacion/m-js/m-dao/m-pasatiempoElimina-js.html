@@ -1,46 +1,41 @@
 <muestra-codigo>
  <div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">bdEjecuta</span></div>
-  <div>}&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">bdEjecuta</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
      style="color: #a31515;">"../../lib/js/bdEjecuta.js"</span></div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">ALMACEN_PASATIEMPO</span>, <span
-     style="color: #001080;">accesoBd</span></div>
-  <div>}&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>, <span
+     style="color: #001080;">accesoBd</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
      style="color: #a31515;">"./accesoBd.js"</span></div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">pasatiempoBusca</span></div>
-  <div>}&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">pasatiempoBusca</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
      style="color: #a31515;">"./pasatiempoBusca.js"</span></div><br>
   <div><span
-     style="color: #008000;">/**&nbsp;</span><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
+     style="color: #267f99;">{ string }</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">uuid</span><span
-     style="color: #008000;"> */</span></div>
+     style="color: #001080;">uuid</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
   <div><span
      style="color: #af00db;">export</span> <span
      style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span></div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">function</span> <span
      style="color: #795e26;">pasatiempoElimina</span>(<span
      style="color: #001080;">uuid</span>)&nbsp;{</div>
   <div>&nbsp;<span
      style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">modelo</span> =</div>
-  <div>&nbsp;&nbsp;<span
+     style="color: #0070c1;">modelo</span> = <span
      style="color: #af00db;">await</span> <span
      style="color: #795e26;">pasatiempoBusca</span>(<span
      style="color: #001080;">uuid</span>)</div>
@@ -60,9 +55,8 @@
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">return</span> <span
      style="color: #795e26;">bdEjecuta</span>(<span
-     style="color: #0070c1;">accesoBd</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;[<span
-     style="color: #0070c1;">ALMACEN_PASATIEMPO</span>],</div>
+     style="color: #0070c1;">accesoBd</span>, [<span
+     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>],</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #001080;">transaccion</span> <span
      style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
@@ -71,15 +65,21 @@
      style="color: #0070c1;">almacenPasatiempo</span> =</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #001080;">transaccion</span>.<span
-     style="color: #795e26;">objectStore</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">ALMACEN_PASATIEMPO</span>)</div>
+     style="color: #795e26;">objectStore</span>(<span
+     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0070c1;">almacenPasatiempo</span>.<span
      style="color: #795e26;">put</span>(<span
      style="color: #0070c1;">modelo</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;})</div>
   <div>&nbsp;}</div>
-  <div>}</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div><span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"pasatiempoElimina"</span>] = <span
+     style="color: #795e26;">pasatiempoElimina</span></div>
  </div>
 </muestra-codigo>

@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>A. srv / dao / AccesoBd.php - GilPG DM</title>
+ <title>2. srv / dao / AccesoBd.php - GilPG DM</title>
  <meta name="description" content="Código de «srv/dao/AccesoBd.php».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -463,19 +463,17 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >A. srv / dao / AccesoBd.php</h1><muestra-codigo>
+   <h1 >2. srv / dao / AccesoBd.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/../modelo/Pasatiempo.php"</span>;</div>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/bdCrea.php"</span>;</div><br>
   <div><span
      style="color: #0000ff;">class</span> <span
@@ -516,8 +514,7 @@
   <div>&nbsp;}</div><br>
   <div>&nbsp;<span
      style="color: #0000ff;">private</span> <span
-     style="color: #0000ff;">static</span></div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">static</span> <span
      style="color: #0000ff;">function</span> <span
      style="color: #795e26;">conecta</span>(): <span
      style="color: #267f99;">PDO</span></div>
@@ -539,15 +536,13 @@
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">null</span>,</div>
   <div>&nbsp;&nbsp;&nbsp;[<span
-     style="color: #267f99;">PDO</span>::ATTR_ERRMODE =&gt;</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #267f99;">PDO</span>::ATTR_ERRMODE =&gt; <span
      style="color: #267f99;">PDO</span>::ERRMODE_EXCEPTION]</div>
   <div>&nbsp;&nbsp;);</div>
   <div>&nbsp;}</div><br>
   <div>&nbsp;<span
      style="color: #0000ff;">private</span> <span
-     style="color: #0000ff;">static</span></div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">static</span> <span
      style="color: #0000ff;">function</span> <span
      style="color: #795e26;">prepara</span>(<span
      style="color: #267f99;">PDO</span> <span
@@ -583,8 +578,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m09sincronizacion/m-srv/m-dao/index.html" title="3. Carpeta «srv / dao»">◀</a>
- <a class="siguiente" href="/m09sincronizacion/m-srv/m-dao/m-bdCrea-php.html" title="B. srv / dao / bdCrea.php">▶</a>
+ <a class="anterior" href="/m09sincronizacion/m-srv/m-dao/m-bdCrea-php.html" title="1. srv / dao / bdCrea.php">◀</a>
+ <a class="siguiente" href="/m09sincronizacion/m-srv/m-dao/m-pasatiempoAgrega-php.html" title="3. srv / dao / pasatiempoAgrega.php">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -601,25 +596,25 @@
     <a href="/m09sincronizacion/">11. Sincronización</a>
    </p>
    <p>
-    <a href="/m09sincronizacion/m-srv/">K. Carpeta «srv»</a>
+    <a href="/m09sincronizacion/m-srv/">N. Carpeta « srv »</a>
    </p>
    
      <p>
       <a class="paginaAnterior" href="/m09sincronizacion/m-srv/m-modelo/m-leePasatiempo-php.html"
-        title="B. srv / modelo / leePasatiempo.php">▲</a>
+        title="2. srv / modelo / leePasatiempo.php">▲</a>
      </p>
-   <h1><a href="/m09sincronizacion/m-srv/m-dao/index.html">3. Carpeta «srv / dao»</a></h1>
+   <h1><a href="/m09sincronizacion/m-srv/m-dao/index.html">B. Carpeta « srv / dao »</a></h1>
    
-   <ol type="A">
+   <ol type="1">
     
    <li>
     <p>
-     <a href="/m09sincronizacion/m-srv/m-dao/m-AccesoBd-php.html" class="actual">srv / dao / AccesoBd.php</a>
+     <a href="/m09sincronizacion/m-srv/m-dao/m-bdCrea-php.html">srv / dao / bdCrea.php</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-srv/m-dao/m-bdCrea-php.html">srv / dao / bdCrea.php</a>
+     <a href="/m09sincronizacion/m-srv/m-dao/m-AccesoBd-php.html" class="actual">srv / dao / AccesoBd.php</a>
     </p>
    </li>
    <li>
@@ -645,8 +640,8 @@
    </ol>
    
     <p>
-     <a class="paginaSiguiente" href="/m09sincronizacion/m-lib/index.html"
-       title="L. Carpeta «lib»">▼</a>
+     <a class="paginaSiguiente" href="/m09sincronizacion/m-srv/m-srvSincro-php.html"
+       title="C. srv / srvSincro.php">▼</a>
     </p>
  
 </nav>
@@ -660,9 +655,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m09sincronizacion/m-srv/m-dao/index.html"
+ let urlAnterior = "/m09sincronizacion/m-srv/m-dao/m-bdCrea-php.html"
  /**@type {string} */
- let urlSiguiente = "/m09sincronizacion/m-srv/m-dao/m-bdCrea-php.html"
+ let urlSiguiente = "/m09sincronizacion/m-srv/m-dao/m-pasatiempoAgrega-php.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

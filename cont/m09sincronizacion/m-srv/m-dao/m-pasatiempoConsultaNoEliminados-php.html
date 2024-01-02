@@ -4,20 +4,17 @@
      style="color: #800000;">&lt;?php</span></div><br>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/../modelo/Pasatiempo.php"</span>;</div>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/AccesoBd.php"</span>;</div>
   <div><span
      style="color: #af00db;">require_once</span> <span
      style="color: #0000ff;">__DIR__</span> . <span
-     style="color: #a31515;">"/../../"</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"lib/php/recibeFetchAll.php"</span>;</div><br>
+     style="color: #a31515;">"/../../lib/php/recibeFetchAll.php"</span>;</div>
+  <br>
   <div><span
      style="color: #008000;">/**&nbsp;</span><span
      style="color: #0000ff;">@return</span><span
@@ -26,8 +23,7 @@
      style="color: #0000ff;">[]</span><span
      style="color: #008000;"> */</span></div>
   <div><span
-     style="color: #0000ff;">function</span></div>
-  <div><span
+     style="color: #0000ff;">function</span> <span
      style="color: #795e26;">pasatiempoConsultaNoEliminados</span>()</div>
   <div>{</div>
   <div>&nbsp;<span
@@ -50,10 +46,8 @@
      style="color: #0000ff;">AS</span><span
      style="color: #a31515;"> nombre,</span></div>
   <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;PAS_MODIFICACION</span>
-  </div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;PAS_MODIFICACION
+   </span><span
      style="color: #0000ff;">AS</span><span
      style="color: #a31515;"> modificacion,</span></div>
   <div><span
@@ -69,7 +63,11 @@
      style="color: #0000ff;">WHERE</span><span
      style="color: #a31515;"> PAS_ELIMINADO </span>=<span
      style="color: #a31515;"> </span><span
-     style="color: #098658;">0</span><span
+     style="color: #098658;">0</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #0000ff;">ORDER BY</span><span
+     style="color: #a31515;"> PAS_NOMBRE</span><span
      style="color: #a31515;">"</span></div>
   <div>&nbsp;);</div>
   <div>&nbsp;<span
@@ -77,8 +75,7 @@
      style="color: #001080;">$stmt</span>-&gt;<span
      style="color: #795e26;">fetchAll</span>(</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #267f99;">PDO</span>::FETCH_CLASS</div>
-  <div>&nbsp;&nbsp;&nbsp;| <span
+     style="color: #267f99;">PDO</span>::FETCH_CLASS | <span
      style="color: #267f99;">PDO</span>::FETCH_PROPS_LATE,</div>
   <div>&nbsp;&nbsp;<span
      style="color: #267f99;">Pasatiempo</span>::<span

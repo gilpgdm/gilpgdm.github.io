@@ -4,120 +4,83 @@
      style="color: #800000;">&lt;?php</span></div><br>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/Pasatiempo.php"</span>;</div><br>
   <div><span
      style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">leePasatiempo</span>(</div>
+     style="color: #795e26;">leePasatiempo</span>(<span
+     style="color: #001080;">$objeto</span>)</div>
+  <div>{</div><br>
   <div>&nbsp;<span
-     style="color: #001080;">$objeto</span></div>
-  <div>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;!<span
+     style="color: #af00db;">if</span> (!<span
      style="color: #795e26;">isset</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">nombre</span>)</div>
-  <div>&nbsp;&nbsp;|| !<span
+     style="color: #001080;">nombre</span>) || !<span
      style="color: #795e26;">is_string</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">nombre</span>)</div>
-  <div>&nbsp;)</div>
+     style="color: #001080;">nombre</span>))</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Exception</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"El nombre debe ser texto."</span></div>
-  <div>&nbsp;&nbsp;);</div>
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"El nombre debe ser texto."</span>);</div><br>
   <div>&nbsp;<span
-     style="color: #001080;">$nombre</span> = <span
-     style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">nombre</span>;</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;!<span
+     style="color: #af00db;">if</span> (!<span
      style="color: #795e26;">isset</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">uuid</span>)</div>
-  <div>&nbsp;&nbsp;|| !<span
+     style="color: #001080;">uuid</span>) || !<span
      style="color: #795e26;">is_string</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">uuid</span>)</div>
-  <div>&nbsp;)</div>
+     style="color: #001080;">uuid</span>))</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Exception</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"El uuid debe ser texto."</span></div>
-  <div>&nbsp;&nbsp;);</div>
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"El uuid debe ser texto."</span>);</div><br>
   <div>&nbsp;<span
-     style="color: #001080;">$uuid</span> = <span
-     style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">uuid</span>;</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;!<span
+     style="color: #af00db;">if</span> (!<span
      style="color: #795e26;">isset</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">eliminado</span>)</div>
-  <div>&nbsp;&nbsp;|| !<span
+     style="color: #001080;">eliminado</span>) || !<span
      style="color: #795e26;">is_bool</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">eliminado</span>)</div>
-  <div>&nbsp;)</div>
+     style="color: #001080;">eliminado</span>))</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Exception</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"El campo eliminado debe ser "</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;. <span
-     style="color: #a31515;">"booleano."</span></div>
-  <div>&nbsp;&nbsp;);</div>
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"El campo eliminado debe ser booleano."</span>);
+  </div><br>
   <div>&nbsp;<span
-     style="color: #001080;">$eliminado</span> = <span
-     style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">eliminado</span>;</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;!<span
+     style="color: #af00db;">if</span> (!<span
      style="color: #795e26;">isset</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">modificacion</span>)</div>
-  <div>&nbsp;&nbsp;|| !<span
+     style="color: #001080;">modificacion</span>)&nbsp;&nbsp;|| !<span
      style="color: #795e26;">is_int</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">modificacion</span>)</div>
-  <div>&nbsp;)</div>
+     style="color: #001080;">modificacion</span>))</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Exception</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"La modificacion debe ser "</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;. <span
-     style="color: #a31515;">"número."</span></div>
-  <div>&nbsp;&nbsp;);</div>
-  <div>&nbsp;<span
-     style="color: #001080;">$modificacion</span> =</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">modificacion</span>;</div>
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"La modificacion debe ser número."</span>);</div>
+  <br>
   <div>&nbsp;<span
      style="color: #af00db;">return</span> <span
      style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Pasatiempo</span>(</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$nombre</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$uuid</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$modificacion</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$eliminado</span></div>
+  <div>&nbsp;&nbsp;uuid: <span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">uuid</span>,</div>
+  <div>&nbsp;&nbsp;nombre: <span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">nombre</span>,</div>
+  <div>&nbsp;&nbsp;modificacion: <span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">modificacion</span>,</div>
+  <div>&nbsp;&nbsp;eliminado: <span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">eliminado</span></div>
   <div>&nbsp;);</div>
   <div>}</div><br>
  </div>

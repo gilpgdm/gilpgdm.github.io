@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>B. srv / modelo / leePasatiempo.php - GilPG DM</title>
+ <title>2. srv / modelo / leePasatiempo.php - GilPG DM</title>
  <meta name="description" content="Código de «srv/modelo/leePasatiempo.php».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -463,126 +463,89 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >B. srv / modelo / leePasatiempo.php</h1><muestra-codigo>
+   <h1 >2. srv / modelo / leePasatiempo.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/Pasatiempo.php"</span>;</div><br>
   <div><span
      style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">leePasatiempo</span>(</div>
+     style="color: #795e26;">leePasatiempo</span>(<span
+     style="color: #001080;">$objeto</span>)</div>
+  <div>{</div><br>
   <div>&nbsp;<span
-     style="color: #001080;">$objeto</span></div>
-  <div>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;!<span
+     style="color: #af00db;">if</span> (!<span
      style="color: #795e26;">isset</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">nombre</span>)</div>
-  <div>&nbsp;&nbsp;|| !<span
+     style="color: #001080;">nombre</span>) || !<span
      style="color: #795e26;">is_string</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">nombre</span>)</div>
-  <div>&nbsp;)</div>
+     style="color: #001080;">nombre</span>))</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Exception</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"El nombre debe ser texto."</span></div>
-  <div>&nbsp;&nbsp;);</div>
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"El nombre debe ser texto."</span>);</div><br>
   <div>&nbsp;<span
-     style="color: #001080;">$nombre</span> = <span
-     style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">nombre</span>;</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;!<span
+     style="color: #af00db;">if</span> (!<span
      style="color: #795e26;">isset</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">uuid</span>)</div>
-  <div>&nbsp;&nbsp;|| !<span
+     style="color: #001080;">uuid</span>) || !<span
      style="color: #795e26;">is_string</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">uuid</span>)</div>
-  <div>&nbsp;)</div>
+     style="color: #001080;">uuid</span>))</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Exception</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"El uuid debe ser texto."</span></div>
-  <div>&nbsp;&nbsp;);</div>
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"El uuid debe ser texto."</span>);</div><br>
   <div>&nbsp;<span
-     style="color: #001080;">$uuid</span> = <span
-     style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">uuid</span>;</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;!<span
+     style="color: #af00db;">if</span> (!<span
      style="color: #795e26;">isset</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">eliminado</span>)</div>
-  <div>&nbsp;&nbsp;|| !<span
+     style="color: #001080;">eliminado</span>) || !<span
      style="color: #795e26;">is_bool</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">eliminado</span>)</div>
-  <div>&nbsp;)</div>
+     style="color: #001080;">eliminado</span>))</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Exception</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"El campo eliminado debe ser "</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;. <span
-     style="color: #a31515;">"booleano."</span></div>
-  <div>&nbsp;&nbsp;);</div>
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"El campo eliminado debe ser booleano."</span>);
+  </div><br>
   <div>&nbsp;<span
-     style="color: #001080;">$eliminado</span> = <span
-     style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">eliminado</span>;</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;!<span
+     style="color: #af00db;">if</span> (!<span
      style="color: #795e26;">isset</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">modificacion</span>)</div>
-  <div>&nbsp;&nbsp;|| !<span
+     style="color: #001080;">modificacion</span>)&nbsp;&nbsp;|| !<span
      style="color: #795e26;">is_int</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">modificacion</span>)</div>
-  <div>&nbsp;)</div>
+     style="color: #001080;">modificacion</span>))</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Exception</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"La modificacion debe ser "</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;. <span
-     style="color: #a31515;">"número."</span></div>
-  <div>&nbsp;&nbsp;);</div>
-  <div>&nbsp;<span
-     style="color: #001080;">$modificacion</span> =</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">modificacion</span>;</div>
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"La modificacion debe ser número."</span>);</div>
+  <br>
   <div>&nbsp;<span
      style="color: #af00db;">return</span> <span
      style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Pasatiempo</span>(</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$nombre</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$uuid</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$modificacion</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$eliminado</span></div>
+  <div>&nbsp;&nbsp;uuid: <span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">uuid</span>,</div>
+  <div>&nbsp;&nbsp;nombre: <span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">nombre</span>,</div>
+  <div>&nbsp;&nbsp;modificacion: <span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">modificacion</span>,</div>
+  <div>&nbsp;&nbsp;eliminado: <span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">eliminado</span></div>
   <div>&nbsp;);</div>
   <div>}</div><br>
  </div>
@@ -610,8 +573,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m09sincronizacion/m-srv/m-modelo/m-Pasatiempo-php.html" title="A. srv / modelo / Pasatiempo.php">◀</a>
- <a class="siguiente" href="/m09sincronizacion/m-srv/m-dao/index.html" title="3. Carpeta «srv / dao»">▶</a>
+ <a class="anterior" href="/m09sincronizacion/m-srv/m-modelo/m-Pasatiempo-php.html" title="1. srv / modelo / Pasatiempo.php">◀</a>
+ <a class="siguiente" href="/m09sincronizacion/m-srv/m-dao/index.html" title="B. Carpeta « srv / dao »">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -628,16 +591,16 @@
     <a href="/m09sincronizacion/">11. Sincronización</a>
    </p>
    <p>
-    <a href="/m09sincronizacion/m-srv/">K. Carpeta «srv»</a>
+    <a href="/m09sincronizacion/m-srv/">N. Carpeta « srv »</a>
    </p>
    
      <p>
-      <a class="paginaAnterior" href="/m09sincronizacion/m-srv/m-SrvSincro-php.html"
-        title="1. srv / SrvSincro.php">▲</a>
+      <a class="paginaAnterior" href="/m09sincronizacion/m-srv/index.html"
+        title="N. Carpeta « srv »">▲</a>
      </p>
-   <h1><a href="/m09sincronizacion/m-srv/m-modelo/index.html">2. Carpeta «srv / modelo»</a></h1>
+   <h1><a href="/m09sincronizacion/m-srv/m-modelo/index.html">A. Carpeta « srv / modelo »</a></h1>
    
-   <ol type="A">
+   <ol type="1">
     
    <li>
     <p>
@@ -653,7 +616,7 @@
    
     <p>
      <a class="paginaSiguiente" href="/m09sincronizacion/m-srv/m-dao/index.html"
-       title="3. Carpeta «srv / dao»">▼</a>
+       title="B. Carpeta « srv / dao »">▼</a>
     </p>
  
 </nav>

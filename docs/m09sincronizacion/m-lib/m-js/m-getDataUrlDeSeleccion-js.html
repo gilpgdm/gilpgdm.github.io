@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>3. js / generaHtmlDePasatiempos.js - GilPG DM</title>
- <meta name="description" content="Código de «js/generaHtmlDePasatiempos.js».">
+ <title>8. lib / js / getDataUrlDeSeleccion.js - GilPG DM</title>
+ <meta name="description" content="Código de «lib/js/getDataUrlDeSeleccion.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -463,107 +463,114 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >3. js / generaHtmlDePasatiempos.js</h1><muestra-codigo>
+   <h1 >8. lib / js / getDataUrlDeSeleccion.js</h1><muestra-codigo>
  <div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">htmlentities</span></div>
-  <div>}&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">getArchivoSeleccionado</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/htmlentities.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">Pasatiempo</span></div>
-  <div>}&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./modelo/Pasatiempo.js"</span></div><br>
+     style="color: #a31515;">"./getArchivoSeleccionado.js"</span></div><br>
   <div><span
      style="color: #008000;">/**</span></div>
   <div><span
      style="color: #008000;">&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{Pasatiempo[]</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span
+     style="color: #267f99;">{HTMLInputElement}</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">pasatiempos</span></div>
+     style="color: #001080;">input</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@returns</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{Promise&lt;string&gt;}</span></div>
   <div><span
      style="color: #008000;">&nbsp;*/</span></div>
   <div><span
      style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">function</span></div>
-  <div>&nbsp;<span
-     style="color: #795e26;">generaHtmlDePasatiempos</span>(</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">pasatiempos</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">let</span> <span
-     style="color: #001080;">render</span> = <span
-     style="color: #a31515;">""</span></div>
-  <div>&nbsp;<span
-     style="color: #af00db;">for</span> (<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">modelo</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">of</span> <span
-     style="color: #001080;">pasatiempos</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">nombre</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">htmlentities</span>(<span
-     style="color: #0070c1;">modelo</span>.<span
-     style="color: #001080;">nombre</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">searchParams</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">URLSearchParams</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;[[<span
-     style="color: #a31515;">"uuid"</span>, <span
-     style="color: #0070c1;">modelo</span>.<span
-     style="color: #001080;">uuid</span>]])</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">params</span> = <span
-     style="color: #795e26;">htmlentities</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">searchParams</span>.<span
-     style="color: #795e26;">toString</span>())</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">render</span> += <span
-     style="color: #008000;">/*&nbsp;HTML */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;`<span
-     style="color: #800000;">&lt;li&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;p&gt;</span></div>
-  <div><span
-     style="color: #800000;">&lt;a</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"modifica.html?</span><span
-     style="color: #0000ff;">${</span><span
-     style="color: #0070c1;">params</span><span
-     style="color: #0000ff;">}</span><span
-     style="color: #0000ff;">"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">${</span><span
-     style="color: #0070c1;">nombre</span><span
-     style="color: #800000;">}&lt;/a&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/p&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/li&gt;</span>`</div>
-  <div>&nbsp;}</div>
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">getDataUrlDeSeleccion</span>(<span
+     style="color: #001080;">input</span>)&nbsp;{</div>
   <div>&nbsp;<span
      style="color: #af00db;">return</span> <span
-     style="color: #001080;">render</span></div>
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Promise</span>((<span
+     style="color: #795e26;">resolve</span>, <span
+     style="color: #795e26;">reject</span>) <span
+     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">try</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">seleccion</span> = <span
+     style="color: #795e26;">getArchivoSeleccionado</span>(<span
+     style="color: #001080;">input</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">seleccion</span> === <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">resolve</span>(<span
+     style="color: #a31515;">""</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">reader</span> = <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">FileReader</span>()</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">reader</span>.<span
+     style="color: #795e26;">onload</span> = () <span
+     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">dataUrl</span> = <span
+     style="color: #0070c1;">reader</span>.<span
+     style="color: #0070c1;">result</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0000ff;">typeof</span> <span
+     style="color: #0070c1;">dataUrl</span> === <span
+     style="color: #a31515;">"string"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">resolve</span>(<span
+     style="color: #0070c1;">dataUrl</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">resolve</span>(<span
+     style="color: #a31515;">""</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">reader</span>.<span
+     style="color: #795e26;">onerror</span> = () <span
+     style="color: #0000ff;">=&gt;</span> <span
+     style="color: #795e26;">reject</span>(<span
+     style="color: #0070c1;">reader</span>.<span
+     style="color: #0070c1;">error</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">reader</span>.<span
+     style="color: #795e26;">readAsDataURL</span>(<span
+     style="color: #0070c1;">seleccion</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">error</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">resolve</span>(<span
+     style="color: #001080;">error</span>)</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;})</div>
   <div>}</div><br>
+  <div><span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div><span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"getDataUrlDeSeleccion"</span>] = <span
+     style="color: #795e26;">getDataUrlDeSeleccion</span></div><br>
  </div>
 </muestra-codigo>
  <footer>
@@ -589,8 +596,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m09sincronizacion/m-js/m-modelo/m-leePasatiempo-js.html" title="B. js / modelo / leePasatiempo.js">◀</a>
- <a class="siguiente" href="/m09sincronizacion/m-js/m-dao/index.html" title="4. Carpeta «js / dao»">▶</a>
+ <a class="anterior" href="/m09sincronizacion/m-lib/m-js/m-getArchivoSeleccionado-js.html" title="7. lib / js / getArchivoSeleccionado.js">◀</a>
+ <a class="siguiente" href="/m09sincronizacion/m-lib/m-js/m-getInputParaElementoHtml-js.html" title="9. lib / js / getInputParaElementoHtml.js">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -606,40 +613,123 @@
    <p>
     <a href="/m09sincronizacion/">11. Sincronización</a>
    </p>
+   <p>
+    <a href="/m09sincronizacion/m-lib/">O. Carpeta « lib »</a>
+   </p>
    
      <p>
-      <a class="paginaAnterior" href="/m09sincronizacion/m-sw-js.html"
-        title="I. sw.js">▲</a>
+      <a class="paginaAnterior" href="/m09sincronizacion/m-lib/index.html"
+        title="O. Carpeta « lib »">▲</a>
      </p>
-   <h1><a href="/m09sincronizacion/m-js/index.html">J. Carpeta «js»</a></h1>
+   <h1><a href="/m09sincronizacion/m-lib/m-js/index.html">A. Carpeta « lib / js »</a></h1>
    
    <ol type="1">
     
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-configura-js.html">js / configura.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-bdConsulta-js.html">lib / js / bdConsulta.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-modelo/">Carpeta «js / modelo»</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-bdEjecuta-js.html">lib / js / bdEjecuta.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-generaHtmlDePasatiempos-js.html" class="actual">js / generaHtmlDePasatiempos.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-buscaElementoHtml-js.html">lib / js / buscaElementoHtml.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-dao/">Carpeta «js / dao»</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-confirmaEliminar-js.html">lib / js / confirmaEliminar.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-ejecuta-js.html">lib / js / ejecuta.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-enviaJson-js.html">lib / js / enviaJson.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-getArchivoSeleccionado-js.html">lib / js / getArchivoSeleccionado.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-getDataUrlDeSeleccion-js.html" class="actual">lib / js / getDataUrlDeSeleccion.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-getInputParaElementoHtml-js.html">lib / js / getInputParaElementoHtml.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraArray-js.html">lib / js / muestraArray.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraBoolean-js.html">lib / js / muestraBoolean.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraError-js.html">lib / js / muestraError.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraImagen-js.html">lib / js / muestraImagen.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraInnerHtml-js.html">lib / js / muestraInnerHtml.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraNumber-js.html">lib / js / muestraNumber.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraObjeto-js.html">lib / js / muestraObjeto.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraString-js.html">lib / js / muestraString.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraTextContent-js.html">lib / js / muestraTextContent.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraValor-js.html">lib / js / muestraValor.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-registraServiceWorkerSiEsSoportado-js.html">lib / js / registraServiceWorkerSiEsSoportado.js</a>
     </p>
    </li>
    </ol>
    
     <p>
-     <a class="paginaSiguiente" href="/m09sincronizacion/m-srv/index.html"
-       title="K. Carpeta «srv»">▼</a>
+     <a class="paginaSiguiente" href="/m09sincronizacion/m-lib/m-php/index.html"
+       title="B. Carpeta « lib / php »">▼</a>
     </p>
  
 </nav>
@@ -653,9 +743,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m09sincronizacion/m-js/m-modelo/m-leePasatiempo-js.html"
+ let urlAnterior = "/m09sincronizacion/m-lib/m-js/m-getArchivoSeleccionado-js.html"
  /**@type {string} */
- let urlSiguiente = "/m09sincronizacion/m-js/m-dao/index.html"
+ let urlSiguiente = "/m09sincronizacion/m-lib/m-js/m-getInputParaElementoHtml-js.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

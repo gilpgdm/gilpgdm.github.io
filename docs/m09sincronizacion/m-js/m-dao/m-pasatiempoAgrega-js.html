@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>B. js / dao / pasatiempoAgrega.js - GilPG DM</title>
+ <title>2. js / dao / pasatiempoAgrega.js - GilPG DM</title>
  <meta name="description" content="Código de «js/dao/pasatiempoAgrega.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -463,28 +463,22 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >B. js / dao / pasatiempoAgrega.js</h1><muestra-codigo>
+   <h1 >2. js / dao / pasatiempoAgrega.js</h1><muestra-codigo>
  <div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">bdEjecuta</span></div>
-  <div>}&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">bdEjecuta</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
      style="color: #a31515;">"../../lib/js/bdEjecuta.js"</span></div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">Pasatiempo</span></div>
-  <div>}&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">Pasatiempo</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
      style="color: #a31515;">"../modelo/Pasatiempo.js"</span></div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
      style="color: #001080;">accesoBd</span>, <span
-     style="color: #001080;">ALMACEN_PASATIEMPO</span></div>
-  <div>}&nbsp;<span
+     style="color: #001080;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
      style="color: #a31515;">"./accesoBd.js"</span></div><br>
   <div><span
@@ -492,18 +486,20 @@
      style="color: #001080;">secuencia</span> = <span
      style="color: #098658;">0</span></div><br>
   <div><span
-     style="color: #008000;">/**&nbsp;</span><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{Pasatiempo}</span><span
+     style="color: #267f99;">{ Pasatiempo }</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">modelo</span><span
-     style="color: #008000;"> */</span></div>
+     style="color: #001080;">modelo</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
   <div><span
      style="color: #af00db;">export</span> <span
      style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span></div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">function</span> <span
      style="color: #795e26;">pasatiempoAgrega</span>(<span
      style="color: #001080;">modelo</span>)&nbsp;{</div>
   <div>&nbsp;<span
@@ -517,29 +513,25 @@
   <div>&nbsp;<span
      style="color: #001080;">modelo</span>.<span
      style="color: #001080;">eliminado</span> = <span
-     style="color: #0000ff;">false</span></div>
+     style="color: #0000ff;">false</span></div><br>
   <div>&nbsp;<span
      style="color: #008000;">// Genera uuid único en internet.</span></div>
   <div>&nbsp;<span
      style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">uuid</span> =</div>
-  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">uuid</span> = <span
      style="color: #267f99;">Date</span>.<span
      style="color: #795e26;">now</span>().<span
-     style="color: #795e26;">toString</span>()</div>
-  <div>&nbsp;&nbsp;+ <span
+     style="color: #795e26;">toString</span>() + <span
      style="color: #001080;">Math</span>.<span
-     style="color: #795e26;">random</span>()</div>
-  <div>&nbsp;&nbsp;+ <span
+     style="color: #795e26;">random</span>() + <span
      style="color: #001080;">secuencia</span></div>
   <div>&nbsp;<span
      style="color: #001080;">secuencia</span>++</div><br>
   <div>&nbsp;<span
      style="color: #af00db;">return</span> <span
      style="color: #795e26;">bdEjecuta</span>(<span
-     style="color: #0070c1;">accesoBd</span>,</div>
-  <div>&nbsp;&nbsp;[<span
-     style="color: #0070c1;">ALMACEN_PASATIEMPO</span>],</div>
+     style="color: #0070c1;">accesoBd</span>, [<span
+     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>],</div>
   <div>&nbsp;&nbsp;<span
      style="color: #001080;">transaccion</span> <span
      style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
@@ -548,15 +540,21 @@
      style="color: #0070c1;">almacenPasatiempo</span> =</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #001080;">transaccion</span>.<span
-     style="color: #795e26;">objectStore</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">ALMACEN_PASATIEMPO</span>)</div>
+     style="color: #795e26;">objectStore</span>(<span
+     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>)</div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0070c1;">almacenPasatiempo</span>.<span
      style="color: #795e26;">add</span>(<span
      style="color: #001080;">modelo</span>)</div>
   <div>&nbsp;&nbsp;})</div>
-  <div>}</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div><span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"pasatiempoAgrega"</span>] = <span
+     style="color: #795e26;">pasatiempoAgrega</span></div>
  </div>
 </muestra-codigo>
  <footer>
@@ -582,8 +580,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m09sincronizacion/m-js/m-dao/m-accesoBd-js.html" title="A. js / dao / accesoBd.js">◀</a>
- <a class="siguiente" href="/m09sincronizacion/m-js/m-dao/m-pasatiempoBusca-js.html" title="C. js / dao / pasatiempoBusca.js">▶</a>
+ <a class="anterior" href="/m09sincronizacion/m-js/m-dao/m-accesoBd-js.html" title="1. js / dao / accesoBd.js">◀</a>
+ <a class="siguiente" href="/m09sincronizacion/m-js/m-dao/m-pasatiempoBusca-js.html" title="3. js / dao / pasatiempoBusca.js">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -600,16 +598,16 @@
     <a href="/m09sincronizacion/">11. Sincronización</a>
    </p>
    <p>
-    <a href="/m09sincronizacion/m-js/">J. Carpeta «js»</a>
+    <a href="/m09sincronizacion/m-js/">M. Carpeta « js »</a>
    </p>
    
      <p>
-      <a class="paginaAnterior" href="/m09sincronizacion/m-js/m-generaHtmlDePasatiempos-js.html"
-        title="3. js / generaHtmlDePasatiempos.js">▲</a>
+      <a class="paginaAnterior" href="/m09sincronizacion/m-js/m-modelo/m-leePasatiempo-js.html"
+        title="3. js / modelo / leePasatiempo.js">▲</a>
      </p>
-   <h1><a href="/m09sincronizacion/m-js/m-dao/index.html">4. Carpeta «js / dao»</a></h1>
+   <h1><a href="/m09sincronizacion/m-js/m-dao/index.html">C. Carpeta « js / dao »</a></h1>
    
-   <ol type="A">
+   <ol type="1">
     
    <li>
     <p>
@@ -655,7 +653,7 @@
    
     <p>
      <a class="paginaSiguiente" href="/m09sincronizacion/m-srv/index.html"
-       title="K. Carpeta «srv»">▼</a>
+       title="N. Carpeta « srv »">▼</a>
     </p>
  
 </nav>

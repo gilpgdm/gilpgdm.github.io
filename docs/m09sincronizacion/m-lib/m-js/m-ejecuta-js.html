@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>D. lib / js / ejecuta.js - GilPG DM</title>
+ <title>5. lib / js / ejecuta.js - GilPG DM</title>
  <meta name="description" content="Código de «lib/js/ejecuta.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -463,77 +463,105 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >D. lib / js / ejecuta.js</h1><muestra-codigo>
+   <h1 >5. lib / js / ejecuta.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #008000;">/**</span></div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Espera a que la promesa de un</span>
-  </div>
+     style="color: #008000;">&nbsp;*&nbsp;Espera a que la promesa de un fetch
+    termine. Si</span></div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;fetch termine. Si hay error</span>
-  </div>
+     style="color: #008000;">&nbsp;*&nbsp;hay error, lanza una excepción. Si no
+    hay error,</span></div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;lanza una excepción. Si no hay</span>
-  </div>
+     style="color: #008000;">&nbsp;*&nbsp;interpreta la respuesta del servidor
+    como JSON y</span></div>
   <div><span
-     style="color: #008000;">&nbsp;*&nbsp;error, interpreta la respuesta</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;del servidor como JSON y</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;la convierte en una literal de</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;objeto. </span></div>
+     style="color: #008000;">&nbsp;*&nbsp;la convierte en una literal de objeto.
+   </span></div>
   <div><span
      style="color: #008000;">&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{Promise&lt;Response&gt;}</span><span
+     style="color: #267f99;">{ string | Promise&lt;Response&gt; }</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">fetch</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@returns</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{Promise&lt;any&gt;}</span></div>
+     style="color: #001080;">servicio</span></div>
   <div><span
      style="color: #008000;">&nbsp;*/</span></div>
   <div><span
-     style="color: #0000ff;">export</span></div>
-  <div>&nbsp;<span
+     style="color: #af00db;">export</span> <span
      style="color: #0000ff;">async</span> <span
      style="color: #0000ff;">function</span> <span
      style="color: #795e26;">ejecuta</span>(<span
-     style="color: #001080;">fetch</span>)&nbsp;{</div>
+     style="color: #001080;">servicio</span>)&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">resp</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">fetch</span></div>
+     style="color: #0000ff;">let</span> <span
+     style="color: #001080;">f</span> = <span
+     style="color: #001080;">servicio</span></div>
   <div>&nbsp;<span
      style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">resp</span>.<span
+     style="color: #0000ff;">typeof</span> <span
+     style="color: #001080;">servicio</span> === <span
+     style="color: #a31515;">"string"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">f</span> = <span
+     style="color: #795e26;">fetch</span>(<span
+     style="color: #001080;">servicio</span>)</div>
+  <div>&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span> <span
+     style="color: #af00db;">if</span> (!(<span
+     style="color: #001080;">f</span> <span
+     style="color: #0000ff;">instanceof</span> <span
+     style="color: #267f99;">Promise</span>))&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(<span
+     style="color: #a31515;">"Servicio de tipo incorrecto."</span>)</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">respuesta</span> = <span
+     style="color: #af00db;">await</span> <span
+     style="color: #001080;">f</span></div>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">respuesta</span>.<span
      style="color: #0070c1;">ok</span>)&nbsp;{</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span> <span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">texto</span> = <span
      style="color: #af00db;">await</span> <span
-     style="color: #0070c1;">resp</span>.<span
-     style="color: #795e26;">json</span>()</div>
+     style="color: #0070c1;">respuesta</span>.<span
+     style="color: #795e26;">text</span>()</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">try</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">JSON</span>.<span
+     style="color: #795e26;">parse</span>(<span
+     style="color: #0070c1;">texto</span>)</div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">error</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(<span
+     style="color: #0070c1;">texto</span>)</div>
+  <div>&nbsp;&nbsp;}</div>
   <div>&nbsp;}&nbsp;<span
      style="color: #af00db;">else</span> <span
      style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">resp</span>.<span
+     style="color: #0070c1;">respuesta</span>.<span
      style="color: #0070c1;">status</span> === <span
      style="color: #098658;">500</span>)&nbsp;{</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Error</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #267f99;">Error</span>(<span
      style="color: #af00db;">await</span> <span
-     style="color: #0070c1;">resp</span>.<span
+     style="color: #0070c1;">respuesta</span>.<span
      style="color: #795e26;">text</span>())</div>
   <div>&nbsp;}&nbsp;<span
      style="color: #af00db;">else</span>&nbsp;{</div>
@@ -541,10 +569,17 @@
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Error</span>(<span
-     style="color: #0070c1;">resp</span>.<span
+     style="color: #0070c1;">respuesta</span>.<span
      style="color: #0070c1;">statusText</span>)</div>
   <div>&nbsp;}</div>
-  <div>}</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div><span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"ejecuta"</span>] = <span
+     style="color: #795e26;">ejecuta</span></div>
  </div>
 </muestra-codigo>
  <footer>
@@ -570,8 +605,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m09sincronizacion/m-lib/m-js/m-confirmaEliminar-js.html" title="C. lib / js / confirmaEliminar.js">◀</a>
- <a class="siguiente" href="/m09sincronizacion/m-lib/m-js/m-enviaJson-js.html" title="E. lib / js / enviaJson.js">▶</a>
+ <a class="anterior" href="/m09sincronizacion/m-lib/m-js/m-confirmaEliminar-js.html" title="4. lib / js / confirmaEliminar.js">◀</a>
+ <a class="siguiente" href="/m09sincronizacion/m-lib/m-js/m-enviaJson-js.html" title="6. lib / js / enviaJson.js">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -588,16 +623,16 @@
     <a href="/m09sincronizacion/">11. Sincronización</a>
    </p>
    <p>
-    <a href="/m09sincronizacion/m-lib/">L. Carpeta «lib»</a>
+    <a href="/m09sincronizacion/m-lib/">O. Carpeta « lib »</a>
    </p>
    
      <p>
       <a class="paginaAnterior" href="/m09sincronizacion/m-lib/index.html"
-        title="L. Carpeta «lib»">▲</a>
+        title="O. Carpeta « lib »">▲</a>
      </p>
-   <h1><a href="/m09sincronizacion/m-lib/m-js/index.html">1. Carpeta «lib / js»</a></h1>
+   <h1><a href="/m09sincronizacion/m-lib/m-js/index.html">A. Carpeta « lib / js »</a></h1>
    
-   <ol type="A">
+   <ol type="1">
     
    <li>
     <p>
@@ -607,6 +642,11 @@
    <li>
     <p>
      <a href="/m09sincronizacion/m-lib/m-js/m-bdEjecuta-js.html">lib / js / bdEjecuta.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-buscaElementoHtml-js.html">lib / js / buscaElementoHtml.js</a>
     </p>
    </li>
    <li>
@@ -626,12 +666,27 @@
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-htmlentities-js.html">lib / js / htmlentities.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-getArchivoSeleccionado-js.html">lib / js / getArchivoSeleccionado.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-MetodoHttp-js.html">lib / js / MetodoHttp.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-getDataUrlDeSeleccion-js.html">lib / js / getDataUrlDeSeleccion.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-getInputParaElementoHtml-js.html">lib / js / getInputParaElementoHtml.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraArray-js.html">lib / js / muestraArray.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraBoolean-js.html">lib / js / muestraBoolean.js</a>
     </p>
    </li>
    <li>
@@ -641,12 +696,37 @@
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-muestraTexto-js.html">lib / js / muestraTexto.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraImagen-js.html">lib / js / muestraImagen.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-parametrosDePagina-js.html">lib / js / parametrosDePagina.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraInnerHtml-js.html">lib / js / muestraInnerHtml.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraNumber-js.html">lib / js / muestraNumber.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraObjeto-js.html">lib / js / muestraObjeto.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraString-js.html">lib / js / muestraString.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraTextContent-js.html">lib / js / muestraTextContent.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraValor-js.html">lib / js / muestraValor.js</a>
     </p>
    </li>
    <li>
@@ -658,7 +738,7 @@
    
     <p>
      <a class="paginaSiguiente" href="/m09sincronizacion/m-lib/m-php/index.html"
-       title="2. Carpeta «lib / php»">▼</a>
+       title="B. Carpeta « lib / php »">▼</a>
     </p>
  
 </nav>

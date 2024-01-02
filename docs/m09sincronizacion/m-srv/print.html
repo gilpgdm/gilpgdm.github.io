@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>Carpeta «srv» - GilPG DM</title>
+ <title>Carpeta « srv » - GilPG DM</title>
  <meta name="description" content="">
  <style>
  :root {
@@ -357,263 +357,7 @@
 </head>
 
 <body class="print">
-   <h1 >K. Carpeta «srv»</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
-    </p>
-   </div>
-
-  <div class="lectura">
-   <nav>
-    <h1>Contenido</h1>
-    
-   <ol type="1">
-    
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-srv/m-SrvSincro-php.html">srv / SrvSincro.php</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-srv/m-modelo/">Carpeta «srv / modelo»</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-srv/m-dao/">Carpeta «srv / dao»</a>
-    </p>
-   </li>
-   </ol>
-   </nav>
-  </div>
-     <section >
-         <h1 >1. srv / SrvSincro.php</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #800000;">&lt;?php</span></div><br>
-  <div><span
-     style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/../lib/php/Servicio.php"</span>;</div>
-  <div><span
-     style="color: #af00db;">require_once</span>&nbsp;&nbsp;<span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/../lib/php/leeJson.php"</span>;</div>
-  <div><span
-     style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/modelo/Pasatiempo.php"</span>;</div>
-  <div><span
-     style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/modelo/leePasatiempo.php"</span>;</div>
-  <div><span
-     style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/dao/pasatiempoAgrega.php"</span>;</div>
-  <div><span
-     style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/dao/pasatiempoBusca.php"</span>;</div>
-  <div><span
-     style="color: #af00db;">require_once</span>&nbsp;&nbsp;<span
-     style="color: #0000ff;">__DIR__</span> . <span
-     style="color: #811f3f;">"/dao/"</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"pasatiempoConsultaNoEliminados.php"</span>;</div>
-  <div><span
-     style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/dao/pasatiempoModifica.php"</span>;</div><br>
-  <div><span
-     style="color: #0000ff;">class</span> <span
-     style="color: #267f99;">SrvSincro</span> <span
-     style="color: #0000ff;">extends</span> <span
-     style="color: #267f99;">Servicio</span></div>
-  <div>{</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">protected</span></div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">implementacion</span>()</div>
-  <div>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$lista</span> = <span
-     style="color: #795e26;">leeJson</span>();</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (!<span
-     style="color: #795e26;">is_array</span>(<span
-     style="color: #001080;">$lista</span>))&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">$lista</span> = [];</div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">foreach</span> (<span
-     style="color: #001080;">$lista</span> as <span
-     style="color: #001080;">$objeto</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">$modeloEnElCliente</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">leePasatiempo</span>(<span
-     style="color: #001080;">$objeto</span>);</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">$modeloEnElServidor</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">pasatiempoBusca</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">$modeloEnElCliente</span>-&gt;<span
-     style="color: #001080;">uuid</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;);</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">$modeloEnElServidor</span> === <span
-     style="color: #0000ff;">false</span></div>
-  <div>&nbsp;&nbsp;&nbsp;)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;CONFLICTO. El objeto no ha</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;estado en el
-    servidor.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;AGREGARLO
-    solamente si no</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;está
-    eliminado. */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!<span
-     style="color: #001080;">$modeloEnElCliente</span>-&gt;<span
-     style="color: #001080;">eliminado</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">pasatiempoAgrega</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">$modeloEnElCliente</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
-     style="color: #af00db;">elseif</span> (</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;!<span
-     style="color: #001080;">$modeloEnElServidor</span>-&gt;<span
-     style="color: #001080;">eliminado</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">$modeloEnElCliente</span>-&gt;<span
-     style="color: #001080;">eliminado</span></div>
-  <div>&nbsp;&nbsp;&nbsp;)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;CONFLICTO. El registro está</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;en el
-    servidor, donde no se</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ha eliminado,
-    pero ha sido</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;eliminado en
-    el cliente.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Gana el
-    cliente, porque</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;optamos por no
-    revivir lo</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;que se ha
-    borrado. */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">pasatiempoModifica</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">$modeloEnElCliente</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;);</div>
-  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span> <span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;!<span
-     style="color: #001080;">$modeloEnElCliente</span>-&gt;<span
-     style="color: #001080;">eliminado</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;!<span
-     style="color: #001080;">$modeloEnElServidor</span>-&gt;<span
-     style="color: #001080;">eliminado</span></div>
-  <div>&nbsp;&nbsp;&nbsp;)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;CONFLICTO. El registro está</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;tanto en el
-    servidor como</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;en el cliente.
-    Los datos</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;pueden ser
-    diferentes.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;PREVALECE LA
-    FECHA MÁS</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;GRANDE. Cuando
-    gana el</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;servidor no se
-    hace nada.*/</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">$modeloEnElCliente</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;<span
-     style="color: #001080;">modificacion</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; <span
-     style="color: #001080;">$modeloEnElServidor</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;<span
-     style="color: #001080;">modificacion</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;La versión del cliente es</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;más
-    nueva y prevalece. */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">pasatiempoModifica</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">$modeloEnElCliente</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$lista</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">pasatiempoConsultaNoEliminados</span>();</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #001080;">$lista</span>;</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #001080;">$servicio</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">SrvSincro</span>();</div>
-  <div><span
-     style="color: #001080;">$servicio</span>-&gt;<span
-     style="color: #795e26;">ejecuta</span>();</div><br>
- </div>
-</muestra-codigo>
-      </section>
-     <section>
-         <h1 >2. Carpeta «srv / modelo»</h1>
+   <h1 >N. Carpeta « srv »</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -629,6 +373,39 @@
     
    <li>
     <p>
+     <a href="/m09sincronizacion/m-srv/m-modelo/">Carpeta « srv / modelo »</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-srv/m-dao/">Carpeta « srv / dao »</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-srv/m-srvSincro-php.html">srv / srvSincro.php</a>
+    </p>
+   </li>
+   </ol>
+   </nav>
+  </div>
+     <section>
+         <h1 >A. Carpeta « srv / modelo »</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+
+  <div class="lectura">
+   <nav>
+    <h1>Contenido</h1>
+    
+   <ol type="1">
+    
+   <li>
+    <p>
      <a href="/m09sincronizacion/m-srv/m-modelo/m-Pasatiempo-php.html">srv / modelo / Pasatiempo.php</a>
     </p>
    </li>
@@ -641,7 +418,7 @@
    </nav>
   </div>
      <section >
-         <h1 >A. srv / modelo / Pasatiempo.php</h1><muestra-codigo>
+         <h1 >1. srv / modelo / Pasatiempo.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
@@ -696,8 +473,7 @@
      style="color: #001080;">$uuid</span>;</div>
   <div>&nbsp;&nbsp;<span
      style="color: #0000ff;">$this</span>-&gt;<span
-     style="color: #001080;">modificacion</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">modificacion</span> = <span
      style="color: #001080;">$modificacion</span>;</div>
   <div>&nbsp;&nbsp;<span
      style="color: #0000ff;">$this</span>-&gt;<span
@@ -717,10 +493,8 @@
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Exception</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"Falta el uuid."</span></div>
-  <div>&nbsp;&nbsp;&nbsp;);</div>
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"Falta el uuid."</span>);</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">if</span> (<span
      style="color: #0000ff;">$this</span>-&gt;<span
@@ -729,136 +503,97 @@
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Exception</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"Falta el nombre."</span></div>
-  <div>&nbsp;&nbsp;&nbsp;);</div>
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"Falta el nombre."</span>);</div>
   <div>&nbsp;}</div>
   <div>}</div><br>
  </div>
 </muestra-codigo>
       </section>
      <section >
-         <h1 >B. srv / modelo / leePasatiempo.php</h1><muestra-codigo>
+         <h1 >2. srv / modelo / leePasatiempo.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/Pasatiempo.php"</span>;</div><br>
   <div><span
      style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">leePasatiempo</span>(</div>
+     style="color: #795e26;">leePasatiempo</span>(<span
+     style="color: #001080;">$objeto</span>)</div>
+  <div>{</div><br>
   <div>&nbsp;<span
-     style="color: #001080;">$objeto</span></div>
-  <div>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;!<span
+     style="color: #af00db;">if</span> (!<span
      style="color: #795e26;">isset</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">nombre</span>)</div>
-  <div>&nbsp;&nbsp;|| !<span
+     style="color: #001080;">nombre</span>) || !<span
      style="color: #795e26;">is_string</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">nombre</span>)</div>
-  <div>&nbsp;)</div>
+     style="color: #001080;">nombre</span>))</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Exception</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"El nombre debe ser texto."</span></div>
-  <div>&nbsp;&nbsp;);</div>
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"El nombre debe ser texto."</span>);</div><br>
   <div>&nbsp;<span
-     style="color: #001080;">$nombre</span> = <span
-     style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">nombre</span>;</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;!<span
+     style="color: #af00db;">if</span> (!<span
      style="color: #795e26;">isset</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">uuid</span>)</div>
-  <div>&nbsp;&nbsp;|| !<span
+     style="color: #001080;">uuid</span>) || !<span
      style="color: #795e26;">is_string</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">uuid</span>)</div>
-  <div>&nbsp;)</div>
+     style="color: #001080;">uuid</span>))</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Exception</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"El uuid debe ser texto."</span></div>
-  <div>&nbsp;&nbsp;);</div>
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"El uuid debe ser texto."</span>);</div><br>
   <div>&nbsp;<span
-     style="color: #001080;">$uuid</span> = <span
-     style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">uuid</span>;</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;!<span
+     style="color: #af00db;">if</span> (!<span
      style="color: #795e26;">isset</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">eliminado</span>)</div>
-  <div>&nbsp;&nbsp;|| !<span
+     style="color: #001080;">eliminado</span>) || !<span
      style="color: #795e26;">is_bool</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">eliminado</span>)</div>
-  <div>&nbsp;)</div>
+     style="color: #001080;">eliminado</span>))</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Exception</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"El campo eliminado debe ser "</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;. <span
-     style="color: #a31515;">"booleano."</span></div>
-  <div>&nbsp;&nbsp;);</div>
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"El campo eliminado debe ser booleano."</span>);
+  </div><br>
   <div>&nbsp;<span
-     style="color: #001080;">$eliminado</span> = <span
-     style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">eliminado</span>;</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (</div>
-  <div>&nbsp;&nbsp;!<span
+     style="color: #af00db;">if</span> (!<span
      style="color: #795e26;">isset</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">modificacion</span>)</div>
-  <div>&nbsp;&nbsp;|| !<span
+     style="color: #001080;">modificacion</span>)&nbsp;&nbsp;|| !<span
      style="color: #795e26;">is_int</span>(<span
      style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">modificacion</span>)</div>
-  <div>&nbsp;)</div>
+     style="color: #001080;">modificacion</span>))</div>
   <div>&nbsp;&nbsp;<span
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Exception</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"La modificacion debe ser "</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;. <span
-     style="color: #a31515;">"número."</span></div>
-  <div>&nbsp;&nbsp;);</div>
-  <div>&nbsp;<span
-     style="color: #001080;">$modificacion</span> =</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$objeto</span>-&gt;<span
-     style="color: #001080;">modificacion</span>;</div>
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"La modificacion debe ser número."</span>);</div>
+  <br>
   <div>&nbsp;<span
      style="color: #af00db;">return</span> <span
      style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Pasatiempo</span>(</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$nombre</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$uuid</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$modificacion</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$eliminado</span></div>
+  <div>&nbsp;&nbsp;uuid: <span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">uuid</span>,</div>
+  <div>&nbsp;&nbsp;nombre: <span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">nombre</span>,</div>
+  <div>&nbsp;&nbsp;modificacion: <span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">modificacion</span>,</div>
+  <div>&nbsp;&nbsp;eliminado: <span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">eliminado</span></div>
   <div>&nbsp;);</div>
   <div>}</div><br>
  </div>
@@ -866,7 +601,7 @@
       </section>
       </section>
      <section>
-         <h1 >3. Carpeta «srv / dao»</h1>
+         <h1 >B. Carpeta « srv / dao »</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -878,16 +613,16 @@
    <nav>
     <h1>Contenido</h1>
     
-   <ol type="A">
+   <ol type="1">
     
    <li>
     <p>
-     <a href="/m09sincronizacion/m-srv/m-dao/m-AccesoBd-php.html">srv / dao / AccesoBd.php</a>
+     <a href="/m09sincronizacion/m-srv/m-dao/m-bdCrea-php.html">srv / dao / bdCrea.php</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-srv/m-dao/m-bdCrea-php.html">srv / dao / bdCrea.php</a>
+     <a href="/m09sincronizacion/m-srv/m-dao/m-AccesoBd-php.html">srv / dao / AccesoBd.php</a>
     </p>
    </li>
    <li>
@@ -914,19 +649,84 @@
    </nav>
   </div>
      <section >
-         <h1 >A. srv / dao / AccesoBd.php</h1><muestra-codigo>
+         <h1 >1. srv / dao / bdCrea.php</h1><muestra-codigo>
+ <div>
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">bdCrea</span>(<span
+     style="color: #267f99;">PDO</span> <span
+     style="color: #001080;">$con</span>)</div>
+  <div>{</div>
+  <div>&nbsp;<span
+     style="color: #001080;">$con</span>-&gt;<span
+     style="color: #795e26;">exec</span>(</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #a31515;">'</span><span
+     style="color: #0000ff;">CREATE</span><span
+     style="color: #a31515;"> </span><span
+     style="color: #0000ff;">TABLE</span><span
+     style="color: #a31515;"> </span><span
+     style="color: #0000ff;">IF</span><span
+     style="color: #a31515;"> </span><span
+     style="color: #0000ff;">NOT</span><span
+     style="color: #a31515;"> </span><span
+     style="color: #0000ff;">EXISTS</span><span
+     style="color: #a31515;"> PASATIEMPO (</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;PAS_UUID </span><span
+     style="color: #0000ff;">TEXT</span><span
+     style="color: #a31515;"> </span><span
+     style="color: #0000ff;">NOT NULL</span><span
+     style="color: #a31515;">,</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;PAS_NOMBRE </span><span
+     style="color: #0000ff;">TEXT</span><span
+     style="color: #a31515;"> </span><span
+     style="color: #0000ff;">NOT NULL</span><span
+     style="color: #a31515;">,</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;PAS_MODIFICACION
+   </span><span
+     style="color: #0000ff;">INTEGER</span><span
+     style="color: #a31515;"> </span><span
+     style="color: #0000ff;">NOT NULL</span><span
+     style="color: #a31515;">,</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;PAS_ELIMINADO </span><span
+     style="color: #0000ff;">INTEGER</span><span
+     style="color: #a31515;"> </span><span
+     style="color: #0000ff;">NOT NULL</span><span
+     style="color: #a31515;">,</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #0000ff;">CONSTRAINT</span><span
+     style="color: #a31515;"> PAS_PK</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #0000ff;">PRIMARY KEY</span><span
+     style="color: #a31515;">(PAS_UUID)</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;)</span><span
+     style="color: #a31515;">'</span></div>
+  <div>&nbsp;);</div>
+  <div>}</div><br>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >2. srv / dao / AccesoBd.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/../modelo/Pasatiempo.php"</span>;</div>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/bdCrea.php"</span>;</div><br>
   <div><span
      style="color: #0000ff;">class</span> <span
@@ -967,8 +767,7 @@
   <div>&nbsp;}</div><br>
   <div>&nbsp;<span
      style="color: #0000ff;">private</span> <span
-     style="color: #0000ff;">static</span></div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">static</span> <span
      style="color: #0000ff;">function</span> <span
      style="color: #795e26;">conecta</span>(): <span
      style="color: #267f99;">PDO</span></div>
@@ -990,15 +789,13 @@
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">null</span>,</div>
   <div>&nbsp;&nbsp;&nbsp;[<span
-     style="color: #267f99;">PDO</span>::ATTR_ERRMODE =&gt;</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #267f99;">PDO</span>::ATTR_ERRMODE =&gt; <span
      style="color: #267f99;">PDO</span>::ERRMODE_EXCEPTION]</div>
   <div>&nbsp;&nbsp;);</div>
   <div>&nbsp;}</div><br>
   <div>&nbsp;<span
      style="color: #0000ff;">private</span> <span
-     style="color: #0000ff;">static</span></div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">static</span> <span
      style="color: #0000ff;">function</span> <span
      style="color: #795e26;">prepara</span>(<span
      style="color: #267f99;">PDO</span> <span
@@ -1013,99 +810,23 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >B. srv / dao / bdCrea.php</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #800000;">&lt;?php</span></div><br>
-  <div><span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">bdCrea</span>(<span
-     style="color: #267f99;">PDO</span> <span
-     style="color: #001080;">$con</span>)</div>
-  <div>{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">$con</span>-&gt;<span
-     style="color: #795e26;">exec</span>(</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #a31515;">'</span><span
-     style="color: #0000ff;">CREATE</span><span
-     style="color: #a31515;"> </span><span
-     style="color: #0000ff;">TABLE</span><span
-     style="color: #a31515;"> </span><span
-     style="color: #0000ff;">IF</span><span
-     style="color: #a31515;"> </span><span
-     style="color: #0000ff;">NOT</span><span
-     style="color: #a31515;"> </span><span
-     style="color: #0000ff;">EXISTS</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;PASATIEMPO (</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PAS_UUID </span><span
-     style="color: #0000ff;">TEXT</span><span
-     style="color: #a31515;"> </span><span
-     style="color: #0000ff;">NOT NULL</span><span
-     style="color: #a31515;">,</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PAS_NOMBRE
-   </span><span
-     style="color: #0000ff;">TEXT</span><span
-     style="color: #a31515;"> </span><span
-     style="color: #0000ff;">NOT NULL</span><span
-     style="color: #a31515;">,</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PAS_MODIFICACION
-   </span><span
-     style="color: #0000ff;">INTEGER</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-     style="color: #0000ff;">NOT NULL</span><span
-     style="color: #a31515;">,</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PAS_ELIMINADO
-   </span><span
-     style="color: #0000ff;">INTEGER</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-     style="color: #0000ff;">NOT NULL</span><span
-     style="color: #a31515;">,</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-     style="color: #0000ff;">CONSTRAINT</span><span
-     style="color: #a31515;"> PAS_PK</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-     style="color: #0000ff;">PRIMARY KEY</span><span
-     style="color: #a31515;">(PAS_UUID)</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;)</span><span
-     style="color: #a31515;">'</span></div>
-  <div>&nbsp;);</div>
-  <div>}</div><br>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >C. srv / dao / pasatiempoAgrega.php</h1><muestra-codigo>
+         <h1 >3. srv / dao / pasatiempoAgrega.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/../modelo/Pasatiempo.php"</span>;</div>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/AccesoBd.php"</span>;</div><br>
   <div><span
      style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">pasatiempoAgrega</span>(</div>
-  <div>&nbsp;<span
+     style="color: #795e26;">pasatiempoAgrega</span>(<span
      style="color: #267f99;">Pasatiempo</span> <span
-     style="color: #001080;">$modelo</span></div>
-  <div>)&nbsp;{</div>
+     style="color: #001080;">$modelo</span>)&nbsp;{</div>
   <div>&nbsp;<span
      style="color: #001080;">$modelo</span>-&gt;<span
      style="color: #795e26;">valida</span>();</div>
@@ -1122,25 +843,14 @@
      style="color: #0000ff;">INSERT INTO</span><span
      style="color: #a31515;"> PASATIEMPO</span></div>
   <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;(PAS_UUID,
-    PAS_NOMBRE,</span></div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PAS_MODIFICACION,</span>
-  </div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PAS_ELIMINADO)</span>
-  </div>
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;(PAS_UUID, PAS_NOMBRE,
+    PAS_MODIFICACION, PAS_ELIMINADO)</span></div>
   <div><span
      style="color: #a31515;">&nbsp;&nbsp;&nbsp;</span><span
      style="color: #0000ff;">VALUES</span></div>
   <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;(:uuid, :nombre,</span>
-  </div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:modificacion,</span>
-  </div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:eliminado)</span><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;(:uuid, :nombre,
+    :modificacion, :eliminado)</span><span
      style="color: #a31515;">"</span></div>
   <div>&nbsp;);</div>
   <div>&nbsp;<span
@@ -1155,13 +865,11 @@
      style="color: #001080;">$modelo</span>-&gt;<span
      style="color: #001080;">nombre</span>,</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #a31515;">":modificacion"</span> =&gt;</div>
-  <div>&nbsp;&nbsp;<span
+     style="color: #a31515;">":modificacion"</span> =&gt; <span
      style="color: #001080;">$modelo</span>-&gt;<span
      style="color: #001080;">modificacion</span>,</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #a31515;">":eliminado"</span> =&gt;</div>
-  <div>&nbsp;&nbsp;<span
+     style="color: #a31515;">":eliminado"</span> =&gt; <span
      style="color: #001080;">$modelo</span>-&gt;<span
      style="color: #001080;">eliminado</span> ? <span
      style="color: #098658;">1</span> : <span
@@ -1172,29 +880,26 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >D. srv / dao / pasatiempoBusca.php</h1><muestra-codigo>
+         <h1 >4. srv / dao / pasatiempoBusca.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/../modelo/Pasatiempo.php"</span>;</div>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/AccesoBd.php"</span>;</div><br>
   <div><span
      style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">pasatiempoBusca</span>(</div>
-  <div>&nbsp;<span
+     style="color: #795e26;">pasatiempoBusca</span>(<span
      style="color: #0000ff;">string</span> <span
-     style="color: #001080;">$uuid</span></div>
-  <div>): <span
+     style="color: #001080;">$uuid</span>): <span
      style="color: #0000ff;">false</span>|<span
-     style="color: #267f99;">Pasatiempo</span>&nbsp;{</div>
+     style="color: #267f99;">Pasatiempo</span></div>
+  <div>{</div>
   <div>&nbsp;<span
      style="color: #001080;">$con</span> = <span
      style="color: #267f99;">AccesoBd</span>::<span
@@ -1215,10 +920,8 @@
      style="color: #0000ff;">AS</span><span
      style="color: #a31515;"> nombre,</span></div>
   <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;PAS_MODIFICACION</span>
-  </div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;PAS_MODIFICACION
+   </span><span
      style="color: #0000ff;">AS</span><span
      style="color: #a31515;"> modificacion,</span></div>
   <div><span
@@ -1238,17 +941,14 @@
   <div>&nbsp;);</div>
   <div>&nbsp;<span
      style="color: #001080;">$stmt</span>-&gt;<span
-     style="color: #795e26;">execute</span>(</div>
-  <div>&nbsp;&nbsp;[<span
+     style="color: #795e26;">execute</span>([<span
      style="color: #a31515;">":uuid"</span> =&gt; <span
-     style="color: #001080;">$uuid</span>]</div>
-  <div>&nbsp;);</div>
+     style="color: #001080;">$uuid</span>]);</div>
   <div>&nbsp;<span
      style="color: #001080;">$stmt</span>-&gt;<span
      style="color: #795e26;">setFetchMode</span>(</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #267f99;">PDO</span>::FETCH_CLASS</div>
-  <div>&nbsp;&nbsp;&nbsp;| <span
+     style="color: #267f99;">PDO</span>::FETCH_CLASS | <span
      style="color: #267f99;">PDO</span>::FETCH_PROPS_LATE,</div>
   <div>&nbsp;&nbsp;<span
      style="color: #267f99;">Pasatiempo</span>::<span
@@ -1263,26 +963,23 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >E. srv / dao / pasatiempoConsultaNoEliminados.php</h1><muestra-codigo>
+         <h1 >5. srv / dao / pasatiempoConsultaNoEliminados.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/../modelo/Pasatiempo.php"</span>;</div>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/AccesoBd.php"</span>;</div>
   <div><span
      style="color: #af00db;">require_once</span> <span
      style="color: #0000ff;">__DIR__</span> . <span
-     style="color: #a31515;">"/../../"</span> .</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"lib/php/recibeFetchAll.php"</span>;</div><br>
+     style="color: #a31515;">"/../../lib/php/recibeFetchAll.php"</span>;</div>
+  <br>
   <div><span
      style="color: #008000;">/**&nbsp;</span><span
      style="color: #0000ff;">@return</span><span
@@ -1291,8 +988,7 @@
      style="color: #0000ff;">[]</span><span
      style="color: #008000;"> */</span></div>
   <div><span
-     style="color: #0000ff;">function</span></div>
-  <div><span
+     style="color: #0000ff;">function</span> <span
      style="color: #795e26;">pasatiempoConsultaNoEliminados</span>()</div>
   <div>{</div>
   <div>&nbsp;<span
@@ -1315,10 +1011,8 @@
      style="color: #0000ff;">AS</span><span
      style="color: #a31515;"> nombre,</span></div>
   <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;PAS_MODIFICACION</span>
-  </div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;PAS_MODIFICACION
+   </span><span
      style="color: #0000ff;">AS</span><span
      style="color: #a31515;"> modificacion,</span></div>
   <div><span
@@ -1334,7 +1028,11 @@
      style="color: #0000ff;">WHERE</span><span
      style="color: #a31515;"> PAS_ELIMINADO </span>=<span
      style="color: #a31515;"> </span><span
-     style="color: #098658;">0</span><span
+     style="color: #098658;">0</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;</span><span
+     style="color: #0000ff;">ORDER BY</span><span
+     style="color: #a31515;"> PAS_NOMBRE</span><span
      style="color: #a31515;">"</span></div>
   <div>&nbsp;);</div>
   <div>&nbsp;<span
@@ -1342,8 +1040,7 @@
      style="color: #001080;">$stmt</span>-&gt;<span
      style="color: #795e26;">fetchAll</span>(</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #267f99;">PDO</span>::FETCH_CLASS</div>
-  <div>&nbsp;&nbsp;&nbsp;| <span
+     style="color: #267f99;">PDO</span>::FETCH_CLASS | <span
      style="color: #267f99;">PDO</span>::FETCH_PROPS_LATE,</div>
   <div>&nbsp;&nbsp;<span
      style="color: #267f99;">Pasatiempo</span>::<span
@@ -1358,27 +1055,24 @@
 </muestra-codigo>
       </section>
      <section >
-         <h1 >F. srv / dao / pasatiempoModifica.php</h1><muestra-codigo>
+         <h1 >6. srv / dao / pasatiempoModifica.php</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #800000;">&lt;?php</span></div><br>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/../modelo/Pasatiempo.php"</span>;</div>
   <div><span
      style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> .</div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">__DIR__</span> . <span
      style="color: #a31515;">"/AccesoBd.php"</span>;</div><br>
   <div><span
      style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">pasatiempoModifica</span>(</div>
-  <div>&nbsp;<span
+     style="color: #795e26;">pasatiempoModifica</span>(<span
      style="color: #267f99;">Pasatiempo</span> <span
-     style="color: #001080;">$modelo</span></div>
-  <div>)&nbsp;{</div>
+     style="color: #001080;">$modelo</span>)</div>
+  <div>{</div>
   <div>&nbsp;<span
      style="color: #001080;">$modelo</span>-&gt;<span
      style="color: #795e26;">valida</span>();</div>
@@ -1396,15 +1090,14 @@
      style="color: #a31515;"> PASATIEMPO</span></div>
   <div><span
      style="color: #a31515;">&nbsp;&nbsp;&nbsp;</span><span
-     style="color: #0000ff;">SET</span><span
-     style="color: #a31515;"> PAS_NOMBRE </span>=<span
+     style="color: #0000ff;">SET</span></div>
+  <div><span
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;PAS_NOMBRE </span>=<span
      style="color: #a31515;"> :nombre,</span></div>
   <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;PAS_MODIFICACION </span>=
-  </div>
-  <div><span
-     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:modificacion,</span>
-  </div>
+     style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;PAS_MODIFICACION
+   </span>=<span
+     style="color: #a31515;"> :modificacion,</span></div>
   <div><span
      style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;PAS_ELIMINADO </span>=<span
      style="color: #a31515;"> :eliminado</span></div>
@@ -1427,13 +1120,11 @@
      style="color: #001080;">$modelo</span>-&gt;<span
      style="color: #001080;">nombre</span>,</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #a31515;">":modificacion"</span> =&gt;</div>
-  <div>&nbsp;&nbsp;<span
+     style="color: #a31515;">":modificacion"</span> =&gt; <span
      style="color: #001080;">$modelo</span>-&gt;<span
      style="color: #001080;">modificacion</span>,</div>
   <div>&nbsp;&nbsp;<span
-     style="color: #a31515;">":eliminado"</span> =&gt;</div>
-  <div>&nbsp;&nbsp;<span
+     style="color: #a31515;">":eliminado"</span> =&gt; <span
      style="color: #001080;">$modelo</span>-&gt;<span
      style="color: #001080;">eliminado</span> ? <span
      style="color: #098658;">1</span> : <span
@@ -1443,6 +1134,159 @@
  </div>
 </muestra-codigo>
       </section>
+      </section>
+     <section >
+         <h1 >C. srv / srvSincro.php</h1><muestra-codigo>
+ <div>
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/../lib/php/ejecuta.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/../lib/php/leeJson.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/modelo/Pasatiempo.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/modelo/leePasatiempo.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/dao/pasatiempoAgrega.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/dao/pasatiempoBusca.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/dao/pasatiempoConsultaNoEliminados.php"</span>;
+  </div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/dao/pasatiempoModifica.php"</span>;</div><br>
+  <div><span
+     style="color: #795e26;">ejecuta</span>(<span
+     style="color: #0000ff;">function</span> ()&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #001080;">$lista</span> = <span
+     style="color: #795e26;">leeJson</span>();</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (!<span
+     style="color: #795e26;">is_array</span>(<span
+     style="color: #001080;">$lista</span>))&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">$lista</span> = [];</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">foreach</span> (<span
+     style="color: #001080;">$lista</span> as <span
+     style="color: #001080;">$objeto</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">$modeloEnElCliente</span> = <span
+     style="color: #795e26;">leePasatiempo</span>(<span
+     style="color: #001080;">$objeto</span>);</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">$modeloEnElServidor</span> = <span
+     style="color: #795e26;">pasatiempoBusca</span>(<span
+     style="color: #001080;">$modeloEnElCliente</span>-&gt;<span
+     style="color: #001080;">uuid</span>);</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">$modeloEnElServidor</span> === <span
+     style="color: #0000ff;">false</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;CONFLICTO. El objeto no ha estado en el
+    servidor.</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;AGREGARLO solamente
+    si no está eliminado. */</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (!<span
+     style="color: #001080;">$modeloEnElCliente</span>-&gt;<span
+     style="color: #001080;">eliminado</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">pasatiempoAgrega</span>(<span
+     style="color: #001080;">$modeloEnElCliente</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">elseif</span> (</div>
+  <div>&nbsp;&nbsp;&nbsp;!<span
+     style="color: #001080;">$modeloEnElServidor</span>-&gt;<span
+     style="color: #001080;">eliminado</span> &amp;&amp; <span
+     style="color: #001080;">$modeloEnElCliente</span>-&gt;<span
+     style="color: #001080;">eliminado</span></div>
+  <div>&nbsp;&nbsp;)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;CONFLICTO. El registro está en el servidor,
+    donde no se ha</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;eliminado, pero ha
+    sido eliminado en el cliente.</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Gana el cliente,
+    porque optamos por no revivir lo que se ha</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;borrado. */</span>
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">pasatiempoModifica</span>(<span
+     style="color: #001080;">$modeloEnElCliente</span>);</div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span> <span
+     style="color: #af00db;">if</span> (</div>
+  <div>&nbsp;&nbsp;&nbsp;!<span
+     style="color: #001080;">$modeloEnElCliente</span>-&gt;<span
+     style="color: #001080;">eliminado</span> &amp;&amp; !<span
+     style="color: #001080;">$modeloEnElServidor</span>-&gt;<span
+     style="color: #001080;">eliminado</span></div>
+  <div>&nbsp;&nbsp;)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;CONFLICTO. El registro está tanto en el
+    servidor como en el</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;cliente. Los
+    datos pueden ser diferentes.</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;PREVALECE LA FECHA
+    MÁS GRANDE. Cuando gana el servidor no se</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;hace nada.*/</span>
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">$modeloEnElCliente</span>-&gt;<span
+     style="color: #001080;">modificacion</span> &gt; <span
+     style="color: #001080;">$modeloEnElServidor</span>-&gt;<span
+     style="color: #001080;">modificacion</span></div>
+  <div>&nbsp;&nbsp;&nbsp;)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">// La versión del cliente es más nueva y
+    prevalece.</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">pasatiempoModifica</span>(<span
+     style="color: #001080;">$modeloEnElCliente</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span
+     style="color: #001080;">$lista</span> = <span
+     style="color: #795e26;">pasatiempoConsultaNoEliminados</span>();</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">$lista</span>;</div>
+  <div>});</div><br>
+ </div>
+</muestra-codigo>
       </section>
 </body>
 

@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>A. js / dao / accesoBd.js - GilPG DM</title>
+ <title>1. js / dao / accesoBd.js - GilPG DM</title>
  <meta name="description" content="Código de «js/dao/accesoBd.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -463,14 +463,18 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >A. js / dao / accesoBd.js</h1><muestra-codigo>
+   <h1 >1. js / dao / accesoBd.js</h1><muestra-codigo>
  <div>
   <div><span
      style="color: #af00db;">export</span> <span
      style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">ALMACEN_PASATIEMPO</span> =</div>
-  <div>&nbsp;<span
+     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span> = <span
      style="color: #a31515;">"Pasatiempo"</span></div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">NOMBRE_DEL_INDICE_NOMBRE</span> = <span
+     style="color: #a31515;">"nombre"</span></div>
   <div><span
      style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">BD_NOMBRE</span> = <span
@@ -483,96 +487,99 @@
      style="color: #008000;">/**&nbsp;</span><span
      style="color: #0000ff;">@type</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{Promise&lt;IDBDatabase&gt;}</span><span
+     style="color: #267f99;">{ Promise&lt;IDBDatabase&gt; }</span><span
      style="color: #008000;"> */</span></div>
   <div><span
      style="color: #af00db;">export</span> <span
      style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">accesoBd</span> =</div>
-  <div>&nbsp;<span
+     style="color: #0070c1;">accesoBd</span> = <span
      style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Promise</span>((<span
      style="color: #795e26;">resolve</span>, <span
      style="color: #795e26;">reject</span>) <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">/*&nbsp;Se solicita abrir la base de datos,
+    indicando nombre y</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;*&nbsp;número de versión. */</span>
+  </div>
+  <div>&nbsp;<span
      style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">solicitud</span> = <span
      style="color: #001080;">indexedDB</span>.<span
-     style="color: #795e26;">open</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">open</span>(<span
      style="color: #0070c1;">BD_NOMBRE</span>, <span
      style="color: #0070c1;">BD_VERSION</span>)</div><br>
-  <div>&nbsp;&nbsp;<span
+  <div>&nbsp;<span
+     style="color: #008000;">// Si se presenta un error, rechaza la
+    promesa.</span></div>
+  <div>&nbsp;<span
      style="color: #0070c1;">solicitud</span>.<span
-     style="color: #795e26;">onerror</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;() <span
+     style="color: #795e26;">onerror</span> = () <span
      style="color: #0000ff;">=&gt;</span> <span
      style="color: #795e26;">reject</span>(<span
      style="color: #0070c1;">solicitud</span>.<span
      style="color: #0070c1;">error</span>)</div><br>
-  <div>&nbsp;&nbsp;<span
+  <div>&nbsp;<span
+     style="color: #008000;">// Si se abre con éxito, devuelve una conexión a la
+    base de datos.</span></div>
+  <div>&nbsp;<span
      style="color: #0070c1;">solicitud</span>.<span
-     style="color: #795e26;">onsuccess</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;() <span
+     style="color: #795e26;">onsuccess</span> = () <span
      style="color: #0000ff;">=&gt;</span> <span
      style="color: #795e26;">resolve</span>(<span
      style="color: #0070c1;">solicitud</span>.<span
-     style="color: #0070c1;">result</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Automáticamente se inicia una</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;transacción para cambio
-    de</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;versión. */</span></div>
-  <div>&nbsp;&nbsp;<span
+     style="color: #0070c1;">result</span>)</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">// Si es necesario, se inicia una transacción para
+    cambio de versión.</span></div>
+  <div>&nbsp;<span
      style="color: #0070c1;">solicitud</span>.<span
-     style="color: #795e26;">onupgradeneeded</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;() <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">onupgradeneeded</span> = () <span
+     style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
+  <div>&nbsp;&nbsp;<span
      style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">bd</span> = <span
      style="color: #0070c1;">solicitud</span>.<span
-     style="color: #0070c1;">result</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Como hay cambio de versión,</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;borra el
-    almacén si es que</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;existe.
-    */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">result</span></div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">// Como hay cambio de versión, borra el almacén si
+    es que existe.</span></div>
+  <div>&nbsp;&nbsp;<span
      style="color: #af00db;">if</span> (<span
      style="color: #0070c1;">bd</span>.<span
-     style="color: #0070c1;">objectStoreNames</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span
-     style="color: #795e26;">contains</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">ALMACEN_PASATIEMPO</span>))&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">objectStoreNames</span>.<span
+     style="color: #795e26;">contains</span>(<span
+     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>))&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0070c1;">bd</span>.<span
-     style="color: #795e26;">deleteObjectStore</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">ALMACEN_PASATIEMPO</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Crea el almacén "Pasatiempo"</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;con el campo
-    llave "uuid".*/</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">deleteObjectStore</span>(<span
+     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>)</div>
+  <div>&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">// Crea el almacén "Pasatiempo" con el campo llave
+    "uuid".</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">almacenPasatiempo</span> =</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0070c1;">bd</span>.<span
-     style="color: #795e26;">createObjectStore</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">ALMACEN_PASATIEMPO</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <span
-     style="color: #001080;">keyPath:</span> <span
-     style="color: #a31515;">"uuid"</span> })</div>
-  <div>&nbsp;&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;})</div>
+     style="color: #795e26;">createObjectStore</span>(<span
+     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>,&nbsp;{ <span
+     style="color: #001080;">keyPath</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #a31515;">"uuid"</span> })</div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">// Crea un índice ordenado por el campo "nombre"
+    que no acepta duplicados.</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0070c1;">almacenPasatiempo</span>.<span
+     style="color: #795e26;">createIndex</span>(<span
+     style="color: #0070c1;">NOMBRE_DEL_INDICE_NOMBRE</span>, <span
+     style="color: #a31515;">"nombre"</span>)</div>
+  <div>&nbsp;}</div><br>
+  <div>})</div>
  </div>
 </muestra-codigo>
  <footer>
@@ -598,8 +605,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m09sincronizacion/m-js/m-dao/index.html" title="4. Carpeta «js / dao»">◀</a>
- <a class="siguiente" href="/m09sincronizacion/m-js/m-dao/m-pasatiempoAgrega-js.html" title="B. js / dao / pasatiempoAgrega.js">▶</a>
+ <a class="anterior" href="/m09sincronizacion/m-js/m-dao/index.html" title="C. Carpeta « js / dao »">◀</a>
+ <a class="siguiente" href="/m09sincronizacion/m-js/m-dao/m-pasatiempoAgrega-js.html" title="2. js / dao / pasatiempoAgrega.js">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -616,16 +623,16 @@
     <a href="/m09sincronizacion/">11. Sincronización</a>
    </p>
    <p>
-    <a href="/m09sincronizacion/m-js/">J. Carpeta «js»</a>
+    <a href="/m09sincronizacion/m-js/">M. Carpeta « js »</a>
    </p>
    
      <p>
-      <a class="paginaAnterior" href="/m09sincronizacion/m-js/m-generaHtmlDePasatiempos-js.html"
-        title="3. js / generaHtmlDePasatiempos.js">▲</a>
+      <a class="paginaAnterior" href="/m09sincronizacion/m-js/m-modelo/m-leePasatiempo-js.html"
+        title="3. js / modelo / leePasatiempo.js">▲</a>
      </p>
-   <h1><a href="/m09sincronizacion/m-js/m-dao/index.html">4. Carpeta «js / dao»</a></h1>
+   <h1><a href="/m09sincronizacion/m-js/m-dao/index.html">C. Carpeta « js / dao »</a></h1>
    
-   <ol type="A">
+   <ol type="1">
     
    <li>
     <p>
@@ -671,7 +678,7 @@
    
     <p>
      <a class="paginaSiguiente" href="/m09sincronizacion/m-srv/index.html"
-       title="K. Carpeta «srv»">▼</a>
+       title="N. Carpeta « srv »">▼</a>
     </p>
  
 </nav>

@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>D. js / dao / pasatiempoConsultaNoEliminados.js - GilPG DM</title>
+ <title>4. js / dao / pasatiempoConsultaNoEliminados.js - GilPG DM</title>
  <meta name="description" content="Código de «js/dao/pasatiempoConsultaNoEliminados.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -463,33 +463,18 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >D. js / dao / pasatiempoConsultaNoEliminados.js</h1><muestra-codigo>
+   <h1 >4. js / dao / pasatiempoConsultaNoEliminados.js</h1><muestra-codigo>
  <div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">bdConsulta</span></div>
-  <div>}&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">bdConsulta</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
      style="color: #a31515;">"../../lib/js/bdConsulta.js"</span></div>
   <div><span
      style="color: #af00db;">import</span>&nbsp;{</div>
   <div>&nbsp;<span
-     style="color: #001080;">Pasatiempo</span></div>
-  <div>}&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../modelo/Pasatiempo.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">leePasatiempo</span></div>
-  <div>}&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../modelo/leePasatiempo.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">ALMACEN_PASATIEMPO</span>, <span
+     style="color: #001080;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>, <span
+     style="color: #001080;">NOMBRE_DEL_INDICE_NOMBRE</span>, <span
      style="color: #001080;">accesoBd</span></div>
   <div>}&nbsp;<span
      style="color: #af00db;">from</span> <span
@@ -497,26 +482,21 @@
   <div><span
      style="color: #af00db;">export</span> <span
      style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span></div>
-  <div>&nbsp;<span
+     style="color: #0000ff;">function</span> <span
      style="color: #795e26;">pasatiempoConsultaNoEliminados</span>()&nbsp;{
-  </div>
+  </div><br>
   <div>&nbsp;<span
      style="color: #af00db;">return</span> <span
      style="color: #795e26;">bdConsulta</span>(<span
-     style="color: #0070c1;">accesoBd</span>,</div>
-  <div>&nbsp;&nbsp;[<span
-     style="color: #0070c1;">ALMACEN_PASATIEMPO</span>],</div>
+     style="color: #0070c1;">accesoBd</span>, [<span
+     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>],</div>
   <div>&nbsp;&nbsp;<span
      style="color: #008000;">/**</span></div>
   <div><span
      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{IDBTransaction</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span
+     style="color: #267f99;">{ IDBTransaction }</span><span
      style="color: #008000;"> </span><span
      style="color: #001080;">transaccion</span><span
      style="color: #008000;"> </span></div>
@@ -524,10 +504,7 @@
      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{(r: Pasatiempo[])=&gt;any</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span
+     style="color: #267f99;">{ (resultado: any[]) =&gt; any }</span><span
      style="color: #008000;"> </span><span
      style="color: #001080;">resolve</span><span
      style="color: #008000;"> </span></div>
@@ -536,145 +513,116 @@
   <div>&nbsp;&nbsp;(<span
      style="color: #001080;">transaccion</span>, <span
      style="color: #795e26;">resolve</span>) <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/**&nbsp;</span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{Pasatiempo[]}</span><span
-     style="color: #008000;"> */</span></div>
+     style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">resultado</span> = []</div>
+     style="color: #0070c1;">resultado</span> = []</div><br>
   <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Pide un cursor para recorrer</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;cada uno de los
-    registristros</span></div>
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">almacenPasatiempo</span> =</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">transaccion</span>.<span
+     style="color: #795e26;">objectStore</span>(<span
+     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>)</div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">// Usa el índice "nombre" para reculeprar los datos
+    ordenadors.</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">indiceNombre</span> = <span
+     style="color: #0070c1;">almacenPasatiempo</span>.<span
+     style="color: #795e26;">index</span>(<span
+     style="color: #0070c1;">NOMBRE_DEL_INDICE_NOMBRE</span>)</div><br>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;Pide un cursor para recorrer cada uno de
+    los registristros</span></div>
   <div><span
      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;que devuelve la
     consulta. */</span></div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">consulta</span> = <span
-     style="color: #001080;">transaccion</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;.<span
-     style="color: #795e26;">objectStore</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">ALMACEN_PASATIEMPO</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;.<span
-     style="color: #795e26;">openCursor</span>()</div>
+     style="color: #0070c1;">indiceNombre</span>.<span
+     style="color: #795e26;">openCursor</span>()</div><br>
   <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;onsuccess se invoca por cada</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;uno de los registros
-    de la</span></div>
+     style="color: #008000;">/*&nbsp;onsuccess se invoca por cada uno de los
+    registros de la</span></div>
   <div><span
      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;consulta y una vez
-    cuando se</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;acaban dichos
-    registros.. */</span></div>
+    cuando se acaban dichos registros. */</span></div>
   <div>&nbsp;&nbsp;&nbsp;<span
      style="color: #0070c1;">consulta</span>.<span
      style="color: #795e26;">onsuccess</span> = () <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+     style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;El cursor que corresponde al</span></div>
+     style="color: #008000;">/*&nbsp;El cursor que corresponde al registro se
+    recupera usando</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;registro se
-    recupera con</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;consulta.result
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;consulta.result
     */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #0000ff;">const</span> <span
      style="color: #0070c1;">cursor</span> = <span
-     style="color: #001080;">consulta</span>.<span
-     style="color: #001080;">result</span></div>
+     style="color: #0070c1;">consulta</span>.<span
+     style="color: #0070c1;">result</span></div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #af00db;">if</span> (<span
-     style="color: #001080;">cursor</span> === <span
-     style="color: #0000ff;">null</span>)&nbsp;{</div>
+     style="color: #0070c1;">cursor</span> === <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Si el cursor es igual a</span></div>
+     style="color: #008000;">/*&nbsp;Si el cursor es igual a null, ya no hay más
+    registros que</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;null, ya
-    no hay más</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;registros
-    que procesar; por</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;lo
-    mismo, se devuelve el</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;resultado
-    con los</span></div>
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;procesar;
+    por lo mismo, se devuelve el resultado con los</span></div>
   <div><span
      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;pasatiempos
-    recuperados,</span></div>
+    recuperados, usando</span></div>
   <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;usando
-    resolve(resultado).</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">resolve</span>(<span
-     style="color: #001080;">resultado</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Si el cursor es diferente a</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;null, si
-    hay más registros.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;El
-    registro que sigue se</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;obntiene
-    con cursor.value*/</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">let</span> <span
-     style="color: #001080;">objeto</span> = <span
-     style="color: #001080;">cursor</span>.<span
-     style="color: #001080;">value</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">modelo</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">leePasatiempo</span>(<span
-     style="color: #001080;">objeto</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (!<span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">eliminado</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">resultado</span>.<span
-     style="color: #795e26;">push</span>(<span
-     style="color: #001080;">modelo</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Busca el siguiente registro</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;de la
-    consulta, que se</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;obtiene
-    la siguiente vez</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;que se
-    invoque la función</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;unsuccess.
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;resolve(resultado).
     */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">cursor</span>.<span
-     style="color: #795e26;">continue</span>()</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;})</div>
-  <div>}</div>
+     style="color: #795e26;">resolve</span>(<span
+     style="color: #0070c1;">resultado</span>)</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;Si el cursor es diferente a null, si hay
+    más registros.</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;El
+    registro que sigue se obtiene con</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;cursor.value*/</span>
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">resultado</span>.<span
+     style="color: #795e26;">push</span>(<span
+     style="color: #0070c1;">cursor</span>.<span
+     style="color: #0070c1;">value</span>)</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;Busca el siguiente registro de la consulta,
+    que se obtiene</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;la
+    siguiente vez que se invoque la función</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;onsuccess.
+    */</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0070c1;">cursor</span>.<span
+     style="color: #795e26;">continue</span>()</div><br>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;})</div><br>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div><span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"pasatiempoConsultaNoEliminados"</span>] = <span
+     style="color: #795e26;">pasatiempoConsultaNoEliminados</span></div>
  </div>
 </muestra-codigo>
  <footer>
@@ -700,8 +648,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m09sincronizacion/m-js/m-dao/m-pasatiempoBusca-js.html" title="C. js / dao / pasatiempoBusca.js">◀</a>
- <a class="siguiente" href="/m09sincronizacion/m-js/m-dao/m-pasatiempoConsultaTodos-js.html" title="E. js / dao / pasatiempoConsultaTodos.js">▶</a>
+ <a class="anterior" href="/m09sincronizacion/m-js/m-dao/m-pasatiempoBusca-js.html" title="3. js / dao / pasatiempoBusca.js">◀</a>
+ <a class="siguiente" href="/m09sincronizacion/m-js/m-dao/m-pasatiempoConsultaTodos-js.html" title="5. js / dao / pasatiempoConsultaTodos.js">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -718,16 +666,16 @@
     <a href="/m09sincronizacion/">11. Sincronización</a>
    </p>
    <p>
-    <a href="/m09sincronizacion/m-js/">J. Carpeta «js»</a>
+    <a href="/m09sincronizacion/m-js/">M. Carpeta « js »</a>
    </p>
    
      <p>
-      <a class="paginaAnterior" href="/m09sincronizacion/m-js/m-generaHtmlDePasatiempos-js.html"
-        title="3. js / generaHtmlDePasatiempos.js">▲</a>
+      <a class="paginaAnterior" href="/m09sincronizacion/m-js/m-modelo/m-leePasatiempo-js.html"
+        title="3. js / modelo / leePasatiempo.js">▲</a>
      </p>
-   <h1><a href="/m09sincronizacion/m-js/m-dao/index.html">4. Carpeta «js / dao»</a></h1>
+   <h1><a href="/m09sincronizacion/m-js/m-dao/index.html">C. Carpeta « js / dao »</a></h1>
    
-   <ol type="A">
+   <ol type="1">
     
    <li>
     <p>
@@ -773,7 +721,7 @@
    
     <p>
      <a class="paginaSiguiente" href="/m09sincronizacion/m-srv/index.html"
-       title="K. Carpeta «srv»">▼</a>
+       title="N. Carpeta « srv »">▼</a>
     </p>
  
 </nav>

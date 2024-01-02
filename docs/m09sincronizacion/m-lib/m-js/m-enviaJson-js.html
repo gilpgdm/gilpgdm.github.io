@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>E. lib / js / enviaJson.js - GilPG DM</title>
+ <title>6. lib / js / enviaJson.js - GilPG DM</title>
  <meta name="description" content="Código de «lib/js/enviaJson.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -463,56 +463,51 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >E. lib / js / enviaJson.js</h1><muestra-codigo>
+   <h1 >6. lib / js / enviaJson.js</h1><muestra-codigo>
  <div>
   <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">ejecuta</span></div>
-  <div>}&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">ejecuta</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./ejecuta.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">MetodoHttp</span></div>
-  <div>}&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./MetodoHttp.js"</span></div><br>
+     style="color: #a31515;">"./ejecuta.js"</span></div><br>
   <div><span
      style="color: #008000;">/**</span></div>
   <div><span
-     style="color: #008000;">*&nbsp;</span><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{Object}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">datos</span></div>
-  <div><span
-     style="color: #008000;">*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{MetodoHttp}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">metodoHttp</span></div>
-  <div><span
-     style="color: #008000;">*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
+     style="color: #267f99;">{ string }</span><span
      style="color: #008000;"> </span><span
      style="color: #001080;">url</span></div>
   <div><span
-     style="color: #008000;">*/</span></div>
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ Object }</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">datos</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ "GET" | "POST"| "PUT" | "PATCH" | "DELETE" |
+    "TRACE" | "OPTIONS"</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*</span><span
+     style="color: #267f99;">&nbsp;&nbsp;| "CONNECT" | "HEAD" }</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">metodoHttp</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
   <div><span
      style="color: #af00db;">export</span> <span
      style="color: #0000ff;">async</span> <span
      style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">enviaJson</span></div>
-  <div>&nbsp;(<span
+     style="color: #795e26;">enviaJson</span>(<span
+     style="color: #001080;">url</span>, <span
      style="color: #001080;">datos</span>, <span
-     style="color: #001080;">metodoHttp</span>, <span
-     style="color: #001080;">url</span>)&nbsp;{</div>
+     style="color: #001080;">metodoHttp</span> = <span
+     style="color: #a31515;">"POST"</span>)&nbsp;{</div>
   <div>&nbsp;<span
      style="color: #af00db;">return</span> <span
      style="color: #af00db;">await</span> <span
@@ -525,13 +520,10 @@
      style="color: #001080;">metodoHttp</span>,</div>
   <div>&nbsp;&nbsp;<span
      style="color: #001080;">headers</span><span
-     style="color: #001080;">:</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">:</span>&nbsp;{ <span
      style="color: #a31515;">"Content-Type"</span><span
-     style="color: #001080;">:</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"application/json"</span></div>
-  <div>&nbsp;&nbsp;},</div>
+     style="color: #001080;">:</span> <span
+     style="color: #a31515;">"application/json"</span> },</div>
   <div>&nbsp;&nbsp;<span
      style="color: #001080;">body</span><span
      style="color: #001080;">:</span> <span
@@ -540,6 +532,13 @@
      style="color: #001080;">datos</span>)</div>
   <div>&nbsp;}))</div>
   <div>}</div><br>
+  <div><span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div><span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"enviaJson"</span>] = <span
+     style="color: #795e26;">enviaJson</span></div>
  </div>
 </muestra-codigo>
  <footer>
@@ -565,8 +564,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m09sincronizacion/m-lib/m-js/m-ejecuta-js.html" title="D. lib / js / ejecuta.js">◀</a>
- <a class="siguiente" href="/m09sincronizacion/m-lib/m-js/m-htmlentities-js.html" title="F. lib / js / htmlentities.js">▶</a>
+ <a class="anterior" href="/m09sincronizacion/m-lib/m-js/m-ejecuta-js.html" title="5. lib / js / ejecuta.js">◀</a>
+ <a class="siguiente" href="/m09sincronizacion/m-lib/m-js/m-getArchivoSeleccionado-js.html" title="7. lib / js / getArchivoSeleccionado.js">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -583,16 +582,16 @@
     <a href="/m09sincronizacion/">11. Sincronización</a>
    </p>
    <p>
-    <a href="/m09sincronizacion/m-lib/">L. Carpeta «lib»</a>
+    <a href="/m09sincronizacion/m-lib/">O. Carpeta « lib »</a>
    </p>
    
      <p>
       <a class="paginaAnterior" href="/m09sincronizacion/m-lib/index.html"
-        title="L. Carpeta «lib»">▲</a>
+        title="O. Carpeta « lib »">▲</a>
      </p>
-   <h1><a href="/m09sincronizacion/m-lib/m-js/index.html">1. Carpeta «lib / js»</a></h1>
+   <h1><a href="/m09sincronizacion/m-lib/m-js/index.html">A. Carpeta « lib / js »</a></h1>
    
-   <ol type="A">
+   <ol type="1">
     
    <li>
     <p>
@@ -602,6 +601,11 @@
    <li>
     <p>
      <a href="/m09sincronizacion/m-lib/m-js/m-bdEjecuta-js.html">lib / js / bdEjecuta.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-buscaElementoHtml-js.html">lib / js / buscaElementoHtml.js</a>
     </p>
    </li>
    <li>
@@ -621,12 +625,27 @@
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-htmlentities-js.html">lib / js / htmlentities.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-getArchivoSeleccionado-js.html">lib / js / getArchivoSeleccionado.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-MetodoHttp-js.html">lib / js / MetodoHttp.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-getDataUrlDeSeleccion-js.html">lib / js / getDataUrlDeSeleccion.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-getInputParaElementoHtml-js.html">lib / js / getInputParaElementoHtml.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraArray-js.html">lib / js / muestraArray.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraBoolean-js.html">lib / js / muestraBoolean.js</a>
     </p>
    </li>
    <li>
@@ -636,12 +655,37 @@
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-muestraTexto-js.html">lib / js / muestraTexto.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraImagen-js.html">lib / js / muestraImagen.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-parametrosDePagina-js.html">lib / js / parametrosDePagina.js</a>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraInnerHtml-js.html">lib / js / muestraInnerHtml.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraNumber-js.html">lib / js / muestraNumber.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraObjeto-js.html">lib / js / muestraObjeto.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraString-js.html">lib / js / muestraString.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraTextContent-js.html">lib / js / muestraTextContent.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-lib/m-js/m-muestraValor-js.html">lib / js / muestraValor.js</a>
     </p>
    </li>
    <li>
@@ -653,7 +697,7 @@
    
     <p>
      <a class="paginaSiguiente" href="/m09sincronizacion/m-lib/m-php/index.html"
-       title="2. Carpeta «lib / php»">▼</a>
+       title="B. Carpeta « lib / php »">▼</a>
     </p>
  
 </nav>
@@ -669,7 +713,7 @@
  /**@type {string} */
  let urlAnterior = "/m09sincronizacion/m-lib/m-js/m-ejecuta-js.html"
  /**@type {string} */
- let urlSiguiente = "/m09sincronizacion/m-lib/m-js/m-htmlentities-js.html"
+ let urlSiguiente = "/m09sincronizacion/m-lib/m-js/m-getArchivoSeleccionado-js.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
