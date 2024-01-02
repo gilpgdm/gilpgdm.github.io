@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" prefix="og: https://ogp.me/ns#">
 
 <head>
  <meta charset="UTF-8">
@@ -8,8 +8,9 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>Acceso al dispositivo - GilPG DM</title>
- <meta name="description" content="Página para imprimir de la lección «Acceso al dispositivo».">
+ <title>D. Uso directo de la cámara - GilPG DM</title>
+ <meta name="description" content="Uso directo de la cámara.">
+ <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  :root {
   --padTop: 2rem;
@@ -251,396 +252,217 @@
  }
 </style>
  <style>
- .pruebaDeEscritorio section {
-  display: inline-block;
-  vertical-align: top;
-  margin: 1em;
+ body {
+  scroll-padding-top: var(--padTop);
  }
 
- .pruebaDeEscritorio section pre {
+ body:not(.sinTransicion) #principal {
+  animation-timing-function: var(--introFuncion);
+  animation-duration: var(--introDuracion);
+  animation-fill-mode: forwards;
+  animation-name: aparece;
+ }
+
+ @keyframes aparece {
+  from {
+   opacity: 0;
+  }
+
+  to {
+   opacity: 1;
+  }
+ }
+
+ #principal {
+  padding-top: var(--padTop);
+  box-sizing: border-box;
+  transition: margin-left 0.7s ease-in-out;
+ }
+
+ #principal a {
+  word-wrap: break-word;
+ }
+
+ #principal>#abre {
+  position: fixed;
+  top: var(--gap);
+  left: var(--gap);
+  transition: 0.7s ease-in-out;
+ }
+
+ #principal>.anterior {
+  position: fixed;
+  top: var(--gap);
+  background-color: var(--colFondo);
+  transition: 0.7s ease-in-out;
+ }
+
+ #principal>.siguiente {
+  position: fixed;
+  top: var(--gap);
+  right: var(--gap);
+  background-color: var(--colFondo);
+  transition: 0.7s ease-in-out;
+ }
+
+ .scroll #principal>#abre,
+ .scroll #principal>.anterior,
+ .scroll #principal>.siguiente {
+  top: -10rem;
+ }
+
+ #principal h1:not(.default) {
+  text-shadow: var(--colTituloShadow);
+ }
+
+ #nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  overflow: auto;
+  color: var(--colLetra);
+  background-color: var(--colFondoNav);
+  padding: var(--padCont);
+  transition: transform 0.7s ease-in-out;
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+  overflow-wrap: anywhere;
+ }
+
+ #nav::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ #nav::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ #nav::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ #nav::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ #nav p {
   margin: 0;
  }
 
- .pruebaDeEscritorio samp {
-  font-weight: bold;
+ #nav a:not([data-logo]) {
+  display: block;
+  padding: var(--padNav);
  }
 
- .pruebaDeEscritorio .activo {
-  display: inline-block;
-  margin: 0 0.2rem 0 0;
-  vertical-align: top;
-  background-color: var(--colSecundario);
-  border: 1px solid var(--colSecundario);
+ #nav a.actual code,
+ #nav a.actual strong {
+  color: var(--colTituloStrongSel);
  }
 
- .pruebaDeEscritorio :target,
- .pruebaDeEscritorio :target caption {
-  background-color: var(--colTarget);
+ #nav h1 a {
+  color: var(--colTituloLetra);
  }
 
- .pruebaDeEscritorio .numero1 {
-  display: inline-block;
-  margin: 0 0.2rem 0 0;
-  color: var(--colStack1);
-  border: 1px solid var(--colStack1);
+ #nav a.actual {
+  color: var(--colFondo);
+  background-color: var(--colNavResaltada);
  }
 
- .pruebaDeEscritorio .numero2 {
-  display: inline-block;
-  color: var(--colStack2);
-  border: 1px solid var(--colStack2);
+ #nav a.paginaAnterior,
+ #nav a.paginaSiguiente {
+  text-align: center;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
  }
 
- .pruebaDeEscritorio .numero3 {
-  display: inline-block;
-  color: var(--colStack3);
-  border: 1px solid var(--colStack3);
+ @media screen and (max-width: 999px) {
+  #principal {
+   max-width: 100vw;
+  }
+
+  #cierra {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: var(--colSombra);
+   transform: translateX(-120%);
+   transition: transform 0.7s ease-out;
+  }
+
+  #nav {
+   width: min(var(--anchoNav), 70%);
+   box-shadow: var(--navSombra);
+  }
+
+  .xmenu>#nav {
+   transform: translateX(-120%);
+  }
+
+  .menu>#cierra,
+  .menu>#nav {
+   transform: translateX(0);
+  }
+
+  #principal>.anterior {
+   left: calc(2 * var(--gap) + 2rem);
+  }
  }
 
- .pruebaDeEscritorio a.parametro1,
- .pruebaDeEscritorio .parametro1 {
-  color: var(--colPar1);
+ @media screen and (min-width: 1000px) {
+  #cierra {
+   display: none;
+  }
+
+  #nav {
+   width: var(--anchoNav);
+  }
+
+  .menu>#nav {
+   transform: translateX(-120%);
+  }
+
+  .xmenu>#principal {
+   margin-left: var(--anchoNav)
+  }
+
+  .menu>#principal>.anterior {
+   left: calc(2 * var(--gap) + 2rem);
+  }
+
+  .xmenu>#principal>.anterior {
+   top: var(--gap);
+   left: calc(var(--anchoNav) + var(--gap));
+  }
+
+  .xmenu.scroll #principal>.anterior {
+   top: -10rem;
+  }
  }
 
- .pruebaDeEscritorio a.parametro2,
- .pruebaDeEscritorio .parametro2 {
-  color: var(--colPar2);
- }
+ @media print {
 
- .pruebaDeEscritorio .descongela {
-  color: var(--colDescongela);
- }
-
- .pruebaDeEscritorio table.tabla1,
- .pruebaDeEscritorio table.tabla1 th,
- .pruebaDeEscritorio table.tabla1 td {
-  border: 1px solid var(--colStack1);
- }
-
- .pruebaDeEscritorio table.tabla2,
- .pruebaDeEscritorio table.tabla2 th,
- .pruebaDeEscritorio table.tabla2 td {
-  border: 1px solid var(--colStack2);
- }
-
- .pruebaDeEscritorio table.tabla3,
- .pruebaDeEscritorio table.tabla3 th,
- .pruebaDeEscritorio table.tabla3 td {
-  border: 1px solid var(--colStack3);
- }
-
- .pruebaDeEscritorio .frame {
-  font-family: var(--fontMono);
-  border-collapse: collapse;
- }
-
- .pruebaDeEscritorio .frame,
- .pruebaDeEscritorio .frame th,
- .pruebaDeEscritorio .frame td {
-  border: thin solid;
- }
-
- .pruebaDeEscritorio .frame caption {
-  font-style: italic;
- }
-
- .pruebaDeEscritorio .objeto caption {
-  text-decoration: underline;
-  font-style: italic;
- }
-
- .pruebaDeEscritorio .creación {
-  display: flex;
+  #nav,
+  #principal>#abre,
+  #principal>.anterior,
+  #principal>.siguiente {
+   display: none;
+  }
  }
 </style>
+ 
 </head>
 
-<body class="print">
-   <h1 >6. Acceso al dispositivo</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
-    </p>
-   </div>
-<div class="lectura">
- <nav>
-  <h1>Contenido</h1>
-  
-   <ol type="A">
-    
-   <li>
-    <p>
-     <a href="/m04dispositivo/mAintro.html">Introduccion</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m04dispositivo/mAgps.html">Geolocalización</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m04dispositivo/mBarchivos.html">Archivos y cámara</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m04dispositivo/mCamara.html">Uso directo de la cámara</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m04dispositivo/mDresumen.html">Resumen</a>
-    </p>
-   </li>
-   </ol>
- </nav>
-</div>
-     <section >
-         <h1 >A. Introduccion</h1><div class="lectura">
- <ul>
-  <li>
-   <p>
-    En esta lección se muestra como aceder directamente a algunas funciones del
-    dispositivo.
-   </p>
-  </li>
- </ul>
-</div>
-      </section>
-     <section >
-         <h1 >B. Geolocalización</h1><div class="horizontal">
- <section>
-  <h1>Salida</h1>
-  <iframe src="/src/m04dispositivos/gps.html" height="200"
-    title="Uso de geolocalización"></iframe>
-  <p class="noPrint">
-   <a href="/src/m04dispositivos/gps.html" target="_blank" rel="noopener">Ábrelo
-    en
-    otra pestaña.</a>
-  </p>
- </section>
- <muestra-codigo>
-  <div>
-   <div><span
-      style="color: #800000;">&lt;!DOCTYPE</span> <span
-      style="color: #e50000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span
-      style="color: #800000;">&lt;html</span> <span
-      style="color: #e50000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;head&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;meta</span> <span
-      style="color: #e50000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;meta</span> <span
-      style="color: #e50000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;title&gt;</span>GPS<span
-      style="color: #800000;">&lt;/title&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;body&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span>GPS<span
-      style="color: #800000;">&lt;/h1&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;label&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;Latitud</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;output</span> <span
-      style="color: #e50000;">id</span>=<span
-      style="color: #0000ff;">"latitud"</span><span
-      style="color: #800000;">&gt;&lt;/output&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;label&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;Longitud</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;output</span> <span
-      style="color: #e50000;">id</span>=<span
-      style="color: #0000ff;">"longitud"</span><span
-      style="color: #800000;">&gt;&lt;/output&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;script&gt;</span></div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #001080;">navigator</span>.<span
-      style="color: #001080;">geolocation</span>.</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #795e26;">watchPosition</span>(<span
-      style="color: #001080;">p</span> <span
-      style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">latitud</span>.<span
-      style="color: #001080;">value</span> =</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">p</span>.<span
-      style="color: #001080;">coords</span>.<span
-      style="color: #001080;">latitude</span></div><br>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">longitud</span>.<span
-      style="color: #001080;">value</span> =</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">p</span>.<span
-      style="color: #001080;">coords</span>.<span
-      style="color: #001080;">longitude</span></div><br>
-   <div>&nbsp;&nbsp;&nbsp;});</div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/script&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;/body&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
-</div>
-      </section>
-     <section >
-         <h1 >C. Archivos y cámara</h1><div class="horizontal">
- <section>
-  <h1>Salida</h1>
-  <iframe src="/src/m04dispositivos/archivos.html" height="300"
-    title="Uso de archivos"></iframe>
-  <p class="noPrint">
-   <a href="/src/m04dispositivos/archivos.html" target="_blank"
-     rel="noopener">Ábrelo
-    en otra pestaña.</a>
-  </p>
-  <p class="noPrint">
-   <a target="_blank" rel="noopener"
-     href="https://drive.google.com/file/d/1LZ0BjQB2Hlt4df2ksrJp2QdA9Ky1oghw/view?usp=sharing">
-    Observa como funciona en Android.</a>
-  </p>
-  <p class="noPrint">
-   <a target="_blank" rel="noopener"
-     href="https://drive.google.com/file/d/1JKaeJaWg0VepcuaDGc0j7S-7CphTtulN/view?usp=sharing">
-    Observa como funciona en iOS.</a>
-  </p>
- </section>
- <muestra-codigo>
-  <div>
-   <div><span
-      style="color: #800000;">&lt;!DOCTYPE</span> <span
-      style="color: #e50000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span
-      style="color: #800000;">&lt;html</span> <span
-      style="color: #e50000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;head&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;meta</span> <span
-      style="color: #e50000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;meta</span> <span
-      style="color: #e50000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;title&gt;</span>Archivos y Cámara<span
-      style="color: #800000;">&lt;/title&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;body&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span>Archivos y Cámara<span
-      style="color: #800000;">&lt;/h1&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;label&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;Foto de Móvil</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;input</span> <span
-      style="color: #e50000;">type</span>=<span
-      style="color: #0000ff;">"file"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">accept</span>=<span
-      style="color: #0000ff;">"image/*"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">capture</span>=<span
-      style="color: #0000ff;">"camera"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;label&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;Video de Móvil</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;input</span> <span
-      style="color: #e50000;">type</span>=<span
-      style="color: #0000ff;">"file"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">accept</span>=<span
-      style="color: #0000ff;">"video/*"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">capture</span>=<span
-      style="color: #0000ff;">""</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;label&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;Archivo</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;input</span> <span
-      style="color: #e50000;">type</span>=<span
-      style="color: #0000ff;">"file"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;/body&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
-</div>
-      </section>
-     <section >
-         <h1 >D. Uso directo de la cámara</h1><div class="horizontal">
+<body  class="xmenu">
+ <div id="principal">
+   <h1 >D. Uso directo de la cámara</h1><div class="horizontal">
  <section>
   <h1>Salida</h1>
   <iframe src="/src/m04dispositivos/camara.html" height="300"
@@ -1219,35 +1041,233 @@
   </div>
  </muestra-codigo>
 </div>
-      </section>
-     <section >
-         <h1 >E. Resumen</h1><div class="lectura">
- <ul>
-  <li>
-   <p>
-    En esta lección se revisaron:
-   </p>
-   <ul>
-    <li>
-     <p>
-      Acceso al GPS.
-     </p>
-    </li>
-    <li>
-     <p>
-      Acceso a la cámara.
-     </p>
-    </li>
-    <li>
-     <p>
-      Acceso a los archivos.
-     </p>
-    </li>
-   </ul>
-  </li>
- </ul>
+ <footer>
+ <p>
+  <a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/"><img
+     alt="Licencia Creative Commons" style="border-width:0"
+     src="/img/icono/160x30.webp" width="80" height="15" /></a>
+  <br />Esta
+  <span xmlns:dct="http://purl.org/dc/terms/"
+    href="http://purl.org/dc/dcmitype/InteractiveResource"
+    rel="dct:type">obra</span>
+  de
+  <a xmlns:cc="http://creativecommons.org/ns#"
+    href="https://gilpgijs.github.io" property="cc:attributionName"
+    rel="cc:attributionURL">Gilberto Pacheco Gallegos</a>
+  está bajo una
+  <a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/">Licencia
+   Creative Commons Atribución 4.0 Internacional</a>.
+ </p>
+</footer>
+ <button id="abre" type="button" title="Menú" class="cambiaMenu">
+  &#x2630;
+ </button>
+ <a class="anterior" href="/m04dispositivo/mBarchivos.html" title="C. Archivos y cámara">◀</a>
+ <a class="siguiente" href="/m04dispositivo/mDresumen.html" title="E. Resumen">▶</a>
 </div>
-      </section>
+<div id="cierra" class="cambiaMenu"></div>
+<nav id="nav">
+ <button type="button" title="Cierra" class="cambiaMenu">
+  &#x2715;
+ </button>
+ 
+   <p>
+    <a href="/"
+      data-logo="true">GilPG DM</a>
+   </p>
+   
+   
+     <p>
+      <a class="paginaAnterior" href="/m03pwaMaterial/m40resumen.html"
+        title="35. Resumen">▲</a>
+     </p>
+   <h1><a href="/m04dispositivo/index.html">6. Acceso al dispositivo</a></h1>
+   
+   <ol type="A">
+    
+   <li>
+    <p>
+     <a href="/m04dispositivo/mAintro.html">Introduccion</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04dispositivo/mAgps.html">Geolocalización</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04dispositivo/mBarchivos.html">Archivos y cámara</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04dispositivo/mCamara.html" class="actual">Uso directo de la cámara</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04dispositivo/mDresumen.html">Resumen</a>
+    </p>
+   </li>
+   </ol>
+   
+    <p>
+     <a class="paginaSiguiente" href="/m05iot/index.html"
+       title="7. IoT">▼</a>
+    </p>
+ 
+</nav>
+ <script>
+ registraServiceWorker("/sw.js")
+ const LOCAL_STORAGE_MENU = "menu"
+ const MENU = "menu"
+ const XMENU = "xmenu"
+ const SCROLL = "scroll"
+ const nav = document.querySelector("#nav")
+ const abre = document.querySelector("#abre")
+
+ /**@type {string} */
+ let urlAnterior = "/m04dispositivo/mBarchivos.html"
+ /**@type {string} */
+ let urlSiguiente = "/m04dispositivo/mDresumen.html"
+ /**@type {number|null} */
+ let iniciaX = null
+ /**@type {number|null} */
+ let iniciaY = null
+ /** @type {number} */
+ let posY = 0
+ /** @type {number} */
+ let dy = 0
+ /** @type {boolean} */
+ let scrolling = false
+
+ document.addEventListener("keydown", teclas)
+ document.addEventListener("touchstart", iniciaTouch)
+ document.addEventListener("touchmove", desplazaTouch)
+ addEventListener("scroll", onScroll)
+ if (abre) {
+  abre.addEventListener("click", cambiaMenu)
+ }
+ const cambian = Array.from(document.querySelectorAll(".cambiaMenu"))
+ for (const c of cambian) {
+  c.addEventListener("click", cambiaMenu)
+ }
+ const menu = localStorage.getItem(LOCAL_STORAGE_MENU)
+ if (menu) {
+  if (menu === MENU) {
+   document.body.classList.remove(XMENU)
+   document.body.classList.add(MENU)
+  } else {
+   document.body.classList.remove(MENU)
+   document.body.classList.add(XMENU)
+  }
+ }
+
+ function registraServiceWorker(url) {
+  if (navigator.serviceWorker) {
+   navigator.serviceWorker.register(url).
+    then(registro => {
+     console.log("Service Worker registrado.")
+     console.log(registro)
+    }).
+    catch(muestraError)
+  }
+ }
+
+ function muestraError(e) {
+  console.error(e)
+  alert(e.message)
+ }
+
+ function cambiaMenu() {
+  document.body.classList.toggle(XMENU)
+  document.body.classList.toggle(MENU)
+  if (document.body.classList.contains(MENU)) {
+   localStorage.setItem(LOCAL_STORAGE_MENU, MENU)
+  } else {
+   localStorage.setItem(LOCAL_STORAGE_MENU, XMENU)
+  }
+ }
+
+ /** @param {KeyboardEvent} ev*/
+ function teclas(ev) {
+  switch (ev.key) {
+   case "ArrowLeft":
+    retrocede()
+    break
+   case "ArrowRight":
+    avanza()
+    break
+  }
+ }
+
+ function retrocede() {
+  if (urlAnterior) {
+   location.href = urlAnterior
+  }
+ }
+
+ function avanza() {
+  if (urlSiguiente) {
+   location.href = urlSiguiente
+  }
+ }
+
+ /** @param {TouchEvent} ev*/
+ function iniciaTouch(ev) {
+  const toqueInicial = ev.touches[0]
+  iniciaX = toqueInicial.clientX
+  iniciaY = toqueInicial.clientY
+ }
+
+ /** @param {TouchEvent} ev*/
+ function desplazaTouch(ev) {
+  if (iniciaX && iniciaY) {
+   const desplazamiento = ev.touches[0]
+   var desplazamientoX = desplazamiento.clientX
+   var desplazamientoY = desplazamiento.clientY
+   var difX = desplazamientoX - iniciaX
+   var difY = desplazamientoY - iniciaY
+   // Checa que el movimiento no sea muy corto.
+   if (Math.abs(difX) + Math.abs(difY) > 90) {
+    if (Math.abs(difX) > Math.abs(difY)) {
+     if (difX > 70) {
+      retrocede()
+     } else {
+      avanza()
+     }
+     // Reinicia valores.
+     iniciaX = null
+     iniciaY = null
+    }
+   }
+  }
+ }
+
+ function onScroll() {
+  dy = scrollY - posY
+  posY = scrollY
+  if (!scrolling) {
+   requestAnimationFrame(avanzaScroll)
+  }
+  scrolling = true
+ }
+
+ function avanzaScroll() {
+  if (posY === 0) {
+   document.body.classList.remove(SCROLL)
+  } else if (dy < 0) {
+   document.body.classList.remove(SCROLL)
+  } else if (dy > 0) {
+   document.body.classList.add(SCROLL)
+  }
+  scrolling = false
+ }
+
+</script>
 </body>
 
 </html>
