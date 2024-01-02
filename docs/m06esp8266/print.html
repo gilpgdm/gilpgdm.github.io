@@ -197,7 +197,8 @@
  }
 
  .horizontal>*:first-child {
-  flex: 0 1 300px;
+  flex: 1 1 300px;
+  text-align: center;
  }
 
  .horizontal>*:nth-child(2) {
@@ -364,15 +365,16 @@
     </p>
    </div>
 <div class="lectura">
- <p>
-  En esta lección se presentan programas para el NODE MCU ESP32 y como
-  interactuar con el sistema de IoT.
- </p>
  <nav>
   <h1>Contenido</h1>
   
    <ol type="A">
     
+   <li>
+    <p>
+     <a href="/m06esp8266/mAintro.html">Introduccion</a>
+    </p>
+   </li>
    <li>
     <p>
      <a href="/m06esp8266/m01software.html">Software a instalar</a>
@@ -402,7 +404,19 @@
  </nav>
 </div>
      <section >
-         <h1 >A. Software a instalar</h1><div class="lectura">
+         <h1 >A. Introduccion</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En esta lección se presentan programas para el NODE MCU ESP32 y como
+    interactuar con el sistema de IoT.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >B. Software a instalar</h1><div class="lectura">
  <dl>
   <dt>Microsoft Edge Chromium</dt>
   <dd>
@@ -580,165 +594,171 @@
 </div>
       </section>
      <section >
-         <h1 >B. Blink.ino</h1><figure>
- <img src="/img/m06esp8266/Video-Blink.gif" alt="Video de la placa">
-</figure>
-<div class="lectura">
- <p class="noPrint">
-  <a href="https://drive.google.com/file/d/1ijC-1CC9V_Ua1nApAcRuQmXYp9wgaKBH/view?usp=sharing"
-    target="_blank" rel="noopener">Ve como capturar y ejecutar este ejemplo.</a>
- </p>
- <p class="noPrint">
-  <a href="https://drive.google.com/file/d/1yqVaTYYt8BxQLhvmZW2bwdiTkqxPQKcB/view?usp=sharing"
-    target="_blank" rel="noopener">Ve como desplegar este ejemplo en Tinkercad y
-   compartirlo.</a>
- </p>
+         <h1 >C. Blink.ino</h1><div class="horizontal">
+ <section>
+  <figure>
+   <img src="/img/m06esp8266/Video-Blink.gif" alt="Video de la placa">
+  </figure>
+  <p class="noPrint">
+   <a href="https://drive.google.com/file/d/1ijC-1CC9V_Ua1nApAcRuQmXYp9wgaKBH/view?usp=sharing"
+     target="_blank" rel="noopener">Ve como capturar y ejecutar este
+    ejemplo.</a>
+  </p>
+  <p class="noPrint">
+   <a href="https://drive.google.com/file/d/1yqVaTYYt8BxQLhvmZW2bwdiTkqxPQKcB/view?usp=sharing"
+     target="_blank" rel="noopener">Ve como desplegar este ejemplo en Tinkercad
+    y
+    compartirlo.</a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span
+      style="color: #008000;">/* Este programa es un derivado de</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;ESP8266 Blink by Simon Peter
+     */</span>
+   </div><br>
+   <div><span
+      style="color: #008000;">/** Función que se invoca una sola</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; vez al inicio del programa.
+     */</span>
+   </div>
+   <div><span style="color: #0000ff;">void</span> <span
+      style="color: #795e26;">setup</span>() {</div>
+   <div><span
+      style="color: #008000;">&nbsp;/* Todas las placas compatibles</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; con Arduino incluyen un led</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; de prueba ligado a un pin</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; cuyo número está definido por</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; la constante LED_BUILTIN.</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; Inicializa el pin para</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; LED_BUILTIN como salida. */</span>
+   </div>
+   <div>&nbsp;<span
+      style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
+   <div>}</div><br>
+   <div><span style="color: #008000;">/* Función que se invoca</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;repetidamente mientras el</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;programa esté activo. */</span></div>
+   <div><span style="color: #0000ff;">void</span> <span
+      style="color: #795e26;">loop</span>() {</div>
+   <div><span
+      style="color: #008000;">&nbsp;/* Enciende el LED_BUILTIN (HIGH</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; es el nivel de voltaje). */</span>
+   </div>
+   <div>&nbsp;<span
+      style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, HIGH);</div>
+   <div>&nbsp;<span style="color: #795e26;">delay</span>(<span
+      style="color: #098658;">1000</span>);<span
+      style="color: #008000;"> // Espera 1 segundo</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;/* Apaga el LED_BUILTIN haciendo</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; que el nivel de voltaje sea</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; LOW. */</span></div>
+   <div>&nbsp;<span
+      style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, LOW);</div>
+   <div>&nbsp;<span style="color: #795e26;">delay</span>(<span
+      style="color: #098658;">1000</span>);</div>
+   <div>}</div><br>
+  </div>
+ </muestra-codigo>
 </div>
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/* Este programa es un derivado de</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp;ESP8266 Blink by Simon Peter */</span>
-  </div><br>
-  <div><span
-     style="color: #008000;">/** Función que se invoca una sola</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; vez al inicio del programa. */</span>
-  </div>
-  <div><span style="color: #0000ff;">void</span> <span
-     style="color: #795e26;">setup</span>() {</div>
-  <div><span
-     style="color: #008000;">&nbsp;/* Todas las placas compatibles</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; con Arduino incluyen un led</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; de prueba ligado a un pin</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; cuyo número está definido por</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; la constante LED_BUILTIN.</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; Inicializa el pin para</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; LED_BUILTIN como salida. */</span>
-  </div>
-  <div>&nbsp;<span
-     style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
-  <div>}</div><br>
-  <div><span style="color: #008000;">/* Función que se invoca</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp;repetidamente mientras el</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp;programa esté activo. */</span></div>
-  <div><span style="color: #0000ff;">void</span> <span
-     style="color: #795e26;">loop</span>() {</div>
-  <div><span
-     style="color: #008000;">&nbsp;/* Enciende el LED_BUILTIN (HIGH</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; es el nivel de voltaje). */</span>
-  </div>
-  <div>&nbsp;<span
-     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, HIGH);</div>
-  <div>&nbsp;<span style="color: #795e26;">delay</span>(<span
-     style="color: #098658;">1000</span>);<span
-     style="color: #008000;"> // Espera 1 segundo</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;/* Apaga el LED_BUILTIN haciendo</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; que el nivel de voltaje sea</span>
-  </div>
-  <div><span style="color: #008000;">&nbsp; &nbsp; LOW. */</span></div>
-  <div>&nbsp;<span
-     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, LOW);</div>
-  <div>&nbsp;<span style="color: #795e26;">delay</span>(<span
-     style="color: #098658;">1000</span>);</div>
-  <div>}</div><br>
- </div>
-</muestra-codigo>
       </section>
      <section >
-         <h1 >C. Button.ino</h1><figure>
- <img src="/img/m06esp8266/Video-Button.gif" alt="Video de la placa">
-</figure>
-<div class="lectura">
- <p class="noPrint">
-  <a href="https://drive.google.com/file/d/1dFU-A3HvWAyTSyquOT1C2N5b6dUyQywq/view?usp=sharing"
-    target="_blank" rel="noopener">Ve como desplegar este ejemplo en Tinkercad y
-   compartirlo.</a>
- </p>
+         <h1 >D. Button.ino</h1><div class="horizontal">
+ <section>
+  <figure>
+   <img src="/img/m06esp8266/Video-Button.gif" alt="Video de la placa">
+  </figure>
+  <p class="noPrint">
+   <a href="https://drive.google.com/file/d/1dFU-A3HvWAyTSyquOT1C2N5b6dUyQywq/view?usp=sharing"
+     target="_blank" rel="noopener">Ve como desplegar este ejemplo en Tinkercad
+    y
+    compartirlo.</a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span
+      style="color: #008000;">/* Este es un derivado de Button</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;por DojoDave y Tom Igoe */</span>
+   </div><br>
+   <div><span style="color: #008000;">/* Pin para el botón. */</span></div>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0000ff;">int</span> <span
+      style="color: #001080;">BOTON</span> = <span
+      style="color: #098658;">0</span>;</div><br>
+   <div><span style="color: #0000ff;">int</span> <span
+      style="color: #001080;">estadoDelBoton</span> = <span
+      style="color: #098658;">0</span>;</div><br>
+   <div><span style="color: #0000ff;">void</span> <span
+      style="color: #795e26;">setup</span>() {</div>
+   <div><span
+      style="color: #008000;">&nbsp;/* Inicializa el pin para</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; LED_BUILTIN como salida. */</span>
+   </div>
+   <div>&nbsp;<span
+      style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
+   <div><span
+      style="color: #008000;">&nbsp;/* Initializa el pin para</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; BOTON como entrada. */</span></div>
+   <div>&nbsp;<span style="color: #795e26;">pinMode</span>(<span
+      style="color: #001080;">BOTON</span>, INPUT);</div>
+   <div>}</div><br>
+   <div><span style="color: #0000ff;">void</span> <span
+      style="color: #795e26;">loop</span>() {</div>
+   <div>&nbsp;<span style="color: #001080;">estadoDelBoton</span> =</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">digitalRead</span>(<span
+      style="color: #001080;">BOTON</span>);</div>
+   <div><span
+      style="color: #008000;">&nbsp;/* Checa si el botón está</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; presionado. Esto es, si</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; estadoDelBotón es LOW. */</span>
+   </div>
+   <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #001080;">estadoDelBoton</span> == LOW) {</div>
+   <div><span
+      style="color: #008000;">&nbsp; // Enciende el LED_BUILTIN.</span></div>
+   <div>&nbsp; <span
+      style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, HIGH);</div>
+   <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
+   <div><span
+      style="color: #008000;">&nbsp; // Apaga el LED_BUILTIN.</span></div>
+   <div>&nbsp; <span
+      style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, LOW);</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
+  </div>
+ </muestra-codigo>
 </div>
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/* Este es un derivado de Button</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp;por DojoDave y Tom Igoe */</span>
-  </div><br>
-  <div><span style="color: #008000;">/* Pin para el botón. */</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0000ff;">int</span> <span
-     style="color: #001080;">BOTON</span> = <span
-     style="color: #098658;">0</span>;</div><br>
-  <div><span style="color: #0000ff;">int</span> <span
-     style="color: #001080;">estadoDelBoton</span> = <span
-     style="color: #098658;">0</span>;</div><br>
-  <div><span style="color: #0000ff;">void</span> <span
-     style="color: #795e26;">setup</span>() {</div>
-  <div><span
-     style="color: #008000;">&nbsp;/* Inicializa el pin para</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; LED_BUILTIN como salida. */</span>
-  </div>
-  <div>&nbsp;<span
-     style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
-  <div><span
-     style="color: #008000;">&nbsp;/* Initializa el pin para</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; BOTON como entrada. */</span></div>
-  <div>&nbsp;<span style="color: #795e26;">pinMode</span>(<span
-     style="color: #001080;">BOTON</span>, INPUT);</div>
-  <div>}</div><br>
-  <div><span style="color: #0000ff;">void</span> <span
-     style="color: #795e26;">loop</span>() {</div>
-  <div>&nbsp;<span style="color: #001080;">estadoDelBoton</span> =</div>
-  <div>&nbsp; &nbsp;<span style="color: #795e26;">digitalRead</span>(<span
-     style="color: #001080;">BOTON</span>);</div>
-  <div><span
-     style="color: #008000;">&nbsp;/* Checa si el botón está</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; presionado. Esto es, si</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; estadoDelBotón es LOW. */</span>
-  </div>
-  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">estadoDelBoton</span> == LOW) {</div>
-  <div><span
-     style="color: #008000;">&nbsp; // Enciende el LED_BUILTIN.</span></div>
-  <div>&nbsp; <span
-     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, HIGH);</div>
-  <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
-  <div><span
-     style="color: #008000;">&nbsp; // Apaga el LED_BUILTIN.</span></div>
-  <div>&nbsp; <span
-     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, LOW);</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
- </div>
-</muestra-codigo>
       </section>
      <section >
-         <h1 >D. Dispositivo.ino</h1><figure>
- <img src="/img/m06esp8266/dispositivo.gif" alt="Video del dispositivo">
- <figcaption>
-  Implementación del ejemplo de IoT con MQTT en Arduino IDE.
- </figcaption>
-</figure>
-<div class="lectura">
+         <h1 >E. Dispositivo.ino</h1><div class="lectura">
  <ul>
   <li>
    <p>
@@ -766,238 +786,247 @@
     baja la velocidad tanto en el código, como en el monitor.
    </p>
   </li>
-  <li class="noPrint">
-   <p class="noPrint">
-    <a href="https://drive.google.com/file/d/14oEAQS2mP7EDtQAA7ydS4O4QWbXHmTGQ/view?usp=sharing"
-      target="_blank" rel="noopener">Ve como configurar y ejecutar este
-     ejemplo.</a>
-    No hagas caso a la parte de los certificados,
-   </p>
-  </li>
  </ul>
 </div>
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">#include</span><span
-     style="color: #0000ff;"> </span><span
-     style="color: #a31515;">"EspMQTTClient.h"</span></div><br>
-  <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0000ff;">char</span> <span
-     style="color: #000000;">*</span><span
-     style="color: #0000ff;">const</span> SSID <span
-     style="color: #000000;">=</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"Galaxy A723C85"</span>;</div>
-  <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0000ff;">char</span> <span
-     style="color: #000000;">*</span><span
-     style="color: #0000ff;">const</span> PASS <span
-     style="color: #000000;">=</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"bdoi1764"</span>;</div>
-  <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0000ff;">char</span> <span
-     style="color: #000000;">*</span><span
-     style="color: #0000ff;">const</span> URL <span
-     style="color: #000000;">=</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"test.mosquitto.org"</span>;</div>
-  <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0000ff;">uint16_t</span> PUERTO <span
-     style="color: #000000;">=</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #098658;">1883</span>;</div>
-  <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0000ff;">char</span> <span
-     style="color: #000000;">*</span><span
-     style="color: #0000ff;">const</span> CLIENT_ID <span
-     style="color: #000000;">=</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"gilpgdmIoT-esp32-1"</span>;</div>
-  <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0000ff;">char</span> <span
-     style="color: #000000;">*</span><span
-     style="color: #0000ff;">const</span> TOPICO_FOCO <span
-     style="color: #000000;">=</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"gilpgdm/IoT/foco"</span>;</div><br>
-  <div><span
-     style="color: #267f99;">EspMQTTClient</span> <span
-     style="color: #795e26;">cliente</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #267f99;">SSID</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #267f99;">PASS</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #267f99;">URL</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #098658;">0</span>,<span
-     style="color: #008000;"> // Usuario opcional</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #098658;">0</span>,<span
-     style="color: #008000;"> // Contraseña opcional</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #267f99;">CLIENT_ID</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #267f99;">PUERTO</span>);</div>
-  <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0000ff;">int</span> BOTON <span
-     style="color: #000000;">=</span> <span
-     style="color: #098658;">0</span>;</div>
-  <div><span
-     style="color: #0000ff;">bool</span> presionado <span
-     style="color: #000000;">=</span> <span
-     style="color: #0000ff;">false</span>;</div>
-  <div>String valor <span
-     style="color: #000000;">=</span> <span
-     style="color: #a31515;">"0"</span>;</div><br>
-  <div><span
-     style="color: #0000ff;">void</span> <span
-     style="color: #795e26;">recibeMensaje</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #267f99;">String</span> <span
-     style="color: #0000ff;">&amp;</span><span
-     style="color: #001080;">payload</span>)</div>
-  <div>{</div>
-  <div>&nbsp;valor <span
-     style="color: #000000;">=</span> payload;</div>
-  <div>&nbsp;<span
-     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN,</div>
+<div class="horizontal">
+ <section>
+  <figure>
+   <img src="/img/m06esp8266/dispositivo.gif" alt="Video del dispositivo">
+   <figcaption>
+    Implementación del ejemplo de IoT con MQTT en Arduino IDE.
+   </figcaption>
+  </figure>
+  <p class="noPrint">
+   <a href="https://drive.google.com/file/d/14oEAQS2mP7EDtQAA7ydS4O4QWbXHmTGQ/view?usp=sharing"
+     target="_blank" rel="noopener">Ve como configurar y ejecutar este
+    ejemplo.</a>
+   No hagas caso a la parte de los certificados,
+  </p>
+ </section>
+ <muestra-codigo>
   <div>
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valor
-   <span
-     style="color: #000000;">==</span> <span
-     style="color: #a31515;">"1"</span></div>
-  <div>
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #000000;">?</span> HIGH</div>
-  <div>
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #000000;">:</span> LOW);</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #0000ff;">void</span> <span
-     style="color: #795e26;">enviaMensajeMqtt</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #267f99;">String</span> <span
-     style="color: #001080;">valorAEnviar</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #267f99;">String</span> <span
-     style="color: #001080;">topico</span>)</div>
-  <div>{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">cliente</span>.<span
-     style="color: #795e26;">publish</span>(topico,</div>
-  <div>
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valorAEnviar);
+   <div><span
+      style="color: #af00db;">#include</span><span
+      style="color: #0000ff;"> </span><span
+      style="color: #a31515;">"EspMQTTClient.h"</span></div><br>
+   <div><span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0000ff;">char</span> <span
+      style="color: #000000;">*</span><span
+      style="color: #0000ff;">const</span> SSID <span
+      style="color: #000000;">=</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #a31515;">"Galaxy A723C85"</span>;</div>
+   <div><span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0000ff;">char</span> <span
+      style="color: #000000;">*</span><span
+      style="color: #0000ff;">const</span> PASS <span
+      style="color: #000000;">=</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #a31515;">"bdoi1764"</span>;</div>
+   <div><span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0000ff;">char</span> <span
+      style="color: #000000;">*</span><span
+      style="color: #0000ff;">const</span> URL <span
+      style="color: #000000;">=</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #a31515;">"test.mosquitto.org"</span>;</div>
+   <div><span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0000ff;">uint16_t</span> PUERTO <span
+      style="color: #000000;">=</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #098658;">1883</span>;</div>
+   <div><span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0000ff;">char</span> <span
+      style="color: #000000;">*</span><span
+      style="color: #0000ff;">const</span> CLIENT_ID <span
+      style="color: #000000;">=</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #a31515;">"gilpgdmIoT-esp32-1"</span>;</div>
+   <div><span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0000ff;">char</span> <span
+      style="color: #000000;">*</span><span
+      style="color: #0000ff;">const</span> TOPICO_FOCO <span
+      style="color: #000000;">=</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #a31515;">"gilpgdm/IoT/foco"</span>;</div><br>
+   <div><span
+      style="color: #267f99;">EspMQTTClient</span> <span
+      style="color: #795e26;">cliente</span>(</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #267f99;">SSID</span>,</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #267f99;">PASS</span>,</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #267f99;">URL</span>,</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #098658;">0</span>,<span
+      style="color: #008000;"> // Usuario opcional</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #098658;">0</span>,<span
+      style="color: #008000;"> // Contraseña opcional</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #267f99;">CLIENT_ID</span>,</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #267f99;">PUERTO</span>);</div>
+   <div><span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0000ff;">int</span> BOTON <span
+      style="color: #000000;">=</span> <span
+      style="color: #098658;">0</span>;</div>
+   <div><span
+      style="color: #0000ff;">bool</span> presionado <span
+      style="color: #000000;">=</span> <span
+      style="color: #0000ff;">false</span>;</div>
+   <div>String valor <span
+      style="color: #000000;">=</span> <span
+      style="color: #a31515;">"0"</span>;</div><br>
+   <div><span
+      style="color: #0000ff;">void</span> <span
+      style="color: #795e26;">recibeMensaje</span>(</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #0000ff;">const</span> <span
+      style="color: #267f99;">String</span> <span
+      style="color: #0000ff;">&amp;</span><span
+      style="color: #001080;">payload</span>)</div>
+   <div>{</div>
+   <div>&nbsp;valor <span
+      style="color: #000000;">=</span> payload;</div>
+   <div>&nbsp;<span
+      style="color: #795e26;">digitalWrite</span>(LED_BUILTIN,</div>
+   <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valor
+    <span
+      style="color: #000000;">==</span> <span
+      style="color: #a31515;">"1"</span>
+   </div>
+   <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #000000;">?</span> HIGH</div>
+   <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #000000;">:</span> LOW);</div>
+   <div>}</div><br>
+   <div><span
+      style="color: #0000ff;">void</span> <span
+      style="color: #795e26;">enviaMensajeMqtt</span>(</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #267f99;">String</span> <span
+      style="color: #001080;">valorAEnviar</span>,</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #267f99;">String</span> <span
+      style="color: #001080;">topico</span>)</div>
+   <div>{</div>
+   <div>&nbsp;<span
+      style="color: #001080;">cliente</span>.<span
+      style="color: #795e26;">publish</span>(topico,</div>
+   <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valorAEnviar);
+   </div>
+   <div>}</div><br>
+   <div><span
+      style="color: #0000ff;">void</span> <span
+      style="color: #795e26;">onConnectionEstablished</span>()</div>
+   <div>{</div>
+   <div>&nbsp;<span
+      style="color: #001080;">cliente</span>.<span
+      style="color: #795e26;">subscribe</span>(</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TOPICO_FOCO, recibeMensaje);</div>
+   <div>&nbsp;<span
+      style="color: #795e26;">enviaMensajeMqtt</span>(</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valor, TOPICO_FOCO);</div>
+   <div>}</div><br>
+   <div><span
+      style="color: #0000ff;">void</span> <span
+      style="color: #795e26;">setup</span>()</div>
+   <div>{</div>
+   <div>&nbsp;<span
+      style="color: #001080;">Serial</span>.<span
+      style="color: #795e26;">begin</span>(<span
+      style="color: #098658;">115200</span>);</div>
+   <div>&nbsp;<span
+      style="color: #795e26;">pinMode</span>(BOTON, INPUT);</div>
+   <div>&nbsp;<span
+      style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
+   <div><span
+      style="color: #008000;">&nbsp;// Funcionalidades opcionaes</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;// Mensajes para depurar conexión</span>
+   </div>
+   <div>&nbsp;<span
+      style="color: #001080;">cliente</span>.<span
+      style="color: #795e26;">enableDebuggingMessages</span>();</div>
+   <div>&nbsp;<span
+      style="color: #001080;">cliente</span>.<span
+      style="color: #795e26;">enableHTTPWebUpdater</span>();</div>
+   <div><span
+      style="color: #008000;">&nbsp;// Actualizaciones</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;// OTA (Over The Air)</span></div>
+   <div>&nbsp;<span
+      style="color: #001080;">cliente</span>.<span
+      style="color: #795e26;">enableOTA</span>();</div>
+   <div><span
+      style="color: #008000;">&nbsp;// Mensaje de última voluntad.</span></div>
+   <div>&nbsp;<span
+      style="color: #001080;">cliente</span>.<span
+      style="color: #795e26;">enableLastWillMessage</span>(</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #a31515;">"gilpgdm/IoT/lastwill"</span>,</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #a31515;">"Adios"</span>);</div>
+   <div>}</div><br>
+   <div><span
+      style="color: #0000ff;">void</span> <span
+      style="color: #795e26;">loop</span>()</div>
+   <div>{</div>
+   <div>&nbsp;<span
+      style="color: #001080;">cliente</span>.<span
+      style="color: #795e26;">loop</span>();</div>
+   <div>&nbsp;<span
+      style="color: #af00db;">if</span> (<span
+      style="color: #001080;">cliente</span>.<span
+      style="color: #795e26;">isConnected</span>())</div>
+   <div>&nbsp;{</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #0000ff;">bool</span> actual <span
+      style="color: #000000;">=</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">digitalRead</span>(BOTON);</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #af00db;">if</span> (<span
+      style="color: #000000;">!</span>presionado <span
+      style="color: #000000;">&amp;&amp;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actual <span
+      style="color: #000000;">==</span> LOW)</div>
+   <div>&nbsp;&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">enviaMensajeMqtt</span>(</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valor <span
+      style="color: #000000;">==</span> <span
+      style="color: #a31515;">"1"</span> <span
+      style="color: #000000;">?</span> <span
+      style="color: #a31515;">"0"</span> <span
+      style="color: #000000;">:</span> <span
+      style="color: #a31515;">"1"</span>,</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TOPICO_FOCO);</div>
+   <div>&nbsp;&nbsp;}</div>
+   <div>&nbsp;&nbsp;presionado <span
+      style="color: #000000;">=</span> (actual <span
+      style="color: #000000;">==</span> LOW);</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
   </div>
-  <div>}</div><br>
-  <div><span
-     style="color: #0000ff;">void</span> <span
-     style="color: #795e26;">onConnectionEstablished</span>()</div>
-  <div>{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">cliente</span>.<span
-     style="color: #795e26;">subscribe</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TOPICO_FOCO, recibeMensaje);</div>
-  <div>&nbsp;<span
-     style="color: #795e26;">enviaMensajeMqtt</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valor, TOPICO_FOCO);</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #0000ff;">void</span> <span
-     style="color: #795e26;">setup</span>()</div>
-  <div>{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">Serial</span>.<span
-     style="color: #795e26;">begin</span>(<span
-     style="color: #098658;">115200</span>);</div>
-  <div>&nbsp;<span
-     style="color: #795e26;">pinMode</span>(BOTON, INPUT);</div>
-  <div>&nbsp;<span
-     style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
-  <div><span
-     style="color: #008000;">&nbsp;// Funcionalidades opcionaes</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;// Mensajes para depurar conexión</span>
-  </div>
-  <div>&nbsp;<span
-     style="color: #001080;">cliente</span>.<span
-     style="color: #795e26;">enableDebuggingMessages</span>();</div>
-  <div>&nbsp;<span
-     style="color: #001080;">cliente</span>.<span
-     style="color: #795e26;">enableHTTPWebUpdater</span>();</div>
-  <div><span
-     style="color: #008000;">&nbsp;// Actualizaciones</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;// OTA (Over The Air)</span></div>
-  <div>&nbsp;<span
-     style="color: #001080;">cliente</span>.<span
-     style="color: #795e26;">enableOTA</span>();</div>
-  <div><span
-     style="color: #008000;">&nbsp;// Mensaje de última voluntad.</span></div>
-  <div>&nbsp;<span
-     style="color: #001080;">cliente</span>.<span
-     style="color: #795e26;">enableLastWillMessage</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"gilpgdm/IoT/lastwill"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"Adios"</span>);</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #0000ff;">void</span> <span
-     style="color: #795e26;">loop</span>()</div>
-  <div>{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">cliente</span>.<span
-     style="color: #795e26;">loop</span>();</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">cliente</span>.<span
-     style="color: #795e26;">isConnected</span>())</div>
-  <div>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">bool</span> actual <span
-     style="color: #000000;">=</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">digitalRead</span>(BOTON);</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #000000;">!</span>presionado <span
-     style="color: #000000;">&amp;&amp;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actual <span
-     style="color: #000000;">==</span> LOW)</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">enviaMensajeMqtt</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valor <span
-     style="color: #000000;">==</span> <span
-     style="color: #a31515;">"1"</span> <span
-     style="color: #000000;">?</span> <span
-     style="color: #a31515;">"0"</span> <span
-     style="color: #000000;">:</span> <span
-     style="color: #a31515;">"1"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TOPICO_FOCO);</div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;presionado <span
-     style="color: #000000;">=</span> (actual <span
-     style="color: #000000;">==</span> LOW);</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
- </div>
-</muestra-codigo>
+ </muestra-codigo>
+</div>
       </section>
      <section >
-         <h1 >E. Resumen</h1><div class="lectura">
+         <h1 >F. Resumen</h1><div class="lectura">
  <ul>
   <li>
    <p>

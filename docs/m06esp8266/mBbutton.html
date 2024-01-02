@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>C. Button.ino - GilPG DM</title>
+ <title>D. Button.ino - GilPG DM</title>
  <meta name="description" content="Código de «Button.ino».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -198,7 +198,8 @@
  }
 
  .horizontal>*:first-child {
-  flex: 0 1 300px;
+  flex: 1 1 300px;
+  text-align: center;
  }
 
  .horizontal>*:nth-child(2) {
@@ -462,74 +463,77 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >C. Button.ino</h1><figure>
- <img src="/img/m06esp8266/Video-Button.gif" alt="Video de la placa">
-</figure>
-<div class="lectura">
- <p class="noPrint">
-  <a href="https://drive.google.com/file/d/1dFU-A3HvWAyTSyquOT1C2N5b6dUyQywq/view?usp=sharing"
-    target="_blank" rel="noopener">Ve como desplegar este ejemplo en Tinkercad y
-   compartirlo.</a>
- </p>
+   <h1 >D. Button.ino</h1><div class="horizontal">
+ <section>
+  <figure>
+   <img src="/img/m06esp8266/Video-Button.gif" alt="Video de la placa">
+  </figure>
+  <p class="noPrint">
+   <a href="https://drive.google.com/file/d/1dFU-A3HvWAyTSyquOT1C2N5b6dUyQywq/view?usp=sharing"
+     target="_blank" rel="noopener">Ve como desplegar este ejemplo en Tinkercad
+    y
+    compartirlo.</a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span
+      style="color: #008000;">/* Este es un derivado de Button</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;por DojoDave y Tom Igoe */</span>
+   </div><br>
+   <div><span style="color: #008000;">/* Pin para el botón. */</span></div>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0000ff;">int</span> <span
+      style="color: #001080;">BOTON</span> = <span
+      style="color: #098658;">0</span>;</div><br>
+   <div><span style="color: #0000ff;">int</span> <span
+      style="color: #001080;">estadoDelBoton</span> = <span
+      style="color: #098658;">0</span>;</div><br>
+   <div><span style="color: #0000ff;">void</span> <span
+      style="color: #795e26;">setup</span>() {</div>
+   <div><span
+      style="color: #008000;">&nbsp;/* Inicializa el pin para</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; LED_BUILTIN como salida. */</span>
+   </div>
+   <div>&nbsp;<span
+      style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
+   <div><span
+      style="color: #008000;">&nbsp;/* Initializa el pin para</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; BOTON como entrada. */</span></div>
+   <div>&nbsp;<span style="color: #795e26;">pinMode</span>(<span
+      style="color: #001080;">BOTON</span>, INPUT);</div>
+   <div>}</div><br>
+   <div><span style="color: #0000ff;">void</span> <span
+      style="color: #795e26;">loop</span>() {</div>
+   <div>&nbsp;<span style="color: #001080;">estadoDelBoton</span> =</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">digitalRead</span>(<span
+      style="color: #001080;">BOTON</span>);</div>
+   <div><span
+      style="color: #008000;">&nbsp;/* Checa si el botón está</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; presionado. Esto es, si</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; estadoDelBotón es LOW. */</span>
+   </div>
+   <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #001080;">estadoDelBoton</span> == LOW) {</div>
+   <div><span
+      style="color: #008000;">&nbsp; // Enciende el LED_BUILTIN.</span></div>
+   <div>&nbsp; <span
+      style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, HIGH);</div>
+   <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
+   <div><span
+      style="color: #008000;">&nbsp; // Apaga el LED_BUILTIN.</span></div>
+   <div>&nbsp; <span
+      style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, LOW);</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
+  </div>
+ </muestra-codigo>
 </div>
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/* Este es un derivado de Button</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp;por DojoDave y Tom Igoe */</span>
-  </div><br>
-  <div><span style="color: #008000;">/* Pin para el botón. */</span></div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0000ff;">int</span> <span
-     style="color: #001080;">BOTON</span> = <span
-     style="color: #098658;">0</span>;</div><br>
-  <div><span style="color: #0000ff;">int</span> <span
-     style="color: #001080;">estadoDelBoton</span> = <span
-     style="color: #098658;">0</span>;</div><br>
-  <div><span style="color: #0000ff;">void</span> <span
-     style="color: #795e26;">setup</span>() {</div>
-  <div><span
-     style="color: #008000;">&nbsp;/* Inicializa el pin para</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; LED_BUILTIN como salida. */</span>
-  </div>
-  <div>&nbsp;<span
-     style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
-  <div><span
-     style="color: #008000;">&nbsp;/* Initializa el pin para</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; BOTON como entrada. */</span></div>
-  <div>&nbsp;<span style="color: #795e26;">pinMode</span>(<span
-     style="color: #001080;">BOTON</span>, INPUT);</div>
-  <div>}</div><br>
-  <div><span style="color: #0000ff;">void</span> <span
-     style="color: #795e26;">loop</span>() {</div>
-  <div>&nbsp;<span style="color: #001080;">estadoDelBoton</span> =</div>
-  <div>&nbsp; &nbsp;<span style="color: #795e26;">digitalRead</span>(<span
-     style="color: #001080;">BOTON</span>);</div>
-  <div><span
-     style="color: #008000;">&nbsp;/* Checa si el botón está</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; presionado. Esto es, si</span></div>
-  <div><span
-     style="color: #008000;">&nbsp; &nbsp; estadoDelBotón es LOW. */</span>
-  </div>
-  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
-     style="color: #001080;">estadoDelBoton</span> == LOW) {</div>
-  <div><span
-     style="color: #008000;">&nbsp; // Enciende el LED_BUILTIN.</span></div>
-  <div>&nbsp; <span
-     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, HIGH);</div>
-  <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
-  <div><span
-     style="color: #008000;">&nbsp; // Apaga el LED_BUILTIN.</span></div>
-  <div>&nbsp; <span
-     style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, LOW);</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
- </div>
-</muestra-codigo>
  <footer>
  <p>
   <a rel="license"
@@ -553,8 +557,8 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m06esp8266/mAblink.html" title="B. Blink.ino">◀</a>
- <a class="siguiente" href="/m06esp8266/mCdispositivo.html" title="D. Dispositivo.ino">▶</a>
+ <a class="anterior" href="/m06esp8266/mAblink.html" title="C. Blink.ino">◀</a>
+ <a class="siguiente" href="/m06esp8266/mCdispositivo.html" title="E. Dispositivo.ino">▶</a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
@@ -576,6 +580,11 @@
    
    <ol type="A">
     
+   <li>
+    <p>
+     <a href="/m06esp8266/mAintro.html">Introduccion</a>
+    </p>
+   </li>
    <li>
     <p>
      <a href="/m06esp8266/m01software.html">Software a instalar</a>

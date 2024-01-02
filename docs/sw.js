@@ -294,6 +294,7 @@ const ARCHIVOS = [
  "/m06esp8266/index.html",
  "/m06esp8266/m01software.html",
  "/m06esp8266/mAblink.html",
+ "/m06esp8266/mAintro.html",
  "/m06esp8266/mBbutton.html",
  "/m06esp8266/mCdispositivo.html",
  "/m06esp8266/mDresumen.html",
