@@ -1,0 +1,118 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/../../vendor/autoload.php"</span>;</div><br>
+  <div><span
+     style="color: #0000ff;">use</span> Minishlink\WebPush\<span
+     style="color: #267f99;">SubscriptionInterface</span>;</div><br>
+  <div><span
+     style="color: #0000ff;">class</span> <span
+     style="color: #267f99;">Suscripcion</span> <span
+     style="color: #0000ff;">implements</span> <span
+     style="color: #267f99;">SubscriptionInterface</span></div>
+  <div>{</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">public</span> <span
+     style="color: #0000ff;">string</span> <span
+     style="color: #001080;">$endpoint</span>;</div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">public</span> <span
+     style="color: #0000ff;">string</span> <span
+     style="color: #001080;">$publicKey</span>;</div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">public</span> <span
+     style="color: #0000ff;">string</span> <span
+     style="color: #001080;">$authToken</span>;</div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">public</span> <span
+     style="color: #0000ff;">string</span> <span
+     style="color: #001080;">$contentEncoding</span>;</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">public</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">__construct</span>(</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">string</span> <span
+     style="color: #001080;">$endpoint</span> = <span
+     style="color: #a31515;">""</span>,</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">string</span> <span
+     style="color: #001080;">$publicKey</span> = <span
+     style="color: #a31515;">""</span>,</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">string</span> <span
+     style="color: #001080;">$authToken</span> = <span
+     style="color: #a31515;">""</span>,</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">string</span> <span
+     style="color: #001080;">$contentEncoding</span> = <span
+     style="color: #a31515;">""</span></div>
+  <div>&nbsp;)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #001080;">endpoint</span> = <span
+     style="color: #001080;">$endpoint</span>;</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #001080;">publicKey</span> = <span
+     style="color: #001080;">$publicKey</span>;</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #001080;">authToken</span> = <span
+     style="color: #001080;">$authToken</span>;</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #001080;">contentEncoding</span> = <span
+     style="color: #001080;">$contentEncoding</span>;</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">public</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">getEndpoint</span>(): <span
+     style="color: #0000ff;">string</span></div>
+  <div>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #001080;">endpoint</span>;</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">public</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">getPublicKey</span>(): ?<span
+     style="color: #0000ff;">string</span></div>
+  <div>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #001080;">publicKey</span>;</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">public</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">getAuthToken</span>(): ?<span
+     style="color: #0000ff;">string</span></div>
+  <div>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #001080;">authToken</span>;</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">public</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">getContentEncoding</span>(): ?<span
+     style="color: #0000ff;">string</span></div>
+  <div>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #0000ff;">$this</span>-&gt;<span
+     style="color: #001080;">contentEncoding</span>;</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+ </div>
+</muestra-codigo>

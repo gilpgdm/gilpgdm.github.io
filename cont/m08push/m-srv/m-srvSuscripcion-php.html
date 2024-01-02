@@ -1,0 +1,94 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/../lib/php/ejecuta.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/../lib/php/leeJson.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/modelo/Suscripcion.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/modelo/leeSuscripcion.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/dao/suscripcionAgrega.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/dao/suscripcionBusca.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/dao/suscripcionModifica.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/dao/suscripcionElimina.php"</span>;</div><br>
+  <div><span
+     style="color: #795e26;">ejecuta</span>(<span
+     style="color: #0000ff;">function</span> ()&nbsp;{</div><br>
+  <div>&nbsp;<span
+     style="color: #001080;">$json</span> = <span
+     style="color: #795e26;">leeJson</span>();</div><br>
+  <div>&nbsp;<span
+     style="color: #001080;">$modelo</span> = <span
+     style="color: #795e26;">leeSuscripcion</span>(<span
+     style="color: #001080;">$json</span>);</div><br>
+  <div>&nbsp;<span
+     style="color: #001080;">$metodoHttp</span> = <span
+     style="color: #001080;">$_SERVER</span>[<span
+     style="color: #a31515;">"REQUEST_METHOD"</span>];</div><br>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">$metodoHttp</span> === <span
+     style="color: #a31515;">"POST"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">suscripcionAgrega</span>(<span
+     style="color: #001080;">$modelo</span>);</div>
+  <div>&nbsp;}&nbsp;<span
+     style="color: #af00db;">elseif</span> (<span
+     style="color: #001080;">$metodoHttp</span> === <span
+     style="color: #a31515;">"PUT"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">$registrado</span> = <span
+     style="color: #795e26;">suscripcionBusca</span>(<span
+     style="color: #001080;">$modelo</span>-&gt;<span
+     style="color: #001080;">endpoint</span>);</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">$registrado</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">suscripcionModifica</span>(<span
+     style="color: #001080;">$modelo</span>);</div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">suscripcionAgrega</span>(<span
+     style="color: #001080;">$modelo</span>);</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;}&nbsp;<span
+     style="color: #af00db;">elseif</span> (<span
+     style="color: #001080;">$metodoHttp</span> === <span
+     style="color: #a31515;">"</span><span
+     style="color: #0000ff;">DELETE</span><span
+     style="color: #a31515;">"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #795e26;">suscripcionElimina</span>(<span
+     style="color: #001080;">$modelo</span>-&gt;<span
+     style="color: #001080;">endpoint</span>);</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #af00db;">return</span> [];</div>
+  <div>});</div><br>
+ </div>
+</muestra-codigo>

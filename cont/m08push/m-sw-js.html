@@ -1,0 +1,84 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">self</span> <span
+     style="color: #0000ff;">instanceof</span> <span
+     style="color: #267f99;">ServiceWorkerGlobalScope</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #008000;">// El siguiente código se activa cuando llega una
+    notificación push.</span></div>
+  <div>&nbsp;<span
+     style="color: #001080;">self</span>.<span
+     style="color: #795e26;">addEventListener</span>(<span
+     style="color: #a31515;">"push"</span>, (<span
+     style="color: #008000;">/**&nbsp;</span><span
+     style="color: #0000ff;">@type</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{PushEvent}</span><span
+     style="color: #008000;"> */</span> <span
+     style="color: #001080;">evt</span>) <span
+     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">notificacion</span> = <span
+     style="color: #001080;">evt</span>.<span
+     style="color: #0070c1;">data</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">/*&nbsp;Si el navegador tiene permitido mostrar
+    notificaciones push,</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;nuestra la que se ha
+    recibido. */</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">notificacion</span> !== <span
+     style="color: #0000ff;">null</span> &amp;&amp; <span
+     style="color: #001080;">self</span>.<span
+     style="color: #267f99;">Notification</span>.<span
+     style="color: #0070c1;">permission</span> === <span
+     style="color: #a31515;">'granted'</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">evt</span>.<span
+     style="color: #795e26;">waitUntil</span>(<span
+     style="color: #795e26;">muestraNotificacion</span>(<span
+     style="color: #0070c1;">notificacion</span>))</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;})</div>
+  <div>}</div><br>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{PushMessageData}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">notificacion</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">muestraNotificacion</span>(<span
+     style="color: #001080;">notificacion</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">self</span> <span
+     style="color: #0000ff;">instanceof</span> <span
+     style="color: #267f99;">ServiceWorkerGlobalScope</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">mensaje</span> = <span
+     style="color: #001080;">notificacion</span>.<span
+     style="color: #795e26;">text</span>()</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">await</span> <span
+     style="color: #001080;">self</span>.<span
+     style="color: #0070c1;">registration</span>.<span
+     style="color: #795e26;">showNotification</span>(<span
+     style="color: #0070c1;">mensaje</span>)</div>
+  <div>&nbsp;}</div>
+  <div>}</div>
+ </div>
+</muestra-codigo>

@@ -1,0 +1,131 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ string | URL }</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">urlDeServiceWorkerQueRecibeNotificaciones</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">activaNotificacionesPush</span>(</div><br>
+  <div>&nbsp;<span
+     style="color: #001080;">urlDeServiceWorkerQueRecibeNotificaciones</span>)&nbsp;{
+  </div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">// Valida que el navegador soporte notificaciones
+    push.</span></div>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (!(<span
+     style="color: #a31515;">'PushManager'</span> <span
+     style="color: #0000ff;">in</span> <span
+     style="color: #001080;">window</span>))</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(<span
+     style="color: #a31515;">"Este navegador no soporta notificaciones
+    push."</span>)</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">// Valida que el navegador soporte
+    notificaciones,</span></div>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (!(<span
+     style="color: #a31515;">"Notification"</span> <span
+     style="color: #0000ff;">in</span> <span
+     style="color: #001080;">window</span>))</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(<span
+     style="color: #a31515;">"Este navegador no soporta notificaciones
+    push."</span>)</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">// Valida que el navegador soporte service
+    workers,</span></div>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (!(<span
+     style="color: #a31515;">"serviceWorker"</span> <span
+     style="color: #0000ff;">in</span> <span
+     style="color: #001080;">navigator</span>))</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(<span
+     style="color: #a31515;">"Este navegador no soporta service
+    workers."</span>)</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">// Recupera el permiso para usar
+    notificaciones</span></div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">let</span> <span
+     style="color: #001080;">permiso</span> = <span
+     style="color: #267f99;">Notification</span>.<span
+     style="color: #0070c1;">permission</span></div>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">permiso</span> === <span
+     style="color: #a31515;">"default"</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">// Permiso no asignado. Pide al usuario su
+    autorización.</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">permiso</span> = <span
+     style="color: #af00db;">await</span> <span
+     style="color: #267f99;">Notification</span>.<span
+     style="color: #795e26;">requestPermission</span>()</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">// Valida que el usuario haya permitido usar
+    notificaciones..</span></div>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">permiso</span> === <span
+     style="color: #a31515;">"denied"</span>)</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(<span
+     style="color: #a31515;">"Notificaciones bloqueadas."</span>)</div><br>
+  <div>&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">registro</span> = <span
+     style="color: #af00db;">await</span> <span
+     style="color: #001080;">navigator</span>.<span
+     style="color: #0070c1;">serviceWorker</span>.<span
+     style="color: #795e26;">register</span>(</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">urlDeServiceWorkerQueRecibeNotificaciones</span>)
+  </div>
+  <div>&nbsp;<span
+     style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #001080;">urlDeServiceWorkerQueRecibeNotificaciones</span>,
+   <span
+     style="color: #a31515;">"registrado."</span>)</div>
+  <div>&nbsp;<span
+     style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #0070c1;">registro</span>)</div><br>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (!(<span
+     style="color: #a31515;">"showNotification"</span> <span
+     style="color: #0000ff;">in</span> <span
+     style="color: #0070c1;">registro</span>))</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(<span
+     style="color: #a31515;">"Este navegador no soporta notificaciones."</span>)
+  </div>
+  <div>}</div>
+ </div>
+</muestra-codigo>

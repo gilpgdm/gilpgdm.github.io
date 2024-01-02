@@ -1,0 +1,86 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/Suscripcion.php"</span>;</div><br>
+  <div><span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">leeSuscripcion</span>(<span
+     style="color: #001080;">$objeto</span>)</div>
+  <div>{</div><br>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (!<span
+     style="color: #795e26;">isset</span>(<span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">endpoint</span>) || !<span
+     style="color: #795e26;">is_string</span>(<span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">endpoint</span>))</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"El endpoint debe ser texto."</span>);</div><br>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (!<span
+     style="color: #795e26;">isset</span>(<span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">publicKey</span>)&nbsp;&nbsp;|| !<span
+     style="color: #795e26;">is_string</span>(<span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">publicKey</span>))</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"El publicKey debe ser texto."</span>);</div><br>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (!<span
+     style="color: #795e26;">isset</span>(<span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">authToken</span>) || !<span
+     style="color: #795e26;">is_string</span>(<span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">authToken</span>))</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"El authToken debe ser texto."</span>);</div><br>
+  <div>&nbsp;<span
+     style="color: #af00db;">if</span> (!<span
+     style="color: #795e26;">isset</span>(<span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">contentEncoding</span>) || !<span
+     style="color: #795e26;">is_string</span>(<span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">contentEncoding</span>))</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Exception</span>(<span
+     style="color: #a31515;">"El contentEncoding debe ser texto."</span>);</div>
+  <br>
+  <div>&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Suscripcion</span>(</div>
+  <div>&nbsp;&nbsp;endpoint: <span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">endpoint</span>,</div>
+  <div>&nbsp;&nbsp;publicKey: <span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">publicKey</span>,</div>
+  <div>&nbsp;&nbsp;authToken: <span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">authToken</span>,</div>
+  <div>&nbsp;&nbsp;contentEncoding: <span
+     style="color: #001080;">$objeto</span>-&gt;<span
+     style="color: #001080;">contentEncoding</span></div>
+  <div>&nbsp;);</div>
+  <div>}</div><br>
+ </div>
+</muestra-codigo>

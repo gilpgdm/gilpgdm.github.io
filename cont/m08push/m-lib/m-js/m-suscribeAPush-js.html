@@ -1,0 +1,44 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #008000;">/**</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{ Uint8Array }</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">applicationServerKey</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span
+     style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">suscribeAPush</span>(<span
+     style="color: #001080;">applicationServerKey</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #008000;">// Recupera el service worker registrado.</span>
+  </div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">registro</span> = <span
+     style="color: #af00db;">await</span> <span
+     style="color: #001080;">navigator</span>.<span
+     style="color: #0070c1;">serviceWorker</span>.<span
+     style="color: #0070c1;">ready</span></div>
+  <div>&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #0070c1;">registro</span>.<span
+     style="color: #0070c1;">pushManager</span>.<span
+     style="color: #795e26;">subscribe</span>({</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">userVisibleOnly</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #0000ff;">true</span>,</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">applicationServerKey</span></div>
+  <div>&nbsp;})</div>
+  <div>}</div>
+ </div>
+</muestra-codigo>

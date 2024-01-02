@@ -1,0 +1,139 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #800000;">&lt;?php</span></div><br>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/../vendor/autoload.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/../lib/php/ejecuta.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/modelo/Suscripcion.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/dao/suscripcionConsulta.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/dao/suscripcionElimina.php"</span>;</div>
+  <div><span
+     style="color: #af00db;">require_once</span> <span
+     style="color: #0000ff;">__DIR__</span> . <span
+     style="color: #a31515;">"/dao/suscripcionElimina.php"</span>;</div><br>
+  <div><span
+     style="color: #0000ff;">use</span> Minishlink\WebPush\<span
+     style="color: #267f99;">WebPush</span>;</div><br>
+  <div><span
+     style="color: #0000ff;">const</span> AUTH = [</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"VAPID"</span> =&gt; [</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #a31515;">"subject"</span> =&gt; <span
+     style="color: #a31515;">"https://notificacionesphp.gilbertopachec2.repl.co/"</span>,
+  </div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #a31515;">"publicKey"</span> =&gt; <span
+     style="color: #a31515;">"BMBlr6YznhYMX3NgcWIDRxZXs0sh7tCv7_YCsWcww0ZCv9WGg-tRCXfMEHTiBPCksSqeve1twlbmVAZFv7GSuj0"</span>,
+  </div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #a31515;">"privateKey"</span> =&gt; <span
+     style="color: #a31515;">"vplfkITvu0cwHqzK9Kj-DYStbCH_9AhGx9LqMyaeI6w"</span>
+  </div>
+  <div>&nbsp;]</div>
+  <div>];</div><br>
+  <div><span
+     style="color: #795e26;">ejecuta</span>(<span
+     style="color: #0000ff;">function</span> ()&nbsp;{</div><br>
+  <div>&nbsp;<span
+     style="color: #001080;">$webPush</span> = <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">WebPush</span>(AUTH);</div>
+  <div>&nbsp;<span
+     style="color: #001080;">$mensaje</span> = <span
+     style="color: #a31515;">"Hola! 👋"</span>;</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">// Envia el mensaje a todas las
+    suscripciones.</span></div>
+  <div>&nbsp;<span
+     style="color: #001080;">$suscripciones</span> = <span
+     style="color: #795e26;">suscripcionConsulta</span>();</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">foreach</span> (<span
+     style="color: #001080;">$suscripciones</span> as <span
+     style="color: #001080;">$suscripcion</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">$webPush</span>-&gt;<span
+     style="color: #795e26;">queueNotification</span>(<span
+     style="color: #001080;">$suscripcion</span>, <span
+     style="color: #001080;">$mensaje</span>);</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span
+     style="color: #001080;">$reportes</span> = <span
+     style="color: #001080;">$webPush</span>-&gt;<span
+     style="color: #795e26;">flush</span>();</div><br>
+  <div>&nbsp;<span
+     style="color: #008000;">// Genera el reporte de envio a cada
+    suscripcion.</span></div>
+  <div>&nbsp;<span
+     style="color: #001080;">$reporteDeEnvios</span> = <span
+     style="color: #a31515;">""</span>;</div>
+  <div>&nbsp;<span
+     style="color: #af00db;">foreach</span> (<span
+     style="color: #001080;">$reportes</span> as <span
+     style="color: #001080;">$reporte</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">$endpoint</span> = <span
+     style="color: #795e26;">htmlentities</span>(<span
+     style="color: #001080;">$reporte</span>-&gt;<span
+     style="color: #795e26;">getRequest</span>()-&gt;<span
+     style="color: #795e26;">getUri</span>());</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">$reporte</span>-&gt;<span
+     style="color: #795e26;">isSuccess</span>())&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">// Reporte de éxito.</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">$reporteDeEnvios</span> .= <span
+     style="color: #a31515;">"&lt;dt&gt;</span><span
+     style="color: #001080;">$endpoint</span><span
+     style="color: #a31515;">&lt;/dt&gt;&lt;dd&gt;Éxito&lt;/dd&gt;"</span>;
+  </div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">$reporte</span>-&gt;<span
+     style="color: #795e26;">isSubscriptionExpired</span>())&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">suscripcionElimina</span>(<span
+     style="color: #001080;">$endpoint</span>);</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">// Reporte de fallo.</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">$explicacion</span> = <span
+     style="color: #795e26;">htmlentities</span>(<span
+     style="color: #001080;">$reporte</span>-&gt;<span
+     style="color: #795e26;">getReason</span>());</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">$reporteDeEnvios</span> .= <span
+     style="color: #a31515;">"&lt;dt&gt;</span><span
+     style="color: #001080;">$endpoint</span><span
+     style="color: #a31515;">&lt;/dt&gt;&lt;dd&gt;Fallo: </span><span
+     style="color: #001080;">$explicacion</span><span
+     style="color: #a31515;">&lt;/dd&gt;"</span>;</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #af00db;">return</span> <span
+     style="color: #001080;">$reporteDeEnvios</span>;</div>
+  <div>});</div><br>
+ </div>
+</muestra-codigo>

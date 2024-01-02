@@ -1,0 +1,524 @@
+<muestra-codigo>
+ <div>
+  <div><span
+     style="color: #800000;">&lt;!DOCTYPE</span> <span
+     style="color: #e50000;">html</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div><span
+     style="color: #800000;">&lt;html</span> <span
+     style="color: #e50000;">lang</span>=<span
+     style="color: #0000ff;">"es"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div><span
+     style="color: #800000;">&lt;head&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;meta</span> <span
+     style="color: #e50000;">charset</span>=<span
+     style="color: #0000ff;">"UTF-8"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;meta</span> <span
+     style="color: #e50000;">name</span>=<span
+     style="color: #0000ff;">"viewport"</span> <span
+     style="color: #e50000;">content</span>=<span
+     style="color: #0000ff;">"width=device-width"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;title&gt;</span>Notificaciones Push<span
+     style="color: #800000;">&lt;/title&gt;</span></div><br>
+  <div><span
+     style="color: #800000;">&lt;/head&gt;</span></div><br>
+  <div><span
+     style="color: #800000;">&lt;body</span> <span
+     style="color: #e50000;">onload</span>=<span
+     style="color: #0000ff;">"</span><span
+     style="color: #795e26;">preparaVista</span><span
+     style="color: #0000ff;">()"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;h1&gt;</span>Notificaciones Push<span
+     style="color: #800000;">&lt;/h1&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;menu</span> <span
+     style="color: #e50000;">style</span>=<span
+     style="color: #0000ff;">"</span><span
+     style="color: #0000ff;">display: flex; list-style: none; flex-wrap: wrap;
+    gap: 0.5rem;"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;li&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;button</span> <span
+     style="color: #e50000;">id</span>=<span
+     style="color: #0000ff;">"btnSuscribe"</span> <span
+     style="color: #e50000;">type</span>=<span
+     style="color: #0000ff;">"button"</span> <span
+     style="color: #e50000;">hidden</span> <span
+     style="color: #e50000;">onclick</span>=<span
+     style="color: #0000ff;">"</span><span
+     style="color: #795e26;">suscribe</span><span
+     style="color: #0000ff;">()"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Suscríbete</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/button&gt;</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/li&gt;</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;li&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;button</span> <span
+     style="color: #e50000;">id</span>=<span
+     style="color: #0000ff;">"btnCancela"</span> <span
+     style="color: #e50000;">type</span>=<span
+     style="color: #0000ff;">"button"</span> <span
+     style="color: #e50000;">hidden</span> <span
+     style="color: #e50000;">onclick</span>=<span
+     style="color: #0000ff;">"</span><span
+     style="color: #795e26;">cancela</span><span
+     style="color: #0000ff;">()"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Cancela suscripción</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/button&gt;</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/li&gt;</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;li&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;button</span> <span
+     style="color: #e50000;">id</span>=<span
+     style="color: #0000ff;">"btnNotifica"</span> <span
+     style="color: #e50000;">type</span>=<span
+     style="color: #0000ff;">"button"</span> <span
+     style="color: #e50000;">hidden</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #e50000;">onclick</span>=<span
+     style="color: #0000ff;">"</span><span
+     style="color: #795e26;">notificaDesdeElServidor</span><span
+     style="color: #0000ff;">()"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;Notifica</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/button&gt;</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/li&gt;</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;li&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;a</span> <span
+     style="color: #e50000;">href</span>=<span
+     style="color: #0000ff;">"srv/generallaves.php"</span> <span
+     style="color: #e50000;">target</span>=<span
+     style="color: #0000ff;">"_blank"</span><span
+     style="color: #800000;">&gt;</span>Genera llaves<span
+     style="color: #800000;">&lt;/a&gt;</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/li&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;/menu&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;p&gt;</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;output</span> <span
+     style="color: #e50000;">id</span>=<span
+     style="color: #0000ff;">"outEstado"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;progress</span> <span
+     style="color: #e50000;">max</span>=<span
+     style="color: #0000ff;">"100"</span><span
+     style="color: #800000;">&gt;</span>Cargando<span
+     style="color: #0000ff;">&amp;hellip;</span><span
+     style="color: #800000;">&lt;/progress&gt;</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;/output&gt;</span></div>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;/p&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;fieldset&gt;</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;legend&gt;</span>Reporte de envío a
+   endpoints<span
+     style="color: #800000;">&lt;/legend&gt;</span></div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #800000;">&lt;dl</span> <span
+     style="color: #e50000;">id</span>=<span
+     style="color: #0000ff;">"reporte"</span><span
+     style="color: #800000;">&gt;&lt;/dl&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;/fieldset&gt;</span></div><br>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;script</span> <span
+     style="color: #e50000;">type</span>=<span
+     style="color: #0000ff;">"module"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">activaNotificacionesPush</span></div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/activaNotificacionesPush.js"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">getSuscripcionPush</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/getSuscripcionPush.js"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">suscribeAPush</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/suscribeAPush.js"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">cancelaSuscripcionPush</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/cancelaSuscripcionPush.js"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">ejecuta</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/ejecuta.js"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">enviaJson</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/enviaJson.js"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">muestraError</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/muestraError.js"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">muestraValor</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/muestraValor.js"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{ <span
+     style="color: #001080;">urlBase64ToUint8Array</span> }&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/urlBase64ToUint8Array.js"</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #af00db;">import</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">calculaDtoParaSuscripcion</span></div>
+  <div>&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"./lib/js/calculaDtoParaSuscripcion.js"</span>
+  </div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">applicationServerKey</span> = <span
+     style="color: #795e26;">urlBase64ToUint8Array</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #a31515;">"BMBlr6YznhYMX3NgcWIDRxZXs0sh7tCv7_YCsWcww0ZCv9WGg-tRCXfMEHTiBPCksSqeve1twlbmVAZFv7GSuj0"</span>)
+  </div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">/**&nbsp;@enum&nbsp;{string}&nbsp;*/</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #267f99;">Estado</span> =&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">CALCULANDO</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #a31515;">"Calculando…"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">SUSCRITO</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #a31515;">"Suscrito"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">DESUSCRITO</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #a31515;">"Sin suscripción"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">INCOMPATIBLE</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #a31515;">"Incompatible"</span></div>
+  <div>&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">preparaVista</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">try</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">activaNotificacionesPush</span>(<span
+     style="color: #a31515;">"sw.js"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">suscripcion</span> = <span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">getSuscripcionPush</span>()</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">suscripcion</span> === <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">muestraEstado</span>(<span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">DESUSCRITO</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">// Modifica la suscripción en el servidor,</span>
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">dto</span> = <span
+     style="color: #795e26;">calculaDtoParaSuscripcion</span>(<span
+     style="color: #0070c1;">suscripcion</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">enviaJson</span>(<span
+     style="color: #a31515;">"srv/srvSuscripcion.php"</span>, <span
+     style="color: #0070c1;">dto</span>, <span
+     style="color: #a31515;">"PUT"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">muestraEstado</span>(<span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">SUSCRITO</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">error</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">muestraEstado</span>(<span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">INCOMPATIBLE</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">muestraError</span>(<span
+     style="color: #001080;">error</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"preparaVista"</span>] = <span
+     style="color: #795e26;">preparaVista</span></div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">notificaDesdeElServidor</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">try</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">reporte</span>.<span
+     style="color: #001080;">innerHTML</span> = <span
+     style="color: #008000;">/*&nbsp;html */</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<span
+     style="color: #800000;">&lt;progress</span> <span
+     style="color: #e50000;">max</span>=<span
+     style="color: #0000ff;">"100"</span><span
+     style="color: #800000;">&gt;</span>Cargando<span
+     style="color: #0000ff;">&amp;hellip;</span><span
+     style="color: #800000;">&lt;/progress&gt;</span>`</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">render</span> = <span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">ejecuta</span>(<span
+     style="color: #a31515;">"srv/srvNotifica.php"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">muestraValor</span>(<span
+     style="color: #001080;">document</span>, <span
+     style="color: #001080;">reporte</span>, <span
+     style="color: #0070c1;">render</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">error</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">muestraError</span>(<span
+     style="color: #001080;">error</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"notificaDesdeElServidor"</span>] = <span
+     style="color: #795e26;">notificaDesdeElServidor</span></div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">suscribe</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">try</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">muestraEstado</span>(<span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">CALCULANDO</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">suscripcion</span> = <span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">suscribeAPush</span>(<span
+     style="color: #0070c1;">applicationServerKey</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">// Agrega la suscripción al servidor,</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">dto</span> = <span
+     style="color: #795e26;">calculaDtoParaSuscripcion</span>(<span
+     style="color: #0070c1;">suscripcion</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">enviaJson</span>(<span
+     style="color: #a31515;">"srv/srvSuscripcion.php"</span>, <span
+     style="color: #0070c1;">dto</span>, <span
+     style="color: #a31515;">"POST"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">muestraEstado</span>(<span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">SUSCRITO</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">error</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">muestraError</span>(<span
+     style="color: #001080;">error</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"suscribe"</span>] = <span
+     style="color: #795e26;">suscribe</span></div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">cancela</span>()&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">try</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">muestraEstado</span>(<span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">CALCULANDO</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">suscripcion</span> = <span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">cancelaSuscripcionPush</span>()</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">suscripcion</span> !== <span
+     style="color: #0000ff;">null</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #008000;">// Elimina la suscripción en el servidor,</span>
+  </div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">dto</span> = <span
+     style="color: #795e26;">calculaDtoParaSuscripcion</span>(<span
+     style="color: #0070c1;">suscripcion</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">await</span> <span
+     style="color: #795e26;">enviaJson</span>(<span
+     style="color: #a31515;">"srv/srvSuscripcion.php"</span>, <span
+     style="color: #0070c1;">dto</span>, <span
+     style="color: #a31515;">"DELETE"</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">muestraEstado</span>(<span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">DESUSCRITO</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">error</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #795e26;">muestraError</span>(<span
+     style="color: #001080;">error</span>)</div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">// Permite que los eventos de html usen la
+    función.</span></div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #001080;">window</span>[<span
+     style="color: #a31515;">"cancela"</span>] = <span
+     style="color: #795e26;">cancela</span></div><br>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">/**&nbsp;@param&nbsp;{Estado}&nbsp;estado */</span>
+  </div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">muestraEstado</span>(<span
+     style="color: #001080;">estado</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">outEstado</span>.<span
+     style="color: #001080;">value</span> = <span
+     style="color: #001080;">estado</span></div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">estado</span> === <span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">INCOMPATIBLE</span> || <span
+     style="color: #001080;">estado</span> === <span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">CALCULANDO</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">btnSuscribe</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">true</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">btnCancela</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">true</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">btnNotifica</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">true</span></div>
+  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span> <span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">estado</span> === <span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">SUSCRITO</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">btnSuscribe</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">true</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">btnCancela</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">false</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">btnNotifica</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">false</span></div>
+  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+     style="color: #af00db;">else</span> <span
+     style="color: #af00db;">if</span> (<span
+     style="color: #001080;">estado</span> === <span
+     style="color: #267f99;">Estado</span>.<span
+     style="color: #001080;">DESUSCRITO</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">btnSuscribe</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">false</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">btnCancela</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">true</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">btnNotifica</span>.<span
+     style="color: #001080;">hidden</span> = <span
+     style="color: #0000ff;">true</span></div>
+  <div>&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;}</div><br>
+  <div>&nbsp;<span
+     style="color: #800000;">&lt;/script&gt;</span></div><br>
+  <div><span
+     style="color: #800000;">&lt;/body&gt;</span></div><br>
+  <div><span
+     style="color: #800000;">&lt;/html&gt;</span></div>
+ </div>
+</muestra-codigo>
