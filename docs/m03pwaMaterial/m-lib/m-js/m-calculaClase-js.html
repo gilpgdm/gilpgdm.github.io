@@ -476,28 +476,26 @@
      style="color: #008000;">&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
+     style="color: #267f99;">{string[]}</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">pagina</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">paginaActual</span></div>
+     style="color: #001080;">paginas</span></div>
   <div><span
      style="color: #008000;">&nbsp;*/</span></div>
   <div><span
      style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
      style="color: #795e26;">calculaClase</span>(<span
-     style="color: #001080;">pagina</span>, <span
-     style="color: #001080;">paginaActual</span>)&nbsp;{</div>
+     style="color: #001080;">paginas</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">pathname</span> = <span
+     style="color: #001080;">location</span>.<span
+     style="color: #001080;">pathname</span></div>
   <div>&nbsp;<span
      style="color: #af00db;">return</span> <span
-     style="color: #001080;">pagina</span> === <span
-     style="color: #001080;">paginaActual</span> ?<span
+     style="color: #001080;">paginas</span>.<span
+     style="color: #795e26;">includes</span>(<span
+     style="color: #0070c1;">pathname</span>) ?<span
      style="color: #008000;"> </span><span
      style="color: #795e26;">html</span>`class="active"` : <span
      style="color: #a31515;">""</span></div>

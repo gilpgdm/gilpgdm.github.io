@@ -557,28 +557,26 @@
      style="color: #008000;">&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@param</span><span
      style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
+     style="color: #267f99;">{string[]}</span><span
      style="color: #008000;"> </span><span
-     style="color: #001080;">pagina</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">paginaActual</span></div>
+     style="color: #001080;">paginas</span></div>
   <div><span
      style="color: #008000;">&nbsp;*/</span></div>
   <div><span
      style="color: #af00db;">export</span> <span
      style="color: #0000ff;">function</span> <span
      style="color: #795e26;">calculaClase</span>(<span
-     style="color: #001080;">pagina</span>, <span
-     style="color: #001080;">paginaActual</span>)&nbsp;{</div>
+     style="color: #001080;">paginas</span>)&nbsp;{</div>
+  <div>&nbsp;<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">pathname</span> = <span
+     style="color: #001080;">location</span>.<span
+     style="color: #001080;">pathname</span></div>
   <div>&nbsp;<span
      style="color: #af00db;">return</span> <span
-     style="color: #001080;">pagina</span> === <span
-     style="color: #001080;">paginaActual</span> ?<span
+     style="color: #001080;">paginas</span>.<span
+     style="color: #795e26;">includes</span>(<span
+     style="color: #0070c1;">pathname</span>) ?<span
      style="color: #008000;"> </span><span
      style="color: #795e26;">html</span>`class="active"` : <span
      style="color: #a31515;">""</span></div>
@@ -5794,11 +5792,6 @@
      style="color: #a31515;">"../cierraElementoHtmo.js"</span></div>
   <div><span
      style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">getAttribute</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../getAttribute.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
      style="color: #001080;">html</span> }&nbsp;<span
      style="color: #af00db;">from</span> <span
      style="color: #a31515;">"../html.js"</span></div>
@@ -5817,21 +5810,13 @@
      style="color: #008000;">/**</span></div>
   <div><span
      style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">_paginaActual</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
      style="color: #0000ff;">@returns</span><span
      style="color: #008000;"> </span><span
      style="color: #267f99;">{{htmlTxt: string;}}</span></div>
   <div><span
      style="color: #008000;">&nbsp;&nbsp;*/</span></div>
   <div>&nbsp;<span
-     style="color: #795e26;">getHipervinculos</span>(<span
-     style="color: #001080;">_paginaActual</span>)&nbsp;{ <span
+     style="color: #795e26;">getHipervinculos</span>()&nbsp;{ <span
      style="color: #af00db;">throw</span> <span
      style="color: #0000ff;">new</span> <span
      style="color: #267f99;">Error</span>(<span
@@ -5926,22 +5911,14 @@
      style="color: #098658;">0</span>);</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">ul</span>&nbsp;{</div>
+     style="color: #800000;">nav</span>&gt;<span
+     style="color: #800000;">div</span>&nbsp;{</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #e50000;">flex-grow</span>: <span
      style="color: #098658;">1</span>;</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">border-radius</span>: <span
-     style="color: #098658;">1rem</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #e50000;">overflow</span>: <span
      style="color: #0451a5;">auto</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">list-style-type</span>: <span
-     style="color: #0451a5;">none</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">margin</span>: <span
-     style="color: #098658;">0</span>;</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
      style="color: #e50000;">padding</span>: <span
      style="color: #098658;">12px</span> <span
@@ -6012,7 +5989,6 @@
   </div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a::after</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;container inactive */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -6038,7 +6014,6 @@
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a.active::after</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;container */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -6047,7 +6022,6 @@
      style="color: #001080;">--md-sys-color-secondary-container</span>);</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;label, shape inactive */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -6120,7 +6094,6 @@
      style="color: #0451a5;">ellipsis</span>;</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a.active</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;label, shape */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -6135,7 +6108,6 @@
   </div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a::before</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;state layer */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -6161,7 +6133,6 @@
      style="color: #098658;">0</span>;</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a</span> <span
      style="color: #800000;">span</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;inactive icon */</span></div>
@@ -6189,7 +6160,6 @@
      style="color: #098658;">24px</span>;</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a.active</span> <span
      style="color: #800000;">span</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;icon */</span></div>
@@ -6247,7 +6217,6 @@
      style="color: #098658;">0</span>);</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a:hover</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;inactive label, shape */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -6256,7 +6225,6 @@
      style="color: #001080;">--md-sys-color-on-surface</span>);</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a.active:hover</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;active label, shape */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -6266,7 +6234,6 @@
   </div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a:hover::before</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;inactive state layer */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -6280,7 +6247,6 @@
   </div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a.active:hover::before</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;state layer */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -6290,7 +6256,6 @@
   </div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a:hover</span> <span
      style="color: #800000;">span</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;inactive icon */</span></div>
@@ -6300,7 +6265,6 @@
      style="color: #001080;">--md-sys-color-on-surface</span>);</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a.active:hover</span> <span
      style="color: #800000;">span</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;icon */</span></div>
@@ -6311,7 +6275,6 @@
   </div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a:focus</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;inactive label, shape */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -6323,7 +6286,6 @@
      style="color: #001080;">--md-sys-color-on-surface</span>);</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a.active:focus</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;label, shape */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -6333,7 +6295,6 @@
   </div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a:focus::before</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;inactive state layer */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -6347,7 +6308,6 @@
   </div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a.active:focus::before</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;state layer */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -6357,7 +6317,6 @@
   </div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a:focus</span> <span
      style="color: #800000;">span</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;inactive icon */</span></div>
@@ -6367,7 +6326,6 @@
      style="color: #001080;">--md-sys-color-on-surface</span>);</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a.active:focus</span> <span
      style="color: #800000;">span</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;icon */</span></div>
@@ -6378,7 +6336,6 @@
   </div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a:active</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;inactive pressed label, shape */</span>
   </div>
@@ -6410,7 +6367,6 @@
      style="color: #001080;">--md-sys-color-on-surface</span>);</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a.active:active</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;active pressed label, shape */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -6420,7 +6376,6 @@
   </div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a:active::before</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;inactive pressed state layer */</span>
   </div>
@@ -6435,7 +6390,6 @@
   </div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a.active:active::before</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;active pressed state layer */</span></div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -6445,7 +6399,6 @@
   </div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a:active</span> <span
      style="color: #800000;">span</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;inactive pressed icon */</span></div>
@@ -6456,7 +6409,6 @@
   <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">li</span> <span
      style="color: #800000;">a.active:focus</span> <span
      style="color: #800000;">span</span>&nbsp;{ <span
      style="color: #008000;">/*&nbsp;active pressed icon */</span></div>
@@ -6483,7 +6435,7 @@
      style="color: #800000;">&lt;nav</span> <span
      style="color: #e50000;">class</span>=<span
      style="color: #0000ff;">"large-end"</span><span
-     style="color: #800000;">&gt;&lt;ul&gt;&lt;/ul&gt;&lt;/nav&gt;</span>`.<span
+     style="color: #800000;">&gt;&lt;div&gt;&lt;/div&gt;&lt;/nav&gt;</span>`.<span
      style="color: #001080;">htmlTxt</span></div>
   <div>&nbsp;}</div><br>
   <div>&nbsp;<span
@@ -6512,10 +6464,10 @@
      style="color: #008000;"> */</span></div>
   <div>&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_ul</span> = <span
+     style="color: #001080;">_div</span> = <span
      style="color: #795e26;">querySelector</span>(<span
      style="color: #001080;">shadow</span>, <span
-     style="color: #a31515;">"ul"</span>)</div>
+     style="color: #a31515;">"nav&gt;div"</span>)</div>
   <div>&nbsp;}</div><br>
   <div>&nbsp;<span
      style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
@@ -6524,18 +6476,11 @@
      style="color: #001080;">hidden</span> = <span
      style="color: #0000ff;">true</span></div>
   <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">paginaActual</span> = <span
-     style="color: #795e26;">getAttribute</span>(<span
-     style="color: #0000ff;">this</span>, <span
-     style="color: #a31515;">"actual"</span>)</div>
-  <div>&nbsp;&nbsp;<span
      style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_ul</span>.<span
+     style="color: #001080;">_div</span>.<span
      style="color: #001080;">innerHTML</span> = <span
      style="color: #0000ff;">this</span>.<span
-     style="color: #795e26;">getHipervinculos</span>(<span
-     style="color: #001080;">paginaActual</span>).<span
+     style="color: #795e26;">getHipervinculos</span>().<span
      style="color: #001080;">htmlTxt</span></div>
   <div>&nbsp;}</div><br>
   <div>&nbsp;<span
