@@ -437,6 +437,11 @@
    </li>
    <li>
     <p>
+     <a href="/m10siot/">Simulación de un sistema IoT</a>
+    </p>
+   </li>
+   <li>
+    <p>
      <a href="/m07notificaciones.html">Notificaciones</a>
     </p>
    </li>
@@ -32279,8 +32284,277 @@
 </div>
       </section>
       </section>
+     <section>
+         <h1 >9. Simulación de un sistema IoT</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    
+   <li>
+    <p>
+     <a href="/m10siot/mAintro.html">Introduccion</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m10siot/mBcontrata.html">Contratación</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m10siot/mCinstalacion.html">Instalación del sistema IoT</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m10siot/mDuso.html">Uso del sistema de IoT</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m10siot/mEmonitoreo.html">Monitoreo</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m10siot/mFtabla.html">Almacenamiento en tabla</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m10siot/mGfacturacion.html">Facturación</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m10siot/mEresumen.html">Resumen</a>
+    </p>
+   </li>
+   </ol>
+ </nav>
+</div>
      <section >
-         <h1 >9. Notificaciones</h1><div class="horizontal">
+         <h1 >A. Introduccion</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En esta lección ejemplifica el funcionamiento de un sistema completo de IoT.
+   </p>
+  </li>
+  <li>
+   <p>
+    Aunque no se muestra, todas las páginsa están protegidas por un sistema
+    de autenticación como en
+    <a target="_blank" rel="noopener"
+      href="https://gilpgawoas.github.io/m19aut/">https://gilpgawoas.github.io/m19aut/</a>
+    y no se pueden usar sin pasar por un inicio de desión.
+   </p>
+  </li>
+  <li>
+   <p>
+    En este ejemplo tendremos los siguientes usuarios y roles:
+   </p>
+   <dl>
+    <dt>cuca</dt>
+    <dd>Vendedor</dd>
+    <dt>pepito</dt>
+    <dd>Cliente</dd>
+    <dt>juan</dt>
+    <dd>Instalador</dd>
+    <dt>angela</dt>
+    <dd>Operador</dd>
+    <dt>perla</dt>
+    <dd>Cobranza</dd>
+   </dl>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >B. Contratación</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Los sistemas de IoT requieren recibir constantemente dinero. En este
+    ejemplo, la financiación viene de estar pagando cada mes el servicio de
+    alumbrado controlado por interruptores físicos y por un control remoto.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para empezar, los clientes asisten a las oficinas de ventas de la empresa,
+    firman un contrato y agendan una cita, pues en este caso el hacer funcionar
+    este tipo de sistemas no es sencillo.
+   </p>
+  </li>
+  <li>
+   <p>
+    En este caso, la página está operada por el usuario <q>cuca</q>, con el
+    rol <q>Vandedor</q>, que recibe los datos proporcionados por los
+    contratantes.
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <iframe src="/src/m10siot/contrato.html"
+   height="600" title="Página de contratación"></iframe>
+</figure>
+      </section>
+     <section >
+         <h1 >C. Instalación del sistema IoT</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    El instalador asiste al domicilio del contratante y realiza la instalación
+    del hardware y del software.
+   </p>
+  </li>
+  <li>
+   <p>
+    Se debe dejar funcionando todo el hardware, todo el software y la conexión
+    al servidor.
+   </p>
+  </li>
+  <li>
+   <p>
+    En este caso, la instalación es realzada el usuario <q>juan</q>, con el
+    rol <q>Instalador</q>.
+   </p>
+  </li>
+  <li>
+   <p>
+    En teste caso, el sistema debe quedar operado por el usuario <q>pepito</q>,
+    con el rol <q>Cliente</q>. Si es necesario, debe recibir capacitación por
+    parte del instalador.
+   </p>
+  </li>
+  <li>
+   <p class="noPrint">
+    El proceso de instalación se parece a lo mostrado en este video:
+    <a href="https://drive.google.com/file/d/14oEAQS2mP7EDtQAA7ydS4O4QWbXHmTGQ/view?usp=sharing"
+      target="_blank" rel="noopener">Configurar e instalar IoT</a>.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >D. Uso del sistema de IoT</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    El cliente, que en este caso es el usuario <q>pepito</q> con el rol
+    <q>Cliente</q> utiliza el sistema.
+   </p>
+  </li>
+  <li>
+   <p>
+    Se transmiten los datos de uso a la empresa de IoT. En este caso, los datos
+    se envían a un servidor MQTT, que a su vez los reenvía a la empresa.
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img src="/img/m06esp8266/dispositivo.gif" alt="Video del dispositivo">
+ <figcaption>
+  Implementación del ejemplo de IoT con MQTT en Arduino IDE.
+ </figcaption>
+</figure>
+<figure>
+ <iframe src="/src/m10siot/foco.html"
+   height="450" title="Página de uso"></iframe>
+</figure>
+      </section>
+     <section >
+         <h1 >E. Monitoreo</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Los datos enviados por MQTT se reciben en la empresa y se almacenan en la
+    base de datos. Se puede usar un mecanismo parecido a la interfaz de uso,
+    pero enviando los datos a un servicio que los almacene.
+   </p>
+  </li>
+  <li>
+   <p>
+    En este caso, el sistema es operado por el usuario <q>angela</q>,
+    con el rol <q>Operador</q>, que observa el comportamiento de la página y
+    revisa si hay fallos.
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <iframe src="/src/m10siot/monitoreo.html"
+   height="450" title="Página de monitoreo"></iframe>
+</figure>
+      </section>
+     <section >
+         <h1 >F. Almacenamiento en tabla</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Los datos de todos los dispositivos se almacenan en la tabla de histórico.
+   </p>
+  </li>
+  <li>
+   <p>
+    El campo timestamp representa hora y fecha en que se tomó la medición..
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <iframe src="/src/m10siot/tabla.html"
+   height="450" title="Página de tabla histórica"></iframe>
+</figure>
+      </section>
+     <section >
+         <h1 >G. Facturación</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Los datos en el sistema se utilizan para extraer conocimiento de los datos
+    almacenados.
+   </p>
+  </li>
+  <li>
+   <p>
+    En este caso, el sistema es operado por el usuario <q>perla</q>,
+    con el rol <q>Cobranza</q> para generar la facturación.
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <iframe src="/src/m10siot/factura.html"
+   height="550" title="Página de facturación"></iframe>
+</figure>
+      </section>
+     <section >
+         <h1 >H. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En esta lección ejemplificó el funcionamiento de un sistema completo de IoT
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+      </section>
+     <section >
+         <h1 >10. Notificaciones</h1><div class="horizontal">
  <section>
   <h1>Salida</h1>
   <iframe src="/src/m01notificaciones/index.html" height="200"
@@ -32417,7 +32691,7 @@
 </div>
       </section>
      <section>
-         <h1 >10. Notificaciones push</h1>
+         <h1 >11. Notificaciones push</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -36849,7 +37123,7 @@
       </section>
       </section>
      <section>
-         <h1 >11. Sincronización</h1>
+         <h1 >12. Sincronización</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width">
+
+ <title>Tabla de consumo</title>
+
+ <style>
+  th,
+  td {
+   overflow-wrap: anywhere;
+  }
+ </style>
+
+</head>
+
+<body>
+
+ <h1>Tabla de consumo</h1>
+
+ <table>
+  <thead>
+   <tr>
+    <th>HISTORICO_ID</th>
+    <th>DISPOSITIVO_ID</th>
+    <th>HISTORICO_VALOR</th>
+    <th>HISTORICO_TIMESTAMP</th>
+   </tr>
+  </thead>
+  <tbody id="tbody"></tbody>
+ </table>
+
+</body>
+
+<script>
+ let id = 300
+ let dispId = 169
+ let i = 0
+ const dispIds = [168, 169, 170]
+ const valores = [1, 0, 0]
+ tbody.innerHTML +=  /* html */
+  `<tr>
+    <td>${id++}</td>
+    <td>${dispIds[i]}</td>
+    <td>${valores[i]}</td>
+    <td>${Date.now()}</td>
+    </tr>`
+ setInterval(() => {
+  valores[i] = valores[i] === 1 ? 0 : 1
+  i = Math.floor(Math.random() * 3)
+  tbody.innerHTML += /* html */
+   `<tr>
+     <td>${id++}</td>
+     <td>${dispIds[i]}</td>
+    <td>${valores[i]}</td>
+     <td>${Date.now()}</td>
+    </tr>`
+ }, 4000);
+</script>
+
+</html>

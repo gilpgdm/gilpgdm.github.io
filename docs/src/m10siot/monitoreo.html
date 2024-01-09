@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width">
+
+ <title>Monitoreo</title>
+
+</head>
+
+<body>
+
+ <h1>Monitoreo</h1>
+
+ <ul id="ul">
+  <li>
+    Botón presionado.
+    Id del dispositivo = 169.
+    Valor = 0.
+    Guardando valor en la base de datos.
+  </li>
+ </ul>
+
+</body>
+
+<script>
+ let valor = 0
+ setInterval(() => {
+  valor = valor === 1 ? 0 : 1
+  ul.innerHTML += /* html */
+  `<li>
+     Botón presionado.
+     Id del dispositivo = 169.
+     Valor = ${valor}.
+     Guardando valor en la base de datos.
+   </li>`
+ }, 4000);
+</script>
+
+</html>

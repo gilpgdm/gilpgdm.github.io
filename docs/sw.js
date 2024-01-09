@@ -462,6 +462,17 @@ const ARCHIVOS = [
  "/m09sincronizacion/mDinstrucciones.html",
  "/m09sincronizacion/mKresumen.html",
  "/m09sincronizacion/print.html",
+ "/m10siot/",
+ "/m10siot/index.html",
+ "/m10siot/mAintro.html",
+ "/m10siot/mBcontrata.html",
+ "/m10siot/mCinstalacion.html",
+ "/m10siot/mDuso.html",
+ "/m10siot/mEmonitoreo.html",
+ "/m10siot/mEresumen.html",
+ "/m10siot/mFtabla.html",
+ "/m10siot/mGfacturacion.html",
+ "/m10siot/print.html",
  "/print.html",
  "/site.webmanifest",
  "/src/m01notificaciones/",
@@ -479,7 +490,12 @@ const ARCHIVOS = [
  "/src/m04dispositivos/gps.html",
  "/src/m05pwaBasica/pwa.zip",
  "/src/m07iot/iothtml.zip",
- "/src/m09sincronizacion/sincronizacion.zip"
+ "/src/m09sincronizacion/sincronizacion.zip",
+ "/src/m10siot/contrato.html",
+ "/src/m10siot/factura.html",
+ "/src/m10siot/foco.html",
+ "/src/m10siot/monitoreo.html",
+ "/src/m10siot/tabla.html"
 ]
 
 // Verifica si el código corre dentro de un service worker.
