@@ -476,10 +476,77 @@
   </li>
  </ul>
 </div>
-<figure>
- <iframe src="/src/m10siot/contrato.html"
-   height="600" title="Página de contratación"></iframe>
-</figure>
+<section class="lectura">
+ <hr>
+
+ <h1>Contrato y cita</h1>
+
+ <form>
+
+  <p>
+    Usuario: Cuca
+  </p>
+
+  <p>
+   <label>
+    Id del dispositivo contratado: 169
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Nombre del contratante
+    <input style="display: block;" type="text" value="Pepito">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Usu del contratante
+    <input style="display: block;" type="text" value="pepito">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Match del contratante
+    <input style="display: block;" type="password" value="123">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Fecha de instalación
+    <input style="display: block;" type="datetime-local" value="2024-11-23T11:00">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Dirección de instalación
+    <textarea style="display: block;" >Su casa</textarea>
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Técnico instalador
+    <select value="2">
+     <option value="1">Juan</option>
+     <option value="2">Samanta</option>
+     <option value="3">Andrés</option>
+     <option value="4">Susana</option>
+    </select>
+   </label>
+  </p>
+
+  <p>
+   <button type="submit">Contratar</button>
+  </p>
+
+ </form>
+
+</section>
       </section>
      <section >
          <h1 >C. Instalación del sistema IoT</h1><div class="lectura">
@@ -542,10 +609,38 @@
   Implementación del ejemplo de IoT con MQTT en Arduino IDE.
  </figcaption>
 </figure>
-<figure>
- <iframe src="/src/m10siot/foco.html"
-   height="450" title="Página de uso"></iframe>
-</figure>
+<section class="lectura">
+
+ <script>
+
+  let valor = 0
+
+ </script>
+ <hr>
+ <h1>Foco</h1>
+
+ <h1>Nombre del cliente </h1>
+ <p>Pepito</p>
+
+ <h1>Usu del cliente </h1>
+ <p>pepito</p>
+
+ <h1>Id del dispositivo</h1>
+ <p>169</p>
+
+ <p>
+  <output id="salida">⚪</output>
+ </p>
+
+ <p>
+  <button type="button"
+    onclick="valor = valor === 1 ? 0 : 1;
+     salida.value = valor === 1 ? '🔴' : '⚪'">
+   Enviar
+  </button>
+ </p>
+
+</section>
       </section>
      <section >
          <h1 >E. Monitoreo</h1><div class="lectura">
@@ -565,11 +660,34 @@
    </p>
   </li>
  </ul>
+ <section>
+  <hr>
+  <h1>Monitoreo</h1>
+
+  <ul id="ul">
+   <li>
+    Botón presionado.
+    Id del dispositivo = 169.
+    Valor = 0.
+    Guardando valor en la base de datos.
+   </li>
+  </ul>
+
+  <script>
+   let valor = 0
+   setInterval(() => {
+    valor = valor === 1 ? 0 : 1
+    ul.innerHTML += /* html */
+     `<li>
+     Botón presionado.
+     Id del dispositivo = 169.
+     Valor = ${valor}.
+     Guardando valor en la base de datos.
+   </li>`
+   }, 4000);
+  </script>
+ </section>
 </div>
-<figure>
- <iframe src="/src/m10siot/monitoreo.html"
-   height="450" title="Página de monitoreo"></iframe>
-</figure>
       </section>
      <section >
          <h1 >F. Almacenamiento en tabla</h1><div class="lectura">
@@ -585,14 +703,56 @@
    </p>
   </li>
  </ul>
+ <section>
+  <hr>
+  <h1>Tabla de consumo</h1>
+
+  <table>
+   <thead>
+    <tr>
+     <th style="overflow-wrap: anywhere">HISTORICO_ID</th>
+     <th style="overflow-wrap: anywhere">DISPOSITIVO_ID</th>
+     <th style="overflow-wrap: anywhere">HISTORICO_VALOR</th>
+     <th style="overflow-wrap: anywhere">HISTORICO_TIMESTAMP</th>
+    </tr>
+   </thead>
+   <tbody id="tbody"></tbody>
+  </table>
+
+  </body>
+
+  <script>
+   let id = 300
+   let dispId = 169
+   let i = 0
+   const dispIds = [168, 169, 170]
+   const valores = [1, 0, 0]
+   tbody.innerHTML +=  /* html */
+    `<tr>
+     <td style="overflow-wrap: anywhere">${id++}</td>
+     <td style="overflow-wrap: anywhere">${dispIds[i]}</td>
+     <td style="overflow-wrap: anywhere">${valores[i]}</td>
+     <td style="overflow-wrap: anywhere">${Date.now()}</td>
+     </tr>`
+   setInterval(() => {
+    valores[i] = valores[i] === 1 ? 0 : 1
+    i = Math.floor(Math.random() * 3)
+    tbody.innerHTML += /* html */
+     `<tr>
+      <td>${id++}</td>
+      <td>${dispIds[i]}</td>
+      <td>${valores[i]}</td>
+      <td>${Date.now()}</td>
+     </tr>`
+   }, 4000);
+  </script>
+
+ </section>
+
 </div>
-<figure>
- <iframe src="/src/m10siot/tabla.html"
-   height="450" title="Página de tabla histórica"></iframe>
-</figure>
       </section>
      <section >
-         <h1 >G. Facturación</h1><div class="lectura">
+         <h1 >G. Facturación</h1><section class="lectura">
  <ul>
   <li>
    <p>
@@ -607,11 +767,23 @@
    </p>
   </li>
  </ul>
-</div>
-<figure>
- <iframe src="/src/m10siot/factura.html"
-   height="550" title="Página de facturación"></iframe>
-</figure>
+ <section>
+  <hr>
+  <h1>Factura de noviembre de 2024</h1>
+
+  <h1>Nombre del cliente</h1>
+  <p>Pepito</p>
+
+  <h1>Id del dispositivo</h1>
+  <p>169</p>
+
+  <h1>Tiempo de encendido del foco</h1>
+  <p>3000 minutos</p>
+
+  <h1>Total a pagar</h1>
+  <p>$600.00</p>
+ </section>
+</section>
       </section>
      <section >
          <h1 >H. Resumen</h1><div class="lectura">

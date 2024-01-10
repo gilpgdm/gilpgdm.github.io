@@ -15,8 +15,31 @@
    </p>
   </li>
  </ul>
+ <section>
+  <hr>
+  <h1>Monitoreo</h1>
+
+  <ul id="ul">
+   <li>
+    Botón presionado.
+    Id del dispositivo = 169.
+    Valor = 0.
+    Guardando valor en la base de datos.
+   </li>
+  </ul>
+
+  <script>
+   let valor = 0
+   setInterval(() => {
+    valor = valor === 1 ? 0 : 1
+    ul.innerHTML += /* html */
+     `<li>
+     Botón presionado.
+     Id del dispositivo = 169.
+     Valor = ${valor}.
+     Guardando valor en la base de datos.
+   </li>`
+   }, 4000);
+  </script>
+ </section>
 </div>
-<figure>
- <iframe src="/src/m10siot/monitoreo.html"
-   height="450" title="Página de monitoreo"></iframe>
-</figure>

@@ -490,12 +490,7 @@ const ARCHIVOS = [
  "/src/m04dispositivos/gps.html",
  "/src/m05pwaBasica/pwa.zip",
  "/src/m07iot/iothtml.zip",
- "/src/m09sincronizacion/sincronizacion.zip",
- "/src/m10siot/contrato.html",
- "/src/m10siot/factura.html",
- "/src/m10siot/foco.html",
- "/src/m10siot/monitoreo.html",
- "/src/m10siot/tabla.html"
+ "/src/m09sincronizacion/sincronizacion.zip"
 ]
 
 // Verifica si el código corre dentro de un service worker.
