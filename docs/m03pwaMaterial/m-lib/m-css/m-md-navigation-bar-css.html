@@ -8,12 +8,15 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>8. lib / css / md-navigation-bar.css - GilPG DM</title>
+ <title>9. lib / css / md-navigation-bar.css - GilPG DM</title>
  <meta name="description" content="Código de «lib/css/md-navigation-bar.css».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
+ /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
  :root {
-  --padTop: 2rem;
+  --marginTop: 0.25rem;
+  --padTop: 0;
+  --h1PadTop: 2.5rem;
   --introDuracion: 2s;
   --introFuncion: ease-out;
   --padCont: 0.5rem;
@@ -22,35 +25,188 @@
   --anchoLectura: 900px;
   --colLetra: black;
   --colFondo: white;
-  --colTituloLetra: #00811c;
-  --colTituloShadow: 3px 1px 2px #bdbdbd;
-  --colTituloStrong: #684601;
-  --colTituloStrongSel: #ffdc97;
-  --colTarget: #cef4ff;
+  --colPush: var(--colFondo);
+  --colPushHover: var(--colFondo);
+  --colPushFocus: var(--colFondo);
+  --colPushActive: #bae397;
+  --colFondoPush: #609732;
+  --colFondoPushHover: #8abd5f;
+  --colFondoPushFocus: #3e7213;
+  --colFondoPushActive: #224c00;
+  --paddingPush: 0.2rem 0.3rem;
+  --borderPush: none;
+  --borderRadiusPush: 0.6em;
+  --colA: #6a7b15;
+  --colAVisited: #6f256f;
+  --colAActive: #e498af;
+  --colAPush: var(--colFondo);
+  --colAVisitedPush: var(--colFondo);
+  --colAPushHover: var(--colFondo);
+  --colAVisitedPushHover: var(--colFondo);
+  --colAPushFocus: var(--colFondo);
+  --colAVisitedPushFocus: var(--colFondo);
+  --colAPushActive: var(--colFondo);
+  --colAVisitedPushActive: var(--colFondo);
+  --colFondoAPush: #6a7b15;
+  --colFondoAVisitedPush: #6f256f;
+  --colFondoAPushHover: #91a437;
+  --colFondoAVisitedPushHover: #a66fa6;
+  --colFondoAPushFocus: #445200;
+  --colFondoAVisitedPushFocus: #530e53;
+  --colFondoAPushActive: #e498af;
+  --colFondoAVisitedPushActive: #e498af;
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
-  --padCtrl: 0.2rem 0.3rem;
-  --borderCtrl: solid thin;
-  --colFondoNav: #f2f2f2;
-  --colNavResaltada: #7a2c99;
-  --colSecundario: #ffff82;
-  --colStack1: black;
-  --colStack2: #224ba5;
-  --colStack3: #92731f;
+  --shadowTitulo: 3px 1px 2px black;
+  --colTitulo: #bae397;
+  --colTituloFondo: #609732;
+  --colPrincipalTituloStrong: white;
+  --colAStrong: var(--colLetra);
+  --colNavH1Sel: #b35f7c;
+  --colFondoNav: var(--colFondo);
+  --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
   --colThumb: #90a4ae;
   --colThumbActivo: #3f3f3f;
+  --colResaltado: #e9c8d2;
+  --colResaltado2: #bae397;
+  --colResaltado3: #cfcfcf;
+  --colLetraResaltado: black;
+  --colLetraCodeComment: #224c00;
+  --colLetraCodeString: #903357;
+  --colLetraCodeReserved: #445200;
+  --colSecundario: #e498af;
+  --colTarget: #cef4ff;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
   --anchoThumb: 7px;
   --borderRadiusThumb: 3.5px;
   --gap: 0.5rem;
-  --fontMono: monospace;
-  --fontSans: sans-serif;
-  --fontSerif: serif;
+  --fontMono: 'Xanh Mono', monospace;
+  --fontSans: 'Patrick Hand', sans-serif;
+  --fontSerif: 'Purple Purse', serif;
   font-family: var(--fontSerif);
   color: var(--colLetra);
   background-color: var(--colFondo);
   scrollbar-width: thin;
   scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ @media (prefers-color-scheme: light) {
+  :root {
+   --colLetra: black;
+   --colFondo: white;
+  }
+ }
+
+ /* https://paletton.com/#uid=74W0u0kaVz84jP27qHbeJtFiHpX */
+ @media (prefers-color-scheme: dark) {
+
+  :root {
+   --colLetra: white;
+   /* --colFondo: #272727; */
+   --colFondo: black;
+   --colPushActive: #e3f5d4;
+   --colFondoPush: #bbe697;
+   --colFondoPushHover: #d0eeb7;
+   --colFondoPushFocus: #9ed372;
+   --colFondoPushActive: #7db84d;
+   --colA: #e9f7a3;
+   --colAVisited: #c89ac8;
+   --colAActive: #983351;
+   --colFondoAPush: #e9f7a3;
+   --colFondoAVisitedPush: #c89ac8;
+   --colFondoAPushHover: #f6fcda;
+   --colFondoAVisitedPushHover: #dec0de;
+   --colFondoAPushFocus: #b4c853;
+   --colFondoAVisitedPushFocus: #9a539a;
+   --colFondoAPushActive: #983351;
+   --colFondoAVisitedPushActive: #983351;
+   --colSombra: #00000080;
+   --colTitulo: #e3f5d4;
+   --colTituloFondo: #7db84d;
+   --colNavH1Sel: #d37290;
+   --colFondoNavSel: #7a3059;
+   --colScrollbar: #616161;
+   --colThumb: #ffffff;
+   --colResaltado: #7a3059;
+   --colResaltado2: #5c922f;
+   --colResaltado3: #4e4e4e;
+   --colLetraResaltado: white;
+   --colLetraCodeComment: #d0eeb7;
+   --colLetraCodeString: #eeb7c8;
+   --colLetraCodeReserved: #f0fac0;
+  }
+ }
+
+ /* xanh-mono-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* xanh-mono-italic - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: italic;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-italic.woff2') format('woff2');
+ }
+
+ /* patrick-hand-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Patrick Hand';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/patrick-hand-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* purple-purse-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Purple Purse';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/purple-purse-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ @font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  src:
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].woff2) format('woff2'),
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].ttf) format('truetype');
+ }
+
+ .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
  }
 
  body::-webkit-scrollbar {
@@ -71,18 +227,132 @@
   background-color: var(--colThumbActivo);
  }
 
+ body {
+  margin-top: 0;
+ }
+
+ a {
+  color: var(--colA);
+ }
+
+ a:visited {
+  color: var(--colAVisited);
+ }
+
+ a:active {
+  color: var(--colAActive);
+ }
+
  .anterior,
- .siguiente {
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente,
+ button {
   display: inline-block;
+  padding: var(--paddingPush);
+  border: var(--borderPush);
+  border-radius: var(--borderRadiusPush);
+  text-align: center;
   text-decoration: none;
-  padding: var(--padCtrl);
-  border: var(--borderCtrl);
-  cursor: pointer;
+ }
+
+ .anterior,
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente {
+  color: var(--colAPush);
+  background-color: var(--colFondoAPush);
+ }
+
+ .anterior:visited,
+ .siguiente:visited,
+ .paginaAnterior:visited,
+ .paginaSiguiente:visited {
+  color: var(--colAVisitedPush);
+  background-color: var(--colFondoAVisitedPush);
  }
 
  .anterior.bye,
- .siguiente.bye {
+ .siguiente.bye,
+ .paginaAnterior.bye,
+ .paginaSiguiente.bye {
   display: none;
+ }
+
+ .anterior:hover,
+ .siguiente:hover,
+ .paginaAnterior:hover,
+ .paginaSiguiente:hover {
+  color: var(--colAPushHover);
+  background-color: var(--colFondoAPushHover);
+ }
+
+ .anterior:visited:hover,
+ .siguiente:visited:hover,
+ .paginaAnterior:visited:hover,
+ .paginaSiguiente:visited:hover {
+  color: var(--colAVisitedPushHover);
+  background-color: var(--colFondoAVisitedPushHover);
+ }
+
+ .anterior:focus,
+ .siguiente:focus,
+ .paginaAnterior:focus,
+ .paginaSiguiente:focus {
+  color: var(--colAPushFocus);
+  background-color: var(--colFondoAPushFocus);
+ }
+
+ .anterior:visited:focus,
+ .siguiente:visited:focus,
+ .paginaAnterior:visited:focus,
+ .paginaSiguiente:visited:focus {
+  color: var(--colAVisitedPushFocus);
+  background-color: var(--colFondoAVisitedPushFocus);
+ }
+
+ .anterior:active,
+ .siguiente:active,
+ .paginaAnterior:active,
+ .paginaSiguiente:active {
+  color: var(--colAPushActive);
+  background-color: var(--colFondoAPushActive);
+ }
+
+ .anterior:visited:active,
+ .siguiente:visited:active,
+ .paginaAnterior:visited:active,
+ .paginaSiguiente:visited:active {
+  color: var(--colAVisitedPushActive);
+  background-color: var(--colFondoAVisitedPushActive);
+ }
+
+ button {
+  color: var(--colPush);
+  background-color: var(--colFondoPush);
+ }
+
+ button:hover {
+  color: var(--colPushHover);
+  background-color: var(--colFondoPushHover);
+ }
+
+ button:focus {
+  color: var(--colPushFocus);
+  background-color: var(--colFondoPushFocus);
+ }
+
+ button:active {
+  color: var(--colPushActive);
+  background-color: var(--colFondoPushActive);
+ }
+
+ .anterior span,
+ .siguiente span,
+ .paginaAnterior span,
+ .paginaSiguiente span,
+ button span {
+  vertical-align: middle;
  }
 
  a[data-logo] {
@@ -100,7 +370,12 @@
  a code,
  h1 strong,
  h1 code {
-  color: var(--colTituloStrong);
+  font-size: 1em;
+ }
+
+ a strong,
+ a code {
+  color: var(--colAStrong);
  }
 
  nav a {
@@ -112,8 +387,8 @@
  }
 
  code {
-  color: var(--colTituloStrong);
   font-family: var(--fontMono);
+  font-size: 1rem;
  }
 
  .tree {
@@ -132,7 +407,7 @@
 
  h1:not(.default) {
   font-family: var(--fontSans);
-  color: var(--colTituloLetra);
+  color: var(--colTituloFondo);
  }
 
  h1,
@@ -145,7 +420,7 @@
  .autor {
   font-family: var(--fontSans);
   font-size: 1.5rem;
-  color: var(--colTituloLetra);
+  color: var(--colTituloFondo);
  }
 
  figure {
@@ -217,15 +492,18 @@
  }
 
  .resaltado {
-  background-color: rgb(255, 255, 89);
+  background-color: var(--colResaltado);
+  color: var(--colLetraResaltado);
  }
 
  .resaltado2 {
-  background-color: rgb(255, 214, 139);
+  background-color: var(--colResaltado2);
+  color: var(--colLetraResaltado);
  }
 
  .resaltado3 {
-  background-color: rgb(235, 234, 233);
+  background-color: var(--colResaltado3);
+  color: var(--colLetraResaltado);
  }
 
  table.borde {
@@ -244,6 +522,61 @@
   padding: 0.4rem;
  }
 
+ table.codeShow {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .codeShow td:first-child {
+  text-align: right;
+  padding: 0 0 0 0;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  /* Avoid selection */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+ }
+
+ .codeShow td:nth-child(2) {
+  padding: 0 0 0 0.25rem;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+  line-height: 1.2rem;
+ }
+
+ .codeReserved {
+  color: var(--colLetraCodeReserved);
+  font-weight: bolder;
+ }
+
+ .codeString {
+  color: var(--colLetraCodeString);
+  font-weight: 600;
+ }
+
+ .codeComment {
+  color: var(--colLetraCodeComment);
+  font-style: italic;
+ }
+
+ @media print {
+  h1 {
+   text-shadow: var(--shadowTitulo);
+  }
+
+  .codeShow button {
+   display: none;
+  }
+ }
+
+
  footer {
   margin-top: 1rem;
   display: block;
@@ -257,19 +590,37 @@
   scroll-padding-top: var(--padTop);
  }
 
- body:not(.sinTransicion) #principal {
+ body {
   animation-timing-function: var(--introFuncion);
   animation-duration: var(--introDuracion);
   animation-fill-mode: forwards;
-  animation-name: aparece;
+  animation-name: appear;
  }
 
- @keyframes aparece {
+ body.noTransition {
+  animation-name: noTransition;
+ }
+
+ @keyframes appear {
   from {
    opacity: 0;
   }
 
   to {
+   opacity: 1;
+  }
+ }
+
+ @keyframes noTransition {
+  0% {
+   opacity: 0;
+  }
+
+  0.7% {
+   opacity: 1;
+  }
+
+  100% {
    opacity: 1;
   }
  }
@@ -288,22 +639,24 @@
   position: fixed;
   top: var(--gap);
   left: var(--gap);
-  transition: 0.7s ease-in-out;
+  transition-property: top, left;
+  transition-duration: 0.7s, 0.7s;
+  transition-timing-function: ease-in-out;
  }
 
  #principal>.anterior {
   position: fixed;
   top: var(--gap);
-  background-color: var(--colFondo);
-  transition: 0.7s ease-in-out;
+  transition-property: top, left;
+  transition-duration: 0.7s, 0.7s;
+  transition-timing-function: ease-in-out;
  }
 
  #principal>.siguiente {
   position: fixed;
   top: var(--gap);
   right: var(--gap);
-  background-color: var(--colFondo);
-  transition: 0.7s ease-in-out;
+  transition: top 0.7s ease-in-out;
  }
 
  .scroll #principal>#abre,
@@ -312,8 +665,17 @@
   top: -10rem;
  }
 
- #principal h1:not(.default) {
-  text-shadow: var(--colTituloShadow);
+ #principal>h1:not(.default) {
+  margin-top: var(--marginTop);
+  padding: var(--h1PadTop) 1rem 1rem 1rem;
+  text-shadow: var(--shadowTitulo);
+  color: var(--colTitulo);
+  background-color: var(--colTituloFondo);
+ }
+
+ #principal>h1:not(.default) strong,
+ #principal>h1:not(.default) code {
+  color: var(--colPrincipalTituloStrong);
  }
 
  #nav {
@@ -361,25 +723,26 @@
 
  #nav a.actual code,
  #nav a.actual strong {
-  color: var(--colTituloStrongSel);
+  color: var(--colAStrong);
  }
 
  #nav h1 a {
-  color: var(--colTituloLetra);
+  color: var(--colTitulo);
+  background-color: var(--colTituloFondo);
+  text-shadow: var(--shadowTitulo);
  }
 
  #nav a.actual {
-  color: var(--colFondo);
-  background-color: var(--colNavResaltada);
+  background-color: var(--colFondoNavSel);
  }
 
- #nav a.paginaAnterior,
- #nav a.paginaSiguiente {
-  text-align: center;
-  text-decoration: none;
-  padding: var(--padCtrl);
-  border: var(--borderCtrl);
-  cursor: pointer;
+ #nav h1 a.actual {
+  background-color: var(--colNavH1Sel);
+ }
+
+ #nav h1 a.actual code,
+ #nav h1 a.actual strong {
+  color: var(--colPrincipalTituloStrong);
  }
 
  @media screen and (max-width: 999px) {
@@ -456,6 +819,14 @@
   #principal>.siguiente {
    display: none;
   }
+
+  #principal>h1:not(.default) {
+   margin-top: 0.5rem;
+   padding: 1rem;
+   color: var(--colTituloFondo);
+   background-color: transparent;
+  }
+
  }
 </style>
  
@@ -463,385 +834,156 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >8. lib / css / md-navigation-bar.css</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">display</span>: <span
-     style="color: #0451a5;">flex</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">justify-content</span>: <span
-     style="color: #0451a5;">center</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">align-items</span>: <span
-     style="color: #0451a5;">stretch</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">position</span>: <span
-     style="color: #0451a5;">fixed</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">left</span>: <span
-     style="color: #098658;">0</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">right</span>: <span
-     style="color: #098658;">0</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">bottom</span>: <span
-     style="color: #098658;">0</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">background-color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-surface-container-low</span>);</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">a</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">position</span>: <span
-     style="color: #0451a5;">relative</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">display</span>: <span
-     style="color: #0451a5;">block</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">flex</span>: <span
-     style="color: #098658;">0</span> <span
-     style="color: #098658;">1</span> <span
-     style="color: #0451a5;">auto</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-on-surface-variant</span>);</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">font-family</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-label-medium-font</span>);</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">font-weight</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-label-medium-weight</span>);
-  </div>
-  <div>&nbsp;<span
-     style="color: #e50000;">font-size</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-label-medium-size</span>);</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">font-style</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-label-medium-font-style</span>);
-  </div>
-  <div>&nbsp;<span
-     style="color: #e50000;">letter-spacing</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-label-medium-tracking</span>);
-  </div>
-  <div>&nbsp;<span
-     style="color: #e50000;">line-height</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-label-medium-line-height</span>);
-  </div>
-  <div>&nbsp;<span
-     style="color: #e50000;">text-transform</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-label-medium-text-transform</span>);
-  </div>
-  <div>&nbsp;<span
-     style="color: #e50000;">text-decoration</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-label-medium-text-decoration</span>);
-  </div>
-  <div>&nbsp;<span
-     style="color: #e50000;">text-decoration</span>: <span
-     style="color: #0451a5;">none</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">padding-top</span>: <span
-     style="color: #098658;">12px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">padding-bottom</span>: <span
-     style="color: #098658;">16px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">padding-left</span>: <span
-     style="color: #098658;">4px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">padding-right</span>: <span
-     style="color: #098658;">4px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">text-align</span>: <span
-     style="color: #0451a5;">center</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">overflow</span>: <span
-     style="color: #0451a5;">hidden</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">box-sizing</span>: <span
-     style="color: #0451a5;">border-box</span>;</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">a.active</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-on-surface</span>);</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">/*&nbsp;state layer */</span></div>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">a::after</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">content</span>: <span
-     style="color: #a31515;">""</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">position</span>: <span
-     style="color: #0451a5;">absolute</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">z-index</span>: <span
-     style="color: #098658;">-2</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">top</span>: <span
-     style="color: #098658;">0</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">right</span>: <span
-     style="color: #098658;">0</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">left</span>: <span
-     style="color: #098658;">0</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">bottom</span>: <span
-     style="color: #098658;">0</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">background-color</span>: <span
-     style="color: #0451a5;">transparent</span>;</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">/*&nbsp;state layer */</span></div>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">a:hover::after</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">background-color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-on-surface-variant</span>);</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">opacity</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-state-hover-state-layer-opacity</span>);
-  </div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">/*&nbsp;state layer */</span></div>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">a.active:hover::after</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">background-color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-on-surface</span>);</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">a:focus</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">outline</span>: <span
-     style="color: #0451a5;">none</span>;</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">/*&nbsp;state layer */</span></div>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">a:focus::after</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">background-color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-on-surface-variant</span>);</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">opacity</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-state-focus-state-layer-opacity</span>);
-  </div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">/*&nbsp;state layer */</span></div>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">a.active:focus::after</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">background-color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-on-surface</span>);</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">a:active</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">background-position</span>: <span
-     style="color: #0451a5;">center</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">background-image</span>:</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">radial-gradient</span>(<span
-     style="color: #0451a5;">circle</span>, <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-riple-color</span>) <span
-     style="color: #098658;">1%</span>, <span
-     style="color: #0451a5;">transparent</span> <span
-     style="color: #098658;">1%</span>);</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">background-size</span>: <span
-     style="color: #098658;">100%</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">animation-name</span>: md-ripple;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">animation-duration</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-motion-duration-500</span>);</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">/*&nbsp;state layer */</span></div>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">a:active::after</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">background-color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-on-surface-variant</span>);</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">opacity</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-state-pressed-state-layer-opacity</span>);
-  </div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">/*&nbsp;state layer */</span></div>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">a.active:active::after</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">background-color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-on-surface</span>);</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">span</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-on-surface-variant</span>);</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">position</span>: <span
-     style="color: #0451a5;">relative</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">display</span>: <span
-     style="color: #0451a5;">block</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">height</span>: <span
-     style="color: #098658;">32px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">width</span>: <span
-     style="color: #098658;">64px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">line-height</span>: <span
-     style="color: #098658;">32px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">margin-bottom</span>: <span
-     style="color: #098658;">4px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">box-sizing</span>: <span
-     style="color: #0451a5;">border-box</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">margin-left</span>: <span
-     style="color: #0451a5;">auto</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">margin-right</span>: <span
-     style="color: #0451a5;">auto</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">overflow</span>: <span
-     style="color: #0451a5;">hidden</span>;</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">a.active</span> <span
-     style="color: #800000;">span</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-on-secondary-container</span>);
-  </div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">a.active</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">font-variation-settings</span>: <span
-     style="color: #a31515;">'FILL'</span><span
-     style="color: #098658;">1</span>, <span
-     style="color: #a31515;">'wght'</span><span
-     style="color: #098658;">700</span>, <span
-     style="color: #a31515;">'GRAD'</span><span
-     style="color: #098658;">0</span>, <span
-     style="color: #a31515;">'opsz'</span><span
-     style="color: #098658;">48</span>;</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">span::before</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">content</span>: <span
-     style="color: #a31515;">""</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">background-color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-secondary-container</span>);</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">position</span>: <span
-     style="color: #0451a5;">absolute</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">z-index</span>: <span
-     style="color: #098658;">-1</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">top</span>: <span
-     style="color: #098658;">0</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">left</span>: <span
-     style="color: #098658;">0</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">height</span>: <span
-     style="color: #098658;">32px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">width</span>: <span
-     style="color: #098658;">64px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">border-radius</span>: <span
-     style="color: #098658;">16px</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">box-sizing</span>: <span
-     style="color: #0451a5;">border-box</span>;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">transform</span>: <span
-     style="color: #795e26;">scaleX</span>(<span
-     style="color: #098658;">0</span>);</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">transition-property</span>: transform;</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">transition-duration</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-motion-duration-500</span>);</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">a.active</span> <span
-     style="color: #800000;">span::before</span>,</div>
-  <div><span
-     style="color: #800000;">.md-navigation-bar</span> <span
-     style="color: #800000;">a:active</span> <span
-     style="color: #800000;">span::before</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">transform</span>: <span
-     style="color: #795e26;">scaleX</span>(<span
-     style="color: #098658;">1</span>);</div>
-  <div>}</div>
- </div>
-</muestra-codigo>
+   <h1 >9. lib / css / md-navigation-bar.css</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>.md-navigation-bar {</td></tr>
+  <tr><td>2</td><td> <span class="codeReserved">display</span>: flex;</td></tr>
+  <tr><td>3</td><td> <span class="codeReserved">justify-content</span>: center;</td></tr>
+  <tr><td>4</td><td> <span class="codeReserved">align-items</span>: stretch;</td></tr>
+  <tr><td>5</td><td> <span class="codeReserved">position</span>: fixed;</td></tr>
+  <tr><td>6</td><td> <span class="codeReserved">left</span>: 0;</td></tr>
+  <tr><td>7</td><td> <span class="codeReserved">right</span>: 0;</td></tr>
+  <tr><td>8</td><td> <span class="codeReserved">bottom</span>: 0;</td></tr>
+  <tr><td>9</td><td> <span class="codeReserved">background-color</span>: var(--md-sys-color-surface-container-low);</td></tr>
+  <tr><td>10</td><td>}</td></tr>
+  <tr><td>11</td><td></td></tr>
+  <tr><td>12</td><td>.md-navigation-bar a {</td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">position</span>: relative;</td></tr>
+  <tr><td>14</td><td> <span class="codeReserved">display</span>: block;</td></tr>
+  <tr><td>15</td><td> flex: 0 1 auto;</td></tr>
+  <tr><td>16</td><td> <span class="codeReserved">color</span>: var(--md-sys-color-on-surface-variant);</td></tr>
+  <tr><td>17</td><td> <span class="codeReserved">font-family</span>: var(--md-sys-typescale-label-medium-font);</td></tr>
+  <tr><td>18</td><td> <span class="codeReserved">font-weight</span>: var(--md-sys-typescale-label-medium-weight);</td></tr>
+  <tr><td>19</td><td> <span class="codeReserved">font-size</span>: var(--md-sys-typescale-label-medium-size);</td></tr>
+  <tr><td>20</td><td> <span class="codeReserved">font-style</span>: var(--md-sys-typescale-label-medium-font-style);</td></tr>
+  <tr><td>21</td><td> <span class="codeReserved">letter-spacing</span>: var(--md-sys-typescale-label-medium-tracking);</td></tr>
+  <tr><td>22</td><td> <span class="codeReserved">line-height</span>: var(--md-sys-typescale-label-medium-line-height);</td></tr>
+  <tr><td>23</td><td> <span class="codeReserved">text-transform</span>: var(--md-sys-typescale-label-medium-text-transform);</td></tr>
+  <tr><td>24</td><td> <span class="codeReserved">text-decoration</span>: var(--md-sys-typescale-label-medium-text-decoration);</td></tr>
+  <tr><td>25</td><td> <span class="codeReserved">text-decoration</span>: none;</td></tr>
+  <tr><td>26</td><td> <span class="codeReserved">padding-top</span>: 12px;</td></tr>
+  <tr><td>27</td><td> <span class="codeReserved">padding-bottom</span>: 16px;</td></tr>
+  <tr><td>28</td><td> <span class="codeReserved">padding-left</span>: 4px;</td></tr>
+  <tr><td>29</td><td> <span class="codeReserved">padding-right</span>: 4px;</td></tr>
+  <tr><td>30</td><td> <span class="codeReserved">text-align</span>: center;</td></tr>
+  <tr><td>31</td><td> <span class="codeReserved">overflow</span>: hidden;</td></tr>
+  <tr><td>32</td><td> <span class="codeReserved">box-sizing</span>: border-box;</td></tr>
+  <tr><td>33</td><td>}</td></tr>
+  <tr><td>34</td><td></td></tr>
+  <tr><td>35</td><td>.md-navigation-bar a.active {</td></tr>
+  <tr><td>36</td><td> <span class="codeReserved">color</span>: var(--md-sys-color-on-surface);</td></tr>
+  <tr><td>37</td><td>}</td></tr>
+  <tr><td>38</td><td></td></tr>
+  <tr><td>39</td><td><span class="codeComment">/* state layer */</span></td></tr>
+  <tr><td>40</td><td>.md-navigation-bar a::after {</td></tr>
+  <tr><td>41</td><td> <span class="codeReserved">content</span>: ;</td></tr>
+  <tr><td>42</td><td> <span class="codeReserved">position</span>: absolute;</td></tr>
+  <tr><td>43</td><td> <span class="codeReserved">z-index</span>: -2;</td></tr>
+  <tr><td>44</td><td> <span class="codeReserved">top</span>: 0;</td></tr>
+  <tr><td>45</td><td> <span class="codeReserved">right</span>: 0;</td></tr>
+  <tr><td>46</td><td> <span class="codeReserved">left</span>: 0;</td></tr>
+  <tr><td>47</td><td> <span class="codeReserved">bottom</span>: 0;</td></tr>
+  <tr><td>48</td><td> <span class="codeReserved">background-color</span>: transparent;</td></tr>
+  <tr><td>49</td><td>}</td></tr>
+  <tr><td>50</td><td></td></tr>
+  <tr><td>51</td><td><span class="codeComment">/* state layer */</span></td></tr>
+  <tr><td>52</td><td>.md-navigation-bar a:hover::after {</td></tr>
+  <tr><td>53</td><td> <span class="codeReserved">background-color</span>: var(--md-sys-color-on-surface-variant);</td></tr>
+  <tr><td>54</td><td> <span class="codeReserved">opacity</span>: var(--md-sys-state-hover-state-layer-opacity);</td></tr>
+  <tr><td>55</td><td>}</td></tr>
+  <tr><td>56</td><td></td></tr>
+  <tr><td>57</td><td><span class="codeComment">/* state layer */</span></td></tr>
+  <tr><td>58</td><td>.md-navigation-bar a.active:hover::after {</td></tr>
+  <tr><td>59</td><td> <span class="codeReserved">background-color</span>: var(--md-sys-color-on-surface);</td></tr>
+  <tr><td>60</td><td>}</td></tr>
+  <tr><td>61</td><td></td></tr>
+  <tr><td>62</td><td>.md-navigation-bar a:focus {</td></tr>
+  <tr><td>63</td><td> <span class="codeReserved">outline</span>: none;</td></tr>
+  <tr><td>64</td><td>}</td></tr>
+  <tr><td>65</td><td></td></tr>
+  <tr><td>66</td><td><span class="codeComment">/* state layer */</span></td></tr>
+  <tr><td>67</td><td>.md-navigation-bar a:focus::after {</td></tr>
+  <tr><td>68</td><td> <span class="codeReserved">background-color</span>: var(--md-sys-color-on-surface-variant);</td></tr>
+  <tr><td>69</td><td> <span class="codeReserved">opacity</span>: var(--md-sys-state-focus-state-layer-opacity);</td></tr>
+  <tr><td>70</td><td>}</td></tr>
+  <tr><td>71</td><td></td></tr>
+  <tr><td>72</td><td><span class="codeComment">/* state layer */</span></td></tr>
+  <tr><td>73</td><td>.md-navigation-bar a.active:focus::after {</td></tr>
+  <tr><td>74</td><td> <span class="codeReserved">background-color</span>: var(--md-sys-color-on-surface);</td></tr>
+  <tr><td>75</td><td>}</td></tr>
+  <tr><td>76</td><td></td></tr>
+  <tr><td>77</td><td>.md-navigation-bar a:active {</td></tr>
+  <tr><td>78</td><td> background-position: center;</td></tr>
+  <tr><td>79</td><td> <span class="codeReserved">background-image</span>:</td></tr>
+  <tr><td>80</td><td>  radial-gradient(circle, var(--md-riple-color) 1%, transparent 1%);</td></tr>
+  <tr><td>81</td><td> <span class="codeReserved">background-size</span>: 100%;</td></tr>
+  <tr><td>82</td><td> <span class="codeReserved">animation-name</span>: md-ripple;</td></tr>
+  <tr><td>83</td><td> <span class="codeReserved">animation-duration</span>: var(--md-sys-motion-duration-500);</td></tr>
+  <tr><td>84</td><td>}</td></tr>
+  <tr><td>85</td><td></td></tr>
+  <tr><td>86</td><td><span class="codeComment">/* state layer */</span></td></tr>
+  <tr><td>87</td><td>.md-navigation-bar a:active::after {</td></tr>
+  <tr><td>88</td><td> <span class="codeReserved">background-color</span>: var(--md-sys-color-on-surface-variant);</td></tr>
+  <tr><td>89</td><td> <span class="codeReserved">opacity</span>: var(--md-sys-state-pressed-state-layer-opacity);</td></tr>
+  <tr><td>90</td><td>}</td></tr>
+  <tr><td>91</td><td></td></tr>
+  <tr><td>92</td><td><span class="codeComment">/* state layer */</span></td></tr>
+  <tr><td>93</td><td>.md-navigation-bar a.active:active::after {</td></tr>
+  <tr><td>94</td><td> <span class="codeReserved">background-color</span>: var(--md-sys-color-on-surface);</td></tr>
+  <tr><td>95</td><td>}</td></tr>
+  <tr><td>96</td><td></td></tr>
+  <tr><td>97</td><td>.md-navigation-bar span {</td></tr>
+  <tr><td>98</td><td> <span class="codeReserved">color</span>: var(--md-sys-color-on-surface-variant);</td></tr>
+  <tr><td>99</td><td> <span class="codeReserved">position</span>: relative;</td></tr>
+  <tr><td>100</td><td> <span class="codeReserved">display</span>: block;</td></tr>
+  <tr><td>101</td><td> <span class="codeReserved">height</span>: 32px;</td></tr>
+  <tr><td>102</td><td> <span class="codeReserved">width</span>: 64px;</td></tr>
+  <tr><td>103</td><td> <span class="codeReserved">line-height</span>: 32px;</td></tr>
+  <tr><td>104</td><td> <span class="codeReserved">margin-bottom</span>: 4px;</td></tr>
+  <tr><td>105</td><td> <span class="codeReserved">box-sizing</span>: border-box;</td></tr>
+  <tr><td>106</td><td> <span class="codeReserved">margin-left</span>: auto;</td></tr>
+  <tr><td>107</td><td> <span class="codeReserved">margin-right</span>: auto;</td></tr>
+  <tr><td>108</td><td> <span class="codeReserved">overflow</span>: hidden;</td></tr>
+  <tr><td>109</td><td>}</td></tr>
+  <tr><td>110</td><td></td></tr>
+  <tr><td>111</td><td>.md-navigation-bar a.active span {</td></tr>
+  <tr><td>112</td><td> <span class="codeReserved">color</span>: var(--md-sys-color-on-secondary-container);</td></tr>
+  <tr><td>113</td><td>}</td></tr>
+  <tr><td>114</td><td></td></tr>
+  <tr><td>115</td><td>.md-navigation-bar a.active {</td></tr>
+  <tr><td>116</td><td> font-variation-settings: <span class="codeString">'FILL'</span>1, <span class="codeString">'wght'</span>700, <span class="codeString">'GRAD'</span>0, <span class="codeString">'opsz'</span>48;</td></tr>
+  <tr><td>117</td><td>}</td></tr>
+  <tr><td>118</td><td></td></tr>
+  <tr><td>119</td><td>.md-navigation-bar span::before {</td></tr>
+  <tr><td>120</td><td> <span class="codeReserved">content</span>: ;</td></tr>
+  <tr><td>121</td><td> <span class="codeReserved">background-color</span>: var(--md-sys-color-secondary-container);</td></tr>
+  <tr><td>122</td><td> <span class="codeReserved">position</span>: absolute;</td></tr>
+  <tr><td>123</td><td> <span class="codeReserved">z-index</span>: -1;</td></tr>
+  <tr><td>124</td><td> <span class="codeReserved">top</span>: 0;</td></tr>
+  <tr><td>125</td><td> <span class="codeReserved">left</span>: 0;</td></tr>
+  <tr><td>126</td><td> <span class="codeReserved">height</span>: 32px;</td></tr>
+  <tr><td>127</td><td> <span class="codeReserved">width</span>: 64px;</td></tr>
+  <tr><td>128</td><td> <span class="codeReserved">border-radius</span>: 16px;</td></tr>
+  <tr><td>129</td><td> <span class="codeReserved">box-sizing</span>: border-box;</td></tr>
+  <tr><td>130</td><td> <span class="codeReserved">transform</span>: scaleX(0);</td></tr>
+  <tr><td>131</td><td> transition-property: <span class="codeReserved">transform</span>;</td></tr>
+  <tr><td>132</td><td> transition-duration: var(--md-sys-motion-duration-500);</td></tr>
+  <tr><td>133</td><td>}</td></tr>
+  <tr><td>134</td><td></td></tr>
+  <tr><td>135</td><td>.md-navigation-bar a.active span::before,</td></tr>
+  <tr><td>136</td><td>.md-navigation-bar a:active span::before {</td></tr>
+  <tr><td>137</td><td> <span class="codeReserved">transform</span>: scaleX(1);</td></tr>
+  <tr><td>138</td><td>}</td></tr>
+ </tbody>
+</table>
  <footer>
  <p>
   <a rel="license"
@@ -863,15 +1005,23 @@
  </p>
 </footer>
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
-  &#x2630;
+  <span class="material-symbols-outlined">
+   menu
+  </span>
  </button>
- <a class="anterior" href="/m03pwaMaterial/m-lib/m-css/m-md-menu-css.html" title="7. lib / css / md-menu.css">◀</a>
- <a class="siguiente" href="/m03pwaMaterial/m-lib/m-css/m-md-outline-button-css.html" title="9. lib / css / md-outline-button.css">▶</a>
+ <a class="anterior" href="/m03pwaMaterial/m-lib/m-css/m-md-menu-css.html" title="8. lib / css / md-menu.css"><span class="material-symbols-outlined">
+     skip_previous
+    </span></a>
+ <a class="siguiente" href="/m03pwaMaterial/m-lib/m-css/m-md-outline-button-css.html" title="10. lib / css / md-outline-button.css"><span class="material-symbols-outlined">
+     skip_next
+     </span></a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
  <button type="button" title="Cierra" class="cambiaMenu">
-  &#x2715;
+  <span class="material-symbols-outlined">
+   close
+  </span>
  </button>
  
    <p>
@@ -888,7 +1038,10 @@
    
      <p>
       <a class="paginaAnterior" href="/m03pwaMaterial/m-lib/index.html"
-        title="33. Carpeta « lib »">▲</a>
+        title="33. Carpeta « lib »"><span
+        class="material-symbols-outlined">
+         arrow_upward
+        </span></a>
      </p>
    <h1><a href="/m03pwaMaterial/m-lib/m-css/index.html">A. Carpeta « lib / css »</a></h1>
    
@@ -912,6 +1065,11 @@
    <li>
     <p>
      <a href="/m03pwaMaterial/m-lib/m-css/m-md-cards-css.html">lib / css / md-cards.css</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-lib/m-css/m-md-fab-primary-css.html">lib / css / md-fab-primary.css</a>
     </p>
    </li>
    <li>
@@ -1012,8 +1170,11 @@
    </ol>
    
     <p>
-     <a class="paginaSiguiente" href="/m03pwaMaterial/m-lib/m-js/index.html"
-       title="B. Carpeta « lib / js »">▼</a>
+     <a class="paginaSiguiente" href="/m03pwaMaterial/m-lib/m-fonts/index.html"
+       title="B. Carpeta « lib / fonts »"><span
+       class="material-symbols-outlined">
+        arrow_downward
+       </span></a>
     </p>
  
 </nav>
@@ -1077,6 +1238,24 @@
  function muestraError(e) {
   console.error(e)
   alert(e.message)
+ }
+
+ async function copyToClipboard(button) {
+  try {
+   const table = button.closest("table")
+   if (table !== null) {
+    const lineas = Array.from(table.querySelectorAll("td:nth-child(2)"))
+    const codigo = lineas
+     .map(linea => linea.textContent || "")
+     .join("\n")
+    if (codigo) {
+     await navigator.clipboard.writeText(codigo)
+     alert("Texto copiado al portapapeles.")
+    }
+   }
+  } catch (e) {
+   alert(e.message)
+  }
  }
 
  function cambiaMenu() {

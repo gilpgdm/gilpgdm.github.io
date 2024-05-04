@@ -1,84 +1,33 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">self</span> <span
-     style="color: #0000ff;">instanceof</span> <span
-     style="color: #267f99;">ServiceWorkerGlobalScope</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #008000;">// El siguiente código se activa cuando llega una
-    notificación push.</span></div>
-  <div>&nbsp;<span
-     style="color: #001080;">self</span>.<span
-     style="color: #795e26;">addEventListener</span>(<span
-     style="color: #a31515;">"push"</span>, (<span
-     style="color: #008000;">/**&nbsp;</span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{PushEvent}</span><span
-     style="color: #008000;"> */</span> <span
-     style="color: #001080;">evt</span>) <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">notificacion</span> = <span
-     style="color: #001080;">evt</span>.<span
-     style="color: #0070c1;">data</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Si el navegador tiene permitido mostrar
-    notificaciones push,</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;nuestra la que se ha
-    recibido. */</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">notificacion</span> !== <span
-     style="color: #0000ff;">null</span> &amp;&amp; <span
-     style="color: #001080;">self</span>.<span
-     style="color: #267f99;">Notification</span>.<span
-     style="color: #0070c1;">permission</span> === <span
-     style="color: #a31515;">'granted'</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">evt</span>.<span
-     style="color: #795e26;">waitUntil</span>(<span
-     style="color: #795e26;">muestraNotificacion</span>(<span
-     style="color: #0070c1;">notificacion</span>))</div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;})</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{PushMessageData}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">notificacion</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">muestraNotificacion</span>(<span
-     style="color: #001080;">notificacion</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">self</span> <span
-     style="color: #0000ff;">instanceof</span> <span
-     style="color: #267f99;">ServiceWorkerGlobalScope</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">mensaje</span> = <span
-     style="color: #001080;">notificacion</span>.<span
-     style="color: #795e26;">text</span>()</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">self</span>.<span
-     style="color: #0070c1;">registration</span>.<span
-     style="color: #795e26;">showNotification</span>(<span
-     style="color: #0070c1;">mensaje</span>)</div>
-  <div>&nbsp;}</div>
-  <div>}</div>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">if</span> (<span class="codeReserved">self</span> <span class="codeReserved">instanceof</span> ServiceWorkerGlobalScope) {</td></tr>
+  <tr><td>2</td><td> <span class="codeComment">// El siguiente código se activa cuando llega una notificación push.</span></td></tr>
+  <tr><td>3</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"push"</span>, (<span class="codeComment">/** <span class="codeReserved">@type</span> {PushEvent} */</span> evt) =&gt; {</td></tr>
+  <tr><td>4</td><td>  <span class="codeReserved">const</span> notificacion = evt.data</td></tr>
+  <tr><td>5</td><td>  <span class="codeComment">/* Si el navegador tiene permitido mostrar notificaciones push,</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment">   * nuestra la que se ha recibido. */</span></td></tr>
+  <tr><td>7</td><td>  <span class="codeReserved">if</span> (notificacion !== <span class="codeReserved">null</span> && <span class="codeReserved">self</span>.Notification.permission === <span class="codeString">'granted'</span>) {</td></tr>
+  <tr><td>8</td><td>   evt.waitUntil(muestraNotificacion(notificacion))</td></tr>
+  <tr><td>9</td><td>  }</td></tr>
+  <tr><td>10</td><td> })</td></tr>
+  <tr><td>11</td><td>}</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>14</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {PushMessageData} notificacion</span></td></tr>
+  <tr><td>15</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>16</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> muestraNotificacion(notificacion) {</td></tr>
+  <tr><td>17</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">self</span> <span class="codeReserved">instanceof</span> ServiceWorkerGlobalScope) {</td></tr>
+  <tr><td>18</td><td>  <span class="codeReserved">const</span> mensaje = notificacion.text()</td></tr>
+  <tr><td>19</td><td>  <span class="codeReserved">await</span> <span class="codeReserved">self</span>.registration.showNotification(mensaje)</td></tr>
+  <tr><td>20</td><td> }</td></tr>
+  <tr><td>21</td><td>}</td></tr>
+ </tbody>
+</table>

@@ -1,62 +1,27 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">Pasatiempo</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./Pasatiempo.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">validaQueTengaLasPropiedadesDePasatiempo</span>
-  </div>
-  <div>}&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./validaQueTengaLasPropiedadesDePasatiempo.js"</span>
-  </div><br>
-  <div><span
-     style="color: #008000;">/**&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ any }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">objeto</span><span
-     style="color: #008000;"> */</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">leePasatiempo</span>(<span
-     style="color: #001080;">objeto</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">validado</span> = <span
-     style="color: #795e26;">validaQueTengaLasPropiedadesDePasatiempo</span>(<span
-     style="color: #001080;">objeto</span>)</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Pasatiempo</span>({</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">uuid</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #0070c1;">validado</span>.<span
-     style="color: #001080;">uuid</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">nombre</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #0070c1;">validado</span>.<span
-     style="color: #001080;">nombre</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">modificacion</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #0070c1;">validado</span>.<span
-     style="color: #001080;">modificacion</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">eliminado</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #0070c1;">validado</span>.<span
-     style="color: #001080;">eliminado</span>,</div>
-  <div>&nbsp;})</div>
-  <div>}</div>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"./Pasatiempo.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> {</td></tr>
+  <tr><td>3</td><td> validaQueTengaLasPropiedadesDePasatiempo</td></tr>
+  <tr><td>4</td><td>} <span class="codeReserved">from</span> <span class="codeString">"./validaQueTengaLasPropiedadesDePasatiempo.js"</span></td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td><span class="codeComment">/** <span class="codeReserved">@param</span> { any } objeto */</span></td></tr>
+  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> leePasatiempo(objeto) {</td></tr>
+  <tr><td>8</td><td> <span class="codeReserved">const</span> validado = validaQueTengaLasPropiedadesDePasatiempo(objeto)</td></tr>
+  <tr><td>9</td><td> <span class="codeReserved">return</span> <span class="codeReserved">new</span> Pasatiempo({</td></tr>
+  <tr><td>10</td><td>  uuid: validado.uuid,</td></tr>
+  <tr><td>11</td><td>  nombre: validado.nombre,</td></tr>
+  <tr><td>12</td><td>  modificacion: validado.modificacion,</td></tr>
+  <tr><td>13</td><td>  eliminado: validado.eliminado,</td></tr>
+  <tr><td>14</td><td> })</td></tr>
+  <tr><td>15</td><td>}</td></tr>
+ </tbody>
+</table>

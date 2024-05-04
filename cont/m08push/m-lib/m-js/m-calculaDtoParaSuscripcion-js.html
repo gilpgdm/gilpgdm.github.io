@@ -1,116 +1,42 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Devuelve una literal de objeto que se
-    puede usar para enviar</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;en formato JSON al servidor.</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;DTO es un acrónimo para Data Transder
-    Object, u</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;objeto para transferencia de
-    datos.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ PushSubscription }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">suscripcion</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">calculaDtoParaSuscripcion</span>(<span
-     style="color: #001080;">suscripcion</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">key</span> = <span
-     style="color: #001080;">suscripcion</span>.<span
-     style="color: #795e26;">getKey</span>(<span
-     style="color: #a31515;">"p256dh"</span>)</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">token</span> = <span
-     style="color: #001080;">suscripcion</span>.<span
-     style="color: #795e26;">getKey</span>(<span
-     style="color: #a31515;">"auth"</span>)</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">supported</span> = <span
-     style="color: #267f99;">PushManager</span>.<span
-     style="color: #0070c1;">supportedContentEncodings</span></div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">encodings</span> = <span
-     style="color: #267f99;">Array</span>.<span
-     style="color: #795e26;">isArray</span>(<span
-     style="color: #0070c1;">supported</span>) &amp;&amp; <span
-     style="color: #0070c1;">supported</span>.<span
-     style="color: #001080;">length</span> &gt; <span
-     style="color: #098658;">0</span></div>
-  <div>&nbsp;&nbsp;? <span
-     style="color: #0070c1;">supported</span></div>
-  <div>&nbsp;&nbsp;: [<span
-     style="color: #a31515;">"aesgcm"</span>]</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">endpoint</span> = <span
-     style="color: #001080;">suscripcion</span>.<span
-     style="color: #0070c1;">endpoint</span></div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">publicKey</span> = <span
-     style="color: #0070c1;">key</span> === <span
-     style="color: #0000ff;">null</span></div>
-  <div>&nbsp;&nbsp;? <span
-     style="color: #0000ff;">null</span></div>
-  <div>&nbsp;&nbsp;: <span
-     style="color: #795e26;">btoa</span>(<span
-     style="color: #267f99;">String</span>.<span
-     style="color: #795e26;">fromCharCode</span>.<span
-     style="color: #795e26;">apply</span>(<span
-     style="color: #0000ff;">null</span>, <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Uint8Array</span>(<span
-     style="color: #0070c1;">key</span>)))</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">authToken</span> = <span
-     style="color: #0070c1;">token</span> === <span
-     style="color: #0000ff;">null</span></div>
-  <div>&nbsp;&nbsp;? <span
-     style="color: #0000ff;">null</span></div>
-  <div>&nbsp;&nbsp;: <span
-     style="color: #795e26;">btoa</span>(<span
-     style="color: #267f99;">String</span>.<span
-     style="color: #795e26;">fromCharCode</span>.<span
-     style="color: #795e26;">apply</span>(<span
-     style="color: #0000ff;">null</span>, <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Uint8Array</span>(<span
-     style="color: #0070c1;">token</span>)))</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">contentEncoding</span> = <span
-     style="color: #0070c1;">encodings</span>[<span
-     style="color: #098658;">0</span>]</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">endpoint</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">publicKey</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">authToken</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">contentEncoding</span></div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * Devuelve una literal de objeto que se puede usar para enviar</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> * en formato JSON al servidor.</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> * DTO es un acrónimo para Data Transder Object, u</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> * objeto para transferencia de datos.</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { PushSubscription } suscripcion</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>8</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> calculaDtoParaSuscripcion(suscripcion) {</td></tr>
+  <tr><td>9</td><td> <span class="codeReserved">const</span> key = suscripcion.getKey(<span class="codeString">"p256dh"</span>)</td></tr>
+  <tr><td>10</td><td> <span class="codeReserved">const</span> token = suscripcion.getKey(<span class="codeString">"auth"</span>)</td></tr>
+  <tr><td>11</td><td> <span class="codeReserved">const</span> supported = PushManager.supportedContentEncodings</td></tr>
+  <tr><td>12</td><td> <span class="codeReserved">const</span> encodings = Array.isArray(supported) && supported.length &gt; 0</td></tr>
+  <tr><td>13</td><td>  ? supported</td></tr>
+  <tr><td>14</td><td>  : [<span class="codeString">"aesgcm"</span>]</td></tr>
+  <tr><td>15</td><td> <span class="codeReserved">const</span> endpoint = suscripcion.endpoint</td></tr>
+  <tr><td>16</td><td> <span class="codeReserved">const</span> publicKey = key === <span class="codeReserved">null</span></td></tr>
+  <tr><td>17</td><td>  ? <span class="codeReserved">null</span></td></tr>
+  <tr><td>18</td><td>  : btoa(String.fromCharCode.apply(<span class="codeReserved">null</span>, <span class="codeReserved">new</span> Uint8Array(key)))</td></tr>
+  <tr><td>19</td><td> <span class="codeReserved">const</span> authToken = token === <span class="codeReserved">null</span></td></tr>
+  <tr><td>20</td><td>  ? <span class="codeReserved">null</span></td></tr>
+  <tr><td>21</td><td>  : btoa(String.fromCharCode.apply(<span class="codeReserved">null</span>, <span class="codeReserved">new</span> Uint8Array(token)))</td></tr>
+  <tr><td>22</td><td> <span class="codeReserved">const</span> contentEncoding = encodings[0]</td></tr>
+  <tr><td>23</td><td> <span class="codeReserved">return</span> {</td></tr>
+  <tr><td>24</td><td>  endpoint,</td></tr>
+  <tr><td>25</td><td>  publicKey,</td></tr>
+  <tr><td>26</td><td>  authToken,</td></tr>
+  <tr><td>27</td><td>  contentEncoding</td></tr>
+  <tr><td>28</td><td> }</td></tr>
+  <tr><td>29</td><td>}</td></tr>
+  <tr><td>30</td><td></td></tr>
+ </tbody>
+</table>

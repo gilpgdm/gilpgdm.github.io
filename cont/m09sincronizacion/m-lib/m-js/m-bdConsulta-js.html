@@ -1,99 +1,36 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@template</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">T</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ Promise&lt;IDBDatabase&gt; }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">bd</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ string[] }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">entidades</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ (</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;transaccion:
-    IDBTransaction,</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;resolve:
-    (resultado:T)=&gt;void</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;) =&gt; void }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">consulta</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@returns</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{Promise&lt;T&gt;}</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">bdConsulta</span>(<span
-     style="color: #001080;">bd</span>, <span
-     style="color: #001080;">entidades</span>, <span
-     style="color: #795e26;">consulta</span>)&nbsp;{</div><br>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">base</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">bd</span></div><br>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Promise</span>((<span
-     style="color: #795e26;">resolve</span>, <span
-     style="color: #795e26;">reject</span>) <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// Inicia una transacción de solo lectura.</span>
-  </div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">transaccion</span> = <span
-     style="color: #0070c1;">base</span>.<span
-     style="color: #795e26;">transaction</span>(<span
-     style="color: #001080;">entidades</span>, <span
-     style="color: #a31515;">"readonly"</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// Al terminar con error ejecuta la función
-    reject.</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0070c1;">transaccion</span>.<span
-     style="color: #795e26;">onerror</span> = () <span
-     style="color: #0000ff;">=&gt;</span> <span
-     style="color: #795e26;">reject</span>(<span
-     style="color: #0070c1;">transaccion</span>.<span
-     style="color: #0070c1;">error</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// Estas son las operaciones para realizar la
-    consulta.</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">consulta</span>(<span
-     style="color: #0070c1;">transaccion</span>, <span
-     style="color: #795e26;">resolve</span>)</div>
-  <div>&nbsp;})</div><br>
-  <div>}</div>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * <span class="codeReserved">@template</span> T</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { Promise&lt;IDBDatabase&gt; } bd</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string[] } entidades</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { (</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> *   transaccion: IDBTransaction,</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> *   resolve: (resultado:T)=&gt;void</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> *  ) =&gt; void } consulta</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> * <span class="codeReserved">@returns</span> {Promise&lt;T&gt;}</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>11</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> bdConsulta(bd, entidades, consulta) {</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">const</span> base = <span class="codeReserved">await</span> bd</td></tr>
+  <tr><td>14</td><td></td></tr>
+  <tr><td>15</td><td> <span class="codeReserved">return</span> <span class="codeReserved">new</span> Promise((resolve, reject) =&gt; {</td></tr>
+  <tr><td>16</td><td>  <span class="codeComment">// Inicia una transacción de solo lectura.</span></td></tr>
+  <tr><td>17</td><td>  <span class="codeReserved">const</span> transaccion = base.transaction(entidades, <span class="codeString">"readonly"</span>)</td></tr>
+  <tr><td>18</td><td>  <span class="codeComment">// Al terminar con error ejecuta la función reject.</span></td></tr>
+  <tr><td>19</td><td>  transaccion.onerror = () =&gt; reject(transaccion.error)</td></tr>
+  <tr><td>20</td><td>  <span class="codeComment">// Estas son las operaciones para realizar la consulta.</span></td></tr>
+  <tr><td>21</td><td>  consulta(transaccion, resolve)</td></tr>
+  <tr><td>22</td><td> })</td></tr>
+  <tr><td>23</td><td></td></tr>
+  <tr><td>24</td><td>}</td></tr>
+ </tbody>
+</table>

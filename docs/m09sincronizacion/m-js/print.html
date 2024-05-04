@@ -11,8 +11,11 @@
  <title>Carpeta « js » - GilPG DM</title>
  <meta name="description" content="">
  <style>
+ /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
  :root {
-  --padTop: 2rem;
+  --marginTop: 0.25rem;
+  --padTop: 0;
+  --h1PadTop: 2.5rem;
   --introDuracion: 2s;
   --introFuncion: ease-out;
   --padCont: 0.5rem;
@@ -21,35 +24,188 @@
   --anchoLectura: 900px;
   --colLetra: black;
   --colFondo: white;
-  --colTituloLetra: #00811c;
-  --colTituloShadow: 3px 1px 2px #bdbdbd;
-  --colTituloStrong: #684601;
-  --colTituloStrongSel: #ffdc97;
-  --colTarget: #cef4ff;
+  --colPush: var(--colFondo);
+  --colPushHover: var(--colFondo);
+  --colPushFocus: var(--colFondo);
+  --colPushActive: #bae397;
+  --colFondoPush: #609732;
+  --colFondoPushHover: #8abd5f;
+  --colFondoPushFocus: #3e7213;
+  --colFondoPushActive: #224c00;
+  --paddingPush: 0.2rem 0.3rem;
+  --borderPush: none;
+  --borderRadiusPush: 0.6em;
+  --colA: #6a7b15;
+  --colAVisited: #6f256f;
+  --colAActive: #e498af;
+  --colAPush: var(--colFondo);
+  --colAVisitedPush: var(--colFondo);
+  --colAPushHover: var(--colFondo);
+  --colAVisitedPushHover: var(--colFondo);
+  --colAPushFocus: var(--colFondo);
+  --colAVisitedPushFocus: var(--colFondo);
+  --colAPushActive: var(--colFondo);
+  --colAVisitedPushActive: var(--colFondo);
+  --colFondoAPush: #6a7b15;
+  --colFondoAVisitedPush: #6f256f;
+  --colFondoAPushHover: #91a437;
+  --colFondoAVisitedPushHover: #a66fa6;
+  --colFondoAPushFocus: #445200;
+  --colFondoAVisitedPushFocus: #530e53;
+  --colFondoAPushActive: #e498af;
+  --colFondoAVisitedPushActive: #e498af;
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
-  --padCtrl: 0.2rem 0.3rem;
-  --borderCtrl: solid thin;
-  --colFondoNav: #f2f2f2;
-  --colNavResaltada: #7a2c99;
-  --colSecundario: #ffff82;
-  --colStack1: black;
-  --colStack2: #224ba5;
-  --colStack3: #92731f;
+  --shadowTitulo: 3px 1px 2px black;
+  --colTitulo: #bae397;
+  --colTituloFondo: #609732;
+  --colPrincipalTituloStrong: white;
+  --colAStrong: var(--colLetra);
+  --colNavH1Sel: #b35f7c;
+  --colFondoNav: var(--colFondo);
+  --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
   --colThumb: #90a4ae;
   --colThumbActivo: #3f3f3f;
+  --colResaltado: #e9c8d2;
+  --colResaltado2: #bae397;
+  --colResaltado3: #cfcfcf;
+  --colLetraResaltado: black;
+  --colLetraCodeComment: #224c00;
+  --colLetraCodeString: #903357;
+  --colLetraCodeReserved: #445200;
+  --colSecundario: #e498af;
+  --colTarget: #cef4ff;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
   --anchoThumb: 7px;
   --borderRadiusThumb: 3.5px;
   --gap: 0.5rem;
-  --fontMono: monospace;
-  --fontSans: sans-serif;
-  --fontSerif: serif;
+  --fontMono: 'Xanh Mono', monospace;
+  --fontSans: 'Patrick Hand', sans-serif;
+  --fontSerif: 'Purple Purse', serif;
   font-family: var(--fontSerif);
   color: var(--colLetra);
   background-color: var(--colFondo);
   scrollbar-width: thin;
   scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ @media (prefers-color-scheme: light) {
+  :root {
+   --colLetra: black;
+   --colFondo: white;
+  }
+ }
+
+ /* https://paletton.com/#uid=74W0u0kaVz84jP27qHbeJtFiHpX */
+ @media (prefers-color-scheme: dark) {
+
+  :root {
+   --colLetra: white;
+   /* --colFondo: #272727; */
+   --colFondo: black;
+   --colPushActive: #e3f5d4;
+   --colFondoPush: #bbe697;
+   --colFondoPushHover: #d0eeb7;
+   --colFondoPushFocus: #9ed372;
+   --colFondoPushActive: #7db84d;
+   --colA: #e9f7a3;
+   --colAVisited: #c89ac8;
+   --colAActive: #983351;
+   --colFondoAPush: #e9f7a3;
+   --colFondoAVisitedPush: #c89ac8;
+   --colFondoAPushHover: #f6fcda;
+   --colFondoAVisitedPushHover: #dec0de;
+   --colFondoAPushFocus: #b4c853;
+   --colFondoAVisitedPushFocus: #9a539a;
+   --colFondoAPushActive: #983351;
+   --colFondoAVisitedPushActive: #983351;
+   --colSombra: #00000080;
+   --colTitulo: #e3f5d4;
+   --colTituloFondo: #7db84d;
+   --colNavH1Sel: #d37290;
+   --colFondoNavSel: #7a3059;
+   --colScrollbar: #616161;
+   --colThumb: #ffffff;
+   --colResaltado: #7a3059;
+   --colResaltado2: #5c922f;
+   --colResaltado3: #4e4e4e;
+   --colLetraResaltado: white;
+   --colLetraCodeComment: #d0eeb7;
+   --colLetraCodeString: #eeb7c8;
+   --colLetraCodeReserved: #f0fac0;
+  }
+ }
+
+ /* xanh-mono-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* xanh-mono-italic - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: italic;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-italic.woff2') format('woff2');
+ }
+
+ /* patrick-hand-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Patrick Hand';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/patrick-hand-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* purple-purse-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Purple Purse';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/purple-purse-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ @font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  src:
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].woff2) format('woff2'),
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].ttf) format('truetype');
+ }
+
+ .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
  }
 
  body::-webkit-scrollbar {
@@ -70,18 +226,132 @@
   background-color: var(--colThumbActivo);
  }
 
+ body {
+  margin-top: 0;
+ }
+
+ a {
+  color: var(--colA);
+ }
+
+ a:visited {
+  color: var(--colAVisited);
+ }
+
+ a:active {
+  color: var(--colAActive);
+ }
+
  .anterior,
- .siguiente {
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente,
+ button {
   display: inline-block;
+  padding: var(--paddingPush);
+  border: var(--borderPush);
+  border-radius: var(--borderRadiusPush);
+  text-align: center;
   text-decoration: none;
-  padding: var(--padCtrl);
-  border: var(--borderCtrl);
-  cursor: pointer;
+ }
+
+ .anterior,
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente {
+  color: var(--colAPush);
+  background-color: var(--colFondoAPush);
+ }
+
+ .anterior:visited,
+ .siguiente:visited,
+ .paginaAnterior:visited,
+ .paginaSiguiente:visited {
+  color: var(--colAVisitedPush);
+  background-color: var(--colFondoAVisitedPush);
  }
 
  .anterior.bye,
- .siguiente.bye {
+ .siguiente.bye,
+ .paginaAnterior.bye,
+ .paginaSiguiente.bye {
   display: none;
+ }
+
+ .anterior:hover,
+ .siguiente:hover,
+ .paginaAnterior:hover,
+ .paginaSiguiente:hover {
+  color: var(--colAPushHover);
+  background-color: var(--colFondoAPushHover);
+ }
+
+ .anterior:visited:hover,
+ .siguiente:visited:hover,
+ .paginaAnterior:visited:hover,
+ .paginaSiguiente:visited:hover {
+  color: var(--colAVisitedPushHover);
+  background-color: var(--colFondoAVisitedPushHover);
+ }
+
+ .anterior:focus,
+ .siguiente:focus,
+ .paginaAnterior:focus,
+ .paginaSiguiente:focus {
+  color: var(--colAPushFocus);
+  background-color: var(--colFondoAPushFocus);
+ }
+
+ .anterior:visited:focus,
+ .siguiente:visited:focus,
+ .paginaAnterior:visited:focus,
+ .paginaSiguiente:visited:focus {
+  color: var(--colAVisitedPushFocus);
+  background-color: var(--colFondoAVisitedPushFocus);
+ }
+
+ .anterior:active,
+ .siguiente:active,
+ .paginaAnterior:active,
+ .paginaSiguiente:active {
+  color: var(--colAPushActive);
+  background-color: var(--colFondoAPushActive);
+ }
+
+ .anterior:visited:active,
+ .siguiente:visited:active,
+ .paginaAnterior:visited:active,
+ .paginaSiguiente:visited:active {
+  color: var(--colAVisitedPushActive);
+  background-color: var(--colFondoAVisitedPushActive);
+ }
+
+ button {
+  color: var(--colPush);
+  background-color: var(--colFondoPush);
+ }
+
+ button:hover {
+  color: var(--colPushHover);
+  background-color: var(--colFondoPushHover);
+ }
+
+ button:focus {
+  color: var(--colPushFocus);
+  background-color: var(--colFondoPushFocus);
+ }
+
+ button:active {
+  color: var(--colPushActive);
+  background-color: var(--colFondoPushActive);
+ }
+
+ .anterior span,
+ .siguiente span,
+ .paginaAnterior span,
+ .paginaSiguiente span,
+ button span {
+  vertical-align: middle;
  }
 
  a[data-logo] {
@@ -99,7 +369,12 @@
  a code,
  h1 strong,
  h1 code {
-  color: var(--colTituloStrong);
+  font-size: 1em;
+ }
+
+ a strong,
+ a code {
+  color: var(--colAStrong);
  }
 
  nav a {
@@ -111,8 +386,8 @@
  }
 
  code {
-  color: var(--colTituloStrong);
   font-family: var(--fontMono);
+  font-size: 1rem;
  }
 
  .tree {
@@ -131,7 +406,7 @@
 
  h1:not(.default) {
   font-family: var(--fontSans);
-  color: var(--colTituloLetra);
+  color: var(--colTituloFondo);
  }
 
  h1,
@@ -144,7 +419,7 @@
  .autor {
   font-family: var(--fontSans);
   font-size: 1.5rem;
-  color: var(--colTituloLetra);
+  color: var(--colTituloFondo);
  }
 
  figure {
@@ -216,15 +491,18 @@
  }
 
  .resaltado {
-  background-color: rgb(255, 255, 89);
+  background-color: var(--colResaltado);
+  color: var(--colLetraResaltado);
  }
 
  .resaltado2 {
-  background-color: rgb(255, 214, 139);
+  background-color: var(--colResaltado2);
+  color: var(--colLetraResaltado);
  }
 
  .resaltado3 {
-  background-color: rgb(235, 234, 233);
+  background-color: var(--colResaltado3);
+  color: var(--colLetraResaltado);
  }
 
  table.borde {
@@ -243,6 +521,61 @@
   padding: 0.4rem;
  }
 
+ table.codeShow {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .codeShow td:first-child {
+  text-align: right;
+  padding: 0 0 0 0;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  /* Avoid selection */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+ }
+
+ .codeShow td:nth-child(2) {
+  padding: 0 0 0 0.25rem;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+  line-height: 1.2rem;
+ }
+
+ .codeReserved {
+  color: var(--colLetraCodeReserved);
+  font-weight: bolder;
+ }
+
+ .codeString {
+  color: var(--colLetraCodeString);
+  font-weight: 600;
+ }
+
+ .codeComment {
+  color: var(--colLetraCodeComment);
+  font-style: italic;
+ }
+
+ @media print {
+  h1 {
+   text-shadow: var(--shadowTitulo);
+  }
+
+  .codeShow button {
+   display: none;
+  }
+ }
+
+
  footer {
   margin-top: 1rem;
   display: block;
@@ -252,10 +585,22 @@
  }
 </style>
  <style>
+ .pruebaDeEscritorio {
+  font-family: var(--fontSans);
+ }
+
+ .pruebaDeEscritorio .section,
  .pruebaDeEscritorio section {
   display: inline-block;
   vertical-align: top;
+ }
+
+ .pruebaDeEscritorio section {
   margin: 1em;
+ }
+
+ .section section {
+  display: block;
  }
 
  .pruebaDeEscritorio section pre {
@@ -378,36 +723,38 @@
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-modelo/">Carpeta « js / modelo »</a>
+     <a href="/m09sincronizacion/m-js/m-bd/">Carpeta « js / bd »</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-dao/">Carpeta « js / dao »</a>
+     <a href="/m09sincronizacion/m-js/m-modelo/">Carpeta « js / modelo »</a>
     </p>
    </li>
    </ol>
    </nav>
   </div>
      <section >
-         <h1 >A. js / configura.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">registraServiceWorkerSiEsSoportado</span></div>
-  <div>}&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/registraServiceWorkerSiEsSoportado.js"</span>
-  </div><br>
-  <div><span
-     style="color: #795e26;">registraServiceWorkerSiEsSoportado</span>(<span
-     style="color: #a31515;">"sw.js"</span>)</div>
- </div>
-</muestra-codigo>
+         <h1 >A. js / configura.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> {</td></tr>
+  <tr><td>2</td><td> registraServiceWorkerSiEsSoportado</td></tr>
+  <tr><td>3</td><td>} <span class="codeReserved">from</span> <span class="codeString">"../lib/js/registraServiceWorkerSiEsSoportado.js"</span></td></tr>
+  <tr><td>4</td><td></td></tr>
+  <tr><td>5</td><td>registraServiceWorkerSiEsSoportado(<span class="codeString">"sw.js"</span>)</td></tr>
+ </tbody>
+</table>
       </section>
      <section>
-         <h1 >B. Carpeta « js / modelo »</h1>
+         <h1 >B. Carpeta « js / bd »</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -421,6 +768,493 @@
     
    <ol type="1">
     
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-bd/m-Bd-js.html">js / bd / Bd.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-bd/m-pasatiempoAgrega-js.html">js / bd / pasatiempoAgrega.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-bd/m-pasatiempoBusca-js.html">js / bd / pasatiempoBusca.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-bd/m-pasatiempoConsultaNoEliminados-js.html">js / bd / pasatiempoConsultaNoEliminados.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-bd/m-pasatiempoConsultaTodos-js.html">js / bd / pasatiempoConsultaTodos.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-bd/m-pasatiempoElimina-js.html">js / bd / pasatiempoElimina.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-bd/m-pasatiempoModifica-js.html">js / bd / pasatiempoModifica.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-bd/m-pasatiemposReemplaza-js.html">js / bd / pasatiemposReemplaza.js</a>
+    </p>
+   </li>
+   </ol>
+   </nav>
+  </div>
+     <section >
+         <h1 >1. js / bd / Bd.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> NOMBRE_DEL_ALMACEN_PASATIEMPO = <span class="codeString">"Pasatiempo"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> NOMBRE_DEL_INDICE_NOMBRE = <span class="codeString">"nombre"</span></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">const</span> BD_NOMBRE = <span class="codeString">"sincronizacion"</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">const</span> BD_VERSION = 1</td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td><span class="codeComment">/** <span class="codeReserved">@type</span> { Promise&lt;IDBDatabase&gt; } */</span></td></tr>
+  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> Bd = <span class="codeReserved">new</span> Promise((resolve, reject) =&gt; {</td></tr>
+  <tr><td>8</td><td></td></tr>
+  <tr><td>9</td><td> <span class="codeComment">/* Se solicita abrir la base de datos, indicando nombre y</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment">  * número de versión. */</span></td></tr>
+  <tr><td>11</td><td> <span class="codeReserved">const</span> solicitud = indexedDB.open(BD_NOMBRE, BD_VERSION)</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td> <span class="codeComment">// Si se presenta un error, rechaza la promesa.</span></td></tr>
+  <tr><td>14</td><td> solicitud.onerror = () =&gt; reject(solicitud.error)</td></tr>
+  <tr><td>15</td><td></td></tr>
+  <tr><td>16</td><td> <span class="codeComment">// Si se abre con éxito, devuelve una conexión a la base de datos.</span></td></tr>
+  <tr><td>17</td><td> solicitud.onsuccess = () =&gt; resolve(solicitud.result)</td></tr>
+  <tr><td>18</td><td></td></tr>
+  <tr><td>19</td><td> <span class="codeComment">// Si es necesario, se inicia una transacción para cambio de versión.</span></td></tr>
+  <tr><td>20</td><td> solicitud.onupgradeneeded = () =&gt; {</td></tr>
+  <tr><td>21</td><td></td></tr>
+  <tr><td>22</td><td>  <span class="codeReserved">const</span> bd = solicitud.result</td></tr>
+  <tr><td>23</td><td></td></tr>
+  <tr><td>24</td><td>  <span class="codeComment">// Como hay cambio de versión, borra el almacén si es que existe.</span></td></tr>
+  <tr><td>25</td><td>  <span class="codeReserved">if</span> (bd.objectStoreNames.contains(NOMBRE_DEL_ALMACEN_PASATIEMPO)) {</td></tr>
+  <tr><td>26</td><td>   bd.deleteObjectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO)</td></tr>
+  <tr><td>27</td><td>  }</td></tr>
+  <tr><td>28</td><td></td></tr>
+  <tr><td>29</td><td>  <span class="codeComment">// Crea el almacén &quot;Pasatiempo&quot; con el campo llave &quot;uuid&quot;.</span></td></tr>
+  <tr><td>30</td><td>  <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
+  <tr><td>31</td><td>   bd.createObjectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO, { keyPath: <span class="codeString">"uuid"</span> })</td></tr>
+  <tr><td>32</td><td></td></tr>
+  <tr><td>33</td><td>  <span class="codeComment">// Crea un índice ordenado por el campo &quot;nombre&quot; que no acepta duplicados.</span></td></tr>
+  <tr><td>34</td><td>  almacenPasatiempo.createIndex(NOMBRE_DEL_INDICE_NOMBRE, <span class="codeString">"nombre"</span>)</td></tr>
+  <tr><td>35</td><td> }</td></tr>
+  <tr><td>36</td><td></td></tr>
+  <tr><td>37</td><td>})</td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >2. js / bd / pasatiempoAgrega.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdEjecuta.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/Pasatiempo.js"</span></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">import</span> { Bd, NOMBRE_DEL_ALMACEN_PASATIEMPO } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>4</td><td></td></tr>
+  <tr><td>5</td><td><span class="codeReserved">let</span> secuencia = 0</td></tr>
+  <tr><td>6</td><td></td></tr>
+  <tr><td>7</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { Pasatiempo } modelo</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>10</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoAgrega(modelo) {</td></tr>
+  <tr><td>11</td><td> modelo.validaNuevo()</td></tr>
+  <tr><td>12</td><td> modelo.modificacion = Date.now()</td></tr>
+  <tr><td>13</td><td> modelo.eliminado = <span class="codeReserved">false</span></td></tr>
+  <tr><td>14</td><td></td></tr>
+  <tr><td>15</td><td> <span class="codeComment">// Genera uuid único en internet.</span></td></tr>
+  <tr><td>16</td><td> modelo.uuid = Date.now().toString() + Math.random() + secuencia</td></tr>
+  <tr><td>17</td><td> secuencia++</td></tr>
+  <tr><td>18</td><td></td></tr>
+  <tr><td>19</td><td> <span class="codeReserved">return</span> bdEjecuta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
+  <tr><td>20</td><td>  transaccion =&gt; {</td></tr>
+  <tr><td>21</td><td>   <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
+  <tr><td>22</td><td>    transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO)</td></tr>
+  <tr><td>23</td><td>   almacenPasatiempo.add(modelo)</td></tr>
+  <tr><td>24</td><td>  })</td></tr>
+  <tr><td>25</td><td>}</td></tr>
+  <tr><td>26</td><td></td></tr>
+  <tr><td>27</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
+  <tr><td>28</td><td>window[<span class="codeString">"pasatiempoAgrega"</span>] = pasatiempoAgrega</td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >3. js / bd / pasatiempoBusca.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { bdConsulta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdConsulta.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { leePasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/leePasatiempo.js"</span></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/Pasatiempo.js"</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">import</span> { Bd, NOMBRE_DEL_ALMACEN_PASATIEMPO } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string | <span class="codeReserved">null</span> } uuid</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoBusca(uuid) {</td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td> <span class="codeReserved">if</span> (uuid === <span class="codeReserved">null</span>)</td></tr>
+  <tr><td>12</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Falta el uuid"</span>)</td></tr>
+  <tr><td>13</td><td></td></tr>
+  <tr><td>14</td><td> <span class="codeReserved">return</span> bdConsulta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
+  <tr><td>15</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>16</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> { IDBTransaction } transaccion </span></td></tr>
+  <tr><td>17</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> { (resultado: Pasatiempo|undefined) =&gt; any } resolve </span></td></tr>
+  <tr><td>18</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>19</td><td>  (transaccion, resolve) =&gt; {</td></tr>
+  <tr><td>20</td><td></td></tr>
+  <tr><td>21</td><td>   <span class="codeComment">/* Pide el primer registro de almacén pasatiempo que tenga como</span></td></tr>
+  <tr><td>22</td><td><span class="codeComment">    * llave primaria el valor del parámetro uuid. */</span></td></tr>
+  <tr><td>23</td><td>   <span class="codeReserved">const</span> consulta =</td></tr>
+  <tr><td>24</td><td>    transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO).get(uuid)</td></tr>
+  <tr><td>25</td><td></td></tr>
+  <tr><td>26</td><td>   <span class="codeComment">/* onsuccess se invoca solo una vez, devolviendo el registro</span></td></tr>
+  <tr><td>27</td><td><span class="codeComment">   * solicitado. */</span></td></tr>
+  <tr><td>28</td><td>   consulta.onsuccess = () =&gt; {</td></tr>
+  <tr><td>29</td><td></td></tr>
+  <tr><td>30</td><td>    <span class="codeComment">/* Se recupera el registro solicitado usando</span></td></tr>
+  <tr><td>31</td><td><span class="codeComment">     *  consulta.result</span></td></tr>
+  <tr><td>32</td><td><span class="codeComment">     * Si el registro no se encuentra se recupera undefined. */</span></td></tr>
+  <tr><td>33</td><td>    <span class="codeReserved">const</span> objeto = consulta.result</td></tr>
+  <tr><td>34</td><td></td></tr>
+  <tr><td>35</td><td>    <span class="codeReserved">if</span> (objeto !== undefined) {</td></tr>
+  <tr><td>36</td><td>     <span class="codeReserved">const</span> modelo = leePasatiempo(objeto)</td></tr>
+  <tr><td>37</td><td>     <span class="codeReserved">if</span> (!modelo.eliminado) {</td></tr>
+  <tr><td>38</td><td>      resolve(modelo)</td></tr>
+  <tr><td>39</td><td>     }</td></tr>
+  <tr><td>40</td><td>    }</td></tr>
+  <tr><td>41</td><td></td></tr>
+  <tr><td>42</td><td>    resolve(undefined)</td></tr>
+  <tr><td>43</td><td></td></tr>
+  <tr><td>44</td><td>   }</td></tr>
+  <tr><td>45</td><td></td></tr>
+  <tr><td>46</td><td>  })</td></tr>
+  <tr><td>47</td><td></td></tr>
+  <tr><td>48</td><td>}</td></tr>
+  <tr><td>49</td><td></td></tr>
+  <tr><td>50</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
+  <tr><td>51</td><td>window[<span class="codeString">"pasatiempoBusca"</span>] = pasatiempoBusca</td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >4. js / bd / pasatiempoConsultaNoEliminados.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { bdConsulta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdConsulta.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> {</td></tr>
+  <tr><td>3</td><td> Bd,</td></tr>
+  <tr><td>4</td><td> NOMBRE_DEL_ALMACEN_PASATIEMPO, NOMBRE_DEL_INDICE_NOMBRE</td></tr>
+  <tr><td>5</td><td>} <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>6</td><td></td></tr>
+  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoConsultaNoEliminados() {</td></tr>
+  <tr><td>8</td><td></td></tr>
+  <tr><td>9</td><td> <span class="codeReserved">return</span> bdConsulta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
+  <tr><td>10</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> { IDBTransaction } transaccion </span></td></tr>
+  <tr><td>12</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> { (resultado: any[]) =&gt; any } resolve </span></td></tr>
+  <tr><td>13</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>14</td><td>  (transaccion, resolve) =&gt; {</td></tr>
+  <tr><td>15</td><td></td></tr>
+  <tr><td>16</td><td>   <span class="codeReserved">const</span> resultado = []</td></tr>
+  <tr><td>17</td><td></td></tr>
+  <tr><td>18</td><td>   <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
+  <tr><td>19</td><td>    transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO)</td></tr>
+  <tr><td>20</td><td></td></tr>
+  <tr><td>21</td><td>   <span class="codeComment">// Usa el índice &quot;nombre&quot; para reculeprar los datos ordenadors.</span></td></tr>
+  <tr><td>22</td><td>   <span class="codeReserved">const</span> indiceNombre = almacenPasatiempo.index(NOMBRE_DEL_INDICE_NOMBRE)</td></tr>
+  <tr><td>23</td><td></td></tr>
+  <tr><td>24</td><td>   <span class="codeComment">/* Pide un cursor para recorrer cada uno de los registristros</span></td></tr>
+  <tr><td>25</td><td><span class="codeComment">    * que devuelve la consulta. */</span></td></tr>
+  <tr><td>26</td><td>   <span class="codeReserved">const</span> consulta = indiceNombre.openCursor()</td></tr>
+  <tr><td>27</td><td></td></tr>
+  <tr><td>28</td><td>   <span class="codeComment">/* onsuccess se invoca por cada uno de los registros de la</span></td></tr>
+  <tr><td>29</td><td><span class="codeComment">    * consulta y una vez cuando se acaban dichos registros. */</span></td></tr>
+  <tr><td>30</td><td>   consulta.onsuccess = () =&gt; {</td></tr>
+  <tr><td>31</td><td></td></tr>
+  <tr><td>32</td><td>    <span class="codeComment">/* El cursor que corresponde al registro se recupera usando</span></td></tr>
+  <tr><td>33</td><td><span class="codeComment">     *  consulta.result */</span></td></tr>
+  <tr><td>34</td><td>    <span class="codeReserved">const</span> cursor = consulta.result</td></tr>
+  <tr><td>35</td><td></td></tr>
+  <tr><td>36</td><td>    <span class="codeReserved">if</span> (cursor === <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>37</td><td></td></tr>
+  <tr><td>38</td><td>     <span class="codeComment">/* Si el cursor es igual a <span class="codeReserved">null</span>, ya no hay más registros que</span></td></tr>
+  <tr><td>39</td><td><span class="codeComment">      * procesar; por lo mismo, se devuelve el resultado con los</span></td></tr>
+  <tr><td>40</td><td><span class="codeComment">      * pasatiempos recuperados, usando</span></td></tr>
+  <tr><td>41</td><td><span class="codeComment">      *  resolve(resultado). */</span></td></tr>
+  <tr><td>42</td><td>     resolve(resultado)</td></tr>
+  <tr><td>43</td><td></td></tr>
+  <tr><td>44</td><td>    } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>45</td><td></td></tr>
+  <tr><td>46</td><td>     <span class="codeComment">/* Si el cursor es diferente a <span class="codeReserved">null</span>, si hay más registros.</span></td></tr>
+  <tr><td>47</td><td><span class="codeComment">      * El registro que sigue se obtiene con</span></td></tr>
+  <tr><td>48</td><td><span class="codeComment">      *  cursor.value */</span></td></tr>
+  <tr><td>49</td><td>     <span class="codeReserved">const</span> modelo = cursor.value</td></tr>
+  <tr><td>50</td><td>     <span class="codeReserved">if</span> (!modelo.eliminado) {</td></tr>
+  <tr><td>51</td><td>      resultado.push(modelo)</td></tr>
+  <tr><td>52</td><td>     }</td></tr>
+  <tr><td>53</td><td></td></tr>
+  <tr><td>54</td><td>     <span class="codeComment">/* Busca el siguiente registro de la consulta, que se obtiene</span></td></tr>
+  <tr><td>55</td><td><span class="codeComment">      * la siguiente vez que se invoque la función</span></td></tr>
+  <tr><td>56</td><td><span class="codeComment">      *  onsuccess. */</span></td></tr>
+  <tr><td>57</td><td>     cursor.<span class="codeReserved">continue</span>()</td></tr>
+  <tr><td>58</td><td></td></tr>
+  <tr><td>59</td><td>    }</td></tr>
+  <tr><td>60</td><td></td></tr>
+  <tr><td>61</td><td>   }</td></tr>
+  <tr><td>62</td><td></td></tr>
+  <tr><td>63</td><td>  })</td></tr>
+  <tr><td>64</td><td></td></tr>
+  <tr><td>65</td><td>}</td></tr>
+  <tr><td>66</td><td></td></tr>
+  <tr><td>67</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
+  <tr><td>68</td><td>window[<span class="codeString">"pasatiempoConsultaNoEliminados"</span>] = pasatiempoConsultaNoEliminados</td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >5. js / bd / pasatiempoConsultaTodos.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { bdConsulta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdConsulta.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { NOMBRE_DEL_ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> * Lista todos los objetos, incluyendo los que tienen</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> * borrado lógico.</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>8</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoConsultaTodos() {</td></tr>
+  <tr><td>9</td><td></td></tr>
+  <tr><td>10</td><td> <span class="codeReserved">return</span> bdConsulta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
+  <tr><td>11</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> { IDBTransaction } transaccion </span></td></tr>
+  <tr><td>13</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> { (result: any[]) =&gt; any } resolve </span></td></tr>
+  <tr><td>14</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>15</td><td>  (transaccion, resolve) =&gt; {</td></tr>
+  <tr><td>16</td><td></td></tr>
+  <tr><td>17</td><td>   <span class="codeReserved">const</span> resultado = []</td></tr>
+  <tr><td>18</td><td></td></tr>
+  <tr><td>19</td><td>   <span class="codeComment">/* Pide un cursor para recorrer cada uno de los</span></td></tr>
+  <tr><td>20</td><td><span class="codeComment">    * registristros que devuelve la consulta. */</span></td></tr>
+  <tr><td>21</td><td>   <span class="codeReserved">const</span> consulta =</td></tr>
+  <tr><td>22</td><td>    transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO).openCursor()</td></tr>
+  <tr><td>23</td><td></td></tr>
+  <tr><td>24</td><td>   <span class="codeComment">/* onsuccess se invoca por cada uno de los registros de la</span></td></tr>
+  <tr><td>25</td><td><span class="codeComment">   * consulta y una vez cuando se acaban dichos registros. */</span></td></tr>
+  <tr><td>26</td><td>   consulta.onsuccess = () =&gt; {</td></tr>
+  <tr><td>27</td><td></td></tr>
+  <tr><td>28</td><td>    <span class="codeComment">/* El cursor que corresponde al registro se recupera usando</span></td></tr>
+  <tr><td>29</td><td><span class="codeComment">     *  consulta.result */</span></td></tr>
+  <tr><td>30</td><td>    <span class="codeReserved">const</span> cursor = consulta.result</td></tr>
+  <tr><td>31</td><td></td></tr>
+  <tr><td>32</td><td>    <span class="codeReserved">if</span> (cursor === <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>33</td><td></td></tr>
+  <tr><td>34</td><td>     <span class="codeComment">/* Si el cursor es igual a <span class="codeReserved">null</span>, ya no hay más registros que</span></td></tr>
+  <tr><td>35</td><td><span class="codeComment">      * procesar; por lo mismo, se devuelve el resultado con los</span></td></tr>
+  <tr><td>36</td><td><span class="codeComment">      * pasatiempos recuperados, usando</span></td></tr>
+  <tr><td>37</td><td><span class="codeComment">      *  resolve(resultado). */</span></td></tr>
+  <tr><td>38</td><td>     resolve(resultado)</td></tr>
+  <tr><td>39</td><td></td></tr>
+  <tr><td>40</td><td>    } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>41</td><td></td></tr>
+  <tr><td>42</td><td>     <span class="codeComment">/* Si el cursor es diferente a <span class="codeReserved">null</span>, si hay más registros.</span></td></tr>
+  <tr><td>43</td><td><span class="codeComment">      * El registro que sigue se obtiene con</span></td></tr>
+  <tr><td>44</td><td><span class="codeComment">      *  cursor.value*/</span></td></tr>
+  <tr><td>45</td><td>     resultado.push(cursor.value)</td></tr>
+  <tr><td>46</td><td></td></tr>
+  <tr><td>47</td><td>     <span class="codeComment">/* Busca el siguiente registro de la consulta, que se obtiene</span></td></tr>
+  <tr><td>48</td><td><span class="codeComment">      * la siguiente vez que se invoque la función</span></td></tr>
+  <tr><td>49</td><td><span class="codeComment">      *  onsuccess. */</span></td></tr>
+  <tr><td>50</td><td>     cursor.<span class="codeReserved">continue</span>()</td></tr>
+  <tr><td>51</td><td></td></tr>
+  <tr><td>52</td><td>    }</td></tr>
+  <tr><td>53</td><td></td></tr>
+  <tr><td>54</td><td>   }</td></tr>
+  <tr><td>55</td><td></td></tr>
+  <tr><td>56</td><td>  })</td></tr>
+  <tr><td>57</td><td></td></tr>
+  <tr><td>58</td><td>}</td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >6. js / bd / pasatiempoElimina.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdEjecuta.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { NOMBRE_DEL_ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">import</span> { pasatiempoBusca } <span class="codeReserved">from</span> <span class="codeString">"./pasatiempoBusca.js"</span></td></tr>
+  <tr><td>4</td><td></td></tr>
+  <tr><td>5</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string } uuid</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>8</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoElimina(uuid) {</td></tr>
+  <tr><td>9</td><td> <span class="codeReserved">const</span> modelo = <span class="codeReserved">await</span> pasatiempoBusca(uuid)</td></tr>
+  <tr><td>10</td><td> <span class="codeReserved">if</span> (modelo !== undefined) {</td></tr>
+  <tr><td>11</td><td>  modelo.modificacion = Date.now()</td></tr>
+  <tr><td>12</td><td>  modelo.eliminado = <span class="codeReserved">true</span></td></tr>
+  <tr><td>13</td><td>  <span class="codeReserved">return</span> bdEjecuta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
+  <tr><td>14</td><td>   transaccion =&gt; {</td></tr>
+  <tr><td>15</td><td>    <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
+  <tr><td>16</td><td>     transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO)</td></tr>
+  <tr><td>17</td><td>    almacenPasatiempo.put(modelo)</td></tr>
+  <tr><td>18</td><td>   })</td></tr>
+  <tr><td>19</td><td> }</td></tr>
+  <tr><td>20</td><td>}</td></tr>
+  <tr><td>21</td><td></td></tr>
+  <tr><td>22</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
+  <tr><td>23</td><td>window[<span class="codeString">"pasatiempoElimina"</span>] = pasatiempoElimina</td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >7. js / bd / pasatiempoModifica.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdEjecuta.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/Pasatiempo.js"</span></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">import</span> { Bd, NOMBRE_DEL_ALMACEN_PASATIEMPO } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">import</span> { pasatiempoBusca } <span class="codeReserved">from</span> <span class="codeString">"./pasatiempoBusca.js"</span></td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { Pasatiempo } modelo</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoModifica(modelo) {</td></tr>
+  <tr><td>10</td><td> modelo.valida()</td></tr>
+  <tr><td>11</td><td> <span class="codeReserved">const</span> anterior = <span class="codeReserved">await</span> pasatiempoBusca(modelo.uuid)</td></tr>
+  <tr><td>12</td><td> <span class="codeReserved">if</span> (anterior === undefined) {</td></tr>
+  <tr><td>13</td><td>  <span class="codeReserved">return</span> undefined</td></tr>
+  <tr><td>14</td><td> } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>15</td><td>  modelo.modificacion = Date.now()</td></tr>
+  <tr><td>16</td><td>  modelo.eliminado = <span class="codeReserved">false</span></td></tr>
+  <tr><td>17</td><td>  <span class="codeReserved">return</span> bdEjecuta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
+  <tr><td>18</td><td>   transaccion =&gt; {</td></tr>
+  <tr><td>19</td><td>    <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
+  <tr><td>20</td><td>     transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO)</td></tr>
+  <tr><td>21</td><td>    almacenPasatiempo.put(modelo)</td></tr>
+  <tr><td>22</td><td>   })</td></tr>
+  <tr><td>23</td><td> }</td></tr>
+  <tr><td>24</td><td>}</td></tr>
+  <tr><td>25</td><td></td></tr>
+  <tr><td>26</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
+  <tr><td>27</td><td>window[<span class="codeString">"pasatiempoModifica"</span>] = pasatiempoModifica</td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >8. js / bd / pasatiemposReemplaza.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdEjecuta.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { Bd, NOMBRE_DEL_ALMACEN_PASATIEMPO } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> * Borra el contenido del almacén pasatiempo y guarda el</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> * contenido del listado.</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {any[]} datosNuevos</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiemposReemplaza(datosNuevos) {</td></tr>
+  <tr><td>10</td><td> <span class="codeReserved">return</span> bdEjecuta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
+  <tr><td>11</td><td>  transaccion =&gt; {</td></tr>
+  <tr><td>12</td><td>   <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
+  <tr><td>13</td><td>    transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO)</td></tr>
+  <tr><td>14</td><td>   almacenPasatiempo.clear()</td></tr>
+  <tr><td>15</td><td>   <span class="codeReserved">for</span> (<span class="codeReserved">const</span> objeto of datosNuevos) {</td></tr>
+  <tr><td>16</td><td>    almacenPasatiempo.add(objeto)</td></tr>
+  <tr><td>17</td><td>   }</td></tr>
+  <tr><td>18</td><td>  })</td></tr>
+  <tr><td>19</td><td>}</td></tr>
+ </tbody>
+</table>
+      </section>
+      </section>
+     <section>
+         <h1 >C. Carpeta « js / modelo »</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+
+  <div class="lectura">
+   <nav>
+    <h1>Contenido</h1>
+    
+   <ol type="1">
+    
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-modelo/m-leePasatiempo-js.html">js / modelo / leePasatiempo.js</a>
+    </p>
+   </li>
    <li>
     <p>
      <a href="/m09sincronizacion/m-js/m-modelo/m-Pasatiempo-js.html">js / modelo / Pasatiempo.js</a>
@@ -431,1299 +1265,132 @@
      <a href="/m09sincronizacion/m-js/m-modelo/m-validaQueTengaLasPropiedadesDePasatiempo-js.html">js / modelo / validaQueTengaLasPropiedadesDePasatiempo.js</a>
     </p>
    </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-js/m-modelo/m-leePasatiempo-js.html">js / modelo / leePasatiempo.js</a>
-    </p>
-   </li>
    </ol>
    </nav>
   </div>
      <section >
-         <h1 >1. js / modelo / Pasatiempo.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">class</span> <span
-     style="color: #267f99;">Pasatiempo</span>&nbsp;{</div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{&nbsp;{</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;uuid?: string,</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;nombre?: string,</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;modificacion?: number,</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;eliminado?: boolean,</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*</span><span
-     style="color: #267f99;"> }&nbsp;}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">modelo</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*/</span></div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">constructor</span>(<span
-     style="color: #001080;">modelo</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">nombre</span> = <span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">nombre</span> === <span
-     style="color: #0000ff;">undefined</span></div>
-  <div>&nbsp;&nbsp;&nbsp;? <span
-     style="color: #a31515;">""</span></div>
-  <div>&nbsp;&nbsp;&nbsp;: <span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">nombre</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">uuid</span> = <span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">uuid</span> === <span
-     style="color: #0000ff;">undefined</span></div>
-  <div>&nbsp;&nbsp;&nbsp;? <span
-     style="color: #a31515;">""</span></div>
-  <div>&nbsp;&nbsp;&nbsp;: <span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">uuid</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">modificacion</span> = <span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">modificacion</span> === <span
-     style="color: #0000ff;">undefined</span></div>
-  <div>&nbsp;&nbsp;&nbsp;? <span
-     style="color: #0000ff;">NaN</span></div>
-  <div>&nbsp;&nbsp;&nbsp;: <span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">modificacion</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">eliminado</span> = <span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">eliminado</span> === <span
-     style="color: #0000ff;">undefined</span></div>
-  <div>&nbsp;&nbsp;&nbsp;? <span
-     style="color: #0000ff;">true</span></div>
-  <div>&nbsp;&nbsp;&nbsp;: <span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">eliminado</span></div>
-  <div>&nbsp;}</div><br>
-  <div>&nbsp;<span
-     style="color: #795e26;">validaNuevo</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">nombre</span> === <span
-     style="color: #a31515;">""</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">throw</span> <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Error</span>(<span
-     style="color: #a31515;">"Falta el nombre."</span>)</div>
-  <div>&nbsp;}</div><br>
-  <div>&nbsp;<span
-     style="color: #795e26;">valida</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">uuid</span> === <span
-     style="color: #a31515;">""</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">throw</span> <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Error</span>(<span
-     style="color: #a31515;">"Falta el uuid."</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">nombre</span> === <span
-     style="color: #a31515;">""</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">throw</span> <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Error</span>(<span
-     style="color: #a31515;">"Falta el nombre."</span>)</div>
-  <div>&nbsp;}</div><br>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">// Permite que los eventos de html usen la
-    clase.</span></div>
-  <div><span
-     style="color: #001080;">window</span>[<span
-     style="color: #a31515;">"Pasatiempo"</span>] = <span
-     style="color: #001080;">Pasatiempo</span></div>
- </div>
-</muestra-codigo>
+         <h1 >1. js / modelo / leePasatiempo.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"./Pasatiempo.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> {</td></tr>
+  <tr><td>3</td><td> validaQueTengaLasPropiedadesDePasatiempo</td></tr>
+  <tr><td>4</td><td>} <span class="codeReserved">from</span> <span class="codeString">"./validaQueTengaLasPropiedadesDePasatiempo.js"</span></td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td><span class="codeComment">/** <span class="codeReserved">@param</span> { any } objeto */</span></td></tr>
+  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> leePasatiempo(objeto) {</td></tr>
+  <tr><td>8</td><td> <span class="codeReserved">const</span> validado = validaQueTengaLasPropiedadesDePasatiempo(objeto)</td></tr>
+  <tr><td>9</td><td> <span class="codeReserved">return</span> <span class="codeReserved">new</span> Pasatiempo({</td></tr>
+  <tr><td>10</td><td>  uuid: validado.uuid,</td></tr>
+  <tr><td>11</td><td>  nombre: validado.nombre,</td></tr>
+  <tr><td>12</td><td>  modificacion: validado.modificacion,</td></tr>
+  <tr><td>13</td><td>  eliminado: validado.eliminado,</td></tr>
+  <tr><td>14</td><td> })</td></tr>
+  <tr><td>15</td><td>}</td></tr>
+ </tbody>
+</table>
       </section>
      <section >
-         <h1 >2. js / modelo / validaQueTengaLasPropiedadesDePasatiempo.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ any }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">objeto</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@returns</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{&nbsp;{</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;uuid: string,</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;nombre: string,</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;modificacion: number,</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;eliminado: boolean,</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;}&nbsp;}</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">validaQueTengaLasPropiedadesDePasatiempo</span>(<span
-     style="color: #001080;">objeto</span>)&nbsp;{</div><br>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0000ff;">typeof</span> <span
-     style="color: #001080;">objeto</span>.<span
-     style="color: #001080;">uuid</span> !== <span
-     style="color: #a31515;">"string"</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">throw</span> <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Error</span>(<span
-     style="color: #a31515;">"El uuid debe ser texto."</span>)</div><br>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0000ff;">typeof</span> <span
-     style="color: #001080;">objeto</span>.<span
-     style="color: #001080;">nombre</span> !== <span
-     style="color: #a31515;">"string"</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">throw</span> <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Error</span>(<span
-     style="color: #a31515;">"El nombre debe ser texto."</span>)</div><br>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0000ff;">typeof</span> <span
-     style="color: #001080;">objeto</span>.<span
-     style="color: #001080;">modificacion</span> !== <span
-     style="color: #a31515;">"number"</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">throw</span> <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Error</span>(<span
-     style="color: #a31515;">"El campo modificacion debe ser número."</span>)
-  </div><br>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0000ff;">typeof</span> <span
-     style="color: #001080;">objeto</span>.<span
-     style="color: #001080;">eliminado</span> !== <span
-     style="color: #a31515;">"boolean"</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">throw</span> <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Error</span>(<span
-     style="color: #a31515;">"El campo eliminado debe ser booleano."</span>)
-  </div><br>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #001080;">objeto</span></div><br>
-  <div>}</div>
- </div>
-</muestra-codigo>
+         <h1 >2. js / modelo / Pasatiempo.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">export</span> <span class="codeReserved">class</span> Pasatiempo {</td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> { {</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment">  *   uuid?: string,</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment">  *   nombre?: string,</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment">  *   modificacion?: number,</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment">  *   eliminado?: boolean,</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment">  * } } modelo</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>11</td><td> <span class="codeReserved">constructor</span>(modelo) {</td></tr>
+  <tr><td>12</td><td>  <span class="codeReserved">this</span>.nombre = modelo.nombre === undefined</td></tr>
+  <tr><td>13</td><td>   ? </td></tr>
+  <tr><td>14</td><td>   : modelo.nombre</td></tr>
+  <tr><td>15</td><td>  <span class="codeReserved">this</span>.uuid = modelo.uuid === undefined</td></tr>
+  <tr><td>16</td><td>   ? </td></tr>
+  <tr><td>17</td><td>   : modelo.uuid</td></tr>
+  <tr><td>18</td><td>  <span class="codeReserved">this</span>.modificacion = modelo.modificacion === undefined</td></tr>
+  <tr><td>19</td><td>   ? NaN</td></tr>
+  <tr><td>20</td><td>   : modelo.modificacion</td></tr>
+  <tr><td>21</td><td>  <span class="codeReserved">this</span>.eliminado = modelo.eliminado === undefined</td></tr>
+  <tr><td>22</td><td>   ? <span class="codeReserved">true</span></td></tr>
+  <tr><td>23</td><td>   : modelo.eliminado</td></tr>
+  <tr><td>24</td><td> }</td></tr>
+  <tr><td>25</td><td></td></tr>
+  <tr><td>26</td><td> validaNuevo() {</td></tr>
+  <tr><td>27</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.nombre === )</td></tr>
+  <tr><td>28</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Falta el nombre."</span>)</td></tr>
+  <tr><td>29</td><td> }</td></tr>
+  <tr><td>30</td><td></td></tr>
+  <tr><td>31</td><td> valida() {</td></tr>
+  <tr><td>32</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.uuid === )</td></tr>
+  <tr><td>33</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Falta el uuid."</span>)</td></tr>
+  <tr><td>34</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.nombre === )</td></tr>
+  <tr><td>35</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Falta el nombre."</span>)</td></tr>
+  <tr><td>36</td><td> }</td></tr>
+  <tr><td>37</td><td></td></tr>
+  <tr><td>38</td><td>}</td></tr>
+  <tr><td>39</td><td></td></tr>
+  <tr><td>40</td><td><span class="codeComment">// Permite que los eventos de html usen la clase.</span></td></tr>
+  <tr><td>41</td><td>window[<span class="codeString">"Pasatiempo"</span>] = Pasatiempo</td></tr>
+ </tbody>
+</table>
       </section>
      <section >
-         <h1 >3. js / modelo / leePasatiempo.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">Pasatiempo</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./Pasatiempo.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">validaQueTengaLasPropiedadesDePasatiempo</span>
-  </div>
-  <div>}&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./validaQueTengaLasPropiedadesDePasatiempo.js"</span>
-  </div><br>
-  <div><span
-     style="color: #008000;">/**&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ any }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">objeto</span><span
-     style="color: #008000;"> */</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">leePasatiempo</span>(<span
-     style="color: #001080;">objeto</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">validado</span> = <span
-     style="color: #795e26;">validaQueTengaLasPropiedadesDePasatiempo</span>(<span
-     style="color: #001080;">objeto</span>)</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Pasatiempo</span>({</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">uuid</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #0070c1;">validado</span>.<span
-     style="color: #001080;">uuid</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">nombre</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #0070c1;">validado</span>.<span
-     style="color: #001080;">nombre</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">modificacion</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #0070c1;">validado</span>.<span
-     style="color: #001080;">modificacion</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">eliminado</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #0070c1;">validado</span>.<span
-     style="color: #001080;">eliminado</span>,</div>
-  <div>&nbsp;})</div>
-  <div>}</div>
- </div>
-</muestra-codigo>
-      </section>
-      </section>
-     <section>
-         <h1 >C. Carpeta « js / dao »</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
-    </p>
-   </div>
-
-  <div class="lectura">
-   <nav>
-    <h1>Contenido</h1>
-    
-   <ol type="1">
-    
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-js/m-dao/m-accesoBd-js.html">js / dao / accesoBd.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-js/m-dao/m-pasatiempoAgrega-js.html">js / dao / pasatiempoAgrega.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-js/m-dao/m-pasatiempoBusca-js.html">js / dao / pasatiempoBusca.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-js/m-dao/m-pasatiempoConsultaNoEliminados-js.html">js / dao / pasatiempoConsultaNoEliminados.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-js/m-dao/m-pasatiempoConsultaTodos-js.html">js / dao / pasatiempoConsultaTodos.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-js/m-dao/m-pasatiempoElimina-js.html">js / dao / pasatiempoElimina.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-js/m-dao/m-pasatiempoModifica-js.html">js / dao / pasatiempoModifica.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-js/m-dao/m-pasatiemposReemplaza-js.html">js / dao / pasatiemposReemplaza.js</a>
-    </p>
-   </li>
-   </ol>
-   </nav>
-  </div>
-     <section >
-         <h1 >1. js / dao / accesoBd.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span> = <span
-     style="color: #a31515;">"Pasatiempo"</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">NOMBRE_DEL_INDICE_NOMBRE</span> = <span
-     style="color: #a31515;">"nombre"</span></div>
-  <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">BD_NOMBRE</span> = <span
-     style="color: #a31515;">"sincronizacion"</span></div>
-  <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">BD_VERSION</span> = <span
-     style="color: #098658;">1</span></div><br>
-  <div><span
-     style="color: #008000;">/**&nbsp;</span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ Promise&lt;IDBDatabase&gt; }</span><span
-     style="color: #008000;"> */</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">accesoBd</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Promise</span>((<span
-     style="color: #795e26;">resolve</span>, <span
-     style="color: #795e26;">reject</span>) <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">/*&nbsp;Se solicita abrir la base de datos,
-    indicando nombre y</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*&nbsp;número de versión. */</span>
-  </div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">solicitud</span> = <span
-     style="color: #001080;">indexedDB</span>.<span
-     style="color: #795e26;">open</span>(<span
-     style="color: #0070c1;">BD_NOMBRE</span>, <span
-     style="color: #0070c1;">BD_VERSION</span>)</div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">// Si se presenta un error, rechaza la
-    promesa.</span></div>
-  <div>&nbsp;<span
-     style="color: #0070c1;">solicitud</span>.<span
-     style="color: #795e26;">onerror</span> = () <span
-     style="color: #0000ff;">=&gt;</span> <span
-     style="color: #795e26;">reject</span>(<span
-     style="color: #0070c1;">solicitud</span>.<span
-     style="color: #0070c1;">error</span>)</div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">// Si se abre con éxito, devuelve una conexión a la
-    base de datos.</span></div>
-  <div>&nbsp;<span
-     style="color: #0070c1;">solicitud</span>.<span
-     style="color: #795e26;">onsuccess</span> = () <span
-     style="color: #0000ff;">=&gt;</span> <span
-     style="color: #795e26;">resolve</span>(<span
-     style="color: #0070c1;">solicitud</span>.<span
-     style="color: #0070c1;">result</span>)</div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">// Si es necesario, se inicia una transacción para
-    cambio de versión.</span></div>
-  <div>&nbsp;<span
-     style="color: #0070c1;">solicitud</span>.<span
-     style="color: #795e26;">onupgradeneeded</span> = () <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">bd</span> = <span
-     style="color: #0070c1;">solicitud</span>.<span
-     style="color: #0070c1;">result</span></div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// Como hay cambio de versión, borra el almacén si
-    es que existe.</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">bd</span>.<span
-     style="color: #0070c1;">objectStoreNames</span>.<span
-     style="color: #795e26;">contains</span>(<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>))&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">bd</span>.<span
-     style="color: #795e26;">deleteObjectStore</span>(<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>)</div>
-  <div>&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// Crea el almacén "Pasatiempo" con el campo llave
-    "uuid".</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">almacenPasatiempo</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">bd</span>.<span
-     style="color: #795e26;">createObjectStore</span>(<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>,&nbsp;{ <span
-     style="color: #001080;">keyPath</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #a31515;">"uuid"</span> })</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// Crea un índice ordenado por el campo "nombre"
-    que no acepta duplicados.</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0070c1;">almacenPasatiempo</span>.<span
-     style="color: #795e26;">createIndex</span>(<span
-     style="color: #0070c1;">NOMBRE_DEL_INDICE_NOMBRE</span>, <span
-     style="color: #a31515;">"nombre"</span>)</div>
-  <div>&nbsp;}</div><br>
-  <div>})</div>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >2. js / dao / pasatiempoAgrega.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">bdEjecuta</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../../lib/js/bdEjecuta.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">Pasatiempo</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../modelo/Pasatiempo.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">accesoBd</span>, <span
-     style="color: #001080;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./accesoBd.js"</span></div><br>
-  <div><span
-     style="color: #0000ff;">let</span> <span
-     style="color: #001080;">secuencia</span> = <span
-     style="color: #098658;">0</span></div><br>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ Pasatiempo }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">modelo</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">pasatiempoAgrega</span>(<span
-     style="color: #001080;">modelo</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #795e26;">validaNuevo</span>()</div>
-  <div>&nbsp;<span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">modificacion</span> = <span
-     style="color: #267f99;">Date</span>.<span
-     style="color: #795e26;">now</span>()</div>
-  <div>&nbsp;<span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">eliminado</span> = <span
-     style="color: #0000ff;">false</span></div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">// Genera uuid único en internet.</span></div>
-  <div>&nbsp;<span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">uuid</span> = <span
-     style="color: #267f99;">Date</span>.<span
-     style="color: #795e26;">now</span>().<span
-     style="color: #795e26;">toString</span>() + <span
-     style="color: #001080;">Math</span>.<span
-     style="color: #795e26;">random</span>() + <span
-     style="color: #001080;">secuencia</span></div>
-  <div>&nbsp;<span
-     style="color: #001080;">secuencia</span>++</div><br>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #795e26;">bdEjecuta</span>(<span
-     style="color: #0070c1;">accesoBd</span>, [<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>],</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">transaccion</span> <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">almacenPasatiempo</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">transaccion</span>.<span
-     style="color: #795e26;">objectStore</span>(<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">almacenPasatiempo</span>.<span
-     style="color: #795e26;">add</span>(<span
-     style="color: #001080;">modelo</span>)</div>
-  <div>&nbsp;&nbsp;})</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">// Permite que los eventos de html usen la
-    función.</span></div>
-  <div><span
-     style="color: #001080;">window</span>[<span
-     style="color: #a31515;">"pasatiempoAgrega"</span>] = <span
-     style="color: #795e26;">pasatiempoAgrega</span></div>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >3. js / dao / pasatiempoBusca.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">bdConsulta</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../../lib/js/bdConsulta.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">leePasatiempo</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../modelo/leePasatiempo.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">Pasatiempo</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../modelo/Pasatiempo.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">accesoBd</span>, <span
-     style="color: #001080;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./accesoBd.js"</span></div><br>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ string | null }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">uuid</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">pasatiempoBusca</span>(<span
-     style="color: #001080;">uuid</span>)&nbsp;{</div><br>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">uuid</span> === <span
-     style="color: #0000ff;">null</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">throw</span> <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Error</span>(<span
-     style="color: #a31515;">"Falta el uuid"</span>)</div><br>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #795e26;">bdConsulta</span>(<span
-     style="color: #0070c1;">accesoBd</span>, [<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>],</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ IDBTransaction }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">transaccion</span><span
-     style="color: #008000;"> </span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ (resultado: Pasatiempo|undefined) =&gt; any
-    }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">resolve</span><span
-     style="color: #008000;"> </span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*/</span></div>
-  <div>&nbsp;&nbsp;(<span
-     style="color: #001080;">transaccion</span>, <span
-     style="color: #795e26;">resolve</span>) <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Pide el primer registro de almacén
-    pasatiempo que tenga como</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;llave primaria el
-    valor del parámetro uuid. */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">consulta</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">transaccion</span>.<span
-     style="color: #795e26;">objectStore</span>(<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>).<span
-     style="color: #795e26;">get</span>(<span
-     style="color: #001080;">uuid</span>)</div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;onsuccess se invoca solo una vez,
-    devolviendo el registro</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;solicitado. */</span>
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">consulta</span>.<span
-     style="color: #795e26;">onsuccess</span> = () <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Se recupera el registro solicitado
-    usando</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;consulta.result</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Si el registro
-    no se encuentra se recupera undefined. */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">objeto</span> = <span
-     style="color: #0070c1;">consulta</span>.<span
-     style="color: #0070c1;">result</span></div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">objeto</span> !== <span
-     style="color: #0000ff;">undefined</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">modelo</span> = <span
-     style="color: #795e26;">leePasatiempo</span>(<span
-     style="color: #0070c1;">objeto</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (!<span
-     style="color: #0070c1;">modelo</span>.<span
-     style="color: #001080;">eliminado</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">resolve</span>(<span
-     style="color: #0070c1;">modelo</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">resolve</span>(<span
-     style="color: #0000ff;">undefined</span>)</div><br>
-  <div>&nbsp;&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;})</div><br>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">// Permite que los eventos de html usen la
-    función.</span></div>
-  <div><span
-     style="color: #001080;">window</span>[<span
-     style="color: #a31515;">"pasatiempoBusca"</span>] = <span
-     style="color: #001080;">pasatiempoBusca</span></div>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >4. js / dao / pasatiempoConsultaNoEliminados.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">bdConsulta</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../../lib/js/bdConsulta.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>, <span
-     style="color: #001080;">NOMBRE_DEL_INDICE_NOMBRE</span>, <span
-     style="color: #001080;">accesoBd</span></div>
-  <div>}&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./accesoBd.js"</span></div><br>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">pasatiempoConsultaNoEliminados</span>()&nbsp;{
-  </div><br>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #795e26;">bdConsulta</span>(<span
-     style="color: #0070c1;">accesoBd</span>, [<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>],</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ IDBTransaction }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">transaccion</span><span
-     style="color: #008000;"> </span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ (resultado: any[]) =&gt; any }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">resolve</span><span
-     style="color: #008000;"> </span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*/</span></div>
-  <div>&nbsp;&nbsp;(<span
-     style="color: #001080;">transaccion</span>, <span
-     style="color: #795e26;">resolve</span>) <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">resultado</span> = []</div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">almacenPasatiempo</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">transaccion</span>.<span
-     style="color: #795e26;">objectStore</span>(<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>)</div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">// Usa el índice "nombre" para reculeprar los datos
-    ordenadors.</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">indiceNombre</span> = <span
-     style="color: #0070c1;">almacenPasatiempo</span>.<span
-     style="color: #795e26;">index</span>(<span
-     style="color: #0070c1;">NOMBRE_DEL_INDICE_NOMBRE</span>)</div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Pide un cursor para recorrer cada uno de
-    los registristros</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;que devuelve la
-    consulta. */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">consulta</span> = <span
-     style="color: #0070c1;">indiceNombre</span>.<span
-     style="color: #795e26;">openCursor</span>()</div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;onsuccess se invoca por cada uno de los
-    registros de la</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;consulta y una vez
-    cuando se acaban dichos registros. */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">consulta</span>.<span
-     style="color: #795e26;">onsuccess</span> = () <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;El cursor que corresponde al registro se
-    recupera usando</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;consulta.result
-    */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">cursor</span> = <span
-     style="color: #0070c1;">consulta</span>.<span
-     style="color: #0070c1;">result</span></div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">cursor</span> === <span
-     style="color: #0000ff;">null</span>)&nbsp;{</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Si el cursor es igual a null, ya no hay más
-    registros que</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;procesar;
-    por lo mismo, se devuelve el resultado con los</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;pasatiempos
-    recuperados, usando</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;resolve(resultado).
-    */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">resolve</span>(<span
-     style="color: #0070c1;">resultado</span>)</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span>&nbsp;{</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Si el cursor es diferente a null, si hay
-    más registros.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;El
-    registro que sigue se obtiene con</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;cursor.value*/</span>
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">resultado</span>.<span
-     style="color: #795e26;">push</span>(<span
-     style="color: #0070c1;">cursor</span>.<span
-     style="color: #0070c1;">value</span>)</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Busca el siguiente registro de la consulta,
-    que se obtiene</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;la
-    siguiente vez que se invoque la función</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;onsuccess.
-    */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">cursor</span>.<span
-     style="color: #795e26;">continue</span>()</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;})</div><br>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">// Permite que los eventos de html usen la
-    función.</span></div>
-  <div><span
-     style="color: #001080;">window</span>[<span
-     style="color: #a31515;">"pasatiempoConsultaNoEliminados"</span>] = <span
-     style="color: #795e26;">pasatiempoConsultaNoEliminados</span></div>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >5. js / dao / pasatiempoConsultaTodos.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">bdConsulta</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../../lib/js/bdConsulta.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>, <span
-     style="color: #001080;">accesoBd</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./accesoBd.js"</span></div><br>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Lista todos los objetos, incluyendo
-    los que tienen</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;borrado lógico.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">pasatiempoConsultaTodos</span>()&nbsp;{</div><br>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #795e26;">bdConsulta</span>(<span
-     style="color: #0070c1;">accesoBd</span>, [<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>],</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ IDBTransaction }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">transaccion</span><span
-     style="color: #008000;"> </span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ (result: any[]) =&gt; any }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">resolve</span><span
-     style="color: #008000;"> </span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*/</span></div>
-  <div>&nbsp;&nbsp;(<span
-     style="color: #001080;">transaccion</span>, <span
-     style="color: #795e26;">resolve</span>) <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">resultado</span> = []</div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Pide un cursor para recorrer cada uno de
-    los</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;registristros que
-    devuelve la consulta. */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">consulta</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">transaccion</span>.<span
-     style="color: #795e26;">objectStore</span>(<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>).<span
-     style="color: #795e26;">openCursor</span>()</div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;onsuccess se invoca por cada uno de los
-    registros de la</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;consulta y una vez cuando
-    se acaban dichos registros. */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">consulta</span>.<span
-     style="color: #795e26;">onsuccess</span> = () <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;El cursor que corresponde al registro se
-    recupera usando</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;consulta.result
-    */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">cursor</span> = <span
-     style="color: #0070c1;">consulta</span>.<span
-     style="color: #0070c1;">result</span></div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">cursor</span> === <span
-     style="color: #0000ff;">null</span>)&nbsp;{</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Si el cursor es igual a null, ya no hay más
-    registros que</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;procesar;
-    por lo mismo, se devuelve el resultado con los</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;pasatiempos
-    recuperados, usando</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;resolve(resultado).
-    */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">resolve</span>(<span
-     style="color: #0070c1;">resultado</span>)</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span>&nbsp;{</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Si el cursor es diferente a null, si hay
-    más registros.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;El
-    registro que sigue se obtiene con</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;cursor.value*/</span>
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">resultado</span>.<span
-     style="color: #795e26;">push</span>(<span
-     style="color: #0070c1;">cursor</span>.<span
-     style="color: #0070c1;">value</span>)</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Busca el siguiente registro de la consulta,
-    que se obtiene</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;la
-    siguiente vez que se invoque la función</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;onsuccess.
-    */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">cursor</span>.<span
-     style="color: #795e26;">continue</span>()</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;})</div><br>
-  <div>}</div>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >6. js / dao / pasatiempoElimina.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">bdEjecuta</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../../lib/js/bdEjecuta.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>, <span
-     style="color: #001080;">accesoBd</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./accesoBd.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">pasatiempoBusca</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./pasatiempoBusca.js"</span></div><br>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ string }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">uuid</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">pasatiempoElimina</span>(<span
-     style="color: #001080;">uuid</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">modelo</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #795e26;">pasatiempoBusca</span>(<span
-     style="color: #001080;">uuid</span>)</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">modelo</span> !== <span
-     style="color: #0000ff;">undefined</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0070c1;">modelo</span>.<span
-     style="color: #001080;">modificacion</span> = <span
-     style="color: #267f99;">Date</span>.<span
-     style="color: #795e26;">now</span>()</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0070c1;">modelo</span>.<span
-     style="color: #001080;">eliminado</span> = <span
-     style="color: #0000ff;">true</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #795e26;">bdEjecuta</span>(<span
-     style="color: #0070c1;">accesoBd</span>, [<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>],</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">transaccion</span> <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">almacenPasatiempo</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">transaccion</span>.<span
-     style="color: #795e26;">objectStore</span>(<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">almacenPasatiempo</span>.<span
-     style="color: #795e26;">put</span>(<span
-     style="color: #0070c1;">modelo</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;})</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">// Permite que los eventos de html usen la
-    función.</span></div>
-  <div><span
-     style="color: #001080;">window</span>[<span
-     style="color: #a31515;">"pasatiempoElimina"</span>] = <span
-     style="color: #795e26;">pasatiempoElimina</span></div>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >7. js / dao / pasatiempoModifica.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">bdEjecuta</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../../lib/js/bdEjecuta.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">Pasatiempo</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../modelo/Pasatiempo.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">accesoBd</span>, <span
-     style="color: #001080;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./accesoBd.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">pasatiempoBusca</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./pasatiempoBusca.js"</span></div><br>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ Pasatiempo }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">modelo</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">pasatiempoModifica</span>(<span
-     style="color: #001080;">modelo</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #795e26;">valida</span>()</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">anterior</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #795e26;">pasatiempoBusca</span>(<span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">uuid</span>)</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">anterior</span> === <span
-     style="color: #0000ff;">undefined</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #0000ff;">undefined</span></div>
-  <div>&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">modificacion</span> = <span
-     style="color: #267f99;">Date</span>.<span
-     style="color: #795e26;">now</span>()</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">modelo</span>.<span
-     style="color: #001080;">eliminado</span> = <span
-     style="color: #0000ff;">false</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #795e26;">bdEjecuta</span>(<span
-     style="color: #0070c1;">accesoBd</span>, [<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>],</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">transaccion</span> <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">almacenPasatiempo</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">transaccion</span>.<span
-     style="color: #795e26;">objectStore</span>(<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">almacenPasatiempo</span>.<span
-     style="color: #795e26;">put</span>(<span
-     style="color: #001080;">modelo</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;})</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">// Permite que los eventos de html usen la
-    función.</span></div>
-  <div><span
-     style="color: #001080;">window</span>[<span
-     style="color: #a31515;">"pasatiempoModifica"</span>] = <span
-     style="color: #795e26;">pasatiempoModifica</span></div>
- </div>
-</muestra-codigo>
-      </section>
-     <section >
-         <h1 >8. js / dao / pasatiemposReemplaza.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">bdEjecuta</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../../lib/js/bdEjecuta.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">accesoBd</span>, <span
-     style="color: #001080;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./accesoBd.js"</span></div><br>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Borra el contenido del almacén
-    pasatiempo y guarda el</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;contenido del listado.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{any[]}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">datosNuevos</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">pasatiemposReemplaza</span>(<span
-     style="color: #001080;">datosNuevos</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #795e26;">bdEjecuta</span>(<span
-     style="color: #0070c1;">accesoBd</span>, [<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>],</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">transaccion</span> <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">almacenPasatiempo</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">transaccion</span>.<span
-     style="color: #795e26;">objectStore</span>(<span
-     style="color: #0070c1;">NOMBRE_DEL_ALMACEN_PASATIEMPO</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">almacenPasatiempo</span>.<span
-     style="color: #795e26;">clear</span>()</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">for</span> (<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">objeto</span> <span
-     style="color: #0000ff;">of</span> <span
-     style="color: #001080;">datosNuevos</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">almacenPasatiempo</span>.<span
-     style="color: #795e26;">add</span>(<span
-     style="color: #0070c1;">objeto</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;})</div>
-  <div>}</div>
- </div>
-</muestra-codigo>
+         <h1 >3. js / modelo / validaQueTengaLasPropiedadesDePasatiempo.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { any } objeto</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> * <span class="codeReserved">@returns</span> { {</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> *   uuid: string,</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> *   nombre: string,</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> *   modificacion: number,</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> *   eliminado: boolean,</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> *  } }</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>10</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaQueTengaLasPropiedadesDePasatiempo(objeto) {</td></tr>
+  <tr><td>11</td><td></td></tr>
+  <tr><td>12</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.uuid !== <span class="codeString">"string"</span>)</td></tr>
+  <tr><td>13</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El uuid debe ser texto."</span>)</td></tr>
+  <tr><td>14</td><td></td></tr>
+  <tr><td>15</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.nombre !== <span class="codeString">"string"</span>)</td></tr>
+  <tr><td>16</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El nombre debe ser texto."</span>)</td></tr>
+  <tr><td>17</td><td></td></tr>
+  <tr><td>18</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.modificacion !== <span class="codeString">"number"</span>)</td></tr>
+  <tr><td>19</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El campo modificacion debe ser número."</span>)</td></tr>
+  <tr><td>20</td><td></td></tr>
+  <tr><td>21</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.eliminado !== <span class="codeString">"boolean"</span>)</td></tr>
+  <tr><td>22</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El campo eliminado debe ser booleano."</span>)</td></tr>
+  <tr><td>23</td><td></td></tr>
+  <tr><td>24</td><td> <span class="codeReserved">return</span> objeto</td></tr>
+  <tr><td>25</td><td></td></tr>
+  <tr><td>26</td><td>}</td></tr>
+ </tbody>
+</table>
       </section>
       </section>
 </body>

@@ -1,77 +1,25 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ string }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">base64String</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">urlBase64ToUint8Array</span>(<span
-     style="color: #001080;">base64String</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">padding</span> = <span
-     style="color: #a31515;">"="</span>.<span
-     style="color: #795e26;">repeat</span>((<span
-     style="color: #098658;">4</span> - (<span
-     style="color: #001080;">base64String</span>.<span
-     style="color: #0070c1;">length</span> % <span
-     style="color: #098658;">4</span>)) % <span
-     style="color: #098658;">4</span>)</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">base64</span> = (<span
-     style="color: #001080;">base64String</span> + <span
-     style="color: #0070c1;">padding</span>).<span
-     style="color: #795e26;">replace</span>(<span
-     style="color: #811f3f;">/</span><span
-     style="color: #ee0000;">\-</span><span
-     style="color: #811f3f;">/</span><span
-     style="color: #0000ff;">g</span>, <span
-     style="color: #a31515;">'+'</span>).<span
-     style="color: #795e26;">replace</span>(<span
-     style="color: #811f3f;">/_/</span><span
-     style="color: #0000ff;">g</span>, <span
-     style="color: #a31515;">'/'</span>)</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">rawData</span> = <span
-     style="color: #795e26;">atob</span>(<span
-     style="color: #0070c1;">base64</span>)</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">outputArray</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Uint8Array</span>(<span
-     style="color: #0070c1;">rawData</span>.<span
-     style="color: #0070c1;">length</span>)</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">for</span> (<span
-     style="color: #0000ff;">let</span> <span
-     style="color: #001080;">i</span> = <span
-     style="color: #098658;">0</span>; <span
-     style="color: #001080;">i</span> &lt; <span
-     style="color: #0070c1;">rawData</span>.<span
-     style="color: #0070c1;">length</span>; ++<span
-     style="color: #001080;">i</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0070c1;">outputArray</span>[<span
-     style="color: #001080;">i</span>] = <span
-     style="color: #0070c1;">rawData</span>.<span
-     style="color: #795e26;">charCodeAt</span>(<span
-     style="color: #001080;">i</span>)</div>
-  <div>&nbsp;}</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #0070c1;">outputArray</span></div>
-  <div>}</div>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string } base64String</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> urlBase64ToUint8Array(base64String) {</td></tr>
+  <tr><td>5</td><td> <span class="codeReserved">const</span> <span class="codeReserved">padding</span> = <span class="codeString">"="</span>.<span class="codeReserved">repeat</span>((4 - (base64String.length % 4)) % 4)</td></tr>
+  <tr><td>6</td><td> <span class="codeReserved">const</span> base64 = (base64String + <span class="codeReserved">padding</span>).replace(<span class="codeString">/\</span>-<span class="codeString">/g</span>, <span class="codeString">'+'</span>).replace(<span class="codeString">/_</span><span class="codeString">/g</span>, <span class="codeString">'/'</span>)</td></tr>
+  <tr><td>7</td><td> <span class="codeReserved">const</span> rawData = atob(base64)</td></tr>
+  <tr><td>8</td><td> <span class="codeReserved">const</span> outputArray = <span class="codeReserved">new</span> Uint8Array(rawData.length)</td></tr>
+  <tr><td>9</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">let</span> i = 0; i &lt; rawData.length; ++i) {</td></tr>
+  <tr><td>10</td><td>  outputArray[i] = rawData.charCodeAt(i)</td></tr>
+  <tr><td>11</td><td> }</td></tr>
+  <tr><td>12</td><td> <span class="codeReserved">return</span> outputArray</td></tr>
+  <tr><td>13</td><td>}</td></tr>
+ </tbody>
+</table>

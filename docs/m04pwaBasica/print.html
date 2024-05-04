@@ -11,8 +11,11 @@
  <title>PWA básica - GilPG DM</title>
  <meta name="description" content="Página para imprimir de la lección «PWA básica».">
  <style>
+ /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
  :root {
-  --padTop: 2rem;
+  --marginTop: 0.25rem;
+  --padTop: 0;
+  --h1PadTop: 2.5rem;
   --introDuracion: 2s;
   --introFuncion: ease-out;
   --padCont: 0.5rem;
@@ -21,35 +24,188 @@
   --anchoLectura: 900px;
   --colLetra: black;
   --colFondo: white;
-  --colTituloLetra: #00811c;
-  --colTituloShadow: 3px 1px 2px #bdbdbd;
-  --colTituloStrong: #684601;
-  --colTituloStrongSel: #ffdc97;
-  --colTarget: #cef4ff;
+  --colPush: var(--colFondo);
+  --colPushHover: var(--colFondo);
+  --colPushFocus: var(--colFondo);
+  --colPushActive: #bae397;
+  --colFondoPush: #609732;
+  --colFondoPushHover: #8abd5f;
+  --colFondoPushFocus: #3e7213;
+  --colFondoPushActive: #224c00;
+  --paddingPush: 0.2rem 0.3rem;
+  --borderPush: none;
+  --borderRadiusPush: 0.6em;
+  --colA: #6a7b15;
+  --colAVisited: #6f256f;
+  --colAActive: #e498af;
+  --colAPush: var(--colFondo);
+  --colAVisitedPush: var(--colFondo);
+  --colAPushHover: var(--colFondo);
+  --colAVisitedPushHover: var(--colFondo);
+  --colAPushFocus: var(--colFondo);
+  --colAVisitedPushFocus: var(--colFondo);
+  --colAPushActive: var(--colFondo);
+  --colAVisitedPushActive: var(--colFondo);
+  --colFondoAPush: #6a7b15;
+  --colFondoAVisitedPush: #6f256f;
+  --colFondoAPushHover: #91a437;
+  --colFondoAVisitedPushHover: #a66fa6;
+  --colFondoAPushFocus: #445200;
+  --colFondoAVisitedPushFocus: #530e53;
+  --colFondoAPushActive: #e498af;
+  --colFondoAVisitedPushActive: #e498af;
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
-  --padCtrl: 0.2rem 0.3rem;
-  --borderCtrl: solid thin;
-  --colFondoNav: #f2f2f2;
-  --colNavResaltada: #7a2c99;
-  --colSecundario: #ffff82;
-  --colStack1: black;
-  --colStack2: #224ba5;
-  --colStack3: #92731f;
+  --shadowTitulo: 3px 1px 2px black;
+  --colTitulo: #bae397;
+  --colTituloFondo: #609732;
+  --colPrincipalTituloStrong: white;
+  --colAStrong: var(--colLetra);
+  --colNavH1Sel: #b35f7c;
+  --colFondoNav: var(--colFondo);
+  --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
   --colThumb: #90a4ae;
   --colThumbActivo: #3f3f3f;
+  --colResaltado: #e9c8d2;
+  --colResaltado2: #bae397;
+  --colResaltado3: #cfcfcf;
+  --colLetraResaltado: black;
+  --colLetraCodeComment: #224c00;
+  --colLetraCodeString: #903357;
+  --colLetraCodeReserved: #445200;
+  --colSecundario: #e498af;
+  --colTarget: #cef4ff;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
   --anchoThumb: 7px;
   --borderRadiusThumb: 3.5px;
   --gap: 0.5rem;
-  --fontMono: monospace;
-  --fontSans: sans-serif;
-  --fontSerif: serif;
+  --fontMono: 'Xanh Mono', monospace;
+  --fontSans: 'Patrick Hand', sans-serif;
+  --fontSerif: 'Purple Purse', serif;
   font-family: var(--fontSerif);
   color: var(--colLetra);
   background-color: var(--colFondo);
   scrollbar-width: thin;
   scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ @media (prefers-color-scheme: light) {
+  :root {
+   --colLetra: black;
+   --colFondo: white;
+  }
+ }
+
+ /* https://paletton.com/#uid=74W0u0kaVz84jP27qHbeJtFiHpX */
+ @media (prefers-color-scheme: dark) {
+
+  :root {
+   --colLetra: white;
+   /* --colFondo: #272727; */
+   --colFondo: black;
+   --colPushActive: #e3f5d4;
+   --colFondoPush: #bbe697;
+   --colFondoPushHover: #d0eeb7;
+   --colFondoPushFocus: #9ed372;
+   --colFondoPushActive: #7db84d;
+   --colA: #e9f7a3;
+   --colAVisited: #c89ac8;
+   --colAActive: #983351;
+   --colFondoAPush: #e9f7a3;
+   --colFondoAVisitedPush: #c89ac8;
+   --colFondoAPushHover: #f6fcda;
+   --colFondoAVisitedPushHover: #dec0de;
+   --colFondoAPushFocus: #b4c853;
+   --colFondoAVisitedPushFocus: #9a539a;
+   --colFondoAPushActive: #983351;
+   --colFondoAVisitedPushActive: #983351;
+   --colSombra: #00000080;
+   --colTitulo: #e3f5d4;
+   --colTituloFondo: #7db84d;
+   --colNavH1Sel: #d37290;
+   --colFondoNavSel: #7a3059;
+   --colScrollbar: #616161;
+   --colThumb: #ffffff;
+   --colResaltado: #7a3059;
+   --colResaltado2: #5c922f;
+   --colResaltado3: #4e4e4e;
+   --colLetraResaltado: white;
+   --colLetraCodeComment: #d0eeb7;
+   --colLetraCodeString: #eeb7c8;
+   --colLetraCodeReserved: #f0fac0;
+  }
+ }
+
+ /* xanh-mono-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* xanh-mono-italic - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: italic;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-italic.woff2') format('woff2');
+ }
+
+ /* patrick-hand-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Patrick Hand';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/patrick-hand-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* purple-purse-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Purple Purse';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/purple-purse-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ @font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  src:
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].woff2) format('woff2'),
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].ttf) format('truetype');
+ }
+
+ .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
  }
 
  body::-webkit-scrollbar {
@@ -70,18 +226,132 @@
   background-color: var(--colThumbActivo);
  }
 
+ body {
+  margin-top: 0;
+ }
+
+ a {
+  color: var(--colA);
+ }
+
+ a:visited {
+  color: var(--colAVisited);
+ }
+
+ a:active {
+  color: var(--colAActive);
+ }
+
  .anterior,
- .siguiente {
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente,
+ button {
   display: inline-block;
+  padding: var(--paddingPush);
+  border: var(--borderPush);
+  border-radius: var(--borderRadiusPush);
+  text-align: center;
   text-decoration: none;
-  padding: var(--padCtrl);
-  border: var(--borderCtrl);
-  cursor: pointer;
+ }
+
+ .anterior,
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente {
+  color: var(--colAPush);
+  background-color: var(--colFondoAPush);
+ }
+
+ .anterior:visited,
+ .siguiente:visited,
+ .paginaAnterior:visited,
+ .paginaSiguiente:visited {
+  color: var(--colAVisitedPush);
+  background-color: var(--colFondoAVisitedPush);
  }
 
  .anterior.bye,
- .siguiente.bye {
+ .siguiente.bye,
+ .paginaAnterior.bye,
+ .paginaSiguiente.bye {
   display: none;
+ }
+
+ .anterior:hover,
+ .siguiente:hover,
+ .paginaAnterior:hover,
+ .paginaSiguiente:hover {
+  color: var(--colAPushHover);
+  background-color: var(--colFondoAPushHover);
+ }
+
+ .anterior:visited:hover,
+ .siguiente:visited:hover,
+ .paginaAnterior:visited:hover,
+ .paginaSiguiente:visited:hover {
+  color: var(--colAVisitedPushHover);
+  background-color: var(--colFondoAVisitedPushHover);
+ }
+
+ .anterior:focus,
+ .siguiente:focus,
+ .paginaAnterior:focus,
+ .paginaSiguiente:focus {
+  color: var(--colAPushFocus);
+  background-color: var(--colFondoAPushFocus);
+ }
+
+ .anterior:visited:focus,
+ .siguiente:visited:focus,
+ .paginaAnterior:visited:focus,
+ .paginaSiguiente:visited:focus {
+  color: var(--colAVisitedPushFocus);
+  background-color: var(--colFondoAVisitedPushFocus);
+ }
+
+ .anterior:active,
+ .siguiente:active,
+ .paginaAnterior:active,
+ .paginaSiguiente:active {
+  color: var(--colAPushActive);
+  background-color: var(--colFondoAPushActive);
+ }
+
+ .anterior:visited:active,
+ .siguiente:visited:active,
+ .paginaAnterior:visited:active,
+ .paginaSiguiente:visited:active {
+  color: var(--colAVisitedPushActive);
+  background-color: var(--colFondoAVisitedPushActive);
+ }
+
+ button {
+  color: var(--colPush);
+  background-color: var(--colFondoPush);
+ }
+
+ button:hover {
+  color: var(--colPushHover);
+  background-color: var(--colFondoPushHover);
+ }
+
+ button:focus {
+  color: var(--colPushFocus);
+  background-color: var(--colFondoPushFocus);
+ }
+
+ button:active {
+  color: var(--colPushActive);
+  background-color: var(--colFondoPushActive);
+ }
+
+ .anterior span,
+ .siguiente span,
+ .paginaAnterior span,
+ .paginaSiguiente span,
+ button span {
+  vertical-align: middle;
  }
 
  a[data-logo] {
@@ -99,7 +369,12 @@
  a code,
  h1 strong,
  h1 code {
-  color: var(--colTituloStrong);
+  font-size: 1em;
+ }
+
+ a strong,
+ a code {
+  color: var(--colAStrong);
  }
 
  nav a {
@@ -111,8 +386,8 @@
  }
 
  code {
-  color: var(--colTituloStrong);
   font-family: var(--fontMono);
+  font-size: 1rem;
  }
 
  .tree {
@@ -131,7 +406,7 @@
 
  h1:not(.default) {
   font-family: var(--fontSans);
-  color: var(--colTituloLetra);
+  color: var(--colTituloFondo);
  }
 
  h1,
@@ -144,7 +419,7 @@
  .autor {
   font-family: var(--fontSans);
   font-size: 1.5rem;
-  color: var(--colTituloLetra);
+  color: var(--colTituloFondo);
  }
 
  figure {
@@ -216,15 +491,18 @@
  }
 
  .resaltado {
-  background-color: rgb(255, 255, 89);
+  background-color: var(--colResaltado);
+  color: var(--colLetraResaltado);
  }
 
  .resaltado2 {
-  background-color: rgb(255, 214, 139);
+  background-color: var(--colResaltado2);
+  color: var(--colLetraResaltado);
  }
 
  .resaltado3 {
-  background-color: rgb(235, 234, 233);
+  background-color: var(--colResaltado3);
+  color: var(--colLetraResaltado);
  }
 
  table.borde {
@@ -243,6 +521,61 @@
   padding: 0.4rem;
  }
 
+ table.codeShow {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .codeShow td:first-child {
+  text-align: right;
+  padding: 0 0 0 0;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  /* Avoid selection */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+ }
+
+ .codeShow td:nth-child(2) {
+  padding: 0 0 0 0.25rem;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+  line-height: 1.2rem;
+ }
+
+ .codeReserved {
+  color: var(--colLetraCodeReserved);
+  font-weight: bolder;
+ }
+
+ .codeString {
+  color: var(--colLetraCodeString);
+  font-weight: 600;
+ }
+
+ .codeComment {
+  color: var(--colLetraCodeComment);
+  font-style: italic;
+ }
+
+ @media print {
+  h1 {
+   text-shadow: var(--shadowTitulo);
+  }
+
+  .codeShow button {
+   display: none;
+  }
+ }
+
+
  footer {
   margin-top: 1rem;
   display: block;
@@ -252,10 +585,22 @@
  }
 </style>
  <style>
+ .pruebaDeEscritorio {
+  font-family: var(--fontSans);
+ }
+
+ .pruebaDeEscritorio .section,
  .pruebaDeEscritorio section {
   display: inline-block;
   vertical-align: top;
+ }
+
+ .pruebaDeEscritorio section {
   margin: 1em;
+ }
+
+ .section section {
+  display: block;
  }
 
  .pruebaDeEscritorio section pre {
@@ -464,22 +809,24 @@
  <ul>
   <li>
    <p>
-    <a href="/src/m05pwaBasica/pwa.zip" download>Descarga el ejemplo.</a>
-   </p>
-  </li>
-  <li>
-   <p>
     Revisa el proyecto en Replit con la URl
     <a href="https://replit.com/@GilbertoPachec2/pwa?v=1" rel="noopener"
       target="_blank">https://replit.com/@GilbertoPachec2/pwa?v=1</a>.
-    Hazle fork al proyecto y córrelo.
+    Hazle fork al proyecto y córrelo. En el ambiente de desarrollo tienes la
+    opción de descargar el proyecto en un zip.
    </p>
   </li>
   <li>
    <p>
-    Prueba e instala el ejemplo con la URl
-    <a href="https://pwa.gilbertopachec2.repl.co/" rel="noopener"
-      target="_blank">https://pwa.gilbertopachec2.repl.co/</a>
+    Una vez que se está ejecutando, probablemente te aparezca un mensaje de
+    error. Ciérralo y haz clic en el botón
+    <button type="button">
+     <span class="material-symbols-outlined">
+      open_in_new
+     </span>
+     New tab
+    </button>
+    para ejecutar la app en una pestaña nueva.
    </p>
   </li>
  </ul>
@@ -515,8 +862,7 @@
    <p>
     <a href="https://drive.google.com/file/d/1dmifWNqm_gRmQuMEe67HqKBYzzDTwEHt/view?usp=sharing"
       target="_blank" rel="noopener">Crea una cuenta de Replit usando la cuenta
-     de
-     Google.</a>
+     de Google.</a>
    </p>
   </li>
   <li>
@@ -528,13 +874,24 @@
   </li>
   <li>
    <p>
+    El archivo <q>sw.js»</q> tiene una lista de los archivos que se instalan.
+    El archivo <q>instruccionesListadoSw.txt</q> te indica como generarla usando
+    Visual Studio Code.
+   </p>
+  </li>
+  <li>
+   <p>
+    Cada vez que publiques los cambios en los archivos, debes modificar el valor
+    de <var>VERSION</var> en el archivo <q>sw.js»</q>.
+   </p>
+  </li>
+  <li>
+   <p>
     <a href="https://drive.google.com/file/d/1pfI0ZZUbXxArDuACZIOeh_L7cQ5a3NsJ/view?usp=sharing"
       target="_blank" rel="noopener">Depura el proyecto.</a>
    </p>
-   <p>
-    Cada vez que publiques los cambios en los archivos, debes modificar el valor
-    de <var>VERSION</var> en el archivo «sw.js».
-   </p>
+  </li>
+  <li>
    <p>
     Recuerda usar la combinación de teclas
     <strong><kbd>Ctrl</kbd>+<kbd>Mayúsculas</kbd>+<kbd>r</kbd></strong>
@@ -674,6 +1031,9 @@
    <p><a href="m-lib/m-js/m-muestraError-js.html">muestraError.js</a></p>
   </li>
   <li>
+   <p><a href="m-lib/m-js/m-ProblemDetails-js.html">ProblemDetails.js</a></p>
+  </li>
+  <li>
    <p><a href="m-lib/m-js/m-registraServiceWorkerSiEsSoportado-js.html">registraServiceWorkerSiEsSoportado.js</a></p>
   </li>
       </ul>
@@ -686,231 +1046,83 @@
   </div>
       </section>
      <section >
-         <h1 >D. index.html</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #800000;">&lt;!DOCTYPE</span> <span
-     style="color: #e50000;">html</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div><span
-     style="color: #800000;">&lt;html</span> <span
-     style="color: #e50000;">lang</span>=<span
-     style="color: #0000ff;">"es"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div><span
-     style="color: #800000;">&lt;head&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;meta</span> <span
-     style="color: #e50000;">charset</span>=<span
-     style="color: #0000ff;">"UTF-8"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;meta</span> <span
-     style="color: #e50000;">name</span>=<span
-     style="color: #0000ff;">"viewport"</span> <span
-     style="color: #e50000;">content</span>=<span
-     style="color: #0000ff;">"width=device-width"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;title&gt;</span>PWA Básica<span
-     style="color: #800000;">&lt;/title&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">&lt;!-- Resumen para los motores de búsqueda.
-    --&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;meta</span> <span
-     style="color: #e50000;">name</span>=<span
-     style="color: #0000ff;">"description"</span> <span
-     style="color: #e50000;">content</span>=<span
-     style="color: #0000ff;">"Ejemplo de PWA"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">&lt;!-- Color de la barra de navegación de Chrome
-    en dispositivos móviles. --&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;meta</span> <span
-     style="color: #e50000;">name</span>=<span
-     style="color: #0000ff;">"theme-color"</span> <span
-     style="color: #e50000;">content</span>=<span
-     style="color: #0000ff;">"#cbc693"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">&lt;!-- Ícono para la página web, que normalmente
-    se pone en la raíz del sitio.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;Puede ser diferente para cada página.
-    --&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;link</span> <span
-     style="color: #e50000;">rel</span>=<span
-     style="color: #0000ff;">"icon"</span> <span
-     style="color: #e50000;">sizes</span>=<span
-     style="color: #0000ff;">"32x32"</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"favicon.ico"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">&lt;!-- Configuración de la PWA para Chrome y Edge.
-    Debe ponerse en todas las</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;páginas. --&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;link</span> <span
-     style="color: #e50000;">rel</span>=<span
-     style="color: #0000ff;">"manifest"</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"site.webmanifest"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">&lt;!-- Configuración para Web Clip en Safari
-    (iOS). Solo se pone en la</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;página principal. --&gt;</span></div>
-  <br>
-  <div>&nbsp;<span
-     style="color: #008000;">&lt;!-- Indica que este sitio se puede instalar en
-    iOS para usarse sin abrir el</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;navegador. --&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;meta</span> <span
-     style="color: #e50000;">name</span>=<span
-     style="color: #0000ff;">"apple-mobile-web-app-capable"</span> <span
-     style="color: #e50000;">content</span>=<span
-     style="color: #0000ff;">"yes"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">&lt;!-- Título en la página de aplicaciones de iOS.
-    Debe ser un texto corto de</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;maximo 20 caracteres. Pede llevar
-    espacio, lo que ayuda a distribuír el</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;texto. Debe coincidir con el short_name
-    del archivo "site.webmanifest", --&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;meta</span> <span
-     style="color: #e50000;">name</span>=<span
-     style="color: #0000ff;">"apple-mobile-web-app-title"</span> <span
-     style="color: #e50000;">content</span>=<span
-     style="color: #0000ff;">"PWA"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">&lt;!-- Indica que la barra de estado cuando no se
-    abre la app, debe ser como</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;las demás app. --&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;meta</span> <span
-     style="color: #e50000;">name</span>=<span
-     style="color: #0000ff;">"apple-mobile-web-app-status-bar-style"</span>
-   <span
-     style="color: #e50000;">content</span>=<span
-     style="color: #0000ff;">"default"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">&lt;!-- Íconos de la app en distintas
-    resoluciones--&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;link</span> <span
-     style="color: #e50000;">rel</span>=<span
-     style="color: #0000ff;">"apple-touch-icon"</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"img/maskable_icon.png"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;link</span> <span
-     style="color: #e50000;">rel</span>=<span
-     style="color: #0000ff;">"apple-touch-icon"</span> <span
-     style="color: #e50000;">sizes</span>=<span
-     style="color: #0000ff;">"48x48"</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"img/maskable_icon_x48.png"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;link</span> <span
-     style="color: #e50000;">rel</span>=<span
-     style="color: #0000ff;">"apple-touch-icon"</span> <span
-     style="color: #e50000;">sizes</span>=<span
-     style="color: #0000ff;">"72x72"</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"img/maskable_icon_x72.png"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;link</span> <span
-     style="color: #e50000;">rel</span>=<span
-     style="color: #0000ff;">"apple-touch-icon"</span> <span
-     style="color: #e50000;">sizes</span>=<span
-     style="color: #0000ff;">"96x96"</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"img/maskable_icon_x96.png"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;link</span> <span
-     style="color: #e50000;">rel</span>=<span
-     style="color: #0000ff;">"apple-touch-icon"</span> <span
-     style="color: #e50000;">sizes</span>=<span
-     style="color: #0000ff;">"128x128"</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"img/maskable_icon_x128.png"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;link</span> <span
-     style="color: #e50000;">rel</span>=<span
-     style="color: #0000ff;">"apple-touch-icon"</span> <span
-     style="color: #e50000;">sizes</span>=<span
-     style="color: #0000ff;">"192x192"</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"img/maskable_icon_x192.png"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;link</span> <span
-     style="color: #e50000;">rel</span>=<span
-     style="color: #0000ff;">"apple-touch-icon"</span> <span
-     style="color: #e50000;">sizes</span>=<span
-     style="color: #0000ff;">"384x384"</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"img/maskable_icon_x384.png"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;link</span> <span
-     style="color: #e50000;">rel</span>=<span
-     style="color: #0000ff;">"apple-touch-icon"</span> <span
-     style="color: #e50000;">sizes</span>=<span
-     style="color: #0000ff;">"512x512"</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"img/maskable_icon_x512.png"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;link</span> <span
-     style="color: #e50000;">rel</span>=<span
-     style="color: #0000ff;">"stylesheet"</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"css/estilos.css"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;script</span> <span
-     style="color: #e50000;">type</span>=<span
-     style="color: #0000ff;">"module"</span> <span
-     style="color: #e50000;">src</span>=<span
-     style="color: #0000ff;">"js/configura.js"</span><span
-     style="color: #800000;">&gt;&lt;/script&gt;</span></div><br>
-  <div><span
-     style="color: #800000;">&lt;/head&gt;</span></div><br>
-  <div><span
-     style="color: #800000;">&lt;body&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;h1&gt;</span>PWA Básica<span
-     style="color: #800000;">&lt;/h1&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;p&gt;</span>Hola mundo.<span
-     style="color: #800000;">&lt;/p&gt;</span></div><br>
-  <div><span
-     style="color: #800000;">&lt;/body&gt;</span></div><br>
-  <div><span
-     style="color: #800000;">&lt;/html&gt;</span></div>
- </div>
-</muestra-codigo>
+         <h1 >D. index.html</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> content=<span class="codeString">"width=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td></td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;PWA Básica&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td> <span class="codeComment">&lt;!-- Resumen para los motores de búsqueda. --&gt;</span></td></tr>
+  <tr><td>12</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"description"</span> content=<span class="codeString">"Ejemplo de PWA"</span>&gt;</td></tr>
+  <tr><td>13</td><td></td></tr>
+  <tr><td>14</td><td> <span class="codeComment">&lt;!-- Color de la barra de navegación de Chrome en dispositivos móviles. --&gt;</span></td></tr>
+  <tr><td>15</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"theme-color"</span> content=<span class="codeString">"#cbc693"</span>&gt;</td></tr>
+  <tr><td>16</td><td></td></tr>
+  <tr><td>17</td><td> <span class="codeComment">&lt;!-- Ícono para la página web, que normalmente se pone en la raíz del sitio.</span></td></tr>
+  <tr><td>18</td><td><span class="codeComment">  Puede ser diferente para cada página. --&gt;</span></td></tr>
+  <tr><td>19</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"icon"</span> sizes=<span class="codeString">"32x32"</span> href=<span class="codeString">"favicon.ico"</span>&gt;</td></tr>
+  <tr><td>20</td><td></td></tr>
+  <tr><td>21</td><td> <span class="codeComment">&lt;!-- Configuración de la PWA para Chrome y Edge. Debe ponerse en todas las</span></td></tr>
+  <tr><td>22</td><td><span class="codeComment">  páginas. --&gt;</span></td></tr>
+  <tr><td>23</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"manifest"</span> href=<span class="codeString">"site.webmanifest"</span>&gt;</td></tr>
+  <tr><td>24</td><td></td></tr>
+  <tr><td>25</td><td> <span class="codeComment">&lt;!-- Configuración para Web Clip en Safari (iOS). Solo se pone en la</span></td></tr>
+  <tr><td>26</td><td><span class="codeComment">  página principal. --&gt;</span></td></tr>
+  <tr><td>27</td><td></td></tr>
+  <tr><td>28</td><td> <span class="codeComment">&lt;!-- Indica que este sitio se puede instalar en iOS para usarse sin abrir el</span></td></tr>
+  <tr><td>29</td><td><span class="codeComment">  navegador. --&gt;</span></td></tr>
+  <tr><td>30</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"apple-mobile-web-app-capable"</span> content=<span class="codeString">"yes"</span>&gt;</td></tr>
+  <tr><td>31</td><td></td></tr>
+  <tr><td>32</td><td> <span class="codeComment">&lt;!-- Título en la página de aplicaciones de iOS. Debe ser un texto corto de</span></td></tr>
+  <tr><td>33</td><td><span class="codeComment">  maximo 20 caracteres. Pede llevar espacio, lo que ayuda a distribuír el</span></td></tr>
+  <tr><td>34</td><td><span class="codeComment">  texto. Debe coincidir con el short_name del archivo &quot;site.webmanifest&quot;, --&gt;</span></td></tr>
+  <tr><td>35</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"apple-mobile-web-app-title"</span> content=<span class="codeString">"PWA"</span>&gt;</td></tr>
+  <tr><td>36</td><td></td></tr>
+  <tr><td>37</td><td> <span class="codeComment">&lt;!-- Indica que la barra de estado cuando no se abre la app, debe ser como</span></td></tr>
+  <tr><td>38</td><td><span class="codeComment">  las demás app. --&gt;</span></td></tr>
+  <tr><td>39</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"apple-mobile-web-app-status-bar-style"</span> content=<span class="codeString">"<span class="codeReserved">default</span>"</span>&gt;</td></tr>
+  <tr><td>40</td><td></td></tr>
+  <tr><td>41</td><td> <span class="codeComment">&lt;!-- Íconos de la app en distintas resoluciones--&gt;</span></td></tr>
+  <tr><td>42</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"apple-touch-icon"</span> href=<span class="codeString">"img/maskable_icon.png"</span>&gt;</td></tr>
+  <tr><td>43</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"apple-touch-icon"</span> sizes=<span class="codeString">"48x48"</span> href=<span class="codeString">"img/maskable_icon_x48.png"</span>&gt;</td></tr>
+  <tr><td>44</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"apple-touch-icon"</span> sizes=<span class="codeString">"72x72"</span> href=<span class="codeString">"img/maskable_icon_x72.png"</span>&gt;</td></tr>
+  <tr><td>45</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"apple-touch-icon"</span> sizes=<span class="codeString">"96x96"</span> href=<span class="codeString">"img/maskable_icon_x96.png"</span>&gt;</td></tr>
+  <tr><td>46</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"apple-touch-icon"</span> sizes=<span class="codeString">"128x128"</span> href=<span class="codeString">"img/maskable_icon_x128.png"</span>&gt;</td></tr>
+  <tr><td>47</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"apple-touch-icon"</span> sizes=<span class="codeString">"192x192"</span> href=<span class="codeString">"img/maskable_icon_x192.png"</span>&gt;</td></tr>
+  <tr><td>48</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"apple-touch-icon"</span> sizes=<span class="codeString">"384x384"</span> href=<span class="codeString">"img/maskable_icon_x384.png"</span>&gt;</td></tr>
+  <tr><td>49</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"apple-touch-icon"</span> sizes=<span class="codeString">"512x512"</span> href=<span class="codeString">"img/maskable_icon_x512.png"</span>&gt;</td></tr>
+  <tr><td>50</td><td></td></tr>
+  <tr><td>51</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/estilos.css"</span>&gt;</td></tr>
+  <tr><td>52</td><td></td></tr>
+  <tr><td>53</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span> src=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>54</td><td></td></tr>
+  <tr><td>55</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>56</td><td></td></tr>
+  <tr><td>57</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>58</td><td></td></tr>
+  <tr><td>59</td><td> &lt;<span class="codeReserved">h</span>1&gt;PWA Básica&lt;/<span class="codeReserved">h</span>1&gt;</td></tr>
+  <tr><td>60</td><td></td></tr>
+  <tr><td>61</td><td> &lt;<span class="codeReserved">p</span>&gt;Hola mundo.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>62</td><td></td></tr>
+  <tr><td>63</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>64</td><td></td></tr>
+  <tr><td>65</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
       </section>
      <section>
          <h1 >E. Carpeta « js »</h1>
@@ -936,932 +1148,407 @@
    </nav>
   </div>
      <section >
-         <h1 >A. js / configura.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">registraServiceWorkerSiEsSoportado</span></div>
-  <div>}&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/registraServiceWorkerSiEsSoportado.js"</span>
-  </div><br>
-  <div><span
-     style="color: #795e26;">registraServiceWorkerSiEsSoportado</span>(<span
-     style="color: #a31515;">"sw.js"</span>)</div>
- </div>
-</muestra-codigo>
+         <h1 >A. js / configura.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> {</td></tr>
+  <tr><td>2</td><td> registraServiceWorkerSiEsSoportado</td></tr>
+  <tr><td>3</td><td>} <span class="codeReserved">from</span> <span class="codeString">"../lib/js/registraServiceWorkerSiEsSoportado.js"</span></td></tr>
+  <tr><td>4</td><td></td></tr>
+  <tr><td>5</td><td>registraServiceWorkerSiEsSoportado(<span class="codeString">"sw.js"</span>)</td></tr>
+ </tbody>
+</table>
       </section>
       </section>
      <section >
-         <h1 >F. site.webmanifest</h1><div class="lectura">
- <ul>
-  <li>
-   <p>Este archivo sirve para configurar los instaladores de la aplicación.</p>
-  </li>
- </ul>
-</div>
-<section class="lectura">
- <h1>Explicación de las propiedades</h1>
- <dl>
-  <dt><code><dfn>short_name</dfn></code></dt>
-  <dd>
-   <p>
-    Nombre corto. Normalmente se despliega en dispositivos móviles.
-    Máximo 20 caracteres.
-   </p>
-  </dd>
-  <dt><code><dfn>name</dfn></code></dt>
-  <dd>
-   <p>
-    Nombre largo. Normalmente se despliega en computadoras de escritorio.
-    Máximo 30 caracteres.
-   </p>
-  </dd>
-  <dt><code><dfn>id</dfn></code></dt>
-  <dd>
-   <p>
-    Identificador del archivo de instalación. Normalmente es la ruta del archivo
-    inicial de la app.
-   </p>
-  </dd>
-  <dt><code><dfn>start_url</dfn></code></dt>
-  <dd>
-   <p>
-    Ruta del archivo inicial de la app.
-   </p>
-  </dd>
-  <dt><code><dfn>display</dfn></code></dt>
-  <dd>
-   <p>
-    Forma de mostrar la app. El término <code>standalone</code> significa que no
-    se muestra la barra de navegación del navegador web.
-   </p>
-  </dd>
-  <dt><code><dfn>theme_color</dfn></code></dt>
-  <dd>
-   <p>
-    Color de la barra de estado (en dispositivos móviles) o de título (en
-    computadoras de escritorio) de la app.
-   </p>
-  </dd>
-  <dt><code><dfn>background_color</dfn></code></dt>
-  <dd>
-   <p>
-    Color de fondo de la pantalla desplah en dispositivos móviles.
-   </p>
-  </dd>
-  <dt><code><dfn>description</dfn></code></dt>
-  <dd>
-   <p>
-    Describe el propósito de la aplicación. Aparece en el cuadro de diálogo que
-    muestra el navegador al instalar la app.
-   </p>
-  </dd>
-  <dt><code><dfn>screenshots</dfn></code></dt>
-  <dd>
-   <p>
-    Listado de máximo 8 capturas de pantalla. Aparecen en el cuadro de diálogo
-    que muestra el navegador al instalar la app. Debes incluir al menos una con
-    <code>"form_factor": "wide"</code>
-    y otra con
-    <code>"form_factor": "narrow"</code>.
-   </p>
-  </dd>
-  <dt><code><dfn>icons</dfn></code></dt>
-  <dd>
-   <p>
-    Listado de íconos en distintas resoluciones para los instaladores de la app.
-    Se selecciona el que se vea mejor según las característocas del dispositivo.
-   </p>
-  </dd>
-  <dt><code><dfn>src</dfn></code></dt>
-  <dd>
-   <p>
-    Url de la imagen dentro de la app.
-   </p>
-  </dd>
-  <dt><code><dfn>sizes</dfn></code></dt>
-  <dd>
-   <p>
-    Dimensiones en pixeles de la imagen, <em>ancho</em>x<em>alto</em>.
-   </p>
-  </dd>
-  <dt><code><dfn>type</dfn></code></dt>
-  <dd>
-   <p>
-    Tipo mime de la imagen.
-   </p>
-  </dd>
-  <dt><code><dfn>purpose</dfn></code></dt>
-  <dd>
-   <p>
-    Forma en que se usa la imagen.
-   </p>
-   <dl>
-    <dt><code><dfn>maskable</dfn></code></dt>
-    <dd>
-     <p>
-      La imagen puede recortarse de forma segura para tomar distintas formas,
-      como círculos, gotas, cuadrados con esquinas redondeadas, etc. Normalmente
-      se usa para dispositivos móviles.
-     </p>
-    </dd>
-    <dt><code><dfn>any</dfn></code></dt>
-    <dd>
-     <p>
-      No se puede asegurar nada sobre la imagen. Normalmente se usa para
-      dispositivos de escritorio.
-     </p>
-    </dd>
-   </dl>
-   <p>
-    Normalmente debe proporcionarse un juego de íconos con <code>purpose</code>
-    <code>any</code> y otro juego de íconos con <code>purpose</code>
-    <code>maskable</code>.
-   </p>
-  </dd>
-  <dt><code><dfn>form_factor</dfn></code></dt>
-  <dd>
-   <p>
-    Orientación de una screenshot.
-   </p>
-   <dl>
-    <dt><code><dfn>wide</dfn></code></dt>
-    <dd>
-     <p>
-      La screenshot tiene una orientación horizontal. Normalmente la creenshot
-      se usa para dispositivos de escritorio.
-     </p>
-    </dd>
-    <dt><code><dfn>narrow</dfn></code></dt>
-    <dd>
-     <p>
-      La screenshot tiene una orientación vertical. Normalmente la creenshot
-      se usa para dispositivos móviles.
-     </p>
-    </dd>
-   </dl>
-   <p>
-    Debes incluir al menos una screenshot con
-    <code>"form_factor": "wide"</code>
-    y otra con
-    <code>"form_factor": "narrow"</code>.
-   </p>
-  </dd>
-  <dt><code><dfn>label</dfn></code></dt>
-  <dd>
-   <p>
-    Descripción de una screenshot. Aparece en el cuadro de diálogo que
-    muestra el navegador al instalar la app.
-   </p>
-  </dd>
- </dl>
-</section>
-<muestra-codigo>
- <div>
-  <div>{</div>
-  <div>&nbsp;<span
-     style="color: #0451a5;">"short_name"</span>: <span
-     style="color: #a31515;">"PWA"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #0451a5;">"name"</span>: <span
-     style="color: #a31515;">"Ejemplo de PWA"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #0451a5;">"id"</span>: <span
-     style="color: #a31515;">"/index.html"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #0451a5;">"start_url"</span>: <span
-     style="color: #a31515;">"/index.html"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #0451a5;">"display"</span>: <span
-     style="color: #a31515;">"standalone"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #0451a5;">"theme_color"</span>: <span
-     style="color: #a31515;">"#cbc693"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #0451a5;">"background_color"</span>: <span
-     style="color: #a31515;">"#ffffff"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #0451a5;">"description"</span>: <span
-     style="color: #a31515;">"Ejemplos básico de PWA."</span>,</div>
-  <div>&nbsp;<span
-     style="color: #0451a5;">"screenshots"</span>: [</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/screenshot_horizontal.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"1507x777"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"form_factor"</span>: <span
-     style="color: #a31515;">"wide"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"label"</span>: <span
-     style="color: #a31515;">"PWA Básica"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/screenshot_vertical.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"591x980"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"form_factor"</span>: <span
-     style="color: #a31515;">"narrow"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"label"</span>: <span
-     style="color: #a31515;">"PWA Básica (2)"</span></div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;],</div>
-  <div>&nbsp;<span
-     style="color: #0451a5;">"icons"</span>: [</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/maskable_icon_x48.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"48x48"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"any"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/maskable_icon_x72.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"72x72"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"any"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/maskable_icon_x96.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"96x96"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"any"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/maskable_icon_x128.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"128x128"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"any"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/maskable_icon_x192.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"192x192"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"any"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/maskable_icon_x384.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"384x384"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"any"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/maskable_icon_x512.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"512x512"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"any"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/maskable_icon.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"2730x2730"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"any"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/icono2048.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"2048x2048"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"any"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/maskable_icon_x48.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"48x48"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"maskable"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/maskable_icon_x72.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"72x72"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"maskable"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/maskable_icon_x96.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"96x96"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"maskable"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/maskable_icon_x128.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"128x128"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"maskable"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/maskable_icon_x192.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"192x192"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"maskable"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/maskable_icon_x384.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"384x384"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"maskable"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/maskable_icon_x512.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"512x512"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"maskable"</span></div>
-  <div>&nbsp;&nbsp;},</div>
-  <div>&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"src"</span>: <span
-     style="color: #a31515;">"/img/maskable_icon.png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"sizes"</span>: <span
-     style="color: #a31515;">"2730x2730"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"type"</span>: <span
-     style="color: #a31515;">"image/png"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0451a5;">"purpose"</span>: <span
-     style="color: #a31515;">"maskable"</span></div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;]</div>
-  <div>}</div>
- </div>
-</muestra-codigo>
+         <h1 >F. site.webmanifest</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>{</td></tr>
+  <tr><td>2</td><td> <span class="codeString">"short_name"</span>: <span class="codeString">"PWA"</span>,</td></tr>
+  <tr><td>3</td><td> <span class="codeString">"name"</span>: <span class="codeString">"Ejemplo de PWA"</span>,</td></tr>
+  <tr><td>4</td><td> <span class="codeString">"id"</span>: <span class="codeString">"/index.html"</span>,</td></tr>
+  <tr><td>5</td><td> <span class="codeString">"start_url"</span>: <span class="codeString">"/index.html"</span>,</td></tr>
+  <tr><td>6</td><td> <span class="codeString">"display"</span>: <span class="codeString">"standalone"</span>,</td></tr>
+  <tr><td>7</td><td> <span class="codeString">"theme_color"</span>: <span class="codeString">"#cbc693"</span>,</td></tr>
+  <tr><td>8</td><td> <span class="codeString">"background_color"</span>: <span class="codeString">"#ffffff"</span>,</td></tr>
+  <tr><td>9</td><td> <span class="codeString">"description"</span>: <span class="codeString">"Ejemplos básico de PWA."</span>,</td></tr>
+  <tr><td>10</td><td> <span class="codeString">"screenshots"</span>: [</td></tr>
+  <tr><td>11</td><td>  {</td></tr>
+  <tr><td>12</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/screenshot_horizontal.png"</span>,</td></tr>
+  <tr><td>13</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"1507x777"</span>,</td></tr>
+  <tr><td>14</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>15</td><td>   <span class="codeString">"form_factor"</span>: <span class="codeString">"wide"</span>,</td></tr>
+  <tr><td>16</td><td>   <span class="codeString">"label"</span>: <span class="codeString">"PWA Básica"</span></td></tr>
+  <tr><td>17</td><td>  },</td></tr>
+  <tr><td>18</td><td>  {</td></tr>
+  <tr><td>19</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/screenshot_vertical.png"</span>,</td></tr>
+  <tr><td>20</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"591x980"</span>,</td></tr>
+  <tr><td>21</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>22</td><td>   <span class="codeString">"form_factor"</span>: <span class="codeString">"narrow"</span>,</td></tr>
+  <tr><td>23</td><td>   <span class="codeString">"label"</span>: <span class="codeString">"PWA Básica (2)"</span></td></tr>
+  <tr><td>24</td><td>  }</td></tr>
+  <tr><td>25</td><td> ],</td></tr>
+  <tr><td>26</td><td> <span class="codeString">"icons"</span>: [</td></tr>
+  <tr><td>27</td><td>  {</td></tr>
+  <tr><td>28</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x48.png"</span>,</td></tr>
+  <tr><td>29</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"48x48"</span>,</td></tr>
+  <tr><td>30</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>31</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
+  <tr><td>32</td><td>  },</td></tr>
+  <tr><td>33</td><td>  {</td></tr>
+  <tr><td>34</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x72.png"</span>,</td></tr>
+  <tr><td>35</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"72x72"</span>,</td></tr>
+  <tr><td>36</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>37</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
+  <tr><td>38</td><td>  },</td></tr>
+  <tr><td>39</td><td>  {</td></tr>
+  <tr><td>40</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x96.png"</span>,</td></tr>
+  <tr><td>41</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"96x96"</span>,</td></tr>
+  <tr><td>42</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>43</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
+  <tr><td>44</td><td>  },</td></tr>
+  <tr><td>45</td><td>  {</td></tr>
+  <tr><td>46</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x128.png"</span>,</td></tr>
+  <tr><td>47</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"128x128"</span>,</td></tr>
+  <tr><td>48</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>49</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
+  <tr><td>50</td><td>  },</td></tr>
+  <tr><td>51</td><td>  {</td></tr>
+  <tr><td>52</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x192.png"</span>,</td></tr>
+  <tr><td>53</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"192x192"</span>,</td></tr>
+  <tr><td>54</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>55</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
+  <tr><td>56</td><td>  },</td></tr>
+  <tr><td>57</td><td>  {</td></tr>
+  <tr><td>58</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x384.png"</span>,</td></tr>
+  <tr><td>59</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"384x384"</span>,</td></tr>
+  <tr><td>60</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>61</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
+  <tr><td>62</td><td>  },</td></tr>
+  <tr><td>63</td><td>  {</td></tr>
+  <tr><td>64</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x512.png"</span>,</td></tr>
+  <tr><td>65</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"512x512"</span>,</td></tr>
+  <tr><td>66</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>67</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
+  <tr><td>68</td><td>  },</td></tr>
+  <tr><td>69</td><td>  {</td></tr>
+  <tr><td>70</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon.png"</span>,</td></tr>
+  <tr><td>71</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"2730x2730"</span>,</td></tr>
+  <tr><td>72</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>73</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
+  <tr><td>74</td><td>  },</td></tr>
+  <tr><td>75</td><td>  {</td></tr>
+  <tr><td>76</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/icono2048.png"</span>,</td></tr>
+  <tr><td>77</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"2048x2048"</span>,</td></tr>
+  <tr><td>78</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>79</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
+  <tr><td>80</td><td>  },</td></tr>
+  <tr><td>81</td><td>  {</td></tr>
+  <tr><td>82</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x48.png"</span>,</td></tr>
+  <tr><td>83</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"48x48"</span>,</td></tr>
+  <tr><td>84</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>85</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></td></tr>
+  <tr><td>86</td><td>  },</td></tr>
+  <tr><td>87</td><td>  {</td></tr>
+  <tr><td>88</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x72.png"</span>,</td></tr>
+  <tr><td>89</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"72x72"</span>,</td></tr>
+  <tr><td>90</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>91</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></td></tr>
+  <tr><td>92</td><td>  },</td></tr>
+  <tr><td>93</td><td>  {</td></tr>
+  <tr><td>94</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x96.png"</span>,</td></tr>
+  <tr><td>95</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"96x96"</span>,</td></tr>
+  <tr><td>96</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>97</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></td></tr>
+  <tr><td>98</td><td>  },</td></tr>
+  <tr><td>99</td><td>  {</td></tr>
+  <tr><td>100</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x128.png"</span>,</td></tr>
+  <tr><td>101</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"128x128"</span>,</td></tr>
+  <tr><td>102</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>103</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></td></tr>
+  <tr><td>104</td><td>  },</td></tr>
+  <tr><td>105</td><td>  {</td></tr>
+  <tr><td>106</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x192.png"</span>,</td></tr>
+  <tr><td>107</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"192x192"</span>,</td></tr>
+  <tr><td>108</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>109</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></td></tr>
+  <tr><td>110</td><td>  },</td></tr>
+  <tr><td>111</td><td>  {</td></tr>
+  <tr><td>112</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x384.png"</span>,</td></tr>
+  <tr><td>113</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"384x384"</span>,</td></tr>
+  <tr><td>114</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>115</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></td></tr>
+  <tr><td>116</td><td>  },</td></tr>
+  <tr><td>117</td><td>  {</td></tr>
+  <tr><td>118</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x512.png"</span>,</td></tr>
+  <tr><td>119</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"512x512"</span>,</td></tr>
+  <tr><td>120</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>121</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></td></tr>
+  <tr><td>122</td><td>  },</td></tr>
+  <tr><td>123</td><td>  {</td></tr>
+  <tr><td>124</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon.png"</span>,</td></tr>
+  <tr><td>125</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"2730x2730"</span>,</td></tr>
+  <tr><td>126</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
+  <tr><td>127</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></td></tr>
+  <tr><td>128</td><td>  }</td></tr>
+  <tr><td>129</td><td> ]</td></tr>
+  <tr><td>130</td><td>}</td></tr>
+ </tbody>
+</table>
       </section>
      <section >
-         <h1 >G. instruccionesListadoSw.txt</h1><muestra-codigo>
- <div>Generar el listado de archivos del sw.js desde Visual Studio Code.</div>
- <div>1. Abrir una terminal desde el menú&nbsp;</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Terminal &gt; New Terminal</div>
- <div><br></div>
- <div>2. Desde la terminal introducir la orden:</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Get-ChildItem -path . -Recurse | Select
-  Directory,Name | Out-File archivos.txt</div>
- <div><br></div>
- <div>3. Abrir el archivo generado, que se llama</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;archivos.txt</div>
- <div>&nbsp;&nbsp;&nbsp;y sobre este, realizar los pasos que siguen:</div>
- <div><br></div>
- <div>4. Quita del archivo archivos.txt:</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;el encabezado,</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;todas las carpetas,</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;el archivo .vscode/settings.json,</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;el archivo archivos.txt,</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;este archivo (instruccionesListadoSw.txt),
- </div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;el archivo jsconfig.json,</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;el archivo sw.js,</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;el archivo de la base de datos, que termina
-  en ".bd" y</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;está en la carpeta srv,</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;todos los archivos de php y</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;las líneas en blanco del final</div>
- <div><br></div>
- <div>5. Cambia los \ por / desde Visual Studio Code con las siguientes</div>
- <div>&nbsp;&nbsp;&nbsp;combinaciones de teclas:</div>
- <div><br></div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Ctrl+H En el diálogo que aparece introduce lo
-  siguiente:</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Find:\</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Replace:/</div>
- <div><br></div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Clic en el icono Reemplaza todo o Replace All y
-  luego teclea ESC</div>
- <div>&nbsp;</div>
- <div>6. Coloca las comillas y coma del final de cada línea desde Visual</div>
- <div>&nbsp;&nbsp;&nbsp;Studio Code con las siguientes combinaciones de teclas:
- </div>
- <div><br></div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Ctrl+H En el diálogo que aparece, selecciona el
-  botón</div>
- <div>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".*"
- </div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e
-  introduce lo siguiente:</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Find:\s*$</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Replace:",</div>
- <div><br></div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Clic en el icono Reemplaza todo o Replace All y
-  luego teclea ESC</div>
- <div><br></div>
- <div>7. Marca la carpeta inicial, presiona la combinación de teclas:</div>
- <div><br></div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Shift+Ctrl+L</div>
- <div><br></div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;borra la selección, teclea " y luego ESC</div>
- <div><br></div>
- <div>8. Cambia las secuencias de espacios por / con las siguientes</div>
- <div>&nbsp;&nbsp;&nbsp;combinaciones de teclas:</div>
- <div><br></div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Ctrl+H En el diálogo que aparece, selecciona el
-  botón</div>
- <div>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".*"
- </div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e
-  introduce lo siguiente:</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Find:\s+</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Replace:/</div>
- <div><br></div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Clic en el icono Reemplaza todo o Replace All y
-  luego teclea ESC</div>
- <div><br></div>
- <div>9. Cambia las "/ por " con las siguientes combinaciones de teclas:</div>
- <div><br></div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Ctrl+H En el diálogo que aparece, quita la
-  selección del botón</div>
- <div>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".*"
- </div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e
-  introduce lo siguiente:</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Find:"/</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Replace:"</div>
- <div><br></div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;Clic en el icono Reemplaza todo o Replace All y
-  luego teclea ESC</div>
- <div><br></div>
- <div>10. Copia el texto al archivo</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sw.js</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;en el contenido del arreglo llamado ARCHIVOS, pero
-  recuerda</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;mantener el último elemento, que dice:</div>
- <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/"</div>
-</muestra-codigo>
+         <h1 >G. instruccionesListadoSw.txt</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>Generar el listado de archivos del sw.js desde Visual Studio Code.</td></tr>
+  <tr><td>2</td><td>1. Abrir una terminal desde el menú </td></tr>
+  <tr><td>3</td><td>    Terminal > New Terminal</td></tr>
+  <tr><td>4</td><td></td></tr>
+  <tr><td>5</td><td>2. Desde la terminal introducir la orden:</td></tr>
+  <tr><td>6</td><td>    Get-ChildItem -path . -Recurse | Select Directory,Name | Out-File archivos.txt</td></tr>
+  <tr><td>7</td><td></td></tr>
+  <tr><td>8</td><td>3. Abrir el archivo generado, que se llama</td></tr>
+  <tr><td>9</td><td>    archivos.txt</td></tr>
+  <tr><td>10</td><td>   y sobre este, realizar los pasos que siguen:</td></tr>
+  <tr><td>11</td><td></td></tr>
+  <tr><td>12</td><td>4. Quita del archivo archivos.txt:</td></tr>
+  <tr><td>13</td><td>    * el encabezado,</td></tr>
+  <tr><td>14</td><td>    * todas las carpetas,</td></tr>
+  <tr><td>15</td><td>    * el archivo .vscode/settings.json,</td></tr>
+  <tr><td>16</td><td>    * el archivo archivos.txt,</td></tr>
+  <tr><td>17</td><td>    * este archivo (instruccionesListadoSw.txt),</td></tr>
+  <tr><td>18</td><td>    * el archivo jsconfig.json,</td></tr>
+  <tr><td>19</td><td>    * el archivo sw.js,</td></tr>
+  <tr><td>20</td><td>    * el archivo de la base de datos, que termina en ".bd" y</td></tr>
+  <tr><td>21</td><td>      está en la carpeta srv,</td></tr>
+  <tr><td>22</td><td>    * todos los archivos de php y</td></tr>
+  <tr><td>23</td><td>    * las líneas en blanco del final</td></tr>
+  <tr><td>24</td><td></td></tr>
+  <tr><td>25</td><td>5. Cambia los \ por / desde Visual Studio Code con las siguientes</td></tr>
+  <tr><td>26</td><td>   combinaciones de teclas:</td></tr>
+  <tr><td>27</td><td></td></tr>
+  <tr><td>28</td><td>    Ctrl+H En el diálogo que aparece introduce lo siguiente:</td></tr>
+  <tr><td>29</td><td>    Find:\</td></tr>
+  <tr><td>30</td><td>    Replace:/</td></tr>
+  <tr><td>31</td><td></td></tr>
+  <tr><td>32</td><td>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</td></tr>
+  <tr><td>33</td><td> </td></tr>
+  <tr><td>34</td><td>6. Coloca las comillas y coma del final de cada línea desde Visual</td></tr>
+  <tr><td>35</td><td>   Studio Code con las siguientes combinaciones de teclas:</td></tr>
+  <tr><td>36</td><td></td></tr>
+  <tr><td>37</td><td>    Ctrl+H En el diálogo que aparece, selecciona el botón</td></tr>
+  <tr><td>38</td><td>            ".*"</td></tr>
+  <tr><td>39</td><td>           e introduce lo siguiente:</td></tr>
+  <tr><td>40</td><td>    Find:\s*$</td></tr>
+  <tr><td>41</td><td>    Replace:",</td></tr>
+  <tr><td>42</td><td></td></tr>
+  <tr><td>43</td><td>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</td></tr>
+  <tr><td>44</td><td></td></tr>
+  <tr><td>45</td><td>7. Marca la carpeta inicial, presiona la combinación de teclas:</td></tr>
+  <tr><td>46</td><td></td></tr>
+  <tr><td>47</td><td>    Shift+Ctrl+L</td></tr>
+  <tr><td>48</td><td></td></tr>
+  <tr><td>49</td><td>    borra la selección, teclea " y luego ESC</td></tr>
+  <tr><td>50</td><td></td></tr>
+  <tr><td>51</td><td>8. Cambia las secuencias de espacios por / con las siguientes</td></tr>
+  <tr><td>52</td><td>   combinaciones de teclas:</td></tr>
+  <tr><td>53</td><td></td></tr>
+  <tr><td>54</td><td>    Ctrl+H En el diálogo que aparece, selecciona el botón</td></tr>
+  <tr><td>55</td><td>            ".*"</td></tr>
+  <tr><td>56</td><td>           e introduce lo siguiente:</td></tr>
+  <tr><td>57</td><td>    Find:\s+</td></tr>
+  <tr><td>58</td><td>    Replace:/</td></tr>
+  <tr><td>59</td><td></td></tr>
+  <tr><td>60</td><td>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</td></tr>
+  <tr><td>61</td><td></td></tr>
+  <tr><td>62</td><td>9. Cambia las "/ por " con las siguientes combinaciones de teclas:</td></tr>
+  <tr><td>63</td><td></td></tr>
+  <tr><td>64</td><td>    Ctrl+H En el diálogo que aparece, quita la selección del botón</td></tr>
+  <tr><td>65</td><td>            ".*"</td></tr>
+  <tr><td>66</td><td>           e introduce lo siguiente:</td></tr>
+  <tr><td>67</td><td>    Find:"/</td></tr>
+  <tr><td>68</td><td>    Replace:"</td></tr>
+  <tr><td>69</td><td></td></tr>
+  <tr><td>70</td><td>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</td></tr>
+  <tr><td>71</td><td></td></tr>
+  <tr><td>72</td><td>10. Copia el texto al archivo</td></tr>
+  <tr><td>73</td><td>     sw.js</td></tr>
+  <tr><td>74</td><td>    en el contenido del arreglo llamado ARCHIVOS, pero recuerda</td></tr>
+  <tr><td>75</td><td>    mantener el último elemento, que dice:</td></tr>
+  <tr><td>76</td><td>     "/"</td></tr>
+ </tbody>
+</table>
       </section>
      <section >
-         <h1 >H. archivos.txt</h1><muestra-codigo>
- <div>"favicon.ico",</div>
- <div>"index.html",</div>
- <div>"site.webmanifest",</div>
- <div>"css/estilos.css",</div>
- <div>"img/icono2048.png",</div>
- <div>"img/maskable_icon.png",</div>
- <div>"img/maskable_icon_x128.png",</div>
- <div>"img/maskable_icon_x192.png",</div>
- <div>"img/maskable_icon_x384.png",</div>
- <div>"img/maskable_icon_x48.png",</div>
- <div>"img/maskable_icon_x512.png",</div>
- <div>"img/maskable_icon_x72.png",</div>
- <div>"img/maskable_icon_x96.png",</div>
- <div>"img/screenshot_horizontal.png",</div>
- <div>"img/screenshot_vertical.png",</div>
- <div>"js/configura.js",</div>
- <div>"lib/js/muestraError.js",</div>
- <div>"lib/js/registraServiceWorkerSiEsSoportado.js",</div>
-</muestra-codigo>
+         <h1 >H. archivos.txt</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>"favicon.ico",</td></tr>
+  <tr><td>2</td><td>"index.html",</td></tr>
+  <tr><td>3</td><td>"site.webmanifest",</td></tr>
+  <tr><td>4</td><td>"css/estilos.css",</td></tr>
+  <tr><td>5</td><td>"img/icono2048.png",</td></tr>
+  <tr><td>6</td><td>"img/maskable_icon.png",</td></tr>
+  <tr><td>7</td><td>"img/maskable_icon_x128.png",</td></tr>
+  <tr><td>8</td><td>"img/maskable_icon_x192.png",</td></tr>
+  <tr><td>9</td><td>"img/maskable_icon_x384.png",</td></tr>
+  <tr><td>10</td><td>"img/maskable_icon_x48.png",</td></tr>
+  <tr><td>11</td><td>"img/maskable_icon_x512.png",</td></tr>
+  <tr><td>12</td><td>"img/maskable_icon_x72.png",</td></tr>
+  <tr><td>13</td><td>"img/maskable_icon_x96.png",</td></tr>
+  <tr><td>14</td><td>"img/screenshot_horizontal.png",</td></tr>
+  <tr><td>15</td><td>"img/screenshot_vertical.png",</td></tr>
+  <tr><td>16</td><td>"js/configura.js",</td></tr>
+  <tr><td>17</td><td>"lib/js/muestraError.js",</td></tr>
+  <tr><td>18</td><td>"lib/js/ProblemDetails.js",</td></tr>
+  <tr><td>19</td><td>"lib/js/registraServiceWorkerSiEsSoportado.js",</td></tr>
+ </tbody>
+</table>
       </section>
      <section >
-         <h1 >I. sw.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/*&nbsp;Este archivo debe estar colocado en la
-    carpeta raíz del sitio.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Cualquier cambio en el contenido de
-    este archivo hace que el service</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;worker se reinstale. */</span></div>
-  <br>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Cambia el número de la versión cuando
-    cambia el contenido de los</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;archivos.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;El número a la izquierda del punto
-    (.), en este caso &lt;q&gt;1&lt;/q&gt;, se</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;conoce como número mayor y se cambia
-    cuando se realizan</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;modificaciones grandes o
-    importantes.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;El número a la derecha del punto (.),
-    en este caso &lt;q&gt;00&lt;/q&gt;, se</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;conoce como número menor y se cambia
-    cuando se realizan</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;modificaciones menores.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">VERSION</span> = <span
-     style="color: #a31515;">"1.00"</span></div><br>
-  <div><span
-     style="color: #008000;">/**&nbsp;Nombre del archivo de cache. */</span>
-  </div>
-  <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">CACHE</span> = <span
-     style="color: #a31515;">"ejemploPWA"</span></div><br>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Archivos requeridos para que la</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;aplicación funcione fuera de</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;línea.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">ARCHIVOS</span> = [</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"favicon.ico"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"index.html"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"site.webmanifest"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"css/estilos.css"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/icono2048.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/maskable_icon.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/maskable_icon_x128.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/maskable_icon_x192.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/maskable_icon_x384.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/maskable_icon_x48.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/maskable_icon_x512.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/maskable_icon_x72.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/maskable_icon_x96.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/screenshot_horizontal.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/screenshot_vertical.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"js/configura.js"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"lib/js/muestraError.js"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"lib/js/registraServiceWorkerSiEsSoportado.js"</span>,
-  </div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/"</span></div>
-  <div>]</div><br>
-  <div><span
-     style="color: #008000;">// Verifica si el código corre dentro de un service
-    worker.</span></div>
-  <div><span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">self</span> <span
-     style="color: #0000ff;">instanceof</span> <span
-     style="color: #267f99;">ServiceWorkerGlobalScope</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #008000;">// Evento al empezar a instalar el servide
-    worker,</span></div>
-  <div>&nbsp;<span
-     style="color: #001080;">self</span>.<span
-     style="color: #795e26;">addEventListener</span>(<span
-     style="color: #a31515;">"install"</span>,</div>
-  <div>&nbsp;&nbsp;(<span
-     style="color: #008000;">/**&nbsp;</span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ExtendableEvent}</span><span
-     style="color: #008000;"> */</span> <span
-     style="color: #001080;">evt</span>) <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"El service worker se está instalando."</span>)
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">evt</span>.<span
-     style="color: #795e26;">waitUntil</span>(<span
-     style="color: #795e26;">llenaElCache</span>())</div>
-  <div>&nbsp;&nbsp;})</div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">// Evento al solicitar información a la red.</span>
-  </div>
-  <div>&nbsp;<span
-     style="color: #001080;">self</span>.<span
-     style="color: #795e26;">addEventListener</span>(<span
-     style="color: #a31515;">"fetch"</span>, (<span
-     style="color: #008000;">/**&nbsp;</span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{FetchEvent}</span><span
-     style="color: #008000;"> */</span> <span
-     style="color: #001080;">evt</span>) <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">evt</span>.<span
-     style="color: #0070c1;">request</span>.<span
-     style="color: #0070c1;">method</span> === <span
-     style="color: #a31515;">"GET"</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">evt</span>.<span
-     style="color: #795e26;">respondWith</span>(<span
-     style="color: #795e26;">buscaLaRespuestaEnElCache</span>(<span
-     style="color: #001080;">evt</span>))</div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;})</div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">// Evento cuando el service worker se vuelve
-    activo.</span></div>
-  <div>&nbsp;<span
-     style="color: #001080;">self</span>.<span
-     style="color: #795e26;">addEventListener</span>(<span
-     style="color: #a31515;">"activate"</span>,</div>
-  <div>&nbsp;&nbsp;() <span
-     style="color: #0000ff;">=&gt;</span> <span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"El service worker está activo."</span>))</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">llenaElCache</span>()&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"Intentando cargar caché:"</span>, <span
-     style="color: #0070c1;">CACHE</span>, <span
-     style="color: #a31515;">"."</span>)</div>
-  <div>&nbsp;<span
-     style="color: #008000;">// Borra todos los cachés.</span></div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">keys</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">caches</span>.<span
-     style="color: #795e26;">keys</span>()</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">for</span> (<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">key</span> <span
-     style="color: #0000ff;">of</span> <span
-     style="color: #0070c1;">keys</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">caches</span>.<span
-     style="color: #795e26;">delete</span>(<span
-     style="color: #0070c1;">key</span>)</div>
-  <div>&nbsp;}</div>
-  <div>&nbsp;<span
-     style="color: #008000;">// Abre el caché de este service worker.</span>
-  </div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">cache</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">caches</span>.<span
-     style="color: #795e26;">open</span>(<span
-     style="color: #0070c1;">CACHE</span>)</div>
-  <div>&nbsp;<span
-     style="color: #008000;">// Carga el listado de ARCHIVOS.</span></div>
-  <div>&nbsp;<span
-     style="color: #af00db;">await</span> <span
-     style="color: #0070c1;">cache</span>.<span
-     style="color: #795e26;">addAll</span>(<span
-     style="color: #0070c1;">ARCHIVOS</span>)</div>
-  <div>&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"Cache cargado:"</span>, <span
-     style="color: #0070c1;">CACHE</span>, <span
-     style="color: #a31515;">"."</span>)</div>
-  <div>&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"Versión:"</span>, <span
-     style="color: #0070c1;">VERSION</span>, <span
-     style="color: #a31515;">"."</span>)</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">/**&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{FetchEvent}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">evt</span><span
-     style="color: #008000;"> */</span></div>
-  <div><span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">buscaLaRespuestaEnElCache</span>(<span
-     style="color: #001080;">evt</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #008000;">// Abre el caché.</span></div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">cache</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">caches</span>.<span
-     style="color: #795e26;">open</span>(<span
-     style="color: #0070c1;">CACHE</span>)</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">request</span> = <span
-     style="color: #001080;">evt</span>.<span
-     style="color: #001080;">request</span></div>
-  <div>&nbsp;<span
-     style="color: #008000;">/*&nbsp;Busca la respuesta a la solicitud en el
-    contenido del caché, sin</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*&nbsp;tomar en cuenta la parte después
-    del símbolo "?" en la URL. */</span></div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">response</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">cache</span>.<span
-     style="color: #795e26;">match</span>(<span
-     style="color: #001080;">request</span>,&nbsp;{ <span
-     style="color: #001080;">ignoreSearch:</span> <span
-     style="color: #0000ff;">true</span> })</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">response</span> === <span
-     style="color: #0000ff;">undefined</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Si no la encuentra, empieza a descargar de
-    la red y devuelve</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;la promesa. */</span>
-  </div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #795e26;">fetch</span>(<span
-     style="color: #001080;">request</span>)</div>
-  <div>&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// Si la encuentra, devuelve la respuesta
-    encontrada en el caché.</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #001080;">response</span></div>
-  <div>&nbsp;}</div>
-  <div>}</div>
- </div>
-</muestra-codigo>
+         <h1 >I. sw.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeComment">/* Este archivo debe estar colocado en la carpeta raíz del sitio.</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * </span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> * Cualquier cambio en el contenido de este archivo hace que el service</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> * worker se reinstale. */</span></td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> * Cambia el número de la versión cuando cambia el contenido de los</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> * archivos.</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> * </span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> * El número a la izquierda del punto (.), en este caso &lt;q&gt;1&lt;/q&gt;, se</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment"> * conoce como número mayor y se cambia cuando se realizan</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment"> * modificaciones grandes o importantes.</span></td></tr>
+  <tr><td>13</td><td><span class="codeComment"> * </span></td></tr>
+  <tr><td>14</td><td><span class="codeComment"> * El número a la derecha del punto (.), en este caso &lt;q&gt;00&lt;/q&gt;, se</span></td></tr>
+  <tr><td>15</td><td><span class="codeComment"> * conoce como número menor y se cambia cuando se realizan</span></td></tr>
+  <tr><td>16</td><td><span class="codeComment"> * modificaciones menores.</span></td></tr>
+  <tr><td>17</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>18</td><td><span class="codeReserved">const</span> VERSION = <span class="codeString">"1.00"</span></td></tr>
+  <tr><td>19</td><td></td></tr>
+  <tr><td>20</td><td><span class="codeComment">/** Nombre del archivo de cache. */</span></td></tr>
+  <tr><td>21</td><td><span class="codeReserved">const</span> CACHE = <span class="codeString">"ejemploPWA"</span></td></tr>
+  <tr><td>22</td><td></td></tr>
+  <tr><td>23</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>24</td><td><span class="codeComment"> * Archivos requeridos para que la</span></td></tr>
+  <tr><td>25</td><td><span class="codeComment"> * aplicación funcione fuera de</span></td></tr>
+  <tr><td>26</td><td><span class="codeComment"> * línea.</span></td></tr>
+  <tr><td>27</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>28</td><td><span class="codeReserved">const</span> ARCHIVOS = [</td></tr>
+  <tr><td>29</td><td> <span class="codeString">"favicon.ico"</span>,</td></tr>
+  <tr><td>30</td><td> <span class="codeString">"index.html"</span>,</td></tr>
+  <tr><td>31</td><td> <span class="codeString">"site.webmanifest"</span>,</td></tr>
+  <tr><td>32</td><td> <span class="codeString">"css/estilos.css"</span>,</td></tr>
+  <tr><td>33</td><td> <span class="codeString">"img/icono2048.png"</span>,</td></tr>
+  <tr><td>34</td><td> <span class="codeString">"img/maskable_icon.png"</span>,</td></tr>
+  <tr><td>35</td><td> <span class="codeString">"img/maskable_icon_x128.png"</span>,</td></tr>
+  <tr><td>36</td><td> <span class="codeString">"img/maskable_icon_x192.png"</span>,</td></tr>
+  <tr><td>37</td><td> <span class="codeString">"img/maskable_icon_x384.png"</span>,</td></tr>
+  <tr><td>38</td><td> <span class="codeString">"img/maskable_icon_x48.png"</span>,</td></tr>
+  <tr><td>39</td><td> <span class="codeString">"img/maskable_icon_x512.png"</span>,</td></tr>
+  <tr><td>40</td><td> <span class="codeString">"img/maskable_icon_x72.png"</span>,</td></tr>
+  <tr><td>41</td><td> <span class="codeString">"img/maskable_icon_x96.png"</span>,</td></tr>
+  <tr><td>42</td><td> <span class="codeString">"img/screenshot_horizontal.png"</span>,</td></tr>
+  <tr><td>43</td><td> <span class="codeString">"img/screenshot_vertical.png"</span>,</td></tr>
+  <tr><td>44</td><td> <span class="codeString">"js/configura.js"</span>,</td></tr>
+  <tr><td>45</td><td> <span class="codeString">"lib/js/muestraError.js"</span>,</td></tr>
+  <tr><td>46</td><td> <span class="codeString">"lib/js/registraServiceWorkerSiEsSoportado.js"</span>,</td></tr>
+  <tr><td>47</td><td> <span class="codeString">"/"</span></td></tr>
+  <tr><td>48</td><td>]</td></tr>
+  <tr><td>49</td><td></td></tr>
+  <tr><td>50</td><td><span class="codeComment">// Verifica si el código corre dentro de un service worker.</span></td></tr>
+  <tr><td>51</td><td><span class="codeReserved">if</span> (<span class="codeReserved">self</span> <span class="codeReserved">instanceof</span> ServiceWorkerGlobalScope) {</td></tr>
+  <tr><td>52</td><td> <span class="codeComment">// Evento al empezar a instalar el servide worker,</span></td></tr>
+  <tr><td>53</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"install"</span>,</td></tr>
+  <tr><td>54</td><td>  (<span class="codeComment">/** <span class="codeReserved">@type</span> {ExtendableEvent} */</span> evt) =&gt; {</td></tr>
+  <tr><td>55</td><td>   console.log(<span class="codeString">"El service worker se está instalando."</span>)</td></tr>
+  <tr><td>56</td><td>   evt.waitUntil(llenaElCache())</td></tr>
+  <tr><td>57</td><td>  })</td></tr>
+  <tr><td>58</td><td></td></tr>
+  <tr><td>59</td><td> <span class="codeComment">// Evento al solicitar información a la red.</span></td></tr>
+  <tr><td>60</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"fetch"</span>, (<span class="codeComment">/** <span class="codeReserved">@type</span> {FetchEvent} */</span> evt) =&gt; {</td></tr>
+  <tr><td>61</td><td>  <span class="codeReserved">if</span> (evt.request.method === <span class="codeString">"GET"</span>) {</td></tr>
+  <tr><td>62</td><td>   evt.respondWith(buscaLaRespuestaEnElCache(evt))</td></tr>
+  <tr><td>63</td><td>  }</td></tr>
+  <tr><td>64</td><td> })</td></tr>
+  <tr><td>65</td><td></td></tr>
+  <tr><td>66</td><td> <span class="codeComment">// Evento cuando el service worker se vuelve activo.</span></td></tr>
+  <tr><td>67</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"activate"</span>,</td></tr>
+  <tr><td>68</td><td>  () =&gt; console.log(<span class="codeString">"El service worker está activo."</span>))</td></tr>
+  <tr><td>69</td><td>}</td></tr>
+  <tr><td>70</td><td></td></tr>
+  <tr><td>71</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> llenaElCache() {</td></tr>
+  <tr><td>72</td><td> console.log(<span class="codeString">"Intentando cargar caché:"</span>, CACHE, <span class="codeString">"."</span>)</td></tr>
+  <tr><td>73</td><td> <span class="codeComment">// Borra todos los cachés.</span></td></tr>
+  <tr><td>74</td><td> <span class="codeReserved">const</span> keys = <span class="codeReserved">await</span> caches.keys()</td></tr>
+  <tr><td>75</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> key of keys) {</td></tr>
+  <tr><td>76</td><td>  <span class="codeReserved">await</span> caches.delete(key)</td></tr>
+  <tr><td>77</td><td> }</td></tr>
+  <tr><td>78</td><td> <span class="codeComment">// Abre el caché de este service worker.</span></td></tr>
+  <tr><td>79</td><td> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</td></tr>
+  <tr><td>80</td><td> <span class="codeComment">// Carga el listado de ARCHIVOS.</span></td></tr>
+  <tr><td>81</td><td> <span class="codeReserved">await</span> cache.addAll(ARCHIVOS)</td></tr>
+  <tr><td>82</td><td> console.log(<span class="codeString">"Cache cargado:"</span>, CACHE, <span class="codeString">"."</span>)</td></tr>
+  <tr><td>83</td><td> console.log(<span class="codeString">"Versión:"</span>, VERSION, <span class="codeString">"."</span>)</td></tr>
+  <tr><td>84</td><td>}</td></tr>
+  <tr><td>85</td><td></td></tr>
+  <tr><td>86</td><td><span class="codeComment">/** <span class="codeReserved">@param</span> {FetchEvent} evt */</span></td></tr>
+  <tr><td>87</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> buscaLaRespuestaEnElCache(evt) {</td></tr>
+  <tr><td>88</td><td> <span class="codeComment">// Abre el caché.</span></td></tr>
+  <tr><td>89</td><td> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</td></tr>
+  <tr><td>90</td><td> <span class="codeReserved">const</span> request = evt.request</td></tr>
+  <tr><td>91</td><td> <span class="codeComment">/* Busca la respuesta a la solicitud en el contenido del caché, sin</span></td></tr>
+  <tr><td>92</td><td><span class="codeComment">  * tomar en cuenta la parte después del símbolo &quot;?&quot; en la URL. */</span></td></tr>
+  <tr><td>93</td><td> <span class="codeReserved">const</span> response = <span class="codeReserved">await</span> cache.match(request, { ignoreSearch: <span class="codeReserved">true</span> })</td></tr>
+  <tr><td>94</td><td> <span class="codeReserved">if</span> (response === undefined) {</td></tr>
+  <tr><td>95</td><td>  <span class="codeComment">/* Si no la encuentra, empieza a descargar de la red y devuelve</span></td></tr>
+  <tr><td>96</td><td><span class="codeComment">   * la promesa. */</span></td></tr>
+  <tr><td>97</td><td>  <span class="codeReserved">return</span> fetch(request)</td></tr>
+  <tr><td>98</td><td> } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>99</td><td>  <span class="codeComment">// Si la encuentra, devuelve la respuesta encontrada en el caché.</span></td></tr>
+  <tr><td>100</td><td>  <span class="codeReserved">return</span> response</td></tr>
+  <tr><td>101</td><td> }</td></tr>
+  <tr><td>102</td><td>}</td></tr>
+ </tbody>
+</table>
       </section>
      <section>
          <h1 >J. Carpeta « css »</h1>
@@ -1887,16 +1574,21 @@
    </nav>
   </div>
      <section >
-         <h1 >A. css / estilos.css</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #800000;">html</span>&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #e50000;">font-family</span>: <span
-     style="color: #0451a5;">sans-serif</span>;</div>
-  <div>}</div>
- </div>
-</muestra-codigo>
+         <h1 >A. css / estilos.css</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>html {</td></tr>
+  <tr><td>2</td><td> <span class="codeReserved">font-family</span>: <span class="codeReserved">sans-serif</span>;</td></tr>
+  <tr><td>3</td><td>}</td></tr>
+ </tbody>
+</table>
       </section>
       </section>
      <section >
@@ -2076,39 +1768,32 @@
   </li>
  </ul>
 </div>
-<muestra-codigo>
- <div>
-  <div>{</div>
-  <div>&nbsp;<span
-     style="color: #0451a5;">"compilerOptions"</span>:&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0451a5;">"checkJs"</span>: <span
-     style="color: #0000ff;">true</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0451a5;">"strictNullChecks"</span>: <span
-     style="color: #0000ff;">true</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0451a5;">"target"</span>: <span
-     style="color: #a31515;">"ES6"</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0451a5;">"module"</span>: <span
-     style="color: #a31515;">"ES6"</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0451a5;">"moduleResolution"</span>: <span
-     style="color: #a31515;">"classic"</span>,</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0451a5;">"lib"</span>: [</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"ES2017"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"WebWorker"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">"DOM"</span></div>
-  <div>&nbsp;&nbsp;]</div>
-  <div>&nbsp;}</div>
-  <div>}</div>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>{</td></tr>
+  <tr><td>2</td><td> <span class="codeString">&quot;compilerOptions&quot;</span>: {</td></tr>
+  <tr><td>3</td><td>  <span class="codeString">&quot;checkJs&quot;</span>: <span class="codeReserved">true</span>,</td></tr>
+  <tr><td>4</td><td>  <span class="codeString">&quot;strictNullChecks&quot;</span>: <span class="codeReserved">true</span>,</td></tr>
+  <tr><td>5</td><td>  <span class="codeString">&quot;target&quot;</span>: <span class="codeString">&quot;ES6&quot;</span>,</td></tr>
+  <tr><td>6</td><td>  <span class="codeString">&quot;module&quot;</span>: <span class="codeString">&quot;ES6&quot;</span>,</td></tr>
+  <tr><td>7</td><td>  <span class="codeString">&quot;moduleResolution&quot;</span>: <span class="codeString">&quot;classic&quot;</span>,</td></tr>
+  <tr><td>8</td><td>  <span class="codeString">&quot;lib&quot;</span>: [</td></tr>
+  <tr><td>9</td><td>   <span class="codeString">&quot;ES2017&quot;</span>,</td></tr>
+  <tr><td>10</td><td>   <span class="codeString">&quot;WebWorker&quot;</span>,</td></tr>
+  <tr><td>11</td><td>   <span class="codeString">&quot;DOM&quot;</span></td></tr>
+  <tr><td>12</td><td>  ]</td></tr>
+  <tr><td>13</td><td> }</td></tr>
+  <tr><td>14</td><td>}</td></tr>
+ </tbody>
+</table>
       </section>
      <section>
          <h1 >N. Carpeta « lib »</h1>
@@ -2155,6 +1840,11 @@
    </li>
    <li>
     <p>
+     <a href="/m04pwaBasica/m-lib/m-js/m-ProblemDetails-js.html">lib / js / ProblemDetails.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
      <a href="/m04pwaBasica/m-lib/m-js/m-registraServiceWorkerSiEsSoportado-js.html">lib / js / registraServiceWorkerSiEsSoportado.js</a>
     </p>
    </li>
@@ -2162,124 +1852,118 @@
    </nav>
   </div>
      <section >
-         <h1 >1. lib / js / muestraError.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Muestra un error en la consola y en un
-    cuadro de</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;alerta el mensaje de una
-    excepción.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ Error | null }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">error</span><span
-     style="color: #008000;"> descripción del error.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">error</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">error</span> === <span
-     style="color: #0000ff;">null</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"Error"</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">alert</span>(<span
-     style="color: #a31515;">"Error"</span>)</div>
-  <div>&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">error</span>(<span
-     style="color: #001080;">error</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">alert</span>(<span
-     style="color: #001080;">error</span>.<span
-     style="color: #001080;">message</span>)</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">// Permite que los eventos de html usen la
-    función.</span></div>
-  <div><span
-     style="color: #001080;">window</span>[<span
-     style="color: #a31515;">"muestraError"</span>] = <span
-     style="color: #795e26;">muestraError</span></div>
- </div>
-</muestra-codigo>
+         <h1 >1. lib / js / muestraError.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { ProblemDetails } <span class="codeReserved">from</span> <span class="codeString">"./ProblemDetails.js"</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> * Muestra un error en la consola y en un cuadro de</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> * alerta el mensaje de una excepción.</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { ProblemDetails | Error | <span class="codeReserved">null</span> } error descripción del error.</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>8</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> muestraError(error) {</td></tr>
+  <tr><td>9</td><td> <span class="codeReserved">if</span> (error === <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>10</td><td>  console.log(<span class="codeString">"Error"</span>)</td></tr>
+  <tr><td>11</td><td>  alert(<span class="codeString">"Error"</span>)</td></tr>
+  <tr><td>12</td><td> } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (error <span class="codeReserved">instanceof</span> ProblemDetails) {</td></tr>
+  <tr><td>13</td><td>  <span class="codeReserved">let</span> mensaje = error.title</td></tr>
+  <tr><td>14</td><td>  <span class="codeReserved">if</span> (error.detail) {</td></tr>
+  <tr><td>15</td><td>   mensaje += <span class="codeString">`\n\n${error.detail}`</span></td></tr>
+  <tr><td>16</td><td>  }</td></tr>
+  <tr><td>17</td><td>  mensaje += <span class="codeString">`\n\nCódigo: ${error.status}`</span></td></tr>
+  <tr><td>18</td><td>  <span class="codeReserved">if</span> (error.type) {</td></tr>
+  <tr><td>19</td><td>   mensaje += <span class="codeString">` ${error.type}`</span></td></tr>
+  <tr><td>20</td><td>  }</td></tr>
+  <tr><td>21</td><td>  console.error(mensaje)</td></tr>
+  <tr><td>22</td><td>  console.error(error)</td></tr>
+  <tr><td>23</td><td>  alert(mensaje)</td></tr>
+  <tr><td>24</td><td> } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>25</td><td>  console.error(error)</td></tr>
+  <tr><td>26</td><td>  alert(error.message)</td></tr>
+  <tr><td>27</td><td> }</td></tr>
+  <tr><td>28</td><td>}</td></tr>
+  <tr><td>29</td><td></td></tr>
+  <tr><td>30</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
+  <tr><td>31</td><td>window[<span class="codeString">"muestraError"</span>] = muestraError</td></tr>
+ </tbody>
+</table>
       </section>
      <section >
-         <h1 >2. lib / js / registraServiceWorkerSiEsSoportado.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">muestraError</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./muestraError.js"</span></div><br>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ string | URL }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">urlDeServiceWorker</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">registraServiceWorkerSiEsSoportado</span>(<span
-     style="color: #001080;">urlDeServiceWorker</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">try</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #a31515;">"serviceWorker"</span> <span
-     style="color: #0000ff;">in</span> <span
-     style="color: #001080;">navigator</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">registro</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">navigator</span>.<span
-     style="color: #0070c1;">serviceWorker</span>.<span
-     style="color: #795e26;">register</span>(<span
-     style="color: #001080;">urlDeServiceWorker</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #001080;">urlDeServiceWorker</span>, <span
-     style="color: #a31515;">"registrado."</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #0070c1;">registro</span>)</div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;}&nbsp;<span
-     style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">error</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">error</span>)</div>
-  <div>&nbsp;}</div>
-  <div>}</div>
- </div>
-</muestra-codigo>
+         <h1 >2. lib / js / ProblemDetails.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> ProblemDetails_BadRequest = 400</td></tr>
+  <tr><td>2</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> ProblemDetails_NotFound = 404</td></tr>
+  <tr><td>3</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> ProblemDetails_InternalServerError = 500</td></tr>
+  <tr><td>4</td><td></td></tr>
+  <tr><td>5</td><td><span class="codeReserved">export</span> <span class="codeReserved">class</span> ProblemDetails <span class="codeReserved">extends</span> Error {</td></tr>
+  <tr><td>6</td><td></td></tr>
+  <tr><td>7</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {number} status</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} title</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} [detail]</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} [type]</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">constructor</span>(status, title, detail, type) {</td></tr>
+  <tr><td>14</td><td>  super(title)</td></tr>
+  <tr><td>15</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
+  <tr><td>16</td><td>  <span class="codeReserved">this</span>.status = status</td></tr>
+  <tr><td>17</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
+  <tr><td>18</td><td>  <span class="codeReserved">this</span>.type = type</td></tr>
+  <tr><td>19</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
+  <tr><td>20</td><td>  <span class="codeReserved">this</span>.title = title</td></tr>
+  <tr><td>21</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
+  <tr><td>22</td><td>  <span class="codeReserved">this</span>.detail = detail</td></tr>
+  <tr><td>23</td><td> }</td></tr>
+  <tr><td>24</td><td></td></tr>
+  <tr><td>25</td><td>}</td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >3. lib / js / registraServiceWorkerSiEsSoportado.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { muestraError } <span class="codeReserved">from</span> <span class="codeString">"./muestraError.js"</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string | URL } urlDeServiceWorker</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>6</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> registraServiceWorkerSiEsSoportado(urlDeServiceWorker) {</td></tr>
+  <tr><td>7</td><td> <span class="codeReserved">try</span> {</td></tr>
+  <tr><td>8</td><td>  <span class="codeReserved">if</span> (<span class="codeString">"serviceWorker"</span> <span class="codeReserved">in</span> navigator) {</td></tr>
+  <tr><td>9</td><td>   <span class="codeReserved">const</span> registro = <span class="codeReserved">await</span> navigator.serviceWorker.register(urlDeServiceWorker)</td></tr>
+  <tr><td>10</td><td>   console.log(urlDeServiceWorker, <span class="codeString">"registrado."</span>)</td></tr>
+  <tr><td>11</td><td>   console.log(registro)</td></tr>
+  <tr><td>12</td><td>  }</td></tr>
+  <tr><td>13</td><td> } <span class="codeReserved">catch</span> (error) {</td></tr>
+  <tr><td>14</td><td>  muestraError(error)</td></tr>
+  <tr><td>15</td><td> }</td></tr>
+  <tr><td>16</td><td>}</td></tr>
+ </tbody>
+</table>
       </section>
       </section>
       </section>

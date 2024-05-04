@@ -1,274 +1,112 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #800000;">&lt;!DOCTYPE</span> <span
-     style="color: #e50000;">html</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div><span
-     style="color: #800000;">&lt;html</span> <span
-     style="color: #e50000;">lang</span>=<span
-     style="color: #0000ff;">"es"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div><span
-     style="color: #800000;">&lt;head&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;meta</span> <span
-     style="color: #e50000;">charset</span>=<span
-     style="color: #0000ff;">"UTF-8"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;meta</span> <span
-     style="color: #e50000;">name</span>=<span
-     style="color: #0000ff;">"viewport"</span> <span
-     style="color: #e50000;">content</span>=<span
-     style="color: #0000ff;">"width=device-width"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;title&gt;</span>Sincronizacion<span
-     style="color: #800000;">&lt;/title&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;script</span> <span
-     style="color: #e50000;">type</span>=<span
-     style="color: #0000ff;">"module"</span> <span
-     style="color: #e50000;">src</span>=<span
-     style="color: #0000ff;">"js/configura.js"</span><span
-     style="color: #800000;">&gt;&lt;/script&gt;</span></div><br>
-  <div><span
-     style="color: #800000;">&lt;/head&gt;</span></div><br>
-  <div><span
-     style="color: #800000;">&lt;body&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;h1&gt;</span>Sincronizacion<span
-     style="color: #800000;">&lt;/h1&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;p&gt;&lt;a</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"agrega.html"</span><span
-     style="color: #800000;">&gt;</span>Agregar<span
-     style="color: #800000;">&lt;/a&gt;&lt;/p&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;ul</span> <span
-     style="color: #e50000;">id</span>=<span
-     style="color: #0000ff;">"lista"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;li&gt;&lt;progress</span> <span
-     style="color: #e50000;">max</span>=<span
-     style="color: #0000ff;">"100"</span><span
-     style="color: #800000;">&gt;</span>Cargando<span
-     style="color: #0000ff;">&amp;hellip;</span><span
-     style="color: #800000;">&lt;/progress&gt;&lt;/li&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;/ul&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;script</span> <span
-     style="color: #e50000;">type</span>=<span
-     style="color: #0000ff;">"module"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">muestraError</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./lib/js/muestraError.js"</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">enviaJson</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./lib/js/enviaJson.js"</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">Pasatiempo</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./js/modelo/Pasatiempo.js"</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">validaQueTengaLasPropiedadesDePasatiempo</span>
-  </div>
-  <div>&nbsp;&nbsp;}&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./js/modelo/validaQueTengaLasPropiedadesDePasatiempo.js"</span>
-  </div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">import</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">pasatiempoConsultaNoEliminados</span></div>
-  <div>&nbsp;&nbsp;}&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./js/dao/pasatiempoConsultaNoEliminados.js"</span>
-  </div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">pasatiempoConsultaTodos</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./js/dao/pasatiempoConsultaTodos.js"</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">pasatiemposReemplaza</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./js/dao/pasatiemposReemplaza.js"</span></div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;Cada 20 segundos (2000
-    milisegundos) después de la última</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;sincronización, los datos
-    se envían al servidor para volver a</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;sincronizarse con los
-    datos del servidor.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*/</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">MILISEGUNDOS_PARA_VOLVER_A_SINCRONIZAR</span> =
-   <span
-     style="color: #098658;">20000</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">let</span> <span
-     style="color: #001080;">noHaSincronizado</span> = <span
-     style="color: #0000ff;">true</span></div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// Crea y pone en funcionamiento el worker del
-    archivo "render.js".</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">worker</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Worker</span>(<span
-     style="color: #a31515;">"render.js"</span>,&nbsp;{ <span
-     style="color: #001080;">type</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #a31515;">"module"</span> })</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// Se invoca cuando el worker envía un mensaje a la
-    página.</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0070c1;">worker</span>.<span
-     style="color: #795e26;">onmessage</span> = <span
-     style="color: #0000ff;">async</span> <span
-     style="color: #001080;">event</span> <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">lista</span>.<span
-     style="color: #001080;">innerHTML</span> = <span
-     style="color: #001080;">event</span>.<span
-     style="color: #001080;">data</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">noHaSincronizado</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">noHaSincronizado</span> = <span
-     style="color: #0000ff;">false</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">await</span> <span
-     style="color: #795e26;">sincroniza</span>()</div>
-  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">esperaUnPocoYLanzaSincronizacion</span>()</div>
-  <div>&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">pasatiempoConsultaNoEliminados</span>()</div>
-  <div>&nbsp;&nbsp;&nbsp;.<span
-     style="color: #795e26;">then</span>(<span
-     style="color: #795e26;">renderEnWebWorker</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;.<span
-     style="color: #795e26;">catch</span>(<span
-     style="color: #001080;">muestraError</span>)</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">renderEnWebWorker</span>(<span
-     style="color: #001080;">datos</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (!<span
-     style="color: #267f99;">Array</span>.<span
-     style="color: #795e26;">isArray</span>(<span
-     style="color: #001080;">datos</span>))</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">throw</span> <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Error</span>(<span
-     style="color: #a31515;">"Los datos no son un arreglo."</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">for</span> (<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">dato</span> <span
-     style="color: #0000ff;">of</span> <span
-     style="color: #001080;">datos</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">validaQueTengaLasPropiedadesDePasatiempo</span>(<span
-     style="color: #0070c1;">dato</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">// Manda los datos al worker para
-    renderizar.</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">worker</span>.<span
-     style="color: #795e26;">postMessage</span>(<span
-     style="color: #001080;">datos</span>)</div>
-  <div>&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">sincroniza</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">try</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">navigator</span>.<span
-     style="color: #001080;">onLine</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">todos</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #795e26;">pasatiempoConsultaTodos</span>()</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">datosNuevos</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #795e26;">enviaJson</span>(<span
-     style="color: #a31515;">"srv/srvSincro.php"</span>, <span
-     style="color: #0070c1;">todos</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">renderEnWebWorker</span>(<span
-     style="color: #0070c1;">datosNuevos</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">await</span> <span
-     style="color: #795e26;">pasatiemposReemplaza</span>(<span
-     style="color: #0070c1;">datosNuevos</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">esperaUnPocoYLanzaSincronizacion</span>()</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
-     style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">error</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">error</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">esperaUnPocoYLanzaSincronizacion</span>()</div>
-  <div>&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">esperaUnPocoYLanzaSincronizacion</span>()&nbsp;{
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">setTimeout</span>(<span
-     style="color: #795e26;">sincroniza</span>, <span
-     style="color: #0070c1;">MILISEGUNDOS_PARA_VOLVER_A_SINCRONIZAR</span>)
-  </div>
-  <div>&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;/script&gt;</span></div><br>
-  <div><span
-     style="color: #800000;">&lt;/body&gt;</span></div><br>
-  <div><span
-     style="color: #800000;">&lt;/html&gt;</span></div>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td></td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;Sincronizacion&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span> src=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>14</td><td></td></tr>
+  <tr><td>15</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>16</td><td></td></tr>
+  <tr><td>17</td><td> &lt;<span class="codeReserved">h1</span>&gt;Sincronizacion&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>18</td><td></td></tr>
+  <tr><td>19</td><td> &lt;<span class="codeReserved">p</span>&gt;&lt;<span class="codeReserved">a</span> href=<span class="codeString">"agrega.html"</span>&gt;Agregar&lt;/<span class="codeReserved">a</span>&gt;&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>20</td><td></td></tr>
+  <tr><td>21</td><td> &lt;<span class="codeReserved">ul</span> id=<span class="codeString">"lista"</span>&gt;</td></tr>
+  <tr><td>22</td><td>  &lt;<span class="codeReserved">li</span>&gt;&lt;<span class="codeReserved">progress</span> max=<span class="codeString">"100"</span>&gt;Cargando&hellip;&lt;/<span class="codeReserved">progress</span>&gt;&lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>23</td><td> &lt;/<span class="codeReserved">ul</span>&gt;</td></tr>
+  <tr><td>24</td><td></td></tr>
+  <tr><td>25</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span>&gt;</td></tr>
+  <tr><td>26</td><td></td></tr>
+  <tr><td>27</td><td>  <span class="codeReserved">import</span> { muestraError } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/muestraError.js"</span></td></tr>
+  <tr><td>28</td><td>  <span class="codeReserved">import</span> { enviaJson } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/enviaJson.js"</span></td></tr>
+  <tr><td>29</td><td>  <span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"./js/modelo/Pasatiempo.js"</span></td></tr>
+  <tr><td>30</td><td>  <span class="codeReserved">import</span> {</td></tr>
+  <tr><td>31</td><td>   validaQueTengaLasPropiedadesDePasatiempo</td></tr>
+  <tr><td>32</td><td>  } <span class="codeReserved">from</span> <span class="codeString">"./js/modelo/validaQueTengaLasPropiedadesDePasatiempo.js"</span></td></tr>
+  <tr><td>33</td><td>  <span class="codeReserved">import</span> {</td></tr>
+  <tr><td>34</td><td>   pasatiempoConsultaNoEliminados</td></tr>
+  <tr><td>35</td><td>  } <span class="codeReserved">from</span> <span class="codeString">"./js/bd/pasatiempoConsultaNoEliminados.js"</span></td></tr>
+  <tr><td>36</td><td>  <span class="codeReserved">import</span> { pasatiempoConsultaTodos } <span class="codeReserved">from</span> <span class="codeString">"./js/bd/pasatiempoConsultaTodos.js"</span></td></tr>
+  <tr><td>37</td><td>  <span class="codeReserved">import</span> { pasatiemposReemplaza } <span class="codeReserved">from</span> <span class="codeString">"./js/bd/pasatiemposReemplaza.js"</span></td></tr>
+  <tr><td>38</td><td></td></tr>
+  <tr><td>39</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>40</td><td><span class="codeComment">   * Cada 20 segundos (2000 milisegundos) después de la última</span></td></tr>
+  <tr><td>41</td><td><span class="codeComment">   * sincronización, los datos se envían al servidor para volver a</span></td></tr>
+  <tr><td>42</td><td><span class="codeComment">   * sincronizarse con los datos del servidor.</span></td></tr>
+  <tr><td>43</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>44</td><td>  <span class="codeReserved">const</span> MILISEGUNDOS_PARA_VOLVER_A_SINCRONIZAR = 20000</td></tr>
+  <tr><td>45</td><td>  <span class="codeReserved">let</span> noHaSincronizado = <span class="codeReserved">true</span></td></tr>
+  <tr><td>46</td><td></td></tr>
+  <tr><td>47</td><td>  <span class="codeComment">// Crea y pone en funcionamiento el worker del archivo &quot;render.js&quot;.</span></td></tr>
+  <tr><td>48</td><td>  <span class="codeReserved">const</span> worker = <span class="codeReserved">new</span> Worker(<span class="codeString">"render.js"</span>, { type: <span class="codeString">"module"</span> })</td></tr>
+  <tr><td>49</td><td></td></tr>
+  <tr><td>50</td><td>  <span class="codeComment">// Se invoca cuando el worker envía un mensaje a la página.</span></td></tr>
+  <tr><td>51</td><td>  worker.onmessage = <span class="codeReserved">async</span> event =&gt; {</td></tr>
+  <tr><td>52</td><td>   lista.innerHTML = event.data</td></tr>
+  <tr><td>53</td><td>   <span class="codeReserved">if</span> (noHaSincronizado) {</td></tr>
+  <tr><td>54</td><td>    noHaSincronizado = <span class="codeReserved">false</span></td></tr>
+  <tr><td>55</td><td>    <span class="codeReserved">await</span> sincroniza()</td></tr>
+  <tr><td>56</td><td>   } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>57</td><td>    esperaUnPocoYLanzaSincronizacion()</td></tr>
+  <tr><td>58</td><td>   }</td></tr>
+  <tr><td>59</td><td>  }</td></tr>
+  <tr><td>60</td><td></td></tr>
+  <tr><td>61</td><td>  pasatiempoConsultaNoEliminados()</td></tr>
+  <tr><td>62</td><td>   .then(renderEnWebWorker)</td></tr>
+  <tr><td>63</td><td>   .<span class="codeReserved">catch</span>(muestraError)</td></tr>
+  <tr><td>64</td><td></td></tr>
+  <tr><td>65</td><td>  <span class="codeReserved">function</span> renderEnWebWorker(datos) {</td></tr>
+  <tr><td>66</td><td>   <span class="codeReserved">if</span> (!Array.isArray(datos))</td></tr>
+  <tr><td>67</td><td>    <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Los datos no están en un arreglo."</span>)</td></tr>
+  <tr><td>68</td><td>   <span class="codeReserved">for</span> (<span class="codeReserved">const</span> dato of datos) {</td></tr>
+  <tr><td>69</td><td>    validaQueTengaLasPropiedadesDePasatiempo(dato)</td></tr>
+  <tr><td>70</td><td>   }</td></tr>
+  <tr><td>71</td><td>   <span class="codeComment">// Manda los datos al worker para renderizar.</span></td></tr>
+  <tr><td>72</td><td>   worker.postMessage(datos)</td></tr>
+  <tr><td>73</td><td>  }</td></tr>
+  <tr><td>74</td><td></td></tr>
+  <tr><td>75</td><td>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> sincroniza() {</td></tr>
+  <tr><td>76</td><td>   <span class="codeReserved">try</span> {</td></tr>
+  <tr><td>77</td><td>    <span class="codeReserved">if</span> (navigator.onLine) {</td></tr>
+  <tr><td>78</td><td>     <span class="codeReserved">const</span> todos = <span class="codeReserved">await</span> pasatiempoConsultaTodos()</td></tr>
+  <tr><td>79</td><td>     <span class="codeReserved">const</span> respuesta = <span class="codeReserved">await</span> enviaJson(<span class="codeString">"srv/srvSincro.php"</span>, todos)</td></tr>
+  <tr><td>80</td><td>     <span class="codeReserved">const</span> datosNuevos = respuesta.body</td></tr>
+  <tr><td>81</td><td>     renderEnWebWorker(datosNuevos)</td></tr>
+  <tr><td>82</td><td>     <span class="codeReserved">await</span> pasatiemposReemplaza(datosNuevos)</td></tr>
+  <tr><td>83</td><td>    } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>84</td><td>     esperaUnPocoYLanzaSincronizacion()</td></tr>
+  <tr><td>85</td><td>    }</td></tr>
+  <tr><td>86</td><td>   } <span class="codeReserved">catch</span> (error) {</td></tr>
+  <tr><td>87</td><td>    muestraError(error)</td></tr>
+  <tr><td>88</td><td>    esperaUnPocoYLanzaSincronizacion()</td></tr>
+  <tr><td>89</td><td>   }</td></tr>
+  <tr><td>90</td><td>  }</td></tr>
+  <tr><td>91</td><td></td></tr>
+  <tr><td>92</td><td>  <span class="codeReserved">function</span> esperaUnPocoYLanzaSincronizacion() {</td></tr>
+  <tr><td>93</td><td>   setTimeout(sincroniza, MILISEGUNDOS_PARA_VOLVER_A_SINCRONIZAR)</td></tr>
+  <tr><td>94</td><td>  }</td></tr>
+  <tr><td>95</td><td></td></tr>
+  <tr><td>96</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>97</td><td></td></tr>
+  <tr><td>98</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>99</td><td></td></tr>
+  <tr><td>100</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>

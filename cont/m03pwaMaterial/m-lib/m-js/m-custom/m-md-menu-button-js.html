@@ -1,41 +1,24 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">class</span> <span
-     style="color: #267f99;">MdMenuButton</span> <span
-     style="color: #0000ff;">extends</span> <span
-     style="color: #267f99;">HTMLButtonElement</span>&nbsp;{</div><br>
-  <div>&nbsp;<span
-     style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">type</span> = <span
-     style="color: #a31515;">"button"</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #0070c1;">classList</span>.<span
-     style="color: #795e26;">add</span>(<span
-     style="color: #a31515;">"md-standard-icon-button"</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">innerHTML</span> = <span
-     style="color: #008000;">/*&nbsp;html */</span></div>
-  <div>&nbsp;&nbsp;&nbsp;`<span
-     style="color: #800000;">&lt;span</span> <span
-     style="color: #e50000;">class</span>=<span
-     style="color: #0000ff;">"material-symbols-outlined"</span><span
-     style="color: #800000;">&gt;</span>menu<span
-     style="color: #800000;">&lt;/span&gt;</span>`</div>
-  <div>&nbsp;}</div><br>
-  <div>}</div><br>
-  <div><span
-     style="color: #001080;">customElements</span>.<span
-     style="color: #795e26;">define</span>(<span
-     style="color: #a31515;">"md-menu-button"</span>, <span
-     style="color: #267f99;">MdMenuButton</span>,&nbsp;{ <span
-     style="color: #001080;">extends</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #a31515;">"button"</span> })</div>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">export</span> <span class="codeReserved">class</span> MdMenuButton <span class="codeReserved">extends</span> HTMLButtonElement {</td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td> connectedCallback() {</td></tr>
+  <tr><td>4</td><td>  <span class="codeReserved">this</span>.type = <span class="codeString">"button"</span></td></tr>
+  <tr><td>5</td><td>  <span class="codeReserved">this</span>.classList.add(<span class="codeString">"md-standard-icon-button"</span>)</td></tr>
+  <tr><td>6</td><td>  <span class="codeReserved">this</span>.innerHTML = <span class="codeComment">/* html */</span></td></tr>
+  <tr><td>7</td><td>   <span class="codeString">`&lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=&quot;material-symbols-outlined&quot;&gt;menu&lt;/<span class="codeReserved">span</span>&gt;`</span></td></tr>
+  <tr><td>8</td><td> }</td></tr>
+  <tr><td>9</td><td></td></tr>
+  <tr><td>10</td><td>}</td></tr>
+  <tr><td>11</td><td></td></tr>
+  <tr><td>12</td><td>customElements.define(<span class="codeString">"md-menu-button"</span>, MdMenuButton, { <span class="codeReserved">extends</span>: <span class="codeString">"button"</span> })</td></tr>
+ </tbody>
+</table>

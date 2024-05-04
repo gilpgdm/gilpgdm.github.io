@@ -12,8 +12,11 @@
  <meta name="description" content="Código de «lib/js/custom/md-slider-field.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
+ /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
  :root {
-  --padTop: 2rem;
+  --marginTop: 0.25rem;
+  --padTop: 0;
+  --h1PadTop: 2.5rem;
   --introDuracion: 2s;
   --introFuncion: ease-out;
   --padCont: 0.5rem;
@@ -22,35 +25,188 @@
   --anchoLectura: 900px;
   --colLetra: black;
   --colFondo: white;
-  --colTituloLetra: #00811c;
-  --colTituloShadow: 3px 1px 2px #bdbdbd;
-  --colTituloStrong: #684601;
-  --colTituloStrongSel: #ffdc97;
-  --colTarget: #cef4ff;
+  --colPush: var(--colFondo);
+  --colPushHover: var(--colFondo);
+  --colPushFocus: var(--colFondo);
+  --colPushActive: #bae397;
+  --colFondoPush: #609732;
+  --colFondoPushHover: #8abd5f;
+  --colFondoPushFocus: #3e7213;
+  --colFondoPushActive: #224c00;
+  --paddingPush: 0.2rem 0.3rem;
+  --borderPush: none;
+  --borderRadiusPush: 0.6em;
+  --colA: #6a7b15;
+  --colAVisited: #6f256f;
+  --colAActive: #e498af;
+  --colAPush: var(--colFondo);
+  --colAVisitedPush: var(--colFondo);
+  --colAPushHover: var(--colFondo);
+  --colAVisitedPushHover: var(--colFondo);
+  --colAPushFocus: var(--colFondo);
+  --colAVisitedPushFocus: var(--colFondo);
+  --colAPushActive: var(--colFondo);
+  --colAVisitedPushActive: var(--colFondo);
+  --colFondoAPush: #6a7b15;
+  --colFondoAVisitedPush: #6f256f;
+  --colFondoAPushHover: #91a437;
+  --colFondoAVisitedPushHover: #a66fa6;
+  --colFondoAPushFocus: #445200;
+  --colFondoAVisitedPushFocus: #530e53;
+  --colFondoAPushActive: #e498af;
+  --colFondoAVisitedPushActive: #e498af;
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
-  --padCtrl: 0.2rem 0.3rem;
-  --borderCtrl: solid thin;
-  --colFondoNav: #f2f2f2;
-  --colNavResaltada: #7a2c99;
-  --colSecundario: #ffff82;
-  --colStack1: black;
-  --colStack2: #224ba5;
-  --colStack3: #92731f;
+  --shadowTitulo: 3px 1px 2px black;
+  --colTitulo: #bae397;
+  --colTituloFondo: #609732;
+  --colPrincipalTituloStrong: white;
+  --colAStrong: var(--colLetra);
+  --colNavH1Sel: #b35f7c;
+  --colFondoNav: var(--colFondo);
+  --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
   --colThumb: #90a4ae;
   --colThumbActivo: #3f3f3f;
+  --colResaltado: #e9c8d2;
+  --colResaltado2: #bae397;
+  --colResaltado3: #cfcfcf;
+  --colLetraResaltado: black;
+  --colLetraCodeComment: #224c00;
+  --colLetraCodeString: #903357;
+  --colLetraCodeReserved: #445200;
+  --colSecundario: #e498af;
+  --colTarget: #cef4ff;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
   --anchoThumb: 7px;
   --borderRadiusThumb: 3.5px;
   --gap: 0.5rem;
-  --fontMono: monospace;
-  --fontSans: sans-serif;
-  --fontSerif: serif;
+  --fontMono: 'Xanh Mono', monospace;
+  --fontSans: 'Patrick Hand', sans-serif;
+  --fontSerif: 'Purple Purse', serif;
   font-family: var(--fontSerif);
   color: var(--colLetra);
   background-color: var(--colFondo);
   scrollbar-width: thin;
   scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ @media (prefers-color-scheme: light) {
+  :root {
+   --colLetra: black;
+   --colFondo: white;
+  }
+ }
+
+ /* https://paletton.com/#uid=74W0u0kaVz84jP27qHbeJtFiHpX */
+ @media (prefers-color-scheme: dark) {
+
+  :root {
+   --colLetra: white;
+   /* --colFondo: #272727; */
+   --colFondo: black;
+   --colPushActive: #e3f5d4;
+   --colFondoPush: #bbe697;
+   --colFondoPushHover: #d0eeb7;
+   --colFondoPushFocus: #9ed372;
+   --colFondoPushActive: #7db84d;
+   --colA: #e9f7a3;
+   --colAVisited: #c89ac8;
+   --colAActive: #983351;
+   --colFondoAPush: #e9f7a3;
+   --colFondoAVisitedPush: #c89ac8;
+   --colFondoAPushHover: #f6fcda;
+   --colFondoAVisitedPushHover: #dec0de;
+   --colFondoAPushFocus: #b4c853;
+   --colFondoAVisitedPushFocus: #9a539a;
+   --colFondoAPushActive: #983351;
+   --colFondoAVisitedPushActive: #983351;
+   --colSombra: #00000080;
+   --colTitulo: #e3f5d4;
+   --colTituloFondo: #7db84d;
+   --colNavH1Sel: #d37290;
+   --colFondoNavSel: #7a3059;
+   --colScrollbar: #616161;
+   --colThumb: #ffffff;
+   --colResaltado: #7a3059;
+   --colResaltado2: #5c922f;
+   --colResaltado3: #4e4e4e;
+   --colLetraResaltado: white;
+   --colLetraCodeComment: #d0eeb7;
+   --colLetraCodeString: #eeb7c8;
+   --colLetraCodeReserved: #f0fac0;
+  }
+ }
+
+ /* xanh-mono-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* xanh-mono-italic - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: italic;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-italic.woff2') format('woff2');
+ }
+
+ /* patrick-hand-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Patrick Hand';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/patrick-hand-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* purple-purse-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Purple Purse';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/purple-purse-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ @font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  src:
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].woff2) format('woff2'),
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].ttf) format('truetype');
+ }
+
+ .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
  }
 
  body::-webkit-scrollbar {
@@ -71,18 +227,132 @@
   background-color: var(--colThumbActivo);
  }
 
+ body {
+  margin-top: 0;
+ }
+
+ a {
+  color: var(--colA);
+ }
+
+ a:visited {
+  color: var(--colAVisited);
+ }
+
+ a:active {
+  color: var(--colAActive);
+ }
+
  .anterior,
- .siguiente {
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente,
+ button {
   display: inline-block;
+  padding: var(--paddingPush);
+  border: var(--borderPush);
+  border-radius: var(--borderRadiusPush);
+  text-align: center;
   text-decoration: none;
-  padding: var(--padCtrl);
-  border: var(--borderCtrl);
-  cursor: pointer;
+ }
+
+ .anterior,
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente {
+  color: var(--colAPush);
+  background-color: var(--colFondoAPush);
+ }
+
+ .anterior:visited,
+ .siguiente:visited,
+ .paginaAnterior:visited,
+ .paginaSiguiente:visited {
+  color: var(--colAVisitedPush);
+  background-color: var(--colFondoAVisitedPush);
  }
 
  .anterior.bye,
- .siguiente.bye {
+ .siguiente.bye,
+ .paginaAnterior.bye,
+ .paginaSiguiente.bye {
   display: none;
+ }
+
+ .anterior:hover,
+ .siguiente:hover,
+ .paginaAnterior:hover,
+ .paginaSiguiente:hover {
+  color: var(--colAPushHover);
+  background-color: var(--colFondoAPushHover);
+ }
+
+ .anterior:visited:hover,
+ .siguiente:visited:hover,
+ .paginaAnterior:visited:hover,
+ .paginaSiguiente:visited:hover {
+  color: var(--colAVisitedPushHover);
+  background-color: var(--colFondoAVisitedPushHover);
+ }
+
+ .anterior:focus,
+ .siguiente:focus,
+ .paginaAnterior:focus,
+ .paginaSiguiente:focus {
+  color: var(--colAPushFocus);
+  background-color: var(--colFondoAPushFocus);
+ }
+
+ .anterior:visited:focus,
+ .siguiente:visited:focus,
+ .paginaAnterior:visited:focus,
+ .paginaSiguiente:visited:focus {
+  color: var(--colAVisitedPushFocus);
+  background-color: var(--colFondoAVisitedPushFocus);
+ }
+
+ .anterior:active,
+ .siguiente:active,
+ .paginaAnterior:active,
+ .paginaSiguiente:active {
+  color: var(--colAPushActive);
+  background-color: var(--colFondoAPushActive);
+ }
+
+ .anterior:visited:active,
+ .siguiente:visited:active,
+ .paginaAnterior:visited:active,
+ .paginaSiguiente:visited:active {
+  color: var(--colAVisitedPushActive);
+  background-color: var(--colFondoAVisitedPushActive);
+ }
+
+ button {
+  color: var(--colPush);
+  background-color: var(--colFondoPush);
+ }
+
+ button:hover {
+  color: var(--colPushHover);
+  background-color: var(--colFondoPushHover);
+ }
+
+ button:focus {
+  color: var(--colPushFocus);
+  background-color: var(--colFondoPushFocus);
+ }
+
+ button:active {
+  color: var(--colPushActive);
+  background-color: var(--colFondoPushActive);
+ }
+
+ .anterior span,
+ .siguiente span,
+ .paginaAnterior span,
+ .paginaSiguiente span,
+ button span {
+  vertical-align: middle;
  }
 
  a[data-logo] {
@@ -100,7 +370,12 @@
  a code,
  h1 strong,
  h1 code {
-  color: var(--colTituloStrong);
+  font-size: 1em;
+ }
+
+ a strong,
+ a code {
+  color: var(--colAStrong);
  }
 
  nav a {
@@ -112,8 +387,8 @@
  }
 
  code {
-  color: var(--colTituloStrong);
   font-family: var(--fontMono);
+  font-size: 1rem;
  }
 
  .tree {
@@ -132,7 +407,7 @@
 
  h1:not(.default) {
   font-family: var(--fontSans);
-  color: var(--colTituloLetra);
+  color: var(--colTituloFondo);
  }
 
  h1,
@@ -145,7 +420,7 @@
  .autor {
   font-family: var(--fontSans);
   font-size: 1.5rem;
-  color: var(--colTituloLetra);
+  color: var(--colTituloFondo);
  }
 
  figure {
@@ -217,15 +492,18 @@
  }
 
  .resaltado {
-  background-color: rgb(255, 255, 89);
+  background-color: var(--colResaltado);
+  color: var(--colLetraResaltado);
  }
 
  .resaltado2 {
-  background-color: rgb(255, 214, 139);
+  background-color: var(--colResaltado2);
+  color: var(--colLetraResaltado);
  }
 
  .resaltado3 {
-  background-color: rgb(235, 234, 233);
+  background-color: var(--colResaltado3);
+  color: var(--colLetraResaltado);
  }
 
  table.borde {
@@ -244,6 +522,61 @@
   padding: 0.4rem;
  }
 
+ table.codeShow {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .codeShow td:first-child {
+  text-align: right;
+  padding: 0 0 0 0;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  /* Avoid selection */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+ }
+
+ .codeShow td:nth-child(2) {
+  padding: 0 0 0 0.25rem;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+  line-height: 1.2rem;
+ }
+
+ .codeReserved {
+  color: var(--colLetraCodeReserved);
+  font-weight: bolder;
+ }
+
+ .codeString {
+  color: var(--colLetraCodeString);
+  font-weight: 600;
+ }
+
+ .codeComment {
+  color: var(--colLetraCodeComment);
+  font-style: italic;
+ }
+
+ @media print {
+  h1 {
+   text-shadow: var(--shadowTitulo);
+  }
+
+  .codeShow button {
+   display: none;
+  }
+ }
+
+
  footer {
   margin-top: 1rem;
   display: block;
@@ -257,19 +590,37 @@
   scroll-padding-top: var(--padTop);
  }
 
- body:not(.sinTransicion) #principal {
+ body {
   animation-timing-function: var(--introFuncion);
   animation-duration: var(--introDuracion);
   animation-fill-mode: forwards;
-  animation-name: aparece;
+  animation-name: appear;
  }
 
- @keyframes aparece {
+ body.noTransition {
+  animation-name: noTransition;
+ }
+
+ @keyframes appear {
   from {
    opacity: 0;
   }
 
   to {
+   opacity: 1;
+  }
+ }
+
+ @keyframes noTransition {
+  0% {
+   opacity: 0;
+  }
+
+  0.7% {
+   opacity: 1;
+  }
+
+  100% {
    opacity: 1;
   }
  }
@@ -288,22 +639,24 @@
   position: fixed;
   top: var(--gap);
   left: var(--gap);
-  transition: 0.7s ease-in-out;
+  transition-property: top, left;
+  transition-duration: 0.7s, 0.7s;
+  transition-timing-function: ease-in-out;
  }
 
  #principal>.anterior {
   position: fixed;
   top: var(--gap);
-  background-color: var(--colFondo);
-  transition: 0.7s ease-in-out;
+  transition-property: top, left;
+  transition-duration: 0.7s, 0.7s;
+  transition-timing-function: ease-in-out;
  }
 
  #principal>.siguiente {
   position: fixed;
   top: var(--gap);
   right: var(--gap);
-  background-color: var(--colFondo);
-  transition: 0.7s ease-in-out;
+  transition: top 0.7s ease-in-out;
  }
 
  .scroll #principal>#abre,
@@ -312,8 +665,17 @@
   top: -10rem;
  }
 
- #principal h1:not(.default) {
-  text-shadow: var(--colTituloShadow);
+ #principal>h1:not(.default) {
+  margin-top: var(--marginTop);
+  padding: var(--h1PadTop) 1rem 1rem 1rem;
+  text-shadow: var(--shadowTitulo);
+  color: var(--colTitulo);
+  background-color: var(--colTituloFondo);
+ }
+
+ #principal>h1:not(.default) strong,
+ #principal>h1:not(.default) code {
+  color: var(--colPrincipalTituloStrong);
  }
 
  #nav {
@@ -361,25 +723,26 @@
 
  #nav a.actual code,
  #nav a.actual strong {
-  color: var(--colTituloStrongSel);
+  color: var(--colAStrong);
  }
 
  #nav h1 a {
-  color: var(--colTituloLetra);
+  color: var(--colTitulo);
+  background-color: var(--colTituloFondo);
+  text-shadow: var(--shadowTitulo);
  }
 
  #nav a.actual {
-  color: var(--colFondo);
-  background-color: var(--colNavResaltada);
+  background-color: var(--colFondoNavSel);
  }
 
- #nav a.paginaAnterior,
- #nav a.paginaSiguiente {
-  text-align: center;
-  text-decoration: none;
-  padding: var(--padCtrl);
-  border: var(--borderCtrl);
-  cursor: pointer;
+ #nav h1 a.actual {
+  background-color: var(--colNavH1Sel);
+ }
+
+ #nav h1 a.actual code,
+ #nav h1 a.actual strong {
+  color: var(--colPrincipalTituloStrong);
  }
 
  @media screen and (max-width: 999px) {
@@ -456,6 +819,14 @@
   #principal>.siguiente {
    display: none;
   }
+
+  #principal>h1:not(.default) {
+   margin-top: 0.5rem;
+   padding: 1rem;
+   color: var(--colTituloFondo);
+   background-color: transparent;
+  }
+
  }
 </style>
  
@@ -463,418 +834,138 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >G. lib / js / custom / md-slider-field.js</h1><muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">html</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../html.js"</span></div><br>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">class</span> <span
-     style="color: #267f99;">MdSliderField</span> <span
-     style="color: #0000ff;">extends</span> <span
-     style="color: #267f99;">HTMLElement</span>&nbsp;{</div><br>
-  <div>&nbsp;<span
-     style="color: #795e26;">getContent</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span><span
-     style="color: #008000;"> </span><span
-     style="color: #795e26;">html</span>`</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;style&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">:host</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">display</span>: <span
-     style="color: #0451a5;">block</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">margin</span>: <span
-     style="color: #098658;">16px</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">:host</span>([<span
-     style="color: #e50000;">hidden</span>])&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">display</span>: <span
-     style="color: #0451a5;">none</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">#label</span>::slotted(<span
-     style="color: #800000;">*</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">display</span>: <span
-     style="color: #0451a5;">block</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">white-space</span>: <span
-     style="color: #0451a5;">nowrap</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">text-overflow</span>: <span
-     style="color: #0451a5;">ellipsis</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">overflow</span>: <span
-     style="color: #0451a5;">hidden</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-on-surface-variant</span>);</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">font-family</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-body-small-font</span>);</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">font-weight</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-body-small-weight</span>);</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">font-size</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-body-small-size</span>);</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">font-style</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-body-small-font-style</span>);
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">letter-spacing</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-body-small-tracking</span>);
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">line-height</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-body-small-line-height</span>);
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">text-transform</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-body-small-text-transform</span>);
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">text-decoration</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-body-small-text-decoration</span>);
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;[<span
-     style="color: #e50000;">name</span>=<span
-     style="color: #a31515;">"slider"</span>]::slotted(<span
-     style="color: #800000;">input</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">-webkit-appearance</span>: <span
-     style="color: #0451a5;">none</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">appearance</span>: <span
-     style="color: #0451a5;">none</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">height</span>: <span
-     style="color: #098658;">4px</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">border-radius</span>: <span
-     style="color: #098658;">2px</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">background-image</span>:</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">linear-gradient</span>(to <span
-     style="color: #0451a5;">right</span>, <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-primary</span>) <span
-     style="color: #098658;">0%</span>, <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-primary</span>) <span
-     style="color: #098658;">50%</span>, <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-surface-container-highest</span>)
-   <span
-     style="color: #098658;">50%</span>, <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-surface-container-highest</span>)
-   <span
-     style="color: #098658;">100%</span>);</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;[<span
-     style="color: #e50000;">name</span>=<span
-     style="color: #a31515;">"slider"</span>]::slotted(<span
-     style="color: #800000;">input:focus</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">outline</span>: <span
-     style="color: #0451a5;">none</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;[<span
-     style="color: #e50000;">name</span>=<span
-     style="color: #a31515;">"supporting"</span>]::slotted(<span
-     style="color: #800000;">*</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">display</span>: <span
-     style="color: #0451a5;">block</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">color</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-color-on-surface-variant</span>);</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">font-family</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-body-small-font</span>);</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">font-weight</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-body-small-weight</span>);</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">font-size</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-body-small-size</span>);</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">font-style</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-body-small-font-style</span>);
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">letter-spacing</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-body-small-tracking</span>);
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">line-height</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-body-small-line-height</span>);
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">text-transform</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-body-small-text-transform</span>);
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">text-decoration</span>: <span
-     style="color: #795e26;">var</span>(<span
-     style="color: #001080;">--md-sys-typescale-body-small-text-decoration</span>);
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">padding-top</span>: <span
-     style="color: #098658;">8px</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">white-space</span>: <span
-     style="color: #0451a5;">nowrap</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">text-overflow</span>: <span
-     style="color: #0451a5;">ellipsis</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">overflow</span>: <span
-     style="color: #0451a5;">hidden</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/style&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;slot</span> <span
-     style="color: #e50000;">id</span>=<span
-     style="color: #0000ff;">"label"</span><span
-     style="color: #800000;">&gt;&lt;/slot&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;slot</span> <span
-     style="color: #e50000;">name</span>=<span
-     style="color: #0000ff;">"slider"</span> <span
-     style="color: #e50000;">onslotchange</span>=<span
-     style="color: #0000ff;">"</span><span
-     style="color: #0000ff;">${this</span>.<span
-     style="color: #001080;">configuraSlider</span><span
-     style="color: #0000ff;">}</span><span
-     style="color: #0000ff;">"</span><span
-     style="color: #800000;">&gt;&lt;/slot&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;slot</span> <span
-     style="color: #e50000;">name</span>=<span
-     style="color: #0000ff;">"supporting"</span><span
-     style="color: #800000;">&gt;&lt;/slot&gt;</span>`.<span
-     style="color: #001080;">htmlTxt</span></div>
-  <div>&nbsp;}</div><br>
-  <div>&nbsp;<span
-     style="color: #0000ff;">constructor</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">super</span>()</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">shadow</span> = <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #795e26;">attachShadow</span>({ <span
-     style="color: #001080;">mode:</span> <span
-     style="color: #a31515;">"open"</span>, <span
-     style="color: #001080;">delegatesFocus:</span> <span
-     style="color: #0000ff;">true</span> })</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">shadow</span>.<span
-     style="color: #001080;">innerHTML</span> = <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #795e26;">getContent</span>()</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">analiza</span> = <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">analiza</span>.<span
-     style="color: #795e26;">bind</span>(<span
-     style="color: #0000ff;">this</span>)</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@private</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{HTMLSlotElement|null}</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*/</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_slotSlider</span> = <span
-     style="color: #001080;">shadow</span>.<span
-     style="color: #795e26;">querySelector</span>(<span
-     style="color: #a31515;">'[name="slider"]'</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@private</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{HTMLInputElement|null}</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*/</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_input</span> = <span
-     style="color: #0000ff;">null</span></div>
-  <div>&nbsp;}</div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">/**&nbsp;</span><span
-     style="color: #0000ff;">@private</span><span
-     style="color: #008000;"> */</span></div>
-  <div>&nbsp;<span
-     style="color: #795e26;">configuraSlider</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_input</span> !== <span
-     style="color: #0000ff;">null</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_input</span>.<span
-     style="color: #795e26;">removeEventListener</span>(<span
-     style="color: #a31515;">"input"</span>, <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">analiza</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_input</span> = <span
-     style="color: #0000ff;">null</span></div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_slotSlider</span> !== <span
-     style="color: #0000ff;">null</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">for</span> (<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">input</span> <span
-     style="color: #0000ff;">of</span> <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_slotSlider</span>.<span
-     style="color: #795e26;">assignedElements</span>())&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">input</span> <span
-     style="color: #0000ff;">instanceof</span> <span
-     style="color: #267f99;">HTMLInputElement</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_input</span> = <span
-     style="color: #001080;">input</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">input</span>.<span
-     style="color: #795e26;">addEventListener</span>(<span
-     style="color: #a31515;">"input"</span>, <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">analiza</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #795e26;">analiza</span>()</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;}</div><br>
-  <div>&nbsp;<span
-     style="color: #795e26;">analiza</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">i</span> = <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_input</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">i</span> !== <span
-     style="color: #0000ff;">null</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">v</span> = <span
-     style="color: #001080;">i</span>.<span
-     style="color: #001080;">valueAsNumber</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">min</span> = <span
-     style="color: #795e26;">parseFloat</span>(<span
-     style="color: #001080;">i</span>.<span
-     style="color: #001080;">min</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">max</span> = <span
-     style="color: #795e26;">parseFloat</span>(<span
-     style="color: #001080;">i</span>.<span
-     style="color: #001080;">max</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">value</span> = (<span
-     style="color: #001080;">v</span> - <span
-     style="color: #001080;">min</span>) / (<span
-     style="color: #001080;">max</span> - <span
-     style="color: #001080;">min</span>) *&nbsp;<span
-     style="color: #098658;">100</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">i</span>.<span
-     style="color: #001080;">title</span> = <span
-     style="color: #001080;">v</span>.<span
-     style="color: #795e26;">toString</span>()</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">i</span>.<span
-     style="color: #001080;">style</span>.<span
-     style="color: #001080;">background</span> =</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #a31515;">`linear-gradient(to right,
-    var(--md-sys-color-primary) 0%, var(--md-sys-color-primary) </span><span
-     style="color: #0000ff;">${</span><span
-     style="color: #001080;">value</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">}</span><span
-     style="color: #a31515;">%, var(--md-sys-color-surface-container-highest)
-   </span><span
-     style="color: #0000ff;">${</span><span
-     style="color: #001080;">value</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">}</span><span
-     style="color: #a31515;">%, var(--md-sys-color-surface-container-highest)
-    100%)`</span></div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;}</div><br>
-  <div>}</div><br>
-  <div><span
-     style="color: #001080;">customElements</span>.<span
-     style="color: #795e26;">define</span>(<span
-     style="color: #a31515;">"md-slider-field"</span>, <span
-     style="color: #001080;">MdSliderField</span>)</div>
- </div>
-</muestra-codigo>
+   <h1 >G. lib / js / custom / md-slider-field.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { html } <span class="codeReserved">from</span> <span class="codeString">"../html.js"</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">export</span> <span class="codeReserved">class</span> MdSliderField <span class="codeReserved">extends</span> HTMLElement {</td></tr>
+  <tr><td>4</td><td></td></tr>
+  <tr><td>5</td><td> getContent() {</td></tr>
+  <tr><td>6</td><td>  <span class="codeReserved">return</span> html<span class="codeString">`</span></td></tr>
+  <tr><td>7</td><td><span class="codeString">   &lt;<span class="codeReserved">style</span>&gt;</span></td></tr>
+  <tr><td>8</td><td><span class="codeString">    :host {</span></td></tr>
+  <tr><td>9</td><td><span class="codeString">     <span class="codeReserved">display</span>: block;</span></td></tr>
+  <tr><td>10</td><td><span class="codeString">     <span class="codeReserved">margin</span>: 16px;</span></td></tr>
+  <tr><td>11</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>12</td><td><span class="codeString"></span></td></tr>
+  <tr><td>13</td><td><span class="codeString">    :host([hidden]) {</span></td></tr>
+  <tr><td>14</td><td><span class="codeString">     <span class="codeReserved">display</span>: none;</span></td></tr>
+  <tr><td>15</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>16</td><td><span class="codeString"></span></td></tr>
+  <tr><td>17</td><td><span class="codeString">    #label::slotted(*) {</span></td></tr>
+  <tr><td>18</td><td><span class="codeString">     <span class="codeReserved">display</span>: block;</span></td></tr>
+  <tr><td>19</td><td><span class="codeString">     <span class="codeReserved">white-space</span>: nowrap;</span></td></tr>
+  <tr><td>20</td><td><span class="codeString">     <span class="codeReserved">text-overflow</span>: ellipsis;</span></td></tr>
+  <tr><td>21</td><td><span class="codeString">     <span class="codeReserved">overflow</span>: hidden;</span></td></tr>
+  <tr><td>22</td><td><span class="codeString">     <span class="codeReserved">color</span>: var(--md-sys-color-on-surface-variant);</span></td></tr>
+  <tr><td>23</td><td><span class="codeString">     <span class="codeReserved">font-family</span>: var(--md-sys-typescale-body-small-font);</span></td></tr>
+  <tr><td>24</td><td><span class="codeString">     <span class="codeReserved">font-weight</span>: var(--md-sys-typescale-body-small-weight);</span></td></tr>
+  <tr><td>25</td><td><span class="codeString">     <span class="codeReserved">font-size</span>: var(--md-sys-typescale-body-small-size);</span></td></tr>
+  <tr><td>26</td><td><span class="codeString">     <span class="codeReserved">font-style</span>: var(--md-sys-typescale-body-small-font-style);</span></td></tr>
+  <tr><td>27</td><td><span class="codeString">     <span class="codeReserved">letter-spacing</span>: var(--md-sys-typescale-body-small-tracking);</span></td></tr>
+  <tr><td>28</td><td><span class="codeString">     <span class="codeReserved">line-height</span>: var(--md-sys-typescale-body-small-line-height);</span></td></tr>
+  <tr><td>29</td><td><span class="codeString">     <span class="codeReserved">text-transform</span>: var(--md-sys-typescale-body-small-text-transform);</span></td></tr>
+  <tr><td>30</td><td><span class="codeString">     <span class="codeReserved">text-decoration</span>: var(--md-sys-typescale-body-small-text-decoration);</span></td></tr>
+  <tr><td>31</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>32</td><td><span class="codeString"></span></td></tr>
+  <tr><td>33</td><td><span class="codeString">    [name=&quot;slider&quot;]::slotted(input) {</span></td></tr>
+  <tr><td>34</td><td><span class="codeString">     -webkit-appearance: none;</span></td></tr>
+  <tr><td>35</td><td><span class="codeString">     <span class="codeReserved">appearance</span>: none;</span></td></tr>
+  <tr><td>36</td><td><span class="codeString">     <span class="codeReserved">height</span>: 4px;</span></td></tr>
+  <tr><td>37</td><td><span class="codeString">     <span class="codeReserved">border-radius</span>: 2px;</span></td></tr>
+  <tr><td>38</td><td><span class="codeString">     <span class="codeReserved">background-image</span>:</span></td></tr>
+  <tr><td>39</td><td><span class="codeString">      linear-gradient(to <span class="codeReserved">right</span>, var(--md-sys-color-primary) 0%, var(--md-sys-color-primary) 50%, var(--md-sys-color-surface-container-highest) 50%, var(--md-sys-color-surface-container-highest) 100%);</span></td></tr>
+  <tr><td>40</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>41</td><td><span class="codeString"></span></td></tr>
+  <tr><td>42</td><td><span class="codeString">    [name=&quot;slider&quot;]::slotted(input:focus) {</span></td></tr>
+  <tr><td>43</td><td><span class="codeString">     <span class="codeReserved">outline</span>: none;</span></td></tr>
+  <tr><td>44</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>45</td><td><span class="codeString"></span></td></tr>
+  <tr><td>46</td><td><span class="codeString">    [name=&quot;supporting&quot;]::slotted(*) {</span></td></tr>
+  <tr><td>47</td><td><span class="codeString">     <span class="codeReserved">display</span>: block;</span></td></tr>
+  <tr><td>48</td><td><span class="codeString">     <span class="codeReserved">color</span>: var(--md-sys-color-on-surface-variant);</span></td></tr>
+  <tr><td>49</td><td><span class="codeString">     <span class="codeReserved">font-family</span>: var(--md-sys-typescale-body-small-font);</span></td></tr>
+  <tr><td>50</td><td><span class="codeString">     <span class="codeReserved">font-weight</span>: var(--md-sys-typescale-body-small-weight);</span></td></tr>
+  <tr><td>51</td><td><span class="codeString">     <span class="codeReserved">font-size</span>: var(--md-sys-typescale-body-small-size);</span></td></tr>
+  <tr><td>52</td><td><span class="codeString">     <span class="codeReserved">font-style</span>: var(--md-sys-typescale-body-small-font-style);</span></td></tr>
+  <tr><td>53</td><td><span class="codeString">     <span class="codeReserved">letter-spacing</span>: var(--md-sys-typescale-body-small-tracking);</span></td></tr>
+  <tr><td>54</td><td><span class="codeString">     <span class="codeReserved">line-height</span>: var(--md-sys-typescale-body-small-line-height);</span></td></tr>
+  <tr><td>55</td><td><span class="codeString">     <span class="codeReserved">text-transform</span>: var(--md-sys-typescale-body-small-text-transform);</span></td></tr>
+  <tr><td>56</td><td><span class="codeString">     <span class="codeReserved">text-decoration</span>: var(--md-sys-typescale-body-small-text-decoration);</span></td></tr>
+  <tr><td>57</td><td><span class="codeString">     <span class="codeReserved">padding-top</span>: 8px;</span></td></tr>
+  <tr><td>58</td><td><span class="codeString">     <span class="codeReserved">white-space</span>: nowrap;</span></td></tr>
+  <tr><td>59</td><td><span class="codeString">     <span class="codeReserved">text-overflow</span>: ellipsis;</span></td></tr>
+  <tr><td>60</td><td><span class="codeString">     <span class="codeReserved">overflow</span>: hidden;</span></td></tr>
+  <tr><td>61</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>62</td><td><span class="codeString">   &lt;/<span class="codeReserved">style</span>&gt;</span></td></tr>
+  <tr><td>63</td><td><span class="codeString">   &lt;<span class="codeReserved">slot</span> id=&quot;label&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;</span></td></tr>
+  <tr><td>64</td><td><span class="codeString">   &lt;<span class="codeReserved">slot</span> name=&quot;slider&quot; onslotchange=&quot;${<span class="codeReserved">this</span>.configuraSlider}&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;</span></td></tr>
+  <tr><td>65</td><td><span class="codeString">   &lt;<span class="codeReserved">slot</span> name=&quot;supporting&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;`</span>.htmlTxt</td></tr>
+  <tr><td>66</td><td> }</td></tr>
+  <tr><td>67</td><td></td></tr>
+  <tr><td>68</td><td> <span class="codeReserved">constructor</span>() {</td></tr>
+  <tr><td>69</td><td>  super()</td></tr>
+  <tr><td>70</td><td>  <span class="codeReserved">const</span> shadow = <span class="codeReserved">this</span>.attachShadow({ mode: <span class="codeString">"open"</span>, delegatesFocus: <span class="codeReserved">true</span> })</td></tr>
+  <tr><td>71</td><td>  shadow.innerHTML = <span class="codeReserved">this</span>.getContent()</td></tr>
+  <tr><td>72</td><td>  <span class="codeReserved">this</span>.analiza = <span class="codeReserved">this</span>.analiza.bind(<span class="codeReserved">this</span>)</td></tr>
+  <tr><td>73</td><td></td></tr>
+  <tr><td>74</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>75</td><td><span class="codeComment">  * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>76</td><td><span class="codeComment">  * <span class="codeReserved">@type</span> {HTMLSlotElement|<span class="codeReserved">null</span>}</span></td></tr>
+  <tr><td>77</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>78</td><td>  <span class="codeReserved">this</span>._slotSlider = shadow.querySelector(<span class="codeString">'[name=&quot;slider&quot;]'</span>)</td></tr>
+  <tr><td>79</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>80</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>81</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> {HTMLInputElement|<span class="codeReserved">null</span>}</span></td></tr>
+  <tr><td>82</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>83</td><td>  <span class="codeReserved">this</span>._input = <span class="codeReserved">null</span></td></tr>
+  <tr><td>84</td><td> }</td></tr>
+  <tr><td>85</td><td></td></tr>
+  <tr><td>86</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
+  <tr><td>87</td><td> configuraSlider() {</td></tr>
+  <tr><td>88</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._input !== <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>89</td><td>   <span class="codeReserved">this</span>._input.removeEventListener(<span class="codeString">"input"</span>, <span class="codeReserved">this</span>.analiza)</td></tr>
+  <tr><td>90</td><td>   <span class="codeReserved">this</span>._input = <span class="codeReserved">null</span></td></tr>
+  <tr><td>91</td><td>  }</td></tr>
+  <tr><td>92</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._slotSlider !== <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>93</td><td>   <span class="codeReserved">for</span> (<span class="codeReserved">const</span> input of <span class="codeReserved">this</span>._slotSlider.assignedElements()) {</td></tr>
+  <tr><td>94</td><td>    <span class="codeReserved">if</span> (input <span class="codeReserved">instanceof</span> HTMLInputElement) {</td></tr>
+  <tr><td>95</td><td>     <span class="codeReserved">this</span>._input = input</td></tr>
+  <tr><td>96</td><td>     input.addEventListener(<span class="codeString">"input"</span>, <span class="codeReserved">this</span>.analiza)</td></tr>
+  <tr><td>97</td><td>     <span class="codeReserved">this</span>.analiza()</td></tr>
+  <tr><td>98</td><td>    }</td></tr>
+  <tr><td>99</td><td>   }</td></tr>
+  <tr><td>100</td><td>  }</td></tr>
+  <tr><td>101</td><td> }</td></tr>
+  <tr><td>102</td><td></td></tr>
+  <tr><td>103</td><td> analiza() {</td></tr>
+  <tr><td>104</td><td>  <span class="codeReserved">const</span> i = <span class="codeReserved">this</span>._input</td></tr>
+  <tr><td>105</td><td>  <span class="codeReserved">if</span> (i !== <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>106</td><td>   <span class="codeReserved">const</span> v = i.valueAsNumber</td></tr>
+  <tr><td>107</td><td>   <span class="codeReserved">const</span> min = parseFloat(i.min)</td></tr>
+  <tr><td>108</td><td>   <span class="codeReserved">const</span> max = parseFloat(i.max)</td></tr>
+  <tr><td>109</td><td>   <span class="codeReserved">const</span> value = (v - min) <span class="codeString">/ </span>(max - min) * 100</td></tr>
+  <tr><td>110</td><td>   i.title = v.toString()</td></tr>
+  <tr><td>111</td><td>   i.style.background =</td></tr>
+  <tr><td>112</td><td>    <span class="codeString">`linear-gradient(to <span class="codeReserved">right</span>, var(--md-sys-color-primary) 0%, var(--md-sys-color-primary) ${value</span></td></tr>
+  <tr><td>113</td><td><span class="codeString">    }%, var(--md-sys-color-surface-container-highest) ${value</span></td></tr>
+  <tr><td>114</td><td><span class="codeString">    }%, var(--md-sys-color-surface-container-highest) 100%)`</span></td></tr>
+  <tr><td>115</td><td>  }</td></tr>
+  <tr><td>116</td><td> }</td></tr>
+  <tr><td>117</td><td></td></tr>
+  <tr><td>118</td><td>}</td></tr>
+  <tr><td>119</td><td></td></tr>
+  <tr><td>120</td><td>customElements.define(<span class="codeString">"md-slider-field"</span>, MdSliderField)</td></tr>
+ </tbody>
+</table>
  <footer>
  <p>
   <a rel="license"
@@ -896,15 +987,23 @@
  </p>
 </footer>
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
-  &#x2630;
+  <span class="material-symbols-outlined">
+   menu
+  </span>
  </button>
- <a class="anterior" href="/m03pwaMaterial/m-lib/m-js/m-custom/m-md-select-menu-js.html" title="F. lib / js / custom / md-select-menu.js">◀</a>
- <a class="siguiente" href="/m03pwaMaterial/m-lib/m-js/m-custom/m-md-switch-js.html" title="H. lib / js / custom / md-switch.js">▶</a>
+ <a class="anterior" href="/m03pwaMaterial/m-lib/m-js/m-custom/m-md-select-menu-js.html" title="F. lib / js / custom / md-select-menu.js"><span class="material-symbols-outlined">
+     skip_previous
+    </span></a>
+ <a class="siguiente" href="/m03pwaMaterial/m-lib/m-js/m-custom/m-md-top-app-bar-js.html" title="H. lib / js / custom / md-top-app-bar.js"><span class="material-symbols-outlined">
+     skip_next
+     </span></a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
  <button type="button" title="Cierra" class="cambiaMenu">
-  &#x2715;
+  <span class="material-symbols-outlined">
+   close
+  </span>
  </button>
  
    <p>
@@ -919,14 +1018,17 @@
     <a href="/m03pwaMaterial/m-lib/">33. Carpeta « lib »</a>
    </p>
    <p>
-    <a href="/m03pwaMaterial/m-lib/m-js/">B. Carpeta « lib / js »</a>
+    <a href="/m03pwaMaterial/m-lib/m-js/">C. Carpeta « lib / js »</a>
    </p>
    
      <p>
-      <a class="paginaAnterior" href="/m03pwaMaterial/m-lib/m-js/m-setBooleanAttribute-js.html"
-        title="14. lib / js / setBooleanAttribute.js">▲</a>
+      <a class="paginaAnterior" href="/m03pwaMaterial/m-lib/m-js/m-const/m-ES_APPLE-js.html"
+        title="A. lib / js / const / ES_APPLE.js"><span
+        class="material-symbols-outlined">
+         arrow_upward
+        </span></a>
      </p>
-   <h1><a href="/m03pwaMaterial/m-lib/m-js/m-custom/index.html">15. Carpeta « lib / js / custom »</a></h1>
+   <h1><a href="/m03pwaMaterial/m-lib/m-js/m-custom/index.html">16. Carpeta « lib / js / custom »</a></h1>
    
    <ol type="A">
     
@@ -967,11 +1069,6 @@
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-lib/m-js/m-custom/m-md-switch-js.html">lib / js / custom / md-switch.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
      <a href="/m03pwaMaterial/m-lib/m-js/m-custom/m-md-top-app-bar-js.html">lib / js / custom / md-top-app-bar.js</a>
     </p>
    </li>
@@ -983,8 +1080,11 @@
    </ol>
    
     <p>
-     <a class="paginaSiguiente" href="/m03pwaMaterial/m-lib/m-fonts/index.html"
-       title="C. Carpeta « lib / fonts »">▼</a>
+     <a class="paginaSiguiente" href="/m03pwaMaterial/m-ungap/index.html"
+       title="34. Carpeta « ungap »"><span
+       class="material-symbols-outlined">
+        arrow_downward
+       </span></a>
     </p>
  
 </nav>
@@ -1000,7 +1100,7 @@
  /**@type {string} */
  let urlAnterior = "/m03pwaMaterial/m-lib/m-js/m-custom/m-md-select-menu-js.html"
  /**@type {string} */
- let urlSiguiente = "/m03pwaMaterial/m-lib/m-js/m-custom/m-md-switch-js.html"
+ let urlSiguiente = "/m03pwaMaterial/m-lib/m-js/m-custom/m-md-top-app-bar-js.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
@@ -1048,6 +1148,24 @@
  function muestraError(e) {
   console.error(e)
   alert(e.message)
+ }
+
+ async function copyToClipboard(button) {
+  try {
+   const table = button.closest("table")
+   if (table !== null) {
+    const lineas = Array.from(table.querySelectorAll("td:nth-child(2)"))
+    const codigo = lineas
+     .map(linea => linea.textContent || "")
+     .join("\n")
+    if (codigo) {
+     await navigator.clipboard.writeText(codigo)
+     alert("Texto copiado al portapapeles.")
+    }
+   }
+  } catch (e) {
+   alert(e.message)
+  }
  }
 
  function cambiaMenu() {

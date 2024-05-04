@@ -15,75 +15,47 @@
     compartirlo.</a>
   </p>
  </section>
- <muestra-codigo>
-  <div>
-   <div><span
-      style="color: #008000;">/* Este programa es un derivado de</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp;ESP8266 Blink by Simon Peter
-     */</span>
-   </div><br>
-   <div><span
-      style="color: #008000;">/** Función que se invoca una sola</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; vez al inicio del programa.
-     */</span>
-   </div>
-   <div><span style="color: #0000ff;">void</span> <span
-      style="color: #795e26;">setup</span>() {</div>
-   <div><span
-      style="color: #008000;">&nbsp;/* Todas las placas compatibles</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; con Arduino incluyen un led</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; de prueba ligado a un pin</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; cuyo número está definido por</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; la constante LED_BUILTIN.</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; Inicializa el pin para</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; LED_BUILTIN como salida. */</span>
-   </div>
-   <div>&nbsp;<span
-      style="color: #795e26;">pinMode</span>(LED_BUILTIN, OUTPUT);</div>
-   <div>}</div><br>
-   <div><span style="color: #008000;">/* Función que se invoca</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp;repetidamente mientras el</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp;programa esté activo. */</span></div>
-   <div><span style="color: #0000ff;">void</span> <span
-      style="color: #795e26;">loop</span>() {</div>
-   <div><span
-      style="color: #008000;">&nbsp;/* Enciende el LED_BUILTIN (HIGH</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; es el nivel de voltaje). */</span>
-   </div>
-   <div>&nbsp;<span
-      style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, HIGH);</div>
-   <div>&nbsp;<span style="color: #795e26;">delay</span>(<span
-      style="color: #098658;">1000</span>);<span
-      style="color: #008000;"> // Espera 1 segundo</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;/* Apaga el LED_BUILTIN haciendo</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; que el nivel de voltaje sea</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; LOW. */</span></div>
-   <div>&nbsp;<span
-      style="color: #795e26;">digitalWrite</span>(LED_BUILTIN, LOW);</div>
-   <div>&nbsp;<span style="color: #795e26;">delay</span>(<span
-      style="color: #098658;">1000</span>);</div>
-   <div>}</div><br>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+  <caption style="text-align: left">
+   <button type=button title="Copiar al portapapeles"
+     onclick="copyToClipboard(this)">
+    <span class="material-symbols-outlined">
+     content_copy
+    </span>
+   </button>
+  </caption>
+  <tbody>
+   <tr><td>1</td><td><span class="codeComment">/* Este programa es un derivado de</span></td></tr>
+   <tr><td>2</td><td><span class="codeComment">   ESP8266 Blink by Simon Peter */</span></td></tr>
+   <tr><td>3</td><td></td></tr>
+   <tr><td>4</td><td><span class="codeComment">/** Función que se invoca una sola</span></td></tr>
+   <tr><td>5</td><td><span class="codeComment">    vez al inicio del programa. */</span></td></tr>
+   <tr><td>6</td><td>void setup() {</td></tr>
+   <tr><td>7</td><td> <span class="codeComment">/* Todas las placas compatibles</span></td></tr>
+   <tr><td>8</td><td><span class="codeComment">    con Arduino incluyen un led</span></td></tr>
+   <tr><td>9</td><td><span class="codeComment">    de prueba ligado a un pin</span></td></tr>
+   <tr><td>10</td><td><span class="codeComment">    cuyo número está definido por</span></td></tr>
+   <tr><td>11</td><td><span class="codeComment">    la constante LED_BUILTIN.</span></td></tr>
+   <tr><td>12</td><td><span class="codeComment">    Inicializa el pin para</span></td></tr>
+   <tr><td>13</td><td><span class="codeComment">    LED_BUILTIN como salida. */</span></td></tr>
+   <tr><td>14</td><td> pinMode(LED_BUILTIN, OUTPUT);</td></tr>
+   <tr><td>15</td><td>}</td></tr>
+   <tr><td>16</td><td></td></tr>
+   <tr><td>17</td><td><span class="codeComment">/* Función que se invoca</span></td></tr>
+   <tr><td>18</td><td><span class="codeComment">   repetidamente mientras el</span></td></tr>
+   <tr><td>19</td><td><span class="codeComment">   programa esté activo. */</span></td></tr>
+   <tr><td>20</td><td>void loop() {</td></tr>
+   <tr><td>21</td><td> <span class="codeComment">/* Enciende el LED_BUILTIN (HIGH</span></td></tr>
+   <tr><td>22</td><td><span class="codeComment">    es el nivel de voltaje). */</span></td></tr>
+   <tr><td>23</td><td> digitalWrite(LED_BUILTIN, HIGH);</td></tr>
+   <tr><td>24</td><td> delay(1000); <span class="codeComment">// Espera 1 segundo</span></td></tr>
+   <tr><td>25</td><td> <span class="codeComment">/* Apaga el LED_BUILTIN haciendo</span></td></tr>
+   <tr><td>26</td><td><span class="codeComment">    que el nivel de voltaje sea</span></td></tr>
+   <tr><td>27</td><td><span class="codeComment">    LOW. */</span></td></tr>
+   <tr><td>28</td><td> digitalWrite(LED_BUILTIN, LOW);</td></tr>
+   <tr><td>29</td><td> delay(1000);</td></tr>
+   <tr><td>30</td><td>}</td></tr>
+   <tr><td>31</td><td></td></tr>
+  </tbody>
+ </table>
 </div>

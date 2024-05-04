@@ -1,62 +1,27 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Añade caracteres al azar a una raíz,
-    para obtener un clientId único por cada</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;instancia que se conecte al servidor
-    de mqtt.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">raiz</span><span
-     style="color: #008000;"> </span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">creaClientIdMqtt</span>(<span
-     style="color: #001080;">raiz</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">chars</span> = <span
-     style="color: #a31515;">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"</span>
-  </div>
-  <div>&nbsp;<span
-     style="color: #af00db;">for</span> (<span
-     style="color: #0000ff;">var</span> <span
-     style="color: #001080;">i</span> = <span
-     style="color: #098658;">0</span>; <span
-     style="color: #001080;">i</span> &lt; <span
-     style="color: #098658;">15</span>; <span
-     style="color: #001080;">i</span>++)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">raiz</span> += <span
-     style="color: #0070c1;">chars</span>.<span
-     style="color: #795e26;">charAt</span>(<span
-     style="color: #001080;">Math</span>.<span
-     style="color: #795e26;">floor</span>(<span
-     style="color: #001080;">Math</span>.<span
-     style="color: #795e26;">random</span>() *&nbsp;<span
-     style="color: #0070c1;">chars</span>.<span
-     style="color: #0070c1;">length</span>))</div>
-  <div>&nbsp;}</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #001080;">raiz</span></div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">// Permite que los eventos de html usen la
-    función.</span></div>
-  <div><span
-     style="color: #001080;">window</span>[<span
-     style="color: #a31515;">"creaClientIdMqtt"</span>] = <span
-     style="color: #795e26;">creaClientIdMqtt</span></div>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * Añade caracteres al azar a una raíz, para obtener un clientId único por cada</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> * instancia que se conecte al servidor de mqtt.</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> * @param {string} raiz </span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>6</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> creaClientIdMqtt(raiz) {</td></tr>
+  <tr><td>7</td><td> <span class="codeReserved">const</span> chars = <span class="codeString">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&quot;</span></td></tr>
+  <tr><td>8</td><td> <span class="codeReserved">for</span> (var i = 0; i &lt; 15; i++) {</td></tr>
+  <tr><td>9</td><td>  raiz += chars.charAt(Math.floor(Math.random() * chars.length))</td></tr>
+  <tr><td>10</td><td> }</td></tr>
+  <tr><td>11</td><td> <span class="codeReserved">return</span> raiz</td></tr>
+  <tr><td>12</td><td>}</td></tr>
+  <tr><td>13</td><td></td></tr>
+  <tr><td>14</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
+  <tr><td>15</td><td>window[<span class="codeString">&quot;creaClientIdMqtt&quot;</span>] = creaClientIdMqtt</td></tr>
+ </tbody>
+</table>

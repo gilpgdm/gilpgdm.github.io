@@ -1,59 +1,28 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">muestraError</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./muestraError.js"</span></div><br>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ string | URL }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">urlDeServiceWorker</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">registraServiceWorkerSiEsSoportado</span>(<span
-     style="color: #001080;">urlDeServiceWorker</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">try</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #a31515;">"serviceWorker"</span> <span
-     style="color: #0000ff;">in</span> <span
-     style="color: #001080;">navigator</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">registro</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">navigator</span>.<span
-     style="color: #0070c1;">serviceWorker</span>.<span
-     style="color: #795e26;">register</span>(<span
-     style="color: #001080;">urlDeServiceWorker</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #001080;">urlDeServiceWorker</span>, <span
-     style="color: #a31515;">"registrado."</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #0070c1;">registro</span>)</div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;}&nbsp;<span
-     style="color: #af00db;">catch</span> (<span
-     style="color: #001080;">error</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">muestraError</span>(<span
-     style="color: #001080;">error</span>)</div>
-  <div>&nbsp;}</div>
-  <div>}</div>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { muestraError } <span class="codeReserved">from</span> <span class="codeString">"./muestraError.js"</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string | URL } urlDeServiceWorker</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>6</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> registraServiceWorkerSiEsSoportado(urlDeServiceWorker) {</td></tr>
+  <tr><td>7</td><td> <span class="codeReserved">try</span> {</td></tr>
+  <tr><td>8</td><td>  <span class="codeReserved">if</span> (<span class="codeString">"serviceWorker"</span> <span class="codeReserved">in</span> navigator) {</td></tr>
+  <tr><td>9</td><td>   <span class="codeReserved">const</span> registro = <span class="codeReserved">await</span> navigator.serviceWorker.register(urlDeServiceWorker)</td></tr>
+  <tr><td>10</td><td>   console.log(urlDeServiceWorker, <span class="codeString">"registrado."</span>)</td></tr>
+  <tr><td>11</td><td>   console.log(registro)</td></tr>
+  <tr><td>12</td><td>  }</td></tr>
+  <tr><td>13</td><td> } <span class="codeReserved">catch</span> (error) {</td></tr>
+  <tr><td>14</td><td>  muestraError(error)</td></tr>
+  <tr><td>15</td><td> }</td></tr>
+  <tr><td>16</td><td>}</td></tr>
+ </tbody>
+</table>

@@ -12,8 +12,11 @@
  <meta name="description" content="Uso directo de la cámara.">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
+ /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
  :root {
-  --padTop: 2rem;
+  --marginTop: 0.25rem;
+  --padTop: 0;
+  --h1PadTop: 2.5rem;
   --introDuracion: 2s;
   --introFuncion: ease-out;
   --padCont: 0.5rem;
@@ -22,35 +25,188 @@
   --anchoLectura: 900px;
   --colLetra: black;
   --colFondo: white;
-  --colTituloLetra: #00811c;
-  --colTituloShadow: 3px 1px 2px #bdbdbd;
-  --colTituloStrong: #684601;
-  --colTituloStrongSel: #ffdc97;
-  --colTarget: #cef4ff;
+  --colPush: var(--colFondo);
+  --colPushHover: var(--colFondo);
+  --colPushFocus: var(--colFondo);
+  --colPushActive: #bae397;
+  --colFondoPush: #609732;
+  --colFondoPushHover: #8abd5f;
+  --colFondoPushFocus: #3e7213;
+  --colFondoPushActive: #224c00;
+  --paddingPush: 0.2rem 0.3rem;
+  --borderPush: none;
+  --borderRadiusPush: 0.6em;
+  --colA: #6a7b15;
+  --colAVisited: #6f256f;
+  --colAActive: #e498af;
+  --colAPush: var(--colFondo);
+  --colAVisitedPush: var(--colFondo);
+  --colAPushHover: var(--colFondo);
+  --colAVisitedPushHover: var(--colFondo);
+  --colAPushFocus: var(--colFondo);
+  --colAVisitedPushFocus: var(--colFondo);
+  --colAPushActive: var(--colFondo);
+  --colAVisitedPushActive: var(--colFondo);
+  --colFondoAPush: #6a7b15;
+  --colFondoAVisitedPush: #6f256f;
+  --colFondoAPushHover: #91a437;
+  --colFondoAVisitedPushHover: #a66fa6;
+  --colFondoAPushFocus: #445200;
+  --colFondoAVisitedPushFocus: #530e53;
+  --colFondoAPushActive: #e498af;
+  --colFondoAVisitedPushActive: #e498af;
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
-  --padCtrl: 0.2rem 0.3rem;
-  --borderCtrl: solid thin;
-  --colFondoNav: #f2f2f2;
-  --colNavResaltada: #7a2c99;
-  --colSecundario: #ffff82;
-  --colStack1: black;
-  --colStack2: #224ba5;
-  --colStack3: #92731f;
+  --shadowTitulo: 3px 1px 2px black;
+  --colTitulo: #bae397;
+  --colTituloFondo: #609732;
+  --colPrincipalTituloStrong: white;
+  --colAStrong: var(--colLetra);
+  --colNavH1Sel: #b35f7c;
+  --colFondoNav: var(--colFondo);
+  --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
   --colThumb: #90a4ae;
   --colThumbActivo: #3f3f3f;
+  --colResaltado: #e9c8d2;
+  --colResaltado2: #bae397;
+  --colResaltado3: #cfcfcf;
+  --colLetraResaltado: black;
+  --colLetraCodeComment: #224c00;
+  --colLetraCodeString: #903357;
+  --colLetraCodeReserved: #445200;
+  --colSecundario: #e498af;
+  --colTarget: #cef4ff;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
   --anchoThumb: 7px;
   --borderRadiusThumb: 3.5px;
   --gap: 0.5rem;
-  --fontMono: monospace;
-  --fontSans: sans-serif;
-  --fontSerif: serif;
+  --fontMono: 'Xanh Mono', monospace;
+  --fontSans: 'Patrick Hand', sans-serif;
+  --fontSerif: 'Purple Purse', serif;
   font-family: var(--fontSerif);
   color: var(--colLetra);
   background-color: var(--colFondo);
   scrollbar-width: thin;
   scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ @media (prefers-color-scheme: light) {
+  :root {
+   --colLetra: black;
+   --colFondo: white;
+  }
+ }
+
+ /* https://paletton.com/#uid=74W0u0kaVz84jP27qHbeJtFiHpX */
+ @media (prefers-color-scheme: dark) {
+
+  :root {
+   --colLetra: white;
+   /* --colFondo: #272727; */
+   --colFondo: black;
+   --colPushActive: #e3f5d4;
+   --colFondoPush: #bbe697;
+   --colFondoPushHover: #d0eeb7;
+   --colFondoPushFocus: #9ed372;
+   --colFondoPushActive: #7db84d;
+   --colA: #e9f7a3;
+   --colAVisited: #c89ac8;
+   --colAActive: #983351;
+   --colFondoAPush: #e9f7a3;
+   --colFondoAVisitedPush: #c89ac8;
+   --colFondoAPushHover: #f6fcda;
+   --colFondoAVisitedPushHover: #dec0de;
+   --colFondoAPushFocus: #b4c853;
+   --colFondoAVisitedPushFocus: #9a539a;
+   --colFondoAPushActive: #983351;
+   --colFondoAVisitedPushActive: #983351;
+   --colSombra: #00000080;
+   --colTitulo: #e3f5d4;
+   --colTituloFondo: #7db84d;
+   --colNavH1Sel: #d37290;
+   --colFondoNavSel: #7a3059;
+   --colScrollbar: #616161;
+   --colThumb: #ffffff;
+   --colResaltado: #7a3059;
+   --colResaltado2: #5c922f;
+   --colResaltado3: #4e4e4e;
+   --colLetraResaltado: white;
+   --colLetraCodeComment: #d0eeb7;
+   --colLetraCodeString: #eeb7c8;
+   --colLetraCodeReserved: #f0fac0;
+  }
+ }
+
+ /* xanh-mono-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* xanh-mono-italic - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: italic;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-italic.woff2') format('woff2');
+ }
+
+ /* patrick-hand-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Patrick Hand';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/patrick-hand-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* purple-purse-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Purple Purse';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/purple-purse-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ @font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  src:
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].woff2) format('woff2'),
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].ttf) format('truetype');
+ }
+
+ .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
  }
 
  body::-webkit-scrollbar {
@@ -71,18 +227,132 @@
   background-color: var(--colThumbActivo);
  }
 
+ body {
+  margin-top: 0;
+ }
+
+ a {
+  color: var(--colA);
+ }
+
+ a:visited {
+  color: var(--colAVisited);
+ }
+
+ a:active {
+  color: var(--colAActive);
+ }
+
  .anterior,
- .siguiente {
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente,
+ button {
   display: inline-block;
+  padding: var(--paddingPush);
+  border: var(--borderPush);
+  border-radius: var(--borderRadiusPush);
+  text-align: center;
   text-decoration: none;
-  padding: var(--padCtrl);
-  border: var(--borderCtrl);
-  cursor: pointer;
+ }
+
+ .anterior,
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente {
+  color: var(--colAPush);
+  background-color: var(--colFondoAPush);
+ }
+
+ .anterior:visited,
+ .siguiente:visited,
+ .paginaAnterior:visited,
+ .paginaSiguiente:visited {
+  color: var(--colAVisitedPush);
+  background-color: var(--colFondoAVisitedPush);
  }
 
  .anterior.bye,
- .siguiente.bye {
+ .siguiente.bye,
+ .paginaAnterior.bye,
+ .paginaSiguiente.bye {
   display: none;
+ }
+
+ .anterior:hover,
+ .siguiente:hover,
+ .paginaAnterior:hover,
+ .paginaSiguiente:hover {
+  color: var(--colAPushHover);
+  background-color: var(--colFondoAPushHover);
+ }
+
+ .anterior:visited:hover,
+ .siguiente:visited:hover,
+ .paginaAnterior:visited:hover,
+ .paginaSiguiente:visited:hover {
+  color: var(--colAVisitedPushHover);
+  background-color: var(--colFondoAVisitedPushHover);
+ }
+
+ .anterior:focus,
+ .siguiente:focus,
+ .paginaAnterior:focus,
+ .paginaSiguiente:focus {
+  color: var(--colAPushFocus);
+  background-color: var(--colFondoAPushFocus);
+ }
+
+ .anterior:visited:focus,
+ .siguiente:visited:focus,
+ .paginaAnterior:visited:focus,
+ .paginaSiguiente:visited:focus {
+  color: var(--colAVisitedPushFocus);
+  background-color: var(--colFondoAVisitedPushFocus);
+ }
+
+ .anterior:active,
+ .siguiente:active,
+ .paginaAnterior:active,
+ .paginaSiguiente:active {
+  color: var(--colAPushActive);
+  background-color: var(--colFondoAPushActive);
+ }
+
+ .anterior:visited:active,
+ .siguiente:visited:active,
+ .paginaAnterior:visited:active,
+ .paginaSiguiente:visited:active {
+  color: var(--colAVisitedPushActive);
+  background-color: var(--colFondoAVisitedPushActive);
+ }
+
+ button {
+  color: var(--colPush);
+  background-color: var(--colFondoPush);
+ }
+
+ button:hover {
+  color: var(--colPushHover);
+  background-color: var(--colFondoPushHover);
+ }
+
+ button:focus {
+  color: var(--colPushFocus);
+  background-color: var(--colFondoPushFocus);
+ }
+
+ button:active {
+  color: var(--colPushActive);
+  background-color: var(--colFondoPushActive);
+ }
+
+ .anterior span,
+ .siguiente span,
+ .paginaAnterior span,
+ .paginaSiguiente span,
+ button span {
+  vertical-align: middle;
  }
 
  a[data-logo] {
@@ -100,7 +370,12 @@
  a code,
  h1 strong,
  h1 code {
-  color: var(--colTituloStrong);
+  font-size: 1em;
+ }
+
+ a strong,
+ a code {
+  color: var(--colAStrong);
  }
 
  nav a {
@@ -112,8 +387,8 @@
  }
 
  code {
-  color: var(--colTituloStrong);
   font-family: var(--fontMono);
+  font-size: 1rem;
  }
 
  .tree {
@@ -132,7 +407,7 @@
 
  h1:not(.default) {
   font-family: var(--fontSans);
-  color: var(--colTituloLetra);
+  color: var(--colTituloFondo);
  }
 
  h1,
@@ -145,7 +420,7 @@
  .autor {
   font-family: var(--fontSans);
   font-size: 1.5rem;
-  color: var(--colTituloLetra);
+  color: var(--colTituloFondo);
  }
 
  figure {
@@ -217,15 +492,18 @@
  }
 
  .resaltado {
-  background-color: rgb(255, 255, 89);
+  background-color: var(--colResaltado);
+  color: var(--colLetraResaltado);
  }
 
  .resaltado2 {
-  background-color: rgb(255, 214, 139);
+  background-color: var(--colResaltado2);
+  color: var(--colLetraResaltado);
  }
 
  .resaltado3 {
-  background-color: rgb(235, 234, 233);
+  background-color: var(--colResaltado3);
+  color: var(--colLetraResaltado);
  }
 
  table.borde {
@@ -244,6 +522,61 @@
   padding: 0.4rem;
  }
 
+ table.codeShow {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .codeShow td:first-child {
+  text-align: right;
+  padding: 0 0 0 0;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  /* Avoid selection */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+ }
+
+ .codeShow td:nth-child(2) {
+  padding: 0 0 0 0.25rem;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+  line-height: 1.2rem;
+ }
+
+ .codeReserved {
+  color: var(--colLetraCodeReserved);
+  font-weight: bolder;
+ }
+
+ .codeString {
+  color: var(--colLetraCodeString);
+  font-weight: 600;
+ }
+
+ .codeComment {
+  color: var(--colLetraCodeComment);
+  font-style: italic;
+ }
+
+ @media print {
+  h1 {
+   text-shadow: var(--shadowTitulo);
+  }
+
+  .codeShow button {
+   display: none;
+  }
+ }
+
+
  footer {
   margin-top: 1rem;
   display: block;
@@ -257,19 +590,37 @@
   scroll-padding-top: var(--padTop);
  }
 
- body:not(.sinTransicion) #principal {
+ body {
   animation-timing-function: var(--introFuncion);
   animation-duration: var(--introDuracion);
   animation-fill-mode: forwards;
-  animation-name: aparece;
+  animation-name: appear;
  }
 
- @keyframes aparece {
+ body.noTransition {
+  animation-name: noTransition;
+ }
+
+ @keyframes appear {
   from {
    opacity: 0;
   }
 
   to {
+   opacity: 1;
+  }
+ }
+
+ @keyframes noTransition {
+  0% {
+   opacity: 0;
+  }
+
+  0.7% {
+   opacity: 1;
+  }
+
+  100% {
    opacity: 1;
   }
  }
@@ -288,22 +639,24 @@
   position: fixed;
   top: var(--gap);
   left: var(--gap);
-  transition: 0.7s ease-in-out;
+  transition-property: top, left;
+  transition-duration: 0.7s, 0.7s;
+  transition-timing-function: ease-in-out;
  }
 
  #principal>.anterior {
   position: fixed;
   top: var(--gap);
-  background-color: var(--colFondo);
-  transition: 0.7s ease-in-out;
+  transition-property: top, left;
+  transition-duration: 0.7s, 0.7s;
+  transition-timing-function: ease-in-out;
  }
 
  #principal>.siguiente {
   position: fixed;
   top: var(--gap);
   right: var(--gap);
-  background-color: var(--colFondo);
-  transition: 0.7s ease-in-out;
+  transition: top 0.7s ease-in-out;
  }
 
  .scroll #principal>#abre,
@@ -312,8 +665,17 @@
   top: -10rem;
  }
 
- #principal h1:not(.default) {
-  text-shadow: var(--colTituloShadow);
+ #principal>h1:not(.default) {
+  margin-top: var(--marginTop);
+  padding: var(--h1PadTop) 1rem 1rem 1rem;
+  text-shadow: var(--shadowTitulo);
+  color: var(--colTitulo);
+  background-color: var(--colTituloFondo);
+ }
+
+ #principal>h1:not(.default) strong,
+ #principal>h1:not(.default) code {
+  color: var(--colPrincipalTituloStrong);
  }
 
  #nav {
@@ -361,25 +723,26 @@
 
  #nav a.actual code,
  #nav a.actual strong {
-  color: var(--colTituloStrongSel);
+  color: var(--colAStrong);
  }
 
  #nav h1 a {
-  color: var(--colTituloLetra);
+  color: var(--colTitulo);
+  background-color: var(--colTituloFondo);
+  text-shadow: var(--shadowTitulo);
  }
 
  #nav a.actual {
-  color: var(--colFondo);
-  background-color: var(--colNavResaltada);
+  background-color: var(--colFondoNavSel);
  }
 
- #nav a.paginaAnterior,
- #nav a.paginaSiguiente {
-  text-align: center;
-  text-decoration: none;
-  padding: var(--padCtrl);
-  border: var(--borderCtrl);
-  cursor: pointer;
+ #nav h1 a.actual {
+  background-color: var(--colNavH1Sel);
+ }
+
+ #nav h1 a.actual code,
+ #nav h1 a.actual strong {
+  color: var(--colPrincipalTituloStrong);
  }
 
  @media screen and (max-width: 999px) {
@@ -456,6 +819,14 @@
   #principal>.siguiente {
    display: none;
   }
+
+  #principal>h1:not(.default) {
+   margin-top: 0.5rem;
+   padding: 1rem;
+   color: var(--colTituloFondo);
+   background-color: transparent;
+  }
+
  }
 </style>
  
@@ -474,578 +845,260 @@
   </p>
   <p class="noPrint">
    <a target="_blank" rel="noopener"
-     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%3E%0A%0A%3Chead%3E%0A%0A%20%3Cmeta%20charset%3D%22utf-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%0A%20%3Ctitle%3EC%C3%A1mara%3C%2Ftitle%3E%0A%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%0A%20%3Ch1%3EC%C3%A1mara%3C%2Fh1%3E%0A%0A%20%3Cp%3E%0A%20%20Para%20grabar%20o%20capturar%20imagen%2C%0A%20%20cliquea%0A%20%20%3Cstrong%3EInicia%3C%2Fstrong%3E.%0A%20%3C%2Fp%3E%0A%0A%20%3Cp%3E%0A%20%20Para%20grabar%20por%205%20segundos%0A%20%20cliquea%0A%20%20%3Cstrong%3EGraba%3C%2Fstrong%3E%0A%20%20y%20cliquea%0A%20%20%3Cstrong%3EPara%3C%2Fstrong%3E%20para%0A%20%20detener.%0A%20%3C%2Fp%3E%0A%0A%20%3Cp%3E%0A%20%20Para%20capturar%20una%20imagen%20de%20la%0A%20%20c%C3%A1mara%2C%20cliquea%0A%20%20%3Cstrong%3ECaptura%3C%2Fstrong%3E.%0A%20%3C%2Fp%3E%0A%0A%20%3Cmenu%20style%3D%22display%3A%20flex%3B%0A%20%20%20flex-wrap%3A%20wrap%3B%0A%20%20%20list-style%3A%20none%3B%22%3E%0A%20%20%3Cli%3E%0A%20%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20onclick%3D%22inicia()%22%3E%0A%20%20%20%20Inicia%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%3C%2Fli%3E%0A%20%20%3Cli%3E%0A%20%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20onclick%3D%22graba()%22%3E%0A%20%20%20%20Graba%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%3C%2Fli%3E%0A%20%20%3Cli%3E%0A%20%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20onclick%3D%22para()%3B%22%3E%0A%20%20%20%20Para%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%3C%2Fli%3E%0A%20%20%3Cli%3E%0A%20%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20onclick%3D%22captura()%22%3E%0A%20%20%20%20Captura%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%3C%2Fli%3E%0A%20%3C%2Fmenu%3E%0A%0A%20%3Csection%0A%20%20%20style%3D%22display%3A%20inline-block%3B%0A%20%20%20%20%20vertical-align%3A%20top%3B%22%3E%0A%0A%20%20%3Ch1%3EPreview%3C%2Fh1%3E%0A%0A%20%20%3Cvideo%20id%3D%22preview%22%20width%3D%22160%22%0A%20%20%20%20height%3D%22120%22%20autoplay%0A%20%20%20%20muted%3E%3C%2Fvideo%3E%0A%0A%20%3C%2Fsection%3E%0A%0A%20%3Csection%0A%20%20%20style%3D%22display%3A%20inline-block%3B%0A%20%20%20%20%20vertical-align%3A%20top%3B%22%3E%0A%0A%20%20%3Ch1%3ERecording%3C%2Fh1%3E%0A%0A%20%20%3Cvideo%20id%3D%22recording%22%20width%3D%22160%22%0A%20%20%20%20height%3D%22120%22%20controls%3E%3C%2Fvideo%3E%0A%0A%20%20%3Cp%3E%0A%20%20%20%3Ca%20id%3D%22descarga%22%3EDescarga%3C%2Fa%3E%0A%20%20%3C%2Fp%3E%0A%0A%20%20%3Cdiv%20id%3D%22mensajes%22%3E%3C%2Fdiv%3E%0A%0A%20%3C%2Fsection%3E%0A%0A%20%3Csection%0A%20%20%20style%3D%22display%3A%20inline-block%3B%0A%20%20%20%20%20vertical-align%3A%20top%3B%22%3E%0A%0A%20%20%3Ch1%3EImagen%3C%2Fh1%3E%0A%0A%20%20%3Ccanvas%20id%3D%22canvas%22%20width%3D%22160%22%0A%20%20%20%20height%3D%22120%22%3E%3C%2Fcanvas%3E%0A%0A%20%20%3Cp%3E%0A%20%20%20%3Ca%20id%3D%22descargaImagen%22%3E%0A%20%20%20%20Descarga%3C%2Fa%3E%0A%20%20%3C%2Fp%3E%0A%0A%20%3C%2Fsection%3E%0A%0A%20%3Cscript%3E%0A%0A%20%20let%20stream%20%3D%20null%0A%0A%20%20let%20TIEMPO_DE_GRABACION%20%3D%205000%0A%0A%20%20var%20context%20%3D%0A%20%20%20canvas.getContext('2d')%0A%0A%20%20async%20function%20inicia()%20%7B%0A%20%20%20try%20%7B%0A%20%20%20%20stream%20%3D%20await%20navigator%0A%20%20%20%20%20.mediaDevices.getUserMedia(%7B%0A%20%20%20%20%20%20video%3A%20true%2C%0A%20%20%20%20%20%20audio%3A%20true%0A%20%20%20%20%20%7D)%0A%20%20%20%20preview.srcObject%20%3D%20stream%0A%20%20%20%20descarga.href%20%3D%20stream%0A%20%20%20%20preview.captureStream%20%3D%0A%20%20%20%20%20preview.captureStream%0A%20%20%20%20%20%7C%7C%20preview.mozCaptureStream%0A%20%20%20%20await%20new%20Promise(%0A%20%20%20%20%20resolve%20%3D%3E%0A%20%20%20%20%20%20preview.onplaying%20%3D%20resolve)%0A%20%20%20%7D%20catch%20(e)%20%7B%0A%20%20%20%20log(e.message)%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20async%20function%20graba()%20%7B%0A%20%20%20try%20%7B%0A%20%20%20%20const%20recordedChunks%20%3D%0A%20%20%20%20%20await%20grabaClip(stream%2C%0A%20%20%20%20%20%20TIEMPO_DE_GRABACION)%0A%20%20%20%20let%20recordedBlob%20%3D%20new%20Blob(%0A%20%20%20%20%20recordedChunks%2C%0A%20%20%20%20%20%7B%20type%3A%20%22video%2Fwebm%22%20%7D)%0A%20%20%20%20recording.src%20%3D%0A%20%20%20%20%20URL.createObjectURL(%0A%20%20%20%20%20%20recordedBlob)%0A%20%20%20%20descarga.href%20%3D%20recording.src%0A%20%20%20%20descarga.download%20%3D%0A%20%20%20%20%20%22RecordedVideo.webm%22%0A%0A%20%20%20%20log(%22Exitosamente%20grabados%20%22%0A%20%20%20%20%20%2B%20recordedBlob.size%0A%20%20%20%20%20%2B%20%22%20bytes%20de%20%22%0A%20%20%20%20%20%2B%20recordedBlob.type%0A%20%20%20%20%20%2B%20%22%20media.%22)%0A%20%20%20%7D%20catch%20(e)%20%7B%0A%20%20%20%20log(e.message)%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20function%20para()%20%7B%0A%20%20%20detiene(preview.srcObject)%0A%20%20%7D%0A%0A%20%20function%20captura()%20%7B%0A%20%20%20context.drawImage(preview%2C%0A%20%20%20%200%2C%200%2C%20160%2C%20120)%0A%20%20%20descargaImagen.href%20%3D%0A%20%20%20%20canvas.toDataURL('image%2Fjpeg')%0A%20%20%20descargaImagen.download%20%3D%0A%20%20%20%20%22imagen.jpg%22%0A%20%20%7D%0A%0A%20%20function%20grabaClip(stream%2C%0A%20%20%20milisegundos)%20%7B%0A%20%20%20let%20recorder%20%3D%0A%20%20%20%20new%20MediaRecorder(stream)%0A%20%20%20let%20data%20%3D%20%5B%5D%0A%20%20%20recorder.ondataavailable%20%3D%0A%20%20%20%20event%20%3D%3E%20data.push(event.data)%0A%20%20%20recorder.start()%0A%20%20%20log(recorder.state%0A%20%20%20%20%2B%20%22%20durante%20%22%0A%20%20%20%20%2B%20(milisegundos%20%2F%201000)%0A%20%20%20%20%2B%20%22%20segundos%26hellip%3B%22)%0A%20%20%20let%20detenido%20%3D%20new%20Promise(%0A%20%20%20%20(resolve%2C%20reject)%20%3D%3E%20%7B%0A%20%20%20%20%20recorder.onstop%20%3D%20resolve%0A%20%20%20%20%20recorder.onerror%20%3D%0A%20%20%20%20%20%20event%20%3D%3E%20reject(event.name)%0A%20%20%20%20%7D)%0A%20%20%20let%20grabado%20%3D%0A%20%20%20%20espera(milisegundos)%0A%20%20%20%20%20.then(()%20%3D%3E%20recorder.state%0A%20%20%20%20%20%20%3D%3D%3D%20%22recording%22%0A%20%20%20%20%20%20%26%26%20recorder.stop()%0A%20%20%20%20%20)%0A%0A%20%20%20return%20Promise.all(%5B%0A%20%20%20%20detenido%2C%0A%20%20%20%20grabado%0A%20%20%20%5D)%0A%20%20%20%20.then(()%20%3D%3E%20data)%0A%20%20%7D%0A%0A%20%20function%20detiene(stream)%20%7B%0A%20%20%20stream.getTracks().forEach(%0A%20%20%20%20track%20%3D%3E%20track.stop())%0A%20%20%7D%0A%0A%20%20function%20log(msg)%20%7B%0A%20%20%20mensajes.innerHTML%20%2B%3D%0A%20%20%20%20msg%20%2B%20%22%3Cbr%3E%22%0A%20%20%7D%0A%0A%20%20function%20espera(milisegundos)%20%7B%0A%20%20%20return%20new%20Promise(%0A%20%20%20%20resolve%20%3D%3E%20setTimeout(%0A%20%20%20%20%20resolve%2C%20milisegundos))%0A%20%20%7D%0A%0A%20%3C%2Fscript%3E%0A%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%3E%0A%0A%3Chead%3E%0A%0A%20%3Cmeta%20charset%3D%22utf-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%0A%20%3Ctitle%3EC%C3%A1mara%3C%2Ftitle%3E%0A%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%0A%20%3Ch1%3EC%C3%A1mara%3C%2Fh1%3E%0A%0A%20%3Cp%3E%0A%20%20Para%20grabar%20o%20capturar%20imagen%2C%0A%20%20cliquea%0A%20%20%3Cstrong%3EInicia%3C%2Fstrong%3E.%0A%20%3C%2Fp%3E%0A%0A%20%3Cp%3E%0A%20%20Para%20grabar%20por%205%20segundos%0A%20%20cliquea%0A%20%20%3Cstrong%3EGraba%3C%2Fstrong%3E%0A%20%20y%20cliquea%0A%20%20%3Cstrong%3EPara%3C%2Fstrong%3E%20para%0A%20%20detener.%0A%20%3C%2Fp%3E%0A%0A%20%3Cp%3E%0A%20%20Para%20capturar%20una%20imagen%20de%20la%0A%20%20c%C3%A1mara%2C%20cliquea%0A%20%20%3Cstrong%3ECaptura%3C%2Fstrong%3E.%0A%20%3C%2Fp%3E%0A%0A%20%3Cmenu%20style%3D%22display%3A%20flex%3B%0A%20%20%20flex-wrap%3A%20wrap%3B%0A%20%20%20list-style%3A%20none%3B%22%3E%0A%20%20%3Cli%3E%0A%20%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20onclick%3D%22inicia()%22%3E%0A%20%20%20%20Inicia%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%3C%2Fli%3E%0A%20%20%3Cli%3E%0A%20%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20onclick%3D%22graba()%22%3E%0A%20%20%20%20Graba%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%3C%2Fli%3E%0A%20%20%3Cli%3E%0A%20%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20onclick%3D%22para()%3B%22%3E%0A%20%20%20%20Para%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%3C%2Fli%3E%0A%20%20%3Cli%3E%0A%20%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20onclick%3D%22captura()%22%3E%0A%20%20%20%20Captura%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%3C%2Fli%3E%0A%20%3C%2Fmenu%3E%0A%0A%20%3Csection%0A%20%20%20style%3D%22display%3A%20inline-block%3B%0A%20%20%20%20%20vertical-align%3A%20top%3B%22%3E%0A%0A%20%20%3Ch1%3EPreview%3C%2Fh1%3E%0A%0A%20%20%3Cvideo%20id%3D%22preview%22%20width%3D%22160%22%0A%20%20%20%20height%3D%22120%22%20autoplay%0A%20%20%20%20muted%3E%3C%2Fvideo%3E%0A%0A%20%3C%2Fsection%3E%0A%0A%20%3Csection%0A%20%20%20style%3D%22display%3A%20inline-block%3B%0A%20%20%20%20%20vertical-align%3A%20top%3B%22%3E%0A%0A%20%20%3Ch1%3ERecording%3C%2Fh1%3E%0A%0A%20%20%3Cvideo%20id%3D%22recording%22%20width%3D%22160%22%0A%20%20%20%20height%3D%22120%22%20controls%3E%3C%2Fvideo%3E%0A%0A%20%20%3Cp%3E%0A%20%20%20%3Ca%20id%3D%22descarga%22%3EDescarga%3C%2Fa%3E%0A%20%20%3C%2Fp%3E%0A%0A%20%20%3Cdiv%20id%3D%22mensajes%22%3E%3C%2Fdiv%3E%0A%0A%20%3C%2Fsection%3E%0A%0A%20%3Csection%0A%20%20%20style%3D%22display%3A%20inline-block%3B%0A%20%20%20%20%20vertical-align%3A%20top%3B%22%3E%0A%0A%20%20%3Ch1%3EImagen%3C%2Fh1%3E%0A%0A%20%20%3Ccanvas%20id%3D%22canvas%22%20width%3D%22160%22%0A%20%20%20%20height%3D%22120%22%3E%3C%2Fcanvas%3E%0A%0A%20%20%3Cp%3E%0A%20%20%20%3Ca%20id%3D%22descargaImagen%22%3E%0A%20%20%20%20Descarga%3C%2Fa%3E%0A%20%20%3C%2Fp%3E%0A%0A%20%3C%2Fsection%3E%0A%0A%20%3Cscript%3E%0A%0A%20%20let%20stream%20%3D%20null%0A%0A%20%20let%20TIEMPO_DE_GRABACION%20%3D%205000%0A%0A%20%20var%20context%20%3D%0A%20%20%20canvas.getContext('2d')%0A%0A%20%20async%20function%20inicia()%20%7B%0A%20%20%20try%20%7B%0A%20%20%20%20stream%20%3D%20await%20navigator%0A%20%20%20%20%20.mediaDevices.getUserMedia(%7B%0A%20%20%20%20%20%20video%3A%20true%2C%0A%20%20%20%20%20%20audio%3A%20true%0A%20%20%20%20%20%7D)%0A%20%20%20%20preview.srcObject%20%3D%20stream%0A%20%20%20%20descarga.href%20%3D%20stream%0A%20%20%20%20preview.captureStream%20%3D%0A%20%20%20%20%20preview.captureStream%0A%20%20%20%20%20%7C%7C%20preview.mozCaptureStream%0A%20%20%20%20await%20new%20Promise(%0A%20%20%20%20%20resolve%20%3D%3E%0A%20%20%20%20%20%20preview.onplaying%20%3D%20resolve)%0A%20%20%20%7D%20catch%20(e)%20%7B%0A%20%20%20%20log(e.message)%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20async%20function%20graba()%20%7B%0A%20%20%20try%20%7B%0A%20%20%20%20const%20recordedChunks%20%3D%0A%20%20%20%20%20await%20grabaClip(stream%2C%0A%20%20%20%20%20%20TIEMPO_DE_GRABACION)%0A%20%20%20%20let%20recordedBlob%20%3D%20new%20Blob(%0A%20%20%20%20%20recordedChunks%2C%0A%20%20%20%20%20%7B%20type%3A%20%22video%2Fwebm%22%20%7D)%0A%20%20%20%20recording.src%20%3D%0A%20%20%20%20%20URL.createObjectURL(%0A%20%20%20%20%20%20recordedBlob)%0A%20%20%20%20descarga.href%20%3D%20recording.src%0A%20%20%20%20descarga.download%20%3D%0A%20%20%20%20%20%22RecordedVideo.webm%22%0A%0A%20%20%20%20log(%22Exitosamente%20grabados%20%22%0A%20%20%20%20%20%2B%20recordedBlob.size%0A%20%20%20%20%20%2B%20%22%20bytes%20de%20%22%0A%20%20%20%20%20%2B%20recordedBlob.type%0A%20%20%20%20%20%2B%20%22%20media.%22)%0A%20%20%20%7D%20catch%20(e)%20%7B%0A%20%20%20%20log(e.message)%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20function%20para()%20%7B%0A%20%20%20detiene(preview.srcObject)%0A%20%20%7D%0A%0A%20%20function%20captura()%20%7B%0A%20%20%20context.drawImage(preview%2C%0A%20%20%20%200%2C%200%2C%20160%2C%20120)%0A%20%20%20descargaImagen.href%20%3D%0A%20%20%20%20canvas.toDataURL('image%2Fjpeg')%0A%20%20%20descargaImagen.download%20%3D%0A%20%20%20%20%22imagen.jpg%22%0A%20%20%7D%0A%0A%20%20function%20grabaClip(stream%2C%0A%20%20%20milisegundos)%20%7B%0A%20%20%20let%20recorder%20%3D%0A%20%20%20%20new%20MediaRecorder(stream)%0A%20%20%20let%20data%20%3D%20%5B%5D%0A%20%20%20recorder.ondataavailable%20%3D%0A%20%20%20%20event%20%3D%3E%20data.push(event.data)%0A%20%20%20recorder.start()%0A%20%20%20log(recorder.state%0A%20%20%20%20%2B%20%22%20durante%20%22%0A%20%20%20%20%2B%20(milisegundos%20%2F%201000)%0A%20%20%20%20%2B%20%22%20segundos%E2%80%A6%22)%0A%20%20%20let%20detenido%20%3D%20new%20Promise(%0A%20%20%20%20(resolve%2C%20reject)%20%3D%3E%20%7B%0A%20%20%20%20%20recorder.onstop%20%3D%20resolve%0A%20%20%20%20%20recorder.onerror%20%3D%0A%20%20%20%20%20%20event%20%3D%3E%20reject(event.name)%0A%20%20%20%20%7D)%0A%20%20%20let%20grabado%20%3D%0A%20%20%20%20espera(milisegundos)%0A%20%20%20%20%20.then(()%20%3D%3E%20recorder.state%0A%20%20%20%20%20%20%3D%3D%3D%20%22recording%22%0A%20%20%20%20%20%20%26%26%20recorder.stop()%0A%20%20%20%20%20)%0A%0A%20%20%20return%20Promise.all(%5B%0A%20%20%20%20detenido%2C%0A%20%20%20%20grabado%0A%20%20%20%5D)%0A%20%20%20%20.then(()%20%3D%3E%20data)%0A%20%20%7D%0A%0A%20%20function%20detiene(stream)%20%7B%0A%20%20%20stream.getTracks().forEach(%0A%20%20%20%20track%20%3D%3E%20track.stop())%0A%20%20%7D%0A%0A%20%20function%20log(msg)%20%7B%0A%20%20%20mensajes.innerHTML%20%2B%3D%0A%20%20%20%20msg%20%2B%20%22%3Cbr%3E%22%0A%20%20%7D%0A%0A%20%20function%20espera(milisegundos)%20%7B%0A%20%20%20return%20new%20Promise(%0A%20%20%20%20resolve%20%3D%3E%20setTimeout(%0A%20%20%20%20%20resolve%2C%20milisegundos))%0A%20%20%7D%0A%0A%20%3C%2Fscript%3E%0A%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
  </section>
- <muestra-codigo>
-  <div>
-   <div><span
-      style="color: #800000;">&lt;!DOCTYPE</span> <span
-      style="color: #e50000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span
-      style="color: #800000;">&lt;html&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;head&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;meta</span> <span
-      style="color: #e50000;">charset</span>=<span
-      style="color: #0000ff;">"utf-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;meta</span> <span
-      style="color: #e50000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;title&gt;</span>Cámara<span
-      style="color: #800000;">&lt;/title&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;body&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span>Cámara<span
-      style="color: #800000;">&lt;/h1&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;Para grabar o capturar imagen,</div>
-   <div>&nbsp;&nbsp;cliquea</div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;strong&gt;</span>Inicia<span
-      style="color: #800000;">&lt;/strong&gt;</span>.</div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;Para grabar por 5 segundos</div>
-   <div>&nbsp;&nbsp;cliquea</div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;strong&gt;</span>Graba<span
-      style="color: #800000;">&lt;/strong&gt;</span></div>
-   <div>&nbsp;&nbsp;y cliquea</div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;strong&gt;</span>Para<span
-      style="color: #800000;">&lt;/strong&gt;</span> para</div>
-   <div>&nbsp;&nbsp;detener.</div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;Para capturar una imagen de la</div>
-   <div>&nbsp;&nbsp;cámara, cliquea</div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;strong&gt;</span>Captura<span
-      style="color: #800000;">&lt;/strong&gt;</span>.</div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;menu</span> <span
-      style="color: #e50000;">style</span>=<span
-      style="color: #0000ff;">"</span><span
-      style="color: #0000ff;">display: flex;</span></div>
-   <div><span
-      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;flex-wrap: wrap;</span></div>
-   <div><span
-      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;list-style: none;"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;li&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;button</span> <span
-      style="color: #e50000;">type</span>=<span
-      style="color: #0000ff;">"button"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">onclick</span>=<span
-      style="color: #0000ff;">"</span><span
-      style="color: #795e26;">inicia</span><span
-      style="color: #0000ff;">()"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;Inicia</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/button&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/li&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;li&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;button</span> <span
-      style="color: #e50000;">type</span>=<span
-      style="color: #0000ff;">"button"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">onclick</span>=<span
-      style="color: #0000ff;">"</span><span
-      style="color: #795e26;">graba</span><span
-      style="color: #0000ff;">()"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;Graba</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/button&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/li&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;li&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;button</span> <span
-      style="color: #e50000;">type</span>=<span
-      style="color: #0000ff;">"button"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">onclick</span>=<span
-      style="color: #0000ff;">"</span><span
-      style="color: #795e26;">para</span><span
-      style="color: #0000ff;">();"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;Para</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/button&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/li&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;li&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;button</span> <span
-      style="color: #e50000;">type</span>=<span
-      style="color: #0000ff;">"button"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">onclick</span>=<span
-      style="color: #0000ff;">"</span><span
-      style="color: #795e26;">captura</span><span
-      style="color: #0000ff;">()"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;Captura</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/button&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/li&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/menu&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;section</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">style</span>=<span
-      style="color: #0000ff;">"</span><span
-      style="color: #0000ff;">display: inline-block;</span></div>
-   <div><span
-      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vertical-align:
-     top;"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span>Preview<span
-      style="color: #800000;">&lt;/h1&gt;</span></div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;video</span> <span
-      style="color: #e50000;">id</span>=<span
-      style="color: #0000ff;">"preview"</span> <span
-      style="color: #e50000;">width</span>=<span
-      style="color: #0000ff;">"160"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">height</span>=<span
-      style="color: #0000ff;">"120"</span> <span
-      style="color: #e50000;">autoplay</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">muted</span><span
-      style="color: #800000;">&gt;&lt;/video&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/section&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;section</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">style</span>=<span
-      style="color: #0000ff;">"</span><span
-      style="color: #0000ff;">display: inline-block;</span></div>
-   <div><span
-      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vertical-align:
-     top;"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span>Recording<span
-      style="color: #800000;">&lt;/h1&gt;</span></div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;video</span> <span
-      style="color: #e50000;">id</span>=<span
-      style="color: #0000ff;">"recording"</span> <span
-      style="color: #e50000;">width</span>=<span
-      style="color: #0000ff;">"160"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">height</span>=<span
-      style="color: #0000ff;">"120"</span> <span
-      style="color: #e50000;">controls</span><span
-      style="color: #800000;">&gt;&lt;/video&gt;</span></div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;a</span> <span
-      style="color: #e50000;">id</span>=<span
-      style="color: #0000ff;">"descarga"</span><span
-      style="color: #800000;">&gt;</span>Descarga<span
-      style="color: #800000;">&lt;/a&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;div</span> <span
-      style="color: #e50000;">id</span>=<span
-      style="color: #0000ff;">"mensajes"</span><span
-      style="color: #800000;">&gt;&lt;/div&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/section&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;section</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">style</span>=<span
-      style="color: #0000ff;">"</span><span
-      style="color: #0000ff;">display: inline-block;</span></div>
-   <div><span
-      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vertical-align:
-     top;"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span>Imagen<span
-      style="color: #800000;">&lt;/h1&gt;</span></div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;canvas</span> <span
-      style="color: #e50000;">id</span>=<span
-      style="color: #0000ff;">"canvas"</span> <span
-      style="color: #e50000;">width</span>=<span
-      style="color: #0000ff;">"160"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">height</span>=<span
-      style="color: #0000ff;">"120"</span><span
-      style="color: #800000;">&gt;&lt;/canvas&gt;</span></div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;a</span> <span
-      style="color: #e50000;">id</span>=<span
-      style="color: #0000ff;">"descargaImagen"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;Descarga<span
-      style="color: #800000;">&lt;/a&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/section&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;script&gt;</span></div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #0000ff;">let</span> <span
-      style="color: #001080;">stream</span> = <span
-      style="color: #0000ff;">null</span></div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #0000ff;">let</span> <span
-      style="color: #001080;">TIEMPO_DE_GRABACION</span> = <span
-      style="color: #098658;">5000</span></div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #0000ff;">var</span> <span
-      style="color: #001080;">context</span> =</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">canvas</span>.<span
-      style="color: #795e26;">getContext</span>(<span
-      style="color: #a31515;">'2d'</span>)</div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #0000ff;">async</span> <span
-      style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">inicia</span>()&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #af00db;">try</span>&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">stream</span> = <span
-      style="color: #af00db;">await</span> <span
-      style="color: #001080;">navigator</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span
-      style="color: #001080;">mediaDevices</span>.<span
-      style="color: #795e26;">getUserMedia</span>({</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">video</span><span
-      style="color: #001080;">:</span> <span
-      style="color: #0000ff;">true</span>,</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">audio</span><span
-      style="color: #001080;">:</span> <span
-      style="color: #0000ff;">true</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">preview</span>.<span
-      style="color: #001080;">srcObject</span> = <span
-      style="color: #001080;">stream</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">descarga</span>.<span
-      style="color: #001080;">href</span> = <span
-      style="color: #001080;">stream</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">preview</span>.<span
-      style="color: #001080;">captureStream</span> =</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">preview</span>.<span
-      style="color: #001080;">captureStream</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|| <span
-      style="color: #001080;">preview</span>.<span
-      style="color: #001080;">mozCaptureStream</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #af00db;">await</span> <span
-      style="color: #0000ff;">new</span> <span
-      style="color: #267f99;">Promise</span>(</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #795e26;">resolve</span> <span
-      style="color: #0000ff;">=&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">preview</span>.<span
-      style="color: #001080;">onplaying</span> = <span
-      style="color: #795e26;">resolve</span>)</div>
-   <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
-      style="color: #af00db;">catch</span> (<span
-      style="color: #001080;">e</span>)&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #795e26;">log</span>(<span
-      style="color: #001080;">e</span>.<span
-      style="color: #001080;">message</span>)</div>
-   <div>&nbsp;&nbsp;&nbsp;}</div>
-   <div>&nbsp;&nbsp;}</div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #0000ff;">async</span> <span
-      style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">graba</span>()&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #af00db;">try</span>&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">recordedChunks</span> =</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #af00db;">await</span> <span
-      style="color: #795e26;">grabaClip</span>(<span
-      style="color: #001080;">stream</span>,</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">TIEMPO_DE_GRABACION</span>)</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #0000ff;">let</span> <span
-      style="color: #001080;">recordedBlob</span> = <span
-      style="color: #0000ff;">new</span> <span
-      style="color: #267f99;">Blob</span>(</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #0070c1;">recordedChunks</span>,</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <span
-      style="color: #001080;">type</span><span
-      style="color: #001080;">:</span> <span
-      style="color: #a31515;">"video/webm"</span> })</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">recording</span>.<span
-      style="color: #001080;">src</span> =</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #267f99;">URL</span>.<span
-      style="color: #795e26;">createObjectURL</span>(</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">recordedBlob</span>)</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">descarga</span>.<span
-      style="color: #001080;">href</span> = <span
-      style="color: #001080;">recording</span>.<span
-      style="color: #001080;">src</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">descarga</span>.<span
-      style="color: #001080;">download</span> =</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #a31515;">"RecordedVideo.webm"</span></div><br>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #795e26;">log</span>(<span
-      style="color: #a31515;">"Exitosamente grabados "</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span
-      style="color: #001080;">recordedBlob</span>.<span
-      style="color: #001080;">size</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span
-      style="color: #a31515;">" bytes de "</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span
-      style="color: #001080;">recordedBlob</span>.<span
-      style="color: #001080;">type</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span
-      style="color: #a31515;">" media."</span>)</div>
-   <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
-      style="color: #af00db;">catch</span> (<span
-      style="color: #001080;">e</span>)&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #795e26;">log</span>(<span
-      style="color: #001080;">e</span>.<span
-      style="color: #001080;">message</span>)</div>
-   <div>&nbsp;&nbsp;&nbsp;}</div>
-   <div>&nbsp;&nbsp;}</div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">para</span>()&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #795e26;">detiene</span>(<span
-      style="color: #001080;">preview</span>.<span
-      style="color: #001080;">srcObject</span>)</div>
-   <div>&nbsp;&nbsp;}</div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">captura</span>()&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">context</span>.<span
-      style="color: #795e26;">drawImage</span>(<span
-      style="color: #001080;">preview</span>,</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #098658;">0</span>, <span
-      style="color: #098658;">0</span>, <span
-      style="color: #098658;">160</span>, <span
-      style="color: #098658;">120</span>)</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">descargaImagen</span>.<span
-      style="color: #001080;">href</span> =</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">canvas</span>.<span
-      style="color: #795e26;">toDataURL</span>(<span
-      style="color: #a31515;">'image/jpeg'</span>)</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">descargaImagen</span>.<span
-      style="color: #001080;">download</span> =</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #a31515;">"imagen.jpg"</span></div>
-   <div>&nbsp;&nbsp;}</div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">grabaClip</span>(<span
-      style="color: #001080;">stream</span>,</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">milisegundos</span>)&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #0000ff;">let</span> <span
-      style="color: #001080;">recorder</span> =</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #0000ff;">new</span> <span
-      style="color: #267f99;">MediaRecorder</span>(<span
-      style="color: #001080;">stream</span>)</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #0000ff;">let</span> <span
-      style="color: #001080;">data</span> = []</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">recorder</span>.<span
-      style="color: #795e26;">ondataavailable</span> =</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">event</span> <span
-      style="color: #0000ff;">=&gt;</span> <span
-      style="color: #001080;">data</span>.<span
-      style="color: #795e26;">push</span>(<span
-      style="color: #001080;">event</span>.<span
-      style="color: #001080;">data</span>)</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">recorder</span>.<span
-      style="color: #795e26;">start</span>()</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #795e26;">log</span>(<span
-      style="color: #001080;">recorder</span>.<span
-      style="color: #001080;">state</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;+ <span
-      style="color: #a31515;">" durante "</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;+ (<span
-      style="color: #001080;">milisegundos</span> / <span
-      style="color: #098658;">1000</span>)</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;+ <span
-      style="color: #a31515;">" segundos&amp;hellip;"</span>)</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #0000ff;">let</span> <span
-      style="color: #001080;">detenido</span> = <span
-      style="color: #0000ff;">new</span> <span
-      style="color: #267f99;">Promise</span>(</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;(<span
-      style="color: #795e26;">resolve</span>, <span
-      style="color: #795e26;">reject</span>) <span
-      style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">recorder</span>.<span
-      style="color: #795e26;">onstop</span> = <span
-      style="color: #795e26;">resolve</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">recorder</span>.<span
-      style="color: #795e26;">onerror</span> =</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">event</span> <span
-      style="color: #0000ff;">=&gt;</span> <span
-      style="color: #795e26;">reject</span>(<span
-      style="color: #001080;">event</span>.<span
-      style="color: #001080;">name</span>)</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;})</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #0000ff;">let</span> <span
-      style="color: #001080;">grabado</span> =</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #795e26;">espera</span>(<span
-      style="color: #001080;">milisegundos</span>)</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span
-      style="color: #795e26;">then</span>(() <span
-      style="color: #0000ff;">=&gt;</span> <span
-      style="color: #001080;">recorder</span>.<span
-      style="color: #001080;">state</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=== <span
-      style="color: #a31515;">"recording"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp; <span
-      style="color: #001080;">recorder</span>.<span
-      style="color: #795e26;">stop</span>()</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</div><br>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #af00db;">return</span> <span
-      style="color: #267f99;">Promise</span>.<span
-      style="color: #795e26;">all</span>([</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">detenido</span>,</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">grabado</span></div>
-   <div>&nbsp;&nbsp;&nbsp;])</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;.<span
-      style="color: #795e26;">then</span>(() <span
-      style="color: #0000ff;">=&gt;</span> <span
-      style="color: #001080;">data</span>)</div>
-   <div>&nbsp;&nbsp;}</div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">detiene</span>(<span
-      style="color: #001080;">stream</span>)&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">stream</span>.<span
-      style="color: #795e26;">getTracks</span>().<span
-      style="color: #795e26;">forEach</span>(</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">track</span> <span
-      style="color: #0000ff;">=&gt;</span> <span
-      style="color: #001080;">track</span>.<span
-      style="color: #795e26;">stop</span>())</div>
-   <div>&nbsp;&nbsp;}</div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">log</span>(<span
-      style="color: #001080;">msg</span>)&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">mensajes</span>.<span
-      style="color: #001080;">innerHTML</span> +=</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #001080;">msg</span> + <span
-      style="color: #a31515;">"&lt;br&gt;"</span></div>
-   <div>&nbsp;&nbsp;}</div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">espera</span>(<span
-      style="color: #001080;">milisegundos</span>)&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #af00db;">return</span> <span
-      style="color: #0000ff;">new</span> <span
-      style="color: #267f99;">Promise</span>(</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #795e26;">resolve</span> <span
-      style="color: #0000ff;">=&gt;</span> <span
-      style="color: #795e26;">setTimeout</span>(</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #795e26;">resolve</span>, <span
-      style="color: #001080;">milisegundos</span>))</div>
-   <div>&nbsp;&nbsp;}</div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/script&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;/body&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+  <caption style="text-align: left">
+   <button type=button title="Copiar al portapapeles"
+     onclick="copyToClipboard(this)">
+    <span class="material-symbols-outlined">
+     content_copy
+    </span>
+   </button>
+  </caption>
+  <tbody>
+   <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+   <tr><td>2</td><td>&lt;<span class="codeReserved">html</span>&gt;</td></tr>
+   <tr><td>3</td><td></td></tr>
+   <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+   <tr><td>5</td><td></td></tr>
+   <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"utf-8"</span>&gt;</td></tr>
+   <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+   <tr><td>8</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+   <tr><td>9</td><td></td></tr>
+   <tr><td>10</td><td> &lt;<span class="codeReserved">title</span>&gt;Cámara&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+   <tr><td>11</td><td></td></tr>
+   <tr><td>12</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
+   <tr><td>13</td><td>  html {</td></tr>
+   <tr><td>14</td><td>   color-scheme: light dark;</td></tr>
+   <tr><td>15</td><td>  }</td></tr>
+   <tr><td>16</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
+   <tr><td>17</td><td></td></tr>
+   <tr><td>18</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+   <tr><td>19</td><td></td></tr>
+   <tr><td>20</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+   <tr><td>21</td><td></td></tr>
+   <tr><td>22</td><td> &lt;<span class="codeReserved">h1</span>&gt;Cámara&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+   <tr><td>23</td><td></td></tr>
+   <tr><td>24</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>25</td><td>  Para grabar o capturar imagen,</td></tr>
+   <tr><td>26</td><td>  cliquea</td></tr>
+   <tr><td>27</td><td>  &lt;<span class="codeReserved">strong</span>&gt;Inicia&lt;/<span class="codeReserved">strong</span>&gt;.</td></tr>
+   <tr><td>28</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>29</td><td></td></tr>
+   <tr><td>30</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>31</td><td>  Para grabar por 5 segundos</td></tr>
+   <tr><td>32</td><td>  cliquea</td></tr>
+   <tr><td>33</td><td>  &lt;<span class="codeReserved">strong</span>&gt;Graba&lt;/<span class="codeReserved">strong</span>&gt;</td></tr>
+   <tr><td>34</td><td>  y cliquea</td></tr>
+   <tr><td>35</td><td>  &lt;<span class="codeReserved">strong</span>&gt;Para&lt;/<span class="codeReserved">strong</span>&gt; para</td></tr>
+   <tr><td>36</td><td>  detener.</td></tr>
+   <tr><td>37</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>38</td><td></td></tr>
+   <tr><td>39</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>40</td><td>  Para capturar una imagen de la</td></tr>
+   <tr><td>41</td><td>  cámara, cliquea</td></tr>
+   <tr><td>42</td><td>  &lt;<span class="codeReserved">strong</span>&gt;Captura&lt;/<span class="codeReserved">strong</span>&gt;.</td></tr>
+   <tr><td>43</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>44</td><td></td></tr>
+   <tr><td>45</td><td> &lt;<span class="codeReserved">menu</span> style=<span class="codeString">"<span class="codeReserved">display</span>: flex;</span></td></tr>
+   <tr><td>46</td><td><span class="codeString">   flex-wrap: wrap;</span></td></tr>
+   <tr><td>47</td><td><span class="codeString">   list-style: none;"</span>&gt;</td></tr>
+   <tr><td>48</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+   <tr><td>49</td><td>   &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span></td></tr>
+   <tr><td>50</td><td>     onclick=<span class="codeString">"inicia()"</span>&gt;</td></tr>
+   <tr><td>51</td><td>    Inicia</td></tr>
+   <tr><td>52</td><td>   &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+   <tr><td>53</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+   <tr><td>54</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+   <tr><td>55</td><td>   &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span></td></tr>
+   <tr><td>56</td><td>     onclick=<span class="codeString">"graba()"</span>&gt;</td></tr>
+   <tr><td>57</td><td>    Graba</td></tr>
+   <tr><td>58</td><td>   &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+   <tr><td>59</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+   <tr><td>60</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+   <tr><td>61</td><td>   &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span></td></tr>
+   <tr><td>62</td><td>     onclick=<span class="codeString">"para();"</span>&gt;</td></tr>
+   <tr><td>63</td><td>    Para</td></tr>
+   <tr><td>64</td><td>   &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+   <tr><td>65</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+   <tr><td>66</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+   <tr><td>67</td><td>   &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span></td></tr>
+   <tr><td>68</td><td>     onclick=<span class="codeString">"captura()"</span>&gt;</td></tr>
+   <tr><td>69</td><td>    Captura</td></tr>
+   <tr><td>70</td><td>   &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+   <tr><td>71</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+   <tr><td>72</td><td> &lt;/<span class="codeReserved">menu</span>&gt;</td></tr>
+   <tr><td>73</td><td></td></tr>
+   <tr><td>74</td><td> &lt;<span class="codeReserved">section</span></td></tr>
+   <tr><td>75</td><td>   style=<span class="codeString">"<span class="codeReserved">display</span>: inline-block;</span></td></tr>
+   <tr><td>76</td><td><span class="codeString">     <span class="codeReserved">vertical-align</span>: <span class="codeReserved">top</span>;"</span>&gt;</td></tr>
+   <tr><td>77</td><td></td></tr>
+   <tr><td>78</td><td>  &lt;<span class="codeReserved">h1</span>&gt;Preview&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+   <tr><td>79</td><td></td></tr>
+   <tr><td>80</td><td>  &lt;<span class="codeReserved">video</span> id=<span class="codeString">"preview"</span> <span class="codeReserved">width</span>=<span class="codeString">"160"</span></td></tr>
+   <tr><td>81</td><td>    <span class="codeReserved">height</span>=<span class="codeString">"120"</span> autoplay</td></tr>
+   <tr><td>82</td><td>    muted&gt;&lt;/<span class="codeReserved">video</span>&gt;</td></tr>
+   <tr><td>83</td><td></td></tr>
+   <tr><td>84</td><td> &lt;/<span class="codeReserved">section</span>&gt;</td></tr>
+   <tr><td>85</td><td></td></tr>
+   <tr><td>86</td><td> &lt;<span class="codeReserved">section</span></td></tr>
+   <tr><td>87</td><td>   style=<span class="codeString">"<span class="codeReserved">display</span>: inline-block;</span></td></tr>
+   <tr><td>88</td><td><span class="codeString">     <span class="codeReserved">vertical-align</span>: <span class="codeReserved">top</span>;"</span>&gt;</td></tr>
+   <tr><td>89</td><td></td></tr>
+   <tr><td>90</td><td>  &lt;<span class="codeReserved">h1</span>&gt;Recording&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+   <tr><td>91</td><td></td></tr>
+   <tr><td>92</td><td>  &lt;<span class="codeReserved">video</span> id=<span class="codeString">"recording"</span> <span class="codeReserved">width</span>=<span class="codeString">"160"</span></td></tr>
+   <tr><td>93</td><td>    <span class="codeReserved">height</span>=<span class="codeString">"120"</span> controls&gt;&lt;/<span class="codeReserved">video</span>&gt;</td></tr>
+   <tr><td>94</td><td></td></tr>
+   <tr><td>95</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>96</td><td>   &lt;<span class="codeReserved">a</span> id=<span class="codeString">"descarga"</span>&gt;Descarga&lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+   <tr><td>97</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>98</td><td></td></tr>
+   <tr><td>99</td><td>  &lt;<span class="codeReserved">div</span> id=<span class="codeString">"mensajes"</span>&gt;&lt;/<span class="codeReserved">div</span>&gt;</td></tr>
+   <tr><td>100</td><td></td></tr>
+   <tr><td>101</td><td> &lt;/<span class="codeReserved">section</span>&gt;</td></tr>
+   <tr><td>102</td><td></td></tr>
+   <tr><td>103</td><td> &lt;<span class="codeReserved">section</span></td></tr>
+   <tr><td>104</td><td>   style=<span class="codeString">"<span class="codeReserved">display</span>: inline-block;</span></td></tr>
+   <tr><td>105</td><td><span class="codeString">     <span class="codeReserved">vertical-align</span>: <span class="codeReserved">top</span>;"</span>&gt;</td></tr>
+   <tr><td>106</td><td></td></tr>
+   <tr><td>107</td><td>  &lt;<span class="codeReserved">h1</span>&gt;Imagen&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+   <tr><td>108</td><td></td></tr>
+   <tr><td>109</td><td>  &lt;<span class="codeReserved">canvas</span> id=<span class="codeString">"canvas"</span> <span class="codeReserved">width</span>=<span class="codeString">"160"</span></td></tr>
+   <tr><td>110</td><td>    <span class="codeReserved">height</span>=<span class="codeString">"120"</span>&gt;&lt;/<span class="codeReserved">canvas</span>&gt;</td></tr>
+   <tr><td>111</td><td></td></tr>
+   <tr><td>112</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>113</td><td>   &lt;<span class="codeReserved">a</span> id=<span class="codeString">"descargaImagen"</span>&gt;</td></tr>
+   <tr><td>114</td><td>    Descarga&lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+   <tr><td>115</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>116</td><td></td></tr>
+   <tr><td>117</td><td> &lt;/<span class="codeReserved">section</span>&gt;</td></tr>
+   <tr><td>118</td><td></td></tr>
+   <tr><td>119</td><td> &lt;<span class="codeReserved">script</span>&gt;</td></tr>
+   <tr><td>120</td><td></td></tr>
+   <tr><td>121</td><td>  <span class="codeReserved">let</span> stream = <span class="codeReserved">null</span></td></tr>
+   <tr><td>122</td><td></td></tr>
+   <tr><td>123</td><td>  <span class="codeReserved">let</span> TIEMPO_DE_GRABACION = 5000</td></tr>
+   <tr><td>124</td><td></td></tr>
+   <tr><td>125</td><td>  var context =</td></tr>
+   <tr><td>126</td><td>   canvas.getContext(<span class="codeString">'2d'</span>)</td></tr>
+   <tr><td>127</td><td></td></tr>
+   <tr><td>128</td><td>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> inicia() {</td></tr>
+   <tr><td>129</td><td>   <span class="codeReserved">try</span> {</td></tr>
+   <tr><td>130</td><td>    stream = <span class="codeReserved">await</span> navigator</td></tr>
+   <tr><td>131</td><td>     .mediaDevices.getUserMedia({</td></tr>
+   <tr><td>132</td><td>      video: <span class="codeReserved">true</span>,</td></tr>
+   <tr><td>133</td><td>      audio: <span class="codeReserved">true</span></td></tr>
+   <tr><td>134</td><td>     })</td></tr>
+   <tr><td>135</td><td>    preview.srcObject = stream</td></tr>
+   <tr><td>136</td><td>    descarga.href = stream</td></tr>
+   <tr><td>137</td><td>    preview.captureStream =</td></tr>
+   <tr><td>138</td><td>     preview.captureStream</td></tr>
+   <tr><td>139</td><td>     || preview.mozCaptureStream</td></tr>
+   <tr><td>140</td><td>    <span class="codeReserved">await</span> <span class="codeReserved">new</span> Promise(</td></tr>
+   <tr><td>141</td><td>     resolve =&gt;</td></tr>
+   <tr><td>142</td><td>      preview.onplaying = resolve)</td></tr>
+   <tr><td>143</td><td>   } <span class="codeReserved">catch</span> (e) {</td></tr>
+   <tr><td>144</td><td>    log(e.message)</td></tr>
+   <tr><td>145</td><td>   }</td></tr>
+   <tr><td>146</td><td>  }</td></tr>
+   <tr><td>147</td><td></td></tr>
+   <tr><td>148</td><td>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> graba() {</td></tr>
+   <tr><td>149</td><td>   <span class="codeReserved">try</span> {</td></tr>
+   <tr><td>150</td><td>    <span class="codeReserved">const</span> recordedChunks =</td></tr>
+   <tr><td>151</td><td>     <span class="codeReserved">await</span> grabaClip(stream,</td></tr>
+   <tr><td>152</td><td>      TIEMPO_DE_GRABACION)</td></tr>
+   <tr><td>153</td><td>    <span class="codeReserved">let</span> recordedBlob = <span class="codeReserved">new</span> Blob(</td></tr>
+   <tr><td>154</td><td>     recordedChunks,</td></tr>
+   <tr><td>155</td><td>     { type: <span class="codeString">"video/webm"</span> })</td></tr>
+   <tr><td>156</td><td>    recording.src =</td></tr>
+   <tr><td>157</td><td>     URL.createObjectURL(</td></tr>
+   <tr><td>158</td><td>      recordedBlob)</td></tr>
+   <tr><td>159</td><td>    descarga.href = recording.src</td></tr>
+   <tr><td>160</td><td>    descarga.download =</td></tr>
+   <tr><td>161</td><td>     <span class="codeString">"RecordedVideo.webm"</span></td></tr>
+   <tr><td>162</td><td></td></tr>
+   <tr><td>163</td><td>    log(<span class="codeString">"Exitosamente grabados "</span></td></tr>
+   <tr><td>164</td><td>     + recordedBlob.size</td></tr>
+   <tr><td>165</td><td>     + <span class="codeString">" bytes de "</span></td></tr>
+   <tr><td>166</td><td>     + recordedBlob.type</td></tr>
+   <tr><td>167</td><td>     + <span class="codeString">" media."</span>)</td></tr>
+   <tr><td>168</td><td>   } <span class="codeReserved">catch</span> (e) {</td></tr>
+   <tr><td>169</td><td>    log(e.message)</td></tr>
+   <tr><td>170</td><td>   }</td></tr>
+   <tr><td>171</td><td>  }</td></tr>
+   <tr><td>172</td><td></td></tr>
+   <tr><td>173</td><td>  <span class="codeReserved">function</span> para() {</td></tr>
+   <tr><td>174</td><td>   detiene(preview.srcObject)</td></tr>
+   <tr><td>175</td><td>  }</td></tr>
+   <tr><td>176</td><td></td></tr>
+   <tr><td>177</td><td>  <span class="codeReserved">function</span> captura() {</td></tr>
+   <tr><td>178</td><td>   context.drawImage(preview,</td></tr>
+   <tr><td>179</td><td>    0, 0, 160, 120)</td></tr>
+   <tr><td>180</td><td>   descargaImagen.href =</td></tr>
+   <tr><td>181</td><td>    canvas.toDataURL(<span class="codeString">'image/jpeg'</span>)</td></tr>
+   <tr><td>182</td><td>   descargaImagen.download =</td></tr>
+   <tr><td>183</td><td>    <span class="codeString">"imagen.jpg"</span></td></tr>
+   <tr><td>184</td><td>  }</td></tr>
+   <tr><td>185</td><td></td></tr>
+   <tr><td>186</td><td>  <span class="codeReserved">function</span> grabaClip(stream,</td></tr>
+   <tr><td>187</td><td>   milisegundos) {</td></tr>
+   <tr><td>188</td><td>   <span class="codeReserved">let</span> recorder =</td></tr>
+   <tr><td>189</td><td>    <span class="codeReserved">new</span> MediaRecorder(stream)</td></tr>
+   <tr><td>190</td><td>   <span class="codeReserved">let</span> data = []</td></tr>
+   <tr><td>191</td><td>   recorder.ondataavailable =</td></tr>
+   <tr><td>192</td><td>    event =&gt; data.push(event.data)</td></tr>
+   <tr><td>193</td><td>   recorder.start()</td></tr>
+   <tr><td>194</td><td>   log(recorder.state</td></tr>
+   <tr><td>195</td><td>    + <span class="codeString">" durante "</span></td></tr>
+   <tr><td>196</td><td>    + (milisegundos <span class="codeString">/ </span>1000)</td></tr>
+   <tr><td>197</td><td>    + <span class="codeString">" segundos&hellip;"</span>)</td></tr>
+   <tr><td>198</td><td>   <span class="codeReserved">let</span> detenido = <span class="codeReserved">new</span> Promise(</td></tr>
+   <tr><td>199</td><td>    (resolve, reject) =&gt; {</td></tr>
+   <tr><td>200</td><td>     recorder.onstop = resolve</td></tr>
+   <tr><td>201</td><td>     recorder.onerror =</td></tr>
+   <tr><td>202</td><td>      event =&gt; reject(event.name)</td></tr>
+   <tr><td>203</td><td>    })</td></tr>
+   <tr><td>204</td><td>   <span class="codeReserved">let</span> grabado =</td></tr>
+   <tr><td>205</td><td>    espera(milisegundos)</td></tr>
+   <tr><td>206</td><td>     .then(() =&gt; recorder.state</td></tr>
+   <tr><td>207</td><td>      === <span class="codeString">"recording"</span></td></tr>
+   <tr><td>208</td><td>      && recorder.stop()</td></tr>
+   <tr><td>209</td><td>     )</td></tr>
+   <tr><td>210</td><td></td></tr>
+   <tr><td>211</td><td>   <span class="codeReserved">return</span> Promise.all([</td></tr>
+   <tr><td>212</td><td>    detenido,</td></tr>
+   <tr><td>213</td><td>    grabado</td></tr>
+   <tr><td>214</td><td>   ])</td></tr>
+   <tr><td>215</td><td>    .then(() =&gt; data)</td></tr>
+   <tr><td>216</td><td>  }</td></tr>
+   <tr><td>217</td><td></td></tr>
+   <tr><td>218</td><td>  <span class="codeReserved">function</span> detiene(stream) {</td></tr>
+   <tr><td>219</td><td>   stream.getTracks().forEach(</td></tr>
+   <tr><td>220</td><td>    track =&gt; track.stop())</td></tr>
+   <tr><td>221</td><td>  }</td></tr>
+   <tr><td>222</td><td></td></tr>
+   <tr><td>223</td><td>  <span class="codeReserved">function</span> log(msg) {</td></tr>
+   <tr><td>224</td><td>   mensajes.innerHTML +=</td></tr>
+   <tr><td>225</td><td>    msg + <span class="codeString">"&lt;<span class="codeReserved">br</span>&gt;"</span></td></tr>
+   <tr><td>226</td><td>  }</td></tr>
+   <tr><td>227</td><td></td></tr>
+   <tr><td>228</td><td>  <span class="codeReserved">function</span> espera(milisegundos) {</td></tr>
+   <tr><td>229</td><td>   <span class="codeReserved">return</span> <span class="codeReserved">new</span> Promise(</td></tr>
+   <tr><td>230</td><td>    resolve =&gt; setTimeout(</td></tr>
+   <tr><td>231</td><td>     resolve, milisegundos))</td></tr>
+   <tr><td>232</td><td>  }</td></tr>
+   <tr><td>233</td><td></td></tr>
+   <tr><td>234</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+   <tr><td>235</td><td></td></tr>
+   <tr><td>236</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+   <tr><td>237</td><td></td></tr>
+   <tr><td>238</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+  </tbody>
+ </table>
 </div>
  <footer>
  <p>
@@ -1068,15 +1121,23 @@
  </p>
 </footer>
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
-  &#x2630;
+  <span class="material-symbols-outlined">
+   menu
+  </span>
  </button>
- <a class="anterior" href="/m04dispositivo/mBarchivos.html" title="C. Archivos y cámara">◀</a>
- <a class="siguiente" href="/m04dispositivo/mDresumen.html" title="E. Resumen">▶</a>
+ <a class="anterior" href="/m04dispositivo/mBarchivos.html" title="C. Archivos y cámara"><span class="material-symbols-outlined">
+     skip_previous
+    </span></a>
+ <a class="siguiente" href="/m04dispositivo/mDresumen.html" title="E. Resumen"><span class="material-symbols-outlined">
+     skip_next
+     </span></a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
  <button type="button" title="Cierra" class="cambiaMenu">
-  &#x2715;
+  <span class="material-symbols-outlined">
+   close
+  </span>
  </button>
  
    <p>
@@ -1087,7 +1148,10 @@
    
      <p>
       <a class="paginaAnterior" href="/m03pwaMaterial/m40resumen.html"
-        title="35. Resumen">▲</a>
+        title="35. Resumen"><span
+        class="material-symbols-outlined">
+         arrow_upward
+        </span></a>
      </p>
    <h1><a href="/m04dispositivo/index.html">6. Acceso al dispositivo</a></h1>
    
@@ -1122,7 +1186,10 @@
    
     <p>
      <a class="paginaSiguiente" href="/m05iot/index.html"
-       title="7. IoT">▼</a>
+       title="7. IoT"><span
+       class="material-symbols-outlined">
+        arrow_downward
+       </span></a>
     </p>
  
 </nav>
@@ -1186,6 +1253,24 @@
  function muestraError(e) {
   console.error(e)
   alert(e.message)
+ }
+
+ async function copyToClipboard(button) {
+  try {
+   const table = button.closest("table")
+   if (table !== null) {
+    const lineas = Array.from(table.querySelectorAll("td:nth-child(2)"))
+    const codigo = lineas
+     .map(linea => linea.textContent || "")
+     .join("\n")
+    if (codigo) {
+     await navigator.clipboard.writeText(codigo)
+     alert("Texto copiado al portapapeles.")
+    }
+   }
+  } catch (e) {
+   alert(e.message)
+  }
  }
 
  function cambiaMenu() {

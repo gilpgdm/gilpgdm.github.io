@@ -1,271 +1,122 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #800000;">&lt;!DOCTYPE</span> <span
-     style="color: #e50000;">html</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div><span
-     style="color: #800000;">&lt;html</span> <span
-     style="color: #e50000;">lang</span>=<span
-     style="color: #0000ff;">"es"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div><span
-     style="color: #800000;">&lt;head&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;meta</span> <span
-     style="color: #e50000;">charset</span>=<span
-     style="color: #0000ff;">"utf-8"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;meta</span> <span
-     style="color: #e50000;">name</span>=<span
-     style="color: #0000ff;">"viewport"</span> <span
-     style="color: #e50000;">content</span>=<span
-     style="color: #0000ff;">"width=device-width"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;title&gt;</span>IoT<span
-     style="color: #800000;">&lt;/title&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;script</span> <span
-     style="color: #e50000;">src</span>=<span
-     style="color: #0000ff;">"paho.javascript-1.0.3/paho-mqtt-min.js"</span><span
-     style="color: #800000;">&gt;&lt;/script&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;script&gt;</span></div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// A cada control le corresponde un tópico
-    diferente.</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">TOPICO_FOCO</span> = <span
-     style="color: #a31515;">"gilpgdm/IoT/foco"</span></div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">let</span> <span
-     style="color: #001080;">valor</span> = <span
-     style="color: #a31515;">"0"</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;/script&gt;</span></div><br>
-  <div><span
-     style="color: #800000;">&lt;/head&gt;</span></div><br>
-  <div><span
-     style="color: #800000;">&lt;body&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;h1&gt;</span>IoT<span
-     style="color: #800000;">&lt;/h1&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;p&gt;</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;output</span> <span
-     style="color: #e50000;">id</span>=<span
-     style="color: #0000ff;">"salida"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;progress</span> <span
-     style="color: #e50000;">max</span>=<span
-     style="color: #0000ff;">"100"</span><span
-     style="color: #800000;">&gt;</span>Cargando<span
-     style="color: #0000ff;">&amp;hellip;</span><span
-     style="color: #800000;">&lt;/progress&gt;</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/output&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;/p&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;p&gt;</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;button</span> <span
-     style="color: #e50000;">type</span>=<span
-     style="color: #0000ff;">"button"</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">onclick</span>=<span
-     style="color: #0000ff;">"</span><span
-     style="color: #795e26;">enviaMensajeMqtt</span><span
-     style="color: #0000ff;">( </span><span
-     style="color: #001080;">valor</span><span
-     style="color: #0000ff;"> </span>===<span
-     style="color: #0000ff;"> </span><span
-     style="color: #a31515;">'1'</span><span
-     style="color: #0000ff;"> </span>?<span
-     style="color: #0000ff;"> </span><span
-     style="color: #a31515;">'0'</span><span
-     style="color: #0000ff;"> </span>:<span
-     style="color: #0000ff;"> </span><span
-     style="color: #a31515;">'1'</span><span
-     style="color: #0000ff;">, </span><span
-     style="color: #0070c1;">TOPICO_FOCO</span><span
-     style="color: #0000ff;">)"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;Enviar</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/button&gt;</span></div>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;/p&gt;</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;script</span> <span
-     style="color: #e50000;">type</span>=<span
-     style="color: #0000ff;">"module"</span><span
-     style="color: #800000;">&gt;</span></div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">creaClientIdMqtt</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./lib/js/creaClientIdMqtt.js"</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">falloEnLaConexionMqtt</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./lib/js/falloEnLaConexionMqtt.js"</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">conexionMqttPerdida</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"./lib/js/conexionMqttPerdida.js"</span></div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// Cambia por una raíz para tu proyecto.</span>
-  </div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">clientId</span> = <span
-     style="color: #795e26;">creaClientIdMqtt</span>(<span
-     style="color: #a31515;">"gilpgdmIoT-"</span>)</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// Si usas un servidor de MQTT diferente, necesitas
-    cambiar los parámetros.</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">cliente</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #001080;">Paho</span>.<span
-     style="color: #0070c1;">MQTT</span>.<span
-     style="color: #795e26;">Client</span>(<span
-     style="color: #a31515;">"test.mosquitto.org"</span>, <span
-     style="color: #098658;">8081</span>, <span
-     style="color: #0070c1;">clientId</span>)</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// Acciones al recibir un mensaje.</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0070c1;">cliente</span>.<span
-     style="color: #795e26;">onMessageArrived</span> = <span
-     style="color: #001080;">mensaje</span> <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">mensaje</span>.<span
-     style="color: #001080;">destinationName</span> === <span
-     style="color: #0070c1;">TOPICO_FOCO</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">valor</span> = <span
-     style="color: #001080;">mensaje</span>.<span
-     style="color: #001080;">payloadString</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">salida</span>.<span
-     style="color: #001080;">value</span> = <span
-     style="color: #001080;">valor</span> === <span
-     style="color: #a31515;">"1"</span> ? <span
-     style="color: #a31515;">"🔴"</span> : <span
-     style="color: #a31515;">"⚪"</span></div>
-  <div>&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// Acciones al perder la conexión.</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0070c1;">cliente</span>.<span
-     style="color: #001080;">onConnectionLost</span> = <span
-     style="color: #001080;">conexionMqttPerdida</span></div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// Configura el cliente.</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0070c1;">cliente</span>.<span
-     style="color: #795e26;">connect</span>({</div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">keepAliveInterval</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #098658;">10</span>,</div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">useSSL</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #0000ff;">true</span>,</div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">// Acciones al fallar la conexión.</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">onFailure</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #001080;">falloEnLaConexionMqtt</span>,</div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">// Acciones al lograr la conexión.</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">onSuccess</span><span
-     style="color: #001080;">:</span> () <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"Conectado"</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">// Se suscribe a uno o más tópicos.</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">cliente</span>.<span
-     style="color: #795e26;">subscribe</span>(<span
-     style="color: #0070c1;">TOPICO_FOCO</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">// Envía el valor inicial al tópico.</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">enviaMensajeMqtt</span>(<span
-     style="color: #001080;">valor</span>, <span
-     style="color: #0070c1;">TOPICO_FOCO</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;},</div><br>
-  <div>&nbsp;&nbsp;})</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;Envá un valor al servidor
-    de MQTT y es reenviado a todos los dispositivos</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;suscritos al tópico
-    indicado</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{string}&nbsp;mensaje</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{string}&nbsp;topico</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*/</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">enviaMensajeMqtt</span>(<span
-     style="color: #001080;">mensaje</span>, <span
-     style="color: #001080;">topico</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">mensajeMqtt</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #001080;">Paho</span>.<span
-     style="color: #0070c1;">MQTT</span>.<span
-     style="color: #795e26;">Message</span>(<span
-     style="color: #001080;">mensaje</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">mensajeMqtt</span>.<span
-     style="color: #001080;">destinationName</span> = <span
-     style="color: #001080;">topico</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #0070c1;">cliente</span>.<span
-     style="color: #795e26;">send</span>(<span
-     style="color: #0070c1;">mensajeMqtt</span>)</div>
-  <div>&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// Permite que los eventos de html usen la
-    función.</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">window</span>[<span
-     style="color: #a31515;">"enviaMensajeMqtt"</span>] = <span
-     style="color: #795e26;">enviaMensajeMqtt</span></div><br>
-  <div>&nbsp;<span
-     style="color: #800000;">&lt;/script&gt;</span></div><br>
-  <div><span
-     style="color: #800000;">&lt;/body&gt;</span></div><br>
-  <div><span
-     style="color: #800000;">&lt;/html&gt;</span></div>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"utf-8"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td></td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;IoT&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td> &lt;<span class="codeReserved">script</span> src=<span class="codeString">"paho.javascript-1.0.3/paho-mqtt-min.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>14</td><td></td></tr>
+  <tr><td>15</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>16</td><td></td></tr>
+  <tr><td>17</td><td> &lt;<span class="codeReserved">h1</span>&gt;IoT&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>18</td><td></td></tr>
+  <tr><td>19</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>20</td><td>  &lt;<span class="codeReserved">output</span> id=<span class="codeString">"salida"</span>&gt;</td></tr>
+  <tr><td>21</td><td>   &lt;<span class="codeReserved">progress</span> max=<span class="codeString">"100"</span>&gt;Cargando&hellip;&lt;/<span class="codeReserved">progress</span>&gt;</td></tr>
+  <tr><td>22</td><td>  &lt;/<span class="codeReserved">output</span>&gt;</td></tr>
+  <tr><td>23</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>24</td><td></td></tr>
+  <tr><td>25</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>26</td><td>  &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span> onclick=<span class="codeString">"clicEnBoton()"</span>&gt;</td></tr>
+  <tr><td>27</td><td>   Enviar</td></tr>
+  <tr><td>28</td><td>  &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+  <tr><td>29</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>30</td><td></td></tr>
+  <tr><td>31</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span>&gt;</td></tr>
+  <tr><td>32</td><td></td></tr>
+  <tr><td>33</td><td>  <span class="codeReserved">import</span> { creaClientIdMqtt } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/creaClientIdMqtt.js"</span></td></tr>
+  <tr><td>34</td><td>  <span class="codeReserved">import</span> { falloEnLaConexionMqtt } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/falloEnLaConexionMqtt.js"</span></td></tr>
+  <tr><td>35</td><td>  <span class="codeReserved">import</span> { conexionMqttPerdida } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/conexionMqttPerdida.js"</span></td></tr>
+  <tr><td>36</td><td>  <span class="codeReserved">import</span> { muestraError } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/muestraError.js"</span></td></tr>
+  <tr><td>37</td><td></td></tr>
+  <tr><td>38</td><td>  <span class="codeComment">// A cada control le corresponde un tópico diferente.</span></td></tr>
+  <tr><td>39</td><td>  <span class="codeReserved">const</span> TOPICO_FOCO = <span class="codeString">"gilpgdm/IoT/foco"</span></td></tr>
+  <tr><td>40</td><td></td></tr>
+  <tr><td>41</td><td>  <span class="codeReserved">let</span> valor = <span class="codeString">"0"</span></td></tr>
+  <tr><td>42</td><td></td></tr>
+  <tr><td>43</td><td>  <span class="codeComment">// Cambia por una raíz para tu proyecto.</span></td></tr>
+  <tr><td>44</td><td>  <span class="codeReserved">const</span> clientId = creaClientIdMqtt(<span class="codeString">"gilpgdmIoT-"</span>)</td></tr>
+  <tr><td>45</td><td></td></tr>
+  <tr><td>46</td><td>  <span class="codeComment">// Si usas un servidor de MQTT diferente, necesitas cambiar los parámetros.</span></td></tr>
+  <tr><td>47</td><td>  <span class="codeReserved">const</span> cliente = <span class="codeReserved">new</span> Paho.MQTT.Client(<span class="codeString">"test.mosquitto.org"</span>, 8081, clientId)</td></tr>
+  <tr><td>48</td><td></td></tr>
+  <tr><td>49</td><td>  <span class="codeReserved">function</span> clicEnBoton() {</td></tr>
+  <tr><td>50</td><td>   <span class="codeReserved">try</span> {</td></tr>
+  <tr><td>51</td><td>    enviaMensajeMqtt(valor === <span class="codeString">'1'</span> ? <span class="codeString">'0'</span> : <span class="codeString">'1'</span>, TOPICO_FOCO)</td></tr>
+  <tr><td>52</td><td>   } <span class="codeReserved">catch</span> (error) {</td></tr>
+  <tr><td>53</td><td>    muestraError(error)</td></tr>
+  <tr><td>54</td><td>   }</td></tr>
+  <tr><td>55</td><td>  }</td></tr>
+  <tr><td>56</td><td>  <span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
+  <tr><td>57</td><td>  window[<span class="codeString">"clicEnBoton"</span>] = clicEnBoton</td></tr>
+  <tr><td>58</td><td></td></tr>
+  <tr><td>59</td><td>  <span class="codeComment">// Acciones al recibir un mensaje.</span></td></tr>
+  <tr><td>60</td><td>  cliente.onMessageArrived = mensaje =&gt; {</td></tr>
+  <tr><td>61</td><td>   <span class="codeReserved">if</span> (mensaje.destinationName === TOPICO_FOCO) {</td></tr>
+  <tr><td>62</td><td>    valor = mensaje.payloadString</td></tr>
+  <tr><td>63</td><td>    salida.value = valor === <span class="codeString">"1"</span> ? <span class="codeString">"🔴"</span> : <span class="codeString">"⚪"</span></td></tr>
+  <tr><td>64</td><td>   }</td></tr>
+  <tr><td>65</td><td>  }</td></tr>
+  <tr><td>66</td><td></td></tr>
+  <tr><td>67</td><td>  <span class="codeComment">// Acciones al perder la conexión.</span></td></tr>
+  <tr><td>68</td><td>  cliente.onConnectionLost = conexionMqttPerdida</td></tr>
+  <tr><td>69</td><td></td></tr>
+  <tr><td>70</td><td>  <span class="codeComment">// Configura el cliente.</span></td></tr>
+  <tr><td>71</td><td>  cliente.connect({</td></tr>
+  <tr><td>72</td><td></td></tr>
+  <tr><td>73</td><td>   keepAliveInterval: 10,</td></tr>
+  <tr><td>74</td><td></td></tr>
+  <tr><td>75</td><td>   useSSL: <span class="codeReserved">true</span>,</td></tr>
+  <tr><td>76</td><td></td></tr>
+  <tr><td>77</td><td>   <span class="codeComment">// Acciones al fallar la conexión.</span></td></tr>
+  <tr><td>78</td><td>   onFailure: falloEnLaConexionMqtt,</td></tr>
+  <tr><td>79</td><td></td></tr>
+  <tr><td>80</td><td>   <span class="codeComment">// Acciones al lograr la conexión.</span></td></tr>
+  <tr><td>81</td><td>   onSuccess: () =&gt; {</td></tr>
+  <tr><td>82</td><td>    console.log(<span class="codeString">"Conectado"</span>)</td></tr>
+  <tr><td>83</td><td>    <span class="codeComment">// Se suscribe a uno o más tópicos.</span></td></tr>
+  <tr><td>84</td><td>    cliente.subscribe(TOPICO_FOCO)</td></tr>
+  <tr><td>85</td><td>    <span class="codeComment">// Envía el valor inicial al tópico.</span></td></tr>
+  <tr><td>86</td><td>    enviaMensajeMqtt(valor, TOPICO_FOCO)</td></tr>
+  <tr><td>87</td><td>   },</td></tr>
+  <tr><td>88</td><td></td></tr>
+  <tr><td>89</td><td>  })</td></tr>
+  <tr><td>90</td><td></td></tr>
+  <tr><td>91</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>92</td><td><span class="codeComment">   * Envá un valor al servidor de MQTT y es reenviado a todos los dispositivos</span></td></tr>
+  <tr><td>93</td><td><span class="codeComment">   * suscritos al tópico indicado</span></td></tr>
+  <tr><td>94</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> {string} mensaje</span></td></tr>
+  <tr><td>95</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> {string} topico</span></td></tr>
+  <tr><td>96</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>97</td><td>  <span class="codeReserved">function</span> enviaMensajeMqtt(mensaje, topico) {</td></tr>
+  <tr><td>98</td><td>   <span class="codeReserved">const</span> mensajeMqtt = <span class="codeReserved">new</span> Paho.MQTT.Message(mensaje)</td></tr>
+  <tr><td>99</td><td>   mensajeMqtt.destinationName = topico</td></tr>
+  <tr><td>100</td><td>   cliente.send(mensajeMqtt)</td></tr>
+  <tr><td>101</td><td>  }</td></tr>
+  <tr><td>102</td><td></td></tr>
+  <tr><td>103</td><td>  <span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
+  <tr><td>104</td><td>  window[<span class="codeString">"enviaMensajeMqtt"</span>] = enviaMensajeMqtt</td></tr>
+  <tr><td>105</td><td></td></tr>
+  <tr><td>106</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>107</td><td></td></tr>
+  <tr><td>108</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>109</td><td></td></tr>
+  <tr><td>110</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>

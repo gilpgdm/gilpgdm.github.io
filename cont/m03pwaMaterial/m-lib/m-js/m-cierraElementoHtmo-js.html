@@ -1,43 +1,23 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ HTMLElement }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">elementoHtml</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">cierraElementoHtmo</span>(<span
-     style="color: #001080;">elementoHtml</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">list</span> = <span
-     style="color: #001080;">elementoHtml</span>.<span
-     style="color: #0070c1;">classList</span></div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #0070c1;">list</span>.<span
-     style="color: #795e26;">contains</span>(<span
-     style="color: #a31515;">"open"</span>))&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0070c1;">list</span>.<span
-     style="color: #795e26;">remove</span>(<span
-     style="color: #a31515;">"open"</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">setTimeout</span>(() <span
-     style="color: #0000ff;">=&gt;</span> <span
-     style="color: #001080;">elementoHtml</span>.<span
-     style="color: #001080;">hidden</span> = <span
-     style="color: #0000ff;">true</span>, <span
-     style="color: #098658;">500</span>)</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { HTMLElement } elementoHtml</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> cierraElementoHtmo(elementoHtml) {</td></tr>
+  <tr><td>5</td><td> <span class="codeReserved">const</span> list = elementoHtml.classList</td></tr>
+  <tr><td>6</td><td> <span class="codeReserved">if</span> (list.contains(<span class="codeString">"open"</span>)) {</td></tr>
+  <tr><td>7</td><td>  list.remove(<span class="codeString">"open"</span>)</td></tr>
+  <tr><td>8</td><td>  setTimeout(() =&gt; elementoHtml.hidden = <span class="codeReserved">true</span>, 500)</td></tr>
+  <tr><td>9</td><td> }</td></tr>
+  <tr><td>10</td><td>}</td></tr>
+  <tr><td>11</td><td></td></tr>
+ </tbody>
+</table>

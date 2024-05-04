@@ -1,139 +1,63 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #800000;">&lt;?php</span></div><br>
-  <div><span
-     style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> . <span
-     style="color: #a31515;">"/../vendor/autoload.php"</span>;</div>
-  <div><span
-     style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> . <span
-     style="color: #a31515;">"/../lib/php/ejecuta.php"</span>;</div>
-  <div><span
-     style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> . <span
-     style="color: #a31515;">"/modelo/Suscripcion.php"</span>;</div>
-  <div><span
-     style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> . <span
-     style="color: #a31515;">"/dao/suscripcionConsulta.php"</span>;</div>
-  <div><span
-     style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> . <span
-     style="color: #a31515;">"/dao/suscripcionElimina.php"</span>;</div>
-  <div><span
-     style="color: #af00db;">require_once</span> <span
-     style="color: #0000ff;">__DIR__</span> . <span
-     style="color: #a31515;">"/dao/suscripcionElimina.php"</span>;</div><br>
-  <div><span
-     style="color: #0000ff;">use</span> Minishlink\WebPush\<span
-     style="color: #267f99;">WebPush</span>;</div><br>
-  <div><span
-     style="color: #0000ff;">const</span> AUTH = [</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"VAPID"</span> =&gt; [</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #a31515;">"subject"</span> =&gt; <span
-     style="color: #a31515;">"https://notificacionesphp.gilbertopachec2.repl.co/"</span>,
-  </div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #a31515;">"publicKey"</span> =&gt; <span
-     style="color: #a31515;">"BMBlr6YznhYMX3NgcWIDRxZXs0sh7tCv7_YCsWcww0ZCv9WGg-tRCXfMEHTiBPCksSqeve1twlbmVAZFv7GSuj0"</span>,
-  </div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #a31515;">"privateKey"</span> =&gt; <span
-     style="color: #a31515;">"vplfkITvu0cwHqzK9Kj-DYStbCH_9AhGx9LqMyaeI6w"</span>
-  </div>
-  <div>&nbsp;]</div>
-  <div>];</div><br>
-  <div><span
-     style="color: #795e26;">ejecuta</span>(<span
-     style="color: #0000ff;">function</span> ()&nbsp;{</div><br>
-  <div>&nbsp;<span
-     style="color: #001080;">$webPush</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">WebPush</span>(AUTH);</div>
-  <div>&nbsp;<span
-     style="color: #001080;">$mensaje</span> = <span
-     style="color: #a31515;">"Hola! 👋"</span>;</div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">// Envia el mensaje a todas las
-    suscripciones.</span></div>
-  <div>&nbsp;<span
-     style="color: #001080;">$suscripciones</span> = <span
-     style="color: #795e26;">suscripcionConsulta</span>();</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">foreach</span> (<span
-     style="color: #001080;">$suscripciones</span> as <span
-     style="color: #001080;">$suscripcion</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$webPush</span>-&gt;<span
-     style="color: #795e26;">queueNotification</span>(<span
-     style="color: #001080;">$suscripcion</span>, <span
-     style="color: #001080;">$mensaje</span>);</div>
-  <div>&nbsp;}</div>
-  <div>&nbsp;<span
-     style="color: #001080;">$reportes</span> = <span
-     style="color: #001080;">$webPush</span>-&gt;<span
-     style="color: #795e26;">flush</span>();</div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">// Genera el reporte de envio a cada
-    suscripcion.</span></div>
-  <div>&nbsp;<span
-     style="color: #001080;">$reporteDeEnvios</span> = <span
-     style="color: #a31515;">""</span>;</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">foreach</span> (<span
-     style="color: #001080;">$reportes</span> as <span
-     style="color: #001080;">$reporte</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">$endpoint</span> = <span
-     style="color: #795e26;">htmlentities</span>(<span
-     style="color: #001080;">$reporte</span>-&gt;<span
-     style="color: #795e26;">getRequest</span>()-&gt;<span
-     style="color: #795e26;">getUri</span>());</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">$reporte</span>-&gt;<span
-     style="color: #795e26;">isSuccess</span>())&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">// Reporte de éxito.</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">$reporteDeEnvios</span> .= <span
-     style="color: #a31515;">"&lt;dt&gt;</span><span
-     style="color: #001080;">$endpoint</span><span
-     style="color: #a31515;">&lt;/dt&gt;&lt;dd&gt;Éxito&lt;/dd&gt;"</span>;
-  </div>
-  <div>&nbsp;&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">$reporte</span>-&gt;<span
-     style="color: #795e26;">isSubscriptionExpired</span>())&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #795e26;">suscripcionElimina</span>(<span
-     style="color: #001080;">$endpoint</span>);</div>
-  <div>&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #008000;">// Reporte de fallo.</span></div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">$explicacion</span> = <span
-     style="color: #795e26;">htmlentities</span>(<span
-     style="color: #001080;">$reporte</span>-&gt;<span
-     style="color: #795e26;">getReason</span>());</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">$reporteDeEnvios</span> .= <span
-     style="color: #a31515;">"&lt;dt&gt;</span><span
-     style="color: #001080;">$endpoint</span><span
-     style="color: #a31515;">&lt;/dt&gt;&lt;dd&gt;Fallo: </span><span
-     style="color: #001080;">$explicacion</span><span
-     style="color: #a31515;">&lt;/dd&gt;"</span>;</div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;}</div><br>
-  <div>&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #001080;">$reporteDeEnvios</span>;</div>
-  <div>});</div><br>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../vendor/autoload.php"</span>;</td></tr>
+  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/ejecutaServicio.php"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/modelo/Suscripcion.php"</span>;</td></tr>
+  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/suscripcionConsulta.php"</span>;</td></tr>
+  <tr><td>7</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/suscripcionElimina.php"</span>;</td></tr>
+  <tr><td>8</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/suscripcionElimina.php"</span>;</td></tr>
+  <tr><td>9</td><td></td></tr>
+  <tr><td>10</td><td>use Minishlink\WebPush\WebPush;</td></tr>
+  <tr><td>11</td><td></td></tr>
+  <tr><td>12</td><td><span class="codeReserved">const</span> AUTH = [</td></tr>
+  <tr><td>13</td><td> <span class="codeString">"VAPID"</span> =&gt; [</td></tr>
+  <tr><td>14</td><td>  <span class="codeString">"subject"</span> =&gt; <span class="codeString">"https://notificacionesphp.gilbertopachec2.repl.co/"</span>,</td></tr>
+  <tr><td>15</td><td>  <span class="codeString">"publicKey"</span> =&gt; <span class="codeString">"BMBlr6YznhYMX3NgcWIDRxZXs0sh7tCv7_YCsWcww0ZCv9WGg-tRCXfMEHTiBPCksSqeve1twlbmVAZFv7GSuj0"</span>,</td></tr>
+  <tr><td>16</td><td>  <span class="codeString">"privateKey"</span> =&gt; <span class="codeString">"vplfkITvu0cwHqzK9Kj-DYStbCH_9AhGx9LqMyaeI6w"</span></td></tr>
+  <tr><td>17</td><td> ]</td></tr>
+  <tr><td>18</td><td>];</td></tr>
+  <tr><td>19</td><td></td></tr>
+  <tr><td>20</td><td>ejecutaServicio(<span class="codeReserved">function</span> () {</td></tr>
+  <tr><td>21</td><td></td></tr>
+  <tr><td>22</td><td> $webPush = <span class="codeReserved">new</span> WebPush(AUTH);</td></tr>
+  <tr><td>23</td><td> $mensaje = <span class="codeString">"Hola! 👋"</span>;</td></tr>
+  <tr><td>24</td><td></td></tr>
+  <tr><td>25</td><td> <span class="codeComment">// Envia el mensaje a todas las suscripciones.</span></td></tr>
+  <tr><td>26</td><td> $suscripciones = suscripcionConsulta();</td></tr>
+  <tr><td>27</td><td> <span class="codeReserved">foreach</span> ($suscripciones <span class="codeReserved">as</span> $suscripcion) {</td></tr>
+  <tr><td>28</td><td>  $webPush-&gt;queueNotification($suscripcion, $mensaje);</td></tr>
+  <tr><td>29</td><td> }</td></tr>
+  <tr><td>30</td><td> $reportes = $webPush-&gt;flush();</td></tr>
+  <tr><td>31</td><td></td></tr>
+  <tr><td>32</td><td> <span class="codeComment">// Genera el reporte de envio a cada suscripcion.</span></td></tr>
+  <tr><td>33</td><td> $reporteDeEnvios = ;</td></tr>
+  <tr><td>34</td><td> <span class="codeReserved">foreach</span> ($reportes <span class="codeReserved">as</span> $reporte) {</td></tr>
+  <tr><td>35</td><td>  $endpoint = htmlentities($reporte-&gt;getRequest()-&gt;getUri());</td></tr>
+  <tr><td>36</td><td>  <span class="codeReserved">if</span> ($reporte-&gt;isSuccess()) {</td></tr>
+  <tr><td>37</td><td>   <span class="codeComment">// Reporte de éxito.</span></td></tr>
+  <tr><td>38</td><td>   $reporteDeEnvios .= <span class="codeString">"&lt;<span class="codeReserved">dt</span>&gt;$endpoint&lt;/<span class="codeReserved">dt</span>&gt;&lt;<span class="codeReserved">dd</span>&gt;Éxito&lt;/<span class="codeReserved">dd</span>&gt;"</span>;</td></tr>
+  <tr><td>39</td><td>  } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>40</td><td>   <span class="codeReserved">if</span> ($reporte-&gt;isSubscriptionExpired()) {</td></tr>
+  <tr><td>41</td><td>    suscripcionElimina($endpoint);</td></tr>
+  <tr><td>42</td><td>   }</td></tr>
+  <tr><td>43</td><td>   <span class="codeComment">// Reporte de fallo.</span></td></tr>
+  <tr><td>44</td><td>   $explicacion = htmlentities($reporte-&gt;getReason());</td></tr>
+  <tr><td>45</td><td>   $reporteDeEnvios .= <span class="codeString">"&lt;<span class="codeReserved">dt</span>&gt;$endpoint&lt;/<span class="codeReserved">dt</span>&gt;&lt;<span class="codeReserved">dd</span>&gt;Fallo: $explicacion&lt;/<span class="codeReserved">dd</span>&gt;"</span>;</td></tr>
+  <tr><td>46</td><td>  }</td></tr>
+  <tr><td>47</td><td> }</td></tr>
+  <tr><td>48</td><td></td></tr>
+  <tr><td>49</td><td> <span class="codeReserved">return</span> [<span class="codeString">"reporte"</span> =&gt; [<span class="codeString">"innerHTML"</span> =&gt; $reporteDeEnvios]];</td></tr>
+  <tr><td>50</td><td>});</td></tr>
+  <tr><td>51</td><td></td></tr>
+ </tbody>
+</table>

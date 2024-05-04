@@ -1,56 +1,28 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{&nbsp;{</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;errorCode: number,</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;errorMessage: string</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*</span><span
-     style="color: #267f99;"> }&nbsp;}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">responseObject</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">conexionMqttPerdida</span>(<span
-     style="color: #001080;">responseObject</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">responseObject</span>.<span
-     style="color: #001080;">errorCode</span> !== <span
-     style="color: #098658;">0</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">mensaje</span> = <span
-     style="color: #a31515;">"Conexión terminada "</span> + <span
-     style="color: #001080;">responseObject</span>.<span
-     style="color: #001080;">errorMessage</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">error</span>(<span
-     style="color: #0070c1;">mensaje</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">alert</span>(<span
-     style="color: #0070c1;">mensaje</span>)</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">// Permite que los eventos de html usen la
-    función.</span></div>
-  <div><span
-     style="color: #001080;">window</span>[<span
-     style="color: #a31515;">"conexionMqttPerdida"</span>] = <span
-     style="color: #795e26;">conexionMqttPerdida</span></div>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * @param { {</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> *  errorCode: number,</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> *  errorMessage: string</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> * } } responseObject</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> conexionMqttPerdida(responseObject) {</td></tr>
+  <tr><td>8</td><td> <span class="codeReserved">if</span> (responseObject.errorCode !== 0) {</td></tr>
+  <tr><td>9</td><td>  <span class="codeReserved">const</span> mensaje = <span class="codeString">&quot;Conexión terminada &quot;</span> + responseObject.errorMessage</td></tr>
+  <tr><td>10</td><td>  console.error(mensaje)</td></tr>
+  <tr><td>11</td><td>  alert(mensaje)</td></tr>
+  <tr><td>12</td><td> }</td></tr>
+  <tr><td>13</td><td>}</td></tr>
+  <tr><td>14</td><td></td></tr>
+  <tr><td>15</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
+  <tr><td>16</td><td>window[<span class="codeString">&quot;conexionMqttPerdida&quot;</span>] = conexionMqttPerdida</td></tr>
+ </tbody>
+</table>

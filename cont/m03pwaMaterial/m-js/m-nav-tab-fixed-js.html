@@ -1,115 +1,45 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">calculaClase</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/calculaClase.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">html</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../lib/js/html.js"</span></div><br>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">class</span> <span
-     style="color: #267f99;">NavTabFixed</span> <span
-     style="color: #0000ff;">extends</span> <span
-     style="color: #267f99;">HTMLElement</span>&nbsp;{</div><br>
-  <div>&nbsp;<span
-     style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #0070c1;">classList</span>.<span
-     style="color: #795e26;">add</span>(<span
-     style="color: #a31515;">"md-tab"</span>, <span
-     style="color: #a31515;">"fixed"</span>)</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">innerHTML</span> =<span
-     style="color: #008000;"> </span><span
-     style="color: #795e26;">html</span>`</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;a</span> <span
-     style="color: #800000;">${</span><span
-     style="color: #795e26;">calculaClase</span>([<span
-     style="color: #a31515;">"/index.html"</span>, <span
-     style="color: #a31515;">""</span>, <span
-     style="color: #a31515;">"/"</span>])<span
-     style="color: #800000;">}</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"index.html"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;span</span> <span
-     style="color: #e50000;">class</span>=<span
-     style="color: #0000ff;">"material-symbols-outlined"</span><span
-     style="color: #800000;">&gt;</span>home<span
-     style="color: #800000;">&lt;/span&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;Inicio</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/a&gt;</span></div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;a</span> <span
-     style="color: #800000;">${</span><span
-     style="color: #795e26;">calculaClase</span>([<span
-     style="color: #a31515;">"/navtab.html"</span>])<span
-     style="color: #800000;">}</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"navtab.html"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;span</span> <span
-     style="color: #e50000;">class</span>=<span
-     style="color: #0000ff;">"material-symbols-outlined"</span><span
-     style="color: #800000;">&gt;</span>swipe_left<span
-     style="color: #800000;">&lt;/span&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;Pestañas scrollable</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/a&gt;</span></div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;a</span> <span
-     style="color: #800000;">${</span><span
-     style="color: #795e26;">calculaClase</span>([<span
-     style="color: #a31515;">"/navTabFixed.html"</span>])<span
-     style="color: #800000;">}</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"navTabFixed.html"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;span</span> <span
-     style="color: #e50000;">class</span>=<span
-     style="color: #0000ff;">"material-symbols-outlined"</span><span
-     style="color: #800000;">&gt;</span>tabs<span
-     style="color: #800000;">&lt;/span&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;Pestañas fijas</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/a&gt;</span></div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;a</span> <span
-     style="color: #800000;">${</span><span
-     style="color: #795e26;">calculaClase</span>([<span
-     style="color: #a31515;">"/navbar.html"</span>])<span
-     style="color: #800000;">}</span> <span
-     style="color: #e50000;">href</span>=<span
-     style="color: #0000ff;">"navbar.html"</span><span
-     style="color: #800000;">&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;span</span> <span
-     style="color: #e50000;">class</span>=<span
-     style="color: #0000ff;">"material-symbols-outlined"</span><span
-     style="color: #800000;">&gt;</span>bottom_navigation<span
-     style="color: #800000;">&lt;/span&gt;</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;Barra de navegación</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/a&gt;</span>`.<span
-     style="color: #001080;">htmlTxt</span></div>
-  <div>&nbsp;}</div><br>
-  <div>}</div><br>
-  <div><span
-     style="color: #001080;">customElements</span>.<span
-     style="color: #795e26;">define</span>(<span
-     style="color: #a31515;">"nav-tab-fixed"</span>, <span
-     style="color: #267f99;">NavTabFixed</span>)</div>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { calculaClase } <span class="codeReserved">from</span> <span class="codeString">"../lib/js/calculaClase.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { html } <span class="codeReserved">from</span> <span class="codeString">"../lib/js/html.js"</span></td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">export</span> <span class="codeReserved">class</span> NavTabFixed <span class="codeReserved">extends</span> HTMLElement {</td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td> connectedCallback() {</td></tr>
+  <tr><td>7</td><td>  <span class="codeReserved">this</span>.classList.add(<span class="codeString">"md-tab"</span>, <span class="codeString">"fixed"</span>)</td></tr>
+  <tr><td>8</td><td></td></tr>
+  <tr><td>9</td><td>  <span class="codeReserved">this</span>.innerHTML = html<span class="codeString">`</span></td></tr>
+  <tr><td>10</td><td><span class="codeString">   &lt;<span class="codeReserved">a</span> ${calculaClase([&quot;/index.html&quot;, &quot;&quot;, &quot;/&quot;])} href=&quot;index.html&quot;&gt;</span></td></tr>
+  <tr><td>11</td><td><span class="codeString">    &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=&quot;material-symbols-outlined&quot;&gt;home&lt;/<span class="codeReserved">span</span>&gt;</span></td></tr>
+  <tr><td>12</td><td><span class="codeString">    Inicio</span></td></tr>
+  <tr><td>13</td><td><span class="codeString">   &lt;/<span class="codeReserved">a</span>&gt;</span></td></tr>
+  <tr><td>14</td><td><span class="codeString"></span></td></tr>
+  <tr><td>15</td><td><span class="codeString">   &lt;<span class="codeReserved">a</span> ${calculaClase([&quot;/navtab.html&quot;])} href=&quot;navtab.html&quot;&gt;</span></td></tr>
+  <tr><td>16</td><td><span class="codeString">    &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=&quot;material-symbols-outlined&quot;&gt;swipe_left&lt;/<span class="codeReserved">span</span>&gt;</span></td></tr>
+  <tr><td>17</td><td><span class="codeString">    Pestañas scrollable</span></td></tr>
+  <tr><td>18</td><td><span class="codeString">   &lt;/<span class="codeReserved">a</span>&gt;</span></td></tr>
+  <tr><td>19</td><td><span class="codeString"></span></td></tr>
+  <tr><td>20</td><td><span class="codeString">   &lt;<span class="codeReserved">a</span> ${calculaClase([&quot;/navTabFixed.html&quot;])} href=&quot;navTabFixed.html&quot;&gt;</span></td></tr>
+  <tr><td>21</td><td><span class="codeString">    &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=&quot;material-symbols-outlined&quot;&gt;tabs&lt;/<span class="codeReserved">span</span>&gt;</span></td></tr>
+  <tr><td>22</td><td><span class="codeString">    Pestañas fijas</span></td></tr>
+  <tr><td>23</td><td><span class="codeString">   &lt;/<span class="codeReserved">a</span>&gt;</span></td></tr>
+  <tr><td>24</td><td><span class="codeString"></span></td></tr>
+  <tr><td>25</td><td><span class="codeString">   &lt;<span class="codeReserved">a</span> ${calculaClase([&quot;/navbar.html&quot;])} href=&quot;navbar.html&quot;&gt;</span></td></tr>
+  <tr><td>26</td><td><span class="codeString">    &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=&quot;material-symbols-outlined&quot;&gt;bottom_navigation&lt;/<span class="codeReserved">span</span>&gt;</span></td></tr>
+  <tr><td>27</td><td><span class="codeString">    Barra de navegación</span></td></tr>
+  <tr><td>28</td><td><span class="codeString">   &lt;/<span class="codeReserved">a</span>&gt;`</span>.htmlTxt</td></tr>
+  <tr><td>29</td><td> }</td></tr>
+  <tr><td>30</td><td></td></tr>
+  <tr><td>31</td><td>}</td></tr>
+  <tr><td>32</td><td></td></tr>
+  <tr><td>33</td><td>customElements.define(<span class="codeString">"nav-tab-fixed"</span>, NavTabFixed)</td></tr>
+ </tbody>
+</table>

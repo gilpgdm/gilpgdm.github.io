@@ -12,8 +12,11 @@
  <meta name="description" content="Código de «navtab.html», navegación con pestañas scrollable en HTML, CSS y JavaScripts.">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
+ /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
  :root {
-  --padTop: 2rem;
+  --marginTop: 0.25rem;
+  --padTop: 0;
+  --h1PadTop: 2.5rem;
   --introDuracion: 2s;
   --introFuncion: ease-out;
   --padCont: 0.5rem;
@@ -22,35 +25,188 @@
   --anchoLectura: 900px;
   --colLetra: black;
   --colFondo: white;
-  --colTituloLetra: #00811c;
-  --colTituloShadow: 3px 1px 2px #bdbdbd;
-  --colTituloStrong: #684601;
-  --colTituloStrongSel: #ffdc97;
-  --colTarget: #cef4ff;
+  --colPush: var(--colFondo);
+  --colPushHover: var(--colFondo);
+  --colPushFocus: var(--colFondo);
+  --colPushActive: #bae397;
+  --colFondoPush: #609732;
+  --colFondoPushHover: #8abd5f;
+  --colFondoPushFocus: #3e7213;
+  --colFondoPushActive: #224c00;
+  --paddingPush: 0.2rem 0.3rem;
+  --borderPush: none;
+  --borderRadiusPush: 0.6em;
+  --colA: #6a7b15;
+  --colAVisited: #6f256f;
+  --colAActive: #e498af;
+  --colAPush: var(--colFondo);
+  --colAVisitedPush: var(--colFondo);
+  --colAPushHover: var(--colFondo);
+  --colAVisitedPushHover: var(--colFondo);
+  --colAPushFocus: var(--colFondo);
+  --colAVisitedPushFocus: var(--colFondo);
+  --colAPushActive: var(--colFondo);
+  --colAVisitedPushActive: var(--colFondo);
+  --colFondoAPush: #6a7b15;
+  --colFondoAVisitedPush: #6f256f;
+  --colFondoAPushHover: #91a437;
+  --colFondoAVisitedPushHover: #a66fa6;
+  --colFondoAPushFocus: #445200;
+  --colFondoAVisitedPushFocus: #530e53;
+  --colFondoAPushActive: #e498af;
+  --colFondoAVisitedPushActive: #e498af;
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
-  --padCtrl: 0.2rem 0.3rem;
-  --borderCtrl: solid thin;
-  --colFondoNav: #f2f2f2;
-  --colNavResaltada: #7a2c99;
-  --colSecundario: #ffff82;
-  --colStack1: black;
-  --colStack2: #224ba5;
-  --colStack3: #92731f;
+  --shadowTitulo: 3px 1px 2px black;
+  --colTitulo: #bae397;
+  --colTituloFondo: #609732;
+  --colPrincipalTituloStrong: white;
+  --colAStrong: var(--colLetra);
+  --colNavH1Sel: #b35f7c;
+  --colFondoNav: var(--colFondo);
+  --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
   --colThumb: #90a4ae;
   --colThumbActivo: #3f3f3f;
+  --colResaltado: #e9c8d2;
+  --colResaltado2: #bae397;
+  --colResaltado3: #cfcfcf;
+  --colLetraResaltado: black;
+  --colLetraCodeComment: #224c00;
+  --colLetraCodeString: #903357;
+  --colLetraCodeReserved: #445200;
+  --colSecundario: #e498af;
+  --colTarget: #cef4ff;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
   --anchoThumb: 7px;
   --borderRadiusThumb: 3.5px;
   --gap: 0.5rem;
-  --fontMono: monospace;
-  --fontSans: sans-serif;
-  --fontSerif: serif;
+  --fontMono: 'Xanh Mono', monospace;
+  --fontSans: 'Patrick Hand', sans-serif;
+  --fontSerif: 'Purple Purse', serif;
   font-family: var(--fontSerif);
   color: var(--colLetra);
   background-color: var(--colFondo);
   scrollbar-width: thin;
   scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ @media (prefers-color-scheme: light) {
+  :root {
+   --colLetra: black;
+   --colFondo: white;
+  }
+ }
+
+ /* https://paletton.com/#uid=74W0u0kaVz84jP27qHbeJtFiHpX */
+ @media (prefers-color-scheme: dark) {
+
+  :root {
+   --colLetra: white;
+   /* --colFondo: #272727; */
+   --colFondo: black;
+   --colPushActive: #e3f5d4;
+   --colFondoPush: #bbe697;
+   --colFondoPushHover: #d0eeb7;
+   --colFondoPushFocus: #9ed372;
+   --colFondoPushActive: #7db84d;
+   --colA: #e9f7a3;
+   --colAVisited: #c89ac8;
+   --colAActive: #983351;
+   --colFondoAPush: #e9f7a3;
+   --colFondoAVisitedPush: #c89ac8;
+   --colFondoAPushHover: #f6fcda;
+   --colFondoAVisitedPushHover: #dec0de;
+   --colFondoAPushFocus: #b4c853;
+   --colFondoAVisitedPushFocus: #9a539a;
+   --colFondoAPushActive: #983351;
+   --colFondoAVisitedPushActive: #983351;
+   --colSombra: #00000080;
+   --colTitulo: #e3f5d4;
+   --colTituloFondo: #7db84d;
+   --colNavH1Sel: #d37290;
+   --colFondoNavSel: #7a3059;
+   --colScrollbar: #616161;
+   --colThumb: #ffffff;
+   --colResaltado: #7a3059;
+   --colResaltado2: #5c922f;
+   --colResaltado3: #4e4e4e;
+   --colLetraResaltado: white;
+   --colLetraCodeComment: #d0eeb7;
+   --colLetraCodeString: #eeb7c8;
+   --colLetraCodeReserved: #f0fac0;
+  }
+ }
+
+ /* xanh-mono-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* xanh-mono-italic - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: italic;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-italic.woff2') format('woff2');
+ }
+
+ /* patrick-hand-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Patrick Hand';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/patrick-hand-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* purple-purse-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Purple Purse';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/purple-purse-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ @font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  src:
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].woff2) format('woff2'),
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].ttf) format('truetype');
+ }
+
+ .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
  }
 
  body::-webkit-scrollbar {
@@ -71,18 +227,132 @@
   background-color: var(--colThumbActivo);
  }
 
+ body {
+  margin-top: 0;
+ }
+
+ a {
+  color: var(--colA);
+ }
+
+ a:visited {
+  color: var(--colAVisited);
+ }
+
+ a:active {
+  color: var(--colAActive);
+ }
+
  .anterior,
- .siguiente {
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente,
+ button {
   display: inline-block;
+  padding: var(--paddingPush);
+  border: var(--borderPush);
+  border-radius: var(--borderRadiusPush);
+  text-align: center;
   text-decoration: none;
-  padding: var(--padCtrl);
-  border: var(--borderCtrl);
-  cursor: pointer;
+ }
+
+ .anterior,
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente {
+  color: var(--colAPush);
+  background-color: var(--colFondoAPush);
+ }
+
+ .anterior:visited,
+ .siguiente:visited,
+ .paginaAnterior:visited,
+ .paginaSiguiente:visited {
+  color: var(--colAVisitedPush);
+  background-color: var(--colFondoAVisitedPush);
  }
 
  .anterior.bye,
- .siguiente.bye {
+ .siguiente.bye,
+ .paginaAnterior.bye,
+ .paginaSiguiente.bye {
   display: none;
+ }
+
+ .anterior:hover,
+ .siguiente:hover,
+ .paginaAnterior:hover,
+ .paginaSiguiente:hover {
+  color: var(--colAPushHover);
+  background-color: var(--colFondoAPushHover);
+ }
+
+ .anterior:visited:hover,
+ .siguiente:visited:hover,
+ .paginaAnterior:visited:hover,
+ .paginaSiguiente:visited:hover {
+  color: var(--colAVisitedPushHover);
+  background-color: var(--colFondoAVisitedPushHover);
+ }
+
+ .anterior:focus,
+ .siguiente:focus,
+ .paginaAnterior:focus,
+ .paginaSiguiente:focus {
+  color: var(--colAPushFocus);
+  background-color: var(--colFondoAPushFocus);
+ }
+
+ .anterior:visited:focus,
+ .siguiente:visited:focus,
+ .paginaAnterior:visited:focus,
+ .paginaSiguiente:visited:focus {
+  color: var(--colAVisitedPushFocus);
+  background-color: var(--colFondoAVisitedPushFocus);
+ }
+
+ .anterior:active,
+ .siguiente:active,
+ .paginaAnterior:active,
+ .paginaSiguiente:active {
+  color: var(--colAPushActive);
+  background-color: var(--colFondoAPushActive);
+ }
+
+ .anterior:visited:active,
+ .siguiente:visited:active,
+ .paginaAnterior:visited:active,
+ .paginaSiguiente:visited:active {
+  color: var(--colAVisitedPushActive);
+  background-color: var(--colFondoAVisitedPushActive);
+ }
+
+ button {
+  color: var(--colPush);
+  background-color: var(--colFondoPush);
+ }
+
+ button:hover {
+  color: var(--colPushHover);
+  background-color: var(--colFondoPushHover);
+ }
+
+ button:focus {
+  color: var(--colPushFocus);
+  background-color: var(--colFondoPushFocus);
+ }
+
+ button:active {
+  color: var(--colPushActive);
+  background-color: var(--colFondoPushActive);
+ }
+
+ .anterior span,
+ .siguiente span,
+ .paginaAnterior span,
+ .paginaSiguiente span,
+ button span {
+  vertical-align: middle;
  }
 
  a[data-logo] {
@@ -100,7 +370,12 @@
  a code,
  h1 strong,
  h1 code {
-  color: var(--colTituloStrong);
+  font-size: 1em;
+ }
+
+ a strong,
+ a code {
+  color: var(--colAStrong);
  }
 
  nav a {
@@ -112,8 +387,8 @@
  }
 
  code {
-  color: var(--colTituloStrong);
   font-family: var(--fontMono);
+  font-size: 1rem;
  }
 
  .tree {
@@ -132,7 +407,7 @@
 
  h1:not(.default) {
   font-family: var(--fontSans);
-  color: var(--colTituloLetra);
+  color: var(--colTituloFondo);
  }
 
  h1,
@@ -145,7 +420,7 @@
  .autor {
   font-family: var(--fontSans);
   font-size: 1.5rem;
-  color: var(--colTituloLetra);
+  color: var(--colTituloFondo);
  }
 
  figure {
@@ -217,15 +492,18 @@
  }
 
  .resaltado {
-  background-color: rgb(255, 255, 89);
+  background-color: var(--colResaltado);
+  color: var(--colLetraResaltado);
  }
 
  .resaltado2 {
-  background-color: rgb(255, 214, 139);
+  background-color: var(--colResaltado2);
+  color: var(--colLetraResaltado);
  }
 
  .resaltado3 {
-  background-color: rgb(235, 234, 233);
+  background-color: var(--colResaltado3);
+  color: var(--colLetraResaltado);
  }
 
  table.borde {
@@ -244,6 +522,61 @@
   padding: 0.4rem;
  }
 
+ table.codeShow {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .codeShow td:first-child {
+  text-align: right;
+  padding: 0 0 0 0;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  /* Avoid selection */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+ }
+
+ .codeShow td:nth-child(2) {
+  padding: 0 0 0 0.25rem;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+  line-height: 1.2rem;
+ }
+
+ .codeReserved {
+  color: var(--colLetraCodeReserved);
+  font-weight: bolder;
+ }
+
+ .codeString {
+  color: var(--colLetraCodeString);
+  font-weight: 600;
+ }
+
+ .codeComment {
+  color: var(--colLetraCodeComment);
+  font-style: italic;
+ }
+
+ @media print {
+  h1 {
+   text-shadow: var(--shadowTitulo);
+  }
+
+  .codeShow button {
+   display: none;
+  }
+ }
+
+
  footer {
   margin-top: 1rem;
   display: block;
@@ -257,19 +590,37 @@
   scroll-padding-top: var(--padTop);
  }
 
- body:not(.sinTransicion) #principal {
+ body {
   animation-timing-function: var(--introFuncion);
   animation-duration: var(--introDuracion);
   animation-fill-mode: forwards;
-  animation-name: aparece;
+  animation-name: appear;
  }
 
- @keyframes aparece {
+ body.noTransition {
+  animation-name: noTransition;
+ }
+
+ @keyframes appear {
   from {
    opacity: 0;
   }
 
   to {
+   opacity: 1;
+  }
+ }
+
+ @keyframes noTransition {
+  0% {
+   opacity: 0;
+  }
+
+  0.7% {
+   opacity: 1;
+  }
+
+  100% {
    opacity: 1;
   }
  }
@@ -288,22 +639,24 @@
   position: fixed;
   top: var(--gap);
   left: var(--gap);
-  transition: 0.7s ease-in-out;
+  transition-property: top, left;
+  transition-duration: 0.7s, 0.7s;
+  transition-timing-function: ease-in-out;
  }
 
  #principal>.anterior {
   position: fixed;
   top: var(--gap);
-  background-color: var(--colFondo);
-  transition: 0.7s ease-in-out;
+  transition-property: top, left;
+  transition-duration: 0.7s, 0.7s;
+  transition-timing-function: ease-in-out;
  }
 
  #principal>.siguiente {
   position: fixed;
   top: var(--gap);
   right: var(--gap);
-  background-color: var(--colFondo);
-  transition: 0.7s ease-in-out;
+  transition: top 0.7s ease-in-out;
  }
 
  .scroll #principal>#abre,
@@ -312,8 +665,17 @@
   top: -10rem;
  }
 
- #principal h1:not(.default) {
-  text-shadow: var(--colTituloShadow);
+ #principal>h1:not(.default) {
+  margin-top: var(--marginTop);
+  padding: var(--h1PadTop) 1rem 1rem 1rem;
+  text-shadow: var(--shadowTitulo);
+  color: var(--colTitulo);
+  background-color: var(--colTituloFondo);
+ }
+
+ #principal>h1:not(.default) strong,
+ #principal>h1:not(.default) code {
+  color: var(--colPrincipalTituloStrong);
  }
 
  #nav {
@@ -361,25 +723,26 @@
 
  #nav a.actual code,
  #nav a.actual strong {
-  color: var(--colTituloStrongSel);
+  color: var(--colAStrong);
  }
 
  #nav h1 a {
-  color: var(--colTituloLetra);
+  color: var(--colTitulo);
+  background-color: var(--colTituloFondo);
+  text-shadow: var(--shadowTitulo);
  }
 
  #nav a.actual {
-  color: var(--colFondo);
-  background-color: var(--colNavResaltada);
+  background-color: var(--colFondoNavSel);
  }
 
- #nav a.paginaAnterior,
- #nav a.paginaSiguiente {
-  text-align: center;
-  text-decoration: none;
-  padding: var(--padCtrl);
-  border: var(--borderCtrl);
-  cursor: pointer;
+ #nav h1 a.actual {
+  background-color: var(--colNavH1Sel);
+ }
+
+ #nav h1 a.actual code,
+ #nav h1 a.actual strong {
+  color: var(--colPrincipalTituloStrong);
  }
 
  @media screen and (max-width: 999px) {
@@ -456,6 +819,14 @@
   #principal>.siguiente {
    display: none;
   }
+
+  #principal>h1:not(.default) {
+   margin-top: 0.5rem;
+   padding: 1rem;
+   color: var(--colTituloFondo);
+   background-color: transparent;
+  }
+
  }
 </style>
  
@@ -529,255 +900,117 @@
      rel="noopener">Ábrelo en otra pestaña.</a>
   </p>
  </section>
- <muestra-codigo>
-  <div>
-   <div><span
-      style="color: #800000;">&lt;!DOCTYPE</span> <span
-      style="color: #e50000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span
-      style="color: #800000;">&lt;html</span> <span
-      style="color: #e50000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;meta</span> <span
-      style="color: #e50000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;meta</span> <span
-      style="color: #e50000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;title&gt;</span></div>
-   <div>&nbsp;&nbsp;Pestañas scrollable - PWA con MD</div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/title&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;meta</span> <span
-      style="color: #e50000;">name</span>=<span
-      style="color: #0000ff;">"theme-color"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">content</span>=<span
-      style="color: #0000ff;">"#fffbfe"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;link</span> <span
-      style="color: #e50000;">rel</span>=<span
-      style="color: #0000ff;">"icon"</span> <span
-      style="color: #e50000;">sizes</span>=<span
-      style="color: #0000ff;">"32x32"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">href</span>=<span
-      style="color: #0000ff;">"favicon.ico"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;link</span> <span
-      style="color: #e50000;">rel</span>=<span
-      style="color: #0000ff;">"manifest"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">href</span>=<span
-      style="color: #0000ff;">"site.webmanifest"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;link</span> <span
-      style="color: #e50000;">rel</span>=<span
-      style="color: #0000ff;">"stylesheet"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">href</span>=<span
-      style="color: #0000ff;">"css/estilos.css"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;script</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">src</span>=<span
-      style="color: #0000ff;">"ungap/custom-elements.js"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/script&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;script</span> <span
-      style="color: #e50000;">type</span>=<span
-      style="color: #0000ff;">"module"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">src</span>=<span
-      style="color: #0000ff;">"js/configura.js"</span><span
-      style="color: #800000;">&gt;&lt;/script&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;body&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;md-top-app-bar</span> <span
-      style="color: #e50000;">adicional</span>=<span
-      style="color: #0000ff;">"tab"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">headline</span>=<span
-      style="color: #0000ff;">"headline"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;Pestañas scrollable</div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/h1&gt;</span></div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;button</span> <span
-      style="color: #e50000;">type</span>=<span
-      style="color: #0000ff;">"button"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">title</span>=<span
-      style="color: #0000ff;">"Agregar"</span> <span
-      style="color: #e50000;">slot</span>=<span
-      style="color: #0000ff;">"action"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">class</span>=<span
-      style="color: #0000ff;">"md-standard-icon-button"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;span</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">class</span>=<span
-      style="color: #0000ff;">"material-symbols-outlined"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;add</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/button&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;button</span> <span
-      style="color: #e50000;">type</span>=<span
-      style="color: #0000ff;">"button"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">title</span>=<span
-      style="color: #0000ff;">"Editar"</span> <span
-      style="color: #e50000;">slot</span>=<span
-      style="color: #0000ff;">"action"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">class</span>=<span
-      style="color: #0000ff;">"md-standard-icon-button"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;span</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">class</span>=<span
-      style="color: #0000ff;">"material-symbols-outlined"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;edit</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/button&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/md-top-app-bar&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;h1</span> <span
-      style="color: #e50000;">id</span>=<span
-      style="color: #0000ff;">"headline"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;Pestañas scrollable</div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/h1&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;nav-tab-scrollable</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #e50000;">id</span>=<span
-      style="color: #0000ff;">"tab"</span><span
-      style="color: #800000;">&gt;&lt;/nav-tab-scrollable&gt;</span></div><br>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;main&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;Esta página usa navegación por</div>
-   <div>&nbsp;&nbsp;&nbsp;pestañas fijas. Las X que siguen</div>
-   <div>&nbsp;&nbsp;&nbsp;son para que veas como se</div>
-   <div>&nbsp;&nbsp;&nbsp;comporta cuando se hace scroll.</div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>x<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/main&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;/body&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>7</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td></td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>10</td><td>  Pestañas scrollable - PWA con MD</td></tr>
+  <tr><td>11</td><td> &lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"theme-color"</span></td></tr>
+  <tr><td>14</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"#fffbfe"</span>&gt;</td></tr>
+  <tr><td>15</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"icon"</span> sizes=<span class="codeString">"32x32"</span></td></tr>
+  <tr><td>16</td><td>   href=<span class="codeString">"favicon.ico"</span>&gt;</td></tr>
+  <tr><td>17</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"manifest"</span></td></tr>
+  <tr><td>18</td><td>   href=<span class="codeString">"site.webmanifest"</span>&gt;</td></tr>
+  <tr><td>19</td><td></td></tr>
+  <tr><td>20</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span></td></tr>
+  <tr><td>21</td><td>   href=<span class="codeString">"css/estilos.css"</span>&gt;</td></tr>
+  <tr><td>22</td><td> &lt;<span class="codeReserved">script</span></td></tr>
+  <tr><td>23</td><td>   src=<span class="codeString">"ungap/custom-elements.js"</span>&gt;</td></tr>
+  <tr><td>24</td><td>   &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>25</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span></td></tr>
+  <tr><td>26</td><td>   src=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>27</td><td></td></tr>
+  <tr><td>28</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>29</td><td></td></tr>
+  <tr><td>30</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>31</td><td></td></tr>
+  <tr><td>32</td><td> &lt;<span class="codeReserved">md-top-app-bar</span> adicional=<span class="codeString">"tab"</span></td></tr>
+  <tr><td>33</td><td>   headline=<span class="codeString">"headline"</span>&gt;</td></tr>
+  <tr><td>34</td><td></td></tr>
+  <tr><td>35</td><td>  &lt;<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>36</td><td>   Pestañas scrollable</td></tr>
+  <tr><td>37</td><td>  &lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>38</td><td></td></tr>
+  <tr><td>39</td><td>  &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span></td></tr>
+  <tr><td>40</td><td>    title=<span class="codeString">"Agregar"</span> slot=<span class="codeString">"action"</span></td></tr>
+  <tr><td>41</td><td>    <span class="codeReserved">class</span>=<span class="codeString">"md-standard-icon-button"</span>&gt;</td></tr>
+  <tr><td>42</td><td>   &lt;<span class="codeReserved">span</span></td></tr>
+  <tr><td>43</td><td>     <span class="codeReserved">class</span>=<span class="codeString">"material-symbols-outlined"</span>&gt;</td></tr>
+  <tr><td>44</td><td>    add</td></tr>
+  <tr><td>45</td><td>   &lt;/<span class="codeReserved">span</span>&gt;</td></tr>
+  <tr><td>46</td><td>  &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+  <tr><td>47</td><td>  &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span></td></tr>
+  <tr><td>48</td><td>    title=<span class="codeString">"Editar"</span> slot=<span class="codeString">"action"</span></td></tr>
+  <tr><td>49</td><td>    <span class="codeReserved">class</span>=<span class="codeString">"md-standard-icon-button"</span>&gt;</td></tr>
+  <tr><td>50</td><td>   &lt;<span class="codeReserved">span</span></td></tr>
+  <tr><td>51</td><td>     <span class="codeReserved">class</span>=<span class="codeString">"material-symbols-outlined"</span>&gt;</td></tr>
+  <tr><td>52</td><td>    edit</td></tr>
+  <tr><td>53</td><td>   &lt;/<span class="codeReserved">span</span>&gt;</td></tr>
+  <tr><td>54</td><td>  &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+  <tr><td>55</td><td></td></tr>
+  <tr><td>56</td><td> &lt;/<span class="codeReserved">md-top-app-bar</span>&gt;</td></tr>
+  <tr><td>57</td><td></td></tr>
+  <tr><td>58</td><td> &lt;<span class="codeReserved">h1</span> id=<span class="codeString">"headline"</span>&gt;</td></tr>
+  <tr><td>59</td><td>  Pestañas scrollable</td></tr>
+  <tr><td>60</td><td> &lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>61</td><td></td></tr>
+  <tr><td>62</td><td> &lt;<span class="codeReserved">nav-tab-scrollable</span></td></tr>
+  <tr><td>63</td><td>   id=<span class="codeString">"tab"</span>&gt;&lt;/<span class="codeReserved">nav-tab-scrollable</span>&gt;</td></tr>
+  <tr><td>64</td><td></td></tr>
+  <tr><td>65</td><td> &lt;<span class="codeReserved">main</span>&gt;</td></tr>
+  <tr><td>66</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>67</td><td>   Esta página usa navegación por</td></tr>
+  <tr><td>68</td><td>   pestañas fijas. Las X que siguen</td></tr>
+  <tr><td>69</td><td>   son para que veas como se</td></tr>
+  <tr><td>70</td><td>   comporta cuando se hace scroll.</td></tr>
+  <tr><td>71</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>72</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>73</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>74</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>75</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>76</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>77</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>78</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>79</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>80</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>81</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>82</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>83</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>84</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>85</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>86</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>87</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>88</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>89</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>90</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>91</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>92</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>93</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>94</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>95</td><td> &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
+  <tr><td>96</td><td></td></tr>
+  <tr><td>97</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>98</td><td></td></tr>
+  <tr><td>99</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </div>
 <div class="lectura">
  <h1>Solo para los más rudos</h1>
@@ -812,15 +1045,23 @@
  </p>
 </footer>
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
-  &#x2630;
+  <span class="material-symbols-outlined">
+   menu
+  </span>
  </button>
- <a class="anterior" href="/m03pwaMaterial/mAdrawer.html" title="18. Cajón de navegación">◀</a>
- <a class="siguiente" href="/m03pwaMaterial/m-navTabFixed-html.html" title="20. navTabFixed.html - Navegación con pestañas fijas">▶</a>
+ <a class="anterior" href="/m03pwaMaterial/mAdrawer.html" title="18. Cajón de navegación"><span class="material-symbols-outlined">
+     skip_previous
+    </span></a>
+ <a class="siguiente" href="/m03pwaMaterial/m-navTabFixed-html.html" title="20. navTabFixed.html - Navegación con pestañas fijas"><span class="material-symbols-outlined">
+     skip_next
+     </span></a>
 </div>
 <div id="cierra" class="cambiaMenu"></div>
 <nav id="nav">
  <button type="button" title="Cierra" class="cambiaMenu">
-  &#x2715;
+  <span class="material-symbols-outlined">
+   close
+  </span>
  </button>
  
    <p>
@@ -831,7 +1072,10 @@
    
      <p>
       <a class="paginaAnterior" href="/m04pwaBasica/mXresumen.html"
-        title="O. Resumen">▲</a>
+        title="O. Resumen"><span
+        class="material-symbols-outlined">
+         arrow_upward
+        </span></a>
      </p>
    <h1><a href="/m03pwaMaterial/index.html">5. PWA con Material Design</a></h1>
    
@@ -1016,7 +1260,10 @@
    
     <p>
      <a class="paginaSiguiente" href="/m04dispositivo/index.html"
-       title="6. Acceso al dispositivo">▼</a>
+       title="6. Acceso al dispositivo"><span
+       class="material-symbols-outlined">
+        arrow_downward
+       </span></a>
     </p>
  
 </nav>
@@ -1080,6 +1327,24 @@
  function muestraError(e) {
   console.error(e)
   alert(e.message)
+ }
+
+ async function copyToClipboard(button) {
+  try {
+   const table = button.closest("table")
+   if (table !== null) {
+    const lineas = Array.from(table.querySelectorAll("td:nth-child(2)"))
+    const codigo = lineas
+     .map(linea => linea.textContent || "")
+     .join("\n")
+    if (codigo) {
+     await navigator.clipboard.writeText(codigo)
+     alert("Texto copiado al portapapeles.")
+    }
+   }
+  } catch (e) {
+   alert(e.message)
+  }
  }
 
  function cambiaMenu() {

@@ -1,342 +1,128 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">abreElementoHtml</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../abreElementoHtml.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">cierraElementoHtmo</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../cierraElementoHtmo.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">html</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../html.js"</span></div>
-  <div><span
-     style="color: #af00db;">import</span>&nbsp;{ <span
-     style="color: #001080;">querySelector</span> }&nbsp;<span
-     style="color: #af00db;">from</span> <span
-     style="color: #a31515;">"../querySelector.js"</span></div><br>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">class</span> <span
-     style="color: #267f99;">MdOptionsMenu</span> <span
-     style="color: #0000ff;">extends</span> <span
-     style="color: #267f99;">HTMLElement</span>&nbsp;{</div><br>
-  <div>&nbsp;<span
-     style="color: #795e26;">getContent</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span><span
-     style="color: #008000;"> </span><span
-     style="color: #795e26;">html</span>`</div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;style&gt;</span></div><br>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">:host</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #e50000;">position</span>: <span
-     style="color: #0451a5;">absolute</span>;</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;/style&gt;</span></div><br>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #800000;">&lt;slot</span> <span
-     style="color: #e50000;">onslotchange</span>=<span
-     style="color: #0000ff;">"</span><span
-     style="color: #0000ff;">${this</span>.<span
-     style="color: #795e26;">_configuraOpciones</span><span
-     style="color: #0000ff;">}</span><span
-     style="color: #0000ff;">"</span><span
-     style="color: #800000;">&gt;&lt;/slot&gt;</span>`.<span
-     style="color: #001080;">htmlTxt</span></div>
-  <div>&nbsp;}</div><br>
-  <div>&nbsp;<span
-     style="color: #0000ff;">constructor</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">super</span>()</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">shadow</span> = <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #795e26;">attachShadow</span>({ <span
-     style="color: #001080;">mode</span><span
-     style="color: #001080;">:</span> <span
-     style="color: #a31515;">"open"</span> })</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0070c1;">shadow</span>.<span
-     style="color: #001080;">innerHTML</span> = <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #795e26;">getContent</span>()</div><br>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@private</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ HTMLSlotElement }</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*/</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_slot</span> = <span
-     style="color: #795e26;">querySelector</span>(<span
-     style="color: #0070c1;">shadow</span>, <span
-     style="color: #a31515;">"slot"</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@private</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{&nbsp;{</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;label:HTMLLabelElement,</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;input: HTMLInputElement }[]
-    }</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*/</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_opciones</span> = []</div>
-  <div>&nbsp;}</div><br>
-  <div>&nbsp;<span
-     style="color: #795e26;">connectedCallback</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">classList</span>.<span
-     style="color: #795e26;">add</span>(<span
-     style="color: #a31515;">"md-menu"</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">hidden</span> = <span
-     style="color: #0000ff;">true</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">role</span> = <span
-     style="color: #a31515;">"listbox"</span></div>
-  <div>&nbsp;}</div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@returns</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ readonly Readonly&lt;{</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;label:HTMLLabelElement,</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;input: HTMLInputElement
-    }&gt;[]}</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*/</span></div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">get</span> <span
-     style="color: #795e26;">opciones</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_opciones</span></div>
-  <div>&nbsp;}</div><br>
-  <div>&nbsp;<span
-     style="color: #0000ff;">get</span> <span
-     style="color: #795e26;">seleccion</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">/**&nbsp;</span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ HTMLInputElement | null }</span><span
-     style="color: #008000;"> */</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">seleccionado</span> = <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #795e26;">querySelector</span>(<span
-     style="color: #a31515;">":checked"</span>)</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #001080;">seleccionado</span> === <span
-     style="color: #0000ff;">null</span> ? <span
-     style="color: #a31515;">""</span> : <span
-     style="color: #001080;">seleccionado</span>.<span
-     style="color: #001080;">value</span></div>
-  <div>&nbsp;}</div><br>
-  <div>&nbsp;<span
-     style="color: #795e26;">_configuraOpciones</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{&nbsp;{</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;label:HTMLLabelElement,</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;input: HTMLInputElement }[]
-    }</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*/</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">opciones</span> = []</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">for</span> (<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">label</span> <span
-     style="color: #0000ff;">of</span> <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_slot</span>.<span
-     style="color: #795e26;">assignedElements</span>())&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">label</span> <span
-     style="color: #0000ff;">instanceof</span> <span
-     style="color: #267f99;">HTMLLabelElement</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">input</span> = <span
-     style="color: #795e26;">querySelector</span>(<span
-     style="color: #001080;">label</span>, <span
-     style="color: #a31515;">`input[type="radio"]`</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">input</span> <span
-     style="color: #0000ff;">instanceof</span> <span
-     style="color: #267f99;">HTMLInputElement</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">input</span>.<span
-     style="color: #001080;">role</span> = <span
-     style="color: #a31515;">"option"</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">opciones</span>.<span
-     style="color: #795e26;">push</span>({ <span
-     style="color: #001080;">label</span>, <span
-     style="color: #001080;">input</span> })</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_opciones</span> = <span
-     style="color: #001080;">opciones</span></div>
-  <div>&nbsp;}</div><br>
-  <div>&nbsp;<span
-     style="color: #795e26;">abre</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">abreElementoHtml</span>(<span
-     style="color: #0000ff;">this</span>)</div>
-  <div>&nbsp;}</div><br><br>
-  <div>&nbsp;<span
-     style="color: #795e26;">cierra</span>()&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #795e26;">cierraElementoHtmo</span>(<span
-     style="color: #0000ff;">this</span>)</div>
-  <div>&nbsp;}</div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{string}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">value</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*/</span></div>
-  <div>&nbsp;<span
-     style="color: #795e26;">muestraValue</span>(<span
-     style="color: #001080;">value</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #0000ff;">let</span> <span
-     style="color: #001080;">texto</span> = <span
-     style="color: #a31515;">""</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">for</span> (<span
-     style="color: #0000ff;">const</span>&nbsp;{ <span
-     style="color: #0070c1;">label</span>, <span
-     style="color: #0070c1;">input</span> }&nbsp;<span
-     style="color: #0000ff;">of</span> <span
-     style="color: #0000ff;">this</span>.<span
-     style="color: #001080;">_opciones</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">input</span>.<span
-     style="color: #001080;">value</span> === <span
-     style="color: #001080;">value</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">input</span>.<span
-     style="color: #001080;">checked</span> = <span
-     style="color: #0000ff;">true</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">label</span>.<span
-     style="color: #001080;">classList</span>.<span
-     style="color: #795e26;">add</span>(<span
-     style="color: #a31515;">"selected"</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #0000ff;">let</span> <span
-     style="color: #001080;">textContent</span> = <span
-     style="color: #001080;">label</span>.<span
-     style="color: #001080;">textContent</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">texto</span> === <span
-     style="color: #a31515;">""</span> &amp;&amp; <span
-     style="color: #001080;">textContent</span> !== <span
-     style="color: #0000ff;">null</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">textContent</span> = <span
-     style="color: #001080;">textContent</span>.<span
-     style="color: #795e26;">trim</span>()</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">textContent</span> !== <span
-     style="color: #a31515;">""</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">texto</span> = <span
-     style="color: #001080;">textContent</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">input</span>.<span
-     style="color: #001080;">checked</span> = <span
-     style="color: #0000ff;">false</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">label</span>.<span
-     style="color: #001080;">classList</span>.<span
-     style="color: #795e26;">remove</span>(<span
-     style="color: #a31515;">"selected"</span>)</div>
-  <div>&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #001080;">texto</span></div>
-  <div>&nbsp;}</div><br>
-  <div>}</div><br>
-  <div><span
-     style="color: #001080;">customElements</span>.<span
-     style="color: #795e26;">define</span>(<span
-     style="color: #a31515;">"md-options-menu"</span>, <span
-     style="color: #001080;">MdOptionsMenu</span>)</div>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { abreElementoHtml } <span class="codeReserved">from</span> <span class="codeString">"../abreElementoHtml.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { cierraElementoHtmo } <span class="codeReserved">from</span> <span class="codeString">"../cierraElementoHtmo.js"</span></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">import</span> { html } <span class="codeReserved">from</span> <span class="codeString">"../html.js"</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">import</span> { querySelector } <span class="codeReserved">from</span> <span class="codeString">"../querySelector.js"</span></td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td><span class="codeReserved">export</span> <span class="codeReserved">class</span> MdOptionsMenu <span class="codeReserved">extends</span> HTMLElement {</td></tr>
+  <tr><td>7</td><td></td></tr>
+  <tr><td>8</td><td> getContent() {</td></tr>
+  <tr><td>9</td><td>  <span class="codeReserved">return</span> html<span class="codeString">`</span></td></tr>
+  <tr><td>10</td><td><span class="codeString"></span></td></tr>
+  <tr><td>11</td><td><span class="codeString">   &lt;<span class="codeReserved">style</span>&gt;</span></td></tr>
+  <tr><td>12</td><td><span class="codeString"></span></td></tr>
+  <tr><td>13</td><td><span class="codeString">    :host {</span></td></tr>
+  <tr><td>14</td><td><span class="codeString">     <span class="codeReserved">position</span>: absolute;</span></td></tr>
+  <tr><td>15</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>16</td><td><span class="codeString"></span></td></tr>
+  <tr><td>17</td><td><span class="codeString">   &lt;/<span class="codeReserved">style</span>&gt;</span></td></tr>
+  <tr><td>18</td><td><span class="codeString"></span></td></tr>
+  <tr><td>19</td><td><span class="codeString">   &lt;<span class="codeReserved">slot</span> onslotchange=&quot;${<span class="codeReserved">this</span>._configuraOpciones}&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;`</span>.htmlTxt</td></tr>
+  <tr><td>20</td><td> }</td></tr>
+  <tr><td>21</td><td></td></tr>
+  <tr><td>22</td><td> <span class="codeReserved">constructor</span>() {</td></tr>
+  <tr><td>23</td><td>  super()</td></tr>
+  <tr><td>24</td><td>  <span class="codeReserved">const</span> shadow = <span class="codeReserved">this</span>.attachShadow({ mode: <span class="codeString">"open"</span> })</td></tr>
+  <tr><td>25</td><td>  shadow.innerHTML = <span class="codeReserved">this</span>.getContent()</td></tr>
+  <tr><td>26</td><td></td></tr>
+  <tr><td>27</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>28</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>29</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> { HTMLSlotElement }</span></td></tr>
+  <tr><td>30</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>31</td><td>  <span class="codeReserved">this</span>._slot = querySelector(shadow, <span class="codeString">"slot"</span>)</td></tr>
+  <tr><td>32</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>33</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>34</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> { {</span></td></tr>
+  <tr><td>35</td><td><span class="codeComment">   *   label:HTMLLabelElement,</span></td></tr>
+  <tr><td>36</td><td><span class="codeComment">   *   input: HTMLInputElement }[] }</span></td></tr>
+  <tr><td>37</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>38</td><td>  <span class="codeReserved">this</span>._opciones = []</td></tr>
+  <tr><td>39</td><td> }</td></tr>
+  <tr><td>40</td><td></td></tr>
+  <tr><td>41</td><td> connectedCallback() {</td></tr>
+  <tr><td>42</td><td>  <span class="codeReserved">this</span>.classList.add(<span class="codeString">"md-menu"</span>)</td></tr>
+  <tr><td>43</td><td>  <span class="codeReserved">this</span>.hidden = <span class="codeReserved">true</span></td></tr>
+  <tr><td>44</td><td>  <span class="codeReserved">this</span>.role = <span class="codeString">"listbox"</span></td></tr>
+  <tr><td>45</td><td> }</td></tr>
+  <tr><td>46</td><td></td></tr>
+  <tr><td>47</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>48</td><td><span class="codeComment">  * <span class="codeReserved">@returns</span> { readonly Readonly&lt;{</span></td></tr>
+  <tr><td>49</td><td><span class="codeComment">  *   label:HTMLLabelElement,</span></td></tr>
+  <tr><td>50</td><td><span class="codeComment">  *   input: HTMLInputElement }&gt;[]}</span></td></tr>
+  <tr><td>51</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>52</td><td> get opciones() {</td></tr>
+  <tr><td>53</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">this</span>._opciones</td></tr>
+  <tr><td>54</td><td> }</td></tr>
+  <tr><td>55</td><td></td></tr>
+  <tr><td>56</td><td> get seleccion() {</td></tr>
+  <tr><td>57</td><td>  <span class="codeComment">/** <span class="codeReserved">@type</span> { HTMLInputElement | <span class="codeReserved">null</span> } */</span></td></tr>
+  <tr><td>58</td><td>  <span class="codeReserved">const</span> seleccionado = <span class="codeReserved">this</span>.querySelector(<span class="codeString">":checked"</span>)</td></tr>
+  <tr><td>59</td><td>  <span class="codeReserved">return</span> seleccionado === <span class="codeReserved">null</span> ?  : seleccionado.value</td></tr>
+  <tr><td>60</td><td> }</td></tr>
+  <tr><td>61</td><td></td></tr>
+  <tr><td>62</td><td> _configuraOpciones() {</td></tr>
+  <tr><td>63</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>64</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> { {</span></td></tr>
+  <tr><td>65</td><td><span class="codeComment">  *   label:HTMLLabelElement,</span></td></tr>
+  <tr><td>66</td><td><span class="codeComment">  *   input: HTMLInputElement }[] }</span></td></tr>
+  <tr><td>67</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>68</td><td>  <span class="codeReserved">const</span> opciones = []</td></tr>
+  <tr><td>69</td><td>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> label of <span class="codeReserved">this</span>._slot.assignedElements()) {</td></tr>
+  <tr><td>70</td><td>   <span class="codeReserved">if</span> (label <span class="codeReserved">instanceof</span> HTMLLabelElement) {</td></tr>
+  <tr><td>71</td><td>    <span class="codeReserved">const</span> input = querySelector(label, <span class="codeString">`input[type=&quot;radio&quot;]`</span>)</td></tr>
+  <tr><td>72</td><td>    <span class="codeReserved">if</span> (input <span class="codeReserved">instanceof</span> HTMLInputElement) {</td></tr>
+  <tr><td>73</td><td>     input.role = <span class="codeString">"option"</span></td></tr>
+  <tr><td>74</td><td>     opciones.push({ label, input })</td></tr>
+  <tr><td>75</td><td>    }</td></tr>
+  <tr><td>76</td><td>   }</td></tr>
+  <tr><td>77</td><td>  }</td></tr>
+  <tr><td>78</td><td>  <span class="codeReserved">this</span>._opciones = opciones</td></tr>
+  <tr><td>79</td><td> }</td></tr>
+  <tr><td>80</td><td></td></tr>
+  <tr><td>81</td><td> abre() {</td></tr>
+  <tr><td>82</td><td>  abreElementoHtml(<span class="codeReserved">this</span>)</td></tr>
+  <tr><td>83</td><td> }</td></tr>
+  <tr><td>84</td><td></td></tr>
+  <tr><td>85</td><td></td></tr>
+  <tr><td>86</td><td> cierra() {</td></tr>
+  <tr><td>87</td><td>  cierraElementoHtmo(<span class="codeReserved">this</span>)</td></tr>
+  <tr><td>88</td><td> }</td></tr>
+  <tr><td>89</td><td></td></tr>
+  <tr><td>90</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>91</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} value</span></td></tr>
+  <tr><td>92</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>93</td><td> muestraValue(value) {</td></tr>
+  <tr><td>94</td><td>  <span class="codeReserved">let</span> texto = </td></tr>
+  <tr><td>95</td><td>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> { label, input } of <span class="codeReserved">this</span>._opciones) {</td></tr>
+  <tr><td>96</td><td>   <span class="codeReserved">if</span> (input.value === value) {</td></tr>
+  <tr><td>97</td><td>    input.checked = <span class="codeReserved">true</span></td></tr>
+  <tr><td>98</td><td>    label.classList.add(<span class="codeString">"selected"</span>)</td></tr>
+  <tr><td>99</td><td>    <span class="codeReserved">let</span> textContent = label.textContent</td></tr>
+  <tr><td>100</td><td>    <span class="codeReserved">if</span> (texto ===  && textContent !== <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>101</td><td>     textContent = textContent.trim()</td></tr>
+  <tr><td>102</td><td>     <span class="codeReserved">if</span> (textContent !== ) {</td></tr>
+  <tr><td>103</td><td>      texto = textContent</td></tr>
+  <tr><td>104</td><td>     }</td></tr>
+  <tr><td>105</td><td>    }</td></tr>
+  <tr><td>106</td><td>   } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>107</td><td>    input.checked = <span class="codeReserved">false</span></td></tr>
+  <tr><td>108</td><td>    label.classList.remove(<span class="codeString">"selected"</span>)</td></tr>
+  <tr><td>109</td><td>   }</td></tr>
+  <tr><td>110</td><td>  }</td></tr>
+  <tr><td>111</td><td>  <span class="codeReserved">return</span> texto</td></tr>
+  <tr><td>112</td><td> }</td></tr>
+  <tr><td>113</td><td></td></tr>
+  <tr><td>114</td><td>}</td></tr>
+  <tr><td>115</td><td></td></tr>
+  <tr><td>116</td><td>customElements.define(<span class="codeString">"md-options-menu"</span>, MdOptionsMenu)</td></tr>
+ </tbody>
+</table>

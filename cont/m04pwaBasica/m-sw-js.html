@@ -1,310 +1,114 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/*&nbsp;Este archivo debe estar colocado en la
-    carpeta raíz del sitio.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Cualquier cambio en el contenido de
-    este archivo hace que el service</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;worker se reinstale. */</span></div>
-  <br>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Cambia el número de la versión cuando
-    cambia el contenido de los</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;archivos.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;El número a la izquierda del punto
-    (.), en este caso &lt;q&gt;1&lt;/q&gt;, se</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;conoce como número mayor y se cambia
-    cuando se realizan</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;modificaciones grandes o
-    importantes.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;El número a la derecha del punto (.),
-    en este caso &lt;q&gt;00&lt;/q&gt;, se</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;conoce como número menor y se cambia
-    cuando se realizan</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;modificaciones menores.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">VERSION</span> = <span
-     style="color: #a31515;">"1.00"</span></div><br>
-  <div><span
-     style="color: #008000;">/**&nbsp;Nombre del archivo de cache. */</span>
-  </div>
-  <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">CACHE</span> = <span
-     style="color: #a31515;">"ejemploPWA"</span></div><br>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Archivos requeridos para que la</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;aplicación funcione fuera de</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;línea.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">ARCHIVOS</span> = [</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"favicon.ico"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"index.html"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"site.webmanifest"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"css/estilos.css"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/icono2048.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/maskable_icon.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/maskable_icon_x128.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/maskable_icon_x192.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/maskable_icon_x384.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/maskable_icon_x48.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/maskable_icon_x512.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/maskable_icon_x72.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/maskable_icon_x96.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/screenshot_horizontal.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"img/screenshot_vertical.png"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"js/configura.js"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"lib/js/muestraError.js"</span>,</div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"lib/js/registraServiceWorkerSiEsSoportado.js"</span>,
-  </div>
-  <div>&nbsp;<span
-     style="color: #a31515;">"/"</span></div>
-  <div>]</div><br>
-  <div><span
-     style="color: #008000;">// Verifica si el código corre dentro de un service
-    worker.</span></div>
-  <div><span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">self</span> <span
-     style="color: #0000ff;">instanceof</span> <span
-     style="color: #267f99;">ServiceWorkerGlobalScope</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #008000;">// Evento al empezar a instalar el servide
-    worker,</span></div>
-  <div>&nbsp;<span
-     style="color: #001080;">self</span>.<span
-     style="color: #795e26;">addEventListener</span>(<span
-     style="color: #a31515;">"install"</span>,</div>
-  <div>&nbsp;&nbsp;(<span
-     style="color: #008000;">/**&nbsp;</span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ExtendableEvent}</span><span
-     style="color: #008000;"> */</span> <span
-     style="color: #001080;">evt</span>) <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"El service worker se está instalando."</span>)
-  </div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">evt</span>.<span
-     style="color: #795e26;">waitUntil</span>(<span
-     style="color: #795e26;">llenaElCache</span>())</div>
-  <div>&nbsp;&nbsp;})</div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">// Evento al solicitar información a la red.</span>
-  </div>
-  <div>&nbsp;<span
-     style="color: #001080;">self</span>.<span
-     style="color: #795e26;">addEventListener</span>(<span
-     style="color: #a31515;">"fetch"</span>, (<span
-     style="color: #008000;">/**&nbsp;</span><span
-     style="color: #0000ff;">@type</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{FetchEvent}</span><span
-     style="color: #008000;"> */</span> <span
-     style="color: #001080;">evt</span>) <span
-     style="color: #0000ff;">=&gt;</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">evt</span>.<span
-     style="color: #0070c1;">request</span>.<span
-     style="color: #0070c1;">method</span> === <span
-     style="color: #a31515;">"GET"</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">evt</span>.<span
-     style="color: #795e26;">respondWith</span>(<span
-     style="color: #795e26;">buscaLaRespuestaEnElCache</span>(<span
-     style="color: #001080;">evt</span>))</div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;})</div><br>
-  <div>&nbsp;<span
-     style="color: #008000;">// Evento cuando el service worker se vuelve
-    activo.</span></div>
-  <div>&nbsp;<span
-     style="color: #001080;">self</span>.<span
-     style="color: #795e26;">addEventListener</span>(<span
-     style="color: #a31515;">"activate"</span>,</div>
-  <div>&nbsp;&nbsp;() <span
-     style="color: #0000ff;">=&gt;</span> <span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"El service worker está activo."</span>))</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">llenaElCache</span>()&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"Intentando cargar caché:"</span>, <span
-     style="color: #0070c1;">CACHE</span>, <span
-     style="color: #a31515;">"."</span>)</div>
-  <div>&nbsp;<span
-     style="color: #008000;">// Borra todos los cachés.</span></div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">keys</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">caches</span>.<span
-     style="color: #795e26;">keys</span>()</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">for</span> (<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">key</span> <span
-     style="color: #0000ff;">of</span> <span
-     style="color: #0070c1;">keys</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">caches</span>.<span
-     style="color: #795e26;">delete</span>(<span
-     style="color: #0070c1;">key</span>)</div>
-  <div>&nbsp;}</div>
-  <div>&nbsp;<span
-     style="color: #008000;">// Abre el caché de este service worker.</span>
-  </div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">cache</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">caches</span>.<span
-     style="color: #795e26;">open</span>(<span
-     style="color: #0070c1;">CACHE</span>)</div>
-  <div>&nbsp;<span
-     style="color: #008000;">// Carga el listado de ARCHIVOS.</span></div>
-  <div>&nbsp;<span
-     style="color: #af00db;">await</span> <span
-     style="color: #0070c1;">cache</span>.<span
-     style="color: #795e26;">addAll</span>(<span
-     style="color: #0070c1;">ARCHIVOS</span>)</div>
-  <div>&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"Cache cargado:"</span>, <span
-     style="color: #0070c1;">CACHE</span>, <span
-     style="color: #a31515;">"."</span>)</div>
-  <div>&nbsp;<span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"Versión:"</span>, <span
-     style="color: #0070c1;">VERSION</span>, <span
-     style="color: #a31515;">"."</span>)</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">/**&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{FetchEvent}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">evt</span><span
-     style="color: #008000;"> */</span></div>
-  <div><span
-     style="color: #0000ff;">async</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">buscaLaRespuestaEnElCache</span>(<span
-     style="color: #001080;">evt</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #008000;">// Abre el caché.</span></div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">cache</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">caches</span>.<span
-     style="color: #795e26;">open</span>(<span
-     style="color: #0070c1;">CACHE</span>)</div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">request</span> = <span
-     style="color: #001080;">evt</span>.<span
-     style="color: #001080;">request</span></div>
-  <div>&nbsp;<span
-     style="color: #008000;">/*&nbsp;Busca la respuesta a la solicitud en el
-    contenido del caché, sin</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;*&nbsp;tomar en cuenta la parte después
-    del símbolo "?" en la URL. */</span></div>
-  <div>&nbsp;<span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">response</span> = <span
-     style="color: #af00db;">await</span> <span
-     style="color: #001080;">cache</span>.<span
-     style="color: #795e26;">match</span>(<span
-     style="color: #001080;">request</span>,&nbsp;{ <span
-     style="color: #001080;">ignoreSearch:</span> <span
-     style="color: #0000ff;">true</span> })</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">response</span> === <span
-     style="color: #0000ff;">undefined</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">/*&nbsp;Si no la encuentra, empieza a descargar de
-    la red y devuelve</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;la promesa. */</span>
-  </div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #795e26;">fetch</span>(<span
-     style="color: #001080;">request</span>)</div>
-  <div>&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">// Si la encuentra, devuelve la respuesta
-    encontrada en el caché.</span></div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #af00db;">return</span> <span
-     style="color: #001080;">response</span></div>
-  <div>&nbsp;}</div>
-  <div>}</div>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeComment">/* Este archivo debe estar colocado en la carpeta raíz del sitio.</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * </span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> * Cualquier cambio en el contenido de este archivo hace que el service</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> * worker se reinstale. */</span></td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> * Cambia el número de la versión cuando cambia el contenido de los</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> * archivos.</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> * </span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> * El número a la izquierda del punto (.), en este caso &lt;q&gt;1&lt;/q&gt;, se</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment"> * conoce como número mayor y se cambia cuando se realizan</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment"> * modificaciones grandes o importantes.</span></td></tr>
+  <tr><td>13</td><td><span class="codeComment"> * </span></td></tr>
+  <tr><td>14</td><td><span class="codeComment"> * El número a la derecha del punto (.), en este caso &lt;q&gt;00&lt;/q&gt;, se</span></td></tr>
+  <tr><td>15</td><td><span class="codeComment"> * conoce como número menor y se cambia cuando se realizan</span></td></tr>
+  <tr><td>16</td><td><span class="codeComment"> * modificaciones menores.</span></td></tr>
+  <tr><td>17</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>18</td><td><span class="codeReserved">const</span> VERSION = <span class="codeString">"1.00"</span></td></tr>
+  <tr><td>19</td><td></td></tr>
+  <tr><td>20</td><td><span class="codeComment">/** Nombre del archivo de cache. */</span></td></tr>
+  <tr><td>21</td><td><span class="codeReserved">const</span> CACHE = <span class="codeString">"ejemploPWA"</span></td></tr>
+  <tr><td>22</td><td></td></tr>
+  <tr><td>23</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>24</td><td><span class="codeComment"> * Archivos requeridos para que la</span></td></tr>
+  <tr><td>25</td><td><span class="codeComment"> * aplicación funcione fuera de</span></td></tr>
+  <tr><td>26</td><td><span class="codeComment"> * línea.</span></td></tr>
+  <tr><td>27</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>28</td><td><span class="codeReserved">const</span> ARCHIVOS = [</td></tr>
+  <tr><td>29</td><td> <span class="codeString">"favicon.ico"</span>,</td></tr>
+  <tr><td>30</td><td> <span class="codeString">"index.html"</span>,</td></tr>
+  <tr><td>31</td><td> <span class="codeString">"site.webmanifest"</span>,</td></tr>
+  <tr><td>32</td><td> <span class="codeString">"css/estilos.css"</span>,</td></tr>
+  <tr><td>33</td><td> <span class="codeString">"img/icono2048.png"</span>,</td></tr>
+  <tr><td>34</td><td> <span class="codeString">"img/maskable_icon.png"</span>,</td></tr>
+  <tr><td>35</td><td> <span class="codeString">"img/maskable_icon_x128.png"</span>,</td></tr>
+  <tr><td>36</td><td> <span class="codeString">"img/maskable_icon_x192.png"</span>,</td></tr>
+  <tr><td>37</td><td> <span class="codeString">"img/maskable_icon_x384.png"</span>,</td></tr>
+  <tr><td>38</td><td> <span class="codeString">"img/maskable_icon_x48.png"</span>,</td></tr>
+  <tr><td>39</td><td> <span class="codeString">"img/maskable_icon_x512.png"</span>,</td></tr>
+  <tr><td>40</td><td> <span class="codeString">"img/maskable_icon_x72.png"</span>,</td></tr>
+  <tr><td>41</td><td> <span class="codeString">"img/maskable_icon_x96.png"</span>,</td></tr>
+  <tr><td>42</td><td> <span class="codeString">"img/screenshot_horizontal.png"</span>,</td></tr>
+  <tr><td>43</td><td> <span class="codeString">"img/screenshot_vertical.png"</span>,</td></tr>
+  <tr><td>44</td><td> <span class="codeString">"js/configura.js"</span>,</td></tr>
+  <tr><td>45</td><td> <span class="codeString">"lib/js/muestraError.js"</span>,</td></tr>
+  <tr><td>46</td><td> <span class="codeString">"lib/js/registraServiceWorkerSiEsSoportado.js"</span>,</td></tr>
+  <tr><td>47</td><td> <span class="codeString">"/"</span></td></tr>
+  <tr><td>48</td><td>]</td></tr>
+  <tr><td>49</td><td></td></tr>
+  <tr><td>50</td><td><span class="codeComment">// Verifica si el código corre dentro de un service worker.</span></td></tr>
+  <tr><td>51</td><td><span class="codeReserved">if</span> (<span class="codeReserved">self</span> <span class="codeReserved">instanceof</span> ServiceWorkerGlobalScope) {</td></tr>
+  <tr><td>52</td><td> <span class="codeComment">// Evento al empezar a instalar el servide worker,</span></td></tr>
+  <tr><td>53</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"install"</span>,</td></tr>
+  <tr><td>54</td><td>  (<span class="codeComment">/** <span class="codeReserved">@type</span> {ExtendableEvent} */</span> evt) =&gt; {</td></tr>
+  <tr><td>55</td><td>   console.log(<span class="codeString">"El service worker se está instalando."</span>)</td></tr>
+  <tr><td>56</td><td>   evt.waitUntil(llenaElCache())</td></tr>
+  <tr><td>57</td><td>  })</td></tr>
+  <tr><td>58</td><td></td></tr>
+  <tr><td>59</td><td> <span class="codeComment">// Evento al solicitar información a la red.</span></td></tr>
+  <tr><td>60</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"fetch"</span>, (<span class="codeComment">/** <span class="codeReserved">@type</span> {FetchEvent} */</span> evt) =&gt; {</td></tr>
+  <tr><td>61</td><td>  <span class="codeReserved">if</span> (evt.request.method === <span class="codeString">"GET"</span>) {</td></tr>
+  <tr><td>62</td><td>   evt.respondWith(buscaLaRespuestaEnElCache(evt))</td></tr>
+  <tr><td>63</td><td>  }</td></tr>
+  <tr><td>64</td><td> })</td></tr>
+  <tr><td>65</td><td></td></tr>
+  <tr><td>66</td><td> <span class="codeComment">// Evento cuando el service worker se vuelve activo.</span></td></tr>
+  <tr><td>67</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"activate"</span>,</td></tr>
+  <tr><td>68</td><td>  () =&gt; console.log(<span class="codeString">"El service worker está activo."</span>))</td></tr>
+  <tr><td>69</td><td>}</td></tr>
+  <tr><td>70</td><td></td></tr>
+  <tr><td>71</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> llenaElCache() {</td></tr>
+  <tr><td>72</td><td> console.log(<span class="codeString">"Intentando cargar caché:"</span>, CACHE, <span class="codeString">"."</span>)</td></tr>
+  <tr><td>73</td><td> <span class="codeComment">// Borra todos los cachés.</span></td></tr>
+  <tr><td>74</td><td> <span class="codeReserved">const</span> keys = <span class="codeReserved">await</span> caches.keys()</td></tr>
+  <tr><td>75</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> key of keys) {</td></tr>
+  <tr><td>76</td><td>  <span class="codeReserved">await</span> caches.delete(key)</td></tr>
+  <tr><td>77</td><td> }</td></tr>
+  <tr><td>78</td><td> <span class="codeComment">// Abre el caché de este service worker.</span></td></tr>
+  <tr><td>79</td><td> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</td></tr>
+  <tr><td>80</td><td> <span class="codeComment">// Carga el listado de ARCHIVOS.</span></td></tr>
+  <tr><td>81</td><td> <span class="codeReserved">await</span> cache.addAll(ARCHIVOS)</td></tr>
+  <tr><td>82</td><td> console.log(<span class="codeString">"Cache cargado:"</span>, CACHE, <span class="codeString">"."</span>)</td></tr>
+  <tr><td>83</td><td> console.log(<span class="codeString">"Versión:"</span>, VERSION, <span class="codeString">"."</span>)</td></tr>
+  <tr><td>84</td><td>}</td></tr>
+  <tr><td>85</td><td></td></tr>
+  <tr><td>86</td><td><span class="codeComment">/** <span class="codeReserved">@param</span> {FetchEvent} evt */</span></td></tr>
+  <tr><td>87</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> buscaLaRespuestaEnElCache(evt) {</td></tr>
+  <tr><td>88</td><td> <span class="codeComment">// Abre el caché.</span></td></tr>
+  <tr><td>89</td><td> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</td></tr>
+  <tr><td>90</td><td> <span class="codeReserved">const</span> request = evt.request</td></tr>
+  <tr><td>91</td><td> <span class="codeComment">/* Busca la respuesta a la solicitud en el contenido del caché, sin</span></td></tr>
+  <tr><td>92</td><td><span class="codeComment">  * tomar en cuenta la parte después del símbolo &quot;?&quot; en la URL. */</span></td></tr>
+  <tr><td>93</td><td> <span class="codeReserved">const</span> response = <span class="codeReserved">await</span> cache.match(request, { ignoreSearch: <span class="codeReserved">true</span> })</td></tr>
+  <tr><td>94</td><td> <span class="codeReserved">if</span> (response === undefined) {</td></tr>
+  <tr><td>95</td><td>  <span class="codeComment">/* Si no la encuentra, empieza a descargar de la red y devuelve</span></td></tr>
+  <tr><td>96</td><td><span class="codeComment">   * la promesa. */</span></td></tr>
+  <tr><td>97</td><td>  <span class="codeReserved">return</span> fetch(request)</td></tr>
+  <tr><td>98</td><td> } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>99</td><td>  <span class="codeComment">// Si la encuentra, devuelve la respuesta encontrada en el caché.</span></td></tr>
+  <tr><td>100</td><td>  <span class="codeReserved">return</span> response</td></tr>
+  <tr><td>101</td><td> }</td></tr>
+  <tr><td>102</td><td>}</td></tr>
+ </tbody>
+</table>

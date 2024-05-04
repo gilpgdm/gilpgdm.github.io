@@ -1,91 +1,36 @@
-<muestra-codigo>
- <div>
-  <div><span
-     style="color: #008000;">/**</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;Si un elemento HTML tiene un mensaje
-    de validación, lo</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;muestra en su elemento de ayuda; en
-    caso contrario, muestra</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;un mensaje de ayuda. </span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{&nbsp;{</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;validity:&nbsp;{ valid: boolean
-    };</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;&nbsp;validationMessage: string</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*</span><span
-     style="color: #267f99;">&nbsp;&nbsp;}&nbsp;}</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">elementoHtml</span><span
-     style="color: #008000;"> elemento que contiene datos de validación.</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ HTMLElement }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">elementoDeAyuda</span><span
-     style="color: #008000;"> elemento fonde</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;se muestran los elementos de
-    validación para elementoHtml.</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;"> </span><span
-     style="color: #267f99;">{ string }</span><span
-     style="color: #008000;"> </span><span
-     style="color: #001080;">mensajeDeAyuda</span><span
-     style="color: #008000;"> mensaje de ayuda cuando el estado de</span></div>
-  <div><span
-     style="color: #008000;">&nbsp;*&nbsp;&nbsp;elementoHtml es válido.</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span
-     style="color: #af00db;">export</span> <span
-     style="color: #0000ff;">function</span> <span
-     style="color: #795e26;">muestraTextoDeAyuda</span>(<span
-     style="color: #001080;">elementoHtml</span>, <span
-     style="color: #001080;">elementoDeAyuda</span>,</div>
-  <div>&nbsp;<span
-     style="color: #001080;">mensajeDeAyuda</span>)&nbsp;{</div>
-  <div>&nbsp;<span
-     style="color: #af00db;">if</span> (<span
-     style="color: #001080;">elementoHtml</span>.<span
-     style="color: #001080;">validity</span>.<span
-     style="color: #001080;">valid</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">elementoDeAyuda</span>.<span
-     style="color: #001080;">textContent</span> = <span
-     style="color: #001080;">mensajeDeAyuda</span></div>
-  <div>&nbsp;}&nbsp;<span
-     style="color: #af00db;">else</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #001080;">elementoDeAyuda</span>.<span
-     style="color: #001080;">textContent</span> = <span
-     style="color: #001080;">elementoHtml</span>.<span
-     style="color: #001080;">validationMessage</span></div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span
-     style="color: #008000;">// Permite que los eventos de html usen la
-    función.</span></div>
-  <div><span
-     style="color: #001080;">window</span>[<span
-     style="color: #a31515;">"muestraTextoDeAyuda"</span>] = <span
-     style="color: #795e26;">muestraTextoDeAyuda</span></div>
- </div>
-</muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * Si un elemento HTML tiene un mensaje de validación, lo</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> * muestra en su elemento de ayuda; en caso contrario, muestra</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> * un mensaje de ayuda. </span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { {</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> *   validity: { valid: boolean };</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> *   validationMessage: string</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> *  } } elementoHtml elemento que contiene datos de validación.</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { HTMLElement } elementoDeAyuda elemento fonde</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> * se muestran los elementos de validación para elementoHtml.</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string } mensajeDeAyuda mensaje de ayuda cuando el estado de</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment"> *  elementoHtml es válido.</span></td></tr>
+  <tr><td>13</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>14</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> muestraTextoDeAyuda(elementoHtml, elementoDeAyuda,</td></tr>
+  <tr><td>15</td><td> mensajeDeAyuda) {</td></tr>
+  <tr><td>16</td><td> <span class="codeReserved">if</span> (elementoHtml.validity.valid) {</td></tr>
+  <tr><td>17</td><td>  elementoDeAyuda.textContent = mensajeDeAyuda</td></tr>
+  <tr><td>18</td><td> } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>19</td><td>  elementoDeAyuda.textContent = elementoHtml.validationMessage</td></tr>
+  <tr><td>20</td><td> }</td></tr>
+  <tr><td>21</td><td>}</td></tr>
+  <tr><td>22</td><td></td></tr>
+  <tr><td>23</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
+  <tr><td>24</td><td>window[<span class="codeString">"muestraTextoDeAyuda"</span>] = muestraTextoDeAyuda</td></tr>
+ </tbody>
+</table>
