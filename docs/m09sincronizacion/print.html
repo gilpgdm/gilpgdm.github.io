@@ -1336,9 +1336,9 @@
   <tr><td>44</td><td><span class="codeComment"> * <span class="codeReserved">@returns</span> { string } un texto que no puede</span></td></tr>
   <tr><td>45</td><td><span class="codeComment"> *  interpretarse como HTML. */</span></td></tr>
   <tr><td>46</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> htmlentities(texto) {</td></tr>
-  <tr><td>47</td><td> <span class="codeReserved">return</span> texto.replace(<span class="codeString">/[</span>&lt;&gt;<span class="codeString">"&#039;]/g, textoDetectado =&gt; {</span></td></tr>
-  <tr><td>48</td><td><span class="codeString">  <span class="codeReserved">switch</span> (textoDetectado) {</span></td></tr>
-  <tr><td>49</td><td><span class="codeString">   <span class="codeReserved">case</span> "</span>&lt;&quot;: <span class="codeReserved">return</span> <span class="codeString">"&lt;"</span></td></tr>
+  <tr><td>47</td><td> <span class="codeReserved">return</span> texto.replace(<span class="codeString">/[&lt;&gt;&quot;&#039;]/</span>g, textoDetectado =&gt; {</td></tr>
+  <tr><td>48</td><td>  <span class="codeReserved">switch</span> (textoDetectado) {</td></tr>
+  <tr><td>49</td><td>   <span class="codeReserved">case</span> <span class="codeString">"<"</span>: <span class="codeReserved">return</span> <span class="codeString">"&lt;"</span></td></tr>
   <tr><td>50</td><td>   <span class="codeReserved">case</span> <span class="codeString">"&gt;"</span>: <span class="codeReserved">return</span> <span class="codeString">"&gt;"</span></td></tr>
   <tr><td>51</td><td>   <span class="codeReserved">case</span> <span class="codeString">'&quot;'</span>: <span class="codeReserved">return</span> <span class="codeString">"&quot;"</span></td></tr>
   <tr><td>52</td><td>   <span class="codeReserved">case</span> <span class="codeString">"&#039;"</span>: <span class="codeReserved">return</span> <span class="codeString">"&#039;"</span></td></tr>

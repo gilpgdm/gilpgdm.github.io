@@ -998,7 +998,7 @@
   <tr><td>35</td><td>  <span class="codeReserved">case</span> <span class="codeString">"string"</span>:</td></tr>
   <tr><td>36</td><td>   <span class="codeReserved">return</span> htmlentities(value)</td></tr>
   <tr><td>37</td><td>  <span class="codeReserved">case</span> <span class="codeString">"<span class="codeReserved">function</span>"</span>: {</td></tr>
-  <tr><td>38</td><td>   <span class="codeReserved">const</span> names = value.name.split(<span class="codeString">/\</span>s+<span class="codeString">/g</span>)</td></tr>
+  <tr><td>38</td><td>   <span class="codeReserved">const</span> names = value.name.split(<span class="codeString">/\s+/</span>g)</td></tr>
   <tr><td>39</td><td>   <span class="codeReserved">const</span> name = htmlentities(names[names.length - 1])</td></tr>
   <tr><td>40</td><td>   <span class="codeReserved">return</span> <span class="codeString">`ejecutaMetodo(<span class="codeReserved">this</span>,&quot;${name}&quot;,event)`</span></td></tr>
   <tr><td>41</td><td>  }</td></tr>
@@ -1043,9 +1043,9 @@
   <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@returns</span> { string } un texto que no puede</span></td></tr>
   <tr><td>8</td><td><span class="codeComment"> *  interpretarse como HTML. */</span></td></tr>
   <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> htmlentities(texto) {</td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">return</span> texto.replace(<span class="codeString">/[</span>&lt;&gt;<span class="codeString">"&#039;]/g, textoDetectado =&gt; {</span></td></tr>
-  <tr><td>11</td><td><span class="codeString">  <span class="codeReserved">switch</span> (textoDetectado) {</span></td></tr>
-  <tr><td>12</td><td><span class="codeString">   <span class="codeReserved">case</span> "</span>&lt;&quot;: <span class="codeReserved">return</span> <span class="codeString">"&lt;"</span></td></tr>
+  <tr><td>10</td><td> <span class="codeReserved">return</span> texto.replace(<span class="codeString">/[&lt;&gt;&quot;&#039;]/</span>g, textoDetectado =&gt; {</td></tr>
+  <tr><td>11</td><td>  <span class="codeReserved">switch</span> (textoDetectado) {</td></tr>
+  <tr><td>12</td><td>   <span class="codeReserved">case</span> <span class="codeString">"<"</span>: <span class="codeReserved">return</span> <span class="codeString">"&lt;"</span></td></tr>
   <tr><td>13</td><td>   <span class="codeReserved">case</span> <span class="codeString">"&gt;"</span>: <span class="codeReserved">return</span> <span class="codeString">"&gt;"</span></td></tr>
   <tr><td>14</td><td>   <span class="codeReserved">case</span> <span class="codeString">'&quot;'</span>: <span class="codeReserved">return</span> <span class="codeString">"&quot;"</span></td></tr>
   <tr><td>15</td><td>   <span class="codeReserved">case</span> <span class="codeString">"&#039;"</span>: <span class="codeReserved">return</span> <span class="codeString">"&#039;"</span></td></tr>
@@ -1318,7 +1318,7 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> ES_APPLE = <span class="codeString">/.</span>*(iPad|iPhone|iPod|Mac).*<span class="codeString">/.</span>test(navigator.userAgent)</td></tr>
+  <tr><td>1</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> ES_APPLE = <span class="codeString">/.*(iPad|iPhone|iPod|Mac).*/</span>.test(navigator.userAgent)</td></tr>
  </tbody>
 </table>
       </section>
