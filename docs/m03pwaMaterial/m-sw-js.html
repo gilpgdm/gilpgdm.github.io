@@ -952,84 +952,81 @@
   <tr><td>106</td><td> <span class="codeString">"lib/js/abreElementoHtml.js"</span>,</td></tr>
   <tr><td>107</td><td> <span class="codeString">"lib/js/calculaClase.js"</span>,</td></tr>
   <tr><td>108</td><td> <span class="codeString">"lib/js/cierraElementoHtmo.js"</span>,</td></tr>
-  <tr><td>109</td><td> <span class="codeString">"lib/js/ejecutaMetodo.js"</span>,</td></tr>
-  <tr><td>110</td><td> <span class="codeString">"lib/js/getAttribute.js"</span>,</td></tr>
-  <tr><td>111</td><td> <span class="codeString">"lib/js/html.js"</span>,</td></tr>
-  <tr><td>112</td><td> <span class="codeString">"lib/js/htmlentities.js"</span>,</td></tr>
-  <tr><td>113</td><td> <span class="codeString">"lib/js/muestraError.js"</span>,</td></tr>
-  <tr><td>114</td><td> <span class="codeString">"lib/js/muestraTextoDeAyuda.js"</span>,</td></tr>
-  <tr><td>115</td><td> <span class="codeString">"lib/js/ProblemDetails.js"</span>,</td></tr>
-  <tr><td>116</td><td> <span class="codeString">"lib/js/querySelector.js"</span>,</td></tr>
-  <tr><td>117</td><td> <span class="codeString">"lib/js/querySelectorAll.js"</span>,</td></tr>
-  <tr><td>118</td><td> <span class="codeString">"lib/js/registraServiceWorkerSiEsSoportado.js"</span>,</td></tr>
-  <tr><td>119</td><td> <span class="codeString">"lib/js/setBooleanAttribute.js"</span>,</td></tr>
-  <tr><td>120</td><td> <span class="codeString">"lib/js/<span class="codeReserved">const</span>/ES_APPLE.js"</span>,</td></tr>
-  <tr><td>121</td><td> <span class="codeString">"lib/js/custom/md-filled-text-field.js"</span>,</td></tr>
-  <tr><td>122</td><td> <span class="codeString">"lib/js/custom/md-menu-button.js"</span>,</td></tr>
-  <tr><td>123</td><td> <span class="codeString">"lib/js/custom/md-options-menu.js"</span>,</td></tr>
-  <tr><td>124</td><td> <span class="codeString">"lib/js/custom/md-overflow-button.js"</span>,</td></tr>
-  <tr><td>125</td><td> <span class="codeString">"lib/js/custom/md-overflow-menu.js"</span>,</td></tr>
-  <tr><td>126</td><td> <span class="codeString">"lib/js/custom/md-select-menu.js"</span>,</td></tr>
-  <tr><td>127</td><td> <span class="codeString">"lib/js/custom/md-slider-field.js"</span>,</td></tr>
-  <tr><td>128</td><td> <span class="codeString">"lib/js/custom/md-top-app-bar.js"</span>,</td></tr>
-  <tr><td>129</td><td> <span class="codeString">"lib/js/custom/MdNavigationDrawer.js"</span>,</td></tr>
-  <tr><td>130</td><td> <span class="codeString">"ungap/custom-elements.js"</span>,</td></tr>
-  <tr><td>131</td><td> <span class="codeString">"/"</span></td></tr>
-  <tr><td>132</td><td>]</td></tr>
-  <tr><td>133</td><td></td></tr>
-  <tr><td>134</td><td><span class="codeComment">// Verifica si el código corre dentro de un service worker.</span></td></tr>
-  <tr><td>135</td><td><span class="codeReserved">if</span> (<span class="codeReserved">self</span> <span class="codeReserved">instanceof</span> ServiceWorkerGlobalScope) {</td></tr>
-  <tr><td>136</td><td> <span class="codeComment">// Evento al empezar a instalar el servide worker,</span></td></tr>
-  <tr><td>137</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"install"</span>,</td></tr>
-  <tr><td>138</td><td>  (<span class="codeComment">/** <span class="codeReserved">@type</span> {ExtendableEvent} */</span> evt) =&gt; {</td></tr>
-  <tr><td>139</td><td>   console.log(<span class="codeString">"El service worker se está instalando."</span>)</td></tr>
-  <tr><td>140</td><td>   evt.waitUntil(llenaElCache())</td></tr>
-  <tr><td>141</td><td>  })</td></tr>
-  <tr><td>142</td><td></td></tr>
-  <tr><td>143</td><td> <span class="codeComment">// Evento al solicitar información a la red.</span></td></tr>
-  <tr><td>144</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"fetch"</span>, (<span class="codeComment">/** <span class="codeReserved">@type</span> {FetchEvent} */</span> evt) =&gt; {</td></tr>
-  <tr><td>145</td><td>  <span class="codeReserved">if</span> (evt.request.method === <span class="codeString">"GET"</span>) {</td></tr>
-  <tr><td>146</td><td>   evt.respondWith(buscaLaRespuestaEnElCache(evt))</td></tr>
-  <tr><td>147</td><td>  }</td></tr>
-  <tr><td>148</td><td> })</td></tr>
-  <tr><td>149</td><td></td></tr>
-  <tr><td>150</td><td> <span class="codeComment">// Evento cuando el service worker se vuelve activo.</span></td></tr>
-  <tr><td>151</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"activate"</span>,</td></tr>
-  <tr><td>152</td><td>  () =&gt; console.log(<span class="codeString">"El service worker está activo."</span>))</td></tr>
-  <tr><td>153</td><td>}</td></tr>
-  <tr><td>154</td><td></td></tr>
-  <tr><td>155</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> llenaElCache() {</td></tr>
-  <tr><td>156</td><td> console.log(<span class="codeString">"Intentando cargar caché:"</span>, CACHE, <span class="codeString">"."</span>)</td></tr>
-  <tr><td>157</td><td> <span class="codeComment">// Borra todos los cachés.</span></td></tr>
-  <tr><td>158</td><td> <span class="codeReserved">const</span> keys = <span class="codeReserved">await</span> caches.keys()</td></tr>
-  <tr><td>159</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> key of keys) {</td></tr>
-  <tr><td>160</td><td>  <span class="codeReserved">await</span> caches.delete(key)</td></tr>
-  <tr><td>161</td><td> }</td></tr>
-  <tr><td>162</td><td> <span class="codeComment">// Abre el caché de este service worker.</span></td></tr>
-  <tr><td>163</td><td> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</td></tr>
-  <tr><td>164</td><td> <span class="codeComment">// Carga el listado de ARCHIVOS.</span></td></tr>
-  <tr><td>165</td><td> <span class="codeReserved">await</span> cache.addAll(ARCHIVOS)</td></tr>
-  <tr><td>166</td><td> console.log(<span class="codeString">"Cache cargado:"</span>, CACHE, <span class="codeString">"."</span>)</td></tr>
-  <tr><td>167</td><td> console.log(<span class="codeString">"Versión:"</span>, VERSION, <span class="codeString">"."</span>)</td></tr>
-  <tr><td>168</td><td>}</td></tr>
-  <tr><td>169</td><td></td></tr>
-  <tr><td>170</td><td><span class="codeComment">/** <span class="codeReserved">@param</span> {FetchEvent} evt */</span></td></tr>
-  <tr><td>171</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> buscaLaRespuestaEnElCache(evt) {</td></tr>
-  <tr><td>172</td><td> <span class="codeComment">// Abre el caché.</span></td></tr>
-  <tr><td>173</td><td> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</td></tr>
-  <tr><td>174</td><td> <span class="codeReserved">const</span> request = evt.request</td></tr>
-  <tr><td>175</td><td> <span class="codeComment">/* Busca la respuesta a la solicitud en el contenido del caché, sin</span></td></tr>
-  <tr><td>176</td><td><span class="codeComment">  * tomar en cuenta la parte después del símbolo &quot;?&quot; en la URL. */</span></td></tr>
-  <tr><td>177</td><td> <span class="codeReserved">const</span> response = <span class="codeReserved">await</span> cache.match(request, { ignoreSearch: <span class="codeReserved">true</span> })</td></tr>
-  <tr><td>178</td><td> <span class="codeReserved">if</span> (response === undefined) {</td></tr>
-  <tr><td>179</td><td>  <span class="codeComment">/* Si no la encuentra, empieza a descargar de la red y devuelve</span></td></tr>
-  <tr><td>180</td><td><span class="codeComment">   * la promesa. */</span></td></tr>
-  <tr><td>181</td><td>  <span class="codeReserved">return</span> fetch(request)</td></tr>
-  <tr><td>182</td><td> } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>183</td><td>  <span class="codeComment">// Si la encuentra, devuelve la respuesta encontrada en el caché.</span></td></tr>
-  <tr><td>184</td><td>  <span class="codeReserved">return</span> response</td></tr>
-  <tr><td>185</td><td> }</td></tr>
-  <tr><td>186</td><td>}</td></tr>
+  <tr><td>109</td><td> <span class="codeString">"lib/js/getAttribute.js"</span>,</td></tr>
+  <tr><td>110</td><td> <span class="codeString">"lib/js/htmlentities.js"</span>,</td></tr>
+  <tr><td>111</td><td> <span class="codeString">"lib/js/muestraError.js"</span>,</td></tr>
+  <tr><td>112</td><td> <span class="codeString">"lib/js/muestraTextoDeAyuda.js"</span>,</td></tr>
+  <tr><td>113</td><td> <span class="codeString">"lib/js/ProblemDetails.js"</span>,</td></tr>
+  <tr><td>114</td><td> <span class="codeString">"lib/js/querySelector.js"</span>,</td></tr>
+  <tr><td>115</td><td> <span class="codeString">"lib/js/querySelectorAll.js"</span>,</td></tr>
+  <tr><td>116</td><td> <span class="codeString">"lib/js/registraServiceWorkerSiEsSoportado.js"</span>,</td></tr>
+  <tr><td>117</td><td> <span class="codeString">"lib/js/<span class="codeReserved">const</span>/ES_APPLE.js"</span>,</td></tr>
+  <tr><td>118</td><td> <span class="codeString">"lib/js/custom/md-filled-text-field.js"</span>,</td></tr>
+  <tr><td>119</td><td> <span class="codeString">"lib/js/custom/md-menu-button.js"</span>,</td></tr>
+  <tr><td>120</td><td> <span class="codeString">"lib/js/custom/md-options-menu.js"</span>,</td></tr>
+  <tr><td>121</td><td> <span class="codeString">"lib/js/custom/md-overflow-button.js"</span>,</td></tr>
+  <tr><td>122</td><td> <span class="codeString">"lib/js/custom/md-overflow-menu.js"</span>,</td></tr>
+  <tr><td>123</td><td> <span class="codeString">"lib/js/custom/md-select-menu.js"</span>,</td></tr>
+  <tr><td>124</td><td> <span class="codeString">"lib/js/custom/md-slider-field.js"</span>,</td></tr>
+  <tr><td>125</td><td> <span class="codeString">"lib/js/custom/md-top-app-bar.js"</span>,</td></tr>
+  <tr><td>126</td><td> <span class="codeString">"lib/js/custom/MdNavigationDrawer.js"</span>,</td></tr>
+  <tr><td>127</td><td> <span class="codeString">"ungap/custom-elements.js"</span>,</td></tr>
+  <tr><td>128</td><td> <span class="codeString">"/"</span></td></tr>
+  <tr><td>129</td><td>]</td></tr>
+  <tr><td>130</td><td></td></tr>
+  <tr><td>131</td><td><span class="codeComment">// Verifica si el código corre dentro de un service worker.</span></td></tr>
+  <tr><td>132</td><td><span class="codeReserved">if</span> (<span class="codeReserved">self</span> <span class="codeReserved">instanceof</span> ServiceWorkerGlobalScope) {</td></tr>
+  <tr><td>133</td><td> <span class="codeComment">// Evento al empezar a instalar el servide worker,</span></td></tr>
+  <tr><td>134</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"install"</span>,</td></tr>
+  <tr><td>135</td><td>  (<span class="codeComment">/** <span class="codeReserved">@type</span> {ExtendableEvent} */</span> evt) =&gt; {</td></tr>
+  <tr><td>136</td><td>   console.log(<span class="codeString">"El service worker se está instalando."</span>)</td></tr>
+  <tr><td>137</td><td>   evt.waitUntil(llenaElCache())</td></tr>
+  <tr><td>138</td><td>  })</td></tr>
+  <tr><td>139</td><td></td></tr>
+  <tr><td>140</td><td> <span class="codeComment">// Evento al solicitar información a la red.</span></td></tr>
+  <tr><td>141</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"fetch"</span>, (<span class="codeComment">/** <span class="codeReserved">@type</span> {FetchEvent} */</span> evt) =&gt; {</td></tr>
+  <tr><td>142</td><td>  <span class="codeReserved">if</span> (evt.request.method === <span class="codeString">"GET"</span>) {</td></tr>
+  <tr><td>143</td><td>   evt.respondWith(buscaLaRespuestaEnElCache(evt))</td></tr>
+  <tr><td>144</td><td>  }</td></tr>
+  <tr><td>145</td><td> })</td></tr>
+  <tr><td>146</td><td></td></tr>
+  <tr><td>147</td><td> <span class="codeComment">// Evento cuando el service worker se vuelve activo.</span></td></tr>
+  <tr><td>148</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"activate"</span>,</td></tr>
+  <tr><td>149</td><td>  () =&gt; console.log(<span class="codeString">"El service worker está activo."</span>))</td></tr>
+  <tr><td>150</td><td>}</td></tr>
+  <tr><td>151</td><td></td></tr>
+  <tr><td>152</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> llenaElCache() {</td></tr>
+  <tr><td>153</td><td> console.log(<span class="codeString">"Intentando cargar caché:"</span>, CACHE, <span class="codeString">"."</span>)</td></tr>
+  <tr><td>154</td><td> <span class="codeComment">// Borra todos los cachés.</span></td></tr>
+  <tr><td>155</td><td> <span class="codeReserved">const</span> keys = <span class="codeReserved">await</span> caches.keys()</td></tr>
+  <tr><td>156</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> key of keys) {</td></tr>
+  <tr><td>157</td><td>  <span class="codeReserved">await</span> caches.delete(key)</td></tr>
+  <tr><td>158</td><td> }</td></tr>
+  <tr><td>159</td><td> <span class="codeComment">// Abre el caché de este service worker.</span></td></tr>
+  <tr><td>160</td><td> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</td></tr>
+  <tr><td>161</td><td> <span class="codeComment">// Carga el listado de ARCHIVOS.</span></td></tr>
+  <tr><td>162</td><td> <span class="codeReserved">await</span> cache.addAll(ARCHIVOS)</td></tr>
+  <tr><td>163</td><td> console.log(<span class="codeString">"Cache cargado:"</span>, CACHE, <span class="codeString">"."</span>)</td></tr>
+  <tr><td>164</td><td> console.log(<span class="codeString">"Versión:"</span>, VERSION, <span class="codeString">"."</span>)</td></tr>
+  <tr><td>165</td><td>}</td></tr>
+  <tr><td>166</td><td></td></tr>
+  <tr><td>167</td><td><span class="codeComment">/** <span class="codeReserved">@param</span> {FetchEvent} evt */</span></td></tr>
+  <tr><td>168</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> buscaLaRespuestaEnElCache(evt) {</td></tr>
+  <tr><td>169</td><td> <span class="codeComment">// Abre el caché.</span></td></tr>
+  <tr><td>170</td><td> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</td></tr>
+  <tr><td>171</td><td> <span class="codeReserved">const</span> request = evt.request</td></tr>
+  <tr><td>172</td><td> <span class="codeComment">/* Busca la respuesta a la solicitud en el contenido del caché, sin</span></td></tr>
+  <tr><td>173</td><td><span class="codeComment">  * tomar en cuenta la parte después del símbolo &quot;?&quot; en la URL. */</span></td></tr>
+  <tr><td>174</td><td> <span class="codeReserved">const</span> response = <span class="codeReserved">await</span> cache.match(request, { ignoreSearch: <span class="codeReserved">true</span> })</td></tr>
+  <tr><td>175</td><td> <span class="codeReserved">if</span> (response === undefined) {</td></tr>
+  <tr><td>176</td><td>  <span class="codeComment">/* Si no la encuentra, empieza a descargar de la red y devuelve</span></td></tr>
+  <tr><td>177</td><td><span class="codeComment">   * la promesa. */</span></td></tr>
+  <tr><td>178</td><td>  <span class="codeReserved">return</span> fetch(request)</td></tr>
+  <tr><td>179</td><td> } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>180</td><td>  <span class="codeComment">// Si la encuentra, devuelve la respuesta encontrada en el caché.</span></td></tr>
+  <tr><td>181</td><td>  <span class="codeReserved">return</span> response</td></tr>
+  <tr><td>182</td><td> }</td></tr>
+  <tr><td>183</td><td>}</td></tr>
  </tbody>
 </table>
  <footer>
@@ -1246,17 +1243,17 @@
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/m-jsconfig-json.html">jsconfig.json</a>
-    </p>
-   </li>
-   <li>
-    <p>
      <a href="/m03pwaMaterial/m-lib/">Carpeta « lib »</a>
     </p>
    </li>
    <li>
     <p>
      <a href="/m03pwaMaterial/m-ungap/">Carpeta « ungap »</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-jsconfig-json.html">jsconfig.json</a>
     </p>
    </li>
    <li>

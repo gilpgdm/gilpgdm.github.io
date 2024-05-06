@@ -8,12 +8,12 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { html } <span class="codeReserved">from</span> <span class="codeString">"../html.js"</span></td></tr>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { querySelector } <span class="codeReserved">from</span> <span class="codeString">"../querySelector.js"</span></td></tr>
   <tr><td>2</td><td></td></tr>
   <tr><td>3</td><td><span class="codeReserved">export</span> <span class="codeReserved">class</span> MdSliderField <span class="codeReserved">extends</span> HTMLElement {</td></tr>
   <tr><td>4</td><td></td></tr>
   <tr><td>5</td><td> getContent() {</td></tr>
-  <tr><td>6</td><td>  <span class="codeReserved">return</span> html<span class="codeString">`</span></td></tr>
+  <tr><td>6</td><td>  <span class="codeReserved">return</span> <span class="codeComment">/* HTML */</span><span class="codeString">`</span></td></tr>
   <tr><td>7</td><td><span class="codeString">   &lt;<span class="codeReserved">style</span>&gt;</span></td></tr>
   <tr><td>8</td><td><span class="codeString">    :host {</span></td></tr>
   <tr><td>9</td><td><span class="codeString">     <span class="codeReserved">display</span>: block;</span></td></tr>
@@ -71,41 +71,41 @@
   <tr><td>61</td><td><span class="codeString">    }</span></td></tr>
   <tr><td>62</td><td><span class="codeString">   &lt;/<span class="codeReserved">style</span>&gt;</span></td></tr>
   <tr><td>63</td><td><span class="codeString">   &lt;<span class="codeReserved">slot</span> id=&quot;label&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;</span></td></tr>
-  <tr><td>64</td><td><span class="codeString">   &lt;<span class="codeReserved">slot</span> name=&quot;slider&quot; onslotchange=&quot;${<span class="codeReserved">this</span>.configuraSlider}&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;</span></td></tr>
-  <tr><td>65</td><td><span class="codeString">   &lt;<span class="codeReserved">slot</span> name=&quot;supporting&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;`</span>.htmlTxt</td></tr>
+  <tr><td>64</td><td><span class="codeString">   &lt;<span class="codeReserved">slot</span> name=&quot;slider&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;</span></td></tr>
+  <tr><td>65</td><td><span class="codeString">   &lt;<span class="codeReserved">slot</span> name=&quot;supporting&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;`</span></td></tr>
   <tr><td>66</td><td> }</td></tr>
   <tr><td>67</td><td></td></tr>
   <tr><td>68</td><td> <span class="codeReserved">constructor</span>() {</td></tr>
   <tr><td>69</td><td>  super()</td></tr>
   <tr><td>70</td><td>  <span class="codeReserved">const</span> shadow = <span class="codeReserved">this</span>.attachShadow({ mode: <span class="codeString">"open"</span>, delegatesFocus: <span class="codeReserved">true</span> })</td></tr>
   <tr><td>71</td><td>  shadow.innerHTML = <span class="codeReserved">this</span>.getContent()</td></tr>
-  <tr><td>72</td><td>  <span class="codeReserved">this</span>.analiza = <span class="codeReserved">this</span>.analiza.bind(<span class="codeReserved">this</span>)</td></tr>
-  <tr><td>73</td><td></td></tr>
-  <tr><td>74</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>75</td><td><span class="codeComment">  * <span class="codeReserved">@private</span></span></td></tr>
-  <tr><td>76</td><td><span class="codeComment">  * <span class="codeReserved">@type</span> {HTMLSlotElement|<span class="codeReserved">null</span>}</span></td></tr>
-  <tr><td>77</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>78</td><td>  <span class="codeReserved">this</span>._slotSlider = shadow.querySelector(<span class="codeString">'[name=&quot;slider&quot;]'</span>)</td></tr>
-  <tr><td>79</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>80</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
-  <tr><td>81</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> {HTMLInputElement|<span class="codeReserved">null</span>}</span></td></tr>
-  <tr><td>82</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>83</td><td>  <span class="codeReserved">this</span>._input = <span class="codeReserved">null</span></td></tr>
-  <tr><td>84</td><td> }</td></tr>
-  <tr><td>85</td><td></td></tr>
-  <tr><td>86</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
-  <tr><td>87</td><td> configuraSlider() {</td></tr>
-  <tr><td>88</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._input !== <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>89</td><td>   <span class="codeReserved">this</span>._input.removeEventListener(<span class="codeString">"input"</span>, <span class="codeReserved">this</span>.analiza)</td></tr>
-  <tr><td>90</td><td>   <span class="codeReserved">this</span>._input = <span class="codeReserved">null</span></td></tr>
-  <tr><td>91</td><td>  }</td></tr>
-  <tr><td>92</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._slotSlider !== <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>93</td><td>   <span class="codeReserved">for</span> (<span class="codeReserved">const</span> input of <span class="codeReserved">this</span>._slotSlider.assignedElements()) {</td></tr>
-  <tr><td>94</td><td>    <span class="codeReserved">if</span> (input <span class="codeReserved">instanceof</span> HTMLInputElement) {</td></tr>
-  <tr><td>95</td><td>     <span class="codeReserved">this</span>._input = input</td></tr>
-  <tr><td>96</td><td>     input.addEventListener(<span class="codeString">"input"</span>, <span class="codeReserved">this</span>.analiza)</td></tr>
-  <tr><td>97</td><td>     <span class="codeReserved">this</span>.analiza()</td></tr>
-  <tr><td>98</td><td>    }</td></tr>
+  <tr><td>72</td><td>  <span class="codeReserved">this</span>._configuraSlider = <span class="codeReserved">this</span>._configuraSlider.bind(<span class="codeReserved">this</span>)</td></tr>
+  <tr><td>73</td><td>  <span class="codeReserved">this</span>.analiza = <span class="codeReserved">this</span>.analiza.bind(<span class="codeReserved">this</span>)</td></tr>
+  <tr><td>74</td><td></td></tr>
+  <tr><td>75</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>76</td><td><span class="codeComment">  * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>77</td><td><span class="codeComment">  * <span class="codeReserved">@type</span> {HTMLSlotElement}</span></td></tr>
+  <tr><td>78</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>79</td><td>  <span class="codeReserved">this</span>._slotSlider = querySelector(shadow, <span class="codeString">'[name=&quot;slider&quot;]'</span>)</td></tr>
+  <tr><td>80</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>81</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>82</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> {HTMLInputElement|<span class="codeReserved">null</span>}</span></td></tr>
+  <tr><td>83</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>84</td><td>  <span class="codeReserved">this</span>._input = <span class="codeReserved">null</span></td></tr>
+  <tr><td>85</td><td>  <span class="codeReserved">this</span>._slotSlider.addEventListener(<span class="codeString">"slotchange"</span>, <span class="codeReserved">this</span>._configuraSlider)</td></tr>
+  <tr><td>86</td><td> }</td></tr>
+  <tr><td>87</td><td></td></tr>
+  <tr><td>88</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
+  <tr><td>89</td><td> _configuraSlider() {</td></tr>
+  <tr><td>90</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._input !== <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>91</td><td>   <span class="codeReserved">this</span>._input.removeEventListener(<span class="codeString">"input"</span>, <span class="codeReserved">this</span>.analiza)</td></tr>
+  <tr><td>92</td><td>   <span class="codeReserved">this</span>._input = <span class="codeReserved">null</span></td></tr>
+  <tr><td>93</td><td>  }</td></tr>
+  <tr><td>94</td><td>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> input of <span class="codeReserved">this</span>._slotSlider.assignedElements()) {</td></tr>
+  <tr><td>95</td><td>   <span class="codeReserved">if</span> (input <span class="codeReserved">instanceof</span> HTMLInputElement) {</td></tr>
+  <tr><td>96</td><td>    <span class="codeReserved">this</span>._input = input</td></tr>
+  <tr><td>97</td><td>    input.addEventListener(<span class="codeString">"input"</span>, <span class="codeReserved">this</span>.analiza)</td></tr>
+  <tr><td>98</td><td>    <span class="codeReserved">this</span>.analiza()</td></tr>
   <tr><td>99</td><td>   }</td></tr>
   <tr><td>100</td><td>  }</td></tr>
   <tr><td>101</td><td> }</td></tr>
@@ -116,7 +116,7 @@
   <tr><td>106</td><td>   <span class="codeReserved">const</span> v = i.valueAsNumber</td></tr>
   <tr><td>107</td><td>   <span class="codeReserved">const</span> min = parseFloat(i.min)</td></tr>
   <tr><td>108</td><td>   <span class="codeReserved">const</span> max = parseFloat(i.max)</td></tr>
-  <tr><td>109</td><td>   <span class="codeReserved">const</span> value = (v - min) <span class="codeString">/ </span>(max - min) * 100</td></tr>
+  <tr><td>109</td><td>   <span class="codeReserved">const</span> value = (v - min) / (max - min) * 100</td></tr>
   <tr><td>110</td><td>   i.title = v.toString()</td></tr>
   <tr><td>111</td><td>   i.style.background =</td></tr>
   <tr><td>112</td><td>    <span class="codeString">`linear-gradient(to <span class="codeReserved">right</span>, var(--md-sys-color-primary) 0%, var(--md-sys-color-primary) ${value</span></td></tr>

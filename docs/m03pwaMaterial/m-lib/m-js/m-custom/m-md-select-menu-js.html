@@ -846,343 +846,346 @@
  <tbody>
   <tr><td>1</td><td><span class="codeReserved">import</span> { getAttribute } <span class="codeReserved">from</span> <span class="codeString">"../getAttribute.js"</span></td></tr>
   <tr><td>2</td><td><span class="codeReserved">import</span> { querySelector } <span class="codeReserved">from</span> <span class="codeString">"../querySelector.js"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">import</span> { setBooleanAttribute } <span class="codeReserved">from</span> <span class="codeString">"../setBooleanAttribute.js"</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">import</span> { MdFilledTextField } <span class="codeReserved">from</span> <span class="codeString">"./md-filled-text-field.js"</span></td></tr>
-  <tr><td>5</td><td><span class="codeReserved">import</span> { MdOptionsMenu } <span class="codeReserved">from</span> <span class="codeString">"./md-options-menu.js"</span></td></tr>
-  <tr><td>6</td><td></td></tr>
-  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">class</span> MdSelectMenu <span class="codeReserved">extends</span> HTMLElement {</td></tr>
-  <tr><td>8</td><td></td></tr>
-  <tr><td>9</td><td> <span class="codeReserved">static</span> get observedAttributes() {</td></tr>
-  <tr><td>10</td><td>  <span class="codeReserved">return</span> [<span class="codeString">"options"</span>, <span class="codeString">"value"</span>]</td></tr>
-  <tr><td>11</td><td> }</td></tr>
-  <tr><td>12</td><td></td></tr>
-  <tr><td>13</td><td> getContent() {</td></tr>
-  <tr><td>14</td><td>  <span class="codeReserved">return</span> <span class="codeComment">/* HTML */</span> <span class="codeString">`</span></td></tr>
-  <tr><td>15</td><td><span class="codeString">   &lt;<span class="codeReserved">link</span> rel=&quot;stylesheet&quot; href=&quot;/lib/css/material-symbols-outlined.css&quot;&gt;</span></td></tr>
-  <tr><td>16</td><td><span class="codeString"></span></td></tr>
-  <tr><td>17</td><td><span class="codeString">   &lt;<span class="codeReserved">style</span>&gt;</span></td></tr>
-  <tr><td>18</td><td><span class="codeString">    :host {</span></td></tr>
-  <tr><td>19</td><td><span class="codeString">     <span class="codeReserved">display</span>: block;</span></td></tr>
-  <tr><td>20</td><td><span class="codeString">     cursor: <span class="codeReserved">default</span>;</span></td></tr>
-  <tr><td>21</td><td><span class="codeString">    }</span></td></tr>
-  <tr><td>22</td><td><span class="codeString"></span></td></tr>
-  <tr><td>23</td><td><span class="codeString">    output {</span></td></tr>
-  <tr><td>24</td><td><span class="codeString">     <span class="codeReserved">display</span>: block;</span></td></tr>
-  <tr><td>25</td><td><span class="codeString">     <span class="codeReserved">white-space</span>: nowrap;</span></td></tr>
-  <tr><td>26</td><td><span class="codeString">     <span class="codeReserved">text-overflow</span>: ellipsis;</span></td></tr>
-  <tr><td>27</td><td><span class="codeString">     <span class="codeReserved">overflow</span>: hidden;</span></td></tr>
-  <tr><td>28</td><td><span class="codeString">    }</span></td></tr>
-  <tr><td>29</td><td><span class="codeString"></span></td></tr>
-  <tr><td>30</td><td><span class="codeString">    #up {</span></td></tr>
-  <tr><td>31</td><td><span class="codeString">     <span class="codeReserved">position</span>: absolute;</span></td></tr>
-  <tr><td>32</td><td><span class="codeString">     <span class="codeReserved">bottom</span>: 8px;</span></td></tr>
-  <tr><td>33</td><td><span class="codeString">     <span class="codeReserved">right</span>: 12px;</span></td></tr>
-  <tr><td>34</td><td><span class="codeString">     <span class="codeReserved">display</span>: none;</span></td></tr>
-  <tr><td>35</td><td><span class="codeString">     <span class="codeReserved">color</span>: var(--md-sys-color-on-surface-variant);</span></td></tr>
-  <tr><td>36</td><td><span class="codeString">    }</span></td></tr>
-  <tr><td>37</td><td><span class="codeString"></span></td></tr>
-  <tr><td>38</td><td><span class="codeString">    #down {</span></td></tr>
-  <tr><td>39</td><td><span class="codeString">     <span class="codeReserved">position</span>: absolute;</span></td></tr>
-  <tr><td>40</td><td><span class="codeString">     <span class="codeReserved">bottom</span>: 8px;</span></td></tr>
-  <tr><td>41</td><td><span class="codeString">     <span class="codeReserved">right</span>: 12px;</span></td></tr>
-  <tr><td>42</td><td><span class="codeString">     <span class="codeReserved">color</span>: var(--md-sys-color-on-surface-variant);</span></td></tr>
-  <tr><td>43</td><td><span class="codeString">    }</span></td></tr>
-  <tr><td>44</td><td><span class="codeString"></span></td></tr>
-  <tr><td>45</td><td><span class="codeString">    :host(.open) #up {</span></td></tr>
-  <tr><td>46</td><td><span class="codeString">     <span class="codeReserved">display</span>: inline-block;</span></td></tr>
-  <tr><td>47</td><td><span class="codeString">    }</span></td></tr>
-  <tr><td>48</td><td><span class="codeString"></span></td></tr>
-  <tr><td>49</td><td><span class="codeString">    :host(.open) #down {</span></td></tr>
-  <tr><td>50</td><td><span class="codeString">     <span class="codeReserved">display</span>: none;</span></td></tr>
-  <tr><td>51</td><td><span class="codeString">    }</span></td></tr>
-  <tr><td>52</td><td><span class="codeString"></span></td></tr>
-  <tr><td>53</td><td><span class="codeString">    :host(.invalid) #up,</span></td></tr>
-  <tr><td>54</td><td><span class="codeString">    :host(.invalid) #down {</span></td></tr>
-  <tr><td>55</td><td><span class="codeString">     <span class="codeReserved">color</span>: var(--md-sys-color-error);</span></td></tr>
-  <tr><td>56</td><td><span class="codeString">    }</span></td></tr>
-  <tr><td>57</td><td><span class="codeString"></span></td></tr>
-  <tr><td>58</td><td><span class="codeString">   &lt;/<span class="codeReserved">style</span>&gt;</span></td></tr>
-  <tr><td>59</td><td><span class="codeString">   &lt;<span class="codeReserved">output</span>&gt;&lt;/<span class="codeReserved">output</span>&gt;</span></td></tr>
-  <tr><td>60</td><td><span class="codeString">   &lt;<span class="codeReserved">span</span> id=&quot;down&quot; <span class="codeReserved">class</span>=&quot;material-symbols-outlined&quot;&gt;</span></td></tr>
-  <tr><td>61</td><td><span class="codeString">    arrow_drop_down</span></td></tr>
-  <tr><td>62</td><td><span class="codeString">   &lt;/<span class="codeReserved">span</span>&gt;</span></td></tr>
-  <tr><td>63</td><td><span class="codeString">   &lt;<span class="codeReserved">span</span> id=&quot;up&quot; <span class="codeReserved">class</span>=&quot;material-symbols-outlined&quot;&gt;</span></td></tr>
-  <tr><td>64</td><td><span class="codeString">    arrow_drop_up</span></td></tr>
-  <tr><td>65</td><td><span class="codeString">   &lt;/<span class="codeReserved">span</span>&gt;`</span></td></tr>
-  <tr><td>66</td><td> }</td></tr>
-  <tr><td>67</td><td></td></tr>
-  <tr><td>68</td><td> <span class="codeReserved">constructor</span>() {</td></tr>
-  <tr><td>69</td><td>  super()</td></tr>
-  <tr><td>70</td><td>  <span class="codeReserved">const</span> shadow = <span class="codeReserved">this</span>.attachShadow({ mode: <span class="codeString">"open"</span> })</td></tr>
-  <tr><td>71</td><td>  shadow.innerHTML =</td></tr>
-  <tr><td>72</td><td>   <span class="codeReserved">this</span>.getContent()</td></tr>
-  <tr><td>73</td><td></td></tr>
-  <tr><td>74</td><td>  <span class="codeReserved">this</span>._alterna = <span class="codeReserved">this</span>._alterna.bind(<span class="codeReserved">this</span>)</td></tr>
-  <tr><td>75</td><td>  <span class="codeReserved">this</span>._onKeyDown = <span class="codeReserved">this</span>._onKeyDown.bind(<span class="codeReserved">this</span>)</td></tr>
-  <tr><td>76</td><td>  <span class="codeReserved">this</span>._cierra = <span class="codeReserved">this</span>._cierra.bind(<span class="codeReserved">this</span>)</td></tr>
-  <tr><td>77</td><td>  <span class="codeReserved">this</span>.opcionSeleccionada = <span class="codeReserved">this</span>.opcionSeleccionada.bind(<span class="codeReserved">this</span>)</td></tr>
-  <tr><td>78</td><td>  <span class="codeReserved">this</span>.clicExterno = <span class="codeReserved">this</span>.clicExterno.bind(<span class="codeReserved">this</span>)</td></tr>
-  <tr><td>79</td><td></td></tr>
-  <tr><td>80</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>81</td><td><span class="codeComment">   * <span class="codeReserved">@readonly</span></span></td></tr>
-  <tr><td>82</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> { { valid:boolean } }</span></td></tr>
-  <tr><td>83</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>84</td><td>  <span class="codeReserved">this</span>.validity = { valid: <span class="codeReserved">true</span> }</td></tr>
-  <tr><td>85</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>86</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
-  <tr><td>87</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> {string}</span></td></tr>
-  <tr><td>88</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>89</td><td>  <span class="codeReserved">this</span>._customValidity = </td></tr>
-  <tr><td>90</td><td></td></tr>
-  <tr><td>91</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>92</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
-  <tr><td>93</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> { HTMLOutputElement }</span></td></tr>
-  <tr><td>94</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>95</td><td>  <span class="codeReserved">this</span>.output = querySelector(shadow, <span class="codeString">"output"</span>)</td></tr>
-  <tr><td>96</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>97</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
-  <tr><td>98</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>99</td><td>  <span class="codeReserved">this</span>._options = </td></tr>
-  <tr><td>100</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>101</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
-  <tr><td>102</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> { MdOptionsMenu | <span class="codeReserved">null</span> }</span></td></tr>
-  <tr><td>103</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>104</td><td>  <span class="codeReserved">this</span>._optionsMenu = <span class="codeReserved">null</span></td></tr>
-  <tr><td>105</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>106</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
-  <tr><td>107</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> { MdFilledTextField | <span class="codeReserved">null</span> }</span></td></tr>
-  <tr><td>108</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>109</td><td>  <span class="codeReserved">this</span>._textField = <span class="codeReserved">null</span></td></tr>
-  <tr><td>110</td><td> }</td></tr>
-  <tr><td>111</td><td></td></tr>
-  <tr><td>112</td><td> connectedCallback() {</td></tr>
-  <tr><td>113</td><td>  <span class="codeReserved">this</span>.tabIndex = 0</td></tr>
-  <tr><td>114</td><td>  <span class="codeReserved">this</span>.role = <span class="codeString">"combobox"</span></td></tr>
-  <tr><td>115</td><td>  <span class="codeReserved">this</span>.ariaHasPopup = <span class="codeString">"listbox"</span></td></tr>
-  <tr><td>116</td><td>  <span class="codeReserved">this</span>.ariaExpanded = <span class="codeString">"<span class="codeReserved">false</span>"</span></td></tr>
-  <tr><td>117</td><td>  <span class="codeReserved">this</span>[<span class="codeString">"aria-controls"</span>] = <span class="codeReserved">this</span>.options</td></tr>
-  <tr><td>118</td><td>  <span class="codeReserved">this</span>.addEventListener(<span class="codeString">"keydown"</span>, <span class="codeReserved">this</span>._onKeyDown)</td></tr>
-  <tr><td>119</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>120</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> { MdFilledTextField | <span class="codeReserved">null</span> }</span></td></tr>
-  <tr><td>121</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>122</td><td>  <span class="codeReserved">const</span> textField = <span class="codeReserved">this</span>.closest(<span class="codeString">"md-filled-text-field"</span>)</td></tr>
-  <tr><td>123</td><td>  <span class="codeReserved">if</span> (textField !== <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>124</td><td>   <span class="codeReserved">this</span>._textField = textField</td></tr>
-  <tr><td>125</td><td>   textField.classList.add(<span class="codeString">"select"</span>)</td></tr>
-  <tr><td>126</td><td>   textField.addEventListener(<span class="codeString">"click"</span>, <span class="codeReserved">this</span>._alterna)</td></tr>
-  <tr><td>127</td><td>  }</td></tr>
-  <tr><td>128</td><td> }</td></tr>
-  <tr><td>129</td><td></td></tr>
-  <tr><td>130</td><td> <span class="codeComment">/**</span></td></tr>
-  <tr><td>131</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} nombreDeAtributo</span></td></tr>
-  <tr><td>132</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} _valorAnterior</span></td></tr>
-  <tr><td>133</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} nuevoValor</span></td></tr>
-  <tr><td>134</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>135</td><td> attributeChangedCallback(nombreDeAtributo, _valorAnterior, nuevoValor) {</td></tr>
-  <tr><td>136</td><td>  <span class="codeReserved">if</span> (nombreDeAtributo === <span class="codeString">"options"</span>) {</td></tr>
-  <tr><td>137</td><td>   <span class="codeReserved">this</span>.muestraOptions(nuevoValor)</td></tr>
-  <tr><td>138</td><td>  } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (nombreDeAtributo === <span class="codeString">"value"</span>) {</td></tr>
-  <tr><td>139</td><td>   <span class="codeReserved">this</span>.muestraValue()</td></tr>
-  <tr><td>140</td><td>  }</td></tr>
-  <tr><td>141</td><td> }</td></tr>
-  <tr><td>142</td><td></td></tr>
-  <tr><td>143</td><td> get options() {</td></tr>
-  <tr><td>144</td><td>  <span class="codeReserved">return</span> getAttribute(<span class="codeReserved">this</span>, <span class="codeString">"options"</span>)</td></tr>
-  <tr><td>145</td><td> }</td></tr>
-  <tr><td>146</td><td></td></tr>
-  <tr><td>147</td><td> set options(options) {</td></tr>
-  <tr><td>148</td><td>  <span class="codeReserved">this</span>.setAttribute(<span class="codeString">"options"</span>, options)</td></tr>
-  <tr><td>149</td><td> }</td></tr>
-  <tr><td>150</td><td></td></tr>
-  <tr><td>151</td><td> <span class="codeComment">/**</span></td></tr>
-  <tr><td>152</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} options</span></td></tr>
-  <tr><td>153</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>154</td><td> muestraOptions(options) {</td></tr>
-  <tr><td>155</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._options !== options && <span class="codeReserved">this</span>._optionsMenu !== <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>156</td><td>   <span class="codeReserved">this</span>._optionsMenu = <span class="codeReserved">null</span></td></tr>
-  <tr><td>157</td><td>  }</td></tr>
-  <tr><td>158</td><td>  <span class="codeReserved">this</span>._options = options</td></tr>
-  <tr><td>159</td><td>  <span class="codeReserved">this</span>[<span class="codeString">"aria-controls"</span>] = <span class="codeReserved">this</span>.options</td></tr>
-  <tr><td>160</td><td> }</td></tr>
-  <tr><td>161</td><td></td></tr>
-  <tr><td>162</td><td> get required() {</td></tr>
-  <tr><td>163</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">this</span>.hasAttribute(<span class="codeString">"required"</span>)</td></tr>
-  <tr><td>164</td><td> }</td></tr>
-  <tr><td>165</td><td></td></tr>
-  <tr><td>166</td><td> set required(required) {</td></tr>
-  <tr><td>167</td><td>  setBooleanAttribute(<span class="codeReserved">this</span>, <span class="codeString">"required"</span>, required)</td></tr>
-  <tr><td>168</td><td> }</td></tr>
-  <tr><td>169</td><td></td></tr>
-  <tr><td>170</td><td> get value() {</td></tr>
-  <tr><td>171</td><td>  <span class="codeReserved">return</span> getAttribute(<span class="codeReserved">this</span>, <span class="codeString">"value"</span>)</td></tr>
-  <tr><td>172</td><td> }</td></tr>
-  <tr><td>173</td><td></td></tr>
-  <tr><td>174</td><td> set value(value) {</td></tr>
-  <tr><td>175</td><td>  <span class="codeReserved">this</span>.setAttribute(<span class="codeString">"value"</span>, value)</td></tr>
-  <tr><td>176</td><td> }</td></tr>
-  <tr><td>177</td><td></td></tr>
-  <tr><td>178</td><td> muestraValue() {</td></tr>
-  <tr><td>179</td><td>  <span class="codeReserved">const</span> value = <span class="codeReserved">this</span>.value</td></tr>
-  <tr><td>180</td><td>  <span class="codeReserved">this</span>.output.value = <span class="codeReserved">this</span>.optionsMenu.muestraValue(value)</td></tr>
-  <tr><td>181</td><td> }</td></tr>
-  <tr><td>182</td><td></td></tr>
-  <tr><td>183</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
-  <tr><td>184</td><td> _alterna() {</td></tr>
-  <tr><td>185</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.classList.contains(<span class="codeString">"open"</span>)) {</td></tr>
-  <tr><td>186</td><td>   <span class="codeReserved">this</span>._cierra()</td></tr>
-  <tr><td>187</td><td>  } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>188</td><td>   <span class="codeReserved">this</span>._abre()</td></tr>
-  <tr><td>189</td><td>  }</td></tr>
-  <tr><td>190</td><td> }</td></tr>
-  <tr><td>191</td><td></td></tr>
-  <tr><td>192</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
-  <tr><td>193</td><td> _abre() {</td></tr>
-  <tr><td>194</td><td>  <span class="codeReserved">this</span>.classList.add(<span class="codeString">"open"</span>)</td></tr>
-  <tr><td>195</td><td>  <span class="codeReserved">const</span> textField = <span class="codeReserved">this</span>._textField</td></tr>
-  <tr><td>196</td><td>  <span class="codeReserved">if</span> (textField !== <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>197</td><td>   <span class="codeReserved">const</span> optionsMenu = <span class="codeReserved">this</span>.optionsMenu</td></tr>
-  <tr><td>198</td><td>   optionsMenu.style.<span class="codeReserved">top</span> = <span class="codeString">`${textField.offsetTop + 56}px`</span></td></tr>
-  <tr><td>199</td><td>   optionsMenu.style.<span class="codeReserved">left</span> = <span class="codeString">`${textField.offsetLeft}px`</span></td></tr>
-  <tr><td>200</td><td>   optionsMenu.style.<span class="codeReserved">width</span> = <span class="codeString">`${textField.offsetWidth}px`</span></td></tr>
-  <tr><td>201</td><td>   optionsMenu.abre()</td></tr>
-  <tr><td>202</td><td>   optionsMenu.addEventListener(<span class="codeString">"input"</span>, <span class="codeReserved">this</span>.opcionSeleccionada)</td></tr>
-  <tr><td>203</td><td>   <span class="codeReserved">this</span>.ariaExpanded = <span class="codeString">"<span class="codeReserved">true</span>"</span></td></tr>
-  <tr><td>204</td><td>   document.addEventListener(<span class="codeString">"click"</span>, <span class="codeReserved">this</span>.clicExterno)</td></tr>
-  <tr><td>205</td><td>  }</td></tr>
-  <tr><td>206</td><td> }</td></tr>
-  <tr><td>207</td><td></td></tr>
-  <tr><td>208</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
-  <tr><td>209</td><td> _cierra() {</td></tr>
-  <tr><td>210</td><td>  <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"open"</span>)</td></tr>
-  <tr><td>211</td><td>  <span class="codeReserved">const</span> optionsMenu = <span class="codeReserved">this</span>.optionsMenu</td></tr>
-  <tr><td>212</td><td>  optionsMenu.cierra()</td></tr>
-  <tr><td>213</td><td>  <span class="codeReserved">this</span>.checkValidity()</td></tr>
-  <tr><td>214</td><td>  optionsMenu.removeEventListener(<span class="codeString">"input"</span>, <span class="codeReserved">this</span>.opcionSeleccionada)</td></tr>
-  <tr><td>215</td><td>  <span class="codeReserved">this</span>.ariaExpanded = <span class="codeString">"<span class="codeReserved">false</span>"</span></td></tr>
-  <tr><td>216</td><td>  document.removeEventListener(<span class="codeString">"click"</span>, <span class="codeReserved">this</span>.clicExterno)</td></tr>
-  <tr><td>217</td><td>  <span class="codeReserved">this</span>.dispatchEvent(<span class="codeReserved">new</span> Event(<span class="codeString">"input"</span>, { bubbles: <span class="codeReserved">true</span> }))</td></tr>
-  <tr><td>218</td><td> }</td></tr>
-  <tr><td>219</td><td></td></tr>
-  <tr><td>220</td><td> get optionsMenu() {</td></tr>
-  <tr><td>221</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._optionsMenu === <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>222</td><td>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._options === )</td></tr>
-  <tr><td>223</td><td>    <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Atributo options no asignado."</span>)</td></tr>
-  <tr><td>224</td><td>   <span class="codeReserved">const</span> menu = document.getElementById(<span class="codeReserved">this</span>._options)</td></tr>
-  <tr><td>225</td><td>   <span class="codeReserved">if</span> (menu <span class="codeReserved">instanceof</span> MdOptionsMenu) {</td></tr>
-  <tr><td>226</td><td>    <span class="codeReserved">this</span>._optionsMenu = menu</td></tr>
-  <tr><td>227</td><td>    <span class="codeReserved">this</span>.muestraValue()</td></tr>
-  <tr><td>228</td><td>   } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>229</td><td>    <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">`Valor incorrecto para options: &quot;${<span class="codeReserved">this</span>._options}&quot;.`</span>)</td></tr>
-  <tr><td>230</td><td>   }</td></tr>
-  <tr><td>231</td><td>  }</td></tr>
-  <tr><td>232</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">this</span>._optionsMenu</td></tr>
-  <tr><td>233</td><td> }</td></tr>
-  <tr><td>234</td><td></td></tr>
-  <tr><td>235</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
-  <tr><td>236</td><td> _avanzaOpcion() {</td></tr>
-  <tr><td>237</td><td>  <span class="codeReserved">const</span> i = <span class="codeReserved">this</span>._valueIndex</td></tr>
-  <tr><td>238</td><td>  <span class="codeReserved">const</span> opciones = <span class="codeReserved">this</span>.optionsMenu.opciones</td></tr>
-  <tr><td>239</td><td>  <span class="codeReserved">if</span> (i &lt; opciones.length - 1) {</td></tr>
-  <tr><td>240</td><td>   <span class="codeReserved">this</span>.value = opciones[i + 1].input.value</td></tr>
-  <tr><td>241</td><td>  }</td></tr>
-  <tr><td>242</td><td> }</td></tr>
-  <tr><td>243</td><td></td></tr>
-  <tr><td>244</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
-  <tr><td>245</td><td> _retrocedeOpcion() {</td></tr>
-  <tr><td>246</td><td>  <span class="codeReserved">const</span> i = <span class="codeReserved">this</span>._valueIndex</td></tr>
-  <tr><td>247</td><td>  <span class="codeReserved">const</span> opciones = <span class="codeReserved">this</span>.optionsMenu.opciones</td></tr>
-  <tr><td>248</td><td>  <span class="codeReserved">if</span> (i &gt; 0) {</td></tr>
-  <tr><td>249</td><td>   <span class="codeReserved">this</span>.value = opciones[i - 1].input.value</td></tr>
-  <tr><td>250</td><td>  }</td></tr>
-  <tr><td>251</td><td> }</td></tr>
-  <tr><td>252</td><td></td></tr>
-  <tr><td>253</td><td> <span class="codeComment">/**</span></td></tr>
-  <tr><td>254</td><td><span class="codeComment">  * <span class="codeReserved">@private</span></span></td></tr>
-  <tr><td>255</td><td><span class="codeComment">  * <span class="codeReserved">@returns</span> {number}</span></td></tr>
-  <tr><td>256</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>257</td><td> get _valueIndex() {</td></tr>
-  <tr><td>258</td><td>  <span class="codeReserved">const</span> value = <span class="codeReserved">this</span>.value</td></tr>
-  <tr><td>259</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">this</span>.optionsMenu.opciones.findIndex(</td></tr>
-  <tr><td>260</td><td>   opcion =&gt; opcion.input.value === value)</td></tr>
-  <tr><td>261</td><td> }</td></tr>
-  <tr><td>262</td><td></td></tr>
-  <tr><td>263</td><td> opcionSeleccionada() {</td></tr>
-  <tr><td>264</td><td>  <span class="codeReserved">this</span>.value = <span class="codeReserved">this</span>.optionsMenu.seleccion</td></tr>
-  <tr><td>265</td><td>  <span class="codeReserved">this</span>._cierra()</td></tr>
-  <tr><td>266</td><td>  <span class="codeReserved">this</span>.focus()</td></tr>
-  <tr><td>267</td><td> }</td></tr>
-  <tr><td>268</td><td></td></tr>
-  <tr><td>269</td><td> <span class="codeComment">/**</span></td></tr>
-  <tr><td>270</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {Event} evt</span></td></tr>
-  <tr><td>271</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>272</td><td> clicExterno(evt) {</td></tr>
-  <tr><td>273</td><td>  <span class="codeReserved">const</span> target = evt.target</td></tr>
-  <tr><td>274</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.classList.contains(<span class="codeString">"open"</span>)</td></tr>
-  <tr><td>275</td><td>   && target <span class="codeReserved">instanceof</span> HTMLElement</td></tr>
-  <tr><td>276</td><td>   && <span class="codeReserved">this</span>._textField !== <span class="codeReserved">null</span></td></tr>
-  <tr><td>277</td><td>   && !<span class="codeReserved">this</span>._textField.contains(target)</td></tr>
-  <tr><td>278</td><td>   && <span class="codeReserved">this</span>._optionsMenu !== <span class="codeReserved">null</span></td></tr>
-  <tr><td>279</td><td>   && !<span class="codeReserved">this</span>._optionsMenu.contains(target)) {</td></tr>
-  <tr><td>280</td><td>   <span class="codeReserved">this</span>._cierra()</td></tr>
-  <tr><td>281</td><td>  }</td></tr>
-  <tr><td>282</td><td> }</td></tr>
-  <tr><td>283</td><td></td></tr>
-  <tr><td>284</td><td> <span class="codeComment">/**</span></td></tr>
-  <tr><td>285</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> { KeyboardEvent } event</span></td></tr>
-  <tr><td>286</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>287</td><td> _onKeyDown(event) {</td></tr>
-  <tr><td>288</td><td>  <span class="codeReserved">const</span> key = event.key</td></tr>
-  <tr><td>289</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.optionsMenu.classList.contains(<span class="codeString">"open"</span>)) {</td></tr>
-  <tr><td>290</td><td>   <span class="codeReserved">if</span> (key === <span class="codeString">"ArrowDown"</span>) {</td></tr>
-  <tr><td>291</td><td>    event.preventDefault()</td></tr>
-  <tr><td>292</td><td>    <span class="codeReserved">this</span>._avanzaOpcion()</td></tr>
-  <tr><td>293</td><td>   } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (key === <span class="codeString">"ArrowUp"</span>) {</td></tr>
+  <tr><td>3</td><td><span class="codeReserved">import</span> { MdFilledTextField } <span class="codeReserved">from</span> <span class="codeString">"./md-filled-text-field.js"</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">import</span> { MdOptionsMenu } <span class="codeReserved">from</span> <span class="codeString">"./md-options-menu.js"</span></td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td><span class="codeReserved">export</span> <span class="codeReserved">class</span> MdSelectMenu <span class="codeReserved">extends</span> HTMLElement {</td></tr>
+  <tr><td>7</td><td></td></tr>
+  <tr><td>8</td><td> <span class="codeReserved">static</span> get observedAttributes() {</td></tr>
+  <tr><td>9</td><td>  <span class="codeReserved">return</span> [<span class="codeString">"options"</span>, <span class="codeString">"value"</span>]</td></tr>
+  <tr><td>10</td><td> }</td></tr>
+  <tr><td>11</td><td></td></tr>
+  <tr><td>12</td><td> getContent() {</td></tr>
+  <tr><td>13</td><td>  <span class="codeReserved">return</span> <span class="codeComment">/* HTML */</span> <span class="codeString">`</span></td></tr>
+  <tr><td>14</td><td><span class="codeString">   &lt;<span class="codeReserved">link</span> rel=&quot;stylesheet&quot; href=&quot;/lib/css/material-symbols-outlined.css&quot;&gt;</span></td></tr>
+  <tr><td>15</td><td><span class="codeString"></span></td></tr>
+  <tr><td>16</td><td><span class="codeString">   &lt;<span class="codeReserved">style</span>&gt;</span></td></tr>
+  <tr><td>17</td><td><span class="codeString">    :host {</span></td></tr>
+  <tr><td>18</td><td><span class="codeString">     <span class="codeReserved">display</span>: block;</span></td></tr>
+  <tr><td>19</td><td><span class="codeString">     cursor: <span class="codeReserved">default</span>;</span></td></tr>
+  <tr><td>20</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>21</td><td><span class="codeString"></span></td></tr>
+  <tr><td>22</td><td><span class="codeString">    output {</span></td></tr>
+  <tr><td>23</td><td><span class="codeString">     <span class="codeReserved">display</span>: block;</span></td></tr>
+  <tr><td>24</td><td><span class="codeString">     <span class="codeReserved">white-space</span>: nowrap;</span></td></tr>
+  <tr><td>25</td><td><span class="codeString">     <span class="codeReserved">text-overflow</span>: ellipsis;</span></td></tr>
+  <tr><td>26</td><td><span class="codeString">     <span class="codeReserved">overflow</span>: hidden;</span></td></tr>
+  <tr><td>27</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>28</td><td><span class="codeString"></span></td></tr>
+  <tr><td>29</td><td><span class="codeString">    #up {</span></td></tr>
+  <tr><td>30</td><td><span class="codeString">     <span class="codeReserved">position</span>: absolute;</span></td></tr>
+  <tr><td>31</td><td><span class="codeString">     <span class="codeReserved">bottom</span>: 8px;</span></td></tr>
+  <tr><td>32</td><td><span class="codeString">     <span class="codeReserved">right</span>: 12px;</span></td></tr>
+  <tr><td>33</td><td><span class="codeString">     <span class="codeReserved">display</span>: none;</span></td></tr>
+  <tr><td>34</td><td><span class="codeString">     <span class="codeReserved">color</span>: var(--md-sys-color-on-surface-variant);</span></td></tr>
+  <tr><td>35</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>36</td><td><span class="codeString"></span></td></tr>
+  <tr><td>37</td><td><span class="codeString">    #down {</span></td></tr>
+  <tr><td>38</td><td><span class="codeString">     <span class="codeReserved">position</span>: absolute;</span></td></tr>
+  <tr><td>39</td><td><span class="codeString">     <span class="codeReserved">bottom</span>: 8px;</span></td></tr>
+  <tr><td>40</td><td><span class="codeString">     <span class="codeReserved">right</span>: 12px;</span></td></tr>
+  <tr><td>41</td><td><span class="codeString">     <span class="codeReserved">color</span>: var(--md-sys-color-on-surface-variant);</span></td></tr>
+  <tr><td>42</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>43</td><td><span class="codeString"></span></td></tr>
+  <tr><td>44</td><td><span class="codeString">    :host(.open) #up {</span></td></tr>
+  <tr><td>45</td><td><span class="codeString">     <span class="codeReserved">display</span>: inline-block;</span></td></tr>
+  <tr><td>46</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>47</td><td><span class="codeString"></span></td></tr>
+  <tr><td>48</td><td><span class="codeString">    :host(.open) #down {</span></td></tr>
+  <tr><td>49</td><td><span class="codeString">     <span class="codeReserved">display</span>: none;</span></td></tr>
+  <tr><td>50</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>51</td><td><span class="codeString"></span></td></tr>
+  <tr><td>52</td><td><span class="codeString">    :host(.invalid) #up,</span></td></tr>
+  <tr><td>53</td><td><span class="codeString">    :host(.invalid) #down {</span></td></tr>
+  <tr><td>54</td><td><span class="codeString">     <span class="codeReserved">color</span>: var(--md-sys-color-error);</span></td></tr>
+  <tr><td>55</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>56</td><td><span class="codeString"></span></td></tr>
+  <tr><td>57</td><td><span class="codeString">   &lt;/<span class="codeReserved">style</span>&gt;</span></td></tr>
+  <tr><td>58</td><td><span class="codeString">   &lt;<span class="codeReserved">output</span>&gt;&lt;/<span class="codeReserved">output</span>&gt;</span></td></tr>
+  <tr><td>59</td><td><span class="codeString">   &lt;<span class="codeReserved">span</span> id=&quot;down&quot; <span class="codeReserved">class</span>=&quot;material-symbols-outlined&quot;&gt;</span></td></tr>
+  <tr><td>60</td><td><span class="codeString">    arrow_drop_down</span></td></tr>
+  <tr><td>61</td><td><span class="codeString">   &lt;/<span class="codeReserved">span</span>&gt;</span></td></tr>
+  <tr><td>62</td><td><span class="codeString">   &lt;<span class="codeReserved">span</span> id=&quot;up&quot; <span class="codeReserved">class</span>=&quot;material-symbols-outlined&quot;&gt;</span></td></tr>
+  <tr><td>63</td><td><span class="codeString">    arrow_drop_up</span></td></tr>
+  <tr><td>64</td><td><span class="codeString">   &lt;/<span class="codeReserved">span</span>&gt;`</span></td></tr>
+  <tr><td>65</td><td> }</td></tr>
+  <tr><td>66</td><td></td></tr>
+  <tr><td>67</td><td> <span class="codeReserved">constructor</span>() {</td></tr>
+  <tr><td>68</td><td>  super()</td></tr>
+  <tr><td>69</td><td>  <span class="codeReserved">const</span> shadow = <span class="codeReserved">this</span>.attachShadow({ mode: <span class="codeString">"open"</span> })</td></tr>
+  <tr><td>70</td><td>  shadow.innerHTML =</td></tr>
+  <tr><td>71</td><td>   <span class="codeReserved">this</span>.getContent()</td></tr>
+  <tr><td>72</td><td></td></tr>
+  <tr><td>73</td><td>  <span class="codeReserved">this</span>._alterna = <span class="codeReserved">this</span>._alterna.bind(<span class="codeReserved">this</span>)</td></tr>
+  <tr><td>74</td><td>  <span class="codeReserved">this</span>._onKeyDown = <span class="codeReserved">this</span>._onKeyDown.bind(<span class="codeReserved">this</span>)</td></tr>
+  <tr><td>75</td><td>  <span class="codeReserved">this</span>._cierra = <span class="codeReserved">this</span>._cierra.bind(<span class="codeReserved">this</span>)</td></tr>
+  <tr><td>76</td><td>  <span class="codeReserved">this</span>.opcionSeleccionada = <span class="codeReserved">this</span>.opcionSeleccionada.bind(<span class="codeReserved">this</span>)</td></tr>
+  <tr><td>77</td><td>  <span class="codeReserved">this</span>.clicExterno = <span class="codeReserved">this</span>.clicExterno.bind(<span class="codeReserved">this</span>)</td></tr>
+  <tr><td>78</td><td></td></tr>
+  <tr><td>79</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>80</td><td><span class="codeComment">   * <span class="codeReserved">@readonly</span></span></td></tr>
+  <tr><td>81</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> { { valid:boolean } }</span></td></tr>
+  <tr><td>82</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>83</td><td>  <span class="codeReserved">this</span>.validity = { valid: <span class="codeReserved">true</span> }</td></tr>
+  <tr><td>84</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>85</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>86</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> {string}</span></td></tr>
+  <tr><td>87</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>88</td><td>  <span class="codeReserved">this</span>._customValidity = </td></tr>
+  <tr><td>89</td><td></td></tr>
+  <tr><td>90</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>91</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>92</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> { HTMLOutputElement }</span></td></tr>
+  <tr><td>93</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>94</td><td>  <span class="codeReserved">this</span>.output = querySelector(shadow, <span class="codeString">"output"</span>)</td></tr>
+  <tr><td>95</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>96</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>97</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>98</td><td>  <span class="codeReserved">this</span>._options = </td></tr>
+  <tr><td>99</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>100</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>101</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> { MdOptionsMenu | <span class="codeReserved">null</span> }</span></td></tr>
+  <tr><td>102</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>103</td><td>  <span class="codeReserved">this</span>._optionsMenu = <span class="codeReserved">null</span></td></tr>
+  <tr><td>104</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>105</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>106</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> { MdFilledTextField | <span class="codeReserved">null</span> }</span></td></tr>
+  <tr><td>107</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>108</td><td>  <span class="codeReserved">this</span>._textField = <span class="codeReserved">null</span></td></tr>
+  <tr><td>109</td><td> }</td></tr>
+  <tr><td>110</td><td></td></tr>
+  <tr><td>111</td><td> connectedCallback() {</td></tr>
+  <tr><td>112</td><td>  <span class="codeReserved">this</span>.tabIndex = 0</td></tr>
+  <tr><td>113</td><td>  <span class="codeReserved">this</span>.role = <span class="codeString">"combobox"</span></td></tr>
+  <tr><td>114</td><td>  <span class="codeReserved">this</span>.ariaHasPopup = <span class="codeString">"listbox"</span></td></tr>
+  <tr><td>115</td><td>  <span class="codeReserved">this</span>.ariaExpanded = <span class="codeString">"<span class="codeReserved">false</span>"</span></td></tr>
+  <tr><td>116</td><td>  <span class="codeReserved">this</span>[<span class="codeString">"aria-controls"</span>] = <span class="codeReserved">this</span>.options</td></tr>
+  <tr><td>117</td><td>  <span class="codeReserved">this</span>.addEventListener(<span class="codeString">"keydown"</span>, <span class="codeReserved">this</span>._onKeyDown)</td></tr>
+  <tr><td>118</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>119</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> { MdFilledTextField | <span class="codeReserved">null</span> }</span></td></tr>
+  <tr><td>120</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>121</td><td>  <span class="codeReserved">const</span> textField = <span class="codeReserved">this</span>.closest(<span class="codeString">"md-filled-text-field"</span>)</td></tr>
+  <tr><td>122</td><td>  <span class="codeReserved">if</span> (textField !== <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>123</td><td>   <span class="codeReserved">this</span>._textField = textField</td></tr>
+  <tr><td>124</td><td>   textField.classList.add(<span class="codeString">"select"</span>)</td></tr>
+  <tr><td>125</td><td>   textField.addEventListener(<span class="codeString">"click"</span>, <span class="codeReserved">this</span>._alterna)</td></tr>
+  <tr><td>126</td><td>  }</td></tr>
+  <tr><td>127</td><td> }</td></tr>
+  <tr><td>128</td><td></td></tr>
+  <tr><td>129</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>130</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} nombreDeAtributo</span></td></tr>
+  <tr><td>131</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} _valorAnterior</span></td></tr>
+  <tr><td>132</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} nuevoValor</span></td></tr>
+  <tr><td>133</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>134</td><td> attributeChangedCallback(nombreDeAtributo, _valorAnterior, nuevoValor) {</td></tr>
+  <tr><td>135</td><td>  <span class="codeReserved">if</span> (nombreDeAtributo === <span class="codeString">"options"</span>) {</td></tr>
+  <tr><td>136</td><td>   <span class="codeReserved">this</span>.muestraOptions(nuevoValor)</td></tr>
+  <tr><td>137</td><td>  } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (nombreDeAtributo === <span class="codeString">"value"</span>) {</td></tr>
+  <tr><td>138</td><td>   <span class="codeReserved">this</span>.muestraValue()</td></tr>
+  <tr><td>139</td><td>  }</td></tr>
+  <tr><td>140</td><td> }</td></tr>
+  <tr><td>141</td><td></td></tr>
+  <tr><td>142</td><td> get options() {</td></tr>
+  <tr><td>143</td><td>  <span class="codeReserved">return</span> getAttribute(<span class="codeReserved">this</span>, <span class="codeString">"options"</span>)</td></tr>
+  <tr><td>144</td><td> }</td></tr>
+  <tr><td>145</td><td></td></tr>
+  <tr><td>146</td><td> set options(options) {</td></tr>
+  <tr><td>147</td><td>  <span class="codeReserved">this</span>.setAttribute(<span class="codeString">"options"</span>, options)</td></tr>
+  <tr><td>148</td><td> }</td></tr>
+  <tr><td>149</td><td></td></tr>
+  <tr><td>150</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>151</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} options</span></td></tr>
+  <tr><td>152</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>153</td><td> muestraOptions(options) {</td></tr>
+  <tr><td>154</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._options !== options && <span class="codeReserved">this</span>._optionsMenu !== <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>155</td><td>   <span class="codeReserved">this</span>._optionsMenu = <span class="codeReserved">null</span></td></tr>
+  <tr><td>156</td><td>  }</td></tr>
+  <tr><td>157</td><td>  <span class="codeReserved">this</span>._options = options</td></tr>
+  <tr><td>158</td><td>  <span class="codeReserved">this</span>[<span class="codeString">"aria-controls"</span>] = <span class="codeReserved">this</span>.options</td></tr>
+  <tr><td>159</td><td> }</td></tr>
+  <tr><td>160</td><td></td></tr>
+  <tr><td>161</td><td> get required() {</td></tr>
+  <tr><td>162</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">this</span>.hasAttribute(<span class="codeString">"required"</span>)</td></tr>
+  <tr><td>163</td><td> }</td></tr>
+  <tr><td>164</td><td></td></tr>
+  <tr><td>165</td><td> set required(required) {</td></tr>
+  <tr><td>166</td><td>  <span class="codeReserved">if</span> (required) {</td></tr>
+  <tr><td>167</td><td>   <span class="codeReserved">this</span>.setAttribute(<span class="codeString">"required"</span>, <span class="codeString">"required"</span>)</td></tr>
+  <tr><td>168</td><td>  } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>169</td><td>   <span class="codeReserved">this</span>.removeAttribute(<span class="codeString">"required"</span>)</td></tr>
+  <tr><td>170</td><td>  }</td></tr>
+  <tr><td>171</td><td> }</td></tr>
+  <tr><td>172</td><td></td></tr>
+  <tr><td>173</td><td> get value() {</td></tr>
+  <tr><td>174</td><td>  <span class="codeReserved">return</span> getAttribute(<span class="codeReserved">this</span>, <span class="codeString">"value"</span>)</td></tr>
+  <tr><td>175</td><td> }</td></tr>
+  <tr><td>176</td><td></td></tr>
+  <tr><td>177</td><td> set value(value) {</td></tr>
+  <tr><td>178</td><td>  <span class="codeReserved">this</span>.setAttribute(<span class="codeString">"value"</span>, value)</td></tr>
+  <tr><td>179</td><td> }</td></tr>
+  <tr><td>180</td><td></td></tr>
+  <tr><td>181</td><td> muestraValue() {</td></tr>
+  <tr><td>182</td><td>  <span class="codeReserved">const</span> value = <span class="codeReserved">this</span>.value</td></tr>
+  <tr><td>183</td><td>  <span class="codeReserved">this</span>.output.value = <span class="codeReserved">this</span>.optionsMenu.muestraValue(value)</td></tr>
+  <tr><td>184</td><td> }</td></tr>
+  <tr><td>185</td><td></td></tr>
+  <tr><td>186</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
+  <tr><td>187</td><td> _alterna() {</td></tr>
+  <tr><td>188</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.classList.contains(<span class="codeString">"open"</span>)) {</td></tr>
+  <tr><td>189</td><td>   <span class="codeReserved">this</span>._cierra()</td></tr>
+  <tr><td>190</td><td>  } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>191</td><td>   <span class="codeReserved">this</span>._abre()</td></tr>
+  <tr><td>192</td><td>  }</td></tr>
+  <tr><td>193</td><td> }</td></tr>
+  <tr><td>194</td><td></td></tr>
+  <tr><td>195</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
+  <tr><td>196</td><td> _abre() {</td></tr>
+  <tr><td>197</td><td>  <span class="codeReserved">this</span>.classList.add(<span class="codeString">"open"</span>)</td></tr>
+  <tr><td>198</td><td>  <span class="codeReserved">const</span> textField = <span class="codeReserved">this</span>._textField</td></tr>
+  <tr><td>199</td><td>  <span class="codeReserved">if</span> (textField !== <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>200</td><td>   <span class="codeReserved">const</span> optionsMenu = <span class="codeReserved">this</span>.optionsMenu</td></tr>
+  <tr><td>201</td><td>   optionsMenu.style.<span class="codeReserved">top</span> = <span class="codeString">`${textField.offsetTop + 56}px`</span></td></tr>
+  <tr><td>202</td><td>   optionsMenu.style.<span class="codeReserved">left</span> = <span class="codeString">`${textField.offsetLeft}px`</span></td></tr>
+  <tr><td>203</td><td>   optionsMenu.style.<span class="codeReserved">width</span> = <span class="codeString">`${textField.offsetWidth}px`</span></td></tr>
+  <tr><td>204</td><td>   optionsMenu.abre()</td></tr>
+  <tr><td>205</td><td>   optionsMenu.addEventListener(<span class="codeString">"input"</span>, <span class="codeReserved">this</span>.opcionSeleccionada)</td></tr>
+  <tr><td>206</td><td>   <span class="codeReserved">this</span>.ariaExpanded = <span class="codeString">"<span class="codeReserved">true</span>"</span></td></tr>
+  <tr><td>207</td><td>   document.addEventListener(<span class="codeString">"click"</span>, <span class="codeReserved">this</span>.clicExterno)</td></tr>
+  <tr><td>208</td><td>  }</td></tr>
+  <tr><td>209</td><td> }</td></tr>
+  <tr><td>210</td><td></td></tr>
+  <tr><td>211</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
+  <tr><td>212</td><td> _cierra() {</td></tr>
+  <tr><td>213</td><td>  <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"open"</span>)</td></tr>
+  <tr><td>214</td><td>  <span class="codeReserved">const</span> optionsMenu = <span class="codeReserved">this</span>.optionsMenu</td></tr>
+  <tr><td>215</td><td>  optionsMenu.cierra()</td></tr>
+  <tr><td>216</td><td>  <span class="codeReserved">this</span>.checkValidity()</td></tr>
+  <tr><td>217</td><td>  optionsMenu.removeEventListener(<span class="codeString">"input"</span>, <span class="codeReserved">this</span>.opcionSeleccionada)</td></tr>
+  <tr><td>218</td><td>  <span class="codeReserved">this</span>.ariaExpanded = <span class="codeString">"<span class="codeReserved">false</span>"</span></td></tr>
+  <tr><td>219</td><td>  document.removeEventListener(<span class="codeString">"click"</span>, <span class="codeReserved">this</span>.clicExterno)</td></tr>
+  <tr><td>220</td><td>  <span class="codeReserved">this</span>.dispatchEvent(<span class="codeReserved">new</span> Event(<span class="codeString">"input"</span>, { bubbles: <span class="codeReserved">true</span> }))</td></tr>
+  <tr><td>221</td><td> }</td></tr>
+  <tr><td>222</td><td></td></tr>
+  <tr><td>223</td><td> get optionsMenu() {</td></tr>
+  <tr><td>224</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._optionsMenu === <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>225</td><td>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._options === )</td></tr>
+  <tr><td>226</td><td>    <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Atributo options no asignado."</span>)</td></tr>
+  <tr><td>227</td><td>   <span class="codeReserved">const</span> menu = document.getElementById(<span class="codeReserved">this</span>._options)</td></tr>
+  <tr><td>228</td><td>   <span class="codeReserved">if</span> (menu <span class="codeReserved">instanceof</span> MdOptionsMenu) {</td></tr>
+  <tr><td>229</td><td>    <span class="codeReserved">this</span>._optionsMenu = menu</td></tr>
+  <tr><td>230</td><td>    <span class="codeReserved">this</span>.muestraValue()</td></tr>
+  <tr><td>231</td><td>   } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>232</td><td>    <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">`Valor incorrecto para options: &quot;${<span class="codeReserved">this</span>._options}&quot;.`</span>)</td></tr>
+  <tr><td>233</td><td>   }</td></tr>
+  <tr><td>234</td><td>  }</td></tr>
+  <tr><td>235</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">this</span>._optionsMenu</td></tr>
+  <tr><td>236</td><td> }</td></tr>
+  <tr><td>237</td><td></td></tr>
+  <tr><td>238</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
+  <tr><td>239</td><td> _avanzaOpcion() {</td></tr>
+  <tr><td>240</td><td>  <span class="codeReserved">const</span> i = <span class="codeReserved">this</span>._valueIndex</td></tr>
+  <tr><td>241</td><td>  <span class="codeReserved">const</span> opciones = <span class="codeReserved">this</span>.optionsMenu.opciones</td></tr>
+  <tr><td>242</td><td>  <span class="codeReserved">if</span> (i &lt; opciones.length - 1) {</td></tr>
+  <tr><td>243</td><td>   <span class="codeReserved">this</span>.value = opciones[i + 1].input.value</td></tr>
+  <tr><td>244</td><td>  }</td></tr>
+  <tr><td>245</td><td> }</td></tr>
+  <tr><td>246</td><td></td></tr>
+  <tr><td>247</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
+  <tr><td>248</td><td> _retrocedeOpcion() {</td></tr>
+  <tr><td>249</td><td>  <span class="codeReserved">const</span> i = <span class="codeReserved">this</span>._valueIndex</td></tr>
+  <tr><td>250</td><td>  <span class="codeReserved">const</span> opciones = <span class="codeReserved">this</span>.optionsMenu.opciones</td></tr>
+  <tr><td>251</td><td>  <span class="codeReserved">if</span> (i &gt; 0) {</td></tr>
+  <tr><td>252</td><td>   <span class="codeReserved">this</span>.value = opciones[i - 1].input.value</td></tr>
+  <tr><td>253</td><td>  }</td></tr>
+  <tr><td>254</td><td> }</td></tr>
+  <tr><td>255</td><td></td></tr>
+  <tr><td>256</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>257</td><td><span class="codeComment">  * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>258</td><td><span class="codeComment">  * <span class="codeReserved">@returns</span> {number}</span></td></tr>
+  <tr><td>259</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>260</td><td> get _valueIndex() {</td></tr>
+  <tr><td>261</td><td>  <span class="codeReserved">const</span> value = <span class="codeReserved">this</span>.value</td></tr>
+  <tr><td>262</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">this</span>.optionsMenu.opciones.findIndex(</td></tr>
+  <tr><td>263</td><td>   opcion =&gt; opcion.input.value === value)</td></tr>
+  <tr><td>264</td><td> }</td></tr>
+  <tr><td>265</td><td></td></tr>
+  <tr><td>266</td><td> opcionSeleccionada() {</td></tr>
+  <tr><td>267</td><td>  <span class="codeReserved">this</span>.value = <span class="codeReserved">this</span>.optionsMenu.seleccion</td></tr>
+  <tr><td>268</td><td>  <span class="codeReserved">this</span>._cierra()</td></tr>
+  <tr><td>269</td><td>  <span class="codeReserved">this</span>.focus()</td></tr>
+  <tr><td>270</td><td> }</td></tr>
+  <tr><td>271</td><td></td></tr>
+  <tr><td>272</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>273</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {Event} evt</span></td></tr>
+  <tr><td>274</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>275</td><td> clicExterno(evt) {</td></tr>
+  <tr><td>276</td><td>  <span class="codeReserved">const</span> target = evt.target</td></tr>
+  <tr><td>277</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.classList.contains(<span class="codeString">"open"</span>)</td></tr>
+  <tr><td>278</td><td>   && target <span class="codeReserved">instanceof</span> HTMLElement</td></tr>
+  <tr><td>279</td><td>   && <span class="codeReserved">this</span>._textField !== <span class="codeReserved">null</span></td></tr>
+  <tr><td>280</td><td>   && !<span class="codeReserved">this</span>._textField.contains(target)</td></tr>
+  <tr><td>281</td><td>   && <span class="codeReserved">this</span>._optionsMenu !== <span class="codeReserved">null</span></td></tr>
+  <tr><td>282</td><td>   && !<span class="codeReserved">this</span>._optionsMenu.contains(target)) {</td></tr>
+  <tr><td>283</td><td>   <span class="codeReserved">this</span>._cierra()</td></tr>
+  <tr><td>284</td><td>  }</td></tr>
+  <tr><td>285</td><td> }</td></tr>
+  <tr><td>286</td><td></td></tr>
+  <tr><td>287</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>288</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> { KeyboardEvent } event</span></td></tr>
+  <tr><td>289</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>290</td><td> _onKeyDown(event) {</td></tr>
+  <tr><td>291</td><td>  <span class="codeReserved">const</span> key = event.key</td></tr>
+  <tr><td>292</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.optionsMenu.classList.contains(<span class="codeString">"open"</span>)) {</td></tr>
+  <tr><td>293</td><td>   <span class="codeReserved">if</span> (key === <span class="codeString">"ArrowDown"</span>) {</td></tr>
   <tr><td>294</td><td>    event.preventDefault()</td></tr>
-  <tr><td>295</td><td>    <span class="codeReserved">this</span>._retrocedeOpcion()</td></tr>
-  <tr><td>296</td><td>   } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (key === <span class="codeString">"Escape"</span>) {</td></tr>
+  <tr><td>295</td><td>    <span class="codeReserved">this</span>._avanzaOpcion()</td></tr>
+  <tr><td>296</td><td>   } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (key === <span class="codeString">"ArrowUp"</span>) {</td></tr>
   <tr><td>297</td><td>    event.preventDefault()</td></tr>
-  <tr><td>298</td><td>    <span class="codeReserved">this</span>._cierra()</td></tr>
-  <tr><td>299</td><td>   } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (key === <span class="codeString">" "</span>) {</td></tr>
+  <tr><td>298</td><td>    <span class="codeReserved">this</span>._retrocedeOpcion()</td></tr>
+  <tr><td>299</td><td>   } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (key === <span class="codeString">"Escape"</span>) {</td></tr>
   <tr><td>300</td><td>    event.preventDefault()</td></tr>
   <tr><td>301</td><td>    <span class="codeReserved">this</span>._cierra()</td></tr>
-  <tr><td>302</td><td>   } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (key === <span class="codeString">"Tab"</span>) {</td></tr>
-  <tr><td>303</td><td>    <span class="codeReserved">this</span>._cierra()</td></tr>
-  <tr><td>304</td><td>   } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>305</td><td>    event.preventDefault()</td></tr>
-  <tr><td>306</td><td>   }</td></tr>
-  <tr><td>307</td><td>  } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (key === <span class="codeString">" "</span>) {</td></tr>
-  <tr><td>308</td><td>   event.preventDefault()</td></tr>
-  <tr><td>309</td><td>   <span class="codeReserved">this</span>._abre()</td></tr>
-  <tr><td>310</td><td>  } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (key === <span class="codeString">"Tab"</span>) {</td></tr>
-  <tr><td>311</td><td>   <span class="codeReserved">this</span>._cierra()</td></tr>
-  <tr><td>312</td><td>  } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>313</td><td>   event.preventDefault()</td></tr>
-  <tr><td>314</td><td>  }</td></tr>
-  <tr><td>315</td><td> }</td></tr>
-  <tr><td>316</td><td></td></tr>
-  <tr><td>317</td><td> <span class="codeComment">/** <span class="codeReserved">@param</span> {string} error */</span></td></tr>
-  <tr><td>318</td><td> setCustomValidity(error) {</td></tr>
-  <tr><td>319</td><td>  <span class="codeReserved">this</span>._customValidity = error</td></tr>
-  <tr><td>320</td><td>  <span class="codeReserved">this</span>.checkValidity()</td></tr>
-  <tr><td>321</td><td> }</td></tr>
-  <tr><td>322</td><td></td></tr>
-  <tr><td>323</td><td> <span class="codeComment">/** <span class="codeReserved">@returns</span> {boolean} */</span></td></tr>
-  <tr><td>324</td><td> checkValidity() {</td></tr>
-  <tr><td>325</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._customValidity !==  || (<span class="codeReserved">this</span>.required && <span class="codeReserved">this</span>.value === )) {</td></tr>
-  <tr><td>326</td><td>   <span class="codeReserved">this</span>.validity.valid = <span class="codeReserved">false</span></td></tr>
-  <tr><td>327</td><td>   <span class="codeReserved">this</span>.validationMessage = <span class="codeString">"Seleccione una opción."</span></td></tr>
-  <tr><td>328</td><td>   <span class="codeReserved">this</span>.classList.add(<span class="codeString">"invalid"</span>)</td></tr>
-  <tr><td>329</td><td>   <span class="codeReserved">return</span> <span class="codeReserved">false</span></td></tr>
-  <tr><td>330</td><td>  } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>331</td><td>   <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"invalid"</span>)</td></tr>
-  <tr><td>332</td><td>   <span class="codeReserved">this</span>.validity.valid = <span class="codeReserved">true</span></td></tr>
-  <tr><td>333</td><td>   <span class="codeReserved">return</span> <span class="codeReserved">true</span></td></tr>
-  <tr><td>334</td><td>  }</td></tr>
-  <tr><td>335</td><td> }</td></tr>
-  <tr><td>336</td><td></td></tr>
-  <tr><td>337</td><td>}</td></tr>
-  <tr><td>338</td><td></td></tr>
-  <tr><td>339</td><td>customElements.define(<span class="codeString">"md-select-menu"</span>, MdSelectMenu)</td></tr>
+  <tr><td>302</td><td>   } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (key === <span class="codeString">" "</span>) {</td></tr>
+  <tr><td>303</td><td>    event.preventDefault()</td></tr>
+  <tr><td>304</td><td>    <span class="codeReserved">this</span>._cierra()</td></tr>
+  <tr><td>305</td><td>   } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (key === <span class="codeString">"Tab"</span>) {</td></tr>
+  <tr><td>306</td><td>    <span class="codeReserved">this</span>._cierra()</td></tr>
+  <tr><td>307</td><td>   } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>308</td><td>    event.preventDefault()</td></tr>
+  <tr><td>309</td><td>   }</td></tr>
+  <tr><td>310</td><td>  } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (key === <span class="codeString">" "</span>) {</td></tr>
+  <tr><td>311</td><td>   event.preventDefault()</td></tr>
+  <tr><td>312</td><td>   <span class="codeReserved">this</span>._abre()</td></tr>
+  <tr><td>313</td><td>  } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (key === <span class="codeString">"Tab"</span>) {</td></tr>
+  <tr><td>314</td><td>   <span class="codeReserved">this</span>._cierra()</td></tr>
+  <tr><td>315</td><td>  } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>316</td><td>   event.preventDefault()</td></tr>
+  <tr><td>317</td><td>  }</td></tr>
+  <tr><td>318</td><td> }</td></tr>
+  <tr><td>319</td><td></td></tr>
+  <tr><td>320</td><td> <span class="codeComment">/** <span class="codeReserved">@param</span> {string} error */</span></td></tr>
+  <tr><td>321</td><td> setCustomValidity(error) {</td></tr>
+  <tr><td>322</td><td>  <span class="codeReserved">this</span>._customValidity = error</td></tr>
+  <tr><td>323</td><td>  <span class="codeReserved">this</span>.checkValidity()</td></tr>
+  <tr><td>324</td><td> }</td></tr>
+  <tr><td>325</td><td></td></tr>
+  <tr><td>326</td><td> <span class="codeComment">/** <span class="codeReserved">@returns</span> {boolean} */</span></td></tr>
+  <tr><td>327</td><td> checkValidity() {</td></tr>
+  <tr><td>328</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._customValidity !==  || (<span class="codeReserved">this</span>.required && <span class="codeReserved">this</span>.value === )) {</td></tr>
+  <tr><td>329</td><td>   <span class="codeReserved">this</span>.validity.valid = <span class="codeReserved">false</span></td></tr>
+  <tr><td>330</td><td>   <span class="codeReserved">this</span>.validationMessage = <span class="codeString">"Seleccione una opción."</span></td></tr>
+  <tr><td>331</td><td>   <span class="codeReserved">this</span>.classList.add(<span class="codeString">"invalid"</span>)</td></tr>
+  <tr><td>332</td><td>   <span class="codeReserved">return</span> <span class="codeReserved">false</span></td></tr>
+  <tr><td>333</td><td>  } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>334</td><td>   <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"invalid"</span>)</td></tr>
+  <tr><td>335</td><td>   <span class="codeReserved">this</span>.validity.valid = <span class="codeReserved">true</span></td></tr>
+  <tr><td>336</td><td>   <span class="codeReserved">return</span> <span class="codeReserved">true</span></td></tr>
+  <tr><td>337</td><td>  }</td></tr>
+  <tr><td>338</td><td> }</td></tr>
+  <tr><td>339</td><td></td></tr>
+  <tr><td>340</td><td>}</td></tr>
+  <tr><td>341</td><td></td></tr>
+  <tr><td>342</td><td>customElements.define(<span class="codeString">"md-select-menu"</span>, MdSelectMenu)</td></tr>
  </tbody>
 </table>
  <footer>
@@ -1234,7 +1237,7 @@
     <a href="/m03pwaMaterial/">5. PWA con Material Design</a>
    </p>
    <p>
-    <a href="/m03pwaMaterial/m-lib/">33. Carpeta « lib »</a>
+    <a href="/m03pwaMaterial/m-lib/">32. Carpeta « lib »</a>
    </p>
    <p>
     <a href="/m03pwaMaterial/m-lib/m-js/">C. Carpeta « lib / js »</a>
@@ -1247,7 +1250,7 @@
          arrow_upward
         </span></a>
      </p>
-   <h1><a href="/m03pwaMaterial/m-lib/m-js/m-custom/index.html">16. Carpeta « lib / js / custom »</a></h1>
+   <h1><a href="/m03pwaMaterial/m-lib/m-js/m-custom/index.html">13. Carpeta « lib / js / custom »</a></h1>
    
    <ol type="A">
     
@@ -1300,7 +1303,7 @@
    
     <p>
      <a class="paginaSiguiente" href="/m03pwaMaterial/m-ungap/index.html"
-       title="34. Carpeta « ungap »"><span
+       title="33. Carpeta « ungap »"><span
        class="material-symbols-outlined">
         arrow_downward
        </span></a>

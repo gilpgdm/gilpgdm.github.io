@@ -834,83 +834,70 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >D. index.html</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
-  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
-  <tr><td>3</td><td></td></tr>
-  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
-  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> content=<span class="codeString">"width=device-width"</span>&gt;</td></tr>
-  <tr><td>8</td><td></td></tr>
-  <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;PWA Básica&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
-  <tr><td>10</td><td></td></tr>
-  <tr><td>11</td><td> <span class="codeComment">&lt;!-- Resumen para los motores de búsqueda. --&gt;</span></td></tr>
-  <tr><td>12</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"description"</span> content=<span class="codeString">"Ejemplo de PWA"</span>&gt;</td></tr>
-  <tr><td>13</td><td></td></tr>
-  <tr><td>14</td><td> <span class="codeComment">&lt;!-- Color de la barra de navegación de Chrome en dispositivos móviles. --&gt;</span></td></tr>
-  <tr><td>15</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"theme-color"</span> content=<span class="codeString">"#cbc693"</span>&gt;</td></tr>
-  <tr><td>16</td><td></td></tr>
-  <tr><td>17</td><td> <span class="codeComment">&lt;!-- Ícono para la página web, que normalmente se pone en la raíz del sitio.</span></td></tr>
-  <tr><td>18</td><td><span class="codeComment">  Puede ser diferente para cada página. --&gt;</span></td></tr>
-  <tr><td>19</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"icon"</span> sizes=<span class="codeString">"32x32"</span> href=<span class="codeString">"favicon.ico"</span>&gt;</td></tr>
-  <tr><td>20</td><td></td></tr>
-  <tr><td>21</td><td> <span class="codeComment">&lt;!-- Configuración de la PWA para Chrome y Edge. Debe ponerse en todas las</span></td></tr>
-  <tr><td>22</td><td><span class="codeComment">  páginas. --&gt;</span></td></tr>
-  <tr><td>23</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"manifest"</span> href=<span class="codeString">"site.webmanifest"</span>&gt;</td></tr>
-  <tr><td>24</td><td></td></tr>
-  <tr><td>25</td><td> <span class="codeComment">&lt;!-- Configuración para Web Clip en Safari (iOS). Solo se pone en la</span></td></tr>
-  <tr><td>26</td><td><span class="codeComment">  página principal. --&gt;</span></td></tr>
-  <tr><td>27</td><td></td></tr>
-  <tr><td>28</td><td> <span class="codeComment">&lt;!-- Indica que este sitio se puede instalar en iOS para usarse sin abrir el</span></td></tr>
-  <tr><td>29</td><td><span class="codeComment">  navegador. --&gt;</span></td></tr>
-  <tr><td>30</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"apple-mobile-web-app-capable"</span> content=<span class="codeString">"yes"</span>&gt;</td></tr>
-  <tr><td>31</td><td></td></tr>
-  <tr><td>32</td><td> <span class="codeComment">&lt;!-- Título en la página de aplicaciones de iOS. Debe ser un texto corto de</span></td></tr>
-  <tr><td>33</td><td><span class="codeComment">  maximo 20 caracteres. Pede llevar espacio, lo que ayuda a distribuír el</span></td></tr>
-  <tr><td>34</td><td><span class="codeComment">  texto. Debe coincidir con el short_name del archivo &quot;site.webmanifest&quot;, --&gt;</span></td></tr>
-  <tr><td>35</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"apple-mobile-web-app-title"</span> content=<span class="codeString">"PWA"</span>&gt;</td></tr>
-  <tr><td>36</td><td></td></tr>
-  <tr><td>37</td><td> <span class="codeComment">&lt;!-- Indica que la barra de estado cuando no se abre la app, debe ser como</span></td></tr>
-  <tr><td>38</td><td><span class="codeComment">  las demás app. --&gt;</span></td></tr>
-  <tr><td>39</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"apple-mobile-web-app-status-bar-style"</span> content=<span class="codeString">"<span class="codeReserved">default</span>"</span>&gt;</td></tr>
-  <tr><td>40</td><td></td></tr>
-  <tr><td>41</td><td> <span class="codeComment">&lt;!-- Íconos de la app en distintas resoluciones--&gt;</span></td></tr>
-  <tr><td>42</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"apple-touch-icon"</span> href=<span class="codeString">"img/maskable_icon.png"</span>&gt;</td></tr>
-  <tr><td>43</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"apple-touch-icon"</span> sizes=<span class="codeString">"48x48"</span> href=<span class="codeString">"img/maskable_icon_x48.png"</span>&gt;</td></tr>
-  <tr><td>44</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"apple-touch-icon"</span> sizes=<span class="codeString">"72x72"</span> href=<span class="codeString">"img/maskable_icon_x72.png"</span>&gt;</td></tr>
-  <tr><td>45</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"apple-touch-icon"</span> sizes=<span class="codeString">"96x96"</span> href=<span class="codeString">"img/maskable_icon_x96.png"</span>&gt;</td></tr>
-  <tr><td>46</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"apple-touch-icon"</span> sizes=<span class="codeString">"128x128"</span> href=<span class="codeString">"img/maskable_icon_x128.png"</span>&gt;</td></tr>
-  <tr><td>47</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"apple-touch-icon"</span> sizes=<span class="codeString">"192x192"</span> href=<span class="codeString">"img/maskable_icon_x192.png"</span>&gt;</td></tr>
-  <tr><td>48</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"apple-touch-icon"</span> sizes=<span class="codeString">"384x384"</span> href=<span class="codeString">"img/maskable_icon_x384.png"</span>&gt;</td></tr>
-  <tr><td>49</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"apple-touch-icon"</span> sizes=<span class="codeString">"512x512"</span> href=<span class="codeString">"img/maskable_icon_x512.png"</span>&gt;</td></tr>
-  <tr><td>50</td><td></td></tr>
-  <tr><td>51</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/estilos.css"</span>&gt;</td></tr>
-  <tr><td>52</td><td></td></tr>
-  <tr><td>53</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span> src=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
-  <tr><td>54</td><td></td></tr>
-  <tr><td>55</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
-  <tr><td>56</td><td></td></tr>
-  <tr><td>57</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>58</td><td></td></tr>
-  <tr><td>59</td><td> &lt;<span class="codeReserved">h</span>1&gt;PWA Básica&lt;/<span class="codeReserved">h</span>1&gt;</td></tr>
-  <tr><td>60</td><td></td></tr>
-  <tr><td>61</td><td> &lt;<span class="codeReserved">p</span>&gt;Hola mundo.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>62</td><td></td></tr>
-  <tr><td>63</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>64</td><td></td></tr>
-  <tr><td>65</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
- </tbody>
-</table>
+   <h1 >D. index.html</h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="https://gilpgpwa.github.io/"
+    height="330" title="Vista de ayuda"></iframe>
+  <p class="noPrint">
+   <a href="https://gilpgpwa.github.io/"
+     target="_blank" rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
+  </p>
+ </section>
+ <table class="codeShow">
+  <caption style="text-align: left">
+   <button type=button title="Copiar al portapapeles"
+     onclick="copyToClipboard(this)">
+    <span class="material-symbols-outlined">
+     content_copy
+    </span>
+   </button>
+  </caption>
+  <tbody>
+   <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+   <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+   <tr><td>3</td><td></td></tr>
+   <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+   <tr><td>5</td><td></td></tr>
+   <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+   <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+   <tr><td>8</td><td></td></tr>
+   <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;PWA Básica&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+   <tr><td>10</td><td></td></tr>
+   <tr><td>11</td><td> <span class="codeComment">&lt;!-- Resumen para los motores de búsqueda. --&gt;</span></td></tr>
+   <tr><td>12</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"description"</span> <span class="codeReserved">content</span>=<span class="codeString">"Ejemplo de PWA"</span>&gt;</td></tr>
+   <tr><td>13</td><td></td></tr>
+   <tr><td>14</td><td> <span class="codeComment">&lt;!-- Color de la barra de navegación de Chrome en</span></td></tr>
+   <tr><td>15</td><td><span class="codeComment">  dispositivos móviles. --&gt;</span></td></tr>
+   <tr><td>16</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"theme-color"</span> <span class="codeReserved">content</span>=<span class="codeString">"#cbc693"</span>&gt;</td></tr>
+   <tr><td>17</td><td></td></tr>
+   <tr><td>18</td><td> <span class="codeComment">&lt;!-- Ícono para la página web, que normalmente se</span></td></tr>
+   <tr><td>19</td><td><span class="codeComment">  pone en la raíz del sitio.</span></td></tr>
+   <tr><td>20</td><td><span class="codeComment">  Puede ser diferente para cada página. --&gt;</span></td></tr>
+   <tr><td>21</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"icon"</span> sizes=<span class="codeString">"32x32"</span> href=<span class="codeString">"favicon.ico"</span>&gt;</td></tr>
+   <tr><td>22</td><td></td></tr>
+   <tr><td>23</td><td> <span class="codeComment">&lt;!-- Configuración de la PWA para Chrome y Edge.</span></td></tr>
+   <tr><td>24</td><td><span class="codeComment">  Debe ponerse en todas las páginas. --&gt;</span></td></tr>
+   <tr><td>25</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"manifest"</span> href=<span class="codeString">"site.webmanifest"</span>&gt;</td></tr>
+   <tr><td>26</td><td></td></tr>
+   <tr><td>27</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/estilos.css"</span>&gt;</td></tr>
+   <tr><td>28</td><td></td></tr>
+   <tr><td>29</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span> src=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+   <tr><td>30</td><td></td></tr>
+   <tr><td>31</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+   <tr><td>32</td><td></td></tr>
+   <tr><td>33</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+   <tr><td>34</td><td></td></tr>
+   <tr><td>35</td><td> &lt;<span class="codeReserved">h1</span>&gt;PWA Básica&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+   <tr><td>36</td><td></td></tr>
+   <tr><td>37</td><td> &lt;<span class="codeReserved">p</span>&gt;Hola mundo.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>38</td><td></td></tr>
+   <tr><td>39</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+   <tr><td>40</td><td></td></tr>
+   <tr><td>41</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+  </tbody>
+ </table>
+</div>
  <footer>
  <p>
   <a rel="license"
@@ -939,7 +926,7 @@
  <a class="anterior" href="/m04pwaBasica/mArchivos.html" title="C. Archivos"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
- <a class="siguiente" href="/m04pwaBasica/m-js/index.html" title="E. Carpeta « js »"><span class="material-symbols-outlined">
+ <a class="siguiente" href="/m04pwaBasica/m-css/index.html" title="E. Carpeta « css »"><span class="material-symbols-outlined">
      skip_next
      </span></a>
 </div>
@@ -990,6 +977,11 @@
    </li>
    <li>
     <p>
+     <a href="/m04pwaBasica/m-css/">Carpeta « css »</a>
+    </p>
+   </li>
+   <li>
+    <p>
      <a href="/m04pwaBasica/m-js/">Carpeta « js »</a>
     </p>
    </li>
@@ -1015,11 +1007,6 @@
    </li>
    <li>
     <p>
-     <a href="/m04pwaBasica/m-css/">Carpeta « css »</a>
-    </p>
-   </li>
-   <li>
-    <p>
      <a href="/m04pwaBasica/m-favicon-ico.html">favicon.ico</a>
     </p>
    </li>
@@ -1030,12 +1017,12 @@
    </li>
    <li>
     <p>
-     <a href="/m04pwaBasica/m-jsconfig-json.html">jsconfig.json</a>
+     <a href="/m04pwaBasica/m-lib/">Carpeta « lib »</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m04pwaBasica/m-lib/">Carpeta « lib »</a>
+     <a href="/m04pwaBasica/m-jsconfig-json.html">jsconfig.json</a>
     </p>
    </li>
    <li>
@@ -1066,7 +1053,7 @@
  /**@type {string} */
  let urlAnterior = "/m04pwaBasica/mArchivos.html"
  /**@type {string} */
- let urlSiguiente = "/m04pwaBasica/m-js/index.html"
+ let urlSiguiente = "/m04pwaBasica/m-css/index.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
