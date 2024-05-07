@@ -14,14 +14,14 @@
   <tr><td>4</td><td>{</td></tr>
   <tr><td>5</td><td> <span class="codeReserved">public</span> string $uuid;</td></tr>
   <tr><td>6</td><td> <span class="codeReserved">public</span> string $nombre;</td></tr>
-  <tr><td>7</td><td> <span class="codeReserved">public</span> int $modificacion;</td></tr>
-  <tr><td>8</td><td> <span class="codeReserved">public</span> bool $eliminado;</td></tr>
+  <tr><td>7</td><td> <span class="codeReserved">public</span> <span class="codeReserved">int</span> $modificacion;</td></tr>
+  <tr><td>8</td><td> <span class="codeReserved">public</span> <span class="codeReserved">bool</span> $eliminado;</td></tr>
   <tr><td>9</td><td></td></tr>
   <tr><td>10</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> <span class="codeReserved">__construct</span>(</td></tr>
-  <tr><td>11</td><td>  string $nombre = ,</td></tr>
-  <tr><td>12</td><td>  string $uuid = ,</td></tr>
-  <tr><td>13</td><td>  int $modificacion = 0,</td></tr>
-  <tr><td>14</td><td>  bool $eliminado = <span class="codeReserved">true</span></td></tr>
+  <tr><td>11</td><td>  string $nombre = <span class="codeString">""</span>,</td></tr>
+  <tr><td>12</td><td>  string $uuid = <span class="codeString">""</span>,</td></tr>
+  <tr><td>13</td><td>  <span class="codeReserved">int</span> $modificacion = 0,</td></tr>
+  <tr><td>14</td><td>  <span class="codeReserved">bool</span> $eliminado = <span class="codeReserved">true</span></td></tr>
   <tr><td>15</td><td> ) {</td></tr>
   <tr><td>16</td><td>  $this-&gt;nombre = $nombre;</td></tr>
   <tr><td>17</td><td>  $this-&gt;uuid = $uuid;</td></tr>
@@ -31,9 +31,9 @@
   <tr><td>21</td><td></td></tr>
   <tr><td>22</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> valida()</td></tr>
   <tr><td>23</td><td> {</td></tr>
-  <tr><td>24</td><td>  <span class="codeReserved">if</span> ($this-&gt;uuid === )</td></tr>
+  <tr><td>24</td><td>  <span class="codeReserved">if</span> ($this-&gt;uuid === <span class="codeString">""</span>)</td></tr>
   <tr><td>25</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Exception(<span class="codeString">"Falta el uuid."</span>);</td></tr>
-  <tr><td>26</td><td>  <span class="codeReserved">if</span> ($this-&gt;nombre === )</td></tr>
+  <tr><td>26</td><td>  <span class="codeReserved">if</span> ($this-&gt;nombre === <span class="codeString">""</span>)</td></tr>
   <tr><td>27</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Exception(<span class="codeString">"Falta el nombre."</span>);</td></tr>
   <tr><td>28</td><td> }</td></tr>
   <tr><td>29</td><td>}</td></tr>

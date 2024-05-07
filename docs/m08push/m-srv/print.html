@@ -832,7 +832,7 @@
   <tr><td>30</td><td> $reportes = $webPush-&gt;flush();</td></tr>
   <tr><td>31</td><td></td></tr>
   <tr><td>32</td><td> <span class="codeComment">// Genera el reporte de envio a cada suscripcion.</span></td></tr>
-  <tr><td>33</td><td> $reporteDeEnvios = ;</td></tr>
+  <tr><td>33</td><td> $reporteDeEnvios = <span class="codeString">""</span>;</td></tr>
   <tr><td>34</td><td> <span class="codeReserved">foreach</span> ($reportes <span class="codeReserved">as</span> $reporte) {</td></tr>
   <tr><td>35</td><td>  $endpoint = htmlentities($reporte-&gt;getRequest()-&gt;getUri());</td></tr>
   <tr><td>36</td><td>  <span class="codeReserved">if</span> ($reporte-&gt;isSuccess()) {</td></tr>
@@ -1325,10 +1325,10 @@
   <tr><td>13</td><td> <span class="codeReserved">public</span> string $contentEncoding;</td></tr>
   <tr><td>14</td><td></td></tr>
   <tr><td>15</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> <span class="codeReserved">__construct</span>(</td></tr>
-  <tr><td>16</td><td>  string $endpoint = ,</td></tr>
-  <tr><td>17</td><td>  string $publicKey = ,</td></tr>
-  <tr><td>18</td><td>  string $authToken = ,</td></tr>
-  <tr><td>19</td><td>  string $contentEncoding = </td></tr>
+  <tr><td>16</td><td>  string $endpoint = <span class="codeString">""</span>,</td></tr>
+  <tr><td>17</td><td>  string $publicKey = <span class="codeString">""</span>,</td></tr>
+  <tr><td>18</td><td>  string $authToken = <span class="codeString">""</span>,</td></tr>
+  <tr><td>19</td><td>  string $contentEncoding = <span class="codeString">""</span></td></tr>
   <tr><td>20</td><td> ) {</td></tr>
   <tr><td>21</td><td>  $this-&gt;endpoint = $endpoint;</td></tr>
   <tr><td>22</td><td>  $this-&gt;publicKey = $publicKey;</td></tr>

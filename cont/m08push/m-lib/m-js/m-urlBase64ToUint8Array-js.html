@@ -13,7 +13,7 @@
   <tr><td>3</td><td><span class="codeComment"> */</span></td></tr>
   <tr><td>4</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> urlBase64ToUint8Array(base64String) {</td></tr>
   <tr><td>5</td><td> <span class="codeReserved">const</span> <span class="codeReserved">padding</span> = <span class="codeString">"="</span>.<span class="codeReserved">repeat</span>((4 - (base64String.length % 4)) % 4)</td></tr>
-  <tr><td>6</td><td> <span class="codeReserved">const</span> base64 = (base64String + <span class="codeReserved">padding</span>).replace(<span class="codeString">/\</span>-<span class="codeString">/g</span>, <span class="codeString">'+'</span>).replace(<span class="codeString">/_</span><span class="codeString">/g</span>, <span class="codeString">'/'</span>)</td></tr>
+  <tr><td>6</td><td> <span class="codeReserved">const</span> base64 = (base64String + <span class="codeReserved">padding</span>).replace(<span class="codeString">/\-/</span>g, <span class="codeString">'+'</span>).replace(<span class="codeString">/_/</span>g, <span class="codeString">'/'</span>)</td></tr>
   <tr><td>7</td><td> <span class="codeReserved">const</span> rawData = atob(base64)</td></tr>
   <tr><td>8</td><td> <span class="codeReserved">const</span> outputArray = <span class="codeReserved">new</span> Uint8Array(rawData.length)</td></tr>
   <tr><td>9</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">let</span> i = 0; i &lt; rawData.length; ++i) {</td></tr>

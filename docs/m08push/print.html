@@ -1206,7 +1206,7 @@
   <tr><td>14</td><td></td></tr>
   <tr><td>15</td><td> &lt;<span class="codeReserved">h1</span>&gt;Notificaciones Push&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
   <tr><td>16</td><td></td></tr>
-  <tr><td>17</td><td> &lt;<span class="codeReserved">menu</span> style=<span class="codeString">"<span class="codeReserved">display</span>: flex; list-style: none; flex-wrap: wrap; <span class="codeReserved">gap</span>: 0.5rem;"</span>&gt;</td></tr>
+  <tr><td>17</td><td> &lt;<span class="codeReserved">menu</span> style=<span class="codeString">"<span class="codeReserved">display</span>: <span class="codeReserved">flex</span>; list-style: none; flex-wrap: wrap; <span class="codeReserved">gap</span>: 0.5rem;"</span>&gt;</td></tr>
   <tr><td>18</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
   <tr><td>19</td><td>   &lt;<span class="codeReserved">button</span> id=<span class="codeString">"btnSuscribe"</span> type=<span class="codeString">"button"</span> hidden onclick=<span class="codeString">"suscribe()"</span>&gt;</td></tr>
   <tr><td>20</td><td>    Suscríbete</td></tr>
@@ -1525,7 +1525,7 @@
   <tr><td>30</td><td> $reportes = $webPush-&gt;flush();</td></tr>
   <tr><td>31</td><td></td></tr>
   <tr><td>32</td><td> <span class="codeComment">// Genera el reporte de envio a cada suscripcion.</span></td></tr>
-  <tr><td>33</td><td> $reporteDeEnvios = ;</td></tr>
+  <tr><td>33</td><td> $reporteDeEnvios = <span class="codeString">""</span>;</td></tr>
   <tr><td>34</td><td> <span class="codeReserved">foreach</span> ($reportes <span class="codeReserved">as</span> $reporte) {</td></tr>
   <tr><td>35</td><td>  $endpoint = htmlentities($reporte-&gt;getRequest()-&gt;getUri());</td></tr>
   <tr><td>36</td><td>  <span class="codeReserved">if</span> ($reporte-&gt;isSuccess()) {</td></tr>
@@ -2018,10 +2018,10 @@
   <tr><td>13</td><td> <span class="codeReserved">public</span> string $contentEncoding;</td></tr>
   <tr><td>14</td><td></td></tr>
   <tr><td>15</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> <span class="codeReserved">__construct</span>(</td></tr>
-  <tr><td>16</td><td>  string $endpoint = ,</td></tr>
-  <tr><td>17</td><td>  string $publicKey = ,</td></tr>
-  <tr><td>18</td><td>  string $authToken = ,</td></tr>
-  <tr><td>19</td><td>  string $contentEncoding = </td></tr>
+  <tr><td>16</td><td>  string $endpoint = <span class="codeString">""</span>,</td></tr>
+  <tr><td>17</td><td>  string $publicKey = <span class="codeString">""</span>,</td></tr>
+  <tr><td>18</td><td>  string $authToken = <span class="codeString">""</span>,</td></tr>
+  <tr><td>19</td><td>  string $contentEncoding = <span class="codeString">""</span></td></tr>
   <tr><td>20</td><td> ) {</td></tr>
   <tr><td>21</td><td>  $this-&gt;endpoint = $endpoint;</td></tr>
   <tr><td>22</td><td>  $this-&gt;publicKey = $publicKey;</td></tr>
@@ -2832,7 +2832,7 @@
   <tr><td>3</td><td><span class="codeComment"> */</span></td></tr>
   <tr><td>4</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> urlBase64ToUint8Array(base64String) {</td></tr>
   <tr><td>5</td><td> <span class="codeReserved">const</span> <span class="codeReserved">padding</span> = <span class="codeString">"="</span>.<span class="codeReserved">repeat</span>((4 - (base64String.length % 4)) % 4)</td></tr>
-  <tr><td>6</td><td> <span class="codeReserved">const</span> base64 = (base64String + <span class="codeReserved">padding</span>).replace(<span class="codeString">/\</span>-<span class="codeString">/g</span>, <span class="codeString">'+'</span>).replace(<span class="codeString">/_</span><span class="codeString">/g</span>, <span class="codeString">'/'</span>)</td></tr>
+  <tr><td>6</td><td> <span class="codeReserved">const</span> base64 = (base64String + <span class="codeReserved">padding</span>).replace(<span class="codeString">/\-/</span>g, <span class="codeString">'+'</span>).replace(<span class="codeString">/_/</span>g, <span class="codeString">'/'</span>)</td></tr>
   <tr><td>7</td><td> <span class="codeReserved">const</span> rawData = atob(base64)</td></tr>
   <tr><td>8</td><td> <span class="codeReserved">const</span> outputArray = <span class="codeReserved">new</span> Uint8Array(rawData.length)</td></tr>
   <tr><td>9</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">let</span> i = 0; i &lt; rawData.length; ++i) {</td></tr>
@@ -3066,13 +3066,13 @@
   <tr><td>7</td><td> <span class="codeReserved">public</span> <span class="codeReserved">const</span> NotFound = 404;</td></tr>
   <tr><td>8</td><td> <span class="codeReserved">public</span> <span class="codeReserved">const</span> InternalServerError = 500;</td></tr>
   <tr><td>9</td><td></td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">public</span> int $status;</td></tr>
+  <tr><td>10</td><td> <span class="codeReserved">public</span> <span class="codeReserved">int</span> $status;</td></tr>
   <tr><td>11</td><td> <span class="codeReserved">public</span> string $title;</td></tr>
   <tr><td>12</td><td> <span class="codeReserved">public</span> ?string $type;</td></tr>
   <tr><td>13</td><td> <span class="codeReserved">public</span> ?string $detail;</td></tr>
   <tr><td>14</td><td></td></tr>
   <tr><td>15</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> <span class="codeReserved">__construct</span>(</td></tr>
-  <tr><td>16</td><td>  int $status,</td></tr>
+  <tr><td>16</td><td>  <span class="codeReserved">int</span> $status,</td></tr>
   <tr><td>17</td><td>  string $title,</td></tr>
   <tr><td>18</td><td>  ?string $type = <span class="codeReserved">null</span>,</td></tr>
   <tr><td>19</td><td>  ?string $detail = <span class="codeReserved">null</span>,</td></tr>

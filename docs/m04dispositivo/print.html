@@ -794,7 +794,7 @@
    <tr><td>11</td><td></td></tr>
    <tr><td>12</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
    <tr><td>13</td><td>  html {</td></tr>
-   <tr><td>14</td><td>   color-scheme: light dark;</td></tr>
+   <tr><td>14</td><td>   <span class="codeReserved">color-scheme</span>: light dark;</td></tr>
    <tr><td>15</td><td>  }</td></tr>
    <tr><td>16</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
    <tr><td>17</td><td></td></tr>
@@ -889,7 +889,7 @@
    <tr><td>11</td><td></td></tr>
    <tr><td>12</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
    <tr><td>13</td><td>  html {</td></tr>
-   <tr><td>14</td><td>   color-scheme: light dark;</td></tr>
+   <tr><td>14</td><td>   <span class="codeReserved">color-scheme</span>: light dark;</td></tr>
    <tr><td>15</td><td>  }</td></tr>
    <tr><td>16</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
    <tr><td>17</td><td></td></tr>
@@ -913,7 +913,7 @@
    <tr><td>35</td><td>   Video de Móvil</td></tr>
    <tr><td>36</td><td>   &lt;<span class="codeReserved">input</span> type=<span class="codeString">"file"</span></td></tr>
    <tr><td>37</td><td>     accept=<span class="codeString">"video/*"</span></td></tr>
-   <tr><td>38</td><td>     capture=&gt;</td></tr>
+   <tr><td>38</td><td>     capture=<span class="codeString">""</span>&gt;</td></tr>
    <tr><td>39</td><td>  &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
    <tr><td>40</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
    <tr><td>41</td><td></td></tr>
@@ -970,7 +970,7 @@
    <tr><td>11</td><td></td></tr>
    <tr><td>12</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
    <tr><td>13</td><td>  html {</td></tr>
-   <tr><td>14</td><td>   color-scheme: light dark;</td></tr>
+   <tr><td>14</td><td>   <span class="codeReserved">color-scheme</span>: light dark;</td></tr>
    <tr><td>15</td><td>  }</td></tr>
    <tr><td>16</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
    <tr><td>17</td><td></td></tr>
@@ -1001,7 +1001,7 @@
    <tr><td>42</td><td>  &lt;<span class="codeReserved">strong</span>&gt;Captura&lt;/<span class="codeReserved">strong</span>&gt;.</td></tr>
    <tr><td>43</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
    <tr><td>44</td><td></td></tr>
-   <tr><td>45</td><td> &lt;<span class="codeReserved">menu</span> style=<span class="codeString">"<span class="codeReserved">display</span>: flex;</span></td></tr>
+   <tr><td>45</td><td> &lt;<span class="codeReserved">menu</span> style=<span class="codeString">"<span class="codeReserved">display</span>: <span class="codeReserved">flex</span>;</span></td></tr>
    <tr><td>46</td><td><span class="codeString">   flex-wrap: wrap;</span></td></tr>
    <tr><td>47</td><td><span class="codeString">   list-style: none;"</span>&gt;</td></tr>
    <tr><td>48</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
@@ -1081,7 +1081,7 @@
    <tr><td>122</td><td></td></tr>
    <tr><td>123</td><td>  <span class="codeReserved">let</span> TIEMPO_DE_GRABACION = 5000</td></tr>
    <tr><td>124</td><td></td></tr>
-   <tr><td>125</td><td>  var context =</td></tr>
+   <tr><td>125</td><td>  <span class="codeReserved">var</span> context =</td></tr>
    <tr><td>126</td><td>   canvas.getContext(<span class="codeString">'2d'</span>)</td></tr>
    <tr><td>127</td><td></td></tr>
    <tr><td>128</td><td>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> inicia() {</td></tr>
@@ -1112,10 +1112,10 @@
    <tr><td>153</td><td>    <span class="codeReserved">let</span> recordedBlob = <span class="codeReserved">new</span> Blob(</td></tr>
    <tr><td>154</td><td>     recordedChunks,</td></tr>
    <tr><td>155</td><td>     { type: <span class="codeString">"video/webm"</span> })</td></tr>
-   <tr><td>156</td><td>    recording.src =</td></tr>
+   <tr><td>156</td><td>    recording.<span class="codeReserved">src</span> =</td></tr>
    <tr><td>157</td><td>     URL.createObjectURL(</td></tr>
    <tr><td>158</td><td>      recordedBlob)</td></tr>
-   <tr><td>159</td><td>    descarga.href = recording.src</td></tr>
+   <tr><td>159</td><td>    descarga.href = recording.<span class="codeReserved">src</span></td></tr>
    <tr><td>160</td><td>    descarga.download =</td></tr>
    <tr><td>161</td><td>     <span class="codeString">"RecordedVideo.webm"</span></td></tr>
    <tr><td>162</td><td></td></tr>
@@ -1152,7 +1152,7 @@
    <tr><td>193</td><td>   recorder.start()</td></tr>
    <tr><td>194</td><td>   log(recorder.state</td></tr>
    <tr><td>195</td><td>    + <span class="codeString">" durante "</span></td></tr>
-   <tr><td>196</td><td>    + (milisegundos <span class="codeString">/ </span>1000)</td></tr>
+   <tr><td>196</td><td>    + (milisegundos / 1000)</td></tr>
    <tr><td>197</td><td>    + <span class="codeString">" segundos&hellip;"</span>)</td></tr>
    <tr><td>198</td><td>   <span class="codeReserved">let</span> detenido = <span class="codeReserved">new</span> Promise(</td></tr>
    <tr><td>199</td><td>    (resolve, reject) =&gt; {</td></tr>

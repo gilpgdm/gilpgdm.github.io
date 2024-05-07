@@ -38,7 +38,11 @@
   <li>
    <p>
     Usa <code class="language-html">class="float"</code> cuando quieras que la
-    etiqueta esté arriba todo el tiempo.
+    etiqueta esté arriba todo el tiempo. Esto sirve para los
+    <code class="language-html">input type="date"</code>
+    e
+    <code class="language-html">input type="file"</code>
+    entre otros tipos de elemento.
    </p>
   </li>
  </ul>
@@ -53,125 +57,121 @@
      rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
-<table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
-  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
-  <tr><td>3</td><td></td></tr>
-  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
-  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
-  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
-  <tr><td>7</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
-  <tr><td>8</td><td></td></tr>
-  <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;</td></tr>
-  <tr><td>10</td><td>  Campos de texto - PWA con MD</td></tr>
-  <tr><td>11</td><td> &lt;/<span class="codeReserved">title</span>&gt;</td></tr>
-  <tr><td>12</td><td></td></tr>
-  <tr><td>13</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"theme-color"</span></td></tr>
-  <tr><td>14</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"#fffbfe"</span>&gt;</td></tr>
-  <tr><td>15</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"icon"</span> sizes=<span class="codeString">"32x32"</span></td></tr>
-  <tr><td>16</td><td>   href=<span class="codeString">"favicon.ico"</span>&gt;</td></tr>
-  <tr><td>17</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"manifest"</span></td></tr>
-  <tr><td>18</td><td>   href=<span class="codeString">"site.webmanifest"</span>&gt;</td></tr>
-  <tr><td>19</td><td></td></tr>
-  <tr><td>20</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span></td></tr>
-  <tr><td>21</td><td>   href=<span class="codeString">"css/estilos.css"</span>&gt;</td></tr>
-  <tr><td>22</td><td> &lt;<span class="codeReserved">script</span></td></tr>
-  <tr><td>23</td><td>   src=<span class="codeString">"ungap/custom-elements.js"</span>&gt;</td></tr>
-  <tr><td>24</td><td>   &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
-  <tr><td>25</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span></td></tr>
-  <tr><td>26</td><td>   src=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
-  <tr><td>27</td><td></td></tr>
-  <tr><td>28</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
-  <tr><td>29</td><td></td></tr>
-  <tr><td>30</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>31</td><td></td></tr>
-  <tr><td>32</td><td> &lt;<span class="codeReserved">md-top-app-bar</span></td></tr>
-  <tr><td>33</td><td>   headline=<span class="codeString">"headline"</span>&gt;</td></tr>
-  <tr><td>34</td><td></td></tr>
-  <tr><td>35</td><td>  &lt;<span class="codeReserved">h1</span>&gt;Texto&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
-  <tr><td>36</td><td></td></tr>
-  <tr><td>37</td><td>  &lt;<span class="codeReserved">button</span> is=<span class="codeString">"md-menu-button"</span></td></tr>
-  <tr><td>38</td><td>    slot=<span class="codeString">"navigation"</span></td></tr>
-  <tr><td>39</td><td>    onclick=<span class="codeString">"nav.abre()"</span>&gt;&lt;/<span class="codeReserved">button</span>&gt;</td></tr>
-  <tr><td>40</td><td></td></tr>
-  <tr><td>41</td><td> &lt;/<span class="codeReserved">md-top-app-bar</span>&gt;</td></tr>
-  <tr><td>42</td><td></td></tr>
-  <tr><td>43</td><td> &lt;<span class="codeReserved">h1</span> id=<span class="codeString">"headline"</span>&gt;</td></tr>
-  <tr><td>44</td><td>  Campos de texto</td></tr>
-  <tr><td>45</td><td> &lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
-  <tr><td>46</td><td></td></tr>
-  <tr><td>47</td><td> &lt;<span class="codeReserved">main</span>&gt;</td></tr>
-  <tr><td>48</td><td></td></tr>
-  <tr><td>49</td><td>  &lt;<span class="codeReserved">md-filled-text-field</span> value=<span class="codeString">"Saludo"</span>&gt;</td></tr>
-  <tr><td>50</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"saludo"</span>&gt;</td></tr>
-  <tr><td>51</td><td>    Saludo</td></tr>
-  <tr><td>52</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
-  <tr><td>53</td><td>   &lt;<span class="codeReserved">output</span> id=<span class="codeString">"saludo"</span></td></tr>
-  <tr><td>54</td><td>     slot=<span class="codeString">"input-text"</span>&gt;&lt;/<span class="codeReserved">output</span>&gt;</td></tr>
-  <tr><td>55</td><td>  &lt;/<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
-  <tr><td>56</td><td></td></tr>
-  <tr><td>57</td><td>  &lt;<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
-  <tr><td>58</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"nombre"</span>&gt;</td></tr>
-  <tr><td>59</td><td>    Nombre*</td></tr>
-  <tr><td>60</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
-  <tr><td>61</td><td>   &lt;<span class="codeReserved">input</span> id=<span class="codeString">"nombre"</span></td></tr>
-  <tr><td>62</td><td>     slot=<span class="codeString">"input-text"</span> required&gt;</td></tr>
-  <tr><td>63</td><td>   &lt;<span class="codeReserved">small</span> slot=<span class="codeString">"supporting"</span>&gt;</td></tr>
-  <tr><td>64</td><td>    *Requerido</td></tr>
-  <tr><td>65</td><td>   &lt;/<span class="codeReserved">small</span>&gt;</td></tr>
-  <tr><td>66</td><td>  &lt;/<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
-  <tr><td>67</td><td></td></tr>
-  <tr><td>68</td><td>  &lt;<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
-  <tr><td>69</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"email"</span></td></tr>
-  <tr><td>70</td><td>     accesskey=<span class="codeString">"M"</span>&gt;</td></tr>
-  <tr><td>71</td><td>    Email</td></tr>
-  <tr><td>72</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
-  <tr><td>73</td><td>   &lt;<span class="codeReserved">input</span> id=<span class="codeString">"email"</span></td></tr>
-  <tr><td>74</td><td>     slot=<span class="codeString">"input-text"</span> type=<span class="codeString">"email"</span></td></tr>
-  <tr><td>75</td><td>     oninput=<span class="codeString">"</span></td></tr>
-  <tr><td>76</td><td><span class="codeString">     campoDireccion.value =</span></td></tr>
-  <tr><td>77</td><td><span class="codeString">      <span class="codeReserved">this</span>.value"</span>&gt;</td></tr>
-  <tr><td>78</td><td>  &lt;/<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
-  <tr><td>79</td><td></td></tr>
-  <tr><td>80</td><td>  <span class="codeComment">&lt;!-- Usa <span class="codeReserved">class</span>=&quot;float&quot; cuando</span></td></tr>
-  <tr><td>81</td><td><span class="codeComment">   quieras que la etiqueta esté</span></td></tr>
-  <tr><td>82</td><td><span class="codeComment">   arriba todo el tiempo. --&gt;</span></td></tr>
-  <tr><td>83</td><td>  &lt;<span class="codeReserved">md-filled-text-field</span> <span class="codeReserved">class</span>=<span class="codeString">"float"</span>&gt;</td></tr>
-  <tr><td>84</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"fecha"</span>&gt;</td></tr>
-  <tr><td>85</td><td>    Fecha</td></tr>
-  <tr><td>86</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
-  <tr><td>87</td><td>   &lt;<span class="codeReserved">input</span> id=<span class="codeString">"fecha"</span></td></tr>
-  <tr><td>88</td><td>     slot=<span class="codeString">"input-text"</span> type=<span class="codeString">"date"</span>&gt;</td></tr>
-  <tr><td>89</td><td>  &lt;/<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
-  <tr><td>90</td><td></td></tr>
-  <tr><td>91</td><td>  &lt;<span class="codeReserved">md-filled-text-field</span></td></tr>
-  <tr><td>92</td><td>    id=<span class="codeString">"campoDireccion"</span>&gt;</td></tr>
-  <tr><td>93</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"direccion"</span>&gt;</td></tr>
-  <tr><td>94</td><td>    Dirección</td></tr>
-  <tr><td>95</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
-  <tr><td>96</td><td>   &lt;<span class="codeReserved">textarea</span> id=<span class="codeString">"direccion"</span></td></tr>
-  <tr><td>97</td><td>     rows=<span class="codeString">"3"</span></td></tr>
-  <tr><td>98</td><td>     slot=<span class="codeString">"input-text"</span>&gt;&lt;/<span class="codeReserved">textarea</span>&gt;</td></tr>
-  <tr><td>99</td><td>  &lt;/<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
-  <tr><td>100</td><td></td></tr>
-  <tr><td>101</td><td> &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
-  <tr><td>102</td><td></td></tr>
-  <tr><td>103</td><td> &lt;<span class="codeReserved">nav-drw</span> id=<span class="codeString">"nav"</span>&gt;&lt;/<span class="codeReserved">nav-drw</span>&gt;</td></tr>
-  <tr><td>104</td><td></td></tr>
-  <tr><td>105</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>106</td><td></td></tr>
-  <tr><td>107</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
- </tbody>
-</table>
+ <table class="codeShow">
+  <caption style="text-align: left">
+   <button type=button title="Copiar al portapapeles"
+     onclick="copyToClipboard(this)">
+    <span class="material-symbols-outlined">
+     content_copy
+    </span>
+   </button>
+  </caption>
+  <tbody>
+   <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+   <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+   <tr><td>3</td><td></td></tr>
+   <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+   <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+   <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+   <tr><td>7</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+   <tr><td>8</td><td></td></tr>
+   <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;</td></tr>
+   <tr><td>10</td><td>  Campos de texto - PWA con MD</td></tr>
+   <tr><td>11</td><td> &lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+   <tr><td>12</td><td></td></tr>
+   <tr><td>13</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"theme-color"</span></td></tr>
+   <tr><td>14</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"#fffbfe"</span>&gt;</td></tr>
+   <tr><td>15</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"icon"</span> sizes=<span class="codeString">"32x32"</span></td></tr>
+   <tr><td>16</td><td>   href=<span class="codeString">"favicon.ico"</span>&gt;</td></tr>
+   <tr><td>17</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"manifest"</span></td></tr>
+   <tr><td>18</td><td>   href=<span class="codeString">"site.webmanifest"</span>&gt;</td></tr>
+   <tr><td>19</td><td></td></tr>
+   <tr><td>20</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span></td></tr>
+   <tr><td>21</td><td>   href=<span class="codeString">"css/estilos.css"</span>&gt;</td></tr>
+   <tr><td>22</td><td> &lt;<span class="codeReserved">script</span></td></tr>
+   <tr><td>23</td><td>   src=<span class="codeString">"ungap/custom-elements.js"</span>&gt;</td></tr>
+   <tr><td>24</td><td>   &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+   <tr><td>25</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span></td></tr>
+   <tr><td>26</td><td>   src=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+   <tr><td>27</td><td></td></tr>
+   <tr><td>28</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+   <tr><td>29</td><td></td></tr>
+   <tr><td>30</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+   <tr><td>31</td><td></td></tr>
+   <tr><td>32</td><td> &lt;<span class="codeReserved">md-top-app-bar</span></td></tr>
+   <tr><td>33</td><td>   headline=<span class="codeString">"headline"</span>&gt;</td></tr>
+   <tr><td>34</td><td></td></tr>
+   <tr><td>35</td><td>  &lt;<span class="codeReserved">h1</span>&gt;Texto&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+   <tr><td>36</td><td></td></tr>
+   <tr><td>37</td><td>  &lt;<span class="codeReserved">button</span> is=<span class="codeString">"md-menu-button"</span></td></tr>
+   <tr><td>38</td><td>    slot=<span class="codeString">"navigation"</span></td></tr>
+   <tr><td>39</td><td>    onclick=<span class="codeString">"nav.abre()"</span>&gt;&lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+   <tr><td>40</td><td></td></tr>
+   <tr><td>41</td><td> &lt;/<span class="codeReserved">md-top-app-bar</span>&gt;</td></tr>
+   <tr><td>42</td><td></td></tr>
+   <tr><td>43</td><td> &lt;<span class="codeReserved">h1</span> id=<span class="codeString">"headline"</span>&gt;Campos de texto&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+   <tr><td>44</td><td></td></tr>
+   <tr><td>45</td><td> &lt;<span class="codeReserved">main</span>&gt;</td></tr>
+   <tr><td>46</td><td></td></tr>
+   <tr><td>47</td><td>  &lt;<span class="codeReserved">md-filled-text-field</span> value=<span class="codeString">"Saludo"</span>&gt;</td></tr>
+   <tr><td>48</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"saludo"</span>&gt;</td></tr>
+   <tr><td>49</td><td>    Saludo</td></tr>
+   <tr><td>50</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+   <tr><td>51</td><td>   &lt;<span class="codeReserved">output</span> id=<span class="codeString">"saludo"</span></td></tr>
+   <tr><td>52</td><td>     slot=<span class="codeString">"input-text"</span>&gt;&lt;/<span class="codeReserved">output</span>&gt;</td></tr>
+   <tr><td>53</td><td>  &lt;/<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
+   <tr><td>54</td><td></td></tr>
+   <tr><td>55</td><td>  &lt;<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
+   <tr><td>56</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"nombre"</span>&gt;</td></tr>
+   <tr><td>57</td><td>    Nombre*</td></tr>
+   <tr><td>58</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+   <tr><td>59</td><td>   &lt;<span class="codeReserved">input</span> id=<span class="codeString">"nombre"</span> required</td></tr>
+   <tr><td>60</td><td>     slot=<span class="codeString">"input-text"</span>&gt;</td></tr>
+   <tr><td>61</td><td>   &lt;<span class="codeReserved">small</span> slot=<span class="codeString">"supporting"</span>&gt;</td></tr>
+   <tr><td>62</td><td>    *Requerido</td></tr>
+   <tr><td>63</td><td>   &lt;/<span class="codeReserved">small</span>&gt;</td></tr>
+   <tr><td>64</td><td>  &lt;/<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
+   <tr><td>65</td><td></td></tr>
+   <tr><td>66</td><td>  &lt;<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
+   <tr><td>67</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"email"</span> accesskey=<span class="codeString">"M"</span>&gt;</td></tr>
+   <tr><td>68</td><td>    Email</td></tr>
+   <tr><td>69</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+   <tr><td>70</td><td>   &lt;<span class="codeReserved">input</span> id=<span class="codeString">"email"</span> type=<span class="codeString">"email"</span></td></tr>
+   <tr><td>71</td><td>     slot=<span class="codeString">"input-text"</span></td></tr>
+   <tr><td>72</td><td>     oninput=<span class="codeString">"</span></td></tr>
+   <tr><td>73</td><td><span class="codeString">      campoDireccion.value =</span></td></tr>
+   <tr><td>74</td><td><span class="codeString">       <span class="codeReserved">this</span>.value"</span>&gt;</td></tr>
+   <tr><td>75</td><td>  &lt;/<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
+   <tr><td>76</td><td></td></tr>
+   <tr><td>77</td><td>  <span class="codeComment">&lt;!-- Usa <span class="codeReserved">class</span>=&quot;float&quot; cuando</span></td></tr>
+   <tr><td>78</td><td><span class="codeComment">   quieras que la etiqueta esté</span></td></tr>
+   <tr><td>79</td><td><span class="codeComment">   arriba todo el tiempo. --&gt;</span></td></tr>
+   <tr><td>80</td><td>  &lt;<span class="codeReserved">md-filled-text-field</span> <span class="codeReserved">class</span>=<span class="codeString">"float"</span>&gt;</td></tr>
+   <tr><td>81</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"fecha"</span>&gt;</td></tr>
+   <tr><td>82</td><td>    Fecha</td></tr>
+   <tr><td>83</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+   <tr><td>84</td><td>   &lt;<span class="codeReserved">input</span> id=<span class="codeString">"fecha"</span> type=<span class="codeString">"date"</span></td></tr>
+   <tr><td>85</td><td>     slot=<span class="codeString">"input-text"</span>&gt;</td></tr>
+   <tr><td>86</td><td>  &lt;/<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
+   <tr><td>87</td><td></td></tr>
+   <tr><td>88</td><td>  &lt;<span class="codeReserved">md-filled-text-field</span></td></tr>
+   <tr><td>89</td><td>    id=<span class="codeString">"campoDireccion"</span>&gt;</td></tr>
+   <tr><td>90</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"direccion"</span>&gt;</td></tr>
+   <tr><td>91</td><td>    Dirección</td></tr>
+   <tr><td>92</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+   <tr><td>93</td><td>   &lt;<span class="codeReserved">textarea</span> id=<span class="codeString">"direccion"</span> rows=<span class="codeString">"3"</span></td></tr>
+   <tr><td>94</td><td>     slot=<span class="codeString">"input-text"</span>&gt;&lt;/<span class="codeReserved">textarea</span>&gt;</td></tr>
+   <tr><td>95</td><td>  &lt;/<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
+   <tr><td>96</td><td></td></tr>
+   <tr><td>97</td><td> &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
+   <tr><td>98</td><td></td></tr>
+   <tr><td>99</td><td> &lt;<span class="codeReserved">nav-drw</span> id=<span class="codeString">"nav"</span>&gt;&lt;/<span class="codeReserved">nav-drw</span>&gt;</td></tr>
+   <tr><td>100</td><td></td></tr>
+   <tr><td>101</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+   <tr><td>102</td><td></td></tr>
+   <tr><td>103</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+  </tbody>
+ </table>
 </div>
 <div class="lectura">
  <h1>Solo para los más rudos</h1>

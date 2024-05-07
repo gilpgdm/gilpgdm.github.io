@@ -867,74 +867,75 @@
    <figcaption>Interruptor en iOS</figcaption>
   </figure>
  </section>
-<table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
-  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
-  <tr><td>3</td><td></td></tr>
-  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
-  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
-  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
-  <tr><td>7</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
-  <tr><td>8</td><td></td></tr>
-  <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;</td></tr>
-  <tr><td>10</td><td>  Interruptores - PWA con MD</td></tr>
-  <tr><td>11</td><td> &lt;/<span class="codeReserved">title</span>&gt;</td></tr>
-  <tr><td>12</td><td></td></tr>
-  <tr><td>13</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"theme-color"</span></td></tr>
-  <tr><td>14</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"#fffbfe"</span>&gt;</td></tr>
-  <tr><td>15</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"icon"</span> sizes=<span class="codeString">"32x32"</span></td></tr>
-  <tr><td>16</td><td>   href=<span class="codeString">"favicon.ico"</span>&gt;</td></tr>
-  <tr><td>17</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"manifest"</span></td></tr>
-  <tr><td>18</td><td>   href=<span class="codeString">"site.webmanifest"</span>&gt;</td></tr>
-  <tr><td>19</td><td></td></tr>
-  <tr><td>20</td><td></td></tr>
-  <tr><td>21</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span></td></tr>
-  <tr><td>22</td><td>   href=<span class="codeString">"css/estilos.css"</span>&gt;</td></tr>
-  <tr><td>23</td><td> &lt;<span class="codeReserved">script</span></td></tr>
-  <tr><td>24</td><td>   src=<span class="codeString">"ungap/custom-elements.js"</span>&gt;</td></tr>
-  <tr><td>25</td><td>   &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
-  <tr><td>26</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span></td></tr>
-  <tr><td>27</td><td>   src=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
-  <tr><td>28</td><td></td></tr>
-  <tr><td>29</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
-  <tr><td>30</td><td></td></tr>
-  <tr><td>31</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>32</td><td></td></tr>
-  <tr><td>33</td><td> &lt;<span class="codeReserved">md-top-app-bar</span>&gt;</td></tr>
-  <tr><td>34</td><td></td></tr>
-  <tr><td>35</td><td>  &lt;<span class="codeReserved">h1</span>&gt;Interruptores&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
-  <tr><td>36</td><td></td></tr>
-  <tr><td>37</td><td>  &lt;<span class="codeReserved">button</span> is=<span class="codeString">"md-menu-button"</span></td></tr>
-  <tr><td>38</td><td>    slot=<span class="codeString">"navigation"</span></td></tr>
-  <tr><td>39</td><td>    onclick=<span class="codeString">"nav.abre()"</span>&gt;&lt;/<span class="codeReserved">button</span>&gt;</td></tr>
-  <tr><td>40</td><td></td></tr>
-  <tr><td>41</td><td> &lt;/<span class="codeReserved">md-top-app-bar</span>&gt;</td></tr>
-  <tr><td>42</td><td></td></tr>
-  <tr><td>43</td><td> &lt;<span class="codeReserved">main</span>&gt;</td></tr>
-  <tr><td>44</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>45</td><td>   &lt;<span class="codeReserved">label</span> accesskey=<span class="codeString">"R"</span>&gt;</td></tr>
-  <tr><td>46</td><td>    Muestra resultados</td></tr>
-  <tr><td>47</td><td>    &lt;<span class="codeReserved">input</span> type=<span class="codeString">"checkbox"</span> <span class="codeReserved">class</span>=<span class="codeString">"md-switch"</span>&gt;</td></tr>
-  <tr><td>48</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
-  <tr><td>49</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>50</td><td> &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
-  <tr><td>51</td><td></td></tr>
-  <tr><td>52</td><td> &lt;<span class="codeReserved">nav-drw</span> id=<span class="codeString">"nav"</span>&gt;&lt;/<span class="codeReserved">nav-drw</span>&gt;</td></tr>
-  <tr><td>53</td><td></td></tr>
-  <tr><td>54</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>55</td><td></td></tr>
-  <tr><td>56</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
- </tbody>
-</table>
+ <table class="codeShow">
+  <caption style="text-align: left">
+   <button type=button title="Copiar al portapapeles"
+     onclick="copyToClipboard(this)">
+    <span class="material-symbols-outlined">
+     content_copy
+    </span>
+   </button>
+  </caption>
+  <tbody>
+   <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+   <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+   <tr><td>3</td><td></td></tr>
+   <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+   <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+   <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+   <tr><td>7</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+   <tr><td>8</td><td></td></tr>
+   <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;</td></tr>
+   <tr><td>10</td><td>  Interruptores - PWA con MD</td></tr>
+   <tr><td>11</td><td> &lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+   <tr><td>12</td><td></td></tr>
+   <tr><td>13</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"theme-color"</span></td></tr>
+   <tr><td>14</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"#fffbfe"</span>&gt;</td></tr>
+   <tr><td>15</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"icon"</span> sizes=<span class="codeString">"32x32"</span></td></tr>
+   <tr><td>16</td><td>   href=<span class="codeString">"favicon.ico"</span>&gt;</td></tr>
+   <tr><td>17</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"manifest"</span></td></tr>
+   <tr><td>18</td><td>   href=<span class="codeString">"site.webmanifest"</span>&gt;</td></tr>
+   <tr><td>19</td><td></td></tr>
+   <tr><td>20</td><td></td></tr>
+   <tr><td>21</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span></td></tr>
+   <tr><td>22</td><td>   href=<span class="codeString">"css/estilos.css"</span>&gt;</td></tr>
+   <tr><td>23</td><td> &lt;<span class="codeReserved">script</span></td></tr>
+   <tr><td>24</td><td>   src=<span class="codeString">"ungap/custom-elements.js"</span>&gt;</td></tr>
+   <tr><td>25</td><td>   &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+   <tr><td>26</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span></td></tr>
+   <tr><td>27</td><td>   src=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+   <tr><td>28</td><td></td></tr>
+   <tr><td>29</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+   <tr><td>30</td><td></td></tr>
+   <tr><td>31</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+   <tr><td>32</td><td></td></tr>
+   <tr><td>33</td><td> &lt;<span class="codeReserved">md-top-app-bar</span>&gt;</td></tr>
+   <tr><td>34</td><td></td></tr>
+   <tr><td>35</td><td>  &lt;<span class="codeReserved">h1</span>&gt;Interruptores&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+   <tr><td>36</td><td></td></tr>
+   <tr><td>37</td><td>  &lt;<span class="codeReserved">button</span> is=<span class="codeString">"md-menu-button"</span></td></tr>
+   <tr><td>38</td><td>    slot=<span class="codeString">"navigation"</span></td></tr>
+   <tr><td>39</td><td>    onclick=<span class="codeString">"nav.abre()"</span>&gt;&lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+   <tr><td>40</td><td></td></tr>
+   <tr><td>41</td><td> &lt;/<span class="codeReserved">md-top-app-bar</span>&gt;</td></tr>
+   <tr><td>42</td><td></td></tr>
+   <tr><td>43</td><td> &lt;<span class="codeReserved">main</span>&gt;</td></tr>
+   <tr><td>44</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>45</td><td>   &lt;<span class="codeReserved">label</span> accesskey=<span class="codeString">"R"</span>&gt;</td></tr>
+   <tr><td>46</td><td>    Muestra resultados</td></tr>
+   <tr><td>47</td><td>    &lt;<span class="codeReserved">input</span> type=<span class="codeString">"checkbox"</span></td></tr>
+   <tr><td>48</td><td>      <span class="codeReserved">class</span>=<span class="codeString">"md-switch"</span>&gt;</td></tr>
+   <tr><td>49</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+   <tr><td>50</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>51</td><td> &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
+   <tr><td>52</td><td></td></tr>
+   <tr><td>53</td><td> &lt;<span class="codeReserved">nav-drw</span> id=<span class="codeString">"nav"</span>&gt;&lt;/<span class="codeReserved">nav-drw</span>&gt;</td></tr>
+   <tr><td>54</td><td></td></tr>
+   <tr><td>55</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+   <tr><td>56</td><td></td></tr>
+   <tr><td>57</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+  </tbody>
+ </table>
 </div>
 <div class="lectura">
  <h1>Solo para los más rudos</h1>

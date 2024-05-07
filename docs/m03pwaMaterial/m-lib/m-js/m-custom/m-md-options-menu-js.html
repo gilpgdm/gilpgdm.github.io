@@ -903,7 +903,7 @@
   <tr><td>57</td><td> get seleccion() {</td></tr>
   <tr><td>58</td><td>  <span class="codeComment">/** <span class="codeReserved">@type</span> { HTMLInputElement | <span class="codeReserved">null</span> } */</span></td></tr>
   <tr><td>59</td><td>  <span class="codeReserved">const</span> seleccionado = <span class="codeReserved">this</span>.querySelector(<span class="codeString">":checked"</span>)</td></tr>
-  <tr><td>60</td><td>  <span class="codeReserved">return</span> seleccionado === <span class="codeReserved">null</span> ?  : seleccionado.value</td></tr>
+  <tr><td>60</td><td>  <span class="codeReserved">return</span> seleccionado === <span class="codeReserved">null</span> ? <span class="codeReserved">""</span> : seleccionado.value</td></tr>
   <tr><td>61</td><td> }</td></tr>
   <tr><td>62</td><td></td></tr>
   <tr><td>63</td><td> _configuraOpciones() {</td></tr>
@@ -938,15 +938,15 @@
   <tr><td>92</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} value</span></td></tr>
   <tr><td>93</td><td><span class="codeComment">  */</span></td></tr>
   <tr><td>94</td><td> muestraValue(value) {</td></tr>
-  <tr><td>95</td><td>  <span class="codeReserved">let</span> texto = </td></tr>
+  <tr><td>95</td><td>  <span class="codeReserved">let</span> texto = <span class="codeReserved">""</span></td></tr>
   <tr><td>96</td><td>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> { label, input } of <span class="codeReserved">this</span>._opciones) {</td></tr>
   <tr><td>97</td><td>   <span class="codeReserved">if</span> (input.value === value) {</td></tr>
   <tr><td>98</td><td>    input.checked = <span class="codeReserved">true</span></td></tr>
   <tr><td>99</td><td>    label.classList.add(<span class="codeString">"selected"</span>)</td></tr>
   <tr><td>100</td><td>    <span class="codeReserved">let</span> textContent = label.textContent</td></tr>
-  <tr><td>101</td><td>    <span class="codeReserved">if</span> (texto ===  && textContent !== <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>101</td><td>    <span class="codeReserved">if</span> (texto === <span class="codeReserved">""</span> && textContent !== <span class="codeReserved">null</span>) {</td></tr>
   <tr><td>102</td><td>     textContent = textContent.trim()</td></tr>
-  <tr><td>103</td><td>     <span class="codeReserved">if</span> (textContent !== ) {</td></tr>
+  <tr><td>103</td><td>     <span class="codeReserved">if</span> (textContent !== <span class="codeReserved">""</span>) {</td></tr>
   <tr><td>104</td><td>      texto = textContent</td></tr>
   <tr><td>105</td><td>     }</td></tr>
   <tr><td>106</td><td>    }</td></tr>

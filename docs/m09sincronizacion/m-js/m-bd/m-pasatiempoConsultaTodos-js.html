@@ -862,7 +862,7 @@
   <tr><td>16</td><td></td></tr>
   <tr><td>17</td><td>   <span class="codeReserved">const</span> resultado = []</td></tr>
   <tr><td>18</td><td></td></tr>
-  <tr><td>19</td><td>   <span class="codeComment">/* Pide un cursor para recorrer cada uno de los</span></td></tr>
+  <tr><td>19</td><td>   <span class="codeComment">/* Pide un <span class="codeReserved">cursor</span> para recorrer cada uno de los</span></td></tr>
   <tr><td>20</td><td><span class="codeComment">    * registristros que devuelve la consulta. */</span></td></tr>
   <tr><td>21</td><td>   <span class="codeReserved">const</span> consulta =</td></tr>
   <tr><td>22</td><td>    transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO).openCursor()</td></tr>
@@ -871,13 +871,13 @@
   <tr><td>25</td><td><span class="codeComment">   * consulta y una vez cuando se acaban dichos registros. */</span></td></tr>
   <tr><td>26</td><td>   consulta.onsuccess = () =&gt; {</td></tr>
   <tr><td>27</td><td></td></tr>
-  <tr><td>28</td><td>    <span class="codeComment">/* El cursor que corresponde al registro se recupera usando</span></td></tr>
+  <tr><td>28</td><td>    <span class="codeComment">/* El <span class="codeReserved">cursor</span> que corresponde al registro se recupera usando</span></td></tr>
   <tr><td>29</td><td><span class="codeComment">     *  consulta.result */</span></td></tr>
-  <tr><td>30</td><td>    <span class="codeReserved">const</span> cursor = consulta.result</td></tr>
+  <tr><td>30</td><td>    <span class="codeReserved">const</span> <span class="codeReserved">cursor</span> = consulta.result</td></tr>
   <tr><td>31</td><td></td></tr>
-  <tr><td>32</td><td>    <span class="codeReserved">if</span> (cursor === <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>32</td><td>    <span class="codeReserved">if</span> (<span class="codeReserved">cursor</span> === <span class="codeReserved">null</span>) {</td></tr>
   <tr><td>33</td><td></td></tr>
-  <tr><td>34</td><td>     <span class="codeComment">/* Si el cursor es igual a <span class="codeReserved">null</span>, ya no hay más registros que</span></td></tr>
+  <tr><td>34</td><td>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> es igual a <span class="codeReserved">null</span>, ya no hay más registros que</span></td></tr>
   <tr><td>35</td><td><span class="codeComment">      * procesar; por lo mismo, se devuelve el resultado con los</span></td></tr>
   <tr><td>36</td><td><span class="codeComment">      * pasatiempos recuperados, usando</span></td></tr>
   <tr><td>37</td><td><span class="codeComment">      *  resolve(resultado). */</span></td></tr>
@@ -885,15 +885,15 @@
   <tr><td>39</td><td></td></tr>
   <tr><td>40</td><td>    } <span class="codeReserved">else</span> {</td></tr>
   <tr><td>41</td><td></td></tr>
-  <tr><td>42</td><td>     <span class="codeComment">/* Si el cursor es diferente a <span class="codeReserved">null</span>, si hay más registros.</span></td></tr>
+  <tr><td>42</td><td>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> es diferente a <span class="codeReserved">null</span>, si hay más registros.</span></td></tr>
   <tr><td>43</td><td><span class="codeComment">      * El registro que sigue se obtiene con</span></td></tr>
-  <tr><td>44</td><td><span class="codeComment">      *  cursor.value*/</span></td></tr>
-  <tr><td>45</td><td>     resultado.push(cursor.value)</td></tr>
+  <tr><td>44</td><td><span class="codeComment">      *  <span class="codeReserved">cursor</span>.value*/</span></td></tr>
+  <tr><td>45</td><td>     resultado.push(<span class="codeReserved">cursor</span>.value)</td></tr>
   <tr><td>46</td><td></td></tr>
   <tr><td>47</td><td>     <span class="codeComment">/* Busca el siguiente registro de la consulta, que se obtiene</span></td></tr>
   <tr><td>48</td><td><span class="codeComment">      * la siguiente vez que se invoque la función</span></td></tr>
   <tr><td>49</td><td><span class="codeComment">      *  onsuccess. */</span></td></tr>
-  <tr><td>50</td><td>     cursor.<span class="codeReserved">continue</span>()</td></tr>
+  <tr><td>50</td><td>     <span class="codeReserved">cursor</span>.<span class="codeReserved">continue</span>()</td></tr>
   <tr><td>51</td><td></td></tr>
   <tr><td>52</td><td>    }</td></tr>
   <tr><td>53</td><td></td></tr>
