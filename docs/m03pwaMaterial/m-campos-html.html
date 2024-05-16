@@ -845,8 +845,27 @@
   </li>
   <li>
    <p>
-    Se el elemento personalizado <dfn>md-filled-text-field</dfn>, definimos con
-    la clase <dfn>MdFilledTextField</dfn>.
+    Añade la class
+    <dfn><code class="language-html">md-filled-text-field</code></dfn>
+    a un elemento de tipo
+    <code class="language-html">p</code>
+    o
+    <code class="language-html">div</code>
+   </p>
+  </li>
+  <li>
+   <p>
+    Usa la class
+    <dfn><code class="language-html">float</code></dfn>
+    junto a la class
+    <code class="language-html">md-filled-text-field</code>
+    cuando quieras que la etiqueta esté arriba todo el tiempo. Esto sirve para
+    los
+    <code class="language-html">output</code>,
+    <code class="language-html">input type="date"</code>
+    e
+    <code class="language-html">input type="file"</code>
+    entre otros tipos de elemento.
    </p>
   </li>
   <li>
@@ -854,31 +873,16 @@
     Las etiquetas deben ser
     <code class="language-html">label</code>
     o
-    <code class="language-html">span</code>.
+    <code class="language-html">span</code>
+    y deben colocarse inmediatamente después del elemento que realiza la
+    captura.
    </p>
   </li>
   <li>
    <p>
-    Los campos de captura deben llevar al atributo
-    <code class="language-html">slot="target"</code>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Los textos de ayuda deben llevar al atributo
-    <code class="language-html">slot="supporting"</code>
-    y normalmente son de tipo
-    <code class="language-html">small</code>..
-   </p>
-  </li>
-  <li>
-   <p>
-    Usa <code class="language-html">class="float"</code> cuando quieras que la
-    etiqueta esté arriba todo el tiempo. Esto sirve para los
-    <code class="language-html">input type="date"</code>
-    e
-    <code class="language-html">input type="file"</code>
-    entre otros tipos de elemento.
+    Los textos de ayuda deben ser elementos de tipo
+    <code class="language-html">small</code>
+    que se colocan después de la etiqueta.
    </p>
   </li>
  </ul>
@@ -925,10 +929,10 @@
    <tr><td>20</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span></td></tr>
    <tr><td>21</td><td>   href=<span class="codeString">"css/estilos.css"</span>&gt;</td></tr>
    <tr><td>22</td><td> &lt;<span class="codeReserved">script</span></td></tr>
-   <tr><td>23</td><td>   src=<span class="codeString">"ungap/custom-elements.js"</span>&gt;</td></tr>
+   <tr><td>23</td><td>   <span class="codeReserved">src</span>=<span class="codeString">"ungap/custom-elements.js"</span>&gt;</td></tr>
    <tr><td>24</td><td>   &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
    <tr><td>25</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span></td></tr>
-   <tr><td>26</td><td>   src=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+   <tr><td>26</td><td>   <span class="codeReserved">src</span>=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
    <tr><td>27</td><td></td></tr>
    <tr><td>28</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
    <tr><td>29</td><td></td></tr>
@@ -949,63 +953,52 @@
    <tr><td>44</td><td></td></tr>
    <tr><td>45</td><td> &lt;<span class="codeReserved">main</span>&gt;</td></tr>
    <tr><td>46</td><td></td></tr>
-   <tr><td>47</td><td>  &lt;<span class="codeReserved">md-filled-text-field</span> value=<span class="codeString">"Saludo"</span>&gt;</td></tr>
-   <tr><td>48</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"saludo"</span>&gt;</td></tr>
-   <tr><td>49</td><td>    Saludo</td></tr>
-   <tr><td>50</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
-   <tr><td>51</td><td>   &lt;<span class="codeReserved">output</span> id=<span class="codeString">"saludo"</span></td></tr>
-   <tr><td>52</td><td>     slot=<span class="codeString">"input-text"</span>&gt;&lt;/<span class="codeReserved">output</span>&gt;</td></tr>
-   <tr><td>53</td><td>  &lt;/<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
-   <tr><td>54</td><td></td></tr>
-   <tr><td>55</td><td>  &lt;<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
-   <tr><td>56</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"nombre"</span>&gt;</td></tr>
-   <tr><td>57</td><td>    Nombre*</td></tr>
-   <tr><td>58</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
-   <tr><td>59</td><td>   &lt;<span class="codeReserved">input</span> id=<span class="codeString">"nombre"</span> required</td></tr>
-   <tr><td>60</td><td>     slot=<span class="codeString">"input-text"</span>&gt;</td></tr>
-   <tr><td>61</td><td>   &lt;<span class="codeReserved">small</span> slot=<span class="codeString">"supporting"</span>&gt;</td></tr>
-   <tr><td>62</td><td>    *Requerido</td></tr>
-   <tr><td>63</td><td>   &lt;/<span class="codeReserved">small</span>&gt;</td></tr>
-   <tr><td>64</td><td>  &lt;/<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
-   <tr><td>65</td><td></td></tr>
-   <tr><td>66</td><td>  &lt;<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
-   <tr><td>67</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"email"</span> accesskey=<span class="codeString">"M"</span>&gt;</td></tr>
-   <tr><td>68</td><td>    Email</td></tr>
-   <tr><td>69</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
-   <tr><td>70</td><td>   &lt;<span class="codeReserved">input</span> id=<span class="codeString">"email"</span> type=<span class="codeString">"email"</span></td></tr>
-   <tr><td>71</td><td>     slot=<span class="codeString">"input-text"</span></td></tr>
-   <tr><td>72</td><td>     oninput=<span class="codeString">"</span></td></tr>
-   <tr><td>73</td><td><span class="codeString">      campoDireccion.value =</span></td></tr>
-   <tr><td>74</td><td><span class="codeString">       <span class="codeReserved">this</span>.value"</span>&gt;</td></tr>
-   <tr><td>75</td><td>  &lt;/<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
+   <tr><td>47</td><td></td></tr>
+   <tr><td>48</td><td>  <span class="codeComment">&lt;!-- Usa <span class="codeReserved">class</span>=&quot;float&quot; cuando</span></td></tr>
+   <tr><td>49</td><td><span class="codeComment">   quieras que la etiqueta esté</span></td></tr>
+   <tr><td>50</td><td><span class="codeComment">   arriba todo el tiempo. --&gt;</span></td></tr>
+   <tr><td>51</td><td>  &lt;<span class="codeReserved">p</span> <span class="codeReserved">class</span>=<span class="codeString">"md-filled-text-field float"</span>&gt;</td></tr>
+   <tr><td>52</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"saludo"</span>&gt;Saludo&lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+   <tr><td>53</td><td>   &lt;<span class="codeReserved">output</span> id=<span class="codeString">"saludo"</span>&gt;Saludo&lt;/<span class="codeReserved">output</span>&gt;</td></tr>
+   <tr><td>54</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>55</td><td></td></tr>
+   <tr><td>56</td><td>  &lt;<span class="codeReserved">p</span> <span class="codeReserved">class</span>=<span class="codeString">"md-filled-text-field"</span>&gt;</td></tr>
+   <tr><td>57</td><td>   &lt;<span class="codeReserved">input</span> id=<span class="codeString">"nombre"</span> required</td></tr>
+   <tr><td>58</td><td>     placeholder=<span class="codeString">"Nombre*"</span>&gt;</td></tr>
+   <tr><td>59</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"nombre"</span>&gt;Nombre*&lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+   <tr><td>60</td><td>   &lt;<span class="codeReserved">small</span>&gt;*Requerido&lt;/<span class="codeReserved">small</span>&gt;</td></tr>
+   <tr><td>61</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>62</td><td></td></tr>
+   <tr><td>63</td><td>  &lt;<span class="codeReserved">p</span> <span class="codeReserved">class</span>=<span class="codeString">"md-filled-text-field"</span>&gt;</td></tr>
+   <tr><td>64</td><td>   &lt;<span class="codeReserved">input</span> id=<span class="codeString">"email"</span> type=<span class="codeString">"email"</span></td></tr>
+   <tr><td>65</td><td>     placeholder=<span class="codeString">"Email"</span>&gt;</td></tr>
+   <tr><td>66</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"email"</span> accesskey=<span class="codeString">"M"</span>&gt;</td></tr>
+   <tr><td>67</td><td>    Email</td></tr>
+   <tr><td>68</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+   <tr><td>69</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>70</td><td></td></tr>
+   <tr><td>71</td><td>  &lt;<span class="codeReserved">p</span> <span class="codeReserved">class</span>=<span class="codeString">"md-filled-text-field float"</span>&gt;</td></tr>
+   <tr><td>72</td><td>   &lt;<span class="codeReserved">input</span> id=<span class="codeString">"fecha"</span> type=<span class="codeString">"date"</span></td></tr>
+   <tr><td>73</td><td>     placeholder=<span class="codeString">"Fecha"</span>&gt;</td></tr>
+   <tr><td>74</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"fecha"</span>&gt;Fecha&lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+   <tr><td>75</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
    <tr><td>76</td><td></td></tr>
-   <tr><td>77</td><td>  <span class="codeComment">&lt;!-- Usa <span class="codeReserved">class</span>=&quot;float&quot; cuando</span></td></tr>
-   <tr><td>78</td><td><span class="codeComment">   quieras que la etiqueta esté</span></td></tr>
-   <tr><td>79</td><td><span class="codeComment">   arriba todo el tiempo. --&gt;</span></td></tr>
-   <tr><td>80</td><td>  &lt;<span class="codeReserved">md-filled-text-field</span> <span class="codeReserved">class</span>=<span class="codeString">"float"</span>&gt;</td></tr>
-   <tr><td>81</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"fecha"</span>&gt;</td></tr>
-   <tr><td>82</td><td>    Fecha</td></tr>
+   <tr><td>77</td><td>  &lt;<span class="codeReserved">p</span> <span class="codeReserved">class</span>=<span class="codeString">"md-filled-text-field"</span>&gt;</td></tr>
+   <tr><td>78</td><td>   &lt;<span class="codeReserved">textarea</span> id=<span class="codeString">"direccion"</span></td></tr>
+   <tr><td>79</td><td>     placeholder=<span class="codeString">"Dirección"</span></td></tr>
+   <tr><td>80</td><td>     rows=<span class="codeString">"3"</span>&gt;&lt;/<span class="codeReserved">textarea</span>&gt;</td></tr>
+   <tr><td>81</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"direccion"</span>&gt;</td></tr>
+   <tr><td>82</td><td>    Dirección</td></tr>
    <tr><td>83</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
-   <tr><td>84</td><td>   &lt;<span class="codeReserved">input</span> id=<span class="codeString">"fecha"</span> type=<span class="codeString">"date"</span></td></tr>
-   <tr><td>85</td><td>     slot=<span class="codeString">"input-text"</span>&gt;</td></tr>
-   <tr><td>86</td><td>  &lt;/<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
+   <tr><td>84</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>85</td><td></td></tr>
+   <tr><td>86</td><td> &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
    <tr><td>87</td><td></td></tr>
-   <tr><td>88</td><td>  &lt;<span class="codeReserved">md-filled-text-field</span></td></tr>
-   <tr><td>89</td><td>    id=<span class="codeString">"campoDireccion"</span>&gt;</td></tr>
-   <tr><td>90</td><td>   &lt;<span class="codeReserved">label</span> <span class="codeReserved">for</span>=<span class="codeString">"direccion"</span>&gt;</td></tr>
-   <tr><td>91</td><td>    Dirección</td></tr>
-   <tr><td>92</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
-   <tr><td>93</td><td>   &lt;<span class="codeReserved">textarea</span> id=<span class="codeString">"direccion"</span> rows=<span class="codeString">"3"</span></td></tr>
-   <tr><td>94</td><td>     slot=<span class="codeString">"input-text"</span>&gt;&lt;/<span class="codeReserved">textarea</span>&gt;</td></tr>
-   <tr><td>95</td><td>  &lt;/<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
-   <tr><td>96</td><td></td></tr>
-   <tr><td>97</td><td> &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
-   <tr><td>98</td><td></td></tr>
-   <tr><td>99</td><td> &lt;<span class="codeReserved">nav-drw</span> id=<span class="codeString">"nav"</span>&gt;&lt;/<span class="codeReserved">nav-drw</span>&gt;</td></tr>
-   <tr><td>100</td><td></td></tr>
-   <tr><td>101</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
-   <tr><td>102</td><td></td></tr>
-   <tr><td>103</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+   <tr><td>88</td><td> &lt;<span class="codeReserved">nav-drw</span> id=<span class="codeString">"nav"</span>&gt;&lt;/<span class="codeReserved">nav-drw</span>&gt;</td></tr>
+   <tr><td>89</td><td></td></tr>
+   <tr><td>90</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+   <tr><td>91</td><td></td></tr>
+   <tr><td>92</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
   </tbody>
  </table>
 </div>

@@ -15,28 +15,17 @@
    <p>
     Coloca el elemento <code class="language-html">md-select-menu</code> con
     <code class="language-html">slot="input-text"</code>,
-    dentro de un <code class="language-html">md-filled-text-field</code>.
+    dentro de un
+    <code class="language-html">&lt;p class="md-filled-text-field"&gt;</code>.
     Usa un <code class="language-html">span</code> cono etiqueta.
-   </p>
-  </li>
-  <li>
-   <p>
-    Para las opciones usa el elemento personalizado
-    <dfn>md-options-menu</dfn>, definido con la clase
-    <dfn>MdOptionMenu</dfn>.
-    Dentro de él coloca elementos tipo
-    <code class="language-html">label</code>
-    que en su interior llevan
-    <code class="language-html">input type="radio"</code> y el texto de la
-    opción.
    </p>
   </li>
   <li>
    <p>
     Para asignar un valor inicial, usa el atributo
     <code class="language-html">value</code>
-    del
-    <code class="language-html">md-filled-text-field</code>.
+    al
+    <code class="language-html">md-select-menu</code>.
    </p>
   </li>
   <li>
@@ -46,6 +35,18 @@
     <code class="language-html">required</code>
     al
     <code class="language-html">md-select-menu</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para las opciones usa el elemento personalizado
+    <dfn>md-options-menu</dfn>, definido con la clase
+    <dfn>MdOptionMenu</dfn>.
+    Dentro de él coloca elementos tipo
+    <code class="language-html">span</code>
+    que indican el value de la opción con el atributo
+    <code class="language-html">data-value</code> y cuyo contenido es el texto
+    de la opción.
    </p>
   </li>
  </ul>
@@ -94,77 +95,77 @@
    <tr><td>20</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span></td></tr>
    <tr><td>21</td><td>   href=<span class="codeString">"css/estilos.css"</span>&gt;</td></tr>
    <tr><td>22</td><td> &lt;<span class="codeReserved">script</span></td></tr>
-   <tr><td>23</td><td>   src=<span class="codeString">"ungap/custom-elements.js"</span>&gt;</td></tr>
+   <tr><td>23</td><td>   <span class="codeReserved">src</span>=<span class="codeString">"ungap/custom-elements.js"</span>&gt;</td></tr>
    <tr><td>24</td><td>   &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
    <tr><td>25</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span></td></tr>
-   <tr><td>26</td><td>   src=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+   <tr><td>26</td><td>   <span class="codeReserved">src</span>=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
    <tr><td>27</td><td></td></tr>
    <tr><td>28</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
    <tr><td>29</td><td></td></tr>
    <tr><td>30</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
    <tr><td>31</td><td></td></tr>
-   <tr><td>32</td><td> &lt;<span class="codeReserved">md-top-app-bar</span>&gt;</td></tr>
+   <tr><td>32</td><td> &lt;<span class="codeReserved">form</span>&gt;</td></tr>
    <tr><td>33</td><td></td></tr>
-   <tr><td>34</td><td>  &lt;<span class="codeReserved">h1</span>&gt;Select&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+   <tr><td>34</td><td>  &lt;<span class="codeReserved">md-top-app-bar</span>&gt;</td></tr>
    <tr><td>35</td><td></td></tr>
-   <tr><td>36</td><td>  &lt;<span class="codeReserved">button</span> is=<span class="codeString">"md-menu-button"</span></td></tr>
-   <tr><td>37</td><td>    slot=<span class="codeString">"navigation"</span></td></tr>
-   <tr><td>38</td><td>    onclick=<span class="codeString">"nav.abre()"</span>&gt;&lt;/<span class="codeReserved">button</span>&gt;</td></tr>
-   <tr><td>39</td><td></td></tr>
-   <tr><td>40</td><td> &lt;/<span class="codeReserved">md-top-app-bar</span>&gt;</td></tr>
+   <tr><td>36</td><td>   &lt;<span class="codeReserved">h1</span>&gt;Select&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+   <tr><td>37</td><td></td></tr>
+   <tr><td>38</td><td>   &lt;<span class="codeReserved">button</span> is=<span class="codeString">"md-menu-button"</span></td></tr>
+   <tr><td>39</td><td>     slot=<span class="codeString">"navigation"</span></td></tr>
+   <tr><td>40</td><td>     onclick=<span class="codeString">"nav.abre()"</span>&gt;&lt;/<span class="codeReserved">button</span>&gt;</td></tr>
    <tr><td>41</td><td></td></tr>
-   <tr><td>42</td><td> &lt;<span class="codeReserved">main</span>&gt;</td></tr>
+   <tr><td>42</td><td>  &lt;/<span class="codeReserved">md-top-app-bar</span>&gt;</td></tr>
    <tr><td>43</td><td></td></tr>
-   <tr><td>44</td><td>  &lt;<span class="codeReserved">md-filled-text-field</span></td></tr>
-   <tr><td>45</td><td>    id=<span class="codeString">"campoGrupo"</span></td></tr>
-   <tr><td>46</td><td>    <span class="codeReserved">class</span>=<span class="codeString">"nopadding"</span> value=<span class="codeString">"IC22"</span>&gt;</td></tr>
-   <tr><td>47</td><td>   &lt;<span class="codeReserved">span</span> id=<span class="codeString">"etiquetaGrupo"</span></td></tr>
-   <tr><td>48</td><td>     accesskey=<span class="codeString">"G"</span>&gt;</td></tr>
-   <tr><td>49</td><td>    Grupo*</td></tr>
-   <tr><td>50</td><td>   &lt;/<span class="codeReserved">span</span>&gt;</td></tr>
-   <tr><td>51</td><td>   &lt;<span class="codeReserved">md-select-menu</span> id=<span class="codeString">"selectGrupo"</span></td></tr>
-   <tr><td>52</td><td>     slot=<span class="codeString">"input-text"</span> required</td></tr>
-   <tr><td>53</td><td>     aria-labelledby=<span class="codeString">"etiquetaGrupo"</span></td></tr>
-   <tr><td>54</td><td>     options=<span class="codeString">"opcionesDeGrupo"</span>&gt;</td></tr>
-   <tr><td>55</td><td>   &lt;/<span class="codeReserved">md-select-menu</span>&gt;</td></tr>
-   <tr><td>56</td><td>   &lt;<span class="codeReserved">small</span> slot=<span class="codeString">"supporting"</span>&gt;</td></tr>
-   <tr><td>57</td><td>    *Requerido</td></tr>
-   <tr><td>58</td><td>   &lt;/<span class="codeReserved">small</span>&gt;</td></tr>
-   <tr><td>59</td><td>  &lt;/<span class="codeReserved">md-filled-text-field</span>&gt;</td></tr>
-   <tr><td>60</td><td></td></tr>
-   <tr><td>61</td><td> &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
-   <tr><td>62</td><td></td></tr>
-   <tr><td>63</td><td> &lt;<span class="codeReserved">md-options-menu</span></td></tr>
-   <tr><td>64</td><td>   id=<span class="codeString">"opcionesDeGrupo"</span></td></tr>
-   <tr><td>65</td><td>   aria-label=<span class="codeString">"Opciones de grupo"</span>&gt;</td></tr>
+   <tr><td>44</td><td>  &lt;<span class="codeReserved">main</span>&gt;</td></tr>
+   <tr><td>45</td><td></td></tr>
+   <tr><td>46</td><td>   &lt;<span class="codeReserved">p</span> <span class="codeReserved">class</span>=<span class="codeString">"md-filled-text-field"</span>&gt;</td></tr>
+   <tr><td>47</td><td>    &lt;<span class="codeReserved">md-select-menu</span> name=<span class="codeString">"grupo"</span></td></tr>
+   <tr><td>48</td><td>      required</td></tr>
+   <tr><td>49</td><td>      aria-labelledby=<span class="codeString">"etiquetaGrupo"</span></td></tr>
+   <tr><td>50</td><td>      options=<span class="codeString">"opcionesDeGrupo"</span></td></tr>
+   <tr><td>51</td><td>      value=<span class="codeString">"IC21"</span>&gt;</td></tr>
+   <tr><td>52</td><td>    &lt;/<span class="codeReserved">md-select-menu</span>&gt;</td></tr>
+   <tr><td>53</td><td>    &lt;<span class="codeReserved">span</span> id=<span class="codeString">"etiquetaGrupo"</span></td></tr>
+   <tr><td>54</td><td>      accesskey=<span class="codeString">"G"</span>&gt;</td></tr>
+   <tr><td>55</td><td>     Grupo*</td></tr>
+   <tr><td>56</td><td>    &lt;/<span class="codeReserved">span</span>&gt;</td></tr>
+   <tr><td>57</td><td>    &lt;<span class="codeReserved">small</span>&gt;*Requerido&lt;/<span class="codeReserved">small</span>&gt;</td></tr>
+   <tr><td>58</td><td>   &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>59</td><td></td></tr>
+   <tr><td>60</td><td>   &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>61</td><td>    &lt;<span class="codeReserved">button</span> <span class="codeReserved">class</span>=<span class="codeString">"md-filled-button"</span></td></tr>
+   <tr><td>62</td><td>      style=<span class="codeString">"<span class="codeReserved">width</span>: 100%;"</span>&gt;</td></tr>
+   <tr><td>63</td><td>     Enviar</td></tr>
+   <tr><td>64</td><td>    &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+   <tr><td>65</td><td>   &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
    <tr><td>66</td><td></td></tr>
-   <tr><td>67</td><td>  &lt;<span class="codeReserved">label</span>&gt;</td></tr>
-   <tr><td>68</td><td>   &lt;<span class="codeReserved">input</span> type=<span class="codeString">"radio"</span></td></tr>
-   <tr><td>69</td><td>     name=<span class="codeString">"grupo"</span> value=<span class="codeReserved">""</span></td></tr>
-   <tr><td>70</td><td>     title=<span class="codeString">"Selecciona opción"</span>&gt;</td></tr>
-   <tr><td>71</td><td>  &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+   <tr><td>67</td><td>  &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
+   <tr><td>68</td><td></td></tr>
+   <tr><td>69</td><td>  &lt;<span class="codeReserved">md-options-menu</span></td></tr>
+   <tr><td>70</td><td>    id=<span class="codeString">"opcionesDeGrupo"</span></td></tr>
+   <tr><td>71</td><td>    aria-label=<span class="codeString">"Opciones de grupo"</span>&gt;</td></tr>
    <tr><td>72</td><td></td></tr>
-   <tr><td>73</td><td>  &lt;<span class="codeReserved">label</span>&gt;</td></tr>
-   <tr><td>74</td><td>   &lt;<span class="codeReserved">input</span> type=<span class="codeString">"radio"</span></td></tr>
-   <tr><td>75</td><td>     name=<span class="codeString">"grupo"</span> value=<span class="codeString">"IC21"</span>&gt;</td></tr>
-   <tr><td>76</td><td>   IC-21</td></tr>
-   <tr><td>77</td><td>  &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
-   <tr><td>78</td><td></td></tr>
-   <tr><td>79</td><td>  &lt;<span class="codeReserved">label</span>&gt;</td></tr>
-   <tr><td>80</td><td>   &lt;<span class="codeReserved">input</span> type=<span class="codeString">"radio"</span></td></tr>
-   <tr><td>81</td><td>     name=<span class="codeString">"grupo"</span> value=<span class="codeString">"IC22"</span>&gt;</td></tr>
-   <tr><td>82</td><td>   IC-22</td></tr>
-   <tr><td>83</td><td>  &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+   <tr><td>73</td><td>   &lt;<span class="codeReserved">span</span> data-value=<span class="codeString">""</span></td></tr>
+   <tr><td>74</td><td>     title=<span class="codeString">"Selecciona opción"</span>&gt;</td></tr>
+   <tr><td>75</td><td>   &lt;/<span class="codeReserved">span</span>&gt;</td></tr>
+   <tr><td>76</td><td></td></tr>
+   <tr><td>77</td><td>   &lt;<span class="codeReserved">span</span> data-value=<span class="codeString">"IC21"</span>&gt;</td></tr>
+   <tr><td>78</td><td>    IC-21</td></tr>
+   <tr><td>79</td><td>   &lt;/<span class="codeReserved">span</span>&gt;</td></tr>
+   <tr><td>80</td><td></td></tr>
+   <tr><td>81</td><td>   &lt;<span class="codeReserved">span</span> data-value=<span class="codeString">"IC22"</span>&gt;</td></tr>
+   <tr><td>82</td><td>    IC-22</td></tr>
+   <tr><td>83</td><td>   &lt;/<span class="codeReserved">span</span>&gt;</td></tr>
    <tr><td>84</td><td></td></tr>
-   <tr><td>85</td><td>  &lt;<span class="codeReserved">label</span>&gt;</td></tr>
-   <tr><td>86</td><td>   &lt;<span class="codeReserved">input</span> type=<span class="codeString">"radio"</span></td></tr>
-   <tr><td>87</td><td>     name=<span class="codeString">"grupo"</span> value=<span class="codeString">"IC23"</span>&gt;</td></tr>
-   <tr><td>88</td><td>   IC-23</td></tr>
-   <tr><td>89</td><td>  &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+   <tr><td>85</td><td>   &lt;<span class="codeReserved">span</span> data-value=<span class="codeString">"IC23"</span>&gt;</td></tr>
+   <tr><td>86</td><td>    IC-23</td></tr>
+   <tr><td>87</td><td>   &lt;/<span class="codeReserved">span</span>&gt;</td></tr>
+   <tr><td>88</td><td></td></tr>
+   <tr><td>89</td><td>  &lt;/<span class="codeReserved">md-options-menu</span>&gt;</td></tr>
    <tr><td>90</td><td></td></tr>
-   <tr><td>91</td><td> &lt;/<span class="codeReserved">md-options-menu</span>&gt;</td></tr>
+   <tr><td>91</td><td>  &lt;<span class="codeReserved">nav-drw</span> id=<span class="codeString">"nav"</span>&gt;&lt;/<span class="codeReserved">nav-drw</span>&gt;</td></tr>
    <tr><td>92</td><td></td></tr>
-   <tr><td>93</td><td> &lt;<span class="codeReserved">nav-drw</span> id=<span class="codeString">"nav"</span>&gt;&lt;/<span class="codeReserved">nav-drw</span>&gt;</td></tr>
+   <tr><td>93</td><td> &lt;/<span class="codeReserved">form</span>&gt;</td></tr>
    <tr><td>94</td><td></td></tr>
    <tr><td>95</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
    <tr><td>96</td><td></td></tr>
@@ -186,7 +187,8 @@
   <li>
    <p>
     Los menús en Material Design están definidos en
-    <a href="https://m3.material.io/components/menus/overview" rel="noopener noreferrer"
+    <a href="https://m3.material.io/components/menus/overview"
+      rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/menus/overview</a>.
    </p>
   </li>

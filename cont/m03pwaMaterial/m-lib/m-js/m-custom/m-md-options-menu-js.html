@@ -41,89 +41,78 @@
   <tr><td>31</td><td>  <span class="codeReserved">this</span>._slot = querySelector(shadow, <span class="codeString">"slot"</span>)</td></tr>
   <tr><td>32</td><td>  <span class="codeComment">/**</span></td></tr>
   <tr><td>33</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
-  <tr><td>34</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> { {</span></td></tr>
-  <tr><td>35</td><td><span class="codeComment">   *   label:HTMLLabelElement,</span></td></tr>
-  <tr><td>36</td><td><span class="codeComment">   *   input: HTMLInputElement }[] }</span></td></tr>
-  <tr><td>37</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>38</td><td>  <span class="codeReserved">this</span>._opciones = []</td></tr>
-  <tr><td>39</td><td>  <span class="codeReserved">this</span>._slot.addEventListener(<span class="codeString">"slotchange"</span>, <span class="codeReserved">this</span>._configuraOpciones)</td></tr>
-  <tr><td>40</td><td> }</td></tr>
-  <tr><td>41</td><td></td></tr>
-  <tr><td>42</td><td> connectedCallback() {</td></tr>
-  <tr><td>43</td><td>  <span class="codeReserved">this</span>.classList.add(<span class="codeString">"md-menu"</span>)</td></tr>
-  <tr><td>44</td><td>  <span class="codeReserved">this</span>.hidden = <span class="codeReserved">true</span></td></tr>
-  <tr><td>45</td><td>  <span class="codeReserved">this</span>.role = <span class="codeString">"listbox"</span></td></tr>
-  <tr><td>46</td><td> }</td></tr>
-  <tr><td>47</td><td></td></tr>
-  <tr><td>48</td><td> <span class="codeComment">/**</span></td></tr>
-  <tr><td>49</td><td><span class="codeComment">  * <span class="codeReserved">@returns</span> { readonly Readonly&lt;{</span></td></tr>
-  <tr><td>50</td><td><span class="codeComment">  *   label:HTMLLabelElement,</span></td></tr>
-  <tr><td>51</td><td><span class="codeComment">  *   input: HTMLInputElement }&gt;[]}</span></td></tr>
-  <tr><td>52</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>53</td><td> get opciones() {</td></tr>
-  <tr><td>54</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">this</span>._opciones</td></tr>
-  <tr><td>55</td><td> }</td></tr>
-  <tr><td>56</td><td></td></tr>
-  <tr><td>57</td><td> get seleccion() {</td></tr>
-  <tr><td>58</td><td>  <span class="codeComment">/** <span class="codeReserved">@type</span> { HTMLInputElement | <span class="codeReserved">null</span> } */</span></td></tr>
-  <tr><td>59</td><td>  <span class="codeReserved">const</span> seleccionado = <span class="codeReserved">this</span>.querySelector(<span class="codeString">":checked"</span>)</td></tr>
-  <tr><td>60</td><td>  <span class="codeReserved">return</span> seleccionado === <span class="codeReserved">null</span> ? <span class="codeReserved">""</span> : seleccionado.value</td></tr>
-  <tr><td>61</td><td> }</td></tr>
-  <tr><td>62</td><td></td></tr>
-  <tr><td>63</td><td> _configuraOpciones() {</td></tr>
-  <tr><td>64</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>65</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> { {</span></td></tr>
-  <tr><td>66</td><td><span class="codeComment">  *   label:HTMLLabelElement,</span></td></tr>
-  <tr><td>67</td><td><span class="codeComment">  *   input: HTMLInputElement }[] }</span></td></tr>
-  <tr><td>68</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>69</td><td>  <span class="codeReserved">const</span> opciones = []</td></tr>
-  <tr><td>70</td><td>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> label of <span class="codeReserved">this</span>._slot.assignedElements()) {</td></tr>
-  <tr><td>71</td><td>   <span class="codeReserved">if</span> (label <span class="codeReserved">instanceof</span> HTMLLabelElement) {</td></tr>
-  <tr><td>72</td><td>    <span class="codeReserved">const</span> input = querySelector(label, <span class="codeString">`input[type=&quot;radio&quot;]`</span>)</td></tr>
-  <tr><td>73</td><td>    <span class="codeReserved">if</span> (input <span class="codeReserved">instanceof</span> HTMLInputElement) {</td></tr>
-  <tr><td>74</td><td>     input.role = <span class="codeString">"option"</span></td></tr>
-  <tr><td>75</td><td>     opciones.push({ label, input })</td></tr>
-  <tr><td>76</td><td>    }</td></tr>
-  <tr><td>77</td><td>   }</td></tr>
-  <tr><td>78</td><td>  }</td></tr>
-  <tr><td>79</td><td>  <span class="codeReserved">this</span>._opciones = opciones</td></tr>
+  <tr><td>34</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> { HTMLElement[] }</span></td></tr>
+  <tr><td>35</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>36</td><td>  <span class="codeReserved">this</span>._opciones = []</td></tr>
+  <tr><td>37</td><td>  <span class="codeReserved">this</span>._slot.addEventListener(<span class="codeString">"slotchange"</span>, <span class="codeReserved">this</span>._configuraOpciones)</td></tr>
+  <tr><td>38</td><td> }</td></tr>
+  <tr><td>39</td><td></td></tr>
+  <tr><td>40</td><td> connectedCallback() {</td></tr>
+  <tr><td>41</td><td>  <span class="codeReserved">this</span>.classList.add(<span class="codeString">"md-menu"</span>)</td></tr>
+  <tr><td>42</td><td>  <span class="codeReserved">this</span>.hidden = <span class="codeReserved">true</span></td></tr>
+  <tr><td>43</td><td>  <span class="codeReserved">this</span>.role = <span class="codeString">"listbox"</span></td></tr>
+  <tr><td>44</td><td> }</td></tr>
+  <tr><td>45</td><td></td></tr>
+  <tr><td>46</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>47</td><td><span class="codeComment">  * <span class="codeReserved">@returns</span> {readonly Readonly&lt;HTMLElement&gt;[]}</span></td></tr>
+  <tr><td>48</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>49</td><td> get opciones() {</td></tr>
+  <tr><td>50</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">this</span>._opciones</td></tr>
+  <tr><td>51</td><td> }</td></tr>
+  <tr><td>52</td><td></td></tr>
+  <tr><td>53</td><td> get seleccion() {</td></tr>
+  <tr><td>54</td><td>  <span class="codeComment">/** <span class="codeReserved">@type</span> { HTMLInputElement | <span class="codeReserved">null</span> } */</span></td></tr>
+  <tr><td>55</td><td>  <span class="codeReserved">const</span> seleccionado = <span class="codeReserved">this</span>.querySelector(<span class="codeString">".selected"</span>)</td></tr>
+  <tr><td>56</td><td>  <span class="codeReserved">return</span> seleccionado === <span class="codeReserved">null</span> ? <span class="codeString">""</span> : seleccionado.value</td></tr>
+  <tr><td>57</td><td> }</td></tr>
+  <tr><td>58</td><td></td></tr>
+  <tr><td>59</td><td> _configuraOpciones() {</td></tr>
+  <tr><td>60</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>61</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> {HTMLElement[]}</span></td></tr>
+  <tr><td>62</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>63</td><td>  <span class="codeReserved">const</span> opciones = []</td></tr>
+  <tr><td>64</td><td>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> opcion of <span class="codeReserved">this</span>._slot.assignedElements()) {</td></tr>
+  <tr><td>65</td><td>   opcion.role = <span class="codeString">"option"</span></td></tr>
+  <tr><td>66</td><td>   <span class="codeReserved">if</span> (opcion <span class="codeReserved">instanceof</span> HTMLElement) {</td></tr>
+  <tr><td>67</td><td>    opciones.push(opcion)</td></tr>
+  <tr><td>68</td><td>   }</td></tr>
+  <tr><td>69</td><td>  }</td></tr>
+  <tr><td>70</td><td>  <span class="codeReserved">this</span>._opciones = opciones</td></tr>
+  <tr><td>71</td><td> }</td></tr>
+  <tr><td>72</td><td></td></tr>
+  <tr><td>73</td><td> abre() {</td></tr>
+  <tr><td>74</td><td>  abreElementoHtml(<span class="codeReserved">this</span>)</td></tr>
+  <tr><td>75</td><td> }</td></tr>
+  <tr><td>76</td><td></td></tr>
+  <tr><td>77</td><td></td></tr>
+  <tr><td>78</td><td> cierra() {</td></tr>
+  <tr><td>79</td><td>  cierraElementoHtmo(<span class="codeReserved">this</span>)</td></tr>
   <tr><td>80</td><td> }</td></tr>
   <tr><td>81</td><td></td></tr>
-  <tr><td>82</td><td> abre() {</td></tr>
-  <tr><td>83</td><td>  abreElementoHtml(<span class="codeReserved">this</span>)</td></tr>
-  <tr><td>84</td><td> }</td></tr>
-  <tr><td>85</td><td></td></tr>
-  <tr><td>86</td><td></td></tr>
-  <tr><td>87</td><td> cierra() {</td></tr>
-  <tr><td>88</td><td>  cierraElementoHtmo(<span class="codeReserved">this</span>)</td></tr>
-  <tr><td>89</td><td> }</td></tr>
-  <tr><td>90</td><td></td></tr>
-  <tr><td>91</td><td> <span class="codeComment">/**</span></td></tr>
-  <tr><td>92</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} value</span></td></tr>
-  <tr><td>93</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>94</td><td> muestraValue(value) {</td></tr>
-  <tr><td>95</td><td>  <span class="codeReserved">let</span> texto = <span class="codeReserved">""</span></td></tr>
-  <tr><td>96</td><td>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> { label, input } of <span class="codeReserved">this</span>._opciones) {</td></tr>
-  <tr><td>97</td><td>   <span class="codeReserved">if</span> (input.value === value) {</td></tr>
-  <tr><td>98</td><td>    input.checked = <span class="codeReserved">true</span></td></tr>
-  <tr><td>99</td><td>    label.classList.add(<span class="codeString">"selected"</span>)</td></tr>
-  <tr><td>100</td><td>    <span class="codeReserved">let</span> textContent = label.textContent</td></tr>
-  <tr><td>101</td><td>    <span class="codeReserved">if</span> (texto === <span class="codeReserved">""</span> && textContent !== <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>102</td><td>     textContent = textContent.trim()</td></tr>
-  <tr><td>103</td><td>     <span class="codeReserved">if</span> (textContent !== <span class="codeReserved">""</span>) {</td></tr>
-  <tr><td>104</td><td>      texto = textContent</td></tr>
-  <tr><td>105</td><td>     }</td></tr>
-  <tr><td>106</td><td>    }</td></tr>
-  <tr><td>107</td><td>   } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>108</td><td>    input.checked = <span class="codeReserved">false</span></td></tr>
-  <tr><td>109</td><td>    label.classList.remove(<span class="codeString">"selected"</span>)</td></tr>
-  <tr><td>110</td><td>   }</td></tr>
-  <tr><td>111</td><td>  }</td></tr>
-  <tr><td>112</td><td>  <span class="codeReserved">return</span> texto</td></tr>
-  <tr><td>113</td><td> }</td></tr>
-  <tr><td>114</td><td></td></tr>
-  <tr><td>115</td><td>}</td></tr>
-  <tr><td>116</td><td></td></tr>
-  <tr><td>117</td><td>customElements.define(<span class="codeString">"md-options-menu"</span>, MdOptionsMenu)</td></tr>
+  <tr><td>82</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>83</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} value</span></td></tr>
+  <tr><td>84</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>85</td><td> muestraValue(value) {</td></tr>
+  <tr><td>86</td><td>  <span class="codeReserved">let</span> texto = <span class="codeString">""</span></td></tr>
+  <tr><td>87</td><td>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> opcion of <span class="codeReserved">this</span>._opciones) {</td></tr>
+  <tr><td>88</td><td>   <span class="codeReserved">if</span> (opcion.dataset.value === value) {</td></tr>
+  <tr><td>89</td><td>    opcion.classList.add(<span class="codeString">"selected"</span>)</td></tr>
+  <tr><td>90</td><td>    <span class="codeReserved">let</span> textContent = opcion.textContent</td></tr>
+  <tr><td>91</td><td>    <span class="codeReserved">if</span> (texto === <span class="codeString">""</span> && textContent !== <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>92</td><td>     textContent = textContent.trim()</td></tr>
+  <tr><td>93</td><td>     <span class="codeReserved">if</span> (textContent !== <span class="codeString">""</span>) {</td></tr>
+  <tr><td>94</td><td>      texto = textContent</td></tr>
+  <tr><td>95</td><td>     }</td></tr>
+  <tr><td>96</td><td>    }</td></tr>
+  <tr><td>97</td><td>   } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>98</td><td>    opcion.classList.remove(<span class="codeString">"selected"</span>)</td></tr>
+  <tr><td>99</td><td>   }</td></tr>
+  <tr><td>100</td><td>  }</td></tr>
+  <tr><td>101</td><td>  <span class="codeReserved">return</span> texto</td></tr>
+  <tr><td>102</td><td> }</td></tr>
+  <tr><td>103</td><td></td></tr>
+  <tr><td>104</td><td>}</td></tr>
+  <tr><td>105</td><td></td></tr>
+  <tr><td>106</td><td>customElements.define(<span class="codeString">"md-options-menu"</span>, MdOptionsMenu)</td></tr>
  </tbody>
 </table>
