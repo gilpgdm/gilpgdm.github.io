@@ -58,11 +58,12 @@
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
   --shadowTitulo: 3px 1px 2px black;
-  --colTitulo: #bae397;
-  --colTituloFondo: #609732;
-  --colPrincipalTituloStrong: white;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
   --colAStrong: var(--colLetra);
-  --colNavH1Sel: #b35f7c;
+  /* --colNavH1Sel: #b35f7c; */
   --colFondoNav: var(--colFondo);
   --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
@@ -125,8 +126,9 @@
    --colFondoAVisitedPushActive: #983351;
    --colSombra: #00000080;
    --colTitulo: #e3f5d4;
-   --colTituloFondo: #7db84d;
-   --colNavH1Sel: #d37290;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
    --colFondoNavSel: #7a3059;
    --colScrollbar: #616161;
    --colThumb: #ffffff;
@@ -567,9 +569,6 @@
  }
 
  @media print {
-  h1 {
-   text-shadow: var(--shadowTitulo);
-  }
 
   .codeShow button {
    display: none;
@@ -668,7 +667,6 @@
  #principal>h1:not(.default) {
   margin-top: var(--marginTop);
   padding: var(--h1PadTop) 1rem 1rem 1rem;
-  text-shadow: var(--shadowTitulo);
   color: var(--colTitulo);
   background-color: var(--colTituloFondo);
  }
@@ -726,23 +724,8 @@
   color: var(--colAStrong);
  }
 
- #nav h1 a {
-  color: var(--colTitulo);
-  background-color: var(--colTituloFondo);
-  text-shadow: var(--shadowTitulo);
- }
-
  #nav a.actual {
   background-color: var(--colFondoNavSel);
- }
-
- #nav h1 a.actual {
-  background-color: var(--colNavH1Sel);
- }
-
- #nav h1 a.actual code,
- #nav h1 a.actual strong {
-  color: var(--colPrincipalTituloStrong);
  }
 
  @media screen and (max-width: 999px) {
@@ -857,15 +840,15 @@
    <p><a href="m-modifica-html.html">modifica.html</a></p>
   </li>
   <li>
-   <p><a href="m-render-js.html">render.js</a></p>
-  </li>
-  <li>
    <p><a href="m-sw-js.html">sw.js</a></p>
   </li>
     <li>
      <details>
       <summary>error</summary>
       <ul>
+  <li>
+   <p><a href="m-error/m-datosnojson-html.html">datosnojson.html</a></p>
+  </li>
   <li>
    <p><a href="m-error/m-eliminadoincorrecto-html.html">eliminadoincorrecto.html</a></p>
   </li>
@@ -930,13 +913,13 @@
       <summary>modelo</summary>
       <ul>
   <li>
-   <p><a href="m-js/m-modelo/m-leePasatiempo-js.html">leePasatiempo.js</a></p>
-  </li>
-  <li>
    <p><a href="m-js/m-modelo/m-Pasatiempo-js.html">Pasatiempo.js</a></p>
   </li>
   <li>
-   <p><a href="m-js/m-modelo/m-validaQueTengaLasPropiedadesDePasatiempo-js.html">validaQueTengaLasPropiedadesDePasatiempo.js</a></p>
+   <p><a href="m-js/m-modelo/m-recuperaPasatiempo-js.html">recuperaPasatiempo.js</a></p>
+  </li>
+  <li>
+   <p><a href="m-js/m-modelo/m-validaPasatiempo-js.html">validaPasatiempo.js</a></p>
   </li>
       </ul>
      </details>
@@ -959,16 +942,13 @@
    <p><a href="m-lib/m-js/m-bdEjecuta-js.html">bdEjecuta.js</a></p>
   </li>
   <li>
-   <p><a href="m-lib/m-js/m-confirmaEliminar-js.html">confirmaEliminar.js</a></p>
+   <p><a href="m-lib/m-js/m-consumeJson-js.html">consumeJson.js</a></p>
   </li>
   <li>
    <p><a href="m-lib/m-js/m-enviaJson-js.html">enviaJson.js</a></p>
   </li>
   <li>
-   <p><a href="m-lib/m-js/m-invocaServicio-js.html">invocaServicio.js</a></p>
-  </li>
-  <li>
-   <p><a href="m-lib/m-js/m-JsonResponse-js.html">JsonResponse.js</a></p>
+   <p><a href="m-lib/m-js/m-htmlentities-js.html">htmlentities.js</a></p>
   </li>
   <li>
    <p><a href="m-lib/m-js/m-muestraError-js.html">muestraError.js</a></p>
@@ -990,19 +970,37 @@
       <summary>php</summary>
       <ul>
   <li>
-   <p><a href="m-lib/m-php/m-ejecutaServicio-php.html">ejecutaServicio.php</a></p>
+   <p><a href="m-lib/m-php/m-BAD_REQUEST-php.html">BAD_REQUEST.php</a></p>
   </li>
   <li>
-   <p><a href="m-lib/m-php/m-JsonResponse-php.html">JsonResponse.php</a></p>
+   <p><a href="m-lib/m-php/m-devuelveErrorInterno-php.html">devuelveErrorInterno.php</a></p>
   </li>
   <li>
-   <p><a href="m-lib/m-php/m-leeJson-php.html">leeJson.php</a></p>
+   <p><a href="m-lib/m-php/m-devuelveJson-php.html">devuelveJson.php</a></p>
+  </li>
+  <li>
+   <p><a href="m-lib/m-php/m-devuelveProblemDetails-php.html">devuelveProblemDetails.php</a></p>
+  </li>
+  <li>
+   <p><a href="m-lib/m-php/m-devuelveResultadoNoJson-php.html">devuelveResultadoNoJson.php</a></p>
+  </li>
+  <li>
+   <p><a href="m-lib/m-php/m-fetch-php.html">fetch.php</a></p>
+  </li>
+  <li>
+   <p><a href="m-lib/m-php/m-fetchAll-php.html">fetchAll.php</a></p>
+  </li>
+  <li>
+   <p><a href="m-lib/m-php/m-INTERNAL_SERVER_ERROR-php.html">INTERNAL_SERVER_ERROR.php</a></p>
   </li>
   <li>
    <p><a href="m-lib/m-php/m-ProblemDetails-php.html">ProblemDetails.php</a></p>
   </li>
   <li>
-   <p><a href="m-lib/m-php/m-recibeFetchAll-php.html">recibeFetchAll.php</a></p>
+   <p><a href="m-lib/m-php/m-recuperaJson-php.html">recuperaJson.php</a></p>
+  </li>
+  <li>
+   <p><a href="m-lib/m-php/m-validaJson-php.html">validaJson.php</a></p>
   </li>
       </ul>
      </details>
@@ -1015,7 +1013,7 @@
       <summary>srv</summary>
       <ul>
   <li>
-   <p><a href="m-srv/m-srvSincro-php.html">srvSincro.php</a></p>
+   <p><a href="m-srv/m-sincroniza-php.html">sincroniza.php</a></p>
   </li>
     <li>
      <details>
@@ -1023,9 +1021,6 @@
       <ul>
   <li>
    <p><a href="m-srv/m-bd/m-Bd-php.html">Bd.php</a></p>
-  </li>
-  <li>
-   <p><a href="m-srv/m-bd/m-bdCrea-php.html">bdCrea.php</a></p>
   </li>
   <li>
    <p><a href="m-srv/m-bd/m-pasatiempoAgrega-php.html">pasatiempoAgrega.php</a></p>
@@ -1047,10 +1042,10 @@
       <summary>modelo</summary>
       <ul>
   <li>
-   <p><a href="m-srv/m-modelo/m-leePasatiempo-php.html">leePasatiempo.php</a></p>
+   <p><a href="m-srv/m-modelo/m-Pasatiempo-php.html">Pasatiempo.php</a></p>
   </li>
   <li>
-   <p><a href="m-srv/m-modelo/m-Pasatiempo-php.html">Pasatiempo.php</a></p>
+   <p><a href="m-srv/m-modelo/m-recuperaPasatiempo-php.html">recuperaPasatiempo.php</a></p>
   </li>
       </ul>
      </details>

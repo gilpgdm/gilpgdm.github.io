@@ -57,11 +57,12 @@
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
   --shadowTitulo: 3px 1px 2px black;
-  --colTitulo: #bae397;
-  --colTituloFondo: #609732;
-  --colPrincipalTituloStrong: white;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
   --colAStrong: var(--colLetra);
-  --colNavH1Sel: #b35f7c;
+  /* --colNavH1Sel: #b35f7c; */
   --colFondoNav: var(--colFondo);
   --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
@@ -124,8 +125,9 @@
    --colFondoAVisitedPushActive: #983351;
    --colSombra: #00000080;
    --colTitulo: #e3f5d4;
-   --colTituloFondo: #7db84d;
-   --colNavH1Sel: #d37290;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
    --colFondoNavSel: #7a3059;
    --colScrollbar: #616161;
    --colThumb: #ffffff;
@@ -566,9 +568,6 @@
  }
 
  @media print {
-  h1 {
-   text-shadow: var(--shadowTitulo);
-  }
 
   .codeShow button {
    display: none;
@@ -916,7 +915,7 @@
  </caption>
  <tbody>
   <tr><td>1</td><td><span class="codeReserved">import</span> { bdConsulta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdConsulta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { leePasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/leePasatiempo.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { recuperaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/recuperaPasatiempo.js"</span></td></tr>
   <tr><td>3</td><td><span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/Pasatiempo.js"</span></td></tr>
   <tr><td>4</td><td><span class="codeReserved">import</span> { Bd, NOMBRE_DEL_ALMACEN_PASATIEMPO } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
   <tr><td>5</td><td></td></tr>
@@ -950,7 +949,7 @@
   <tr><td>33</td><td>    <span class="codeReserved">const</span> objeto = consulta.result</td></tr>
   <tr><td>34</td><td></td></tr>
   <tr><td>35</td><td>    <span class="codeReserved">if</span> (objeto !== undefined) {</td></tr>
-  <tr><td>36</td><td>     <span class="codeReserved">const</span> modelo = leePasatiempo(objeto)</td></tr>
+  <tr><td>36</td><td>     <span class="codeReserved">const</span> modelo = recuperaPasatiempo(objeto)</td></tr>
   <tr><td>37</td><td>     <span class="codeReserved">if</span> (!modelo.eliminado) {</td></tr>
   <tr><td>38</td><td>      resolve(modelo)</td></tr>
   <tr><td>39</td><td>     }</td></tr>
@@ -1252,53 +1251,24 @@
     
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-modelo/m-leePasatiempo-js.html">js / modelo / leePasatiempo.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
      <a href="/m09sincronizacion/m-js/m-modelo/m-Pasatiempo-js.html">js / modelo / Pasatiempo.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-modelo/m-validaQueTengaLasPropiedadesDePasatiempo-js.html">js / modelo / validaQueTengaLasPropiedadesDePasatiempo.js</a>
+     <a href="/m09sincronizacion/m-js/m-modelo/m-recuperaPasatiempo-js.html">js / modelo / recuperaPasatiempo.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-modelo/m-validaPasatiempo-js.html">js / modelo / validaPasatiempo.js</a>
     </p>
    </li>
    </ol>
    </nav>
   </div>
      <section >
-         <h1 >1. js / modelo / leePasatiempo.js</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"./Pasatiempo.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> {</td></tr>
-  <tr><td>3</td><td> validaQueTengaLasPropiedadesDePasatiempo</td></tr>
-  <tr><td>4</td><td>} <span class="codeReserved">from</span> <span class="codeString">"./validaQueTengaLasPropiedadesDePasatiempo.js"</span></td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeComment">/** <span class="codeReserved">@param</span> { any } objeto */</span></td></tr>
-  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> leePasatiempo(objeto) {</td></tr>
-  <tr><td>8</td><td> <span class="codeReserved">const</span> validado = validaQueTengaLasPropiedadesDePasatiempo(objeto)</td></tr>
-  <tr><td>9</td><td> <span class="codeReserved">return</span> <span class="codeReserved">new</span> Pasatiempo({</td></tr>
-  <tr><td>10</td><td>  uuid: validado.uuid,</td></tr>
-  <tr><td>11</td><td>  nombre: validado.nombre,</td></tr>
-  <tr><td>12</td><td>  modificacion: validado.modificacion,</td></tr>
-  <tr><td>13</td><td>  eliminado: validado.eliminado,</td></tr>
-  <tr><td>14</td><td> })</td></tr>
-  <tr><td>15</td><td>}</td></tr>
- </tbody>
-</table>
-      </section>
-     <section >
-         <h1 >2. js / modelo / Pasatiempo.js</h1><table class="codeShow">
+         <h1 >1. js / modelo / Pasatiempo.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1353,7 +1323,36 @@
 </table>
       </section>
      <section >
-         <h1 >3. js / modelo / validaQueTengaLasPropiedadesDePasatiempo.js</h1><table class="codeShow">
+         <h1 >2. js / modelo / recuperaPasatiempo.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"./Pasatiempo.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> {</td></tr>
+  <tr><td>3</td><td> validaPasatiempo</td></tr>
+  <tr><td>4</td><td>} <span class="codeReserved">from</span> <span class="codeString">"./validaPasatiempo.js"</span></td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td><span class="codeComment">/** <span class="codeReserved">@param</span> { any } objeto */</span></td></tr>
+  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> recuperaPasatiempo(objeto) {</td></tr>
+  <tr><td>8</td><td> <span class="codeReserved">const</span> validado = validaPasatiempo(objeto)</td></tr>
+  <tr><td>9</td><td> <span class="codeReserved">return</span> <span class="codeReserved">new</span> Pasatiempo({</td></tr>
+  <tr><td>10</td><td>  uuid: validado.uuid,</td></tr>
+  <tr><td>11</td><td>  nombre: validado.nombre,</td></tr>
+  <tr><td>12</td><td>  modificacion: validado.modificacion,</td></tr>
+  <tr><td>13</td><td>  eliminado: validado.eliminado,</td></tr>
+  <tr><td>14</td><td> })</td></tr>
+  <tr><td>15</td><td>}</td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >3. js / modelo / validaPasatiempo.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1372,7 +1371,7 @@
   <tr><td>7</td><td><span class="codeComment"> *   eliminado: boolean,</span></td></tr>
   <tr><td>8</td><td><span class="codeComment"> *  } }</span></td></tr>
   <tr><td>9</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>10</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaQueTengaLasPropiedadesDePasatiempo(objeto) {</td></tr>
+  <tr><td>10</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaPasatiempo(objeto) {</td></tr>
   <tr><td>11</td><td></td></tr>
   <tr><td>12</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.uuid !== <span class="codeString">"string"</span>)</td></tr>
   <tr><td>13</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El uuid debe ser texto."</span>)</td></tr>

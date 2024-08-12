@@ -57,11 +57,12 @@
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
   --shadowTitulo: 3px 1px 2px black;
-  --colTitulo: #bae397;
-  --colTituloFondo: #609732;
-  --colPrincipalTituloStrong: white;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
   --colAStrong: var(--colLetra);
-  --colNavH1Sel: #b35f7c;
+  /* --colNavH1Sel: #b35f7c; */
   --colFondoNav: var(--colFondo);
   --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
@@ -124,8 +125,9 @@
    --colFondoAVisitedPushActive: #983351;
    --colSombra: #00000080;
    --colTitulo: #e3f5d4;
-   --colTituloFondo: #7db84d;
-   --colNavH1Sel: #d37290;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
    --colFondoNavSel: #7a3059;
    --colScrollbar: #616161;
    --colThumb: #ffffff;
@@ -566,9 +568,6 @@
  }
 
  @media print {
-  h1 {
-   text-shadow: var(--shadowTitulo);
-  }
 
   .codeShow button {
    display: none;
@@ -1065,70 +1064,59 @@
   </div>
       </section>
      <section >
-         <h1 >D. index.html</h1><div class="horizontal">
- <section>
-  <h1>Salida</h1>
-  <iframe src="https://gilpgpwa.github.io/"
-    height="330" title="Vista de ayuda"></iframe>
-  <p class="noPrint">
-   <a href="https://gilpgpwa.github.io/"
-     target="_blank" rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
-  </p>
- </section>
- <table class="codeShow">
-  <caption style="text-align: left">
-   <button type=button title="Copiar al portapapeles"
-     onclick="copyToClipboard(this)">
-    <span class="material-symbols-outlined">
-     content_copy
-    </span>
-   </button>
-  </caption>
-  <tbody>
-   <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
-   <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
-   <tr><td>3</td><td></td></tr>
-   <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
-   <tr><td>5</td><td></td></tr>
-   <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
-   <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
-   <tr><td>8</td><td></td></tr>
-   <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;PWA Básica&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
-   <tr><td>10</td><td></td></tr>
-   <tr><td>11</td><td> <span class="codeComment">&lt;!-- Resumen para los motores de búsqueda. --&gt;</span></td></tr>
-   <tr><td>12</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"description"</span> <span class="codeReserved">content</span>=<span class="codeString">"Ejemplo de PWA"</span>&gt;</td></tr>
-   <tr><td>13</td><td></td></tr>
-   <tr><td>14</td><td> <span class="codeComment">&lt;!-- Color de la barra de navegación de Chrome en</span></td></tr>
-   <tr><td>15</td><td><span class="codeComment">  dispositivos móviles. --&gt;</span></td></tr>
-   <tr><td>16</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"theme-color"</span> <span class="codeReserved">content</span>=<span class="codeString">"#cbc693"</span>&gt;</td></tr>
-   <tr><td>17</td><td></td></tr>
-   <tr><td>18</td><td> <span class="codeComment">&lt;!-- Ícono para la página web, que normalmente se</span></td></tr>
-   <tr><td>19</td><td><span class="codeComment">  pone en la raíz del sitio.</span></td></tr>
-   <tr><td>20</td><td><span class="codeComment">  Puede ser diferente para cada página. --&gt;</span></td></tr>
-   <tr><td>21</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"icon"</span> sizes=<span class="codeString">"32x32"</span> href=<span class="codeString">"favicon.ico"</span>&gt;</td></tr>
-   <tr><td>22</td><td></td></tr>
-   <tr><td>23</td><td> <span class="codeComment">&lt;!-- Configuración de la PWA para Chrome y Edge.</span></td></tr>
-   <tr><td>24</td><td><span class="codeComment">  Debe ponerse en todas las páginas. --&gt;</span></td></tr>
-   <tr><td>25</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"manifest"</span> href=<span class="codeString">"site.webmanifest"</span>&gt;</td></tr>
-   <tr><td>26</td><td></td></tr>
-   <tr><td>27</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/estilos.css"</span>&gt;</td></tr>
-   <tr><td>28</td><td></td></tr>
-   <tr><td>29</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span> src=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
-   <tr><td>30</td><td></td></tr>
-   <tr><td>31</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
-   <tr><td>32</td><td></td></tr>
-   <tr><td>33</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
-   <tr><td>34</td><td></td></tr>
-   <tr><td>35</td><td> &lt;<span class="codeReserved">h1</span>&gt;PWA Básica&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
-   <tr><td>36</td><td></td></tr>
-   <tr><td>37</td><td> &lt;<span class="codeReserved">p</span>&gt;Hola mundo.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>38</td><td></td></tr>
-   <tr><td>39</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
-   <tr><td>40</td><td></td></tr>
-   <tr><td>41</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
-  </tbody>
- </table>
-</div>
+         <h1 >D. index.html</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td></td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;PWA Básica&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td> <span class="codeComment">&lt;!-- Resumen para los motores de búsqueda. --&gt;</span></td></tr>
+  <tr><td>12</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"description"</span> <span class="codeReserved">content</span>=<span class="codeString">"Ejemplo de PWA"</span>&gt;</td></tr>
+  <tr><td>13</td><td></td></tr>
+  <tr><td>14</td><td> <span class="codeComment">&lt;!-- Color de la barra de navegación de Chrome en</span></td></tr>
+  <tr><td>15</td><td><span class="codeComment">  dispositivos móviles. --&gt;</span></td></tr>
+  <tr><td>16</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"theme-color"</span> <span class="codeReserved">content</span>=<span class="codeString">"#cbc693"</span>&gt;</td></tr>
+  <tr><td>17</td><td></td></tr>
+  <tr><td>18</td><td> <span class="codeComment">&lt;!-- Ícono para la página web, que normalmente se</span></td></tr>
+  <tr><td>19</td><td><span class="codeComment">  pone en la raíz del sitio.</span></td></tr>
+  <tr><td>20</td><td><span class="codeComment">  Puede ser diferente para cada página. --&gt;</span></td></tr>
+  <tr><td>21</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"icon"</span> sizes=<span class="codeString">"32x32"</span> href=<span class="codeString">"favicon.ico"</span>&gt;</td></tr>
+  <tr><td>22</td><td></td></tr>
+  <tr><td>23</td><td> <span class="codeComment">&lt;!-- Configuración de la PWA para Chrome y Edge.</span></td></tr>
+  <tr><td>24</td><td><span class="codeComment">  Debe ponerse en todas las páginas. --&gt;</span></td></tr>
+  <tr><td>25</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"manifest"</span> href=<span class="codeString">"site.webmanifest"</span>&gt;</td></tr>
+  <tr><td>26</td><td></td></tr>
+  <tr><td>27</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/estilos.css"</span>&gt;</td></tr>
+  <tr><td>28</td><td></td></tr>
+  <tr><td>29</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span> <span class="codeReserved">src</span>=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>30</td><td></td></tr>
+  <tr><td>31</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>32</td><td></td></tr>
+  <tr><td>33</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>34</td><td></td></tr>
+  <tr><td>35</td><td> &lt;<span class="codeReserved">h1</span>&gt;PWA Básica&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>36</td><td></td></tr>
+  <tr><td>37</td><td> &lt;<span class="codeReserved">p</span>&gt;Hola mundo.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>38</td><td></td></tr>
+  <tr><td>39</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>40</td><td></td></tr>
+  <tr><td>41</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
       </section>
      <section>
          <h1 >E. Carpeta « css »</h1>
@@ -1400,14 +1388,14 @@
   <tr><td>9</td><td> <span class="codeString">"description"</span>: <span class="codeString">"Ejemplos básico de PWA."</span>,</td></tr>
   <tr><td>10</td><td> <span class="codeString">"screenshots"</span>: [</td></tr>
   <tr><td>11</td><td>  {</td></tr>
-  <tr><td>12</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/screenshot_horizontal.png"</span>,</td></tr>
+  <tr><td>12</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/screenshot_horizontal.png"</span>,</td></tr>
   <tr><td>13</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"1507x777"</span>,</td></tr>
   <tr><td>14</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>15</td><td>   <span class="codeString">"form_factor"</span>: <span class="codeString">"wide"</span>,</td></tr>
   <tr><td>16</td><td>   <span class="codeString">"label"</span>: <span class="codeString">"PWA Básica"</span></td></tr>
   <tr><td>17</td><td>  },</td></tr>
   <tr><td>18</td><td>  {</td></tr>
-  <tr><td>19</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/screenshot_vertical.png"</span>,</td></tr>
+  <tr><td>19</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/screenshot_vertical.png"</span>,</td></tr>
   <tr><td>20</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"591x980"</span>,</td></tr>
   <tr><td>21</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>22</td><td>   <span class="codeString">"form_factor"</span>: <span class="codeString">"narrow"</span>,</td></tr>
@@ -1416,103 +1404,103 @@
   <tr><td>25</td><td> ],</td></tr>
   <tr><td>26</td><td> <span class="codeString">"icons"</span>: [</td></tr>
   <tr><td>27</td><td>  {</td></tr>
-  <tr><td>28</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x48.png"</span>,</td></tr>
+  <tr><td>28</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x48.png"</span>,</td></tr>
   <tr><td>29</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"48x48"</span>,</td></tr>
   <tr><td>30</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>31</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
   <tr><td>32</td><td>  },</td></tr>
   <tr><td>33</td><td>  {</td></tr>
-  <tr><td>34</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x72.png"</span>,</td></tr>
+  <tr><td>34</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x72.png"</span>,</td></tr>
   <tr><td>35</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"72x72"</span>,</td></tr>
   <tr><td>36</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>37</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
   <tr><td>38</td><td>  },</td></tr>
   <tr><td>39</td><td>  {</td></tr>
-  <tr><td>40</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x96.png"</span>,</td></tr>
+  <tr><td>40</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x96.png"</span>,</td></tr>
   <tr><td>41</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"96x96"</span>,</td></tr>
   <tr><td>42</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>43</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
   <tr><td>44</td><td>  },</td></tr>
   <tr><td>45</td><td>  {</td></tr>
-  <tr><td>46</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x128.png"</span>,</td></tr>
+  <tr><td>46</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x128.png"</span>,</td></tr>
   <tr><td>47</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"128x128"</span>,</td></tr>
   <tr><td>48</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>49</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
   <tr><td>50</td><td>  },</td></tr>
   <tr><td>51</td><td>  {</td></tr>
-  <tr><td>52</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x192.png"</span>,</td></tr>
+  <tr><td>52</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x192.png"</span>,</td></tr>
   <tr><td>53</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"192x192"</span>,</td></tr>
   <tr><td>54</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>55</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
   <tr><td>56</td><td>  },</td></tr>
   <tr><td>57</td><td>  {</td></tr>
-  <tr><td>58</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x384.png"</span>,</td></tr>
+  <tr><td>58</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x384.png"</span>,</td></tr>
   <tr><td>59</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"384x384"</span>,</td></tr>
   <tr><td>60</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>61</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
   <tr><td>62</td><td>  },</td></tr>
   <tr><td>63</td><td>  {</td></tr>
-  <tr><td>64</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x512.png"</span>,</td></tr>
+  <tr><td>64</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x512.png"</span>,</td></tr>
   <tr><td>65</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"512x512"</span>,</td></tr>
   <tr><td>66</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>67</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
   <tr><td>68</td><td>  },</td></tr>
   <tr><td>69</td><td>  {</td></tr>
-  <tr><td>70</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon.png"</span>,</td></tr>
+  <tr><td>70</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon.png"</span>,</td></tr>
   <tr><td>71</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"2730x2730"</span>,</td></tr>
   <tr><td>72</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>73</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
   <tr><td>74</td><td>  },</td></tr>
   <tr><td>75</td><td>  {</td></tr>
-  <tr><td>76</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/icono2048.png"</span>,</td></tr>
+  <tr><td>76</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/icono2048.png"</span>,</td></tr>
   <tr><td>77</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"2048x2048"</span>,</td></tr>
   <tr><td>78</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>79</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></td></tr>
   <tr><td>80</td><td>  },</td></tr>
   <tr><td>81</td><td>  {</td></tr>
-  <tr><td>82</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x48.png"</span>,</td></tr>
+  <tr><td>82</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x48.png"</span>,</td></tr>
   <tr><td>83</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"48x48"</span>,</td></tr>
   <tr><td>84</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>85</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></td></tr>
   <tr><td>86</td><td>  },</td></tr>
   <tr><td>87</td><td>  {</td></tr>
-  <tr><td>88</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x72.png"</span>,</td></tr>
+  <tr><td>88</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x72.png"</span>,</td></tr>
   <tr><td>89</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"72x72"</span>,</td></tr>
   <tr><td>90</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>91</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></td></tr>
   <tr><td>92</td><td>  },</td></tr>
   <tr><td>93</td><td>  {</td></tr>
-  <tr><td>94</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x96.png"</span>,</td></tr>
+  <tr><td>94</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x96.png"</span>,</td></tr>
   <tr><td>95</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"96x96"</span>,</td></tr>
   <tr><td>96</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>97</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></td></tr>
   <tr><td>98</td><td>  },</td></tr>
   <tr><td>99</td><td>  {</td></tr>
-  <tr><td>100</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x128.png"</span>,</td></tr>
+  <tr><td>100</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x128.png"</span>,</td></tr>
   <tr><td>101</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"128x128"</span>,</td></tr>
   <tr><td>102</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>103</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></td></tr>
   <tr><td>104</td><td>  },</td></tr>
   <tr><td>105</td><td>  {</td></tr>
-  <tr><td>106</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x192.png"</span>,</td></tr>
+  <tr><td>106</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x192.png"</span>,</td></tr>
   <tr><td>107</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"192x192"</span>,</td></tr>
   <tr><td>108</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>109</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></td></tr>
   <tr><td>110</td><td>  },</td></tr>
   <tr><td>111</td><td>  {</td></tr>
-  <tr><td>112</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x384.png"</span>,</td></tr>
+  <tr><td>112</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x384.png"</span>,</td></tr>
   <tr><td>113</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"384x384"</span>,</td></tr>
   <tr><td>114</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>115</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></td></tr>
   <tr><td>116</td><td>  },</td></tr>
   <tr><td>117</td><td>  {</td></tr>
-  <tr><td>118</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon_x512.png"</span>,</td></tr>
+  <tr><td>118</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x512.png"</span>,</td></tr>
   <tr><td>119</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"512x512"</span>,</td></tr>
   <tr><td>120</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>121</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></td></tr>
   <tr><td>122</td><td>  },</td></tr>
   <tr><td>123</td><td>  {</td></tr>
-  <tr><td>124</td><td>   <span class="codeString">"src"</span>: <span class="codeString">"/img/maskable_icon.png"</span>,</td></tr>
+  <tr><td>124</td><td>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon.png"</span>,</td></tr>
   <tr><td>125</td><td>   <span class="codeString">"sizes"</span>: <span class="codeString">"2730x2730"</span>,</td></tr>
   <tr><td>126</td><td>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</td></tr>
   <tr><td>127</td><td>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></td></tr>
@@ -1728,7 +1716,7 @@
   <tr><td>69</td><td>}</td></tr>
   <tr><td>70</td><td></td></tr>
   <tr><td>71</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> llenaElCache() {</td></tr>
-  <tr><td>72</td><td> console.log(<span class="codeString">"Intentando cargar caché:"</span>, CACHE, <span class="codeString">"."</span>)</td></tr>
+  <tr><td>72</td><td> console.log(<span class="codeString">"Intentando cargar caché:"</span>, CACHE)</td></tr>
   <tr><td>73</td><td> <span class="codeComment">// Borra todos los cachés.</span></td></tr>
   <tr><td>74</td><td> <span class="codeReserved">const</span> keys = <span class="codeReserved">await</span> caches.keys()</td></tr>
   <tr><td>75</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> key of keys) {</td></tr>
@@ -1738,8 +1726,8 @@
   <tr><td>79</td><td> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</td></tr>
   <tr><td>80</td><td> <span class="codeComment">// Carga el listado de ARCHIVOS.</span></td></tr>
   <tr><td>81</td><td> <span class="codeReserved">await</span> cache.addAll(ARCHIVOS)</td></tr>
-  <tr><td>82</td><td> console.log(<span class="codeString">"Cache cargado:"</span>, CACHE, <span class="codeString">"."</span>)</td></tr>
-  <tr><td>83</td><td> console.log(<span class="codeString">"Versión:"</span>, VERSION, <span class="codeString">"."</span>)</td></tr>
+  <tr><td>82</td><td> console.log(<span class="codeString">"Cache cargado:"</span>, CACHE)</td></tr>
+  <tr><td>83</td><td> console.log(<span class="codeString">"Versión:"</span>, VERSION)</td></tr>
   <tr><td>84</td><td>}</td></tr>
   <tr><td>85</td><td></td></tr>
   <tr><td>86</td><td><span class="codeComment">/** <span class="codeReserved">@param</span> {FetchEvent} evt */</span></td></tr>
@@ -1763,20 +1751,10 @@
 </table>
       </section>
      <section >
-         <h1 >K. favicon.ico</h1><div class="lectura">
- <ul>
-  <li>
-   <p>
-    Es el ícono que se muestra en las pestañas del navegador. Normalmente debe
-    ser de 32x32 pixeles y debe colocarse en la carpeta raíz del proyecto.
-   </p>
-  </li>
- </ul>
-</div>
-<figure>
- <img style="width: auto; max-width: 100%;" alt="favicon.ico"
-   src="/img/m05pwaBasica/favicon.ico">
-</figure>
+         <h1 >K. favicon.ico</h1><figure>
+    <img style="width: auto; max-width: 100%;" alt="favicon.ico"
+      src="/img/m05pwaBasica/favicon.ico">
+   </figure>
       </section>
      <section>
          <h1 >L. Carpeta « img »</h1>
@@ -1853,69 +1831,69 @@
   </div>
      <section >
          <h1 >A. img / icono2048.png</h1><figure>
- <img style="width: auto; max-width: 100%;" alt="icono2048.png"
-   src="/img/m05pwaBasica/icono2048.png">
-</figure>
+    <img style="width: auto; max-width: 100%;" alt="icono2048.png"
+      src="/img/m05pwaBasica/icono2048.png">
+   </figure>
       </section>
      <section >
          <h1 >B. img / maskable_icon.png</h1><figure>
- <img style="width: auto; max-width: 100%;" alt="maskable_icon.png"
-   src="/img/m05pwaBasica/maskable_icon.png">
-</figure>
+    <img style="width: auto; max-width: 100%;" alt="maskable_icon.png"
+      src="/img/m05pwaBasica/maskable_icon.png">
+   </figure>
       </section>
      <section >
          <h1 >C. img / maskable_icon_x128.png</h1><figure>
- <img style="width: auto; max-width: 100%;" alt="maskable_icon_x128.png"
-   src="/img/m05pwaBasica/maskable_icon_x128.png">
-</figure>
+    <img style="width: auto; max-width: 100%;" alt="maskable_icon_x128.png"
+      src="/img/m05pwaBasica/maskable_icon_x128.png">
+   </figure>
       </section>
      <section >
          <h1 >D. img / maskable_icon_x192.png</h1><figure>
- <img style="width: auto; max-width: 100%;" alt="maskable_icon_x192.png"
-   src="/img/m05pwaBasica/maskable_icon_x192.png">
-</figure>
+    <img style="width: auto; max-width: 100%;" alt="maskable_icon_x192.png"
+      src="/img/m05pwaBasica/maskable_icon_x192.png">
+   </figure>
       </section>
      <section >
          <h1 >E. img / maskable_icon_x384.png</h1><figure>
- <img style="width: auto; max-width: 100%;" alt="maskable_icon_x384.png"
-   src="/img/m05pwaBasica/maskable_icon_x384.png">
-</figure>
+    <img style="width: auto; max-width: 100%;" alt="maskable_icon_x384.png"
+      src="/img/m05pwaBasica/maskable_icon_x384.png">
+   </figure>
       </section>
      <section >
          <h1 >F. img / maskable_icon_x48.png</h1><figure>
- <img style="width: auto; max-width: 100%;" alt="maskable_icon_x48.png"
-   src="/img/m05pwaBasica/maskable_icon_x48.png">
-</figure>
+    <img style="width: auto; max-width: 100%;" alt="maskable_icon_x48.png"
+      src="/img/m05pwaBasica/maskable_icon_x48.png">
+   </figure>
       </section>
      <section >
          <h1 >G. img / maskable_icon_x512.png</h1><figure>
- <img style="width: auto; max-width: 100%;" alt="maskable_icon_x512.png"
-   src="/img/m05pwaBasica/maskable_icon_x512.png">
-</figure>
+    <img style="width: auto; max-width: 100%;" alt="maskable_icon_x512.png"
+      src="/img/m05pwaBasica/maskable_icon_x512.png">
+   </figure>
       </section>
      <section >
          <h1 >H. img / maskable_icon_x72.png</h1><figure>
- <img style="width: auto; max-width: 100%;" alt="maskable_icon_x72.png"
-   src="/img/m05pwaBasica/maskable_icon_x72.png">
-</figure>
+    <img style="width: auto; max-width: 100%;" alt="maskable_icon_x72.png"
+      src="/img/m05pwaBasica/maskable_icon_x72.png">
+   </figure>
       </section>
      <section >
          <h1 >I. img / maskable_icon_x96.png</h1><figure>
- <img style="width: auto; max-width: 100%;" alt="maskable_icon_x96.png"
-   src="/img/m05pwaBasica/maskable_icon_x96.png">
-</figure>
+    <img style="width: auto; max-width: 100%;" alt="maskable_icon_x96.png"
+      src="/img/m05pwaBasica/maskable_icon_x96.png">
+   </figure>
       </section>
      <section >
          <h1 >J. img / screenshot_horizontal.png</h1><figure>
- <img style="width: auto; max-width: 100%;" alt="screenshot_horizontal.png"
-   src="/img/m05pwaBasica/screenshot_horizontal.png">
-</figure>
+    <img style="width: auto; max-width: 100%;" alt="screenshot_horizontal.png"
+      src="/img/m05pwaBasica/screenshot_horizontal.png">
+   </figure>
       </section>
      <section >
          <h1 >K. img / screenshot_vertical.png</h1><figure>
- <img style="width: auto; max-width: 100%;" alt="screenshot_vertical.png"
-   src="/img/m05pwaBasica/screenshot_vertical.png">
-</figure>
+    <img style="width: auto; max-width: 100%;" alt="screenshot_vertical.png"
+      src="/img/m05pwaBasica/screenshot_vertical.png">
+   </figure>
       </section>
       </section>
      <section>
@@ -1993,29 +1971,39 @@
   <tr><td>6</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { ProblemDetails | Error | <span class="codeReserved">null</span> } error descripción del error.</span></td></tr>
   <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
   <tr><td>8</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> muestraError(error) {</td></tr>
-  <tr><td>9</td><td> <span class="codeReserved">if</span> (error === <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>10</td><td>  console.log(<span class="codeString">"Error"</span>)</td></tr>
-  <tr><td>11</td><td>  alert(<span class="codeString">"Error"</span>)</td></tr>
-  <tr><td>12</td><td> } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (error <span class="codeReserved">instanceof</span> ProblemDetails) {</td></tr>
-  <tr><td>13</td><td>  <span class="codeReserved">let</span> mensaje = error.title</td></tr>
-  <tr><td>14</td><td>  <span class="codeReserved">if</span> (error.detail) {</td></tr>
-  <tr><td>15</td><td>   mensaje += <span class="codeString">`\n\n${error.detail}`</span></td></tr>
-  <tr><td>16</td><td>  }</td></tr>
-  <tr><td>17</td><td>  mensaje += <span class="codeString">`\n\nCódigo: ${error.status}`</span></td></tr>
-  <tr><td>18</td><td>  <span class="codeReserved">if</span> (error.type) {</td></tr>
-  <tr><td>19</td><td>   mensaje += <span class="codeString">` ${error.type}`</span></td></tr>
+  <tr><td>9</td><td></td></tr>
+  <tr><td>10</td><td> <span class="codeReserved">if</span> (error === <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>11</td><td></td></tr>
+  <tr><td>12</td><td>  console.log(<span class="codeString">"Error"</span>)</td></tr>
+  <tr><td>13</td><td>  alert(<span class="codeString">"Error"</span>)</td></tr>
+  <tr><td>14</td><td></td></tr>
+  <tr><td>15</td><td> } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (error <span class="codeReserved">instanceof</span> ProblemDetails) {</td></tr>
+  <tr><td>16</td><td></td></tr>
+  <tr><td>17</td><td>  <span class="codeReserved">let</span> mensaje = error.title</td></tr>
+  <tr><td>18</td><td>  <span class="codeReserved">if</span> (error.detail) {</td></tr>
+  <tr><td>19</td><td>   mensaje += <span class="codeString">`\n\n${error.detail}`</span></td></tr>
   <tr><td>20</td><td>  }</td></tr>
-  <tr><td>21</td><td>  console.error(mensaje)</td></tr>
-  <tr><td>22</td><td>  console.error(error)</td></tr>
-  <tr><td>23</td><td>  alert(mensaje)</td></tr>
-  <tr><td>24</td><td> } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>25</td><td>  console.error(error)</td></tr>
-  <tr><td>26</td><td>  alert(error.message)</td></tr>
-  <tr><td>27</td><td> }</td></tr>
-  <tr><td>28</td><td>}</td></tr>
-  <tr><td>29</td><td></td></tr>
-  <tr><td>30</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
-  <tr><td>31</td><td>window[<span class="codeString">"muestraError"</span>] = muestraError</td></tr>
+  <tr><td>21</td><td>  mensaje += <span class="codeString">`\n\nCódigo: ${error.status}`</span></td></tr>
+  <tr><td>22</td><td>  <span class="codeReserved">if</span> (error.type) {</td></tr>
+  <tr><td>23</td><td>   mensaje += <span class="codeString">` ${error.type}`</span></td></tr>
+  <tr><td>24</td><td>  }</td></tr>
+  <tr><td>25</td><td></td></tr>
+  <tr><td>26</td><td>  console.error(mensaje)</td></tr>
+  <tr><td>27</td><td>  console.error(error)</td></tr>
+  <tr><td>28</td><td>  console.error(error.headers)</td></tr>
+  <tr><td>29</td><td>  alert(mensaje)</td></tr>
+  <tr><td>30</td><td></td></tr>
+  <tr><td>31</td><td> } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>32</td><td></td></tr>
+  <tr><td>33</td><td>  console.error(error)</td></tr>
+  <tr><td>34</td><td>  alert(error.message)</td></tr>
+  <tr><td>35</td><td></td></tr>
+  <tr><td>36</td><td> }</td></tr>
+  <tr><td>37</td><td></td></tr>
+  <tr><td>38</td><td>}</td></tr>
+  <tr><td>39</td><td></td></tr>
+  <tr><td>40</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
+  <tr><td>41</td><td>window[<span class="codeString">"muestraError"</span>] = muestraError</td></tr>
  </tbody>
 </table>
       </section>
@@ -2030,28 +2018,28 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> ProblemDetails_BadRequest = 400</td></tr>
-  <tr><td>2</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> ProblemDetails_NotFound = 404</td></tr>
-  <tr><td>3</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> ProblemDetails_InternalServerError = 500</td></tr>
-  <tr><td>4</td><td></td></tr>
-  <tr><td>5</td><td><span class="codeReserved">export</span> <span class="codeReserved">class</span> ProblemDetails <span class="codeReserved">extends</span> Error {</td></tr>
-  <tr><td>6</td><td></td></tr>
-  <tr><td>7</td><td> <span class="codeComment">/**</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {number} status</span></td></tr>
-  <tr><td>9</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} title</span></td></tr>
-  <tr><td>10</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} [detail]</span></td></tr>
-  <tr><td>11</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} [type]</span></td></tr>
-  <tr><td>12</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>13</td><td> <span class="codeReserved">constructor</span>(status, title, detail, type) {</td></tr>
-  <tr><td>14</td><td>  super(title)</td></tr>
+  <tr><td>1</td><td><span class="codeComment">/** Detalle de los errores devueltos por un servicio. */</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">export</span> <span class="codeReserved">class</span> ProblemDetails <span class="codeReserved">extends</span> Error {</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {number} status</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {Headers} headers</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} title</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} [type]</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} [detail]</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>11</td><td> <span class="codeReserved">constructor</span>(status, headers, title, type, detail) {</td></tr>
+  <tr><td>12</td><td>  super(title)</td></tr>
+  <tr><td>13</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
+  <tr><td>14</td><td>  <span class="codeReserved">this</span>.status = status</td></tr>
   <tr><td>15</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>16</td><td>  <span class="codeReserved">this</span>.status = status</td></tr>
+  <tr><td>16</td><td>  <span class="codeReserved">this</span>.headers = headers</td></tr>
   <tr><td>17</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
   <tr><td>18</td><td>  <span class="codeReserved">this</span>.type = type</td></tr>
   <tr><td>19</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>20</td><td>  <span class="codeReserved">this</span>.title = title</td></tr>
+  <tr><td>20</td><td>  <span class="codeReserved">this</span>.detail = detail</td></tr>
   <tr><td>21</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>22</td><td>  <span class="codeReserved">this</span>.detail = detail</td></tr>
+  <tr><td>22</td><td>  <span class="codeReserved">this</span>.title = title</td></tr>
   <tr><td>23</td><td> }</td></tr>
   <tr><td>24</td><td></td></tr>
   <tr><td>25</td><td>}</td></tr>

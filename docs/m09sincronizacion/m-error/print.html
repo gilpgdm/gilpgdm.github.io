@@ -57,11 +57,12 @@
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
   --shadowTitulo: 3px 1px 2px black;
-  --colTitulo: #bae397;
-  --colTituloFondo: #609732;
-  --colPrincipalTituloStrong: white;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
   --colAStrong: var(--colLetra);
-  --colNavH1Sel: #b35f7c;
+  /* --colNavH1Sel: #b35f7c; */
   --colFondoNav: var(--colFondo);
   --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
@@ -124,8 +125,9 @@
    --colFondoAVisitedPushActive: #983351;
    --colSombra: #00000080;
    --colTitulo: #e3f5d4;
-   --colTituloFondo: #7db84d;
-   --colNavH1Sel: #d37290;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
    --colFondoNavSel: #7a3059;
    --colScrollbar: #616161;
    --colThumb: #ffffff;
@@ -566,9 +568,6 @@
  }
 
  @media print {
-  h1 {
-   text-shadow: var(--shadowTitulo);
-  }
 
   .codeShow button {
    display: none;
@@ -718,6 +717,11 @@
     
    <li>
     <p>
+     <a href="/m09sincronizacion/m-error/m-datosnojson-html.html">error / datosnojson.html</a>
+    </p>
+   </li>
+   <li>
+    <p>
      <a href="/m09sincronizacion/m-error/m-eliminadoincorrecto-html.html">error / eliminadoincorrecto.html</a>
     </p>
    </li>
@@ -750,7 +754,44 @@
    </nav>
   </div>
      <section >
-         <h1 >A. error / eliminadoincorrecto.html</h1><table class="codeShow">
+         <h1 >A. error / datosnojson.html</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td></td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;Los datos recibidos no son JSON&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>14</td><td></td></tr>
+  <tr><td>15</td><td> &lt;<span class="codeReserved">h1</span>&gt;Los datos recibidos no son JSON&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>16</td><td></td></tr>
+  <tr><td>17</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>18</td><td>  Los datos recibidos no están en formato JSON.</td></tr>
+  <tr><td>19</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>20</td><td></td></tr>
+  <tr><td>21</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>22</td><td></td></tr>
+  <tr><td>23</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >B. error / eliminadoincorrecto.html</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -781,7 +822,7 @@
 </table>
       </section>
      <section >
-         <h1 >B. error / errorinterno.html</h1><table class="codeShow">
+         <h1 >C. error / errorinterno.html</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -792,12 +833,12 @@
  </caption>
  <tbody>
   <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
-  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">&quot;es&quot;</span>&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
   <tr><td>3</td><td></td></tr>
   <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
   <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">&quot;UTF-8&quot;</span>&gt;</td></tr>
-  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">&quot;viewport&quot;</span> content=<span class="codeString">&quot;width=device-width&quot;</span>&gt;</td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
   <tr><td>8</td><td></td></tr>
   <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;Error interno del servidor&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
   <tr><td>10</td><td></td></tr>
@@ -816,7 +857,7 @@
 </table>
       </section>
      <section >
-         <h1 >C. error / modificacionincorrecta.html</h1><table class="codeShow">
+         <h1 >D. error / modificacionincorrecta.html</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -847,7 +888,7 @@
 </table>
       </section>
      <section >
-         <h1 >D. error / nojson.html</h1><table class="codeShow">
+         <h1 >E. error / nojson.html</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -858,12 +899,12 @@
  </caption>
  <tbody>
   <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
-  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">&quot;es&quot;</span>&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
   <tr><td>3</td><td></td></tr>
   <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
   <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">&quot;UTF-8&quot;</span>&gt;</td></tr>
-  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">&quot;viewport&quot;</span> content=<span class="codeString">&quot;width=device-width&quot;</span>&gt;</td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
   <tr><td>8</td><td></td></tr>
   <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;El valor devuelto no puede representarse como JSON&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
   <tr><td>10</td><td></td></tr>
@@ -885,7 +926,7 @@
 </table>
       </section>
      <section >
-         <h1 >E. error / nombreincorrecto.html</h1><table class="codeShow">
+         <h1 >F. error / nombreincorrecto.html</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -916,7 +957,7 @@
 </table>
       </section>
      <section >
-         <h1 >F. error / uuidincorrecto.html</h1><table class="codeShow">
+         <h1 >G. error / uuidincorrecto.html</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">

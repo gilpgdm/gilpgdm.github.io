@@ -58,11 +58,12 @@
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
   --shadowTitulo: 3px 1px 2px black;
-  --colTitulo: #bae397;
-  --colTituloFondo: #609732;
-  --colPrincipalTituloStrong: white;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
   --colAStrong: var(--colLetra);
-  --colNavH1Sel: #b35f7c;
+  /* --colNavH1Sel: #b35f7c; */
   --colFondoNav: var(--colFondo);
   --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
@@ -125,8 +126,9 @@
    --colFondoAVisitedPushActive: #983351;
    --colSombra: #00000080;
    --colTitulo: #e3f5d4;
-   --colTituloFondo: #7db84d;
-   --colNavH1Sel: #d37290;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
    --colFondoNavSel: #7a3059;
    --colScrollbar: #616161;
    --colThumb: #ffffff;
@@ -567,9 +569,6 @@
  }
 
  @media print {
-  h1 {
-   text-shadow: var(--shadowTitulo);
-  }
 
   .codeShow button {
    display: none;
@@ -668,7 +667,6 @@
  #principal>h1:not(.default) {
   margin-top: var(--marginTop);
   padding: var(--h1PadTop) 1rem 1rem 1rem;
-  text-shadow: var(--shadowTitulo);
   color: var(--colTitulo);
   background-color: var(--colTituloFondo);
  }
@@ -726,23 +724,8 @@
   color: var(--colAStrong);
  }
 
- #nav h1 a {
-  color: var(--colTitulo);
-  background-color: var(--colTituloFondo);
-  text-shadow: var(--shadowTitulo);
- }
-
  #nav a.actual {
   background-color: var(--colFondoNavSel);
- }
-
- #nav h1 a.actual {
-  background-color: var(--colNavH1Sel);
- }
-
- #nav h1 a.actual code,
- #nav h1 a.actual strong {
-  color: var(--colPrincipalTituloStrong);
  }
 
  @media screen and (max-width: 999px) {
@@ -846,12 +829,12 @@
  <tbody>
   <tr><td>1</td><td>.md-filled-text-field {</td></tr>
   <tr><td>2</td><td> <span class="codeReserved">position</span>: relative;</td></tr>
-  <tr><td>3</td><td> <span class="codeReserved">margin</span>: 16px;</td></tr>
+  <tr><td>3</td><td> <span class="codeReserved">margin</span>: 1rem;</td></tr>
   <tr><td>4</td><td> <span class="codeReserved">overflow</span>: hidden;</td></tr>
   <tr><td>5</td><td> <span class="codeReserved">display</span>: <span class="codeReserved">flex</span>;</td></tr>
   <tr><td>6</td><td> <span class="codeReserved">flex-direction</span>: column;</td></tr>
   <tr><td>7</td><td> <span class="codeReserved">align-items</span>: stretch;</td></tr>
-  <tr><td>8</td><td> <span class="codeReserved">padding-top</span>: calc(8px + <span class="codeReserved">var</span>(--md-sys-typescale-body-small-line-height));</td></tr>
+  <tr><td>8</td><td> <span class="codeReserved">padding-top</span>: calc(0.5rem + <span class="codeReserved">var</span>(--md-sys-typescale-body-small-line-height));</td></tr>
   <tr><td>9</td><td> <span class="codeReserved">border-top-left-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-extra-small-top-top-left);</td></tr>
   <tr><td>10</td><td> <span class="codeReserved">border-top-right-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-extra-small-top-top-right);</td></tr>
   <tr><td>11</td><td> <span class="codeReserved">overflow</span>: hidden;</td></tr>
@@ -884,11 +867,11 @@
   <tr><td>38</td><td>.md-filled-text-field span,</td></tr>
   <tr><td>39</td><td>.md-filled-text-field label {</td></tr>
   <tr><td>40</td><td> <span class="codeReserved">position</span>: absolute;</td></tr>
-  <tr><td>41</td><td> <span class="codeReserved">top</span>: 8px;</td></tr>
-  <tr><td>42</td><td> <span class="codeReserved">left</span>: 16px;</td></tr>
-  <tr><td>43</td><td> <span class="codeReserved">right</span>: 16px;</td></tr>
+  <tr><td>41</td><td> <span class="codeReserved">top</span>: 0.5rem;</td></tr>
+  <tr><td>42</td><td> <span class="codeReserved">left</span>: 1rem;</td></tr>
+  <tr><td>43</td><td> <span class="codeReserved">right</span>: 1rem;</td></tr>
   <tr><td>44</td><td> <span class="codeReserved">display</span>: block;</td></tr>
-  <tr><td>45</td><td> <span class="codeReserved">transform</span>: translateY(16px);</td></tr>
+  <tr><td>45</td><td> <span class="codeReserved">transform</span>: translateY(1rem);</td></tr>
   <tr><td>46</td><td> <span class="codeReserved">transition-property</span>: <span class="codeReserved">transform</span>;</td></tr>
   <tr><td>47</td><td> <span class="codeReserved">transition-duration</span>: <span class="codeReserved">var</span>(--md-sys-motion-duration-300);</td></tr>
   <tr><td>48</td><td> <span class="codeReserved">white-space</span>: nowrap;</td></tr>
@@ -925,11 +908,11 @@
   <tr><td>79</td><td>.md-filled-text-field :not(label, span, small) {</td></tr>
   <tr><td>80</td><td> <span class="codeReserved">position</span>: relative;</td></tr>
   <tr><td>81</td><td> <span class="codeReserved">caret-color</span>: <span class="codeReserved">var</span>(--md-sys-color-primary);</td></tr>
-  <tr><td>82</td><td> <span class="codeReserved">min-height</span>: 32px;</td></tr>
+  <tr><td>82</td><td> <span class="codeReserved">min-height</span>: 2rem;</td></tr>
   <tr><td>83</td><td> <span class="codeReserved">box-sizing</span>: border-box;</td></tr>
-  <tr><td>84</td><td> <span class="codeReserved">padding-left</span>: 16px;</td></tr>
-  <tr><td>85</td><td> <span class="codeReserved">padding-bottom</span>: 8px;</td></tr>
-  <tr><td>86</td><td> <span class="codeReserved">padding-right</span>: 16px;</td></tr>
+  <tr><td>84</td><td> <span class="codeReserved">padding-left</span>: 1rem;</td></tr>
+  <tr><td>85</td><td> <span class="codeReserved">padding-bottom</span>: 0.5rem;</td></tr>
+  <tr><td>86</td><td> <span class="codeReserved">padding-right</span>: 1rem;</td></tr>
   <tr><td>87</td><td> <span class="codeReserved">border</span>: none;</td></tr>
   <tr><td>88</td><td> <span class="codeReserved">resize</span>: none;</td></tr>
   <tr><td>89</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
@@ -943,7 +926,7 @@
   <tr><td>97</td><td> <span class="codeReserved">text-decoration</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-text-decoration);</td></tr>
   <tr><td>98</td><td> <span class="codeReserved">background-color</span>: transparent;</td></tr>
   <tr><td>99</td><td> <span class="codeReserved">outline</span>: none;</td></tr>
-  <tr><td>100</td><td> <span class="codeReserved">border-bottom-width</span>: 1px;</td></tr>
+  <tr><td>100</td><td> <span class="codeReserved">border-bottom-width</span>: 0.0625rem;</td></tr>
   <tr><td>101</td><td> <span class="codeReserved">border-bottom-style</span>: solid;</td></tr>
   <tr><td>102</td><td> <span class="codeReserved">border-bottom-color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</td></tr>
   <tr><td>103</td><td>}</td></tr>
@@ -964,7 +947,7 @@
   <tr><td>118</td><td> <span class="codeReserved">line-height</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-line-height);</td></tr>
   <tr><td>119</td><td> <span class="codeReserved">text-transform</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-text-transform);</td></tr>
   <tr><td>120</td><td> <span class="codeReserved">text-decoration</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-text-decoration);</td></tr>
-  <tr><td>121</td><td> <span class="codeReserved">padding</span>: 4px 16px 0 16px;</td></tr>
+  <tr><td>121</td><td> <span class="codeReserved">padding</span>: 0.25rem 1rem 0 1rem;</td></tr>
   <tr><td>122</td><td> <span class="codeReserved">white-space</span>: nowrap;</td></tr>
   <tr><td>123</td><td> <span class="codeReserved">text-overflow</span>: ellipsis;</td></tr>
   <tr><td>124</td><td> <span class="codeReserved">overflow</span>: hidden;</td></tr>
@@ -976,8 +959,8 @@
   <tr><td>130</td><td>}</td></tr>
   <tr><td>131</td><td></td></tr>
   <tr><td>132</td><td>.md-filled-text-field:hover :not(label, span, small) {</td></tr>
-  <tr><td>133</td><td> <span class="codeReserved">padding-bottom</span>: 8px;</td></tr>
-  <tr><td>134</td><td> <span class="codeReserved">border-bottom-width</span>: 1px;</td></tr>
+  <tr><td>133</td><td> <span class="codeReserved">padding-bottom</span>: 0.5rem;</td></tr>
+  <tr><td>134</td><td> <span class="codeReserved">border-bottom-width</span>: 0.0625rem;</td></tr>
   <tr><td>135</td><td> <span class="codeReserved">border-bottom-color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
   <tr><td>136</td><td>}</td></tr>
   <tr><td>137</td><td></td></tr>
@@ -998,39 +981,45 @@
   <tr><td>152</td><td>.md-filled-text-field :focus {</td></tr>
   <tr><td>153</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
   <tr><td>154</td><td> <span class="codeReserved">outline</span>: none;</td></tr>
-  <tr><td>155</td><td> <span class="codeReserved">padding-bottom</span>: 7px;</td></tr>
-  <tr><td>156</td><td> <span class="codeReserved">border-bottom-width</span>: 2px;</td></tr>
+  <tr><td>155</td><td> <span class="codeReserved">padding-bottom</span>: 0.4375rem;</td></tr>
+  <tr><td>156</td><td> <span class="codeReserved">border-bottom-width</span>: 0.125rem;</td></tr>
   <tr><td>157</td><td> <span class="codeReserved">border-bottom-color</span>: <span class="codeReserved">var</span>(--md-sys-color-primary);</td></tr>
   <tr><td>158</td><td>}</td></tr>
   <tr><td>159</td><td></td></tr>
-  <tr><td>160</td><td>.md-filled-text-field:focus-within small {</td></tr>
-  <tr><td>161</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</td></tr>
-  <tr><td>162</td><td>}</td></tr>
-  <tr><td>163</td><td></td></tr>
-  <tr><td>164</td><td>.md-filled-text-field :invalid {</td></tr>
-  <tr><td>165</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
-  <tr><td>166</td><td> <span class="codeReserved">border-bottom-color</span>: <span class="codeReserved">var</span>(--md-sys-color-error);</td></tr>
+  <tr><td>160</td><td>.md-filled-text-field:hover :focus {</td></tr>
+  <tr><td>161</td><td> <span class="codeReserved">padding-bottom</span>: 0.4375rem;</td></tr>
+  <tr><td>162</td><td> <span class="codeReserved">border-bottom-width</span>: 0.125rem;</td></tr>
+  <tr><td>163</td><td>}</td></tr>
+  <tr><td>164</td><td></td></tr>
+  <tr><td>165</td><td>.md-filled-text-field:focus-within small {</td></tr>
+  <tr><td>166</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</td></tr>
   <tr><td>167</td><td>}</td></tr>
   <tr><td>168</td><td></td></tr>
-  <tr><td>169</td><td>.md-filled-text-field :invalid+span,</td></tr>
-  <tr><td>170</td><td>.md-filled-text-field :invalid+label {</td></tr>
-  <tr><td>171</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-error);</td></tr>
+  <tr><td>169</td><td>.md-filled-text-field :invalid {</td></tr>
+  <tr><td>170</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
+  <tr><td>171</td><td> <span class="codeReserved">border-bottom-color</span>: <span class="codeReserved">var</span>(--md-sys-color-error);</td></tr>
   <tr><td>172</td><td>}</td></tr>
   <tr><td>173</td><td></td></tr>
-  <tr><td>174</td><td>.md-filled-text-field :invalid~small,</td></tr>
-  <tr><td>175</td><td>.md-filled-text-field:hover :invalid~small,</td></tr>
-  <tr><td>176</td><td>.md-filled-text-field:focus-within .input-text:invalid~small {</td></tr>
-  <tr><td>177</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-error);</td></tr>
-  <tr><td>178</td><td>}</td></tr>
-  <tr><td>179</td><td></td></tr>
-  <tr><td>180</td><td>.md-filled-text-field :invalid:focus {</td></tr>
-  <tr><td>181</td><td> <span class="codeReserved">caret-color</span>: <span class="codeReserved">var</span>(--md-sys-color-error);</td></tr>
-  <tr><td>182</td><td> <span class="codeReserved">border-bottom-color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-error-container) !important;</td></tr>
+  <tr><td>174</td><td>.md-filled-text-field :invalid+span,</td></tr>
+  <tr><td>175</td><td>.md-filled-text-field :invalid+label {</td></tr>
+  <tr><td>176</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-error);</td></tr>
+  <tr><td>177</td><td>}</td></tr>
+  <tr><td>178</td><td></td></tr>
+  <tr><td>179</td><td>.md-filled-text-field :invalid~small,</td></tr>
+  <tr><td>180</td><td>.md-filled-text-field:hover :invalid~small,</td></tr>
+  <tr><td>181</td><td>.md-filled-text-field:focus-within .input-text:invalid~small {</td></tr>
+  <tr><td>182</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-error);</td></tr>
   <tr><td>183</td><td>}</td></tr>
   <tr><td>184</td><td></td></tr>
-  <tr><td>185</td><td>.md-filled-text-field:hover :invalid {</td></tr>
-  <tr><td>186</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
-  <tr><td>187</td><td>}</td></tr>
+  <tr><td>185</td><td>.md-filled-text-field :invalid:focus {</td></tr>
+  <tr><td>186</td><td> <span class="codeReserved">caret-color</span>: <span class="codeReserved">var</span>(--md-sys-color-error);</td></tr>
+  <tr><td>187</td><td> <span class="codeReserved">border-bottom-color</span>: <span class="codeReserved">var</span>(--md-sys-color-error);</td></tr>
+  <tr><td>188</td><td>}</td></tr>
+  <tr><td>189</td><td></td></tr>
+  <tr><td>190</td><td>.md-filled-text-field:hover :invalid {</td></tr>
+  <tr><td>191</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
+  <tr><td>192</td><td> <span class="codeReserved">border-bottom-color</span>: <span class="codeReserved">var</span>(--md-sys-color-error);</td></tr>
+  <tr><td>193</td><td>}</td></tr>
  </tbody>
 </table>
  <footer>

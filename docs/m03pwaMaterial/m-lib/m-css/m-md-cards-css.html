@@ -58,11 +58,12 @@
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
   --shadowTitulo: 3px 1px 2px black;
-  --colTitulo: #bae397;
-  --colTituloFondo: #609732;
-  --colPrincipalTituloStrong: white;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
   --colAStrong: var(--colLetra);
-  --colNavH1Sel: #b35f7c;
+  /* --colNavH1Sel: #b35f7c; */
   --colFondoNav: var(--colFondo);
   --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
@@ -125,8 +126,9 @@
    --colFondoAVisitedPushActive: #983351;
    --colSombra: #00000080;
    --colTitulo: #e3f5d4;
-   --colTituloFondo: #7db84d;
-   --colNavH1Sel: #d37290;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
    --colFondoNavSel: #7a3059;
    --colScrollbar: #616161;
    --colThumb: #ffffff;
@@ -567,9 +569,6 @@
  }
 
  @media print {
-  h1 {
-   text-shadow: var(--shadowTitulo);
-  }
 
   .codeShow button {
    display: none;
@@ -668,7 +667,6 @@
  #principal>h1:not(.default) {
   margin-top: var(--marginTop);
   padding: var(--h1PadTop) 1rem 1rem 1rem;
-  text-shadow: var(--shadowTitulo);
   color: var(--colTitulo);
   background-color: var(--colTituloFondo);
  }
@@ -726,23 +724,8 @@
   color: var(--colAStrong);
  }
 
- #nav h1 a {
-  color: var(--colTitulo);
-  background-color: var(--colTituloFondo);
-  text-shadow: var(--shadowTitulo);
- }
-
  #nav a.actual {
   background-color: var(--colFondoNavSel);
- }
-
- #nav h1 a.actual {
-  background-color: var(--colNavH1Sel);
- }
-
- #nav h1 a.actual code,
- #nav h1 a.actual strong {
-  color: var(--colPrincipalTituloStrong);
  }
 
  @media screen and (max-width: 999px) {
@@ -845,8 +828,8 @@
  </caption>
  <tbody>
   <tr><td>1</td><td>.md-cards {</td></tr>
-  <tr><td>2</td><td> <span class="codeReserved">margin</span>: 8px;</td></tr>
-  <tr><td>3</td><td> <span class="codeReserved">gap</span>: 8px;</td></tr>
+  <tr><td>2</td><td> <span class="codeReserved">margin</span>: 0.5rem;</td></tr>
+  <tr><td>3</td><td> <span class="codeReserved">gap</span>: 0.5rem;</td></tr>
   <tr><td>4</td><td> <span class="codeReserved">display</span>: grid;</td></tr>
   <tr><td>5</td><td> <span class="codeReserved">grid-template-columns</span>: <span class="codeReserved">repeat</span>(auto-fill, <span class="codeReserved">minmax</span>(15rem, 1fr));</td></tr>
   <tr><td>6</td><td>}</td></tr>
@@ -880,7 +863,7 @@
   <tr><td>34</td><td> <span class="codeReserved">display</span>: block;</td></tr>
   <tr><td>35</td><td> <span class="codeReserved">text-decoration</span>: none;</td></tr>
   <tr><td>36</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</td></tr>
-  <tr><td>37</td><td> <span class="codeReserved">border-radius</span>: 12px;</td></tr>
+  <tr><td>37</td><td> <span class="codeReserved">border-radius</span>: 0.75rem;</td></tr>
   <tr><td>38</td><td> <span class="codeReserved">overflow</span>: hidden;</td></tr>
   <tr><td>39</td><td> <span class="codeReserved">box-shadow</span>: <span class="codeReserved">var</span>(--md-box_shadow_level0);</td></tr>
   <tr><td>40</td><td>}</td></tr>
@@ -926,19 +909,19 @@
   <tr><td>80</td><td>}</td></tr>
   <tr><td>81</td><td></td></tr>
   <tr><td>82</td><td>.md-cards figure {</td></tr>
-  <tr><td>83</td><td> <span class="codeReserved">border-radius</span>: 12px;</td></tr>
+  <tr><td>83</td><td> <span class="codeReserved">border-radius</span>: 0.75rem;</td></tr>
   <tr><td>84</td><td> <span class="codeReserved">padding</span>: 0;</td></tr>
   <tr><td>85</td><td> <span class="codeReserved">margin</span>: 0;</td></tr>
   <tr><td>86</td><td> <span class="codeReserved">width</span>: 100%;</td></tr>
   <tr><td>87</td><td>}</td></tr>
   <tr><td>88</td><td></td></tr>
   <tr><td>89</td><td>.md-cards figure * {</td></tr>
-  <tr><td>90</td><td> <span class="codeReserved">border-radius</span>: 12px;</td></tr>
+  <tr><td>90</td><td> <span class="codeReserved">border-radius</span>: 0.75rem;</td></tr>
   <tr><td>91</td><td> <span class="codeReserved">width</span>: 100%;</td></tr>
   <tr><td>92</td><td>}</td></tr>
   <tr><td>93</td><td></td></tr>
   <tr><td>94</td><td>.md-cards .headline {</td></tr>
-  <tr><td>95</td><td> <span class="codeReserved">margin</span>: 16px;</td></tr>
+  <tr><td>95</td><td> <span class="codeReserved">margin</span>: 1rem;</td></tr>
   <tr><td>96</td><td> <span class="codeReserved">font-family</span>: <span class="codeReserved">var</span>(--md-sys-typescale-headline-small-font);</td></tr>
   <tr><td>97</td><td> <span class="codeReserved">font-weight</span>: <span class="codeReserved">var</span>(--md-sys-typescale-headline-small-weight);</td></tr>
   <tr><td>98</td><td> <span class="codeReserved">font-size</span>: <span class="codeReserved">var</span>(--md-sys-typescale-headline-small-size);</td></tr>
@@ -954,7 +937,7 @@
   <tr><td>108</td><td>}</td></tr>
   <tr><td>109</td><td></td></tr>
   <tr><td>110</td><td>.md-cards .supporting {</td></tr>
-  <tr><td>111</td><td> <span class="codeReserved">margin</span>: 16px;</td></tr>
+  <tr><td>111</td><td> <span class="codeReserved">margin</span>: 1rem;</td></tr>
   <tr><td>112</td><td> <span class="codeReserved">font-family</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-font);</td></tr>
   <tr><td>113</td><td> <span class="codeReserved">font-weight</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-weight);</td></tr>
   <tr><td>114</td><td> <span class="codeReserved">font-size</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-size);</td></tr>

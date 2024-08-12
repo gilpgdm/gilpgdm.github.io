@@ -58,11 +58,12 @@
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
   --shadowTitulo: 3px 1px 2px black;
-  --colTitulo: #bae397;
-  --colTituloFondo: #609732;
-  --colPrincipalTituloStrong: white;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
   --colAStrong: var(--colLetra);
-  --colNavH1Sel: #b35f7c;
+  /* --colNavH1Sel: #b35f7c; */
   --colFondoNav: var(--colFondo);
   --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
@@ -125,8 +126,9 @@
    --colFondoAVisitedPushActive: #983351;
    --colSombra: #00000080;
    --colTitulo: #e3f5d4;
-   --colTituloFondo: #7db84d;
-   --colNavH1Sel: #d37290;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
    --colFondoNavSel: #7a3059;
    --colScrollbar: #616161;
    --colThumb: #ffffff;
@@ -567,9 +569,6 @@
  }
 
  @media print {
-  h1 {
-   text-shadow: var(--shadowTitulo);
-  }
 
   .codeShow button {
    display: none;
@@ -668,7 +667,6 @@
  #principal>h1:not(.default) {
   margin-top: var(--marginTop);
   padding: var(--h1PadTop) 1rem 1rem 1rem;
-  text-shadow: var(--shadowTitulo);
   color: var(--colTitulo);
   background-color: var(--colTituloFondo);
  }
@@ -726,23 +724,8 @@
   color: var(--colAStrong);
  }
 
- #nav h1 a {
-  color: var(--colTitulo);
-  background-color: var(--colTituloFondo);
-  text-shadow: var(--shadowTitulo);
- }
-
  #nav a.actual {
   background-color: var(--colFondoNavSel);
- }
-
- #nav h1 a.actual {
-  background-color: var(--colNavH1Sel);
- }
-
- #nav h1 a.actual code,
- #nav h1 a.actual strong {
-  color: var(--colPrincipalTituloStrong);
  }
 
  @media screen and (max-width: 999px) {
@@ -872,78 +855,72 @@
   <tr><td>26</td><td></td></tr>
   <tr><td>27</td><td>  <span class="codeReserved">import</span> { muestraError } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/muestraError.js"</span></td></tr>
   <tr><td>28</td><td>  <span class="codeReserved">import</span> { enviaJson } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/enviaJson.js"</span></td></tr>
-  <tr><td>29</td><td>  <span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"./js/modelo/Pasatiempo.js"</span></td></tr>
-  <tr><td>30</td><td>  <span class="codeReserved">import</span> {</td></tr>
-  <tr><td>31</td><td>   validaQueTengaLasPropiedadesDePasatiempo</td></tr>
-  <tr><td>32</td><td>  } <span class="codeReserved">from</span> <span class="codeString">"./js/modelo/validaQueTengaLasPropiedadesDePasatiempo.js"</span></td></tr>
-  <tr><td>33</td><td>  <span class="codeReserved">import</span> {</td></tr>
-  <tr><td>34</td><td>   pasatiempoConsultaNoEliminados</td></tr>
-  <tr><td>35</td><td>  } <span class="codeReserved">from</span> <span class="codeString">"./js/bd/pasatiempoConsultaNoEliminados.js"</span></td></tr>
-  <tr><td>36</td><td>  <span class="codeReserved">import</span> { pasatiempoConsultaTodos } <span class="codeReserved">from</span> <span class="codeString">"./js/bd/pasatiempoConsultaTodos.js"</span></td></tr>
-  <tr><td>37</td><td>  <span class="codeReserved">import</span> { pasatiemposReemplaza } <span class="codeReserved">from</span> <span class="codeString">"./js/bd/pasatiemposReemplaza.js"</span></td></tr>
-  <tr><td>38</td><td></td></tr>
-  <tr><td>39</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>40</td><td><span class="codeComment">   * Cada 20 segundos (2000 milisegundos) después de la última</span></td></tr>
-  <tr><td>41</td><td><span class="codeComment">   * sincronización, los datos se envían al servidor para volver a</span></td></tr>
-  <tr><td>42</td><td><span class="codeComment">   * sincronizarse con los datos del servidor.</span></td></tr>
-  <tr><td>43</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>44</td><td>  <span class="codeReserved">const</span> MILISEGUNDOS_PARA_VOLVER_A_SINCRONIZAR = 20000</td></tr>
-  <tr><td>45</td><td>  <span class="codeReserved">let</span> noHaSincronizado = <span class="codeReserved">true</span></td></tr>
-  <tr><td>46</td><td></td></tr>
-  <tr><td>47</td><td>  <span class="codeComment">// Crea y pone en funcionamiento el worker del archivo &quot;render.js&quot;.</span></td></tr>
-  <tr><td>48</td><td>  <span class="codeReserved">const</span> worker = <span class="codeReserved">new</span> Worker(<span class="codeString">"render.js"</span>, { type: <span class="codeString">"module"</span> })</td></tr>
-  <tr><td>49</td><td></td></tr>
-  <tr><td>50</td><td>  <span class="codeComment">// Se invoca cuando el worker envía un mensaje a la página.</span></td></tr>
-  <tr><td>51</td><td>  worker.onmessage = <span class="codeReserved">async</span> event =&gt; {</td></tr>
-  <tr><td>52</td><td>   lista.innerHTML = event.data</td></tr>
-  <tr><td>53</td><td>   <span class="codeReserved">if</span> (noHaSincronizado) {</td></tr>
-  <tr><td>54</td><td>    noHaSincronizado = <span class="codeReserved">false</span></td></tr>
-  <tr><td>55</td><td>    <span class="codeReserved">await</span> sincroniza()</td></tr>
-  <tr><td>56</td><td>   } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>57</td><td>    esperaUnPocoYLanzaSincronizacion()</td></tr>
-  <tr><td>58</td><td>   }</td></tr>
-  <tr><td>59</td><td>  }</td></tr>
-  <tr><td>60</td><td></td></tr>
-  <tr><td>61</td><td>  pasatiempoConsultaNoEliminados()</td></tr>
-  <tr><td>62</td><td>   .then(renderEnWebWorker)</td></tr>
-  <tr><td>63</td><td>   .<span class="codeReserved">catch</span>(muestraError)</td></tr>
-  <tr><td>64</td><td></td></tr>
-  <tr><td>65</td><td>  <span class="codeReserved">function</span> renderEnWebWorker(datos) {</td></tr>
-  <tr><td>66</td><td>   <span class="codeReserved">if</span> (!Array.isArray(datos))</td></tr>
-  <tr><td>67</td><td>    <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Los datos no están en un arreglo."</span>)</td></tr>
-  <tr><td>68</td><td>   <span class="codeReserved">for</span> (<span class="codeReserved">const</span> dato of datos) {</td></tr>
-  <tr><td>69</td><td>    validaQueTengaLasPropiedadesDePasatiempo(dato)</td></tr>
-  <tr><td>70</td><td>   }</td></tr>
-  <tr><td>71</td><td>   <span class="codeComment">// Manda los datos al worker para renderizar.</span></td></tr>
-  <tr><td>72</td><td>   worker.postMessage(datos)</td></tr>
-  <tr><td>73</td><td>  }</td></tr>
-  <tr><td>74</td><td></td></tr>
-  <tr><td>75</td><td>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> sincroniza() {</td></tr>
-  <tr><td>76</td><td>   <span class="codeReserved">try</span> {</td></tr>
-  <tr><td>77</td><td>    <span class="codeReserved">if</span> (navigator.onLine) {</td></tr>
-  <tr><td>78</td><td>     <span class="codeReserved">const</span> todos = <span class="codeReserved">await</span> pasatiempoConsultaTodos()</td></tr>
-  <tr><td>79</td><td>     <span class="codeReserved">const</span> respuesta = <span class="codeReserved">await</span> enviaJson(<span class="codeString">"srv/srvSincro.php"</span>, todos)</td></tr>
-  <tr><td>80</td><td>     <span class="codeReserved">const</span> datosNuevos = respuesta.body</td></tr>
-  <tr><td>81</td><td>     renderEnWebWorker(datosNuevos)</td></tr>
-  <tr><td>82</td><td>     <span class="codeReserved">await</span> pasatiemposReemplaza(datosNuevos)</td></tr>
-  <tr><td>83</td><td>    } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>84</td><td>     esperaUnPocoYLanzaSincronizacion()</td></tr>
-  <tr><td>85</td><td>    }</td></tr>
-  <tr><td>86</td><td>   } <span class="codeReserved">catch</span> (error) {</td></tr>
-  <tr><td>87</td><td>    muestraError(error)</td></tr>
-  <tr><td>88</td><td>    esperaUnPocoYLanzaSincronizacion()</td></tr>
-  <tr><td>89</td><td>   }</td></tr>
-  <tr><td>90</td><td>  }</td></tr>
+  <tr><td>29</td><td>  <span class="codeReserved">import</span> { htmlentities } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/htmlentities.js"</span></td></tr>
+  <tr><td>30</td><td>  <span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"./js/modelo/Pasatiempo.js"</span></td></tr>
+  <tr><td>31</td><td>  <span class="codeReserved">import</span> { validaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"./js/modelo/validaPasatiempo.js"</span></td></tr>
+  <tr><td>32</td><td>  <span class="codeReserved">import</span> {</td></tr>
+  <tr><td>33</td><td>   pasatiempoConsultaNoEliminados</td></tr>
+  <tr><td>34</td><td>  } <span class="codeReserved">from</span> <span class="codeString">"./js/bd/pasatiempoConsultaNoEliminados.js"</span></td></tr>
+  <tr><td>35</td><td>  <span class="codeReserved">import</span> { pasatiempoConsultaTodos } <span class="codeReserved">from</span> <span class="codeString">"./js/bd/pasatiempoConsultaTodos.js"</span></td></tr>
+  <tr><td>36</td><td>  <span class="codeReserved">import</span> { pasatiemposReemplaza } <span class="codeReserved">from</span> <span class="codeString">"./js/bd/pasatiemposReemplaza.js"</span></td></tr>
+  <tr><td>37</td><td></td></tr>
+  <tr><td>38</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>39</td><td><span class="codeComment">   * Cada 20 segundos (2000 milisegundos) después de la última</span></td></tr>
+  <tr><td>40</td><td><span class="codeComment">   * sincronización, los datos se envían al servidor para volver a</span></td></tr>
+  <tr><td>41</td><td><span class="codeComment">   * sincronizarse con los datos del servidor.</span></td></tr>
+  <tr><td>42</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>43</td><td>  <span class="codeReserved">const</span> MILISEGUNDOS_PARA_VOLVER_A_SINCRONIZAR = 20000</td></tr>
+  <tr><td>44</td><td>  <span class="codeReserved">let</span> noHaSincronizado = <span class="codeReserved">true</span></td></tr>
+  <tr><td>45</td><td></td></tr>
+  <tr><td>46</td><td>  pasatiempoConsultaNoEliminados()</td></tr>
+  <tr><td>47</td><td>   .then(datos =&gt; {</td></tr>
+  <tr><td>48</td><td>    renderiza(datos)</td></tr>
+  <tr><td>49</td><td>    sincroniza()</td></tr>
+  <tr><td>50</td><td>   })</td></tr>
+  <tr><td>51</td><td>   .<span class="codeReserved">catch</span>(error =&gt; {</td></tr>
+  <tr><td>52</td><td>    muestraError(error)</td></tr>
+  <tr><td>53</td><td>    esperaUnPocoYLanzaSincronizacion()</td></tr>
+  <tr><td>54</td><td>   })</td></tr>
+  <tr><td>55</td><td></td></tr>
+  <tr><td>56</td><td>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> renderiza(pasatiempos) {</td></tr>
+  <tr><td>57</td><td></td></tr>
+  <tr><td>58</td><td>   <span class="codeReserved">let</span> render = <span class="codeString">""</span></td></tr>
+  <tr><td>59</td><td>   <span class="codeReserved">for</span> (<span class="codeReserved">const</span> modelo of pasatiempos) {</td></tr>
+  <tr><td>60</td><td>    <span class="codeReserved">const</span> nombre = htmlentities(modelo.nombre)</td></tr>
+  <tr><td>61</td><td>    <span class="codeReserved">const</span> searchParams = <span class="codeReserved">new</span> URLSearchParams([[<span class="codeString">"uuid"</span>, modelo.uuid]])</td></tr>
+  <tr><td>62</td><td>    <span class="codeReserved">const</span> params = htmlentities(searchParams.toString())</td></tr>
+  <tr><td>63</td><td>    render += <span class="codeComment">/* html */</span></td></tr>
+  <tr><td>64</td><td>     <span class="codeString">`&lt;<span class="codeReserved">li</span>&gt;</span></td></tr>
+  <tr><td>65</td><td><span class="codeString">      &lt;<span class="codeReserved">p</span>&gt;&lt;<span class="codeReserved">a</span> href=&quot;modifica.html?${params}&quot;&gt;${nombre}&lt;/<span class="codeReserved">a</span>&gt;&lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>66</td><td><span class="codeString">     &lt;/<span class="codeReserved">li</span>&gt;`</span></td></tr>
+  <tr><td>67</td><td>   }</td></tr>
+  <tr><td>68</td><td>   lista.innerHTML = render</td></tr>
+  <tr><td>69</td><td>  }</td></tr>
+  <tr><td>70</td><td></td></tr>
+  <tr><td>71</td><td>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> sincroniza() {</td></tr>
+  <tr><td>72</td><td>   <span class="codeReserved">try</span> {</td></tr>
+  <tr><td>73</td><td>    <span class="codeReserved">if</span> (navigator.onLine) {</td></tr>
+  <tr><td>74</td><td>     <span class="codeReserved">const</span> todos = <span class="codeReserved">await</span> pasatiempoConsultaTodos()</td></tr>
+  <tr><td>75</td><td>     <span class="codeReserved">const</span> respuesta = <span class="codeReserved">await</span> enviaJson(<span class="codeString">"srv/sincroniza.php"</span>, todos)</td></tr>
+  <tr><td>76</td><td>     <span class="codeReserved">const</span> datosNuevos = respuesta.body</td></tr>
+  <tr><td>77</td><td>     <span class="codeReserved">await</span> pasatiemposReemplaza(datosNuevos)</td></tr>
+  <tr><td>78</td><td>     renderiza(datosNuevos)</td></tr>
+  <tr><td>79</td><td>    }</td></tr>
+  <tr><td>80</td><td>   } <span class="codeReserved">catch</span> (error) {</td></tr>
+  <tr><td>81</td><td>    muestraError(error)</td></tr>
+  <tr><td>82</td><td>   }</td></tr>
+  <tr><td>83</td><td>   esperaUnPocoYLanzaSincronizacion()</td></tr>
+  <tr><td>84</td><td>  }</td></tr>
+  <tr><td>85</td><td></td></tr>
+  <tr><td>86</td><td>  <span class="codeReserved">function</span> esperaUnPocoYLanzaSincronizacion() {</td></tr>
+  <tr><td>87</td><td>   setTimeout(sincroniza, MILISEGUNDOS_PARA_VOLVER_A_SINCRONIZAR)</td></tr>
+  <tr><td>88</td><td>  }</td></tr>
+  <tr><td>89</td><td></td></tr>
+  <tr><td>90</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
   <tr><td>91</td><td></td></tr>
-  <tr><td>92</td><td>  <span class="codeReserved">function</span> esperaUnPocoYLanzaSincronizacion() {</td></tr>
-  <tr><td>93</td><td>   setTimeout(sincroniza, MILISEGUNDOS_PARA_VOLVER_A_SINCRONIZAR)</td></tr>
-  <tr><td>94</td><td>  }</td></tr>
-  <tr><td>95</td><td></td></tr>
-  <tr><td>96</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
-  <tr><td>97</td><td></td></tr>
-  <tr><td>98</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>99</td><td></td></tr>
-  <tr><td>100</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+  <tr><td>92</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>93</td><td></td></tr>
+  <tr><td>94</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
  </tbody>
 </table>
  <footer>

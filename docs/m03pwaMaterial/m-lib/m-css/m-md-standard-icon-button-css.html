@@ -58,11 +58,12 @@
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
   --shadowTitulo: 3px 1px 2px black;
-  --colTitulo: #bae397;
-  --colTituloFondo: #609732;
-  --colPrincipalTituloStrong: white;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
   --colAStrong: var(--colLetra);
-  --colNavH1Sel: #b35f7c;
+  /* --colNavH1Sel: #b35f7c; */
   --colFondoNav: var(--colFondo);
   --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
@@ -125,8 +126,9 @@
    --colFondoAVisitedPushActive: #983351;
    --colSombra: #00000080;
    --colTitulo: #e3f5d4;
-   --colTituloFondo: #7db84d;
-   --colNavH1Sel: #d37290;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
    --colFondoNavSel: #7a3059;
    --colScrollbar: #616161;
    --colThumb: #ffffff;
@@ -567,9 +569,6 @@
  }
 
  @media print {
-  h1 {
-   text-shadow: var(--shadowTitulo);
-  }
 
   .codeShow button {
    display: none;
@@ -668,7 +667,6 @@
  #principal>h1:not(.default) {
   margin-top: var(--marginTop);
   padding: var(--h1PadTop) 1rem 1rem 1rem;
-  text-shadow: var(--shadowTitulo);
   color: var(--colTitulo);
   background-color: var(--colTituloFondo);
  }
@@ -726,23 +724,8 @@
   color: var(--colAStrong);
  }
 
- #nav h1 a {
-  color: var(--colTitulo);
-  background-color: var(--colTituloFondo);
-  text-shadow: var(--shadowTitulo);
- }
-
  #nav a.actual {
   background-color: var(--colFondoNavSel);
- }
-
- #nav h1 a.actual {
-  background-color: var(--colNavH1Sel);
- }
-
- #nav h1 a.actual code,
- #nav h1 a.actual strong {
-  color: var(--colPrincipalTituloStrong);
  }
 
  @media screen and (max-width: 999px) {
@@ -848,7 +831,7 @@
   <tr><td>2</td><td> <span class="codeReserved">position</span>: relative;</td></tr>
   <tr><td>3</td><td> <span class="codeReserved">display</span>: inline-block;</td></tr>
   <tr><td>4</td><td> <span class="codeReserved">border</span>: none;</td></tr>
-  <tr><td>5</td><td> <span class="codeReserved">padding</span>: 4px;</td></tr>
+  <tr><td>5</td><td> <span class="codeReserved">padding</span>: 0.25rem;</td></tr>
   <tr><td>6</td><td> <span class="codeReserved">background-color</span>: transparent;</td></tr>
   <tr><td>7</td><td> <span class="codeReserved">text-decoration</span>: none;</td></tr>
   <tr><td>8</td><td> <span class="codeReserved">border-radius</span>: 50%;</td></tr>
@@ -863,27 +846,27 @@
   <tr><td>17</td><td>.md-standard-icon-button::after {</td></tr>
   <tr><td>18</td><td> <span class="codeReserved">content</span>: <span class="codeString">""</span>;</td></tr>
   <tr><td>19</td><td> <span class="codeReserved">position</span>: absolute;</td></tr>
-  <tr><td>20</td><td> <span class="codeReserved">top</span>: 4px;</td></tr>
-  <tr><td>21</td><td> <span class="codeReserved">right</span>: 4px;</td></tr>
-  <tr><td>22</td><td> <span class="codeReserved">left</span>: 4px;</td></tr>
-  <tr><td>23</td><td> <span class="codeReserved">bottom</span>: 4px;</td></tr>
+  <tr><td>20</td><td> <span class="codeReserved">top</span>: 0.25rem;</td></tr>
+  <tr><td>21</td><td> <span class="codeReserved">right</span>: 0.25rem;</td></tr>
+  <tr><td>22</td><td> <span class="codeReserved">left</span>: 0.25rem;</td></tr>
+  <tr><td>23</td><td> <span class="codeReserved">bottom</span>: 0.25rem;</td></tr>
   <tr><td>24</td><td> <span class="codeReserved">border-radius</span>: 50%;</td></tr>
   <tr><td>25</td><td>}</td></tr>
   <tr><td>26</td><td></td></tr>
   <tr><td>27</td><td>.md-standard-icon-button span {</td></tr>
   <tr><td>28</td><td> <span class="codeReserved">position</span>: relative;</td></tr>
-  <tr><td>29</td><td> <span class="codeReserved">padding</span>: 8px;</td></tr>
+  <tr><td>29</td><td> <span class="codeReserved">padding</span>: 0.5rem;</td></tr>
   <tr><td>30</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</td></tr>
-  <tr><td>31</td><td> <span class="codeReserved">font-size</span>: 24px;</td></tr>
-  <tr><td>32</td><td> <span class="codeReserved">width</span>: 24px;</td></tr>
-  <tr><td>33</td><td> <span class="codeReserved">height</span>: 24px;</td></tr>
+  <tr><td>31</td><td> <span class="codeReserved">font-size</span>: 1.5rem;</td></tr>
+  <tr><td>32</td><td> <span class="codeReserved">width</span>: 1.5rem;</td></tr>
+  <tr><td>33</td><td> <span class="codeReserved">height</span>: 1.5rem;</td></tr>
   <tr><td>34</td><td>}</td></tr>
   <tr><td>35</td><td></td></tr>
   <tr><td>36</td><td>.md-standard-icon-button.avatar span {</td></tr>
-  <tr><td>37</td><td> <span class="codeReserved">padding</span>: 5px;</td></tr>
-  <tr><td>38</td><td> <span class="codeReserved">font-size</span>: 30px;</td></tr>
-  <tr><td>39</td><td> <span class="codeReserved">width</span>: 30px;</td></tr>
-  <tr><td>40</td><td> <span class="codeReserved">height</span>: 30px;</td></tr>
+  <tr><td>37</td><td> <span class="codeReserved">padding</span>: 0.3125rem;</td></tr>
+  <tr><td>38</td><td> <span class="codeReserved">font-size</span>: 1.875rem;</td></tr>
+  <tr><td>39</td><td> <span class="codeReserved">width</span>: 1.875rem;</td></tr>
+  <tr><td>40</td><td> <span class="codeReserved">height</span>: 1.875rem;</td></tr>
   <tr><td>41</td><td>}</td></tr>
   <tr><td>42</td><td></td></tr>
   <tr><td>43</td><td>.md-standard-icon-button:hover::after {</td></tr>

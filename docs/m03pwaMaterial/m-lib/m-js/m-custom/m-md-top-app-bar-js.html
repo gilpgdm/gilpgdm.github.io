@@ -58,11 +58,12 @@
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
   --shadowTitulo: 3px 1px 2px black;
-  --colTitulo: #bae397;
-  --colTituloFondo: #609732;
-  --colPrincipalTituloStrong: white;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
   --colAStrong: var(--colLetra);
-  --colNavH1Sel: #b35f7c;
+  /* --colNavH1Sel: #b35f7c; */
   --colFondoNav: var(--colFondo);
   --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
@@ -125,8 +126,9 @@
    --colFondoAVisitedPushActive: #983351;
    --colSombra: #00000080;
    --colTitulo: #e3f5d4;
-   --colTituloFondo: #7db84d;
-   --colNavH1Sel: #d37290;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
    --colFondoNavSel: #7a3059;
    --colScrollbar: #616161;
    --colThumb: #ffffff;
@@ -567,9 +569,6 @@
  }
 
  @media print {
-  h1 {
-   text-shadow: var(--shadowTitulo);
-  }
 
   .codeShow button {
    display: none;
@@ -668,7 +667,6 @@
  #principal>h1:not(.default) {
   margin-top: var(--marginTop);
   padding: var(--h1PadTop) 1rem 1rem 1rem;
-  text-shadow: var(--shadowTitulo);
   color: var(--colTitulo);
   background-color: var(--colTituloFondo);
  }
@@ -726,23 +724,8 @@
   color: var(--colAStrong);
  }
 
- #nav h1 a {
-  color: var(--colTitulo);
-  background-color: var(--colTituloFondo);
-  text-shadow: var(--shadowTitulo);
- }
-
  #nav a.actual {
   background-color: var(--colFondoNavSel);
- }
-
- #nav h1 a.actual {
-  background-color: var(--colNavH1Sel);
- }
-
- #nav h1 a.actual code,
- #nav h1 a.actual strong {
-  color: var(--colPrincipalTituloStrong);
  }
 
  @media screen and (max-width: 999px) {
@@ -858,18 +841,18 @@
   <tr><td>12</td><td><span class="codeString">     <span class="codeReserved">display</span>: <span class="codeReserved">flex</span>;</span></td></tr>
   <tr><td>13</td><td><span class="codeString">     <span class="codeReserved">box-sizing</span>: border-box;</span></td></tr>
   <tr><td>14</td><td><span class="codeString">     <span class="codeReserved">align-items</span>: center;</span></td></tr>
-  <tr><td>15</td><td><span class="codeString">     <span class="codeReserved">padding</span>: 0 4px;</span></td></tr>
+  <tr><td>15</td><td><span class="codeString">     <span class="codeReserved">padding</span>: 0 0.25rem;</span></td></tr>
   <tr><td>16</td><td><span class="codeString">     <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-surface);</span></td></tr>
   <tr><td>17</td><td><span class="codeString">     <span class="codeReserved">position</span>: sticky;</span></td></tr>
   <tr><td>18</td><td><span class="codeString">     <span class="codeReserved">z-index</span>: 1;</span></td></tr>
   <tr><td>19</td><td><span class="codeString">     <span class="codeReserved">left</span>: env(titlebar-area-x, 0);</span></td></tr>
   <tr><td>20</td><td><span class="codeString">     <span class="codeReserved">top</span>: env(titlebar-area-y, 0);</span></td></tr>
-  <tr><td>21</td><td><span class="codeString">     <span class="codeReserved">height</span>: env(titlebar-area-height, 64px);</span></td></tr>
+  <tr><td>21</td><td><span class="codeString">     <span class="codeReserved">height</span>: env(titlebar-area-height, 4rem);</span></td></tr>
   <tr><td>22</td><td><span class="codeString">     <span class="codeReserved">width</span>: env(titlebar-area-width, 100%);</span></td></tr>
   <tr><td>23</td><td><span class="codeString">    }</span></td></tr>
   <tr><td>24</td><td><span class="codeString">    </span></td></tr>
   <tr><td>25</td><td><span class="codeString">    :host(.apple) {</span></td></tr>
-  <tr><td>26</td><td><span class="codeString">     <span class="codeReserved">height</span>: env(titlebar-area-height, 48px);</span></td></tr>
+  <tr><td>26</td><td><span class="codeString">     <span class="codeReserved">height</span>: env(titlebar-area-height, 3rem);</span></td></tr>
   <tr><td>27</td><td><span class="codeString">    }</span></td></tr>
   <tr><td>28</td><td><span class="codeString"></span></td></tr>
   <tr><td>29</td><td><span class="codeString">    :host(.scroll) {</span></td></tr>
@@ -893,203 +876,204 @@
   <tr><td>47</td><td><span class="codeString"></span></td></tr>
   <tr><td>48</td><td><span class="codeString">    :host(.centrado) #acciones,</span></td></tr>
   <tr><td>49</td><td><span class="codeString">    :host(.center-aligned) #acciones {</span></td></tr>
-  <tr><td>50</td><td><span class="codeString">     <span class="codeReserved">flex</span>: 0 0 48px;</span></td></tr>
+  <tr><td>50</td><td><span class="codeString">     <span class="codeReserved">flex</span>: 0 0 3rem;</span></td></tr>
   <tr><td>51</td><td><span class="codeString">     <span class="codeReserved">overflow</span>: hidden</span></td></tr>
   <tr><td>52</td><td><span class="codeString">    }</span></td></tr>
   <tr><td>53</td><td><span class="codeString"></span></td></tr>
   <tr><td>54</td><td><span class="codeString">    #headline::slotted(*) {</span></td></tr>
   <tr><td>55</td><td><span class="codeString">     -webkit-app-region: drag;</span></td></tr>
-  <tr><td>56</td><td><span class="codeString">     <span class="codeReserved">white-space</span>: nowrap;</span></td></tr>
-  <tr><td>57</td><td><span class="codeString">     <span class="codeReserved">text-overflow</span>: ellipsis;</span></td></tr>
-  <tr><td>58</td><td><span class="codeString">     <span class="codeReserved">overflow</span>: hidden;</span></td></tr>
-  <tr><td>59</td><td><span class="codeString">     <span class="codeReserved">font-family</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-font);</span></td></tr>
-  <tr><td>60</td><td><span class="codeString">     <span class="codeReserved">font-weight</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-weight);</span></td></tr>
-  <tr><td>61</td><td><span class="codeString">     <span class="codeReserved">font-size</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-size);</span></td></tr>
-  <tr><td>62</td><td><span class="codeString">     <span class="codeReserved">font-style</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-font-style);</span></td></tr>
-  <tr><td>63</td><td><span class="codeString">     <span class="codeReserved">letter-spacing</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-tracking);</span></td></tr>
-  <tr><td>64</td><td><span class="codeString">     <span class="codeReserved">line-height</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-line-height);</span></td></tr>
-  <tr><td>65</td><td><span class="codeString">     <span class="codeReserved">text-transform</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-text-transform);</span></td></tr>
-  <tr><td>66</td><td><span class="codeString">     <span class="codeReserved">text-decoration</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-text-decoration);</span></td></tr>
-  <tr><td>67</td><td><span class="codeString">     <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</span></td></tr>
-  <tr><td>68</td><td><span class="codeString">     <span class="codeReserved">transition-property</span>: <span class="codeReserved">opacity</span>;</span></td></tr>
-  <tr><td>69</td><td><span class="codeString">     <span class="codeReserved">transition-duration</span>: <span class="codeReserved">var</span>(--md-sys-motion-duration-700);</span></td></tr>
-  <tr><td>70</td><td><span class="codeString">    }</span></td></tr>
-  <tr><td>71</td><td><span class="codeString"></span></td></tr>
-  <tr><td>72</td><td><span class="codeString">    :host(.headline) #headline::slotted(*) {</span></td></tr>
-  <tr><td>73</td><td><span class="codeString">     <span class="codeReserved">opacity</span>: 0;</span></td></tr>
-  <tr><td>74</td><td><span class="codeString">    }</span></td></tr>
-  <tr><td>75</td><td><span class="codeString"></span></td></tr>
-  <tr><td>76</td><td><span class="codeString">    :host(.scroll.headline) #headline::slotted(*) {</span></td></tr>
-  <tr><td>77</td><td><span class="codeString">     <span class="codeReserved">opacity</span>: 1;</span></td></tr>
-  <tr><td>78</td><td><span class="codeString">    }</span></td></tr>
-  <tr><td>79</td><td><span class="codeString"></span></td></tr>
-  <tr><td>80</td><td><span class="codeString">    :host(.center-aligned) #headline::slotted(*) {</span></td></tr>
-  <tr><td>81</td><td><span class="codeString">     <span class="codeReserved">flex</span>: 1 1 auto;</span></td></tr>
-  <tr><td>82</td><td><span class="codeString">     <span class="codeReserved">text-align</span>: center</span></td></tr>
-  <tr><td>83</td><td><span class="codeString">    }</span></td></tr>
-  <tr><td>84</td><td><span class="codeString"></span></td></tr>
-  <tr><td>85</td><td><span class="codeString">   &lt;/<span class="codeReserved">style</span>&gt;</span></td></tr>
-  <tr><td>86</td><td><span class="codeString"></span></td></tr>
-  <tr><td>87</td><td><span class="codeString">   &lt;<span class="codeReserved">span</span> id=&quot;navigation&quot;&gt;</span></td></tr>
-  <tr><td>88</td><td><span class="codeString">    &lt;<span class="codeReserved">slot</span> name=&quot;navigation&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;</span></td></tr>
-  <tr><td>89</td><td><span class="codeString">   &lt;/<span class="codeReserved">span</span>&gt;</span></td></tr>
-  <tr><td>90</td><td><span class="codeString">   &lt;<span class="codeReserved">slot</span> id=&quot;headline&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;</span></td></tr>
-  <tr><td>91</td><td><span class="codeString">   &lt;<span class="codeReserved">span</span> id=&quot;acciones&quot;&gt;</span></td></tr>
-  <tr><td>92</td><td><span class="codeString">    &lt;<span class="codeReserved">slot</span> name=&quot;action&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;</span></td></tr>
-  <tr><td>93</td><td><span class="codeString">   &lt;/<span class="codeReserved">span</span>&gt;`</span></td></tr>
-  <tr><td>94</td><td> }</td></tr>
-  <tr><td>95</td><td></td></tr>
-  <tr><td>96</td><td> <span class="codeReserved">constructor</span>() {</td></tr>
-  <tr><td>97</td><td>  super()</td></tr>
-  <tr><td>98</td><td>  <span class="codeReserved">if</span> (ES_APPLE) {</td></tr>
-  <tr><td>99</td><td>   document.body.classList.add(<span class="codeString">"apple"</span>)</td></tr>
-  <tr><td>100</td><td>   document.body.classList.remove(<span class="codeString">"material"</span>)</td></tr>
-  <tr><td>101</td><td>  } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>102</td><td>   document.body.classList.add(<span class="codeString">"material"</span>)</td></tr>
-  <tr><td>103</td><td>   document.body.classList.remove(<span class="codeString">"apple"</span>)</td></tr>
-  <tr><td>104</td><td>  }</td></tr>
-  <tr><td>105</td><td></td></tr>
-  <tr><td>106</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>107</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
-  <tr><td>108</td><td><span class="codeComment">   * <span class="codeReserved">@readonly</span></span></td></tr>
-  <tr><td>109</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>110</td><td>  <span class="codeReserved">const</span> shadow = <span class="codeReserved">this</span>.attachShadow({ mode: <span class="codeString">"open"</span> })</td></tr>
-  <tr><td>111</td><td>  shadow.innerHTML = <span class="codeReserved">this</span>.getContent()</td></tr>
-  <tr><td>112</td><td>  <span class="codeReserved">this</span>._configuraAction = <span class="codeReserved">this</span>._configuraAction.bind(<span class="codeReserved">this</span>)</td></tr>
-  <tr><td>113</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>114</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
-  <tr><td>115</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> {number}</span></td></tr>
-  <tr><td>116</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>117</td><td>  <span class="codeReserved">this</span>._posY = 0</td></tr>
-  <tr><td>118</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>119</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
-  <tr><td>120</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> {boolean}</span></td></tr>
-  <tr><td>121</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>122</td><td>  <span class="codeReserved">this</span>._scrolling = <span class="codeReserved">false</span></td></tr>
-  <tr><td>123</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>124</td><td><span class="codeComment">    * <span class="codeReserved">@private</span></span></td></tr>
-  <tr><td>125</td><td><span class="codeComment">    * <span class="codeReserved">@type</span> { HTMLSlotElement }</span></td></tr>
-  <tr><td>126</td><td><span class="codeComment">    */</span></td></tr>
-  <tr><td>127</td><td>  <span class="codeReserved">this</span>._navigation = querySelector(shadow, <span class="codeString">'[name=&quot;navigation&quot;]'</span>)</td></tr>
-  <tr><td>128</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>129</td><td><span class="codeComment">    * <span class="codeReserved">@private</span></span></td></tr>
-  <tr><td>130</td><td><span class="codeComment">    * <span class="codeReserved">@type</span> { HTMLSlotElement }</span></td></tr>
-  <tr><td>131</td><td><span class="codeComment">    */</span></td></tr>
-  <tr><td>132</td><td>  <span class="codeReserved">this</span>._action = querySelector(shadow, <span class="codeString">'[name=&quot;action&quot;]'</span>)</td></tr>
-  <tr><td>133</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>134</td><td><span class="codeComment">    * <span class="codeReserved">@private</span></span></td></tr>
-  <tr><td>135</td><td><span class="codeComment">    * <span class="codeReserved">@type</span> { HTMLHeadingElement | <span class="codeReserved">null</span> }</span></td></tr>
-  <tr><td>136</td><td><span class="codeComment">    */</span></td></tr>
-  <tr><td>137</td><td>  <span class="codeReserved">this</span>._headline = <span class="codeReserved">null</span></td></tr>
-  <tr><td>138</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>139</td><td><span class="codeComment">    * <span class="codeReserved">@private</span></span></td></tr>
-  <tr><td>140</td><td><span class="codeComment">    * <span class="codeReserved">@type</span> { HTMLElement | <span class="codeReserved">null</span> }</span></td></tr>
-  <tr><td>141</td><td><span class="codeComment">    */</span></td></tr>
-  <tr><td>142</td><td>  <span class="codeReserved">this</span>._adicional = <span class="codeReserved">null</span></td></tr>
-  <tr><td>143</td><td>  <span class="codeReserved">this</span>._action.addEventListener(<span class="codeString">"slotchange"</span>, <span class="codeReserved">this</span>._configuraAction)</td></tr>
-  <tr><td>144</td><td>  addEventListener(<span class="codeString">"scroll"</span>, () =&gt; <span class="codeReserved">this</span>._onScroll())</td></tr>
-  <tr><td>145</td><td>  addEventListener(<span class="codeString">"load"</span>, () =&gt; <span class="codeReserved">this</span>.configurOtros())</td></tr>
-  <tr><td>146</td><td> }</td></tr>
-  <tr><td>147</td><td></td></tr>
-  <tr><td>148</td><td> connectedCallback() {</td></tr>
-  <tr><td>149</td><td>  <span class="codeReserved">this</span>.role = <span class="codeString">"toolbar"</span></td></tr>
-  <tr><td>150</td><td>  <span class="codeReserved">this</span>._configuraAction()</td></tr>
-  <tr><td>151</td><td> }</td></tr>
-  <tr><td>152</td><td></td></tr>
-  <tr><td>153</td><td> configurOtros() {</td></tr>
-  <tr><td>154</td><td>  <span class="codeReserved">const</span> idHeadline = getAttribute(<span class="codeReserved">this</span>, <span class="codeString">"headline"</span>)</td></tr>
-  <tr><td>155</td><td>  <span class="codeReserved">if</span> (idHeadline !== <span class="codeString">""</span>) {</td></tr>
-  <tr><td>156</td><td>   <span class="codeReserved">const</span> headline = document.getElementById(idHeadline)</td></tr>
-  <tr><td>157</td><td>   <span class="codeReserved">if</span> (headline <span class="codeReserved">instanceof</span> HTMLHeadingElement) {</td></tr>
-  <tr><td>158</td><td>    <span class="codeReserved">this</span>._headline = headline</td></tr>
-  <tr><td>159</td><td>    <span class="codeReserved">this</span>.classList.add(<span class="codeString">"headline"</span>)</td></tr>
-  <tr><td>160</td><td>    <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.classList.contains(<span class="codeString">"apple"</span>) || <span class="codeReserved">this</span>.classList.contains(<span class="codeString">"medium"</span>)) {</td></tr>
-  <tr><td>161</td><td>     headline.classList.add(<span class="codeString">"md-headline"</span>, <span class="codeString">"headline-small"</span>)</td></tr>
-  <tr><td>162</td><td>    } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>163</td><td>     headline.classList.add(<span class="codeString">"md-headline"</span>, <span class="codeString">"headline-medium"</span>)</td></tr>
-  <tr><td>164</td><td>    }</td></tr>
-  <tr><td>165</td><td>   }</td></tr>
-  <tr><td>166</td><td>  }</td></tr>
-  <tr><td>167</td><td>  <span class="codeReserved">const</span> idAdicional = getAttribute(<span class="codeReserved">this</span>, <span class="codeString">"adicional"</span>)</td></tr>
-  <tr><td>168</td><td>  <span class="codeReserved">if</span> (idAdicional !== <span class="codeString">""</span>) {</td></tr>
-  <tr><td>169</td><td>   <span class="codeReserved">this</span>._adicional = document.getElementById(idAdicional)</td></tr>
-  <tr><td>170</td><td>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._adicional !== <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>171</td><td>    <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.classList.contains(<span class="codeString">"apple"</span>)) {</td></tr>
-  <tr><td>172</td><td>     <span class="codeReserved">this</span>._adicional.style.<span class="codeReserved">top</span> = <span class="codeString">"env(titlebar-area-height, 48px)"</span></td></tr>
-  <tr><td>173</td><td>    } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>174</td><td>     <span class="codeReserved">this</span>._adicional.style.<span class="codeReserved">top</span> = <span class="codeString">"env(titlebar-area-height, 64px)"</span></td></tr>
-  <tr><td>175</td><td>    }</td></tr>
-  <tr><td>176</td><td>   }</td></tr>
-  <tr><td>177</td><td>  }</td></tr>
-  <tr><td>178</td><td> }</td></tr>
-  <tr><td>179</td><td></td></tr>
-  <tr><td>180</td><td> _configuraAction() {</td></tr>
-  <tr><td>181</td><td>  <span class="codeReserved">const</span> assignedElements = <span class="codeReserved">this</span>._action.assignedElements()</td></tr>
-  <tr><td>182</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.isConnected) {</td></tr>
-  <tr><td>183</td><td>   <span class="codeReserved">if</span> (ES_APPLE) {</td></tr>
-  <tr><td>184</td><td>    <span class="codeReserved">this</span>.classList.add(<span class="codeString">"apple"</span>)</td></tr>
-  <tr><td>185</td><td>    <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"material"</span>)</td></tr>
-  <tr><td>186</td><td>   } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>187</td><td>    <span class="codeReserved">this</span>.classList.add(<span class="codeString">"material"</span>)</td></tr>
-  <tr><td>188</td><td>    <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"apple"</span>)</td></tr>
-  <tr><td>189</td><td>   }</td></tr>
-  <tr><td>190</td><td>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.classList.contains(<span class="codeString">"center-aligned"</span>)) {</td></tr>
-  <tr><td>191</td><td>    <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"centrado"</span>)</td></tr>
-  <tr><td>192</td><td>    <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"justificado"</span>)</td></tr>
-  <tr><td>193</td><td>   } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>194</td><td>    <span class="codeReserved">if</span> (ES_APPLE && assignedElements.length &lt;= 1) {</td></tr>
-  <tr><td>195</td><td>     <span class="codeReserved">this</span>.classList.add(<span class="codeString">"centrado"</span>)</td></tr>
-  <tr><td>196</td><td>     <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"justificado"</span>)</td></tr>
-  <tr><td>197</td><td>    } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>198</td><td>     <span class="codeReserved">this</span>.classList.add(<span class="codeString">"justificado"</span>)</td></tr>
-  <tr><td>199</td><td>     <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"centrado"</span>)</td></tr>
-  <tr><td>200</td><td>    }</td></tr>
-  <tr><td>201</td><td>   }</td></tr>
-  <tr><td>202</td><td>  }</td></tr>
-  <tr><td>203</td><td> }</td></tr>
-  <tr><td>204</td><td></td></tr>
-  <tr><td>205</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
-  <tr><td>206</td><td> _onScroll() {</td></tr>
-  <tr><td>207</td><td>  <span class="codeReserved">this</span>._posY = scrollY</td></tr>
-  <tr><td>208</td><td>  <span class="codeReserved">if</span> (!<span class="codeReserved">this</span>._scrolling) {</td></tr>
-  <tr><td>209</td><td>   requestAnimationFrame(() =&gt; <span class="codeReserved">this</span>._avanza())</td></tr>
-  <tr><td>210</td><td>  }</td></tr>
-  <tr><td>211</td><td>  <span class="codeReserved">this</span>._scrolling = <span class="codeReserved">true</span></td></tr>
-  <tr><td>212</td><td> }</td></tr>
-  <tr><td>213</td><td></td></tr>
-  <tr><td>214</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
-  <tr><td>215</td><td> _avanza() {</td></tr>
-  <tr><td>216</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._posY === 0) {</td></tr>
-  <tr><td>217</td><td>   <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"scroll"</span>)</td></tr>
-  <tr><td>218</td><td>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._headline !== <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>219</td><td>    <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._adicional === <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>220</td><td>     <span class="codeReserved">this</span>._headline.classList.remove(<span class="codeString">"scroll"</span>)</td></tr>
-  <tr><td>221</td><td>    } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>222</td><td>     <span class="codeReserved">this</span>._headline.classList.remove(<span class="codeString">"scroll-adicional"</span>)</td></tr>
-  <tr><td>223</td><td>    }</td></tr>
-  <tr><td>224</td><td>   }</td></tr>
-  <tr><td>225</td><td>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._adicional !== <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>226</td><td>    <span class="codeReserved">this</span>._adicional.classList.remove(<span class="codeString">"scroll"</span>)</td></tr>
-  <tr><td>227</td><td>   }</td></tr>
-  <tr><td>228</td><td>  } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>229</td><td>   <span class="codeReserved">this</span>.classList.add(<span class="codeString">"scroll"</span>)</td></tr>
-  <tr><td>230</td><td>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._headline !== <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>231</td><td>    <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._adicional === <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>232</td><td>     <span class="codeReserved">this</span>._headline.classList.add(<span class="codeString">"scroll"</span>)</td></tr>
-  <tr><td>233</td><td>    } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>234</td><td>     <span class="codeReserved">this</span>._headline.classList.add(<span class="codeString">"scroll-adicional"</span>)</td></tr>
-  <tr><td>235</td><td>    }</td></tr>
-  <tr><td>236</td><td>   }</td></tr>
-  <tr><td>237</td><td>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._adicional !== <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>238</td><td>    <span class="codeReserved">this</span>._adicional.classList.add(<span class="codeString">"scroll"</span>)</td></tr>
-  <tr><td>239</td><td>   }</td></tr>
-  <tr><td>240</td><td>  }</td></tr>
-  <tr><td>241</td><td>  <span class="codeReserved">this</span>._scrolling = <span class="codeReserved">false</span></td></tr>
-  <tr><td>242</td><td> }</td></tr>
-  <tr><td>243</td><td></td></tr>
-  <tr><td>244</td><td>}</td></tr>
-  <tr><td>245</td><td></td></tr>
-  <tr><td>246</td><td>customElements.define(<span class="codeString">"md-top-app-bar"</span>, MdTopAppBar)</td></tr>
+  <tr><td>56</td><td><span class="codeString">     <span class="codeReserved">flex</span>: 1 1 auto;</span></td></tr>
+  <tr><td>57</td><td><span class="codeString">     <span class="codeReserved">white-space</span>: nowrap;</span></td></tr>
+  <tr><td>58</td><td><span class="codeString">     <span class="codeReserved">text-overflow</span>: ellipsis;</span></td></tr>
+  <tr><td>59</td><td><span class="codeString">     <span class="codeReserved">overflow</span>: hidden;</span></td></tr>
+  <tr><td>60</td><td><span class="codeString">     <span class="codeReserved">font-family</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-font);</span></td></tr>
+  <tr><td>61</td><td><span class="codeString">     <span class="codeReserved">font-weight</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-weight);</span></td></tr>
+  <tr><td>62</td><td><span class="codeString">     <span class="codeReserved">font-size</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-size);</span></td></tr>
+  <tr><td>63</td><td><span class="codeString">     <span class="codeReserved">font-style</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-font-style);</span></td></tr>
+  <tr><td>64</td><td><span class="codeString">     <span class="codeReserved">letter-spacing</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-tracking);</span></td></tr>
+  <tr><td>65</td><td><span class="codeString">     <span class="codeReserved">line-height</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-line-height);</span></td></tr>
+  <tr><td>66</td><td><span class="codeString">     <span class="codeReserved">text-transform</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-text-transform);</span></td></tr>
+  <tr><td>67</td><td><span class="codeString">     <span class="codeReserved">text-decoration</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-text-decoration);</span></td></tr>
+  <tr><td>68</td><td><span class="codeString">     <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</span></td></tr>
+  <tr><td>69</td><td><span class="codeString">     <span class="codeReserved">transition-property</span>: <span class="codeReserved">opacity</span>;</span></td></tr>
+  <tr><td>70</td><td><span class="codeString">     <span class="codeReserved">transition-duration</span>: <span class="codeReserved">var</span>(--md-sys-motion-duration-700);</span></td></tr>
+  <tr><td>71</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>72</td><td><span class="codeString"></span></td></tr>
+  <tr><td>73</td><td><span class="codeString">    :host(.headline) #headline::slotted(*) {</span></td></tr>
+  <tr><td>74</td><td><span class="codeString">     <span class="codeReserved">opacity</span>: 0;</span></td></tr>
+  <tr><td>75</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>76</td><td><span class="codeString"></span></td></tr>
+  <tr><td>77</td><td><span class="codeString">    :host(.scroll.headline) #headline::slotted(*) {</span></td></tr>
+  <tr><td>78</td><td><span class="codeString">     <span class="codeReserved">opacity</span>: 1;</span></td></tr>
+  <tr><td>79</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>80</td><td><span class="codeString"></span></td></tr>
+  <tr><td>81</td><td><span class="codeString">    :host(.center-aligned) #headline::slotted(*) {</span></td></tr>
+  <tr><td>82</td><td><span class="codeString">     <span class="codeReserved">flex</span>: 1 1 auto;</span></td></tr>
+  <tr><td>83</td><td><span class="codeString">     <span class="codeReserved">text-align</span>: center</span></td></tr>
+  <tr><td>84</td><td><span class="codeString">    }</span></td></tr>
+  <tr><td>85</td><td><span class="codeString"></span></td></tr>
+  <tr><td>86</td><td><span class="codeString">   &lt;/<span class="codeReserved">style</span>&gt;</span></td></tr>
+  <tr><td>87</td><td><span class="codeString"></span></td></tr>
+  <tr><td>88</td><td><span class="codeString">   &lt;<span class="codeReserved">span</span> id=&quot;navigation&quot;&gt;</span></td></tr>
+  <tr><td>89</td><td><span class="codeString">    &lt;<span class="codeReserved">slot</span> name=&quot;navigation&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;</span></td></tr>
+  <tr><td>90</td><td><span class="codeString">   &lt;/<span class="codeReserved">span</span>&gt;</span></td></tr>
+  <tr><td>91</td><td><span class="codeString">   &lt;<span class="codeReserved">slot</span> id=&quot;headline&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;</span></td></tr>
+  <tr><td>92</td><td><span class="codeString">   &lt;<span class="codeReserved">span</span> id=&quot;acciones&quot;&gt;</span></td></tr>
+  <tr><td>93</td><td><span class="codeString">    &lt;<span class="codeReserved">slot</span> name=&quot;action&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;</span></td></tr>
+  <tr><td>94</td><td><span class="codeString">   &lt;/<span class="codeReserved">span</span>&gt;`</span></td></tr>
+  <tr><td>95</td><td> }</td></tr>
+  <tr><td>96</td><td></td></tr>
+  <tr><td>97</td><td> <span class="codeReserved">constructor</span>() {</td></tr>
+  <tr><td>98</td><td>  super()</td></tr>
+  <tr><td>99</td><td>  <span class="codeReserved">if</span> (ES_APPLE) {</td></tr>
+  <tr><td>100</td><td>   document.body.classList.add(<span class="codeString">"apple"</span>)</td></tr>
+  <tr><td>101</td><td>   document.body.classList.remove(<span class="codeString">"material"</span>)</td></tr>
+  <tr><td>102</td><td>  } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>103</td><td>   document.body.classList.add(<span class="codeString">"material"</span>)</td></tr>
+  <tr><td>104</td><td>   document.body.classList.remove(<span class="codeString">"apple"</span>)</td></tr>
+  <tr><td>105</td><td>  }</td></tr>
+  <tr><td>106</td><td></td></tr>
+  <tr><td>107</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>108</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>109</td><td><span class="codeComment">   * <span class="codeReserved">@readonly</span></span></td></tr>
+  <tr><td>110</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>111</td><td>  <span class="codeReserved">const</span> shadow = <span class="codeReserved">this</span>.attachShadow({ mode: <span class="codeString">"open"</span> })</td></tr>
+  <tr><td>112</td><td>  shadow.innerHTML = <span class="codeReserved">this</span>.getContent()</td></tr>
+  <tr><td>113</td><td>  <span class="codeReserved">this</span>._configuraAction = <span class="codeReserved">this</span>._configuraAction.bind(<span class="codeReserved">this</span>)</td></tr>
+  <tr><td>114</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>115</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>116</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> {number}</span></td></tr>
+  <tr><td>117</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>118</td><td>  <span class="codeReserved">this</span>._posY = 0</td></tr>
+  <tr><td>119</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>120</td><td><span class="codeComment">   * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>121</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> {boolean}</span></td></tr>
+  <tr><td>122</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>123</td><td>  <span class="codeReserved">this</span>._scrolling = <span class="codeReserved">false</span></td></tr>
+  <tr><td>124</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>125</td><td><span class="codeComment">    * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>126</td><td><span class="codeComment">    * <span class="codeReserved">@type</span> { HTMLSlotElement }</span></td></tr>
+  <tr><td>127</td><td><span class="codeComment">    */</span></td></tr>
+  <tr><td>128</td><td>  <span class="codeReserved">this</span>._navigation = querySelector(shadow, <span class="codeString">'[name=&quot;navigation&quot;]'</span>)</td></tr>
+  <tr><td>129</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>130</td><td><span class="codeComment">    * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>131</td><td><span class="codeComment">    * <span class="codeReserved">@type</span> { HTMLSlotElement }</span></td></tr>
+  <tr><td>132</td><td><span class="codeComment">    */</span></td></tr>
+  <tr><td>133</td><td>  <span class="codeReserved">this</span>._action = querySelector(shadow, <span class="codeString">'[name=&quot;action&quot;]'</span>)</td></tr>
+  <tr><td>134</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>135</td><td><span class="codeComment">    * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>136</td><td><span class="codeComment">    * <span class="codeReserved">@type</span> { HTMLHeadingElement | <span class="codeReserved">null</span> }</span></td></tr>
+  <tr><td>137</td><td><span class="codeComment">    */</span></td></tr>
+  <tr><td>138</td><td>  <span class="codeReserved">this</span>._headline = <span class="codeReserved">null</span></td></tr>
+  <tr><td>139</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>140</td><td><span class="codeComment">    * <span class="codeReserved">@private</span></span></td></tr>
+  <tr><td>141</td><td><span class="codeComment">    * <span class="codeReserved">@type</span> { HTMLElement | <span class="codeReserved">null</span> }</span></td></tr>
+  <tr><td>142</td><td><span class="codeComment">    */</span></td></tr>
+  <tr><td>143</td><td>  <span class="codeReserved">this</span>._adicional = <span class="codeReserved">null</span></td></tr>
+  <tr><td>144</td><td>  <span class="codeReserved">this</span>._action.addEventListener(<span class="codeString">"slotchange"</span>, <span class="codeReserved">this</span>._configuraAction)</td></tr>
+  <tr><td>145</td><td>  addEventListener(<span class="codeString">"scroll"</span>, () =&gt; <span class="codeReserved">this</span>._onScroll())</td></tr>
+  <tr><td>146</td><td>  addEventListener(<span class="codeString">"load"</span>, () =&gt; <span class="codeReserved">this</span>.configurOtros())</td></tr>
+  <tr><td>147</td><td> }</td></tr>
+  <tr><td>148</td><td></td></tr>
+  <tr><td>149</td><td> connectedCallback() {</td></tr>
+  <tr><td>150</td><td>  <span class="codeReserved">this</span>.role = <span class="codeString">"toolbar"</span></td></tr>
+  <tr><td>151</td><td>  <span class="codeReserved">this</span>._configuraAction()</td></tr>
+  <tr><td>152</td><td> }</td></tr>
+  <tr><td>153</td><td></td></tr>
+  <tr><td>154</td><td> configurOtros() {</td></tr>
+  <tr><td>155</td><td>  <span class="codeReserved">const</span> idHeadline = getAttribute(<span class="codeReserved">this</span>, <span class="codeString">"headline"</span>)</td></tr>
+  <tr><td>156</td><td>  <span class="codeReserved">if</span> (idHeadline !== <span class="codeString">""</span>) {</td></tr>
+  <tr><td>157</td><td>   <span class="codeReserved">const</span> headline = document.getElementById(idHeadline)</td></tr>
+  <tr><td>158</td><td>   <span class="codeReserved">if</span> (headline <span class="codeReserved">instanceof</span> HTMLHeadingElement) {</td></tr>
+  <tr><td>159</td><td>    <span class="codeReserved">this</span>._headline = headline</td></tr>
+  <tr><td>160</td><td>    <span class="codeReserved">this</span>.classList.add(<span class="codeString">"headline"</span>)</td></tr>
+  <tr><td>161</td><td>    <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.classList.contains(<span class="codeString">"apple"</span>) || <span class="codeReserved">this</span>.classList.contains(<span class="codeString">"medium"</span>)) {</td></tr>
+  <tr><td>162</td><td>     headline.classList.add(<span class="codeString">"md-headline"</span>, <span class="codeString">"headline-small"</span>)</td></tr>
+  <tr><td>163</td><td>    } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>164</td><td>     headline.classList.add(<span class="codeString">"md-headline"</span>, <span class="codeString">"headline-medium"</span>)</td></tr>
+  <tr><td>165</td><td>    }</td></tr>
+  <tr><td>166</td><td>   }</td></tr>
+  <tr><td>167</td><td>  }</td></tr>
+  <tr><td>168</td><td>  <span class="codeReserved">const</span> idAdicional = getAttribute(<span class="codeReserved">this</span>, <span class="codeString">"adicional"</span>)</td></tr>
+  <tr><td>169</td><td>  <span class="codeReserved">if</span> (idAdicional !== <span class="codeString">""</span>) {</td></tr>
+  <tr><td>170</td><td>   <span class="codeReserved">this</span>._adicional = document.getElementById(idAdicional)</td></tr>
+  <tr><td>171</td><td>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._adicional !== <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>172</td><td>    <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.classList.contains(<span class="codeString">"apple"</span>)) {</td></tr>
+  <tr><td>173</td><td>     <span class="codeReserved">this</span>._adicional.style.<span class="codeReserved">top</span> = <span class="codeString">"env(titlebar-area-height, 3rem)"</span></td></tr>
+  <tr><td>174</td><td>    } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>175</td><td>     <span class="codeReserved">this</span>._adicional.style.<span class="codeReserved">top</span> = <span class="codeString">"env(titlebar-area-height, 4rem)"</span></td></tr>
+  <tr><td>176</td><td>    }</td></tr>
+  <tr><td>177</td><td>   }</td></tr>
+  <tr><td>178</td><td>  }</td></tr>
+  <tr><td>179</td><td> }</td></tr>
+  <tr><td>180</td><td></td></tr>
+  <tr><td>181</td><td> _configuraAction() {</td></tr>
+  <tr><td>182</td><td>  <span class="codeReserved">const</span> assignedElements = <span class="codeReserved">this</span>._action.assignedElements()</td></tr>
+  <tr><td>183</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.isConnected) {</td></tr>
+  <tr><td>184</td><td>   <span class="codeReserved">if</span> (ES_APPLE) {</td></tr>
+  <tr><td>185</td><td>    <span class="codeReserved">this</span>.classList.add(<span class="codeString">"apple"</span>)</td></tr>
+  <tr><td>186</td><td>    <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"material"</span>)</td></tr>
+  <tr><td>187</td><td>   } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>188</td><td>    <span class="codeReserved">this</span>.classList.add(<span class="codeString">"material"</span>)</td></tr>
+  <tr><td>189</td><td>    <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"apple"</span>)</td></tr>
+  <tr><td>190</td><td>   }</td></tr>
+  <tr><td>191</td><td>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.classList.contains(<span class="codeString">"center-aligned"</span>)) {</td></tr>
+  <tr><td>192</td><td>    <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"centrado"</span>)</td></tr>
+  <tr><td>193</td><td>    <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"justificado"</span>)</td></tr>
+  <tr><td>194</td><td>   } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>195</td><td>    <span class="codeReserved">if</span> (ES_APPLE && assignedElements.length &lt;= 1) {</td></tr>
+  <tr><td>196</td><td>     <span class="codeReserved">this</span>.classList.add(<span class="codeString">"centrado"</span>)</td></tr>
+  <tr><td>197</td><td>     <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"justificado"</span>)</td></tr>
+  <tr><td>198</td><td>    } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>199</td><td>     <span class="codeReserved">this</span>.classList.add(<span class="codeString">"justificado"</span>)</td></tr>
+  <tr><td>200</td><td>     <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"centrado"</span>)</td></tr>
+  <tr><td>201</td><td>    }</td></tr>
+  <tr><td>202</td><td>   }</td></tr>
+  <tr><td>203</td><td>  }</td></tr>
+  <tr><td>204</td><td> }</td></tr>
+  <tr><td>205</td><td></td></tr>
+  <tr><td>206</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
+  <tr><td>207</td><td> _onScroll() {</td></tr>
+  <tr><td>208</td><td>  <span class="codeReserved">this</span>._posY = scrollY</td></tr>
+  <tr><td>209</td><td>  <span class="codeReserved">if</span> (!<span class="codeReserved">this</span>._scrolling) {</td></tr>
+  <tr><td>210</td><td>   requestAnimationFrame(() =&gt; <span class="codeReserved">this</span>._avanza())</td></tr>
+  <tr><td>211</td><td>  }</td></tr>
+  <tr><td>212</td><td>  <span class="codeReserved">this</span>._scrolling = <span class="codeReserved">true</span></td></tr>
+  <tr><td>213</td><td> }</td></tr>
+  <tr><td>214</td><td></td></tr>
+  <tr><td>215</td><td> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></td></tr>
+  <tr><td>216</td><td> _avanza() {</td></tr>
+  <tr><td>217</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._posY === 0) {</td></tr>
+  <tr><td>218</td><td>   <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"scroll"</span>)</td></tr>
+  <tr><td>219</td><td>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._headline !== <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>220</td><td>    <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._adicional === <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>221</td><td>     <span class="codeReserved">this</span>._headline.classList.remove(<span class="codeString">"scroll"</span>)</td></tr>
+  <tr><td>222</td><td>    } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>223</td><td>     <span class="codeReserved">this</span>._headline.classList.remove(<span class="codeString">"scroll-adicional"</span>)</td></tr>
+  <tr><td>224</td><td>    }</td></tr>
+  <tr><td>225</td><td>   }</td></tr>
+  <tr><td>226</td><td>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._adicional !== <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>227</td><td>    <span class="codeReserved">this</span>._adicional.classList.remove(<span class="codeString">"scroll"</span>)</td></tr>
+  <tr><td>228</td><td>   }</td></tr>
+  <tr><td>229</td><td>  } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>230</td><td>   <span class="codeReserved">this</span>.classList.add(<span class="codeString">"scroll"</span>)</td></tr>
+  <tr><td>231</td><td>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._headline !== <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>232</td><td>    <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._adicional === <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>233</td><td>     <span class="codeReserved">this</span>._headline.classList.add(<span class="codeString">"scroll"</span>)</td></tr>
+  <tr><td>234</td><td>    } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>235</td><td>     <span class="codeReserved">this</span>._headline.classList.add(<span class="codeString">"scroll-adicional"</span>)</td></tr>
+  <tr><td>236</td><td>    }</td></tr>
+  <tr><td>237</td><td>   }</td></tr>
+  <tr><td>238</td><td>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._adicional !== <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>239</td><td>    <span class="codeReserved">this</span>._adicional.classList.add(<span class="codeString">"scroll"</span>)</td></tr>
+  <tr><td>240</td><td>   }</td></tr>
+  <tr><td>241</td><td>  }</td></tr>
+  <tr><td>242</td><td>  <span class="codeReserved">this</span>._scrolling = <span class="codeReserved">false</span></td></tr>
+  <tr><td>243</td><td> }</td></tr>
+  <tr><td>244</td><td></td></tr>
+  <tr><td>245</td><td>}</td></tr>
+  <tr><td>246</td><td></td></tr>
+  <tr><td>247</td><td>customElements.define(<span class="codeString">"md-top-app-bar"</span>, MdTopAppBar)</td></tr>
  </tbody>
 </table>
  <footer>
@@ -1154,7 +1138,7 @@
          arrow_upward
         </span></a>
      </p>
-   <h1><a href="/m03pwaMaterial/m-lib/m-js/m-custom/index.html">13. Carpeta « lib / js / custom »</a></h1>
+   <h1><a href="/m03pwaMaterial/m-lib/m-js/m-custom/index.html">12. Carpeta « lib / js / custom »</a></h1>
    
    <ol type="A">
     

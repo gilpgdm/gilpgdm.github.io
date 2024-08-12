@@ -58,11 +58,12 @@
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
   --shadowTitulo: 3px 1px 2px black;
-  --colTitulo: #bae397;
-  --colTituloFondo: #609732;
-  --colPrincipalTituloStrong: white;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
   --colAStrong: var(--colLetra);
-  --colNavH1Sel: #b35f7c;
+  /* --colNavH1Sel: #b35f7c; */
   --colFondoNav: var(--colFondo);
   --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
@@ -125,8 +126,9 @@
    --colFondoAVisitedPushActive: #983351;
    --colSombra: #00000080;
    --colTitulo: #e3f5d4;
-   --colTituloFondo: #7db84d;
-   --colNavH1Sel: #d37290;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
    --colFondoNavSel: #7a3059;
    --colScrollbar: #616161;
    --colThumb: #ffffff;
@@ -567,9 +569,6 @@
  }
 
  @media print {
-  h1 {
-   text-shadow: var(--shadowTitulo);
-  }
 
   .codeShow button {
    display: none;
@@ -668,7 +667,6 @@
  #principal>h1:not(.default) {
   margin-top: var(--marginTop);
   padding: var(--h1PadTop) 1rem 1rem 1rem;
-  text-shadow: var(--shadowTitulo);
   color: var(--colTitulo);
   background-color: var(--colTituloFondo);
  }
@@ -726,23 +724,8 @@
   color: var(--colAStrong);
  }
 
- #nav h1 a {
-  color: var(--colTitulo);
-  background-color: var(--colTituloFondo);
-  text-shadow: var(--shadowTitulo);
- }
-
  #nav a.actual {
   background-color: var(--colFondoNavSel);
- }
-
- #nav h1 a.actual {
-  background-color: var(--colNavH1Sel);
- }
-
- #nav h1 a.actual code,
- #nav h1 a.actual strong {
-  color: var(--colPrincipalTituloStrong);
  }
 
  @media screen and (max-width: 999px) {
@@ -915,7 +898,7 @@
   <tr><td>69</td><td>}</td></tr>
   <tr><td>70</td><td></td></tr>
   <tr><td>71</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> llenaElCache() {</td></tr>
-  <tr><td>72</td><td> console.log(<span class="codeString">"Intentando cargar caché:"</span>, CACHE, <span class="codeString">"."</span>)</td></tr>
+  <tr><td>72</td><td> console.log(<span class="codeString">"Intentando cargar caché:"</span>, CACHE)</td></tr>
   <tr><td>73</td><td> <span class="codeComment">// Borra todos los cachés.</span></td></tr>
   <tr><td>74</td><td> <span class="codeReserved">const</span> keys = <span class="codeReserved">await</span> caches.keys()</td></tr>
   <tr><td>75</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> key of keys) {</td></tr>
@@ -925,8 +908,8 @@
   <tr><td>79</td><td> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</td></tr>
   <tr><td>80</td><td> <span class="codeComment">// Carga el listado de ARCHIVOS.</span></td></tr>
   <tr><td>81</td><td> <span class="codeReserved">await</span> cache.addAll(ARCHIVOS)</td></tr>
-  <tr><td>82</td><td> console.log(<span class="codeString">"Cache cargado:"</span>, CACHE, <span class="codeString">"."</span>)</td></tr>
-  <tr><td>83</td><td> console.log(<span class="codeString">"Versión:"</span>, VERSION, <span class="codeString">"."</span>)</td></tr>
+  <tr><td>82</td><td> console.log(<span class="codeString">"Cache cargado:"</span>, CACHE)</td></tr>
+  <tr><td>83</td><td> console.log(<span class="codeString">"Versión:"</span>, VERSION)</td></tr>
   <tr><td>84</td><td>}</td></tr>
   <tr><td>85</td><td></td></tr>
   <tr><td>86</td><td><span class="codeComment">/** <span class="codeReserved">@param</span> {FetchEvent} evt */</span></td></tr>

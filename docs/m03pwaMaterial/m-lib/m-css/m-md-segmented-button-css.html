@@ -58,11 +58,12 @@
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
   --shadowTitulo: 3px 1px 2px black;
-  --colTitulo: #bae397;
-  --colTituloFondo: #609732;
-  --colPrincipalTituloStrong: white;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
   --colAStrong: var(--colLetra);
-  --colNavH1Sel: #b35f7c;
+  /* --colNavH1Sel: #b35f7c; */
   --colFondoNav: var(--colFondo);
   --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
@@ -125,8 +126,9 @@
    --colFondoAVisitedPushActive: #983351;
    --colSombra: #00000080;
    --colTitulo: #e3f5d4;
-   --colTituloFondo: #7db84d;
-   --colNavH1Sel: #d37290;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
    --colFondoNavSel: #7a3059;
    --colScrollbar: #616161;
    --colThumb: #ffffff;
@@ -567,9 +569,6 @@
  }
 
  @media print {
-  h1 {
-   text-shadow: var(--shadowTitulo);
-  }
 
   .codeShow button {
    display: none;
@@ -668,7 +667,6 @@
  #principal>h1:not(.default) {
   margin-top: var(--marginTop);
   padding: var(--h1PadTop) 1rem 1rem 1rem;
-  text-shadow: var(--shadowTitulo);
   color: var(--colTitulo);
   background-color: var(--colTituloFondo);
  }
@@ -726,23 +724,8 @@
   color: var(--colAStrong);
  }
 
- #nav h1 a {
-  color: var(--colTitulo);
-  background-color: var(--colTituloFondo);
-  text-shadow: var(--shadowTitulo);
- }
-
  #nav a.actual {
   background-color: var(--colFondoNavSel);
- }
-
- #nav h1 a.actual {
-  background-color: var(--colNavH1Sel);
- }
-
- #nav h1 a.actual code,
- #nav h1 a.actual strong {
-  color: var(--colPrincipalTituloStrong);
  }
 
  @media screen and (max-width: 999px) {
@@ -848,9 +831,9 @@
   <tr><td>2</td><td> <span class="codeReserved">display</span>: <span class="codeReserved">flex</span>;</td></tr>
   <tr><td>3</td><td> <span class="codeReserved">align-items</span>: stretch;</td></tr>
   <tr><td>4</td><td> <span class="codeReserved">box-sizing</span>: border-box;</td></tr>
-  <tr><td>5</td><td> <span class="codeReserved">border</span>: 1px solid <span class="codeReserved">var</span>(--md-sys-color-outline);</td></tr>
-  <tr><td>6</td><td> <span class="codeReserved">height</span>: 40px;</td></tr>
-  <tr><td>7</td><td> <span class="codeReserved">border-radius</span>: 20px;</td></tr>
+  <tr><td>5</td><td> <span class="codeReserved">border</span>: 0.0625rem solid <span class="codeReserved">var</span>(--md-sys-color-outline);</td></tr>
+  <tr><td>6</td><td> <span class="codeReserved">height</span>: 2.5rem;</td></tr>
+  <tr><td>7</td><td> <span class="codeReserved">border-radius</span>: 1.25rem;</td></tr>
   <tr><td>8</td><td> <span class="codeReserved">overflow</span>: hidden;</td></tr>
   <tr><td>9</td><td>}</td></tr>
   <tr><td>10</td><td></td></tr>
@@ -861,9 +844,9 @@
   <tr><td>15</td><td>.md-segmented-button input {</td></tr>
   <tr><td>16</td><td> -<span class="codeReserved">webkit-appearance</span>: none;</td></tr>
   <tr><td>17</td><td> <span class="codeReserved">appearance</span>: none;</td></tr>
-  <tr><td>18</td><td> <span class="codeReserved">flex</span>: 0 1 1px;</td></tr>
-  <tr><td>19</td><td> <span class="codeReserved">width</span>: 1px;</td></tr>
-  <tr><td>20</td><td> <span class="codeReserved">height</span>: 38px;</td></tr>
+  <tr><td>18</td><td> <span class="codeReserved">flex</span>: 0 1 0.0625rem;</td></tr>
+  <tr><td>19</td><td> <span class="codeReserved">width</span>: 0.0625rem;</td></tr>
+  <tr><td>20</td><td> <span class="codeReserved">height</span>: 2.375rem;</td></tr>
   <tr><td>21</td><td> <span class="codeReserved">margin</span>: 0;</td></tr>
   <tr><td>22</td><td> <span class="codeReserved">padding</span>: 0;</td></tr>
   <tr><td>23</td><td> <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-outline);</td></tr>
@@ -883,11 +866,11 @@
   <tr><td>37</td><td></td></tr>
   <tr><td>38</td><td>.md-segmented-button label {</td></tr>
   <tr><td>39</td><td> <span class="codeReserved">position</span>: relative;</td></tr>
-  <tr><td>40</td><td> <span class="codeReserved">flex</span>: 1 1 24px;</td></tr>
+  <tr><td>40</td><td> <span class="codeReserved">flex</span>: 1 1 1.5rem;</td></tr>
   <tr><td>41</td><td> <span class="codeReserved">display</span>: block;</td></tr>
   <tr><td>42</td><td> <span class="codeReserved">box-sizing</span>: border-box;</td></tr>
-  <tr><td>43</td><td> <span class="codeReserved">height</span>: 38px;</td></tr>
-  <tr><td>44</td><td> <span class="codeReserved">line-height</span>: 38px;</td></tr>
+  <tr><td>43</td><td> <span class="codeReserved">height</span>: 2.375rem;</td></tr>
+  <tr><td>44</td><td> <span class="codeReserved">line-height</span>: 2.375rem;</td></tr>
   <tr><td>45</td><td> <span class="codeReserved">text-align</span>: center;</td></tr>
   <tr><td>46</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
   <tr><td>47</td><td> <span class="codeReserved">font-family</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-font);</td></tr>
@@ -897,7 +880,7 @@
   <tr><td>51</td><td> <span class="codeReserved">letter-spacing</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-tracking);</td></tr>
   <tr><td>52</td><td> <span class="codeReserved">text-transform</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-text-transform);</td></tr>
   <tr><td>53</td><td> <span class="codeReserved">text-decoration</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-text-decoration);</td></tr>
-  <tr><td>54</td><td> <span class="codeReserved">padding</span>: 0 12px;</td></tr>
+  <tr><td>54</td><td> <span class="codeReserved">padding</span>: 0 0.75rem;</td></tr>
   <tr><td>55</td><td> <span class="codeReserved">overflow</span>: hidden;</td></tr>
   <tr><td>56</td><td> <span class="codeReserved">white-space</span>: nowrap;</td></tr>
   <tr><td>57</td><td> <span class="codeReserved">text-overflow</span>: ellipsis;</td></tr>
@@ -935,10 +918,10 @@
   <tr><td>89</td><td>.md-segmented-button label span {</td></tr>
   <tr><td>90</td><td> <span class="codeReserved">vertical-align</span>: middle;</td></tr>
   <tr><td>91</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
-  <tr><td>92</td><td> <span class="codeReserved">font-size</span>: 18px;</td></tr>
-  <tr><td>93</td><td> <span class="codeReserved">width</span>: 18px;</td></tr>
-  <tr><td>94</td><td> <span class="codeReserved">height</span>: 18px;</td></tr>
-  <tr><td>95</td><td> <span class="codeReserved">margin-right</span>: 8px;</td></tr>
+  <tr><td>92</td><td> <span class="codeReserved">font-size</span>: 1.125rem;</td></tr>
+  <tr><td>93</td><td> <span class="codeReserved">width</span>: 1.125rem;</td></tr>
+  <tr><td>94</td><td> <span class="codeReserved">height</span>: 1.125rem;</td></tr>
+  <tr><td>95</td><td> <span class="codeReserved">margin-right</span>: 0.5rem;</td></tr>
   <tr><td>96</td><td>}</td></tr>
   <tr><td>97</td><td></td></tr>
   <tr><td>98</td><td></td></tr>

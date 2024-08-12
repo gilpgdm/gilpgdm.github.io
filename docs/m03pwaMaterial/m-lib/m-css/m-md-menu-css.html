@@ -58,11 +58,12 @@
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
   --shadowTitulo: 3px 1px 2px black;
-  --colTitulo: #bae397;
-  --colTituloFondo: #609732;
-  --colPrincipalTituloStrong: white;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
   --colAStrong: var(--colLetra);
-  --colNavH1Sel: #b35f7c;
+  /* --colNavH1Sel: #b35f7c; */
   --colFondoNav: var(--colFondo);
   --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
@@ -125,8 +126,9 @@
    --colFondoAVisitedPushActive: #983351;
    --colSombra: #00000080;
    --colTitulo: #e3f5d4;
-   --colTituloFondo: #7db84d;
-   --colNavH1Sel: #d37290;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
    --colFondoNavSel: #7a3059;
    --colScrollbar: #616161;
    --colThumb: #ffffff;
@@ -567,9 +569,6 @@
  }
 
  @media print {
-  h1 {
-   text-shadow: var(--shadowTitulo);
-  }
 
   .codeShow button {
    display: none;
@@ -668,7 +667,6 @@
  #principal>h1:not(.default) {
   margin-top: var(--marginTop);
   padding: var(--h1PadTop) 1rem 1rem 1rem;
-  text-shadow: var(--shadowTitulo);
   color: var(--colTitulo);
   background-color: var(--colTituloFondo);
  }
@@ -726,23 +724,8 @@
   color: var(--colAStrong);
  }
 
- #nav h1 a {
-  color: var(--colTitulo);
-  background-color: var(--colTituloFondo);
-  text-shadow: var(--shadowTitulo);
- }
-
  #nav a.actual {
   background-color: var(--colFondoNavSel);
- }
-
- #nav h1 a.actual {
-  background-color: var(--colNavH1Sel);
- }
-
- #nav h1 a.actual code,
- #nav h1 a.actual strong {
-  color: var(--colPrincipalTituloStrong);
  }
 
  @media screen and (max-width: 999px) {
@@ -849,7 +832,7 @@
   <tr><td>3</td><td> <span class="codeReserved">z-index</span>: 2;</td></tr>
   <tr><td>4</td><td> <span class="codeReserved">box-sizing</span>: border-box;</td></tr>
   <tr><td>5</td><td> <span class="codeReserved">cursor</span>: <span class="codeReserved">default</span>;</td></tr>
-  <tr><td>6</td><td> <span class="codeReserved">padding</span>: 4px 0;</td></tr>
+  <tr><td>6</td><td> <span class="codeReserved">padding</span>: 0.25rem 0;</td></tr>
   <tr><td>7</td><td> <span class="codeReserved">border-radius</span>:</td></tr>
   <tr><td>8</td><td>  <span class="codeReserved">var</span>(--md-sys-shape-corner-extra-small-default-size);</td></tr>
   <tr><td>9</td><td> <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-surface-container-low);</td></tr>
@@ -888,9 +871,9 @@
   <tr><td>42</td><td> <span class="codeReserved">position</span>: relative;</td></tr>
   <tr><td>43</td><td> <span class="codeReserved">display</span>: block;</td></tr>
   <tr><td>44</td><td> <span class="codeReserved">box-sizing</span>: border-box;</td></tr>
-  <tr><td>45</td><td> <span class="codeReserved">height</span>: 48px;</td></tr>
-  <tr><td>46</td><td> <span class="codeReserved">line-height</span>: 48px;</td></tr>
-  <tr><td>47</td><td> <span class="codeReserved">padding</span>: 0 12px;</td></tr>
+  <tr><td>45</td><td> <span class="codeReserved">height</span>: 3rem;</td></tr>
+  <tr><td>46</td><td> <span class="codeReserved">line-height</span>: 3rem;</td></tr>
+  <tr><td>47</td><td> <span class="codeReserved">padding</span>: 0 0.75rem;</td></tr>
   <tr><td>48</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
   <tr><td>49</td><td> <span class="codeReserved">font-family</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-font);</td></tr>
   <tr><td>50</td><td> <span class="codeReserved">font-weight</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-weight);</td></tr>
@@ -923,12 +906,12 @@
   <tr><td>77</td><td><span class="codeComment">/* icon */</span></td></tr>
   <tr><td>78</td><td>.md-menu&gt;* span {</td></tr>
   <tr><td>79</td><td> <span class="codeReserved">position</span>: relative;</td></tr>
-  <tr><td>80</td><td> <span class="codeReserved">margin-right</span>: 12px;</td></tr>
+  <tr><td>80</td><td> <span class="codeReserved">margin-right</span>: 0.75rem;</td></tr>
   <tr><td>81</td><td> <span class="codeReserved">vertical-align</span>: middle;</td></tr>
   <tr><td>82</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</td></tr>
-  <tr><td>83</td><td> <span class="codeReserved">font-size</span>: 24px;</td></tr>
-  <tr><td>84</td><td> <span class="codeReserved">width</span>: 24px;</td></tr>
-  <tr><td>85</td><td> <span class="codeReserved">height</span>: 24px;</td></tr>
+  <tr><td>83</td><td> <span class="codeReserved">font-size</span>: 1.5rem;</td></tr>
+  <tr><td>84</td><td> <span class="codeReserved">width</span>: 1.5rem;</td></tr>
+  <tr><td>85</td><td> <span class="codeReserved">height</span>: 1.5rem;</td></tr>
   <tr><td>86</td><td>}</td></tr>
   <tr><td>87</td><td></td></tr>
   <tr><td>88</td><td><span class="codeComment">/* icon */</span></td></tr>

@@ -42,7 +42,7 @@
   <tr><td>32</td><td>   &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
   <tr><td>33</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
   <tr><td>34</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>35</td><td>   &lt;<span class="codeReserved">a</span> href=<span class="codeString">"srv/generallaves.php"</span> target=<span class="codeString">"_blank"</span>&gt;Genera llaves&lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>35</td><td>   &lt;<span class="codeReserved">a</span> href=<span class="codeString">"srv/genera-llaves.php"</span> target=<span class="codeString">"_blank"</span>&gt;Genera llaves&lt;/<span class="codeReserved">a</span>&gt;</td></tr>
   <tr><td>36</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
   <tr><td>37</td><td> &lt;/<span class="codeReserved">menu</span>&gt;</td></tr>
   <tr><td>38</td><td></td></tr>
@@ -67,7 +67,7 @@
   <tr><td>57</td><td>  <span class="codeReserved">import</span> { getSuscripcionPush } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/getSuscripcionPush.js"</span></td></tr>
   <tr><td>58</td><td>  <span class="codeReserved">import</span> { suscribeAPush } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/suscribeAPush.js"</span></td></tr>
   <tr><td>59</td><td>  <span class="codeReserved">import</span> { cancelaSuscripcionPush } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/cancelaSuscripcionPush.js"</span></td></tr>
-  <tr><td>60</td><td>  <span class="codeReserved">import</span> { invocaServicio } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/invocaServicio.js"</span></td></tr>
+  <tr><td>60</td><td>  <span class="codeReserved">import</span> { consumeJson } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/consumeJson.js"</span></td></tr>
   <tr><td>61</td><td>  <span class="codeReserved">import</span> { enviaJson } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/enviaJson.js"</span></td></tr>
   <tr><td>62</td><td>  <span class="codeReserved">import</span> { muestraError } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/muestraError.js"</span></td></tr>
   <tr><td>63</td><td>  <span class="codeReserved">import</span> { muestraObjeto } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/muestraObjeto.js"</span></td></tr>
@@ -95,7 +95,7 @@
   <tr><td>85</td><td>    } <span class="codeReserved">else</span> {</td></tr>
   <tr><td>86</td><td>     <span class="codeComment">// Modifica la suscripción en el servidor,</span></td></tr>
   <tr><td>87</td><td>     <span class="codeReserved">const</span> dto = calculaDtoParaSuscripcion(suscripcion)</td></tr>
-  <tr><td>88</td><td>     <span class="codeReserved">await</span> enviaJson(<span class="codeString">"srv/srvSuscripcion.php"</span>, dto, <span class="codeString">"PUT"</span>)</td></tr>
+  <tr><td>88</td><td>     <span class="codeReserved">await</span> enviaJson(<span class="codeString">"srv/suscripcion-modifica.php"</span>, dto)</td></tr>
   <tr><td>89</td><td>     muestraEstado(Estado.SUSCRITO)</td></tr>
   <tr><td>90</td><td>    }</td></tr>
   <tr><td>91</td><td>   } <span class="codeReserved">catch</span> (error) {</td></tr>
@@ -110,7 +110,7 @@
   <tr><td>100</td><td>   <span class="codeReserved">try</span> {</td></tr>
   <tr><td>101</td><td>    reporte.innerHTML =</td></tr>
   <tr><td>102</td><td>     <span class="codeComment">/* html */</span> <span class="codeString">`&lt;<span class="codeReserved">progress</span> max=&quot;100&quot;&gt;Cargando&hellip;&lt;/<span class="codeReserved">progress</span>&gt;`</span></td></tr>
-  <tr><td>103</td><td>    <span class="codeReserved">const</span> render = <span class="codeReserved">await</span> invocaServicio(<span class="codeString">"srv/srvNotifica.php"</span>)</td></tr>
+  <tr><td>103</td><td>    <span class="codeReserved">const</span> render = <span class="codeReserved">await</span> consumeJson(<span class="codeString">"srv/notifica.php"</span>)</td></tr>
   <tr><td>104</td><td>    <span class="codeReserved">await</span> muestraObjeto(document, render.body)</td></tr>
   <tr><td>105</td><td>   } <span class="codeReserved">catch</span> (error) {</td></tr>
   <tr><td>106</td><td>    muestraError(error)</td></tr>
@@ -125,7 +125,7 @@
   <tr><td>115</td><td>    <span class="codeReserved">const</span> suscripcion = <span class="codeReserved">await</span> suscribeAPush(applicationServerKey)</td></tr>
   <tr><td>116</td><td>    <span class="codeComment">// Agrega la suscripción al servidor,</span></td></tr>
   <tr><td>117</td><td>    <span class="codeReserved">const</span> dto = calculaDtoParaSuscripcion(suscripcion)</td></tr>
-  <tr><td>118</td><td>    <span class="codeReserved">await</span> enviaJson(<span class="codeString">"srv/srvSuscripcion.php"</span>, dto, <span class="codeString">"POST"</span>)</td></tr>
+  <tr><td>118</td><td>    <span class="codeReserved">await</span> enviaJson(<span class="codeString">"srv/suscripcion-modifica.php"</span>, dto)</td></tr>
   <tr><td>119</td><td>    muestraEstado(Estado.SUSCRITO)</td></tr>
   <tr><td>120</td><td>   } <span class="codeReserved">catch</span> (error) {</td></tr>
   <tr><td>121</td><td>    muestraError(error)</td></tr>
@@ -141,7 +141,7 @@
   <tr><td>131</td><td>    <span class="codeReserved">if</span> (suscripcion !== <span class="codeReserved">null</span>) {</td></tr>
   <tr><td>132</td><td>     <span class="codeComment">// Elimina la suscripción en el servidor,</span></td></tr>
   <tr><td>133</td><td>     <span class="codeReserved">const</span> dto = calculaDtoParaSuscripcion(suscripcion)</td></tr>
-  <tr><td>134</td><td>     <span class="codeReserved">await</span> enviaJson(<span class="codeString">"srv/srvSuscripcion.php"</span>, dto, <span class="codeString">"<span class="codeReserved">DELETE</span>"</span>)</td></tr>
+  <tr><td>134</td><td>     <span class="codeReserved">await</span> enviaJson(<span class="codeString">"srv/suscripcion-elimina.php"</span>, dto)</td></tr>
   <tr><td>135</td><td>     muestraEstado(Estado.DESUSCRITO)</td></tr>
   <tr><td>136</td><td>    }</td></tr>
   <tr><td>137</td><td>   } <span class="codeReserved">catch</span> (error) {</td></tr>

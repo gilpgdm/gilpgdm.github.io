@@ -57,11 +57,12 @@
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
   --shadowTitulo: 3px 1px 2px black;
-  --colTitulo: #bae397;
-  --colTituloFondo: #609732;
-  --colPrincipalTituloStrong: white;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
   --colAStrong: var(--colLetra);
-  --colNavH1Sel: #b35f7c;
+  /* --colNavH1Sel: #b35f7c; */
   --colFondoNav: var(--colFondo);
   --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
@@ -124,8 +125,9 @@
    --colFondoAVisitedPushActive: #983351;
    --colSombra: #00000080;
    --colTitulo: #e3f5d4;
-   --colTituloFondo: #7db84d;
-   --colNavH1Sel: #d37290;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
    --colFondoNavSel: #7a3059;
    --colScrollbar: #616161;
    --colThumb: #ffffff;
@@ -566,9 +568,6 @@
  }
 
  @media print {
-  h1 {
-   text-shadow: var(--shadowTitulo);
-  }
 
   .codeShow button {
    display: none;
@@ -718,34 +717,108 @@
     
    <li>
     <p>
-     <a href="/m08push/m-srv/m-generallaves-php.html">srv / generallaves.php</a>
+     <a href="/m08push/m-srv/m-Bd-php.html">srv / Bd.php</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m08push/m-srv/m-srvNotifica-php.html">srv / srvNotifica.php</a>
+     <a href="/m08push/m-srv/m-genera-llaves-php.html">srv / genera-llaves.php</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m08push/m-srv/m-srvSuscripcion-php.html">srv / srvSuscripcion.php</a>
+     <a href="/m08push/m-srv/m-notifica-php.html">srv / notifica.php</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m08push/m-srv/m-bd/">Carpeta « srv / bd »</a>
+     <a href="/m08push/m-srv/m-suscripcion-elimina-php.html">srv / suscripcion-elimina.php</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m08push/m-srv/m-modelo/">Carpeta « srv / modelo »</a>
+     <a href="/m08push/m-srv/m-suscripcion-modifica-php.html">srv / suscripcion-modifica.php</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m08push/m-srv/m-Suscripcion-php.html">srv / Suscripcion.php</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m08push/m-srv/m-suscripcionConsulta-php.html">srv / suscripcionConsulta.php</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m08push/m-srv/m-suscripcionElimina-php.html">srv / suscripcionElimina.php</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m08push/m-srv/m-suscripcionRecupera-php.html">srv / suscripcionRecupera.php</a>
     </p>
    </li>
    </ol>
    </nav>
   </div>
      <section >
-         <h1 >A. srv / generallaves.php</h1><table class="codeShow">
+         <h1 >A. srv / Bd.php</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">class</span> Bd</td></tr>
+  <tr><td>4</td><td>{</td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td> <span class="codeReserved">private</span> <span class="codeReserved">static</span> ?PDO $conexion = <span class="codeReserved">null</span>;</td></tr>
+  <tr><td>7</td><td></td></tr>
+  <tr><td>8</td><td> <span class="codeReserved">static</span> <span class="codeReserved">function</span> getConexion(): PDO</td></tr>
+  <tr><td>9</td><td> {</td></tr>
+  <tr><td>10</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">self</span>::$conexion === <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>11</td><td></td></tr>
+  <tr><td>12</td><td>   <span class="codeReserved">self</span>::$conexion = <span class="codeReserved">new</span> PDO(</td></tr>
+  <tr><td>13</td><td>    <span class="codeComment">// cadena de conexión</span></td></tr>
+  <tr><td>14</td><td>    <span class="codeString">"sqlite:notificacionespush.db"</span>,</td></tr>
+  <tr><td>15</td><td>    <span class="codeComment">// usuario</span></td></tr>
+  <tr><td>16</td><td>    <span class="codeReserved">null</span>,</td></tr>
+  <tr><td>17</td><td>    <span class="codeComment">// contraseña</span></td></tr>
+  <tr><td>18</td><td>    <span class="codeReserved">null</span>,</td></tr>
+  <tr><td>19</td><td>    <span class="codeComment">// Opciones: conexiones persistentes y lanza excepciones.</span></td></tr>
+  <tr><td>20</td><td>    [PDO::ATTR_PERSISTENT =&gt; <span class="codeReserved">true</span>, PDO::ATTR_ERRMODE =&gt; PDO::ERRMODE_EXCEPTION]</td></tr>
+  <tr><td>21</td><td>   );</td></tr>
+  <tr><td>22</td><td></td></tr>
+  <tr><td>23</td><td>   <span class="codeReserved">self</span>::$conexion-&gt;exec(</td></tr>
+  <tr><td>24</td><td>    <span class="codeString">'<span class="codeReserved">CREATE</span> <span class="codeReserved">TABLE</span> <span class="codeReserved">IF</span> <span class="codeReserved">NOT</span> <span class="codeReserved">EXISTS</span> SUSCRIPCION (</span></td></tr>
+  <tr><td>25</td><td><span class="codeString">      SUS_ENDPOINT <span class="codeReserved">TEXT</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
+  <tr><td>26</td><td><span class="codeString">      SUS_PUB_KEY <span class="codeReserved">TEXT</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
+  <tr><td>27</td><td><span class="codeString">      SUS_AUT_TOK <span class="codeReserved">TEXT</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
+  <tr><td>28</td><td><span class="codeString">      SUS_CONT_ENCOD <span class="codeReserved">TEXT</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
+  <tr><td>29</td><td><span class="codeString">      <span class="codeReserved">CONSTRAINT</span> SUS_PK</span></td></tr>
+  <tr><td>30</td><td><span class="codeString">       <span class="codeReserved">PRIMARY</span> <span class="codeReserved">KEY</span>(SUS_ENDPOINT),</span></td></tr>
+  <tr><td>31</td><td><span class="codeString">      <span class="codeReserved">CONSTRAINT</span> SUS_ENDPNT_NV</span></td></tr>
+  <tr><td>32</td><td><span class="codeString">       CHECK(LENGTH(SUS_ENDPOINT) &gt; 0)</span></td></tr>
+  <tr><td>33</td><td><span class="codeString">     )'</span></td></tr>
+  <tr><td>34</td><td>   );</td></tr>
+  <tr><td>35</td><td>  }</td></tr>
+  <tr><td>36</td><td></td></tr>
+  <tr><td>37</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">self</span>::$conexion;</td></tr>
+  <tr><td>38</td><td> }</td></tr>
+  <tr><td>39</td><td>}</td></tr>
+  <tr><td>40</td><td></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >B. srv / genera-llaves.php</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -790,7 +863,7 @@
 </table>
       </section>
      <section >
-         <h1 >B. srv / srvNotifica.php</h1><table class="codeShow">
+         <h1 >C. srv / notifica.php</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -803,276 +876,84 @@
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
   <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../vendor/autoload.php"</span>;</td></tr>
-  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/ejecutaServicio.php"</span>;</td></tr>
-  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/modelo/Suscripcion.php"</span>;</td></tr>
-  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/suscripcionConsulta.php"</span>;</td></tr>
-  <tr><td>7</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/suscripcionElimina.php"</span>;</td></tr>
-  <tr><td>8</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/suscripcionElimina.php"</span>;</td></tr>
-  <tr><td>9</td><td></td></tr>
-  <tr><td>10</td><td>use Minishlink\WebPush\WebPush;</td></tr>
-  <tr><td>11</td><td></td></tr>
-  <tr><td>12</td><td><span class="codeReserved">const</span> AUTH = [</td></tr>
-  <tr><td>13</td><td> <span class="codeString">"VAPID"</span> =&gt; [</td></tr>
-  <tr><td>14</td><td>  <span class="codeString">"subject"</span> =&gt; <span class="codeString">"https://notificacionesphp.gilbertopachec2.repl.co/"</span>,</td></tr>
-  <tr><td>15</td><td>  <span class="codeString">"publicKey"</span> =&gt; <span class="codeString">"BMBlr6YznhYMX3NgcWIDRxZXs0sh7tCv7_YCsWcww0ZCv9WGg-tRCXfMEHTiBPCksSqeve1twlbmVAZFv7GSuj0"</span>,</td></tr>
-  <tr><td>16</td><td>  <span class="codeString">"privateKey"</span> =&gt; <span class="codeString">"vplfkITvu0cwHqzK9Kj-DYStbCH_9AhGx9LqMyaeI6w"</span></td></tr>
-  <tr><td>17</td><td> ]</td></tr>
-  <tr><td>18</td><td>];</td></tr>
-  <tr><td>19</td><td></td></tr>
-  <tr><td>20</td><td>ejecutaServicio(<span class="codeReserved">function</span> () {</td></tr>
-  <tr><td>21</td><td></td></tr>
-  <tr><td>22</td><td> $webPush = <span class="codeReserved">new</span> WebPush(AUTH);</td></tr>
-  <tr><td>23</td><td> $mensaje = <span class="codeString">"Hola! 👋"</span>;</td></tr>
-  <tr><td>24</td><td></td></tr>
-  <tr><td>25</td><td> <span class="codeComment">// Envia el mensaje a todas las suscripciones.</span></td></tr>
-  <tr><td>26</td><td> $suscripciones = suscripcionConsulta();</td></tr>
-  <tr><td>27</td><td> <span class="codeReserved">foreach</span> ($suscripciones <span class="codeReserved">as</span> $suscripcion) {</td></tr>
-  <tr><td>28</td><td>  $webPush-&gt;queueNotification($suscripcion, $mensaje);</td></tr>
-  <tr><td>29</td><td> }</td></tr>
-  <tr><td>30</td><td> $reportes = $webPush-&gt;flush();</td></tr>
-  <tr><td>31</td><td></td></tr>
-  <tr><td>32</td><td> <span class="codeComment">// Genera el reporte de envio a cada suscripcion.</span></td></tr>
-  <tr><td>33</td><td> $reporteDeEnvios = <span class="codeString">""</span>;</td></tr>
-  <tr><td>34</td><td> <span class="codeReserved">foreach</span> ($reportes <span class="codeReserved">as</span> $reporte) {</td></tr>
-  <tr><td>35</td><td>  $endpoint = htmlentities($reporte-&gt;getRequest()-&gt;getUri());</td></tr>
-  <tr><td>36</td><td>  <span class="codeReserved">if</span> ($reporte-&gt;isSuccess()) {</td></tr>
-  <tr><td>37</td><td>   <span class="codeComment">// Reporte de éxito.</span></td></tr>
-  <tr><td>38</td><td>   $reporteDeEnvios .= <span class="codeString">"&lt;<span class="codeReserved">dt</span>&gt;$endpoint&lt;/<span class="codeReserved">dt</span>&gt;&lt;<span class="codeReserved">dd</span>&gt;Éxito&lt;/<span class="codeReserved">dd</span>&gt;"</span>;</td></tr>
-  <tr><td>39</td><td>  } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>40</td><td>   <span class="codeReserved">if</span> ($reporte-&gt;isSubscriptionExpired()) {</td></tr>
-  <tr><td>41</td><td>    suscripcionElimina($endpoint);</td></tr>
-  <tr><td>42</td><td>   }</td></tr>
-  <tr><td>43</td><td>   <span class="codeComment">// Reporte de fallo.</span></td></tr>
-  <tr><td>44</td><td>   $explicacion = htmlentities($reporte-&gt;getReason());</td></tr>
-  <tr><td>45</td><td>   $reporteDeEnvios .= <span class="codeString">"&lt;<span class="codeReserved">dt</span>&gt;$endpoint&lt;/<span class="codeReserved">dt</span>&gt;&lt;<span class="codeReserved">dd</span>&gt;Fallo: $explicacion&lt;/<span class="codeReserved">dd</span>&gt;"</span>;</td></tr>
-  <tr><td>46</td><td>  }</td></tr>
-  <tr><td>47</td><td> }</td></tr>
-  <tr><td>48</td><td></td></tr>
-  <tr><td>49</td><td> <span class="codeReserved">return</span> [<span class="codeString">"reporte"</span> =&gt; [<span class="codeString">"innerHTML"</span> =&gt; $reporteDeEnvios]];</td></tr>
-  <tr><td>50</td><td>});</td></tr>
-  <tr><td>51</td><td></td></tr>
- </tbody>
-</table>
-      </section>
-     <section >
-         <h1 >C. srv / srvSuscripcion.php</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/ejecutaServicio.php"</span>;</td></tr>
-  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/leeJson.php"</span>;</td></tr>
-  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/JsonResponse.php"</span>;</td></tr>
-  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/modelo/Suscripcion.php"</span>;</td></tr>
-  <tr><td>7</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/modelo/leeSuscripcion.php"</span>;</td></tr>
-  <tr><td>8</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/suscripcionAgrega.php"</span>;</td></tr>
-  <tr><td>9</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/suscripcionBusca.php"</span>;</td></tr>
-  <tr><td>10</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/suscripcionModifica.php"</span>;</td></tr>
-  <tr><td>11</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/suscripcionElimina.php"</span>;</td></tr>
+  <tr><td>4</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/fetchAll.php"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/ProblemDetails.php"</span>;</td></tr>
+  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveJson.php"</span>;</td></tr>
+  <tr><td>7</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveProblemDetails.php"</span>;</td></tr>
+  <tr><td>8</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveErrorInterno.php"</span>;</td></tr>
+  <tr><td>9</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
+  <tr><td>10</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Suscripcion.php"</span>;</td></tr>
+  <tr><td>11</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/suscripcionElimina.php"</span>;</td></tr>
   <tr><td>12</td><td></td></tr>
-  <tr><td>13</td><td>ejecutaServicio(<span class="codeReserved">function</span> () {</td></tr>
+  <tr><td>13</td><td>use Minishlink\WebPush\WebPush;</td></tr>
   <tr><td>14</td><td></td></tr>
-  <tr><td>15</td><td> $json = leeJson();</td></tr>
-  <tr><td>16</td><td></td></tr>
-  <tr><td>17</td><td> $modelo = leeSuscripcion($json);</td></tr>
-  <tr><td>18</td><td></td></tr>
-  <tr><td>19</td><td> $metodoHttp = $_SERVER[<span class="codeString">"REQUEST_METHOD"</span>];</td></tr>
-  <tr><td>20</td><td></td></tr>
-  <tr><td>21</td><td> <span class="codeReserved">if</span> ($metodoHttp === <span class="codeString">"POST"</span>) {</td></tr>
-  <tr><td>22</td><td>  suscripcionAgrega($modelo);</td></tr>
-  <tr><td>23</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">new</span> JsonResponse(JsonResponse_Created);</td></tr>
-  <tr><td>24</td><td> } <span class="codeReserved">elseif</span> ($metodoHttp === <span class="codeString">"PUT"</span>) {</td></tr>
-  <tr><td>25</td><td>  $registrado = suscripcionBusca($modelo-&gt;endpoint);</td></tr>
-  <tr><td>26</td><td>  <span class="codeReserved">if</span> ($registrado) {</td></tr>
-  <tr><td>27</td><td>   suscripcionModifica($modelo);</td></tr>
-  <tr><td>28</td><td>   <span class="codeReserved">return</span> $modelo;</td></tr>
-  <tr><td>29</td><td>  } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>30</td><td>   suscripcionAgrega($modelo);</td></tr>
-  <tr><td>31</td><td>   <span class="codeReserved">return</span> <span class="codeReserved">new</span> JsonResponse(JsonResponse_Created);</td></tr>
-  <tr><td>32</td><td>  }</td></tr>
-  <tr><td>33</td><td> } <span class="codeReserved">elseif</span> ($metodoHttp === <span class="codeString">"<span class="codeReserved">DELETE</span>"</span>) {</td></tr>
-  <tr><td>34</td><td>  suscripcionElimina($modelo-&gt;endpoint);</td></tr>
-  <tr><td>35</td><td>  <span class="codeReserved">return</span> JsonResponse::noContent();</td></tr>
-  <tr><td>36</td><td> }</td></tr>
-  <tr><td>37</td><td></td></tr>
-  <tr><td>38</td><td> <span class="codeReserved">return</span> [];</td></tr>
-  <tr><td>39</td><td>});</td></tr>
-  <tr><td>40</td><td></td></tr>
- </tbody>
-</table>
-      </section>
-     <section>
-         <h1 >D. Carpeta « srv / bd »</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
-    </p>
-   </div>
-
-  <div class="lectura">
-   <nav>
-    <h1>Contenido</h1>
-    
-   <ol type="1">
-    
-   <li>
-    <p>
-     <a href="/m08push/m-srv/m-bd/m-Bd-php.html">srv / bd / Bd.php</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m08push/m-srv/m-bd/m-bdCrea-php.html">srv / bd / bdCrea.php</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m08push/m-srv/m-bd/m-suscripcionAgrega-php.html">srv / bd / suscripcionAgrega.php</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m08push/m-srv/m-bd/m-suscripcionBusca-php.html">srv / bd / suscripcionBusca.php</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m08push/m-srv/m-bd/m-suscripcionConsulta-php.html">srv / bd / suscripcionConsulta.php</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m08push/m-srv/m-bd/m-suscripcionElimina-php.html">srv / bd / suscripcionElimina.php</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m08push/m-srv/m-bd/m-suscripcionModifica-php.html">srv / bd / suscripcionModifica.php</a>
-    </p>
-   </li>
-   </ol>
-   </nav>
-  </div>
-     <section >
-         <h1 >1. srv / bd / Bd.php</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bdCrea.php"</span>;</td></tr>
-  <tr><td>4</td><td></td></tr>
-  <tr><td>5</td><td><span class="codeReserved">class</span> Bd</td></tr>
-  <tr><td>6</td><td>{</td></tr>
-  <tr><td>7</td><td></td></tr>
-  <tr><td>8</td><td> <span class="codeReserved">private</span> <span class="codeReserved">static</span> ?PDO $conexion = <span class="codeReserved">null</span>;</td></tr>
-  <tr><td>9</td><td></td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">static</span> <span class="codeReserved">function</span> getConexion(): PDO</td></tr>
-  <tr><td>11</td><td> {</td></tr>
-  <tr><td>12</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">self</span>::$conexion === <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>13</td><td></td></tr>
-  <tr><td>14</td><td>   <span class="codeReserved">self</span>::$conexion = <span class="codeReserved">new</span> PDO(</td></tr>
-  <tr><td>15</td><td>    <span class="codeComment">// cadena de conexión</span></td></tr>
-  <tr><td>16</td><td>    <span class="codeString">"sqlite:notificacionespush.db"</span>,</td></tr>
-  <tr><td>17</td><td>    <span class="codeComment">// usuario</span></td></tr>
-  <tr><td>18</td><td>    <span class="codeReserved">null</span>,</td></tr>
-  <tr><td>19</td><td>    <span class="codeComment">// contraseña</span></td></tr>
-  <tr><td>20</td><td>    <span class="codeReserved">null</span>,</td></tr>
-  <tr><td>21</td><td>    <span class="codeComment">// Opciones: conexiones persistentes y lanza excepciones.</span></td></tr>
-  <tr><td>22</td><td>    [PDO::ATTR_PERSISTENT =&gt; <span class="codeReserved">true</span>, PDO::ATTR_ERRMODE =&gt; PDO::ERRMODE_EXCEPTION]</td></tr>
-  <tr><td>23</td><td>   );</td></tr>
-  <tr><td>24</td><td></td></tr>
-  <tr><td>25</td><td>   bdCrea(<span class="codeReserved">self</span>::$conexion);</td></tr>
-  <tr><td>26</td><td>  }</td></tr>
-  <tr><td>27</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">self</span>::$conexion;</td></tr>
-  <tr><td>28</td><td> }</td></tr>
-  <tr><td>29</td><td>}</td></tr>
-  <tr><td>30</td><td></td></tr>
- </tbody>
-</table>
-      </section>
-     <section >
-         <h1 >2. srv / bd / bdCrea.php</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">function</span> bdCrea(PDO $con)</td></tr>
-  <tr><td>4</td><td>{</td></tr>
-  <tr><td>5</td><td> $con-&gt;exec(</td></tr>
-  <tr><td>6</td><td>  <span class="codeString">'<span class="codeReserved">CREATE</span> <span class="codeReserved">TABLE</span> <span class="codeReserved">IF</span> <span class="codeReserved">NOT</span> <span class="codeReserved">EXISTS</span> SUSCRIPCION (</span></td></tr>
-  <tr><td>7</td><td><span class="codeString">    SUS_ENDPOINT <span class="codeReserved">TEXT</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
-  <tr><td>8</td><td><span class="codeString">    SUS_PUB_KEY <span class="codeReserved">TEXT</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
-  <tr><td>9</td><td><span class="codeString">    SUS_AUT_TOK <span class="codeReserved">TEXT</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
-  <tr><td>10</td><td><span class="codeString">    SUS_CONT_ENCOD <span class="codeReserved">TEXT</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
-  <tr><td>11</td><td><span class="codeString">    <span class="codeReserved">CONSTRAINT</span> SUS_PK</span></td></tr>
-  <tr><td>12</td><td><span class="codeString">     <span class="codeReserved">PRIMARY</span> <span class="codeReserved">KEY</span>(SUS_ENDPOINT)</span></td></tr>
-  <tr><td>13</td><td><span class="codeString">   )'</span></td></tr>
-  <tr><td>14</td><td> );</td></tr>
-  <tr><td>15</td><td>}</td></tr>
-  <tr><td>16</td><td></td></tr>
- </tbody>
-</table>
-      </section>
-     <section >
-         <h1 >3. srv / bd / suscripcionAgrega.php</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>4</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Suscripcion.php"</span>;</td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeReserved">function</span> suscripcionAgrega(Suscripcion $modelo)</td></tr>
-  <tr><td>7</td><td>{</td></tr>
-  <tr><td>8</td><td> $con = Bd::getConexion();</td></tr>
-  <tr><td>9</td><td> $stmt = $con-&gt;prepare(</td></tr>
-  <tr><td>10</td><td>  <span class="codeString">"<span class="codeReserved">INSERT</span> <span class="codeReserved">INTO</span> SUSCRIPCION</span></td></tr>
-  <tr><td>11</td><td><span class="codeString">    (SUS_ENDPOINT, SUS_PUB_KEY, SUS_AUT_TOK, SUS_CONT_ENCOD)</span></td></tr>
-  <tr><td>12</td><td><span class="codeString">   <span class="codeReserved">VALUES</span></span></td></tr>
-  <tr><td>13</td><td><span class="codeString">    (:endpoint, :publicKey, :authToken, :contentEncoding)"</span></td></tr>
-  <tr><td>14</td><td> );</td></tr>
-  <tr><td>15</td><td> $stmt-&gt;execute([</td></tr>
-  <tr><td>16</td><td>  <span class="codeString">":endpoint"</span> =&gt; $modelo-&gt;endpoint,</td></tr>
-  <tr><td>17</td><td>  <span class="codeString">":publicKey"</span> =&gt; $modelo-&gt;publicKey,</td></tr>
-  <tr><td>18</td><td>  <span class="codeString">":authToken"</span> =&gt; $modelo-&gt;authToken,</td></tr>
-  <tr><td>19</td><td>  <span class="codeString">":contentEncoding"</span> =&gt; $modelo-&gt;contentEncoding</td></tr>
-  <tr><td>20</td><td> ]);</td></tr>
-  <tr><td>21</td><td>}</td></tr>
+  <tr><td>15</td><td><span class="codeReserved">const</span> AUTH = [</td></tr>
+  <tr><td>16</td><td> <span class="codeString">"VAPID"</span> =&gt; [</td></tr>
+  <tr><td>17</td><td>  <span class="codeString">"subject"</span> =&gt; <span class="codeString">"https://notificacionesphp.gilbertopachec2.repl.co/"</span>,</td></tr>
+  <tr><td>18</td><td>  <span class="codeString">"publicKey"</span> =&gt; <span class="codeString">"BMBlr6YznhYMX3NgcWIDRxZXs0sh7tCv7_YCsWcww0ZCv9WGg-tRCXfMEHTiBPCksSqeve1twlbmVAZFv7GSuj0"</span>,</td></tr>
+  <tr><td>19</td><td>  <span class="codeString">"privateKey"</span> =&gt; <span class="codeString">"vplfkITvu0cwHqzK9Kj-DYStbCH_9AhGx9LqMyaeI6w"</span></td></tr>
+  <tr><td>20</td><td> ]</td></tr>
+  <tr><td>21</td><td>];</td></tr>
   <tr><td>22</td><td></td></tr>
+  <tr><td>23</td><td><span class="codeReserved">try</span> {</td></tr>
+  <tr><td>24</td><td></td></tr>
+  <tr><td>25</td><td> $webPush = <span class="codeReserved">new</span> WebPush(AUTH);</td></tr>
+  <tr><td>26</td><td> $mensaje = <span class="codeString">"Hola! 👋"</span>;</td></tr>
+  <tr><td>27</td><td></td></tr>
+  <tr><td>28</td><td> <span class="codeComment">// Envia el mensaje a todas las suscripciones.</span></td></tr>
+  <tr><td>29</td><td></td></tr>
+  <tr><td>30</td><td> $conexion = Bd::getConexion();</td></tr>
+  <tr><td>31</td><td></td></tr>
+  <tr><td>32</td><td> $suscripciones = fetchAll(</td></tr>
+  <tr><td>33</td><td>  $conexion-&gt;query(</td></tr>
+  <tr><td>34</td><td>   <span class="codeString">"<span class="codeReserved">SELECT</span></span></td></tr>
+  <tr><td>35</td><td><span class="codeString">    SUS_ENDPOINT <span class="codeReserved">as</span> endpoint,</span></td></tr>
+  <tr><td>36</td><td><span class="codeString">    SUS_PUB_KEY <span class="codeReserved">as</span> publicKey,</span></td></tr>
+  <tr><td>37</td><td><span class="codeString">    SUS_AUT_TOK <span class="codeReserved">as</span> authToken,</span></td></tr>
+  <tr><td>38</td><td><span class="codeString">    SUS_CONT_ENCOD <span class="codeReserved">as</span> contentEncoding</span></td></tr>
+  <tr><td>39</td><td><span class="codeString">   <span class="codeReserved">FROM</span> SUSCRIPCION"</span></td></tr>
+  <tr><td>40</td><td>  ),</td></tr>
+  <tr><td>41</td><td>  [],</td></tr>
+  <tr><td>42</td><td>  PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,</td></tr>
+  <tr><td>43</td><td>  Suscripcion::<span class="codeReserved">class</span></td></tr>
+  <tr><td>44</td><td> );</td></tr>
+  <tr><td>45</td><td></td></tr>
+  <tr><td>46</td><td> <span class="codeReserved">foreach</span> ($suscripciones <span class="codeReserved">as</span> $suscripcion) {</td></tr>
+  <tr><td>47</td><td>  $webPush-&gt;queueNotification($suscripcion, $mensaje);</td></tr>
+  <tr><td>48</td><td> }</td></tr>
+  <tr><td>49</td><td> $reportes = $webPush-&gt;flush();</td></tr>
+  <tr><td>50</td><td></td></tr>
+  <tr><td>51</td><td> <span class="codeComment">// Genera el reporte de envio a cada suscripcion.</span></td></tr>
+  <tr><td>52</td><td> $reporteDeEnvios = <span class="codeString">""</span>;</td></tr>
+  <tr><td>53</td><td> <span class="codeReserved">foreach</span> ($reportes <span class="codeReserved">as</span> $reporte) {</td></tr>
+  <tr><td>54</td><td>  $endpoint = htmlentities($reporte-&gt;getRequest()-&gt;getUri());</td></tr>
+  <tr><td>55</td><td>  <span class="codeReserved">if</span> ($reporte-&gt;isSuccess()) {</td></tr>
+  <tr><td>56</td><td>   <span class="codeComment">// Reporte de éxito.</span></td></tr>
+  <tr><td>57</td><td>   $reporteDeEnvios .= <span class="codeString">"&lt;<span class="codeReserved">dt</span>&gt;$endpoint&lt;/<span class="codeReserved">dt</span>&gt;&lt;<span class="codeReserved">dd</span>&gt;Éxito&lt;/<span class="codeReserved">dd</span>&gt;"</span>;</td></tr>
+  <tr><td>58</td><td>  } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>59</td><td>   <span class="codeReserved">if</span> ($reporte-&gt;isSubscriptionExpired()) {</td></tr>
+  <tr><td>60</td><td>    suscripcionElimina($endpoint);</td></tr>
+  <tr><td>61</td><td>   }</td></tr>
+  <tr><td>62</td><td>   <span class="codeComment">// Reporte de fallo.</span></td></tr>
+  <tr><td>63</td><td>   $explicacion = htmlentities($reporte-&gt;getReason());</td></tr>
+  <tr><td>64</td><td>   $reporteDeEnvios .= <span class="codeString">"&lt;<span class="codeReserved">dt</span>&gt;$endpoint&lt;/<span class="codeReserved">dt</span>&gt;&lt;<span class="codeReserved">dd</span>&gt;Fallo: $explicacion&lt;/<span class="codeReserved">dd</span>&gt;"</span>;</td></tr>
+  <tr><td>65</td><td>  }</td></tr>
+  <tr><td>66</td><td> }</td></tr>
+  <tr><td>67</td><td></td></tr>
+  <tr><td>68</td><td> devuelveJson([<span class="codeString">"reporte"</span> =&gt; [<span class="codeString">"innerHTML"</span> =&gt; $reporteDeEnvios]]);</td></tr>
+  <tr><td>69</td><td>} <span class="codeReserved">catch</span> (ProblemDetails $details) {</td></tr>
+  <tr><td>70</td><td></td></tr>
+  <tr><td>71</td><td> devuelveProblemDetails($details);</td></tr>
+  <tr><td>72</td><td>} <span class="codeReserved">catch</span> (Throwable $error) {</td></tr>
+  <tr><td>73</td><td></td></tr>
+  <tr><td>74</td><td> devuelveErrorInterno($error);</td></tr>
+  <tr><td>75</td><td>}</td></tr>
+  <tr><td>76</td><td></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >4. srv / bd / suscripcionBusca.php</h1><table class="codeShow">
+         <h1 >D. srv / suscripcion-elimina.php</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1084,34 +965,34 @@
  <tbody>
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>4</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Suscripcion.php"</span>;</td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeReserved">function</span> suscripcionBusca(string $endpoint)</td></tr>
-  <tr><td>7</td><td>{</td></tr>
-  <tr><td>8</td><td> $con = Bd::getConexion();</td></tr>
-  <tr><td>9</td><td> $stmt = $con-&gt;prepare(</td></tr>
-  <tr><td>10</td><td>  <span class="codeString">"<span class="codeReserved">SELECT</span></span></td></tr>
-  <tr><td>11</td><td><span class="codeString">    SUS_ENDPOINT <span class="codeReserved">as</span> endpoint,</span></td></tr>
-  <tr><td>12</td><td><span class="codeString">    SUS_PUB_KEY <span class="codeReserved">as</span> publicKey,</span></td></tr>
-  <tr><td>13</td><td><span class="codeString">    SUS_AUT_TOK <span class="codeReserved">as</span> authToken,</span></td></tr>
-  <tr><td>14</td><td><span class="codeString">    SUS_CONT_ENCOD <span class="codeReserved">as</span> contentEncoding</span></td></tr>
-  <tr><td>15</td><td><span class="codeString">   <span class="codeReserved">FROM</span> SUSCRIPCION</span></td></tr>
-  <tr><td>16</td><td><span class="codeString">   <span class="codeReserved">WHERE</span> SUS_ENDPOINT = :endpoint"</span></td></tr>
-  <tr><td>17</td><td> );</td></tr>
-  <tr><td>18</td><td> $stmt-&gt;execute([<span class="codeString">":endpoint"</span> =&gt; $endpoint]);</td></tr>
-  <tr><td>19</td><td> $stmt-&gt;setFetchMode(</td></tr>
-  <tr><td>20</td><td>  PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,</td></tr>
-  <tr><td>21</td><td>  Suscripcion::<span class="codeReserved">class</span></td></tr>
-  <tr><td>22</td><td> );</td></tr>
-  <tr><td>23</td><td> <span class="codeReserved">return</span> $stmt-&gt;fetch();</td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/recuperaJson.php"</span>;</td></tr>
+  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveNoContent.php"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/ProblemDetails.php"</span>;</td></tr>
+  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveProblemDetails.php"</span>;</td></tr>
+  <tr><td>7</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveErrorInterno.php"</span>;</td></tr>
+  <tr><td>8</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
+  <tr><td>9</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/suscripcionRecupera.php"</span>;</td></tr>
+  <tr><td>10</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/suscripcionElimina.php"</span>;</td></tr>
+  <tr><td>11</td><td></td></tr>
+  <tr><td>12</td><td><span class="codeReserved">try</span> {</td></tr>
+  <tr><td>13</td><td></td></tr>
+  <tr><td>14</td><td> $objeto = recuperaJson();</td></tr>
+  <tr><td>15</td><td> $modelo = suscripcionRecupera($objeto);</td></tr>
+  <tr><td>16</td><td> suscripcionElimina($modelo-&gt;endpoint);</td></tr>
+  <tr><td>17</td><td> devuelveNoContent();</td></tr>
+  <tr><td>18</td><td>} <span class="codeReserved">catch</span> (ProblemDetails $details) {</td></tr>
+  <tr><td>19</td><td></td></tr>
+  <tr><td>20</td><td> devuelveProblemDetails($details);</td></tr>
+  <tr><td>21</td><td>} <span class="codeReserved">catch</span> (Throwable $error) {</td></tr>
+  <tr><td>22</td><td></td></tr>
+  <tr><td>23</td><td> devuelveErrorInterno($error);</td></tr>
   <tr><td>24</td><td>}</td></tr>
   <tr><td>25</td><td></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >5. srv / bd / suscripcionConsulta.php</h1><table class="codeShow">
+         <h1 >E. srv / suscripcion-modifica.php</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1123,184 +1004,79 @@
  <tbody>
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>4</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Suscripcion.php"</span>;</td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeReserved">function</span> suscripcionConsulta()</td></tr>
-  <tr><td>7</td><td>{</td></tr>
-  <tr><td>8</td><td> $con = Bd::getConexion();</td></tr>
-  <tr><td>9</td><td> $stmt = $con-&gt;query(</td></tr>
-  <tr><td>10</td><td>  <span class="codeString">"<span class="codeReserved">SELECT</span></span></td></tr>
-  <tr><td>11</td><td><span class="codeString">    SUS_ENDPOINT <span class="codeReserved">as</span> endpoint,</span></td></tr>
-  <tr><td>12</td><td><span class="codeString">    SUS_PUB_KEY <span class="codeReserved">as</span> publicKey,</span></td></tr>
-  <tr><td>13</td><td><span class="codeString">    SUS_AUT_TOK <span class="codeReserved">as</span> authToken,</span></td></tr>
-  <tr><td>14</td><td><span class="codeString">    SUS_CONT_ENCOD <span class="codeReserved">as</span> contentEncoding</span></td></tr>
-  <tr><td>15</td><td><span class="codeString">   <span class="codeReserved">FROM</span> SUSCRIPCION"</span></td></tr>
-  <tr><td>16</td><td> );</td></tr>
-  <tr><td>17</td><td> <span class="codeReserved">return</span> $stmt-&gt;fetchAll(</td></tr>
-  <tr><td>18</td><td>  PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,</td></tr>
-  <tr><td>19</td><td>  Suscripcion::<span class="codeReserved">class</span></td></tr>
-  <tr><td>20</td><td> );</td></tr>
-  <tr><td>21</td><td>}</td></tr>
-  <tr><td>22</td><td></td></tr>
- </tbody>
-</table>
-      </section>
-     <section >
-         <h1 >6. srv / bd / suscripcionElimina.php</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>4</td><td></td></tr>
-  <tr><td>5</td><td><span class="codeReserved">function</span> suscripcionElimina(string $endpoint)</td></tr>
-  <tr><td>6</td><td>{</td></tr>
-  <tr><td>7</td><td> $con = Bd::getConexion();</td></tr>
-  <tr><td>8</td><td> $stmt = $con-&gt;prepare(</td></tr>
-  <tr><td>9</td><td>  <span class="codeString">"<span class="codeReserved">DELETE</span> <span class="codeReserved">FROM</span> SUSCRIPCION</span></td></tr>
-  <tr><td>10</td><td><span class="codeString">   <span class="codeReserved">WHERE</span> SUS_ENDPOINT = :endpoint"</span></td></tr>
-  <tr><td>11</td><td> );</td></tr>
-  <tr><td>12</td><td> $stmt-&gt;execute([<span class="codeString">":endpoint"</span> =&gt; $endpoint]);</td></tr>
-  <tr><td>13</td><td>}</td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/recuperaJson.php"</span>;</td></tr>
+  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveCreated.php"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveJson.php"</span>;</td></tr>
+  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/ProblemDetails.php"</span>;</td></tr>
+  <tr><td>7</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveProblemDetails.php"</span>;</td></tr>
+  <tr><td>8</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveErrorInterno.php"</span>;</td></tr>
+  <tr><td>9</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
+  <tr><td>10</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Suscripcion.php"</span>;</td></tr>
+  <tr><td>11</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/suscripcionRecupera.php"</span>;</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td><span class="codeReserved">try</span> {</td></tr>
   <tr><td>14</td><td></td></tr>
- </tbody>
-</table>
-      </section>
-     <section >
-         <h1 >7. srv / bd / suscripcionModifica.php</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>4</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Suscripcion.php"</span>;</td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeReserved">function</span> suscripcionModifica(Suscripcion $modelo)</td></tr>
-  <tr><td>7</td><td>{</td></tr>
-  <tr><td>8</td><td> $con = Bd::getConexion();</td></tr>
-  <tr><td>9</td><td> $stmt = $con-&gt;prepare(</td></tr>
-  <tr><td>10</td><td>  <span class="codeString">"<span class="codeReserved">UPDATE</span> SUSCRIPCION</span></td></tr>
-  <tr><td>11</td><td><span class="codeString">   <span class="codeReserved">SET</span></span></td></tr>
-  <tr><td>12</td><td><span class="codeString">    SUS_PUB_KEY = :publicKey,</span></td></tr>
-  <tr><td>13</td><td><span class="codeString">    SUS_AUT_TOK = :authToken,</span></td></tr>
-  <tr><td>14</td><td><span class="codeString">    SUS_CONT_ENCOD = :contentEncoding</span></td></tr>
-  <tr><td>15</td><td><span class="codeString">   <span class="codeReserved">WHERE</span> SUS_ENDPOINT = :endpoint"</span></td></tr>
-  <tr><td>16</td><td> );</td></tr>
-  <tr><td>17</td><td> $stmt-&gt;execute([</td></tr>
-  <tr><td>18</td><td>  <span class="codeString">":endpoint"</span> =&gt; $modelo-&gt;endpoint,</td></tr>
-  <tr><td>19</td><td>  <span class="codeString">":publicKey"</span> =&gt; $modelo-&gt;publicKey,</td></tr>
-  <tr><td>20</td><td>  <span class="codeString">":authToken"</span> =&gt; $modelo-&gt;authToken,</td></tr>
-  <tr><td>21</td><td>  <span class="codeString">":contentEncoding"</span> =&gt; $modelo-&gt;contentEncoding</td></tr>
-  <tr><td>22</td><td> ]);</td></tr>
-  <tr><td>23</td><td>}</td></tr>
-  <tr><td>24</td><td></td></tr>
- </tbody>
-</table>
-      </section>
-      </section>
-     <section>
-         <h1 >E. Carpeta « srv / modelo »</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
-    </p>
-   </div>
-
-  <div class="lectura">
-   <nav>
-    <h1>Contenido</h1>
-    
-   <ol type="1">
-    
-   <li>
-    <p>
-     <a href="/m08push/m-srv/m-modelo/m-leeSuscripcion-php.html">srv / modelo / leeSuscripcion.php</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m08push/m-srv/m-modelo/m-Suscripcion-php.html">srv / modelo / Suscripcion.php</a>
-    </p>
-   </li>
-   </ol>
-   </nav>
-  </div>
-     <section >
-         <h1 >1. srv / modelo / leeSuscripcion.php</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/ProblemDetails.php"</span>;</td></tr>
-  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Suscripcion.php"</span>;</td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeReserved">function</span> leeSuscripcion($objeto)</td></tr>
-  <tr><td>7</td><td>{</td></tr>
-  <tr><td>8</td><td></td></tr>
-  <tr><td>9</td><td> <span class="codeReserved">if</span> (!isset($objeto-&gt;endpoint) || !is_string($objeto-&gt;endpoint))</td></tr>
-  <tr><td>10</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetails(</td></tr>
-  <tr><td>11</td><td>   status: ProblemDetails::BadRequest,</td></tr>
-  <tr><td>12</td><td>   type: <span class="codeString">"/error/endpointincorrecto.html"</span>,</td></tr>
-  <tr><td>13</td><td>   title: <span class="codeString">"El endpoint debe ser texto."</span>,</td></tr>
-  <tr><td>14</td><td>  );</td></tr>
-  <tr><td>15</td><td></td></tr>
-  <tr><td>16</td><td> <span class="codeReserved">if</span> (!isset($objeto-&gt;publicKey)  || !is_string($objeto-&gt;publicKey))</td></tr>
-  <tr><td>17</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetails(</td></tr>
-  <tr><td>18</td><td>   status: ProblemDetails::BadRequest,</td></tr>
-  <tr><td>19</td><td>   type: <span class="codeString">"/error/publickeyincorrecta.html"</span>,</td></tr>
-  <tr><td>20</td><td>   title: <span class="codeString">"La publicKey debe ser texto."</span>,</td></tr>
-  <tr><td>21</td><td>  );</td></tr>
-  <tr><td>22</td><td></td></tr>
-  <tr><td>23</td><td> <span class="codeReserved">if</span> (!isset($objeto-&gt;authToken) || !is_string($objeto-&gt;authToken))</td></tr>
-  <tr><td>24</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetails(</td></tr>
-  <tr><td>25</td><td>   status: ProblemDetails::BadRequest,</td></tr>
-  <tr><td>26</td><td>   type: <span class="codeString">"/error/authtokenincorrecto.html"</span>,</td></tr>
-  <tr><td>27</td><td>   title: <span class="codeString">"El authToken debe ser texto."</span>,</td></tr>
-  <tr><td>28</td><td>  );</td></tr>
+  <tr><td>15</td><td> $objeto = recuperaJson();</td></tr>
+  <tr><td>16</td><td> $modelo = suscripcionRecupera($objeto);</td></tr>
+  <tr><td>17</td><td></td></tr>
+  <tr><td>18</td><td> $conexion = Bd::getConexion();</td></tr>
+  <tr><td>19</td><td></td></tr>
+  <tr><td>20</td><td> $statement = $conexion-&gt;prepare(</td></tr>
+  <tr><td>21</td><td>  <span class="codeString">"<span class="codeReserved">SELECT</span></span></td></tr>
+  <tr><td>22</td><td><span class="codeString">    SUS_ENDPOINT</span></td></tr>
+  <tr><td>23</td><td><span class="codeString">   <span class="codeReserved">FROM</span> SUSCRIPCION</span></td></tr>
+  <tr><td>24</td><td><span class="codeString">   <span class="codeReserved">WHERE</span> SUS_ENDPOINT = :endpoint"</span></td></tr>
+  <tr><td>25</td><td> );</td></tr>
+  <tr><td>26</td><td> $statement-&gt;execute([<span class="codeString">":endpoint"</span> =&gt; $modelo-&gt;endpoint]);</td></tr>
+  <tr><td>27</td><td></td></tr>
+  <tr><td>28</td><td> <span class="codeReserved">if</span> ($statement-&gt;fetchColumn() === <span class="codeReserved">false</span>) {</td></tr>
   <tr><td>29</td><td></td></tr>
-  <tr><td>30</td><td> <span class="codeReserved">if</span> (!isset($objeto-&gt;contentEncoding) || !is_string($objeto-&gt;contentEncoding))</td></tr>
-  <tr><td>31</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetails(</td></tr>
-  <tr><td>32</td><td>   status: ProblemDetails::BadRequest,</td></tr>
-  <tr><td>33</td><td>   type: <span class="codeString">"/error/contentencodingincorrecta.html"</span>,</td></tr>
-  <tr><td>34</td><td>   title: <span class="codeString">"La contentEncoding debe ser texto."</span>,</td></tr>
-  <tr><td>35</td><td>  );</td></tr>
-  <tr><td>36</td><td></td></tr>
-  <tr><td>37</td><td> <span class="codeReserved">return</span> <span class="codeReserved">new</span> Suscripcion(</td></tr>
-  <tr><td>38</td><td>  endpoint: $objeto-&gt;endpoint,</td></tr>
-  <tr><td>39</td><td>  publicKey: $objeto-&gt;publicKey,</td></tr>
-  <tr><td>40</td><td>  authToken: $objeto-&gt;authToken,</td></tr>
-  <tr><td>41</td><td>  contentEncoding: $objeto-&gt;contentEncoding</td></tr>
-  <tr><td>42</td><td> );</td></tr>
-  <tr><td>43</td><td>}</td></tr>
-  <tr><td>44</td><td></td></tr>
+  <tr><td>30</td><td>  $conexion-&gt;prepare(</td></tr>
+  <tr><td>31</td><td>   <span class="codeString">"<span class="codeReserved">INSERT</span> <span class="codeReserved">INTO</span> SUSCRIPCION</span></td></tr>
+  <tr><td>32</td><td><span class="codeString">    (SUS_ENDPOINT, SUS_PUB_KEY, SUS_AUT_TOK, SUS_CONT_ENCOD)</span></td></tr>
+  <tr><td>33</td><td><span class="codeString">   <span class="codeReserved">VALUES</span></span></td></tr>
+  <tr><td>34</td><td><span class="codeString">    (:endpoint, :publicKey, :authToken, :contentEncoding)"</span></td></tr>
+  <tr><td>35</td><td>  )</td></tr>
+  <tr><td>36</td><td>   -&gt;execute([</td></tr>
+  <tr><td>37</td><td>    <span class="codeString">":endpoint"</span> =&gt; $modelo-&gt;endpoint,</td></tr>
+  <tr><td>38</td><td>    <span class="codeString">":publicKey"</span> =&gt; $modelo-&gt;publicKey,</td></tr>
+  <tr><td>39</td><td>    <span class="codeString">":authToken"</span> =&gt; $modelo-&gt;authToken,</td></tr>
+  <tr><td>40</td><td>    <span class="codeString">":contentEncoding"</span> =&gt; $modelo-&gt;contentEncoding</td></tr>
+  <tr><td>41</td><td>   ]);</td></tr>
+  <tr><td>42</td><td></td></tr>
+  <tr><td>43</td><td>  devuelveCreated(<span class="codeString">""</span>, $modelo);</td></tr>
+  <tr><td>44</td><td> } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>45</td><td></td></tr>
+  <tr><td>46</td><td>  $conexion-&gt;prepare(</td></tr>
+  <tr><td>47</td><td>   <span class="codeString">"<span class="codeReserved">UPDATE</span> SUSCRIPCION</span></td></tr>
+  <tr><td>48</td><td><span class="codeString">    <span class="codeReserved">SET</span></span></td></tr>
+  <tr><td>49</td><td><span class="codeString">     SUS_PUB_KEY = :publicKey,</span></td></tr>
+  <tr><td>50</td><td><span class="codeString">     SUS_AUT_TOK = :authToken,</span></td></tr>
+  <tr><td>51</td><td><span class="codeString">     SUS_CONT_ENCOD = :contentEncoding</span></td></tr>
+  <tr><td>52</td><td><span class="codeString">    <span class="codeReserved">WHERE</span> SUS_ENDPOINT = :endpoint"</span></td></tr>
+  <tr><td>53</td><td>  )</td></tr>
+  <tr><td>54</td><td>   -&gt;execute([</td></tr>
+  <tr><td>55</td><td>    <span class="codeString">":endpoint"</span> =&gt; $modelo-&gt;endpoint,</td></tr>
+  <tr><td>56</td><td>    <span class="codeString">":publicKey"</span> =&gt; $modelo-&gt;publicKey,</td></tr>
+  <tr><td>57</td><td>    <span class="codeString">":authToken"</span> =&gt; $modelo-&gt;authToken,</td></tr>
+  <tr><td>58</td><td>    <span class="codeString">":contentEncoding"</span> =&gt; $modelo-&gt;contentEncoding</td></tr>
+  <tr><td>59</td><td>   ]);</td></tr>
+  <tr><td>60</td><td></td></tr>
+  <tr><td>61</td><td>  devuelveJson($modelo);</td></tr>
+  <tr><td>62</td><td> }</td></tr>
+  <tr><td>63</td><td>} <span class="codeReserved">catch</span> (ProblemDetails $details) {</td></tr>
+  <tr><td>64</td><td></td></tr>
+  <tr><td>65</td><td> devuelveProblemDetails($details);</td></tr>
+  <tr><td>66</td><td>} <span class="codeReserved">catch</span> (Throwable $error) {</td></tr>
+  <tr><td>67</td><td></td></tr>
+  <tr><td>68</td><td> devuelveErrorInterno($error);</td></tr>
+  <tr><td>69</td><td>}</td></tr>
+  <tr><td>70</td><td></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >2. srv / modelo / Suscripcion.php</h1><table class="codeShow">
+         <h1 >F. srv / Suscripcion.php</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1312,7 +1088,7 @@
  <tbody>
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../vendor/autoload.php"</span>;</td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../vendor/autoload.php"</span>;</td></tr>
   <tr><td>4</td><td></td></tr>
   <tr><td>5</td><td>use Minishlink\WebPush\SubscriptionInterface;</td></tr>
   <tr><td>6</td><td></td></tr>
@@ -1360,6 +1136,126 @@
  </tbody>
 </table>
       </section>
+     <section >
+         <h1 >G. srv / suscripcionConsulta.php</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/fetchAll.php"</span>;</td></tr>
+  <tr><td>4</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Suscripcion.php"</span>;</td></tr>
+  <tr><td>6</td><td></td></tr>
+  <tr><td>7</td><td><span class="codeReserved">function</span> suscripcionConsulta()</td></tr>
+  <tr><td>8</td><td>{</td></tr>
+  <tr><td>9</td><td> $conexion = Bd::getConexion();</td></tr>
+  <tr><td>10</td><td> <span class="codeReserved">return</span> fetchAll(</td></tr>
+  <tr><td>11</td><td>  $conexion-&gt;query(</td></tr>
+  <tr><td>12</td><td>   <span class="codeString">"<span class="codeReserved">SELECT</span></span></td></tr>
+  <tr><td>13</td><td><span class="codeString">    SUS_ENDPOINT <span class="codeReserved">as</span> endpoint,</span></td></tr>
+  <tr><td>14</td><td><span class="codeString">    SUS_PUB_KEY <span class="codeReserved">as</span> publicKey,</span></td></tr>
+  <tr><td>15</td><td><span class="codeString">    SUS_AUT_TOK <span class="codeReserved">as</span> authToken,</span></td></tr>
+  <tr><td>16</td><td><span class="codeString">    SUS_CONT_ENCOD <span class="codeReserved">as</span> contentEncoding</span></td></tr>
+  <tr><td>17</td><td><span class="codeString">   <span class="codeReserved">FROM</span> SUSCRIPCION"</span></td></tr>
+  <tr><td>18</td><td>  ),</td></tr>
+  <tr><td>19</td><td>  [],</td></tr>
+  <tr><td>20</td><td>  PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,</td></tr>
+  <tr><td>21</td><td>  Suscripcion::<span class="codeReserved">class</span></td></tr>
+  <tr><td>22</td><td> );</td></tr>
+  <tr><td>23</td><td>}</td></tr>
+  <tr><td>24</td><td></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >H. srv / suscripcionElimina.php</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
+  <tr><td>4</td><td></td></tr>
+  <tr><td>5</td><td><span class="codeReserved">function</span> suscripcionElimina(string $endpoint)</td></tr>
+  <tr><td>6</td><td>{</td></tr>
+  <tr><td>7</td><td> $con = Bd::getConexion();</td></tr>
+  <tr><td>8</td><td> $stmt = $con-&gt;prepare(</td></tr>
+  <tr><td>9</td><td>  <span class="codeString">"<span class="codeReserved">DELETE</span> <span class="codeReserved">FROM</span> SUSCRIPCION</span></td></tr>
+  <tr><td>10</td><td><span class="codeString">   <span class="codeReserved">WHERE</span> SUS_ENDPOINT = :endpoint"</span></td></tr>
+  <tr><td>11</td><td> );</td></tr>
+  <tr><td>12</td><td> $stmt-&gt;execute([<span class="codeString">":endpoint"</span> =&gt; $endpoint]);</td></tr>
+  <tr><td>13</td><td>}</td></tr>
+  <tr><td>14</td><td></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >I. srv / suscripcionRecupera.php</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/BAD_REQUEST.php"</span>;</td></tr>
+  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/validaJson.php"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/ProblemDetails.php"</span>;</td></tr>
+  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Suscripcion.php"</span>;</td></tr>
+  <tr><td>7</td><td></td></tr>
+  <tr><td>8</td><td><span class="codeReserved">function</span> suscripcionRecupera($objeto)</td></tr>
+  <tr><td>9</td><td>{</td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td> $objeto = validaJson($objeto);</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">if</span> (!isset($objeto-&gt;publicKey)  || !is_string($objeto-&gt;publicKey))</td></tr>
+  <tr><td>14</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetails(</td></tr>
+  <tr><td>15</td><td>   type: <span class="codeString">"/error/publickeyincorrecta.html"</span>,</td></tr>
+  <tr><td>16</td><td>   status: BAD_REQUEST,</td></tr>
+  <tr><td>17</td><td>   title: <span class="codeString">"La publicKey debe ser texto."</span>,</td></tr>
+  <tr><td>18</td><td>  );</td></tr>
+  <tr><td>19</td><td></td></tr>
+  <tr><td>20</td><td> <span class="codeReserved">if</span> (!isset($objeto-&gt;authToken) || !is_string($objeto-&gt;authToken))</td></tr>
+  <tr><td>21</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetails(</td></tr>
+  <tr><td>22</td><td>   type: <span class="codeString">"/error/authtokenincorrecto.html"</span>,</td></tr>
+  <tr><td>23</td><td>   status: BAD_REQUEST,</td></tr>
+  <tr><td>24</td><td>   title: <span class="codeString">"El authToken debe ser texto."</span>,</td></tr>
+  <tr><td>25</td><td>  );</td></tr>
+  <tr><td>26</td><td></td></tr>
+  <tr><td>27</td><td> <span class="codeReserved">if</span> (!isset($objeto-&gt;contentEncoding) || !is_string($objeto-&gt;contentEncoding))</td></tr>
+  <tr><td>28</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetails(</td></tr>
+  <tr><td>29</td><td>   type: <span class="codeString">"/error/contentencodingincorrecta.html"</span>,</td></tr>
+  <tr><td>30</td><td>   status: BAD_REQUEST,</td></tr>
+  <tr><td>31</td><td>   title: <span class="codeString">"La contentEncoding debe ser texto."</span>,</td></tr>
+  <tr><td>32</td><td>  );</td></tr>
+  <tr><td>33</td><td></td></tr>
+  <tr><td>34</td><td> <span class="codeReserved">return</span> <span class="codeReserved">new</span> Suscripcion(</td></tr>
+  <tr><td>35</td><td>  endpoint: $objeto-&gt;endpoint,</td></tr>
+  <tr><td>36</td><td>  publicKey: $objeto-&gt;publicKey,</td></tr>
+  <tr><td>37</td><td>  authToken: $objeto-&gt;authToken,</td></tr>
+  <tr><td>38</td><td>  contentEncoding: $objeto-&gt;contentEncoding</td></tr>
+  <tr><td>39</td><td> );</td></tr>
+  <tr><td>40</td><td>}</td></tr>
+  <tr><td>41</td><td></td></tr>
+ </tbody>
+</table>
       </section>
 </body>
 

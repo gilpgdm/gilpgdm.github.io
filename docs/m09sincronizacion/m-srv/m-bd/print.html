@@ -57,11 +57,12 @@
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
   --shadowTitulo: 3px 1px 2px black;
-  --colTitulo: #bae397;
-  --colTituloFondo: #609732;
-  --colPrincipalTituloStrong: white;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
   --colAStrong: var(--colLetra);
-  --colNavH1Sel: #b35f7c;
+  /* --colNavH1Sel: #b35f7c; */
   --colFondoNav: var(--colFondo);
   --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
@@ -124,8 +125,9 @@
    --colFondoAVisitedPushActive: #983351;
    --colSombra: #00000080;
    --colTitulo: #e3f5d4;
-   --colTituloFondo: #7db84d;
-   --colNavH1Sel: #d37290;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
    --colFondoNavSel: #7a3059;
    --colScrollbar: #616161;
    --colThumb: #ffffff;
@@ -566,9 +568,6 @@
  }
 
  @media print {
-  h1 {
-   text-shadow: var(--shadowTitulo);
-  }
 
   .codeShow button {
    display: none;
@@ -723,11 +722,6 @@
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-srv/m-bd/m-bdCrea-php.html">srv / bd / bdCrea.php</a>
-    </p>
-   </li>
-   <li>
-    <p>
      <a href="/m09sincronizacion/m-srv/m-bd/m-pasatiempoAgrega-php.html">srv / bd / pasatiempoAgrega.php</a>
     </p>
    </li>
@@ -763,39 +757,91 @@
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
   <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Pasatiempo.php"</span>;</td></tr>
-  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bdCrea.php"</span>;</td></tr>
+  <tr><td>4</td><td></td></tr>
+  <tr><td>5</td><td><span class="codeReserved">class</span> Bd</td></tr>
+  <tr><td>6</td><td>{</td></tr>
+  <tr><td>7</td><td></td></tr>
+  <tr><td>8</td><td> <span class="codeReserved">private</span> <span class="codeReserved">static</span> ?PDO $conexion = <span class="codeReserved">null</span>;</td></tr>
+  <tr><td>9</td><td></td></tr>
+  <tr><td>10</td><td> <span class="codeReserved">static</span> <span class="codeReserved">function</span> getConexion(): PDO</td></tr>
+  <tr><td>11</td><td> {</td></tr>
+  <tr><td>12</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">self</span>::$conexion === <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>13</td><td>   <span class="codeReserved">self</span>::$conexion = <span class="codeReserved">new</span> PDO(</td></tr>
+  <tr><td>14</td><td>    <span class="codeComment">// cadena de conexión</span></td></tr>
+  <tr><td>15</td><td>    <span class="codeString">"sqlite:sincronizacion.db"</span>,</td></tr>
+  <tr><td>16</td><td>    <span class="codeComment">// usuario</span></td></tr>
+  <tr><td>17</td><td>    <span class="codeReserved">null</span>,</td></tr>
+  <tr><td>18</td><td>    <span class="codeComment">// contraseña</span></td></tr>
+  <tr><td>19</td><td>    <span class="codeReserved">null</span>,</td></tr>
+  <tr><td>20</td><td>    <span class="codeComment">// Opciones: conexiones persistentes y lanza excepciones.</span></td></tr>
+  <tr><td>21</td><td>    [PDO::ATTR_PERSISTENT =&gt; <span class="codeReserved">true</span>, PDO::ATTR_ERRMODE =&gt; PDO::ERRMODE_EXCEPTION]</td></tr>
+  <tr><td>22</td><td>   );</td></tr>
+  <tr><td>23</td><td></td></tr>
+  <tr><td>24</td><td>   <span class="codeReserved">self</span>::$conexion-&gt;exec(</td></tr>
+  <tr><td>25</td><td>    <span class="codeString">'<span class="codeReserved">CREATE</span> <span class="codeReserved">TABLE</span> <span class="codeReserved">IF</span> <span class="codeReserved">NOT</span> <span class="codeReserved">EXISTS</span> PASATIEMPO (</span></td></tr>
+  <tr><td>26</td><td><span class="codeString">      PAS_UUID <span class="codeReserved">TEXT</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
+  <tr><td>27</td><td><span class="codeString">      PAS_NOMBRE <span class="codeReserved">TEXT</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
+  <tr><td>28</td><td><span class="codeString">      PAS_MODIFICACION <span class="codeReserved">INTEGER</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
+  <tr><td>29</td><td><span class="codeString">      PAS_ELIMINADO <span class="codeReserved">INTEGER</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
+  <tr><td>30</td><td><span class="codeString">      <span class="codeReserved">CONSTRAINT</span> PAS_PK</span></td></tr>
+  <tr><td>31</td><td><span class="codeString">       <span class="codeReserved">PRIMARY</span> <span class="codeReserved">KEY</span>(PAS_UUID),</span></td></tr>
+  <tr><td>32</td><td><span class="codeString">      <span class="codeReserved">CONSTRAINT</span> PAS_UUID_NV</span></td></tr>
+  <tr><td>33</td><td><span class="codeString">       CHECK(LENGTH(PAS_UUID) &gt; 0),</span></td></tr>
+  <tr><td>34</td><td><span class="codeString">      <span class="codeReserved">CONSTRAINT</span> PAS_NOM_NV</span></td></tr>
+  <tr><td>35</td><td><span class="codeString">       CHECK(LENGTH(PAS_NOMBRE) &gt; 0)</span></td></tr>
+  <tr><td>36</td><td><span class="codeString">     )'</span></td></tr>
+  <tr><td>37</td><td>   );</td></tr>
+  <tr><td>38</td><td>  }</td></tr>
+  <tr><td>39</td><td></td></tr>
+  <tr><td>40</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">self</span>::$conexion;</td></tr>
+  <tr><td>41</td><td> }</td></tr>
+  <tr><td>42</td><td>}</td></tr>
+  <tr><td>43</td><td></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >2. srv / bd / pasatiempoAgrega.php</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
+  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Pasatiempo.php"</span>;</td></tr>
   <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeReserved">class</span> Bd</td></tr>
+  <tr><td>6</td><td><span class="codeReserved">function</span> pasatiempoAgrega(Pasatiempo $modelo)</td></tr>
   <tr><td>7</td><td>{</td></tr>
   <tr><td>8</td><td></td></tr>
-  <tr><td>9</td><td> <span class="codeReserved">private</span> <span class="codeReserved">static</span> ?PDO $conexion = <span class="codeReserved">null</span>;</td></tr>
+  <tr><td>9</td><td> $modelo-&gt;valida();</td></tr>
   <tr><td>10</td><td></td></tr>
-  <tr><td>11</td><td> <span class="codeReserved">static</span> <span class="codeReserved">function</span> getConexion(): PDO</td></tr>
-  <tr><td>12</td><td> {</td></tr>
-  <tr><td>13</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">self</span>::$conexion === <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>14</td><td>   <span class="codeReserved">self</span>::$conexion = <span class="codeReserved">new</span> PDO(</td></tr>
-  <tr><td>15</td><td>    <span class="codeComment">// cadena de conexión</span></td></tr>
-  <tr><td>16</td><td>    <span class="codeString">"sqlite:sincronizacion.db"</span>,</td></tr>
-  <tr><td>17</td><td>    <span class="codeComment">// usuario</span></td></tr>
-  <tr><td>18</td><td>    <span class="codeReserved">null</span>,</td></tr>
-  <tr><td>19</td><td>    <span class="codeComment">// contraseña</span></td></tr>
-  <tr><td>20</td><td>    <span class="codeReserved">null</span>,</td></tr>
-  <tr><td>21</td><td>    <span class="codeComment">// Opciones: conexiones persistentes y lanza excepciones.</span></td></tr>
-  <tr><td>22</td><td>    [PDO::ATTR_PERSISTENT =&gt; <span class="codeReserved">true</span>, PDO::ATTR_ERRMODE =&gt; PDO::ERRMODE_EXCEPTION]</td></tr>
-  <tr><td>23</td><td>   );</td></tr>
-  <tr><td>24</td><td></td></tr>
-  <tr><td>25</td><td>   bdCrea(<span class="codeReserved">self</span>::$conexion);</td></tr>
-  <tr><td>26</td><td>  }</td></tr>
-  <tr><td>27</td><td></td></tr>
-  <tr><td>28</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">self</span>::$conexion;</td></tr>
-  <tr><td>29</td><td> }</td></tr>
-  <tr><td>30</td><td>}</td></tr>
-  <tr><td>31</td><td></td></tr>
+  <tr><td>11</td><td> $conexion = Bd::getConexion();</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td> $conexion-&gt;prepare(</td></tr>
+  <tr><td>14</td><td>  <span class="codeString">"<span class="codeReserved">INSERT</span> <span class="codeReserved">INTO</span> PASATIEMPO</span></td></tr>
+  <tr><td>15</td><td><span class="codeString">    (PAS_UUID, PAS_NOMBRE, PAS_MODIFICACION, PAS_ELIMINADO)</span></td></tr>
+  <tr><td>16</td><td><span class="codeString">   <span class="codeReserved">VALUES</span></span></td></tr>
+  <tr><td>17</td><td><span class="codeString">    (:uuid, :nombre, :modificacion, :eliminado)"</span></td></tr>
+  <tr><td>18</td><td> )</td></tr>
+  <tr><td>19</td><td>  -&gt;execute([</td></tr>
+  <tr><td>20</td><td>   <span class="codeString">":uuid"</span> =&gt; $modelo-&gt;uuid,</td></tr>
+  <tr><td>21</td><td>   <span class="codeString">":nombre"</span> =&gt; $modelo-&gt;nombre,</td></tr>
+  <tr><td>22</td><td>   <span class="codeString">":modificacion"</span> =&gt; $modelo-&gt;modificacion,</td></tr>
+  <tr><td>23</td><td>   <span class="codeString">":eliminado"</span> =&gt; $modelo-&gt;eliminado ? 1 : 0</td></tr>
+  <tr><td>24</td><td>  ]);</td></tr>
+  <tr><td>25</td><td>}</td></tr>
+  <tr><td>26</td><td></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >2. srv / bd / bdCrea.php</h1><table class="codeShow">
+         <h1 >3. srv / bd / pasatiempoBusca.php</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -807,141 +853,36 @@
  <tbody>
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">function</span> bdCrea(PDO $con)</td></tr>
-  <tr><td>4</td><td>{</td></tr>
-  <tr><td>5</td><td> $con-&gt;exec(</td></tr>
-  <tr><td>6</td><td>  <span class="codeString">'<span class="codeReserved">CREATE</span> <span class="codeReserved">TABLE</span> <span class="codeReserved">IF</span> <span class="codeReserved">NOT</span> <span class="codeReserved">EXISTS</span> PASATIEMPO (</span></td></tr>
-  <tr><td>7</td><td><span class="codeString">    PAS_UUID <span class="codeReserved">TEXT</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
-  <tr><td>8</td><td><span class="codeString">    PAS_NOMBRE <span class="codeReserved">TEXT</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
-  <tr><td>9</td><td><span class="codeString">    PAS_MODIFICACION <span class="codeReserved">INTEGER</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
-  <tr><td>10</td><td><span class="codeString">    PAS_ELIMINADO <span class="codeReserved">INTEGER</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
-  <tr><td>11</td><td><span class="codeString">    <span class="codeReserved">CONSTRAINT</span> PAS_PK</span></td></tr>
-  <tr><td>12</td><td><span class="codeString">     <span class="codeReserved">PRIMARY</span> <span class="codeReserved">KEY</span>(PAS_UUID)</span></td></tr>
-  <tr><td>13</td><td><span class="codeString">   )'</span></td></tr>
-  <tr><td>14</td><td> );</td></tr>
-  <tr><td>15</td><td>}</td></tr>
-  <tr><td>16</td><td></td></tr>
- </tbody>
-</table>
-      </section>
-     <section >
-         <h1 >3. srv / bd / pasatiempoAgrega.php</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Pasatiempo.php"</span>;</td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/fetch.php"</span>;</td></tr>
   <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeReserved">function</span> pasatiempoAgrega(Pasatiempo $modelo) {</td></tr>
-  <tr><td>7</td><td> $modelo-&gt;valida();</td></tr>
-  <tr><td>8</td><td> $con = Bd::getConexion();</td></tr>
-  <tr><td>9</td><td> $stmt = $con-&gt;prepare(</td></tr>
-  <tr><td>10</td><td>  <span class="codeString">"<span class="codeReserved">INSERT</span> <span class="codeReserved">INTO</span> PASATIEMPO</span></td></tr>
-  <tr><td>11</td><td><span class="codeString">    (PAS_UUID, PAS_NOMBRE, PAS_MODIFICACION, PAS_ELIMINADO)</span></td></tr>
-  <tr><td>12</td><td><span class="codeString">   <span class="codeReserved">VALUES</span></span></td></tr>
-  <tr><td>13</td><td><span class="codeString">    (:uuid, :nombre, :modificacion, :eliminado)"</span></td></tr>
-  <tr><td>14</td><td> );</td></tr>
-  <tr><td>15</td><td> $stmt-&gt;execute([</td></tr>
-  <tr><td>16</td><td>  <span class="codeString">":uuid"</span> =&gt; $modelo-&gt;uuid,</td></tr>
-  <tr><td>17</td><td>  <span class="codeString">":nombre"</span> =&gt; $modelo-&gt;nombre,</td></tr>
-  <tr><td>18</td><td>  <span class="codeString">":modificacion"</span> =&gt; $modelo-&gt;modificacion,</td></tr>
-  <tr><td>19</td><td>  <span class="codeString">":eliminado"</span> =&gt; $modelo-&gt;eliminado ? 1 : 0</td></tr>
-  <tr><td>20</td><td> ]);</td></tr>
-  <tr><td>21</td><td>}</td></tr>
-  <tr><td>22</td><td></td></tr>
- </tbody>
-</table>
-      </section>
-     <section >
-         <h1 >4. srv / bd / pasatiempoBusca.php</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Pasatiempo.php"</span>;</td></tr>
-  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeReserved">function</span> pasatiempoBusca(string $uuid): <span class="codeReserved">false</span>|Pasatiempo</td></tr>
-  <tr><td>7</td><td>{</td></tr>
-  <tr><td>8</td><td> $con = Bd::getConexion();</td></tr>
-  <tr><td>9</td><td> $stmt = $con-&gt;prepare(</td></tr>
-  <tr><td>10</td><td>  <span class="codeString">"<span class="codeReserved">SELECT</span></span></td></tr>
-  <tr><td>11</td><td><span class="codeString">    PAS_UUID <span class="codeReserved">AS</span> uuid,</span></td></tr>
-  <tr><td>12</td><td><span class="codeString">    PAS_NOMBRE <span class="codeReserved">AS</span> nombre,</span></td></tr>
-  <tr><td>13</td><td><span class="codeString">    PAS_MODIFICACION <span class="codeReserved">AS</span> modificacion,</span></td></tr>
-  <tr><td>14</td><td><span class="codeString">    PAS_ELIMINADO <span class="codeReserved">AS</span> eliminado</span></td></tr>
-  <tr><td>15</td><td><span class="codeString">   <span class="codeReserved">FROM</span> PASATIEMPO</span></td></tr>
-  <tr><td>16</td><td><span class="codeString">   <span class="codeReserved">WHERE</span> PAS_UUID = :uuid"</span></td></tr>
-  <tr><td>17</td><td> );</td></tr>
-  <tr><td>18</td><td> $stmt-&gt;execute([<span class="codeString">":uuid"</span> =&gt; $uuid]);</td></tr>
-  <tr><td>19</td><td> $stmt-&gt;setFetchMode(</td></tr>
-  <tr><td>20</td><td>  PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,</td></tr>
-  <tr><td>21</td><td>  Pasatiempo::<span class="codeReserved">class</span></td></tr>
-  <tr><td>22</td><td> );</td></tr>
-  <tr><td>23</td><td> <span class="codeReserved">return</span> $stmt-&gt;fetch();</td></tr>
-  <tr><td>24</td><td>}</td></tr>
-  <tr><td>25</td><td></td></tr>
- </tbody>
-</table>
-      </section>
-     <section >
-         <h1 >5. srv / bd / pasatiempoConsultaNoEliminados.php</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Pasatiempo.php"</span>;</td></tr>
-  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/recibeFetchAll.php"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Pasatiempo.php"</span>;</td></tr>
   <tr><td>6</td><td></td></tr>
-  <tr><td>7</td><td><span class="codeComment">/** <span class="codeReserved">@return</span> Pasatiempo[] */</span></td></tr>
-  <tr><td>8</td><td><span class="codeReserved">function</span> pasatiempoConsultaNoEliminados()</td></tr>
-  <tr><td>9</td><td>{</td></tr>
-  <tr><td>10</td><td> $con = Bd::getConexion();</td></tr>
-  <tr><td>11</td><td> $stmt = $con-&gt;query(</td></tr>
-  <tr><td>12</td><td>  <span class="codeString">"<span class="codeReserved">SELECT</span></span></td></tr>
-  <tr><td>13</td><td><span class="codeString">    PAS_UUID <span class="codeReserved">AS</span> uuid,</span></td></tr>
-  <tr><td>14</td><td><span class="codeString">    PAS_NOMBRE <span class="codeReserved">AS</span> nombre,</span></td></tr>
-  <tr><td>15</td><td><span class="codeString">    PAS_MODIFICACION <span class="codeReserved">AS</span> modificacion,</span></td></tr>
-  <tr><td>16</td><td><span class="codeString">    PAS_ELIMINADO <span class="codeReserved">AS</span> eliminado</span></td></tr>
-  <tr><td>17</td><td><span class="codeString">   <span class="codeReserved">FROM</span> PASATIEMPO</span></td></tr>
-  <tr><td>18</td><td><span class="codeString">   <span class="codeReserved">WHERE</span> PAS_ELIMINADO = 0</span></td></tr>
-  <tr><td>19</td><td><span class="codeString">   <span class="codeReserved">ORDER</span> <span class="codeReserved">BY</span> PAS_NOMBRE"</span></td></tr>
-  <tr><td>20</td><td> );</td></tr>
-  <tr><td>21</td><td> $resultado = $stmt-&gt;fetchAll(</td></tr>
-  <tr><td>22</td><td>  PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,</td></tr>
-  <tr><td>23</td><td>  Pasatiempo::<span class="codeReserved">class</span></td></tr>
-  <tr><td>24</td><td> );</td></tr>
-  <tr><td>25</td><td> <span class="codeReserved">return</span> recibeFetchAll($resultado);</td></tr>
+  <tr><td>7</td><td><span class="codeReserved">function</span> pasatiempoBusca(string $uuid): <span class="codeReserved">false</span>|Pasatiempo</td></tr>
+  <tr><td>8</td><td>{</td></tr>
+  <tr><td>9</td><td></td></tr>
+  <tr><td>10</td><td> $conexion = Bd::getConexion();</td></tr>
+  <tr><td>11</td><td></td></tr>
+  <tr><td>12</td><td> <span class="codeReserved">return</span> fetch(</td></tr>
+  <tr><td>13</td><td>  $conexion-&gt;prepare(</td></tr>
+  <tr><td>14</td><td>   <span class="codeString">"<span class="codeReserved">SELECT</span></span></td></tr>
+  <tr><td>15</td><td><span class="codeString">    PAS_UUID <span class="codeReserved">AS</span> uuid,</span></td></tr>
+  <tr><td>16</td><td><span class="codeString">    PAS_NOMBRE <span class="codeReserved">AS</span> nombre,</span></td></tr>
+  <tr><td>17</td><td><span class="codeString">    PAS_MODIFICACION <span class="codeReserved">AS</span> modificacion,</span></td></tr>
+  <tr><td>18</td><td><span class="codeString">    PAS_ELIMINADO <span class="codeReserved">AS</span> eliminado</span></td></tr>
+  <tr><td>19</td><td><span class="codeString">   <span class="codeReserved">FROM</span> PASATIEMPO</span></td></tr>
+  <tr><td>20</td><td><span class="codeString">   <span class="codeReserved">WHERE</span> PAS_UUID = :uuid"</span></td></tr>
+  <tr><td>21</td><td>  ),</td></tr>
+  <tr><td>22</td><td>  [<span class="codeString">":uuid"</span> =&gt; $uuid],</td></tr>
+  <tr><td>23</td><td>  PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,</td></tr>
+  <tr><td>24</td><td>  Pasatiempo::<span class="codeReserved">class</span></td></tr>
+  <tr><td>25</td><td> );</td></tr>
   <tr><td>26</td><td>}</td></tr>
   <tr><td>27</td><td></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >6. srv / bd / pasatiempoModifica.php</h1><table class="codeShow">
+         <h1 >4. srv / bd / pasatiempoConsultaNoEliminados.php</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -953,29 +894,74 @@
  <tbody>
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Pasatiempo.php"</span>;</td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/fetchAll.php"</span>;</td></tr>
   <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Pasatiempo.php"</span>;</td></tr>
+  <tr><td>6</td><td></td></tr>
+  <tr><td>7</td><td><span class="codeComment">/** <span class="codeReserved">@return</span> Pasatiempo[] */</span></td></tr>
+  <tr><td>8</td><td><span class="codeReserved">function</span> pasatiempoConsultaNoEliminados()</td></tr>
+  <tr><td>9</td><td>{</td></tr>
+  <tr><td>10</td><td> $conexion = Bd::getConexion();</td></tr>
+  <tr><td>11</td><td></td></tr>
+  <tr><td>12</td><td> <span class="codeReserved">return</span> fetchAll(</td></tr>
+  <tr><td>13</td><td>  $conexion-&gt;query(</td></tr>
+  <tr><td>14</td><td>   <span class="codeString">"<span class="codeReserved">SELECT</span></span></td></tr>
+  <tr><td>15</td><td><span class="codeString">    PAS_UUID <span class="codeReserved">AS</span> uuid,</span></td></tr>
+  <tr><td>16</td><td><span class="codeString">    PAS_NOMBRE <span class="codeReserved">AS</span> nombre,</span></td></tr>
+  <tr><td>17</td><td><span class="codeString">    PAS_MODIFICACION <span class="codeReserved">AS</span> modificacion,</span></td></tr>
+  <tr><td>18</td><td><span class="codeString">    PAS_ELIMINADO <span class="codeReserved">AS</span> eliminado</span></td></tr>
+  <tr><td>19</td><td><span class="codeString">   <span class="codeReserved">FROM</span> PASATIEMPO</span></td></tr>
+  <tr><td>20</td><td><span class="codeString">   <span class="codeReserved">WHERE</span> PAS_ELIMINADO = 0</span></td></tr>
+  <tr><td>21</td><td><span class="codeString">   <span class="codeReserved">ORDER</span> <span class="codeReserved">BY</span> PAS_NOMBRE"</span></td></tr>
+  <tr><td>22</td><td>  ),</td></tr>
+  <tr><td>23</td><td>  [],</td></tr>
+  <tr><td>24</td><td>  PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,</td></tr>
+  <tr><td>25</td><td>  Pasatiempo::<span class="codeReserved">class</span></td></tr>
+  <tr><td>26</td><td> );</td></tr>
+  <tr><td>27</td><td>}</td></tr>
+  <tr><td>28</td><td></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >5. srv / bd / pasatiempoModifica.php</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
+  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Pasatiempo.php"</span>;</td></tr>
   <tr><td>5</td><td></td></tr>
   <tr><td>6</td><td><span class="codeReserved">function</span> pasatiempoModifica(Pasatiempo $modelo)</td></tr>
   <tr><td>7</td><td>{</td></tr>
-  <tr><td>8</td><td> $modelo-&gt;valida();</td></tr>
-  <tr><td>9</td><td> $con = Bd::getConexion();</td></tr>
-  <tr><td>10</td><td> $stmt = $con-&gt;prepare(</td></tr>
-  <tr><td>11</td><td>  <span class="codeString">"<span class="codeReserved">UPDATE</span> PASATIEMPO</span></td></tr>
-  <tr><td>12</td><td><span class="codeString">   <span class="codeReserved">SET</span></span></td></tr>
-  <tr><td>13</td><td><span class="codeString">    PAS_NOMBRE = :nombre,</span></td></tr>
-  <tr><td>14</td><td><span class="codeString">    PAS_MODIFICACION = :modificacion,</span></td></tr>
-  <tr><td>15</td><td><span class="codeString">    PAS_ELIMINADO = :eliminado</span></td></tr>
-  <tr><td>16</td><td><span class="codeString">   <span class="codeReserved">WHERE</span> PAS_UUID = :uuid"</span></td></tr>
-  <tr><td>17</td><td> );</td></tr>
-  <tr><td>18</td><td> $stmt-&gt;execute([</td></tr>
-  <tr><td>19</td><td>  <span class="codeString">":uuid"</span> =&gt; $modelo-&gt;uuid,</td></tr>
-  <tr><td>20</td><td>  <span class="codeString">":nombre"</span> =&gt; $modelo-&gt;nombre,</td></tr>
-  <tr><td>21</td><td>  <span class="codeString">":modificacion"</span> =&gt; $modelo-&gt;modificacion,</td></tr>
-  <tr><td>22</td><td>  <span class="codeString">":eliminado"</span> =&gt; $modelo-&gt;eliminado ? 1 : 0</td></tr>
-  <tr><td>23</td><td> ]);</td></tr>
-  <tr><td>24</td><td>}</td></tr>
-  <tr><td>25</td><td></td></tr>
+  <tr><td>8</td><td></td></tr>
+  <tr><td>9</td><td> $modelo-&gt;valida();</td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td> $conexion = Bd::getConexion();</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td> $conexion-&gt;prepare(</td></tr>
+  <tr><td>14</td><td>  <span class="codeString">"<span class="codeReserved">UPDATE</span> PASATIEMPO</span></td></tr>
+  <tr><td>15</td><td><span class="codeString">   <span class="codeReserved">SET</span></span></td></tr>
+  <tr><td>16</td><td><span class="codeString">    PAS_NOMBRE = :nombre,</span></td></tr>
+  <tr><td>17</td><td><span class="codeString">    PAS_MODIFICACION = :modificacion,</span></td></tr>
+  <tr><td>18</td><td><span class="codeString">    PAS_ELIMINADO = :eliminado</span></td></tr>
+  <tr><td>19</td><td><span class="codeString">   <span class="codeReserved">WHERE</span> PAS_UUID = :uuid"</span></td></tr>
+  <tr><td>20</td><td> )</td></tr>
+  <tr><td>21</td><td>  -&gt;execute([</td></tr>
+  <tr><td>22</td><td>   <span class="codeString">":uuid"</span> =&gt; $modelo-&gt;uuid,</td></tr>
+  <tr><td>23</td><td>   <span class="codeString">":nombre"</span> =&gt; $modelo-&gt;nombre,</td></tr>
+  <tr><td>24</td><td>   <span class="codeString">":modificacion"</span> =&gt; $modelo-&gt;modificacion,</td></tr>
+  <tr><td>25</td><td>   <span class="codeString">":eliminado"</span> =&gt; $modelo-&gt;eliminado ? 1 : 0</td></tr>
+  <tr><td>26</td><td>  ]);</td></tr>
+  <tr><td>27</td><td>}</td></tr>
+  <tr><td>28</td><td></td></tr>
  </tbody>
 </table>
       </section>
