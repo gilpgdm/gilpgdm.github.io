@@ -159,7 +159,7 @@
   <tr><td>149</td><td>}</td></tr>
   <tr><td>150</td><td></td></tr>
   <tr><td>151</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> llenaElCache() {</td></tr>
-  <tr><td>152</td><td> console.log(<span class="codeString">"Intentando cargar caché:"</span>, CACHE, <span class="codeString">"."</span>)</td></tr>
+  <tr><td>152</td><td> console.log(<span class="codeString">"Intentando cargar caché:"</span>, CACHE)</td></tr>
   <tr><td>153</td><td> <span class="codeComment">// Borra todos los cachés.</span></td></tr>
   <tr><td>154</td><td> <span class="codeReserved">const</span> keys = <span class="codeReserved">await</span> caches.keys()</td></tr>
   <tr><td>155</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> key of keys) {</td></tr>
@@ -169,8 +169,8 @@
   <tr><td>159</td><td> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</td></tr>
   <tr><td>160</td><td> <span class="codeComment">// Carga el listado de ARCHIVOS.</span></td></tr>
   <tr><td>161</td><td> <span class="codeReserved">await</span> cache.addAll(ARCHIVOS)</td></tr>
-  <tr><td>162</td><td> console.log(<span class="codeString">"Cache cargado:"</span>, CACHE, <span class="codeString">"."</span>)</td></tr>
-  <tr><td>163</td><td> console.log(<span class="codeString">"Versión:"</span>, VERSION, <span class="codeString">"."</span>)</td></tr>
+  <tr><td>162</td><td> console.log(<span class="codeString">"Cache cargado:"</span>, CACHE)</td></tr>
+  <tr><td>163</td><td> console.log(<span class="codeString">"Versión:"</span>, VERSION)</td></tr>
   <tr><td>164</td><td>}</td></tr>
   <tr><td>165</td><td></td></tr>
   <tr><td>166</td><td><span class="codeComment">/** <span class="codeReserved">@param</span> {FetchEvent} evt */</span></td></tr>
