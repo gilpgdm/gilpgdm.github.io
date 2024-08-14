@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>G. render.js - GilPG DM</title>
- <meta name="description" content="Código de «render.js».">
+ <title>F. error / resultadonojson.html - GilPG DM</title>
+ <meta name="description" content="Código de «error/resultadonojson.html».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
@@ -817,7 +817,7 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >G. render.js</h1><table class="codeShow">
+   <h1 >F. error / resultadonojson.html</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -827,62 +827,30 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeComment">/* Ejemplo de render en el cliente. No se usa <span class="codeReserved">import</span></span></td></tr>
-  <tr><td>2</td><td><span class="codeComment"> * porque Firefox no lo soporta en los web workers. */</span></td></tr>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
   <tr><td>3</td><td></td></tr>
-  <tr><td>4</td><td><span class="codeComment">// Verifica si el código corre dentro de un web worker.</span></td></tr>
-  <tr><td>5</td><td><span class="codeReserved">if</span> (<span class="codeReserved">self</span> <span class="codeReserved">instanceof</span> WorkerGlobalScope) {</td></tr>
-  <tr><td>6</td><td></td></tr>
-  <tr><td>7</td><td> <span class="codeComment">// Se invoca al recibir un mensaje de la página.</span></td></tr>
-  <tr><td>8</td><td> onmessage = event =&gt; {</td></tr>
-  <tr><td>9</td><td></td></tr>
-  <tr><td>10</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>11</td><td><span class="codeComment">   * <span class="codeReserved">@type</span> {  {</span></td></tr>
-  <tr><td>12</td><td><span class="codeComment">   *   uuid: string,</span></td></tr>
-  <tr><td>13</td><td><span class="codeComment">   *   nombre: string,</span></td></tr>
-  <tr><td>14</td><td><span class="codeComment">   *   modificacion: number,</span></td></tr>
-  <tr><td>15</td><td><span class="codeComment">   *   eliminado: boolean,</span></td></tr>
-  <tr><td>16</td><td><span class="codeComment">   *  } [] }</span></td></tr>
-  <tr><td>17</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>18</td><td>  <span class="codeReserved">const</span> pasatiempos = event.data</td></tr>
-  <tr><td>19</td><td></td></tr>
-  <tr><td>20</td><td>  <span class="codeReserved">let</span> render = <span class="codeString">""</span></td></tr>
-  <tr><td>21</td><td>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> modelo of pasatiempos) {</td></tr>
-  <tr><td>22</td><td>   <span class="codeReserved">const</span> nombre = htmlentities(modelo.nombre)</td></tr>
-  <tr><td>23</td><td>   <span class="codeReserved">const</span> searchParams = <span class="codeReserved">new</span> URLSearchParams([[<span class="codeString">"uuid"</span>, modelo.uuid]])</td></tr>
-  <tr><td>24</td><td>   <span class="codeReserved">const</span> params = htmlentities(searchParams.toString())</td></tr>
-  <tr><td>25</td><td>   render += <span class="codeComment">/* html */</span></td></tr>
-  <tr><td>26</td><td>    <span class="codeString">`&lt;<span class="codeReserved">li</span>&gt;</span></td></tr>
-  <tr><td>27</td><td><span class="codeString">      &lt;<span class="codeReserved">p</span>&gt;&lt;<span class="codeReserved">a</span> href=&quot;modifica.html?${params}&quot;&gt;${nombre}&lt;/<span class="codeReserved">a</span>&gt;&lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
-  <tr><td>28</td><td><span class="codeString">     &lt;/<span class="codeReserved">li</span>&gt;`</span></td></tr>
-  <tr><td>29</td><td>  }</td></tr>
-  <tr><td>30</td><td></td></tr>
-  <tr><td>31</td><td>  <span class="codeComment">// Envía el render a la página que invocó este web worker.</span></td></tr>
-  <tr><td>32</td><td>  <span class="codeReserved">self</span>.postMessage(render)</td></tr>
-  <tr><td>33</td><td></td></tr>
-  <tr><td>34</td><td> }</td></tr>
-  <tr><td>35</td><td></td></tr>
-  <tr><td>36</td><td>}</td></tr>
-  <tr><td>37</td><td></td></tr>
-  <tr><td>38</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>39</td><td><span class="codeComment"> * Codifica un texto para que cambie los caracteres</span></td></tr>
-  <tr><td>40</td><td><span class="codeComment"> * especiales y no se pueda interpretar como</span></td></tr>
-  <tr><td>41</td><td><span class="codeComment"> * etiiqueta HTML. Esta técnica evita la inyección</span></td></tr>
-  <tr><td>42</td><td><span class="codeComment"> * de código.</span></td></tr>
-  <tr><td>43</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string } texto</span></td></tr>
-  <tr><td>44</td><td><span class="codeComment"> * <span class="codeReserved">@returns</span> { string } un texto que no puede</span></td></tr>
-  <tr><td>45</td><td><span class="codeComment"> *  interpretarse como HTML. */</span></td></tr>
-  <tr><td>46</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> htmlentities(texto) {</td></tr>
-  <tr><td>47</td><td> <span class="codeReserved">return</span> texto.replace(<span class="codeString">/[&lt;&gt;&quot;&#039;]/</span>g, textoDetectado =&gt; {</td></tr>
-  <tr><td>48</td><td>  <span class="codeReserved">switch</span> (textoDetectado) {</td></tr>
-  <tr><td>49</td><td>   <span class="codeReserved">case</span> <span class="codeString">"<"</span>: <span class="codeReserved">return</span> <span class="codeString">"&lt;"</span></td></tr>
-  <tr><td>50</td><td>   <span class="codeReserved">case</span> <span class="codeString">"&gt;"</span>: <span class="codeReserved">return</span> <span class="codeString">"&gt;"</span></td></tr>
-  <tr><td>51</td><td>   <span class="codeReserved">case</span> <span class="codeString">'&quot;'</span>: <span class="codeReserved">return</span> <span class="codeString">"&quot;"</span></td></tr>
-  <tr><td>52</td><td>   <span class="codeReserved">case</span> <span class="codeString">"&#039;"</span>: <span class="codeReserved">return</span> <span class="codeString">"&#039;"</span></td></tr>
-  <tr><td>53</td><td>   <span class="codeReserved">default</span>: <span class="codeReserved">return</span> textoDetectado</td></tr>
-  <tr><td>54</td><td>  }</td></tr>
-  <tr><td>55</td><td> })</td></tr>
-  <tr><td>56</td><td>}</td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td></td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;El resultado no puede representarse como JSON&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>14</td><td></td></tr>
+  <tr><td>15</td><td> &lt;<span class="codeReserved">h1</span>&gt;El resultado no puede representarse como JSON&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>16</td><td></td></tr>
+  <tr><td>17</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>18</td><td>  Debido a un error interno del servidor, el resultado generado, no se puede</td></tr>
+  <tr><td>19</td><td>  recuperar.</td></tr>
+  <tr><td>20</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>21</td><td></td></tr>
+  <tr><td>22</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>23</td><td></td></tr>
+  <tr><td>24</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
  </tbody>
 </table>
  <footer>
@@ -910,10 +878,10 @@
    menu
   </span>
  </button>
- <a class="anterior" href="/m09sincronizacion/m-index-html.html" title="F. index.html"><span class="material-symbols-outlined">
+ <a class="anterior" href="/m09sincronizacion/m-error/m-nombreincorrecto-html.html" title="E. error / nombreincorrecto.html"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
- <a class="siguiente" href="/m09sincronizacion/m-agrega-html.html" title="H. agrega.html"><span class="material-symbols-outlined">
+ <a class="siguiente" href="/m09sincronizacion/m-error/m-uuidincorrecto-html.html" title="G. error / uuidincorrecto.html"><span class="material-symbols-outlined">
      skip_next
      </span></a>
 </div>
@@ -930,110 +898,65 @@
       data-logo="true">GilPG DM</a>
    </p>
    
+   <p>
+    <a href="/m09sincronizacion/">12. Sincronización</a>
+   </p>
    
      <p>
-      <a class="paginaAnterior" href="/m08push/mGresumen.html"
-        title="17. Resumen"><span
+      <a class="paginaAnterior" href="/m09sincronizacion/m-lib/m-php/m-validaJson-php.html"
+        title="11. lib / php / validaJson.php"><span
         class="material-symbols-outlined">
          arrow_upward
         </span></a>
      </p>
-   <h1><a href="/m09sincronizacion/index.html">12. Sincronización</a></h1>
+   <h1><a href="/m09sincronizacion/m-error/index.html">O. Carpeta « error »</a></h1>
    
    <ol type="A">
     
    <li>
     <p>
-     <a href="/m09sincronizacion/mAintro.html">Introducción</a>
+     <a href="/m09sincronizacion/m-error/m-datosnojson-html.html">error / datosnojson.html</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/mBder.html">Diagrama entidad relación</a>
+     <a href="/m09sincronizacion/m-error/m-eliminadoincorrecto-html.html">error / eliminadoincorrecto.html</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/mCbdeploy.html">Diagrama de despliegue</a>
+     <a href="/m09sincronizacion/m-error/m-errorinterno-html.html">error / errorinterno.html</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/mDinstrucciones.html">Hazlo funcionar</a>
+     <a href="/m09sincronizacion/m-error/m-modificacionincorrecta-html.html">error / modificacionincorrecta.html</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/mArchivos.html">Archivos</a>
+     <a href="/m09sincronizacion/m-error/m-nombreincorrecto-html.html">error / nombreincorrecto.html</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-index-html.html">index.html</a>
+     <a href="/m09sincronizacion/m-error/m-resultadonojson-html.html" class="actual">error / resultadonojson.html</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-render-js.html" class="actual">render.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-agrega-html.html">agrega.html</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-modifica-html.html">modifica.html</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-instruccionesListadoSw-txt.html">instruccionesListadoSw.txt</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-archivos-txt.html">archivos.txt</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-sw-js.html">sw.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-js/">Carpeta « js »</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-srv/">Carpeta « srv »</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-lib/">Carpeta « lib »</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-error/">Carpeta « error »</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-jsconfig-json.html">jsconfig.json</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/mKresumen.html">Resumen</a>
+     <a href="/m09sincronizacion/m-error/m-uuidincorrecto-html.html">error / uuidincorrecto.html</a>
     </p>
    </li>
    </ol>
    
+    <p>
+     <a class="paginaSiguiente" href="/m09sincronizacion/m-jsconfig-json.html"
+       title="P. jsconfig.json"><span
+       class="material-symbols-outlined">
+        arrow_downward
+       </span></a>
+    </p>
  
 </nav>
  <script>
@@ -1046,9 +969,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m09sincronizacion/m-index-html.html"
+ let urlAnterior = "/m09sincronizacion/m-error/m-nombreincorrecto-html.html"
  /**@type {string} */
- let urlSiguiente = "/m09sincronizacion/m-agrega-html.html"
+ let urlSiguiente = "/m09sincronizacion/m-error/m-uuidincorrecto-html.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
