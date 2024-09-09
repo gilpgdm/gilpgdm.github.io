@@ -85,7 +85,8 @@
   --gap: 0.5rem;
   --fontMono: 'Xanh Mono', monospace;
   --fontSans: 'Patrick Hand', sans-serif;
-  --fontSerif: 'Purple Purse', serif;
+  /* --fontSerif: 'Purple Purse', serif; */
+  --fontSerif: Georgia, 'Times New Roman', Times, serif;
   font-family: var(--fontSerif);
   color: var(--colLetra);
   background-color: var(--colFondo);
@@ -701,7 +702,7 @@
 </head>
 
 <body class="print">
-   <h1 >4. PWA básica</h1>
+   <h1 >5. PWA básica</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -781,6 +782,11 @@
    </li>
    <li>
     <p>
+     <a href="/m04pwaBasica/m--htaccess.html">.htaccess</a>
+    </p>
+   </li>
+   <li>
+    <p>
      <a href="/m04pwaBasica/m-jsconfig-json.html">jsconfig.json</a>
     </p>
    </li>
@@ -802,9 +808,9 @@
   </li>
   <li>
    <p>
-    La puedes probar e instalar, de preferencia con Chrome, en
-    <a href="https://gilpgpwa.github.io/" target="_blank"
-      rel="noopener noreferrer">https://gilpgpwa.github.io/</a>.
+    Puedes probar el ejemplo en
+    <a href="https://pwab.rf.gd/" rel="noreferrer"
+      target="_blank">https://pwab.rf.gd/</a>.
    </p>
   </li>
  </ul>
@@ -812,46 +818,38 @@
       </section>
      <section >
          <h1 >B. Hazlo funcionar</h1><div class="lectura">
- <ul>
-  <li>
-   <p>
-    Prueba e instala, de preferencia con Chrome, el sitio
-    <a href="https://gilpgpwa.github.io/" target="_blank"
-      rel="noopener noreferrer">https://gilpgpwa.github.io/</a>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Revisa el proyecto en Replit con la URl
-    <a href="https://replit.com/@GilbertoPachec2/pwa?v=1"
-      rel="noopener noreferrer"
-      target="_blank">https://replit.com/@GilbertoPachec2/pwa?v=1</a>.
-    Hazle fork al proyecto y córrelo. En el ambiente de desarrollo tienes la
-    opción de descargar el proyecto en un zip.
-   </p>
-  </li>
-  <li>
-   <p>
-    Una vez que se está ejecutando, probablemente te aparezca un mensaje de
-    error. Ciérralo y haz clic en el botón
-    <button type="button">
-     <span class="material-symbols-outlined">
-      open_in_new
-     </span>
-     New tab
-    </button>
-    para ejecutar la app en una pestaña nueva.
-   </p>
-  </li>
- </ul>
  <ol>
   <li>
    <p>
+    Prueba e instala, de preferencia con Chrome, el sitio
+    <a href="https://pwab.rf.gd/" rel="noreferrer"
+      target="_blank">https://pwab.rf.gd/</a>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Descarga el archivo
+    <a href="/src/pwab.zip" download>/src/pwab.zip</a> y
+    descompáctalo.
+   </p>
+  </li>
+  <li>
+   <p>
+    Abre la carpeta descompactada con Visual Studio Code.
+   </p>
+  </li>
+  <li>
+   <p>
+    Edita los archivos que desees.
+   </p>
+  </li>
+  <li>
+   <p>
     <a href="https://drive.google.com/file/d/1RiRkApBqQE6A4-APu7p18_DHa2aVRcfn/view?usp=sharing"
-      target="_blank" rel="noopener noreferrer">Crea los íconos del proyecto</a>
+      target="_blank" rel="noreferrer">Crea los íconos del proyecto</a>
     con
-    <a href="https://www.photopea.com/"
-      target="_blank" rel="noopener noreferrer">https://www.photopea.com/</a>.
+    <a href="https://www.photopea.com/" target="_blank"
+      rel="noreferrer">https://www.photopea.com/</a>.
     Este paso se hizo com Microsoft Edge (versión Chromium), pero no funcionó
     con Google Chrome.
    </p>
@@ -859,8 +857,7 @@
   <li>
    <p>
     <a href="https://drive.google.com/file/d/1lI4TAJ_xRJpY6xqNnEzT4L214S_UggfB/view?usp=sharing"
-      target="_blank" rel="noopener noreferrer">Crea los íconos
-     enmascarables</a>
+      target="_blank" rel="noreferrer">Crea los íconos enmascarables</a>
     con
     <a target="_blank"
       href="https://maskable.app/">https://maskable.app/</a>
@@ -869,30 +866,44 @@
   </li>
   <li>
    <p>
-    <a href="https://drive.google.com/file/d/1ujeNp8TaHjqqRXl_TFT0omUGymmFWTLm/view?usp=sharing"
-      target="_blank" rel="noopener noreferrer">Usa o crea una cuenta de
-     Google.</a>
+    Coloca el archivo <q>favicon.ico</q> en la raíz del proyecto.
    </p>
   </li>
   <li>
    <p>
-    <a href="https://drive.google.com/file/d/1dmifWNqm_gRmQuMEe67HqKBYzzDTwEHt/view?usp=sharing"
-      target="_blank" rel="noopener noreferrer">Crea una cuenta de Replit usando
-     la cuenta
-     de Google.</a>
+    Coloca los otros íconos en la carpeta <q>img</q> y asegúrate de que estén
+    declarados en el archivo <q>site.webmanifest</q>.
    </p>
   </li>
   <li>
    <p>
-    <a href="https://drive.google.com/file/d/1MpT73tzI9tJDcgy1uH9eRtXVdKuF1D36/view?usp=sharing"
-      target="_blank" rel="noopener noreferrer">Crea un proyecto <em>HTML, CSS,
-      JS</em> en
-     Replit y edita o sube los archivos de este proyecto.</a>
+    Haz clic derecho en <q>index.html</q>, selecciona
+    <em>PHP Server: serve project</em> y se abre el navegador para que puedas
+    probar localmente el ejemplo.
    </p>
   </li>
   <li>
    <p>
-    El archivo <q>sw.js»</q> tiene una lista de los archivos que se instalan.
+    Haz al menos una captura de la ventana de tu aplicación con orientación
+    vertical y otra con orientación horizontal, todas ellas de 320 px como
+    mínimo y 3,840 px como máximo.
+   </p>
+  </li>
+  <li>
+   <p>
+    Coloca las capturas en la carpeta <q>img</q> y asegúrate de que estén
+    declaradas en el archivo <q>site.webmanifest</q>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Abre las herramientas de depuración haciendo clic derecho en la página y
+    selecciona <em>Inspeccionar</em> (o <em>Inspect</em> si aparece en inglés).
+   </p>
+  </li>
+  <li>
+   <p>
+    El archivo <q>sw.js</q> tiene una lista de los archivos que se instalan.
     El archivo <q>instruccionesListadoSw.txt</q> te indica como generarla usando
     Visual Studio Code.
    </p>
@@ -900,29 +911,49 @@
   <li>
    <p>
     Cada vez que publiques los cambios en los archivos, debes modificar el valor
-    de <var>VERSION</var> en el archivo <q>sw.js»</q>.
+    de <var>VERSION</var> en el archivo <q>sw.js</q>.
    </p>
   </li>
   <li>
    <p>
-    <a href="https://drive.google.com/file/d/1pfI0ZZUbXxArDuACZIOeh_L7cQ5a3NsJ/view?usp=sharing"
-      target="_blank" rel="noopener noreferrer">Depura el proyecto.</a>
+    Cuando desarrollas, es incómodo modificar la versión cada que realizas
+    cambios; en ves de ello desinstala la app: En la Pestaña <em>Aplicación</em>
+    (o <em>Application</em> en inglés) selecciona <em>Almacenamoento</em> (o
+    <em>Storage</em> en inglés). Cliquea <em>Borrar datos del sitio</em>.
+   </p>
+   <p>
+    Recarga la app, de preferencia haciendo clic derecho en el ícono de
+    <em>volver a cargar la página</em> y seleccionando <em>vaciar caché y volver
+     a cargar de manera forzada</em> (o algo parecido). Si no aparece un menú
+    emergente, simplemente cliquea <em>volver a cargar la página</em>.
+    Revisa que aparezca ningún error ni en la pestañas <em>Consola</em>, ni en
+    <em>Red</em>.
    </p>
   </li>
   <li>
    <p>
-    Recuerda usar la combinación de teclas
+    Usa la combinación de teclas
     <strong><kbd>Ctrl</kbd>+<kbd>Mayúsculas</kbd>+<kbd>r</kbd></strong>
-    para forzar que se actualice el navegador en caso de que no se vean
-    los cambios.
+    para forzar que se actualice temporalmente el navegador en caso de que no se
+    vean los cambios.
    </p>
   </li>
   <li>
    <p>
-    <a href="https://drive.google.com/file/d/1d56ZzPMG0xZeGjlncx7ns8sOf4ZU86B0/view?usp=sharingg"
-      target="_blank">Crea la <b>cover page</b> o página de spotlight del
-     proyecto.</a>
+    Sube el proyecto al hosting que elijas. En algunos casos puedes usar
+    filezilla
+    (<a href="https://filezilla-project.org/" target="_blank"
+      rel="noreferrer">https://filezilla-project.org/</a>)
    </p>
+  </li>
+  <li>
+   <p>
+    En algunos host tienes que configurar el certificado SSL. El archivo
+    <q>.htaccess</q> sirve para que algunos servidores forcen el uso de https.
+   </p>
+  </li>
+  <li>
+   <p>Abre un navegador y prueba el proyecto en tu hosting.</p>
   </li>
   <li>
    <p>
@@ -956,6 +987,9 @@
   <div class="lectura">
    <p>Haz clic en los triángulos para expandir las carpetas</p>
    <ul class="tree">
+  <li>
+   <p><a href="m--htaccess.html">.htaccess</a></p>
+  </li>
   <li>
    <p><a href="m-archivos-txt.html">archivos.txt</a></p>
   </li>
@@ -1276,6 +1310,41 @@
     y otra con
     <code>"form_factor": "narrow"</code>.
    </p>
+   <ul>
+    <li>
+     <p>
+     El ancho y la altura deben ser de 320 px como mínimo y 3,840 px como máximo.
+     </p>
+    </li>
+    <li>
+     <p>
+      La dimensión máxima no puede ser más de 2.3 veces mayor que la dimensión mínima.
+     </p>
+    </li>
+    <li>
+     <p>
+Todas las capturas de pantalla con el valor del mismo factor de forma deben tener relaciones de aspecto idénticas.
+     </p>
+    </li>
+    <li>
+     <p>
+Solo se admiten los formatos de imagen JPEG y PNG.
+     </p>
+    </li>
+    <li>
+     <p>
+Solo se mostrarán ocho capturas de pantalla. Si se agregan más, el usuario-agente simplemente los ignora.
+     </p>
+    </li>
+    <li>
+     <p>
+      <small>
+       <a target="_blank" rel="noreferrer"
+        href="https://web.dev/patterns/web-apps/richer-install-ui?hl=es-419">https://web.dev/patterns/web-apps/richer-install-ui?hl=es-419</a>
+      </small>
+     </p>
+    </li>
+   </ul>
   </dd>
   <dt><code><dfn>icons</dfn></code></dt>
   <dd>
@@ -1537,67 +1606,68 @@
   <tr><td>13</td><td>    * el encabezado,</td></tr>
   <tr><td>14</td><td>    * todas las carpetas,</td></tr>
   <tr><td>15</td><td>    * el archivo .vscode/settings.json,</td></tr>
-  <tr><td>16</td><td>    * el archivo archivos.txt,</td></tr>
-  <tr><td>17</td><td>    * este archivo (instruccionesListadoSw.txt),</td></tr>
-  <tr><td>18</td><td>    * el archivo jsconfig.json,</td></tr>
-  <tr><td>19</td><td>    * el archivo sw.js,</td></tr>
-  <tr><td>20</td><td>    * el archivo de la base de datos, que termina en ".bd" y</td></tr>
-  <tr><td>21</td><td>      está en la carpeta srv,</td></tr>
-  <tr><td>22</td><td>    * todos los archivos de php y</td></tr>
-  <tr><td>23</td><td>    * las líneas en blanco del final</td></tr>
-  <tr><td>24</td><td></td></tr>
-  <tr><td>25</td><td>5. Cambia los \ por / desde Visual Studio Code con las siguientes</td></tr>
-  <tr><td>26</td><td>   combinaciones de teclas:</td></tr>
-  <tr><td>27</td><td></td></tr>
-  <tr><td>28</td><td>    Ctrl+H En el diálogo que aparece introduce lo siguiente:</td></tr>
-  <tr><td>29</td><td>    Find:\</td></tr>
-  <tr><td>30</td><td>    Replace:/</td></tr>
-  <tr><td>31</td><td></td></tr>
-  <tr><td>32</td><td>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</td></tr>
-  <tr><td>33</td><td> </td></tr>
-  <tr><td>34</td><td>6. Coloca las comillas y coma del final de cada línea desde Visual</td></tr>
-  <tr><td>35</td><td>   Studio Code con las siguientes combinaciones de teclas:</td></tr>
-  <tr><td>36</td><td></td></tr>
-  <tr><td>37</td><td>    Ctrl+H En el diálogo que aparece, selecciona el botón</td></tr>
-  <tr><td>38</td><td>            ".*"</td></tr>
-  <tr><td>39</td><td>           e introduce lo siguiente:</td></tr>
-  <tr><td>40</td><td>    Find:\s*$</td></tr>
-  <tr><td>41</td><td>    Replace:",</td></tr>
-  <tr><td>42</td><td></td></tr>
-  <tr><td>43</td><td>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</td></tr>
-  <tr><td>44</td><td></td></tr>
-  <tr><td>45</td><td>7. Marca la carpeta inicial, presiona la combinación de teclas:</td></tr>
-  <tr><td>46</td><td></td></tr>
-  <tr><td>47</td><td>    Shift+Ctrl+L</td></tr>
-  <tr><td>48</td><td></td></tr>
-  <tr><td>49</td><td>    borra la selección, teclea " y luego ESC</td></tr>
-  <tr><td>50</td><td></td></tr>
-  <tr><td>51</td><td>8. Cambia las secuencias de espacios por / con las siguientes</td></tr>
-  <tr><td>52</td><td>   combinaciones de teclas:</td></tr>
-  <tr><td>53</td><td></td></tr>
-  <tr><td>54</td><td>    Ctrl+H En el diálogo que aparece, selecciona el botón</td></tr>
-  <tr><td>55</td><td>            ".*"</td></tr>
-  <tr><td>56</td><td>           e introduce lo siguiente:</td></tr>
-  <tr><td>57</td><td>    Find:\s+</td></tr>
-  <tr><td>58</td><td>    Replace:/</td></tr>
-  <tr><td>59</td><td></td></tr>
-  <tr><td>60</td><td>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</td></tr>
-  <tr><td>61</td><td></td></tr>
-  <tr><td>62</td><td>9. Cambia las "/ por " con las siguientes combinaciones de teclas:</td></tr>
-  <tr><td>63</td><td></td></tr>
-  <tr><td>64</td><td>    Ctrl+H En el diálogo que aparece, quita la selección del botón</td></tr>
-  <tr><td>65</td><td>            ".*"</td></tr>
-  <tr><td>66</td><td>           e introduce lo siguiente:</td></tr>
-  <tr><td>67</td><td>    Find:"/</td></tr>
-  <tr><td>68</td><td>    Replace:"</td></tr>
-  <tr><td>69</td><td></td></tr>
-  <tr><td>70</td><td>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</td></tr>
-  <tr><td>71</td><td></td></tr>
-  <tr><td>72</td><td>10. Copia el texto al archivo</td></tr>
-  <tr><td>73</td><td>     sw.js</td></tr>
-  <tr><td>74</td><td>    en el contenido del arreglo llamado ARCHIVOS, pero recuerda</td></tr>
-  <tr><td>75</td><td>    mantener el último elemento, que dice:</td></tr>
-  <tr><td>76</td><td>     "/"</td></tr>
+  <tr><td>16</td><td>    * el archivo .htaccess,</td></tr>
+  <tr><td>17</td><td>    * el archivo archivos.txt,</td></tr>
+  <tr><td>18</td><td>    * este archivo (instruccionesListadoSw.txt),</td></tr>
+  <tr><td>19</td><td>    * el archivo jsconfig.json,</td></tr>
+  <tr><td>20</td><td>    * el archivo sw.js,</td></tr>
+  <tr><td>21</td><td>    * el archivo de la base de datos, que termina en ".bd" y</td></tr>
+  <tr><td>22</td><td>      está en la carpeta srv,</td></tr>
+  <tr><td>23</td><td>    * todos los archivos de php y</td></tr>
+  <tr><td>24</td><td>    * las líneas en blanco del final</td></tr>
+  <tr><td>25</td><td></td></tr>
+  <tr><td>26</td><td>5. Cambia los \ por / desde Visual Studio Code con las siguientes</td></tr>
+  <tr><td>27</td><td>   combinaciones de teclas:</td></tr>
+  <tr><td>28</td><td></td></tr>
+  <tr><td>29</td><td>    Ctrl+H En el diálogo que aparece introduce lo siguiente:</td></tr>
+  <tr><td>30</td><td>    Find:\</td></tr>
+  <tr><td>31</td><td>    Replace:/</td></tr>
+  <tr><td>32</td><td></td></tr>
+  <tr><td>33</td><td>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</td></tr>
+  <tr><td>34</td><td> </td></tr>
+  <tr><td>35</td><td>6. Coloca las comillas y coma del final de cada línea desde Visual</td></tr>
+  <tr><td>36</td><td>   Studio Code con las siguientes combinaciones de teclas:</td></tr>
+  <tr><td>37</td><td></td></tr>
+  <tr><td>38</td><td>    Ctrl+H En el diálogo que aparece, selecciona el botón</td></tr>
+  <tr><td>39</td><td>            ".*"</td></tr>
+  <tr><td>40</td><td>           e introduce lo siguiente:</td></tr>
+  <tr><td>41</td><td>    Find:\s*$</td></tr>
+  <tr><td>42</td><td>    Replace:",</td></tr>
+  <tr><td>43</td><td></td></tr>
+  <tr><td>44</td><td>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</td></tr>
+  <tr><td>45</td><td></td></tr>
+  <tr><td>46</td><td>7. Marca la carpeta inicial, presiona la combinación de teclas:</td></tr>
+  <tr><td>47</td><td></td></tr>
+  <tr><td>48</td><td>    Shift+Ctrl+L</td></tr>
+  <tr><td>49</td><td></td></tr>
+  <tr><td>50</td><td>    borra la selección, teclea " y luego ESC</td></tr>
+  <tr><td>51</td><td></td></tr>
+  <tr><td>52</td><td>8. Cambia las secuencias de espacios por / con las siguientes</td></tr>
+  <tr><td>53</td><td>   combinaciones de teclas:</td></tr>
+  <tr><td>54</td><td></td></tr>
+  <tr><td>55</td><td>    Ctrl+H En el diálogo que aparece, selecciona el botón</td></tr>
+  <tr><td>56</td><td>            ".*"</td></tr>
+  <tr><td>57</td><td>           e introduce lo siguiente:</td></tr>
+  <tr><td>58</td><td>    Find:\s+</td></tr>
+  <tr><td>59</td><td>    Replace:/</td></tr>
+  <tr><td>60</td><td></td></tr>
+  <tr><td>61</td><td>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</td></tr>
+  <tr><td>62</td><td></td></tr>
+  <tr><td>63</td><td>9. Cambia las "/ por " con las siguientes combinaciones de teclas:</td></tr>
+  <tr><td>64</td><td></td></tr>
+  <tr><td>65</td><td>    Ctrl+H En el diálogo que aparece, quita la selección del botón</td></tr>
+  <tr><td>66</td><td>            ".*"</td></tr>
+  <tr><td>67</td><td>           e introduce lo siguiente:</td></tr>
+  <tr><td>68</td><td>    Find:"/</td></tr>
+  <tr><td>69</td><td>    Replace:"</td></tr>
+  <tr><td>70</td><td></td></tr>
+  <tr><td>71</td><td>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</td></tr>
+  <tr><td>72</td><td></td></tr>
+  <tr><td>73</td><td>10. Copia el texto al archivo</td></tr>
+  <tr><td>74</td><td>     sw.js</td></tr>
+  <tr><td>75</td><td>    en el contenido del arreglo llamado ARCHIVOS, pero recuerda</td></tr>
+  <tr><td>76</td><td>    mantener el último elemento, que dice:</td></tr>
+  <tr><td>77</td><td>     "/"</td></tr>
  </tbody>
 </table>
       </section>
@@ -2080,7 +2150,26 @@
       </section>
       </section>
      <section >
-         <h1 >N. jsconfig.json</h1><div class="lectura">
+         <h1 >N. .htaccess</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>RewriteEngine On</td></tr>
+  <tr><td>2</td><td>RewriteCond %{HTTP:X-Forwarded-Proto} !https</td></tr>
+  <tr><td>3</td><td>RewriteCond %{HTTPS} off</td></tr>
+  <tr><td>4</td><td>RewriteCond %{HTTP:CF-Visitor} !{"scheme":"https"}</td></tr>
+  <tr><td>5</td><td>RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]</td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >O. jsconfig.json</h1><div class="lectura">
  <ul>
   <li>
    <p>
@@ -2115,8 +2204,8 @@
   <tr><td>3</td><td>  <span class="codeString">&quot;checkJs&quot;</span>: <span class="codeReserved">true</span>,</td></tr>
   <tr><td>4</td><td>  <span class="codeString">&quot;strictNullChecks&quot;</span>: <span class="codeReserved">true</span>,</td></tr>
   <tr><td>5</td><td>  <span class="codeString">&quot;target&quot;</span>: <span class="codeString">&quot;ES6&quot;</span>,</td></tr>
-  <tr><td>6</td><td>  <span class="codeString">&quot;module&quot;</span>: <span class="codeString">&quot;ES6&quot;</span>,</td></tr>
-  <tr><td>7</td><td>  <span class="codeString">&quot;moduleResolution&quot;</span>: <span class="codeString">&quot;classic&quot;</span>,</td></tr>
+  <tr><td>6</td><td>  <span class="codeString">&quot;module&quot;</span>: <span class="codeString">&quot;Node16&quot;</span>,</td></tr>
+  <tr><td>7</td><td>  <span class="codeString">&quot;moduleResolution&quot;</span>: <span class="codeString">&quot;Node16&quot;</span>,</td></tr>
   <tr><td>8</td><td>  <span class="codeString">&quot;lib&quot;</span>: [</td></tr>
   <tr><td>9</td><td>   <span class="codeString">&quot;ES2017&quot;</span>,</td></tr>
   <tr><td>10</td><td>   <span class="codeString">&quot;WebWorker&quot;</span>,</td></tr>
@@ -2128,7 +2217,7 @@
 </table>
       </section>
      <section >
-         <h1 >O. Resumen</h1><div class="lectura">
+         <h1 >P. Resumen</h1><div class="lectura">
  <ul>
   <li>
    <p>En esta lección se presentó la estructura básica de una PWA.</p>

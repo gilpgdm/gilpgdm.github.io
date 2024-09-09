@@ -86,7 +86,8 @@
   --gap: 0.5rem;
   --fontMono: 'Xanh Mono', monospace;
   --fontSans: 'Patrick Hand', sans-serif;
-  --fontSerif: 'Purple Purse', serif;
+  /* --fontSerif: 'Purple Purse', serif; */
+  --fontSerif: Georgia, 'Times New Roman', Times, serif;
   font-family: var(--fontSerif);
   color: var(--colLetra);
   background-color: var(--colFondo);
@@ -818,46 +819,38 @@
 <body  class="xmenu">
  <div id="principal">
    <h1 >B. Hazlo funcionar</h1><div class="lectura">
- <ul>
-  <li>
-   <p>
-    Prueba e instala, de preferencia con Chrome, el sitio
-    <a href="https://gilpgpwa.github.io/" target="_blank"
-      rel="noopener noreferrer">https://gilpgpwa.github.io/</a>.
-   </p>
-  </li>
-  <li>
-   <p>
-    Revisa el proyecto en Replit con la URl
-    <a href="https://replit.com/@GilbertoPachec2/pwa?v=1"
-      rel="noopener noreferrer"
-      target="_blank">https://replit.com/@GilbertoPachec2/pwa?v=1</a>.
-    Hazle fork al proyecto y córrelo. En el ambiente de desarrollo tienes la
-    opción de descargar el proyecto en un zip.
-   </p>
-  </li>
-  <li>
-   <p>
-    Una vez que se está ejecutando, probablemente te aparezca un mensaje de
-    error. Ciérralo y haz clic en el botón
-    <button type="button">
-     <span class="material-symbols-outlined">
-      open_in_new
-     </span>
-     New tab
-    </button>
-    para ejecutar la app en una pestaña nueva.
-   </p>
-  </li>
- </ul>
  <ol>
   <li>
    <p>
+    Prueba e instala, de preferencia con Chrome, el sitio
+    <a href="https://pwab.rf.gd/" rel="noreferrer"
+      target="_blank">https://pwab.rf.gd/</a>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Descarga el archivo
+    <a href="/src/pwab.zip" download>/src/pwab.zip</a> y
+    descompáctalo.
+   </p>
+  </li>
+  <li>
+   <p>
+    Abre la carpeta descompactada con Visual Studio Code.
+   </p>
+  </li>
+  <li>
+   <p>
+    Edita los archivos que desees.
+   </p>
+  </li>
+  <li>
+   <p>
     <a href="https://drive.google.com/file/d/1RiRkApBqQE6A4-APu7p18_DHa2aVRcfn/view?usp=sharing"
-      target="_blank" rel="noopener noreferrer">Crea los íconos del proyecto</a>
+      target="_blank" rel="noreferrer">Crea los íconos del proyecto</a>
     con
-    <a href="https://www.photopea.com/"
-      target="_blank" rel="noopener noreferrer">https://www.photopea.com/</a>.
+    <a href="https://www.photopea.com/" target="_blank"
+      rel="noreferrer">https://www.photopea.com/</a>.
     Este paso se hizo com Microsoft Edge (versión Chromium), pero no funcionó
     con Google Chrome.
    </p>
@@ -865,8 +858,7 @@
   <li>
    <p>
     <a href="https://drive.google.com/file/d/1lI4TAJ_xRJpY6xqNnEzT4L214S_UggfB/view?usp=sharing"
-      target="_blank" rel="noopener noreferrer">Crea los íconos
-     enmascarables</a>
+      target="_blank" rel="noreferrer">Crea los íconos enmascarables</a>
     con
     <a target="_blank"
       href="https://maskable.app/">https://maskable.app/</a>
@@ -875,30 +867,44 @@
   </li>
   <li>
    <p>
-    <a href="https://drive.google.com/file/d/1ujeNp8TaHjqqRXl_TFT0omUGymmFWTLm/view?usp=sharing"
-      target="_blank" rel="noopener noreferrer">Usa o crea una cuenta de
-     Google.</a>
+    Coloca el archivo <q>favicon.ico</q> en la raíz del proyecto.
    </p>
   </li>
   <li>
    <p>
-    <a href="https://drive.google.com/file/d/1dmifWNqm_gRmQuMEe67HqKBYzzDTwEHt/view?usp=sharing"
-      target="_blank" rel="noopener noreferrer">Crea una cuenta de Replit usando
-     la cuenta
-     de Google.</a>
+    Coloca los otros íconos en la carpeta <q>img</q> y asegúrate de que estén
+    declarados en el archivo <q>site.webmanifest</q>.
    </p>
   </li>
   <li>
    <p>
-    <a href="https://drive.google.com/file/d/1MpT73tzI9tJDcgy1uH9eRtXVdKuF1D36/view?usp=sharing"
-      target="_blank" rel="noopener noreferrer">Crea un proyecto <em>HTML, CSS,
-      JS</em> en
-     Replit y edita o sube los archivos de este proyecto.</a>
+    Haz clic derecho en <q>index.html</q>, selecciona
+    <em>PHP Server: serve project</em> y se abre el navegador para que puedas
+    probar localmente el ejemplo.
    </p>
   </li>
   <li>
    <p>
-    El archivo <q>sw.js»</q> tiene una lista de los archivos que se instalan.
+    Haz al menos una captura de la ventana de tu aplicación con orientación
+    vertical y otra con orientación horizontal, todas ellas de 320 px como
+    mínimo y 3,840 px como máximo.
+   </p>
+  </li>
+  <li>
+   <p>
+    Coloca las capturas en la carpeta <q>img</q> y asegúrate de que estén
+    declaradas en el archivo <q>site.webmanifest</q>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Abre las herramientas de depuración haciendo clic derecho en la página y
+    selecciona <em>Inspeccionar</em> (o <em>Inspect</em> si aparece en inglés).
+   </p>
+  </li>
+  <li>
+   <p>
+    El archivo <q>sw.js</q> tiene una lista de los archivos que se instalan.
     El archivo <q>instruccionesListadoSw.txt</q> te indica como generarla usando
     Visual Studio Code.
    </p>
@@ -906,29 +912,49 @@
   <li>
    <p>
     Cada vez que publiques los cambios en los archivos, debes modificar el valor
-    de <var>VERSION</var> en el archivo <q>sw.js»</q>.
+    de <var>VERSION</var> en el archivo <q>sw.js</q>.
    </p>
   </li>
   <li>
    <p>
-    <a href="https://drive.google.com/file/d/1pfI0ZZUbXxArDuACZIOeh_L7cQ5a3NsJ/view?usp=sharing"
-      target="_blank" rel="noopener noreferrer">Depura el proyecto.</a>
+    Cuando desarrollas, es incómodo modificar la versión cada que realizas
+    cambios; en ves de ello desinstala la app: En la Pestaña <em>Aplicación</em>
+    (o <em>Application</em> en inglés) selecciona <em>Almacenamoento</em> (o
+    <em>Storage</em> en inglés). Cliquea <em>Borrar datos del sitio</em>.
+   </p>
+   <p>
+    Recarga la app, de preferencia haciendo clic derecho en el ícono de
+    <em>volver a cargar la página</em> y seleccionando <em>vaciar caché y volver
+     a cargar de manera forzada</em> (o algo parecido). Si no aparece un menú
+    emergente, simplemente cliquea <em>volver a cargar la página</em>.
+    Revisa que aparezca ningún error ni en la pestañas <em>Consola</em>, ni en
+    <em>Red</em>.
    </p>
   </li>
   <li>
    <p>
-    Recuerda usar la combinación de teclas
+    Usa la combinación de teclas
     <strong><kbd>Ctrl</kbd>+<kbd>Mayúsculas</kbd>+<kbd>r</kbd></strong>
-    para forzar que se actualice el navegador en caso de que no se vean
-    los cambios.
+    para forzar que se actualice temporalmente el navegador en caso de que no se
+    vean los cambios.
    </p>
   </li>
   <li>
    <p>
-    <a href="https://drive.google.com/file/d/1d56ZzPMG0xZeGjlncx7ns8sOf4ZU86B0/view?usp=sharingg"
-      target="_blank">Crea la <b>cover page</b> o página de spotlight del
-     proyecto.</a>
+    Sube el proyecto al hosting que elijas. En algunos casos puedes usar
+    filezilla
+    (<a href="https://filezilla-project.org/" target="_blank"
+      rel="noreferrer">https://filezilla-project.org/</a>)
    </p>
+  </li>
+  <li>
+   <p>
+    En algunos host tienes que configurar el certificado SSL. El archivo
+    <q>.htaccess</q> sirve para que algunos servidores forcen el uso de https.
+   </p>
+  </li>
+  <li>
+   <p>Abre un navegador y prueba el proyecto en tu hosting.</p>
   </li>
   <li>
    <p>
@@ -1009,7 +1035,7 @@
          arrow_upward
         </span></a>
      </p>
-   <h1><a href="/m04pwaBasica/index.html">4. PWA básica</a></h1>
+   <h1><a href="/m04pwaBasica/index.html">5. PWA básica</a></h1>
    
    <ol type="A">
     
@@ -1080,6 +1106,11 @@
    </li>
    <li>
     <p>
+     <a href="/m04pwaBasica/m--htaccess.html">.htaccess</a>
+    </p>
+   </li>
+   <li>
+    <p>
      <a href="/m04pwaBasica/m-jsconfig-json.html">jsconfig.json</a>
     </p>
    </li>
@@ -1092,7 +1123,7 @@
    
     <p>
      <a class="paginaSiguiente" href="/m03pwaMaterial/index.html"
-       title="5. PWA con Material Design"><span
+       title="6. PWA con Material Design"><span
        class="material-symbols-outlined">
         arrow_downward
        </span></a>

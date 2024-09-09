@@ -1,0 +1,336 @@
+<section class="lectura">
+ <h1>Para la parte web</h1>
+ <dl>
+  <dt>Microsoft Edge Chromium</dt>
+  <dd>
+   <ul>
+    <li>
+     <p>
+      Ya viene instalado en las computadoras más nuevas, pero si la tuya
+      no lo tiene, lo puedes descargar de
+      <a href="https://www.microsoft.com/es-es/edge" rel="noreferrer"
+        target="_blank">https://www.microsoft.com/es-es/edge</a>.
+     </p>
+    </li>
+    <li class="noPrint">
+     <p>
+      <a href="https://drive.google.com/file/d/1Wwsq6D3MaX8CDPpCIu53p9Lvx_42D5ou/view?usp=sharing"
+        target="_blank" rel="noreferrer">Video de instalación.</a>
+     </p>
+    </li>
+   </ul>
+  </dd>
+  <dt>Mozilla Firefox</dt>
+  <dd>
+   <ul>
+    <li>
+     <p>
+      Lo puedes descargar de
+      <a href="https://www.mozilla.org"
+        target="_blank" rel="noreferrer">https://www.mozilla.org</a>.
+     </p>
+    </li>
+    <li class="noPrint">
+     <p>
+      <a href="https://drive.google.com/file/d/1Wr5AZUh1isg2qH0GtzQrz-MwjCfm2ZJC/view?usp=sharing"
+        target="_blank" rel="noreferrer">Video de Instalación.</a>
+     </p>
+    </li>
+   </ul>
+  </dd>
+  <dt>Google Chrome</dt>
+  <dd>
+   <ul>
+    <li>
+     <p>
+      Lo puedes descargar de
+      <a href="https://google.com/chrome"
+        target="_blank" rel="noreferrer">https://google.com/chrome</a>.
+     </p>
+    </li>
+    <li class="noPrint">
+     <p>
+      <a href="https://drive.google.com/file/d/1DvSCM9GSypdK1GEI7EpBnIp9olPG3zNE/view?usp=sharing"
+        target="_blank" rel="noreferrer">Video de Instalación.</a>
+     </p>
+    </li>
+   </ul>
+  </dd>
+  <dt>PHP</dt>
+  <dd>
+   <dl>
+    <dt>Para Linux y apple</dt>
+    <dd>
+     <p>Se puede instalar desde las tiendas de software.</p>
+    </dd>
+    <dt>Para Windows</dt>
+    <dd>
+     <ol>
+      <li>
+       <p>
+        Descarga la versión Thread Safe que corresponda a la arquitectura de tu
+        computadora (x64 o x86, la maypría son x64) desde
+        <a target="_blank" rel="noreferrer"
+          href="https://windows.php.net/download#php-8.3">https://windows.php.net/download#php-8.3</a>.
+       </p>
+      </li>
+      <li>
+       <p>Crea una carpeta con nombre <em>php</em> en el disco <em>C:</em> y
+        descompacta ahí el php
+       </p>
+      </li>
+      <li>
+       <p>Edita el archivo C:\php\php.ini con el siguiente contenido</p>
+       <pre><code>extension = php_mbstring.dll
+extension=php_pdo_sqlite.dll
+extension=php_pdo_mysql.dll
+extension=php_openssl.dll
+extension=php_sockets.dll
+extension=php_fileinfo.dll
+zend_extension = xdebug
+xdebug.mode = debug
+xdebug.start_with_request = yes
+</code></pre>
+      </li>
+      <li>
+       <p>
+        Añade la ruta <em>C:\php</em> a la variable de ambiente PATH.
+       </p>
+       <ol>
+        <li>
+         <p>
+          Haz clic en el logo de Windows.
+         </p>
+        </li>
+        <li>
+         <p>
+          Haz clic en Configuración.
+         </p>
+        </li>
+        <li>
+         <p>
+          Haz clic en Sistema.
+         </p>
+        </li>
+        <li>
+         <p>
+          Haz clic en Acerca de.
+         </p>
+        </li>
+        <li>
+         <p>
+          Haz clic en Configuración avanzada del sistema. Te pide que autorices.
+          Autoriza.
+         </p>
+        </li>
+        <li>
+         <p>
+          Haz clic en Variables de entorno.
+         </p>
+        </li>
+        <li>
+         <p>
+          En Variables del sistema selecciona Path y haz clic en Editar...
+         </p>
+        </li>
+        <li>
+         <p>
+          Haz clic en Nuevo. Se abre una entrada y en ella teclea
+          <kbd>C:\php</kbd>. Haz clic en Aceptar.
+         </p>
+        </li>
+        <li>
+         <p>
+          Haz clic en Aceptar para cerrar las variables de entorno.
+         </p>
+        </li>
+        <li>
+         <p>
+          Haz clic en Aceptar para cerrar las propiedades del sistema.
+         </p>
+        </li>
+       </ol>
+      </li>
+     </ol>
+    </dd>
+   </dl>
+  </dd>
+  <dt>Visual Studio Code</dt>
+  <dd>
+   <p>Usa la URL <a target="_blank" rel="noreferrer"
+      href="https://code.visualstudio.com/">https://code.visualstudio.com/</a>.
+   </p>
+   <p>Instala las extensiones:</p>
+   <ul>
+    <li>es6-string-html de Tobermory</li>
+    <li>anuragsingk-PHP Server de Anuragsingk</li>
+    <li>PHP Debug de Xdebug</li>
+    <li>PHP Estension Pack de Xdebug</li>
+    <li>PHP Intellephsense de Ben Mewburn</li>
+    <li>PHP IntelliSense de Damjan Cvetko</li>
+   </ul>
+   <p>
+    Haz clic en el engrane de abajo a la izquierda <img alt=""
+      src="/img/engrane.png"> y seleciona <em>Settings</em>. En
+    <em>Extensions > PHP Server configuration</em> configura lo siguiente
+   <dl>
+    <dt>Phpserver Ip</dt>
+    <dd>localhost</dd>
+    <dt>Phpserver port</dt>
+    <dd>80</dd>
+   </dl>
+   </p>
+  </dd>
+  <dt>Xdebug</dt>
+  <dd>
+   <ul>
+    <li>
+     <p>
+      Crea una carpeta vacía y ábrela con Visual Studio Code.
+     </p>
+    </li>
+    <li>
+     <p>
+      Crea el archivo <em>index.php</em> con el siguiente contenido
+     </p>
+     <pre><code>&lt;?php
+
+phpinfo();
+</code></pre>
+    </li>
+    <li>
+     <p>
+      Haz clic derecho en <em>index.php</em> y selecciona
+      <em>PHP Server: serve project</em>
+     </p>
+    </li>
+    <li>
+     <p>
+      Sigue las instrucciones de <a target="_blank" rel="noreferrer"
+        href="https://xdebug.org/wizard">https://xdebug.org/wizard</a>
+     </p>
+    </li>
+   </ul>
+  </dd>
+ </dl>
+ <h1>Para ESP32</h1>
+ <dl>
+  <dt>CP210x USB to UART Bridge VCP Drivers</dt>
+  <dd>
+   <ul>
+    <li>
+     <p>
+      Lo puedes descargar de
+      <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers"
+        target="_blank"
+        rel="noreferrer">https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers</a>.
+     </p>
+    </li>
+    <li class="noPrint">
+     <p>
+      <a href="https://drive.google.com/file/d/1YWudSvdMMRe2xJcYwDO88CFIeeEJZqRH/view?usp=sharing"
+        target="_blank" rel="noreferrer">Video de Instalación.</a>
+     </p>
+    </li>
+    <li>
+     <p>Las instrucciones de instalación son los siguientes:</p>
+     <ol>
+      <li>
+       <p>
+        Selecciona la pestaña DOWNLOADS y descarga el archivo
+        <q>CP210x Universal Windows Driver</q>.
+       </p>
+      </li>
+      <li>
+       <p>
+        Descompácta el archivo, haz clic derecho en
+        <q>silabser.inf</q>
+        y selecciona instalar.
+       </p>
+      </li>
+     </ol>
+    </li>
+   </ul>
+  </dd>
+  <dt>Arduino IDE</dt>
+  <dt>Arduino core for ESP8266 WiFi chip</dt>
+  <dt>Arduino core for ESP32 WiFi chip</dt>
+  <dt>EspMQTTClient</dt>
+  <dd>
+   <ul>
+    <li>
+     <p>
+      Puedes descargar Arduino IDE desde
+      <a href="https://www.arduino.cc/" rel="noreferrer"
+        target="_blank">https://www.arduino.cc/</a>.
+     </p>
+    </li>
+    <li class="noPrint">
+     <p>
+      <a href="https://drive.google.com/file/d/19lBZ4e1B93WksD9OUUmrnJeIPn9H18Zc/view?usp=sharing"
+        target="_blank" rel="noreferrer">Video de Instalación de Arduino IDE +
+       ESP8266 + ESP32 + ArduinoWebSockets.</a>
+     </p>
+     <p>
+      En el video no se muestra la instalación de la libresría EspMQTTClient,
+      pero se instala como una librería normal. Si te solicita instalar
+      otras librerías, instálalas también.
+     </p>
+    </li>
+    <li>
+     <p>Las instrucciones de instalación son los siguientes:</p>
+     <ol>
+      <li>
+       <p>
+        Selecciona la pestaña SOFTWARE y busca el DOWNLOAD para tu sistema
+        operativo.
+       </p>
+      </li>
+      <li>
+       <p>
+        Una vez instalado Arduino IDE, entra a esta aplicación, selecciona el
+        menú
+        <q>Archivo > Preferencias</q>.
+        Se abre un cuadro de diálogo y en el campo
+        <q>Gestor de URLs Adicionales de Tarjetas</q>
+        introduce el valor
+       </p>
+       <blockquote style="overflow: auto;">
+        https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json,https://arduino.esp8266.com/stable/package_esp8266com_index.json
+       </blockquote>
+      </li>
+      <li>
+       <p>
+        Selecciona el menú
+        <q>Herramientas > Placa:xxx > Gestor de tarjetas&hellip;</q>.
+        En ocasiones el gestor de tarjetas tarda un poco en habilitarse, por
+        lo que tendrás que cerrar el menú y volver a abrirlo posiblemente unas
+        cuantas veces.
+       </p>
+      </li>
+      <li>
+       <p>
+        Instala las tarjetas esp32 y esp8266.
+       </p>
+      </li>
+      <li>
+       <p>
+        Selecciona el menú
+        <q>Herramientas > Administrar bibliotecas&hellip;</q>.
+        En ocasiones el gestor de tarjetas tarda un poco en habilitarse, por
+        lo que tendrás que cerrar el menú y volver a abrirlo posiblemente unas
+        cuantas veces.
+       </p>
+      </li>
+      <li>
+       <p>
+        Instala la libresría EspMQTTClient. Se instala como una librería normal.
+        Si te solicita instalar otras librerías, instálalas también.
+       </p>
+      </li>
+     </ol>
+    </li>
+   </ul>
+  </dd>
+ </dl>
+</section>

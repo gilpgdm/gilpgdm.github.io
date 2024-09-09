@@ -85,7 +85,8 @@
   --gap: 0.5rem;
   --fontMono: 'Xanh Mono', monospace;
   --fontSans: 'Patrick Hand', sans-serif;
-  --fontSerif: 'Purple Purse', serif;
+  /* --fontSerif: 'Purple Purse', serif; */
+  --fontSerif: Georgia, 'Times New Roman', Times, serif;
   font-family: var(--fontSerif);
   color: var(--colLetra);
   background-color: var(--colFondo);
@@ -701,7 +702,7 @@
 </head>
 
 <body class="print">
-   <h1 >8. ESP32</h1>
+   <h1 >9. ESP32</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -717,11 +718,6 @@
    <li>
     <p>
      <a href="/m06esp8266/mAintro.html">Introduccion</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m06esp8266/m01software.html">Software a instalar</a>
     </p>
    </li>
    <li>
@@ -760,197 +756,19 @@
 </div>
       </section>
      <section >
-         <h1 >B. Software a instalar</h1><div class="lectura">
- <dl>
-  <dt>Microsoft Edge Chromium</dt>
-  <dd>
-   <ul>
-    <li>
-     <p>
-      Ya viene instalado en las computadoras más nuevas, pero si la tuya
-      no lo tiene, lo puedes descargar de
-      <a href="https://www.microsoft.com/es-es/edge" rel="noopener noreferrer"
-        target="_blank">https://www.microsoft.com/es-es/edge</a>.
-     </p>
-    </li>
-    <li class="noPrint">
-     <p>
-      <a href="https://drive.google.com/file/d/1Wwsq6D3MaX8CDPpCIu53p9Lvx_42D5ou/view?usp=sharing"
-        target="_blank" rel="noopener noreferrer">Video de instalación.</a>
-     </p>
-    </li>
-   </ul>
-  </dd>
-  <dt>Mozilla Firefox</dt>
-  <dd>
-   <ul>
-    <li>
-     <p>
-      Lo puedes descargar de
-      <a href="https://www.mozilla.org"
-        target="_blank" rel="noopener noreferrer">https://www.mozilla.org</a>.
-     </p>
-    </li>
-    <li class="noPrint">
-     <p>
-      <a href="https://drive.google.com/file/d/1Wr5AZUh1isg2qH0GtzQrz-MwjCfm2ZJC/view?usp=sharing"
-        target="_blank" rel="noopener noreferrer">Video de Instalación.</a>
-     </p>
-    </li>
-   </ul>
-  </dd>
-  <dt>Google Chrome</dt>
-  <dd>
-   <ul>
-    <li>
-     <p>
-      Lo puedes descargar de
-      <a href="https://google.com/chrome"
-        target="_blank" rel="noopener noreferrer">https://google.com/chrome</a>.
-     </p>
-    </li>
-    <li class="noPrint">
-     <p>
-      <a href="https://drive.google.com/file/d/1DvSCM9GSypdK1GEI7EpBnIp9olPG3zNE/view?usp=sharing"
-        target="_blank" rel="noopener noreferrer">Video de Instalación.</a>
-     </p>
-    </li>
-   </ul>
-  </dd>
-  <dt>CP210x USB to UART Bridge VCP Drivers</dt>
-  <dd>
-   <ul>
-    <li>
-     <p>
-      Lo puedes descargar de
-      <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers"
-        target="_blank"
-        rel="noopener noreferrer">https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers</a>.
-     </p>
-    </li>
-    <li class="noPrint">
-     <p>
-      <a href="https://drive.google.com/file/d/1YWudSvdMMRe2xJcYwDO88CFIeeEJZqRH/view?usp=sharing"
-        target="_blank" rel="noopener noreferrer">Video de Instalación.</a>
-     </p>
-    </li>
-    <li>
-     <p>Las instrucciones de instalación son los siguientes:</p>
-     <ol>
-      <li>
-       <p>
-        Selecciona la pestaña DOWNLOADS y descarga el archivo
-        <q>CP210x Universal Windows Driver</q>.
-       </p>
-      </li>
-      <li>
-       <p>
-        Descompácta el archivo, haz clic derecho en
-        <q>silabser.inf</q>
-        y selecciona instalar.
-       </p>
-      </li>
-     </ol>
-    </li>
-   </ul>
-  </dd>
-  <dt>Arduino IDE</dt>
-  <dt>Arduino core for ESP8266 WiFi chip</dt>
-  <dt>Arduino core for ESP32 WiFi chip</dt>
-  <dt>EspMQTTClient</dt>
-  <dd>
-   <ul>
-    <li>
-     <p>
-      Puedes descargar Arduino IDE desde
-      <a href="https://www.arduino.cc/" rel="noopener noreferrer"
-        target="_blank">https://www.arduino.cc/</a>.
-     </p>
-    </li>
-    <li class="noPrint">
-     <p>
-      <a href="https://drive.google.com/file/d/19lBZ4e1B93WksD9OUUmrnJeIPn9H18Zc/view?usp=sharing"
-        target="_blank" rel="noopener noreferrer">Video de Instalación de Arduino IDE +
-       ESP8266 + ESP32 + ArduinoWebSockets.</a>
-     </p>
-     <p>
-      En el video no se muestra la instalación de la libresría EspMQTTClient,
-      pero se instala como una librería normal. Si te solicita instalar
-      otras librerías, instálalas también.
-     </p>
-    </li>
-    <li>
-     <p>Las instrucciones de instalación son los siguientes:</p>
-     <ol>
-      <li>
-       <p>
-        Selecciona la pestaña SOFTWARE y busca el DOWNLOAD para tu sistema
-        operativo.
-       </p>
-      </li>
-      <li>
-       <p>
-        Una vez instalado Arduino IDE, entra a esta aplicación, selecciona el
-        menú
-        <q>Archivo > Preferencias</q>.
-        Se abre un cuadro de diálogo y en el campo
-        <q>Gestor de URLs Adicionales de Tarjetas</q>
-        introduce el valor
-       </p>
-       <blockquote style="overflow: auto;">
-        https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json,https://arduino.esp8266.com/stable/package_esp8266com_index.json
-       </blockquote>
-      </li>
-      <li>
-       <p>
-        Selecciona el menú
-        <q>Herramientas > Placa:xxx > Gestor de tarjetas&hellip;</q>.
-        En ocasiones el gestor de tarjetas tarda un poco en habilitarse, por
-        lo que tendrás que cerrar el menú y volver a abrirlo posiblemente unas
-        cuantas veces.
-       </p>
-      </li>
-      <li>
-       <p>
-        Instala las tarjetas esp32 y esp8266.
-       </p>
-      </li>
-      <li>
-       <p>
-        Selecciona el menú
-        <q>Herramientas > Administrar bibliotecas&hellip;</q>.
-        En ocasiones el gestor de tarjetas tarda un poco en habilitarse, por
-        lo que tendrás que cerrar el menú y volver a abrirlo posiblemente unas
-        cuantas veces.
-       </p>
-      </li>
-      <li>
-       <p>
-        Instala la libresría EspMQTTClient. Se instala como una librería normal.
-        Si te solicita instalar otras librerías, instálalas también.
-       </p>
-      </li>
-     </ol>
-    </li>
-   </ul>
-  </dd>
- </dl>
-</div>
-      </section>
-     <section >
-         <h1 >C. Blink.ino</h1><div class="horizontal">
+         <h1 >B. Blink.ino</h1><div class="horizontal">
  <section>
   <figure>
    <img src="/img/m06esp8266/Video-Blink.gif" alt="Video de la placa">
   </figure>
   <p class="noPrint">
    <a href="https://drive.google.com/file/d/1ijC-1CC9V_Ua1nApAcRuQmXYp9wgaKBH/view?usp=sharing"
-     target="_blank" rel="noopener noreferrer">Ve como capturar y ejecutar este
+     target="_blank" rel="noreferrer">Ve como capturar y ejecutar este
     ejemplo.</a>
   </p>
   <p class="noPrint">
    <a href="https://drive.google.com/file/d/1yqVaTYYt8BxQLhvmZW2bwdiTkqxPQKcB/view?usp=sharing"
-     target="_blank" rel="noopener noreferrer">Ve como desplegar este ejemplo en Tinkercad
+     target="_blank" rel="noreferrer">Ve como desplegar este ejemplo en Tinkercad
     y
     compartirlo.</a>
   </p>
@@ -1001,14 +819,14 @@
 </div>
       </section>
      <section >
-         <h1 >D. Button.ino</h1><div class="horizontal">
+         <h1 >C. Button.ino</h1><div class="horizontal">
  <section>
   <figure>
    <img src="/img/m06esp8266/Video-Button.gif" alt="Video de la placa">
   </figure>
   <p class="noPrint">
    <a href="https://drive.google.com/file/d/1dFU-A3HvWAyTSyquOT1C2N5b6dUyQywq/view?usp=sharing"
-     target="_blank" rel="noopener noreferrer">Ve como desplegar este ejemplo en Tinkercad
+     target="_blank" rel="noreferrer">Ve como desplegar este ejemplo en Tinkercad
     y
     compartirlo.</a>
   </p>
@@ -1060,7 +878,7 @@
 </div>
       </section>
      <section >
-         <h1 >E. Dispositivo.ino</h1><div class="lectura">
+         <h1 >D. Dispositivo.ino</h1><div class="lectura">
  <ul>
   <li>
    <p>
@@ -1072,7 +890,7 @@
    <p>
     La URL y el puerto deben coincidir con tu dervidor de MQTT. Si usas
     <a href="https://test.mosquitto.org" target="_blank"
-      rel="noopener noreferrer">test.mosquitto.org</a>,
+      rel="noreferrer">test.mosquitto.org</a>,
     conserva los valores mostrados más adelante.
    </p>
   </li>
@@ -1100,7 +918,7 @@
   </figure>
   <p class="noPrint">
    <a href="https://drive.google.com/file/d/14oEAQS2mP7EDtQAA7ydS4O4QWbXHmTGQ/view?usp=sharing"
-     target="_blank" rel="noopener noreferrer">Ve como configurar y ejecutar este
+     target="_blank" rel="noreferrer">Ve como configurar y ejecutar este
     ejemplo.</a>
    No hagas caso a la parte de los certificados,
   </p>
@@ -1209,7 +1027,7 @@
 </div>
       </section>
      <section >
-         <h1 >F. Resumen</h1><div class="lectura">
+         <h1 >E. Resumen</h1><div class="lectura">
  <ul>
   <li>
    <p>

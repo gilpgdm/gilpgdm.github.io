@@ -85,6 +85,7 @@ const ARCHIVOS = [
  "/m01pwa/mCnavegadores.html",
  "/m01pwa/mDdesarrollo.html",
  "/m01pwa/mEresumen.html",
+ "/m01software.html",
  "/m03pwaMaterial/",
  "/m03pwaMaterial/index.html",
  "/m03pwaMaterial/m-archivos-txt.html",
@@ -223,6 +224,7 @@ const ARCHIVOS = [
  "/m04dispositivo/mDresumen.html",
  "/m04pwaBasica/",
  "/m04pwaBasica/index.html",
+ "/m04pwaBasica/m--htaccess.html",
  "/m04pwaBasica/m-archivos-txt.html",
  "/m04pwaBasica/m-css/",
  "/m04pwaBasica/m-css/index.html",
@@ -288,7 +290,6 @@ const ARCHIVOS = [
  "/m05iot/mGresumen.html",
  "/m06esp8266/",
  "/m06esp8266/index.html",
- "/m06esp8266/m01software.html",
  "/m06esp8266/mAblink.html",
  "/m06esp8266/mAintro.html",
  "/m06esp8266/mBbutton.html",
@@ -455,6 +456,7 @@ const ARCHIVOS = [
  "/m10siot/mFtabla.html",
  "/m10siot/mGfacturacion.html",
  "/site.webmanifest",
+ "/src/iothtml.zip",
  "/src/m01notificaciones/",
  "/src/m01notificaciones/index.html",
  "/src/m03pwaMaterial/custom-elements.js",
@@ -464,7 +466,11 @@ const ARCHIVOS = [
  "/src/m03pwaMaterial/roboto-v32-latin-regular.woff2",
  "/src/m04dispositivos/archivos.html",
  "/src/m04dispositivos/camara.html",
- "/src/m04dispositivos/gps.html"
+ "/src/m04dispositivos/gps.html",
+ "/src/notipush.zip",
+ "/src/pwab.zip",
+ "/src/pwamd.zip",
+ "/src/sincro.zip"
 ]
 
 // Verifica si el código corre dentro de un service worker.
