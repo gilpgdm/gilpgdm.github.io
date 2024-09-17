@@ -10,31 +10,27 @@
  <tbody>
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/fetchAll.php"</span>;</td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/select.php"</span>;</td></tr>
   <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Pasatiempo.php"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/PASATIEMPO.php"</span>;</td></tr>
   <tr><td>6</td><td></td></tr>
-  <tr><td>7</td><td><span class="codeComment">/** <span class="codeReserved">@return</span> Pasatiempo[] */</span></td></tr>
-  <tr><td>8</td><td><span class="codeReserved">function</span> pasatiempoConsultaNoEliminados()</td></tr>
-  <tr><td>9</td><td>{</td></tr>
-  <tr><td>10</td><td> $conexion = Bd::getConexion();</td></tr>
-  <tr><td>11</td><td></td></tr>
-  <tr><td>12</td><td> <span class="codeReserved">return</span> fetchAll(</td></tr>
-  <tr><td>13</td><td>  $conexion-&gt;query(</td></tr>
-  <tr><td>14</td><td>   <span class="codeString">"<span class="codeReserved">SELECT</span></span></td></tr>
-  <tr><td>15</td><td><span class="codeString">    PAS_UUID <span class="codeReserved">AS</span> uuid,</span></td></tr>
-  <tr><td>16</td><td><span class="codeString">    PAS_NOMBRE <span class="codeReserved">AS</span> nombre,</span></td></tr>
-  <tr><td>17</td><td><span class="codeString">    PAS_MODIFICACION <span class="codeReserved">AS</span> modificacion,</span></td></tr>
-  <tr><td>18</td><td><span class="codeString">    PAS_ELIMINADO <span class="codeReserved">AS</span> eliminado</span></td></tr>
-  <tr><td>19</td><td><span class="codeString">   <span class="codeReserved">FROM</span> PASATIEMPO</span></td></tr>
-  <tr><td>20</td><td><span class="codeString">   <span class="codeReserved">WHERE</span> PAS_ELIMINADO = 0</span></td></tr>
-  <tr><td>21</td><td><span class="codeString">   <span class="codeReserved">ORDER</span> <span class="codeReserved">BY</span> PAS_NOMBRE"</span></td></tr>
-  <tr><td>22</td><td>  ),</td></tr>
-  <tr><td>23</td><td>  [],</td></tr>
-  <tr><td>24</td><td>  PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,</td></tr>
-  <tr><td>25</td><td>  Pasatiempo::<span class="codeReserved">class</span></td></tr>
-  <tr><td>26</td><td> );</td></tr>
-  <tr><td>27</td><td>}</td></tr>
-  <tr><td>28</td><td></td></tr>
+  <tr><td>7</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> * <span class="codeReserved">@return</span> array{</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> *   PAS_ID: string,</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> *   PAS_NOMBRE: string,</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment"> *   PAS_MODIFICACION: <span class="codeReserved">int</span>,</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment"> *   PAS_ELIMINADO: <span class="codeReserved">int</span></span></td></tr>
+  <tr><td>13</td><td><span class="codeComment"> *  }[]</span></td></tr>
+  <tr><td>14</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>15</td><td><span class="codeReserved">function</span> pasatiempoConsultaNoEliminados()</td></tr>
+  <tr><td>16</td><td>{</td></tr>
+  <tr><td>17</td><td> <span class="codeReserved">return</span> select(</td></tr>
+  <tr><td>18</td><td>  pdo: Bd::pdo(),</td></tr>
+  <tr><td>19</td><td>  <span class="codeReserved">from</span>: PASATIEMPO,</td></tr>
+  <tr><td>20</td><td>  where: [PAS_ELIMINADO =&gt; 0],</td></tr>
+  <tr><td>21</td><td>  orderBy: PAS_NOMBRE</td></tr>
+  <tr><td>22</td><td> );</td></tr>
+  <tr><td>23</td><td>}</td></tr>
+  <tr><td>24</td><td></td></tr>
  </tbody>
 </table>

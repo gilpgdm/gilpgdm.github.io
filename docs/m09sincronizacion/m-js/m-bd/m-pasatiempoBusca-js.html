@@ -829,56 +829,48 @@
  </caption>
  <tbody>
   <tr><td>1</td><td><span class="codeReserved">import</span> { bdConsulta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdConsulta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { recuperaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/recuperaPasatiempo.js"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/Pasatiempo.js"</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">import</span> { Bd, NOMBRE_DEL_ALMACEN_PASATIEMPO } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/exportaAHtml.js"</span></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">import</span> { validaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/validaPasatiempo.js"</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
   <tr><td>5</td><td></td></tr>
   <tr><td>6</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string | <span class="codeReserved">null</span> } uuid</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {string} id</span></td></tr>
   <tr><td>8</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoBusca(uuid) {</td></tr>
+  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoBusca(id) {</td></tr>
   <tr><td>10</td><td></td></tr>
-  <tr><td>11</td><td> <span class="codeReserved">if</span> (uuid === <span class="codeReserved">null</span>)</td></tr>
-  <tr><td>12</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Falta el uuid"</span>)</td></tr>
-  <tr><td>13</td><td></td></tr>
-  <tr><td>14</td><td> <span class="codeReserved">return</span> bdConsulta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
-  <tr><td>15</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>16</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> { IDBTransaction } transaccion </span></td></tr>
-  <tr><td>17</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> { (resultado: Pasatiempo|undefined) =&gt; any } resolve </span></td></tr>
-  <tr><td>18</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>19</td><td>  (transaccion, resolve) =&gt; {</td></tr>
-  <tr><td>20</td><td></td></tr>
-  <tr><td>21</td><td>   <span class="codeComment">/* Pide el primer registro de almacén pasatiempo que tenga como</span></td></tr>
-  <tr><td>22</td><td><span class="codeComment">    * llave primaria el valor del parámetro uuid. */</span></td></tr>
-  <tr><td>23</td><td>   <span class="codeReserved">const</span> consulta =</td></tr>
-  <tr><td>24</td><td>    transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO).get(uuid)</td></tr>
-  <tr><td>25</td><td></td></tr>
-  <tr><td>26</td><td>   <span class="codeComment">/* onsuccess se invoca solo una vez, devolviendo el registro</span></td></tr>
-  <tr><td>27</td><td><span class="codeComment">   * solicitado. */</span></td></tr>
-  <tr><td>28</td><td>   consulta.onsuccess = () =&gt; {</td></tr>
-  <tr><td>29</td><td></td></tr>
-  <tr><td>30</td><td>    <span class="codeComment">/* Se recupera el registro solicitado usando</span></td></tr>
-  <tr><td>31</td><td><span class="codeComment">     *  consulta.result</span></td></tr>
-  <tr><td>32</td><td><span class="codeComment">     * Si el registro no se encuentra se recupera undefined. */</span></td></tr>
-  <tr><td>33</td><td>    <span class="codeReserved">const</span> objeto = consulta.result</td></tr>
-  <tr><td>34</td><td></td></tr>
-  <tr><td>35</td><td>    <span class="codeReserved">if</span> (objeto !== undefined) {</td></tr>
-  <tr><td>36</td><td>     <span class="codeReserved">const</span> modelo = recuperaPasatiempo(objeto)</td></tr>
-  <tr><td>37</td><td>     <span class="codeReserved">if</span> (!modelo.eliminado) {</td></tr>
-  <tr><td>38</td><td>      resolve(modelo)</td></tr>
-  <tr><td>39</td><td>     }</td></tr>
-  <tr><td>40</td><td>    }</td></tr>
-  <tr><td>41</td><td></td></tr>
-  <tr><td>42</td><td>    resolve(undefined)</td></tr>
-  <tr><td>43</td><td></td></tr>
-  <tr><td>44</td><td>   }</td></tr>
-  <tr><td>45</td><td></td></tr>
-  <tr><td>46</td><td>  })</td></tr>
-  <tr><td>47</td><td></td></tr>
-  <tr><td>48</td><td>}</td></tr>
-  <tr><td>49</td><td></td></tr>
-  <tr><td>50</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
-  <tr><td>51</td><td>window[<span class="codeString">"pasatiempoBusca"</span>] = pasatiempoBusca</td></tr>
+  <tr><td>11</td><td> <span class="codeReserved">return</span> bdConsulta(Bd, [ALMACEN_PASATIEMPO],</td></tr>
+  <tr><td>12</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>13</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> {(resultado: <span class="codeReserved">import</span>(&quot;../modelo/PASATIEMPO.js&quot;).PASATIEMPO|undefined)</span></td></tr>
+  <tr><td>14</td><td><span class="codeComment">   *                                                            =&gt; any} resolve </span></td></tr>
+  <tr><td>15</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>16</td><td>  (transaccion, resolve) =&gt; {</td></tr>
+  <tr><td>17</td><td></td></tr>
+  <tr><td>18</td><td>   <span class="codeComment">/* Pide el primer objeto de ALMACEN_PASATIEMPO que tenga como llave</span></td></tr>
+  <tr><td>19</td><td><span class="codeComment">    * primaria el valor del parámetro id. */</span></td></tr>
+  <tr><td>20</td><td>   <span class="codeReserved">const</span> consulta = transaccion.objectStore(ALMACEN_PASATIEMPO).get(id)</td></tr>
+  <tr><td>21</td><td></td></tr>
+  <tr><td>22</td><td>   <span class="codeComment">// onsuccess se invoca solo una vez, devolviendo el objeto solicitado.</span></td></tr>
+  <tr><td>23</td><td>   consulta.onsuccess = () =&gt; {</td></tr>
+  <tr><td>24</td><td>    <span class="codeComment">/* Se recupera el objeto solicitado usando</span></td></tr>
+  <tr><td>25</td><td><span class="codeComment">     *  consulta.result</span></td></tr>
+  <tr><td>26</td><td><span class="codeComment">     * Si el objeto no se encuentra se recupera undefined. */</span></td></tr>
+  <tr><td>27</td><td>    <span class="codeReserved">const</span> objeto = consulta.result</td></tr>
+  <tr><td>28</td><td>    <span class="codeReserved">if</span> (objeto !== undefined) {</td></tr>
+  <tr><td>29</td><td>     <span class="codeReserved">const</span> modelo = validaPasatiempo(objeto)</td></tr>
+  <tr><td>30</td><td>     <span class="codeReserved">if</span> (modelo.PAS_ELIMINADO === 0) {</td></tr>
+  <tr><td>31</td><td>      resolve(modelo)</td></tr>
+  <tr><td>32</td><td>      <span class="codeReserved">return</span></td></tr>
+  <tr><td>33</td><td>     }</td></tr>
+  <tr><td>34</td><td>    }</td></tr>
+  <tr><td>35</td><td>    resolve(undefined)</td></tr>
+  <tr><td>36</td><td></td></tr>
+  <tr><td>37</td><td>   }</td></tr>
+  <tr><td>38</td><td></td></tr>
+  <tr><td>39</td><td>  })</td></tr>
+  <tr><td>40</td><td></td></tr>
+  <tr><td>41</td><td>}</td></tr>
+  <tr><td>42</td><td></td></tr>
+  <tr><td>43</td><td>exportaAHtml(pasatiempoBusca)</td></tr>
  </tbody>
 </table>
  <footer>
@@ -934,13 +926,13 @@
    </p>
    
      <p>
-      <a class="paginaAnterior" href="/m09sincronizacion/m-js/m-configura-js.html"
-        title="A. js / configura.js"><span
+      <a class="paginaAnterior" href="/m09sincronizacion/m-js/m-sincroniza-js.html"
+        title="D. js / sincroniza.js"><span
         class="material-symbols-outlined">
          arrow_upward
         </span></a>
      </p>
-   <h1><a href="/m09sincronizacion/m-js/m-bd/index.html">B. Carpeta « js / bd »</a></h1>
+   <h1><a href="/m09sincronizacion/m-js/m-bd/index.html">E. Carpeta « js / bd »</a></h1>
    
    <ol type="1">
     
@@ -988,7 +980,7 @@
    
     <p>
      <a class="paginaSiguiente" href="/m09sincronizacion/m-js/m-modelo/index.html"
-       title="C. Carpeta « js / modelo »"><span
+       title="F. Carpeta « js / modelo »"><span
        class="material-symbols-outlined">
         arrow_downward
        </span></a>

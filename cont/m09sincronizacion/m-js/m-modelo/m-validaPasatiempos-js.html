@@ -1,0 +1,30 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { validaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"./validaPasatiempo.js"</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { any } objetos</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> * <span class="codeReserved">@returns</span> {<span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO[]}</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaPasatiempos(objetos) {</td></tr>
+  <tr><td>8</td><td> <span class="codeReserved">if</span> (!Array.isArray(objetos))</td></tr>
+  <tr><td>9</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"no se recibió un arreglo."</span>)</td></tr>
+  <tr><td>10</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment">  * <span class="codeReserved">@type</span> {<span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO[]}</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">const</span> arreglo = []</td></tr>
+  <tr><td>14</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> objeto of objetos) {</td></tr>
+  <tr><td>15</td><td>  arreglo.push(validaPasatiempo(objeto))</td></tr>
+  <tr><td>16</td><td> }</td></tr>
+  <tr><td>17</td><td> <span class="codeReserved">return</span> arreglo</td></tr>
+  <tr><td>18</td><td>}</td></tr>
+ </tbody>
+</table>

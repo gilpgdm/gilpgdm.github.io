@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>H. srv / suscripcionElimina.php - GilPG DM</title>
+ <title>G. srv / suscripcionElimina.php - GilPG DM</title>
  <meta name="description" content="Código de «srv/suscripcionElimina.php».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -818,7 +818,7 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >H. srv / suscripcionElimina.php</h1><table class="codeShow">
+   <h1 >G. srv / suscripcionElimina.php</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -830,18 +830,14 @@
  <tbody>
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>4</td><td></td></tr>
-  <tr><td>5</td><td><span class="codeReserved">function</span> suscripcionElimina(string $endpoint)</td></tr>
-  <tr><td>6</td><td>{</td></tr>
-  <tr><td>7</td><td> $con = Bd::getConexion();</td></tr>
-  <tr><td>8</td><td> $stmt = $con-&gt;prepare(</td></tr>
-  <tr><td>9</td><td>  <span class="codeString">"<span class="codeReserved">DELETE</span> <span class="codeReserved">FROM</span> SUSCRIPCION</span></td></tr>
-  <tr><td>10</td><td><span class="codeString">   <span class="codeReserved">WHERE</span> SUS_ENDPOINT = :endpoint"</span></td></tr>
-  <tr><td>11</td><td> );</td></tr>
-  <tr><td>12</td><td> $stmt-&gt;execute([<span class="codeString">":endpoint"</span> =&gt; $endpoint]);</td></tr>
-  <tr><td>13</td><td>}</td></tr>
-  <tr><td>14</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/delete.php"</span>;</td></tr>
+  <tr><td>4</td><td><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td><span class="codeReserved">function</span> suscripcionElimina(PDO $pdo,string $endpoint)</td></tr>
+  <tr><td>7</td><td>{</td></tr>
+  <tr><td>8</td><td> delete(pdo: $pdo, <span class="codeReserved">from</span>: SUSCRIPCION, where: [SUS_ENDPOINT =&gt; $endpoint]);</td></tr>
+  <tr><td>9</td><td>}</td></tr>
+  <tr><td>10</td><td></td></tr>
  </tbody>
 </table>
  <footer>
@@ -869,10 +865,10 @@
    menu
   </span>
  </button>
- <a class="anterior" href="/m08push/m-srv/m-suscripcionConsulta-php.html" title="G. srv / suscripcionConsulta.php"><span class="material-symbols-outlined">
+ <a class="anterior" href="/m08push/m-srv/m-Suscripcion-php.html" title="F. srv / Suscripcion.php"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
- <a class="siguiente" href="/m08push/m-srv/m-suscripcionRecupera-php.html" title="I. srv / suscripcionRecupera.php"><span class="material-symbols-outlined">
+ <a class="siguiente" href="/m08push/m-srv/m-suscripcionRecupera-php.html" title="H. srv / suscripcionRecupera.php"><span class="material-symbols-outlined">
      skip_next
      </span></a>
 </div>
@@ -936,11 +932,6 @@
    </li>
    <li>
     <p>
-     <a href="/m08push/m-srv/m-suscripcionConsulta-php.html">srv / suscripcionConsulta.php</a>
-    </p>
-   </li>
-   <li>
-    <p>
      <a href="/m08push/m-srv/m-suscripcionElimina-php.html" class="actual">srv / suscripcionElimina.php</a>
     </p>
    </li>
@@ -970,7 +961,7 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m08push/m-srv/m-suscripcionConsulta-php.html"
+ let urlAnterior = "/m08push/m-srv/m-Suscripcion-php.html"
  /**@type {string} */
  let urlSiguiente = "/m08push/m-srv/m-suscripcionRecupera-php.html"
  /**@type {number|null} */

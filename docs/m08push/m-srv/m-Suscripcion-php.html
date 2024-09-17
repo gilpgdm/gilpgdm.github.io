@@ -832,49 +832,55 @@
   <tr><td>2</td><td></td></tr>
   <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../vendor/autoload.php"</span>;</td></tr>
   <tr><td>4</td><td></td></tr>
-  <tr><td>5</td><td>use Minishlink\WebPush\SubscriptionInterface;</td></tr>
-  <tr><td>6</td><td></td></tr>
-  <tr><td>7</td><td><span class="codeReserved">class</span> Suscripcion implements SubscriptionInterface</td></tr>
-  <tr><td>8</td><td>{</td></tr>
-  <tr><td>9</td><td></td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">public</span> string $endpoint;</td></tr>
-  <tr><td>11</td><td> <span class="codeReserved">public</span> string $publicKey;</td></tr>
-  <tr><td>12</td><td> <span class="codeReserved">public</span> string $authToken;</td></tr>
-  <tr><td>13</td><td> <span class="codeReserved">public</span> string $contentEncoding;</td></tr>
-  <tr><td>14</td><td></td></tr>
-  <tr><td>15</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> <span class="codeReserved">__construct</span>(</td></tr>
-  <tr><td>16</td><td>  string $endpoint = <span class="codeString">""</span>,</td></tr>
-  <tr><td>17</td><td>  string $publicKey = <span class="codeString">""</span>,</td></tr>
-  <tr><td>18</td><td>  string $authToken = <span class="codeString">""</span>,</td></tr>
-  <tr><td>19</td><td>  string $contentEncoding = <span class="codeString">""</span></td></tr>
-  <tr><td>20</td><td> ) {</td></tr>
-  <tr><td>21</td><td>  $this-&gt;endpoint = $endpoint;</td></tr>
-  <tr><td>22</td><td>  $this-&gt;publicKey = $publicKey;</td></tr>
-  <tr><td>23</td><td>  $this-&gt;authToken = $authToken;</td></tr>
-  <tr><td>24</td><td>  $this-&gt;contentEncoding = $contentEncoding;</td></tr>
-  <tr><td>25</td><td> }</td></tr>
-  <tr><td>26</td><td></td></tr>
-  <tr><td>27</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> getEndpoint(): string</td></tr>
-  <tr><td>28</td><td> {</td></tr>
-  <tr><td>29</td><td>  <span class="codeReserved">return</span> $this-&gt;endpoint;</td></tr>
-  <tr><td>30</td><td> }</td></tr>
-  <tr><td>31</td><td></td></tr>
-  <tr><td>32</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> getPublicKey(): ?string</td></tr>
-  <tr><td>33</td><td> {</td></tr>
-  <tr><td>34</td><td>  <span class="codeReserved">return</span> $this-&gt;publicKey;</td></tr>
-  <tr><td>35</td><td> }</td></tr>
-  <tr><td>36</td><td></td></tr>
-  <tr><td>37</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> getAuthToken(): ?string</td></tr>
-  <tr><td>38</td><td> {</td></tr>
-  <tr><td>39</td><td>  <span class="codeReserved">return</span> $this-&gt;authToken;</td></tr>
-  <tr><td>40</td><td> }</td></tr>
-  <tr><td>41</td><td></td></tr>
-  <tr><td>42</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> getContentEncoding(): ?string</td></tr>
-  <tr><td>43</td><td> {</td></tr>
-  <tr><td>44</td><td>  <span class="codeReserved">return</span> $this-&gt;contentEncoding;</td></tr>
-  <tr><td>45</td><td> }</td></tr>
-  <tr><td>46</td><td>}</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">const</span> SUSCRIPCION = <span class="codeString">"SUSCRIPCION"</span>;</td></tr>
+  <tr><td>6</td><td><span class="codeReserved">const</span> SUS_ENDPOINT = <span class="codeString">"SUS_ENDPOINT"</span>;</td></tr>
+  <tr><td>7</td><td><span class="codeReserved">const</span> SUS_PUB_KEY = <span class="codeString">"SUS_PUB_KEY"</span>;</td></tr>
+  <tr><td>8</td><td><span class="codeReserved">const</span> SUS_AUT_TOK = <span class="codeString">"SUS_AUT_TOK"</span>;</td></tr>
+  <tr><td>9</td><td><span class="codeReserved">const</span> SUS_CONT_ENCOD = <span class="codeString">"SUS_CONT_ENCOD"</span>;</td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td>use Minishlink\WebPush\SubscriptionInterface;</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td><span class="codeReserved">class</span> Suscripcion implements SubscriptionInterface</td></tr>
+  <tr><td>14</td><td>{</td></tr>
+  <tr><td>15</td><td></td></tr>
+  <tr><td>16</td><td> <span class="codeReserved">public</span> string $SUS_ENDPOINT;</td></tr>
+  <tr><td>17</td><td> <span class="codeReserved">public</span> string $SUS_PUB_KEY;</td></tr>
+  <tr><td>18</td><td> <span class="codeReserved">public</span> string $SUS_AUT_TOK;</td></tr>
+  <tr><td>19</td><td> <span class="codeReserved">public</span> string $SUS_CONT_ENCOD;</td></tr>
+  <tr><td>20</td><td></td></tr>
+  <tr><td>21</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> <span class="codeReserved">__construct</span>(</td></tr>
+  <tr><td>22</td><td>  string $SUS_ENDPOINT = <span class="codeString">""</span>,</td></tr>
+  <tr><td>23</td><td>  string $SUS_PUB_KEY = <span class="codeString">""</span>,</td></tr>
+  <tr><td>24</td><td>  string $SUS_AUT_TOK = <span class="codeString">""</span>,</td></tr>
+  <tr><td>25</td><td>  string $SUS_CONT_ENCOD = <span class="codeString">""</span></td></tr>
+  <tr><td>26</td><td> ) {</td></tr>
+  <tr><td>27</td><td>  $this-&gt;SUS_ENDPOINT = $SUS_ENDPOINT;</td></tr>
+  <tr><td>28</td><td>  $this-&gt;SUS_PUB_KEY = $SUS_PUB_KEY;</td></tr>
+  <tr><td>29</td><td>  $this-&gt;SUS_AUT_TOK = $SUS_AUT_TOK;</td></tr>
+  <tr><td>30</td><td>  $this-&gt;SUS_CONT_ENCOD = $SUS_CONT_ENCOD;</td></tr>
+  <tr><td>31</td><td> }</td></tr>
+  <tr><td>32</td><td></td></tr>
+  <tr><td>33</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> getEndpoint(): string</td></tr>
+  <tr><td>34</td><td> {</td></tr>
+  <tr><td>35</td><td>  <span class="codeReserved">return</span> $this-&gt;SUS_ENDPOINT;</td></tr>
+  <tr><td>36</td><td> }</td></tr>
+  <tr><td>37</td><td></td></tr>
+  <tr><td>38</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> getPublicKey(): ?string</td></tr>
+  <tr><td>39</td><td> {</td></tr>
+  <tr><td>40</td><td>  <span class="codeReserved">return</span> $this-&gt;SUS_PUB_KEY;</td></tr>
+  <tr><td>41</td><td> }</td></tr>
+  <tr><td>42</td><td></td></tr>
+  <tr><td>43</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> getAuthToken(): ?string</td></tr>
+  <tr><td>44</td><td> {</td></tr>
+  <tr><td>45</td><td>  <span class="codeReserved">return</span> $this-&gt;SUS_AUT_TOK;</td></tr>
+  <tr><td>46</td><td> }</td></tr>
   <tr><td>47</td><td></td></tr>
+  <tr><td>48</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> getContentEncoding(): ?string</td></tr>
+  <tr><td>49</td><td> {</td></tr>
+  <tr><td>50</td><td>  <span class="codeReserved">return</span> $this-&gt;SUS_CONT_ENCOD;</td></tr>
+  <tr><td>51</td><td> }</td></tr>
+  <tr><td>52</td><td>}</td></tr>
+  <tr><td>53</td><td></td></tr>
  </tbody>
 </table>
  <footer>
@@ -905,7 +911,7 @@
  <a class="anterior" href="/m08push/m-srv/m-suscripcion-modifica-php.html" title="E. srv / suscripcion-modifica.php"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
- <a class="siguiente" href="/m08push/m-srv/m-suscripcionConsulta-php.html" title="G. srv / suscripcionConsulta.php"><span class="material-symbols-outlined">
+ <a class="siguiente" href="/m08push/m-srv/m-suscripcionElimina-php.html" title="G. srv / suscripcionElimina.php"><span class="material-symbols-outlined">
      skip_next
      </span></a>
 </div>
@@ -969,11 +975,6 @@
    </li>
    <li>
     <p>
-     <a href="/m08push/m-srv/m-suscripcionConsulta-php.html">srv / suscripcionConsulta.php</a>
-    </p>
-   </li>
-   <li>
-    <p>
      <a href="/m08push/m-srv/m-suscripcionElimina-php.html">srv / suscripcionElimina.php</a>
     </p>
    </li>
@@ -1005,7 +1006,7 @@
  /**@type {string} */
  let urlAnterior = "/m08push/m-srv/m-suscripcion-modifica-php.html"
  /**@type {string} */
- let urlSiguiente = "/m08push/m-srv/m-suscripcionConsulta-php.html"
+ let urlSiguiente = "/m08push/m-srv/m-suscripcionElimina-php.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>1. srv / modelo / Pasatiempo.php - GilPG DM</title>
- <meta name="description" content="Código de «srv/modelo/Pasatiempo.php».">
+ <title>1. srv / modelo / PASATIEMPO.php - GilPG DM</title>
+ <meta name="description" content="Código de «srv/modelo/PASATIEMPO.php».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
@@ -818,7 +818,7 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >1. srv / modelo / Pasatiempo.php</h1><table class="codeShow">
+   <h1 >1. srv / modelo / PASATIEMPO.php</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -830,34 +830,12 @@
  <tbody>
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">class</span> Pasatiempo</td></tr>
-  <tr><td>4</td><td>{</td></tr>
-  <tr><td>5</td><td> <span class="codeReserved">public</span> string $uuid;</td></tr>
-  <tr><td>6</td><td> <span class="codeReserved">public</span> string $nombre;</td></tr>
-  <tr><td>7</td><td> <span class="codeReserved">public</span> <span class="codeReserved">int</span> $modificacion;</td></tr>
-  <tr><td>8</td><td> <span class="codeReserved">public</span> <span class="codeReserved">bool</span> $eliminado;</td></tr>
-  <tr><td>9</td><td></td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> <span class="codeReserved">__construct</span>(</td></tr>
-  <tr><td>11</td><td>  string $nombre = <span class="codeString">""</span>,</td></tr>
-  <tr><td>12</td><td>  string $uuid = <span class="codeString">""</span>,</td></tr>
-  <tr><td>13</td><td>  <span class="codeReserved">int</span> $modificacion = 0,</td></tr>
-  <tr><td>14</td><td>  <span class="codeReserved">bool</span> $eliminado = <span class="codeReserved">true</span></td></tr>
-  <tr><td>15</td><td> ) {</td></tr>
-  <tr><td>16</td><td>  $this-&gt;nombre = $nombre;</td></tr>
-  <tr><td>17</td><td>  $this-&gt;uuid = $uuid;</td></tr>
-  <tr><td>18</td><td>  $this-&gt;modificacion = $modificacion;</td></tr>
-  <tr><td>19</td><td>  $this-&gt;eliminado = $eliminado;</td></tr>
-  <tr><td>20</td><td> }</td></tr>
-  <tr><td>21</td><td></td></tr>
-  <tr><td>22</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> valida()</td></tr>
-  <tr><td>23</td><td> {</td></tr>
-  <tr><td>24</td><td>  <span class="codeReserved">if</span> ($this-&gt;uuid === <span class="codeString">""</span>)</td></tr>
-  <tr><td>25</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Exception(<span class="codeString">"Falta el uuid."</span>);</td></tr>
-  <tr><td>26</td><td>  <span class="codeReserved">if</span> ($this-&gt;nombre === <span class="codeString">""</span>)</td></tr>
-  <tr><td>27</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Exception(<span class="codeString">"Falta el nombre."</span>);</td></tr>
-  <tr><td>28</td><td> }</td></tr>
-  <tr><td>29</td><td>}</td></tr>
-  <tr><td>30</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">const</span> PASATIEMPO = <span class="codeString">"PASATIEMPO"</span>;</td></tr>
+  <tr><td>4</td><td><span class="codeReserved">const</span> PAS_ID = <span class="codeString">"PAS_ID"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">const</span> PAS_NOMBRE = <span class="codeString">"PAS_NOMBRE"</span>;</td></tr>
+  <tr><td>6</td><td><span class="codeReserved">const</span> PAS_MODIFICACION = <span class="codeString">"PAS_MODIFICACION"</span>;</td></tr>
+  <tr><td>7</td><td><span class="codeReserved">const</span> PAS_ELIMINADO = <span class="codeString">"PAS_ELIMINADO"</span>;</td></tr>
+  <tr><td>8</td><td></td></tr>
  </tbody>
 </table>
  <footer>
@@ -888,7 +866,7 @@
  <a class="anterior" href="/m09sincronizacion/m-srv/m-modelo/index.html" title="C. Carpeta « srv / modelo »"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
- <a class="siguiente" href="/m09sincronizacion/m-srv/m-modelo/m-recuperaPasatiempo-php.html" title="2. srv / modelo / recuperaPasatiempo.php"><span class="material-symbols-outlined">
+ <a class="siguiente" href="/m09sincronizacion/m-srv/m-modelo/m-validaId-php.html" title="2. srv / modelo / validaId.php"><span class="material-symbols-outlined">
      skip_next
      </span></a>
 </div>
@@ -925,12 +903,17 @@
     
    <li>
     <p>
-     <a href="/m09sincronizacion/m-srv/m-modelo/m-Pasatiempo-php.html" class="actual">srv / modelo / Pasatiempo.php</a>
+     <a href="/m09sincronizacion/m-srv/m-modelo/m-PASATIEMPO-php.html" class="actual">srv / modelo / PASATIEMPO.php</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-srv/m-modelo/m-recuperaPasatiempo-php.html">srv / modelo / recuperaPasatiempo.php</a>
+     <a href="/m09sincronizacion/m-srv/m-modelo/m-validaId-php.html">srv / modelo / validaId.php</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-srv/m-modelo/m-validaPasatiempo-php.html">srv / modelo / validaPasatiempo.php</a>
     </p>
    </li>
    </ol>
@@ -956,7 +939,7 @@
  /**@type {string} */
  let urlAnterior = "/m09sincronizacion/m-srv/m-modelo/index.html"
  /**@type {string} */
- let urlSiguiente = "/m09sincronizacion/m-srv/m-modelo/m-recuperaPasatiempo-php.html"
+ let urlSiguiente = "/m09sincronizacion/m-srv/m-modelo/m-validaId-php.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

@@ -828,43 +828,45 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> NOMBRE_DEL_ALMACEN_PASATIEMPO = <span class="codeString">"Pasatiempo"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> NOMBRE_DEL_INDICE_NOMBRE = <span class="codeString">"nombre"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">const</span> BD_NOMBRE = <span class="codeString">"sincronizacion"</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">const</span> BD_VERSION = 1</td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeComment">/** <span class="codeReserved">@type</span> { Promise&lt;IDBDatabase&gt; } */</span></td></tr>
-  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> Bd = <span class="codeReserved">new</span> Promise((resolve, reject) =&gt; {</td></tr>
-  <tr><td>8</td><td></td></tr>
-  <tr><td>9</td><td> <span class="codeComment">/* Se solicita abrir la base de datos, indicando nombre y</span></td></tr>
-  <tr><td>10</td><td><span class="codeComment">  * número de versión. */</span></td></tr>
-  <tr><td>11</td><td> <span class="codeReserved">const</span> solicitud = indexedDB.open(BD_NOMBRE, BD_VERSION)</td></tr>
-  <tr><td>12</td><td></td></tr>
-  <tr><td>13</td><td> <span class="codeComment">// Si se presenta un error, rechaza la promesa.</span></td></tr>
-  <tr><td>14</td><td> solicitud.onerror = () =&gt; reject(solicitud.error)</td></tr>
-  <tr><td>15</td><td></td></tr>
-  <tr><td>16</td><td> <span class="codeComment">// Si se abre con éxito, devuelve una conexión a la base de datos.</span></td></tr>
-  <tr><td>17</td><td> solicitud.onsuccess = () =&gt; resolve(solicitud.result)</td></tr>
-  <tr><td>18</td><td></td></tr>
-  <tr><td>19</td><td> <span class="codeComment">// Si es necesario, se inicia una transacción para cambio de versión.</span></td></tr>
-  <tr><td>20</td><td> solicitud.onupgradeneeded = () =&gt; {</td></tr>
-  <tr><td>21</td><td></td></tr>
-  <tr><td>22</td><td>  <span class="codeReserved">const</span> bd = solicitud.result</td></tr>
+  <tr><td>1</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> ALMACEN_PASATIEMPO = <span class="codeString">"PASATIEMPO"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> PAS_ID = <span class="codeString">"PAS_ID"</span></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> INDICE_NOMBRE = <span class="codeString">"INDICE_NOMBRE"</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> PAS_NOMBRE = <span class="codeString">"PAS_NOMBRE"</span></td></tr>
+  <tr><td>5</td><td><span class="codeReserved">const</span> BD_NOMBRE = <span class="codeString">"sincronizacion"</span></td></tr>
+  <tr><td>6</td><td><span class="codeReserved">const</span> BD_VERSION = 1</td></tr>
+  <tr><td>7</td><td></td></tr>
+  <tr><td>8</td><td><span class="codeComment">/** <span class="codeReserved">@type</span> { Promise&lt;IDBDatabase&gt; } */</span></td></tr>
+  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> Bd = <span class="codeReserved">new</span> Promise((resolve, reject) =&gt; {</td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td> <span class="codeComment">/* Se solicita abrir la base de datos, indicando nombre y</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment">  * número de versión. */</span></td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">const</span> solicitud = indexedDB.open(BD_NOMBRE, BD_VERSION)</td></tr>
+  <tr><td>14</td><td></td></tr>
+  <tr><td>15</td><td> <span class="codeComment">// Si se presenta un error, rechaza la promesa.</span></td></tr>
+  <tr><td>16</td><td> solicitud.onerror = () =&gt; reject(solicitud.error)</td></tr>
+  <tr><td>17</td><td></td></tr>
+  <tr><td>18</td><td> <span class="codeComment">// Si se abre con éxito, devuelve una conexión a la base de datos.</span></td></tr>
+  <tr><td>19</td><td> solicitud.onsuccess = () =&gt; resolve(solicitud.result)</td></tr>
+  <tr><td>20</td><td></td></tr>
+  <tr><td>21</td><td> <span class="codeComment">// Si es necesario, se inicia una transacción para cambio de versión.</span></td></tr>
+  <tr><td>22</td><td> solicitud.onupgradeneeded = () =&gt; {</td></tr>
   <tr><td>23</td><td></td></tr>
-  <tr><td>24</td><td>  <span class="codeComment">// Como hay cambio de versión, borra el almacén si es que existe.</span></td></tr>
-  <tr><td>25</td><td>  <span class="codeReserved">if</span> (bd.objectStoreNames.contains(NOMBRE_DEL_ALMACEN_PASATIEMPO)) {</td></tr>
-  <tr><td>26</td><td>   bd.deleteObjectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO)</td></tr>
-  <tr><td>27</td><td>  }</td></tr>
-  <tr><td>28</td><td></td></tr>
-  <tr><td>29</td><td>  <span class="codeComment">// Crea el almacén &quot;Pasatiempo&quot; con el campo llave &quot;uuid&quot;.</span></td></tr>
-  <tr><td>30</td><td>  <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
-  <tr><td>31</td><td>   bd.createObjectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO, { keyPath: <span class="codeString">"uuid"</span> })</td></tr>
-  <tr><td>32</td><td></td></tr>
-  <tr><td>33</td><td>  <span class="codeComment">// Crea un índice ordenado por el campo &quot;nombre&quot; que no acepta duplicados.</span></td></tr>
-  <tr><td>34</td><td>  almacenPasatiempo.createIndex(NOMBRE_DEL_INDICE_NOMBRE, <span class="codeString">"nombre"</span>)</td></tr>
-  <tr><td>35</td><td> }</td></tr>
-  <tr><td>36</td><td></td></tr>
-  <tr><td>37</td><td>})</td></tr>
+  <tr><td>24</td><td>  <span class="codeReserved">const</span> bd = solicitud.result</td></tr>
+  <tr><td>25</td><td></td></tr>
+  <tr><td>26</td><td>  <span class="codeComment">// Como hay cambio de versión, borra el almacén si es que existe.</span></td></tr>
+  <tr><td>27</td><td>  <span class="codeReserved">if</span> (bd.objectStoreNames.contains(ALMACEN_PASATIEMPO)) {</td></tr>
+  <tr><td>28</td><td>   bd.deleteObjectStore(ALMACEN_PASATIEMPO)</td></tr>
+  <tr><td>29</td><td>  }</td></tr>
+  <tr><td>30</td><td></td></tr>
+  <tr><td>31</td><td>  <span class="codeComment">// Crea el almacén &quot;PASATIEMPO&quot; con el campo llave &quot;PAS_ID&quot;.</span></td></tr>
+  <tr><td>32</td><td>  <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
+  <tr><td>33</td><td>   bd.createObjectStore(ALMACEN_PASATIEMPO, { keyPath: PAS_ID })</td></tr>
+  <tr><td>34</td><td></td></tr>
+  <tr><td>35</td><td>  <span class="codeComment">// Crea un índice ordenado por el campo &quot;PAS_NOMBRE&quot; que no acepta duplicados.</span></td></tr>
+  <tr><td>36</td><td>  almacenPasatiempo.createIndex(INDICE_NOMBRE, <span class="codeString">"PAS_NOMBRE"</span>)</td></tr>
+  <tr><td>37</td><td> }</td></tr>
+  <tr><td>38</td><td></td></tr>
+  <tr><td>39</td><td>})</td></tr>
  </tbody>
 </table>
  <footer>
@@ -892,7 +894,7 @@
    menu
   </span>
  </button>
- <a class="anterior" href="/m09sincronizacion/m-js/m-bd/index.html" title="B. Carpeta « js / bd »"><span class="material-symbols-outlined">
+ <a class="anterior" href="/m09sincronizacion/m-js/m-bd/index.html" title="E. Carpeta « js / bd »"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
  <a class="siguiente" href="/m09sincronizacion/m-js/m-bd/m-pasatiempoAgrega-js.html" title="2. js / bd / pasatiempoAgrega.js"><span class="material-symbols-outlined">
@@ -920,13 +922,13 @@
    </p>
    
      <p>
-      <a class="paginaAnterior" href="/m09sincronizacion/m-js/m-configura-js.html"
-        title="A. js / configura.js"><span
+      <a class="paginaAnterior" href="/m09sincronizacion/m-js/m-sincroniza-js.html"
+        title="D. js / sincroniza.js"><span
         class="material-symbols-outlined">
          arrow_upward
         </span></a>
      </p>
-   <h1><a href="/m09sincronizacion/m-js/m-bd/index.html">B. Carpeta « js / bd »</a></h1>
+   <h1><a href="/m09sincronizacion/m-js/m-bd/index.html">E. Carpeta « js / bd »</a></h1>
    
    <ol type="1">
     
@@ -974,7 +976,7 @@
    
     <p>
      <a class="paginaSiguiente" href="/m09sincronizacion/m-js/m-modelo/index.html"
-       title="C. Carpeta « js / modelo »"><span
+       title="F. Carpeta « js / modelo »"><span
        class="material-symbols-outlined">
         arrow_downward
        </span></a>

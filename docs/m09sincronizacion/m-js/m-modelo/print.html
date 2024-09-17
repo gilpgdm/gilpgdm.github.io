@@ -702,7 +702,7 @@
 </head>
 
 <body class="print">
-   <h1 >C. Carpeta « js / modelo »</h1>
+   <h1 >F. Carpeta « js / modelo »</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -718,12 +718,17 @@
     
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-modelo/m-Pasatiempo-js.html">js / modelo / Pasatiempo.js</a>
+     <a href="/m09sincronizacion/m-js/m-modelo/m-PASATIEMPO-js.html">js / modelo / PASATIEMPO.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-modelo/m-recuperaPasatiempo-js.html">js / modelo / recuperaPasatiempo.js</a>
+     <a href="/m09sincronizacion/m-js/m-modelo/m-validaId-js.html">js / modelo / validaId.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-modelo/m-validaNombre-js.html">js / modelo / validaNombre.js</a>
     </p>
    </li>
    <li>
@@ -731,11 +736,16 @@
      <a href="/m09sincronizacion/m-js/m-modelo/m-validaPasatiempo-js.html">js / modelo / validaPasatiempo.js</a>
     </p>
    </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-modelo/m-validaPasatiempos-js.html">js / modelo / validaPasatiempos.js</a>
+    </p>
+   </li>
    </ol>
    </nav>
   </div>
      <section >
-         <h1 >1. js / modelo / Pasatiempo.js</h1><table class="codeShow">
+         <h1 >1. js / modelo / PASATIEMPO.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -745,52 +755,18 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">export</span> <span class="codeReserved">class</span> Pasatiempo {</td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td> <span class="codeComment">/**</span></td></tr>
-  <tr><td>4</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> { {</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment">  *   uuid?: string,</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment">  *   nombre?: string,</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment">  *   modificacion?: number,</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment">  *   eliminado?: boolean,</span></td></tr>
-  <tr><td>9</td><td><span class="codeComment">  * } } modelo</span></td></tr>
-  <tr><td>10</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>11</td><td> <span class="codeReserved">constructor</span>(modelo) {</td></tr>
-  <tr><td>12</td><td>  <span class="codeReserved">this</span>.nombre = modelo.nombre === undefined</td></tr>
-  <tr><td>13</td><td>   ? <span class="codeString">""</span></td></tr>
-  <tr><td>14</td><td>   : modelo.nombre</td></tr>
-  <tr><td>15</td><td>  <span class="codeReserved">this</span>.uuid = modelo.uuid === undefined</td></tr>
-  <tr><td>16</td><td>   ? <span class="codeString">""</span></td></tr>
-  <tr><td>17</td><td>   : modelo.uuid</td></tr>
-  <tr><td>18</td><td>  <span class="codeReserved">this</span>.modificacion = modelo.modificacion === undefined</td></tr>
-  <tr><td>19</td><td>   ? NaN</td></tr>
-  <tr><td>20</td><td>   : modelo.modificacion</td></tr>
-  <tr><td>21</td><td>  <span class="codeReserved">this</span>.eliminado = modelo.eliminado === undefined</td></tr>
-  <tr><td>22</td><td>   ? <span class="codeReserved">true</span></td></tr>
-  <tr><td>23</td><td>   : modelo.eliminado</td></tr>
-  <tr><td>24</td><td> }</td></tr>
-  <tr><td>25</td><td></td></tr>
-  <tr><td>26</td><td> validaNuevo() {</td></tr>
-  <tr><td>27</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.nombre === <span class="codeString">""</span>)</td></tr>
-  <tr><td>28</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Falta el nombre."</span>)</td></tr>
-  <tr><td>29</td><td> }</td></tr>
-  <tr><td>30</td><td></td></tr>
-  <tr><td>31</td><td> valida() {</td></tr>
-  <tr><td>32</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.uuid === <span class="codeString">""</span>)</td></tr>
-  <tr><td>33</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Falta el uuid."</span>)</td></tr>
-  <tr><td>34</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.nombre === <span class="codeString">""</span>)</td></tr>
-  <tr><td>35</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Falta el nombre."</span>)</td></tr>
-  <tr><td>36</td><td> }</td></tr>
-  <tr><td>37</td><td></td></tr>
-  <tr><td>38</td><td>}</td></tr>
-  <tr><td>39</td><td></td></tr>
-  <tr><td>40</td><td><span class="codeComment">// Permite que los eventos de html usen la clase.</span></td></tr>
-  <tr><td>41</td><td>window[<span class="codeString">"Pasatiempo"</span>] = Pasatiempo</td></tr>
+  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * <span class="codeReserved">@typedef</span> {Object} PASATIEMPO</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> * <span class="codeReserved">@property</span> {string} [PAS_ID]</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> * <span class="codeReserved">@property</span> {string} PAS_NOMBRE</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> * <span class="codeReserved">@property</span> {number} [PAS_MODIFICACION]</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> * <span class="codeReserved">@property</span> {number} [PAS_ELIMINADO]</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >2. js / modelo / recuperaPasatiempo.js</h1><table class="codeShow">
+         <h1 >2. js / modelo / validaId.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -800,26 +776,39 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"./Pasatiempo.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> {</td></tr>
-  <tr><td>3</td><td> validaPasatiempo</td></tr>
-  <tr><td>4</td><td>} <span class="codeReserved">from</span> <span class="codeString">"./validaPasatiempo.js"</span></td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeComment">/** <span class="codeReserved">@param</span> { any } objeto */</span></td></tr>
-  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> recuperaPasatiempo(objeto) {</td></tr>
-  <tr><td>8</td><td> <span class="codeReserved">const</span> validado = validaPasatiempo(objeto)</td></tr>
-  <tr><td>9</td><td> <span class="codeReserved">return</span> <span class="codeReserved">new</span> Pasatiempo({</td></tr>
-  <tr><td>10</td><td>  uuid: validado.uuid,</td></tr>
-  <tr><td>11</td><td>  nombre: validado.nombre,</td></tr>
-  <tr><td>12</td><td>  modificacion: validado.modificacion,</td></tr>
-  <tr><td>13</td><td>  eliminado: validado.eliminado,</td></tr>
-  <tr><td>14</td><td> })</td></tr>
-  <tr><td>15</td><td>}</td></tr>
+  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {string} id</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaId(id) {</td></tr>
+  <tr><td>5</td><td>  <span class="codeReserved">if</span> (id === <span class="codeString">""</span>)</td></tr>
+  <tr><td>6</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Falta el id."</span>)</td></tr>
+  <tr><td>7</td><td> }</td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >3. js / modelo / validaPasatiempo.js</h1><table class="codeShow">
+         <h1 >3. js / modelo / validaNombre.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {string} nombre</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaNombre(nombre) {</td></tr>
+  <tr><td>5</td><td> <span class="codeReserved">if</span> (nombre === <span class="codeString">""</span>)</td></tr>
+  <tr><td>6</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Falta el nombre."</span>)</td></tr>
+  <tr><td>7</td><td>}</td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >4. js / modelo / validaPasatiempo.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -831,30 +820,57 @@
  <tbody>
   <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
   <tr><td>2</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { any } objeto</span></td></tr>
-  <tr><td>3</td><td><span class="codeComment"> * <span class="codeReserved">@returns</span> { {</span></td></tr>
-  <tr><td>4</td><td><span class="codeComment"> *   uuid: string,</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> *   nombre: string,</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> *   modificacion: number,</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> *   eliminado: boolean,</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment"> *  } }</span></td></tr>
-  <tr><td>9</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>10</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaPasatiempo(objeto) {</td></tr>
-  <tr><td>11</td><td></td></tr>
-  <tr><td>12</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.uuid !== <span class="codeString">"string"</span>)</td></tr>
-  <tr><td>13</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El uuid debe ser texto."</span>)</td></tr>
-  <tr><td>14</td><td></td></tr>
-  <tr><td>15</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.nombre !== <span class="codeString">"string"</span>)</td></tr>
-  <tr><td>16</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El nombre debe ser texto."</span>)</td></tr>
-  <tr><td>17</td><td></td></tr>
-  <tr><td>18</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.modificacion !== <span class="codeString">"number"</span>)</td></tr>
-  <tr><td>19</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El campo modificacion debe ser número."</span>)</td></tr>
+  <tr><td>3</td><td><span class="codeComment"> * <span class="codeReserved">@returns</span> {<span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO}</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>5</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaPasatiempo(objeto) {</td></tr>
+  <tr><td>6</td><td></td></tr>
+  <tr><td>7</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.PAS_ID !== <span class="codeString">"string"</span>)</td></tr>
+  <tr><td>8</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El id debe ser texto."</span>)</td></tr>
+  <tr><td>9</td><td></td></tr>
+  <tr><td>10</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.PAS_NOMBRE !== <span class="codeString">"string"</span>)</td></tr>
+  <tr><td>11</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El nombre debe ser texto."</span>)</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.PAS_MODIFICACION !== <span class="codeString">"number"</span>)</td></tr>
+  <tr><td>14</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El campo modificacion debe ser número."</span>)</td></tr>
+  <tr><td>15</td><td></td></tr>
+  <tr><td>16</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.PAS_ELIMINADO !== <span class="codeString">"number"</span>)</td></tr>
+  <tr><td>17</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El campo eliminado debe ser número."</span>)</td></tr>
+  <tr><td>18</td><td></td></tr>
+  <tr><td>19</td><td> <span class="codeReserved">return</span> objeto</td></tr>
   <tr><td>20</td><td></td></tr>
-  <tr><td>21</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.eliminado !== <span class="codeString">"boolean"</span>)</td></tr>
-  <tr><td>22</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El campo eliminado debe ser booleano."</span>)</td></tr>
-  <tr><td>23</td><td></td></tr>
-  <tr><td>24</td><td> <span class="codeReserved">return</span> objeto</td></tr>
-  <tr><td>25</td><td></td></tr>
-  <tr><td>26</td><td>}</td></tr>
+  <tr><td>21</td><td>}</td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >5. js / modelo / validaPasatiempos.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { validaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"./validaPasatiempo.js"</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { any } objetos</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> * <span class="codeReserved">@returns</span> {<span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO[]}</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaPasatiempos(objetos) {</td></tr>
+  <tr><td>8</td><td> <span class="codeReserved">if</span> (!Array.isArray(objetos))</td></tr>
+  <tr><td>9</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"no se recibió un arreglo."</span>)</td></tr>
+  <tr><td>10</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment">  * <span class="codeReserved">@type</span> {<span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO[]}</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">const</span> arreglo = []</td></tr>
+  <tr><td>14</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> objeto of objetos) {</td></tr>
+  <tr><td>15</td><td>  arreglo.push(validaPasatiempo(objeto))</td></tr>
+  <tr><td>16</td><td> }</td></tr>
+  <tr><td>17</td><td> <span class="codeReserved">return</span> arreglo</td></tr>
+  <tr><td>18</td><td>}</td></tr>
  </tbody>
 </table>
       </section>

@@ -702,7 +702,7 @@
 </head>
 
 <body class="print">
-   <h1 >B. Carpeta « js / bd »</h1>
+   <h1 >E. Carpeta « js / bd »</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -770,43 +770,45 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> NOMBRE_DEL_ALMACEN_PASATIEMPO = <span class="codeString">"Pasatiempo"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> NOMBRE_DEL_INDICE_NOMBRE = <span class="codeString">"nombre"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">const</span> BD_NOMBRE = <span class="codeString">"sincronizacion"</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">const</span> BD_VERSION = 1</td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeComment">/** <span class="codeReserved">@type</span> { Promise&lt;IDBDatabase&gt; } */</span></td></tr>
-  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> Bd = <span class="codeReserved">new</span> Promise((resolve, reject) =&gt; {</td></tr>
-  <tr><td>8</td><td></td></tr>
-  <tr><td>9</td><td> <span class="codeComment">/* Se solicita abrir la base de datos, indicando nombre y</span></td></tr>
-  <tr><td>10</td><td><span class="codeComment">  * número de versión. */</span></td></tr>
-  <tr><td>11</td><td> <span class="codeReserved">const</span> solicitud = indexedDB.open(BD_NOMBRE, BD_VERSION)</td></tr>
-  <tr><td>12</td><td></td></tr>
-  <tr><td>13</td><td> <span class="codeComment">// Si se presenta un error, rechaza la promesa.</span></td></tr>
-  <tr><td>14</td><td> solicitud.onerror = () =&gt; reject(solicitud.error)</td></tr>
-  <tr><td>15</td><td></td></tr>
-  <tr><td>16</td><td> <span class="codeComment">// Si se abre con éxito, devuelve una conexión a la base de datos.</span></td></tr>
-  <tr><td>17</td><td> solicitud.onsuccess = () =&gt; resolve(solicitud.result)</td></tr>
-  <tr><td>18</td><td></td></tr>
-  <tr><td>19</td><td> <span class="codeComment">// Si es necesario, se inicia una transacción para cambio de versión.</span></td></tr>
-  <tr><td>20</td><td> solicitud.onupgradeneeded = () =&gt; {</td></tr>
-  <tr><td>21</td><td></td></tr>
-  <tr><td>22</td><td>  <span class="codeReserved">const</span> bd = solicitud.result</td></tr>
+  <tr><td>1</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> ALMACEN_PASATIEMPO = <span class="codeString">"PASATIEMPO"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> PAS_ID = <span class="codeString">"PAS_ID"</span></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> INDICE_NOMBRE = <span class="codeString">"INDICE_NOMBRE"</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> PAS_NOMBRE = <span class="codeString">"PAS_NOMBRE"</span></td></tr>
+  <tr><td>5</td><td><span class="codeReserved">const</span> BD_NOMBRE = <span class="codeString">"sincronizacion"</span></td></tr>
+  <tr><td>6</td><td><span class="codeReserved">const</span> BD_VERSION = 1</td></tr>
+  <tr><td>7</td><td></td></tr>
+  <tr><td>8</td><td><span class="codeComment">/** <span class="codeReserved">@type</span> { Promise&lt;IDBDatabase&gt; } */</span></td></tr>
+  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> Bd = <span class="codeReserved">new</span> Promise((resolve, reject) =&gt; {</td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td> <span class="codeComment">/* Se solicita abrir la base de datos, indicando nombre y</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment">  * número de versión. */</span></td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">const</span> solicitud = indexedDB.open(BD_NOMBRE, BD_VERSION)</td></tr>
+  <tr><td>14</td><td></td></tr>
+  <tr><td>15</td><td> <span class="codeComment">// Si se presenta un error, rechaza la promesa.</span></td></tr>
+  <tr><td>16</td><td> solicitud.onerror = () =&gt; reject(solicitud.error)</td></tr>
+  <tr><td>17</td><td></td></tr>
+  <tr><td>18</td><td> <span class="codeComment">// Si se abre con éxito, devuelve una conexión a la base de datos.</span></td></tr>
+  <tr><td>19</td><td> solicitud.onsuccess = () =&gt; resolve(solicitud.result)</td></tr>
+  <tr><td>20</td><td></td></tr>
+  <tr><td>21</td><td> <span class="codeComment">// Si es necesario, se inicia una transacción para cambio de versión.</span></td></tr>
+  <tr><td>22</td><td> solicitud.onupgradeneeded = () =&gt; {</td></tr>
   <tr><td>23</td><td></td></tr>
-  <tr><td>24</td><td>  <span class="codeComment">// Como hay cambio de versión, borra el almacén si es que existe.</span></td></tr>
-  <tr><td>25</td><td>  <span class="codeReserved">if</span> (bd.objectStoreNames.contains(NOMBRE_DEL_ALMACEN_PASATIEMPO)) {</td></tr>
-  <tr><td>26</td><td>   bd.deleteObjectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO)</td></tr>
-  <tr><td>27</td><td>  }</td></tr>
-  <tr><td>28</td><td></td></tr>
-  <tr><td>29</td><td>  <span class="codeComment">// Crea el almacén &quot;Pasatiempo&quot; con el campo llave &quot;uuid&quot;.</span></td></tr>
-  <tr><td>30</td><td>  <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
-  <tr><td>31</td><td>   bd.createObjectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO, { keyPath: <span class="codeString">"uuid"</span> })</td></tr>
-  <tr><td>32</td><td></td></tr>
-  <tr><td>33</td><td>  <span class="codeComment">// Crea un índice ordenado por el campo &quot;nombre&quot; que no acepta duplicados.</span></td></tr>
-  <tr><td>34</td><td>  almacenPasatiempo.createIndex(NOMBRE_DEL_INDICE_NOMBRE, <span class="codeString">"nombre"</span>)</td></tr>
-  <tr><td>35</td><td> }</td></tr>
-  <tr><td>36</td><td></td></tr>
-  <tr><td>37</td><td>})</td></tr>
+  <tr><td>24</td><td>  <span class="codeReserved">const</span> bd = solicitud.result</td></tr>
+  <tr><td>25</td><td></td></tr>
+  <tr><td>26</td><td>  <span class="codeComment">// Como hay cambio de versión, borra el almacén si es que existe.</span></td></tr>
+  <tr><td>27</td><td>  <span class="codeReserved">if</span> (bd.objectStoreNames.contains(ALMACEN_PASATIEMPO)) {</td></tr>
+  <tr><td>28</td><td>   bd.deleteObjectStore(ALMACEN_PASATIEMPO)</td></tr>
+  <tr><td>29</td><td>  }</td></tr>
+  <tr><td>30</td><td></td></tr>
+  <tr><td>31</td><td>  <span class="codeComment">// Crea el almacén &quot;PASATIEMPO&quot; con el campo llave &quot;PAS_ID&quot;.</span></td></tr>
+  <tr><td>32</td><td>  <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
+  <tr><td>33</td><td>   bd.createObjectStore(ALMACEN_PASATIEMPO, { keyPath: PAS_ID })</td></tr>
+  <tr><td>34</td><td></td></tr>
+  <tr><td>35</td><td>  <span class="codeComment">// Crea un índice ordenado por el campo &quot;PAS_NOMBRE&quot; que no acepta duplicados.</span></td></tr>
+  <tr><td>36</td><td>  almacenPasatiempo.createIndex(INDICE_NOMBRE, <span class="codeString">"PAS_NOMBRE"</span>)</td></tr>
+  <tr><td>37</td><td> }</td></tr>
+  <tr><td>38</td><td></td></tr>
+  <tr><td>39</td><td>})</td></tr>
  </tbody>
 </table>
       </section>
@@ -822,33 +824,27 @@
  </caption>
  <tbody>
   <tr><td>1</td><td><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdEjecuta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/Pasatiempo.js"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">import</span> { Bd, NOMBRE_DEL_ALMACEN_PASATIEMPO } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
-  <tr><td>4</td><td></td></tr>
-  <tr><td>5</td><td><span class="codeReserved">let</span> secuencia = 0</td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { creaIdCliente } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/creaIdCliente.js"</span></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">import</span> { validaNombre } <span class="codeReserved">from</span> <span class="codeString">"../modelo/validaNombre.js"</span></td></tr>
+  <tr><td>5</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/exportaAHtml.js"</span></td></tr>
   <tr><td>6</td><td></td></tr>
   <tr><td>7</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { Pasatiempo } modelo</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">import</span>(&quot;../modelo/PASATIEMPO.js&quot;).PASATIEMPO} modelo</span></td></tr>
   <tr><td>9</td><td><span class="codeComment"> */</span></td></tr>
   <tr><td>10</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoAgrega(modelo) {</td></tr>
-  <tr><td>11</td><td> modelo.validaNuevo()</td></tr>
-  <tr><td>12</td><td> modelo.modificacion = Date.now()</td></tr>
-  <tr><td>13</td><td> modelo.eliminado = <span class="codeReserved">false</span></td></tr>
-  <tr><td>14</td><td></td></tr>
-  <tr><td>15</td><td> <span class="codeComment">// Genera uuid único en internet.</span></td></tr>
-  <tr><td>16</td><td> modelo.uuid = Date.now().toString() + Math.random() + secuencia</td></tr>
-  <tr><td>17</td><td> secuencia++</td></tr>
-  <tr><td>18</td><td></td></tr>
-  <tr><td>19</td><td> <span class="codeReserved">return</span> bdEjecuta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
-  <tr><td>20</td><td>  transaccion =&gt; {</td></tr>
-  <tr><td>21</td><td>   <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
-  <tr><td>22</td><td>    transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO)</td></tr>
-  <tr><td>23</td><td>   almacenPasatiempo.add(modelo)</td></tr>
-  <tr><td>24</td><td>  })</td></tr>
-  <tr><td>25</td><td>}</td></tr>
-  <tr><td>26</td><td></td></tr>
-  <tr><td>27</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
-  <tr><td>28</td><td>window[<span class="codeString">"pasatiempoAgrega"</span>] = pasatiempoAgrega</td></tr>
+  <tr><td>11</td><td> validaNombre(modelo.PAS_NOMBRE)</td></tr>
+  <tr><td>12</td><td> modelo.PAS_MODIFICACION = Date.now()</td></tr>
+  <tr><td>13</td><td> modelo.PAS_ELIMINADO = 0</td></tr>
+  <tr><td>14</td><td> <span class="codeComment">// Genera id único en internet.</span></td></tr>
+  <tr><td>15</td><td> modelo.PAS_ID = creaIdCliente(Date.now().toString())</td></tr>
+  <tr><td>16</td><td> <span class="codeReserved">return</span> bdEjecuta(Bd, [ALMACEN_PASATIEMPO], transaccion =&gt; {</td></tr>
+  <tr><td>17</td><td>  <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</td></tr>
+  <tr><td>18</td><td>  almacenPasatiempo.add(modelo)</td></tr>
+  <tr><td>19</td><td> })</td></tr>
+  <tr><td>20</td><td>}</td></tr>
+  <tr><td>21</td><td></td></tr>
+  <tr><td>22</td><td>exportaAHtml(pasatiempoAgrega)</td></tr>
  </tbody>
 </table>
       </section>
@@ -864,56 +860,48 @@
  </caption>
  <tbody>
   <tr><td>1</td><td><span class="codeReserved">import</span> { bdConsulta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdConsulta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { recuperaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/recuperaPasatiempo.js"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/Pasatiempo.js"</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">import</span> { Bd, NOMBRE_DEL_ALMACEN_PASATIEMPO } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/exportaAHtml.js"</span></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">import</span> { validaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/validaPasatiempo.js"</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
   <tr><td>5</td><td></td></tr>
   <tr><td>6</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string | <span class="codeReserved">null</span> } uuid</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {string} id</span></td></tr>
   <tr><td>8</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoBusca(uuid) {</td></tr>
+  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoBusca(id) {</td></tr>
   <tr><td>10</td><td></td></tr>
-  <tr><td>11</td><td> <span class="codeReserved">if</span> (uuid === <span class="codeReserved">null</span>)</td></tr>
-  <tr><td>12</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Falta el uuid"</span>)</td></tr>
-  <tr><td>13</td><td></td></tr>
-  <tr><td>14</td><td> <span class="codeReserved">return</span> bdConsulta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
-  <tr><td>15</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>16</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> { IDBTransaction } transaccion </span></td></tr>
-  <tr><td>17</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> { (resultado: Pasatiempo|undefined) =&gt; any } resolve </span></td></tr>
-  <tr><td>18</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>19</td><td>  (transaccion, resolve) =&gt; {</td></tr>
-  <tr><td>20</td><td></td></tr>
-  <tr><td>21</td><td>   <span class="codeComment">/* Pide el primer registro de almacén pasatiempo que tenga como</span></td></tr>
-  <tr><td>22</td><td><span class="codeComment">    * llave primaria el valor del parámetro uuid. */</span></td></tr>
-  <tr><td>23</td><td>   <span class="codeReserved">const</span> consulta =</td></tr>
-  <tr><td>24</td><td>    transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO).get(uuid)</td></tr>
-  <tr><td>25</td><td></td></tr>
-  <tr><td>26</td><td>   <span class="codeComment">/* onsuccess se invoca solo una vez, devolviendo el registro</span></td></tr>
-  <tr><td>27</td><td><span class="codeComment">   * solicitado. */</span></td></tr>
-  <tr><td>28</td><td>   consulta.onsuccess = () =&gt; {</td></tr>
-  <tr><td>29</td><td></td></tr>
-  <tr><td>30</td><td>    <span class="codeComment">/* Se recupera el registro solicitado usando</span></td></tr>
-  <tr><td>31</td><td><span class="codeComment">     *  consulta.result</span></td></tr>
-  <tr><td>32</td><td><span class="codeComment">     * Si el registro no se encuentra se recupera undefined. */</span></td></tr>
-  <tr><td>33</td><td>    <span class="codeReserved">const</span> objeto = consulta.result</td></tr>
-  <tr><td>34</td><td></td></tr>
-  <tr><td>35</td><td>    <span class="codeReserved">if</span> (objeto !== undefined) {</td></tr>
-  <tr><td>36</td><td>     <span class="codeReserved">const</span> modelo = recuperaPasatiempo(objeto)</td></tr>
-  <tr><td>37</td><td>     <span class="codeReserved">if</span> (!modelo.eliminado) {</td></tr>
-  <tr><td>38</td><td>      resolve(modelo)</td></tr>
-  <tr><td>39</td><td>     }</td></tr>
-  <tr><td>40</td><td>    }</td></tr>
-  <tr><td>41</td><td></td></tr>
-  <tr><td>42</td><td>    resolve(undefined)</td></tr>
-  <tr><td>43</td><td></td></tr>
-  <tr><td>44</td><td>   }</td></tr>
-  <tr><td>45</td><td></td></tr>
-  <tr><td>46</td><td>  })</td></tr>
-  <tr><td>47</td><td></td></tr>
-  <tr><td>48</td><td>}</td></tr>
-  <tr><td>49</td><td></td></tr>
-  <tr><td>50</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
-  <tr><td>51</td><td>window[<span class="codeString">"pasatiempoBusca"</span>] = pasatiempoBusca</td></tr>
+  <tr><td>11</td><td> <span class="codeReserved">return</span> bdConsulta(Bd, [ALMACEN_PASATIEMPO],</td></tr>
+  <tr><td>12</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>13</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> {(resultado: <span class="codeReserved">import</span>(&quot;../modelo/PASATIEMPO.js&quot;).PASATIEMPO|undefined)</span></td></tr>
+  <tr><td>14</td><td><span class="codeComment">   *                                                            =&gt; any} resolve </span></td></tr>
+  <tr><td>15</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>16</td><td>  (transaccion, resolve) =&gt; {</td></tr>
+  <tr><td>17</td><td></td></tr>
+  <tr><td>18</td><td>   <span class="codeComment">/* Pide el primer objeto de ALMACEN_PASATIEMPO que tenga como llave</span></td></tr>
+  <tr><td>19</td><td><span class="codeComment">    * primaria el valor del parámetro id. */</span></td></tr>
+  <tr><td>20</td><td>   <span class="codeReserved">const</span> consulta = transaccion.objectStore(ALMACEN_PASATIEMPO).get(id)</td></tr>
+  <tr><td>21</td><td></td></tr>
+  <tr><td>22</td><td>   <span class="codeComment">// onsuccess se invoca solo una vez, devolviendo el objeto solicitado.</span></td></tr>
+  <tr><td>23</td><td>   consulta.onsuccess = () =&gt; {</td></tr>
+  <tr><td>24</td><td>    <span class="codeComment">/* Se recupera el objeto solicitado usando</span></td></tr>
+  <tr><td>25</td><td><span class="codeComment">     *  consulta.result</span></td></tr>
+  <tr><td>26</td><td><span class="codeComment">     * Si el objeto no se encuentra se recupera undefined. */</span></td></tr>
+  <tr><td>27</td><td>    <span class="codeReserved">const</span> objeto = consulta.result</td></tr>
+  <tr><td>28</td><td>    <span class="codeReserved">if</span> (objeto !== undefined) {</td></tr>
+  <tr><td>29</td><td>     <span class="codeReserved">const</span> modelo = validaPasatiempo(objeto)</td></tr>
+  <tr><td>30</td><td>     <span class="codeReserved">if</span> (modelo.PAS_ELIMINADO === 0) {</td></tr>
+  <tr><td>31</td><td>      resolve(modelo)</td></tr>
+  <tr><td>32</td><td>      <span class="codeReserved">return</span></td></tr>
+  <tr><td>33</td><td>     }</td></tr>
+  <tr><td>34</td><td>    }</td></tr>
+  <tr><td>35</td><td>    resolve(undefined)</td></tr>
+  <tr><td>36</td><td></td></tr>
+  <tr><td>37</td><td>   }</td></tr>
+  <tr><td>38</td><td></td></tr>
+  <tr><td>39</td><td>  })</td></tr>
+  <tr><td>40</td><td></td></tr>
+  <tr><td>41</td><td>}</td></tr>
+  <tr><td>42</td><td></td></tr>
+  <tr><td>43</td><td>exportaAHtml(pasatiempoBusca)</td></tr>
  </tbody>
 </table>
       </section>
@@ -929,73 +917,58 @@
  </caption>
  <tbody>
   <tr><td>1</td><td><span class="codeReserved">import</span> { bdConsulta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdConsulta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> {</td></tr>
-  <tr><td>3</td><td> Bd,</td></tr>
-  <tr><td>4</td><td> NOMBRE_DEL_ALMACEN_PASATIEMPO, NOMBRE_DEL_INDICE_NOMBRE</td></tr>
-  <tr><td>5</td><td>} <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
-  <tr><td>6</td><td></td></tr>
-  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoConsultaNoEliminados() {</td></tr>
-  <tr><td>8</td><td></td></tr>
-  <tr><td>9</td><td> <span class="codeReserved">return</span> bdConsulta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
-  <tr><td>10</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>11</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> { IDBTransaction } transaccion </span></td></tr>
-  <tr><td>12</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> { (resultado: any[]) =&gt; any } resolve </span></td></tr>
-  <tr><td>13</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>14</td><td>  (transaccion, resolve) =&gt; {</td></tr>
-  <tr><td>15</td><td></td></tr>
-  <tr><td>16</td><td>   <span class="codeReserved">const</span> resultado = []</td></tr>
-  <tr><td>17</td><td></td></tr>
-  <tr><td>18</td><td>   <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
-  <tr><td>19</td><td>    transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO)</td></tr>
-  <tr><td>20</td><td></td></tr>
-  <tr><td>21</td><td>   <span class="codeComment">// Usa el índice &quot;nombre&quot; para reculeprar los datos ordenadors.</span></td></tr>
-  <tr><td>22</td><td>   <span class="codeReserved">const</span> indiceNombre = almacenPasatiempo.index(NOMBRE_DEL_INDICE_NOMBRE)</td></tr>
-  <tr><td>23</td><td></td></tr>
-  <tr><td>24</td><td>   <span class="codeComment">/* Pide un <span class="codeReserved">cursor</span> para recorrer cada uno de los registristros</span></td></tr>
-  <tr><td>25</td><td><span class="codeComment">    * que devuelve la consulta. */</span></td></tr>
-  <tr><td>26</td><td>   <span class="codeReserved">const</span> consulta = indiceNombre.openCursor()</td></tr>
-  <tr><td>27</td><td></td></tr>
-  <tr><td>28</td><td>   <span class="codeComment">/* onsuccess se invoca por cada uno de los registros de la</span></td></tr>
-  <tr><td>29</td><td><span class="codeComment">    * consulta y una vez cuando se acaban dichos registros. */</span></td></tr>
-  <tr><td>30</td><td>   consulta.onsuccess = () =&gt; {</td></tr>
-  <tr><td>31</td><td></td></tr>
-  <tr><td>32</td><td>    <span class="codeComment">/* El <span class="codeReserved">cursor</span> que corresponde al registro se recupera usando</span></td></tr>
-  <tr><td>33</td><td><span class="codeComment">     *  consulta.result */</span></td></tr>
-  <tr><td>34</td><td>    <span class="codeReserved">const</span> <span class="codeReserved">cursor</span> = consulta.result</td></tr>
-  <tr><td>35</td><td></td></tr>
-  <tr><td>36</td><td>    <span class="codeReserved">if</span> (<span class="codeReserved">cursor</span> === <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>37</td><td></td></tr>
-  <tr><td>38</td><td>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> es igual a <span class="codeReserved">null</span>, ya no hay más registros que</span></td></tr>
-  <tr><td>39</td><td><span class="codeComment">      * procesar; por lo mismo, se devuelve el resultado con los</span></td></tr>
-  <tr><td>40</td><td><span class="codeComment">      * pasatiempos recuperados, usando</span></td></tr>
-  <tr><td>41</td><td><span class="codeComment">      *  resolve(resultado). */</span></td></tr>
-  <tr><td>42</td><td>     resolve(resultado)</td></tr>
-  <tr><td>43</td><td></td></tr>
-  <tr><td>44</td><td>    } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>45</td><td></td></tr>
-  <tr><td>46</td><td>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> es diferente a <span class="codeReserved">null</span>, si hay más registros.</span></td></tr>
-  <tr><td>47</td><td><span class="codeComment">      * El registro que sigue se obtiene con</span></td></tr>
-  <tr><td>48</td><td><span class="codeComment">      *  <span class="codeReserved">cursor</span>.value */</span></td></tr>
-  <tr><td>49</td><td>     <span class="codeReserved">const</span> modelo = <span class="codeReserved">cursor</span>.value</td></tr>
-  <tr><td>50</td><td>     <span class="codeReserved">if</span> (!modelo.eliminado) {</td></tr>
-  <tr><td>51</td><td>      resultado.push(modelo)</td></tr>
-  <tr><td>52</td><td>     }</td></tr>
-  <tr><td>53</td><td></td></tr>
-  <tr><td>54</td><td>     <span class="codeComment">/* Busca el siguiente registro de la consulta, que se obtiene</span></td></tr>
-  <tr><td>55</td><td><span class="codeComment">      * la siguiente vez que se invoque la función</span></td></tr>
-  <tr><td>56</td><td><span class="codeComment">      *  onsuccess. */</span></td></tr>
-  <tr><td>57</td><td>     <span class="codeReserved">cursor</span>.<span class="codeReserved">continue</span>()</td></tr>
-  <tr><td>58</td><td></td></tr>
-  <tr><td>59</td><td>    }</td></tr>
-  <tr><td>60</td><td></td></tr>
-  <tr><td>61</td><td>   }</td></tr>
-  <tr><td>62</td><td></td></tr>
-  <tr><td>63</td><td>  })</td></tr>
-  <tr><td>64</td><td></td></tr>
-  <tr><td>65</td><td>}</td></tr>
-  <tr><td>66</td><td></td></tr>
-  <tr><td>67</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
-  <tr><td>68</td><td>window[<span class="codeString">"pasatiempoConsultaNoEliminados"</span>] = pasatiempoConsultaNoEliminados</td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/exportaAHtml.js"</span></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">import</span> { validaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/validaPasatiempo.js"</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd, INDICE_NOMBRE } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoConsultaNoEliminados() {</td></tr>
+  <tr><td>7</td><td></td></tr>
+  <tr><td>8</td><td> <span class="codeReserved">return</span> bdConsulta(Bd, [ALMACEN_PASATIEMPO],</td></tr>
+  <tr><td>9</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> {(resultado: <span class="codeReserved">import</span>(&quot;../modelo/PASATIEMPO.js&quot;).PASATIEMPO[])=&gt;<span class="codeReserved">void</span></span></td></tr>
+  <tr><td>11</td><td><span class="codeComment">   *                                                                  } resolve</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>13</td><td>  (transaccion, resolve) =&gt; {</td></tr>
+  <tr><td>14</td><td></td></tr>
+  <tr><td>15</td><td>   <span class="codeReserved">const</span> resultado = []</td></tr>
+  <tr><td>16</td><td></td></tr>
+  <tr><td>17</td><td>   <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</td></tr>
+  <tr><td>18</td><td></td></tr>
+  <tr><td>19</td><td>   <span class="codeComment">// Usa el índice INDICE_NOMBRE para recuperar los datos ordenados.</span></td></tr>
+  <tr><td>20</td><td>   <span class="codeReserved">const</span> indiceNombre = almacenPasatiempo.index(INDICE_NOMBRE)</td></tr>
+  <tr><td>21</td><td></td></tr>
+  <tr><td>22</td><td>   <span class="codeComment">// Pide un cursor para recorrer cada objeto que devuelve la consulta.</span></td></tr>
+  <tr><td>23</td><td>   <span class="codeReserved">const</span> consulta = indiceNombre.openCursor()</td></tr>
+  <tr><td>24</td><td></td></tr>
+  <tr><td>25</td><td>   <span class="codeComment">/* onsuccess se invoca por cada uno de los objetos de la consulta y una vez</span></td></tr>
+  <tr><td>26</td><td><span class="codeComment">    * cuando se acaban dichos objetos. */</span></td></tr>
+  <tr><td>27</td><td>   consulta.onsuccess = () =&gt; {</td></tr>
+  <tr><td>28</td><td>    <span class="codeComment">/* El <span class="codeReserved">cursor</span> correspondiente al objeto se recupera usando</span></td></tr>
+  <tr><td>29</td><td><span class="codeComment">     *  consulta.result */</span></td></tr>
+  <tr><td>30</td><td>    <span class="codeReserved">const</span> <span class="codeReserved">cursor</span> = consulta.result</td></tr>
+  <tr><td>31</td><td>    <span class="codeReserved">if</span> (<span class="codeReserved">cursor</span> === <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>32</td><td>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> vale <span class="codeReserved">null</span>, ya no hay más objetos que procesar; por lo</span></td></tr>
+  <tr><td>33</td><td><span class="codeComment">      * mismo, se devuelve el resultado con los pasatiempos recuperados, usando</span></td></tr>
+  <tr><td>34</td><td><span class="codeComment">      *  resolve(resultado). */</span></td></tr>
+  <tr><td>35</td><td>     resolve(resultado)</td></tr>
+  <tr><td>36</td><td>    } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>37</td><td>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> no vale <span class="codeReserved">null</span> y hay más objetos, el siguiente se obtiene con</span></td></tr>
+  <tr><td>38</td><td><span class="codeComment">      *  <span class="codeReserved">cursor</span>.value */</span></td></tr>
+  <tr><td>39</td><td>     <span class="codeReserved">const</span> modelo = validaPasatiempo(<span class="codeReserved">cursor</span>.value)</td></tr>
+  <tr><td>40</td><td>     <span class="codeReserved">if</span> (modelo.PAS_ELIMINADO === 0) {</td></tr>
+  <tr><td>41</td><td>      resultado.push(modelo)</td></tr>
+  <tr><td>42</td><td>     }</td></tr>
+  <tr><td>43</td><td>     <span class="codeComment">/* Busca el siguiente objeto de la consulta, que se recupera la siguiente</span></td></tr>
+  <tr><td>44</td><td><span class="codeComment">      * vez que se invoque la función onsuccess. */</span></td></tr>
+  <tr><td>45</td><td>     <span class="codeReserved">cursor</span>.<span class="codeReserved">continue</span>()</td></tr>
+  <tr><td>46</td><td>    }</td></tr>
+  <tr><td>47</td><td>   }</td></tr>
+  <tr><td>48</td><td></td></tr>
+  <tr><td>49</td><td>  })</td></tr>
+  <tr><td>50</td><td></td></tr>
+  <tr><td>51</td><td>}</td></tr>
+  <tr><td>52</td><td></td></tr>
+  <tr><td>53</td><td>exportaAHtml(pasatiempoConsultaNoEliminados)</td></tr>
  </tbody>
 </table>
       </section>
@@ -1011,63 +984,50 @@
  </caption>
  <tbody>
   <tr><td>1</td><td><span class="codeReserved">import</span> { bdConsulta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdConsulta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { NOMBRE_DEL_ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
-  <tr><td>3</td><td></td></tr>
-  <tr><td>4</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> * Lista todos los objetos, incluyendo los que tienen</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> * borrado lógico.</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { validaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/validaPasatiempo.js"</span></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>4</td><td></td></tr>
+  <tr><td>5</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> * Lista todos los objetos, incluyendo los que tienen borrado lógico.</span></td></tr>
   <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
   <tr><td>8</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoConsultaTodos() {</td></tr>
   <tr><td>9</td><td></td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">return</span> bdConsulta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
+  <tr><td>10</td><td> <span class="codeReserved">return</span> bdConsulta(Bd, [ALMACEN_PASATIEMPO],</td></tr>
   <tr><td>11</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>12</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> { IDBTransaction } transaccion </span></td></tr>
-  <tr><td>13</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> { (result: any[]) =&gt; any } resolve </span></td></tr>
-  <tr><td>14</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> {(resultado: <span class="codeReserved">import</span>(&quot;../modelo/PASATIEMPO.js&quot;).PASATIEMPO[])=&gt;<span class="codeReserved">void</span></span></td></tr>
+  <tr><td>13</td><td><span class="codeComment">   *                                                                  } resolve</span></td></tr>
+  <tr><td>14</td><td><span class="codeComment">   */</span></td></tr>
   <tr><td>15</td><td>  (transaccion, resolve) =&gt; {</td></tr>
   <tr><td>16</td><td></td></tr>
   <tr><td>17</td><td>   <span class="codeReserved">const</span> resultado = []</td></tr>
   <tr><td>18</td><td></td></tr>
-  <tr><td>19</td><td>   <span class="codeComment">/* Pide un <span class="codeReserved">cursor</span> para recorrer cada uno de los</span></td></tr>
-  <tr><td>20</td><td><span class="codeComment">    * registristros que devuelve la consulta. */</span></td></tr>
-  <tr><td>21</td><td>   <span class="codeReserved">const</span> consulta =</td></tr>
-  <tr><td>22</td><td>    transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO).openCursor()</td></tr>
-  <tr><td>23</td><td></td></tr>
-  <tr><td>24</td><td>   <span class="codeComment">/* onsuccess se invoca por cada uno de los registros de la</span></td></tr>
-  <tr><td>25</td><td><span class="codeComment">   * consulta y una vez cuando se acaban dichos registros. */</span></td></tr>
-  <tr><td>26</td><td>   consulta.onsuccess = () =&gt; {</td></tr>
-  <tr><td>27</td><td></td></tr>
-  <tr><td>28</td><td>    <span class="codeComment">/* El <span class="codeReserved">cursor</span> que corresponde al registro se recupera usando</span></td></tr>
-  <tr><td>29</td><td><span class="codeComment">     *  consulta.result */</span></td></tr>
-  <tr><td>30</td><td>    <span class="codeReserved">const</span> <span class="codeReserved">cursor</span> = consulta.result</td></tr>
-  <tr><td>31</td><td></td></tr>
-  <tr><td>32</td><td>    <span class="codeReserved">if</span> (<span class="codeReserved">cursor</span> === <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>33</td><td></td></tr>
-  <tr><td>34</td><td>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> es igual a <span class="codeReserved">null</span>, ya no hay más registros que</span></td></tr>
-  <tr><td>35</td><td><span class="codeComment">      * procesar; por lo mismo, se devuelve el resultado con los</span></td></tr>
-  <tr><td>36</td><td><span class="codeComment">      * pasatiempos recuperados, usando</span></td></tr>
-  <tr><td>37</td><td><span class="codeComment">      *  resolve(resultado). */</span></td></tr>
-  <tr><td>38</td><td>     resolve(resultado)</td></tr>
-  <tr><td>39</td><td></td></tr>
-  <tr><td>40</td><td>    } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>41</td><td></td></tr>
-  <tr><td>42</td><td>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> es diferente a <span class="codeReserved">null</span>, si hay más registros.</span></td></tr>
-  <tr><td>43</td><td><span class="codeComment">      * El registro que sigue se obtiene con</span></td></tr>
-  <tr><td>44</td><td><span class="codeComment">      *  <span class="codeReserved">cursor</span>.value*/</span></td></tr>
-  <tr><td>45</td><td>     resultado.push(<span class="codeReserved">cursor</span>.value)</td></tr>
-  <tr><td>46</td><td></td></tr>
-  <tr><td>47</td><td>     <span class="codeComment">/* Busca el siguiente registro de la consulta, que se obtiene</span></td></tr>
-  <tr><td>48</td><td><span class="codeComment">      * la siguiente vez que se invoque la función</span></td></tr>
-  <tr><td>49</td><td><span class="codeComment">      *  onsuccess. */</span></td></tr>
-  <tr><td>50</td><td>     <span class="codeReserved">cursor</span>.<span class="codeReserved">continue</span>()</td></tr>
-  <tr><td>51</td><td></td></tr>
-  <tr><td>52</td><td>    }</td></tr>
-  <tr><td>53</td><td></td></tr>
-  <tr><td>54</td><td>   }</td></tr>
-  <tr><td>55</td><td></td></tr>
-  <tr><td>56</td><td>  })</td></tr>
-  <tr><td>57</td><td></td></tr>
-  <tr><td>58</td><td>}</td></tr>
+  <tr><td>19</td><td>   <span class="codeComment">// Pide un cursor para recorrer cada objeto que devuelve la consulta.</span></td></tr>
+  <tr><td>20</td><td>   <span class="codeReserved">const</span> consulta = transaccion.objectStore(ALMACEN_PASATIEMPO).openCursor()</td></tr>
+  <tr><td>21</td><td></td></tr>
+  <tr><td>22</td><td>   <span class="codeComment">/* onsuccess se invoca por cada uno de los objetos de la consulta y una vez</span></td></tr>
+  <tr><td>23</td><td><span class="codeComment">    * cuando se acaban dichos objetos. */</span></td></tr>
+  <tr><td>24</td><td>   consulta.onsuccess = () =&gt; {</td></tr>
+  <tr><td>25</td><td>    <span class="codeComment">/* El <span class="codeReserved">cursor</span> correspondiente al objeto se recupera usando</span></td></tr>
+  <tr><td>26</td><td><span class="codeComment">     *  consulta.result */</span></td></tr>
+  <tr><td>27</td><td>    <span class="codeReserved">const</span> <span class="codeReserved">cursor</span> = consulta.result</td></tr>
+  <tr><td>28</td><td>    <span class="codeReserved">if</span> (<span class="codeReserved">cursor</span> === <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>29</td><td>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> vale <span class="codeReserved">null</span>, ya no hay más objetos que procesar; por lo</span></td></tr>
+  <tr><td>30</td><td><span class="codeComment">      * mismo, se devuelve el resultado con los pasatiempos recuperados, usando</span></td></tr>
+  <tr><td>31</td><td><span class="codeComment">      *  resolve(resultado). */</span></td></tr>
+  <tr><td>32</td><td>     resolve(resultado)</td></tr>
+  <tr><td>33</td><td>    } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>34</td><td>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> no vale <span class="codeReserved">null</span> y hay más objetos, el siguiente se obtiene con</span></td></tr>
+  <tr><td>35</td><td><span class="codeComment">      *  <span class="codeReserved">cursor</span>.value*/</span></td></tr>
+  <tr><td>36</td><td>     resultado.push(validaPasatiempo(<span class="codeReserved">cursor</span>.value))</td></tr>
+  <tr><td>37</td><td>     <span class="codeComment">/* Busca el siguiente objeto de la consulta, que se recupera la siguiente</span></td></tr>
+  <tr><td>38</td><td><span class="codeComment">      * vez que se invoque la función onsuccess. */</span></td></tr>
+  <tr><td>39</td><td>     <span class="codeReserved">cursor</span>.<span class="codeReserved">continue</span>()</td></tr>
+  <tr><td>40</td><td>    }</td></tr>
+  <tr><td>41</td><td>   }</td></tr>
+  <tr><td>42</td><td></td></tr>
+  <tr><td>43</td><td>  })</td></tr>
+  <tr><td>44</td><td></td></tr>
+  <tr><td>45</td><td>}</td></tr>
  </tbody>
 </table>
       </section>
@@ -1083,28 +1043,26 @@
  </caption>
  <tbody>
   <tr><td>1</td><td><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdEjecuta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { NOMBRE_DEL_ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">import</span> { pasatiempoBusca } <span class="codeReserved">from</span> <span class="codeString">"./pasatiempoBusca.js"</span></td></tr>
-  <tr><td>4</td><td></td></tr>
-  <tr><td>5</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string } uuid</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>8</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoElimina(uuid) {</td></tr>
-  <tr><td>9</td><td> <span class="codeReserved">const</span> modelo = <span class="codeReserved">await</span> pasatiempoBusca(uuid)</td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">if</span> (modelo !== undefined) {</td></tr>
-  <tr><td>11</td><td>  modelo.modificacion = Date.now()</td></tr>
-  <tr><td>12</td><td>  modelo.eliminado = <span class="codeReserved">true</span></td></tr>
-  <tr><td>13</td><td>  <span class="codeReserved">return</span> bdEjecuta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
-  <tr><td>14</td><td>   transaccion =&gt; {</td></tr>
-  <tr><td>15</td><td>    <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
-  <tr><td>16</td><td>     transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO)</td></tr>
-  <tr><td>17</td><td>    almacenPasatiempo.put(modelo)</td></tr>
-  <tr><td>18</td><td>   })</td></tr>
-  <tr><td>19</td><td> }</td></tr>
-  <tr><td>20</td><td>}</td></tr>
-  <tr><td>21</td><td></td></tr>
-  <tr><td>22</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
-  <tr><td>23</td><td>window[<span class="codeString">"pasatiempoElimina"</span>] = pasatiempoElimina</td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/exportaAHtml.js"</span></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">import</span> { pasatiempoBusca } <span class="codeReserved">from</span> <span class="codeString">"./pasatiempoBusca.js"</span></td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string } id</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoElimina(id) {</td></tr>
+  <tr><td>10</td><td> <span class="codeReserved">const</span> modelo = <span class="codeReserved">await</span> pasatiempoBusca(id)</td></tr>
+  <tr><td>11</td><td> <span class="codeReserved">if</span> (modelo !== undefined) {</td></tr>
+  <tr><td>12</td><td>  modelo.PAS_MODIFICACION = Date.now()</td></tr>
+  <tr><td>13</td><td>  modelo.PAS_ELIMINADO = 1</td></tr>
+  <tr><td>14</td><td>  <span class="codeReserved">return</span> bdEjecuta(Bd, [ALMACEN_PASATIEMPO], transaccion =&gt; {</td></tr>
+  <tr><td>15</td><td>   <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</td></tr>
+  <tr><td>16</td><td>   almacenPasatiempo.put(modelo)</td></tr>
+  <tr><td>17</td><td>  })</td></tr>
+  <tr><td>18</td><td> }</td></tr>
+  <tr><td>19</td><td>}</td></tr>
+  <tr><td>20</td><td></td></tr>
+  <tr><td>21</td><td>exportaAHtml(pasatiempoElimina)</td></tr>
  </tbody>
 </table>
       </section>
@@ -1120,32 +1078,32 @@
  </caption>
  <tbody>
   <tr><td>1</td><td><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdEjecuta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/Pasatiempo.js"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">import</span> { Bd, NOMBRE_DEL_ALMACEN_PASATIEMPO } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">import</span> { pasatiempoBusca } <span class="codeReserved">from</span> <span class="codeString">"./pasatiempoBusca.js"</span></td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { Pasatiempo } modelo</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoModifica(modelo) {</td></tr>
-  <tr><td>10</td><td> modelo.valida()</td></tr>
-  <tr><td>11</td><td> <span class="codeReserved">const</span> anterior = <span class="codeReserved">await</span> pasatiempoBusca(modelo.uuid)</td></tr>
-  <tr><td>12</td><td> <span class="codeReserved">if</span> (anterior === undefined) {</td></tr>
-  <tr><td>13</td><td>  <span class="codeReserved">return</span> undefined</td></tr>
-  <tr><td>14</td><td> } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>15</td><td>  modelo.modificacion = Date.now()</td></tr>
-  <tr><td>16</td><td>  modelo.eliminado = <span class="codeReserved">false</span></td></tr>
-  <tr><td>17</td><td>  <span class="codeReserved">return</span> bdEjecuta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
-  <tr><td>18</td><td>   transaccion =&gt; {</td></tr>
-  <tr><td>19</td><td>    <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
-  <tr><td>20</td><td>     transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO)</td></tr>
-  <tr><td>21</td><td>    almacenPasatiempo.put(modelo)</td></tr>
-  <tr><td>22</td><td>   })</td></tr>
-  <tr><td>23</td><td> }</td></tr>
-  <tr><td>24</td><td>}</td></tr>
-  <tr><td>25</td><td></td></tr>
-  <tr><td>26</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
-  <tr><td>27</td><td>window[<span class="codeString">"pasatiempoModifica"</span>] = pasatiempoModifica</td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/exportaAHtml.js"</span></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">import</span> { validaId } <span class="codeReserved">from</span> <span class="codeString">"../modelo/validaId.js"</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">import</span> { validaNombre } <span class="codeReserved">from</span> <span class="codeString">"../modelo/validaNombre.js"</span></td></tr>
+  <tr><td>5</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>6</td><td><span class="codeReserved">import</span> { pasatiempoBusca } <span class="codeReserved">from</span> <span class="codeString">"./pasatiempoBusca.js"</span></td></tr>
+  <tr><td>7</td><td></td></tr>
+  <tr><td>8</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { <span class="codeReserved">import</span>(&quot;../modelo/PASATIEMPO.js&quot;).PASATIEMPO } modelo</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>11</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoModifica(modelo) {</td></tr>
+  <tr><td>12</td><td> validaNombre(modelo.PAS_NOMBRE)</td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">if</span> (modelo.PAS_ID === undefined)</td></tr>
+  <tr><td>14</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">`Falta PAS_ID de ${modelo.PAS_NOMBRE}.`</span>)</td></tr>
+  <tr><td>15</td><td> validaId(modelo.PAS_ID)</td></tr>
+  <tr><td>16</td><td> <span class="codeReserved">const</span> anterior = <span class="codeReserved">await</span> pasatiempoBusca(modelo.PAS_ID)</td></tr>
+  <tr><td>17</td><td> <span class="codeReserved">if</span> (anterior !== undefined) {</td></tr>
+  <tr><td>18</td><td>  modelo.PAS_MODIFICACION = Date.now()</td></tr>
+  <tr><td>19</td><td>  modelo.PAS_ELIMINADO = 0</td></tr>
+  <tr><td>20</td><td>  <span class="codeReserved">return</span> bdEjecuta(Bd, [ALMACEN_PASATIEMPO], transaccion =&gt; {</td></tr>
+  <tr><td>21</td><td>   <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</td></tr>
+  <tr><td>22</td><td>   almacenPasatiempo.put(modelo)</td></tr>
+  <tr><td>23</td><td>  })</td></tr>
+  <tr><td>24</td><td> }</td></tr>
+  <tr><td>25</td><td>}</td></tr>
+  <tr><td>26</td><td></td></tr>
+  <tr><td>27</td><td>exportaAHtml(pasatiempoModifica)</td></tr>
  </tbody>
 </table>
       </section>
@@ -1161,24 +1119,21 @@
  </caption>
  <tbody>
   <tr><td>1</td><td><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdEjecuta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { Bd, NOMBRE_DEL_ALMACEN_PASATIEMPO } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
   <tr><td>3</td><td></td></tr>
   <tr><td>4</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> * Borra el contenido del almacén pasatiempo y guarda el</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> * contenido del listado.</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {any[]} datosNuevos</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiemposReemplaza(datosNuevos) {</td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">return</span> bdEjecuta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
-  <tr><td>11</td><td>  transaccion =&gt; {</td></tr>
-  <tr><td>12</td><td>   <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
-  <tr><td>13</td><td>    transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO)</td></tr>
-  <tr><td>14</td><td>   almacenPasatiempo.clear()</td></tr>
-  <tr><td>15</td><td>   <span class="codeReserved">for</span> (<span class="codeReserved">const</span> objeto of datosNuevos) {</td></tr>
-  <tr><td>16</td><td>    almacenPasatiempo.add(objeto)</td></tr>
-  <tr><td>17</td><td>   }</td></tr>
-  <tr><td>18</td><td>  })</td></tr>
-  <tr><td>19</td><td>}</td></tr>
+  <tr><td>5</td><td><span class="codeComment"> * Borra el contenido del almacén PASATIEMPO y guarda nuevospasatiempos.</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">import</span>(&quot;../modelo/PASATIEMPO.js&quot;).PASATIEMPO[]} nuevospasatiempos</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>8</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiemposReemplaza(nuevospasatiempos) {</td></tr>
+  <tr><td>9</td><td> <span class="codeReserved">return</span> bdEjecuta(Bd, [ALMACEN_PASATIEMPO], transaccion =&gt; {</td></tr>
+  <tr><td>10</td><td>  <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</td></tr>
+  <tr><td>11</td><td>  almacenPasatiempo.clear()</td></tr>
+  <tr><td>12</td><td>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> objeto of nuevospasatiempos) {</td></tr>
+  <tr><td>13</td><td>   almacenPasatiempo.add(objeto)</td></tr>
+  <tr><td>14</td><td>  }</td></tr>
+  <tr><td>15</td><td> })</td></tr>
+  <tr><td>16</td><td>}</td></tr>
  </tbody>
 </table>
       </section>

@@ -40,31 +40,31 @@
   <tr><td>30</td><td></td></tr>
   <tr><td>31</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span>&gt;</td></tr>
   <tr><td>32</td><td></td></tr>
-  <tr><td>33</td><td>  <span class="codeReserved">import</span> { creaClientIdMqtt } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/creaClientIdMqtt.js"</span></td></tr>
-  <tr><td>34</td><td>  <span class="codeReserved">import</span> { falloEnLaConexionMqtt } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/falloEnLaConexionMqtt.js"</span></td></tr>
-  <tr><td>35</td><td>  <span class="codeReserved">import</span> { conexionMqttPerdida } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/conexionMqttPerdida.js"</span></td></tr>
-  <tr><td>36</td><td>  <span class="codeReserved">import</span> { muestraError } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/muestraError.js"</span></td></tr>
-  <tr><td>37</td><td></td></tr>
-  <tr><td>38</td><td>  <span class="codeComment">// A cada control le corresponde un tópico diferente.</span></td></tr>
-  <tr><td>39</td><td>  <span class="codeReserved">const</span> TOPICO_FOCO = <span class="codeString">"gilpgdm/IoT/foco"</span></td></tr>
-  <tr><td>40</td><td></td></tr>
-  <tr><td>41</td><td>  <span class="codeReserved">let</span> valor = <span class="codeString">"0"</span></td></tr>
-  <tr><td>42</td><td></td></tr>
-  <tr><td>43</td><td>  <span class="codeComment">// Cambia por una raíz para tu proyecto.</span></td></tr>
-  <tr><td>44</td><td>  <span class="codeReserved">const</span> clientId = creaClientIdMqtt(<span class="codeString">"gilpgdmIoT-"</span>)</td></tr>
-  <tr><td>45</td><td></td></tr>
-  <tr><td>46</td><td>  <span class="codeComment">// Si usas un servidor de MQTT diferente, necesitas cambiar los parámetros.</span></td></tr>
-  <tr><td>47</td><td>  <span class="codeReserved">const</span> cliente = <span class="codeReserved">new</span> Paho.MQTT.Client(<span class="codeString">"test.mosquitto.org"</span>, 8081, clientId)</td></tr>
-  <tr><td>48</td><td></td></tr>
-  <tr><td>49</td><td>  <span class="codeReserved">function</span> clicEnBoton() {</td></tr>
-  <tr><td>50</td><td>   <span class="codeReserved">try</span> {</td></tr>
-  <tr><td>51</td><td>    enviaMensajeMqtt(valor === <span class="codeString">'1'</span> ? <span class="codeString">'0'</span> : <span class="codeString">'1'</span>, TOPICO_FOCO)</td></tr>
-  <tr><td>52</td><td>   } <span class="codeReserved">catch</span> (error) {</td></tr>
-  <tr><td>53</td><td>    muestraError(error)</td></tr>
-  <tr><td>54</td><td>   }</td></tr>
-  <tr><td>55</td><td>  }</td></tr>
-  <tr><td>56</td><td>  <span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
-  <tr><td>57</td><td>  window[<span class="codeString">"clicEnBoton"</span>] = clicEnBoton</td></tr>
+  <tr><td>33</td><td>  <span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/exportaAHtml.js"</span></td></tr>
+  <tr><td>34</td><td>  <span class="codeReserved">import</span> { creaIdCliente } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/creaIdCliente.js"</span></td></tr>
+  <tr><td>35</td><td>  <span class="codeReserved">import</span> { falloEnLaConexionMqtt } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/falloEnLaConexionMqtt.js"</span></td></tr>
+  <tr><td>36</td><td>  <span class="codeReserved">import</span> { conexionMqttPerdida } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/conexionMqttPerdida.js"</span></td></tr>
+  <tr><td>37</td><td>  <span class="codeReserved">import</span> { muestraError } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/muestraError.js"</span></td></tr>
+  <tr><td>38</td><td></td></tr>
+  <tr><td>39</td><td>  <span class="codeComment">// A cada control le corresponde un tópico diferente.</span></td></tr>
+  <tr><td>40</td><td>  <span class="codeReserved">const</span> TOPICO_FOCO = <span class="codeString">"gilpgdm/IoT/foco"</span></td></tr>
+  <tr><td>41</td><td></td></tr>
+  <tr><td>42</td><td>  <span class="codeReserved">let</span> valor = <span class="codeString">"0"</span></td></tr>
+  <tr><td>43</td><td></td></tr>
+  <tr><td>44</td><td>  <span class="codeComment">// Cambia por una raíz para tu proyecto.</span></td></tr>
+  <tr><td>45</td><td>  <span class="codeReserved">const</span> clientId = creaIdCliente(<span class="codeString">"gilpgdmIoT-"</span>)</td></tr>
+  <tr><td>46</td><td></td></tr>
+  <tr><td>47</td><td>  <span class="codeComment">// Si usas un servidor de MQTT diferente, necesitas cambiar los parámetros.</span></td></tr>
+  <tr><td>48</td><td>  <span class="codeReserved">const</span> cliente = <span class="codeReserved">new</span> Paho.MQTT.Client(<span class="codeString">"test.mosquitto.org"</span>, 8081, clientId)</td></tr>
+  <tr><td>49</td><td></td></tr>
+  <tr><td>50</td><td>  <span class="codeReserved">function</span> clicEnBoton() {</td></tr>
+  <tr><td>51</td><td>   <span class="codeReserved">try</span> {</td></tr>
+  <tr><td>52</td><td>    enviaMensajeMqtt(valor === <span class="codeString">'1'</span> ? <span class="codeString">'0'</span> : <span class="codeString">'1'</span>, TOPICO_FOCO)</td></tr>
+  <tr><td>53</td><td>   } <span class="codeReserved">catch</span> (error) {</td></tr>
+  <tr><td>54</td><td>    muestraError(error)</td></tr>
+  <tr><td>55</td><td>   }</td></tr>
+  <tr><td>56</td><td>  }</td></tr>
+  <tr><td>57</td><td>  exportaAHtml(clicEnBoton)</td></tr>
   <tr><td>58</td><td></td></tr>
   <tr><td>59</td><td>  <span class="codeComment">// Acciones al recibir un mensaje.</span></td></tr>
   <tr><td>60</td><td>  cliente.onMessageArrived = mensaje =&gt; {</td></tr>
@@ -110,13 +110,10 @@
   <tr><td>100</td><td>   cliente.send(mensajeMqtt)</td></tr>
   <tr><td>101</td><td>  }</td></tr>
   <tr><td>102</td><td></td></tr>
-  <tr><td>103</td><td>  <span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
-  <tr><td>104</td><td>  window[<span class="codeString">"enviaMensajeMqtt"</span>] = enviaMensajeMqtt</td></tr>
-  <tr><td>105</td><td></td></tr>
-  <tr><td>106</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
-  <tr><td>107</td><td></td></tr>
-  <tr><td>108</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>109</td><td></td></tr>
-  <tr><td>110</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+  <tr><td>103</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>104</td><td></td></tr>
+  <tr><td>105</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>106</td><td></td></tr>
+  <tr><td>107</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
  </tbody>
 </table>

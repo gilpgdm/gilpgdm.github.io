@@ -9,31 +9,31 @@
  </caption>
  <tbody>
   <tr><td>1</td><td><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdEjecuta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { Pasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/Pasatiempo.js"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">import</span> { Bd, NOMBRE_DEL_ALMACEN_PASATIEMPO } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">import</span> { pasatiempoBusca } <span class="codeReserved">from</span> <span class="codeString">"./pasatiempoBusca.js"</span></td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { Pasatiempo } modelo</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoModifica(modelo) {</td></tr>
-  <tr><td>10</td><td> modelo.valida()</td></tr>
-  <tr><td>11</td><td> <span class="codeReserved">const</span> anterior = <span class="codeReserved">await</span> pasatiempoBusca(modelo.uuid)</td></tr>
-  <tr><td>12</td><td> <span class="codeReserved">if</span> (anterior === undefined) {</td></tr>
-  <tr><td>13</td><td>  <span class="codeReserved">return</span> undefined</td></tr>
-  <tr><td>14</td><td> } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>15</td><td>  modelo.modificacion = Date.now()</td></tr>
-  <tr><td>16</td><td>  modelo.eliminado = <span class="codeReserved">false</span></td></tr>
-  <tr><td>17</td><td>  <span class="codeReserved">return</span> bdEjecuta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
-  <tr><td>18</td><td>   transaccion =&gt; {</td></tr>
-  <tr><td>19</td><td>    <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
-  <tr><td>20</td><td>     transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO)</td></tr>
-  <tr><td>21</td><td>    almacenPasatiempo.put(modelo)</td></tr>
-  <tr><td>22</td><td>   })</td></tr>
-  <tr><td>23</td><td> }</td></tr>
-  <tr><td>24</td><td>}</td></tr>
-  <tr><td>25</td><td></td></tr>
-  <tr><td>26</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
-  <tr><td>27</td><td>window[<span class="codeString">"pasatiempoModifica"</span>] = pasatiempoModifica</td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/exportaAHtml.js"</span></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">import</span> { validaId } <span class="codeReserved">from</span> <span class="codeString">"../modelo/validaId.js"</span></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">import</span> { validaNombre } <span class="codeReserved">from</span> <span class="codeString">"../modelo/validaNombre.js"</span></td></tr>
+  <tr><td>5</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>6</td><td><span class="codeReserved">import</span> { pasatiempoBusca } <span class="codeReserved">from</span> <span class="codeString">"./pasatiempoBusca.js"</span></td></tr>
+  <tr><td>7</td><td></td></tr>
+  <tr><td>8</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { <span class="codeReserved">import</span>(&quot;../modelo/PASATIEMPO.js&quot;).PASATIEMPO } modelo</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>11</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoModifica(modelo) {</td></tr>
+  <tr><td>12</td><td> validaNombre(modelo.PAS_NOMBRE)</td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">if</span> (modelo.PAS_ID === undefined)</td></tr>
+  <tr><td>14</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">`Falta PAS_ID de ${modelo.PAS_NOMBRE}.`</span>)</td></tr>
+  <tr><td>15</td><td> validaId(modelo.PAS_ID)</td></tr>
+  <tr><td>16</td><td> <span class="codeReserved">const</span> anterior = <span class="codeReserved">await</span> pasatiempoBusca(modelo.PAS_ID)</td></tr>
+  <tr><td>17</td><td> <span class="codeReserved">if</span> (anterior !== undefined) {</td></tr>
+  <tr><td>18</td><td>  modelo.PAS_MODIFICACION = Date.now()</td></tr>
+  <tr><td>19</td><td>  modelo.PAS_ELIMINADO = 0</td></tr>
+  <tr><td>20</td><td>  <span class="codeReserved">return</span> bdEjecuta(Bd, [ALMACEN_PASATIEMPO], transaccion =&gt; {</td></tr>
+  <tr><td>21</td><td>   <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</td></tr>
+  <tr><td>22</td><td>   almacenPasatiempo.put(modelo)</td></tr>
+  <tr><td>23</td><td>  })</td></tr>
+  <tr><td>24</td><td> }</td></tr>
+  <tr><td>25</td><td>}</td></tr>
+  <tr><td>26</td><td></td></tr>
+  <tr><td>27</td><td>exportaAHtml(pasatiempoModifica)</td></tr>
  </tbody>
 </table>

@@ -747,19 +747,19 @@
  <tbody>
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/recuperaJson.php"</span>;</td></tr>
-  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveJson.php"</span>;</td></tr>
-  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/ProblemDetails.php"</span>;</td></tr>
-  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveProblemDetails.php"</span>;</td></tr>
-  <tr><td>7</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveErrorInterno.php"</span>;</td></tr>
-  <tr><td>8</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/modelo/Pasatiempo.php"</span>;</td></tr>
-  <tr><td>9</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/modelo/recuperaPasatiempo.php"</span>;</td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/ejecutaServicio.php"</span>;</td></tr>
+  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/recuperaJson.php"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveJson.php"</span>;</td></tr>
+  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/ProblemDetails.php"</span>;</td></tr>
+  <tr><td>7</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveProblemDetails.php"</span>;</td></tr>
+  <tr><td>8</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveErrorInterno.php"</span>;</td></tr>
+  <tr><td>9</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/modelo/validaPasatiempo.php"</span>;</td></tr>
   <tr><td>10</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/pasatiempoAgrega.php"</span>;</td></tr>
   <tr><td>11</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/pasatiempoBusca.php"</span>;</td></tr>
   <tr><td>12</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/pasatiempoConsultaNoEliminados.php"</span>;</td></tr>
   <tr><td>13</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/pasatiempoModifica.php"</span>;</td></tr>
   <tr><td>14</td><td></td></tr>
-  <tr><td>15</td><td><span class="codeReserved">try</span> {</td></tr>
+  <tr><td>15</td><td>ejecutaServicio(<span class="codeReserved">function</span> () {</td></tr>
   <tr><td>16</td><td></td></tr>
   <tr><td>17</td><td> $lista = recuperaJson();</td></tr>
   <tr><td>18</td><td></td></tr>
@@ -767,37 +767,37 @@
   <tr><td>20</td><td>  $lista = [];</td></tr>
   <tr><td>21</td><td> }</td></tr>
   <tr><td>22</td><td></td></tr>
-  <tr><td>23</td><td> <span class="codeReserved">foreach</span> ($lista <span class="codeReserved">as</span> $objeto) {</td></tr>
-  <tr><td>24</td><td></td></tr>
-  <tr><td>25</td><td>  $modeloEnElCliente = recuperaPasatiempo($objeto);</td></tr>
-  <tr><td>26</td><td>  $modeloEnElServidor = pasatiempoBusca($modeloEnElCliente-&gt;uuid);</td></tr>
-  <tr><td>27</td><td></td></tr>
-  <tr><td>28</td><td>  <span class="codeReserved">if</span> ($modeloEnElServidor === <span class="codeReserved">false</span>) {</td></tr>
-  <tr><td>29</td><td></td></tr>
-  <tr><td>30</td><td>   <span class="codeComment">/* CONFLICTO. El objeto no ha estado en el servidor.</span></td></tr>
-  <tr><td>31</td><td><span class="codeComment">    * AGREGARLO solamente si no está eliminado. */</span></td></tr>
-  <tr><td>32</td><td>   <span class="codeReserved">if</span> (!$modeloEnElCliente-&gt;eliminado) {</td></tr>
-  <tr><td>33</td><td>    pasatiempoAgrega($modeloEnElCliente);</td></tr>
-  <tr><td>34</td><td>   }</td></tr>
-  <tr><td>35</td><td>  } <span class="codeReserved">elseif</span> (</td></tr>
-  <tr><td>36</td><td>   !$modeloEnElServidor-&gt;eliminado && $modeloEnElCliente-&gt;eliminado</td></tr>
+  <tr><td>23</td><td> <span class="codeReserved">foreach</span> ($lista <span class="codeReserved">as</span> $modelo) {</td></tr>
+  <tr><td>24</td><td>  $modeloEnElCliente = validaPasatiempo($modelo);</td></tr>
+  <tr><td>25</td><td>  $modeloEnElServidor = pasatiempoBusca($modeloEnElCliente[PAS_ID]);</td></tr>
+  <tr><td>26</td><td></td></tr>
+  <tr><td>27</td><td>  <span class="codeReserved">if</span> ($modeloEnElServidor === <span class="codeReserved">false</span>) {</td></tr>
+  <tr><td>28</td><td></td></tr>
+  <tr><td>29</td><td>   <span class="codeComment">/* CONFLICTO: El modelo no ha estado en el servidor.</span></td></tr>
+  <tr><td>30</td><td><span class="codeComment">    * AGREGARLO solamente si no está eliminado. */</span></td></tr>
+  <tr><td>31</td><td>   <span class="codeReserved">if</span> ($modeloEnElCliente[PAS_ELIMINADO] === 0) {</td></tr>
+  <tr><td>32</td><td>    pasatiempoAgrega($modeloEnElCliente);</td></tr>
+  <tr><td>33</td><td>   }</td></tr>
+  <tr><td>34</td><td>  } <span class="codeReserved">elseif</span> (</td></tr>
+  <tr><td>35</td><td>   $modeloEnElServidor[PAS_ELIMINADO] === 0</td></tr>
+  <tr><td>36</td><td>   && $modeloEnElCliente[PAS_ELIMINADO] === 1</td></tr>
   <tr><td>37</td><td>  ) {</td></tr>
   <tr><td>38</td><td></td></tr>
-  <tr><td>39</td><td>   <span class="codeComment">/* CONFLICTO. El registro está en el servidor, donde no se ha</span></td></tr>
-  <tr><td>40</td><td><span class="codeComment">    * eliminado, pero ha sido eliminado en el cliente.</span></td></tr>
-  <tr><td>41</td><td><span class="codeComment">    * Gana el cliente, porque optamos por no revivir lo que se ha</span></td></tr>
-  <tr><td>42</td><td><span class="codeComment">    * borrado. */</span></td></tr>
-  <tr><td>43</td><td>   pasatiempoModifica($modeloEnElCliente);</td></tr>
-  <tr><td>44</td><td>  } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (</td></tr>
-  <tr><td>45</td><td>   !$modeloEnElCliente-&gt;eliminado && !$modeloEnElServidor-&gt;eliminado</td></tr>
+  <tr><td>39</td><td>   <span class="codeComment">/* CONFLICTO: El registro está en el servidor, donde no se ha eliminado, pero</span></td></tr>
+  <tr><td>40</td><td><span class="codeComment">    * ha sido eliminado en el cliente.</span></td></tr>
+  <tr><td>41</td><td><span class="codeComment">    * Gana el cliente, porque optamos por no revivir lo eliminado. */</span></td></tr>
+  <tr><td>42</td><td>   pasatiempoModifica($modeloEnElCliente);</td></tr>
+  <tr><td>43</td><td>  } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (</td></tr>
+  <tr><td>44</td><td>   $modeloEnElCliente[PAS_ELIMINADO] === 0</td></tr>
+  <tr><td>45</td><td>   && $modeloEnElServidor[PAS_ELIMINADO] === 0</td></tr>
   <tr><td>46</td><td>  ) {</td></tr>
   <tr><td>47</td><td></td></tr>
-  <tr><td>48</td><td>   <span class="codeComment">/* CONFLICTO. El registro está tanto en el servidor como en el</span></td></tr>
-  <tr><td>49</td><td><span class="codeComment">    *  cliente. Los datos pueden ser diferentes.</span></td></tr>
-  <tr><td>50</td><td><span class="codeComment">    * PREVALECE LA FECHA MÁS GRANDE. Cuando gana el servidor no se</span></td></tr>
-  <tr><td>51</td><td><span class="codeComment">    * hace nada.*/</span></td></tr>
-  <tr><td>52</td><td>   <span class="codeReserved">if</span> (</td></tr>
-  <tr><td>53</td><td>    $modeloEnElCliente-&gt;modificacion &gt; $modeloEnElServidor-&gt;modificacion</td></tr>
+  <tr><td>48</td><td>   <span class="codeComment">/* CONFLICTO: Registros en el servidor y en el cliente. Pueden ser</span></td></tr>
+  <tr><td>49</td><td><span class="codeComment">    * diferentes.</span></td></tr>
+  <tr><td>50</td><td><span class="codeComment">    * GANA FECHA MÁS GRANDE. Cuando gana el servidor, no se hace nada. */</span></td></tr>
+  <tr><td>51</td><td>   <span class="codeReserved">if</span> (</td></tr>
+  <tr><td>52</td><td>    $modeloEnElCliente[PAS_MODIFICACION] &gt;</td></tr>
+  <tr><td>53</td><td>    $modeloEnElServidor[PAS_MODIFICACION]</td></tr>
   <tr><td>54</td><td>   ) {</td></tr>
   <tr><td>55</td><td>    <span class="codeComment">// La versión del cliente es más nueva y prevalece.</span></td></tr>
   <tr><td>56</td><td>    pasatiempoModifica($modeloEnElCliente);</td></tr>
@@ -808,14 +808,8 @@
   <tr><td>61</td><td> $lista = pasatiempoConsultaNoEliminados();</td></tr>
   <tr><td>62</td><td></td></tr>
   <tr><td>63</td><td> devuelveJson($lista);</td></tr>
-  <tr><td>64</td><td>} <span class="codeReserved">catch</span> (ProblemDetails $details) {</td></tr>
+  <tr><td>64</td><td>});</td></tr>
   <tr><td>65</td><td></td></tr>
-  <tr><td>66</td><td> devuelveProblemDetails($details);</td></tr>
-  <tr><td>67</td><td>} <span class="codeReserved">catch</span> (Throwable $error) {</td></tr>
-  <tr><td>68</td><td></td></tr>
-  <tr><td>69</td><td> devuelveErrorInterno($error);</td></tr>
-  <tr><td>70</td><td>}</td></tr>
-  <tr><td>71</td><td></td></tr>
  </tbody>
 </table>
       </section>
@@ -875,47 +869,45 @@
  <tbody>
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Pasatiempo.php"</span>;</td></tr>
-  <tr><td>4</td><td></td></tr>
-  <tr><td>5</td><td><span class="codeReserved">class</span> Bd</td></tr>
-  <tr><td>6</td><td>{</td></tr>
+  <tr><td>3</td><td><span class="codeReserved">class</span> Bd</td></tr>
+  <tr><td>4</td><td>{</td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td> <span class="codeReserved">private</span> <span class="codeReserved">static</span> ?PDO $pdo = <span class="codeReserved">null</span>;</td></tr>
   <tr><td>7</td><td></td></tr>
-  <tr><td>8</td><td> <span class="codeReserved">private</span> <span class="codeReserved">static</span> ?PDO $conexion = <span class="codeReserved">null</span>;</td></tr>
-  <tr><td>9</td><td></td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">static</span> <span class="codeReserved">function</span> getConexion(): PDO</td></tr>
-  <tr><td>11</td><td> {</td></tr>
-  <tr><td>12</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">self</span>::$conexion === <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>13</td><td>   <span class="codeReserved">self</span>::$conexion = <span class="codeReserved">new</span> PDO(</td></tr>
-  <tr><td>14</td><td>    <span class="codeComment">// cadena de conexión</span></td></tr>
-  <tr><td>15</td><td>    <span class="codeString">"sqlite:sincronizacion.db"</span>,</td></tr>
-  <tr><td>16</td><td>    <span class="codeComment">// usuario</span></td></tr>
+  <tr><td>8</td><td> <span class="codeReserved">static</span> <span class="codeReserved">function</span> pdo(): PDO</td></tr>
+  <tr><td>9</td><td> {</td></tr>
+  <tr><td>10</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">self</span>::$pdo === <span class="codeReserved">null</span>) {</td></tr>
+  <tr><td>11</td><td>   <span class="codeReserved">self</span>::$pdo = <span class="codeReserved">new</span> PDO(</td></tr>
+  <tr><td>12</td><td>    <span class="codeComment">// cadena de conexión</span></td></tr>
+  <tr><td>13</td><td>    <span class="codeString">"sqlite:sincronizacion.db"</span>,</td></tr>
+  <tr><td>14</td><td>    <span class="codeComment">// usuario</span></td></tr>
+  <tr><td>15</td><td>    <span class="codeReserved">null</span>,</td></tr>
+  <tr><td>16</td><td>    <span class="codeComment">// contraseña</span></td></tr>
   <tr><td>17</td><td>    <span class="codeReserved">null</span>,</td></tr>
-  <tr><td>18</td><td>    <span class="codeComment">// contraseña</span></td></tr>
-  <tr><td>19</td><td>    <span class="codeReserved">null</span>,</td></tr>
-  <tr><td>20</td><td>    <span class="codeComment">// Opciones: conexiones persistentes y lanza excepciones.</span></td></tr>
-  <tr><td>21</td><td>    [PDO::ATTR_PERSISTENT =&gt; <span class="codeReserved">true</span>, PDO::ATTR_ERRMODE =&gt; PDO::ERRMODE_EXCEPTION]</td></tr>
-  <tr><td>22</td><td>   );</td></tr>
-  <tr><td>23</td><td></td></tr>
-  <tr><td>24</td><td>   <span class="codeReserved">self</span>::$conexion-&gt;exec(</td></tr>
-  <tr><td>25</td><td>    <span class="codeString">'<span class="codeReserved">CREATE</span> <span class="codeReserved">TABLE</span> <span class="codeReserved">IF</span> <span class="codeReserved">NOT</span> <span class="codeReserved">EXISTS</span> PASATIEMPO (</span></td></tr>
-  <tr><td>26</td><td><span class="codeString">      PAS_UUID <span class="codeReserved">TEXT</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
-  <tr><td>27</td><td><span class="codeString">      PAS_NOMBRE <span class="codeReserved">TEXT</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
-  <tr><td>28</td><td><span class="codeString">      PAS_MODIFICACION <span class="codeReserved">INTEGER</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
-  <tr><td>29</td><td><span class="codeString">      PAS_ELIMINADO <span class="codeReserved">INTEGER</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
-  <tr><td>30</td><td><span class="codeString">      <span class="codeReserved">CONSTRAINT</span> PAS_PK</span></td></tr>
-  <tr><td>31</td><td><span class="codeString">       <span class="codeReserved">PRIMARY</span> <span class="codeReserved">KEY</span>(PAS_UUID),</span></td></tr>
-  <tr><td>32</td><td><span class="codeString">      <span class="codeReserved">CONSTRAINT</span> PAS_UUID_NV</span></td></tr>
-  <tr><td>33</td><td><span class="codeString">       CHECK(LENGTH(PAS_UUID) &gt; 0),</span></td></tr>
-  <tr><td>34</td><td><span class="codeString">      <span class="codeReserved">CONSTRAINT</span> PAS_NOM_NV</span></td></tr>
-  <tr><td>35</td><td><span class="codeString">       CHECK(LENGTH(PAS_NOMBRE) &gt; 0)</span></td></tr>
-  <tr><td>36</td><td><span class="codeString">     )'</span></td></tr>
-  <tr><td>37</td><td>   );</td></tr>
-  <tr><td>38</td><td>  }</td></tr>
-  <tr><td>39</td><td></td></tr>
-  <tr><td>40</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">self</span>::$conexion;</td></tr>
-  <tr><td>41</td><td> }</td></tr>
-  <tr><td>42</td><td>}</td></tr>
-  <tr><td>43</td><td></td></tr>
+  <tr><td>18</td><td>    <span class="codeComment">// Opciones: pdos no persistentes y lanza excepciones.</span></td></tr>
+  <tr><td>19</td><td>    [PDO::ATTR_PERSISTENT =&gt; <span class="codeReserved">false</span>, PDO::ATTR_ERRMODE =&gt; PDO::ERRMODE_EXCEPTION]</td></tr>
+  <tr><td>20</td><td>   );</td></tr>
+  <tr><td>21</td><td></td></tr>
+  <tr><td>22</td><td>   <span class="codeReserved">self</span>::$pdo-&gt;exec(</td></tr>
+  <tr><td>23</td><td>    <span class="codeString">'<span class="codeReserved">CREATE</span> <span class="codeReserved">TABLE</span> <span class="codeReserved">IF</span> <span class="codeReserved">NOT</span> <span class="codeReserved">EXISTS</span> PASATIEMPO (</span></td></tr>
+  <tr><td>24</td><td><span class="codeString">      PAS_ID <span class="codeReserved">TEXT</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
+  <tr><td>25</td><td><span class="codeString">      PAS_NOMBRE <span class="codeReserved">TEXT</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
+  <tr><td>26</td><td><span class="codeString">      PAS_MODIFICACION <span class="codeReserved">INTEGER</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
+  <tr><td>27</td><td><span class="codeString">      PAS_ELIMINADO <span class="codeReserved">INTEGER</span> <span class="codeReserved">NOT</span> <span class="codeReserved">NULL</span>,</span></td></tr>
+  <tr><td>28</td><td><span class="codeString">      <span class="codeReserved">CONSTRAINT</span> PAS_PK</span></td></tr>
+  <tr><td>29</td><td><span class="codeString">       <span class="codeReserved">PRIMARY</span> <span class="codeReserved">KEY</span>(PAS_ID),</span></td></tr>
+  <tr><td>30</td><td><span class="codeString">      <span class="codeReserved">CONSTRAINT</span> PAS_ID_NV</span></td></tr>
+  <tr><td>31</td><td><span class="codeString">       CHECK(LENGTH(PAS_ID) &gt; 0),</span></td></tr>
+  <tr><td>32</td><td><span class="codeString">      <span class="codeReserved">CONSTRAINT</span> PAS_NOM_NV</span></td></tr>
+  <tr><td>33</td><td><span class="codeString">       CHECK(LENGTH(PAS_NOMBRE) &gt; 0)</span></td></tr>
+  <tr><td>34</td><td><span class="codeString">     )'</span></td></tr>
+  <tr><td>35</td><td>   );</td></tr>
+  <tr><td>36</td><td>  }</td></tr>
+  <tr><td>37</td><td></td></tr>
+  <tr><td>38</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">self</span>::$pdo;</td></tr>
+  <tr><td>39</td><td> }</td></tr>
+  <tr><td>40</td><td>}</td></tr>
+  <tr><td>41</td><td></td></tr>
  </tbody>
 </table>
       </section>
@@ -932,30 +924,27 @@
  <tbody>
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Pasatiempo.php"</span>;</td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeReserved">function</span> pasatiempoAgrega(Pasatiempo $modelo)</td></tr>
-  <tr><td>7</td><td>{</td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/validaNombre.php"</span>;</td></tr>
+  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/insert.php"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
+  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/PASATIEMPO.php"</span>;</td></tr>
+  <tr><td>7</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/validaId.php"</span>;</td></tr>
   <tr><td>8</td><td></td></tr>
-  <tr><td>9</td><td> $modelo-&gt;valida();</td></tr>
-  <tr><td>10</td><td></td></tr>
-  <tr><td>11</td><td> $conexion = Bd::getConexion();</td></tr>
-  <tr><td>12</td><td></td></tr>
-  <tr><td>13</td><td> $conexion-&gt;prepare(</td></tr>
-  <tr><td>14</td><td>  <span class="codeString">"<span class="codeReserved">INSERT</span> <span class="codeReserved">INTO</span> PASATIEMPO</span></td></tr>
-  <tr><td>15</td><td><span class="codeString">    (PAS_UUID, PAS_NOMBRE, PAS_MODIFICACION, PAS_ELIMINADO)</span></td></tr>
-  <tr><td>16</td><td><span class="codeString">   <span class="codeReserved">VALUES</span></span></td></tr>
-  <tr><td>17</td><td><span class="codeString">    (:uuid, :nombre, :modificacion, :eliminado)"</span></td></tr>
-  <tr><td>18</td><td> )</td></tr>
-  <tr><td>19</td><td>  -&gt;execute([</td></tr>
-  <tr><td>20</td><td>   <span class="codeString">":uuid"</span> =&gt; $modelo-&gt;uuid,</td></tr>
-  <tr><td>21</td><td>   <span class="codeString">":nombre"</span> =&gt; $modelo-&gt;nombre,</td></tr>
-  <tr><td>22</td><td>   <span class="codeString">":modificacion"</span> =&gt; $modelo-&gt;modificacion,</td></tr>
-  <tr><td>23</td><td>   <span class="codeString">":eliminado"</span> =&gt; $modelo-&gt;eliminado ? 1 : 0</td></tr>
-  <tr><td>24</td><td>  ]);</td></tr>
-  <tr><td>25</td><td>}</td></tr>
-  <tr><td>26</td><td></td></tr>
+  <tr><td>9</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> array{</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment"> *   PAS_ID: string,</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment"> *   PAS_NOMBRE: string,</span></td></tr>
+  <tr><td>13</td><td><span class="codeComment"> *   PAS_MODIFICACION: <span class="codeReserved">int</span>,</span></td></tr>
+  <tr><td>14</td><td><span class="codeComment"> *   PAS_ELIMINADO: <span class="codeReserved">int</span></span></td></tr>
+  <tr><td>15</td><td><span class="codeComment"> *  } $modelo</span></td></tr>
+  <tr><td>16</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>17</td><td><span class="codeReserved">function</span> pasatiempoAgrega(array $modelo)</td></tr>
+  <tr><td>18</td><td>{</td></tr>
+  <tr><td>19</td><td> validaId($modelo[PAS_ID]);</td></tr>
+  <tr><td>20</td><td> validaNombre($modelo[PAS_NOMBRE]);</td></tr>
+  <tr><td>21</td><td> insert(pdo: Bd::pdo(), into: PASATIEMPO, values: $modelo);</td></tr>
+  <tr><td>22</td><td>}</td></tr>
+  <tr><td>23</td><td></td></tr>
  </tbody>
 </table>
       </section>
@@ -972,31 +961,27 @@
  <tbody>
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/fetch.php"</span>;</td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/selectFirst.php"</span>;</td></tr>
   <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Pasatiempo.php"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/PASATIEMPO.php"</span>;</td></tr>
   <tr><td>6</td><td></td></tr>
-  <tr><td>7</td><td><span class="codeReserved">function</span> pasatiempoBusca(string $uuid): <span class="codeReserved">false</span>|Pasatiempo</td></tr>
-  <tr><td>8</td><td>{</td></tr>
-  <tr><td>9</td><td></td></tr>
-  <tr><td>10</td><td> $conexion = Bd::getConexion();</td></tr>
-  <tr><td>11</td><td></td></tr>
-  <tr><td>12</td><td> <span class="codeReserved">return</span> fetch(</td></tr>
-  <tr><td>13</td><td>  $conexion-&gt;prepare(</td></tr>
-  <tr><td>14</td><td>   <span class="codeString">"<span class="codeReserved">SELECT</span></span></td></tr>
-  <tr><td>15</td><td><span class="codeString">    PAS_UUID <span class="codeReserved">AS</span> uuid,</span></td></tr>
-  <tr><td>16</td><td><span class="codeString">    PAS_NOMBRE <span class="codeReserved">AS</span> nombre,</span></td></tr>
-  <tr><td>17</td><td><span class="codeString">    PAS_MODIFICACION <span class="codeReserved">AS</span> modificacion,</span></td></tr>
-  <tr><td>18</td><td><span class="codeString">    PAS_ELIMINADO <span class="codeReserved">AS</span> eliminado</span></td></tr>
-  <tr><td>19</td><td><span class="codeString">   <span class="codeReserved">FROM</span> PASATIEMPO</span></td></tr>
-  <tr><td>20</td><td><span class="codeString">   <span class="codeReserved">WHERE</span> PAS_UUID = :uuid"</span></td></tr>
-  <tr><td>21</td><td>  ),</td></tr>
-  <tr><td>22</td><td>  [<span class="codeString">":uuid"</span> =&gt; $uuid],</td></tr>
-  <tr><td>23</td><td>  PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,</td></tr>
-  <tr><td>24</td><td>  Pasatiempo::<span class="codeReserved">class</span></td></tr>
-  <tr><td>25</td><td> );</td></tr>
-  <tr><td>26</td><td>}</td></tr>
-  <tr><td>27</td><td></td></tr>
+  <tr><td>7</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> * <span class="codeReserved">@return</span> <span class="codeReserved">false</span> | array{</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> *   PAS_ID: string,</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> *   PAS_NOMBRE: string,</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment"> *   PAS_MODIFICACION: <span class="codeReserved">int</span>,</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment"> *   PAS_ELIMINADO: <span class="codeReserved">int</span></span></td></tr>
+  <tr><td>13</td><td><span class="codeComment"> *  }</span></td></tr>
+  <tr><td>14</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>15</td><td><span class="codeReserved">function</span> pasatiempoBusca(string $id): <span class="codeReserved">false</span>|array</td></tr>
+  <tr><td>16</td><td>{</td></tr>
+  <tr><td>17</td><td> <span class="codeReserved">return</span> selectFirst(</td></tr>
+  <tr><td>18</td><td>  pdo: Bd::pdo(),</td></tr>
+  <tr><td>19</td><td>  <span class="codeReserved">from</span>: PASATIEMPO,</td></tr>
+  <tr><td>20</td><td>  where: [PAS_ID =&gt; $id]</td></tr>
+  <tr><td>21</td><td> );</td></tr>
+  <tr><td>22</td><td>}</td></tr>
+  <tr><td>23</td><td></td></tr>
  </tbody>
 </table>
       </section>
@@ -1013,32 +998,28 @@
  <tbody>
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/fetchAll.php"</span>;</td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/select.php"</span>;</td></tr>
   <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Pasatiempo.php"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/PASATIEMPO.php"</span>;</td></tr>
   <tr><td>6</td><td></td></tr>
-  <tr><td>7</td><td><span class="codeComment">/** <span class="codeReserved">@return</span> Pasatiempo[] */</span></td></tr>
-  <tr><td>8</td><td><span class="codeReserved">function</span> pasatiempoConsultaNoEliminados()</td></tr>
-  <tr><td>9</td><td>{</td></tr>
-  <tr><td>10</td><td> $conexion = Bd::getConexion();</td></tr>
-  <tr><td>11</td><td></td></tr>
-  <tr><td>12</td><td> <span class="codeReserved">return</span> fetchAll(</td></tr>
-  <tr><td>13</td><td>  $conexion-&gt;query(</td></tr>
-  <tr><td>14</td><td>   <span class="codeString">"<span class="codeReserved">SELECT</span></span></td></tr>
-  <tr><td>15</td><td><span class="codeString">    PAS_UUID <span class="codeReserved">AS</span> uuid,</span></td></tr>
-  <tr><td>16</td><td><span class="codeString">    PAS_NOMBRE <span class="codeReserved">AS</span> nombre,</span></td></tr>
-  <tr><td>17</td><td><span class="codeString">    PAS_MODIFICACION <span class="codeReserved">AS</span> modificacion,</span></td></tr>
-  <tr><td>18</td><td><span class="codeString">    PAS_ELIMINADO <span class="codeReserved">AS</span> eliminado</span></td></tr>
-  <tr><td>19</td><td><span class="codeString">   <span class="codeReserved">FROM</span> PASATIEMPO</span></td></tr>
-  <tr><td>20</td><td><span class="codeString">   <span class="codeReserved">WHERE</span> PAS_ELIMINADO = 0</span></td></tr>
-  <tr><td>21</td><td><span class="codeString">   <span class="codeReserved">ORDER</span> <span class="codeReserved">BY</span> PAS_NOMBRE"</span></td></tr>
-  <tr><td>22</td><td>  ),</td></tr>
-  <tr><td>23</td><td>  [],</td></tr>
-  <tr><td>24</td><td>  PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,</td></tr>
-  <tr><td>25</td><td>  Pasatiempo::<span class="codeReserved">class</span></td></tr>
-  <tr><td>26</td><td> );</td></tr>
-  <tr><td>27</td><td>}</td></tr>
-  <tr><td>28</td><td></td></tr>
+  <tr><td>7</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> * <span class="codeReserved">@return</span> array{</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> *   PAS_ID: string,</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> *   PAS_NOMBRE: string,</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment"> *   PAS_MODIFICACION: <span class="codeReserved">int</span>,</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment"> *   PAS_ELIMINADO: <span class="codeReserved">int</span></span></td></tr>
+  <tr><td>13</td><td><span class="codeComment"> *  }[]</span></td></tr>
+  <tr><td>14</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>15</td><td><span class="codeReserved">function</span> pasatiempoConsultaNoEliminados()</td></tr>
+  <tr><td>16</td><td>{</td></tr>
+  <tr><td>17</td><td> <span class="codeReserved">return</span> select(</td></tr>
+  <tr><td>18</td><td>  pdo: Bd::pdo(),</td></tr>
+  <tr><td>19</td><td>  <span class="codeReserved">from</span>: PASATIEMPO,</td></tr>
+  <tr><td>20</td><td>  where: [PAS_ELIMINADO =&gt; 0],</td></tr>
+  <tr><td>21</td><td>  orderBy: PAS_NOMBRE</td></tr>
+  <tr><td>22</td><td> );</td></tr>
+  <tr><td>23</td><td>}</td></tr>
+  <tr><td>24</td><td></td></tr>
  </tbody>
 </table>
       </section>
@@ -1055,30 +1036,30 @@
  <tbody>
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/Pasatiempo.php"</span>;</td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeReserved">function</span> pasatiempoModifica(Pasatiempo $modelo)</td></tr>
-  <tr><td>7</td><td>{</td></tr>
+  <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/validaNombre.php"</span>;</td></tr>
+  <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/update.php"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
+  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/PASATIEMPO.php"</span>;</td></tr>
+  <tr><td>7</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/validaId.php"</span>;</td></tr>
   <tr><td>8</td><td></td></tr>
-  <tr><td>9</td><td> $modelo-&gt;valida();</td></tr>
-  <tr><td>10</td><td></td></tr>
-  <tr><td>11</td><td> $conexion = Bd::getConexion();</td></tr>
-  <tr><td>12</td><td></td></tr>
-  <tr><td>13</td><td> $conexion-&gt;prepare(</td></tr>
-  <tr><td>14</td><td>  <span class="codeString">"<span class="codeReserved">UPDATE</span> PASATIEMPO</span></td></tr>
-  <tr><td>15</td><td><span class="codeString">   <span class="codeReserved">SET</span></span></td></tr>
-  <tr><td>16</td><td><span class="codeString">    PAS_NOMBRE = :nombre,</span></td></tr>
-  <tr><td>17</td><td><span class="codeString">    PAS_MODIFICACION = :modificacion,</span></td></tr>
-  <tr><td>18</td><td><span class="codeString">    PAS_ELIMINADO = :eliminado</span></td></tr>
-  <tr><td>19</td><td><span class="codeString">   <span class="codeReserved">WHERE</span> PAS_UUID = :uuid"</span></td></tr>
-  <tr><td>20</td><td> )</td></tr>
-  <tr><td>21</td><td>  -&gt;execute([</td></tr>
-  <tr><td>22</td><td>   <span class="codeString">":uuid"</span> =&gt; $modelo-&gt;uuid,</td></tr>
-  <tr><td>23</td><td>   <span class="codeString">":nombre"</span> =&gt; $modelo-&gt;nombre,</td></tr>
-  <tr><td>24</td><td>   <span class="codeString">":modificacion"</span> =&gt; $modelo-&gt;modificacion,</td></tr>
-  <tr><td>25</td><td>   <span class="codeString">":eliminado"</span> =&gt; $modelo-&gt;eliminado ? 1 : 0</td></tr>
-  <tr><td>26</td><td>  ]);</td></tr>
+  <tr><td>9</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> array{</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment"> *   PAS_ID: string,</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment"> *   PAS_NOMBRE: string,</span></td></tr>
+  <tr><td>13</td><td><span class="codeComment"> *   PAS_MODIFICACION: <span class="codeReserved">int</span>,</span></td></tr>
+  <tr><td>14</td><td><span class="codeComment"> *   PAS_ELIMINADO: <span class="codeReserved">int</span></span></td></tr>
+  <tr><td>15</td><td><span class="codeComment"> *  } $modelo</span></td></tr>
+  <tr><td>16</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>17</td><td><span class="codeReserved">function</span> pasatiempoModifica(array $modelo)</td></tr>
+  <tr><td>18</td><td>{</td></tr>
+  <tr><td>19</td><td> validaId($modelo[PAS_ID]);</td></tr>
+  <tr><td>20</td><td> validaNombre($modelo[PAS_NOMBRE]);</td></tr>
+  <tr><td>21</td><td> update(</td></tr>
+  <tr><td>22</td><td>  pdo: Bd::pdo(),</td></tr>
+  <tr><td>23</td><td>  table: PASATIEMPO,</td></tr>
+  <tr><td>24</td><td>  set: $modelo,</td></tr>
+  <tr><td>25</td><td>  where: [PAS_ID =&gt; $modelo[PAS_ID]]</td></tr>
+  <tr><td>26</td><td> );</td></tr>
   <tr><td>27</td><td>}</td></tr>
   <tr><td>28</td><td></td></tr>
  </tbody>
@@ -1102,19 +1083,24 @@
     
    <li>
     <p>
-     <a href="/m09sincronizacion/m-srv/m-modelo/m-Pasatiempo-php.html">srv / modelo / Pasatiempo.php</a>
+     <a href="/m09sincronizacion/m-srv/m-modelo/m-PASATIEMPO-php.html">srv / modelo / PASATIEMPO.php</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-srv/m-modelo/m-recuperaPasatiempo-php.html">srv / modelo / recuperaPasatiempo.php</a>
+     <a href="/m09sincronizacion/m-srv/m-modelo/m-validaId-php.html">srv / modelo / validaId.php</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-srv/m-modelo/m-validaPasatiempo-php.html">srv / modelo / validaPasatiempo.php</a>
     </p>
    </li>
    </ol>
    </nav>
   </div>
      <section >
-         <h1 >1. srv / modelo / Pasatiempo.php</h1><table class="codeShow">
+         <h1 >1. srv / modelo / PASATIEMPO.php</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1126,39 +1112,43 @@
  <tbody>
   <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
   <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">class</span> Pasatiempo</td></tr>
-  <tr><td>4</td><td>{</td></tr>
-  <tr><td>5</td><td> <span class="codeReserved">public</span> string $uuid;</td></tr>
-  <tr><td>6</td><td> <span class="codeReserved">public</span> string $nombre;</td></tr>
-  <tr><td>7</td><td> <span class="codeReserved">public</span> <span class="codeReserved">int</span> $modificacion;</td></tr>
-  <tr><td>8</td><td> <span class="codeReserved">public</span> <span class="codeReserved">bool</span> $eliminado;</td></tr>
-  <tr><td>9</td><td></td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> <span class="codeReserved">__construct</span>(</td></tr>
-  <tr><td>11</td><td>  string $nombre = <span class="codeString">""</span>,</td></tr>
-  <tr><td>12</td><td>  string $uuid = <span class="codeString">""</span>,</td></tr>
-  <tr><td>13</td><td>  <span class="codeReserved">int</span> $modificacion = 0,</td></tr>
-  <tr><td>14</td><td>  <span class="codeReserved">bool</span> $eliminado = <span class="codeReserved">true</span></td></tr>
-  <tr><td>15</td><td> ) {</td></tr>
-  <tr><td>16</td><td>  $this-&gt;nombre = $nombre;</td></tr>
-  <tr><td>17</td><td>  $this-&gt;uuid = $uuid;</td></tr>
-  <tr><td>18</td><td>  $this-&gt;modificacion = $modificacion;</td></tr>
-  <tr><td>19</td><td>  $this-&gt;eliminado = $eliminado;</td></tr>
-  <tr><td>20</td><td> }</td></tr>
-  <tr><td>21</td><td></td></tr>
-  <tr><td>22</td><td> <span class="codeReserved">public</span> <span class="codeReserved">function</span> valida()</td></tr>
-  <tr><td>23</td><td> {</td></tr>
-  <tr><td>24</td><td>  <span class="codeReserved">if</span> ($this-&gt;uuid === <span class="codeString">""</span>)</td></tr>
-  <tr><td>25</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Exception(<span class="codeString">"Falta el uuid."</span>);</td></tr>
-  <tr><td>26</td><td>  <span class="codeReserved">if</span> ($this-&gt;nombre === <span class="codeString">""</span>)</td></tr>
-  <tr><td>27</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Exception(<span class="codeString">"Falta el nombre."</span>);</td></tr>
-  <tr><td>28</td><td> }</td></tr>
-  <tr><td>29</td><td>}</td></tr>
-  <tr><td>30</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">const</span> PASATIEMPO = <span class="codeString">"PASATIEMPO"</span>;</td></tr>
+  <tr><td>4</td><td><span class="codeReserved">const</span> PAS_ID = <span class="codeString">"PAS_ID"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">const</span> PAS_NOMBRE = <span class="codeString">"PAS_NOMBRE"</span>;</td></tr>
+  <tr><td>6</td><td><span class="codeReserved">const</span> PAS_MODIFICACION = <span class="codeString">"PAS_MODIFICACION"</span>;</td></tr>
+  <tr><td>7</td><td><span class="codeReserved">const</span> PAS_ELIMINADO = <span class="codeString">"PAS_ELIMINADO"</span>;</td></tr>
+  <tr><td>8</td><td></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >2. srv / modelo / recuperaPasatiempo.php</h1><table class="codeShow">
+         <h1 >2. srv / modelo / validaId.php</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">function</span> validaId(string $id)</td></tr>
+  <tr><td>4</td><td>{</td></tr>
+  <tr><td>5</td><td> <span class="codeReserved">if</span> ($id === <span class="codeString">""</span>)</td></tr>
+  <tr><td>6</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetails(</td></tr>
+  <tr><td>7</td><td>   status: BAD_REQUEST,</td></tr>
+  <tr><td>8</td><td>   title: <span class="codeString">"Falta el id."</span>,</td></tr>
+  <tr><td>9</td><td>   type: <span class="codeString">"/error/faltaid.html"</span>,</td></tr>
+  <tr><td>10</td><td>  );</td></tr>
+  <tr><td>11</td><td>}</td></tr>
+  <tr><td>12</td><td></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >3. srv / modelo / validaPasatiempo.php</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1173,47 +1163,47 @@
   <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/BAD_REQUEST.php"</span>;</td></tr>
   <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/validaJson.php"</span>;</td></tr>
   <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/ProblemDetails.php"</span>;</td></tr>
-  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Pasatiempo.php"</span>;</td></tr>
+  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/PASATIEMPO.php"</span>;</td></tr>
   <tr><td>7</td><td></td></tr>
-  <tr><td>8</td><td><span class="codeReserved">function</span> recuperaPasatiempo($objeto)</td></tr>
+  <tr><td>8</td><td><span class="codeReserved">function</span> validaPasatiempo($objeto)</td></tr>
   <tr><td>9</td><td>{</td></tr>
   <tr><td>10</td><td></td></tr>
   <tr><td>11</td><td> $objeto = validaJson($objeto);</td></tr>
   <tr><td>12</td><td></td></tr>
-  <tr><td>13</td><td> <span class="codeReserved">if</span> (!isset($objeto-&gt;nombre) || !is_string($objeto-&gt;nombre))</td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">if</span> (!isset($objeto-&gt;PAS_ID) || !is_string($objeto-&gt;PAS_ID))</td></tr>
   <tr><td>14</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetails(</td></tr>
   <tr><td>15</td><td>   status: BAD_REQUEST,</td></tr>
-  <tr><td>16</td><td>   title: <span class="codeString">"El nombre debe ser texto."</span>,</td></tr>
-  <tr><td>17</td><td>   type: <span class="codeString">"/error/nombreincorrecto.html"</span>,</td></tr>
+  <tr><td>16</td><td>   title: <span class="codeString">"El id debe ser texto."</span>,</td></tr>
+  <tr><td>17</td><td>   type: <span class="codeString">"/error/idincorrecto.html"</span>,</td></tr>
   <tr><td>18</td><td>  );</td></tr>
   <tr><td>19</td><td></td></tr>
-  <tr><td>20</td><td> <span class="codeReserved">if</span> (!isset($objeto-&gt;uuid) || !is_string($objeto-&gt;uuid))</td></tr>
+  <tr><td>20</td><td> <span class="codeReserved">if</span> (!isset($objeto-&gt;PAS_NOMBRE) || !is_string($objeto-&gt;PAS_NOMBRE))</td></tr>
   <tr><td>21</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetails(</td></tr>
   <tr><td>22</td><td>   status: BAD_REQUEST,</td></tr>
-  <tr><td>23</td><td>   title: <span class="codeString">"El uuid debe ser texto."</span>,</td></tr>
-  <tr><td>24</td><td>   type: <span class="codeString">"/error/uuidincorrecto.html"</span>,</td></tr>
+  <tr><td>23</td><td>   title: <span class="codeString">"El nombre debe ser texto."</span>,</td></tr>
+  <tr><td>24</td><td>   type: <span class="codeString">"/error/nombreincorrecto.html"</span>,</td></tr>
   <tr><td>25</td><td>  );</td></tr>
   <tr><td>26</td><td></td></tr>
-  <tr><td>27</td><td> <span class="codeReserved">if</span> (!isset($objeto-&gt;eliminado) || !is_bool($objeto-&gt;eliminado))</td></tr>
+  <tr><td>27</td><td> <span class="codeReserved">if</span> (!isset($objeto-&gt;PAS_MODIFICACION)  || !is_int($objeto-&gt;PAS_MODIFICACION))</td></tr>
   <tr><td>28</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetails(</td></tr>
   <tr><td>29</td><td>   status: BAD_REQUEST,</td></tr>
-  <tr><td>30</td><td>   title: <span class="codeString">"El campo eliminado debe ser booleano."</span>,</td></tr>
-  <tr><td>31</td><td>   type: <span class="codeString">"/error/eliminadoincorrecto.html"</span>,</td></tr>
+  <tr><td>30</td><td>   title: <span class="codeString">"La modificacion debe ser número."</span>,</td></tr>
+  <tr><td>31</td><td>   type: <span class="codeString">"/error/modificacionincorrecta.html"</span>,</td></tr>
   <tr><td>32</td><td>  );</td></tr>
   <tr><td>33</td><td></td></tr>
-  <tr><td>34</td><td> <span class="codeReserved">if</span> (!isset($objeto-&gt;modificacion)  || !is_int($objeto-&gt;modificacion))</td></tr>
+  <tr><td>34</td><td>  <span class="codeReserved">if</span> (!isset($objeto-&gt;PAS_ELIMINADO) || !is_int($objeto-&gt;PAS_ELIMINADO))</td></tr>
   <tr><td>35</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetails(</td></tr>
   <tr><td>36</td><td>   status: BAD_REQUEST,</td></tr>
-  <tr><td>37</td><td>   title: <span class="codeString">"La modificacion debe ser número."</span>,</td></tr>
-  <tr><td>38</td><td>   type: <span class="codeString">"/error/modificacionincorrecta.html"</span>,</td></tr>
+  <tr><td>37</td><td>   title: <span class="codeString">"El campo eliminado debe ser entero."</span>,</td></tr>
+  <tr><td>38</td><td>   type: <span class="codeString">"/error/eliminadoincorrecto.html"</span>,</td></tr>
   <tr><td>39</td><td>  );</td></tr>
   <tr><td>40</td><td></td></tr>
-  <tr><td>41</td><td> <span class="codeReserved">return</span> <span class="codeReserved">new</span> Pasatiempo(</td></tr>
-  <tr><td>42</td><td>  uuid: $objeto-&gt;uuid,</td></tr>
-  <tr><td>43</td><td>  nombre: $objeto-&gt;nombre,</td></tr>
-  <tr><td>44</td><td>  modificacion: $objeto-&gt;modificacion,</td></tr>
-  <tr><td>45</td><td>  eliminado: $objeto-&gt;eliminado</td></tr>
-  <tr><td>46</td><td> );</td></tr>
+  <tr><td>41</td><td> <span class="codeReserved">return</span> [</td></tr>
+  <tr><td>42</td><td>  PAS_ID =&gt; $objeto-&gt;PAS_ID,</td></tr>
+  <tr><td>43</td><td>  PAS_NOMBRE =&gt; $objeto-&gt;PAS_NOMBRE,</td></tr>
+  <tr><td>44</td><td>  PAS_MODIFICACION =&gt; $objeto-&gt;PAS_MODIFICACION,</td></tr>
+  <tr><td>45</td><td>  PAS_ELIMINADO =&gt; $objeto-&gt;PAS_ELIMINADO</td></tr>
+  <tr><td>46</td><td> ];</td></tr>
   <tr><td>47</td><td>}</td></tr>
   <tr><td>48</td><td></td></tr>
  </tbody>

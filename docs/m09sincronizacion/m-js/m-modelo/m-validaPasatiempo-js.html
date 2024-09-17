@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>3. js / modelo / validaPasatiempo.js - GilPG DM</title>
+ <title>4. js / modelo / validaPasatiempo.js - GilPG DM</title>
  <meta name="description" content="Código de «js/modelo/validaPasatiempo.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -818,7 +818,7 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >3. js / modelo / validaPasatiempo.js</h1><table class="codeShow">
+   <h1 >4. js / modelo / validaPasatiempo.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -830,30 +830,25 @@
  <tbody>
   <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
   <tr><td>2</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { any } objeto</span></td></tr>
-  <tr><td>3</td><td><span class="codeComment"> * <span class="codeReserved">@returns</span> { {</span></td></tr>
-  <tr><td>4</td><td><span class="codeComment"> *   uuid: string,</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> *   nombre: string,</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> *   modificacion: number,</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> *   eliminado: boolean,</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment"> *  } }</span></td></tr>
-  <tr><td>9</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>10</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaPasatiempo(objeto) {</td></tr>
-  <tr><td>11</td><td></td></tr>
-  <tr><td>12</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.uuid !== <span class="codeString">"string"</span>)</td></tr>
-  <tr><td>13</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El uuid debe ser texto."</span>)</td></tr>
-  <tr><td>14</td><td></td></tr>
-  <tr><td>15</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.nombre !== <span class="codeString">"string"</span>)</td></tr>
-  <tr><td>16</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El nombre debe ser texto."</span>)</td></tr>
-  <tr><td>17</td><td></td></tr>
-  <tr><td>18</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.modificacion !== <span class="codeString">"number"</span>)</td></tr>
-  <tr><td>19</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El campo modificacion debe ser número."</span>)</td></tr>
+  <tr><td>3</td><td><span class="codeComment"> * <span class="codeReserved">@returns</span> {<span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO}</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>5</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaPasatiempo(objeto) {</td></tr>
+  <tr><td>6</td><td></td></tr>
+  <tr><td>7</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.PAS_ID !== <span class="codeString">"string"</span>)</td></tr>
+  <tr><td>8</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El id debe ser texto."</span>)</td></tr>
+  <tr><td>9</td><td></td></tr>
+  <tr><td>10</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.PAS_NOMBRE !== <span class="codeString">"string"</span>)</td></tr>
+  <tr><td>11</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El nombre debe ser texto."</span>)</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.PAS_MODIFICACION !== <span class="codeString">"number"</span>)</td></tr>
+  <tr><td>14</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El campo modificacion debe ser número."</span>)</td></tr>
+  <tr><td>15</td><td></td></tr>
+  <tr><td>16</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.PAS_ELIMINADO !== <span class="codeString">"number"</span>)</td></tr>
+  <tr><td>17</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El campo eliminado debe ser número."</span>)</td></tr>
+  <tr><td>18</td><td></td></tr>
+  <tr><td>19</td><td> <span class="codeReserved">return</span> objeto</td></tr>
   <tr><td>20</td><td></td></tr>
-  <tr><td>21</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.eliminado !== <span class="codeString">"boolean"</span>)</td></tr>
-  <tr><td>22</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El campo eliminado debe ser booleano."</span>)</td></tr>
-  <tr><td>23</td><td></td></tr>
-  <tr><td>24</td><td> <span class="codeReserved">return</span> objeto</td></tr>
-  <tr><td>25</td><td></td></tr>
-  <tr><td>26</td><td>}</td></tr>
+  <tr><td>21</td><td>}</td></tr>
  </tbody>
 </table>
  <footer>
@@ -881,10 +876,10 @@
    menu
   </span>
  </button>
- <a class="anterior" href="/m09sincronizacion/m-js/m-modelo/m-recuperaPasatiempo-js.html" title="2. js / modelo / recuperaPasatiempo.js"><span class="material-symbols-outlined">
+ <a class="anterior" href="/m09sincronizacion/m-js/m-modelo/m-validaNombre-js.html" title="3. js / modelo / validaNombre.js"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
- <a class="siguiente" href="/m09sincronizacion/m-srv/index.html" title="M. Carpeta « srv »"><span class="material-symbols-outlined">
+ <a class="siguiente" href="/m09sincronizacion/m-js/m-modelo/m-validaPasatiempos-js.html" title="5. js / modelo / validaPasatiempos.js"><span class="material-symbols-outlined">
      skip_next
      </span></a>
 </div>
@@ -915,23 +910,33 @@
          arrow_upward
         </span></a>
      </p>
-   <h1><a href="/m09sincronizacion/m-js/m-modelo/index.html">C. Carpeta « js / modelo »</a></h1>
+   <h1><a href="/m09sincronizacion/m-js/m-modelo/index.html">F. Carpeta « js / modelo »</a></h1>
    
    <ol type="1">
     
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-modelo/m-Pasatiempo-js.html">js / modelo / Pasatiempo.js</a>
+     <a href="/m09sincronizacion/m-js/m-modelo/m-PASATIEMPO-js.html">js / modelo / PASATIEMPO.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-modelo/m-recuperaPasatiempo-js.html">js / modelo / recuperaPasatiempo.js</a>
+     <a href="/m09sincronizacion/m-js/m-modelo/m-validaId-js.html">js / modelo / validaId.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-modelo/m-validaNombre-js.html">js / modelo / validaNombre.js</a>
     </p>
    </li>
    <li>
     <p>
      <a href="/m09sincronizacion/m-js/m-modelo/m-validaPasatiempo-js.html" class="actual">js / modelo / validaPasatiempo.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-modelo/m-validaPasatiempos-js.html">js / modelo / validaPasatiempos.js</a>
     </p>
    </li>
    </ol>
@@ -955,9 +960,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m09sincronizacion/m-js/m-modelo/m-recuperaPasatiempo-js.html"
+ let urlAnterior = "/m09sincronizacion/m-js/m-modelo/m-validaNombre-js.html"
  /**@type {string} */
- let urlSiguiente = "/m09sincronizacion/m-srv/index.html"
+ let urlSiguiente = "/m09sincronizacion/m-js/m-modelo/m-validaPasatiempos-js.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

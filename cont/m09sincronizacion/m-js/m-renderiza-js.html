@@ -1,0 +1,36 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../lib/js/exportaAHtml.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { htmlentities } <span class="codeReserved">from</span> <span class="codeString">"../lib/js/htmlentities.js"</span></td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {HTMLUListElement} lista</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">import</span>(&quot;./modelo/PASATIEMPO.js&quot;).PASATIEMPO[]} pasatiempos</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>8</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> renderiza(lista, pasatiempos) {</td></tr>
+  <tr><td>9</td><td> <span class="codeReserved">let</span> render = <span class="codeString">""</span></td></tr>
+  <tr><td>10</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> modelo of pasatiempos) {</td></tr>
+  <tr><td>11</td><td>  <span class="codeReserved">if</span> (modelo.PAS_ID === undefined)</td></tr>
+  <tr><td>12</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">`Falta PAS_ID de ${modelo.PAS_NOMBRE}.`</span>)</td></tr>
+  <tr><td>13</td><td>  <span class="codeReserved">const</span> nombre = htmlentities(modelo.PAS_NOMBRE)</td></tr>
+  <tr><td>14</td><td>  <span class="codeReserved">const</span> searchParams = <span class="codeReserved">new</span> URLSearchParams([[<span class="codeString">"id"</span>, modelo.PAS_ID]])</td></tr>
+  <tr><td>15</td><td>  <span class="codeReserved">const</span> params = htmlentities(searchParams.toString())</td></tr>
+  <tr><td>16</td><td>  render += <span class="codeComment">/* html */</span></td></tr>
+  <tr><td>17</td><td>   <span class="codeString">`&lt;<span class="codeReserved">li</span>&gt;</span></td></tr>
+  <tr><td>18</td><td><span class="codeString">     &lt;<span class="codeReserved">p</span>&gt;&lt;<span class="codeReserved">a</span> href=&quot;modifica.html?${params}&quot;&gt;${nombre}&lt;/<span class="codeReserved">a</span>&gt;&lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>19</td><td><span class="codeString">    &lt;/<span class="codeReserved">li</span>&gt;`</span></td></tr>
+  <tr><td>20</td><td> }</td></tr>
+  <tr><td>21</td><td> lista.innerHTML = render</td></tr>
+  <tr><td>22</td><td>}</td></tr>
+  <tr><td>23</td><td></td></tr>
+  <tr><td>24</td><td>exportaAHtml(renderiza)</td></tr>
+ </tbody>
+</table>

@@ -9,23 +9,20 @@
  </caption>
  <tbody>
   <tr><td>1</td><td><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdEjecuta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { Bd, NOMBRE_DEL_ALMACEN_PASATIEMPO } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
   <tr><td>3</td><td></td></tr>
   <tr><td>4</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> * Borra el contenido del almacén pasatiempo y guarda el</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> * contenido del listado.</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {any[]} datosNuevos</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiemposReemplaza(datosNuevos) {</td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">return</span> bdEjecuta(Bd, [NOMBRE_DEL_ALMACEN_PASATIEMPO],</td></tr>
-  <tr><td>11</td><td>  transaccion =&gt; {</td></tr>
-  <tr><td>12</td><td>   <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
-  <tr><td>13</td><td>    transaccion.objectStore(NOMBRE_DEL_ALMACEN_PASATIEMPO)</td></tr>
-  <tr><td>14</td><td>   almacenPasatiempo.clear()</td></tr>
-  <tr><td>15</td><td>   <span class="codeReserved">for</span> (<span class="codeReserved">const</span> objeto of datosNuevos) {</td></tr>
-  <tr><td>16</td><td>    almacenPasatiempo.add(objeto)</td></tr>
-  <tr><td>17</td><td>   }</td></tr>
-  <tr><td>18</td><td>  })</td></tr>
-  <tr><td>19</td><td>}</td></tr>
+  <tr><td>5</td><td><span class="codeComment"> * Borra el contenido del almacén PASATIEMPO y guarda nuevospasatiempos.</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">import</span>(&quot;../modelo/PASATIEMPO.js&quot;).PASATIEMPO[]} nuevospasatiempos</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>8</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiemposReemplaza(nuevospasatiempos) {</td></tr>
+  <tr><td>9</td><td> <span class="codeReserved">return</span> bdEjecuta(Bd, [ALMACEN_PASATIEMPO], transaccion =&gt; {</td></tr>
+  <tr><td>10</td><td>  <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</td></tr>
+  <tr><td>11</td><td>  almacenPasatiempo.clear()</td></tr>
+  <tr><td>12</td><td>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> objeto of nuevospasatiempos) {</td></tr>
+  <tr><td>13</td><td>   almacenPasatiempo.add(objeto)</td></tr>
+  <tr><td>14</td><td>  }</td></tr>
+  <tr><td>15</td><td> })</td></tr>
+  <tr><td>16</td><td>}</td></tr>
  </tbody>
 </table>

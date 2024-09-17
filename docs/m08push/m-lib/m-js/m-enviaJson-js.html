@@ -829,26 +829,26 @@
  </caption>
  <tbody>
   <tr><td>1</td><td><span class="codeReserved">import</span> { consumeJson } <span class="codeReserved">from</span> <span class="codeString">"./consumeJson.js"</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>4</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string } url</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { Object } body</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { &quot;GET&quot; | &quot;POST&quot;| &quot;PUT&quot; | &quot;PATCH&quot; | &quot;<span class="codeReserved">DELETE</span>&quot; | &quot;TRACE&quot; | &quot;OPTIONS&quot;</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> *  | &quot;CONNECT&quot; | &quot;HEAD&quot; } metodoHttp</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> enviaJson(url, body, metodoHttp = <span class="codeString">"POST"</span>) {</td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">return</span> <span class="codeReserved">await</span> consumeJson(fetch(url, {</td></tr>
-  <tr><td>11</td><td>  method: metodoHttp,</td></tr>
-  <tr><td>12</td><td>  headers: {</td></tr>
-  <tr><td>13</td><td>   <span class="codeString">"Content-Type"</span>: <span class="codeString">"application/json"</span>,</td></tr>
-  <tr><td>14</td><td>   <span class="codeString">"Accept"</span>: <span class="codeString">"application/json, application/problem+json"</span></td></tr>
-  <tr><td>15</td><td>  },</td></tr>
-  <tr><td>16</td><td>  body: JSON.stringify(body)</td></tr>
-  <tr><td>17</td><td> }))</td></tr>
-  <tr><td>18</td><td>}</td></tr>
-  <tr><td>19</td><td></td></tr>
-  <tr><td>20</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
-  <tr><td>21</td><td>window[<span class="codeString">"enviaJson"</span>] = enviaJson</td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"./exportaAHtml.js"</span></td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string } url</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { Object } body</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { &quot;GET&quot; | &quot;POST&quot;| &quot;PUT&quot; | &quot;PATCH&quot; | &quot;<span class="codeReserved">DELETE</span>&quot; | &quot;TRACE&quot; | &quot;OPTIONS&quot;</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> *  | &quot;CONNECT&quot; | &quot;HEAD&quot; } metodoHttp</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>10</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> enviaJson(url, body, metodoHttp = <span class="codeString">"POST"</span>) {</td></tr>
+  <tr><td>11</td><td> <span class="codeReserved">return</span> <span class="codeReserved">await</span> consumeJson(fetch(url, {</td></tr>
+  <tr><td>12</td><td>  method: metodoHttp,</td></tr>
+  <tr><td>13</td><td>  headers: {</td></tr>
+  <tr><td>14</td><td>   <span class="codeString">"Content-Type"</span>: <span class="codeString">"application/json"</span>,</td></tr>
+  <tr><td>15</td><td>   <span class="codeString">"Accept"</span>: <span class="codeString">"application/json, application/problem+json"</span></td></tr>
+  <tr><td>16</td><td>  },</td></tr>
+  <tr><td>17</td><td>  body: JSON.stringify(body)</td></tr>
+  <tr><td>18</td><td> }))</td></tr>
+  <tr><td>19</td><td>}</td></tr>
+  <tr><td>20</td><td></td></tr>
+  <tr><td>21</td><td>exportaAHtml(enviaJson)</td></tr>
  </tbody>
 </table>
  <footer>
@@ -879,7 +879,7 @@
  <a class="anterior" href="/m08push/m-lib/m-js/m-consumeJson-js.html" title="4. lib / js / consumeJson.js"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
- <a class="siguiente" href="/m08push/m-lib/m-js/m-getSuscripcionPush-js.html" title="6. lib / js / getSuscripcionPush.js"><span class="material-symbols-outlined">
+ <a class="siguiente" href="/m08push/m-lib/m-js/m-exportaAHtml-js.html" title="6. lib / js / exportaAHtml.js"><span class="material-symbols-outlined">
      skip_next
      </span></a>
 </div>
@@ -900,12 +900,12 @@
     <a href="/m08push/">12. Notificaciones push</a>
    </p>
    <p>
-    <a href="/m08push/m-lib/">13. Carpeta « lib »</a>
+    <a href="/m08push/m-lib/">11. Carpeta « lib »</a>
    </p>
    
      <p>
       <a class="paginaAnterior" href="/m08push/m-lib/index.html"
-        title="13. Carpeta « lib »"><span
+        title="11. Carpeta « lib »"><span
         class="material-symbols-outlined">
          arrow_upward
         </span></a>
@@ -941,6 +941,11 @@
    </li>
    <li>
     <p>
+     <a href="/m08push/m-lib/m-js/m-exportaAHtml-js.html">lib / js / exportaAHtml.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
      <a href="/m08push/m-lib/m-js/m-getSuscripcionPush-js.html">lib / js / getSuscripcionPush.js</a>
     </p>
    </li>
@@ -952,6 +957,11 @@
    <li>
     <p>
      <a href="/m08push/m-lib/m-js/m-muestraObjeto-js.html">lib / js / muestraObjeto.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m08push/m-lib/m-js/m-nombreDeFuncionParaHtml-js.html">lib / js / nombreDeFuncionParaHtml.js</a>
     </p>
    </li>
    <li>
@@ -992,7 +1002,7 @@
  /**@type {string} */
  let urlAnterior = "/m08push/m-lib/m-js/m-consumeJson-js.html"
  /**@type {string} */
- let urlSiguiente = "/m08push/m-lib/m-js/m-getSuscripcionPush-js.html"
+ let urlSiguiente = "/m08push/m-lib/m-js/m-exportaAHtml-js.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
