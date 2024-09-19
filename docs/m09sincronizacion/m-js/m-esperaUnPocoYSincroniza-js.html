@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>1. srv / modelo / PASATIEMPO.php - GilPG DM</title>
- <meta name="description" content="Código de «srv/modelo/PASATIEMPO.php».">
+ <title>B. js / esperaUnPocoYSincroniza.js - GilPG DM</title>
+ <meta name="description" content="Código de «js/esperaUnPocoYSincroniza.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
@@ -818,7 +818,7 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >1. srv / modelo / PASATIEMPO.php</h1><table class="codeShow">
+   <h1 >B. js / esperaUnPocoYSincroniza.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -828,14 +828,24 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td>&lt;?<span class="codeReserved">php</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">const</span> PASATIEMPO = <span class="codeString">"PASATIEMPO"</span>;</td></tr>
-  <tr><td>4</td><td><span class="codeReserved">const</span> PAS_ID = <span class="codeString">"PAS_ID"</span>;</td></tr>
-  <tr><td>5</td><td><span class="codeReserved">const</span> PAS_NOMBRE = <span class="codeString">"PAS_NOMBRE"</span>;</td></tr>
-  <tr><td>6</td><td><span class="codeReserved">const</span> PAS_MODIFICACION = <span class="codeString">"PAS_MODIFICACION"</span>;</td></tr>
-  <tr><td>7</td><td><span class="codeReserved">const</span> PAS_ELIMINADO = <span class="codeString">"PAS_ELIMINADO"</span>;</td></tr>
-  <tr><td>8</td><td></td></tr>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../lib/js/exportaAHtml.js"</span></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">import</span> { sincroniza } <span class="codeReserved">from</span> <span class="codeString">"./sincroniza.js"</span></td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> * Cada 20 segundos (2000 milisegundos) después de la última</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> * sincronización, los datos se envían al servidor para volver a</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> * sincronizarse con los datos del servidor.</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>9</td><td><span class="codeReserved">const</span> MILISEGUNDOS_PARA_VOLVER_A_SINCRONIZAR = 20000</td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {HTMLUListElement} lista</span></td></tr>
+  <tr><td>13</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>14</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> esperaUnPocoYSincroniza(lista) {</td></tr>
+  <tr><td>15</td><td> setTimeout(() =&gt; sincroniza(lista), MILISEGUNDOS_PARA_VOLVER_A_SINCRONIZAR)</td></tr>
+  <tr><td>16</td><td>}</td></tr>
+  <tr><td>17</td><td></td></tr>
+  <tr><td>18</td><td>exportaAHtml(esperaUnPocoYSincroniza)</td></tr>
  </tbody>
 </table>
  <footer>
@@ -863,10 +873,10 @@
    menu
   </span>
  </button>
- <a class="anterior" href="/m09sincronizacion/m-srv/m-modelo/index.html" title="C. Carpeta « srv / modelo »"><span class="material-symbols-outlined">
+ <a class="anterior" href="/m09sincronizacion/m-js/m-configura-js.html" title="A. js / configura.js"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
- <a class="siguiente" href="/m09sincronizacion/m-srv/m-modelo/m-validaId-php.html" title="2. srv / modelo / validaId.php"><span class="material-symbols-outlined">
+ <a class="siguiente" href="/m09sincronizacion/m-js/m-renderiza-js.html" title="C. js / renderiza.js"><span class="material-symbols-outlined">
      skip_next
      </span></a>
 </div>
@@ -886,41 +896,53 @@
    <p>
     <a href="/m09sincronizacion/">13. Sincronización</a>
    </p>
-   <p>
-    <a href="/m09sincronizacion/m-srv/">M. Carpeta « srv »</a>
-   </p>
    
      <p>
-      <a class="paginaAnterior" href="/m09sincronizacion/m-srv/m-bd/m-pasatiempoModifica-php.html"
-        title="5. srv / bd / pasatiempoModifica.php"><span
+      <a class="paginaAnterior" href="/m09sincronizacion/m-sw-js.html"
+        title="K. sw.js"><span
         class="material-symbols-outlined">
          arrow_upward
         </span></a>
      </p>
-   <h1><a href="/m09sincronizacion/m-srv/m-modelo/index.html">C. Carpeta « srv / modelo »</a></h1>
+   <h1><a href="/m09sincronizacion/m-js/index.html">L. Carpeta « js »</a></h1>
    
-   <ol type="1">
+   <ol type="A">
     
    <li>
     <p>
-     <a href="/m09sincronizacion/m-srv/m-modelo/m-PASATIEMPO-php.html" class="actual">srv / modelo / PASATIEMPO.php</a>
+     <a href="/m09sincronizacion/m-js/m-configura-js.html">js / configura.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-srv/m-modelo/m-validaId-php.html">srv / modelo / validaId.php</a>
+     <a href="/m09sincronizacion/m-js/m-esperaUnPocoYSincroniza-js.html" class="actual">js / esperaUnPocoYSincroniza.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-srv/m-modelo/m-validaPasatiempo-php.html">srv / modelo / validaPasatiempo.php</a>
+     <a href="/m09sincronizacion/m-js/m-renderiza-js.html">js / renderiza.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-sincroniza-js.html">js / sincroniza.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-bd/">Carpeta « js / bd »</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-modelo/">Carpeta « js / modelo »</a>
     </p>
    </li>
    </ol>
    
     <p>
-     <a class="paginaSiguiente" href="/m09sincronizacion/m-lib/index.html"
-       title="N. Carpeta « lib »"><span
+     <a class="paginaSiguiente" href="/m09sincronizacion/m-srv/index.html"
+       title="M. Carpeta « srv »"><span
        class="material-symbols-outlined">
         arrow_downward
        </span></a>
@@ -937,9 +959,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m09sincronizacion/m-srv/m-modelo/index.html"
+ let urlAnterior = "/m09sincronizacion/m-js/m-configura-js.html"
  /**@type {string} */
- let urlSiguiente = "/m09sincronizacion/m-srv/m-modelo/m-validaId-php.html"
+ let urlSiguiente = "/m09sincronizacion/m-js/m-renderiza-js.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

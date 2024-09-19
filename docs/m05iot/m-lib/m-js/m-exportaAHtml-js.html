@@ -828,15 +828,21 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { nombreDeFuncionParaHtml } <span class="codeReserved">from</span> <span class="codeString">"./nombreDeFuncionParaHtml.js"</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>4</td><td><span class="codeComment"> * Permite que los eventos de html usen la función.</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">function</span>} functionInstance</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> exportaAHtml(functionInstance) {</td></tr>
-  <tr><td>8</td><td> window[nombreDeFuncionParaHtml(functionInstance)] = functionInstance</td></tr>
-  <tr><td>9</td><td>}</td></tr>
+  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * Permite que los eventos de html usen la función.</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">function</span>} functionInstance</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>5</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> exportaAHtml(functionInstance) {</td></tr>
+  <tr><td>6</td><td> window[nombreDeFuncionParaHtml(functionInstance)] = functionInstance</td></tr>
+  <tr><td>7</td><td>}</td></tr>
+  <tr><td>8</td><td></td></tr>
+  <tr><td>9</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">function</span>} valor</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>12</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> nombreDeFuncionParaHtml(valor) {</td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">const</span> names = valor.name.split(<span class="codeString">/\s+/</span>g)</td></tr>
+  <tr><td>14</td><td> <span class="codeReserved">return</span> names[names.length - 1]</td></tr>
+  <tr><td>15</td><td>}</td></tr>
  </tbody>
 </table>
  <footer>
@@ -925,11 +931,6 @@
    <li>
     <p>
      <a href="/m05iot/m-lib/m-js/m-muestraError-js.html">lib / js / muestraError.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m05iot/m-lib/m-js/m-nombreDeFuncionParaHtml-js.html">lib / js / nombreDeFuncionParaHtml.js</a>
     </p>
    </li>
    <li>

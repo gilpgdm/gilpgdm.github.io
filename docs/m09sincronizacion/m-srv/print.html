@@ -753,63 +753,64 @@
   <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/ProblemDetails.php"</span>;</td></tr>
   <tr><td>7</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveProblemDetails.php"</span>;</td></tr>
   <tr><td>8</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../lib/php/devuelveErrorInterno.php"</span>;</td></tr>
-  <tr><td>9</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/modelo/validaPasatiempo.php"</span>;</td></tr>
-  <tr><td>10</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/pasatiempoAgrega.php"</span>;</td></tr>
-  <tr><td>11</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/pasatiempoBusca.php"</span>;</td></tr>
-  <tr><td>12</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/pasatiempoConsultaNoEliminados.php"</span>;</td></tr>
-  <tr><td>13</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/pasatiempoModifica.php"</span>;</td></tr>
-  <tr><td>14</td><td></td></tr>
-  <tr><td>15</td><td>ejecutaServicio(<span class="codeReserved">function</span> () {</td></tr>
-  <tr><td>16</td><td></td></tr>
-  <tr><td>17</td><td> $lista = recuperaJson();</td></tr>
-  <tr><td>18</td><td></td></tr>
-  <tr><td>19</td><td> <span class="codeReserved">if</span> (!is_array($lista)) {</td></tr>
-  <tr><td>20</td><td>  $lista = [];</td></tr>
-  <tr><td>21</td><td> }</td></tr>
-  <tr><td>22</td><td></td></tr>
-  <tr><td>23</td><td> <span class="codeReserved">foreach</span> ($lista <span class="codeReserved">as</span> $modelo) {</td></tr>
-  <tr><td>24</td><td>  $modeloEnElCliente = validaPasatiempo($modelo);</td></tr>
-  <tr><td>25</td><td>  $modeloEnElServidor = pasatiempoBusca($modeloEnElCliente[PAS_ID]);</td></tr>
-  <tr><td>26</td><td></td></tr>
-  <tr><td>27</td><td>  <span class="codeReserved">if</span> ($modeloEnElServidor === <span class="codeReserved">false</span>) {</td></tr>
-  <tr><td>28</td><td></td></tr>
-  <tr><td>29</td><td>   <span class="codeComment">/* CONFLICTO: El modelo no ha estado en el servidor.</span></td></tr>
-  <tr><td>30</td><td><span class="codeComment">    * AGREGARLO solamente si no está eliminado. */</span></td></tr>
-  <tr><td>31</td><td>   <span class="codeReserved">if</span> ($modeloEnElCliente[PAS_ELIMINADO] === 0) {</td></tr>
-  <tr><td>32</td><td>    pasatiempoAgrega($modeloEnElCliente);</td></tr>
-  <tr><td>33</td><td>   }</td></tr>
-  <tr><td>34</td><td>  } <span class="codeReserved">elseif</span> (</td></tr>
-  <tr><td>35</td><td>   $modeloEnElServidor[PAS_ELIMINADO] === 0</td></tr>
-  <tr><td>36</td><td>   && $modeloEnElCliente[PAS_ELIMINADO] === 1</td></tr>
-  <tr><td>37</td><td>  ) {</td></tr>
-  <tr><td>38</td><td></td></tr>
-  <tr><td>39</td><td>   <span class="codeComment">/* CONFLICTO: El registro está en el servidor, donde no se ha eliminado, pero</span></td></tr>
-  <tr><td>40</td><td><span class="codeComment">    * ha sido eliminado en el cliente.</span></td></tr>
-  <tr><td>41</td><td><span class="codeComment">    * Gana el cliente, porque optamos por no revivir lo eliminado. */</span></td></tr>
-  <tr><td>42</td><td>   pasatiempoModifica($modeloEnElCliente);</td></tr>
-  <tr><td>43</td><td>  } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (</td></tr>
-  <tr><td>44</td><td>   $modeloEnElCliente[PAS_ELIMINADO] === 0</td></tr>
-  <tr><td>45</td><td>   && $modeloEnElServidor[PAS_ELIMINADO] === 0</td></tr>
-  <tr><td>46</td><td>  ) {</td></tr>
-  <tr><td>47</td><td></td></tr>
-  <tr><td>48</td><td>   <span class="codeComment">/* CONFLICTO: Registros en el servidor y en el cliente. Pueden ser</span></td></tr>
-  <tr><td>49</td><td><span class="codeComment">    * diferentes.</span></td></tr>
-  <tr><td>50</td><td><span class="codeComment">    * GANA FECHA MÁS GRANDE. Cuando gana el servidor, no se hace nada. */</span></td></tr>
-  <tr><td>51</td><td>   <span class="codeReserved">if</span> (</td></tr>
-  <tr><td>52</td><td>    $modeloEnElCliente[PAS_MODIFICACION] &gt;</td></tr>
-  <tr><td>53</td><td>    $modeloEnElServidor[PAS_MODIFICACION]</td></tr>
-  <tr><td>54</td><td>   ) {</td></tr>
-  <tr><td>55</td><td>    <span class="codeComment">// La versión del cliente es más nueva y prevalece.</span></td></tr>
-  <tr><td>56</td><td>    pasatiempoModifica($modeloEnElCliente);</td></tr>
-  <tr><td>57</td><td>   }</td></tr>
-  <tr><td>58</td><td>  }</td></tr>
-  <tr><td>59</td><td> }</td></tr>
-  <tr><td>60</td><td></td></tr>
-  <tr><td>61</td><td> $lista = pasatiempoConsultaNoEliminados();</td></tr>
-  <tr><td>62</td><td></td></tr>
-  <tr><td>63</td><td> devuelveJson($lista);</td></tr>
-  <tr><td>64</td><td>});</td></tr>
-  <tr><td>65</td><td></td></tr>
+  <tr><td>9</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/modelo/TABLA_PASATIEMPO.php"</span>;</td></tr>
+  <tr><td>10</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/modelo/validaPasatiempo.php"</span>;</td></tr>
+  <tr><td>11</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/pasatiempoAgrega.php"</span>;</td></tr>
+  <tr><td>12</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/pasatiempoBusca.php"</span>;</td></tr>
+  <tr><td>13</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/pasatiempoConsultaNoEliminados.php"</span>;</td></tr>
+  <tr><td>14</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/bd/pasatiempoModifica.php"</span>;</td></tr>
+  <tr><td>15</td><td></td></tr>
+  <tr><td>16</td><td>ejecutaServicio(<span class="codeReserved">function</span> () {</td></tr>
+  <tr><td>17</td><td></td></tr>
+  <tr><td>18</td><td> $lista = recuperaJson();</td></tr>
+  <tr><td>19</td><td></td></tr>
+  <tr><td>20</td><td> <span class="codeReserved">if</span> (!is_array($lista)) {</td></tr>
+  <tr><td>21</td><td>  $lista = [];</td></tr>
+  <tr><td>22</td><td> }</td></tr>
+  <tr><td>23</td><td></td></tr>
+  <tr><td>24</td><td> <span class="codeReserved">foreach</span> ($lista <span class="codeReserved">as</span> $modelo) {</td></tr>
+  <tr><td>25</td><td>  $modeloEnElCliente = validaPasatiempo($modelo);</td></tr>
+  <tr><td>26</td><td>  $modeloEnElServidor = pasatiempoBusca($modeloEnElCliente[PAS_ID]);</td></tr>
+  <tr><td>27</td><td></td></tr>
+  <tr><td>28</td><td>  <span class="codeReserved">if</span> ($modeloEnElServidor === <span class="codeReserved">false</span>) {</td></tr>
+  <tr><td>29</td><td></td></tr>
+  <tr><td>30</td><td>   <span class="codeComment">/* CONFLICTO: El modelo no ha estado en el servidor.</span></td></tr>
+  <tr><td>31</td><td><span class="codeComment">    * AGREGARLO solamente si no está eliminado. */</span></td></tr>
+  <tr><td>32</td><td>   <span class="codeReserved">if</span> ($modeloEnElCliente[PAS_ELIMINADO] === 0) {</td></tr>
+  <tr><td>33</td><td>    pasatiempoAgrega($modeloEnElCliente);</td></tr>
+  <tr><td>34</td><td>   }</td></tr>
+  <tr><td>35</td><td>  } <span class="codeReserved">elseif</span> (</td></tr>
+  <tr><td>36</td><td>   $modeloEnElServidor[PAS_ELIMINADO] === 0</td></tr>
+  <tr><td>37</td><td>   && $modeloEnElCliente[PAS_ELIMINADO] === 1</td></tr>
+  <tr><td>38</td><td>  ) {</td></tr>
+  <tr><td>39</td><td></td></tr>
+  <tr><td>40</td><td>   <span class="codeComment">/* CONFLICTO: El registro está en el servidor, donde no se ha eliminado, pero</span></td></tr>
+  <tr><td>41</td><td><span class="codeComment">    * ha sido eliminado en el cliente.</span></td></tr>
+  <tr><td>42</td><td><span class="codeComment">    * Gana el cliente, porque optamos por no revivir lo eliminado. */</span></td></tr>
+  <tr><td>43</td><td>   pasatiempoModifica($modeloEnElCliente);</td></tr>
+  <tr><td>44</td><td>  } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (</td></tr>
+  <tr><td>45</td><td>   $modeloEnElCliente[PAS_ELIMINADO] === 0</td></tr>
+  <tr><td>46</td><td>   && $modeloEnElServidor[PAS_ELIMINADO] === 0</td></tr>
+  <tr><td>47</td><td>  ) {</td></tr>
+  <tr><td>48</td><td></td></tr>
+  <tr><td>49</td><td>   <span class="codeComment">/* CONFLICTO: Registros en el servidor y en el cliente. Pueden ser</span></td></tr>
+  <tr><td>50</td><td><span class="codeComment">    * diferentes.</span></td></tr>
+  <tr><td>51</td><td><span class="codeComment">    * GANA FECHA MÁS GRANDE. Cuando gana el servidor, no se hace nada. */</span></td></tr>
+  <tr><td>52</td><td>   <span class="codeReserved">if</span> (</td></tr>
+  <tr><td>53</td><td>    $modeloEnElCliente[PAS_MODIFICACION] &gt;</td></tr>
+  <tr><td>54</td><td>    $modeloEnElServidor[PAS_MODIFICACION]</td></tr>
+  <tr><td>55</td><td>   ) {</td></tr>
+  <tr><td>56</td><td>    <span class="codeComment">// La versión del cliente es más nueva y prevalece.</span></td></tr>
+  <tr><td>57</td><td>    pasatiempoModifica($modeloEnElCliente);</td></tr>
+  <tr><td>58</td><td>   }</td></tr>
+  <tr><td>59</td><td>  }</td></tr>
+  <tr><td>60</td><td> }</td></tr>
+  <tr><td>61</td><td></td></tr>
+  <tr><td>62</td><td> $lista = pasatiempoConsultaNoEliminados();</td></tr>
+  <tr><td>63</td><td></td></tr>
+  <tr><td>64</td><td> devuelveJson($lista);</td></tr>
+  <tr><td>65</td><td>});</td></tr>
+  <tr><td>66</td><td></td></tr>
  </tbody>
 </table>
       </section>
@@ -927,7 +928,7 @@
   <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/validaNombre.php"</span>;</td></tr>
   <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/insert.php"</span>;</td></tr>
   <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/PASATIEMPO.php"</span>;</td></tr>
+  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/TABLA_PASATIEMPO.php"</span>;</td></tr>
   <tr><td>7</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/validaId.php"</span>;</td></tr>
   <tr><td>8</td><td></td></tr>
   <tr><td>9</td><td><span class="codeComment">/**</span></td></tr>
@@ -963,7 +964,7 @@
   <tr><td>2</td><td></td></tr>
   <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/selectFirst.php"</span>;</td></tr>
   <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/PASATIEMPO.php"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/TABLA_PASATIEMPO.php"</span>;</td></tr>
   <tr><td>6</td><td></td></tr>
   <tr><td>7</td><td><span class="codeComment">/**</span></td></tr>
   <tr><td>8</td><td><span class="codeComment"> * <span class="codeReserved">@return</span> <span class="codeReserved">false</span> | array{</span></td></tr>
@@ -1000,7 +1001,7 @@
   <tr><td>2</td><td></td></tr>
   <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/select.php"</span>;</td></tr>
   <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/PASATIEMPO.php"</span>;</td></tr>
+  <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/TABLA_PASATIEMPO.php"</span>;</td></tr>
   <tr><td>6</td><td></td></tr>
   <tr><td>7</td><td><span class="codeComment">/**</span></td></tr>
   <tr><td>8</td><td><span class="codeComment"> * <span class="codeReserved">@return</span> array{</span></td></tr>
@@ -1039,7 +1040,7 @@
   <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/validaNombre.php"</span>;</td></tr>
   <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/update.php"</span>;</td></tr>
   <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</td></tr>
-  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/PASATIEMPO.php"</span>;</td></tr>
+  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/TABLA_PASATIEMPO.php"</span>;</td></tr>
   <tr><td>7</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../modelo/validaId.php"</span>;</td></tr>
   <tr><td>8</td><td></td></tr>
   <tr><td>9</td><td><span class="codeComment">/**</span></td></tr>
@@ -1083,7 +1084,7 @@
     
    <li>
     <p>
-     <a href="/m09sincronizacion/m-srv/m-modelo/m-PASATIEMPO-php.html">srv / modelo / PASATIEMPO.php</a>
+     <a href="/m09sincronizacion/m-srv/m-modelo/m-TABLA_PASATIEMPO-php.html">srv / modelo / TABLA_PASATIEMPO.php</a>
     </p>
    </li>
    <li>
@@ -1100,7 +1101,7 @@
    </nav>
   </div>
      <section >
-         <h1 >1. srv / modelo / PASATIEMPO.php</h1><table class="codeShow">
+         <h1 >1. srv / modelo / TABLA_PASATIEMPO.php</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1163,7 +1164,7 @@
   <tr><td>3</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/BAD_REQUEST.php"</span>;</td></tr>
   <tr><td>4</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/validaJson.php"</span>;</td></tr>
   <tr><td>5</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../../lib/php/ProblemDetails.php"</span>;</td></tr>
-  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/PASATIEMPO.php"</span>;</td></tr>
+  <tr><td>6</td><td><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/TABLA_PASATIEMPO.php"</span>;</td></tr>
   <tr><td>7</td><td></td></tr>
   <tr><td>8</td><td><span class="codeReserved">function</span> validaPasatiempo($objeto)</td></tr>
   <tr><td>9</td><td>{</td></tr>

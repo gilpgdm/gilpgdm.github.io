@@ -791,11 +791,6 @@
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-lib/m-js/m-nombreDeFuncionParaHtml-js.html">lib / js / nombreDeFuncionParaHtml.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
      <a href="/m09sincronizacion/m-lib/m-js/m-ProblemDetails-js.html">lib / js / ProblemDetails.js</a>
     </p>
    </li>
@@ -1065,15 +1060,21 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { nombreDeFuncionParaHtml } <span class="codeReserved">from</span> <span class="codeString">"./nombreDeFuncionParaHtml.js"</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>4</td><td><span class="codeComment"> * Permite que los eventos de html usen la función.</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">function</span>} functionInstance</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> exportaAHtml(functionInstance) {</td></tr>
-  <tr><td>8</td><td> window[nombreDeFuncionParaHtml(functionInstance)] = functionInstance</td></tr>
-  <tr><td>9</td><td>}</td></tr>
+  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * Permite que los eventos de html usen la función.</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">function</span>} functionInstance</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>5</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> exportaAHtml(functionInstance) {</td></tr>
+  <tr><td>6</td><td> window[nombreDeFuncionParaHtml(functionInstance)] = functionInstance</td></tr>
+  <tr><td>7</td><td>}</td></tr>
+  <tr><td>8</td><td></td></tr>
+  <tr><td>9</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">function</span>} valor</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>12</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> nombreDeFuncionParaHtml(valor) {</td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">const</span> names = valor.name.split(<span class="codeString">/\s+/</span>g)</td></tr>
+  <tr><td>14</td><td> <span class="codeReserved">return</span> names[names.length - 1]</td></tr>
+  <tr><td>15</td><td>}</td></tr>
  </tbody>
 </table>
       </section>
@@ -1133,7 +1134,7 @@
   <tr><td>10</td><td></td></tr>
   <tr><td>11</td><td> <span class="codeReserved">if</span> (error === <span class="codeReserved">null</span>) {</td></tr>
   <tr><td>12</td><td></td></tr>
-  <tr><td>13</td><td>  console.log(<span class="codeString">"Error"</span>)</td></tr>
+  <tr><td>13</td><td>  console.error(<span class="codeString">"Error"</span>)</td></tr>
   <tr><td>14</td><td>  alert(<span class="codeString">"Error"</span>)</td></tr>
   <tr><td>15</td><td></td></tr>
   <tr><td>16</td><td> } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (error <span class="codeReserved">instanceof</span> ProblemDetails) {</td></tr>
@@ -1313,7 +1314,7 @@
 </table>
       </section>
      <section >
-         <h1 >10. lib / js / nombreDeFuncionParaHtml.js</h1><table class="codeShow">
+         <h1 >10. lib / js / ProblemDetails.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1324,57 +1325,47 @@
  </caption>
  <tbody>
   <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>2</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">function</span>} valor</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * Detalle de los errores devueltos por un servicio.</span></td></tr>
   <tr><td>3</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> nombreDeFuncionParaHtml(valor) {</td></tr>
-  <tr><td>5</td><td> <span class="codeReserved">const</span> names = valor.name.split(<span class="codeString">/\s+/</span>g)</td></tr>
-  <tr><td>6</td><td> <span class="codeReserved">return</span> names[names.length - 1]</td></tr>
-  <tr><td>7</td><td>}</td></tr>
-  <tr><td>8</td><td></td></tr>
+  <tr><td>4</td><td><span class="codeReserved">export</span> <span class="codeReserved">class</span> ProblemDetails <span class="codeReserved">extends</span> Error {</td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {number} status</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {Headers} headers</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} title</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} [type]</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} [detail]</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">constructor</span>(status, headers, title, type, detail) {</td></tr>
+  <tr><td>14</td><td>  super(title)</td></tr>
+  <tr><td>15</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>16</td><td><span class="codeComment">   * <span class="codeReserved">@readonly</span></span></td></tr>
+  <tr><td>17</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>18</td><td>  <span class="codeReserved">this</span>.status = status</td></tr>
+  <tr><td>19</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>20</td><td><span class="codeComment">   * <span class="codeReserved">@readonly</span></span></td></tr>
+  <tr><td>21</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>22</td><td>  <span class="codeReserved">this</span>.headers = headers</td></tr>
+  <tr><td>23</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>24</td><td><span class="codeComment">   * <span class="codeReserved">@readonly</span></span></td></tr>
+  <tr><td>25</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>26</td><td>  <span class="codeReserved">this</span>.type = type</td></tr>
+  <tr><td>27</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>28</td><td><span class="codeComment">   * <span class="codeReserved">@readonly</span></span></td></tr>
+  <tr><td>29</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>30</td><td>  <span class="codeReserved">this</span>.detail = detail</td></tr>
+  <tr><td>31</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>32</td><td><span class="codeComment">   * <span class="codeReserved">@readonly</span></span></td></tr>
+  <tr><td>33</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>34</td><td>  <span class="codeReserved">this</span>.title = title</td></tr>
+  <tr><td>35</td><td> }</td></tr>
+  <tr><td>36</td><td></td></tr>
+  <tr><td>37</td><td>}</td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >11. lib / js / ProblemDetails.js</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td><span class="codeComment">/** Detalle de los errores devueltos por un servicio. */</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">export</span> <span class="codeReserved">class</span> ProblemDetails <span class="codeReserved">extends</span> Error {</td></tr>
-  <tr><td>3</td><td></td></tr>
-  <tr><td>4</td><td> <span class="codeComment">/**</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {number} status</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {Headers} headers</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} title</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} [type]</span></td></tr>
-  <tr><td>9</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} [detail]</span></td></tr>
-  <tr><td>10</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>11</td><td> <span class="codeReserved">constructor</span>(status, headers, title, type, detail) {</td></tr>
-  <tr><td>12</td><td>  super(title)</td></tr>
-  <tr><td>13</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>14</td><td>  <span class="codeReserved">this</span>.status = status</td></tr>
-  <tr><td>15</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>16</td><td>  <span class="codeReserved">this</span>.headers = headers</td></tr>
-  <tr><td>17</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>18</td><td>  <span class="codeReserved">this</span>.type = type</td></tr>
-  <tr><td>19</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>20</td><td>  <span class="codeReserved">this</span>.detail = detail</td></tr>
-  <tr><td>21</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>22</td><td>  <span class="codeReserved">this</span>.title = title</td></tr>
-  <tr><td>23</td><td> }</td></tr>
-  <tr><td>24</td><td></td></tr>
-  <tr><td>25</td><td>}</td></tr>
- </tbody>
-</table>
-      </section>
-     <section >
-         <h1 >12. lib / js / registraServiceWorkerSiEsSoportado.js</h1><table class="codeShow">
+         <h1 >11. lib / js / registraServiceWorkerSiEsSoportado.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
