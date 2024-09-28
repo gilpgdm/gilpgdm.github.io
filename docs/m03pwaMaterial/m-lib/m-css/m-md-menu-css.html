@@ -829,7 +829,7 @@
  </caption>
  <tbody>
   <tr><td>1</td><td>.md-menu {</td></tr>
-  <tr><td>2</td><td> <span class="codeReserved">display</span>: block;</td></tr>
+  <tr><td>2</td><td> <span class="codeReserved">display</span>: none;</td></tr>
   <tr><td>3</td><td> <span class="codeReserved">z-index</span>: 2;</td></tr>
   <tr><td>4</td><td> <span class="codeReserved">box-sizing</span>: border-box;</td></tr>
   <tr><td>5</td><td> <span class="codeReserved">cursor</span>: <span class="codeReserved">default</span>;</td></tr>
@@ -839,147 +839,157 @@
   <tr><td>9</td><td> <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-surface-container-low);</td></tr>
   <tr><td>10</td><td> <span class="codeReserved">box-shadow</span>: <span class="codeReserved">var</span>(--md-box_shadow_level2);</td></tr>
   <tr><td>11</td><td> <span class="codeReserved">transform</span>: translateY(-50%) scaleY(0);</td></tr>
-  <tr><td>12</td><td> <span class="codeReserved">transition-property</span>: <span class="codeReserved">transform</span>;</td></tr>
-  <tr><td>13</td><td> <span class="codeReserved">transition-duration</span>: <span class="codeReserved">var</span>(--md-sys-motion-duration-500);</td></tr>
-  <tr><td>14</td><td>}</td></tr>
-  <tr><td>15</td><td></td></tr>
-  <tr><td>16</td><td>.md-menu[hidden] {</td></tr>
-  <tr><td>17</td><td> <span class="codeReserved">display</span>: none</td></tr>
-  <tr><td>18</td><td>}</td></tr>
-  <tr><td>19</td><td></td></tr>
-  <tr><td>20</td><td>.md-menu.open {</td></tr>
-  <tr><td>21</td><td> <span class="codeReserved">transform</span>: translateY(0) scaleY(1);</td></tr>
-  <tr><td>22</td><td>}</td></tr>
-  <tr><td>23</td><td></td></tr>
-  <tr><td>24</td><td><span class="codeComment">/* container */</span></td></tr>
-  <tr><td>25</td><td>.md-menu&gt;*::after {</td></tr>
-  <tr><td>26</td><td> <span class="codeReserved">content</span>: <span class="codeString">""</span>;</td></tr>
-  <tr><td>27</td><td> <span class="codeReserved">position</span>: absolute;</td></tr>
-  <tr><td>28</td><td> <span class="codeReserved">z-index</span>: -2;</td></tr>
-  <tr><td>29</td><td> <span class="codeReserved">top</span>: 0;</td></tr>
-  <tr><td>30</td><td> <span class="codeReserved">right</span>: 0;</td></tr>
-  <tr><td>31</td><td> <span class="codeReserved">left</span>: 0;</td></tr>
-  <tr><td>32</td><td> <span class="codeReserved">bottom</span>: 0;</td></tr>
-  <tr><td>33</td><td>}</td></tr>
-  <tr><td>34</td><td></td></tr>
-  <tr><td>35</td><td><span class="codeComment">/* container */</span></td></tr>
-  <tr><td>36</td><td>.md-menu&gt;.selected::after {</td></tr>
-  <tr><td>37</td><td> <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-secondary-container);</td></tr>
-  <tr><td>38</td><td>}</td></tr>
-  <tr><td>39</td><td></td></tr>
-  <tr><td>40</td><td><span class="codeComment">/* label, shape */</span></td></tr>
-  <tr><td>41</td><td>.md-menu&gt;* {</td></tr>
-  <tr><td>42</td><td> <span class="codeReserved">position</span>: relative;</td></tr>
-  <tr><td>43</td><td> <span class="codeReserved">display</span>: block;</td></tr>
-  <tr><td>44</td><td> <span class="codeReserved">box-sizing</span>: border-box;</td></tr>
-  <tr><td>45</td><td> <span class="codeReserved">height</span>: 3rem;</td></tr>
-  <tr><td>46</td><td> <span class="codeReserved">line-height</span>: 3rem;</td></tr>
-  <tr><td>47</td><td> <span class="codeReserved">padding</span>: 0 0.75rem;</td></tr>
-  <tr><td>48</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
-  <tr><td>49</td><td> <span class="codeReserved">font-family</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-font);</td></tr>
-  <tr><td>50</td><td> <span class="codeReserved">font-weight</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-weight);</td></tr>
-  <tr><td>51</td><td> <span class="codeReserved">font-size</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-size);</td></tr>
-  <tr><td>52</td><td> <span class="codeReserved">font-style</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-font-style);</td></tr>
-  <tr><td>53</td><td> <span class="codeReserved">letter-spacing</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-tracking);</td></tr>
-  <tr><td>54</td><td> <span class="codeReserved">text-transform</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-text-transform);</td></tr>
-  <tr><td>55</td><td> <span class="codeReserved">text-decoration</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-text-decoration);</td></tr>
-  <tr><td>56</td><td> <span class="codeReserved">white-space</span>: nowrap;</td></tr>
-  <tr><td>57</td><td> <span class="codeReserved">text-overflow</span>: ellipsis;</td></tr>
-  <tr><td>58</td><td> <span class="codeReserved">overflow</span>: hidden;</td></tr>
-  <tr><td>59</td><td>}</td></tr>
-  <tr><td>60</td><td></td></tr>
-  <tr><td>61</td><td><span class="codeComment">/* label, shape */</span></td></tr>
-  <tr><td>62</td><td>.md-menu&gt;.selected {</td></tr>
-  <tr><td>63</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-secondary-container);</td></tr>
-  <tr><td>64</td><td>}</td></tr>
-  <tr><td>65</td><td></td></tr>
-  <tr><td>66</td><td><span class="codeComment">/* state layer */</span></td></tr>
-  <tr><td>67</td><td>.md-menu&gt;*::before {</td></tr>
-  <tr><td>68</td><td> <span class="codeReserved">content</span>: <span class="codeString">""</span>;</td></tr>
-  <tr><td>69</td><td> <span class="codeReserved">position</span>: absolute;</td></tr>
-  <tr><td>70</td><td> <span class="codeReserved">z-index</span>: -1;</td></tr>
-  <tr><td>71</td><td> <span class="codeReserved">top</span>: 0;</td></tr>
-  <tr><td>72</td><td> <span class="codeReserved">right</span>: 0;</td></tr>
-  <tr><td>73</td><td> <span class="codeReserved">left</span>: 0;</td></tr>
-  <tr><td>74</td><td> <span class="codeReserved">bottom</span>: 0;</td></tr>
-  <tr><td>75</td><td>}</td></tr>
-  <tr><td>76</td><td></td></tr>
-  <tr><td>77</td><td><span class="codeComment">/* icon */</span></td></tr>
-  <tr><td>78</td><td>.md-menu&gt;* span {</td></tr>
-  <tr><td>79</td><td> <span class="codeReserved">position</span>: relative;</td></tr>
-  <tr><td>80</td><td> <span class="codeReserved">margin-right</span>: 0.75rem;</td></tr>
-  <tr><td>81</td><td> <span class="codeReserved">vertical-align</span>: middle;</td></tr>
-  <tr><td>82</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</td></tr>
-  <tr><td>83</td><td> <span class="codeReserved">font-size</span>: 1.5rem;</td></tr>
-  <tr><td>84</td><td> <span class="codeReserved">width</span>: 1.5rem;</td></tr>
-  <tr><td>85</td><td> <span class="codeReserved">height</span>: 1.5rem;</td></tr>
-  <tr><td>86</td><td>}</td></tr>
-  <tr><td>87</td><td></td></tr>
-  <tr><td>88</td><td><span class="codeComment">/* icon */</span></td></tr>
-  <tr><td>89</td><td>.md-menu&gt;.selected span {</td></tr>
-  <tr><td>90</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-secondary-container);</td></tr>
-  <tr><td>91</td><td>}</td></tr>
-  <tr><td>92</td><td></td></tr>
-  <tr><td>93</td><td><span class="codeComment">/* state layer */</span></td></tr>
-  <tr><td>94</td><td>.md-menu&gt;:hover::before {</td></tr>
-  <tr><td>95</td><td> <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
-  <tr><td>96</td><td> <span class="codeReserved">opacity</span>: <span class="codeReserved">var</span>(--md-sys-state-hover-state-layer-opacity);</td></tr>
-  <tr><td>97</td><td>}</td></tr>
-  <tr><td>98</td><td></td></tr>
-  <tr><td>99</td><td><span class="codeComment">/* label, shape */</span></td></tr>
-  <tr><td>100</td><td>.md-menu&gt;:hover {</td></tr>
-  <tr><td>101</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
-  <tr><td>102</td><td>}</td></tr>
-  <tr><td>103</td><td></td></tr>
-  <tr><td>104</td><td><span class="codeComment">/* icon */</span></td></tr>
-  <tr><td>105</td><td>.md-menu&gt;:hover span {</td></tr>
-  <tr><td>106</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</td></tr>
+  <tr><td>12</td><td> <span class="codeReserved">transition-timing-function</span>:</td></tr>
+  <tr><td>13</td><td>  cubic-bezier(<span class="codeReserved">var</span>(--md-sys-motion-easing-standard-x0),</td></tr>
+  <tr><td>14</td><td>   <span class="codeReserved">var</span>(--md-sys-motion-easing-standard-y0),</td></tr>
+  <tr><td>15</td><td>   <span class="codeReserved">var</span>(--md-sys-motion-easing-standard-x1),</td></tr>
+  <tr><td>16</td><td>   <span class="codeReserved">var</span>(--md-sys-motion-easing-standard-y1));</td></tr>
+  <tr><td>17</td><td> <span class="codeReserved">transition-property</span>: <span class="codeReserved">display</span>, <span class="codeReserved">transform</span>;</td></tr>
+  <tr><td>18</td><td> transition-behavior: allow-discrete;</td></tr>
+  <tr><td>19</td><td> <span class="codeReserved">transition-duration</span>: <span class="codeReserved">var</span>(--md-sys-motion-duration-500);</td></tr>
+  <tr><td>20</td><td>}</td></tr>
+  <tr><td>21</td><td></td></tr>
+  <tr><td>22</td><td>.md-menu.open {</td></tr>
+  <tr><td>23</td><td> <span class="codeReserved">display</span>: block;</td></tr>
+  <tr><td>24</td><td> <span class="codeReserved">transform</span>: translateY(0) scaleY(1);</td></tr>
+  <tr><td>25</td><td>}</td></tr>
+  <tr><td>26</td><td></td></tr>
+  <tr><td>27</td><td><span class="codeReserved">@starting-style</span> {</td></tr>
+  <tr><td>28</td><td> .md-menu.open {</td></tr>
+  <tr><td>29</td><td>  <span class="codeReserved">display</span>: block;</td></tr>
+  <tr><td>30</td><td>  <span class="codeReserved">transform</span>: translateY(-50%) scaleY(0);</td></tr>
+  <tr><td>31</td><td> }</td></tr>
+  <tr><td>32</td><td>}</td></tr>
+  <tr><td>33</td><td></td></tr>
+  <tr><td>34</td><td><span class="codeComment">/* container */</span></td></tr>
+  <tr><td>35</td><td>.md-menu&gt;*::after {</td></tr>
+  <tr><td>36</td><td> <span class="codeReserved">content</span>: <span class="codeString">""</span>;</td></tr>
+  <tr><td>37</td><td> <span class="codeReserved">position</span>: absolute;</td></tr>
+  <tr><td>38</td><td> <span class="codeReserved">z-index</span>: -2;</td></tr>
+  <tr><td>39</td><td> <span class="codeReserved">top</span>: 0;</td></tr>
+  <tr><td>40</td><td> <span class="codeReserved">right</span>: 0;</td></tr>
+  <tr><td>41</td><td> <span class="codeReserved">left</span>: 0;</td></tr>
+  <tr><td>42</td><td> <span class="codeReserved">bottom</span>: 0;</td></tr>
+  <tr><td>43</td><td>}</td></tr>
+  <tr><td>44</td><td></td></tr>
+  <tr><td>45</td><td><span class="codeComment">/* container */</span></td></tr>
+  <tr><td>46</td><td>.md-menu&gt;.selected::after {</td></tr>
+  <tr><td>47</td><td> <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-secondary-container);</td></tr>
+  <tr><td>48</td><td>}</td></tr>
+  <tr><td>49</td><td></td></tr>
+  <tr><td>50</td><td><span class="codeComment">/* label, shape */</span></td></tr>
+  <tr><td>51</td><td>.md-menu&gt;* {</td></tr>
+  <tr><td>52</td><td> <span class="codeReserved">position</span>: relative;</td></tr>
+  <tr><td>53</td><td> <span class="codeReserved">display</span>: block;</td></tr>
+  <tr><td>54</td><td> <span class="codeReserved">box-sizing</span>: border-box;</td></tr>
+  <tr><td>55</td><td> <span class="codeReserved">height</span>: 3rem;</td></tr>
+  <tr><td>56</td><td> <span class="codeReserved">line-height</span>: 3rem;</td></tr>
+  <tr><td>57</td><td> <span class="codeReserved">padding</span>: 0 0.75rem;</td></tr>
+  <tr><td>58</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
+  <tr><td>59</td><td> <span class="codeReserved">font-family</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-font);</td></tr>
+  <tr><td>60</td><td> <span class="codeReserved">font-weight</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-weight);</td></tr>
+  <tr><td>61</td><td> <span class="codeReserved">font-size</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-size);</td></tr>
+  <tr><td>62</td><td> <span class="codeReserved">font-style</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-font-style);</td></tr>
+  <tr><td>63</td><td> <span class="codeReserved">letter-spacing</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-tracking);</td></tr>
+  <tr><td>64</td><td> <span class="codeReserved">text-transform</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-text-transform);</td></tr>
+  <tr><td>65</td><td> <span class="codeReserved">text-decoration</span>: <span class="codeReserved">var</span>(--md-sys-typescale-label-large-text-decoration);</td></tr>
+  <tr><td>66</td><td> <span class="codeReserved">white-space</span>: nowrap;</td></tr>
+  <tr><td>67</td><td> <span class="codeReserved">text-overflow</span>: ellipsis;</td></tr>
+  <tr><td>68</td><td> <span class="codeReserved">overflow</span>: hidden;</td></tr>
+  <tr><td>69</td><td>}</td></tr>
+  <tr><td>70</td><td></td></tr>
+  <tr><td>71</td><td><span class="codeComment">/* label, shape */</span></td></tr>
+  <tr><td>72</td><td>.md-menu&gt;.selected {</td></tr>
+  <tr><td>73</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-secondary-container);</td></tr>
+  <tr><td>74</td><td>}</td></tr>
+  <tr><td>75</td><td></td></tr>
+  <tr><td>76</td><td><span class="codeComment">/* state layer */</span></td></tr>
+  <tr><td>77</td><td>.md-menu&gt;*::before {</td></tr>
+  <tr><td>78</td><td> <span class="codeReserved">content</span>: <span class="codeString">""</span>;</td></tr>
+  <tr><td>79</td><td> <span class="codeReserved">position</span>: absolute;</td></tr>
+  <tr><td>80</td><td> <span class="codeReserved">z-index</span>: -1;</td></tr>
+  <tr><td>81</td><td> <span class="codeReserved">top</span>: 0;</td></tr>
+  <tr><td>82</td><td> <span class="codeReserved">right</span>: 0;</td></tr>
+  <tr><td>83</td><td> <span class="codeReserved">left</span>: 0;</td></tr>
+  <tr><td>84</td><td> <span class="codeReserved">bottom</span>: 0;</td></tr>
+  <tr><td>85</td><td>}</td></tr>
+  <tr><td>86</td><td></td></tr>
+  <tr><td>87</td><td><span class="codeComment">/* icon */</span></td></tr>
+  <tr><td>88</td><td>.md-menu&gt;* span {</td></tr>
+  <tr><td>89</td><td> <span class="codeReserved">position</span>: relative;</td></tr>
+  <tr><td>90</td><td> <span class="codeReserved">margin-right</span>: 0.75rem;</td></tr>
+  <tr><td>91</td><td> <span class="codeReserved">vertical-align</span>: middle;</td></tr>
+  <tr><td>92</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</td></tr>
+  <tr><td>93</td><td> <span class="codeReserved">font-size</span>: 1.5rem;</td></tr>
+  <tr><td>94</td><td> <span class="codeReserved">width</span>: 1.5rem;</td></tr>
+  <tr><td>95</td><td> <span class="codeReserved">height</span>: 1.5rem;</td></tr>
+  <tr><td>96</td><td>}</td></tr>
+  <tr><td>97</td><td></td></tr>
+  <tr><td>98</td><td><span class="codeComment">/* icon */</span></td></tr>
+  <tr><td>99</td><td>.md-menu&gt;.selected span {</td></tr>
+  <tr><td>100</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-secondary-container);</td></tr>
+  <tr><td>101</td><td>}</td></tr>
+  <tr><td>102</td><td></td></tr>
+  <tr><td>103</td><td><span class="codeComment">/* state layer */</span></td></tr>
+  <tr><td>104</td><td>.md-menu&gt;:hover::before {</td></tr>
+  <tr><td>105</td><td> <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
+  <tr><td>106</td><td> <span class="codeReserved">opacity</span>: <span class="codeReserved">var</span>(--md-sys-state-hover-state-layer-opacity);</td></tr>
   <tr><td>107</td><td>}</td></tr>
   <tr><td>108</td><td></td></tr>
-  <tr><td>109</td><td><span class="codeComment">/* state layer */</span></td></tr>
-  <tr><td>110</td><td>.md-menu&gt;:focus::before {</td></tr>
-  <tr><td>111</td><td> <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
-  <tr><td>112</td><td> <span class="codeReserved">opacity</span>: <span class="codeReserved">var</span>(--md-sys-state-focus-state-layer-opacity);</td></tr>
-  <tr><td>113</td><td>}</td></tr>
-  <tr><td>114</td><td></td></tr>
-  <tr><td>115</td><td><span class="codeComment">/* label, shape */</span></td></tr>
-  <tr><td>116</td><td>.md-menu&gt;:focus {</td></tr>
-  <tr><td>117</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
-  <tr><td>118</td><td> <span class="codeReserved">outline</span>: none;</td></tr>
-  <tr><td>119</td><td>}</td></tr>
-  <tr><td>120</td><td></td></tr>
-  <tr><td>121</td><td><span class="codeComment">/* icon */</span></td></tr>
-  <tr><td>122</td><td>.md-menu&gt;:focus span {</td></tr>
-  <tr><td>123</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</td></tr>
-  <tr><td>124</td><td>}</td></tr>
-  <tr><td>125</td><td></td></tr>
-  <tr><td>126</td><td><span class="codeComment">/* label, shape */</span></td></tr>
-  <tr><td>127</td><td>.md-menu&gt;:active {</td></tr>
-  <tr><td>128</td><td> <span class="codeReserved">background-position</span>: center;</td></tr>
-  <tr><td>129</td><td> <span class="codeReserved">background-image</span>:</td></tr>
-  <tr><td>130</td><td>  <span class="codeReserved">radial-gradient</span>(circle, <span class="codeReserved">var</span>(--md-riple-color) 1%, transparent 1%);</td></tr>
-  <tr><td>131</td><td> <span class="codeReserved">background-size</span>: 100%;</td></tr>
-  <tr><td>132</td><td> <span class="codeReserved">animation-name</span>: md-ripple;</td></tr>
-  <tr><td>133</td><td> <span class="codeReserved">animation-duration</span>: <span class="codeReserved">var</span>(--md-sys-motion-duration-500);</td></tr>
-  <tr><td>134</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
-  <tr><td>135</td><td>}</td></tr>
-  <tr><td>136</td><td></td></tr>
-  <tr><td>137</td><td><span class="codeComment">/* state layer */</span></td></tr>
-  <tr><td>138</td><td>.md-menu&gt;:active::before {</td></tr>
-  <tr><td>139</td><td> <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
-  <tr><td>140</td><td> <span class="codeReserved">opacity</span>: <span class="codeReserved">var</span>(--md-sys-state-pressed-state-layer-opacity);</td></tr>
-  <tr><td>141</td><td>}</td></tr>
-  <tr><td>142</td><td></td></tr>
-  <tr><td>143</td><td></td></tr>
-  <tr><td>144</td><td><span class="codeComment">/* icon */</span></td></tr>
-  <tr><td>145</td><td>.md-menu&gt;:active span {</td></tr>
-  <tr><td>146</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</td></tr>
-  <tr><td>147</td><td>}</td></tr>
-  <tr><td>148</td><td></td></tr>
-  <tr><td>149</td><td>.md-menu input[type=<span class="codeString">"radio"</span>] {</td></tr>
-  <tr><td>150</td><td> <span class="codeReserved">appearance</span>: none;</td></tr>
-  <tr><td>151</td><td> <span class="codeReserved">transform</span>: scaleX(0);</td></tr>
-  <tr><td>152</td><td>}</td></tr>
+  <tr><td>109</td><td><span class="codeComment">/* label, shape */</span></td></tr>
+  <tr><td>110</td><td>.md-menu&gt;:hover {</td></tr>
+  <tr><td>111</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
+  <tr><td>112</td><td>}</td></tr>
+  <tr><td>113</td><td></td></tr>
+  <tr><td>114</td><td><span class="codeComment">/* icon */</span></td></tr>
+  <tr><td>115</td><td>.md-menu&gt;:hover span {</td></tr>
+  <tr><td>116</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</td></tr>
+  <tr><td>117</td><td>}</td></tr>
+  <tr><td>118</td><td></td></tr>
+  <tr><td>119</td><td><span class="codeComment">/* state layer */</span></td></tr>
+  <tr><td>120</td><td>.md-menu&gt;:focus::before {</td></tr>
+  <tr><td>121</td><td> <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
+  <tr><td>122</td><td> <span class="codeReserved">opacity</span>: <span class="codeReserved">var</span>(--md-sys-state-focus-state-layer-opacity);</td></tr>
+  <tr><td>123</td><td>}</td></tr>
+  <tr><td>124</td><td></td></tr>
+  <tr><td>125</td><td><span class="codeComment">/* label, shape */</span></td></tr>
+  <tr><td>126</td><td>.md-menu&gt;:focus {</td></tr>
+  <tr><td>127</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
+  <tr><td>128</td><td> <span class="codeReserved">outline</span>: none;</td></tr>
+  <tr><td>129</td><td>}</td></tr>
+  <tr><td>130</td><td></td></tr>
+  <tr><td>131</td><td><span class="codeComment">/* icon */</span></td></tr>
+  <tr><td>132</td><td>.md-menu&gt;:focus span {</td></tr>
+  <tr><td>133</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</td></tr>
+  <tr><td>134</td><td>}</td></tr>
+  <tr><td>135</td><td></td></tr>
+  <tr><td>136</td><td><span class="codeComment">/* label, shape */</span></td></tr>
+  <tr><td>137</td><td>.md-menu&gt;:active {</td></tr>
+  <tr><td>138</td><td> <span class="codeReserved">background-position</span>: center;</td></tr>
+  <tr><td>139</td><td> <span class="codeReserved">background-image</span>:</td></tr>
+  <tr><td>140</td><td>  <span class="codeReserved">radial-gradient</span>(circle, <span class="codeReserved">var</span>(--md-riple-color) 1%, transparent 1%);</td></tr>
+  <tr><td>141</td><td> <span class="codeReserved">background-size</span>: 100%;</td></tr>
+  <tr><td>142</td><td> <span class="codeReserved">animation-name</span>: md-ripple;</td></tr>
+  <tr><td>143</td><td> <span class="codeReserved">animation-duration</span>: <span class="codeReserved">var</span>(--md-sys-motion-duration-500);</td></tr>
+  <tr><td>144</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
+  <tr><td>145</td><td>}</td></tr>
+  <tr><td>146</td><td></td></tr>
+  <tr><td>147</td><td><span class="codeComment">/* state layer */</span></td></tr>
+  <tr><td>148</td><td>.md-menu&gt;:active::before {</td></tr>
+  <tr><td>149</td><td> <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</td></tr>
+  <tr><td>150</td><td> <span class="codeReserved">opacity</span>: <span class="codeReserved">var</span>(--md-sys-state-pressed-state-layer-opacity);</td></tr>
+  <tr><td>151</td><td>}</td></tr>
+  <tr><td>152</td><td></td></tr>
+  <tr><td>153</td><td></td></tr>
+  <tr><td>154</td><td><span class="codeComment">/* icon */</span></td></tr>
+  <tr><td>155</td><td>.md-menu&gt;:active span {</td></tr>
+  <tr><td>156</td><td> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</td></tr>
+  <tr><td>157</td><td>}</td></tr>
+  <tr><td>158</td><td></td></tr>
+  <tr><td>159</td><td>.md-menu input[type=<span class="codeString">"radio"</span>] {</td></tr>
+  <tr><td>160</td><td> <span class="codeReserved">appearance</span>: none;</td></tr>
+  <tr><td>161</td><td> <span class="codeReserved">transform</span>: scaleX(0);</td></tr>
+  <tr><td>162</td><td>}</td></tr>
  </tbody>
 </table>
  <footer>

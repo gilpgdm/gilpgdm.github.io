@@ -50,52 +50,51 @@
   <tr><td>40</td><td></td></tr>
   <tr><td>41</td><td> connectedCallback() {</td></tr>
   <tr><td>42</td><td>  <span class="codeReserved">this</span>.classList.add(<span class="codeString">"md-menu"</span>)</td></tr>
-  <tr><td>43</td><td>  <span class="codeReserved">this</span>.hidden = <span class="codeReserved">true</span></td></tr>
-  <tr><td>44</td><td>  <span class="codeReserved">this</span>.role = <span class="codeString">"menu"</span></td></tr>
-  <tr><td>45</td><td> }</td></tr>
-  <tr><td>46</td><td></td></tr>
-  <tr><td>47</td><td> <span class="codeComment">/**</span></td></tr>
-  <tr><td>48</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {HTMLButtonElement} toggleButton</span></td></tr>
-  <tr><td>49</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>50</td><td> alterna(toggleButton) {</td></tr>
-  <tr><td>51</td><td>  <span class="codeReserved">this</span>._toggleButton = toggleButton</td></tr>
-  <tr><td>52</td><td>  <span class="codeReserved">const</span> <span class="codeReserved">top</span> = toggleButton.offsetTop + toggleButton.offsetHeight - 4</td></tr>
-  <tr><td>53</td><td>  <span class="codeReserved">const</span> <span class="codeReserved">right</span> =</td></tr>
-  <tr><td>54</td><td>   innerWidth - (toggleButton.offsetLeft + toggleButton.offsetWidth) - 3</td></tr>
-  <tr><td>55</td><td>  <span class="codeReserved">this</span>.style.<span class="codeReserved">top</span> = <span class="codeString">`${<span class="codeReserved">top</span>}px`</span></td></tr>
-  <tr><td>56</td><td>  <span class="codeReserved">this</span>.style.<span class="codeReserved">right</span> = <span class="codeString">`${<span class="codeReserved">right</span>}px`</span></td></tr>
-  <tr><td>57</td><td>  <span class="codeReserved">const</span> list = <span class="codeReserved">this</span>.classList</td></tr>
-  <tr><td>58</td><td>  <span class="codeReserved">if</span> (list.contains(<span class="codeString">"open"</span>)) {</td></tr>
-  <tr><td>59</td><td>   <span class="codeReserved">this</span>.cierra()</td></tr>
-  <tr><td>60</td><td>  } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>61</td><td>   <span class="codeReserved">this</span>.abre()</td></tr>
-  <tr><td>62</td><td>  }</td></tr>
-  <tr><td>63</td><td> }</td></tr>
-  <tr><td>64</td><td></td></tr>
-  <tr><td>65</td><td> abre() {</td></tr>
-  <tr><td>66</td><td>  document.addEventListener(<span class="codeString">"click"</span>, <span class="codeReserved">this</span>.clicCierra)</td></tr>
-  <tr><td>67</td><td>  abreElementoHtml(<span class="codeReserved">this</span>)</td></tr>
-  <tr><td>68</td><td> }</td></tr>
-  <tr><td>69</td><td></td></tr>
-  <tr><td>70</td><td> cierra() {</td></tr>
-  <tr><td>71</td><td>  document.removeEventListener(<span class="codeString">"click"</span>, <span class="codeReserved">this</span>.clicCierra)</td></tr>
-  <tr><td>72</td><td>  cierraElementoHtmo(<span class="codeReserved">this</span>)</td></tr>
-  <tr><td>73</td><td> }</td></tr>
-  <tr><td>74</td><td></td></tr>
-  <tr><td>75</td><td> <span class="codeComment">/**</span></td></tr>
-  <tr><td>76</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {Event} evt</span></td></tr>
-  <tr><td>77</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>78</td><td> clicCierra(evt) {</td></tr>
-  <tr><td>79</td><td>  <span class="codeReserved">const</span> target = evt.target</td></tr>
-  <tr><td>80</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.classList.contains(<span class="codeString">"open"</span>)</td></tr>
-  <tr><td>81</td><td>   && <span class="codeReserved">this</span>._toggleButton !== <span class="codeReserved">null</span></td></tr>
-  <tr><td>82</td><td>   && target <span class="codeReserved">instanceof</span> HTMLElement</td></tr>
-  <tr><td>83</td><td>   && !<span class="codeReserved">this</span>._toggleButton.contains(target)) {</td></tr>
-  <tr><td>84</td><td>   <span class="codeReserved">this</span>.cierra()</td></tr>
-  <tr><td>85</td><td>  }</td></tr>
-  <tr><td>86</td><td> }</td></tr>
-  <tr><td>87</td><td>}</td></tr>
-  <tr><td>88</td><td></td></tr>
-  <tr><td>89</td><td>customElements.define(<span class="codeString">"md-overflow-menu"</span>, MdOverflowMenu)</td></tr>
+  <tr><td>43</td><td>  <span class="codeReserved">this</span>.role = <span class="codeString">"menu"</span></td></tr>
+  <tr><td>44</td><td> }</td></tr>
+  <tr><td>45</td><td></td></tr>
+  <tr><td>46</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>47</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {HTMLButtonElement} toggleButton</span></td></tr>
+  <tr><td>48</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>49</td><td> alterna(toggleButton) {</td></tr>
+  <tr><td>50</td><td>  <span class="codeReserved">this</span>._toggleButton = toggleButton</td></tr>
+  <tr><td>51</td><td>  <span class="codeReserved">const</span> <span class="codeReserved">top</span> = toggleButton.offsetTop + toggleButton.offsetHeight - 4</td></tr>
+  <tr><td>52</td><td>  <span class="codeReserved">const</span> <span class="codeReserved">right</span> =</td></tr>
+  <tr><td>53</td><td>   innerWidth - (toggleButton.offsetLeft + toggleButton.offsetWidth) - 3</td></tr>
+  <tr><td>54</td><td>  <span class="codeReserved">this</span>.style.<span class="codeReserved">top</span> = <span class="codeString">`${<span class="codeReserved">top</span>}px`</span></td></tr>
+  <tr><td>55</td><td>  <span class="codeReserved">this</span>.style.<span class="codeReserved">right</span> = <span class="codeString">`${<span class="codeReserved">right</span>}px`</span></td></tr>
+  <tr><td>56</td><td>  <span class="codeReserved">const</span> list = <span class="codeReserved">this</span>.classList</td></tr>
+  <tr><td>57</td><td>  <span class="codeReserved">if</span> (list.contains(<span class="codeString">"open"</span>)) {</td></tr>
+  <tr><td>58</td><td>   <span class="codeReserved">this</span>.cierra()</td></tr>
+  <tr><td>59</td><td>  } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>60</td><td>   <span class="codeReserved">this</span>.abre()</td></tr>
+  <tr><td>61</td><td>  }</td></tr>
+  <tr><td>62</td><td> }</td></tr>
+  <tr><td>63</td><td></td></tr>
+  <tr><td>64</td><td> abre() {</td></tr>
+  <tr><td>65</td><td>  document.addEventListener(<span class="codeString">"click"</span>, <span class="codeReserved">this</span>.clicCierra)</td></tr>
+  <tr><td>66</td><td>  abreElementoHtml(<span class="codeReserved">this</span>)</td></tr>
+  <tr><td>67</td><td> }</td></tr>
+  <tr><td>68</td><td></td></tr>
+  <tr><td>69</td><td> cierra() {</td></tr>
+  <tr><td>70</td><td>  document.removeEventListener(<span class="codeString">"click"</span>, <span class="codeReserved">this</span>.clicCierra)</td></tr>
+  <tr><td>71</td><td>  cierraElementoHtmo(<span class="codeReserved">this</span>)</td></tr>
+  <tr><td>72</td><td> }</td></tr>
+  <tr><td>73</td><td></td></tr>
+  <tr><td>74</td><td> <span class="codeComment">/**</span></td></tr>
+  <tr><td>75</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {Event} evt</span></td></tr>
+  <tr><td>76</td><td><span class="codeComment">  */</span></td></tr>
+  <tr><td>77</td><td> clicCierra(evt) {</td></tr>
+  <tr><td>78</td><td>  <span class="codeReserved">const</span> target = evt.target</td></tr>
+  <tr><td>79</td><td>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.classList.contains(<span class="codeString">"open"</span>)</td></tr>
+  <tr><td>80</td><td>   && <span class="codeReserved">this</span>._toggleButton !== <span class="codeReserved">null</span></td></tr>
+  <tr><td>81</td><td>   && target <span class="codeReserved">instanceof</span> HTMLElement</td></tr>
+  <tr><td>82</td><td>   && !<span class="codeReserved">this</span>._toggleButton.contains(target)) {</td></tr>
+  <tr><td>83</td><td>   <span class="codeReserved">this</span>.cierra()</td></tr>
+  <tr><td>84</td><td>  }</td></tr>
+  <tr><td>85</td><td> }</td></tr>
+  <tr><td>86</td><td>}</td></tr>
+  <tr><td>87</td><td></td></tr>
+  <tr><td>88</td><td>customElements.define(<span class="codeString">"md-overflow-menu"</span>, MdOverflowMenu)</td></tr>
  </tbody>
 </table>

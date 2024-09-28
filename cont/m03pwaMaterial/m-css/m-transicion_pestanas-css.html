@@ -1,0 +1,48 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeReserved">@view-transition</span> {</td></tr>
+  <tr><td>2</td><td> navigation: auto;</td></tr>
+  <tr><td>3</td><td>}</td></tr>
+  <tr><td>4</td><td></td></tr>
+  <tr><td>5</td><td>#headline {</td></tr>
+  <tr><td>6</td><td> view-transition-name: encabezado;</td></tr>
+  <tr><td>7</td><td>}</td></tr>
+  <tr><td>8</td><td></td></tr>
+  <tr><td>9</td><td>main {</td></tr>
+  <tr><td>10</td><td> view-transition-name: contenido;</td></tr>
+  <tr><td>11</td><td>}</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td>::view-transition-group(encabezado) {</td></tr>
+  <tr><td>14</td><td> <span class="codeReserved">animation-duration</span>: <span class="codeReserved">var</span>(--md-sys-motion-duration-1000);</td></tr>
+  <tr><td>15</td><td>}</td></tr>
+  <tr><td>16</td><td></td></tr>
+  <tr><td>17</td><td>::view-transition-group(contenido) {</td></tr>
+  <tr><td>18</td><td> <span class="codeReserved">animation-duration</span>: <span class="codeReserved">var</span>(--md-sys-motion-duration-1000);</td></tr>
+  <tr><td>19</td><td>}</td></tr>
+  <tr><td>20</td><td></td></tr>
+  <tr><td>21</td><td>html::view-transition-old(encabezado) {</td></tr>
+  <tr><td>22</td><td> <span class="codeReserved">animation-name</span>: salePorLaIzquierda;</td></tr>
+  <tr><td>23</td><td>}</td></tr>
+  <tr><td>24</td><td></td></tr>
+  <tr><td>25</td><td>html::view-transition-new(encabezado) {</td></tr>
+  <tr><td>26</td><td> <span class="codeReserved">animation-name</span>: entraPorLaDerecha;</td></tr>
+  <tr><td>27</td><td>}</td></tr>
+  <tr><td>28</td><td></td></tr>
+  <tr><td>29</td><td>html::view-transition-old(contenido) {</td></tr>
+  <tr><td>30</td><td> <span class="codeReserved">animation-name</span>: salePorLaIzquierda;</td></tr>
+  <tr><td>31</td><td>}</td></tr>
+  <tr><td>32</td><td></td></tr>
+  <tr><td>33</td><td>html::view-transition-new(contenido) {</td></tr>
+  <tr><td>34</td><td> <span class="codeReserved">animation-duration</span>: <span class="codeReserved">var</span>(--md-sys-motion-duration-700);</td></tr>
+  <tr><td>35</td><td> <span class="codeReserved">animation-name</span>: entraPorLaDerecha;</td></tr>
+  <tr><td>36</td><td>}</td></tr>
+ </tbody>
+</table>

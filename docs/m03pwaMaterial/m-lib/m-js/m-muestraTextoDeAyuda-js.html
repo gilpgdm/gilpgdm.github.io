@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>6. lib / js / muestraTextoDeAyuda.js - GilPG DM</title>
+ <title>7. lib / js / muestraTextoDeAyuda.js - GilPG DM</title>
  <meta name="description" content="Código de «lib/js/muestraTextoDeAyuda.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -818,7 +818,7 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >6. lib / js / muestraTextoDeAyuda.js</h1><table class="codeShow">
+   <h1 >7. lib / js / muestraTextoDeAyuda.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -828,30 +828,31 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>2</td><td><span class="codeComment"> * Si un elemento HTML tiene un mensaje de validación, lo</span></td></tr>
-  <tr><td>3</td><td><span class="codeComment"> * muestra en su elemento de ayuda; en caso contrario, muestra</span></td></tr>
-  <tr><td>4</td><td><span class="codeComment"> * un mensaje de ayuda. </span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { {</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> *   validity: { valid: boolean };</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> *   validationMessage: string</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment"> *  } } elementoHtml elemento que contiene datos de validación.</span></td></tr>
-  <tr><td>9</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { HTMLElement } elementoDeAyuda elemento fonde</span></td></tr>
-  <tr><td>10</td><td><span class="codeComment"> * se muestran los elementos de validación para elementoHtml.</span></td></tr>
-  <tr><td>11</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string } mensajeDeAyuda mensaje de ayuda cuando el estado de</span></td></tr>
-  <tr><td>12</td><td><span class="codeComment"> *  elementoHtml es válido.</span></td></tr>
-  <tr><td>13</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>14</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> muestraTextoDeAyuda(elementoHtml, elementoDeAyuda,</td></tr>
-  <tr><td>15</td><td> mensajeDeAyuda) {</td></tr>
-  <tr><td>16</td><td> <span class="codeReserved">if</span> (elementoHtml.validity.valid) {</td></tr>
-  <tr><td>17</td><td>  elementoDeAyuda.textContent = mensajeDeAyuda</td></tr>
-  <tr><td>18</td><td> } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>19</td><td>  elementoDeAyuda.textContent = elementoHtml.validationMessage</td></tr>
-  <tr><td>20</td><td> }</td></tr>
-  <tr><td>21</td><td>}</td></tr>
-  <tr><td>22</td><td></td></tr>
-  <tr><td>23</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
-  <tr><td>24</td><td>window[<span class="codeString">"muestraTextoDeAyuda"</span>] = muestraTextoDeAyuda</td></tr>
+  <tr><td>1</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"./exportaAHtml.js"</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> * Si un elemento HTML tiene un mensaje de validación, lo</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> * muestra en su elemento de ayuda; en caso contrario, muestra</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment"> * un mensaje de ayuda. </span></td></tr>
+  <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { {</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> *   validity: { valid: boolean };</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> *   validationMessage: string</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> *  } } elementoHtml elemento que contiene datos de validación.</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { HTMLElement } elementoDeAyuda elemento fonde</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment"> * se muestran los elementos de validación para elementoHtml.</span></td></tr>
+  <tr><td>13</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string } mensajeDeAyuda mensaje de ayuda cuando el</span></td></tr>
+  <tr><td>14</td><td><span class="codeComment"> *  estado de elementoHtml es válido.</span></td></tr>
+  <tr><td>15</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>16</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> muestraTextoDeAyuda(elementoHtml, elementoDeAyuda,</td></tr>
+  <tr><td>17</td><td> mensajeDeAyuda) {</td></tr>
+  <tr><td>18</td><td> <span class="codeReserved">if</span> (elementoHtml.validity.valid) {</td></tr>
+  <tr><td>19</td><td>  elementoDeAyuda.textContent = mensajeDeAyuda</td></tr>
+  <tr><td>20</td><td> } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>21</td><td>  elementoDeAyuda.textContent = elementoHtml.validationMessage</td></tr>
+  <tr><td>22</td><td> }</td></tr>
+  <tr><td>23</td><td>}</td></tr>
+  <tr><td>24</td><td></td></tr>
+  <tr><td>25</td><td>exportaAHtml(muestraTextoDeAyuda)</td></tr>
  </tbody>
 </table>
  <footer>
@@ -879,10 +880,10 @@
    menu
   </span>
  </button>
- <a class="anterior" href="/m03pwaMaterial/m-lib/m-js/m-muestraError-js.html" title="5. lib / js / muestraError.js"><span class="material-symbols-outlined">
+ <a class="anterior" href="/m03pwaMaterial/m-lib/m-js/m-muestraError-js.html" title="6. lib / js / muestraError.js"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
- <a class="siguiente" href="/m03pwaMaterial/m-lib/m-js/m-ProblemDetails-js.html" title="7. lib / js / ProblemDetails.js"><span class="material-symbols-outlined">
+ <a class="siguiente" href="/m03pwaMaterial/m-lib/m-js/m-ProblemDetails-js.html" title="8. lib / js / ProblemDetails.js"><span class="material-symbols-outlined">
      skip_next
      </span></a>
 </div>
@@ -929,6 +930,11 @@
    </li>
    <li>
     <p>
+     <a href="/m03pwaMaterial/m-lib/m-js/m-exportaAHtml-js.html">lib / js / exportaAHtml.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
      <a href="/m03pwaMaterial/m-lib/m-js/m-getAttribute-js.html">lib / js / getAttribute.js</a>
     </p>
    </li>
@@ -955,11 +961,6 @@
    <li>
     <p>
      <a href="/m03pwaMaterial/m-lib/m-js/m-querySelector-js.html">lib / js / querySelector.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m03pwaMaterial/m-lib/m-js/m-registraServiceWorkerSiEsSoportado-js.html">lib / js / registraServiceWorkerSiEsSoportado.js</a>
     </p>
    </li>
    <li>

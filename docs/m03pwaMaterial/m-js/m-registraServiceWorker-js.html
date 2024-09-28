@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" prefix="og: https://ogp.me/ns#">
 
 <head>
  <meta charset="UTF-8">
@@ -8,8 +8,9 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>Carpeta « lib » - GilPG DM</title>
- <meta name="description" content="">
+ <title>F. js / registraServiceWorker.js - GilPG DM</title>
+ <meta name="description" content="Código de «js/registraServiceWorker.js».">
+ <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
  :root {
@@ -585,304 +586,531 @@
  }
 </style>
  <style>
- .pruebaDeEscritorio {
-  font-family: var(--fontSans);
+ body {
+  scroll-padding-top: var(--padTop);
  }
 
- .pruebaDeEscritorio .section,
- .pruebaDeEscritorio section {
-  display: inline-block;
-  vertical-align: top;
+ body {
+  animation-timing-function: var(--introFuncion);
+  animation-duration: var(--introDuracion);
+  animation-fill-mode: forwards;
+  animation-name: appear;
  }
 
- .pruebaDeEscritorio section {
-  margin: 1em;
+ body.noTransition {
+  animation-name: noTransition;
  }
 
- .section section {
-  display: block;
+ @keyframes appear {
+  from {
+   opacity: 0;
+  }
+
+  to {
+   opacity: 1;
+  }
  }
 
- .pruebaDeEscritorio section pre {
+ @keyframes noTransition {
+  0% {
+   opacity: 0;
+  }
+
+  0.7% {
+   opacity: 1;
+  }
+
+  100% {
+   opacity: 1;
+  }
+ }
+
+ #principal {
+  padding-top: var(--padTop);
+  box-sizing: border-box;
+  transition: margin-left 0.7s ease-in-out;
+ }
+
+ #principal a {
+  word-wrap: break-word;
+ }
+
+ #principal>#abre {
+  position: fixed;
+  top: var(--gap);
+  left: var(--gap);
+  transition-property: top, left;
+  transition-duration: 0.7s, 0.7s;
+  transition-timing-function: ease-in-out;
+ }
+
+ #principal>.anterior {
+  position: fixed;
+  top: var(--gap);
+  transition-property: top, left;
+  transition-duration: 0.7s, 0.7s;
+  transition-timing-function: ease-in-out;
+ }
+
+ #principal>.siguiente {
+  position: fixed;
+  top: var(--gap);
+  right: var(--gap);
+  transition: top 0.7s ease-in-out;
+ }
+
+ .scroll #principal>#abre,
+ .scroll #principal>.anterior,
+ .scroll #principal>.siguiente {
+  top: -10rem;
+ }
+
+ #principal>h1:not(.default) {
+  margin-top: var(--marginTop);
+  padding: var(--h1PadTop) 1rem 1rem 1rem;
+  color: var(--colTitulo);
+  background-color: var(--colTituloFondo);
+ }
+
+ #principal>h1:not(.default) strong,
+ #principal>h1:not(.default) code {
+  color: var(--colPrincipalTituloStrong);
+ }
+
+ #nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  overflow: auto;
+  color: var(--colLetra);
+  background-color: var(--colFondoNav);
+  padding: var(--padCont);
+  transition: transform 0.7s ease-in-out;
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+  overflow-wrap: anywhere;
+ }
+
+ #nav::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ #nav::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ #nav::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ #nav::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ #nav p {
   margin: 0;
  }
 
- .pruebaDeEscritorio samp {
-  font-weight: bold;
+ #nav a:not([data-logo]) {
+  display: block;
+  padding: var(--padNav);
  }
 
- .pruebaDeEscritorio .activo {
-  display: inline-block;
-  margin: 0 0.2rem 0 0;
-  vertical-align: top;
-  background-color: var(--colSecundario);
-  border: 1px solid var(--colSecundario);
+ #nav a.actual code,
+ #nav a.actual strong {
+  color: var(--colAStrong);
  }
 
- .pruebaDeEscritorio :target,
- .pruebaDeEscritorio :target caption {
-  background-color: var(--colTarget);
+ #nav a.actual {
+  background-color: var(--colFondoNavSel);
  }
 
- .pruebaDeEscritorio .numero1 {
-  display: inline-block;
-  margin: 0 0.2rem 0 0;
-  color: var(--colStack1);
-  border: 1px solid var(--colStack1);
+ @media screen and (max-width: 999px) {
+  #principal {
+   max-width: 100vw;
+  }
+
+  #cierra {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: var(--colSombra);
+   transform: translateX(-120%);
+   transition: transform 0.7s ease-out;
+  }
+
+  #nav {
+   width: min(var(--anchoNav), 70%);
+   box-shadow: var(--navSombra);
+  }
+
+  .xmenu>#nav {
+   transform: translateX(-120%);
+  }
+
+  .menu>#cierra,
+  .menu>#nav {
+   transform: translateX(0);
+  }
+
+  #principal>.anterior {
+   left: calc(2 * var(--gap) + 2rem);
+  }
  }
 
- .pruebaDeEscritorio .numero2 {
-  display: inline-block;
-  color: var(--colStack2);
-  border: 1px solid var(--colStack2);
+ @media screen and (min-width: 1000px) {
+  #cierra {
+   display: none;
+  }
+
+  #nav {
+   width: var(--anchoNav);
+  }
+
+  .menu>#nav {
+   transform: translateX(-120%);
+  }
+
+  .xmenu>#principal {
+   margin-left: var(--anchoNav)
+  }
+
+  .menu>#principal>.anterior {
+   left: calc(2 * var(--gap) + 2rem);
+  }
+
+  .xmenu>#principal>.anterior {
+   top: var(--gap);
+   left: calc(var(--anchoNav) + var(--gap));
+  }
+
+  .xmenu.scroll #principal>.anterior {
+   top: -10rem;
+  }
  }
 
- .pruebaDeEscritorio .numero3 {
-  display: inline-block;
-  color: var(--colStack3);
-  border: 1px solid var(--colStack3);
- }
+ @media print {
 
- .pruebaDeEscritorio a.parametro1,
- .pruebaDeEscritorio .parametro1 {
-  color: var(--colPar1);
- }
+  #nav,
+  #principal>#abre,
+  #principal>.anterior,
+  #principal>.siguiente {
+   display: none;
+  }
 
- .pruebaDeEscritorio a.parametro2,
- .pruebaDeEscritorio .parametro2 {
-  color: var(--colPar2);
- }
+  #principal>h1:not(.default) {
+   margin-top: 0.5rem;
+   padding: 1rem;
+   color: var(--colTituloFondo);
+   background-color: transparent;
+  }
 
- .pruebaDeEscritorio .descongela {
-  color: var(--colDescongela);
- }
-
- .pruebaDeEscritorio table.tabla1,
- .pruebaDeEscritorio table.tabla1 th,
- .pruebaDeEscritorio table.tabla1 td {
-  border: 1px solid var(--colStack1);
- }
-
- .pruebaDeEscritorio table.tabla2,
- .pruebaDeEscritorio table.tabla2 th,
- .pruebaDeEscritorio table.tabla2 td {
-  border: 1px solid var(--colStack2);
- }
-
- .pruebaDeEscritorio table.tabla3,
- .pruebaDeEscritorio table.tabla3 th,
- .pruebaDeEscritorio table.tabla3 td {
-  border: 1px solid var(--colStack3);
- }
-
- .pruebaDeEscritorio .frame {
-  font-family: var(--fontMono);
-  border-collapse: collapse;
- }
-
- .pruebaDeEscritorio .frame,
- .pruebaDeEscritorio .frame th,
- .pruebaDeEscritorio .frame td {
-  border: thin solid;
- }
-
- .pruebaDeEscritorio .frame caption {
-  font-style: italic;
- }
-
- .pruebaDeEscritorio .objeto caption {
-  text-decoration: underline;
-  font-style: italic;
- }
-
- .pruebaDeEscritorio .creación {
-  display: flex;
  }
 </style>
+ 
 </head>
 
-<body class="print">
-   <h1 >M. Carpeta « lib »</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
-    </p>
-   </div>
-
-  <div class="lectura">
-   <nav>
-    <h1>Contenido</h1>
-    
+<body  class="xmenu">
+ <div id="principal">
+   <h1 >F. js / registraServiceWorker.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeString">"use strict"</span> <span class="codeComment">// usa JavaScript en modo estricto.</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">const</span> nombreDeServiceWorker = <span class="codeString">"sw.js"</span></td></tr>
+  <tr><td>4</td><td></td></tr>
+  <tr><td>5</td><td><span class="codeReserved">try</span> {</td></tr>
+  <tr><td>6</td><td> navigator.serviceWorker.register(nombreDeServiceWorker)</td></tr>
+  <tr><td>7</td><td>  .then(registro =&gt; {</td></tr>
+  <tr><td>8</td><td>   console.log(nombreDeServiceWorker, <span class="codeString">"registrado."</span>)</td></tr>
+  <tr><td>9</td><td>   console.log(registro)</td></tr>
+  <tr><td>10</td><td>  })</td></tr>
+  <tr><td>11</td><td>  .<span class="codeReserved">catch</span>(error =&gt; console.log(error))</td></tr>
+  <tr><td>12</td><td>} <span class="codeReserved">catch</span> (error) {</td></tr>
+  <tr><td>13</td><td> console.log(error)</td></tr>
+  <tr><td>14</td><td>}</td></tr>
+ </tbody>
+</table>
+ <footer>
+ <p>
+  <a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/"><img
+     alt="Licencia Creative Commons" style="border-width:0"
+     src="/img/icono/160x30.webp" width="80" height="15" /></a>
+  <br />Esta
+  <span xmlns:dct="http://purl.org/dc/terms/"
+    href="http://purl.org/dc/dcmitype/InteractiveResource"
+    rel="dct:type">obra</span>
+  de
+  <a xmlns:cc="http://creativecommons.org/ns#"
+    href="https://gilpgijs.github.io" property="cc:attributionName"
+    rel="cc:attributionURL">Gilberto Pacheco Gallegos</a>
+  está bajo una
+  <a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/">Licencia
+   Creative Commons Atribución 4.0 Internacional</a>.
+ </p>
+</footer>
+ <button id="abre" type="button" title="Menú" class="cambiaMenu">
+  <span class="material-symbols-outlined">
+   menu
+  </span>
+ </button>
+ <a class="anterior" href="/m03pwaMaterial/m-js/m-nav-tab-scrollable-js.html" title="E. js / nav-tab-scrollable.js"><span class="material-symbols-outlined">
+     skip_previous
+    </span></a>
+ <a class="siguiente" href="/m03pwaMaterial/m-site-webmanifest.html" title="25. site.webmanifest"><span class="material-symbols-outlined">
+     skip_next
+     </span></a>
+</div>
+<div id="cierra" class="cambiaMenu"></div>
+<nav id="nav">
+ <button type="button" title="Cierra" class="cambiaMenu">
+  <span class="material-symbols-outlined">
+   close
+  </span>
+ </button>
+ 
+   <p>
+    <a href="/"
+      data-logo="true">GilPG DM</a>
+   </p>
+   
+   <p>
+    <a href="/m03pwaMaterial/">6. PWA con Material Design</a>
+   </p>
+   
+     <p>
+      <a class="paginaAnterior" href="/m03pwaMaterial/m-ayuda-html.html"
+        title="23. ayuda.html - Vista de ayuda"><span
+        class="material-symbols-outlined">
+         arrow_upward
+        </span></a>
+     </p>
+   <h1><a href="/m03pwaMaterial/m-js/index.html">24. Carpeta « js »</a></h1>
+   
    <ol type="A">
     
    <li>
     <p>
-     <a href="/m04pwaBasica/m-lib/m-js/">Carpeta « lib / js »</a>
+     <a href="/m03pwaMaterial/m-js/m-configura-js.html">js / configura.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-js/m-nav-bar-js.html">js / nav-bar.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-js/m-nav-drw-js.html">js / nav-drw.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-js/m-nav-tab-fixed-js.html">js / nav-tab-fixed.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-js/m-nav-tab-scrollable-js.html">js / nav-tab-scrollable.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-js/m-registraServiceWorker-js.html" class="actual">js / registraServiceWorker.js</a>
     </p>
    </li>
    </ol>
-   </nav>
-  </div>
-     <section>
-         <h1 >A. Carpeta « lib / js »</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+   
+    <p>
+     <a class="paginaSiguiente" href="/m03pwaMaterial/m-site-webmanifest.html"
+       title="25. site.webmanifest"><span
+       class="material-symbols-outlined">
+        arrow_downward
+       </span></a>
     </p>
-   </div>
+ 
+</nav>
+ <script>
+ registraServiceWorker("/sw.js")
+ const LOCAL_STORAGE_MENU = "menu"
+ const MENU = "menu"
+ const XMENU = "xmenu"
+ const SCROLL = "scroll"
+ const nav = document.querySelector("#nav")
+ const abre = document.querySelector("#abre")
 
-  <div class="lectura">
-   <nav>
-    <h1>Contenido</h1>
-    
-   <ol type="1">
-    
-   <li>
-    <p>
-     <a href="/m04pwaBasica/m-lib/m-js/m-muestraError-js.html">lib / js / muestraError.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m04pwaBasica/m-lib/m-js/m-ProblemDetails-js.html">lib / js / ProblemDetails.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m04pwaBasica/m-lib/m-js/m-registraServiceWorkerSiEsSoportado-js.html">lib / js / registraServiceWorkerSiEsSoportado.js</a>
-    </p>
-   </li>
-   </ol>
-   </nav>
-  </div>
-     <section >
-         <h1 >1. lib / js / muestraError.js</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { ProblemDetails } <span class="codeReserved">from</span> <span class="codeString">"./ProblemDetails.js"</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>4</td><td><span class="codeComment"> * Muestra un error en la consola y en un cuadro de</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> * alerta el mensaje de una excepción.</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { ProblemDetails | Error | <span class="codeReserved">null</span> } error descripción del error.</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>8</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> muestraError(error) {</td></tr>
-  <tr><td>9</td><td></td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">if</span> (error === <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>11</td><td></td></tr>
-  <tr><td>12</td><td>  console.log(<span class="codeString">"Error"</span>)</td></tr>
-  <tr><td>13</td><td>  alert(<span class="codeString">"Error"</span>)</td></tr>
-  <tr><td>14</td><td></td></tr>
-  <tr><td>15</td><td> } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (error <span class="codeReserved">instanceof</span> ProblemDetails) {</td></tr>
-  <tr><td>16</td><td></td></tr>
-  <tr><td>17</td><td>  <span class="codeReserved">let</span> mensaje = error.title</td></tr>
-  <tr><td>18</td><td>  <span class="codeReserved">if</span> (error.detail) {</td></tr>
-  <tr><td>19</td><td>   mensaje += <span class="codeString">`\n\n${error.detail}`</span></td></tr>
-  <tr><td>20</td><td>  }</td></tr>
-  <tr><td>21</td><td>  mensaje += <span class="codeString">`\n\nCódigo: ${error.status}`</span></td></tr>
-  <tr><td>22</td><td>  <span class="codeReserved">if</span> (error.type) {</td></tr>
-  <tr><td>23</td><td>   mensaje += <span class="codeString">` ${error.type}`</span></td></tr>
-  <tr><td>24</td><td>  }</td></tr>
-  <tr><td>25</td><td></td></tr>
-  <tr><td>26</td><td>  console.error(mensaje)</td></tr>
-  <tr><td>27</td><td>  console.error(error)</td></tr>
-  <tr><td>28</td><td>  console.error(<span class="codeString">"Headers:"</span>)</td></tr>
-  <tr><td>29</td><td>  error.headers.forEach((valor, llave) =&gt; console.error(llave, <span class="codeString">"="</span>, valor))</td></tr>
-  <tr><td>30</td><td>  alert(mensaje)</td></tr>
-  <tr><td>31</td><td></td></tr>
-  <tr><td>32</td><td> } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>33</td><td></td></tr>
-  <tr><td>34</td><td>  console.error(error)</td></tr>
-  <tr><td>35</td><td>  alert(error.message)</td></tr>
-  <tr><td>36</td><td></td></tr>
-  <tr><td>37</td><td> }</td></tr>
-  <tr><td>38</td><td></td></tr>
-  <tr><td>39</td><td>}</td></tr>
-  <tr><td>40</td><td></td></tr>
-  <tr><td>41</td><td><span class="codeComment">// Permite que los eventos de html usen la función.</span></td></tr>
-  <tr><td>42</td><td>window[<span class="codeString">"muestraError"</span>] = muestraError</td></tr>
- </tbody>
-</table>
-      </section>
-     <section >
-         <h1 >2. lib / js / ProblemDetails.js</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td><span class="codeComment">/** Detalle de los errores devueltos por un servicio. */</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">export</span> <span class="codeReserved">class</span> ProblemDetails <span class="codeReserved">extends</span> Error {</td></tr>
-  <tr><td>3</td><td></td></tr>
-  <tr><td>4</td><td> <span class="codeComment">/**</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {number} status</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {Headers} headers</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} title</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} [type]</span></td></tr>
-  <tr><td>9</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} [detail]</span></td></tr>
-  <tr><td>10</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>11</td><td> <span class="codeReserved">constructor</span>(status, headers, title, type, detail) {</td></tr>
-  <tr><td>12</td><td>  super(title)</td></tr>
-  <tr><td>13</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>14</td><td>  <span class="codeReserved">this</span>.status = status</td></tr>
-  <tr><td>15</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>16</td><td>  <span class="codeReserved">this</span>.headers = headers</td></tr>
-  <tr><td>17</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>18</td><td>  <span class="codeReserved">this</span>.type = type</td></tr>
-  <tr><td>19</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>20</td><td>  <span class="codeReserved">this</span>.detail = detail</td></tr>
-  <tr><td>21</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>22</td><td>  <span class="codeReserved">this</span>.title = title</td></tr>
-  <tr><td>23</td><td> }</td></tr>
-  <tr><td>24</td><td></td></tr>
-  <tr><td>25</td><td>}</td></tr>
- </tbody>
-</table>
-      </section>
-     <section >
-         <h1 >3. lib / js / registraServiceWorkerSiEsSoportado.js</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { muestraError } <span class="codeReserved">from</span> <span class="codeString">"./muestraError.js"</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>4</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string | URL } urlDeServiceWorker</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>6</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> registraServiceWorkerSiEsSoportado(urlDeServiceWorker) {</td></tr>
-  <tr><td>7</td><td> <span class="codeReserved">try</span> {</td></tr>
-  <tr><td>8</td><td>  <span class="codeReserved">if</span> (<span class="codeString">"serviceWorker"</span> <span class="codeReserved">in</span> navigator) {</td></tr>
-  <tr><td>9</td><td>   <span class="codeReserved">const</span> registro = <span class="codeReserved">await</span> navigator.serviceWorker.register(urlDeServiceWorker)</td></tr>
-  <tr><td>10</td><td>   console.log(urlDeServiceWorker, <span class="codeString">"registrado."</span>)</td></tr>
-  <tr><td>11</td><td>   console.log(registro)</td></tr>
-  <tr><td>12</td><td>  }</td></tr>
-  <tr><td>13</td><td> } <span class="codeReserved">catch</span> (error) {</td></tr>
-  <tr><td>14</td><td>  muestraError(error)</td></tr>
-  <tr><td>15</td><td> }</td></tr>
-  <tr><td>16</td><td>}</td></tr>
- </tbody>
-</table>
-      </section>
-      </section>
+ /**@type {string} */
+ let urlAnterior = "/m03pwaMaterial/m-js/m-nav-tab-scrollable-js.html"
+ /**@type {string} */
+ let urlSiguiente = "/m03pwaMaterial/m-site-webmanifest.html"
+ /**@type {number|null} */
+ let iniciaX = null
+ /**@type {number|null} */
+ let iniciaY = null
+ /** @type {number} */
+ let posY = 0
+ /** @type {number} */
+ let dy = 0
+ /** @type {boolean} */
+ let scrolling = false
+
+ document.addEventListener("keydown", teclas)
+ document.addEventListener("touchstart", iniciaTouch)
+ document.addEventListener("touchmove", desplazaTouch)
+ addEventListener("scroll", onScroll)
+ if (abre) {
+  abre.addEventListener("click", cambiaMenu)
+ }
+ const cambian = Array.from(document.querySelectorAll(".cambiaMenu"))
+ for (const c of cambian) {
+  c.addEventListener("click", cambiaMenu)
+ }
+ const menu = localStorage.getItem(LOCAL_STORAGE_MENU)
+ if (menu) {
+  if (menu === MENU) {
+   document.body.classList.remove(XMENU)
+   document.body.classList.add(MENU)
+  } else {
+   document.body.classList.remove(MENU)
+   document.body.classList.add(XMENU)
+  }
+ }
+
+ function registraServiceWorker(url) {
+  if (navigator.serviceWorker) {
+   navigator.serviceWorker.register(url).
+    then(registro => {
+     console.log("Service Worker registrado.")
+     console.log(registro)
+    }).
+    catch(muestraError)
+  }
+ }
+
+ function muestraError(e) {
+  console.error(e)
+  alert(e.message)
+ }
+
+ async function copyToClipboard(button) {
+  try {
+   const table = button.closest("table")
+   if (table !== null) {
+    const lineas = Array.from(table.querySelectorAll("td:nth-child(2)"))
+    const codigo = lineas
+     .map(linea => linea.textContent || "")
+     .join("\n")
+    if (codigo) {
+     await navigator.clipboard.writeText(codigo)
+     alert("Texto copiado al portapapeles.")
+    }
+   }
+  } catch (e) {
+   alert(e.message)
+  }
+ }
+
+ function cambiaMenu() {
+  document.body.classList.toggle(XMENU)
+  document.body.classList.toggle(MENU)
+  if (document.body.classList.contains(MENU)) {
+   localStorage.setItem(LOCAL_STORAGE_MENU, MENU)
+  } else {
+   localStorage.setItem(LOCAL_STORAGE_MENU, XMENU)
+  }
+ }
+
+ /** @param {KeyboardEvent} ev*/
+ function teclas(ev) {
+  switch (ev.key) {
+   case "ArrowLeft":
+    retrocede()
+    break
+   case "ArrowRight":
+    avanza()
+    break
+  }
+ }
+
+ function retrocede() {
+  if (urlAnterior) {
+   location.href = urlAnterior
+  }
+ }
+
+ function avanza() {
+  if (urlSiguiente) {
+   location.href = urlSiguiente
+  }
+ }
+
+ /** @param {TouchEvent} ev*/
+ function iniciaTouch(ev) {
+  const toqueInicial = ev.touches[0]
+  iniciaX = toqueInicial.clientX
+  iniciaY = toqueInicial.clientY
+ }
+
+ /** @param {TouchEvent} ev*/
+ function desplazaTouch(ev) {
+  if (iniciaX && iniciaY) {
+   const desplazamiento = ev.touches[0]
+   var desplazamientoX = desplazamiento.clientX
+   var desplazamientoY = desplazamiento.clientY
+   var difX = desplazamientoX - iniciaX
+   var difY = desplazamientoY - iniciaY
+   // Checa que el movimiento no sea muy corto.
+   if (Math.abs(difX) + Math.abs(difY) > 90) {
+    if (Math.abs(difX) > Math.abs(difY)) {
+     if (difX > 70) {
+      retrocede()
+     } else {
+      avanza()
+     }
+     // Reinicia valores.
+     iniciaX = null
+     iniciaY = null
+    }
+   }
+  }
+ }
+
+ function onScroll() {
+  dy = scrollY - posY
+  posY = scrollY
+  if (!scrolling) {
+   requestAnimationFrame(avanzaScroll)
+  }
+  scrolling = true
+ }
+
+ function avanzaScroll() {
+  if (posY === 0) {
+   document.body.classList.remove(SCROLL)
+  } else if (dy < 0) {
+   document.body.classList.remove(SCROLL)
+  } else if (dy > 0) {
+   document.body.classList.add(SCROLL)
+  }
+  scrolling = false
+ }
+
+</script>
 </body>
 
 </html>

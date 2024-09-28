@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>3. lib / js / registraServiceWorkerSiEsSoportado.js - GilPG DM</title>
- <meta name="description" content="Código de «lib/js/registraServiceWorkerSiEsSoportado.js».">
+ <title>3. lib / js / exportaAHtml.js - GilPG DM</title>
+ <meta name="description" content="Código de «lib/js/exportaAHtml.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
@@ -818,7 +818,7 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >3. lib / js / registraServiceWorkerSiEsSoportado.js</h1><table class="codeShow">
+   <h1 >3. lib / js / exportaAHtml.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -828,22 +828,21 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { muestraError } <span class="codeReserved">from</span> <span class="codeString">"./muestraError.js"</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>4</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string | URL } urlDeServiceWorker</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>6</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> registraServiceWorkerSiEsSoportado(urlDeServiceWorker) {</td></tr>
-  <tr><td>7</td><td> <span class="codeReserved">try</span> {</td></tr>
-  <tr><td>8</td><td>  <span class="codeReserved">if</span> (<span class="codeString">"serviceWorker"</span> <span class="codeReserved">in</span> navigator) {</td></tr>
-  <tr><td>9</td><td>   <span class="codeReserved">const</span> registro = <span class="codeReserved">await</span> navigator.serviceWorker.register(urlDeServiceWorker)</td></tr>
-  <tr><td>10</td><td>   console.log(urlDeServiceWorker, <span class="codeString">"registrado."</span>)</td></tr>
-  <tr><td>11</td><td>   console.log(registro)</td></tr>
-  <tr><td>12</td><td>  }</td></tr>
-  <tr><td>13</td><td> } <span class="codeReserved">catch</span> (error) {</td></tr>
-  <tr><td>14</td><td>  muestraError(error)</td></tr>
-  <tr><td>15</td><td> }</td></tr>
-  <tr><td>16</td><td>}</td></tr>
+  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>2</td><td><span class="codeComment"> * Permite que los eventos de html usen la función.</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">function</span>} functionInstance</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>5</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> exportaAHtml(functionInstance) {</td></tr>
+  <tr><td>6</td><td> window[nombreDeFuncionParaHtml(functionInstance)] = functionInstance</td></tr>
+  <tr><td>7</td><td>}</td></tr>
+  <tr><td>8</td><td></td></tr>
+  <tr><td>9</td><td><span class="codeComment">/**</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">function</span>} valor</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td>12</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> nombreDeFuncionParaHtml(valor) {</td></tr>
+  <tr><td>13</td><td> <span class="codeReserved">const</span> names = valor.name.split(<span class="codeString">/\s+/</span>g)</td></tr>
+  <tr><td>14</td><td> <span class="codeReserved">return</span> names[names.length - 1]</td></tr>
+  <tr><td>15</td><td>}</td></tr>
  </tbody>
 </table>
  <footer>
@@ -871,10 +870,10 @@
    menu
   </span>
  </button>
- <a class="anterior" href="/m04pwaBasica/m-lib/m-js/m-ProblemDetails-js.html" title="2. lib / js / ProblemDetails.js"><span class="material-symbols-outlined">
+ <a class="anterior" href="/m03pwaMaterial/m-lib/m-js/m-cierraElementoHtmo-js.html" title="2. lib / js / cierraElementoHtmo.js"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
- <a class="siguiente" href="/m04pwaBasica/m--htaccess.html" title="N. .htaccess"><span class="material-symbols-outlined">
+ <a class="siguiente" href="/m03pwaMaterial/m-lib/m-js/m-getAttribute-js.html" title="4. lib / js / getAttribute.js"><span class="material-symbols-outlined">
      skip_next
      </span></a>
 </div>
@@ -892,43 +891,88 @@
    </p>
    
    <p>
-    <a href="/m04pwaBasica/">5. PWA básica</a>
+    <a href="/m03pwaMaterial/">6. PWA con Material Design</a>
    </p>
    <p>
-    <a href="/m04pwaBasica/m-lib/">M. Carpeta « lib »</a>
+    <a href="/m03pwaMaterial/m-lib/">32. Carpeta « lib »</a>
    </p>
    
      <p>
-      <a class="paginaAnterior" href="/m04pwaBasica/m-lib/index.html"
-        title="M. Carpeta « lib »"><span
+      <a class="paginaAnterior" href="/m03pwaMaterial/m-lib/m-fonts/m-roboto-v32-latin-regular-woff2.html"
+        title="4. lib / fonts / roboto-v32-latin-regular.woff2"><span
         class="material-symbols-outlined">
          arrow_upward
         </span></a>
      </p>
-   <h1><a href="/m04pwaBasica/m-lib/m-js/index.html">A. Carpeta « lib / js »</a></h1>
+   <h1><a href="/m03pwaMaterial/m-lib/m-js/index.html">C. Carpeta « lib / js »</a></h1>
    
    <ol type="1">
     
    <li>
     <p>
-     <a href="/m04pwaBasica/m-lib/m-js/m-muestraError-js.html">lib / js / muestraError.js</a>
+     <a href="/m03pwaMaterial/m-lib/m-js/m-abreElementoHtml-js.html">lib / js / abreElementoHtml.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m04pwaBasica/m-lib/m-js/m-ProblemDetails-js.html">lib / js / ProblemDetails.js</a>
+     <a href="/m03pwaMaterial/m-lib/m-js/m-cierraElementoHtmo-js.html">lib / js / cierraElementoHtmo.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m04pwaBasica/m-lib/m-js/m-registraServiceWorkerSiEsSoportado-js.html" class="actual">lib / js / registraServiceWorkerSiEsSoportado.js</a>
+     <a href="/m03pwaMaterial/m-lib/m-js/m-exportaAHtml-js.html" class="actual">lib / js / exportaAHtml.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-lib/m-js/m-getAttribute-js.html">lib / js / getAttribute.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-lib/m-js/m-htmlentities-js.html">lib / js / htmlentities.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-lib/m-js/m-muestraError-js.html">lib / js / muestraError.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-lib/m-js/m-muestraTextoDeAyuda-js.html">lib / js / muestraTextoDeAyuda.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-lib/m-js/m-ProblemDetails-js.html">lib / js / ProblemDetails.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-lib/m-js/m-querySelector-js.html">lib / js / querySelector.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-lib/m-js/m-resaltaSiEstasEn-js.html">lib / js / resaltaSiEstasEn.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-lib/m-js/m-const/">Carpeta « lib / js / const »</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-lib/m-js/m-custom/">Carpeta « lib / js / custom »</a>
     </p>
    </li>
    </ol>
    
     <p>
-     <a class="paginaSiguiente" href="/m04pwaBasica/m--htaccess.html"
-       title="N. .htaccess"><span
+     <a class="paginaSiguiente" href="/m03pwaMaterial/m-ungap/index.html"
+       title="33. Carpeta « ungap »"><span
        class="material-symbols-outlined">
         arrow_downward
        </span></a>
@@ -945,9 +989,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m04pwaBasica/m-lib/m-js/m-ProblemDetails-js.html"
+ let urlAnterior = "/m03pwaMaterial/m-lib/m-js/m-cierraElementoHtmo-js.html"
  /**@type {string} */
- let urlSiguiente = "/m04pwaBasica/m--htaccess.html"
+ let urlSiguiente = "/m03pwaMaterial/m-lib/m-js/m-getAttribute-js.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

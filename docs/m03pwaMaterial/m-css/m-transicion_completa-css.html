@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>2. lib / js / ProblemDetails.js - GilPG DM</title>
- <meta name="description" content="Código de «lib/js/ProblemDetails.js».">
+ <title>C. css / transicion_completa.css - GilPG DM</title>
+ <meta name="description" content="Código de «css/transicion_completa.css».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
@@ -818,7 +818,7 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >2. lib / js / ProblemDetails.js</h1><table class="codeShow">
+   <h1 >C. css / transicion_completa.css</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -828,31 +828,23 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeComment">/** Detalle de los errores devueltos por un servicio. */</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">export</span> <span class="codeReserved">class</span> ProblemDetails <span class="codeReserved">extends</span> Error {</td></tr>
-  <tr><td>3</td><td></td></tr>
-  <tr><td>4</td><td> <span class="codeComment">/**</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {number} status</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {Headers} headers</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} title</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} [type]</span></td></tr>
-  <tr><td>9</td><td><span class="codeComment">  * <span class="codeReserved">@param</span> {string} [detail]</span></td></tr>
-  <tr><td>10</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>11</td><td> <span class="codeReserved">constructor</span>(status, headers, title, type, detail) {</td></tr>
-  <tr><td>12</td><td>  super(title)</td></tr>
-  <tr><td>13</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>14</td><td>  <span class="codeReserved">this</span>.status = status</td></tr>
-  <tr><td>15</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>16</td><td>  <span class="codeReserved">this</span>.headers = headers</td></tr>
-  <tr><td>17</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>18</td><td>  <span class="codeReserved">this</span>.type = type</td></tr>
-  <tr><td>19</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>20</td><td>  <span class="codeReserved">this</span>.detail = detail</td></tr>
-  <tr><td>21</td><td>  <span class="codeComment">/** <span class="codeReserved">@readonly</span> */</span></td></tr>
-  <tr><td>22</td><td>  <span class="codeReserved">this</span>.title = title</td></tr>
-  <tr><td>23</td><td> }</td></tr>
-  <tr><td>24</td><td></td></tr>
-  <tr><td>25</td><td>}</td></tr>
+  <tr><td>1</td><td></td></tr>
+  <tr><td>2</td><td><span class="codeReserved">@view-transition</span> {</td></tr>
+  <tr><td>3</td><td> navigation: auto;</td></tr>
+  <tr><td>4</td><td>}</td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td>::view-transition-group(root) {</td></tr>
+  <tr><td>7</td><td> <span class="codeReserved">animation-duration</span>: <span class="codeReserved">var</span>(--md-sys-motion-duration-700);</td></tr>
+  <tr><td>8</td><td>}</td></tr>
+  <tr><td>9</td><td></td></tr>
+  <tr><td>10</td><td>html::view-transition-old(root) {</td></tr>
+  <tr><td>11</td><td> <span class="codeReserved">animation-name</span>: desvanece;</td></tr>
+  <tr><td>12</td><td>}</td></tr>
+  <tr><td>13</td><td></td></tr>
+  <tr><td>14</td><td>html::view-transition-new(root) {</td></tr>
+  <tr><td>15</td><td> animation-delay: <span class="codeReserved">var</span>(--md-sys-motion-duration-700);</td></tr>
+  <tr><td>16</td><td> <span class="codeReserved">animation-name</span>: aparece;</td></tr>
+  <tr><td>17</td><td>}</td></tr>
  </tbody>
 </table>
  <footer>
@@ -880,10 +872,10 @@
    menu
   </span>
  </button>
- <a class="anterior" href="/m04pwaBasica/m-lib/m-js/m-muestraError-js.html" title="1. lib / js / muestraError.js"><span class="material-symbols-outlined">
+ <a class="anterior" href="/m03pwaMaterial/m-css/m-tokens-css.html" title="B. css / tokens.css"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
- <a class="siguiente" href="/m04pwaBasica/m-lib/m-js/m-registraServiceWorkerSiEsSoportado-js.html" title="3. lib / js / registraServiceWorkerSiEsSoportado.js"><span class="material-symbols-outlined">
+ <a class="siguiente" href="/m03pwaMaterial/m-css/m-transicion_pestanas-css.html" title="D. css / transicion_pestanas.css"><span class="material-symbols-outlined">
      skip_next
      </span></a>
 </div>
@@ -901,43 +893,45 @@
    </p>
    
    <p>
-    <a href="/m04pwaBasica/">5. PWA básica</a>
-   </p>
-   <p>
-    <a href="/m04pwaBasica/m-lib/">M. Carpeta « lib »</a>
+    <a href="/m03pwaMaterial/">6. PWA con Material Design</a>
    </p>
    
      <p>
-      <a class="paginaAnterior" href="/m04pwaBasica/m-lib/index.html"
-        title="M. Carpeta « lib »"><span
+      <a class="paginaAnterior" href="/m03pwaMaterial/m-sw-js.html"
+        title="28. sw.js"><span
         class="material-symbols-outlined">
          arrow_upward
         </span></a>
      </p>
-   <h1><a href="/m04pwaBasica/m-lib/m-js/index.html">A. Carpeta « lib / js »</a></h1>
+   <h1><a href="/m03pwaMaterial/m-css/index.html">29. Carpeta « css »</a></h1>
    
-   <ol type="1">
+   <ol type="A">
     
    <li>
     <p>
-     <a href="/m04pwaBasica/m-lib/m-js/m-muestraError-js.html">lib / js / muestraError.js</a>
+     <a href="/m03pwaMaterial/m-css/m-estilos-css.html">css / estilos.css</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m04pwaBasica/m-lib/m-js/m-ProblemDetails-js.html" class="actual">lib / js / ProblemDetails.js</a>
+     <a href="/m03pwaMaterial/m-css/m-tokens-css.html">css / tokens.css</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m04pwaBasica/m-lib/m-js/m-registraServiceWorkerSiEsSoportado-js.html">lib / js / registraServiceWorkerSiEsSoportado.js</a>
+     <a href="/m03pwaMaterial/m-css/m-transicion_completa-css.html" class="actual">css / transicion_completa.css</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/m-css/m-transicion_pestanas-css.html">css / transicion_pestanas.css</a>
     </p>
    </li>
    </ol>
    
     <p>
-     <a class="paginaSiguiente" href="/m04pwaBasica/m--htaccess.html"
-       title="N. .htaccess"><span
+     <a class="paginaSiguiente" href="/m03pwaMaterial/m-favicon-ico.html"
+       title="30. favicon.ico"><span
        class="material-symbols-outlined">
         arrow_downward
        </span></a>
@@ -954,9 +948,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m04pwaBasica/m-lib/m-js/m-muestraError-js.html"
+ let urlAnterior = "/m03pwaMaterial/m-css/m-tokens-css.html"
  /**@type {string} */
- let urlSiguiente = "/m04pwaBasica/m-lib/m-js/m-registraServiceWorkerSiEsSoportado-js.html"
+ let urlSiguiente = "/m03pwaMaterial/m-css/m-transicion_pestanas-css.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

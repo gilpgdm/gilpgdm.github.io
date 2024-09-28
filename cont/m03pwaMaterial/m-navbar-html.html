@@ -38,6 +38,17 @@
   </li>
   <li>
    <p>
+    Para reducir los problemas de despliegues transitorios conocidos como fuoc,
+    se añade la siguiente línea después de los link para estilos:
+    <code
+      class="language-html"> &lt;link rel=&quot;expect&quot; blocking=&quot;render&quot; href=&quot;#navbar&quot;&gt;</code>,
+    donde <code>navbar</code> es el id de cualquier hiperenlace del elemento
+    personalizado
+    <code class="language-html">nav-bar</code>.
+   </p>
+  </li>
+  <li>
+   <p>
     Coloca
     <code class="language-html">nav-bar</code>
     al final de tu forma.
@@ -69,97 +80,80 @@
    <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
    <tr><td>3</td><td></td></tr>
    <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
-   <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
-   <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
-   <tr><td>7</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+   <tr><td>5</td><td></td></tr>
+   <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+   <tr><td>7</td><td> &lt;<span class="codeReserved">title</span>&gt;Barra de Navegación - PWA con MD&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
    <tr><td>8</td><td></td></tr>
-   <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;</td></tr>
-   <tr><td>10</td><td>  Barra de Navegación - PWA con MD</td></tr>
-   <tr><td>11</td><td> &lt;/<span class="codeReserved">title</span>&gt;</td></tr>
-   <tr><td>12</td><td></td></tr>
-   <tr><td>13</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"theme-color"</span></td></tr>
-   <tr><td>14</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"#fffbfe"</span>&gt;</td></tr>
-   <tr><td>15</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"icon"</span> sizes=<span class="codeString">"32x32"</span></td></tr>
-   <tr><td>16</td><td>   href=<span class="codeString">"favicon.ico"</span>&gt;</td></tr>
-   <tr><td>17</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"manifest"</span></td></tr>
-   <tr><td>18</td><td>   href=<span class="codeString">"site.webmanifest"</span>&gt;</td></tr>
-   <tr><td>19</td><td></td></tr>
-   <tr><td>20</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span></td></tr>
-   <tr><td>21</td><td>   href=<span class="codeString">"css/estilos.css"</span>&gt;</td></tr>
-   <tr><td>22</td><td> &lt;<span class="codeReserved">script</span></td></tr>
-   <tr><td>23</td><td>   src=<span class="codeString">"ungap/custom-elements.js"</span>&gt;</td></tr>
-   <tr><td>24</td><td>   &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
-   <tr><td>25</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span></td></tr>
-   <tr><td>26</td><td>   src=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
-   <tr><td>27</td><td></td></tr>
-   <tr><td>28</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
-   <tr><td>29</td><td></td></tr>
-   <tr><td>30</td><td>&lt;<span class="codeReserved">body</span> style=<span class="codeString">"<span class="codeReserved">padding-bottom</span>: 80px;"</span>&gt;</td></tr>
-   <tr><td>31</td><td></td></tr>
-   <tr><td>32</td><td> &lt;<span class="codeReserved">md-top-app-bar</span> headline=<span class="codeString">"headline"</span>&gt;</td></tr>
-   <tr><td>33</td><td></td></tr>
-   <tr><td>34</td><td>  &lt;<span class="codeReserved">h1</span>&gt;navegación&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
-   <tr><td>35</td><td></td></tr>
-   <tr><td>36</td><td>  &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span> title=<span class="codeString">"Agregar"</span></td></tr>
-   <tr><td>37</td><td>    slot=<span class="codeString">"action"</span></td></tr>
-   <tr><td>38</td><td>    <span class="codeReserved">class</span>=<span class="codeString">"md-standard-icon-button"</span>&gt;</td></tr>
-   <tr><td>39</td><td>   &lt;<span class="codeReserved">span</span></td></tr>
-   <tr><td>40</td><td>     <span class="codeReserved">class</span>=<span class="codeString">"material-symbols-outlined"</span>&gt;</td></tr>
-   <tr><td>41</td><td>    add</td></tr>
-   <tr><td>42</td><td>   &lt;/<span class="codeReserved">span</span>&gt;</td></tr>
-   <tr><td>43</td><td>  &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
-   <tr><td>44</td><td>  &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span> title=<span class="codeString">"Editar"</span></td></tr>
-   <tr><td>45</td><td>    slot=<span class="codeString">"action"</span></td></tr>
-   <tr><td>46</td><td>    <span class="codeReserved">class</span>=<span class="codeString">"md-standard-icon-button"</span>&gt;</td></tr>
-   <tr><td>47</td><td>   &lt;<span class="codeReserved">span</span></td></tr>
-   <tr><td>48</td><td>     <span class="codeReserved">class</span>=<span class="codeString">"material-symbols-outlined"</span>&gt;</td></tr>
-   <tr><td>49</td><td>    edit</td></tr>
-   <tr><td>50</td><td>   &lt;/<span class="codeReserved">span</span>&gt;</td></tr>
-   <tr><td>51</td><td>  &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
-   <tr><td>52</td><td></td></tr>
-   <tr><td>53</td><td> &lt;/<span class="codeReserved">md-top-app-bar</span>&gt;</td></tr>
-   <tr><td>54</td><td></td></tr>
-   <tr><td>55</td><td> &lt;<span class="codeReserved">h1</span> id=<span class="codeString">"headline"</span>&gt;</td></tr>
-   <tr><td>56</td><td>  Barra de navegación</td></tr>
-   <tr><td>57</td><td> &lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
-   <tr><td>58</td><td></td></tr>
-   <tr><td>59</td><td> &lt;<span class="codeReserved">main</span>&gt;</td></tr>
-   <tr><td>60</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>61</td><td>   Esta página usa barra de navegación.</td></tr>
-   <tr><td>62</td><td>   Las X que siguen son para que veas</td></tr>
-   <tr><td>63</td><td>   como se comporta cuando se hace</td></tr>
-   <tr><td>64</td><td>   scroll.</td></tr>
-   <tr><td>65</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>9</td><td> &lt;<span class="codeReserved">script</span> <span class="codeReserved">src</span>=<span class="codeString">"js/registraServiceWorker.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+   <tr><td>10</td><td></td></tr>
+   <tr><td>11</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+   <tr><td>12</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"theme-color"</span> <span class="codeReserved">content</span>=<span class="codeString">"#fffbfe"</span>&gt;</td></tr>
+   <tr><td>13</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"icon"</span> sizes=<span class="codeString">"32x32"</span> href=<span class="codeString">"favicon.ico"</span>&gt;</td></tr>
+   <tr><td>14</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"manifest"</span> href=<span class="codeString">"site.webmanifest"</span>&gt;</td></tr>
+   <tr><td>15</td><td> &lt;<span class="codeReserved">script</span> <span class="codeReserved">src</span>=<span class="codeString">"ungap/custom-elements.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+   <tr><td>16</td><td></td></tr>
+   <tr><td>17</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span> <span class="codeReserved">src</span>=<span class="codeString">"js/configura.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+   <tr><td>18</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/estilos.css"</span>&gt;</td></tr>
+   <tr><td>19</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/transicion_pestanas.css"</span>&gt;</td></tr>
+   <tr><td>20</td><td> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"expect"</span> blocking=<span class="codeString">"render"</span> href=<span class="codeString">"#navbar"</span>&gt;</td></tr>
+   <tr><td>21</td><td></td></tr>
+   <tr><td>22</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+   <tr><td>23</td><td></td></tr>
+   <tr><td>24</td><td>&lt;<span class="codeReserved">body</span></td></tr>
+   <tr><td>25</td><td>  style=<span class="codeString">"<span class="codeReserved">padding-bottom</span>: 5rem;"</span>&gt;</td></tr>
+   <tr><td>26</td><td></td></tr>
+   <tr><td>27</td><td> &lt;<span class="codeReserved">md-top-app-bar</span> headline=<span class="codeString">"headline"</span>&gt;</td></tr>
+   <tr><td>28</td><td></td></tr>
+   <tr><td>29</td><td>  &lt;<span class="codeReserved">h1</span>&gt;navegación&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+   <tr><td>30</td><td></td></tr>
+   <tr><td>31</td><td>  &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span> <span class="codeReserved">class</span>=<span class="codeString">"md-standard-icon-button"</span> title=<span class="codeString">"Agregar"</span></td></tr>
+   <tr><td>32</td><td>    slot=<span class="codeString">"action"</span>&gt;</td></tr>
+   <tr><td>33</td><td>   &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"material-symbols-outlined"</span>&gt;add&lt;/<span class="codeReserved">span</span>&gt;</td></tr>
+   <tr><td>34</td><td>  &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+   <tr><td>35</td><td>  &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span> <span class="codeReserved">class</span>=<span class="codeString">"md-standard-icon-button"</span> title=<span class="codeString">"Editar"</span></td></tr>
+   <tr><td>36</td><td>    slot=<span class="codeString">"action"</span>&gt;</td></tr>
+   <tr><td>37</td><td>   &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"material-symbols-outlined"</span>&gt;edit&lt;/<span class="codeReserved">span</span>&gt;</td></tr>
+   <tr><td>38</td><td>  &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+   <tr><td>39</td><td></td></tr>
+   <tr><td>40</td><td> &lt;/<span class="codeReserved">md-top-app-bar</span>&gt;</td></tr>
+   <tr><td>41</td><td></td></tr>
+   <tr><td>42</td><td> &lt;<span class="codeReserved">h1</span> id=<span class="codeString">"headline"</span>&gt;Barra de navegación&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+   <tr><td>43</td><td></td></tr>
+   <tr><td>44</td><td> &lt;<span class="codeReserved">main</span>&gt;</td></tr>
+   <tr><td>45</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>46</td><td>   Esta página usa barra de navegación. Las X que siguen son para que veas como</td></tr>
+   <tr><td>47</td><td>   se comporta cuando se hace scroll.</td></tr>
+   <tr><td>48</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>49</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>50</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>51</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>52</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>53</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>54</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>55</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>56</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>57</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>58</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>59</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>60</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>61</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>62</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>63</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>64</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+   <tr><td>65</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
    <tr><td>66</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
    <tr><td>67</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
    <tr><td>68</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
    <tr><td>69</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
    <tr><td>70</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
    <tr><td>71</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>72</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>73</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>74</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>75</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>76</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>77</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>78</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>79</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>80</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>81</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>82</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>83</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>84</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>85</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>86</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>87</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>88</td><td>  &lt;<span class="codeReserved">p</span>&gt;x&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>89</td><td> &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
-   <tr><td>90</td><td></td></tr>
-   <tr><td>91</td><td> &lt;<span class="codeReserved">nav-bar</span>&gt;&lt;/<span class="codeReserved">nav-bar</span>&gt;</td></tr>
-   <tr><td>92</td><td></td></tr>
-   <tr><td>93</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
-   <tr><td>94</td><td></td></tr>
-   <tr><td>95</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+   <tr><td>72</td><td> &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
+   <tr><td>73</td><td></td></tr>
+   <tr><td>74</td><td> &lt;<span class="codeReserved">nav-bar</span>&gt;&lt;/<span class="codeReserved">nav-bar</span>&gt;</td></tr>
+   <tr><td>75</td><td></td></tr>
+   <tr><td>76</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+   <tr><td>77</td><td></td></tr>
+   <tr><td>78</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
   </tbody>
  </table>
 </div>

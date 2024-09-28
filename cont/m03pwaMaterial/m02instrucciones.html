@@ -5,9 +5,9 @@
     Prueba e instala, de preferencia con Chrome, el sitio
     <a href="https://pwamd.rf.gd/" rel="noreferrer"
       target="_blank">https://pwamd.rf.gd/</a>
-      y en
-      <a href="https://gilpgpwamd.github.io/" rel="noreferrer"
-        target="_blank">https://gilpgpwamd.github.io/</a>.
+    y en
+    <a href="https://gilpgpwamd.github.io/" rel="noreferrer"
+      target="_blank">https://gilpgpwamd.github.io/</a>.
    </p>
   </li>
   <li>
@@ -61,9 +61,42 @@
   </li>
   <li>
    <p>
-    Haz clic derecho en <q>index.html</q>, selecciona
-    <em>PHP Server: serve project</em> y se abre el navegador para que puedas
-    probar localmente el ejemplo.
+    <strong>Para cambiar los colores,</strong> entra al sitio
+    <a href="https://m3.material.io/theme-builder#/custom" target="_blank"
+      rel="noopener noreferrer">https://m3.material.io/theme-builder#/custom</a>,
+    selecciona los colores de tu aplicación, haz clic en <em>Export</em> y
+    selecciona <em>Web (CSS)</em> para descargar el zip que contiene los estilos
+    que generan los colores. Descompacta el zip y copia el archivo
+    <q>tokens.css</q> de la carpeta descompactada, para sobreescribir el archivo
+    del mismo nombre que está en la carpeta <q>css</q> del proyecto.
+   </p>
+  </li>
+  <li>
+   <p>
+    El archivo <q>sw.js</q> tiene una lista de los archivos que se instalan.
+    El archivo <q>instruccionesListadoSw.txt</q> te indica como generarla usando
+    Visual Studio Code.
+   </p>
+  </li>
+  <li>
+   <p>
+    Cada vez que modifiques los archivos, debes modificar el valor
+    de <var>VERSION</var> en el archivo <q>sw.js</q> para poder ver los cambios
+    en el navegador.
+   </p>
+  </li>
+  <li>
+   <p>
+    <strong>Si tu proyecto no usa backend,</strong> haz clic derecho en
+    <q>index.html</q>, selecciona <em>Open with Live Server</em> y se abre el
+    navegador para que puedas probar localmente el ejemplo.
+   </p>
+  </li>
+  <li>
+   <p>
+    <strong>Si tu proyecto usa PHP,</strong> haz clic derecho en
+    <q>index.html</q>, selecciona <em>PHP Server: serve project</em> y se abre
+    el navegador para que puedas probar localmente el ejemplo.
    </p>
   </li>
   <li>
@@ -81,35 +114,9 @@
   </li>
   <li>
    <p>
-    Abre las herramientas de depuración haciendo clic derecho en la página y
+    <strong>Cuando desarrolles,</strong>
+    abre las herramientas de depuración haciendo clic derecho en la página y
     selecciona <em>Inspeccionar</em> (o <em>Inspect</em> si aparece en inglés).
-   </p>
-  </li>
-  <li>
-   <p>
-    El archivo <q>sw.js</q> tiene una lista de los archivos que se instalan.
-    El archivo <q>instruccionesListadoSw.txt</q> te indica como generarla usando
-    Visual Studio Code.
-   </p>
-  </li>
-  <li>
-   <p>
-    En el hosting InfinityFree, la primera ves que corres la página, puede
-    marcar un mensaje de error, pero al recargar funciona correctamente.
-   </p>
-  </li>
-  <li>
-   <p>
-    Cada vez que publiques los cambios en los archivos, debes modificar el valor
-    de <var>VERSION</var> en el archivo <q>sw.js</q>.
-   </p>
-  </li>
-  <li>
-   <p>
-    En GitHub pages, cada vez que publiques los cambios en los archivos, debes
-    esperar al menos 10 minutos antes de modificar el valor
-    de <var>VERSION</var> en el archivo <q>sw.js</q> y volver a subir este
-    archivo.
    </p>
   </li>
   <li>
@@ -121,16 +128,19 @@
    </p>
    <p>
     Recarga la app, de preferencia haciendo clic derecho en el ícono de
-    <em>volver a cargar la página</em> y seleccionando <em>vaciar caché y volver
-     a cargar de manera forzada</em> (o algo parecido). Si no aparece un menú
-    emergente, simplemente cliquea <em>volver a cargar la página</em>.
+    <em>volver a cargar la página</em>
+    <img alt="Ïmagen del ícono de recarga" src="/img/reload.png"> y
+    seleccionando <em>vaciar caché y volver a cargar de manera forzada</em> (o
+    algo parecido). Si no aparece un menú emergente, simplemente cliquea
+    <em>volver a cargar la página</em>
+    <img alt="Ïmagen del ícono de recarga" src="/img/reload.png">.
     Revisa que aparezca ningún error ni en la pestañas <em>Consola</em>, ni en
     <em>Red</em>.
    </p>
   </li>
   <li>
    <p>
-    Usa la combinación de teclas
+    Tanbién puedes usar la combinación de teclas
     <strong><kbd>Ctrl</kbd>+<kbd>Mayúsculas</kbd>+<kbd>r</kbd></strong>
     para forzar que se actualice temporalmente el navegador en caso de que no se
     vean los cambios.
@@ -147,8 +157,8 @@
   </li>
   <li>
    <p>
-    En algunos host, como InfinityFree, tienes que configurar el certificado
-    SSL. El archivo
+    En algunos host, como <strong>InfinityFree</strong>, tienes que configurar
+    el certificado SSL. El archivo
     <q>.htaccess</q> se sube a algunos servidores cuando el certificado se ha
     creado e instalado. Sirve para que algunos servidores forcen el uso de
     https, para eliminar el control de cache, pues ahora lo lleva el service
@@ -157,6 +167,110 @@
   </li>
   <li>
    <p>Abre un navegador y prueba el proyecto en tu hosting.</p>
+  </li>
+  <li>
+   <p>
+    <strong>En el hosting InfinityFree,</strong> la primera ves que corres la
+    página, puede marcar un mensaje de error, pero al recargar funciona
+    correctamente. Puedes evitar esteproblema usando un dominio propio.
+   </p>
+  </li>
+  <li>
+   <p>
+    <strong>Para usar GitHub pages,</strong> sigue estos pasos:
+   </p>
+   <ol>
+    <li>
+     <p>
+      Crea una cuenta de email con el nombre de tu sitio, por ejemplo,
+      <samp>miapp@google.com</samp>
+     </p>
+    </li>
+    <li>
+     <p>
+      Crea una cuenta de GitHub usando el email anterior y selecciona el nombre
+      de usuario unsando la parte inicial del correo electrónico, por ejemplo
+      <samp>miapp</samp>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Crea un repositorion con el nombre de tu cuenta y que termine con
+      <em>.github.io</em> por ejemplo <samp>miapp.github.io</samp>
+     </p>
+    </li>
+    <li>
+     <p>
+      Entra al repositorio y selecciona <em>⚙ Settings</em>, luego selecciona
+      <em>📁 Pages</em> y en la sección <strong>Branches</strong> selecciona la
+      carpeta donde se ubicará la carpeta. De preferencia selecciona
+      <em>/ (root)</em> para que coloques la página en la raíz del proyecto.
+     </p>
+    </li>
+    <li>
+     <p>
+      En la pestaña <em>&lt; &gt; Code</em>, cliquea <em>&lt; &gt; Code</em> y
+      en la sección <strong>Branches</strong> y copia la dirección que está en
+      <strong>Clone HTTPS</strong>.
+     </p>
+    </li>
+    <li>
+     <p>
+      <strong>En Visual Studio Code,</strong> usa el botón de la izquierda para
+      <em>Source Control</em>.
+     </p>
+     <figure>
+      <img alt="Imagen de Source Control" src="/img/source_control.png">
+     </figure>
+    </li>
+    <li>
+     <p>
+      Clique el botón <em>Clone Repository</em> y sigue las instrucciones,
+      usando la url que copiaste en el punto anterior.
+     </p>
+    </li>
+    <li>
+     <p>Añade los archivos al proyecto y trabaja normalmente.</p>
+    </li>
+    <li>
+     <p>
+      <strong>Para subir el código a GitHub,</strong> inicialmente no debes
+      modificar el valor de <var>VERSION</var> en el archivo <q>sw.js</q>
+     </p>
+    </li>
+    <li>
+     <p>
+      En la sección de
+      <em>SOURCE CONTROL</em>, en <em>Message</em>
+      introduce un mensaje sobre los cambios que hiciste, por ejemplo
+      <kbd>index.html corregido</kbd>, selecciona <em>v</em> y luego
+      <em>Commit & Push</em>.
+     </p>
+     <figure>
+      <img alt="Imagen de Commit & Push" src="/img/github_commit.png">
+     </figure>
+    </li>
+    <li>
+     <p>
+      Entra a la página de tu repositorio y abajo a la derecha, selecciona el
+      enlace <em>github-pages</em>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Se muestran los despliegues realizados. Recarga la página hasta que
+      apareca el mensaje de tu último push con una palomita dentro de un círculo
+      verde.
+     </p>
+    </li>
+    <li>
+     <p>
+      A partir de este momento, espera al menos 11 minutos para modificar el
+      valor de <var>VERSION</var> en el archivo <q>sw.js</q> y volver a subir el
+      proyecto.
+     </p>
+    </li>
+   </ol>
   </li>
   <li>
    <p>
