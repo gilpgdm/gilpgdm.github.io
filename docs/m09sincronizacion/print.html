@@ -934,13 +934,71 @@
   </li>
   <li>
    <p>
+    El archivo <q>sw.js</q> tiene una lista de los archivos que se instalan.
+    El archivo <q>instruccionesListadoSw.txt</q> te indica como generarla usando
+    Visual Studio Code.
+   </p>
+  </li>
+  <li>
+   <p>
+    Cada vez que modifiques los archivos, debes modificar el valor
+    de <var>VERSION</var> en el archivo <q>sw.js</q> para poder ver los cambios
+    en el navegador.
+   </p>
+  </li>
+  <li>
+   <p>
     Haz clic derecho en <q>index.html</q>, selecciona
     <em>PHP Server: serve project</em> y se abre el navegador para que puedas
     probar localmente el ejemplo.
    </p>
   </li>
   <li>
-   <p>Para depurar paso a paso haz lo siguiente:</p>
+   <p>
+    <strong>Cuando desarrolles,</strong> es incómodo modificar la versión cada
+    que realizas cambios; en ves de ello desinstala la app:
+   </p>
+   <ol>
+    <li>
+     <p>
+      Abre las herramientas de depuración haciendo clic derecho en la página y
+      selecciona <em>Inspeccionar</em> (o <em>Inspect</em> si aparece en
+      inglés).
+     </p>
+    </li>
+    <li>
+     <p>
+      En la Pestaña
+      <em>Aplicación</em>
+      (o <em>Application</em> en inglés) selecciona <em>Almacenamoento</em> (o
+      <em>Storage</em> en inglés). Cliquea <em>Borrar datos del sitio</em>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Recarga la app, de preferencia haciendo clic derecho en el ícono de
+      <em>volver a cargar la página</em>
+      <img alt="Ïmagen del ícono de recarga" src="/img/reload.png"> y
+      seleccionando <em>vaciar caché y volver a cargar de manera forzada</em> (o
+      algo parecido). Si no aparece un menú emergente, simplemente cliquea
+      <em>volver a cargar la página</em>
+      <img alt="Ïmagen del ícono de recarga" src="/img/reload.png">.
+      Revisa que no aparezca ningún error ni en la pestañas <em>Consola</em>, ni
+      en <em>Red</em>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Tanbién puedes usar la combinación de teclas
+      <strong><kbd>Ctrl</kbd>+<kbd>Mayúsculas</kbd>+<kbd>r</kbd></strong>
+      para forzar que se actualice temporalmente el navegador en caso de que no
+      se vean los cambios.
+     </p>
+    </li>
+   </ol>
+  </li>
+  <li>
+   <p><strong>Para depurar paso a paso</strong> haz lo siguiente:</p>
    <ol>
     <li>
      <p>
@@ -1001,7 +1059,8 @@
     </li>
     <li>
      <p>
-      Regresa al navegador, recarga la página y empieza a usarla.
+      Regresa al navegador, recarga la página de manera normal y empieza a
+      usarla.
      </p>
     </li>
     <li>
@@ -1026,14 +1085,77 @@
   </li>
   <li>
    <p>
-    En algunos host tienes que configurar el certificado SSL. El archivo
+    En algunos host, como <strong>InfinityFree</strong>, tienes que configurar
+    el certificado SSL. El archivo
     <q>.htaccess</q> se sube a algunos servidores cuando el certificado se ha
     creado e instalado. Sirve para que algunos servidores forcen el uso de
-    https.
+    https, para eliminar el control de cache, pues ahora lo lleva el service
+    worker y para asignar el mime type correcto para el archivo de manifest.
    </p>
   </li>
   <li>
    <p>Abre un navegador y prueba el proyecto en tu hosting.</p>
+  </li>
+  <li>
+   <p>
+    <strong>En el hosting InfinityFree,</strong> la primera ves que corres la
+    página, puede marcar un mensaje de error, pero al recargar funciona
+    correctamente. Puedes evitar esteproblema usando un dominio propio.
+   </p>
+  </li>
+  <li>
+   <p>
+    <strong>Respalda tu sitio en GitHub:</strong>
+   </p>
+   <ol>
+    <li>
+     <p>
+      Crea una cuenta de GitHub.
+     </p>
+    </li>
+    <li>
+     <p>
+      Crea un repositorio.
+     </p>
+    </li>
+    <li>
+     <p>
+      En la pestaña <em>&lt; &gt; Code</em>, cliquea <em>&lt; &gt; Code</em> y
+      en la sección <strong>Branches</strong> y copia la dirección que está en
+      <strong>Clone HTTPS</strong>.
+     </p>
+    </li>
+    <li>
+     <p>
+      <strong>En Visual Studio Code,</strong> usa el botón de la izquierda para
+      <em>Source Control</em>.
+     </p>
+     <figure>
+      <img alt="Imagen de Source Control" src="/img/source_control.png">
+     </figure>
+    </li>
+    <li>
+     <p>
+      Clique el botón <em>Clone Repository</em> y sigue las instrucciones,
+      usando la url que copiaste en el punto anterior.
+     </p>
+    </li>
+    <li>
+     <p>Añade los archivos al proyecto y trabaja normalmente.</p>
+    </li>
+    <li>
+     <p>
+      <strong>Para subir el código a GitHub,</strong> en la sección de
+      <em>SOURCE CONTROL</em>, en <em>Message</em>
+      introduce un mensaje sobre los cambios que hiciste, por ejemplo
+      <kbd>index.html corregido</kbd>, selecciona <em>v</em> y luego
+      <em>Commit & Push</em>.
+     </p>
+     <figure>
+      <img alt="Imagen de Commit & Push" src="/img/github_commit.png">
+     </figure>
+    </li>
+   </ol>
   </li>
  </ol>
 </div>
