@@ -412,6 +412,7 @@ const ARCHIVOS = [
  "/m09sincronizacion/m-js/m-esperaUnPocoYSincroniza-js.html",
  "/m09sincronizacion/m-js/m-modelo/",
  "/m09sincronizacion/m-js/m-modelo/index.html",
+ "/m09sincronizacion/m-js/m-modelo/m-PASATIEMPO-js.html",
  "/m09sincronizacion/m-js/m-modelo/m-validaId-js.html",
  "/m09sincronizacion/m-js/m-modelo/m-validaNombre-js.html",
  "/m09sincronizacion/m-js/m-modelo/m-validaPasatiempo-js.html",
