@@ -37,101 +37,100 @@
   <tr><td>27</td><td><span class="codeComment"> */</span></td></tr>
   <tr><td>28</td><td><span class="codeReserved">const</span> ARCHIVOS = [</td></tr>
   <tr><td>29</td><td> <span class="codeString">"agrega.html"</span>,</td></tr>
-  <tr><td>30</td><td> <span class="codeString">"index.html"</span>,</td></tr>
-  <tr><td>31</td><td> <span class="codeString">"modifica.html"</span>,</td></tr>
-  <tr><td>32</td><td> <span class="codeString">"error/datosnojson.html"</span>,</td></tr>
-  <tr><td>33</td><td> <span class="codeString">"error/eliminadoincorrecto.html"</span>,</td></tr>
-  <tr><td>34</td><td> <span class="codeString">"error/errorinterno.html"</span>,</td></tr>
-  <tr><td>35</td><td> <span class="codeString">"error/faltaid.html"</span>,</td></tr>
-  <tr><td>36</td><td> <span class="codeString">"error/faltanombre.html"</span>,</td></tr>
-  <tr><td>37</td><td> <span class="codeString">"error/idincorrecto.html"</span>,</td></tr>
-  <tr><td>38</td><td> <span class="codeString">"error/modificacionincorrecta.html"</span>,</td></tr>
-  <tr><td>39</td><td> <span class="codeString">"error/nombreenblanco.html"</span>,</td></tr>
-  <tr><td>40</td><td> <span class="codeString">"error/nombreincorrecto.html"</span>,</td></tr>
-  <tr><td>41</td><td> <span class="codeString">"error/resultadonojson.html"</span>,</td></tr>
-  <tr><td>42</td><td> <span class="codeString">"js/configura.js"</span>,</td></tr>
-  <tr><td>43</td><td> <span class="codeString">"js/esperaUnPocoYSincroniza.js"</span>,</td></tr>
-  <tr><td>44</td><td> <span class="codeString">"js/renderiza.js"</span>,</td></tr>
-  <tr><td>45</td><td> <span class="codeString">"js/sincroniza.js"</span>,</td></tr>
-  <tr><td>46</td><td> <span class="codeString">"js/bd/Bd.js"</span>,</td></tr>
-  <tr><td>47</td><td> <span class="codeString">"js/bd/pasatiempoAgrega.js"</span>,</td></tr>
-  <tr><td>48</td><td> <span class="codeString">"js/bd/pasatiempoBusca.js"</span>,</td></tr>
-  <tr><td>49</td><td> <span class="codeString">"js/bd/pasatiempoConsultaNoEliminados.js"</span>,</td></tr>
-  <tr><td>50</td><td> <span class="codeString">"js/bd/pasatiempoConsultaTodos.js"</span>,</td></tr>
-  <tr><td>51</td><td> <span class="codeString">"js/bd/pasatiempoElimina.js"</span>,</td></tr>
-  <tr><td>52</td><td> <span class="codeString">"js/bd/pasatiempoModifica.js"</span>,</td></tr>
-  <tr><td>53</td><td> <span class="codeString">"js/bd/pasatiemposReemplaza.js"</span>,</td></tr>
-  <tr><td>54</td><td> <span class="codeString">"js/modelo/PASATIEMPO.js"</span>,</td></tr>
-  <tr><td>55</td><td> <span class="codeString">"js/modelo/validaId.js"</span>,</td></tr>
-  <tr><td>56</td><td> <span class="codeString">"js/modelo/validaNombre.js"</span>,</td></tr>
-  <tr><td>57</td><td> <span class="codeString">"js/modelo/validaPasatiempo.js"</span>,</td></tr>
-  <tr><td>58</td><td> <span class="codeString">"js/modelo/validaPasatiempos.js"</span>,</td></tr>
-  <tr><td>59</td><td> <span class="codeString">"lib/js/bdConsulta.js"</span>,</td></tr>
-  <tr><td>60</td><td> <span class="codeString">"lib/js/bdEjecuta.js"</span>,</td></tr>
-  <tr><td>61</td><td> <span class="codeString">"lib/js/consumeJson.js"</span>,</td></tr>
-  <tr><td>62</td><td> <span class="codeString">"lib/js/creaIdCliente.js"</span>,</td></tr>
-  <tr><td>63</td><td> <span class="codeString">"lib/js/enviaJson.js"</span>,</td></tr>
-  <tr><td>64</td><td> <span class="codeString">"lib/js/exportaAHtml.js"</span>,</td></tr>
-  <tr><td>65</td><td> <span class="codeString">"lib/js/htmlentities.js"</span>,</td></tr>
-  <tr><td>66</td><td> <span class="codeString">"lib/js/muestraError.js"</span>,</td></tr>
-  <tr><td>67</td><td> <span class="codeString">"lib/js/muestraObjeto.js"</span>,</td></tr>
-  <tr><td>68</td><td> <span class="codeString">"lib/js/ProblemDetails.js"</span>,</td></tr>
-  <tr><td>69</td><td> <span class="codeString">"lib/js/registraServiceWorkerSiEsSoportado.js"</span>,</td></tr>
-  <tr><td>70</td><td> <span class="codeString">"/"</span></td></tr>
-  <tr><td>71</td><td>]</td></tr>
-  <tr><td>72</td><td></td></tr>
-  <tr><td>73</td><td><span class="codeComment">// Verifica si el código corre dentro de un service worker.</span></td></tr>
-  <tr><td>74</td><td><span class="codeReserved">if</span> (<span class="codeReserved">self</span> <span class="codeReserved">instanceof</span> ServiceWorkerGlobalScope) {</td></tr>
-  <tr><td>75</td><td> <span class="codeComment">// Evento al empezar a instalar el servide worker,</span></td></tr>
-  <tr><td>76</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"install"</span>,</td></tr>
-  <tr><td>77</td><td>  (<span class="codeComment">/** <span class="codeReserved">@type</span> {ExtendableEvent} */</span> evt) =&gt; {</td></tr>
-  <tr><td>78</td><td>   console.log(<span class="codeString">"El service worker se está instalando."</span>)</td></tr>
-  <tr><td>79</td><td>   evt.waitUntil(llenaElCache())</td></tr>
-  <tr><td>80</td><td>  })</td></tr>
-  <tr><td>81</td><td></td></tr>
-  <tr><td>82</td><td> <span class="codeComment">// Evento al solicitar información a la red.</span></td></tr>
-  <tr><td>83</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"fetch"</span>, (<span class="codeComment">/** <span class="codeReserved">@type</span> {FetchEvent} */</span> evt) =&gt; {</td></tr>
-  <tr><td>84</td><td>  <span class="codeReserved">if</span> (evt.request.method === <span class="codeString">"GET"</span>) {</td></tr>
-  <tr><td>85</td><td>   evt.respondWith(buscaLaRespuestaEnElCache(evt))</td></tr>
-  <tr><td>86</td><td>  }</td></tr>
-  <tr><td>87</td><td> })</td></tr>
-  <tr><td>88</td><td></td></tr>
-  <tr><td>89</td><td> <span class="codeComment">// Evento cuando el service worker se vuelve activo.</span></td></tr>
-  <tr><td>90</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"activate"</span>,</td></tr>
-  <tr><td>91</td><td>  () =&gt; console.log(<span class="codeString">"El service worker está activo."</span>))</td></tr>
-  <tr><td>92</td><td>}</td></tr>
-  <tr><td>93</td><td></td></tr>
-  <tr><td>94</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> llenaElCache() {</td></tr>
-  <tr><td>95</td><td> console.log(<span class="codeString">"Intentando cargar caché:"</span>, CACHE)</td></tr>
-  <tr><td>96</td><td> <span class="codeComment">// Borra todos los cachés.</span></td></tr>
-  <tr><td>97</td><td> <span class="codeReserved">const</span> keys = <span class="codeReserved">await</span> caches.keys()</td></tr>
-  <tr><td>98</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> key of keys) {</td></tr>
-  <tr><td>99</td><td>  <span class="codeReserved">await</span> caches.delete(key)</td></tr>
-  <tr><td>100</td><td> }</td></tr>
-  <tr><td>101</td><td> <span class="codeComment">// Abre el caché de este service worker.</span></td></tr>
-  <tr><td>102</td><td> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</td></tr>
-  <tr><td>103</td><td> <span class="codeComment">// Carga el listado de ARCHIVOS.</span></td></tr>
-  <tr><td>104</td><td> <span class="codeReserved">await</span> cache.addAll(ARCHIVOS)</td></tr>
-  <tr><td>105</td><td> console.log(<span class="codeString">"Cache cargado:"</span>, CACHE)</td></tr>
-  <tr><td>106</td><td> console.log(<span class="codeString">"Versión:"</span>, VERSION)</td></tr>
-  <tr><td>107</td><td>}</td></tr>
-  <tr><td>108</td><td></td></tr>
-  <tr><td>109</td><td><span class="codeComment">/** <span class="codeReserved">@param</span> {FetchEvent} evt */</span></td></tr>
-  <tr><td>110</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> buscaLaRespuestaEnElCache(evt) {</td></tr>
-  <tr><td>111</td><td> <span class="codeComment">// Abre el caché.</span></td></tr>
-  <tr><td>112</td><td> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</td></tr>
-  <tr><td>113</td><td> <span class="codeReserved">const</span> request = evt.request</td></tr>
-  <tr><td>114</td><td> <span class="codeComment">/* Busca la respuesta a la solicitud en el contenido del caché, sin</span></td></tr>
-  <tr><td>115</td><td><span class="codeComment">  * tomar en cuenta la parte después del símbolo &quot;?&quot; en la URL. */</span></td></tr>
-  <tr><td>116</td><td> <span class="codeReserved">const</span> response = <span class="codeReserved">await</span> cache.match(request, { ignoreSearch: <span class="codeReserved">true</span> })</td></tr>
-  <tr><td>117</td><td> <span class="codeReserved">if</span> (response === undefined) {</td></tr>
-  <tr><td>118</td><td>  <span class="codeComment">/* Si no la encuentra, empieza a descargar de la red y devuelve</span></td></tr>
-  <tr><td>119</td><td><span class="codeComment">   * la promesa. */</span></td></tr>
-  <tr><td>120</td><td>  <span class="codeReserved">return</span> fetch(request)</td></tr>
-  <tr><td>121</td><td> } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>122</td><td>  <span class="codeComment">// Si la encuentra, devuelve la respuesta encontrada en el caché.</span></td></tr>
-  <tr><td>123</td><td>  <span class="codeReserved">return</span> response</td></tr>
-  <tr><td>124</td><td> }</td></tr>
-  <tr><td>125</td><td>}</td></tr>
+  <tr><td>30</td><td><span class="codeString">"index.html"</span>,</td></tr>
+  <tr><td>31</td><td><span class="codeString">"modifica.html"</span>,</td></tr>
+  <tr><td>32</td><td><span class="codeString">"error/datosnojson.html"</span>,</td></tr>
+  <tr><td>33</td><td><span class="codeString">"error/eliminadoincorrecto.html"</span>,</td></tr>
+  <tr><td>34</td><td><span class="codeString">"error/errorinterno.html"</span>,</td></tr>
+  <tr><td>35</td><td><span class="codeString">"error/faltaid.html"</span>,</td></tr>
+  <tr><td>36</td><td><span class="codeString">"error/faltanombre.html"</span>,</td></tr>
+  <tr><td>37</td><td><span class="codeString">"error/idincorrecto.html"</span>,</td></tr>
+  <tr><td>38</td><td><span class="codeString">"error/modificacionincorrecta.html"</span>,</td></tr>
+  <tr><td>39</td><td><span class="codeString">"error/nombreenblanco.html"</span>,</td></tr>
+  <tr><td>40</td><td><span class="codeString">"error/nombreincorrecto.html"</span>,</td></tr>
+  <tr><td>41</td><td><span class="codeString">"error/resultadonojson.html"</span>,</td></tr>
+  <tr><td>42</td><td><span class="codeString">"js/esperaUnPocoYSincroniza.js"</span>,</td></tr>
+  <tr><td>43</td><td><span class="codeString">"js/registraServiceWorker.js"</span>,</td></tr>
+  <tr><td>44</td><td><span class="codeString">"js/renderiza.js"</span>,</td></tr>
+  <tr><td>45</td><td><span class="codeString">"js/sincroniza.js"</span>,</td></tr>
+  <tr><td>46</td><td><span class="codeString">"js/bd/Bd.js"</span>,</td></tr>
+  <tr><td>47</td><td><span class="codeString">"js/bd/pasatiempoAgrega.js"</span>,</td></tr>
+  <tr><td>48</td><td><span class="codeString">"js/bd/pasatiempoBusca.js"</span>,</td></tr>
+  <tr><td>49</td><td><span class="codeString">"js/bd/pasatiempoConsultaNoEliminados.js"</span>,</td></tr>
+  <tr><td>50</td><td><span class="codeString">"js/bd/pasatiempoConsultaTodos.js"</span>,</td></tr>
+  <tr><td>51</td><td><span class="codeString">"js/bd/pasatiempoElimina.js"</span>,</td></tr>
+  <tr><td>52</td><td><span class="codeString">"js/bd/pasatiempoModifica.js"</span>,</td></tr>
+  <tr><td>53</td><td><span class="codeString">"js/bd/pasatiemposReemplaza.js"</span>,</td></tr>
+  <tr><td>54</td><td><span class="codeString">"js/modelo/PASATIEMPO.js"</span>,</td></tr>
+  <tr><td>55</td><td><span class="codeString">"js/modelo/validaId.js"</span>,</td></tr>
+  <tr><td>56</td><td><span class="codeString">"js/modelo/validaNombre.js"</span>,</td></tr>
+  <tr><td>57</td><td><span class="codeString">"js/modelo/validaPasatiempo.js"</span>,</td></tr>
+  <tr><td>58</td><td><span class="codeString">"js/modelo/validaPasatiempos.js"</span>,</td></tr>
+  <tr><td>59</td><td><span class="codeString">"lib/js/bdConsulta.js"</span>,</td></tr>
+  <tr><td>60</td><td><span class="codeString">"lib/js/bdEjecuta.js"</span>,</td></tr>
+  <tr><td>61</td><td><span class="codeString">"lib/js/consumeJson.js"</span>,</td></tr>
+  <tr><td>62</td><td><span class="codeString">"lib/js/creaIdCliente.js"</span>,</td></tr>
+  <tr><td>63</td><td><span class="codeString">"lib/js/enviaJson.js"</span>,</td></tr>
+  <tr><td>64</td><td><span class="codeString">"lib/js/exportaAHtml.js"</span>,</td></tr>
+  <tr><td>65</td><td><span class="codeString">"lib/js/htmlentities.js"</span>,</td></tr>
+  <tr><td>66</td><td><span class="codeString">"lib/js/muestraError.js"</span>,</td></tr>
+  <tr><td>67</td><td><span class="codeString">"lib/js/muestraObjeto.js"</span>,</td></tr>
+  <tr><td>68</td><td><span class="codeString">"lib/js/ProblemDetails.js"</span>,</td></tr>
+  <tr><td>69</td><td> <span class="codeString">"/"</span></td></tr>
+  <tr><td>70</td><td>]</td></tr>
+  <tr><td>71</td><td></td></tr>
+  <tr><td>72</td><td><span class="codeComment">// Verifica si el código corre dentro de un service worker.</span></td></tr>
+  <tr><td>73</td><td><span class="codeReserved">if</span> (<span class="codeReserved">self</span> <span class="codeReserved">instanceof</span> ServiceWorkerGlobalScope) {</td></tr>
+  <tr><td>74</td><td> <span class="codeComment">// Evento al empezar a instalar el servide worker,</span></td></tr>
+  <tr><td>75</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"install"</span>,</td></tr>
+  <tr><td>76</td><td>  (<span class="codeComment">/** <span class="codeReserved">@type</span> {ExtendableEvent} */</span> evt) =&gt; {</td></tr>
+  <tr><td>77</td><td>   console.log(<span class="codeString">"El service worker se está instalando."</span>)</td></tr>
+  <tr><td>78</td><td>   evt.waitUntil(llenaElCache())</td></tr>
+  <tr><td>79</td><td>  })</td></tr>
+  <tr><td>80</td><td></td></tr>
+  <tr><td>81</td><td> <span class="codeComment">// Evento al solicitar información a la red.</span></td></tr>
+  <tr><td>82</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"fetch"</span>, (<span class="codeComment">/** <span class="codeReserved">@type</span> {FetchEvent} */</span> evt) =&gt; {</td></tr>
+  <tr><td>83</td><td>  <span class="codeReserved">if</span> (evt.request.method === <span class="codeString">"GET"</span>) {</td></tr>
+  <tr><td>84</td><td>   evt.respondWith(buscaLaRespuestaEnElCache(evt))</td></tr>
+  <tr><td>85</td><td>  }</td></tr>
+  <tr><td>86</td><td> })</td></tr>
+  <tr><td>87</td><td></td></tr>
+  <tr><td>88</td><td> <span class="codeComment">// Evento cuando el service worker se vuelve activo.</span></td></tr>
+  <tr><td>89</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"activate"</span>,</td></tr>
+  <tr><td>90</td><td>  () =&gt; console.log(<span class="codeString">"El service worker está activo."</span>))</td></tr>
+  <tr><td>91</td><td>}</td></tr>
+  <tr><td>92</td><td></td></tr>
+  <tr><td>93</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> llenaElCache() {</td></tr>
+  <tr><td>94</td><td> console.log(<span class="codeString">"Intentando cargar caché:"</span>, CACHE)</td></tr>
+  <tr><td>95</td><td> <span class="codeComment">// Borra todos los cachés.</span></td></tr>
+  <tr><td>96</td><td> <span class="codeReserved">const</span> keys = <span class="codeReserved">await</span> caches.keys()</td></tr>
+  <tr><td>97</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> key of keys) {</td></tr>
+  <tr><td>98</td><td>  <span class="codeReserved">await</span> caches.delete(key)</td></tr>
+  <tr><td>99</td><td> }</td></tr>
+  <tr><td>100</td><td> <span class="codeComment">// Abre el caché de este service worker.</span></td></tr>
+  <tr><td>101</td><td> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</td></tr>
+  <tr><td>102</td><td> <span class="codeComment">// Carga el listado de ARCHIVOS.</span></td></tr>
+  <tr><td>103</td><td> <span class="codeReserved">await</span> cache.addAll(ARCHIVOS)</td></tr>
+  <tr><td>104</td><td> console.log(<span class="codeString">"Cache cargado:"</span>, CACHE)</td></tr>
+  <tr><td>105</td><td> console.log(<span class="codeString">"Versión:"</span>, VERSION)</td></tr>
+  <tr><td>106</td><td>}</td></tr>
+  <tr><td>107</td><td></td></tr>
+  <tr><td>108</td><td><span class="codeComment">/** <span class="codeReserved">@param</span> {FetchEvent} evt */</span></td></tr>
+  <tr><td>109</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> buscaLaRespuestaEnElCache(evt) {</td></tr>
+  <tr><td>110</td><td> <span class="codeComment">// Abre el caché.</span></td></tr>
+  <tr><td>111</td><td> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</td></tr>
+  <tr><td>112</td><td> <span class="codeReserved">const</span> request = evt.request</td></tr>
+  <tr><td>113</td><td> <span class="codeComment">/* Busca la respuesta a la solicitud en el contenido del caché, sin</span></td></tr>
+  <tr><td>114</td><td><span class="codeComment">  * tomar en cuenta la parte después del símbolo &quot;?&quot; en la URL. */</span></td></tr>
+  <tr><td>115</td><td> <span class="codeReserved">const</span> response = <span class="codeReserved">await</span> cache.match(request, { ignoreSearch: <span class="codeReserved">true</span> })</td></tr>
+  <tr><td>116</td><td> <span class="codeReserved">if</span> (response === undefined) {</td></tr>
+  <tr><td>117</td><td>  <span class="codeComment">/* Si no la encuentra, empieza a descargar de la red y devuelve</span></td></tr>
+  <tr><td>118</td><td><span class="codeComment">   * la promesa. */</span></td></tr>
+  <tr><td>119</td><td>  <span class="codeReserved">return</span> fetch(request)</td></tr>
+  <tr><td>120</td><td> } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>121</td><td>  <span class="codeComment">// Si la encuentra, devuelve la respuesta encontrada en el caché.</span></td></tr>
+  <tr><td>122</td><td>  <span class="codeReserved">return</span> response</td></tr>
+  <tr><td>123</td><td> }</td></tr>
+  <tr><td>124</td><td>}</td></tr>
  </tbody>
 </table>

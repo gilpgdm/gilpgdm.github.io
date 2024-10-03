@@ -718,12 +718,12 @@
     
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-configura-js.html">js / configura.js</a>
+     <a href="/m09sincronizacion/m-js/m-esperaUnPocoYSincroniza-js.html">js / esperaUnPocoYSincroniza.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-esperaUnPocoYSincroniza-js.html">js / esperaUnPocoYSincroniza.js</a>
+     <a href="/m09sincronizacion/m-js/m-registraServiceWorker-js.html">js / registraServiceWorker.js</a>
     </p>
    </li>
    <li>
@@ -750,26 +750,7 @@
    </nav>
   </div>
      <section >
-         <h1 >A. js / configura.js</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> {</td></tr>
-  <tr><td>2</td><td> registraServiceWorkerSiEsSoportado</td></tr>
-  <tr><td>3</td><td>} <span class="codeReserved">from</span> <span class="codeString">"../lib/js/registraServiceWorkerSiEsSoportado.js"</span></td></tr>
-  <tr><td>4</td><td></td></tr>
-  <tr><td>5</td><td>registraServiceWorkerSiEsSoportado(<span class="codeString">"sw.js"</span>)</td></tr>
- </tbody>
-</table>
-      </section>
-     <section >
-         <h1 >B. js / esperaUnPocoYSincroniza.js</h1><table class="codeShow">
+         <h1 >A. js / esperaUnPocoYSincroniza.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -797,6 +778,34 @@
   <tr><td>16</td><td>}</td></tr>
   <tr><td>17</td><td></td></tr>
   <tr><td>18</td><td>exportaAHtml(esperaUnPocoYSincroniza)</td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >B. js / registraServiceWorker.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td><span class="codeString">"use strict"</span> <span class="codeComment">// usa JavaScript en modo estricto.</span></td></tr>
+  <tr><td>2</td><td></td></tr>
+  <tr><td>3</td><td><span class="codeReserved">const</span> nombreDeServiceWorker = <span class="codeString">"sw.js"</span></td></tr>
+  <tr><td>4</td><td></td></tr>
+  <tr><td>5</td><td><span class="codeReserved">try</span> {</td></tr>
+  <tr><td>6</td><td> navigator.serviceWorker.register(nombreDeServiceWorker)</td></tr>
+  <tr><td>7</td><td>  .then(registro =&gt; {</td></tr>
+  <tr><td>8</td><td>   console.log(nombreDeServiceWorker, <span class="codeString">"registrado."</span>)</td></tr>
+  <tr><td>9</td><td>   console.log(registro)</td></tr>
+  <tr><td>10</td><td>  })</td></tr>
+  <tr><td>11</td><td>  .<span class="codeReserved">catch</span>(error =&gt; console.log(error))</td></tr>
+  <tr><td>12</td><td>} <span class="codeReserved">catch</span> (error) {</td></tr>
+  <tr><td>13</td><td> console.log(error)</td></tr>
+  <tr><td>14</td><td>}</td></tr>
  </tbody>
 </table>
       </section>
