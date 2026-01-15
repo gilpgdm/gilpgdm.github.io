@@ -234,6 +234,36 @@
   margin-top: 0;
  }
 
+ h1 {
+  font-size: 3rem;
+ }
+
+ section h1,
+ nav h1 {
+  font-size: 2.5rem;
+  font-style: oblique;
+ }
+
+ section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section section h1 {
+  font-size: 1.5rem;
+  font-style: oblique;
+ }
+
+ section section section section section h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+ }
+
  a {
   color: var(--colA);
  }
@@ -453,8 +483,9 @@
  }
 
  iframe {
+  /* background-color: white; */
   box-sizing: border-box;
-  width: 300px;
+  resize: both;
  }
 
  .lectura {
@@ -476,12 +507,15 @@
  }
 
  .horizontal>*:first-child {
-  flex: 1 1 300px;
-  text-align: center;
+  flex: 1 1 auto;
  }
 
  .horizontal>*:nth-child(2) {
-  flex: 1 1 auto;
+  flex: 1 1 40ch;
+ }
+
+ .horizontal iframe {
+  width: 300px;
  }
 
  .columnas4 {
@@ -528,9 +562,10 @@
  table.codeShow {
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
  }
 
- .codeShow td:first-child {
+ .codeShow td.codeShow_order {
   text-align: right;
   padding: 0 0 0 0;
   vertical-align: top;
@@ -544,14 +579,18 @@
   user-select: none;
  }
 
- .codeShow td:nth-child(2) {
+ .codeShow td:has(pre) {
   padding: 0 0 0 0.25rem;
   vertical-align: top;
+ }
+
+ .codeShow td pre {
   font-family: var(--fontMono);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   font-size: 1rem;
   line-height: 1.2rem;
+  margin: 0;
  }
 
  .codeReserved {
@@ -824,31 +863,31 @@
    <p>
     Puedes ver el listado de mis sitios educativos en
     <a href="https://gilpgcl.github.io" target="_blank"
-      rel="noreferrer">https://gilpgcl.github.io</a>.
+      rel="noopener noreferrer">https://gilpgcl.github.io</a>.
    </p>
   </li>
   <li>
    <p>
     Este sitio es continuación de
-    <a href="https://gilpgiti.github.io" rel="noreferrer"
+    <a href="https://gilpgiti.github.io" rel="noopener noreferrer"
       target="_blank">https://gilpgiti.github.io</a>,
-    <a href="https://gilpgijs.github.io" rel="noreferrer"
+    <a href="https://gilpgijs.github.io" rel="noopener noreferrer"
       target="_blank">https://gilpgijs.github.io</a>,
-    <a href="https://gilpgihc.github.io" rel="noreferrer"
+    <a href="https://gilpgihc.github.io" rel="noopener noreferrer"
       target="_blank">https://gilpgihc.github.io</a>,
-    <a href="https://gilpgawoas.github.io" rel="noreferrer"
+    <a href="https://gilpgawoas.github.io" rel="noopener noreferrer"
       target="_blank">https://gilpgawoas.github.io</a>,
-    <a href="https://gilpgdam.github.io" rel="noreferrer"
+    <a href="https://gilpgdam.github.io" rel="noopener noreferrer"
       target="_blank">https://gilpgdam.github.io</a>
     y
-    <a href="https://gilpgad.github.io" rel="noreferrer"
+    <a href="https://gilpgad.github.io" rel="noopener noreferrer"
       target="_blank">https://gilpgad.github.io</a>
    </p>
   </li>
   <li>
    <p><b>
      El contenido sobre pruebas se ha desplazado a
-     <a href="https://gilpgawoas.github.io" rel="noreferrer"
+     <a href="https://gilpgawoas.github.io" rel="noopener noreferrer"
        target="_blank">https://gilpgawoas.github.io</a>
     </b>
    </p>
@@ -856,14 +895,14 @@
   <li>
    <p>
     El contenido sobre multmedia se ha desplazado a
-    <a href="https://gilpgihc.github.io" rel="noreferrer"
+    <a href="https://gilpgihc.github.io" rel="noopener noreferrer"
       target="_blank">https://gilpgihc.github.io</a>
    </p>
   </li>
   <li>
    <p>
     El contenido sobre aplicaciones nativas y multiplataforma se ha desplazado a
-    <a href="https://gilpgiti.github.io" rel="noreferrer"
+    <a href="https://gilpgiti.github.io" rel="noopener noreferrer"
       target="_blank">https://gilpgiti.github.io</a>
    </p>
   </li>
@@ -946,7 +985,7 @@
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/">PWA con Material Design</a>
+     <a href="/m04pwaListas/">PWA con listas y Material Design 3 Expression</a>
     </p>
    </li>
    <li>
@@ -982,6 +1021,11 @@
    <li>
     <p>
      <a href="/m09sincronizacion/">Sincronización</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/">PWA con Material Design (Desactualizado)</a>
     </p>
    </li>
    </ol>

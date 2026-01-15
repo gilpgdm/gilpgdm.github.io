@@ -233,6 +233,36 @@
   margin-top: 0;
  }
 
+ h1 {
+  font-size: 3rem;
+ }
+
+ section h1,
+ nav h1 {
+  font-size: 2.5rem;
+  font-style: oblique;
+ }
+
+ section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section section h1 {
+  font-size: 1.5rem;
+  font-style: oblique;
+ }
+
+ section section section section section h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+ }
+
  a {
   color: var(--colA);
  }
@@ -452,8 +482,9 @@
  }
 
  iframe {
+  /* background-color: white; */
   box-sizing: border-box;
-  width: 300px;
+  resize: both;
  }
 
  .lectura {
@@ -475,12 +506,15 @@
  }
 
  .horizontal>*:first-child {
-  flex: 1 1 300px;
-  text-align: center;
+  flex: 1 1 auto;
  }
 
  .horizontal>*:nth-child(2) {
-  flex: 1 1 auto;
+  flex: 1 1 40ch;
+ }
+
+ .horizontal iframe {
+  width: 300px;
  }
 
  .columnas4 {
@@ -527,9 +561,10 @@
  table.codeShow {
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
  }
 
- .codeShow td:first-child {
+ .codeShow td.codeShow_order {
   text-align: right;
   padding: 0 0 0 0;
   vertical-align: top;
@@ -543,14 +578,18 @@
   user-select: none;
  }
 
- .codeShow td:nth-child(2) {
+ .codeShow td:has(pre) {
   padding: 0 0 0 0.25rem;
   vertical-align: top;
+ }
+
+ .codeShow td pre {
   font-family: var(--fontMono);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   font-size: 1rem;
   line-height: 1.2rem;
+  margin: 0;
  }
 
  .codeReserved {
@@ -702,11 +741,11 @@
 </head>
 
 <body class="print">
-   <h1 >F. Carpeta « js »</h1>
+   <h1 >G. Carpeta « js »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 
@@ -718,14 +757,37 @@
     
    <li>
     <p>
-     <a href="/m04pwaBasica/m-js/m-registraServiceWorker-js.html">js / registraServiceWorker.js</a>
+     <a href="/m04pwaBasica/m-js/m-lib/">Carpeta « js / lib »</a>
+    </p>
+   </li>
+   </ol>
+   </nav>
+  </div>
+     <section>
+         <h1 >A. Carpeta « js / lib »</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
+    </p>
+   </div>
+
+  <div class="lectura">
+   <nav>
+    <h1>Contenido</h1>
+    
+   <ol type="1">
+    
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-js/m-lib/m-registraServiceWorker-js.html">js / lib / registraServiceWorker.js</a>
     </p>
    </li>
    </ol>
    </nav>
   </div>
      <section >
-         <h1 >A. js / registraServiceWorker.js</h1><table class="codeShow">
+         <h1 >1. js / lib / registraServiceWorker.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -735,22 +797,21 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeString">"use strict"</span> <span class="codeComment">// usa JavaScript en modo estricto.</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">const</span> nombreDeServiceWorker = <span class="codeString">"sw.js"</span></td></tr>
-  <tr><td>4</td><td></td></tr>
-  <tr><td>5</td><td><span class="codeReserved">try</span> {</td></tr>
-  <tr><td>6</td><td> navigator.serviceWorker.register(nombreDeServiceWorker)</td></tr>
-  <tr><td>7</td><td>  .then(registro =&gt; {</td></tr>
-  <tr><td>8</td><td>   console.log(nombreDeServiceWorker, <span class="codeString">"registrado."</span>)</td></tr>
-  <tr><td>9</td><td>   console.log(registro)</td></tr>
-  <tr><td>10</td><td>  })</td></tr>
-  <tr><td>11</td><td>  .<span class="codeReserved">catch</span>(error =&gt; console.log(error))</td></tr>
-  <tr><td>12</td><td>} <span class="codeReserved">catch</span> (error) {</td></tr>
-  <tr><td>13</td><td> console.log(error)</td></tr>
-  <tr><td>14</td><td>}</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">const</span> nombreDeServiceWorker = <span class="codeString">"sw.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">try</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre> navigator.serviceWorker.register(nombreDeServiceWorker)</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre>  .then(registro =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre>   console.log(nombreDeServiceWorker, <span class="codeString">"registrado."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre>   console.log(registro)</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>  })</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre>  .<span class="codeReserved">catch</span>(error =&gt; console.log(error))</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>} <span class="codeReserved">catch</span> (error) {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> console.log(error)</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>}</pre></td></tr>
  </tbody>
 </table>
+      </section>
       </section>
 </body>
 

@@ -234,6 +234,36 @@
   margin-top: 0;
  }
 
+ h1 {
+  font-size: 3rem;
+ }
+
+ section h1,
+ nav h1 {
+  font-size: 2.5rem;
+  font-style: oblique;
+ }
+
+ section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section section h1 {
+  font-size: 1.5rem;
+  font-style: oblique;
+ }
+
+ section section section section section h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+ }
+
  a {
   color: var(--colA);
  }
@@ -453,8 +483,9 @@
  }
 
  iframe {
+  /* background-color: white; */
   box-sizing: border-box;
-  width: 300px;
+  resize: both;
  }
 
  .lectura {
@@ -476,12 +507,15 @@
  }
 
  .horizontal>*:first-child {
-  flex: 1 1 300px;
-  text-align: center;
+  flex: 1 1 auto;
  }
 
  .horizontal>*:nth-child(2) {
-  flex: 1 1 auto;
+  flex: 1 1 40ch;
+ }
+
+ .horizontal iframe {
+  width: 300px;
  }
 
  .columnas4 {
@@ -528,9 +562,10 @@
  table.codeShow {
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
  }
 
- .codeShow td:first-child {
+ .codeShow td.codeShow_order {
   text-align: right;
   padding: 0 0 0 0;
   vertical-align: top;
@@ -544,14 +579,18 @@
   user-select: none;
  }
 
- .codeShow td:nth-child(2) {
+ .codeShow td:has(pre) {
   padding: 0 0 0 0.25rem;
   vertical-align: top;
+ }
+
+ .codeShow td pre {
   font-family: var(--fontMono);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   font-size: 1rem;
   line-height: 1.2rem;
+  margin: 0;
  }
 
  .codeReserved {
@@ -824,7 +863,7 @@
    <p>
     El sitio oficial de los íconos de Material Design es
     <a href="https://fonts.google.com/icons" target="_blank"
-      rel="noreferrer">https://fonts.google.com/icons</a>.
+      rel="noopener noreferrer">https://fonts.google.com/icons</a>.
    </p>
   </li>
   <li>
@@ -847,7 +886,7 @@
     title="Ejemplo con íconos oficiales"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/iconos.html" target="_blank"
-     rel="noreferrer">Ábrelo en otra pestaña.</a>
+     rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -902,7 +941,7 @@
    <tr><td>40</td><td>   &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"material-symbols-outlined"</span>&gt;bolt&lt;/<span class="codeReserved">span</span>&gt;</td></tr>
    <tr><td>41</td><td>  &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
    <tr><td>42</td><td></td></tr>
-   <tr><td>43</td><td>  &lt;<span class="codeReserved">a</span> <span class="codeReserved">class</span>=<span class="codeString">"md-standard-icon-button"</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span></td></tr>
+   <tr><td>43</td><td>  &lt;<span class="codeReserved">a</span> <span class="codeReserved">class</span>=<span class="codeString">"md-standard-icon-button"</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noopener noreferrer"</span></td></tr>
    <tr><td>44</td><td>    href=<span class="codeString">"https://google.com"</span>&gt;</td></tr>
    <tr><td>45</td><td>   &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"material-symbols-outlined"</span>&gt;star&lt;/<span class="codeReserved">span</span>&gt;&lt;/<span class="codeReserved">a</span>&gt;</td></tr>
    <tr><td>46</td><td></td></tr>
@@ -930,7 +969,7 @@
    <p>
     Los botones en Material Design están definidos en
     <a href="https://m3.material.io/components/icon-buttons/overview"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/icon-buttons/overview</a>.
    </p>
   </li>
@@ -938,7 +977,7 @@
    <p>
     Los botones FAB en Material Design están definidos en
     <a href="https://m3.material.io/components/floating-action-button/overview"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/floating-action-button/overview</a>.
    </p>
   </li>
@@ -991,13 +1030,13 @@
    
    
      <p>
-      <a class="paginaAnterior" href="/m04pwaBasica/mXresumen.html"
-        title="O. Resumen"><span
+      <a class="paginaAnterior" href="/m09sincronizacion/mKresumen.html"
+        title="R. Resumen"><span
         class="material-symbols-outlined">
          arrow_upward
         </span></a>
      </p>
-   <h1><a href="/m03pwaMaterial/index.html">6. PWA con Material Design</a></h1>
+   <h1><a href="/m03pwaMaterial/index.html">14. PWA con Material Design (Desactualizado)</a></h1>
    
    <ol type="1">
     
@@ -1183,13 +1222,6 @@
    </li>
    </ol>
    
-    <p>
-     <a class="paginaSiguiente" href="/m04dispositivo/index.html"
-       title="7. Acceso al dispositivo"><span
-       class="material-symbols-outlined">
-        arrow_downward
-       </span></a>
-    </p>
  
 </nav>
  <script>

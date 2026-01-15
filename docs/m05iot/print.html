@@ -233,6 +233,36 @@
   margin-top: 0;
  }
 
+ h1 {
+  font-size: 3rem;
+ }
+
+ section h1,
+ nav h1 {
+  font-size: 2.5rem;
+  font-style: oblique;
+ }
+
+ section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section section h1 {
+  font-size: 1.5rem;
+  font-style: oblique;
+ }
+
+ section section section section section h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+ }
+
  a {
   color: var(--colA);
  }
@@ -452,8 +482,9 @@
  }
 
  iframe {
+  /* background-color: white; */
   box-sizing: border-box;
-  width: 300px;
+  resize: both;
  }
 
  .lectura {
@@ -475,12 +506,15 @@
  }
 
  .horizontal>*:first-child {
-  flex: 1 1 300px;
-  text-align: center;
+  flex: 1 1 auto;
  }
 
  .horizontal>*:nth-child(2) {
-  flex: 1 1 auto;
+  flex: 1 1 40ch;
+ }
+
+ .horizontal iframe {
+  width: 300px;
  }
 
  .columnas4 {
@@ -527,9 +561,10 @@
  table.codeShow {
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
  }
 
- .codeShow td:first-child {
+ .codeShow td.codeShow_order {
   text-align: right;
   padding: 0 0 0 0;
   vertical-align: top;
@@ -543,14 +578,18 @@
   user-select: none;
  }
 
- .codeShow td:nth-child(2) {
+ .codeShow td:has(pre) {
   padding: 0 0 0 0.25rem;
   vertical-align: top;
+ }
+
+ .codeShow td pre {
   font-family: var(--fontMono);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   font-size: 1rem;
   line-height: 1.2rem;
+  margin: 0;
  }
 
  .codeReserved {
@@ -705,8 +744,8 @@
    <h1 >8. IoT</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 <div class="lectura">
@@ -779,7 +818,7 @@
   <li>
    <p>
     Puedes probar el ejemplo en
-    <a href="https://iothtml.rf.gd/" rel="noreferrer"
+    <a href="https://iothtml.rf.gd/" rel="noopener noreferrer"
       target="_blank">https://iothtml.rf.gd/</a>.
    </p>
   </li>
@@ -799,7 +838,7 @@
   <li>
    <p>
     Prueba el ejemplo en
-    <a href="https://iothtml.rf.gd/" rel="noreferrer"
+    <a href="https://iothtml.rf.gd/" rel="noopener noreferrer"
       target="_blank">https://iothtml.rf.gd/</a>.
    </p>
   </li>
@@ -814,7 +853,7 @@
     Este proyecto puede correr simultáneamente en varios navegadores y
     computadoras. Todos interactuan con el servidor
     <a href="https://test.mosquitto.org" target="_blank"
-      rel="noreferrer">test.mosquitto.org</a>.
+      rel="noopener noreferrer">test.mosquitto.org</a>.
    </p>
   </li>
   <li>
@@ -822,7 +861,7 @@
     Este ejercicio usa la librería Eclipse Paho JavaScript Client para conectar
     el JavaScript del navegador web para conectarse al servidor de mqtt. Puedes
     profundizar en este tema en la URL
-    <a href="https://eclipse.dev/paho/clients/js/" rel="noreferrer"
+    <a href="https://eclipse.dev/paho/clients/js/" rel="noopener noreferrer"
       target="_blank">https://eclipse.dev/paho/clients/js/</a>
    </p>
   </li>
@@ -1007,7 +1046,7 @@
       resaltada en la pestaña de fuentes. Usa los controles de depuración para
       avanzar, como se muestra en
       <a href="https://drive.google.com/file/d/1wdg7LKHR8L21FQGsRr2bXpXqAcaEGxCx/view?usp=sharing"
-        target="_blank" rel="noreferrer">este video</a>.
+        target="_blank" rel="noopener noreferrer">este video</a>.
      </p>
     </li>
    </ol>
@@ -1063,7 +1102,7 @@
       <q>.htaccess</q>. En algunos casos puedes usar
       filezilla
       (<a href="https://filezilla-project.org/" target="_blank"
-        rel="noreferrer">https://filezilla-project.org/</a>)
+        rel="noopener noreferrer">https://filezilla-project.org/</a>)
      </p>
     </li>
     <li>
@@ -1293,8 +1332,8 @@
          <h1 >F. Carpeta « lib »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 
@@ -1316,8 +1355,8 @@
          <h1 >A. Carpeta « lib / js »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 
@@ -1576,8 +1615,8 @@
          <h1 >G. Carpeta « paho.javascript-1.0.3 »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 

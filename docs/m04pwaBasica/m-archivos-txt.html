@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>I. archivos.txt - GilPG DM</title>
+ <title>J. archivos.txt - GilPG DM</title>
  <meta name="description" content="Código de «archivos.txt».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -234,6 +234,36 @@
   margin-top: 0;
  }
 
+ h1 {
+  font-size: 3rem;
+ }
+
+ section h1,
+ nav h1 {
+  font-size: 2.5rem;
+  font-style: oblique;
+ }
+
+ section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section section h1 {
+  font-size: 1.5rem;
+  font-style: oblique;
+ }
+
+ section section section section section h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+ }
+
  a {
   color: var(--colA);
  }
@@ -453,8 +483,9 @@
  }
 
  iframe {
+  /* background-color: white; */
   box-sizing: border-box;
-  width: 300px;
+  resize: both;
  }
 
  .lectura {
@@ -476,12 +507,15 @@
  }
 
  .horizontal>*:first-child {
-  flex: 1 1 300px;
-  text-align: center;
+  flex: 1 1 auto;
  }
 
  .horizontal>*:nth-child(2) {
-  flex: 1 1 auto;
+  flex: 1 1 40ch;
+ }
+
+ .horizontal iframe {
+  width: 300px;
  }
 
  .columnas4 {
@@ -528,9 +562,10 @@
  table.codeShow {
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
  }
 
- .codeShow td:first-child {
+ .codeShow td.codeShow_order {
   text-align: right;
   padding: 0 0 0 0;
   vertical-align: top;
@@ -544,14 +579,18 @@
   user-select: none;
  }
 
- .codeShow td:nth-child(2) {
+ .codeShow td:has(pre) {
   padding: 0 0 0 0.25rem;
   vertical-align: top;
+ }
+
+ .codeShow td pre {
   font-family: var(--fontMono);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   font-size: 1rem;
   line-height: 1.2rem;
+  margin: 0;
  }
 
  .codeReserved {
@@ -818,7 +857,7 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >I. archivos.txt</h1><table class="codeShow">
+   <h1 >J. archivos.txt</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -828,22 +867,22 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td>"favicon.ico",</td></tr>
-  <tr><td>2</td><td>"index.html",</td></tr>
-  <tr><td>3</td><td>"site.webmanifest",</td></tr>
-  <tr><td>4</td><td>"css/estilos.css",</td></tr>
-  <tr><td>5</td><td>"img/icono2048.png",</td></tr>
-  <tr><td>6</td><td>"img/maskable_icon.png",</td></tr>
-  <tr><td>7</td><td>"img/maskable_icon_x128.png",</td></tr>
-  <tr><td>8</td><td>"img/maskable_icon_x192.png",</td></tr>
-  <tr><td>9</td><td>"img/maskable_icon_x384.png",</td></tr>
-  <tr><td>10</td><td>"img/maskable_icon_x48.png",</td></tr>
-  <tr><td>11</td><td>"img/maskable_icon_x512.png",</td></tr>
-  <tr><td>12</td><td>"img/maskable_icon_x72.png",</td></tr>
-  <tr><td>13</td><td>"img/maskable_icon_x96.png",</td></tr>
-  <tr><td>14</td><td>"img/screenshot_horizontal.png",</td></tr>
-  <tr><td>15</td><td>"img/screenshot_vertical.png",</td></tr>
-  <tr><td>16</td><td>"js/registraServiceWorker.js",</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre>"favicon.ico",</pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre>"index.html",</pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre>"site.webmanifest",</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre>"css/estilos.css",</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre>"img/icono2048.png",</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre>"img/maskable_icon.png",</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre>"img/maskable_icon_x128.png",</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>"img/maskable_icon_x192.png",</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre>"img/maskable_icon_x384.png",</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>"img/maskable_icon_x48.png",</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>"img/maskable_icon_x512.png",</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>"img/maskable_icon_x72.png",</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>"img/maskable_icon_x96.png",</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>"img/screenshot_horizontal.png",</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>"img/screenshot_vertical.png",</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>"js/registraServiceWorker.js",</pre></td></tr>
  </tbody>
 </table>
  <footer>
@@ -871,10 +910,10 @@
    menu
   </span>
  </button>
- <a class="anterior" href="/m04pwaBasica/m-instruccionesListadoSw-txt.html" title="H. instruccionesListadoSw.txt"><span class="material-symbols-outlined">
+ <a class="anterior" href="/m04pwaBasica/m-instruccionesListadoSw-txt.html" title="I. instruccionesListadoSw.txt"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
- <a class="siguiente" href="/m04pwaBasica/m-sw-js.html" title="J. sw.js"><span class="material-symbols-outlined">
+ <a class="siguiente" href="/m04pwaBasica/m-sw-js.html" title="K. sw.js"><span class="material-symbols-outlined">
      skip_next
      </span></a>
 </div>
@@ -910,7 +949,12 @@
    </li>
    <li>
     <p>
-     <a href="/m04pwaBasica/mAinstrucciones.html">Hazlo funcionar</a>
+     <a href="/m04pwaBasica/mAvideoinstrucciones.html">Hazlo funcionar (con videos)</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/mAinstrucciones.html">Hazlo funcionar (texto)</a>
     </p>
    </li>
    <li>
@@ -981,8 +1025,8 @@
    </ol>
    
     <p>
-     <a class="paginaSiguiente" href="/m03pwaMaterial/index.html"
-       title="6. PWA con Material Design"><span
+     <a class="paginaSiguiente" href="/m04pwaListas/index.html"
+       title="6. PWA con listas y Material Design 3 Expression"><span
        class="material-symbols-outlined">
         arrow_downward
        </span></a>

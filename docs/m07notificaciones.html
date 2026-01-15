@@ -234,6 +234,36 @@
   margin-top: 0;
  }
 
+ h1 {
+  font-size: 3rem;
+ }
+
+ section h1,
+ nav h1 {
+  font-size: 2.5rem;
+  font-style: oblique;
+ }
+
+ section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section section h1 {
+  font-size: 1.5rem;
+  font-style: oblique;
+ }
+
+ section section section section section h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+ }
+
  a {
   color: var(--colA);
  }
@@ -453,8 +483,9 @@
  }
 
  iframe {
+  /* background-color: white; */
   box-sizing: border-box;
-  width: 300px;
+  resize: both;
  }
 
  .lectura {
@@ -476,12 +507,15 @@
  }
 
  .horizontal>*:first-child {
-  flex: 1 1 300px;
-  text-align: center;
+  flex: 1 1 auto;
  }
 
  .horizontal>*:nth-child(2) {
-  flex: 1 1 auto;
+  flex: 1 1 40ch;
+ }
+
+ .horizontal iframe {
+  width: 300px;
  }
 
  .columnas4 {
@@ -528,9 +562,10 @@
  table.codeShow {
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
  }
 
- .codeShow td:first-child {
+ .codeShow td.codeShow_order {
   text-align: right;
   padding: 0 0 0 0;
   vertical-align: top;
@@ -544,14 +579,18 @@
   user-select: none;
  }
 
- .codeShow td:nth-child(2) {
+ .codeShow td:has(pre) {
   padding: 0 0 0 0.25rem;
   vertical-align: top;
+ }
+
+ .codeShow td pre {
   font-family: var(--fontMono);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   font-size: 1rem;
   line-height: 1.2rem;
+  margin: 0;
  }
 
  .codeReserved {
@@ -825,10 +864,10 @@
     title="Uso de notificaciones"></iframe>
   <p>
    <a href="/src/m01notificaciones/index.html" target="_blank"
-     rel="noreferrer">Ábrelo en otra pestaña.</a>
+     rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="noreferrer"
+   <a target="_blank" rel="noopener noreferrer"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%0A%20%3Ctitle%3ENotificaciones%3C%2Ftitle%3E%0A%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%0A%20%3Ch1%3ENotificaciones%3C%2Fh1%3E%0A%0A%20%3Cbutton%20type%3D%22button%22%0A%20%20%20onclick%3D%22notifica()%22%3E%0A%20%20Muestra%0A%20%3C%2Fbutton%3E%0A%0A%20%3Cscript%3E%0A%0A%20%20const%20MENSAJE%20%3D%20%22Hola%22%0A%0A%20%20async%20function%20notifica()%20%7B%0A%20%20%20let%20permitida%20%3D%20false%0A%20%20%20if%20(%22Notification%22%20in%20window)%20%7B%0A%20%20%20%20let%20permiso%20%3D%0A%20%20%20%20%20Notification.permission%0A%20%20%20%20if%20(permiso%20%3D%3D%3D%20%22default%22)%20%7B%0A%20%20%20%20%20permiso%20%3D%20await%20Notification%0A%20%20%20%20%20%20.requestPermission()%0A%20%20%20%20%7D%0A%20%20%20%20permitida%20%3D%0A%20%20%20%20%20permiso%20%3D%3D%3D%20%22granted%22%0A%20%20%20%20%20%20%3F%20true%0A%20%20%20%20%20%20%3A%20false%0A%20%20%20%7D%0A%20%20%20if%20(permitida)%20%7B%0A%20%20%20%20notificacion%20%3D%0A%20%20%20%20%20new%20Notification(MENSAJE)%0A%20%20%20%7D%20else%20%7B%0A%20%20%20%20alert(MENSAJE)%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%3C%2Fscript%3E%0A%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
@@ -982,7 +1021,7 @@
    </li>
    <li>
     <p>
-     <a href="/m03pwaMaterial/">PWA con Material Design</a>
+     <a href="/m04pwaListas/">PWA con listas y Material Design 3 Expression</a>
     </p>
    </li>
    <li>
@@ -1018,6 +1057,11 @@
    <li>
     <p>
      <a href="/m09sincronizacion/">Sincronización</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03pwaMaterial/">PWA con Material Design (Desactualizado)</a>
     </p>
    </li>
    </ol>

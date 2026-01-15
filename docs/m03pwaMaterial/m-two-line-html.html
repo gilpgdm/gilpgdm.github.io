@@ -234,6 +234,36 @@
   margin-top: 0;
  }
 
+ h1 {
+  font-size: 3rem;
+ }
+
+ section h1,
+ nav h1 {
+  font-size: 2.5rem;
+  font-style: oblique;
+ }
+
+ section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section section h1 {
+  font-size: 1.5rem;
+  font-style: oblique;
+ }
+
+ section section section section section h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+ }
+
  a {
   color: var(--colA);
  }
@@ -453,8 +483,9 @@
  }
 
  iframe {
+  /* background-color: white; */
   box-sizing: border-box;
-  width: 300px;
+  resize: both;
  }
 
  .lectura {
@@ -476,12 +507,15 @@
  }
 
  .horizontal>*:first-child {
-  flex: 1 1 300px;
-  text-align: center;
+  flex: 1 1 auto;
  }
 
  .horizontal>*:nth-child(2) {
-  flex: 1 1 auto;
+  flex: 1 1 40ch;
+ }
+
+ .horizontal iframe {
+  width: 300px;
  }
 
  .columnas4 {
@@ -528,9 +562,10 @@
  table.codeShow {
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
  }
 
- .codeShow td:first-child {
+ .codeShow td.codeShow_order {
   text-align: right;
   padding: 0 0 0 0;
   vertical-align: top;
@@ -544,14 +579,18 @@
   user-select: none;
  }
 
- .codeShow td:nth-child(2) {
+ .codeShow td:has(pre) {
   padding: 0 0 0 0.25rem;
   vertical-align: top;
+ }
+
+ .codeShow td pre {
   font-family: var(--fontMono);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   font-size: 1rem;
   line-height: 1.2rem;
+  margin: 0;
  }
 
  .codeReserved {
@@ -987,7 +1026,7 @@
     title="Navegación inferior para móvil"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/two-line.html" target="_blank"
-     rel="noreferrer">Ábrelo en otra pestaña.</a>
+     rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -1104,7 +1143,7 @@
    <tr><td>102</td><td>   &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
    <tr><td>103</td><td></td></tr>
    <tr><td>104</td><td>   &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-   <tr><td>105</td><td>    &lt;<span class="codeReserved">a</span> <span class="codeReserved">class</span>=<span class="codeString">"md-two-line image"</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span></td></tr>
+   <tr><td>105</td><td>    &lt;<span class="codeReserved">a</span> <span class="codeReserved">class</span>=<span class="codeString">"md-two-line image"</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noopener noreferrer"</span></td></tr>
    <tr><td>106</td><td>      href=<span class="codeString">"https://culturacolectiva.com/historia/ciudad-neza-su-historia-en-fotografias/"</span>&gt;</td></tr>
    <tr><td>107</td><td>     &lt;<span class="codeReserved">img</span> alt=<span class="codeString">"Coyote de Neza"</span> <span class="codeReserved">src</span>=<span class="codeString">"img/Escultura_de_coyote.jpeg"</span>&gt;</td></tr>
    <tr><td>108</td><td>     &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"headline"</span>&gt;</td></tr>
@@ -1126,7 +1165,7 @@
    <tr><td>124</td><td>    &lt;<span class="codeReserved">li</span>&gt;</td></tr>
    <tr><td>125</td><td>     &lt;<span class="codeReserved">p</span>&gt;</td></tr>
    <tr><td>126</td><td>      &lt;<span class="codeReserved">small</span>&gt;</td></tr>
-   <tr><td>127</td><td>       &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span></td></tr>
+   <tr><td>127</td><td>       &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noopener noreferrer"</span></td></tr>
    <tr><td>128</td><td>         href=<span class="codeString">"https://www.pexels.com/es-es/foto/nina-mono-cara-sonriente-10961948/"</span>&gt;</td></tr>
    <tr><td>129</td><td>        La foto de la niña es de Moises Patrício, publicada en el sitio Pexels.</td></tr>
    <tr><td>130</td><td>        Haz clic en este hipervínculo para más información.</td></tr>
@@ -1175,7 +1214,7 @@
   <li>
    <p>
     Las listas están definida en
-    <a href="https://m3.material.io/components/lists/overview" rel="noreferrer"
+    <a href="https://m3.material.io/components/lists/overview" rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/lists/overview</a>.
    </p>
   </li>
@@ -1228,13 +1267,13 @@
    
    
      <p>
-      <a class="paginaAnterior" href="/m04pwaBasica/mXresumen.html"
-        title="O. Resumen"><span
+      <a class="paginaAnterior" href="/m09sincronizacion/mKresumen.html"
+        title="R. Resumen"><span
         class="material-symbols-outlined">
          arrow_upward
         </span></a>
      </p>
-   <h1><a href="/m03pwaMaterial/index.html">6. PWA con Material Design</a></h1>
+   <h1><a href="/m03pwaMaterial/index.html">14. PWA con Material Design (Desactualizado)</a></h1>
    
    <ol type="1">
     
@@ -1420,13 +1459,6 @@
    </li>
    </ol>
    
-    <p>
-     <a class="paginaSiguiente" href="/m04dispositivo/index.html"
-       title="7. Acceso al dispositivo"><span
-       class="material-symbols-outlined">
-        arrow_downward
-       </span></a>
-    </p>
  
 </nav>
  <script>

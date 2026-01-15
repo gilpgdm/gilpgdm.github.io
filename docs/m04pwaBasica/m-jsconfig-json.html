@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>N. jsconfig.json - GilPG DM</title>
+ <title>O. jsconfig.json - GilPG DM</title>
  <meta name="description" content="Código de «jsconfig.json».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -234,6 +234,36 @@
   margin-top: 0;
  }
 
+ h1 {
+  font-size: 3rem;
+ }
+
+ section h1,
+ nav h1 {
+  font-size: 2.5rem;
+  font-style: oblique;
+ }
+
+ section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section section h1 {
+  font-size: 1.5rem;
+  font-style: oblique;
+ }
+
+ section section section section section h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+ }
+
  a {
   color: var(--colA);
  }
@@ -453,8 +483,9 @@
  }
 
  iframe {
+  /* background-color: white; */
   box-sizing: border-box;
-  width: 300px;
+  resize: both;
  }
 
  .lectura {
@@ -476,12 +507,15 @@
  }
 
  .horizontal>*:first-child {
-  flex: 1 1 300px;
-  text-align: center;
+  flex: 1 1 auto;
  }
 
  .horizontal>*:nth-child(2) {
-  flex: 1 1 auto;
+  flex: 1 1 40ch;
+ }
+
+ .horizontal iframe {
+  width: 300px;
  }
 
  .columnas4 {
@@ -528,9 +562,10 @@
  table.codeShow {
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
  }
 
- .codeShow td:first-child {
+ .codeShow td.codeShow_order {
   text-align: right;
   padding: 0 0 0 0;
   vertical-align: top;
@@ -544,14 +579,18 @@
   user-select: none;
  }
 
- .codeShow td:nth-child(2) {
+ .codeShow td:has(pre) {
   padding: 0 0 0 0.25rem;
   vertical-align: top;
+ }
+
+ .codeShow td pre {
   font-family: var(--fontMono);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   font-size: 1rem;
   line-height: 1.2rem;
+  margin: 0;
  }
 
  .codeReserved {
@@ -818,25 +857,24 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >N. jsconfig.json</h1><div class="lectura">
- <ul>
-  <li>
-   <p>
-    Este archivo ayuda a detectar errores en los archivos del proyecto.
-   </p>
-  </li>
-  <li>
-   <p>
-    Lo utiliza principalmente Visual Studio Code.
-   </p>
-  </li>
-  <li>
-   <p>
-    No se explica aquí su estructura, pero puede encontrarse la explicación de
-    todo en la documentación del sitio de Visual Studio Code.
-   </p>
-  </li>
- </ul>
+   <h1 >O. jsconfig.json</h1><ul>
+ <li>
+  <p>
+   Este archivo ayuda a detectar errores en los archivos del proyecto.
+  </p>
+ </li>
+ <li>
+  <p>
+   Lo utiliza principalmente Visual Studio Code.
+  </p>
+ </li>
+ <li>
+  <p>
+   No se explica aquí su estructura, pero puede encontrarse la explicación de
+   todo en la documentación del sitio de Visual Studio Code.
+  </p>
+ </li>
+</ul>
 </div>
 <table class="codeShow">
  <caption style="text-align: left">
@@ -848,20 +886,24 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td>{</td></tr>
-  <tr><td>2</td><td> <span class="codeString">&quot;compilerOptions&quot;</span>: {</td></tr>
-  <tr><td>3</td><td>  <span class="codeString">&quot;checkJs&quot;</span>: <span class="codeReserved">true</span>,</td></tr>
-  <tr><td>4</td><td>  <span class="codeString">&quot;strictNullChecks&quot;</span>: <span class="codeReserved">true</span>,</td></tr>
-  <tr><td>5</td><td>  <span class="codeString">&quot;target&quot;</span>: <span class="codeString">&quot;ES6&quot;</span>,</td></tr>
-  <tr><td>6</td><td>  <span class="codeString">&quot;module&quot;</span>: <span class="codeString">&quot;Node16&quot;</span>,</td></tr>
-  <tr><td>7</td><td>  <span class="codeString">&quot;moduleResolution&quot;</span>: <span class="codeString">&quot;Node16&quot;</span>,</td></tr>
-  <tr><td>8</td><td>  <span class="codeString">&quot;lib&quot;</span>: [</td></tr>
-  <tr><td>9</td><td>   <span class="codeString">&quot;ES2017&quot;</span>,</td></tr>
-  <tr><td>10</td><td>   <span class="codeString">&quot;WebWorker&quot;</span>,</td></tr>
-  <tr><td>11</td><td>   <span class="codeString">&quot;DOM&quot;</span></td></tr>
-  <tr><td>12</td><td>  ]</td></tr>
-  <tr><td>13</td><td> }</td></tr>
-  <tr><td>14</td><td>}</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre>{</pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre> <span class="codeString">"compilerOptions"</span>: {</pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre>  <span class="codeString">"checkJs"</span>: <span class="codeReserved">true</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre>  <span class="codeString">"strictNullChecks"</span>: <span class="codeReserved">true</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre>  <span class="codeString">"target"</span>: <span class="codeString">"ES6"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre>  <span class="codeString">"module"</span>: <span class="codeString">"Node16"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre>  <span class="codeString">"moduleResolution"</span>: <span class="codeString">"Node16"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>  <span class="codeString">"lib"</span>: [</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre>   <span class="codeString">"ES2017"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>   <span class="codeString">"WebWorker"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>   <span class="codeString">"DOM"</span></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>  ]</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre> },</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre> <span class="codeString">"exclude"</span>: [</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>  <span class="codeString">"node_modules"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>  <span class="codeString">"dist"</span></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre> ]</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>}</pre></td></tr>
  </tbody>
 </table>
  <footer>
@@ -889,10 +931,10 @@
    menu
   </span>
  </button>
- <a class="anterior" href="/m04pwaBasica/m--htaccess.html" title="M. .htaccess"><span class="material-symbols-outlined">
+ <a class="anterior" href="/m04pwaBasica/m--htaccess.html" title="N. .htaccess"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
- <a class="siguiente" href="/m04pwaBasica/mXresumen.html" title="O. Resumen"><span class="material-symbols-outlined">
+ <a class="siguiente" href="/m04pwaBasica/mXresumen.html" title="P. Resumen"><span class="material-symbols-outlined">
      skip_next
      </span></a>
 </div>
@@ -928,7 +970,12 @@
    </li>
    <li>
     <p>
-     <a href="/m04pwaBasica/mAinstrucciones.html">Hazlo funcionar</a>
+     <a href="/m04pwaBasica/mAvideoinstrucciones.html">Hazlo funcionar (con videos)</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/mAinstrucciones.html">Hazlo funcionar (texto)</a>
     </p>
    </li>
    <li>
@@ -999,8 +1046,8 @@
    </ol>
    
     <p>
-     <a class="paginaSiguiente" href="/m03pwaMaterial/index.html"
-       title="6. PWA con Material Design"><span
+     <a class="paginaSiguiente" href="/m04pwaListas/index.html"
+       title="6. PWA con listas y Material Design 3 Expression"><span
        class="material-symbols-outlined">
         arrow_downward
        </span></a>

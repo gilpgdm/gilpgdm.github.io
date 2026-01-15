@@ -1,0 +1,126 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/*</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> Copyright 2016 Google Inc. All rights reserved.</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"></span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> you may not use <span class="codeReserved">this</span> file except <span class="codeReserved">in</span> compliance with the License.</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> You may obtain a copy of the License at</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment"></span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeComment">     http://www.apache.org/licenses/LICENSE-2.0</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre><span class="codeComment"></span></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre><span class="codeComment"> Unless required by applicable law or agreed <span class="codeReserved">to</span> <span class="codeReserved">in</span> writing, software</span></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre><span class="codeComment"> distributed under the License is distributed on an &quot;<span class="codeReserved">AS</span> IS&quot; BASIS,</span></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre><span class="codeComment"> WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre><span class="codeComment"> See the License <span class="codeReserved">for</span> the specific language governing permissions and</span></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre><span class="codeComment"> limitations under the License.</span></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre><span class="codeComment">*/</span></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>:root {</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>  <span class="codeComment">/* Fully rounded */</span></pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>  --md-sys-shape-corner-full-family: 3px;</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>  <span class="codeComment">/* Extra large <span class="codeReserved">top</span> rounding */</span></pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>  --md-sys-shape-corner-extra-large-top-family: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>  --md-sys-shape-corner-extra-large-top-default-size: 0px;</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>  --md-sys-shape-corner-extra-large-top-top-left: 28px;</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>  --md-sys-shape-corner-extra-large-top-top-right-unit: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre>  --md-sys-shape-corner-extra-large-top-top-right: 28px;</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>  <span class="codeComment">/* Extra large rounding */</span></pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre>  --md-sys-shape-corner-extra-large-family: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre>  --md-sys-shape-corner-extra-large-default-size-unit: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>  --md-sys-shape-corner-extra-large-default-size: 28px;</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre>  <span class="codeComment">/* Large <span class="codeReserved">top</span> rounding */</span></pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre>  --md-sys-shape-corner-large-top-family: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre>  --md-sys-shape-corner-large-top-default-size-unit: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre>  --md-sys-shape-corner-large-top-default-size: 0px;</pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre>  --md-sys-shape-corner-large-top-top-left-unit: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre>  --md-sys-shape-corner-large-top-top-left: 16px;</pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre>  --md-sys-shape-corner-large-top-top-right-unit: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre>  --md-sys-shape-corner-large-top-top-right: 16px;</pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre>  <span class="codeComment">/* Large end rounding */</span></pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre>  --md-sys-shape-corner-large-end-family: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre>  --md-sys-shape-corner-large-end-default-size-unit: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">41</td><td><pre>  --md-sys-shape-corner-large-end-default-size: 0px;</pre></td></tr>
+  <tr><td class="codeShow_order">42</td><td><pre>  --md-sys-shape-corner-large-end-top-right-unit: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">43</td><td><pre>  --md-sys-shape-corner-large-end-top-right: 16px;</pre></td></tr>
+  <tr><td class="codeShow_order">44</td><td><pre>  --md-sys-shape-corner-large-end-bottom-right-unit: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">45</td><td><pre>  --md-sys-shape-corner-large-end-bottom-right: 16px;</pre></td></tr>
+  <tr><td class="codeShow_order">46</td><td><pre>  <span class="codeComment">/* Large rounding */</span></pre></td></tr>
+  <tr><td class="codeShow_order">47</td><td><pre>  --md-sys-shape-corner-large-family: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">48</td><td><pre>  --md-sys-shape-corner-large-default-size-unit: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">49</td><td><pre>  --md-sys-shape-corner-large-default-size: 16px;</pre></td></tr>
+  <tr><td class="codeShow_order">50</td><td><pre>  <span class="codeComment">/* Medium rounding */</span></pre></td></tr>
+  <tr><td class="codeShow_order">51</td><td><pre>  --md-sys-shape-corner-medium-family: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">52</td><td><pre>  --md-sys-shape-corner-medium-default-size-unit: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">53</td><td><pre>  --md-sys-shape-corner-medium-default-size: 12px;</pre></td></tr>
+  <tr><td class="codeShow_order">54</td><td><pre>  <span class="codeComment">/* Small rounding */</span></pre></td></tr>
+  <tr><td class="codeShow_order">55</td><td><pre>  --md-sys-shape-corner-small-family: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">56</td><td><pre>  --md-sys-shape-corner-small-default-size-unit: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">57</td><td><pre>  --md-sys-shape-corner-small-default-size: 8px;</pre></td></tr>
+  <tr><td class="codeShow_order">58</td><td><pre>  <span class="codeComment">/* Extra small <span class="codeReserved">top</span> rounding */</span></pre></td></tr>
+  <tr><td class="codeShow_order">59</td><td><pre>  --md-sys-shape-corner-extra-small-top-family: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">60</td><td><pre>  --md-sys-shape-corner-extra-small-top-default-size-unit: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">61</td><td><pre>  --md-sys-shape-corner-extra-small-top-default-size: 0px;</pre></td></tr>
+  <tr><td class="codeShow_order">62</td><td><pre>  --md-sys-shape-corner-extra-small-top-top-left-unit: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">63</td><td><pre>  --md-sys-shape-corner-extra-small-top-top-left: 4px;</pre></td></tr>
+  <tr><td class="codeShow_order">64</td><td><pre>  --md-sys-shape-corner-extra-small-top-top-right-unit: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">65</td><td><pre>  --md-sys-shape-corner-extra-small-top-top-right: 4px;</pre></td></tr>
+  <tr><td class="codeShow_order">66</td><td><pre>  <span class="codeComment">/* Extra small rounding */</span></pre></td></tr>
+  <tr><td class="codeShow_order">67</td><td><pre>  --md-sys-shape-corner-extra-small-family: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">68</td><td><pre>  --md-sys-shape-corner-extra-small-default-size-unit: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">69</td><td><pre>  --md-sys-shape-corner-extra-small-default-size: 4px;</pre></td></tr>
+  <tr><td class="codeShow_order">70</td><td><pre>  <span class="codeComment">/* No rounding */</span></pre></td></tr>
+  <tr><td class="codeShow_order">71</td><td><pre>  --md-sys-shape-corner-none-family: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">72</td><td><pre>  --md-sys-shape-corner-none-default-size-unit: 1px;</pre></td></tr>
+  <tr><td class="codeShow_order">73</td><td><pre>  --md-sys-shape-corner-none-default-size: 0px;</pre></td></tr>
+  <tr><td class="codeShow_order">74</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">75</td><td><pre>  --md-sys-shape-small: <span class="codeReserved">var</span>(--md-sys-shape-corner-small-default-size);</pre></td></tr>
+  <tr><td class="codeShow_order">76</td><td><pre>  --md-sys-shape-medium: <span class="codeReserved">var</span>(--md-sys-shape-corner-medium-default-size);</pre></td></tr>
+  <tr><td class="codeShow_order">77</td><td><pre>  --md-sys-shape-large: <span class="codeReserved">var</span>(--md-sys-shape-corner-large-default-size);</pre></td></tr>
+  <tr><td class="codeShow_order">78</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">79</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">80</td><td><pre>.shape-none {</pre></td></tr>
+  <tr><td class="codeShow_order">81</td><td><pre>  <span class="codeReserved">border-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-none-default-size);</pre></td></tr>
+  <tr><td class="codeShow_order">82</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">83</td><td><pre>.shape-extra-small {</pre></td></tr>
+  <tr><td class="codeShow_order">84</td><td><pre>  <span class="codeReserved">border-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-extra-small-default-size);</pre></td></tr>
+  <tr><td class="codeShow_order">85</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">86</td><td><pre>.shape-small {</pre></td></tr>
+  <tr><td class="codeShow_order">87</td><td><pre>  <span class="codeReserved">border-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-small-default-size);</pre></td></tr>
+  <tr><td class="codeShow_order">88</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">89</td><td><pre>.shape-medium {</pre></td></tr>
+  <tr><td class="codeShow_order">90</td><td><pre>  <span class="codeReserved">border-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-medium-default-size);</pre></td></tr>
+  <tr><td class="codeShow_order">91</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">92</td><td><pre>.shape-large {</pre></td></tr>
+  <tr><td class="codeShow_order">93</td><td><pre>  <span class="codeReserved">border-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-large-default-size);</pre></td></tr>
+  <tr><td class="codeShow_order">94</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">95</td><td><pre>.shape-extra-large {</pre></td></tr>
+  <tr><td class="codeShow_order">96</td><td><pre>  <span class="codeReserved">border-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-extra-large-default-size);</pre></td></tr>
+  <tr><td class="codeShow_order">97</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">98</td><td><pre>.extra-small-top {</pre></td></tr>
+  <tr><td class="codeShow_order">99</td><td><pre>  <span class="codeReserved">border-top-left-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-extra-small-top-top-left);</pre></td></tr>
+  <tr><td class="codeShow_order">100</td><td><pre>  <span class="codeReserved">border-top-right-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-extra-small-top-top-right);</pre></td></tr>
+  <tr><td class="codeShow_order">101</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">102</td><td><pre>.large-end {</pre></td></tr>
+  <tr><td class="codeShow_order">103</td><td><pre>  <span class="codeReserved">border-top-right-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-large-end-top-right);</pre></td></tr>
+  <tr><td class="codeShow_order">104</td><td><pre>  <span class="codeReserved">border-bottom-right-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-large-end-bottom-right);</pre></td></tr>
+  <tr><td class="codeShow_order">105</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">106</td><td><pre>.large-top {</pre></td></tr>
+  <tr><td class="codeShow_order">107</td><td><pre>  <span class="codeReserved">border-top-left-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-large-top-top-left);</pre></td></tr>
+  <tr><td class="codeShow_order">108</td><td><pre>  <span class="codeReserved">border-top-right-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-large-top-top-right);</pre></td></tr>
+  <tr><td class="codeShow_order">109</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">110</td><td><pre>.extra-large-top {</pre></td></tr>
+  <tr><td class="codeShow_order">111</td><td><pre>  <span class="codeReserved">border-top-left-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-extra-large-top-top-left);</pre></td></tr>
+  <tr><td class="codeShow_order">112</td><td><pre>  <span class="codeReserved">border-top-right-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-extra-large-top-top-right);</pre></td></tr>
+  <tr><td class="codeShow_order">113</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">114</td><td><pre></pre></td></tr>
+ </tbody>
+</table>

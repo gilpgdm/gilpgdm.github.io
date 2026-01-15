@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>H. instruccionesListadoSw.txt - GilPG DM</title>
+ <title>I. instruccionesListadoSw.txt - GilPG DM</title>
  <meta name="description" content="Código de «instruccionesListadoSw.txt».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -234,6 +234,36 @@
   margin-top: 0;
  }
 
+ h1 {
+  font-size: 3rem;
+ }
+
+ section h1,
+ nav h1 {
+  font-size: 2.5rem;
+  font-style: oblique;
+ }
+
+ section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section section h1 {
+  font-size: 1.5rem;
+  font-style: oblique;
+ }
+
+ section section section section section h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+ }
+
  a {
   color: var(--colA);
  }
@@ -453,8 +483,9 @@
  }
 
  iframe {
+  /* background-color: white; */
   box-sizing: border-box;
-  width: 300px;
+  resize: both;
  }
 
  .lectura {
@@ -476,12 +507,15 @@
  }
 
  .horizontal>*:first-child {
-  flex: 1 1 300px;
-  text-align: center;
+  flex: 1 1 auto;
  }
 
  .horizontal>*:nth-child(2) {
-  flex: 1 1 auto;
+  flex: 1 1 40ch;
+ }
+
+ .horizontal iframe {
+  width: 300px;
  }
 
  .columnas4 {
@@ -528,9 +562,10 @@
  table.codeShow {
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
  }
 
- .codeShow td:first-child {
+ .codeShow td.codeShow_order {
   text-align: right;
   padding: 0 0 0 0;
   vertical-align: top;
@@ -544,14 +579,18 @@
   user-select: none;
  }
 
- .codeShow td:nth-child(2) {
+ .codeShow td:has(pre) {
   padding: 0 0 0 0.25rem;
   vertical-align: top;
+ }
+
+ .codeShow td pre {
   font-family: var(--fontMono);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   font-size: 1rem;
   line-height: 1.2rem;
+  margin: 0;
  }
 
  .codeReserved {
@@ -818,7 +857,7 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >H. instruccionesListadoSw.txt</h1><table class="codeShow">
+   <h1 >I. instruccionesListadoSw.txt</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -828,83 +867,83 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td>Generar el listado de archivos del sw.js desde Visual Studio Code.</td></tr>
-  <tr><td>2</td><td>1. Abrir una terminal desde el menú </td></tr>
-  <tr><td>3</td><td>    Terminal > New Terminal</td></tr>
-  <tr><td>4</td><td></td></tr>
-  <tr><td>5</td><td>2. Desde la terminal introducir la orden:</td></tr>
-  <tr><td>6</td><td>    Get-ChildItem -path . -Recurse | Select Directory,Name | Out-File archivos.txt</td></tr>
-  <tr><td>7</td><td></td></tr>
-  <tr><td>8</td><td>3. Abrir el archivo generado, que se llama</td></tr>
-  <tr><td>9</td><td>    archivos.txt</td></tr>
-  <tr><td>10</td><td>   y sobre este, realizar los pasos que siguen:</td></tr>
-  <tr><td>11</td><td></td></tr>
-  <tr><td>12</td><td>4. Quita del archivo archivos.txt:</td></tr>
-  <tr><td>13</td><td>    * el encabezado,</td></tr>
-  <tr><td>14</td><td>    * todas las carpetas,</td></tr>
-  <tr><td>15</td><td>    * el archivo .vscode/settings.json,</td></tr>
-  <tr><td>16</td><td>    * el archivo .htaccess,</td></tr>
-  <tr><td>17</td><td>    * el archivo archivos.txt,</td></tr>
-  <tr><td>18</td><td>    * este archivo (instruccionesListadoSw.txt),</td></tr>
-  <tr><td>19</td><td>    * el archivo jsconfig.json,</td></tr>
-  <tr><td>20</td><td>    * el archivo sw.js,</td></tr>
-  <tr><td>21</td><td>    * el archivo de la base de datos, que termina en ".bd" y</td></tr>
-  <tr><td>22</td><td>      está en la carpeta srv,</td></tr>
-  <tr><td>23</td><td>    * todos los archivos de php y</td></tr>
-  <tr><td>24</td><td>    * las líneas en blanco del final</td></tr>
-  <tr><td>25</td><td></td></tr>
-  <tr><td>26</td><td>5. Cambia los \ por / desde Visual Studio Code con las siguientes</td></tr>
-  <tr><td>27</td><td>   combinaciones de teclas:</td></tr>
-  <tr><td>28</td><td></td></tr>
-  <tr><td>29</td><td>    Ctrl+H En el diálogo que aparece introduce lo siguiente:</td></tr>
-  <tr><td>30</td><td>    Find:\</td></tr>
-  <tr><td>31</td><td>    Replace:/</td></tr>
-  <tr><td>32</td><td></td></tr>
-  <tr><td>33</td><td>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</td></tr>
-  <tr><td>34</td><td> </td></tr>
-  <tr><td>35</td><td>6. Coloca las comillas y coma del final de cada línea desde Visual</td></tr>
-  <tr><td>36</td><td>   Studio Code con las siguientes combinaciones de teclas:</td></tr>
-  <tr><td>37</td><td></td></tr>
-  <tr><td>38</td><td>    Ctrl+H En el diálogo que aparece, selecciona el botón</td></tr>
-  <tr><td>39</td><td>            ".*"</td></tr>
-  <tr><td>40</td><td>           e introduce lo siguiente:</td></tr>
-  <tr><td>41</td><td>    Find:\s*$</td></tr>
-  <tr><td>42</td><td>    Replace:",</td></tr>
-  <tr><td>43</td><td></td></tr>
-  <tr><td>44</td><td>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</td></tr>
-  <tr><td>45</td><td></td></tr>
-  <tr><td>46</td><td>7. Marca la carpeta inicial, presiona la combinación de teclas:</td></tr>
-  <tr><td>47</td><td></td></tr>
-  <tr><td>48</td><td>    Shift+Ctrl+L</td></tr>
-  <tr><td>49</td><td></td></tr>
-  <tr><td>50</td><td>    borra la selección, teclea " y luego ESC</td></tr>
-  <tr><td>51</td><td></td></tr>
-  <tr><td>52</td><td>8. Cambia las secuencias de espacios por / con las siguientes</td></tr>
-  <tr><td>53</td><td>   combinaciones de teclas:</td></tr>
-  <tr><td>54</td><td></td></tr>
-  <tr><td>55</td><td>    Ctrl+H En el diálogo que aparece, selecciona el botón</td></tr>
-  <tr><td>56</td><td>            ".*"</td></tr>
-  <tr><td>57</td><td>           e introduce lo siguiente:</td></tr>
-  <tr><td>58</td><td>    Find:\s+</td></tr>
-  <tr><td>59</td><td>    Replace:/</td></tr>
-  <tr><td>60</td><td></td></tr>
-  <tr><td>61</td><td>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</td></tr>
-  <tr><td>62</td><td></td></tr>
-  <tr><td>63</td><td>9. Cambia las "/ por " con las siguientes combinaciones de teclas:</td></tr>
-  <tr><td>64</td><td></td></tr>
-  <tr><td>65</td><td>    Ctrl+H En el diálogo que aparece, quita la selección del botón</td></tr>
-  <tr><td>66</td><td>            ".*"</td></tr>
-  <tr><td>67</td><td>           e introduce lo siguiente:</td></tr>
-  <tr><td>68</td><td>    Find:"/</td></tr>
-  <tr><td>69</td><td>    Replace:"</td></tr>
-  <tr><td>70</td><td></td></tr>
-  <tr><td>71</td><td>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</td></tr>
-  <tr><td>72</td><td></td></tr>
-  <tr><td>73</td><td>10. Copia el texto al archivo</td></tr>
-  <tr><td>74</td><td>     sw.js</td></tr>
-  <tr><td>75</td><td>    en el contenido del arreglo llamado ARCHIVOS, pero recuerda</td></tr>
-  <tr><td>76</td><td>    mantener el último elemento, que dice:</td></tr>
-  <tr><td>77</td><td>     "/"</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre>Generar el listado de archivos del sw.js desde Visual Studio Code.</pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre>1. Abrir una terminal desde el menú </pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre>    Terminal > New Terminal</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre>2. Desde la terminal introducir la orden:</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre>    Get-ChildItem -path . -Recurse | Select Directory,Name | Out-File archivos.txt</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>3. Abrir el archivo generado, que se llama</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre>    archivos.txt</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>   y sobre este, realizar los pasos que siguen:</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>4. Quita del archivo archivos.txt:</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>    * el encabezado,</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>    * todas las carpetas,</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>    * el archivo .vscode/settings.json,</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>    * el archivo .htaccess,</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>    * el archivo archivos.txt,</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>    * este archivo (instruccionesListadoSw.txt),</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>    * el archivo jsconfig.json,</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>    * el archivo sw.js,</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>    * el archivo de la base de datos, que termina en ".bd" y</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>      está en la carpeta srv,</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>    * todos los archivos de php y</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>    * las líneas en blanco del final</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>5. Cambia los \ por / desde Visual Studio Code con las siguientes</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre>   combinaciones de teclas:</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>    Ctrl+H En el diálogo que aparece introduce lo siguiente:</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre>    Find:\</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre>    Replace:/</pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre> </pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre>6. Coloca las comillas y coma del final de cada línea desde Visual</pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre>   Studio Code con las siguientes combinaciones de teclas:</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre>    Ctrl+H En el diálogo que aparece, selecciona el botón</pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre>            ".*"</pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre>           e introduce lo siguiente:</pre></td></tr>
+  <tr><td class="codeShow_order">41</td><td><pre>    Find:\s*$</pre></td></tr>
+  <tr><td class="codeShow_order">42</td><td><pre>    Replace:",</pre></td></tr>
+  <tr><td class="codeShow_order">43</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">44</td><td><pre>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</pre></td></tr>
+  <tr><td class="codeShow_order">45</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">46</td><td><pre>7. Marca la carpeta inicial, presiona la combinación de teclas:</pre></td></tr>
+  <tr><td class="codeShow_order">47</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">48</td><td><pre>    Shift+Ctrl+L</pre></td></tr>
+  <tr><td class="codeShow_order">49</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">50</td><td><pre>    borra la selección, teclea " y luego ESC</pre></td></tr>
+  <tr><td class="codeShow_order">51</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">52</td><td><pre>8. Cambia las secuencias de espacios por / con las siguientes</pre></td></tr>
+  <tr><td class="codeShow_order">53</td><td><pre>   combinaciones de teclas:</pre></td></tr>
+  <tr><td class="codeShow_order">54</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">55</td><td><pre>    Ctrl+H En el diálogo que aparece, selecciona el botón</pre></td></tr>
+  <tr><td class="codeShow_order">56</td><td><pre>            ".*"</pre></td></tr>
+  <tr><td class="codeShow_order">57</td><td><pre>           e introduce lo siguiente:</pre></td></tr>
+  <tr><td class="codeShow_order">58</td><td><pre>    Find:\s+</pre></td></tr>
+  <tr><td class="codeShow_order">59</td><td><pre>    Replace:/</pre></td></tr>
+  <tr><td class="codeShow_order">60</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">61</td><td><pre>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</pre></td></tr>
+  <tr><td class="codeShow_order">62</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">63</td><td><pre>9. Cambia las "/ por " con las siguientes combinaciones de teclas:</pre></td></tr>
+  <tr><td class="codeShow_order">64</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">65</td><td><pre>    Ctrl+H En el diálogo que aparece, quita la selección del botón</pre></td></tr>
+  <tr><td class="codeShow_order">66</td><td><pre>            ".*"</pre></td></tr>
+  <tr><td class="codeShow_order">67</td><td><pre>           e introduce lo siguiente:</pre></td></tr>
+  <tr><td class="codeShow_order">68</td><td><pre>    Find:"/</pre></td></tr>
+  <tr><td class="codeShow_order">69</td><td><pre>    Replace:"</pre></td></tr>
+  <tr><td class="codeShow_order">70</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">71</td><td><pre>    Clic en el icono Reemplaza todo o Replace All y luego teclea ESC</pre></td></tr>
+  <tr><td class="codeShow_order">72</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">73</td><td><pre>10. Copia el texto al archivo</pre></td></tr>
+  <tr><td class="codeShow_order">74</td><td><pre>     sw.js</pre></td></tr>
+  <tr><td class="codeShow_order">75</td><td><pre>    en el contenido del arreglo llamado ARCHIVOS, pero recuerda</pre></td></tr>
+  <tr><td class="codeShow_order">76</td><td><pre>    mantener el último elemento, que dice:</pre></td></tr>
+  <tr><td class="codeShow_order">77</td><td><pre>     "/"</pre></td></tr>
  </tbody>
 </table>
  <footer>
@@ -932,10 +971,10 @@
    menu
   </span>
  </button>
- <a class="anterior" href="/m04pwaBasica/m-site-webmanifest.html" title="G. site.webmanifest"><span class="material-symbols-outlined">
+ <a class="anterior" href="/m04pwaBasica/m-site-webmanifest.html" title="H. site.webmanifest"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
- <a class="siguiente" href="/m04pwaBasica/m-archivos-txt.html" title="I. archivos.txt"><span class="material-symbols-outlined">
+ <a class="siguiente" href="/m04pwaBasica/m-archivos-txt.html" title="J. archivos.txt"><span class="material-symbols-outlined">
      skip_next
      </span></a>
 </div>
@@ -971,7 +1010,12 @@
    </li>
    <li>
     <p>
-     <a href="/m04pwaBasica/mAinstrucciones.html">Hazlo funcionar</a>
+     <a href="/m04pwaBasica/mAvideoinstrucciones.html">Hazlo funcionar (con videos)</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/mAinstrucciones.html">Hazlo funcionar (texto)</a>
     </p>
    </li>
    <li>
@@ -1042,8 +1086,8 @@
    </ol>
    
     <p>
-     <a class="paginaSiguiente" href="/m03pwaMaterial/index.html"
-       title="6. PWA con Material Design"><span
+     <a class="paginaSiguiente" href="/m04pwaListas/index.html"
+       title="6. PWA con listas y Material Design 3 Expression"><span
        class="material-symbols-outlined">
         arrow_downward
        </span></a>

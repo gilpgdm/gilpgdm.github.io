@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>6. PWA con Material Design - GilPG DM</title>
+ <title>14. PWA con Material Design (Desactualizado) - GilPG DM</title>
  <meta name="description" content="Contenido de la lección «PWA con Material Design».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
@@ -234,6 +234,36 @@
   margin-top: 0;
  }
 
+ h1 {
+  font-size: 3rem;
+ }
+
+ section h1,
+ nav h1 {
+  font-size: 2.5rem;
+  font-style: oblique;
+ }
+
+ section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section section h1 {
+  font-size: 1.5rem;
+  font-style: oblique;
+ }
+
+ section section section section section h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+ }
+
  a {
   color: var(--colA);
  }
@@ -453,8 +483,9 @@
  }
 
  iframe {
+  /* background-color: white; */
   box-sizing: border-box;
-  width: 300px;
+  resize: both;
  }
 
  .lectura {
@@ -476,12 +507,15 @@
  }
 
  .horizontal>*:first-child {
-  flex: 1 1 300px;
-  text-align: center;
+  flex: 1 1 auto;
  }
 
  .horizontal>*:nth-child(2) {
-  flex: 1 1 auto;
+  flex: 1 1 40ch;
+ }
+
+ .horizontal iframe {
+  width: 300px;
  }
 
  .columnas4 {
@@ -528,9 +562,10 @@
  table.codeShow {
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
  }
 
- .codeShow td:first-child {
+ .codeShow td.codeShow_order {
   text-align: right;
   padding: 0 0 0 0;
   vertical-align: top;
@@ -544,14 +579,18 @@
   user-select: none;
  }
 
- .codeShow td:nth-child(2) {
+ .codeShow td:has(pre) {
   padding: 0 0 0 0.25rem;
   vertical-align: top;
+ }
+
+ .codeShow td pre {
   font-family: var(--fontMono);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   font-size: 1rem;
   line-height: 1.2rem;
+  margin: 0;
  }
 
  .codeReserved {
@@ -818,14 +857,17 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >6. PWA con Material Design</h1>
+   <h1 >14. PWA con Material Design (Desactualizado)</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 <div class="lectura">
+ <p><b>
+  Este ejemplo está desactualizado, pero es un ejemplo de lo que se piede hacer.
+ </b></p>
  <nav>
   <h1>Contenido</h1>
   
@@ -1039,7 +1081,7 @@
    menu
   </span>
  </button>
- <a class="anterior" href="/m04pwaBasica/mXresumen.html" title="O. Resumen"><span class="material-symbols-outlined">
+ <a class="anterior" href="/m09sincronizacion/mKresumen.html" title="R. Resumen"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
  <a class="siguiente" href="/m03pwaMaterial/mAintro.html" title="1. Introduccion"><span class="material-symbols-outlined">
@@ -1061,13 +1103,13 @@
    
    
      <p>
-      <a class="paginaAnterior" href="/m04pwaBasica/mXresumen.html"
-        title="O. Resumen"><span
+      <a class="paginaAnterior" href="/m09sincronizacion/mKresumen.html"
+        title="R. Resumen"><span
         class="material-symbols-outlined">
          arrow_upward
         </span></a>
      </p>
-   <h1><a href="/m03pwaMaterial/index.html" class="actual">6. PWA con Material Design</a></h1>
+   <h1><a href="/m03pwaMaterial/index.html" class="actual">14. PWA con Material Design (Desactualizado)</a></h1>
    
    <ol type="1">
     
@@ -1253,13 +1295,6 @@
    </li>
    </ol>
    
-    <p>
-     <a class="paginaSiguiente" href="/m04dispositivo/index.html"
-       title="7. Acceso al dispositivo"><span
-       class="material-symbols-outlined">
-        arrow_downward
-       </span></a>
-    </p>
  
 </nav>
  <script>
@@ -1272,7 +1307,7 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m04pwaBasica/mXresumen.html"
+ let urlAnterior = "/m09sincronizacion/mKresumen.html"
  /**@type {string} */
  let urlSiguiente = "/m03pwaMaterial/mAintro.html"
  /**@type {number|null} */

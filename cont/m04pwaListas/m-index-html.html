@@ -1,0 +1,178 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span> <span class="codeReserved">class</span>=<span class="codeString">"light dark"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre>&lt;<span class="codeReserved">head</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> &lt;<span class="codeReserved">title</span>&gt;PWA con Lista&lt;/<span class="codeReserved">title</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> <span class="codeComment">&lt;!-- Resumen para los motores de búsqueda. --&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"description"</span> <span class="codeReserved">content</span>=<span class="codeString">"Ejemplo de PWA con Material Design"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span> <span class="codeReserved">src</span>=<span class="codeString">"js/lib/registraServiceWorker.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre> <span class="codeComment">&lt;!-- Color de la barra de navegación de Chrome en dispositivos móviles. --&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"theme-color"</span> <span class="codeReserved">content</span>=<span class="codeString">"#fffbfe"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre> <span class="codeComment">&lt;!-- Ícono para la página web, que normalmente se pone en la raíz del sitio.</span></pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre><span class="codeComment">  Puede ser diferente para cada página. --&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"icon"</span> sizes=<span class="codeString">"32x32"</span> href=<span class="codeString">"favicon.ico"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre> <span class="codeComment">&lt;!-- Configuración de la PWA para Chrome, Edge y Safari.</span></pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre><span class="codeComment">  Debe ponerse en todas las páginas. --&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"manifest"</span> href=<span class="codeString">"site.webmanifest"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre> <span class="codeComment">&lt;!-- Permite a los navegadores, que como Safari no soportan el estándar</span></pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre><span class="codeComment">  completo de custom elementsm, lo cumplan totalmente. Debe ponerse en todas</span></pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre><span class="codeComment">  las páginas. --&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre> &lt;<span class="codeReserved">script</span> <span class="codeReserved">src</span>=<span class="codeString">"ungap/custom-elements.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span> <span class="codeReserved">src</span>=<span class="codeString">"js/lib/custom/md-app-bar.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span> <span class="codeReserved">src</span>=<span class="codeString">"js/nav-tab-fixed.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/estilos.css"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/transicion_pestanas.css"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/md-tab.css"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/material-symbols-outlined.css"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/md-list.css"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">41</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">42</td><td><pre>&lt;/<span class="codeReserved">head</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">43</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">44</td><td><pre>&lt;<span class="codeReserved">body</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">45</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">46</td><td><pre> &lt;<span class="codeReserved">md-app-bar</span> <span class="codeReserved">class</span>=<span class="codeString">"centered"</span> adicional=<span class="codeString">"tab"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">47</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">48</td><td><pre>  &lt;<span class="codeReserved">h1</span>&gt;PWA con Lista&lt;/<span class="codeReserved">h1</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">49</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">50</td><td><pre> &lt;/<span class="codeReserved">md-app-bar</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">51</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">52</td><td><pre> &lt;<span class="codeReserved">nav-tab-fixed</span> id=<span class="codeString">"tab"</span>&gt;&lt;/<span class="codeReserved">nav-tab-fixed</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">53</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">54</td><td><pre> &lt;<span class="codeReserved">section</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">55</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">56</td><td><pre>  &lt;<span class="codeReserved">ul</span> <span class="codeReserved">class</span>=<span class="codeString">"md-list"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">57</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">58</td><td><pre>   &lt;<span class="codeReserved">li</span> <span class="codeReserved">class</span>=<span class="codeString">"md-one-line"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">59</td><td><pre>    &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"headline"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">60</td><td><pre>     Ciudad de México</pre></td></tr>
+  <tr><td class="codeShow_order">61</td><td><pre>    &lt;/<span class="codeReserved">span</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">62</td><td><pre>   &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">63</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">64</td><td><pre>   &lt;<span class="codeReserved">li</span> <span class="codeReserved">class</span>=<span class="codeString">"md-one-line"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">65</td><td><pre>    &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"headline"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">66</td><td><pre>     Lorem ipsum dolor sit amet consectetur adipisicing elit.</pre></td></tr>
+  <tr><td class="codeShow_order">67</td><td><pre>     Laboriosam eaque unde voluptates tempore ad suscipit libero, saepe neque</pre></td></tr>
+  <tr><td class="codeShow_order">68</td><td><pre>     illo amet, eos ea similique quia, maiores tenetur modi nobis expedita</pre></td></tr>
+  <tr><td class="codeShow_order">69</td><td><pre>     alias!</pre></td></tr>
+  <tr><td class="codeShow_order">70</td><td><pre>    &lt;/<span class="codeReserved">span</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">71</td><td><pre>   &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">72</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">73</td><td><pre>   &lt;<span class="codeReserved">li</span> <span class="codeReserved">class</span>=<span class="codeString">"md-one-line icon"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">74</td><td><pre>    &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"material-symbols-outlined"</span>&gt;account_balance&lt;/<span class="codeReserved">span</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">75</td><td><pre>    &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"headline"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">76</td><td><pre>     Atenas</pre></td></tr>
+  <tr><td class="codeShow_order">77</td><td><pre>    &lt;/<span class="codeReserved">span</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">78</td><td><pre>   &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">79</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">80</td><td><pre>   &lt;<span class="codeReserved">li</span> <span class="codeReserved">class</span>=<span class="codeString">"md-one-line avatar"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">81</td><td><pre>    &lt;<span class="codeReserved">img</span> alt=<span class="codeString">"Avatar de Ana"</span> <span class="codeReserved">src</span>=<span class="codeString">"img/pexels-moises-patrício-10961948.jpg"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">82</td><td><pre>    &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"headline"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">83</td><td><pre>     Ana</pre></td></tr>
+  <tr><td class="codeShow_order">84</td><td><pre>    &lt;/<span class="codeReserved">span</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">85</td><td><pre>   &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">86</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">87</td><td><pre>   &lt;<span class="codeReserved">li</span> <span class="codeReserved">class</span>=<span class="codeString">"md-one-line image"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">88</td><td><pre>    &lt;<span class="codeReserved">img</span> alt=<span class="codeString">"Coyote de Neza"</span> <span class="codeReserved">src</span>=<span class="codeString">"img/Escultura_de_coyote.jpeg"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">89</td><td><pre>    &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"headline"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">90</td><td><pre>     Neza</pre></td></tr>
+  <tr><td class="codeShow_order">91</td><td><pre>    &lt;/<span class="codeReserved">span</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">92</td><td><pre>   &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">93</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">94</td><td><pre>   &lt;<span class="codeReserved">li</span> <span class="codeReserved">class</span>=<span class="codeString">"md-one-line video"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">95</td><td><pre>    &lt;<span class="codeReserved">img</span> alt=<span class="codeString">"Ciudad de San Francisco"</span></pre></td></tr>
+  <tr><td class="codeShow_order">96</td><td><pre>      <span class="codeReserved">src</span>=<span class="codeString">"img/pexels-craig-dennis-3701822.jpg"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">97</td><td><pre>    &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"headline"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">98</td><td><pre>     San Francisco</pre></td></tr>
+  <tr><td class="codeShow_order">99</td><td><pre>    &lt;/<span class="codeReserved">span</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">100</td><td><pre>   &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">101</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">102</td><td><pre>   &lt;<span class="codeReserved">li</span> <span class="codeReserved">class</span>=<span class="codeString">"md-one-line video"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">103</td><td><pre>    &lt;<span class="codeReserved">img</span> alt=<span class="codeString">"Ciudad de San Francisco"</span></pre></td></tr>
+  <tr><td class="codeShow_order">104</td><td><pre>      <span class="codeReserved">src</span>=<span class="codeString">"img/pexels-craig-dennis-3701822.jpg"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">105</td><td><pre>    &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"headline"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">106</td><td><pre>     Lorem ipsum dolor sit amet consectetur adipisicing elit.</pre></td></tr>
+  <tr><td class="codeShow_order">107</td><td><pre>     Laboriosam eaque unde voluptates tempore ad suscipit libero, saepe neque</pre></td></tr>
+  <tr><td class="codeShow_order">108</td><td><pre>     illo amet, eos ea similique quia, maiores tenetur modi nobis expedita</pre></td></tr>
+  <tr><td class="codeShow_order">109</td><td><pre>    &lt;/<span class="codeReserved">span</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">110</td><td><pre>   &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">111</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">112</td><td><pre>   &lt;<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">113</td><td><pre>    &lt;<span class="codeReserved">a</span> <span class="codeReserved">class</span>=<span class="codeString">"md-one-line image"</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noopener noreferrer"</span></pre></td></tr>
+  <tr><td class="codeShow_order">114</td><td><pre>      href=<span class="codeString">"https://culturacolectiva.com/historia/ciudad-neza-su-historia-en-fotografias/"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">115</td><td><pre>     &lt;<span class="codeReserved">img</span> alt=<span class="codeString">"Coyote de Neza"</span> <span class="codeReserved">src</span>=<span class="codeString">"img/Escultura_de_coyote.jpeg"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">116</td><td><pre>     &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"headline"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">117</td><td><pre>      Neza Link</pre></td></tr>
+  <tr><td class="codeShow_order">118</td><td><pre>     &lt;/<span class="codeReserved">span</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">119</td><td><pre>    &lt;/<span class="codeReserved">a</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">120</td><td><pre>   &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">121</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">122</td><td><pre>  &lt;/<span class="codeReserved">ul</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">123</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">124</td><td><pre>  &lt;<span class="codeReserved">footer</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">125</td><td><pre>   &lt;<span class="codeReserved">ul</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">126</td><td><pre>    &lt;<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">127</td><td><pre>     &lt;<span class="codeReserved">p</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">128</td><td><pre>      &lt;<span class="codeReserved">small</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">129</td><td><pre>       &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noopener noreferrer"</span></pre></td></tr>
+  <tr><td class="codeShow_order">130</td><td><pre>         href=<span class="codeString">"https://www.pexels.com/es-es/foto/nina-mono-cara-sonriente-10961948/"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">131</td><td><pre>        La foto de la niña es de Moises Patrício, publicada en el sitio Pexels.</pre></td></tr>
+  <tr><td class="codeShow_order">132</td><td><pre>        Haz clic en este hipervínculo para más información.</pre></td></tr>
+  <tr><td class="codeShow_order">133</td><td><pre>       &lt;/<span class="codeReserved">a</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">134</td><td><pre>      &lt;/<span class="codeReserved">small</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">135</td><td><pre>     &lt;/<span class="codeReserved">p</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">136</td><td><pre>    &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">137</td><td><pre>    &lt;<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">138</td><td><pre>     &lt;<span class="codeReserved">p</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">139</td><td><pre>      &lt;<span class="codeReserved">small</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">140</td><td><pre>       &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noopener noreferrer"</span></pre></td></tr>
+  <tr><td class="codeShow_order">141</td><td><pre>         href=<span class="codeString">"https://www.pinterest.com.mx/ludresi/"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">142</td><td><pre>        La foto del Coyote de Neza es de Ludres Isan, publicada en el sitio</pre></td></tr>
+  <tr><td class="codeShow_order">143</td><td><pre>        Pinterest. Haz clic en este hipervínculo para más información.</pre></td></tr>
+  <tr><td class="codeShow_order">144</td><td><pre>       &lt;/<span class="codeReserved">a</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">145</td><td><pre>      &lt;/<span class="codeReserved">small</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">146</td><td><pre>     &lt;/<span class="codeReserved">p</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">147</td><td><pre>    &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">148</td><td><pre>    &lt;<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">149</td><td><pre>     &lt;<span class="codeReserved">p</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">150</td><td><pre>      &lt;<span class="codeReserved">small</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">151</td><td><pre>       &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noopener noreferrer"</span></pre></td></tr>
+  <tr><td class="codeShow_order">152</td><td><pre>         href=<span class="codeString">"https://www.pexels.com/es-es/foto/puente-golden-gate-san-francisco-california-3701822/"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">153</td><td><pre>        La foto del puente de San Francisco es de Craig Dennis, publicada en el</pre></td></tr>
+  <tr><td class="codeShow_order">154</td><td><pre>        sitio Pexels. Haz clic en este hipervínculo para más información.</pre></td></tr>
+  <tr><td class="codeShow_order">155</td><td><pre>       &lt;/<span class="codeReserved">a</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">156</td><td><pre>      &lt;/<span class="codeReserved">small</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">157</td><td><pre>     &lt;/<span class="codeReserved">p</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">158</td><td><pre>    &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">159</td><td><pre>   &lt;/<span class="codeReserved">ul</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">160</td><td><pre>  &lt;/<span class="codeReserved">footer</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">161</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">162</td><td><pre> &lt;/<span class="codeReserved">section</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">163</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">164</td><td><pre>&lt;/<span class="codeReserved">body</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">165</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">166</td><td><pre>&lt;/<span class="codeReserved">html</span>&gt;</pre></td></tr>
+ </tbody>
+</table>

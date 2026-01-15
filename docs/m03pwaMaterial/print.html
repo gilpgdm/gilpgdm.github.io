@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>PWA con Material Design - GilPG DM</title>
+ <title>PWA con Material Design (Desactualizado) - GilPG DM</title>
  <meta name="description" content="Página para imprimir de la lección «PWA con Material Design».">
  <style>
  /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
@@ -233,6 +233,36 @@
   margin-top: 0;
  }
 
+ h1 {
+  font-size: 3rem;
+ }
+
+ section h1,
+ nav h1 {
+  font-size: 2.5rem;
+  font-style: oblique;
+ }
+
+ section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section section h1 {
+  font-size: 1.5rem;
+  font-style: oblique;
+ }
+
+ section section section section section h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+ }
+
  a {
   color: var(--colA);
  }
@@ -452,8 +482,9 @@
  }
 
  iframe {
+  /* background-color: white; */
   box-sizing: border-box;
-  width: 300px;
+  resize: both;
  }
 
  .lectura {
@@ -475,12 +506,15 @@
  }
 
  .horizontal>*:first-child {
-  flex: 1 1 300px;
-  text-align: center;
+  flex: 1 1 auto;
  }
 
  .horizontal>*:nth-child(2) {
-  flex: 1 1 auto;
+  flex: 1 1 40ch;
+ }
+
+ .horizontal iframe {
+  width: 300px;
  }
 
  .columnas4 {
@@ -527,9 +561,10 @@
  table.codeShow {
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
  }
 
- .codeShow td:first-child {
+ .codeShow td.codeShow_order {
   text-align: right;
   padding: 0 0 0 0;
   vertical-align: top;
@@ -543,14 +578,18 @@
   user-select: none;
  }
 
- .codeShow td:nth-child(2) {
+ .codeShow td:has(pre) {
   padding: 0 0 0 0.25rem;
   vertical-align: top;
+ }
+
+ .codeShow td pre {
   font-family: var(--fontMono);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   font-size: 1rem;
   line-height: 1.2rem;
+  margin: 0;
  }
 
  .codeReserved {
@@ -702,14 +741,17 @@
 </head>
 
 <body class="print">
-   <h1 >6. PWA con Material Design</h1>
+   <h1 >14. PWA con Material Design (Desactualizado)</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 <div class="lectura">
+ <p><b>
+  Este ejemplo está desactualizado, pero es un ejemplo de lo que se piede hacer.
+ </b></p>
  <nav>
   <h1>Contenido</h1>
   
@@ -910,14 +952,14 @@
   <li>
    <p>
     Puedes probar el ejemplo en
-    <a href="https://gilpgpwamd.github.io/" rel="noreferrer"
+    <a href="https://gilpgpwamd.github.io/" rel="noopener noreferrer"
       target="_blank">https://gilpgpwamd.github.io/index.html</a>.
    </p>
   </li>
   <li>
    <p>
     También puedes probar el ejemplo en
-    <a href="https://pwamd.rf.gd/" rel="noreferrer"
+    <a href="https://pwamd.rf.gd/" rel="noopener noreferrer"
       target="_blank">https://pwamd.rf.gd/</a>.
    </p>
   </li>
@@ -934,14 +976,14 @@
     <dfn>Material Design</dfn> es una guía de diseño para aplicaciones
     multiplataforma. La encuentras en
     <a href="https://m3.material.io/" target="_blank"
-      rel="noreferrer">https://m3.material.io/</a>.
+      rel="noopener noreferrer">https://m3.material.io/</a>.
    </p>
   </dd>
   <dt>Herramienta para selección de colores</dt>
   <dt>Material Theme Builder</dt>
   <dd>
    <p>
-    <a href="https://m3.material.io/theme-builder/" rel="noreferrer"
+    <a href="https://m3.material.io/theme-builder/" rel="noopener noreferrer"
       target="_blank">https://m3.material.io/theme-builder/</a>
    </p>
   </dd>
@@ -951,7 +993,7 @@
     La forma de adaptar Material Design en distintas plataformas está en
     <a target="_blank"
       href="https://material.io/design/platform-guidance/cross-platform-adaptation.html"
-      rel="noreferrer">https://material.io/design/platform-guidance/cross-platform-adaptation.html</a>
+      rel="noopener noreferrer">https://material.io/design/platform-guidance/cross-platform-adaptation.html</a>
    </p>
   </dd>
  </dl>
@@ -963,10 +1005,10 @@
   <li>
    <p>
     Prueba e instala, de preferencia con Chrome, el sitio
-    <a href="https://pwamd.rf.gd/" rel="noreferrer"
+    <a href="https://pwamd.rf.gd/" rel="noopener noreferrer"
       target="_blank">https://pwamd.rf.gd/</a>
     y en
-    <a href="https://gilpgpwamd.github.io/" rel="noreferrer"
+    <a href="https://gilpgpwamd.github.io/" rel="noopener noreferrer"
       target="_blank">https://gilpgpwamd.github.io/</a>.
    </p>
   </li>
@@ -1096,10 +1138,10 @@
   <li>
    <p>
     <a href="https://drive.google.com/file/d/1RiRkApBqQE6A4-APu7p18_DHa2aVRcfn/view?usp=sharing"
-      target="_blank" rel="noreferrer">Crea los íconos del proyecto</a>
+      target="_blank" rel="noopener noreferrer">Crea los íconos del proyecto</a>
     con
     <a href="https://www.photopea.com/" target="_blank"
-      rel="noreferrer">https://www.photopea.com/</a>.
+      rel="noopener noreferrer">https://www.photopea.com/</a>.
     Este paso se hizo com Microsoft Edge (versión Chromium), pero no funcionó
     con Google Chrome.
    </p>
@@ -1107,7 +1149,7 @@
   <li>
    <p>
     <a href="https://drive.google.com/file/d/1lI4TAJ_xRJpY6xqNnEzT4L214S_UggfB/view?usp=sharing"
-      target="_blank" rel="noreferrer">Crea los íconos enmascarables</a>
+      target="_blank" rel="noopener noreferrer">Crea los íconos enmascarables</a>
     con
     <a target="_blank"
       href="https://maskable.app/">https://maskable.app/</a>
@@ -1130,7 +1172,7 @@
     <strong>Para cambiar los colores,</strong> entra al sitio
     <a href="https://material-foundation.github.io/material-theme-builder/"
       target="_blank"
-      rel="noreferrer">https://material-foundation.github.io/material-theme-builder/</a>,
+      rel="noopener noreferrer">https://material-foundation.github.io/material-theme-builder/</a>,
     selecciona los colores de tu aplicación, haz clic en
     <em>Pick your fonts &rarr;</em>. Elige font <em>Roboto</em>, haz clic en
     <em>Export theme &rarr;</em>. Haz clic en
@@ -1284,7 +1326,7 @@
       resaltada en la pestaña de fuentes. Usa los controles de depuración para
       avanzar, como se muestra en
       <a href="https://drive.google.com/file/d/1wdg7LKHR8L21FQGsRr2bXpXqAcaEGxCx/view?usp=sharing"
-        target="_blank" rel="noreferrer">este video</a>.
+        target="_blank" rel="noopener noreferrer">este video</a>.
      </p>
     </li>
    </ol>
@@ -1345,7 +1387,7 @@
       <q>.htaccess</q>. En algunos casos puedes usar
       filezilla
       (<a href="https://filezilla-project.org/" target="_blank"
-        rel="noreferrer">https://filezilla-project.org/</a>)
+        rel="noopener noreferrer">https://filezilla-project.org/</a>)
      </p>
     </li>
     <li>
@@ -1913,7 +1955,7 @@
   <iframe src="https://gilpgpwamd.github.io/" title="Página principal"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/" target="_blank"
-     rel="noreferrer">Ábrelo en otra pestaña.</a>
+     rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -2024,7 +2066,7 @@
    <p>
     Las barras de aplicación en Material Design están definidas en
     <a href="https://m3.material.io/components/top-app-bar/overview"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/top-app-bar/overview</a>.
    </p>
   </li>
@@ -2155,7 +2197,7 @@
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/secundaria.html"
      target="_blank"
-     rel="noreferrer">Ábrelo en otra pestaña.</a>
+     rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -2274,14 +2316,14 @@
    <p>
     Las barras de aplicación en Material Design están definidas en
     <a href="https://m3.material.io/components/top-app-bar/overview"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/top-app-bar/overview</a>.
    </p>
   </li>
   <li>
    <p>
     Los menús en Material Design están definidos en
-    <a href="https://m3.material.io/components/menus/overview" rel="noreferrer"
+    <a href="https://m3.material.io/components/menus/overview" rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/menus/overview</a>.
    </p>
   </li>
@@ -2295,7 +2337,7 @@
    <p>
     El sitio oficial de los íconos de Material Design es
     <a href="https://fonts.google.com/icons" target="_blank"
-      rel="noreferrer">https://fonts.google.com/icons</a>.
+      rel="noopener noreferrer">https://fonts.google.com/icons</a>.
    </p>
   </li>
   <li>
@@ -2318,7 +2360,7 @@
     title="Ejemplo con íconos oficiales"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/iconos.html" target="_blank"
-     rel="noreferrer">Ábrelo en otra pestaña.</a>
+     rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -2373,7 +2415,7 @@
    <tr><td>40</td><td>   &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"material-symbols-outlined"</span>&gt;bolt&lt;/<span class="codeReserved">span</span>&gt;</td></tr>
    <tr><td>41</td><td>  &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
    <tr><td>42</td><td></td></tr>
-   <tr><td>43</td><td>  &lt;<span class="codeReserved">a</span> <span class="codeReserved">class</span>=<span class="codeString">"md-standard-icon-button"</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span></td></tr>
+   <tr><td>43</td><td>  &lt;<span class="codeReserved">a</span> <span class="codeReserved">class</span>=<span class="codeString">"md-standard-icon-button"</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noopener noreferrer"</span></td></tr>
    <tr><td>44</td><td>    href=<span class="codeString">"https://google.com"</span>&gt;</td></tr>
    <tr><td>45</td><td>   &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"material-symbols-outlined"</span>&gt;star&lt;/<span class="codeReserved">span</span>&gt;&lt;/<span class="codeReserved">a</span>&gt;</td></tr>
    <tr><td>46</td><td></td></tr>
@@ -2401,7 +2443,7 @@
    <p>
     Los botones en Material Design están definidos en
     <a href="https://m3.material.io/components/icon-buttons/overview"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/icon-buttons/overview</a>.
    </p>
   </li>
@@ -2409,7 +2451,7 @@
    <p>
     Los botones FAB en Material Design están definidos en
     <a href="https://m3.material.io/components/floating-action-button/overview"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/floating-action-button/overview</a>.
    </p>
   </li>
@@ -2438,7 +2480,7 @@
     title="Botón para movil"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/botones.html" target="_blank"
-     rel="noreferrer">Ábrelo en otra pestaña.</a>
+     rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -2513,7 +2555,7 @@
   <li>
    <p>
     Los botones en Material Design están definidos en
-    <a href="https://m3.material.io/components/buttons/overview" rel="noreferrer"
+    <a href="https://m3.material.io/components/buttons/overview" rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/buttons/overview</a>.
    </p>
   </li>
@@ -2590,7 +2632,7 @@
     title="Campos de captura para móvil"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/campos.html" target="_blank"
-     rel="noreferrer">Ábrelo en otra pestaña.</a>
+     rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -2695,14 +2737,14 @@
    <p>
     Los campos de texto en Material Design están definidos en
     <a href="https://m3.material.io/components/text-fields/overview"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/text-fields/overview</a>.
    </p>
   </li>
   <li>
    <p>
     Los menús en Material Design están definidos en
-    <a href="https://material.io/components/menus" rel="noreferrer"
+    <a href="https://material.io/components/menus" rel="noopener noreferrer"
       target="_blank">https://material.io/components/menus</a>.
    </p>
   </li>
@@ -2770,7 +2812,7 @@
     title="Select para móvil"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/select.html" target="_blank"
-     rel="noreferrer">Ábrelo
+     rel="noopener noreferrer">Ábrelo
     en
     otra pestaña.</a>
   </p>
@@ -2861,7 +2903,7 @@
    <p>
     Los campos de texto en Material Design están definidos en
     <a href="https://m3.material.io/components/text-fields/overview"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/text-fields/overview</a>.
    </p>
   </li>
@@ -2869,7 +2911,7 @@
    <p>
     Los menús en Material Design están definidos en
     <a href="https://m3.material.io/components/menus/overview"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/menus/overview</a>.
    </p>
   </li>
@@ -2897,7 +2939,7 @@
     title="Interruptor para móvil"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/interruptor.html"
-     target="_blank" rel="noreferrer">Ábrelo en otra pestaña.</a>
+     target="_blank" rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
   <figure>
    <img style="width: auto;" alt="Interruptor en Android"
@@ -2975,7 +3017,7 @@
   <li>
    <p>
     Los interruptores en Material Design están defnidos en
-    <a href="https://m3.material.io/components/switch/overview" rel="noreferrer"
+    <a href="https://m3.material.io/components/switch/overview" rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/switch/overview</a>.
    </p>
   </li>
@@ -2990,7 +3032,7 @@
     height="170"></iframe>
   <p>
    <a href="https://gilpgpwamd.github.io/slider.html" target="_blank"
-     rel="noreferrer">Ábrelo en otra pestaña.</a>
+     rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -3060,7 +3102,7 @@
    <p>
     Los sliders en Material Design están definidos en
     <a href="https://m3.material.io/components/sliders/overview"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/sliders/overview</a>.
    </p>
   </li>
@@ -3106,7 +3148,7 @@
     height="250" title="Botón segmentado"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/segmentado.html"
-     target="_blank" rel="noreferrer">Ábrelo en otra pestaña.</a>
+     target="_blank" rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -3194,7 +3236,7 @@
    <p>
     Los botones segmentados de Material Design están defnidos en
     <a href="https://m3.material.io/components/segmented-buttons/overview"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/segmented-buttons/overview</a>.
    </p>
   </li>
@@ -3364,7 +3406,7 @@
     title="Navegación inferior para móvil"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/one-line.html" target="_blank"
-     rel="noreferrer">Ábrelo en otra pestaña.</a>
+     rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -3535,7 +3577,7 @@
   <li>
    <p>
     Las listas están definida en
-    <a href="https://m3.material.io/components/lists/overview" rel="noreferrer"
+    <a href="https://m3.material.io/components/lists/overview" rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/lists/overview</a>.
    </p>
   </li>
@@ -3712,7 +3754,7 @@
     title="Navegación inferior para móvil"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/two-line.html" target="_blank"
-     rel="noreferrer">Ábrelo en otra pestaña.</a>
+     rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -3829,7 +3871,7 @@
    <tr><td>102</td><td>   &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
    <tr><td>103</td><td></td></tr>
    <tr><td>104</td><td>   &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-   <tr><td>105</td><td>    &lt;<span class="codeReserved">a</span> <span class="codeReserved">class</span>=<span class="codeString">"md-two-line image"</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span></td></tr>
+   <tr><td>105</td><td>    &lt;<span class="codeReserved">a</span> <span class="codeReserved">class</span>=<span class="codeString">"md-two-line image"</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noopener noreferrer"</span></td></tr>
    <tr><td>106</td><td>      href=<span class="codeString">"https://culturacolectiva.com/historia/ciudad-neza-su-historia-en-fotografias/"</span>&gt;</td></tr>
    <tr><td>107</td><td>     &lt;<span class="codeReserved">img</span> alt=<span class="codeString">"Coyote de Neza"</span> <span class="codeReserved">src</span>=<span class="codeString">"img/Escultura_de_coyote.jpeg"</span>&gt;</td></tr>
    <tr><td>108</td><td>     &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"headline"</span>&gt;</td></tr>
@@ -3851,7 +3893,7 @@
    <tr><td>124</td><td>    &lt;<span class="codeReserved">li</span>&gt;</td></tr>
    <tr><td>125</td><td>     &lt;<span class="codeReserved">p</span>&gt;</td></tr>
    <tr><td>126</td><td>      &lt;<span class="codeReserved">small</span>&gt;</td></tr>
-   <tr><td>127</td><td>       &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span></td></tr>
+   <tr><td>127</td><td>       &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noopener noreferrer"</span></td></tr>
    <tr><td>128</td><td>         href=<span class="codeString">"https://www.pexels.com/es-es/foto/nina-mono-cara-sonriente-10961948/"</span>&gt;</td></tr>
    <tr><td>129</td><td>        La foto de la niña es de Moises Patrício, publicada en el sitio Pexels.</td></tr>
    <tr><td>130</td><td>        Haz clic en este hipervínculo para más información.</td></tr>
@@ -3900,7 +3942,7 @@
   <li>
    <p>
     Las listas están definida en
-    <a href="https://m3.material.io/components/lists/overview" rel="noreferrer"
+    <a href="https://m3.material.io/components/lists/overview" rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/lists/overview</a>.
    </p>
   </li>
@@ -4079,7 +4121,7 @@
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/three-line.html"
      target="_blank"
-     rel="noreferrer">Ábrelo en otra pestaña.</a>
+     rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -4267,7 +4309,7 @@
   <li>
    <p>
     Las listas están definida en
-    <a href="https://m3.material.io/components/lists/overview" rel="noreferrer"
+    <a href="https://m3.material.io/components/lists/overview" rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/lists/overview</a>.
    </p>
   </li>
@@ -4319,7 +4361,7 @@
     title="Navegación inferior para móvil"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/tarjetas.html" target="_blank"
-     rel="noreferrer">Ábrelo en otra pestaña.</a>
+     rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -4472,7 +4514,7 @@
   <li>
    <p>
     Las tarjetas están definida en
-    <a href="https://m3.material.io/components/cards/specs" rel="noreferrer"
+    <a href="https://m3.material.io/components/cards/specs" rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/cards/specs</a>.
    </p>
   </li>
@@ -4543,7 +4585,7 @@
     height="400" title="Navegación con cajón de navegación"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/secundaria.html"
-     target="_blank" rel="noreferrer">Ábrelo en otra pestaña.</a>
+     target="_blank" rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -4662,7 +4704,7 @@
    <p>
     El cajón de navegación está definido en
     <a href="https://m3.material.io/components/navigation-drawer/overview"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/navigation-drawer/overview</a>.
    </p>
   </li>
@@ -4670,7 +4712,7 @@
    <p>
     El <dfn>navigation rail</dfn> está definido en
     <a href="https://m3.material.io/components/navigation-rail/overview"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/navigation-rail/overview</a>.
    </p>
   </li>
@@ -4752,7 +4794,7 @@
     title="Navegación con pestañas scrollable"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/navtab.html" target="_blank"
-     rel="noreferrer">Ábrelo en otra pestaña.</a>
+     rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -4851,7 +4893,7 @@
   <li>
    <p>
     Las pestañas están definidas en
-    <a href="https://m3.material.io/components/tabs/overview" rel="noreferrer"
+    <a href="https://m3.material.io/components/tabs/overview" rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/tabs/overview</a>.
    </p>
   </li>
@@ -4930,7 +4972,7 @@
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/navTabFixed.html"
      target="_blank"
-     rel="noreferrer">Ábrelo en otra pestaña.</a>
+     rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -5090,7 +5132,7 @@
     title="Navegación inferior para móvil"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/navbar.html" target="_blank"
-     rel="noreferrer">Ábrelo en otra pestaña.</a>
+     rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -5191,7 +5233,7 @@
    <p>
     La barra de navegación está definida en
     <a href="https://m3.material.io/components/navigation-bar/overview"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       target="_blank">https://m3.material.io/components/navigation-bar/overview</a>.
    </p>
   </li>
@@ -5238,7 +5280,7 @@
     height="330" title="Formulario para móvil"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/formulario.html"
-     target="_blank" rel="noreferrer">Ábrelo en otra pestaña.</a>
+     target="_blank" rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -5366,7 +5408,7 @@
     height="330" title="Vista de ayuda"></iframe>
   <p class="noPrint">
    <a href="https://gilpgpwamd.github.io/ayuda.html"
-     target="_blank" rel="noreferrer">Ábrelo en otra pestaña.</a>
+     target="_blank" rel="noopener noreferrer">Ábrelo en otra pestaña.</a>
   </p>
  </section>
  <table class="codeShow">
@@ -5484,8 +5526,8 @@
          <h1 >24. Carpeta « js »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 
@@ -6649,8 +6691,8 @@
          <h1 >29. Carpeta « css »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 
@@ -7373,8 +7415,8 @@
          <h1 >31. Carpeta « img »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 
@@ -7499,7 +7541,7 @@
    <p>
     La foto del Coyote de Neza es de Ludres Isan, publicada en Pinterest.
     Se puede localizar en
-    <a target="_blank" rel="noreferrer"
+    <a target="_blank" rel="noopener noreferrer"
       href="https://www.pinterest.com.mx/ludresi/">https://www.pinterest.com.mx/ludresi/</a>
    </p>
   </li>
@@ -7571,7 +7613,7 @@
    <p>
     Foto de Craig Dennis en Pexels.
     Se puede localizar en
-    <a target="_blank" rel="noreferrer"
+    <a target="_blank" rel="noopener noreferrer"
       href="https://www.pexels.com/es-es/foto/puente-golden-gate-san-francisco-california-3701822/">https://www.pexels.com/es-es/foto/puente-golden-gate-san-francisco-california-3701822/</a>
    </p>
   </li>
@@ -7589,7 +7631,7 @@
    <p>
     Foto de Creative Workshop en Pexels.
     Se puede localizar en
-    <a target="_blank" rel="noreferrer"
+    <a target="_blank" rel="noopener noreferrer"
       href="https://www.pexels.com/es-es/foto/perro-de-pelo-corto-marron-y-blanco-acostado-3978352/">https://www.pexels.com/es-es/foto/perro-de-pelo-corto-marron-y-blanco-acostado-3978352/</a>
    </p>
   </li>
@@ -7607,7 +7649,7 @@
    <p>
     Foto de Erik Karits en Pexels.
     Se puede localizar en
-    <a target="_blank" rel="noreferrer"
+    <a target="_blank" rel="noopener noreferrer"
       href="https://www.pexels.com/es-es/foto/foto-de-buho-ural-3732453/">https://www.pexels.com/es-es/foto/foto-de-buho-ural-3732453/</a>
    </p>
   </li>
@@ -7625,7 +7667,7 @@
    <p>
     Foto de Esteban Arango en Pexels.
     Se puede localizar en
-    <a target="_blank" rel="noreferrer"
+    <a target="_blank" rel="noopener noreferrer"
       href="https://www.pexels.com/es-es/foto/animal-perro-mono-hierba-10226903/">https://www.pexels.com/es-es/foto/animal-perro-mono-hierba-10226903/</a>
    </p>
   </li>
@@ -7643,7 +7685,7 @@
    <p>
     Foto de Moises Patrício en Pexels.
     Se puede localizar en
-    <a target="_blank" rel="noreferrer"
+    <a target="_blank" rel="noopener noreferrer"
       href="https://www.pexels.com/es-es/foto/nina-mono-cara-sonriente-10961948/">https://www.pexels.com/es-es/foto/nina-mono-cara-sonriente-10961948/</a>
    </p>
   </li>
@@ -7661,7 +7703,7 @@
    <p>
     Foto de Ralph en Pexels.
     Se puede localizar en
-    <a target="_blank" rel="noreferrer"
+    <a target="_blank" rel="noopener noreferrer"
       href="https://www.pexels.com/es-es/foto/leon-marron-2270848/">https://www.pexels.com/es-es/foto/leon-marron-2270848/</a>
    </p>
   </li>
@@ -7678,7 +7720,7 @@
    <p>
     Foto de Rasmus Svinding en Pexels.
     Se puede localizar en
-    <a target="_blank" rel="noreferrer"
+    <a target="_blank" rel="noopener noreferrer"
       href="https://www.pexels.com/es-es/foto/oso-cafe-35435/">https://www.pexels.com/es-es/foto/oso-cafe-35435/</a>
    </p>
   </li>
@@ -7696,7 +7738,7 @@
    <p>
     Foto de Steve en Pexels.
     Se puede localizar en
-    <a target="_blank" rel="noreferrer"
+    <a target="_blank" rel="noopener noreferrer"
       href="https://www.pexels.com/es-es/foto/lobo-blanco-y-negro-397857/">https://www.pexels.com/es-es/foto/lobo-blanco-y-negro-397857/</a>
    </p>
   </li>
@@ -7714,7 +7756,7 @@
    <p>
     Foto de Vadim B en Pexels.
     Se puede localizar en
-    <a target="_blank" rel="noreferrer"
+    <a target="_blank" rel="noopener noreferrer"
       href="https://www.pexels.com/es-es/foto/gatito-gris-en-bolsa-de-papel-plateada-141496/">https://www.pexels.com/es-es/foto/gatito-gris-en-bolsa-de-papel-plateada-141496/</a>
    </p>
   </li>
@@ -7742,8 +7784,8 @@
          <h1 >32. Carpeta « lib »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 
@@ -7775,8 +7817,8 @@
          <h1 >A. Carpeta « lib / css »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 
@@ -10080,8 +10122,8 @@
          <h1 >B. Carpeta « lib / fonts »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 
@@ -10151,8 +10193,8 @@
          <h1 >C. Carpeta « lib / js »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 
@@ -10568,8 +10610,8 @@
          <h1 >11. Carpeta « lib / js / const »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 
@@ -10607,8 +10649,8 @@
          <h1 >12. Carpeta « lib / js / custom »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 
@@ -12100,8 +12142,8 @@
          <h1 >33. Carpeta « material-tokens »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 
@@ -12123,8 +12165,8 @@
          <h1 >A. Carpeta « material-tokens / css »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 
@@ -13553,8 +13595,8 @@
          <h1 >9. Carpeta « material-tokens / css / theme »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 
@@ -13768,8 +13810,8 @@
          <h1 >34. Carpeta « ungap »</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 
