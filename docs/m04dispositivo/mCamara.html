@@ -875,254 +875,1443 @@
  <table class="codeShow">
   <caption style="text-align: left">
    <button type=button title="Copiar al portapapeles"
-     onclick="copyToClipboard(this)">
+           onclick="copyToClipboard(this)">
     <span class="material-symbols-outlined">
      content_copy
     </span>
    </button>
   </caption>
   <tbody>
-   <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
-   <tr><td>2</td><td>&lt;<span class="codeReserved">html</span>&gt;</td></tr>
-   <tr><td>3</td><td></td></tr>
-   <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
-   <tr><td>5</td><td></td></tr>
-   <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"utf-8"</span>&gt;</td></tr>
-   <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
-   <tr><td>8</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
-   <tr><td>9</td><td></td></tr>
-   <tr><td>10</td><td> &lt;<span class="codeReserved">title</span>&gt;Cámara&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
-   <tr><td>11</td><td></td></tr>
-   <tr><td>12</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
-   <tr><td>13</td><td>  html {</td></tr>
-   <tr><td>14</td><td>   <span class="codeReserved">color-scheme</span>: light dark;</td></tr>
-   <tr><td>15</td><td>  }</td></tr>
-   <tr><td>16</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
-   <tr><td>17</td><td></td></tr>
-   <tr><td>18</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
-   <tr><td>19</td><td></td></tr>
-   <tr><td>20</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
-   <tr><td>21</td><td></td></tr>
-   <tr><td>22</td><td> &lt;<span class="codeReserved">h1</span>&gt;Cámara&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
-   <tr><td>23</td><td></td></tr>
-   <tr><td>24</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>25</td><td>  Para grabar o capturar imagen,</td></tr>
-   <tr><td>26</td><td>  cliquea</td></tr>
-   <tr><td>27</td><td>  &lt;<span class="codeReserved">strong</span>&gt;Inicia&lt;/<span class="codeReserved">strong</span>&gt;.</td></tr>
-   <tr><td>28</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>29</td><td></td></tr>
-   <tr><td>30</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>31</td><td>  Para grabar por 5 segundos</td></tr>
-   <tr><td>32</td><td>  cliquea</td></tr>
-   <tr><td>33</td><td>  &lt;<span class="codeReserved">strong</span>&gt;Graba&lt;/<span class="codeReserved">strong</span>&gt;</td></tr>
-   <tr><td>34</td><td>  y cliquea</td></tr>
-   <tr><td>35</td><td>  &lt;<span class="codeReserved">strong</span>&gt;Para&lt;/<span class="codeReserved">strong</span>&gt; para</td></tr>
-   <tr><td>36</td><td>  detener.</td></tr>
-   <tr><td>37</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>38</td><td></td></tr>
-   <tr><td>39</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>40</td><td>  Para capturar una imagen de la</td></tr>
-   <tr><td>41</td><td>  cámara, cliquea</td></tr>
-   <tr><td>42</td><td>  &lt;<span class="codeReserved">strong</span>&gt;Captura&lt;/<span class="codeReserved">strong</span>&gt;.</td></tr>
-   <tr><td>43</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>44</td><td></td></tr>
-   <tr><td>45</td><td> &lt;<span class="codeReserved">menu</span> style=<span class="codeString">"<span class="codeReserved">display</span>: <span class="codeReserved">flex</span>;</span></td></tr>
-   <tr><td>46</td><td><span class="codeString">   flex-wrap: wrap;</span></td></tr>
-   <tr><td>47</td><td><span class="codeString">   list-style: none;"</span>&gt;</td></tr>
-   <tr><td>48</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-   <tr><td>49</td><td>   &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span></td></tr>
-   <tr><td>50</td><td>     onclick=<span class="codeString">"inicia()"</span>&gt;</td></tr>
-   <tr><td>51</td><td>    Inicia</td></tr>
-   <tr><td>52</td><td>   &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
-   <tr><td>53</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
-   <tr><td>54</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-   <tr><td>55</td><td>   &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span></td></tr>
-   <tr><td>56</td><td>     onclick=<span class="codeString">"graba()"</span>&gt;</td></tr>
-   <tr><td>57</td><td>    Graba</td></tr>
-   <tr><td>58</td><td>   &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
-   <tr><td>59</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
-   <tr><td>60</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-   <tr><td>61</td><td>   &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span></td></tr>
-   <tr><td>62</td><td>     onclick=<span class="codeString">"para();"</span>&gt;</td></tr>
-   <tr><td>63</td><td>    Para</td></tr>
-   <tr><td>64</td><td>   &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
-   <tr><td>65</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
-   <tr><td>66</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-   <tr><td>67</td><td>   &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span></td></tr>
-   <tr><td>68</td><td>     onclick=<span class="codeString">"captura()"</span>&gt;</td></tr>
-   <tr><td>69</td><td>    Captura</td></tr>
-   <tr><td>70</td><td>   &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
-   <tr><td>71</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
-   <tr><td>72</td><td> &lt;/<span class="codeReserved">menu</span>&gt;</td></tr>
-   <tr><td>73</td><td></td></tr>
-   <tr><td>74</td><td> &lt;<span class="codeReserved">section</span></td></tr>
-   <tr><td>75</td><td>   style=<span class="codeString">"<span class="codeReserved">display</span>: inline-block;</span></td></tr>
-   <tr><td>76</td><td><span class="codeString">     <span class="codeReserved">vertical-align</span>: <span class="codeReserved">top</span>;"</span>&gt;</td></tr>
-   <tr><td>77</td><td></td></tr>
-   <tr><td>78</td><td>  &lt;<span class="codeReserved">h1</span>&gt;Preview&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
-   <tr><td>79</td><td></td></tr>
-   <tr><td>80</td><td>  &lt;<span class="codeReserved">video</span> id=<span class="codeString">"preview"</span> <span class="codeReserved">width</span>=<span class="codeString">"160"</span></td></tr>
-   <tr><td>81</td><td>    <span class="codeReserved">height</span>=<span class="codeString">"120"</span> autoplay</td></tr>
-   <tr><td>82</td><td>    muted&gt;&lt;/<span class="codeReserved">video</span>&gt;</td></tr>
-   <tr><td>83</td><td></td></tr>
-   <tr><td>84</td><td> &lt;/<span class="codeReserved">section</span>&gt;</td></tr>
-   <tr><td>85</td><td></td></tr>
-   <tr><td>86</td><td> &lt;<span class="codeReserved">section</span></td></tr>
-   <tr><td>87</td><td>   style=<span class="codeString">"<span class="codeReserved">display</span>: inline-block;</span></td></tr>
-   <tr><td>88</td><td><span class="codeString">     <span class="codeReserved">vertical-align</span>: <span class="codeReserved">top</span>;"</span>&gt;</td></tr>
-   <tr><td>89</td><td></td></tr>
-   <tr><td>90</td><td>  &lt;<span class="codeReserved">h1</span>&gt;Recording&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
-   <tr><td>91</td><td></td></tr>
-   <tr><td>92</td><td>  &lt;<span class="codeReserved">video</span> id=<span class="codeString">"recording"</span> <span class="codeReserved">width</span>=<span class="codeString">"160"</span></td></tr>
-   <tr><td>93</td><td>    <span class="codeReserved">height</span>=<span class="codeString">"120"</span> controls&gt;&lt;/<span class="codeReserved">video</span>&gt;</td></tr>
-   <tr><td>94</td><td></td></tr>
-   <tr><td>95</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>96</td><td>   &lt;<span class="codeReserved">a</span> id=<span class="codeString">"descarga"</span>&gt;Descarga&lt;/<span class="codeReserved">a</span>&gt;</td></tr>
-   <tr><td>97</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>98</td><td></td></tr>
-   <tr><td>99</td><td>  &lt;<span class="codeReserved">div</span> id=<span class="codeString">"mensajes"</span>&gt;&lt;/<span class="codeReserved">div</span>&gt;</td></tr>
-   <tr><td>100</td><td></td></tr>
-   <tr><td>101</td><td> &lt;/<span class="codeReserved">section</span>&gt;</td></tr>
-   <tr><td>102</td><td></td></tr>
-   <tr><td>103</td><td> &lt;<span class="codeReserved">section</span></td></tr>
-   <tr><td>104</td><td>   style=<span class="codeString">"<span class="codeReserved">display</span>: inline-block;</span></td></tr>
-   <tr><td>105</td><td><span class="codeString">     <span class="codeReserved">vertical-align</span>: <span class="codeReserved">top</span>;"</span>&gt;</td></tr>
-   <tr><td>106</td><td></td></tr>
-   <tr><td>107</td><td>  &lt;<span class="codeReserved">h1</span>&gt;Imagen&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
-   <tr><td>108</td><td></td></tr>
-   <tr><td>109</td><td>  &lt;<span class="codeReserved">canvas</span> id=<span class="codeString">"canvas"</span> <span class="codeReserved">width</span>=<span class="codeString">"160"</span></td></tr>
-   <tr><td>110</td><td>    <span class="codeReserved">height</span>=<span class="codeString">"120"</span>&gt;&lt;/<span class="codeReserved">canvas</span>&gt;</td></tr>
-   <tr><td>111</td><td></td></tr>
-   <tr><td>112</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>113</td><td>   &lt;<span class="codeReserved">a</span> id=<span class="codeString">"descargaImagen"</span>&gt;</td></tr>
-   <tr><td>114</td><td>    Descarga&lt;/<span class="codeReserved">a</span>&gt;</td></tr>
-   <tr><td>115</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-   <tr><td>116</td><td></td></tr>
-   <tr><td>117</td><td> &lt;/<span class="codeReserved">section</span>&gt;</td></tr>
-   <tr><td>118</td><td></td></tr>
-   <tr><td>119</td><td> &lt;<span class="codeReserved">script</span>&gt;</td></tr>
-   <tr><td>120</td><td></td></tr>
-   <tr><td>121</td><td>  <span class="codeReserved">let</span> stream = <span class="codeReserved">null</span></td></tr>
-   <tr><td>122</td><td></td></tr>
-   <tr><td>123</td><td>  <span class="codeReserved">let</span> TIEMPO_DE_GRABACION = 5000</td></tr>
-   <tr><td>124</td><td></td></tr>
-   <tr><td>125</td><td>  <span class="codeReserved">var</span> context =</td></tr>
-   <tr><td>126</td><td>   canvas.getContext(<span class="codeString">'2d'</span>)</td></tr>
-   <tr><td>127</td><td></td></tr>
-   <tr><td>128</td><td>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> inicia() {</td></tr>
-   <tr><td>129</td><td>   <span class="codeReserved">try</span> {</td></tr>
-   <tr><td>130</td><td>    stream = <span class="codeReserved">await</span> navigator</td></tr>
-   <tr><td>131</td><td>     .mediaDevices.getUserMedia({</td></tr>
-   <tr><td>132</td><td>      video: <span class="codeReserved">true</span>,</td></tr>
-   <tr><td>133</td><td>      audio: <span class="codeReserved">true</span></td></tr>
-   <tr><td>134</td><td>     })</td></tr>
-   <tr><td>135</td><td>    preview.srcObject = stream</td></tr>
-   <tr><td>136</td><td>    descarga.href = stream</td></tr>
-   <tr><td>137</td><td>    preview.captureStream =</td></tr>
-   <tr><td>138</td><td>     preview.captureStream</td></tr>
-   <tr><td>139</td><td>     || preview.mozCaptureStream</td></tr>
-   <tr><td>140</td><td>    <span class="codeReserved">await</span> <span class="codeReserved">new</span> Promise(</td></tr>
-   <tr><td>141</td><td>     resolve =&gt;</td></tr>
-   <tr><td>142</td><td>      preview.onplaying = resolve)</td></tr>
-   <tr><td>143</td><td>   } <span class="codeReserved">catch</span> (e) {</td></tr>
-   <tr><td>144</td><td>    log(e.message)</td></tr>
-   <tr><td>145</td><td>   }</td></tr>
-   <tr><td>146</td><td>  }</td></tr>
-   <tr><td>147</td><td></td></tr>
-   <tr><td>148</td><td>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> graba() {</td></tr>
-   <tr><td>149</td><td>   <span class="codeReserved">try</span> {</td></tr>
-   <tr><td>150</td><td>    <span class="codeReserved">const</span> recordedChunks =</td></tr>
-   <tr><td>151</td><td>     <span class="codeReserved">await</span> grabaClip(stream,</td></tr>
-   <tr><td>152</td><td>      TIEMPO_DE_GRABACION)</td></tr>
-   <tr><td>153</td><td>    <span class="codeReserved">let</span> recordedBlob = <span class="codeReserved">new</span> Blob(</td></tr>
-   <tr><td>154</td><td>     recordedChunks,</td></tr>
-   <tr><td>155</td><td>     { type: <span class="codeString">"video/webm"</span> })</td></tr>
-   <tr><td>156</td><td>    recording.<span class="codeReserved">src</span> =</td></tr>
-   <tr><td>157</td><td>     URL.createObjectURL(</td></tr>
-   <tr><td>158</td><td>      recordedBlob)</td></tr>
-   <tr><td>159</td><td>    descarga.href = recording.<span class="codeReserved">src</span></td></tr>
-   <tr><td>160</td><td>    descarga.download =</td></tr>
-   <tr><td>161</td><td>     <span class="codeString">"RecordedVideo.webm"</span></td></tr>
-   <tr><td>162</td><td></td></tr>
-   <tr><td>163</td><td>    log(<span class="codeString">"Exitosamente grabados "</span></td></tr>
-   <tr><td>164</td><td>     + recordedBlob.size</td></tr>
-   <tr><td>165</td><td>     + <span class="codeString">" bytes de "</span></td></tr>
-   <tr><td>166</td><td>     + recordedBlob.type</td></tr>
-   <tr><td>167</td><td>     + <span class="codeString">" media."</span>)</td></tr>
-   <tr><td>168</td><td>   } <span class="codeReserved">catch</span> (e) {</td></tr>
-   <tr><td>169</td><td>    log(e.message)</td></tr>
-   <tr><td>170</td><td>   }</td></tr>
-   <tr><td>171</td><td>  }</td></tr>
-   <tr><td>172</td><td></td></tr>
-   <tr><td>173</td><td>  <span class="codeReserved">function</span> para() {</td></tr>
-   <tr><td>174</td><td>   detiene(preview.srcObject)</td></tr>
-   <tr><td>175</td><td>  }</td></tr>
-   <tr><td>176</td><td></td></tr>
-   <tr><td>177</td><td>  <span class="codeReserved">function</span> captura() {</td></tr>
-   <tr><td>178</td><td>   context.drawImage(preview,</td></tr>
-   <tr><td>179</td><td>    0, 0, 160, 120)</td></tr>
-   <tr><td>180</td><td>   descargaImagen.href =</td></tr>
-   <tr><td>181</td><td>    canvas.toDataURL(<span class="codeString">'image/jpeg'</span>)</td></tr>
-   <tr><td>182</td><td>   descargaImagen.download =</td></tr>
-   <tr><td>183</td><td>    <span class="codeString">"imagen.jpg"</span></td></tr>
-   <tr><td>184</td><td>  }</td></tr>
-   <tr><td>185</td><td></td></tr>
-   <tr><td>186</td><td>  <span class="codeReserved">function</span> grabaClip(stream,</td></tr>
-   <tr><td>187</td><td>   milisegundos) {</td></tr>
-   <tr><td>188</td><td>   <span class="codeReserved">let</span> recorder =</td></tr>
-   <tr><td>189</td><td>    <span class="codeReserved">new</span> MediaRecorder(stream)</td></tr>
-   <tr><td>190</td><td>   <span class="codeReserved">let</span> data = []</td></tr>
-   <tr><td>191</td><td>   recorder.ondataavailable =</td></tr>
-   <tr><td>192</td><td>    event =&gt; data.push(event.data)</td></tr>
-   <tr><td>193</td><td>   recorder.start()</td></tr>
-   <tr><td>194</td><td>   log(recorder.state</td></tr>
-   <tr><td>195</td><td>    + <span class="codeString">" durante "</span></td></tr>
-   <tr><td>196</td><td>    + (milisegundos / 1000)</td></tr>
-   <tr><td>197</td><td>    + <span class="codeString">" segundos&hellip;"</span>)</td></tr>
-   <tr><td>198</td><td>   <span class="codeReserved">let</span> detenido = <span class="codeReserved">new</span> Promise(</td></tr>
-   <tr><td>199</td><td>    (resolve, reject) =&gt; {</td></tr>
-   <tr><td>200</td><td>     recorder.onstop = resolve</td></tr>
-   <tr><td>201</td><td>     recorder.onerror =</td></tr>
-   <tr><td>202</td><td>      event =&gt; reject(event.name)</td></tr>
-   <tr><td>203</td><td>    })</td></tr>
-   <tr><td>204</td><td>   <span class="codeReserved">let</span> grabado =</td></tr>
-   <tr><td>205</td><td>    espera(milisegundos)</td></tr>
-   <tr><td>206</td><td>     .then(() =&gt; recorder.state</td></tr>
-   <tr><td>207</td><td>      === <span class="codeString">"recording"</span></td></tr>
-   <tr><td>208</td><td>      && recorder.stop()</td></tr>
-   <tr><td>209</td><td>     )</td></tr>
-   <tr><td>210</td><td></td></tr>
-   <tr><td>211</td><td>   <span class="codeReserved">return</span> Promise.all([</td></tr>
-   <tr><td>212</td><td>    detenido,</td></tr>
-   <tr><td>213</td><td>    grabado</td></tr>
-   <tr><td>214</td><td>   ])</td></tr>
-   <tr><td>215</td><td>    .then(() =&gt; data)</td></tr>
-   <tr><td>216</td><td>  }</td></tr>
-   <tr><td>217</td><td></td></tr>
-   <tr><td>218</td><td>  <span class="codeReserved">function</span> detiene(stream) {</td></tr>
-   <tr><td>219</td><td>   stream.getTracks().forEach(</td></tr>
-   <tr><td>220</td><td>    track =&gt; track.stop())</td></tr>
-   <tr><td>221</td><td>  }</td></tr>
-   <tr><td>222</td><td></td></tr>
-   <tr><td>223</td><td>  <span class="codeReserved">function</span> log(msg) {</td></tr>
-   <tr><td>224</td><td>   mensajes.innerHTML +=</td></tr>
-   <tr><td>225</td><td>    msg + <span class="codeString">"&lt;<span class="codeReserved">br</span>&gt;"</span></td></tr>
-   <tr><td>226</td><td>  }</td></tr>
-   <tr><td>227</td><td></td></tr>
-   <tr><td>228</td><td>  <span class="codeReserved">function</span> espera(milisegundos) {</td></tr>
-   <tr><td>229</td><td>   <span class="codeReserved">return</span> <span class="codeReserved">new</span> Promise(</td></tr>
-   <tr><td>230</td><td>    resolve =&gt; setTimeout(</td></tr>
-   <tr><td>231</td><td>     resolve, milisegundos))</td></tr>
-   <tr><td>232</td><td>  }</td></tr>
-   <tr><td>233</td><td></td></tr>
-   <tr><td>234</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
-   <tr><td>235</td><td></td></tr>
-   <tr><td>236</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
-   <tr><td>237</td><td></td></tr>
-   <tr><td>238</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+   <tr>
+    <td class="codeShow_order">1</td>
+    <td>
+     <pre>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">2</td>
+    <td>
+     <pre>&lt;<span class="codeReserved">html</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">3</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">4</td>
+    <td>
+     <pre>&lt;<span class="codeReserved">head</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">5</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">6</td>
+    <td>
+     <pre> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"utf-8"</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">7</td>
+    <td>
+     <pre> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">8</td>
+    <td>
+     <pre>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">9</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">10</td>
+    <td>
+     <pre> &lt;<span class="codeReserved">title</span>&gt;Cámara&lt;/<span class="codeReserved">title</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">11</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">12</td>
+    <td>
+     <pre> &lt;<span class="codeReserved">style</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">13</td>
+    <td>
+     <pre>  html {</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">14</td>
+    <td>
+     <pre>   <span class="codeReserved">color-scheme</span>: light dark;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">15</td>
+    <td>
+     <pre>  }</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">16</td>
+    <td>
+     <pre> &lt;/<span class="codeReserved">style</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">17</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">18</td>
+    <td>
+     <pre>&lt;/<span class="codeReserved">head</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">19</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">20</td>
+    <td>
+     <pre>&lt;<span class="codeReserved">body</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">21</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">22</td>
+    <td>
+     <pre> &lt;<span class="codeReserved">h1</span>&gt;Cámara&lt;/<span class="codeReserved">h1</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">23</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">24</td>
+    <td>
+     <pre> &lt;<span class="codeReserved">p</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">25</td>
+    <td>
+     <pre>  Para grabar o capturar imagen,</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">26</td>
+    <td>
+     <pre>  cliquea</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">27</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">strong</span>&gt;Inicia&lt;/<span class="codeReserved">strong</span>&gt;.</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">28</td>
+    <td>
+     <pre> &lt;/<span class="codeReserved">p</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">29</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">30</td>
+    <td>
+     <pre> &lt;<span class="codeReserved">p</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">31</td>
+    <td>
+     <pre>  Para grabar por 5 segundos</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">32</td>
+    <td>
+     <pre>  cliquea</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">33</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">strong</span>&gt;Graba&lt;/<span class="codeReserved">strong</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">34</td>
+    <td>
+     <pre>  y cliquea</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">35</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">strong</span>&gt;Para&lt;/<span class="codeReserved">strong</span>&gt; para</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">36</td>
+    <td>
+     <pre>  detener.</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">37</td>
+    <td>
+     <pre> &lt;/<span class="codeReserved">p</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">38</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">39</td>
+    <td>
+     <pre> &lt;<span class="codeReserved">p</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">40</td>
+    <td>
+     <pre>  Para capturar una imagen de la</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">41</td>
+    <td>
+     <pre>  cámara, cliquea</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">42</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">strong</span>&gt;Captura&lt;/<span class="codeReserved">strong</span>&gt;.</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">43</td>
+    <td>
+     <pre> &lt;/<span class="codeReserved">p</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">44</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">45</td>
+    <td>
+     <pre> &lt;<span class="codeReserved">menu</span> style=<span class="codeString">"<span class="codeReserved">display</span>: <span class="codeReserved">flex</span>;</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">46</td>
+    <td>
+     <pre><span class="codeString">   flex-wrap: wrap;</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">47</td>
+    <td>
+     <pre><span class="codeString">   list-style: none;"</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">48</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">li</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">49</td>
+    <td>
+     <pre>   &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">50</td>
+    <td>
+     <pre>     onclick=<span class="codeString">"inicia()"</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">51</td>
+    <td>
+     <pre>    Inicia</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">52</td>
+    <td>
+     <pre>   &lt;/<span class="codeReserved">button</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">53</td>
+    <td>
+     <pre>  &lt;/<span class="codeReserved">li</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">54</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">li</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">55</td>
+    <td>
+     <pre>   &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">56</td>
+    <td>
+     <pre>     onclick=<span class="codeString">"graba()"</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">57</td>
+    <td>
+     <pre>    Graba</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">58</td>
+    <td>
+     <pre>   &lt;/<span class="codeReserved">button</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">59</td>
+    <td>
+     <pre>  &lt;/<span class="codeReserved">li</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">60</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">li</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">61</td>
+    <td>
+     <pre>   &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">62</td>
+    <td>
+     <pre>     onclick=<span class="codeString">"para();"</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">63</td>
+    <td>
+     <pre>    Para</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">64</td>
+    <td>
+     <pre>   &lt;/<span class="codeReserved">button</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">65</td>
+    <td>
+     <pre>  &lt;/<span class="codeReserved">li</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">66</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">li</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">67</td>
+    <td>
+     <pre>   &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">68</td>
+    <td>
+     <pre>     onclick=<span class="codeString">"captura()"</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">69</td>
+    <td>
+     <pre>    Captura</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">70</td>
+    <td>
+     <pre>   &lt;/<span class="codeReserved">button</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">71</td>
+    <td>
+     <pre>  &lt;/<span class="codeReserved">li</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">72</td>
+    <td>
+     <pre> &lt;/<span class="codeReserved">menu</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">73</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">74</td>
+    <td>
+     <pre> &lt;<span class="codeReserved">section</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">75</td>
+    <td>
+     <pre>   style=<span class="codeString">"<span class="codeReserved">display</span>: inline-block;</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">76</td>
+    <td>
+     <pre><span class="codeString">     <span class="codeReserved">vertical-align</span>: <span class="codeReserved">top</span>;"</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">77</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">78</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">h1</span>&gt;Preview&lt;/<span class="codeReserved">h1</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">79</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">80</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">video</span> id=<span class="codeString">"preview"</span> <span class="codeReserved">width</span>=<span class="codeString">"160"</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">81</td>
+    <td>
+     <pre>    <span class="codeReserved">height</span>=<span class="codeString">"120"</span> autoplay</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">82</td>
+    <td>
+     <pre>    muted&gt;&lt;/<span class="codeReserved">video</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">83</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">84</td>
+    <td>
+     <pre> &lt;/<span class="codeReserved">section</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">85</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">86</td>
+    <td>
+     <pre> &lt;<span class="codeReserved">section</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">87</td>
+    <td>
+     <pre>   style=<span class="codeString">"<span class="codeReserved">display</span>: inline-block;</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">88</td>
+    <td>
+     <pre><span class="codeString">     <span class="codeReserved">vertical-align</span>: <span class="codeReserved">top</span>;"</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">89</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">90</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">h1</span>&gt;Recording&lt;/<span class="codeReserved">h1</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">91</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">92</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">video</span> id=<span class="codeString">"recording"</span> <span class="codeReserved">width</span>=<span class="codeString">"160"</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">93</td>
+    <td>
+     <pre>    <span class="codeReserved">height</span>=<span class="codeString">"120"</span> controls&gt;&lt;/<span class="codeReserved">video</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">94</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">95</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">p</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">96</td>
+    <td>
+     <pre>   &lt;<span class="codeReserved">a</span> id=<span class="codeString">"descarga"</span>&gt;Descarga&lt;/<span class="codeReserved">a</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">97</td>
+    <td>
+     <pre>  &lt;/<span class="codeReserved">p</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">98</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">99</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">div</span> id=<span class="codeString">"mensajes"</span>&gt;&lt;/<span class="codeReserved">div</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">100</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">101</td>
+    <td>
+     <pre> &lt;/<span class="codeReserved">section</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">102</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">103</td>
+    <td>
+     <pre> &lt;<span class="codeReserved">section</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">104</td>
+    <td>
+     <pre>   style=<span class="codeString">"<span class="codeReserved">display</span>: inline-block;</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">105</td>
+    <td>
+     <pre><span class="codeString">     <span class="codeReserved">vertical-align</span>: <span class="codeReserved">top</span>;"</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">106</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">107</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">h1</span>&gt;Imagen&lt;/<span class="codeReserved">h1</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">108</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">109</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">canvas</span> id=<span class="codeString">"canvas"</span> <span class="codeReserved">width</span>=<span class="codeString">"160"</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">110</td>
+    <td>
+     <pre>    <span class="codeReserved">height</span>=<span class="codeString">"120"</span>&gt;&lt;/<span class="codeReserved">canvas</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">111</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">112</td>
+    <td>
+     <pre>  &lt;<span class="codeReserved">p</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">113</td>
+    <td>
+     <pre>   &lt;<span class="codeReserved">a</span> id=<span class="codeString">"descargaImagen"</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">114</td>
+    <td>
+     <pre>    Descarga&lt;/<span class="codeReserved">a</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">115</td>
+    <td>
+     <pre>  &lt;/<span class="codeReserved">p</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">116</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">117</td>
+    <td>
+     <pre> &lt;/<span class="codeReserved">section</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">118</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">119</td>
+    <td>
+     <pre> &lt;<span class="codeReserved">script</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">120</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">121</td>
+    <td>
+     <pre>  <span class="codeReserved">let</span> stream = <span class="codeReserved">null</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">122</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">123</td>
+    <td>
+     <pre>  <span class="codeReserved">let</span> TIEMPO_DE_GRABACION = 5000</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">124</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">125</td>
+    <td>
+     <pre>  <span class="codeReserved">var</span> context =</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">126</td>
+    <td>
+     <pre>   canvas.getContext(<span class="codeString">'2d'</span>)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">127</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">128</td>
+    <td>
+     <pre>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> inicia() {</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">129</td>
+    <td>
+     <pre>   <span class="codeReserved">try</span> {</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">130</td>
+    <td>
+     <pre>    stream = <span class="codeReserved">await</span> navigator</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">131</td>
+    <td>
+     <pre>     .mediaDevices.getUserMedia({</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">132</td>
+    <td>
+     <pre>      video: <span class="codeReserved">true</span>,</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">133</td>
+    <td>
+     <pre>      audio: <span class="codeReserved">true</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">134</td>
+    <td>
+     <pre>     })</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">135</td>
+    <td>
+     <pre>    preview.srcObject = stream</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">136</td>
+    <td>
+     <pre>    descarga.href = stream</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">137</td>
+    <td>
+     <pre>    preview.captureStream =</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">138</td>
+    <td>
+     <pre>     preview.captureStream</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">139</td>
+    <td>
+     <pre>     || preview.mozCaptureStream</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">140</td>
+    <td>
+     <pre>    <span class="codeReserved">await</span> <span class="codeReserved">new</span> Promise(</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">141</td>
+    <td>
+     <pre>     resolve =&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">142</td>
+    <td>
+     <pre>      preview.onplaying = resolve)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">143</td>
+    <td>
+     <pre>   } <span class="codeReserved">catch</span> (e) {</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">144</td>
+    <td>
+     <pre>    log(e.message)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">145</td>
+    <td>
+     <pre>   }</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">146</td>
+    <td>
+     <pre>  }</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">147</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">148</td>
+    <td>
+     <pre>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> graba() {</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">149</td>
+    <td>
+     <pre>   <span class="codeReserved">try</span> {</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">150</td>
+    <td>
+     <pre>    <span class="codeReserved">const</span> recordedChunks =</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">151</td>
+    <td>
+     <pre>     <span class="codeReserved">await</span> grabaClip(stream,</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">152</td>
+    <td>
+     <pre>      TIEMPO_DE_GRABACION)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">153</td>
+    <td>
+     <pre>    <span class="codeReserved">let</span> recordedBlob = <span class="codeReserved">new</span> Blob(</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">154</td>
+    <td>
+     <pre>     recordedChunks,</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">155</td>
+    <td>
+     <pre>     { type: <span class="codeString">"video/webm"</span> })</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">156</td>
+    <td>
+     <pre>    recording.<span class="codeReserved">src</span> =</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">157</td>
+    <td>
+     <pre>     URL.createObjectURL(</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">158</td>
+    <td>
+     <pre>      recordedBlob)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">159</td>
+    <td>
+     <pre>    descarga.href = recording.<span class="codeReserved">src</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">160</td>
+    <td>
+     <pre>    descarga.download =</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">161</td>
+    <td>
+     <pre>     <span class="codeString">"RecordedVideo.webm"</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">162</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">163</td>
+    <td>
+     <pre>    log(<span class="codeString">"Exitosamente grabados "</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">164</td>
+    <td>
+     <pre>     + recordedBlob.size</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">165</td>
+    <td>
+     <pre>     + <span class="codeString">" bytes de "</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">166</td>
+    <td>
+     <pre>     + recordedBlob.type</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">167</td>
+    <td>
+     <pre>     + <span class="codeString">" media."</span>)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">168</td>
+    <td>
+     <pre>   } <span class="codeReserved">catch</span> (e) {</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">169</td>
+    <td>
+     <pre>    log(e.message)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">170</td>
+    <td>
+     <pre>   }</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">171</td>
+    <td>
+     <pre>  }</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">172</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">173</td>
+    <td>
+     <pre>  <span class="codeReserved">function</span> para() {</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">174</td>
+    <td>
+     <pre>   detiene(preview.srcObject)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">175</td>
+    <td>
+     <pre>  }</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">176</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">177</td>
+    <td>
+     <pre>  <span class="codeReserved">function</span> captura() {</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">178</td>
+    <td>
+     <pre>   context.drawImage(preview,</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">179</td>
+    <td>
+     <pre>    0, 0, 160, 120)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">180</td>
+    <td>
+     <pre>   descargaImagen.href =</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">181</td>
+    <td>
+     <pre>    canvas.toDataURL(<span class="codeString">'image/jpeg'</span>)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">182</td>
+    <td>
+     <pre>   descargaImagen.download =</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">183</td>
+    <td>
+     <pre>    <span class="codeString">"imagen.jpg"</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">184</td>
+    <td>
+     <pre>  }</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">185</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">186</td>
+    <td>
+     <pre>  <span class="codeReserved">function</span> grabaClip(stream,</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">187</td>
+    <td>
+     <pre>   milisegundos) {</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">188</td>
+    <td>
+     <pre>   <span class="codeReserved">let</span> recorder =</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">189</td>
+    <td>
+     <pre>    <span class="codeReserved">new</span> MediaRecorder(stream)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">190</td>
+    <td>
+     <pre>   <span class="codeReserved">let</span> data = []</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">191</td>
+    <td>
+     <pre>   recorder.ondataavailable =</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">192</td>
+    <td>
+     <pre>    event =&gt; data.push(event.data)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">193</td>
+    <td>
+     <pre>   recorder.start()</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">194</td>
+    <td>
+     <pre>   log(recorder.state</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">195</td>
+    <td>
+     <pre>    + <span class="codeString">" durante "</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">196</td>
+    <td>
+     <pre>    + (milisegundos / 1000)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">197</td>
+    <td>
+     <pre>    + <span class="codeString">" segundos&hellip;"</span>)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">198</td>
+    <td>
+     <pre>   <span class="codeReserved">let</span> detenido = <span class="codeReserved">new</span> Promise(</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">199</td>
+    <td>
+     <pre>    (resolve, reject) =&gt; {</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">200</td>
+    <td>
+     <pre>     recorder.onstop = resolve</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">201</td>
+    <td>
+     <pre>     recorder.onerror =</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">202</td>
+    <td>
+     <pre>      event =&gt; reject(event.name)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">203</td>
+    <td>
+     <pre>    })</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">204</td>
+    <td>
+     <pre>   <span class="codeReserved">let</span> grabado =</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">205</td>
+    <td>
+     <pre>    espera(milisegundos)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">206</td>
+    <td>
+     <pre>     .then(() =&gt; recorder.state</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">207</td>
+    <td>
+     <pre>      === <span class="codeString">"recording"</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">208</td>
+    <td>
+     <pre>      && recorder.stop()</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">209</td>
+    <td>
+     <pre>     )</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">210</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">211</td>
+    <td>
+     <pre>   <span class="codeReserved">return</span> Promise.all([</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">212</td>
+    <td>
+     <pre>    detenido,</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">213</td>
+    <td>
+     <pre>    grabado</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">214</td>
+    <td>
+     <pre>   ])</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">215</td>
+    <td>
+     <pre>    .then(() =&gt; data)</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">216</td>
+    <td>
+     <pre>  }</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">217</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">218</td>
+    <td>
+     <pre>  <span class="codeReserved">function</span> detiene(stream) {</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">219</td>
+    <td>
+     <pre>   stream.getTracks().forEach(</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">220</td>
+    <td>
+     <pre>    track =&gt; track.stop())</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">221</td>
+    <td>
+     <pre>  }</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">222</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">223</td>
+    <td>
+     <pre>  <span class="codeReserved">function</span> log(msg) {</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">224</td>
+    <td>
+     <pre>   mensajes.innerHTML +=</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">225</td>
+    <td>
+     <pre>    msg + <span class="codeString">"&lt;<span class="codeReserved">br</span>&gt;"</span></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">226</td>
+    <td>
+     <pre>  }</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">227</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">228</td>
+    <td>
+     <pre>  <span class="codeReserved">function</span> espera(milisegundos) {</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">229</td>
+    <td>
+     <pre>   <span class="codeReserved">return</span> <span class="codeReserved">new</span> Promise(</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">230</td>
+    <td>
+     <pre>    resolve =&gt; setTimeout(</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">231</td>
+    <td>
+     <pre>     resolve, milisegundos))</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">232</td>
+    <td>
+     <pre>  }</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">233</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">234</td>
+    <td>
+     <pre> &lt;/<span class="codeReserved">script</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">235</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">236</td>
+    <td>
+     <pre>&lt;/<span class="codeReserved">body</span>&gt;</pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">237</td>
+    <td>
+     <pre></pre>
+    </td>
+   </tr>
+   <tr>
+    <td class="codeShow_order">238</td>
+    <td>
+     <pre>&lt;/<span class="codeReserved">html</span>&gt;</pre>
+    </td>
+   </tr>
   </tbody>
- </table>
-</div>
+ </table></div>
  <footer>
  <p>
   <a rel="license"
@@ -1171,7 +2360,7 @@
    
      <p>
       <a class="paginaAnterior" href="/m04pwaListas/mXresumen.html"
-        title="R. Resumen"><span
+        title="T. Resumen"><span
         class="material-symbols-outlined">
          arrow_upward
         </span></a>

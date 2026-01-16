@@ -3,18 +3,14 @@
   <li>
    <p>
     Prueba e instala, de preferencia con Chrome, el sitio
-    <a href="https://pwab.rf.gd/" rel="noopener noreferrer"
-      target="_blank">https://pwab.rf.gd/</a>
-    y en
-    <a href="https://gilpgpwa.github.io/" rel="noopener noreferrer"
-      target="_blank">https://gilpgpwa.github.io/</a>.
+    <a href="https://gilpgpwal.github.io/" rel="noopener noreferrer"
+       target="_blank">https://gilpgpwal.github.io/</a>.
    </p>
   </li>
   <li>
    <p>
     Descarga el archivo
-    <a href="/src/pwab.zip" download>/src/pwab.zip</a> y
-    descompáctalo.
+    <a href="/src/pwab.zip" download>/src/pwab.zip</a> y descompáctalo.
    </p>
   </li>
   <li>
@@ -86,7 +82,7 @@
    </ol>
   </li>
   <li>
-   <p><strong>Importa el proyecto en GitHub:</strong></p>
+   <p><strong>Importa el proyecto de GitHub a Visual Studio Code:</strong></p>
    <ol type="A">
     <li>
      <p>
@@ -129,29 +125,28 @@
    </ol>
   </li>
   <li>
-   <p>
-    Edita los archivos que desees.
+   <p><strong>Edita los archivos que desees.</strong></p>
+  </li>
+  <li>
+   <p><strong>
+     <a href="https://drive.google.com/file/d/1RgccRuYZ3Buc4vzngbZFyOUdtGXfXHYq/view?usp=sharing"
+        target="_blank" rel="noopener noreferrer">Crea los íconos del
+      proyecto</a>
+     con
+     <a href="https://www.photopea.com/" target="_blank"
+        rel="noopener noreferrer">https://www.photopea.com/</a>.
+    </strong>
    </p>
   </li>
   <li>
-   <p>
-    <a href="https://drive.google.com/file/d/1RiRkApBqQE6A4-APu7p18_DHa2aVRcfn/view?usp=sharing"
-      target="_blank" rel="noopener noreferrer">Crea los íconos del proyecto</a>
-    con
-    <a href="https://www.photopea.com/" target="_blank"
-      rel="noopener noreferrer">https://www.photopea.com/</a>.
-    Este paso se hizo com Microsoft Edge (versión Chromium), pero no funcionó
-    con Google Chrome.
-   </p>
-  </li>
-  <li>
-   <p>
-    <a href="https://drive.google.com/file/d/1lI4TAJ_xRJpY6xqNnEzT4L214S_UggfB/view?usp=sharing"
-      target="_blank" rel="noopener noreferrer">Crea los íconos enmascarables</a>
-    con
-    <a target="_blank"
-      href="https://maskable.app/">https://maskable.app/</a>
-    a partir del archivo «icono2048.png».
+   <p><strong>
+     <a href="https://drive.google.com/file/d/1D3nFwAeQkwklcEwuepQ_ESaLt0dLAPHW/view?usp=sharing"
+        target="_blank" rel="noopener noreferrer">Crea los íconos
+      enmascarables</a>
+     con
+     <a target="_blank" href="https://maskable.app/">https://maskable.app/</a>
+     a partir del archivo «icono2048.png».
+    </strong>
    </p>
   </li>
   <li>
@@ -181,16 +176,9 @@
   </li>
   <li>
    <p>
-    <strong>Si tu proyecto no usa backend,</strong> haz clic derecho en
+    Haz clic derecho en
     <q>index.html</q>, selecciona <em>Open with Live Server</em> y se abre el
     navegador para que puedas probar localmente el ejemplo.
-   </p>
-  </li>
-  <li>
-   <p>
-    <strong>Si tu proyecto usa PHP,</strong> haz clic derecho en
-    <q>index.html</q>, selecciona <em>PHP Server: serve project</em> y se abre
-    el navegador para que puedas probar localmente el ejemplo.
    </p>
   </li>
   <li>
@@ -256,7 +244,6 @@
       <em>Archivo de manifiesto</em> (o
       <em>Manifest file</em> en inglés). Esta herramienta analiza la estructura
       del archivo de manifiesto y te indica si hay un error.
-      <strong>InfinityFree</strong> bloquea el análisis de las imágenes.
      </p>
     </li>
     <li>
@@ -275,8 +262,8 @@
   <li>
    <p>
     <mark>
-    <strong>Cuando usas GitHub pages,</strong> antes de subir los archivos, no
-    debes modificar el valor de <var>VERSION</var> en el archivo <q>sw.js</q>.
+     <strong>Cuando usas GitHub pages,</strong> antes de subir los archivos, no
+     debes modificar el valor de <var>VERSION</var> en el archivo <q>sw.js</q>.
     </mark>
    </p>
   </li>
@@ -320,48 +307,9 @@
    </ol>
   </li>
   <li>
-   <p><strong>Si no usas GitHub pages:</strong></p>
-   <ol>
-    <li>
-     <p>
-      Sube el proyecto al hosting que elijas sin incluir el archivo
-      <q>.htaccess</q>. En algunos casos puedes usar
-      filezilla
-      (<a href="https://filezilla-project.org/" target="_blank"
-        rel="noopener noreferrer">https://filezilla-project.org/</a>)
-     </p>
-    </li>
-    <li>
-     <p>
-      En algunos host como <strong>InfinityFree,</strong> tienes que
-      configurar el certificado SSL.
-     </p>
-    </li>
-    <li>
-     <p>
-      En algunos host, como <strong>InfinityFree</strong>, debes subir el
-      archivo <q>.htaccess</q> cuando el certificado SSL se ha creado e
-      instalado. Sirve para forzar el uso de https, para eliminar el
-      control de cache, pues ahora lo lleva el service worker y para asignar el
-      mime type correcto para el archivo de manifest.
-     </p>
-    </li>
-    <li>
-     <p>Abre un navegador y prueba el proyecto en tu hosting.</p>
-    </li>
-    <li>
-     <p>
-      <strong>En el hosting InfinityFree,</strong> la primera ves que corres la
-      página, puede marcar un mensaje de error, pero al recargar funciona
-      correctamente. Puedes evitar este problema usando un dominio propio.
-     </p>
-    </li>
-   </ol>
-  </li>
-  <li>
    <p>
     <a href="https://drive.google.com/file/d/1djpD_9jiaw6S71LMpJuwwSUs7hTEEyZz/view?usp=sharing"
-      target="_blank">Instala y usa tu PWA en Windows.</a>
+       target="_blank">Instala y usa tu PWA en Windows.</a>
     Aunque en este video se recomienda usar Edge, al momento de actualizar el
     contenido, la opción más recomendada es Chrome para que te muestre las
     descripciones y las capturas de pantalla.
@@ -370,16 +318,16 @@
   <li>
    <p>
     <a href="https://drive.google.com/file/d/1jCM53PH_w20SKbMe7B6_FU-ilV9l30fh/view?usp=sharing"
-      target="_blank">Instala y usa tu PWA en Android.</a>
+       target="_blank">Instala y usa tu PWA en Android.</a>
     Al momento de actualizar las notas, tal vez no te aparezca el botón para
-    instalar y tengas que seleccionar la acción de instalar que aparece en el
-    menú de extensión de Chrome.
+    instalar y tengas que seleccionar la acción de agregar a la pantalla
+    principal que aparece en el menú de extensión de Chrome.
    </p>
   </li>
   <li>
    <p>
     <a href="https://drive.google.com/file/d/17Hnc_IcOL2HmSytSwHTi-tdPCyAHhQzr/view?usp=sharing"
-      target="_blank">Instala y usa tu PWA en iOS (iPhone y iPad).</a>
+       target="_blank">Instala y usa tu PWA en iOS (iPhone y iPad).</a>
    </p>
   </li>
  </ol>
