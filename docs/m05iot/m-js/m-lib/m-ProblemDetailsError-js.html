@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>3. lib / js / exportaAHtml.js - GilPG DM</title>
- <meta name="description" content="Código de «lib/js/exportaAHtml.js».">
+ <title>7. js / lib / ProblemDetailsError.js - GilPG DM</title>
+ <meta name="description" content="Código de «js/lib/ProblemDetailsError.js».">
  <meta name="og:image" content="https://gilpgdm.github.io/img/icono/icono2048.png">
  <style>
  /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
@@ -857,7 +857,7 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >3. lib / js / exportaAHtml.js</h1><table class="codeShow">
+   <h1 >7. js / lib / ProblemDetailsError.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -867,21 +867,26 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>2</td><td><span class="codeComment"> * Permite que los eventos de html usen la función.</span></td></tr>
-  <tr><td>3</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">function</span>} functionInstance</span></td></tr>
-  <tr><td>4</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>5</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> exportaAHtml(functionInstance) {</td></tr>
-  <tr><td>6</td><td> window[nombreDeFuncionParaHtml(functionInstance)] = functionInstance</td></tr>
-  <tr><td>7</td><td>}</td></tr>
-  <tr><td>8</td><td></td></tr>
-  <tr><td>9</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>10</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">function</span>} valor</span></td></tr>
-  <tr><td>11</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>12</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> nombreDeFuncionParaHtml(valor) {</td></tr>
-  <tr><td>13</td><td> <span class="codeReserved">const</span> names = valor.name.split(<span class="codeString">/\s+/</span>g)</td></tr>
-  <tr><td>14</td><td> <span class="codeReserved">return</span> names[names.length - 1]</td></tr>
-  <tr><td>15</td><td>}</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">class</span> ProblemDetailsError <span class="codeReserved">extends</span> Error {</pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre> <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment">  * Detalle de los errores devueltos por un servicio.</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment">  * Crea una instancia de ProblemDetailsError.</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment">  * <span class="codeReserved">@param</span> {object} problemDetails Objeto con la descripcipon del error.</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment">  */</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeReserved">constructor</span>(problemDetails) {</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>  super(<span class="codeReserved">typeof</span> problemDetails[<span class="codeString">"detail"</span>] === <span class="codeString">"string"</span></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>   ? problemDetails[<span class="codeString">"detail"</span>]</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>   : (<span class="codeReserved">typeof</span> problemDetails[<span class="codeString">"title"</span>] === <span class="codeString">"string"</span></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>    ? problemDetails[<span class="codeString">"title"</span>]</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>    : <span class="codeString">"Error"</span>))</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>  <span class="codeReserved">this</span>.problemDetails = problemDetails</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>}</pre></td></tr>
  </tbody>
 </table>
  <footer>
@@ -909,10 +914,10 @@
    menu
   </span>
  </button>
- <a class="anterior" href="/m05iot/m-lib/m-js/m-creaIdCliente-js.html" title="2. lib / js / creaIdCliente.js"><span class="material-symbols-outlined">
+ <a class="anterior" href="/m05iot/m-js/m-lib/m-muestraError-js.html" title="6. js / lib / muestraError.js"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
- <a class="siguiente" href="/m05iot/m-lib/m-js/m-falloEnLaConexionMqtt-js.html" title="4. lib / js / falloEnLaConexionMqtt.js"><span class="material-symbols-outlined">
+ <a class="siguiente" href="/m05iot/m-paho.javascript-1.0.3/index.html" title="H. Carpeta « paho.javascript-1.0.3 »"><span class="material-symbols-outlined">
      skip_next
      </span></a>
 </div>
@@ -933,55 +938,60 @@
     <a href="/m05iot/">8. IoT</a>
    </p>
    <p>
-    <a href="/m05iot/m-lib/">F. Carpeta « lib »</a>
+    <a href="/m05iot/m-js/">G. Carpeta « js »</a>
    </p>
    
      <p>
-      <a class="paginaAnterior" href="/m05iot/m-lib/index.html"
-        title="F. Carpeta « lib »"><span
+      <a class="paginaAnterior" href="/m05iot/m-js/index.html"
+        title="G. Carpeta « js »"><span
         class="material-symbols-outlined">
          arrow_upward
         </span></a>
      </p>
-   <h1><a href="/m05iot/m-lib/m-js/index.html">A. Carpeta « lib / js »</a></h1>
+   <h1><a href="/m05iot/m-js/m-lib/index.html">A. Carpeta « js / lib »</a></h1>
    
    <ol type="1">
     
    <li>
     <p>
-     <a href="/m05iot/m-lib/m-js/m-conexionMqttPerdida-js.html">lib / js / conexionMqttPerdida.js</a>
+     <a href="/m05iot/m-js/m-lib/m-conexionMqttPerdida-js.html">js / lib / conexionMqttPerdida.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m05iot/m-lib/m-js/m-creaIdCliente-js.html">lib / js / creaIdCliente.js</a>
+     <a href="/m05iot/m-js/m-lib/m-creaIdCliente-js.html">js / lib / creaIdCliente.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m05iot/m-lib/m-js/m-exportaAHtml-js.html" class="actual">lib / js / exportaAHtml.js</a>
+     <a href="/m05iot/m-js/m-lib/m-enviaMensajeMqtt-js.html">js / lib / enviaMensajeMqtt.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m05iot/m-lib/m-js/m-falloEnLaConexionMqtt-js.html">lib / js / falloEnLaConexionMqtt.js</a>
+     <a href="/m05iot/m-js/m-lib/m-falloEnLaConexionMqtt-js.html">js / lib / falloEnLaConexionMqtt.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m05iot/m-lib/m-js/m-muestraError-js.html">lib / js / muestraError.js</a>
+     <a href="/m05iot/m-js/m-lib/m-manejaErrores-js.html">js / lib / manejaErrores.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m05iot/m-lib/m-js/m-ProblemDetails-js.html">lib / js / ProblemDetails.js</a>
+     <a href="/m05iot/m-js/m-lib/m-muestraError-js.html">js / lib / muestraError.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m05iot/m-js/m-lib/m-ProblemDetailsError-js.html" class="actual">js / lib / ProblemDetailsError.js</a>
     </p>
    </li>
    </ol>
    
     <p>
      <a class="paginaSiguiente" href="/m05iot/m-paho.javascript-1.0.3/index.html"
-       title="G. Carpeta « paho.javascript-1.0.3 »"><span
+       title="H. Carpeta « paho.javascript-1.0.3 »"><span
        class="material-symbols-outlined">
         arrow_downward
        </span></a>
@@ -998,9 +1008,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m05iot/m-lib/m-js/m-creaIdCliente-js.html"
+ let urlAnterior = "/m05iot/m-js/m-lib/m-muestraError-js.html"
  /**@type {string} */
- let urlSiguiente = "/m05iot/m-lib/m-js/m-falloEnLaConexionMqtt-js.html"
+ let urlSiguiente = "/m05iot/m-paho.javascript-1.0.3/index.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
