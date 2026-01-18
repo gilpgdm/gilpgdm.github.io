@@ -8,29 +8,30 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../lib/js/exportaAHtml.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { htmlentities } <span class="codeReserved">from</span> <span class="codeString">"../lib/js/htmlentities.js"</span></td></tr>
-  <tr><td>3</td><td></td></tr>
-  <tr><td>4</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {HTMLUListElement} lista</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">import</span>(&quot;./modelo/PASATIEMPO.js&quot;).PASATIEMPO[]} pasatiempos</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>8</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> renderiza(lista, pasatiempos) {</td></tr>
-  <tr><td>9</td><td> <span class="codeReserved">let</span> render = <span class="codeString">""</span></td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> modelo of pasatiempos) {</td></tr>
-  <tr><td>11</td><td>  <span class="codeReserved">if</span> (modelo.PAS_ID === undefined)</td></tr>
-  <tr><td>12</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">`Falta PAS_ID de ${modelo.PAS_NOMBRE}.`</span>)</td></tr>
-  <tr><td>13</td><td>  <span class="codeReserved">const</span> nombre = htmlentities(modelo.PAS_NOMBRE)</td></tr>
-  <tr><td>14</td><td>  <span class="codeReserved">const</span> searchParams = <span class="codeReserved">new</span> URLSearchParams([[<span class="codeString">"id"</span>, modelo.PAS_ID]])</td></tr>
-  <tr><td>15</td><td>  <span class="codeReserved">const</span> params = htmlentities(searchParams.toString())</td></tr>
-  <tr><td>16</td><td>  render += <span class="codeComment">/* html */</span></td></tr>
-  <tr><td>17</td><td>   <span class="codeString">`&lt;<span class="codeReserved">li</span>&gt;</span></td></tr>
-  <tr><td>18</td><td><span class="codeString">     &lt;<span class="codeReserved">p</span>&gt;&lt;<span class="codeReserved">a</span> href=&quot;modifica.html?${params}&quot;&gt;${nombre}&lt;/<span class="codeReserved">a</span>&gt;&lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
-  <tr><td>19</td><td><span class="codeString">    &lt;/<span class="codeReserved">li</span>&gt;`</span></td></tr>
-  <tr><td>20</td><td> }</td></tr>
-  <tr><td>21</td><td> lista.innerHTML = render</td></tr>
-  <tr><td>22</td><td>}</td></tr>
-  <tr><td>23</td><td></td></tr>
-  <tr><td>24</td><td>exportaAHtml(renderiza)</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { htmlentities } <span class="codeReserved">from</span> <span class="codeString">"./lib/htmlentities.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeReserved">import</span> { muestraObjeto } <span class="codeReserved">from</span> <span class="codeString">"./lib/muestraObjeto.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO[]} pasatiempos</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> renderiza(pasatiempos) {</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeReserved">let</span> render = <span class="codeString">""</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> modelo of pasatiempos) {</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>  <span class="codeReserved">const</span> nombre = htmlentities(modelo.PAS_NOMBRE)</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>  <span class="codeReserved">const</span> searchParams = <span class="codeReserved">new</span> URLSearchParams([[<span class="codeString">"id"</span>, modelo.PAS_ID]])</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>  <span class="codeReserved">const</span> params = htmlentities(searchParams.toString())</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>  render += <span class="codeComment">/* html */</span></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>   <span class="codeString">`&lt;<span class="codeReserved">li</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre><span class="codeString">     &lt;<span class="codeReserved">p</span>&gt;&lt;<span class="codeReserved">a</span> href=&quot;modifica.html?${params}&quot;&gt;${nombre}&lt;/<span class="codeReserved">a</span>&gt;&lt;/<span class="codeReserved">p</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre><span class="codeString">    &lt;/<span class="codeReserved">li</span>&gt;`</span></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre> muestraObjeto(</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>  document,</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>   lista: { innerHTML: render }</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre> )</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre></pre></td></tr>
  </tbody>
 </table>

@@ -1,0 +1,34 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * <span class="codeReserved">@template</span> T</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {Promise&lt;IDBDatabase&gt;} bd</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {string[]} almacenes</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {(transaccion: IDBTransaction, resolve: (resultado:T)=&gt;<span class="codeReserved">void</span>) =&gt; any</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> *                                                                   } consulta</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment"> * <span class="codeReserved">@returns</span> {Promise&lt;T&gt;}</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> bdConsulta(bd, almacenes, consulta) {</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> <span class="codeReserved">const</span> base = <span class="codeReserved">await</span> bd</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre> <span class="codeReserved">return</span> <span class="codeReserved">new</span> Promise((resolve, reject) =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>  <span class="codeComment">// Inicia una transacción de solo lectura.</span></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>  <span class="codeReserved">const</span> transaccion = base.transaction(almacenes, <span class="codeString">"readonly"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>  <span class="codeComment">// Al terminar con error ejecuta la función reject.</span></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>  transaccion.onerror = () =&gt; reject(transaccion.error)</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>  <span class="codeComment">// Estas son las operaciones para realizar la consulta.</span></pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>  consulta(transaccion, resolve)</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre> })</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>

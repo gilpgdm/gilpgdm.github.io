@@ -757,12 +757,52 @@
     
    <li>
     <p>
+     <a href="/m09sincronizacion/m-js/m-Bd-js.html">js / Bd.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
      <a href="/m09sincronizacion/m-js/m-esperaUnPocoYSincroniza-js.html">js / esperaUnPocoYSincroniza.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-registraServiceWorker-js.html">js / registraServiceWorker.js</a>
+     <a href="/m09sincronizacion/m-js/m-PASATIEMPO-js.html">js / PASATIEMPO.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-pasatiempoAgrega-js.html">js / pasatiempoAgrega.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-pasatiempoBusca-js.html">js / pasatiempoBusca.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-pasatiempoConsultaNoEliminados-js.html">js / pasatiempoConsultaNoEliminados.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-pasatiempoConsultaTodos-js.html">js / pasatiempoConsultaTodos.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-pasatiempoElimina-js.html">js / pasatiempoElimina.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-pasatiempoModifica-js.html">js / pasatiempoModifica.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-pasatiemposReemplaza-js.html">js / pasatiemposReemplaza.js</a>
     </p>
    </li>
    <li>
@@ -777,19 +817,24 @@
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-bd/">Carpeta « js / bd »</a>
+     <a href="/m09sincronizacion/m-js/m-validaPasatiempo-js.html">js / validaPasatiempo.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-modelo/">Carpeta « js / modelo »</a>
+     <a href="/m09sincronizacion/m-js/m-validaPasatiempos-js.html">js / validaPasatiempos.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-lib/">Carpeta « js / lib »</a>
     </p>
    </li>
    </ol>
    </nav>
   </div>
      <section >
-         <h1 >A. js / esperaUnPocoYSincroniza.js</h1><table class="codeShow">
+         <h1 >A. js / Bd.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -799,29 +844,50 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../lib/js/exportaAHtml.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { sincroniza } <span class="codeReserved">from</span> <span class="codeString">"./sincroniza.js"</span></td></tr>
-  <tr><td>3</td><td></td></tr>
-  <tr><td>4</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> * Cada 20 segundos (2000 milisegundos) después de la última</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> * sincronización, los datos se envían al servidor para volver a</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> * sincronizarse con los datos del servidor.</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>9</td><td><span class="codeReserved">const</span> MILISEGUNDOS_PARA_VOLVER_A_SINCRONIZAR = 20000</td></tr>
-  <tr><td>10</td><td></td></tr>
-  <tr><td>11</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>12</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {HTMLUListElement} lista</span></td></tr>
-  <tr><td>13</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>14</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> esperaUnPocoYSincroniza(lista) {</td></tr>
-  <tr><td>15</td><td> setTimeout(() =&gt; sincroniza(lista), MILISEGUNDOS_PARA_VOLVER_A_SINCRONIZAR)</td></tr>
-  <tr><td>16</td><td>}</td></tr>
-  <tr><td>17</td><td></td></tr>
-  <tr><td>18</td><td>exportaAHtml(esperaUnPocoYSincroniza)</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">const</span> ALMACEN_PASATIEMPO = <span class="codeString">"PASATIEMPO"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">const</span> PAS_ID = <span class="codeString">"PAS_ID"</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">const</span> INDICE_NOMBRE = <span class="codeString">"INDICE_NOMBRE"</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">const</span> PAS_NOMBRE = <span class="codeString">"PAS_NOMBRE"</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeReserved">const</span> BD_NOMBRE = <span class="codeString">"sincro"</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeReserved">const</span> BD_VERSION = 1</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeComment">/** <span class="codeReserved">@type</span> { Promise&lt;IDBDatabase&gt; } */</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">const</span> Bd = <span class="codeReserved">new</span> Promise((resolve, reject) =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> <span class="codeComment">/* Se solicita abrir la base de datos, indicando nombre y</span></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre><span class="codeComment">  * número de versión. */</span></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre> <span class="codeReserved">const</span> solicitud = indexedDB.open(BD_NOMBRE, BD_VERSION)</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre> <span class="codeComment">// Si se presenta un error, rechaza la promesa.</span></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre> solicitud.onerror = () =&gt; reject(solicitud.error)</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre> <span class="codeComment">// Si se abre con éxito, devuelve una conexión a la base de datos.</span></pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre> solicitud.onsuccess = () =&gt; resolve(solicitud.result)</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre> <span class="codeComment">// Si es necesario, se inicia una transacción para cambio de versión.</span></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre> solicitud.onupgradeneeded = () =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>  <span class="codeReserved">const</span> bd = solicitud.result</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>  <span class="codeComment">// Como hay cambio de versión, borra el almacén si es que existe.</span></pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre>  <span class="codeReserved">if</span> (bd.objectStoreNames.contains(ALMACEN_PASATIEMPO)) {</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre>   bd.deleteObjectStore(ALMACEN_PASATIEMPO)</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre>  <span class="codeComment">// Crea el almacén &quot;PASATIEMPO&quot; con el campo llave &quot;PAS_ID&quot;.</span></pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre>  <span class="codeReserved">const</span> almacenPasatiempo =</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre>   bd.createObjectStore(ALMACEN_PASATIEMPO, { keyPath: PAS_ID })</pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre>  <span class="codeComment">// Crea un índice ordenado por el campo PAS_NOMBRE que no acepta duplicados.</span></pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre>  almacenPasatiempo.createIndex(INDICE_NOMBRE, PAS_NOMBRE)</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre>})</pre></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >B. js / registraServiceWorker.js</h1><table class="codeShow">
+         <h1 >B. js / esperaUnPocoYSincroniza.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -831,25 +897,23 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeString">"use strict"</span> <span class="codeComment">// usa JavaScript en modo estricto.</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">const</span> nombreDeServiceWorker = <span class="codeString">"sw.js"</span></td></tr>
-  <tr><td>4</td><td></td></tr>
-  <tr><td>5</td><td><span class="codeReserved">try</span> {</td></tr>
-  <tr><td>6</td><td> navigator.serviceWorker.register(nombreDeServiceWorker)</td></tr>
-  <tr><td>7</td><td>  .then(registro =&gt; {</td></tr>
-  <tr><td>8</td><td>   console.log(nombreDeServiceWorker, <span class="codeString">"registrado."</span>)</td></tr>
-  <tr><td>9</td><td>   console.log(registro)</td></tr>
-  <tr><td>10</td><td>  })</td></tr>
-  <tr><td>11</td><td>  .<span class="codeReserved">catch</span>(error =&gt; console.log(error))</td></tr>
-  <tr><td>12</td><td>} <span class="codeReserved">catch</span> (error) {</td></tr>
-  <tr><td>13</td><td> console.log(error)</td></tr>
-  <tr><td>14</td><td>}</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { sincroniza } <span class="codeReserved">from</span> <span class="codeString">"./sincroniza.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * Cada 20 segundos (2000 milisegundos) después de la última</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * sincronización, los datos se envían al servidor para volver a</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> * sincronizarse con los datos del servidor.</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeReserved">const</span> MILISEGUNDOS_PARA_VOLVER_A_SINCRONIZAR = 20000</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> esperaUnPocoYSincroniza() {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> setTimeout(() =&gt; sincroniza(), MILISEGUNDOS_PARA_VOLVER_A_SINCRONIZAR)</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>}</pre></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >C. js / renderiza.js</h1><table class="codeShow">
+         <h1 >C. js / PASATIEMPO.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -859,35 +923,18 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../lib/js/exportaAHtml.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { htmlentities } <span class="codeReserved">from</span> <span class="codeString">"../lib/js/htmlentities.js"</span></td></tr>
-  <tr><td>3</td><td></td></tr>
-  <tr><td>4</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {HTMLUListElement} lista</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">import</span>(&quot;./modelo/PASATIEMPO.js&quot;).PASATIEMPO[]} pasatiempos</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>8</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> renderiza(lista, pasatiempos) {</td></tr>
-  <tr><td>9</td><td> <span class="codeReserved">let</span> render = <span class="codeString">""</span></td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> modelo of pasatiempos) {</td></tr>
-  <tr><td>11</td><td>  <span class="codeReserved">if</span> (modelo.PAS_ID === undefined)</td></tr>
-  <tr><td>12</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">`Falta PAS_ID de ${modelo.PAS_NOMBRE}.`</span>)</td></tr>
-  <tr><td>13</td><td>  <span class="codeReserved">const</span> nombre = htmlentities(modelo.PAS_NOMBRE)</td></tr>
-  <tr><td>14</td><td>  <span class="codeReserved">const</span> searchParams = <span class="codeReserved">new</span> URLSearchParams([[<span class="codeString">"id"</span>, modelo.PAS_ID]])</td></tr>
-  <tr><td>15</td><td>  <span class="codeReserved">const</span> params = htmlentities(searchParams.toString())</td></tr>
-  <tr><td>16</td><td>  render += <span class="codeComment">/* html */</span></td></tr>
-  <tr><td>17</td><td>   <span class="codeString">`&lt;<span class="codeReserved">li</span>&gt;</span></td></tr>
-  <tr><td>18</td><td><span class="codeString">     &lt;<span class="codeReserved">p</span>&gt;&lt;<span class="codeReserved">a</span> href=&quot;modifica.html?${params}&quot;&gt;${nombre}&lt;/<span class="codeReserved">a</span>&gt;&lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
-  <tr><td>19</td><td><span class="codeString">    &lt;/<span class="codeReserved">li</span>&gt;`</span></td></tr>
-  <tr><td>20</td><td> }</td></tr>
-  <tr><td>21</td><td> lista.innerHTML = render</td></tr>
-  <tr><td>22</td><td>}</td></tr>
-  <tr><td>23</td><td></td></tr>
-  <tr><td>24</td><td>exportaAHtml(renderiza)</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * <span class="codeReserved">@typedef</span> {Object} PASATIEMPO</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * <span class="codeReserved">@property</span> {string} PAS_ID</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * <span class="codeReserved">@property</span> {string} PAS_NOMBRE</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * <span class="codeReserved">@property</span> {number} PAS_MODIFICACION</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> * <span class="codeReserved">@property</span> {number} PAS_ELIMINADO</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >D. js / sincroniza.js</h1><table class="codeShow">
+         <h1 >D. js / pasatiempoAgrega.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -897,40 +944,500 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { enviaJson } <span class="codeReserved">from</span> <span class="codeString">"../lib/js/enviaJson.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../lib/js/exportaAHtml.js"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">import</span> { muestraError } <span class="codeReserved">from</span> <span class="codeString">"../lib/js/muestraError.js"</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">import</span> { pasatiempoConsultaTodos } <span class="codeReserved">from</span> <span class="codeString">"./bd/pasatiempoConsultaTodos.js"</span></td></tr>
-  <tr><td>5</td><td><span class="codeReserved">import</span> { pasatiemposReemplaza } <span class="codeReserved">from</span> <span class="codeString">"./bd/pasatiemposReemplaza.js"</span></td></tr>
-  <tr><td>6</td><td><span class="codeReserved">import</span> { esperaUnPocoYSincroniza } <span class="codeReserved">from</span> <span class="codeString">"./esperaUnPocoYSincroniza.js"</span></td></tr>
-  <tr><td>7</td><td><span class="codeReserved">import</span> { validaPasatiempos } <span class="codeReserved">from</span> <span class="codeString">"./modelo/validaPasatiempos.js"</span></td></tr>
-  <tr><td>8</td><td><span class="codeReserved">import</span> { renderiza } <span class="codeReserved">from</span> <span class="codeString">"./renderiza.js"</span></td></tr>
-  <tr><td>9</td><td></td></tr>
-  <tr><td>10</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>11</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {HTMLUListElement} lista</span></td></tr>
-  <tr><td>12</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>13</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> sincroniza(lista) {</td></tr>
-  <tr><td>14</td><td> <span class="codeReserved">try</span> {</td></tr>
-  <tr><td>15</td><td>  <span class="codeReserved">if</span> (navigator.onLine) {</td></tr>
-  <tr><td>16</td><td>   <span class="codeReserved">const</span> todos = <span class="codeReserved">await</span> pasatiempoConsultaTodos()</td></tr>
-  <tr><td>17</td><td>   <span class="codeReserved">const</span> respuesta = <span class="codeReserved">await</span> enviaJson(<span class="codeString">"srv/sincroniza.php"</span>, todos)</td></tr>
-  <tr><td>18</td><td>   <span class="codeReserved">const</span> pasatiempos = validaPasatiempos(respuesta.body)</td></tr>
-  <tr><td>19</td><td>   <span class="codeReserved">await</span> pasatiemposReemplaza(pasatiempos)</td></tr>
-  <tr><td>20</td><td>   renderiza(lista, pasatiempos)</td></tr>
-  <tr><td>21</td><td>  }</td></tr>
-  <tr><td>22</td><td> } <span class="codeReserved">catch</span> (error) {</td></tr>
-  <tr><td>23</td><td>  muestraError(error)</td></tr>
-  <tr><td>24</td><td> }</td></tr>
-  <tr><td>25</td><td> esperaUnPocoYSincroniza(lista)</td></tr>
-  <tr><td>26</td><td></td></tr>
-  <tr><td>27</td><td>}</td></tr>
-  <tr><td>28</td><td></td></tr>
-  <tr><td>29</td><td>exportaAHtml(sincroniza)</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"./lib/bdEjecuta.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">import</span> { creaIdCliente } <span class="codeReserved">from</span> <span class="codeString">"./lib/creaIdCliente.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeReserved">import</span> { recibeTextoObligatorio } <span class="codeReserved">from</span> <span class="codeString">"./lib/recibeTextoObligatorio.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {SubmitEvent} event</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoAgrega(event) {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre> event.preventDefault()</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre> <span class="codeReserved">const</span> target = event.target</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre> <span class="codeReserved">if</span> (!(target <span class="codeReserved">instanceof</span> HTMLFormElement))</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"target no es de tipo form."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre> <span class="codeReserved">const</span> formData = <span class="codeReserved">new</span> FormData(target)</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre> <span class="codeReserved">const</span> modelo = {</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>  PAS_ID: creaIdCliente(Date.now().toString()), <span class="codeComment">// Genera id único en internet.</span></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>  PAS_NOMBRE: recibeTextoObligatorio(formData, <span class="codeString">"nombre"</span>),</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>  PAS_MODIFICACION: Date.now(),</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>  PAS_ELIMINADO: 0,</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre> <span class="codeReserved">await</span> bdEjecuta(Bd, [ALMACEN_PASATIEMPO], transaccion =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre>  <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>  almacenPasatiempo.add(modelo)</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre> })</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre> location.href = <span class="codeString">"index.html"</span></pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >E. js / pasatiempoBusca.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { bdConsulta } <span class="codeReserved">from</span> <span class="codeString">"./lib/bdConsulta.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeReserved">import</span> { validaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"./validaPasatiempo.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {string} id</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoBusca(id) {</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> <span class="codeReserved">return</span> bdConsulta(Bd, [ALMACEN_PASATIEMPO],</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>  <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre><span class="codeComment">   * <span class="codeReserved">@param</span> {(resultado: <span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO|undefined)</span></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre><span class="codeComment">   *                                                            =&gt; any} resolve </span></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre><span class="codeComment">   */</span></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>  (transaccion, resolve) =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>   <span class="codeComment">/* Pide el primer objeto de ALMACEN_PASATIEMPO que tenga como llave</span></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre><span class="codeComment">    * primaria el valor del parámetro id. */</span></pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>   <span class="codeReserved">const</span> consulta = transaccion.objectStore(ALMACEN_PASATIEMPO).get(id)</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>   <span class="codeComment">// onsuccess se invoca solo una vez, devolviendo el objeto solicitado.</span></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>   consulta.onsuccess = () =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>    <span class="codeComment">/* Se recupera el objeto solicitado usando</span></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre><span class="codeComment">     *  consulta.result</span></pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre><span class="codeComment">     * Si el objeto no se encuentra se recupera undefined. */</span></pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>    <span class="codeReserved">const</span> objeto = consulta.result</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre>    <span class="codeReserved">if</span> (objeto !== undefined) {</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre>     <span class="codeReserved">const</span> modelo = validaPasatiempo(objeto)</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>     <span class="codeReserved">if</span> (modelo.PAS_ELIMINADO === 0) {</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre>      resolve(modelo)</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre>      <span class="codeReserved">return</span></pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre>     }</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre>    }</pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre>    resolve(undefined)</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre>  })</pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >F. js / pasatiempoConsultaNoEliminados.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd, INDICE_NOMBRE } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeReserved">import</span> { bdConsulta } <span class="codeReserved">from</span> <span class="codeString">"./lib/bdConsulta.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">import</span> { validaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"./validaPasatiempo.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoConsultaNoEliminados() {</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre> <span class="codeReserved">return</span> bdConsulta(Bd, [ALMACEN_PASATIEMPO],</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>  <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre><span class="codeComment">   * <span class="codeReserved">@param</span> {(resultado: <span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO[])=&gt;<span class="codeReserved">void</span></span></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre><span class="codeComment">   *                                                                  } resolve</span></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre><span class="codeComment">   */</span></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>  (transaccion, resolve) =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>   <span class="codeReserved">const</span> resultado = []</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>   <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>   <span class="codeComment">// Usa el índice INDICE_NOMBRE para recuperar los datos ordenados.</span></pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>   <span class="codeReserved">const</span> indiceNombre = almacenPasatiempo.index(INDICE_NOMBRE)</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>   <span class="codeComment">// Pide un cursor para recorrer cada objeto que devuelve la consulta.</span></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>   <span class="codeReserved">const</span> consulta = indiceNombre.openCursor()</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>   <span class="codeComment">/* onsuccess se invoca por cada uno de los objetos de la consulta y una vez</span></pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre><span class="codeComment">    * cuando se acaban dichos objetos. */</span></pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>   consulta.onsuccess = () =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre>    <span class="codeComment">/* El <span class="codeReserved">cursor</span> correspondiente al objeto se recupera usando</span></pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre><span class="codeComment">     *  consulta.result */</span></pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>    <span class="codeReserved">const</span> <span class="codeReserved">cursor</span> = consulta.result</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre>    <span class="codeReserved">if</span> (<span class="codeReserved">cursor</span> === <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> vale <span class="codeReserved">null</span>, ya no hay más objetos que procesar; por lo</span></pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre><span class="codeComment">      * mismo, se devuelve el resultado con los pasatiempos recuperados, usando</span></pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre><span class="codeComment">      *  resolve(resultado). */</span></pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre>     resolve(resultado)</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre>    } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> no vale <span class="codeReserved">null</span> y hay más objetos, el siguiente se obtiene con</span></pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre><span class="codeComment">      *  <span class="codeReserved">cursor</span>.value */</span></pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre>     <span class="codeReserved">const</span> modelo = validaPasatiempo(<span class="codeReserved">cursor</span>.value)</pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre>     <span class="codeReserved">if</span> (modelo.PAS_ELIMINADO === 0) {</pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre>      resultado.push(modelo)</pre></td></tr>
+  <tr><td class="codeShow_order">41</td><td><pre>     }</pre></td></tr>
+  <tr><td class="codeShow_order">42</td><td><pre>     <span class="codeComment">/* Busca el siguiente objeto de la consulta, que se recupera la siguiente</span></pre></td></tr>
+  <tr><td class="codeShow_order">43</td><td><pre><span class="codeComment">      * vez que se invoque la función onsuccess. */</span></pre></td></tr>
+  <tr><td class="codeShow_order">44</td><td><pre>     <span class="codeReserved">cursor</span>.<span class="codeReserved">continue</span>()</pre></td></tr>
+  <tr><td class="codeShow_order">45</td><td><pre>    }</pre></td></tr>
+  <tr><td class="codeShow_order">46</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">47</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">48</td><td><pre>  })</pre></td></tr>
+  <tr><td class="codeShow_order">49</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">50</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >G. js / pasatiempoConsultaTodos.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { bdConsulta } <span class="codeReserved">from</span> <span class="codeString">"./lib/bdConsulta.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeReserved">import</span> { validaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"./validaPasatiempo.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> * Lista todos los objetos, incluyendo los que tienen borrado lógico.</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoConsultaTodos() {</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> <span class="codeReserved">return</span> bdConsulta(Bd, [ALMACEN_PASATIEMPO],</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>  <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre><span class="codeComment">   * <span class="codeReserved">@param</span> {(resultado: <span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO[])=&gt;<span class="codeReserved">void</span></span></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre><span class="codeComment">   *                                                                  } resolve</span></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre><span class="codeComment">   */</span></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>  (transaccion, resolve) =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>   <span class="codeReserved">const</span> resultado = []</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>   <span class="codeComment">// Pide un cursor para recorrer cada objeto que devuelve la consulta.</span></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>   <span class="codeReserved">const</span> consulta = transaccion.objectStore(ALMACEN_PASATIEMPO).openCursor()</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>   <span class="codeComment">/* onsuccess se invoca por cada uno de los objetos de la consulta y una vez</span></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre><span class="codeComment">    * cuando se acaban dichos objetos. */</span></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>   consulta.onsuccess = () =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre>    <span class="codeComment">/* El <span class="codeReserved">cursor</span> correspondiente al objeto se recupera usando</span></pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre><span class="codeComment">     *  consulta.result */</span></pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre>    <span class="codeReserved">const</span> <span class="codeReserved">cursor</span> = consulta.result</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre>    <span class="codeReserved">if</span> (<span class="codeReserved">cursor</span> === <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> vale <span class="codeReserved">null</span>, ya no hay más objetos que procesar; por lo</span></pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre><span class="codeComment">      * mismo, se devuelve el resultado con los pasatiempos recuperados, usando</span></pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre><span class="codeComment">      *  resolve(resultado). */</span></pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre>     resolve(resultado)</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre>    } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> no vale <span class="codeReserved">null</span> y hay más objetos, el siguiente se obtiene con</span></pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre><span class="codeComment">      *  <span class="codeReserved">cursor</span>.value*/</span></pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre>     resultado.push(validaPasatiempo(<span class="codeReserved">cursor</span>.value))</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre>     <span class="codeComment">/* Busca el siguiente objeto de la consulta, que se recupera la siguiente</span></pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre><span class="codeComment">      * vez que se invoque la función onsuccess. */</span></pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre>     <span class="codeReserved">cursor</span>.<span class="codeReserved">continue</span>()</pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre>    }</pre></td></tr>
+  <tr><td class="codeShow_order">41</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">42</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">43</td><td><pre>  })</pre></td></tr>
+  <tr><td class="codeShow_order">44</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">45</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >H. js / pasatiempoElimina.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"./lib/bdEjecuta.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">import</span> { pasatiempoBusca } <span class="codeReserved">from</span> <span class="codeString">"./pasatiempoBusca.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { string } id</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoElimina(id) {</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> <span class="codeReserved">if</span> (confirm(<span class="codeString">'Confirma la eliminación'</span>)) {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>  <span class="codeReserved">const</span> modelo = <span class="codeReserved">await</span> pasatiempoBusca(id)</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>  <span class="codeReserved">if</span> (modelo !== undefined) {</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>   modelo.PAS_MODIFICACION = Date.now()</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>   modelo.PAS_ELIMINADO = 1</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>   <span class="codeReserved">await</span> bdEjecuta(Bd, [ALMACEN_PASATIEMPO], transaccion =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>    <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>    almacenPasatiempo.put(modelo)</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>   })</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre>  location.href = <span class="codeString">"index.html"</span></pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >I. js / pasatiempoModifica.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"./lib/bdEjecuta.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">import</span> { recibeTextoObligatorio } <span class="codeReserved">from</span> <span class="codeString">"./lib/recibeTextoObligatorio.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeReserved">import</span> { pasatiempoBusca } <span class="codeReserved">from</span> <span class="codeString">"./pasatiempoBusca.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {SubmitEvent} event</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {string} id</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoModifica(event, id) {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre> event.preventDefault()</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre> <span class="codeReserved">const</span> target = event.target</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre> <span class="codeReserved">if</span> (!(target <span class="codeReserved">instanceof</span> HTMLFormElement))</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"target no es de tipo form."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre> <span class="codeReserved">const</span> formData = <span class="codeReserved">new</span> FormData(target)</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre> <span class="codeReserved">const</span> nombre = recibeTextoObligatorio(formData, <span class="codeString">"nombre"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre> <span class="codeReserved">const</span> anterior = <span class="codeReserved">await</span> pasatiempoBusca(id)</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre> <span class="codeReserved">if</span> (anterior !== undefined) {</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>  anterior.PAS_NOMBRE = nombre</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre>  anterior.PAS_MODIFICACION = Date.now()</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>  <span class="codeReserved">await</span> bdEjecuta(Bd, [ALMACEN_PASATIEMPO], transaccion =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre>   <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre>   almacenPasatiempo.put(anterior)</pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre>  })</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre> location.href = <span class="codeString">"index.html"</span></pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >J. js / pasatiemposReemplaza.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"./lib/bdEjecuta.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * Borra el contenido del almacén PASATIEMPO y guarda nuevospasatiempos.</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO[]} nuevosPasatiempos</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiemposReemplaza(nuevosPasatiempos) {</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> <span class="codeReserved">return</span> bdEjecuta(Bd, [ALMACEN_PASATIEMPO], transaccion =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>  <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>  almacenPasatiempo.clear()</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> objeto of nuevosPasatiempos) {</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>   almacenPasatiempo.add(objeto)</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre> })</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >K. js / renderiza.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { htmlentities } <span class="codeReserved">from</span> <span class="codeString">"./lib/htmlentities.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeReserved">import</span> { muestraObjeto } <span class="codeReserved">from</span> <span class="codeString">"./lib/muestraObjeto.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO[]} pasatiempos</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> renderiza(pasatiempos) {</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeReserved">let</span> render = <span class="codeString">""</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> modelo of pasatiempos) {</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>  <span class="codeReserved">const</span> nombre = htmlentities(modelo.PAS_NOMBRE)</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>  <span class="codeReserved">const</span> searchParams = <span class="codeReserved">new</span> URLSearchParams([[<span class="codeString">"id"</span>, modelo.PAS_ID]])</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>  <span class="codeReserved">const</span> params = htmlentities(searchParams.toString())</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>  render += <span class="codeComment">/* html */</span></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>   <span class="codeString">`&lt;<span class="codeReserved">li</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre><span class="codeString">     &lt;<span class="codeReserved">p</span>&gt;&lt;<span class="codeReserved">a</span> href=&quot;modifica.html?${params}&quot;&gt;${nombre}&lt;/<span class="codeReserved">a</span>&gt;&lt;/<span class="codeReserved">p</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre><span class="codeString">    &lt;/<span class="codeReserved">li</span>&gt;`</span></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre> muestraObjeto(</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>  document,</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>   lista: { innerHTML: render }</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre> )</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre></pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >L. js / sincroniza.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { pasatiempoConsultaTodos } <span class="codeReserved">from</span> <span class="codeString">"./pasatiempoConsultaTodos.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeReserved">import</span> { pasatiemposReemplaza } <span class="codeReserved">from</span> <span class="codeString">"./pasatiemposReemplaza.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">import</span> { esperaUnPocoYSincroniza } <span class="codeReserved">from</span> <span class="codeString">"./esperaUnPocoYSincroniza.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeReserved">import</span> { consume } <span class="codeReserved">from</span> <span class="codeString">"./lib/consume.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeReserved">import</span> { enviaJsonRecibeJson } <span class="codeReserved">from</span> <span class="codeString">"./lib/enviaJsonRecibeJson.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeReserved">import</span> { muestraError } <span class="codeReserved">from</span> <span class="codeString">"./lib/muestraError.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeReserved">import</span> { renderiza } <span class="codeReserved">from</span> <span class="codeString">"./renderiza.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeReserved">import</span> { validaPasatiempos } <span class="codeReserved">from</span> <span class="codeString">"./validaPasatiempos.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> sincroniza() {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre> <span class="codeReserved">try</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>  <span class="codeReserved">if</span> (navigator.onLine) {</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>   <span class="codeReserved">const</span> todos = <span class="codeReserved">await</span> pasatiempoConsultaTodos()</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>   <span class="codeReserved">const</span> respuesta =</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>    <span class="codeReserved">await</span> consume(enviaJsonRecibeJson(<span class="codeString">"php/sincroniza.php"</span>, todos))</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>   <span class="codeReserved">const</span> pasatiempos = validaPasatiempos(<span class="codeReserved">await</span> respuesta.json())</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>   <span class="codeReserved">await</span> pasatiemposReemplaza(pasatiempos)</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>   renderiza(pasatiempos)</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre> } <span class="codeReserved">catch</span> (error) {</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre>  muestraError(error)</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre> esperaUnPocoYSincroniza()</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >M. js / validaPasatiempo.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { any } objeto</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * <span class="codeReserved">@returns</span> {<span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO}</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaPasatiempo(objeto) {</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.PAS_ELIMINADO !== <span class="codeString">"number"</span> || isNaN(objeto.PAS_ELIMINADO))</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El campo eliminado debe ser número."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.PAS_ID !== <span class="codeString">"string"</span> || objeto.PAS_ID === <span class="codeString">""</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El id debe ser texto que no esté en blanco."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre> <span class="codeReserved">if</span> (</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>  <span class="codeReserved">typeof</span> objeto.PAS_MODIFICACION !== <span class="codeString">"number"</span> || isNaN(objeto.PAS_MODIFICACION)</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre> )</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El campo modificacion debe ser número."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.PAS_NOMBRE !== <span class="codeString">"string"</span> || objeto.PAS_ID === <span class="codeString">""</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El nombre debe ser texto que no esté en blanco."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre> <span class="codeReserved">return</span> objeto</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >N. js / validaPasatiempos.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { validaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"./validaPasatiempo.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { any } objetos</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * <span class="codeReserved">@returns</span> {<span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO[]}</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaPasatiempos(objetos) {</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeReserved">if</span> (!Array.isArray(objetos))</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"no se recibió un arreglo."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre><span class="codeComment">  * <span class="codeReserved">@type</span> {<span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO[]}</span></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre><span class="codeComment">  */</span></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre> <span class="codeReserved">const</span> arreglo = []</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> objeto of objetos) {</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>  arreglo.push(validaPasatiempo(objeto))</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre> <span class="codeReserved">return</span> arreglo</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>}</pre></td></tr>
  </tbody>
 </table>
       </section>
      <section>
-         <h1 >E. Carpeta « js / bd »</h1>
+         <h1 >O. Carpeta « js / lib »</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a target="_blank" rel="noreferrer"
@@ -946,49 +1453,79 @@
     
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-bd/m-Bd-js.html">js / bd / Bd.js</a>
+     <a href="/m09sincronizacion/m-js/m-lib/m-bdConsulta-js.html">js / lib / bdConsulta.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-bd/m-pasatiempoAgrega-js.html">js / bd / pasatiempoAgrega.js</a>
+     <a href="/m09sincronizacion/m-js/m-lib/m-bdEjecuta-js.html">js / lib / bdEjecuta.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-bd/m-pasatiempoBusca-js.html">js / bd / pasatiempoBusca.js</a>
+     <a href="/m09sincronizacion/m-js/m-lib/m-consume-js.html">js / lib / consume.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-bd/m-pasatiempoConsultaNoEliminados-js.html">js / bd / pasatiempoConsultaNoEliminados.js</a>
+     <a href="/m09sincronizacion/m-js/m-lib/m-creaIdCliente-js.html">js / lib / creaIdCliente.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-bd/m-pasatiempoConsultaTodos-js.html">js / bd / pasatiempoConsultaTodos.js</a>
+     <a href="/m09sincronizacion/m-js/m-lib/m-enviaJsonRecibeJson-js.html">js / lib / enviaJsonRecibeJson.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-bd/m-pasatiempoElimina-js.html">js / bd / pasatiempoElimina.js</a>
+     <a href="/m09sincronizacion/m-js/m-lib/m-htmlentities-js.html">js / lib / htmlentities.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-bd/m-pasatiempoModifica-js.html">js / bd / pasatiempoModifica.js</a>
+     <a href="/m09sincronizacion/m-js/m-lib/m-manejaErrores-js.html">js / lib / manejaErrores.js</a>
     </p>
    </li>
    <li>
     <p>
-     <a href="/m09sincronizacion/m-js/m-bd/m-pasatiemposReemplaza-js.html">js / bd / pasatiemposReemplaza.js</a>
+     <a href="/m09sincronizacion/m-js/m-lib/m-muestraError-js.html">js / lib / muestraError.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-lib/m-muestraObjeto-js.html">js / lib / muestraObjeto.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-lib/m-ProblemDetailsError-js.html">js / lib / ProblemDetailsError.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-lib/m-recibeTexto-js.html">js / lib / recibeTexto.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-lib/m-recibeTextoObligatorio-js.html">js / lib / recibeTextoObligatorio.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-lib/m-registraServiceWorker-js.html">js / lib / registraServiceWorker.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09sincronizacion/m-js/m-lib/m-validaEntidadObligatoria-js.html">js / lib / validaEntidadObligatoria.js</a>
     </p>
    </li>
    </ol>
    </nav>
   </div>
      <section >
-         <h1 >1. js / bd / Bd.js</h1><table class="codeShow">
+         <h1 >1. js / lib / bdConsulta.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -998,50 +1535,33 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> ALMACEN_PASATIEMPO = <span class="codeString">"PASATIEMPO"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> PAS_ID = <span class="codeString">"PAS_ID"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> INDICE_NOMBRE = <span class="codeString">"INDICE_NOMBRE"</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> PAS_NOMBRE = <span class="codeString">"PAS_NOMBRE"</span></td></tr>
-  <tr><td>5</td><td><span class="codeReserved">const</span> BD_NOMBRE = <span class="codeString">"sincronizacion"</span></td></tr>
-  <tr><td>6</td><td><span class="codeReserved">const</span> BD_VERSION = 1</td></tr>
-  <tr><td>7</td><td></td></tr>
-  <tr><td>8</td><td><span class="codeComment">/** <span class="codeReserved">@type</span> { Promise&lt;IDBDatabase&gt; } */</span></td></tr>
-  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">const</span> Bd = <span class="codeReserved">new</span> Promise((resolve, reject) =&gt; {</td></tr>
-  <tr><td>10</td><td></td></tr>
-  <tr><td>11</td><td> <span class="codeComment">/* Se solicita abrir la base de datos, indicando nombre y</span></td></tr>
-  <tr><td>12</td><td><span class="codeComment">  * número de versión. */</span></td></tr>
-  <tr><td>13</td><td> <span class="codeReserved">const</span> solicitud = indexedDB.open(BD_NOMBRE, BD_VERSION)</td></tr>
-  <tr><td>14</td><td></td></tr>
-  <tr><td>15</td><td> <span class="codeComment">// Si se presenta un error, rechaza la promesa.</span></td></tr>
-  <tr><td>16</td><td> solicitud.onerror = () =&gt; reject(solicitud.error)</td></tr>
-  <tr><td>17</td><td></td></tr>
-  <tr><td>18</td><td> <span class="codeComment">// Si se abre con éxito, devuelve una conexión a la base de datos.</span></td></tr>
-  <tr><td>19</td><td> solicitud.onsuccess = () =&gt; resolve(solicitud.result)</td></tr>
-  <tr><td>20</td><td></td></tr>
-  <tr><td>21</td><td> <span class="codeComment">// Si es necesario, se inicia una transacción para cambio de versión.</span></td></tr>
-  <tr><td>22</td><td> solicitud.onupgradeneeded = () =&gt; {</td></tr>
-  <tr><td>23</td><td></td></tr>
-  <tr><td>24</td><td>  <span class="codeReserved">const</span> bd = solicitud.result</td></tr>
-  <tr><td>25</td><td></td></tr>
-  <tr><td>26</td><td>  <span class="codeComment">// Como hay cambio de versión, borra el almacén si es que existe.</span></td></tr>
-  <tr><td>27</td><td>  <span class="codeReserved">if</span> (bd.objectStoreNames.contains(ALMACEN_PASATIEMPO)) {</td></tr>
-  <tr><td>28</td><td>   bd.deleteObjectStore(ALMACEN_PASATIEMPO)</td></tr>
-  <tr><td>29</td><td>  }</td></tr>
-  <tr><td>30</td><td></td></tr>
-  <tr><td>31</td><td>  <span class="codeComment">// Crea el almacén &quot;PASATIEMPO&quot; con el campo llave &quot;PAS_ID&quot;.</span></td></tr>
-  <tr><td>32</td><td>  <span class="codeReserved">const</span> almacenPasatiempo =</td></tr>
-  <tr><td>33</td><td>   bd.createObjectStore(ALMACEN_PASATIEMPO, { keyPath: PAS_ID })</td></tr>
-  <tr><td>34</td><td></td></tr>
-  <tr><td>35</td><td>  <span class="codeComment">// Crea un índice ordenado por el campo &quot;PAS_NOMBRE&quot; que no acepta duplicados.</span></td></tr>
-  <tr><td>36</td><td>  almacenPasatiempo.createIndex(INDICE_NOMBRE, <span class="codeString">"PAS_NOMBRE"</span>)</td></tr>
-  <tr><td>37</td><td> }</td></tr>
-  <tr><td>38</td><td></td></tr>
-  <tr><td>39</td><td>})</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * <span class="codeReserved">@template</span> T</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {Promise&lt;IDBDatabase&gt;} bd</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {string[]} almacenes</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {(transaccion: IDBTransaction, resolve: (resultado:T)=&gt;<span class="codeReserved">void</span>) =&gt; any</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> *                                                                   } consulta</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment"> * <span class="codeReserved">@returns</span> {Promise&lt;T&gt;}</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> bdConsulta(bd, almacenes, consulta) {</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> <span class="codeReserved">const</span> base = <span class="codeReserved">await</span> bd</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre> <span class="codeReserved">return</span> <span class="codeReserved">new</span> Promise((resolve, reject) =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>  <span class="codeComment">// Inicia una transacción de solo lectura.</span></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>  <span class="codeReserved">const</span> transaccion = base.transaction(almacenes, <span class="codeString">"readonly"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>  <span class="codeComment">// Al terminar con error ejecuta la función reject.</span></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>  transaccion.onerror = () =&gt; reject(transaccion.error)</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>  <span class="codeComment">// Estas son las operaciones para realizar la consulta.</span></pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>  consulta(transaccion, resolve)</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre> })</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>}</pre></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >2. js / bd / pasatiempoAgrega.js</h1><table class="codeShow">
+         <h1 >2. js / lib / bdEjecuta.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1051,33 +1571,34 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdEjecuta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { creaIdCliente } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/creaIdCliente.js"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">import</span> { validaNombre } <span class="codeReserved">from</span> <span class="codeString">"../modelo/validaNombre.js"</span></td></tr>
-  <tr><td>5</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/exportaAHtml.js"</span></td></tr>
-  <tr><td>6</td><td></td></tr>
-  <tr><td>7</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">import</span>(&quot;../modelo/PASATIEMPO.js&quot;).PASATIEMPO} modelo</span></td></tr>
-  <tr><td>9</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>10</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoAgrega(modelo) {</td></tr>
-  <tr><td>11</td><td> validaNombre(modelo.PAS_NOMBRE)</td></tr>
-  <tr><td>12</td><td> modelo.PAS_MODIFICACION = Date.now()</td></tr>
-  <tr><td>13</td><td> modelo.PAS_ELIMINADO = 0</td></tr>
-  <tr><td>14</td><td> <span class="codeComment">// Genera id único en internet.</span></td></tr>
-  <tr><td>15</td><td> modelo.PAS_ID = creaIdCliente(Date.now().toString())</td></tr>
-  <tr><td>16</td><td> <span class="codeReserved">return</span> bdEjecuta(Bd, [ALMACEN_PASATIEMPO], transaccion =&gt; {</td></tr>
-  <tr><td>17</td><td>  <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</td></tr>
-  <tr><td>18</td><td>  almacenPasatiempo.add(modelo)</td></tr>
-  <tr><td>19</td><td> })</td></tr>
-  <tr><td>20</td><td>}</td></tr>
-  <tr><td>21</td><td></td></tr>
-  <tr><td>22</td><td>exportaAHtml(pasatiempoAgrega)</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {Promise&lt;IDBDatabase&gt;} bd</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {string[]} entidades</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {(t:IDBTransaction) =&gt; <span class="codeReserved">void</span>} operaciones</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> bdEjecuta(bd, entidades, operaciones) {</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeComment">// Espera que se abra la bd</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> <span class="codeReserved">const</span> base = <span class="codeReserved">await</span> bd</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> <span class="codeReserved">return</span> <span class="codeReserved">new</span> Promise(</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>  (resolve, reject) =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>   <span class="codeComment">// Inicia una transacción de lectura y escritura.</span></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>   <span class="codeReserved">const</span> transaccion = base.transaction(entidades, <span class="codeString">"readwrite"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>   <span class="codeComment">// Al terminar con éxito, ejecuta la función resolve.</span></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>   transaccion.oncomplete = resolve</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>   <span class="codeComment">// Al terminar con error, ejecuta la función reject.</span></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>   transaccion.onerror = () =&gt; reject(transaccion.error)</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>   <span class="codeComment">// Estas son las operaciones de la transacción.</span></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>   operaciones(transaccion)</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>  })</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>}</pre></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >3. js / bd / pasatiempoBusca.js</h1><table class="codeShow">
+         <h1 >3. js / lib / consume.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1087,54 +1608,31 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { bdConsulta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdConsulta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/exportaAHtml.js"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">import</span> { validaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/validaPasatiempo.js"</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {string} id</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoBusca(id) {</td></tr>
-  <tr><td>10</td><td></td></tr>
-  <tr><td>11</td><td> <span class="codeReserved">return</span> bdConsulta(Bd, [ALMACEN_PASATIEMPO],</td></tr>
-  <tr><td>12</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>13</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> {(resultado: <span class="codeReserved">import</span>(&quot;../modelo/PASATIEMPO.js&quot;).PASATIEMPO|undefined)</span></td></tr>
-  <tr><td>14</td><td><span class="codeComment">   *                                                            =&gt; any} resolve </span></td></tr>
-  <tr><td>15</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>16</td><td>  (transaccion, resolve) =&gt; {</td></tr>
-  <tr><td>17</td><td></td></tr>
-  <tr><td>18</td><td>   <span class="codeComment">/* Pide el primer objeto de ALMACEN_PASATIEMPO que tenga como llave</span></td></tr>
-  <tr><td>19</td><td><span class="codeComment">    * primaria el valor del parámetro id. */</span></td></tr>
-  <tr><td>20</td><td>   <span class="codeReserved">const</span> consulta = transaccion.objectStore(ALMACEN_PASATIEMPO).get(id)</td></tr>
-  <tr><td>21</td><td></td></tr>
-  <tr><td>22</td><td>   <span class="codeComment">// onsuccess se invoca solo una vez, devolviendo el objeto solicitado.</span></td></tr>
-  <tr><td>23</td><td>   consulta.onsuccess = () =&gt; {</td></tr>
-  <tr><td>24</td><td>    <span class="codeComment">/* Se recupera el objeto solicitado usando</span></td></tr>
-  <tr><td>25</td><td><span class="codeComment">     *  consulta.result</span></td></tr>
-  <tr><td>26</td><td><span class="codeComment">     * Si el objeto no se encuentra se recupera undefined. */</span></td></tr>
-  <tr><td>27</td><td>    <span class="codeReserved">const</span> objeto = consulta.result</td></tr>
-  <tr><td>28</td><td>    <span class="codeReserved">if</span> (objeto !== undefined) {</td></tr>
-  <tr><td>29</td><td>     <span class="codeReserved">const</span> modelo = validaPasatiempo(objeto)</td></tr>
-  <tr><td>30</td><td>     <span class="codeReserved">if</span> (modelo.PAS_ELIMINADO === 0) {</td></tr>
-  <tr><td>31</td><td>      resolve(modelo)</td></tr>
-  <tr><td>32</td><td>      <span class="codeReserved">return</span></td></tr>
-  <tr><td>33</td><td>     }</td></tr>
-  <tr><td>34</td><td>    }</td></tr>
-  <tr><td>35</td><td>    resolve(undefined)</td></tr>
-  <tr><td>36</td><td></td></tr>
-  <tr><td>37</td><td>   }</td></tr>
-  <tr><td>38</td><td></td></tr>
-  <tr><td>39</td><td>  })</td></tr>
-  <tr><td>40</td><td></td></tr>
-  <tr><td>41</td><td>}</td></tr>
-  <tr><td>42</td><td></td></tr>
-  <tr><td>43</td><td>exportaAHtml(pasatiempoBusca)</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { ProblemDetailsError } <span class="codeReserved">from</span> <span class="codeString">"./ProblemDetailsError.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * Espera a que la promesa de un fetch termine. Si</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * hay error, lanza una excepción.</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> * </span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {Promise&lt;Response&gt; } servicio</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> consume(servicio) {</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> <span class="codeReserved">const</span> respuesta = <span class="codeReserved">await</span> servicio</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> <span class="codeReserved">if</span> (respuesta.ok) {</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>  <span class="codeReserved">return</span> respuesta</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre> } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>  <span class="codeReserved">const</span> contentType = respuesta.headers.get(<span class="codeString">"Content-Type"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>  <span class="codeReserved">if</span> (contentType === <span class="codeString">"application/problem+json; charset=utf-8"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetailsError(<span class="codeReserved">await</span> respuesta.json())</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>  <span class="codeReserved">else</span></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(respuesta.statusText)</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>}</pre></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >4. js / bd / pasatiempoConsultaNoEliminados.js</h1><table class="codeShow">
+         <h1 >4. js / lib / creaIdCliente.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1144,64 +1642,22 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { bdConsulta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdConsulta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/exportaAHtml.js"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">import</span> { validaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/validaPasatiempo.js"</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd, INDICE_NOMBRE } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoConsultaNoEliminados() {</td></tr>
-  <tr><td>7</td><td></td></tr>
-  <tr><td>8</td><td> <span class="codeReserved">return</span> bdConsulta(Bd, [ALMACEN_PASATIEMPO],</td></tr>
-  <tr><td>9</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>10</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> {(resultado: <span class="codeReserved">import</span>(&quot;../modelo/PASATIEMPO.js&quot;).PASATIEMPO[])=&gt;<span class="codeReserved">void</span></span></td></tr>
-  <tr><td>11</td><td><span class="codeComment">   *                                                                  } resolve</span></td></tr>
-  <tr><td>12</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>13</td><td>  (transaccion, resolve) =&gt; {</td></tr>
-  <tr><td>14</td><td></td></tr>
-  <tr><td>15</td><td>   <span class="codeReserved">const</span> resultado = []</td></tr>
-  <tr><td>16</td><td></td></tr>
-  <tr><td>17</td><td>   <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</td></tr>
-  <tr><td>18</td><td></td></tr>
-  <tr><td>19</td><td>   <span class="codeComment">// Usa el índice INDICE_NOMBRE para recuperar los datos ordenados.</span></td></tr>
-  <tr><td>20</td><td>   <span class="codeReserved">const</span> indiceNombre = almacenPasatiempo.index(INDICE_NOMBRE)</td></tr>
-  <tr><td>21</td><td></td></tr>
-  <tr><td>22</td><td>   <span class="codeComment">// Pide un cursor para recorrer cada objeto que devuelve la consulta.</span></td></tr>
-  <tr><td>23</td><td>   <span class="codeReserved">const</span> consulta = indiceNombre.openCursor()</td></tr>
-  <tr><td>24</td><td></td></tr>
-  <tr><td>25</td><td>   <span class="codeComment">/* onsuccess se invoca por cada uno de los objetos de la consulta y una vez</span></td></tr>
-  <tr><td>26</td><td><span class="codeComment">    * cuando se acaban dichos objetos. */</span></td></tr>
-  <tr><td>27</td><td>   consulta.onsuccess = () =&gt; {</td></tr>
-  <tr><td>28</td><td>    <span class="codeComment">/* El <span class="codeReserved">cursor</span> correspondiente al objeto se recupera usando</span></td></tr>
-  <tr><td>29</td><td><span class="codeComment">     *  consulta.result */</span></td></tr>
-  <tr><td>30</td><td>    <span class="codeReserved">const</span> <span class="codeReserved">cursor</span> = consulta.result</td></tr>
-  <tr><td>31</td><td>    <span class="codeReserved">if</span> (<span class="codeReserved">cursor</span> === <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>32</td><td>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> vale <span class="codeReserved">null</span>, ya no hay más objetos que procesar; por lo</span></td></tr>
-  <tr><td>33</td><td><span class="codeComment">      * mismo, se devuelve el resultado con los pasatiempos recuperados, usando</span></td></tr>
-  <tr><td>34</td><td><span class="codeComment">      *  resolve(resultado). */</span></td></tr>
-  <tr><td>35</td><td>     resolve(resultado)</td></tr>
-  <tr><td>36</td><td>    } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>37</td><td>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> no vale <span class="codeReserved">null</span> y hay más objetos, el siguiente se obtiene con</span></td></tr>
-  <tr><td>38</td><td><span class="codeComment">      *  <span class="codeReserved">cursor</span>.value */</span></td></tr>
-  <tr><td>39</td><td>     <span class="codeReserved">const</span> modelo = validaPasatiempo(<span class="codeReserved">cursor</span>.value)</td></tr>
-  <tr><td>40</td><td>     <span class="codeReserved">if</span> (modelo.PAS_ELIMINADO === 0) {</td></tr>
-  <tr><td>41</td><td>      resultado.push(modelo)</td></tr>
-  <tr><td>42</td><td>     }</td></tr>
-  <tr><td>43</td><td>     <span class="codeComment">/* Busca el siguiente objeto de la consulta, que se recupera la siguiente</span></td></tr>
-  <tr><td>44</td><td><span class="codeComment">      * vez que se invoque la función onsuccess. */</span></td></tr>
-  <tr><td>45</td><td>     <span class="codeReserved">cursor</span>.<span class="codeReserved">continue</span>()</td></tr>
-  <tr><td>46</td><td>    }</td></tr>
-  <tr><td>47</td><td>   }</td></tr>
-  <tr><td>48</td><td></td></tr>
-  <tr><td>49</td><td>  })</td></tr>
-  <tr><td>50</td><td></td></tr>
-  <tr><td>51</td><td>}</td></tr>
-  <tr><td>52</td><td></td></tr>
-  <tr><td>53</td><td>exportaAHtml(pasatiempoConsultaNoEliminados)</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * Añade caracteres al azar a una raíz, para obtener un clientId único.</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {string} raiz </span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> creaIdCliente(raiz) {</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre> <span class="codeReserved">const</span> chars = <span class="codeString">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre> <span class="codeReserved">for</span> (<span class="codeReserved">var</span> i = 0; i &lt; 15; i++) {</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>  raiz += chars.charAt(Math.floor(Math.random() * chars.length))</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> <span class="codeReserved">return</span> raiz</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>}</pre></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >5. js / bd / pasatiempoConsultaTodos.js</h1><table class="codeShow">
+         <h1 >5. js / lib / enviaJsonRecibeJson.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1211,56 +1667,31 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { bdConsulta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdConsulta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { validaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"../modelo/validaPasatiempo.js"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
-  <tr><td>4</td><td></td></tr>
-  <tr><td>5</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> * Lista todos los objetos, incluyendo los que tienen borrado lógico.</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>8</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoConsultaTodos() {</td></tr>
-  <tr><td>9</td><td></td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">return</span> bdConsulta(Bd, [ALMACEN_PASATIEMPO],</td></tr>
-  <tr><td>11</td><td>  <span class="codeComment">/**</span></td></tr>
-  <tr><td>12</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> {(resultado: <span class="codeReserved">import</span>(&quot;../modelo/PASATIEMPO.js&quot;).PASATIEMPO[])=&gt;<span class="codeReserved">void</span></span></td></tr>
-  <tr><td>13</td><td><span class="codeComment">   *                                                                  } resolve</span></td></tr>
-  <tr><td>14</td><td><span class="codeComment">   */</span></td></tr>
-  <tr><td>15</td><td>  (transaccion, resolve) =&gt; {</td></tr>
-  <tr><td>16</td><td></td></tr>
-  <tr><td>17</td><td>   <span class="codeReserved">const</span> resultado = []</td></tr>
-  <tr><td>18</td><td></td></tr>
-  <tr><td>19</td><td>   <span class="codeComment">// Pide un cursor para recorrer cada objeto que devuelve la consulta.</span></td></tr>
-  <tr><td>20</td><td>   <span class="codeReserved">const</span> consulta = transaccion.objectStore(ALMACEN_PASATIEMPO).openCursor()</td></tr>
-  <tr><td>21</td><td></td></tr>
-  <tr><td>22</td><td>   <span class="codeComment">/* onsuccess se invoca por cada uno de los objetos de la consulta y una vez</span></td></tr>
-  <tr><td>23</td><td><span class="codeComment">    * cuando se acaban dichos objetos. */</span></td></tr>
-  <tr><td>24</td><td>   consulta.onsuccess = () =&gt; {</td></tr>
-  <tr><td>25</td><td>    <span class="codeComment">/* El <span class="codeReserved">cursor</span> correspondiente al objeto se recupera usando</span></td></tr>
-  <tr><td>26</td><td><span class="codeComment">     *  consulta.result */</span></td></tr>
-  <tr><td>27</td><td>    <span class="codeReserved">const</span> <span class="codeReserved">cursor</span> = consulta.result</td></tr>
-  <tr><td>28</td><td>    <span class="codeReserved">if</span> (<span class="codeReserved">cursor</span> === <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>29</td><td>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> vale <span class="codeReserved">null</span>, ya no hay más objetos que procesar; por lo</span></td></tr>
-  <tr><td>30</td><td><span class="codeComment">      * mismo, se devuelve el resultado con los pasatiempos recuperados, usando</span></td></tr>
-  <tr><td>31</td><td><span class="codeComment">      *  resolve(resultado). */</span></td></tr>
-  <tr><td>32</td><td>     resolve(resultado)</td></tr>
-  <tr><td>33</td><td>    } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>34</td><td>     <span class="codeComment">/* Si el <span class="codeReserved">cursor</span> no vale <span class="codeReserved">null</span> y hay más objetos, el siguiente se obtiene con</span></td></tr>
-  <tr><td>35</td><td><span class="codeComment">      *  <span class="codeReserved">cursor</span>.value*/</span></td></tr>
-  <tr><td>36</td><td>     resultado.push(validaPasatiempo(<span class="codeReserved">cursor</span>.value))</td></tr>
-  <tr><td>37</td><td>     <span class="codeComment">/* Busca el siguiente objeto de la consulta, que se recupera la siguiente</span></td></tr>
-  <tr><td>38</td><td><span class="codeComment">      * vez que se invoque la función onsuccess. */</span></td></tr>
-  <tr><td>39</td><td>     <span class="codeReserved">cursor</span>.<span class="codeReserved">continue</span>()</td></tr>
-  <tr><td>40</td><td>    }</td></tr>
-  <tr><td>41</td><td>   }</td></tr>
-  <tr><td>42</td><td></td></tr>
-  <tr><td>43</td><td>  })</td></tr>
-  <tr><td>44</td><td></td></tr>
-  <tr><td>45</td><td>}</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { string } url</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { Object } body</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { &quot;GET&quot; | &quot;POST&quot;| &quot;PUT&quot; | &quot;PATCH&quot; | &quot;<span class="codeReserved">DELETE</span>&quot; | &quot;TRACE&quot; | &quot;OPTIONS&quot;</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> *  | &quot;CONNECT&quot; | &quot;HEAD&quot; } metodoHttp</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> enviaJsonRecibeJson(url, body, metodoHttp = <span class="codeString">"POST"</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> <span class="codeReserved">return</span> fetch(</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>  url,</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>   method: metodoHttp,</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>   headers: {</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>    <span class="codeString">"Content-Type"</span>: <span class="codeString">"application/json"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>    <span class="codeString">"Accept"</span>: <span class="codeString">"application/json, application/problem+json"</span></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>   },</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>   body: JSON.stringify(body)</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre> )</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>}</pre></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >6. js / bd / pasatiempoElimina.js</h1><table class="codeShow">
+         <h1 >6. js / lib / htmlentities.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1270,32 +1701,30 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdEjecuta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/exportaAHtml.js"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">import</span> { pasatiempoBusca } <span class="codeReserved">from</span> <span class="codeString">"./pasatiempoBusca.js"</span></td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { string } id</span></td></tr>
-  <tr><td>8</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>9</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoElimina(id) {</td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">const</span> modelo = <span class="codeReserved">await</span> pasatiempoBusca(id)</td></tr>
-  <tr><td>11</td><td> <span class="codeReserved">if</span> (modelo !== undefined) {</td></tr>
-  <tr><td>12</td><td>  modelo.PAS_MODIFICACION = Date.now()</td></tr>
-  <tr><td>13</td><td>  modelo.PAS_ELIMINADO = 1</td></tr>
-  <tr><td>14</td><td>  <span class="codeReserved">return</span> bdEjecuta(Bd, [ALMACEN_PASATIEMPO], transaccion =&gt; {</td></tr>
-  <tr><td>15</td><td>   <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</td></tr>
-  <tr><td>16</td><td>   almacenPasatiempo.put(modelo)</td></tr>
-  <tr><td>17</td><td>  })</td></tr>
-  <tr><td>18</td><td> }</td></tr>
-  <tr><td>19</td><td>}</td></tr>
-  <tr><td>20</td><td></td></tr>
-  <tr><td>21</td><td>exportaAHtml(pasatiempoElimina)</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * Codifica un texto para que cambie los caracteres</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * especiales y no se pueda interpretar como</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * etiiqueta HTML. Esta técnica evita la inyección</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * de código.</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { string } texto</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment">*/</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> htmlentities(texto) {</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> <span class="codeReserved">return</span> texto.replace(<span class="codeString">/[&lt;&gt;&quot;&#039;]/</span>g, textoDetectado =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>  <span class="codeReserved">switch</span> (textoDetectado) {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>   <span class="codeReserved">case</span> <span class="codeString">"<"</span>: <span class="codeReserved">return</span> <span class="codeString">"&lt;"</span></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>   <span class="codeReserved">case</span> <span class="codeString">"&gt;"</span>: <span class="codeReserved">return</span> <span class="codeString">"&gt;"</span></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>   <span class="codeReserved">case</span> <span class="codeString">'&quot;'</span>: <span class="codeReserved">return</span> <span class="codeString">"&quot;"</span></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>   <span class="codeReserved">case</span> <span class="codeString">"&#039;"</span>: <span class="codeReserved">return</span> <span class="codeString">"&#039;"</span></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>   <span class="codeReserved">default</span>: <span class="codeReserved">return</span> textoDetectado</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre> })</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre></pre></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >7. js / bd / pasatiempoModifica.js</h1><table class="codeShow">
+         <h1 >7. js / lib / manejaErrores.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1305,38 +1734,46 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdEjecuta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/exportaAHtml.js"</span></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">import</span> { validaId } <span class="codeReserved">from</span> <span class="codeString">"../modelo/validaId.js"</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">import</span> { validaNombre } <span class="codeReserved">from</span> <span class="codeString">"../modelo/validaNombre.js"</span></td></tr>
-  <tr><td>5</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
-  <tr><td>6</td><td><span class="codeReserved">import</span> { pasatiempoBusca } <span class="codeReserved">from</span> <span class="codeString">"./pasatiempoBusca.js"</span></td></tr>
-  <tr><td>7</td><td></td></tr>
-  <tr><td>8</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>9</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { <span class="codeReserved">import</span>(&quot;../modelo/PASATIEMPO.js&quot;).PASATIEMPO } modelo</span></td></tr>
-  <tr><td>10</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>11</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoModifica(modelo) {</td></tr>
-  <tr><td>12</td><td> validaNombre(modelo.PAS_NOMBRE)</td></tr>
-  <tr><td>13</td><td> <span class="codeReserved">if</span> (modelo.PAS_ID === undefined)</td></tr>
-  <tr><td>14</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">`Falta PAS_ID de ${modelo.PAS_NOMBRE}.`</span>)</td></tr>
-  <tr><td>15</td><td> validaId(modelo.PAS_ID)</td></tr>
-  <tr><td>16</td><td> <span class="codeReserved">const</span> anterior = <span class="codeReserved">await</span> pasatiempoBusca(modelo.PAS_ID)</td></tr>
-  <tr><td>17</td><td> <span class="codeReserved">if</span> (anterior !== undefined) {</td></tr>
-  <tr><td>18</td><td>  modelo.PAS_MODIFICACION = Date.now()</td></tr>
-  <tr><td>19</td><td>  modelo.PAS_ELIMINADO = 0</td></tr>
-  <tr><td>20</td><td>  <span class="codeReserved">return</span> bdEjecuta(Bd, [ALMACEN_PASATIEMPO], transaccion =&gt; {</td></tr>
-  <tr><td>21</td><td>   <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</td></tr>
-  <tr><td>22</td><td>   almacenPasatiempo.put(modelo)</td></tr>
-  <tr><td>23</td><td>  })</td></tr>
-  <tr><td>24</td><td> }</td></tr>
-  <tr><td>25</td><td>}</td></tr>
-  <tr><td>26</td><td></td></tr>
-  <tr><td>27</td><td>exportaAHtml(pasatiempoModifica)</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { muestraError } <span class="codeReserved">from</span> <span class="codeString">"./muestraError.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * Intercepta Response.prototype.json para capturar errores de parseo</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * y asegurar que se reporten correctamente en navegadores Chromium.</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre>{</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeReserved">const</span> originalJson = Response.prototype.json</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> Response.prototype.json = <span class="codeReserved">function</span> () {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>  <span class="codeComment">// Llamamos al método original usando el contexto (this) de la respuesta</span></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>  <span class="codeReserved">return</span> originalJson.apply(<span class="codeReserved">this</span>, arguments)</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>   .<span class="codeReserved">catch</span>((<span class="codeComment">/** <span class="codeReserved">@type</span> {any} */</span> error) =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>    <span class="codeComment">// Corrige un error de Chrome que evita el manejo correcto de errores.</span></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>    <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(error)</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>   })</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>window.onerror = <span class="codeReserved">function</span> (</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>  <span class="codeComment">/** <span class="codeReserved">@type</span> {string} */</span> _message,</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>  <span class="codeComment">/** <span class="codeReserved">@type</span> {string} */</span> _url,</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>  <span class="codeComment">/** <span class="codeReserved">@type</span> {number} */</span> _line,</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>  <span class="codeComment">/** <span class="codeReserved">@type</span> {number} */</span> _column,</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre>  <span class="codeComment">/** <span class="codeReserved">@type</span> {Error} */</span> errorObject</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>) {</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre> muestraError(errorObject)</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre> <span class="codeReserved">return</span> <span class="codeReserved">true</span></pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre>window.addEventListener(<span class="codeString">'unhandledrejection'</span>, event =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre> muestraError(event.reason)</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre> event.preventDefault()</pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre>})</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre></pre></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >8. js / bd / pasatiemposReemplaza.js</h1><table class="codeShow">
+         <h1 >8. js / lib / muestraError.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1346,92 +1783,50 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"../../lib/js/bdEjecuta.js"</span></td></tr>
-  <tr><td>2</td><td><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></td></tr>
-  <tr><td>3</td><td></td></tr>
-  <tr><td>4</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> * Borra el contenido del almacén PASATIEMPO y guarda nuevospasatiempos.</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {<span class="codeReserved">import</span>(&quot;../modelo/PASATIEMPO.js&quot;).PASATIEMPO[]} nuevospasatiempos</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>8</td><td><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiemposReemplaza(nuevospasatiempos) {</td></tr>
-  <tr><td>9</td><td> <span class="codeReserved">return</span> bdEjecuta(Bd, [ALMACEN_PASATIEMPO], transaccion =&gt; {</td></tr>
-  <tr><td>10</td><td>  <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</td></tr>
-  <tr><td>11</td><td>  almacenPasatiempo.clear()</td></tr>
-  <tr><td>12</td><td>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> objeto of nuevospasatiempos) {</td></tr>
-  <tr><td>13</td><td>   almacenPasatiempo.add(objeto)</td></tr>
-  <tr><td>14</td><td>  }</td></tr>
-  <tr><td>15</td><td> })</td></tr>
-  <tr><td>16</td><td>}</td></tr>
- </tbody>
-</table>
-      </section>
-      </section>
-     <section>
-         <h1 >F. Carpeta « js / modelo »</h1>
-   <div class="lectura"> 
-    <p class="noPrint">
-     <a target="_blank" rel="noreferrer"
-      href="print.html">Versión para imprimir.</a>
-    </p>
-   </div>
-
-  <div class="lectura">
-   <nav>
-    <h1>Contenido</h1>
-    
-   <ol type="1">
-    
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-js/m-modelo/m-PASATIEMPO-js.html">js / modelo / PASATIEMPO.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-js/m-modelo/m-validaId-js.html">js / modelo / validaId.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-js/m-modelo/m-validaNombre-js.html">js / modelo / validaNombre.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-js/m-modelo/m-validaPasatiempo-js.html">js / modelo / validaPasatiempo.js</a>
-    </p>
-   </li>
-   <li>
-    <p>
-     <a href="/m09sincronizacion/m-js/m-modelo/m-validaPasatiempos-js.html">js / modelo / validaPasatiempos.js</a>
-    </p>
-   </li>
-   </ol>
-   </nav>
-  </div>
-     <section >
-         <h1 >1. js / modelo / PASATIEMPO.js</h1><table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>2</td><td><span class="codeComment"> * <span class="codeReserved">@typedef</span> {Object} PASATIEMPO</span></td></tr>
-  <tr><td>3</td><td><span class="codeComment"> * <span class="codeReserved">@property</span> {string} [PAS_ID]</span></td></tr>
-  <tr><td>4</td><td><span class="codeComment"> * <span class="codeReserved">@property</span> {string} PAS_NOMBRE</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> * <span class="codeReserved">@property</span> {number} [PAS_MODIFICACION]</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> * <span class="codeReserved">@property</span> {number} [PAS_ELIMINADO]</span></td></tr>
-  <tr><td>7</td><td><span class="codeComment"> */</span></td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { ProblemDetailsError } <span class="codeReserved">from</span> <span class="codeString">"./ProblemDetailsError.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * Muestra los datos de una Error en la consola y en un cuadro de alerta.</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { ProblemDetailsError | Error | <span class="codeReserved">null</span> } error descripción del error.</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> muestraError(error) {</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> <span class="codeReserved">if</span> (error === <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>  console.error(<span class="codeString">"Error"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>  alert(<span class="codeString">"Error"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre> } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (error <span class="codeReserved">instanceof</span> ProblemDetailsError) {</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>  <span class="codeReserved">const</span> problemDetails = error.problemDetails</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>  <span class="codeReserved">let</span> mensaje =</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>   <span class="codeReserved">typeof</span> problemDetails[<span class="codeString">"title"</span>] === <span class="codeString">"string"</span> ? problemDetails[<span class="codeString">"title"</span>] : <span class="codeString">""</span></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>  <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> problemDetails[<span class="codeString">"detail"</span>] === <span class="codeString">"string"</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>   <span class="codeReserved">if</span> (mensaje !== <span class="codeString">""</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>    mensaje += <span class="codeString">"\n\n"</span></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>   mensaje += problemDetails[<span class="codeString">"detail"</span>]</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>  <span class="codeReserved">if</span> (mensaje === <span class="codeString">""</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre>   mensaje = <span class="codeString">"Error"</span></pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>  console.error(error, problemDetails)</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre>  alert(mensaje)</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre> } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre>  console.error(error)</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre>  alert(error.message)</pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre>}</pre></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >2. js / modelo / validaId.js</h1><table class="codeShow">
+         <h1 >9. js / lib / muestraObjeto.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1441,18 +1836,96 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>2</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {string} id</span></td></tr>
-  <tr><td>3</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaId(id) {</td></tr>
-  <tr><td>5</td><td>  <span class="codeReserved">if</span> (id === <span class="codeString">""</span>)</td></tr>
-  <tr><td>6</td><td>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Falta el id."</span>)</td></tr>
-  <tr><td>7</td><td> }</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {Document | HTMLElement | ShadowRoot} raizHtml</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { any } objeto</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> muestraObjeto(raizHtml, objeto) {</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> [nombre, definiciones] of Object.entries(objeto)) {</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre>  <span class="codeReserved">if</span> (Array.isArray(definiciones)) {</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>   muestraArray(raizHtml, nombre, definiciones)</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre>  } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (definiciones !== undefined && definiciones !== <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>   muestraElemento(raizHtml, nombre, definiciones)</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { string } nombre</span></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> selectorDeNombre(nombre) {</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre> <span class="codeReserved">return</span> <span class="codeString">`[id=&quot;${nombre}&quot;],[name=&quot;${nombre}&quot;],[data-name=&quot;${nombre}&quot;]`</span></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { Document | HTMLElement | ShadowRoot } raizHtml</span></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { string } propiedad</span></pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {any[]} valores</span></pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre><span class="codeReserved">function</span> muestraArray(raizHtml, propiedad, valores) {</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre> <span class="codeReserved">const</span> conjunto = <span class="codeReserved">new</span> Set(valores)</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre> <span class="codeReserved">const</span> elementos = raizHtml.querySelectorAll(selectorDeNombre(propiedad))</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre> <span class="codeReserved">if</span> (elementos.length === 1 && elementos[0] <span class="codeReserved">instanceof</span> HTMLSelectElement) {</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre>  muestraOptions(elementos[0], conjunto)</pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre> } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre>  muestraInputs(elementos, conjunto)</pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {HTMLSelectElement} select</span></pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {Set&lt;any&gt;} conjunto</span></pre></td></tr>
+  <tr><td class="codeShow_order">41</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">42</td><td><pre><span class="codeReserved">function</span> muestraOptions(select, conjunto) {</pre></td></tr>
+  <tr><td class="codeShow_order">43</td><td><pre> <span class="codeReserved">for</span> (<span class="codeReserved">let</span> i = 0, options = select.options, len = options.length; i &lt; len; i++) {</pre></td></tr>
+  <tr><td class="codeShow_order">44</td><td><pre>  <span class="codeReserved">const</span> option = options[i]</pre></td></tr>
+  <tr><td class="codeShow_order">45</td><td><pre>  option.selected = conjunto.has(option.value)</pre></td></tr>
+  <tr><td class="codeShow_order">46</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">47</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">48</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">49</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">50</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {NodeListOf&lt;Element&gt;} elementos</span></pre></td></tr>
+  <tr><td class="codeShow_order">51</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {Set&lt;any&gt;} conjunto</span></pre></td></tr>
+  <tr><td class="codeShow_order">52</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">53</td><td><pre><span class="codeReserved">function</span> muestraInputs(elementos, conjunto) {</pre></td></tr>
+  <tr><td class="codeShow_order">54</td><td><pre> <span class="codeReserved">for</span> (<span class="codeReserved">let</span> i = 0, len = elementos.length; i &lt; len; i++) {</pre></td></tr>
+  <tr><td class="codeShow_order">55</td><td><pre>  <span class="codeReserved">const</span> elemento = elementos[i]</pre></td></tr>
+  <tr><td class="codeShow_order">56</td><td><pre>  <span class="codeReserved">if</span> (elemento <span class="codeReserved">instanceof</span> HTMLInputElement) {</pre></td></tr>
+  <tr><td class="codeShow_order">57</td><td><pre>   elemento.checked = conjunto.has(elemento.value)</pre></td></tr>
+  <tr><td class="codeShow_order">58</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">59</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">60</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">61</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">62</td><td><pre><span class="codeReserved">const</span> data_ = <span class="codeString">"data-"</span></pre></td></tr>
+  <tr><td class="codeShow_order">63</td><td><pre><span class="codeReserved">const</span> data_Length = data_.length</pre></td></tr>
+  <tr><td class="codeShow_order">64</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">65</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">66</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {Document | HTMLElement | ShadowRoot} raizHtml</span></pre></td></tr>
+  <tr><td class="codeShow_order">67</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {string} nombre</span></pre></td></tr>
+  <tr><td class="codeShow_order">68</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {{ [s: string]: any; } } definiciones</span></pre></td></tr>
+  <tr><td class="codeShow_order">69</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">70</td><td><pre><span class="codeReserved">function</span> muestraElemento(raizHtml, nombre, definiciones) {</pre></td></tr>
+  <tr><td class="codeShow_order">71</td><td><pre> <span class="codeReserved">const</span> elemento = raizHtml.querySelector(selectorDeNombre(nombre))</pre></td></tr>
+  <tr><td class="codeShow_order">72</td><td><pre> <span class="codeReserved">if</span> (elemento !== <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">73</td><td><pre>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> [propiedad, valor] of Object.entries(definiciones)) {</pre></td></tr>
+  <tr><td class="codeShow_order">74</td><td><pre>   <span class="codeReserved">if</span> (propiedad <span class="codeReserved">in</span> elemento) {</pre></td></tr>
+  <tr><td class="codeShow_order">75</td><td><pre>    elemento[propiedad] = valor</pre></td></tr>
+  <tr><td class="codeShow_order">76</td><td><pre>   } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (</pre></td></tr>
+  <tr><td class="codeShow_order">77</td><td><pre>    propiedad.length &gt; data_Length</pre></td></tr>
+  <tr><td class="codeShow_order">78</td><td><pre>    && propiedad.startsWith(data_)</pre></td></tr>
+  <tr><td class="codeShow_order">79</td><td><pre>    && elemento <span class="codeReserved">instanceof</span> HTMLElement</pre></td></tr>
+  <tr><td class="codeShow_order">80</td><td><pre>   ) {</pre></td></tr>
+  <tr><td class="codeShow_order">81</td><td><pre>    elemento.dataset[propiedad.substring(data_Length)] = valor</pre></td></tr>
+  <tr><td class="codeShow_order">82</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">83</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">84</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">85</td><td><pre>}</pre></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >3. js / modelo / validaNombre.js</h1><table class="codeShow">
+         <h1 >10. js / lib / ProblemDetailsError.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1462,18 +1935,31 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>2</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {string} nombre</span></td></tr>
-  <tr><td>3</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>4</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaNombre(nombre) {</td></tr>
-  <tr><td>5</td><td> <span class="codeReserved">if</span> (nombre === <span class="codeString">""</span>)</td></tr>
-  <tr><td>6</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Falta el nombre."</span>)</td></tr>
-  <tr><td>7</td><td>}</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">class</span> ProblemDetailsError <span class="codeReserved">extends</span> Error {</pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre> <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment">  * Detalle de los errores devueltos por un servicio.</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment">  * Crea una instancia de ProblemDetailsError.</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment">  * <span class="codeReserved">@param</span> {object} problemDetails Objeto con la descripcipon del error.</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment">  */</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeReserved">constructor</span>(problemDetails) {</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>  super(<span class="codeReserved">typeof</span> problemDetails[<span class="codeString">"detail"</span>] === <span class="codeString">"string"</span></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>   ? problemDetails[<span class="codeString">"detail"</span>]</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>   : (<span class="codeReserved">typeof</span> problemDetails[<span class="codeString">"title"</span>] === <span class="codeString">"string"</span></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>    ? problemDetails[<span class="codeString">"title"</span>]</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>    : <span class="codeString">"Error"</span>))</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>  <span class="codeReserved">this</span>.problemDetails = problemDetails</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>}</pre></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >4. js / modelo / validaPasatiempo.js</h1><table class="codeShow">
+         <h1 >11. js / lib / recibeTexto.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1483,32 +1969,22 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>2</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { any } objeto</span></td></tr>
-  <tr><td>3</td><td><span class="codeComment"> * <span class="codeReserved">@returns</span> {<span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO}</span></td></tr>
-  <tr><td>4</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>5</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaPasatiempo(objeto) {</td></tr>
-  <tr><td>6</td><td></td></tr>
-  <tr><td>7</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.PAS_ID !== <span class="codeString">"string"</span>)</td></tr>
-  <tr><td>8</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El id debe ser texto."</span>)</td></tr>
-  <tr><td>9</td><td></td></tr>
-  <tr><td>10</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.PAS_NOMBRE !== <span class="codeString">"string"</span>)</td></tr>
-  <tr><td>11</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El nombre debe ser texto."</span>)</td></tr>
-  <tr><td>12</td><td></td></tr>
-  <tr><td>13</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.PAS_MODIFICACION !== <span class="codeString">"number"</span>)</td></tr>
-  <tr><td>14</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El campo modificacion debe ser número."</span>)</td></tr>
-  <tr><td>15</td><td></td></tr>
-  <tr><td>16</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> objeto.PAS_ELIMINADO !== <span class="codeString">"number"</span>)</td></tr>
-  <tr><td>17</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"El campo eliminado debe ser número."</span>)</td></tr>
-  <tr><td>18</td><td></td></tr>
-  <tr><td>19</td><td> <span class="codeReserved">return</span> objeto</td></tr>
-  <tr><td>20</td><td></td></tr>
-  <tr><td>21</td><td>}</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {FormData} formData</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {string} parametro</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> recibeTexto(formData, parametro) {</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre> <span class="codeReserved">const</span> valor = formData.get(parametro)</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre> <span class="codeReserved">if</span> (valor !== <span class="codeReserved">null</span> && <span class="codeReserved">typeof</span> valor !== <span class="codeString">"string"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">`El valor de ${parametro} debe ser texto.`</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> <span class="codeReserved">return</span> valor === <span class="codeReserved">null</span> ? undefined : valor</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre></pre></td></tr>
  </tbody>
 </table>
       </section>
      <section >
-         <h1 >5. js / modelo / validaPasatiempos.js</h1><table class="codeShow">
+         <h1 >12. js / lib / recibeTextoObligatorio.js</h1><table class="codeShow">
  <caption style="text-align: left">
   <button type=button title="Copiar al portapapeles"
     onclick="copyToClipboard(this)">
@@ -1518,24 +1994,73 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">import</span> { validaPasatiempo } <span class="codeReserved">from</span> <span class="codeString">"./validaPasatiempo.js"</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>4</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> { any } objetos</span></td></tr>
-  <tr><td>5</td><td><span class="codeComment"> * <span class="codeReserved">@returns</span> {<span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO[]}</span></td></tr>
-  <tr><td>6</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>7</td><td><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaPasatiempos(objetos) {</td></tr>
-  <tr><td>8</td><td> <span class="codeReserved">if</span> (!Array.isArray(objetos))</td></tr>
-  <tr><td>9</td><td>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"no se recibió un arreglo."</span>)</td></tr>
-  <tr><td>10</td><td> <span class="codeComment">/**</span></td></tr>
-  <tr><td>11</td><td><span class="codeComment">  * <span class="codeReserved">@type</span> {<span class="codeReserved">import</span>(&quot;./PASATIEMPO.js&quot;).PASATIEMPO[]}</span></td></tr>
-  <tr><td>12</td><td><span class="codeComment">  */</span></td></tr>
-  <tr><td>13</td><td> <span class="codeReserved">const</span> arreglo = []</td></tr>
-  <tr><td>14</td><td> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> objeto of objetos) {</td></tr>
-  <tr><td>15</td><td>  arreglo.push(validaPasatiempo(objeto))</td></tr>
-  <tr><td>16</td><td> }</td></tr>
-  <tr><td>17</td><td> <span class="codeReserved">return</span> arreglo</td></tr>
-  <tr><td>18</td><td>}</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { recibeTexto } <span class="codeReserved">from</span> <span class="codeString">"./recibeTexto.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {FormData} formData</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {string} parametro</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> recibeTextoObligatorio(formData, parametro) {</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeReserved">const</span> texto = recibeTexto(formData, parametro)</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> <span class="codeReserved">if</span> (texto === undefined) <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">`Falta el valor de ${parametro}.`</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> <span class="codeReserved">const</span> trimTexto = texto.trim()</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> <span class="codeReserved">if</span> (trimTexto === <span class="codeString">""</span>) <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">`Campo ${parametro} en blanco.`</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre> <span class="codeReserved">return</span> trimTexto</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre></pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >13. js / lib / registraServiceWorker.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">const</span> nombreDeServiceWorker = <span class="codeString">"sw.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">try</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre> navigator.serviceWorker.register(nombreDeServiceWorker)</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre>  .then(registro =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre>   console.log(nombreDeServiceWorker, <span class="codeString">"registrado."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre>   console.log(registro)</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>  })</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre>  .<span class="codeReserved">catch</span>(error =&gt; console.log(error))</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>} <span class="codeReserved">catch</span> (error) {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> console.log(error)</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >14. js / lib / validaEntidadObligatoria.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * <span class="codeReserved">@template</span> T</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {string} nombre</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {T | undefined} entidad</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> validaEntidadObligatoria(nombre, entidad) {</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeReserved">if</span> (entidad === undefined)</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">`Registro de ${nombre} no encontrado.`</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> <span class="codeReserved">return</span> entidad</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre></pre></td></tr>
  </tbody>
 </table>
       </section>

@@ -1,0 +1,46 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { ALMACEN_PASATIEMPO, Bd } <span class="codeReserved">from</span> <span class="codeString">"./Bd.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeReserved">import</span> { bdEjecuta } <span class="codeReserved">from</span> <span class="codeString">"./lib/bdEjecuta.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">import</span> { creaIdCliente } <span class="codeReserved">from</span> <span class="codeString">"./lib/creaIdCliente.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeReserved">import</span> { recibeTextoObligatorio } <span class="codeReserved">from</span> <span class="codeString">"./lib/recibeTextoObligatorio.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {SubmitEvent} event</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> pasatiempoAgrega(event) {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre> event.preventDefault()</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre> <span class="codeReserved">const</span> target = event.target</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre> <span class="codeReserved">if</span> (!(target <span class="codeReserved">instanceof</span> HTMLFormElement))</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"target no es de tipo form."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre> <span class="codeReserved">const</span> formData = <span class="codeReserved">new</span> FormData(target)</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre> <span class="codeReserved">const</span> modelo = {</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>  PAS_ID: creaIdCliente(Date.now().toString()), <span class="codeComment">// Genera id único en internet.</span></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>  PAS_NOMBRE: recibeTextoObligatorio(formData, <span class="codeString">"nombre"</span>),</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>  PAS_MODIFICACION: Date.now(),</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>  PAS_ELIMINADO: 0,</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre> <span class="codeReserved">await</span> bdEjecuta(Bd, [ALMACEN_PASATIEMPO], transaccion =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre>  <span class="codeReserved">const</span> almacenPasatiempo = transaccion.objectStore(ALMACEN_PASATIEMPO)</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>  almacenPasatiempo.add(modelo)</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre> })</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre> location.href = <span class="codeString">"index.html"</span></pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
