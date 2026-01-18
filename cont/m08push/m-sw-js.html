@@ -8,47 +8,47 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td><span class="codeReserved">const</span> URL_SERVIDOR = <span class="codeString">"https://notipush.rf.gd"</span></td></tr>
-  <tr><td>2</td><td></td></tr>
-  <tr><td>3</td><td><span class="codeReserved">if</span> (<span class="codeReserved">self</span> <span class="codeReserved">instanceof</span> ServiceWorkerGlobalScope) {</td></tr>
-  <tr><td>4</td><td></td></tr>
-  <tr><td>5</td><td> <span class="codeComment">// El siguiente código se activa cuando llega una notificación push.</span></td></tr>
-  <tr><td>6</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"push"</span>, (<span class="codeComment">/** <span class="codeReserved">@type</span> {PushEvent} */</span> event) =&gt; {</td></tr>
-  <tr><td>7</td><td>  <span class="codeReserved">const</span> notificacion = event.data</td></tr>
-  <tr><td>8</td><td>  <span class="codeComment">/* Si el navegador tiene permitido mostrar notificaciones push,</span></td></tr>
-  <tr><td>9</td><td><span class="codeComment">   * nuestra la que se ha recibido. */</span></td></tr>
-  <tr><td>10</td><td>  <span class="codeReserved">if</span> (notificacion !== <span class="codeReserved">null</span> && <span class="codeReserved">self</span>.Notification.permission === <span class="codeString">'granted'</span>) {</td></tr>
-  <tr><td>11</td><td>   event.waitUntil(muestraNotificacion(notificacion))</td></tr>
-  <tr><td>12</td><td>  }</td></tr>
-  <tr><td>13</td><td> })</td></tr>
-  <tr><td>14</td><td></td></tr>
-  <tr><td>15</td><td> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"notificationclick"</span>,</td></tr>
-  <tr><td>16</td><td>  (<span class="codeComment">/** <span class="codeReserved">@type</span> {NotificationEvent} */</span> event) =&gt; {</td></tr>
-  <tr><td>17</td><td>   event.notification.close()</td></tr>
-  <tr><td>18</td><td>   event.waitUntil(muestraVentana())</td></tr>
-  <tr><td>19</td><td>  })</td></tr>
-  <tr><td>20</td><td>}</td></tr>
-  <tr><td>21</td><td></td></tr>
-  <tr><td>22</td><td><span class="codeComment">/**</span></td></tr>
-  <tr><td>23</td><td><span class="codeComment"> * <span class="codeReserved">@param</span> {PushMessageData} notificacion</span></td></tr>
-  <tr><td>24</td><td><span class="codeComment"> */</span></td></tr>
-  <tr><td>25</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> muestraNotificacion(notificacion) {</td></tr>
-  <tr><td>26</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">self</span> <span class="codeReserved">instanceof</span> ServiceWorkerGlobalScope) {</td></tr>
-  <tr><td>27</td><td>  <span class="codeReserved">const</span> mensaje = notificacion.text()</td></tr>
-  <tr><td>28</td><td>  <span class="codeReserved">await</span> <span class="codeReserved">self</span>.registration.showNotification(mensaje)</td></tr>
-  <tr><td>29</td><td> }</td></tr>
-  <tr><td>30</td><td>}</td></tr>
-  <tr><td>31</td><td></td></tr>
-  <tr><td>32</td><td><span class="codeReserved">async</span> <span class="codeReserved">function</span> muestraVentana() {</td></tr>
-  <tr><td>33</td><td> <span class="codeReserved">if</span> (<span class="codeReserved">self</span> <span class="codeReserved">instanceof</span> ServiceWorkerGlobalScope) {</td></tr>
-  <tr><td>34</td><td>  <span class="codeReserved">const</span> clientes = <span class="codeReserved">await</span> <span class="codeReserved">self</span>.clients.matchAll({ type: <span class="codeString">"window"</span> })</td></tr>
-  <tr><td>35</td><td>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> cliente of clientes) {</td></tr>
-  <tr><td>36</td><td>   <span class="codeReserved">if</span> (cliente.url.startsWith(URL_SERVIDOR)) {</td></tr>
-  <tr><td>37</td><td>    <span class="codeReserved">return</span> cliente.focus()</td></tr>
-  <tr><td>38</td><td>   }</td></tr>
-  <tr><td>39</td><td>  }</td></tr>
-  <tr><td>40</td><td>  <span class="codeReserved">return</span> <span class="codeReserved">self</span>.clients.openWindow(<span class="codeString">"/"</span>)</td></tr>
-  <tr><td>41</td><td> }</td></tr>
-  <tr><td>42</td><td>}</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">const</span> URL_SERVIDOR = <span class="codeString">"https://notipush.rf.gd"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">if</span> (<span class="codeReserved">self</span> <span class="codeReserved">instanceof</span> ServiceWorkerGlobalScope) {</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre> <span class="codeComment">// El siguiente código se activa cuando llega una notificación push.</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"push"</span>, (<span class="codeComment">/** <span class="codeReserved">@type</span> {PushEvent} */</span> event) =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre>  <span class="codeReserved">const</span> notificacion = event.data</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>  <span class="codeComment">/* Si el navegador tiene permitido mostrar notificaciones push,</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre><span class="codeComment">   * nuestra la que se ha recibido. */</span></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>  <span class="codeReserved">if</span> (notificacion !== <span class="codeReserved">null</span> && <span class="codeReserved">self</span>.Notification.permission === <span class="codeString">'granted'</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>   event.waitUntil(muestraNotificacion(notificacion))</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre> })</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"notificationclick"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>  (<span class="codeComment">/** <span class="codeReserved">@type</span> {NotificationEvent} */</span> event) =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>   event.notification.close()</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>   event.waitUntil(muestraVentana())</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>  })</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {PushMessageData} notificacion</span></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre><span class="codeReserved">async</span> <span class="codeReserved">function</span> muestraNotificacion(notificacion) {</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre> <span class="codeReserved">if</span> (<span class="codeReserved">self</span> <span class="codeReserved">instanceof</span> ServiceWorkerGlobalScope) {</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre>  <span class="codeReserved">const</span> mensaje = notificacion.text()</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre>  <span class="codeReserved">await</span> <span class="codeReserved">self</span>.registration.showNotification(mensaje)</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre><span class="codeReserved">async</span> <span class="codeReserved">function</span> muestraVentana() {</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre> <span class="codeReserved">if</span> (<span class="codeReserved">self</span> <span class="codeReserved">instanceof</span> ServiceWorkerGlobalScope) {</pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre>  <span class="codeReserved">const</span> clientes = <span class="codeReserved">await</span> <span class="codeReserved">self</span>.clients.matchAll({ type: <span class="codeString">"window"</span> })</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> cliente of clientes) {</pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre>   <span class="codeReserved">if</span> (cliente.url.startsWith(URL_SERVIDOR)) {</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre>    <span class="codeReserved">return</span> cliente.focus()</pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre>  <span class="codeReserved">return</span> <span class="codeReserved">self</span>.clients.openWindow(<span class="codeString">"/"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">41</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">42</td><td><pre>}</pre></td></tr>
  </tbody>
 </table>

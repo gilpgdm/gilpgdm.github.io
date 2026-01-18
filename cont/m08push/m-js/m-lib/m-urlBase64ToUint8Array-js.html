@@ -1,0 +1,25 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { string } base64String</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> urlBase64ToUint8Array(base64String) {</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre> <span class="codeReserved">const</span> <span class="codeReserved">padding</span> = <span class="codeString">"="</span>.<span class="codeReserved">repeat</span>((4 - (base64String.length % 4)) % 4)</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre> <span class="codeReserved">const</span> base64 = (base64String + <span class="codeReserved">padding</span>).replace(<span class="codeString">/\-/</span>g, <span class="codeString">'+'</span>).replace(<span class="codeString">/_/</span>g, <span class="codeString">'/'</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre> <span class="codeReserved">const</span> rawData = atob(base64)</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeReserved">const</span> outputArray = <span class="codeReserved">new</span> Uint8Array(rawData.length)</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> <span class="codeReserved">for</span> (<span class="codeReserved">let</span> i = 0; i &lt; rawData.length; ++i) {</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>  outputArray[i] = rawData.charCodeAt(i)</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre> <span class="codeReserved">return</span> outputArray</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>

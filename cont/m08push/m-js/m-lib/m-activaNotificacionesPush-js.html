@@ -1,0 +1,50 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { string | URL } urlDeServiceWorkerQueRecibeNotificaciones</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> activaNotificacionesPush(</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre> urlDeServiceWorkerQueRecibeNotificaciones) {</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeComment">// Valida que el navegador soporte notificaciones push.</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> <span class="codeReserved">if</span> (!(<span class="codeString">'PushManager'</span> <span class="codeReserved">in</span> window))</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Este navegador no soporta notificaciones push."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre> <span class="codeComment">// Valida que el navegador soporte notificaciones,</span></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre> <span class="codeReserved">if</span> (!(<span class="codeString">"Notification"</span> <span class="codeReserved">in</span> window))</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Este navegador no soporta notificaciones push."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre> <span class="codeComment">// Valida que el navegador soporte service workers,</span></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre> <span class="codeReserved">if</span> (!(<span class="codeString">"serviceWorker"</span> <span class="codeReserved">in</span> navigator))</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Este navegador no soporta service workers."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre> <span class="codeComment">// Recupera el permiso para usar notificaciones</span></pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre> <span class="codeReserved">let</span> permiso = Notification.permission</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre> <span class="codeReserved">if</span> (permiso === <span class="codeString">"<span class="codeReserved">default</span>"</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>  <span class="codeComment">// Permiso no asignado. Pide al usuario su autorización.</span></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>  permiso = <span class="codeReserved">await</span> Notification.requestPermission()</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre> <span class="codeComment">// Valida que el usuario haya permitido usar notificaciones..</span></pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre> <span class="codeReserved">if</span> (permiso === <span class="codeString">"denied"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Notificaciones bloqueadas."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre> <span class="codeReserved">const</span> registro = <span class="codeReserved">await</span> navigator.serviceWorker.register(</pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre>  urlDeServiceWorkerQueRecibeNotificaciones)</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre> console.log(urlDeServiceWorkerQueRecibeNotificaciones, <span class="codeString">"registrado."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre> console.log(registro)</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre> <span class="codeReserved">if</span> (!(<span class="codeString">"showNotification"</span> <span class="codeReserved">in</span> registro))</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">"Este navegador no soporta notificaciones."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>

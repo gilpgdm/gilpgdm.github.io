@@ -8,168 +8,159 @@
   </button>
  </caption>
  <tbody>
-  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
-  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
-  <tr><td>3</td><td></td></tr>
-  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
-  <tr><td>5</td><td></td></tr>
-  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
-  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
-  <tr><td>8</td><td></td></tr>
-  <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;Notificaciones Push&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
-  <tr><td>10</td><td></td></tr>
-  <tr><td>11</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
-  <tr><td>12</td><td></td></tr>
-  <tr><td>13</td><td>&lt;<span class="codeReserved">body</span> onload=<span class="codeString">"preparaVista()"</span>&gt;</td></tr>
-  <tr><td>14</td><td></td></tr>
-  <tr><td>15</td><td> &lt;<span class="codeReserved">h1</span>&gt;Notificaciones Push&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
-  <tr><td>16</td><td></td></tr>
-  <tr><td>17</td><td> &lt;<span class="codeReserved">menu</span> style=<span class="codeString">"<span class="codeReserved">display</span>: <span class="codeReserved">flex</span>; list-style: none; flex-wrap: wrap; <span class="codeReserved">gap</span>: 0.5rem;"</span>&gt;</td></tr>
-  <tr><td>18</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>19</td><td>   &lt;<span class="codeReserved">button</span> id=<span class="codeString">"btnSuscribe"</span> type=<span class="codeString">"button"</span> hidden onclick=<span class="codeString">"suscribe()"</span>&gt;</td></tr>
-  <tr><td>20</td><td>    Suscríbete</td></tr>
-  <tr><td>21</td><td>   &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
-  <tr><td>22</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>23</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>24</td><td>   &lt;<span class="codeReserved">button</span> id=<span class="codeString">"btnCancela"</span> type=<span class="codeString">"button"</span> hidden onclick=<span class="codeString">"cancela()"</span>&gt;</td></tr>
-  <tr><td>25</td><td>    Cancela suscripción</td></tr>
-  <tr><td>26</td><td>   &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
-  <tr><td>27</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>28</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>29</td><td>   &lt;<span class="codeReserved">button</span> id=<span class="codeString">"btnNotifica"</span> type=<span class="codeString">"button"</span> hidden</td></tr>
-  <tr><td>30</td><td>     onclick=<span class="codeString">"notificaDesdeElServidor()"</span>&gt;</td></tr>
-  <tr><td>31</td><td>    Notifica</td></tr>
-  <tr><td>32</td><td>   &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
-  <tr><td>33</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>34</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>35</td><td>   &lt;<span class="codeReserved">a</span> href=<span class="codeString">"srv/genera-llaves.php"</span> target=<span class="codeString">"_blank"</span>&gt;Genera llaves&lt;/<span class="codeReserved">a</span>&gt;</td></tr>
-  <tr><td>36</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>37</td><td> &lt;/<span class="codeReserved">menu</span>&gt;</td></tr>
-  <tr><td>38</td><td></td></tr>
-  <tr><td>39</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>40</td><td>  &lt;<span class="codeReserved">output</span> id=<span class="codeString">"outEstado"</span>&gt;</td></tr>
-  <tr><td>41</td><td>   &lt;<span class="codeReserved">progress</span> max=<span class="codeString">"100"</span>&gt;Cargando&hellip;&lt;/<span class="codeReserved">progress</span>&gt;</td></tr>
-  <tr><td>42</td><td>  &lt;/<span class="codeReserved">output</span>&gt;</td></tr>
-  <tr><td>43</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>44</td><td></td></tr>
-  <tr><td>45</td><td> &lt;<span class="codeReserved">fieldset</span>&gt;</td></tr>
-  <tr><td>46</td><td>  &lt;<span class="codeReserved">legend</span>&gt;Reporte de envío a endpoints&lt;/<span class="codeReserved">legend</span>&gt;</td></tr>
-  <tr><td>47</td><td></td></tr>
-  <tr><td>48</td><td>  &lt;<span class="codeReserved">dl</span> id=<span class="codeString">"reporte"</span>&gt;&lt;/<span class="codeReserved">dl</span>&gt;</td></tr>
-  <tr><td>49</td><td></td></tr>
-  <tr><td>50</td><td> &lt;/<span class="codeReserved">fieldset</span>&gt;</td></tr>
-  <tr><td>51</td><td></td></tr>
-  <tr><td>52</td><td> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span>&gt;</td></tr>
-  <tr><td>53</td><td></td></tr>
-  <tr><td>54</td><td>  <span class="codeReserved">import</span> { exportaAHtml } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/exportaAHtml.js"</span></td></tr>
-  <tr><td>55</td><td>  <span class="codeReserved">import</span> {</td></tr>
-  <tr><td>56</td><td>   activaNotificacionesPush</td></tr>
-  <tr><td>57</td><td>  } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/activaNotificacionesPush.js"</span></td></tr>
-  <tr><td>58</td><td>  <span class="codeReserved">import</span> { getSuscripcionPush } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/getSuscripcionPush.js"</span></td></tr>
-  <tr><td>59</td><td>  <span class="codeReserved">import</span> { suscribeAPush } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/suscribeAPush.js"</span></td></tr>
-  <tr><td>60</td><td>  <span class="codeReserved">import</span> { cancelaSuscripcionPush } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/cancelaSuscripcionPush.js"</span></td></tr>
-  <tr><td>61</td><td>  <span class="codeReserved">import</span> { consumeJson } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/consumeJson.js"</span></td></tr>
-  <tr><td>62</td><td>  <span class="codeReserved">import</span> { enviaJson } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/enviaJson.js"</span></td></tr>
-  <tr><td>63</td><td>  <span class="codeReserved">import</span> { muestraError } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/muestraError.js"</span></td></tr>
-  <tr><td>64</td><td>  <span class="codeReserved">import</span> { muestraObjeto } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/muestraObjeto.js"</span></td></tr>
-  <tr><td>65</td><td>  <span class="codeReserved">import</span> { urlBase64ToUint8Array } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/urlBase64ToUint8Array.js"</span></td></tr>
-  <tr><td>66</td><td>  <span class="codeReserved">import</span> {</td></tr>
-  <tr><td>67</td><td>   calculaDtoParaSuscripcion</td></tr>
-  <tr><td>68</td><td>  } <span class="codeReserved">from</span> <span class="codeString">"./lib/js/calculaDtoParaSuscripcion.js"</span></td></tr>
-  <tr><td>69</td><td></td></tr>
-  <tr><td>70</td><td>  <span class="codeReserved">const</span> applicationServerKey = urlBase64ToUint8Array(</td></tr>
-  <tr><td>71</td><td>   <span class="codeString">"BMBlr6YznhYMX3NgcWIDRxZXs0sh7tCv7_YCsWcww0ZCv9WGg-tRCXfMEHTiBPCksSqeve1twlbmVAZFv7GSuj0"</span>)</td></tr>
-  <tr><td>72</td><td>  <span class="codeComment">/** <span class="codeReserved">@enum</span> {string} */</span></td></tr>
-  <tr><td>73</td><td>  <span class="codeReserved">const</span> Estado = {</td></tr>
-  <tr><td>74</td><td>   CALCULANDO: <span class="codeString">"Calculando…"</span>,</td></tr>
-  <tr><td>75</td><td>   SUSCRITO: <span class="codeString">"Suscrito"</span>,</td></tr>
-  <tr><td>76</td><td>   DESUSCRITO: <span class="codeString">"Sin suscripción"</span>,</td></tr>
-  <tr><td>77</td><td>   INCOMPATIBLE: <span class="codeString">"Incompatible"</span></td></tr>
-  <tr><td>78</td><td>  }</td></tr>
-  <tr><td>79</td><td></td></tr>
-  <tr><td>80</td><td>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> preparaVista() {</td></tr>
-  <tr><td>81</td><td>   <span class="codeReserved">try</span> {</td></tr>
-  <tr><td>82</td><td>    <span class="codeReserved">await</span> activaNotificacionesPush(<span class="codeString">"sw.js"</span>)</td></tr>
-  <tr><td>83</td><td>    <span class="codeReserved">const</span> suscripcion = <span class="codeReserved">await</span> getSuscripcionPush()</td></tr>
-  <tr><td>84</td><td>    <span class="codeReserved">if</span> (suscripcion === <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>85</td><td>     muestraEstado(Estado.DESUSCRITO)</td></tr>
-  <tr><td>86</td><td>    } <span class="codeReserved">else</span> {</td></tr>
-  <tr><td>87</td><td>     <span class="codeComment">// Modifica la suscripción en el servidor,</span></td></tr>
-  <tr><td>88</td><td>     <span class="codeReserved">const</span> dto = calculaDtoParaSuscripcion(suscripcion)</td></tr>
-  <tr><td>89</td><td>     <span class="codeReserved">await</span> enviaJson(<span class="codeString">"srv/suscripcion-modifica.php"</span>, dto)</td></tr>
-  <tr><td>90</td><td>     muestraEstado(Estado.SUSCRITO)</td></tr>
-  <tr><td>91</td><td>    }</td></tr>
-  <tr><td>92</td><td>   } <span class="codeReserved">catch</span> (error) {</td></tr>
-  <tr><td>93</td><td>    muestraEstado(Estado.INCOMPATIBLE)</td></tr>
-  <tr><td>94</td><td>    muestraError(error)</td></tr>
-  <tr><td>95</td><td>   }</td></tr>
-  <tr><td>96</td><td>  }</td></tr>
-  <tr><td>97</td><td>  exportaAHtml(preparaVista)</td></tr>
-  <tr><td>98</td><td></td></tr>
-  <tr><td>99</td><td>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> notificaDesdeElServidor() {</td></tr>
-  <tr><td>100</td><td>   <span class="codeReserved">try</span> {</td></tr>
-  <tr><td>101</td><td>    reporte.innerHTML =</td></tr>
-  <tr><td>102</td><td>     <span class="codeComment">/* html */</span> <span class="codeString">`&lt;<span class="codeReserved">progress</span> max=&quot;100&quot;&gt;Cargando&hellip;&lt;/<span class="codeReserved">progress</span>&gt;`</span></td></tr>
-  <tr><td>103</td><td>    <span class="codeReserved">const</span> render = <span class="codeReserved">await</span> consumeJson(<span class="codeString">"srv/notifica.php"</span>)</td></tr>
-  <tr><td>104</td><td>    <span class="codeReserved">await</span> muestraObjeto(document, render.body)</td></tr>
-  <tr><td>105</td><td>   } <span class="codeReserved">catch</span> (error) {</td></tr>
-  <tr><td>106</td><td>    muestraError(error)</td></tr>
-  <tr><td>107</td><td>   }</td></tr>
-  <tr><td>108</td><td>  }</td></tr>
-  <tr><td>109</td><td>  exportaAHtml(notificaDesdeElServidor)</td></tr>
-  <tr><td>110</td><td></td></tr>
-  <tr><td>111</td><td>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> suscribe() {</td></tr>
-  <tr><td>112</td><td>   <span class="codeReserved">try</span> {</td></tr>
-  <tr><td>113</td><td>    muestraEstado(Estado.CALCULANDO)</td></tr>
-  <tr><td>114</td><td>    <span class="codeReserved">const</span> suscripcion = <span class="codeReserved">await</span> suscribeAPush(applicationServerKey)</td></tr>
-  <tr><td>115</td><td>    <span class="codeComment">// Agrega la suscripción al servidor,</span></td></tr>
-  <tr><td>116</td><td>    <span class="codeReserved">const</span> dto = calculaDtoParaSuscripcion(suscripcion)</td></tr>
-  <tr><td>117</td><td>    <span class="codeReserved">await</span> enviaJson(<span class="codeString">"srv/suscripcion-modifica.php"</span>, dto)</td></tr>
-  <tr><td>118</td><td>    muestraEstado(Estado.SUSCRITO)</td></tr>
-  <tr><td>119</td><td>   } <span class="codeReserved">catch</span> (error) {</td></tr>
-  <tr><td>120</td><td>    muestraError(error)</td></tr>
-  <tr><td>121</td><td>   }</td></tr>
-  <tr><td>122</td><td>  }</td></tr>
-  <tr><td>123</td><td>  exportaAHtml(suscribe)</td></tr>
-  <tr><td>124</td><td></td></tr>
-  <tr><td>125</td><td>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> cancela() {</td></tr>
-  <tr><td>126</td><td>   <span class="codeReserved">try</span> {</td></tr>
-  <tr><td>127</td><td>    muestraEstado(Estado.CALCULANDO)</td></tr>
-  <tr><td>128</td><td>    <span class="codeReserved">const</span> suscripcion = <span class="codeReserved">await</span> cancelaSuscripcionPush()</td></tr>
-  <tr><td>129</td><td>    <span class="codeReserved">if</span> (suscripcion !== <span class="codeReserved">null</span>) {</td></tr>
-  <tr><td>130</td><td>     <span class="codeComment">// Elimina la suscripción en el servidor,</span></td></tr>
-  <tr><td>131</td><td>     <span class="codeReserved">const</span> dto = calculaDtoParaSuscripcion(suscripcion)</td></tr>
-  <tr><td>132</td><td>     <span class="codeReserved">await</span> enviaJson(<span class="codeString">"srv/suscripcion-elimina.php"</span>, dto)</td></tr>
-  <tr><td>133</td><td>     muestraEstado(Estado.DESUSCRITO)</td></tr>
-  <tr><td>134</td><td>    }</td></tr>
-  <tr><td>135</td><td>   } <span class="codeReserved">catch</span> (error) {</td></tr>
-  <tr><td>136</td><td>    muestraError(error)</td></tr>
-  <tr><td>137</td><td>   }</td></tr>
-  <tr><td>138</td><td>  }</td></tr>
-  <tr><td>139</td><td>  exportaAHtml(cancela)</td></tr>
-  <tr><td>140</td><td></td></tr>
-  <tr><td>141</td><td>  <span class="codeComment">/** <span class="codeReserved">@param</span> {Estado} estado */</span></td></tr>
-  <tr><td>142</td><td>  <span class="codeReserved">function</span> muestraEstado(estado) {</td></tr>
-  <tr><td>143</td><td>   outEstado.value = estado</td></tr>
-  <tr><td>144</td><td>   <span class="codeReserved">if</span> (estado === Estado.INCOMPATIBLE || estado === Estado.CALCULANDO) {</td></tr>
-  <tr><td>145</td><td>    btnSuscribe.hidden = <span class="codeReserved">true</span></td></tr>
-  <tr><td>146</td><td>    btnCancela.hidden = <span class="codeReserved">true</span></td></tr>
-  <tr><td>147</td><td>    btnNotifica.hidden = <span class="codeReserved">true</span></td></tr>
-  <tr><td>148</td><td>   } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (estado === Estado.SUSCRITO) {</td></tr>
-  <tr><td>149</td><td>    btnSuscribe.hidden = <span class="codeReserved">true</span></td></tr>
-  <tr><td>150</td><td>    btnCancela.hidden = <span class="codeReserved">false</span></td></tr>
-  <tr><td>151</td><td>    btnNotifica.hidden = <span class="codeReserved">false</span></td></tr>
-  <tr><td>152</td><td>   } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (estado === Estado.DESUSCRITO) {</td></tr>
-  <tr><td>153</td><td>    btnSuscribe.hidden = <span class="codeReserved">false</span></td></tr>
-  <tr><td>154</td><td>    btnCancela.hidden = <span class="codeReserved">true</span></td></tr>
-  <tr><td>155</td><td>    btnNotifica.hidden = <span class="codeReserved">true</span></td></tr>
-  <tr><td>156</td><td>   }</td></tr>
-  <tr><td>157</td><td>  }</td></tr>
-  <tr><td>158</td><td></td></tr>
-  <tr><td>159</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
-  <tr><td>160</td><td></td></tr>
-  <tr><td>161</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>162</td><td></td></tr>
-  <tr><td>163</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+  <tr><td class="codeShow_order">1</td><td><pre>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre>&lt;<span class="codeReserved">head</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> &lt;<span class="codeReserved">title</span>&gt;Notificaciones Push&lt;/<span class="codeReserved">title</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span> <span class="codeReserved">src</span>=<span class="codeString">"js/lib/manejaErrores.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>&lt;/<span class="codeReserved">head</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>&lt;<span class="codeReserved">body</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre> &lt;<span class="codeReserved">h1</span>&gt;Notificaciones Push&lt;/<span class="codeReserved">h1</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre> &lt;<span class="codeReserved">menu</span> style=<span class="codeString">"<span class="codeReserved">display</span>: <span class="codeReserved">flex</span>; list-style: none; flex-wrap: wrap; <span class="codeReserved">gap</span>: 0.5rem;"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>  &lt;<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>   &lt;<span class="codeReserved">button</span> id=<span class="codeString">"btnSuscribe"</span> type=<span class="codeString">"button"</span> hidden&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>    Suscríbete</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>   &lt;/<span class="codeReserved">button</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>  &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre>  &lt;<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>   &lt;<span class="codeReserved">button</span> id=<span class="codeString">"btnCancela"</span> type=<span class="codeString">"button"</span> hidden&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre>    Cancela suscripción</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre>   &lt;/<span class="codeReserved">button</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>  &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre>  &lt;<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre>   &lt;<span class="codeReserved">button</span> id=<span class="codeString">"btnNotifica"</span> type=<span class="codeString">"button"</span> hidden&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre>    Notifica</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre>   &lt;/<span class="codeReserved">button</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre>  &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre>  &lt;<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre>   &lt;<span class="codeReserved">a</span> href=<span class="codeString">"srv/genera-llaves.php"</span> target=<span class="codeString">"_blank"</span>&gt;Genera llaves&lt;/<span class="codeReserved">a</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre>  &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre> &lt;/<span class="codeReserved">menu</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre> &lt;<span class="codeReserved">p</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">41</td><td><pre>  &lt;<span class="codeReserved">output</span> id=<span class="codeString">"outEstado"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">42</td><td><pre>   &lt;<span class="codeReserved">progress</span> max=<span class="codeString">"100"</span>&gt;Cargando&hellip;&lt;/<span class="codeReserved">progress</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">43</td><td><pre>  &lt;/<span class="codeReserved">output</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">44</td><td><pre> &lt;/<span class="codeReserved">p</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">45</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">46</td><td><pre> &lt;<span class="codeReserved">fieldset</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">47</td><td><pre>  &lt;<span class="codeReserved">legend</span>&gt;Reporte de envío a endpoints&lt;/<span class="codeReserved">legend</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">48</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">49</td><td><pre>  &lt;<span class="codeReserved">dl</span> id=<span class="codeString">"reporte"</span>&gt;&lt;/<span class="codeReserved">dl</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">50</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">51</td><td><pre> &lt;/<span class="codeReserved">fieldset</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">52</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">53</td><td><pre> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">54</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">55</td><td><pre>  <span class="codeReserved">import</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">56</td><td><pre>   activaNotificacionesPush</pre></td></tr>
+  <tr><td class="codeShow_order">57</td><td><pre>  } <span class="codeReserved">from</span> <span class="codeString">"./js/lib/activaNotificacionesPush.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">58</td><td><pre>  <span class="codeReserved">import</span> { getSuscripcionPush } <span class="codeReserved">from</span> <span class="codeString">"./js/lib/getSuscripcionPush.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">59</td><td><pre>  <span class="codeReserved">import</span> { suscribeAPush } <span class="codeReserved">from</span> <span class="codeString">"./js/lib/suscribeAPush.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">60</td><td><pre>  <span class="codeReserved">import</span> { cancelaSuscripcionPush } <span class="codeReserved">from</span> <span class="codeString">"./js/lib/cancelaSuscripcionPush.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">61</td><td><pre>  <span class="codeReserved">import</span> { urlBase64ToUint8Array } <span class="codeReserved">from</span> <span class="codeString">"./js/lib/urlBase64ToUint8Array.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">62</td><td><pre>  <span class="codeReserved">import</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">63</td><td><pre>   calculaDtoParaSuscripcion</pre></td></tr>
+  <tr><td class="codeShow_order">64</td><td><pre>  } <span class="codeReserved">from</span> <span class="codeString">"./js/lib/calculaDtoParaSuscripcion.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">65</td><td><pre>  <span class="codeReserved">import</span> { consume } <span class="codeReserved">from</span> <span class="codeString">"./js/lib/consume.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">66</td><td><pre>  <span class="codeReserved">import</span> { enviaJsonRecibeJson } <span class="codeReserved">from</span> <span class="codeString">"./js/lib/enviaJsonRecibeJson.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">67</td><td><pre>  <span class="codeReserved">import</span> { descargaVista } <span class="codeReserved">from</span> <span class="codeString">"./js/lib/descargaVista.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">68</td><td><pre>  <span class="codeReserved">import</span> { muestraError } <span class="codeReserved">from</span> <span class="codeString">"./js/lib/muestraError.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">69</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">70</td><td><pre>  <span class="codeReserved">const</span> applicationServerKey = urlBase64ToUint8Array(</pre></td></tr>
+  <tr><td class="codeShow_order">71</td><td><pre>   <span class="codeString">"BMBlr6YznhYMX3NgcWIDRxZXs0sh7tCv7_YCsWcww0ZCv9WGg-tRCXfMEHTiBPCksSqeve1twlbmVAZFv7GSuj0"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">72</td><td><pre>  <span class="codeComment">/** <span class="codeReserved">@enum</span> {string} */</span></pre></td></tr>
+  <tr><td class="codeShow_order">73</td><td><pre>  <span class="codeReserved">const</span> Estado = {</pre></td></tr>
+  <tr><td class="codeShow_order">74</td><td><pre>   CALCULANDO: <span class="codeString">"Calculando…"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">75</td><td><pre>   SUSCRITO: <span class="codeString">"Suscrito"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">76</td><td><pre>   DESUSCRITO: <span class="codeString">"Sin suscripción"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">77</td><td><pre>   INCOMPATIBLE: <span class="codeString">"Incompatible"</span></pre></td></tr>
+  <tr><td class="codeShow_order">78</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">79</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">80</td><td><pre>  preparaVista()</pre></td></tr>
+  <tr><td class="codeShow_order">81</td><td><pre>  btnSuscribe.addEventListener(<span class="codeString">"click"</span>, suscribe)</pre></td></tr>
+  <tr><td class="codeShow_order">82</td><td><pre>  btnCancela.addEventListener(<span class="codeString">"click"</span>, cancela)</pre></td></tr>
+  <tr><td class="codeShow_order">83</td><td><pre>  btnNotifica.addEventListener(<span class="codeString">"click"</span>, notificaDesdeElServidor)</pre></td></tr>
+  <tr><td class="codeShow_order">84</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">85</td><td><pre>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> preparaVista() {</pre></td></tr>
+  <tr><td class="codeShow_order">86</td><td><pre>   <span class="codeReserved">try</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">87</td><td><pre>    <span class="codeReserved">await</span> activaNotificacionesPush(<span class="codeString">"sw.js"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">88</td><td><pre>    <span class="codeReserved">const</span> suscripcion = <span class="codeReserved">await</span> getSuscripcionPush()</pre></td></tr>
+  <tr><td class="codeShow_order">89</td><td><pre>    <span class="codeReserved">if</span> (suscripcion === <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">90</td><td><pre>     muestraEstado(Estado.DESUSCRITO)</pre></td></tr>
+  <tr><td class="codeShow_order">91</td><td><pre>    } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">92</td><td><pre>     <span class="codeComment">// Modifica la suscripción en el servidor,</span></pre></td></tr>
+  <tr><td class="codeShow_order">93</td><td><pre>     <span class="codeReserved">const</span> dto = calculaDtoParaSuscripcion(suscripcion)</pre></td></tr>
+  <tr><td class="codeShow_order">94</td><td><pre>     <span class="codeReserved">await</span> consume(enviaJsonRecibeJson(<span class="codeString">"php/suscripcion-modifica.php"</span>, dto))</pre></td></tr>
+  <tr><td class="codeShow_order">95</td><td><pre>     muestraEstado(Estado.SUSCRITO)</pre></td></tr>
+  <tr><td class="codeShow_order">96</td><td><pre>    }</pre></td></tr>
+  <tr><td class="codeShow_order">97</td><td><pre>   } <span class="codeReserved">catch</span> (error) {</pre></td></tr>
+  <tr><td class="codeShow_order">98</td><td><pre>    muestraEstado(Estado.INCOMPATIBLE)</pre></td></tr>
+  <tr><td class="codeShow_order">99</td><td><pre>    muestraError(error)</pre></td></tr>
+  <tr><td class="codeShow_order">100</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">101</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">102</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">103</td><td><pre>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> notificaDesdeElServidor() {</pre></td></tr>
+  <tr><td class="codeShow_order">104</td><td><pre>   reporte.innerHTML =</pre></td></tr>
+  <tr><td class="codeShow_order">105</td><td><pre>     <span class="codeComment">/* html */</span> <span class="codeString">`&lt;<span class="codeReserved">progress</span> max=&quot;100&quot;&gt;Cargando&hellip;&lt;/<span class="codeReserved">progress</span>&gt;`</span></pre></td></tr>
+  <tr><td class="codeShow_order">106</td><td><pre>   <span class="codeReserved">await</span> descargaVista(<span class="codeString">"php/notifica.php"</span>, <span class="codeString">"POST"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">107</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">108</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">109</td><td><pre>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> suscribe() {</pre></td></tr>
+  <tr><td class="codeShow_order">110</td><td><pre>   muestraEstado(Estado.CALCULANDO)</pre></td></tr>
+  <tr><td class="codeShow_order">111</td><td><pre>   <span class="codeReserved">const</span> suscripcion = <span class="codeReserved">await</span> suscribeAPush(applicationServerKey)</pre></td></tr>
+  <tr><td class="codeShow_order">112</td><td><pre>   <span class="codeComment">// Agrega la suscripción al servidor,</span></pre></td></tr>
+  <tr><td class="codeShow_order">113</td><td><pre>   <span class="codeReserved">const</span> dto = calculaDtoParaSuscripcion(suscripcion)</pre></td></tr>
+  <tr><td class="codeShow_order">114</td><td><pre>   <span class="codeReserved">await</span> consume(enviaJsonRecibeJson(<span class="codeString">"php/suscripcion-modifica.php"</span>, dto)</pre></td></tr>
+  <tr><td class="codeShow_order">115</td><td><pre>   )</pre></td></tr>
+  <tr><td class="codeShow_order">116</td><td><pre>   muestraEstado(Estado.SUSCRITO)</pre></td></tr>
+  <tr><td class="codeShow_order">117</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">118</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">119</td><td><pre>  <span class="codeReserved">async</span> <span class="codeReserved">function</span> cancela() {</pre></td></tr>
+  <tr><td class="codeShow_order">120</td><td><pre>   muestraEstado(Estado.CALCULANDO)</pre></td></tr>
+  <tr><td class="codeShow_order">121</td><td><pre>   <span class="codeReserved">const</span> suscripcion = <span class="codeReserved">await</span> cancelaSuscripcionPush()</pre></td></tr>
+  <tr><td class="codeShow_order">122</td><td><pre>   <span class="codeReserved">if</span> (suscripcion !== <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">123</td><td><pre>    <span class="codeComment">// Elimina la suscripción en el servidor,</span></pre></td></tr>
+  <tr><td class="codeShow_order">124</td><td><pre>    <span class="codeReserved">const</span> dto = calculaDtoParaSuscripcion(suscripcion)</pre></td></tr>
+  <tr><td class="codeShow_order">125</td><td><pre>    <span class="codeReserved">await</span> consume(enviaJsonRecibeJson(<span class="codeString">"php/suscripcion-elimina.php"</span>, dto))</pre></td></tr>
+  <tr><td class="codeShow_order">126</td><td><pre>    muestraEstado(Estado.DESUSCRITO)</pre></td></tr>
+  <tr><td class="codeShow_order">127</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">128</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">129</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">130</td><td><pre>  <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">131</td><td><pre><span class="codeComment">   * <span class="codeReserved">@param</span> {Estado} estado</span></pre></td></tr>
+  <tr><td class="codeShow_order">132</td><td><pre><span class="codeComment">   */</span></pre></td></tr>
+  <tr><td class="codeShow_order">133</td><td><pre>  <span class="codeReserved">function</span> muestraEstado(estado) {</pre></td></tr>
+  <tr><td class="codeShow_order">134</td><td><pre>   outEstado.value = estado</pre></td></tr>
+  <tr><td class="codeShow_order">135</td><td><pre>   <span class="codeReserved">if</span> (estado === Estado.INCOMPATIBLE || estado === Estado.CALCULANDO) {</pre></td></tr>
+  <tr><td class="codeShow_order">136</td><td><pre>    btnSuscribe.hidden = <span class="codeReserved">true</span></pre></td></tr>
+  <tr><td class="codeShow_order">137</td><td><pre>    btnCancela.hidden = <span class="codeReserved">true</span></pre></td></tr>
+  <tr><td class="codeShow_order">138</td><td><pre>    btnNotifica.hidden = <span class="codeReserved">true</span></pre></td></tr>
+  <tr><td class="codeShow_order">139</td><td><pre>   } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (estado === Estado.SUSCRITO) {</pre></td></tr>
+  <tr><td class="codeShow_order">140</td><td><pre>    btnSuscribe.hidden = <span class="codeReserved">true</span></pre></td></tr>
+  <tr><td class="codeShow_order">141</td><td><pre>    btnCancela.hidden = <span class="codeReserved">false</span></pre></td></tr>
+  <tr><td class="codeShow_order">142</td><td><pre>    btnNotifica.hidden = <span class="codeReserved">false</span></pre></td></tr>
+  <tr><td class="codeShow_order">143</td><td><pre>   } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (estado === Estado.DESUSCRITO) {</pre></td></tr>
+  <tr><td class="codeShow_order">144</td><td><pre>    btnSuscribe.hidden = <span class="codeReserved">false</span></pre></td></tr>
+  <tr><td class="codeShow_order">145</td><td><pre>    btnCancela.hidden = <span class="codeReserved">true</span></pre></td></tr>
+  <tr><td class="codeShow_order">146</td><td><pre>    btnNotifica.hidden = <span class="codeReserved">true</span></pre></td></tr>
+  <tr><td class="codeShow_order">147</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">148</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">149</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">150</td><td><pre> &lt;/<span class="codeReserved">script</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">151</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">152</td><td><pre> &lt;/<span class="codeReserved">body</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">153</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">154</td><td><pre>&lt;/<span class="codeReserved">html</span>&gt;</pre></td></tr>
  </tbody>
 </table>

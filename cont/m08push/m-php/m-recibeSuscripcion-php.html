@@ -1,0 +1,75 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre>&lt;?<span class="codeReserved">php</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/lib/BAD_REQUEST.php"</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/lib/recibeJson.php"</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/lib/ProblemDetailsException.php"</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeReserved">function</span> recibeSuscripcion()</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>{</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> $objeto = recibeJson();</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre> <span class="codeReserved">if</span> (</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>  !isset($objeto-&gt;authToken)</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>  || !is_string($objeto-&gt;authToken)</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>  || $objeto-&gt;authToken === <span class="codeString">""</span></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre> )</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetailsException([</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>   <span class="codeString">"status"</span> =&gt; BAD_REQUEST,</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>   <span class="codeString">"title"</span> =&gt; <span class="codeString">"El authToken debe ser texto que no esté en blanco."</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>   <span class="codeString">"type"</span> =&gt; <span class="codeString">"/errors/authtokenincorrecto.html"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>  ]);</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre> <span class="codeReserved">if</span> (</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>  !isset($objeto-&gt;contentEncoding)</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre>  || !is_string($objeto-&gt;contentEncoding)</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>  || $objeto-&gt;contentEncoding === <span class="codeString">""</span></pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre> )</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetailsException([</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>   <span class="codeString">"status"</span> =&gt; BAD_REQUEST,</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre>   <span class="codeString">"title"</span> =&gt; <span class="codeString">"La contentEncoding debe ser texto que no esté en blanco."</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre>   <span class="codeString">"type"</span> =&gt; <span class="codeString">"/errors/contentencodingincorrecta.html"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre>  ]);</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre> <span class="codeReserved">if</span> (</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre>  !isset($objeto-&gt;endpoint)</pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre>  || !is_string($objeto-&gt;endpoint)</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre>  || $objeto-&gt;endpoint === <span class="codeString">""</span></pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre> )</pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetailsException([</pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre>   <span class="codeString">"status"</span> =&gt; BAD_REQUEST,</pre></td></tr>
+  <tr><td class="codeShow_order">41</td><td><pre>   <span class="codeString">"title"</span> =&gt; <span class="codeString">"El endpoint debe ser texto que no esté en blanco."</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">42</td><td><pre>   <span class="codeString">"type"</span> =&gt; <span class="codeString">"/errors/endpointincorrecto.html"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">43</td><td><pre>  ]);</pre></td></tr>
+  <tr><td class="codeShow_order">44</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">45</td><td><pre> <span class="codeReserved">if</span> (</pre></td></tr>
+  <tr><td class="codeShow_order">46</td><td><pre>  !isset($objeto-&gt;publicKey)</pre></td></tr>
+  <tr><td class="codeShow_order">47</td><td><pre>  || !is_string($objeto-&gt;publicKey)</pre></td></tr>
+  <tr><td class="codeShow_order">48</td><td><pre>  || $objeto-&gt;publicKey === <span class="codeString">""</span></pre></td></tr>
+  <tr><td class="codeShow_order">49</td><td><pre> )</pre></td></tr>
+  <tr><td class="codeShow_order">50</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetailsException([</pre></td></tr>
+  <tr><td class="codeShow_order">51</td><td><pre>   <span class="codeString">"status"</span> =&gt; BAD_REQUEST,</pre></td></tr>
+  <tr><td class="codeShow_order">52</td><td><pre>   <span class="codeString">"title"</span> =&gt; <span class="codeString">"La publicKey debe ser texto que no esté en blanco."</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">53</td><td><pre>   <span class="codeString">"type"</span> =&gt; <span class="codeString">"/errors/publickeyincorrecta.html"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">54</td><td><pre>  ]);</pre></td></tr>
+  <tr><td class="codeShow_order">55</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">56</td><td><pre> <span class="codeReserved">return</span> [</pre></td></tr>
+  <tr><td class="codeShow_order">57</td><td><pre>  <span class="codeString">"SUS_AUT_TOK"</span> =&gt; $objeto-&gt;authToken,</pre></td></tr>
+  <tr><td class="codeShow_order">58</td><td><pre>  <span class="codeString">"SUS_CONT_ENCOD"</span> =&gt; $objeto-&gt;contentEncoding,</pre></td></tr>
+  <tr><td class="codeShow_order">59</td><td><pre>  <span class="codeString">"SUS_ENDPOINT"</span> =&gt; $objeto-&gt;endpoint,</pre></td></tr>
+  <tr><td class="codeShow_order">60</td><td><pre>  <span class="codeString">"SUS_PUB_KEY"</span> =&gt; $objeto-&gt;publicKey,</pre></td></tr>
+  <tr><td class="codeShow_order">61</td><td><pre> ];</pre></td></tr>
+  <tr><td class="codeShow_order">62</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">63</td><td><pre></pre></td></tr>
+ </tbody>
+</table>

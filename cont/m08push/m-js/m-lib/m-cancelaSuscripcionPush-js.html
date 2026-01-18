@@ -1,0 +1,21 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { getSuscripcionPush } <span class="codeReserved">from</span> <span class="codeString">"./getSuscripcionPush.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">async</span> <span class="codeReserved">function</span> cancelaSuscripcionPush() {</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre> <span class="codeReserved">const</span> suscripcion = <span class="codeReserved">await</span> getSuscripcionPush()</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre> <span class="codeReserved">const</span> resultado = suscripcion === <span class="codeReserved">null</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre>  ? <span class="codeReserved">false</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre>  : <span class="codeReserved">await</span> suscripcion.unsubscribe()</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeReserved">return</span> resultado === <span class="codeReserved">true</span> ? suscripcion : <span class="codeReserved">null</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>

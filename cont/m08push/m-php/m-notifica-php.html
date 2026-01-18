@@ -1,0 +1,66 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre>&lt;?<span class="codeReserved">php</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/lib/manejaErrores.php"</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/../vendor/autoload.php"</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/lib/devuelveJson.php"</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeReserved">require_once</span>  <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Bd.php"</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/Suscripcion.php"</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeReserved">require_once</span> <span class="codeReserved">__DIR__</span> . <span class="codeString">"/suscripcionElimina.php"</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>use Minishlink\WebPush\WebPush;</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre><span class="codeReserved">const</span> AUTH = [</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre> <span class="codeString">"VAPID"</span> =&gt; [</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>  <span class="codeString">"subject"</span> =&gt; <span class="codeString">"https://notipush.rf.gd/"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>  <span class="codeString">"publicKey"</span> =&gt; <span class="codeString">"BMBlr6YznhYMX3NgcWIDRxZXs0sh7tCv7_YCsWcww0ZCv9WGg-tRCXfMEHTiBPCksSqeve1twlbmVAZFv7GSuj0"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>  <span class="codeString">"privateKey"</span> =&gt; <span class="codeString">"vplfkITvu0cwHqzK9Kj-DYStbCH_9AhGx9LqMyaeI6w"</span></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre> ]</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>];</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>$webPush = <span class="codeReserved">new</span> WebPush(AUTH);</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>$mensaje = <span class="codeString">"Hola! 👋"</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre><span class="codeComment">// Envia el mensaje a todas las suscripciones.</span></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre>$bd = Bd::pdo();</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>$stmt = $bd-&gt;query(<span class="codeString">"<span class="codeReserved">SELECT</span> * <span class="codeReserved">FROM</span> SUSCRIPCION"</span>);</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre>$suscripciones =</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre> $stmt-&gt;fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, Suscripcion::<span class="codeReserved">class</span>);</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre><span class="codeReserved">foreach</span> ($suscripciones <span class="codeReserved">as</span> $suscripcion) {</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre> $webPush-&gt;queueNotification($suscripcion, $mensaje);</pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre>$reportes = $webPush-&gt;flush();</pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre><span class="codeComment">// Genera el reporte de envio a cada suscripcion.</span></pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre>$reporteDeEnvios = <span class="codeString">""</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre><span class="codeReserved">foreach</span> ($reportes <span class="codeReserved">as</span> $reporte) {</pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre> $endpoint = $reporte-&gt;getRequest()-&gt;getUri();</pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre> $htmlEndpoint = htmlentities($endpoint);</pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre> <span class="codeReserved">if</span> ($reporte-&gt;isSuccess()) {</pre></td></tr>
+  <tr><td class="codeShow_order">41</td><td><pre>  <span class="codeComment">// Reporte de éxito.</span></pre></td></tr>
+  <tr><td class="codeShow_order">42</td><td><pre>  $reporteDeEnvios .= <span class="codeString">"&lt;<span class="codeReserved">dt</span>&gt;$htmlEndpoint&lt;/<span class="codeReserved">dt</span>&gt;&lt;<span class="codeReserved">dd</span>&gt;Éxito&lt;/<span class="codeReserved">dd</span>&gt;"</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">43</td><td><pre> } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">44</td><td><pre>  <span class="codeReserved">if</span> ($reporte-&gt;isSubscriptionExpired()) {</pre></td></tr>
+  <tr><td class="codeShow_order">45</td><td><pre>   suscripcionElimina($bd, $endpoint);</pre></td></tr>
+  <tr><td class="codeShow_order">46</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">47</td><td><pre>  <span class="codeComment">// Reporte de fallo.</span></pre></td></tr>
+  <tr><td class="codeShow_order">48</td><td><pre>  $explicacion = htmlentities($reporte-&gt;getReason());</pre></td></tr>
+  <tr><td class="codeShow_order">49</td><td><pre>  $reporteDeEnvios .= <span class="codeString">"&lt;<span class="codeReserved">dt</span>&gt;$endpoint&lt;/<span class="codeReserved">dt</span>&gt;&lt;<span class="codeReserved">dd</span>&gt;Fallo: $explicacion&lt;/<span class="codeReserved">dd</span>&gt;"</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">50</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">51</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">52</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">53</td><td><pre>devuelveJson([<span class="codeString">"reporte"</span> =&gt; [<span class="codeString">"innerHTML"</span> =&gt; $reporteDeEnvios]]);</pre></td></tr>
+  <tr><td class="codeShow_order">54</td><td><pre></pre></td></tr>
+ </tbody>
+</table>

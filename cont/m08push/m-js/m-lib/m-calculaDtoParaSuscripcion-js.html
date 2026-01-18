@@ -1,0 +1,42 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * Devuelve una literal de objeto que se puede usar para enviar</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * en formato JSON al servidor.</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * DTO es un acrónimo para Data Transder Object, u</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * objeto para transferencia de datos.</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { PushSubscription } suscripcion</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> calculaDtoParaSuscripcion(suscripcion) {</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> <span class="codeReserved">const</span> key = suscripcion.getKey(<span class="codeString">"p256dh"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> <span class="codeReserved">const</span> token = suscripcion.getKey(<span class="codeString">"auth"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> <span class="codeReserved">const</span> supported = PushManager.supportedContentEncodings</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre> <span class="codeReserved">const</span> encodings = Array.isArray(supported) && supported.length &gt; 0</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>  ? supported</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>  : [<span class="codeString">"aesgcm"</span>]</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre> <span class="codeReserved">const</span> endpoint = suscripcion.endpoint</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre> <span class="codeReserved">const</span> publicKey = key === <span class="codeReserved">null</span></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>  ? <span class="codeReserved">null</span></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>  : btoa(String.fromCharCode.apply(<span class="codeReserved">null</span>, <span class="codeReserved">new</span> Uint8Array(key)))</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre> <span class="codeReserved">const</span> authToken = token === <span class="codeReserved">null</span></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>  ? <span class="codeReserved">null</span></pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>  : btoa(String.fromCharCode.apply(<span class="codeReserved">null</span>, <span class="codeReserved">new</span> Uint8Array(token)))</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre> <span class="codeReserved">const</span> contentEncoding = encodings[0]</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre> <span class="codeReserved">return</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>  endpoint,</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre>  publicKey,</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>  authToken,</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre>  contentEncoding</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre></pre></td></tr>
+ </tbody>
+</table>
