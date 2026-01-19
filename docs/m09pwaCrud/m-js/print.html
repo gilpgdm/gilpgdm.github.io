@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/lib/js/muestra-codigo.js"></script>
+ <title>Carpeta « js » - GilPG DM</title>
+ <meta name="description" content="">
+ <style>
+ /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
+ :root {
+  --marginTop: 0.25rem;
+  --padTop: 0;
+  --h1PadTop: 2.5rem;
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colPush: var(--colFondo);
+  --colPushHover: var(--colFondo);
+  --colPushFocus: var(--colFondo);
+  --colPushActive: #bae397;
+  --colFondoPush: #609732;
+  --colFondoPushHover: #8abd5f;
+  --colFondoPushFocus: #3e7213;
+  --colFondoPushActive: #224c00;
+  --paddingPush: 0.2rem 0.3rem;
+  --borderPush: none;
+  --borderRadiusPush: 0.6em;
+  --colA: #6a7b15;
+  --colAVisited: #6f256f;
+  --colAActive: #e498af;
+  --colAPush: var(--colFondo);
+  --colAVisitedPush: var(--colFondo);
+  --colAPushHover: var(--colFondo);
+  --colAVisitedPushHover: var(--colFondo);
+  --colAPushFocus: var(--colFondo);
+  --colAVisitedPushFocus: var(--colFondo);
+  --colAPushActive: var(--colFondo);
+  --colAVisitedPushActive: var(--colFondo);
+  --colFondoAPush: #6a7b15;
+  --colFondoAVisitedPush: #6f256f;
+  --colFondoAPushHover: #91a437;
+  --colFondoAVisitedPushHover: #a66fa6;
+  --colFondoAPushFocus: #445200;
+  --colFondoAVisitedPushFocus: #530e53;
+  --colFondoAPushActive: #e498af;
+  --colFondoAVisitedPushActive: #e498af;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --shadowTitulo: 3px 1px 2px black;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
+  --colAStrong: var(--colLetra);
+  /* --colNavH1Sel: #b35f7c; */
+  --colFondoNav: var(--colFondo);
+  --colFondoNavSel: #e498af;
+  --colScrollbar: #CFD8DC;
+  --colThumb: #90a4ae;
+  --colThumbActivo: #3f3f3f;
+  --colResaltado: #e9c8d2;
+  --colResaltado2: #bae397;
+  --colResaltado3: #cfcfcf;
+  --colLetraResaltado: black;
+  --colLetraCodeComment: #224c00;
+  --colLetraCodeString: #903357;
+  --colLetraCodeReserved: #445200;
+  --colSecundario: #e498af;
+  --colTarget: #cef4ff;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --anchoThumb: 7px;
+  --borderRadiusThumb: 3.5px;
+  --gap: 0.5rem;
+  --fontMono: 'Xanh Mono', monospace;
+  --fontSans: 'Patrick Hand', sans-serif;
+  /* --fontSerif: 'Purple Purse', serif; */
+  --fontSerif: Georgia, 'Times New Roman', Times, serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ @media (prefers-color-scheme: light) {
+  :root {
+   --colLetra: black;
+   --colFondo: white;
+  }
+ }
+
+ /* https://paletton.com/#uid=74W0u0kaVz84jP27qHbeJtFiHpX */
+ @media (prefers-color-scheme: dark) {
+
+  :root {
+   --colLetra: white;
+   /* --colFondo: #272727; */
+   --colFondo: black;
+   --colPushActive: #e3f5d4;
+   --colFondoPush: #bbe697;
+   --colFondoPushHover: #d0eeb7;
+   --colFondoPushFocus: #9ed372;
+   --colFondoPushActive: #7db84d;
+   --colA: #e9f7a3;
+   --colAVisited: #c89ac8;
+   --colAActive: #983351;
+   --colFondoAPush: #e9f7a3;
+   --colFondoAVisitedPush: #c89ac8;
+   --colFondoAPushHover: #f6fcda;
+   --colFondoAVisitedPushHover: #dec0de;
+   --colFondoAPushFocus: #b4c853;
+   --colFondoAVisitedPushFocus: #9a539a;
+   --colFondoAPushActive: #983351;
+   --colFondoAVisitedPushActive: #983351;
+   --colSombra: #00000080;
+   --colTitulo: #e3f5d4;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
+   --colFondoNavSel: #7a3059;
+   --colScrollbar: #616161;
+   --colThumb: #ffffff;
+   --colResaltado: #7a3059;
+   --colResaltado2: #5c922f;
+   --colResaltado3: #4e4e4e;
+   --colLetraResaltado: white;
+   --colLetraCodeComment: #d0eeb7;
+   --colLetraCodeString: #eeb7c8;
+   --colLetraCodeReserved: #f0fac0;
+  }
+ }
+
+ /* xanh-mono-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* xanh-mono-italic - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: italic;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-italic.woff2') format('woff2');
+ }
+
+ /* patrick-hand-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Patrick Hand';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/patrick-hand-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* purple-purse-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Purple Purse';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/purple-purse-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ @font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  src:
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].woff2) format('woff2'),
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].ttf) format('truetype');
+ }
+
+ .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+ }
+
+ body::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ body::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ body::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ body {
+  margin-top: 0;
+ }
+
+ h1 {
+  font-size: 3rem;
+ }
+
+ section h1,
+ nav h1 {
+  font-size: 2.5rem;
+  font-style: oblique;
+ }
+
+ section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section section h1 {
+  font-size: 1.5rem;
+  font-style: oblique;
+ }
+
+ section section section section section h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+ }
+
+ a {
+  color: var(--colA);
+ }
+
+ a:visited {
+  color: var(--colAVisited);
+ }
+
+ a:active {
+  color: var(--colAActive);
+ }
+
+ .anterior,
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente,
+ button {
+  display: inline-block;
+  padding: var(--paddingPush);
+  border: var(--borderPush);
+  border-radius: var(--borderRadiusPush);
+  text-align: center;
+  text-decoration: none;
+ }
+
+ .anterior,
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente {
+  color: var(--colAPush);
+  background-color: var(--colFondoAPush);
+ }
+
+ .anterior:visited,
+ .siguiente:visited,
+ .paginaAnterior:visited,
+ .paginaSiguiente:visited {
+  color: var(--colAVisitedPush);
+  background-color: var(--colFondoAVisitedPush);
+ }
+
+ .anterior.bye,
+ .siguiente.bye,
+ .paginaAnterior.bye,
+ .paginaSiguiente.bye {
+  display: none;
+ }
+
+ .anterior:hover,
+ .siguiente:hover,
+ .paginaAnterior:hover,
+ .paginaSiguiente:hover {
+  color: var(--colAPushHover);
+  background-color: var(--colFondoAPushHover);
+ }
+
+ .anterior:visited:hover,
+ .siguiente:visited:hover,
+ .paginaAnterior:visited:hover,
+ .paginaSiguiente:visited:hover {
+  color: var(--colAVisitedPushHover);
+  background-color: var(--colFondoAVisitedPushHover);
+ }
+
+ .anterior:focus,
+ .siguiente:focus,
+ .paginaAnterior:focus,
+ .paginaSiguiente:focus {
+  color: var(--colAPushFocus);
+  background-color: var(--colFondoAPushFocus);
+ }
+
+ .anterior:visited:focus,
+ .siguiente:visited:focus,
+ .paginaAnterior:visited:focus,
+ .paginaSiguiente:visited:focus {
+  color: var(--colAVisitedPushFocus);
+  background-color: var(--colFondoAVisitedPushFocus);
+ }
+
+ .anterior:active,
+ .siguiente:active,
+ .paginaAnterior:active,
+ .paginaSiguiente:active {
+  color: var(--colAPushActive);
+  background-color: var(--colFondoAPushActive);
+ }
+
+ .anterior:visited:active,
+ .siguiente:visited:active,
+ .paginaAnterior:visited:active,
+ .paginaSiguiente:visited:active {
+  color: var(--colAVisitedPushActive);
+  background-color: var(--colFondoAVisitedPushActive);
+ }
+
+ button {
+  color: var(--colPush);
+  background-color: var(--colFondoPush);
+ }
+
+ button:hover {
+  color: var(--colPushHover);
+  background-color: var(--colFondoPushHover);
+ }
+
+ button:focus {
+  color: var(--colPushFocus);
+  background-color: var(--colFondoPushFocus);
+ }
+
+ button:active {
+  color: var(--colPushActive);
+  background-color: var(--colFondoPushActive);
+ }
+
+ .anterior span,
+ .siguiente span,
+ .paginaAnterior span,
+ .paginaSiguiente span,
+ button span {
+  vertical-align: middle;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  font-size: 1em;
+ }
+
+ a strong,
+ a code {
+  color: var(--colAStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+ }
+
+ code {
+  font-family: var(--fontMono);
+  font-size: 1rem;
+ }
+
+ .tree {
+  font-family: var(--fontSans);
+ }
+
+ .tree summary {
+  text-decoration: underline;
+  cursor: pointer;
+ }
+
+ .tree li {
+  margin-top: 1em;
+  margin-bottom: 1em;
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloFondo);
+ }
+
+ h1,
+ .lectura a,
+ .lectura p,
+ .lectura blockquote {
+  overflow-wrap: anywhere;
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloFondo);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  width: 100%;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+
+  .pruebaDeEscritorio {
+   page-break-before: always;
+  }
+ }
+
+ iframe {
+  /* background-color: white; */
+  box-sizing: border-box;
+  resize: both;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ .horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: start;
+  justify-content: center;
+ }
+
+ .horizontal>*:first-child {
+  flex: 1 1 auto;
+ }
+
+ .horizontal>*:nth-child(2) {
+  flex: 1 1 40ch;
+ }
+
+ .horizontal iframe {
+  width: 300px;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: var(--colResaltado);
+  color: var(--colLetraResaltado);
+ }
+
+ .resaltado2 {
+  background-color: var(--colResaltado2);
+  color: var(--colLetraResaltado);
+ }
+
+ .resaltado3 {
+  background-color: var(--colResaltado3);
+  color: var(--colLetraResaltado);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ table.codeShow {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+ }
+
+ .codeShow td.codeShow_order {
+  text-align: right;
+  padding: 0 0 0 0;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  /* Avoid selection */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+ }
+
+ .codeShow td:has(pre) {
+  padding: 0 0 0 0.25rem;
+  vertical-align: top;
+ }
+
+ .codeShow td pre {
+  font-family: var(--fontMono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  margin: 0;
+ }
+
+ .codeReserved {
+  color: var(--colLetraCodeReserved);
+  font-weight: bolder;
+ }
+
+ .codeString {
+  color: var(--colLetraCodeString);
+  font-weight: 600;
+ }
+
+ .codeComment {
+  color: var(--colLetraCodeComment);
+  font-style: italic;
+ }
+
+ @media print {
+
+  .codeShow button {
+   display: none;
+  }
+ }
+
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ .pruebaDeEscritorio {
+  font-family: var(--fontSans);
+ }
+
+ .pruebaDeEscritorio .section,
+ .pruebaDeEscritorio section {
+  display: inline-block;
+  vertical-align: top;
+ }
+
+ .pruebaDeEscritorio section {
+  margin: 1em;
+ }
+
+ .section section {
+  display: block;
+ }
+
+ .pruebaDeEscritorio section pre {
+  margin: 0;
+ }
+
+ .pruebaDeEscritorio samp {
+  font-weight: bold;
+ }
+
+ .pruebaDeEscritorio .activo {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  vertical-align: top;
+  background-color: var(--colSecundario);
+  border: 1px solid var(--colSecundario);
+ }
+
+ .pruebaDeEscritorio :target,
+ .pruebaDeEscritorio :target caption {
+  background-color: var(--colTarget);
+ }
+
+ .pruebaDeEscritorio .numero1 {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  color: var(--colStack1);
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio .numero2 {
+  display: inline-block;
+  color: var(--colStack2);
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio .numero3 {
+  display: inline-block;
+  color: var(--colStack3);
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio a.parametro1,
+ .pruebaDeEscritorio .parametro1 {
+  color: var(--colPar1);
+ }
+
+ .pruebaDeEscritorio a.parametro2,
+ .pruebaDeEscritorio .parametro2 {
+  color: var(--colPar2);
+ }
+
+ .pruebaDeEscritorio .descongela {
+  color: var(--colDescongela);
+ }
+
+ .pruebaDeEscritorio table.tabla1,
+ .pruebaDeEscritorio table.tabla1 th,
+ .pruebaDeEscritorio table.tabla1 td {
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio table.tabla3,
+ .pruebaDeEscritorio table.tabla3 th,
+ .pruebaDeEscritorio table.tabla3 td {
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio .frame {
+  font-family: var(--fontMono);
+  border-collapse: collapse;
+ }
+
+ .pruebaDeEscritorio .frame,
+ .pruebaDeEscritorio .frame th,
+ .pruebaDeEscritorio .frame td {
+  border: thin solid;
+ }
+
+ .pruebaDeEscritorio .frame caption {
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .objeto caption {
+  text-decoration: underline;
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .creación {
+  display: flex;
+ }
+</style>
+</head>
+
+<body class="print">
+   <h1 >O. Carpeta « js »</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
+    </p>
+   </div>
+
+  <div class="lectura">
+   <nav>
+    <h1>Contenido</h1>
+    
+   <ol type="A">
+    
+   <li>
+    <p>
+     <a href="/m09pwaCrud/m-js/m-nav-tab-fixed-js.html">js / nav-tab-fixed.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09pwaCrud/m-js/m-lib/">Carpeta « js / lib »</a>
+    </p>
+   </li>
+   </ol>
+   </nav>
+  </div>
+     <section >
+         <h1 >A. js / nav-tab-fixed.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { resaltaSiEstasEn } <span class="codeReserved">from</span> <span class="codeString">"./lib/resaltaSiEstasEn.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">class</span> NavTabFixed <span class="codeReserved">extends</span> HTMLElement {</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre> <span class="codeReserved">constructor</span>() {</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre>  super()</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre>  <span class="codeReserved">this</span>.creado = <span class="codeReserved">false</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> connectedCallback() {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>  <span class="codeReserved">this</span>.classList.add(<span class="codeString">"md-tab"</span>, <span class="codeString">"fixed"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>  <span class="codeReserved">if</span> (!<span class="codeReserved">this</span>.creado) {</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>   <span class="codeReserved">this</span>.innerHTML = <span class="codeComment">/* HTML */</span><span class="codeString">`</span></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre><span class="codeString">    &lt;<span class="codeReserved">a</span> ${resaltaSiEstasEn([&quot;/index.html&quot;, &quot;&quot;, &quot;/&quot;])} href=&quot;index.html&quot;&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre><span class="codeString">     &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=&quot;material-symbols-outlined&quot;&gt;home&lt;/<span class="codeReserved">span</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre><span class="codeString">     Inicio</span></pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre><span class="codeString">    &lt;/<span class="codeReserved">a</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre><span class="codeString"> </span></pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre><span class="codeString">    &lt;<span class="codeReserved">a</span> ${resaltaSiEstasEn([&quot;/ayuda.html&quot;])} href=&quot;ayuda.html&quot;&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre><span class="codeString">     &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=&quot;material-symbols-outlined&quot;&gt;help&lt;/<span class="codeReserved">span</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre><span class="codeString">     Ayuda</span></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre><span class="codeString">    &lt;/<span class="codeReserved">a</span>&gt;`</span></pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>   <span class="codeReserved">this</span>.creado = <span class="codeReserved">true</span></pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre>customElements.define(<span class="codeString">"nav-tab-fixed"</span>, NavTabFixed)</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section>
+         <h1 >B. Carpeta « js / lib »</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
+    </p>
+   </div>
+
+  <div class="lectura">
+   <nav>
+    <h1>Contenido</h1>
+    
+   <ol type="1">
+    
+   <li>
+    <p>
+     <a href="/m09pwaCrud/m-js/m-lib/m-ES_APPLE-js.html">js / lib / ES_APPLE.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09pwaCrud/m-js/m-lib/m-getAttribute-js.html">js / lib / getAttribute.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09pwaCrud/m-js/m-lib/m-manejaErrores-js.html">js / lib / manejaErrores.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09pwaCrud/m-js/m-lib/m-muestraError-js.html">js / lib / muestraError.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09pwaCrud/m-js/m-lib/m-muestraTextoDeAyuda-js.html">js / lib / muestraTextoDeAyuda.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09pwaCrud/m-js/m-lib/m-ProblemDetailsError-js.html">js / lib / ProblemDetailsError.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09pwaCrud/m-js/m-lib/m-querySelector-js.html">js / lib / querySelector.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09pwaCrud/m-js/m-lib/m-registraServiceWorker-js.html">js / lib / registraServiceWorker.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09pwaCrud/m-js/m-lib/m-resaltaSiEstasEn-js.html">js / lib / resaltaSiEstasEn.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09pwaCrud/m-js/m-lib/m-custom/">Carpeta « js / lib / custom »</a>
+    </p>
+   </li>
+   </ol>
+   </nav>
+  </div>
+     <section >
+         <h1 >1. js / lib / ES_APPLE.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">const</span> ES_APPLE = <span class="codeString">/.*(iPad|iPhone|iPod|Mac).*/</span>.test(navigator.userAgent)</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >2. js / lib / getAttribute.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {HTMLElement} elementoHtml</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {string} nombre</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * <span class="codeReserved">@returns</span> {string}</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> getAttribute(elementoHtml, nombre) {</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre> <span class="codeReserved">const</span> valor = elementoHtml.getAttribute(nombre)</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeReserved">return</span> valor === <span class="codeReserved">null</span> ? <span class="codeString">""</span> : valor</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >3. js / lib / manejaErrores.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { muestraError } <span class="codeReserved">from</span> <span class="codeString">"./muestraError.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * Intercepta Response.prototype.json para capturar errores de parseo</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * y asegurar que se reporten correctamente en navegadores Chromium.</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre>{</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeReserved">const</span> originalJson = Response.prototype.json</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> Response.prototype.json = <span class="codeReserved">function</span> () {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>  <span class="codeComment">// Llamamos al método original usando el contexto (this) de la respuesta</span></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>  <span class="codeReserved">return</span> originalJson.apply(<span class="codeReserved">this</span>, arguments)</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>   .<span class="codeReserved">catch</span>((<span class="codeComment">/** <span class="codeReserved">@type</span> {any} */</span> error) =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>    <span class="codeComment">// Corrige un error de Chrome que evita el manejo correcto de errores.</span></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>    <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(error)</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>   })</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>window.onerror = <span class="codeReserved">function</span> (</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>  <span class="codeComment">/** <span class="codeReserved">@type</span> {string} */</span> _message,</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>  <span class="codeComment">/** <span class="codeReserved">@type</span> {string} */</span> _url,</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>  <span class="codeComment">/** <span class="codeReserved">@type</span> {number} */</span> _line,</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>  <span class="codeComment">/** <span class="codeReserved">@type</span> {number} */</span> _column,</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre>  <span class="codeComment">/** <span class="codeReserved">@type</span> {Error} */</span> errorObject</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>) {</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre> muestraError(errorObject)</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre> <span class="codeReserved">return</span> <span class="codeReserved">true</span></pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre>window.addEventListener(<span class="codeString">'unhandledrejection'</span>, event =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre> muestraError(event.reason)</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre> event.preventDefault()</pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre>})</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre></pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >4. js / lib / muestraError.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { ProblemDetailsError } <span class="codeReserved">from</span> <span class="codeString">"./ProblemDetailsError.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * Muestra los datos de una Error en la consola y en un cuadro de alerta.</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { ProblemDetailsError | Error | <span class="codeReserved">null</span> } error descripción del error.</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> muestraError(error) {</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> <span class="codeReserved">if</span> (error === <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>  console.error(<span class="codeString">"Error"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>  alert(<span class="codeString">"Error"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre> } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (error <span class="codeReserved">instanceof</span> ProblemDetailsError) {</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>  <span class="codeReserved">const</span> problemDetails = error.problemDetails</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>  <span class="codeReserved">let</span> mensaje =</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>   <span class="codeReserved">typeof</span> problemDetails[<span class="codeString">"title"</span>] === <span class="codeString">"string"</span> ? problemDetails[<span class="codeString">"title"</span>] : <span class="codeString">""</span></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>  <span class="codeReserved">if</span> (<span class="codeReserved">typeof</span> problemDetails[<span class="codeString">"detail"</span>] === <span class="codeString">"string"</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>   <span class="codeReserved">if</span> (mensaje !== <span class="codeString">""</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>    mensaje += <span class="codeString">"\n\n"</span></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>   mensaje += problemDetails[<span class="codeString">"detail"</span>]</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>  <span class="codeReserved">if</span> (mensaje === <span class="codeString">""</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre>   mensaje = <span class="codeString">"Error"</span></pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>  console.error(error, problemDetails)</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre>  alert(mensaje)</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre> } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre>  console.error(error)</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre>  alert(error.message)</pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >5. js / lib / muestraTextoDeAyuda.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * Si un elemento HTML tiene un mensaje de validación, lo</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * muestra en su elemento de ayuda; en caso contrario, muestra</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * un mensaje de ayuda. </span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { {</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> *   validity: { valid: boolean };</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment"> *   validationMessage: string</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeComment"> *  } } elementoHtml elemento que contiene datos de validación.</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { HTMLElement } elementoDeAyuda elemento fonde</span></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre><span class="codeComment"> * se muestran los elementos de validación para elementoHtml.</span></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { string } mensajeDeAyuda mensaje de ayuda cuando el</span></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre><span class="codeComment"> *  estado de elementoHtml es válido.</span></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> muestraTextoDeAyuda(elementoHtml, elementoDeAyuda,</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre> mensajeDeAyuda) {</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre> <span class="codeReserved">if</span> (elementoHtml.validity.valid) {</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>  elementoDeAyuda.textContent = mensajeDeAyuda</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre> } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>  elementoDeAyuda.textContent = elementoHtml.validationMessage</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >6. js / lib / ProblemDetailsError.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">class</span> ProblemDetailsError <span class="codeReserved">extends</span> Error {</pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre> <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment">  * Detalle de los errores devueltos por un servicio.</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment">  * Crea una instancia de ProblemDetailsError.</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment">  * <span class="codeReserved">@param</span> {object} problemDetails Objeto con la descripcipon del error.</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment">  */</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeReserved">constructor</span>(problemDetails) {</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>  super(<span class="codeReserved">typeof</span> problemDetails[<span class="codeString">"detail"</span>] === <span class="codeString">"string"</span></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>   ? problemDetails[<span class="codeString">"detail"</span>]</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>   : (<span class="codeReserved">typeof</span> problemDetails[<span class="codeString">"title"</span>] === <span class="codeString">"string"</span></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>    ? problemDetails[<span class="codeString">"title"</span>]</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>    : <span class="codeString">"Error"</span>))</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>  <span class="codeReserved">this</span>.problemDetails = problemDetails</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >7. js / lib / querySelector.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * <span class="codeReserved">@template</span> { HTMLElement } T</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { Document | Element | ShadowRoot } raiz</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { string } query</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * <span class="codeReserved">@returns</span> { T }</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> querySelector(raiz, query) {</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeComment">/** <span class="codeReserved">@type</span> { T | <span class="codeReserved">null</span> } */</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> <span class="codeReserved">const</span> resutado = raiz.querySelector(query)</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> <span class="codeReserved">if</span> (resutado === <span class="codeReserved">null</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>  <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(<span class="codeString">`No se encuentra ${query}.`</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre> <span class="codeReserved">return</span> resutado</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >8. js / lib / registraServiceWorker.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">const</span> nombreDeServiceWorker = <span class="codeString">"sw.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">try</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre> navigator.serviceWorker.register(nombreDeServiceWorker)</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre>  .then(registro =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre>   console.log(nombreDeServiceWorker, <span class="codeString">"registrado."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre>   console.log(registro)</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>  })</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre>  .<span class="codeReserved">catch</span>(error =&gt; console.log(error))</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>} <span class="codeReserved">catch</span> (error) {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> console.log(error)</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >9. js / lib / resaltaSiEstasEn.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> {string[]} paginas</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> resaltaSiEstasEn(paginas) {</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre> <span class="codeReserved">const</span> pathname = location.pathname</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> pagina of paginas) {</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>  <span class="codeReserved">if</span> (pathname === pagina) {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>   queueMicrotask(() =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>    <span class="codeReserved">const</span> tab = document.querySelector(<span class="codeString">".active"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>    <span class="codeReserved">if</span> (tab !== <span class="codeReserved">null</span> && tab.closest(<span class="codeString">".scrollable"</span>) !== <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>     tab.scrollIntoView({ inline: <span class="codeString">"center"</span>, block: <span class="codeString">"end"</span> })</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>    }</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>   })</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>   <span class="codeReserved">return</span> <span class="codeString">`<span class="codeReserved">class</span>=&quot;active&quot;`</span></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre> <span class="codeReserved">return</span> <span class="codeString">""</span></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section>
+         <h1 >10. Carpeta « js / lib / custom »</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
+    </p>
+   </div>
+
+  <div class="lectura">
+   <nav>
+    <h1>Contenido</h1>
+    
+   <ol type="A">
+    
+   <li>
+    <p>
+     <a href="/m09pwaCrud/m-js/m-lib/m-custom/m-md-app-bar-js.html">js / lib / custom / md-app-bar.js</a>
+    </p>
+   </li>
+   </ol>
+   </nav>
+  </div>
+     <section >
+         <h1 >A. js / lib / custom / md-app-bar.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { ES_APPLE } <span class="codeReserved">from</span> <span class="codeString">"../ES_APPLE.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeReserved">import</span> { getAttribute } <span class="codeReserved">from</span> <span class="codeString">"../getAttribute.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">import</span> { querySelector } <span class="codeReserved">from</span> <span class="codeString">"../querySelector.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeReserved">class</span> MdAppBar <span class="codeReserved">extends</span> HTMLElement {</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre> getContent() {</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>  <span class="codeReserved">return</span> <span class="codeComment">/* HTML */</span><span class="codeString">`</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre><span class="codeString">   &lt;<span class="codeReserved">style</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre><span class="codeString"></span></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre><span class="codeString">    :host {</span></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre><span class="codeString">     <span class="codeReserved">display</span>: <span class="codeReserved">flex</span>;</span></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre><span class="codeString">     <span class="codeReserved">box-sizing</span>: border-box;</span></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre><span class="codeString">     <span class="codeReserved">align-items</span>: center;</span></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre><span class="codeString">     <span class="codeReserved">padding</span>: 0 0.25rem;</span></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre><span class="codeString">     <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-surface);</span></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre><span class="codeString">     <span class="codeReserved">position</span>: sticky;</span></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre><span class="codeString">     <span class="codeReserved">z-index</span>: 1;</span></pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre><span class="codeString">     <span class="codeReserved">left</span>: env(titlebar-area-x, 0);</span></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre><span class="codeString">     <span class="codeReserved">top</span>: env(titlebar-area-y, 0);</span></pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre><span class="codeString">     <span class="codeReserved">height</span>: env(titlebar-area-height, 4rem);</span></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre><span class="codeString">     <span class="codeReserved">width</span>: env(titlebar-area-width, 100%);</span></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre><span class="codeString">    }</span></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre><span class="codeString">    </span></pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre><span class="codeString">    :host(.apple) {</span></pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre><span class="codeString">     <span class="codeReserved">height</span>: env(titlebar-area-height, 3rem);</span></pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre><span class="codeString">    }</span></pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre><span class="codeString"></span></pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre><span class="codeString">    :host(.scroll) {</span></pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre><span class="codeString">     <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-surface-container-low);</span></pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre><span class="codeString">    }</span></pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre><span class="codeString"></span></pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre><span class="codeString">    #navigation {</span></pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre><span class="codeString">     <span class="codeReserved">flex</span>: 0 0 auto;</span></pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre><span class="codeString">     <span class="codeReserved">overflow</span>: hidden</span></pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre><span class="codeString">    }</span></pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre><span class="codeString"></span></pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre><span class="codeString">    #navigation ::slotted(*) {</span></pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre><span class="codeString">     <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</span></pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre><span class="codeString">    }</span></pre></td></tr>
+  <tr><td class="codeShow_order">41</td><td><pre><span class="codeString"></span></pre></td></tr>
+  <tr><td class="codeShow_order">42</td><td><pre><span class="codeString">    #acciones {</span></pre></td></tr>
+  <tr><td class="codeShow_order">43</td><td><pre><span class="codeString">     <span class="codeReserved">margin-left</span>: auto;</span></pre></td></tr>
+  <tr><td class="codeShow_order">44</td><td><pre><span class="codeString">     <span class="codeReserved">flex</span>: 0 0 auto;</span></pre></td></tr>
+  <tr><td class="codeShow_order">45</td><td><pre><span class="codeString">     <span class="codeReserved">overflow</span>: hidden</span></pre></td></tr>
+  <tr><td class="codeShow_order">46</td><td><pre><span class="codeString">    }</span></pre></td></tr>
+  <tr><td class="codeShow_order">47</td><td><pre><span class="codeString"></span></pre></td></tr>
+  <tr><td class="codeShow_order">48</td><td><pre><span class="codeString">    :host(.centered) #navigation,</span></pre></td></tr>
+  <tr><td class="codeShow_order">49</td><td><pre><span class="codeString">    :host(.centered) #acciones {</span></pre></td></tr>
+  <tr><td class="codeShow_order">50</td><td><pre><span class="codeString">     <span class="codeReserved">flex</span>: 0 0 6rem;</span></pre></td></tr>
+  <tr><td class="codeShow_order">51</td><td><pre><span class="codeString">     <span class="codeReserved">overflow</span>: hidden</span></pre></td></tr>
+  <tr><td class="codeShow_order">52</td><td><pre><span class="codeString">    }</span></pre></td></tr>
+  <tr><td class="codeShow_order">53</td><td><pre><span class="codeString"></span></pre></td></tr>
+  <tr><td class="codeShow_order">54</td><td><pre><span class="codeString">    #headline::slotted(*) {</span></pre></td></tr>
+  <tr><td class="codeShow_order">55</td><td><pre><span class="codeString">     -webkit-app-region: drag;</span></pre></td></tr>
+  <tr><td class="codeShow_order">56</td><td><pre><span class="codeString">     <span class="codeReserved">flex</span>: 1 1 auto;</span></pre></td></tr>
+  <tr><td class="codeShow_order">57</td><td><pre><span class="codeString">     <span class="codeReserved">white-space</span>: nowrap;</span></pre></td></tr>
+  <tr><td class="codeShow_order">58</td><td><pre><span class="codeString">     <span class="codeReserved">text-overflow</span>: ellipsis;</span></pre></td></tr>
+  <tr><td class="codeShow_order">59</td><td><pre><span class="codeString">     <span class="codeReserved">overflow</span>: hidden;</span></pre></td></tr>
+  <tr><td class="codeShow_order">60</td><td><pre><span class="codeString">     <span class="codeReserved">font-family</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-font);</span></pre></td></tr>
+  <tr><td class="codeShow_order">61</td><td><pre><span class="codeString">     <span class="codeReserved">font-weight</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-weight);</span></pre></td></tr>
+  <tr><td class="codeShow_order">62</td><td><pre><span class="codeString">     <span class="codeReserved">font-size</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-size);</span></pre></td></tr>
+  <tr><td class="codeShow_order">63</td><td><pre><span class="codeString">     <span class="codeReserved">font-style</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-font-style);</span></pre></td></tr>
+  <tr><td class="codeShow_order">64</td><td><pre><span class="codeString">     <span class="codeReserved">letter-spacing</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-tracking);</span></pre></td></tr>
+  <tr><td class="codeShow_order">65</td><td><pre><span class="codeString">     <span class="codeReserved">line-height</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-line-height);</span></pre></td></tr>
+  <tr><td class="codeShow_order">66</td><td><pre><span class="codeString">     <span class="codeReserved">text-transform</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-text-transform);</span></pre></td></tr>
+  <tr><td class="codeShow_order">67</td><td><pre><span class="codeString">     <span class="codeReserved">text-decoration</span>: <span class="codeReserved">var</span>(--md-sys-typescale-title-large-text-decoration);</span></pre></td></tr>
+  <tr><td class="codeShow_order">68</td><td><pre><span class="codeString">     <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</span></pre></td></tr>
+  <tr><td class="codeShow_order">69</td><td><pre><span class="codeString">    }</span></pre></td></tr>
+  <tr><td class="codeShow_order">70</td><td><pre><span class="codeString"></span></pre></td></tr>
+  <tr><td class="codeShow_order">71</td><td><pre><span class="codeString">    :host(.centered) #headline::slotted(*) {</span></pre></td></tr>
+  <tr><td class="codeShow_order">72</td><td><pre><span class="codeString">     <span class="codeReserved">flex</span>: 1 1 auto;</span></pre></td></tr>
+  <tr><td class="codeShow_order">73</td><td><pre><span class="codeString">     <span class="codeReserved">text-align</span>: center</span></pre></td></tr>
+  <tr><td class="codeShow_order">74</td><td><pre><span class="codeString">    }</span></pre></td></tr>
+  <tr><td class="codeShow_order">75</td><td><pre><span class="codeString"></span></pre></td></tr>
+  <tr><td class="codeShow_order">76</td><td><pre><span class="codeString">   &lt;/<span class="codeReserved">style</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">77</td><td><pre><span class="codeString"></span></pre></td></tr>
+  <tr><td class="codeShow_order">78</td><td><pre><span class="codeString">   &lt;<span class="codeReserved">span</span> id=&quot;navigation&quot;&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">79</td><td><pre><span class="codeString">    &lt;<span class="codeReserved">slot</span> name=&quot;navigation&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">80</td><td><pre><span class="codeString">   &lt;/<span class="codeReserved">span</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">81</td><td><pre><span class="codeString">   &lt;<span class="codeReserved">slot</span> id=&quot;headline&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">82</td><td><pre><span class="codeString">   &lt;<span class="codeReserved">span</span> id=&quot;acciones&quot;&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">83</td><td><pre><span class="codeString">    &lt;<span class="codeReserved">slot</span> name=&quot;action&quot;&gt;&lt;/<span class="codeReserved">slot</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">84</td><td><pre><span class="codeString">   &lt;/<span class="codeReserved">span</span>&gt;`</span></pre></td></tr>
+  <tr><td class="codeShow_order">85</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">86</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">87</td><td><pre> <span class="codeReserved">constructor</span>() {</pre></td></tr>
+  <tr><td class="codeShow_order">88</td><td><pre>  super()</pre></td></tr>
+  <tr><td class="codeShow_order">89</td><td><pre>  <span class="codeReserved">if</span> (ES_APPLE) {</pre></td></tr>
+  <tr><td class="codeShow_order">90</td><td><pre>   document.body.classList.add(<span class="codeString">"apple"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">91</td><td><pre>   document.body.classList.remove(<span class="codeString">"material"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">92</td><td><pre>  } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">93</td><td><pre>   document.body.classList.add(<span class="codeString">"material"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">94</td><td><pre>   document.body.classList.remove(<span class="codeString">"apple"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">95</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">96</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">97</td><td><pre>  <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">98</td><td><pre><span class="codeComment">   * <span class="codeReserved">@private</span></span></pre></td></tr>
+  <tr><td class="codeShow_order">99</td><td><pre><span class="codeComment">   * <span class="codeReserved">@readonly</span></span></pre></td></tr>
+  <tr><td class="codeShow_order">100</td><td><pre><span class="codeComment">   */</span></pre></td></tr>
+  <tr><td class="codeShow_order">101</td><td><pre>  <span class="codeReserved">const</span> shadow = <span class="codeReserved">this</span>.attachShadow({ mode: <span class="codeString">"open"</span> })</pre></td></tr>
+  <tr><td class="codeShow_order">102</td><td><pre>  shadow.innerHTML = <span class="codeReserved">this</span>.getContent()</pre></td></tr>
+  <tr><td class="codeShow_order">103</td><td><pre>  <span class="codeReserved">this</span>._configuraAction = <span class="codeReserved">this</span>._configuraAction.bind(<span class="codeReserved">this</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">104</td><td><pre>  <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">105</td><td><pre><span class="codeComment">   * <span class="codeReserved">@private</span></span></pre></td></tr>
+  <tr><td class="codeShow_order">106</td><td><pre><span class="codeComment">   * <span class="codeReserved">@type</span> {number}</span></pre></td></tr>
+  <tr><td class="codeShow_order">107</td><td><pre><span class="codeComment">   */</span></pre></td></tr>
+  <tr><td class="codeShow_order">108</td><td><pre>  <span class="codeReserved">this</span>._posY = 0</pre></td></tr>
+  <tr><td class="codeShow_order">109</td><td><pre>  <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">110</td><td><pre><span class="codeComment">   * <span class="codeReserved">@private</span></span></pre></td></tr>
+  <tr><td class="codeShow_order">111</td><td><pre><span class="codeComment">   * <span class="codeReserved">@type</span> {boolean}</span></pre></td></tr>
+  <tr><td class="codeShow_order">112</td><td><pre><span class="codeComment">   */</span></pre></td></tr>
+  <tr><td class="codeShow_order">113</td><td><pre>  <span class="codeReserved">this</span>._scrolling = <span class="codeReserved">false</span></pre></td></tr>
+  <tr><td class="codeShow_order">114</td><td><pre>  <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">115</td><td><pre><span class="codeComment">    * <span class="codeReserved">@private</span></span></pre></td></tr>
+  <tr><td class="codeShow_order">116</td><td><pre><span class="codeComment">    * <span class="codeReserved">@type</span> { HTMLSlotElement }</span></pre></td></tr>
+  <tr><td class="codeShow_order">117</td><td><pre><span class="codeComment">    */</span></pre></td></tr>
+  <tr><td class="codeShow_order">118</td><td><pre>  <span class="codeReserved">this</span>._navigation = querySelector(shadow, <span class="codeString">'[name=&quot;navigation&quot;]'</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">119</td><td><pre>  <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">120</td><td><pre><span class="codeComment">    * <span class="codeReserved">@private</span></span></pre></td></tr>
+  <tr><td class="codeShow_order">121</td><td><pre><span class="codeComment">    * <span class="codeReserved">@type</span> { HTMLSlotElement }</span></pre></td></tr>
+  <tr><td class="codeShow_order">122</td><td><pre><span class="codeComment">    */</span></pre></td></tr>
+  <tr><td class="codeShow_order">123</td><td><pre>  <span class="codeReserved">this</span>._action = querySelector(shadow, <span class="codeString">'[name=&quot;action&quot;]'</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">124</td><td><pre>  <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">125</td><td><pre><span class="codeComment">    * <span class="codeReserved">@private</span></span></pre></td></tr>
+  <tr><td class="codeShow_order">126</td><td><pre><span class="codeComment">    * <span class="codeReserved">@type</span> { HTMLHeadingElement | <span class="codeReserved">null</span> }</span></pre></td></tr>
+  <tr><td class="codeShow_order">127</td><td><pre><span class="codeComment">    */</span></pre></td></tr>
+  <tr><td class="codeShow_order">128</td><td><pre>  <span class="codeReserved">this</span>._headline = <span class="codeReserved">null</span></pre></td></tr>
+  <tr><td class="codeShow_order">129</td><td><pre>  <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">130</td><td><pre><span class="codeComment">    * <span class="codeReserved">@private</span></span></pre></td></tr>
+  <tr><td class="codeShow_order">131</td><td><pre><span class="codeComment">    * <span class="codeReserved">@type</span> { HTMLElement | <span class="codeReserved">null</span> }</span></pre></td></tr>
+  <tr><td class="codeShow_order">132</td><td><pre><span class="codeComment">    */</span></pre></td></tr>
+  <tr><td class="codeShow_order">133</td><td><pre>  <span class="codeReserved">this</span>._adicional = <span class="codeReserved">null</span></pre></td></tr>
+  <tr><td class="codeShow_order">134</td><td><pre>  <span class="codeReserved">this</span>._action.addEventListener(<span class="codeString">"slotchange"</span>, <span class="codeReserved">this</span>._configuraAction)</pre></td></tr>
+  <tr><td class="codeShow_order">135</td><td><pre>  addEventListener(<span class="codeString">"scroll"</span>, () =&gt; <span class="codeReserved">this</span>._onScroll())</pre></td></tr>
+  <tr><td class="codeShow_order">136</td><td><pre>  addEventListener(<span class="codeString">"load"</span>, () =&gt; <span class="codeReserved">this</span>.configurOtros())</pre></td></tr>
+  <tr><td class="codeShow_order">137</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">138</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">139</td><td><pre> connectedCallback() {</pre></td></tr>
+  <tr><td class="codeShow_order">140</td><td><pre>  <span class="codeReserved">this</span>.role = <span class="codeString">"toolbar"</span></pre></td></tr>
+  <tr><td class="codeShow_order">141</td><td><pre>  <span class="codeReserved">this</span>._configuraAction()</pre></td></tr>
+  <tr><td class="codeShow_order">142</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">143</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">144</td><td><pre> configurOtros() {</pre></td></tr>
+  <tr><td class="codeShow_order">145</td><td><pre>  <span class="codeReserved">const</span> idHeadline = getAttribute(<span class="codeReserved">this</span>, <span class="codeString">"headline"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">146</td><td><pre>  <span class="codeReserved">if</span> (idHeadline !== <span class="codeString">""</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">147</td><td><pre>   <span class="codeReserved">const</span> headline = document.getElementById(idHeadline)</pre></td></tr>
+  <tr><td class="codeShow_order">148</td><td><pre>   <span class="codeReserved">if</span> (headline <span class="codeReserved">instanceof</span> HTMLHeadingElement) {</pre></td></tr>
+  <tr><td class="codeShow_order">149</td><td><pre>    <span class="codeReserved">this</span>._headline = headline</pre></td></tr>
+  <tr><td class="codeShow_order">150</td><td><pre>    <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.classList.contains(<span class="codeString">"apple"</span>) || <span class="codeReserved">this</span>.classList.contains(<span class="codeString">"medium"</span>)) {</pre></td></tr>
+  <tr><td class="codeShow_order">151</td><td><pre>     headline.classList.add(<span class="codeString">"md-headline"</span>, <span class="codeString">"headline-small"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">152</td><td><pre>    } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">153</td><td><pre>     headline.classList.add(<span class="codeString">"md-headline"</span>, <span class="codeString">"headline-medium"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">154</td><td><pre>    }</pre></td></tr>
+  <tr><td class="codeShow_order">155</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">156</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">157</td><td><pre>  <span class="codeReserved">const</span> idAdicional = getAttribute(<span class="codeReserved">this</span>, <span class="codeString">"adicional"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">158</td><td><pre>  <span class="codeReserved">if</span> (idAdicional !== <span class="codeString">""</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">159</td><td><pre>   <span class="codeReserved">this</span>._adicional = document.getElementById(idAdicional)</pre></td></tr>
+  <tr><td class="codeShow_order">160</td><td><pre>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._adicional !== <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">161</td><td><pre>    <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.classList.contains(<span class="codeString">"apple"</span>)) {</pre></td></tr>
+  <tr><td class="codeShow_order">162</td><td><pre>     <span class="codeReserved">this</span>._adicional.style.<span class="codeReserved">top</span> = <span class="codeString">"env(titlebar-area-height, 3rem)"</span></pre></td></tr>
+  <tr><td class="codeShow_order">163</td><td><pre>    } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">164</td><td><pre>     <span class="codeReserved">this</span>._adicional.style.<span class="codeReserved">top</span> = <span class="codeString">"env(titlebar-area-height, 4rem)"</span></pre></td></tr>
+  <tr><td class="codeShow_order">165</td><td><pre>    }</pre></td></tr>
+  <tr><td class="codeShow_order">166</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">167</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">168</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">169</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">170</td><td><pre> _configuraAction() {</pre></td></tr>
+  <tr><td class="codeShow_order">171</td><td><pre>  <span class="codeReserved">const</span> assignedElements = <span class="codeReserved">this</span>._action.assignedElements()</pre></td></tr>
+  <tr><td class="codeShow_order">172</td><td><pre>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.isConnected) {</pre></td></tr>
+  <tr><td class="codeShow_order">173</td><td><pre>   <span class="codeReserved">if</span> (ES_APPLE) {</pre></td></tr>
+  <tr><td class="codeShow_order">174</td><td><pre>    <span class="codeReserved">this</span>.classList.add(<span class="codeString">"apple"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">175</td><td><pre>    <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"material"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">176</td><td><pre>   } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">177</td><td><pre>    <span class="codeReserved">this</span>.classList.add(<span class="codeString">"material"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">178</td><td><pre>    <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"apple"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">179</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">180</td><td><pre>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>.classList.contains(<span class="codeString">"centered"</span>)) {</pre></td></tr>
+  <tr><td class="codeShow_order">181</td><td><pre>    <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"centrado"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">182</td><td><pre>    <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"justificado"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">183</td><td><pre>   } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">184</td><td><pre>    <span class="codeReserved">if</span> (ES_APPLE && assignedElements.length &lt;= 1) {</pre></td></tr>
+  <tr><td class="codeShow_order">185</td><td><pre>     <span class="codeReserved">this</span>.classList.add(<span class="codeString">"centrado"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">186</td><td><pre>     <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"justificado"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">187</td><td><pre>    } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">188</td><td><pre>     <span class="codeReserved">this</span>.classList.add(<span class="codeString">"justificado"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">189</td><td><pre>     <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"centrado"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">190</td><td><pre>    }</pre></td></tr>
+  <tr><td class="codeShow_order">191</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">192</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">193</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">194</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">195</td><td><pre> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">196</td><td><pre> _onScroll() {</pre></td></tr>
+  <tr><td class="codeShow_order">197</td><td><pre>  <span class="codeReserved">this</span>._posY = scrollY</pre></td></tr>
+  <tr><td class="codeShow_order">198</td><td><pre>  <span class="codeReserved">if</span> (!<span class="codeReserved">this</span>._scrolling) {</pre></td></tr>
+  <tr><td class="codeShow_order">199</td><td><pre>   requestAnimationFrame(() =&gt; <span class="codeReserved">this</span>._avanza())</pre></td></tr>
+  <tr><td class="codeShow_order">200</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">201</td><td><pre>  <span class="codeReserved">this</span>._scrolling = <span class="codeReserved">true</span></pre></td></tr>
+  <tr><td class="codeShow_order">202</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">203</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">204</td><td><pre> <span class="codeComment">/** <span class="codeReserved">@private</span> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">205</td><td><pre> _avanza() {</pre></td></tr>
+  <tr><td class="codeShow_order">206</td><td><pre>  <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._posY === 0) {</pre></td></tr>
+  <tr><td class="codeShow_order">207</td><td><pre>   <span class="codeReserved">this</span>.classList.remove(<span class="codeString">"scroll"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">208</td><td><pre>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._headline !== <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">209</td><td><pre>    <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._adicional === <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">210</td><td><pre>     <span class="codeReserved">this</span>._headline.classList.remove(<span class="codeString">"scroll"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">211</td><td><pre>    } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">212</td><td><pre>     <span class="codeReserved">this</span>._headline.classList.remove(<span class="codeString">"scroll-adicional"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">213</td><td><pre>    }</pre></td></tr>
+  <tr><td class="codeShow_order">214</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">215</td><td><pre>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._adicional !== <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">216</td><td><pre>    <span class="codeReserved">this</span>._adicional.classList.remove(<span class="codeString">"scroll"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">217</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">218</td><td><pre>  } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">219</td><td><pre>   <span class="codeReserved">this</span>.classList.add(<span class="codeString">"scroll"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">220</td><td><pre>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._headline !== <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">221</td><td><pre>    <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._adicional === <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">222</td><td><pre>     <span class="codeReserved">this</span>._headline.classList.add(<span class="codeString">"scroll"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">223</td><td><pre>    } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">224</td><td><pre>     <span class="codeReserved">this</span>._headline.classList.add(<span class="codeString">"scroll-adicional"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">225</td><td><pre>    }</pre></td></tr>
+  <tr><td class="codeShow_order">226</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">227</td><td><pre>   <span class="codeReserved">if</span> (<span class="codeReserved">this</span>._adicional !== <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">228</td><td><pre>    <span class="codeReserved">this</span>._adicional.classList.add(<span class="codeString">"scroll"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">229</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">230</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">231</td><td><pre>  <span class="codeReserved">this</span>._scrolling = <span class="codeReserved">false</span></pre></td></tr>
+  <tr><td class="codeShow_order">232</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">233</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">234</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">235</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">236</td><td><pre>customElements.define(<span class="codeString">"md-app-bar"</span>, MdAppBar)</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+      </section>
+      </section>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * Si un elemento HTML tiene un mensaje de validación, lo</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * muestra en su elemento de ayuda; en caso contrario, muestra</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * un mensaje de ayuda. </span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { {</span></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment"> *   validity: { valid: boolean };</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment"> *   validationMessage: string</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeComment"> *  } } elementoHtml elemento que contiene datos de validación.</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { HTMLElement } elementoDeAyuda elemento fonde</span></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre><span class="codeComment"> * se muestran los elementos de validación para elementoHtml.</span></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre><span class="codeComment"> * <span class="codeReserved">@param</span> { string } mensajeDeAyuda mensaje de ayuda cuando el</span></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre><span class="codeComment"> *  estado de elementoHtml es válido.</span></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">function</span> muestraTextoDeAyuda(elementoHtml, elementoDeAyuda,</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre> mensajeDeAyuda) {</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre> <span class="codeReserved">if</span> (elementoHtml.validity.valid) {</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>  elementoDeAyuda.textContent = mensajeDeAyuda</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre> } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>  elementoDeAyuda.textContent = elementoHtml.validationMessage</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>

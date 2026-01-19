@@ -1,0 +1,206 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre>.md-filled-text-field {</pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre> <span class="codeReserved">position</span>: relative;</pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre> <span class="codeReserved">overflow</span>: hidden;</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre> <span class="codeReserved">display</span>: <span class="codeReserved">flex</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre> <span class="codeReserved">flex-direction</span>: column;</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre> <span class="codeReserved">align-items</span>: stretch;</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre> <span class="codeReserved">padding-top</span>: calc(0.5rem + <span class="codeReserved">var</span>(--md-sys-typescale-body-small-line-height));</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeReserved">border-top-left-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-extra-small-top-top-left);</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> <span class="codeReserved">border-top-right-radius</span>: <span class="codeReserved">var</span>(--md-sys-shape-corner-extra-small-top-top-right);</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> <span class="codeReserved">overflow</span>: hidden;</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre><span class="codeComment">/* container */</span></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>.md-filled-text-field::before {</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre> <span class="codeReserved">content</span>: <span class="codeString">""</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre> <span class="codeReserved">position</span>: absolute;</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre> <span class="codeReserved">z-index</span>: -2;</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre> <span class="codeReserved">top</span>: 0;</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre> <span class="codeReserved">right</span>: 0;</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre> <span class="codeReserved">left</span>: 0;</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre> <span class="codeReserved">bottom</span>: 0;</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre> <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-surface-container-highest);</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre><span class="codeComment">/* state layer */</span></pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>.md-filled-text-field::after {</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre> <span class="codeReserved">content</span>: <span class="codeString">""</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre> <span class="codeReserved">position</span>: absolute;</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre> <span class="codeReserved">z-index</span>: -1;</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre> <span class="codeReserved">top</span>: 0;</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre> <span class="codeReserved">right</span>: 0;</pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre> <span class="codeReserved">left</span>: 0;</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre> <span class="codeReserved">bottom</span>: 0;</pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre> <span class="codeReserved">background-color</span>: transparent;</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre>.md-filled-text-field span,</pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre>.md-filled-text-field label {</pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre> <span class="codeReserved">position</span>: absolute;</pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre> <span class="codeReserved">top</span>: 0.5rem;</pre></td></tr>
+  <tr><td class="codeShow_order">41</td><td><pre> <span class="codeReserved">left</span>: 1rem;</pre></td></tr>
+  <tr><td class="codeShow_order">42</td><td><pre> <span class="codeReserved">right</span>: 1rem;</pre></td></tr>
+  <tr><td class="codeShow_order">43</td><td><pre> <span class="codeReserved">display</span>: block;</pre></td></tr>
+  <tr><td class="codeShow_order">44</td><td><pre> <span class="codeReserved">transform</span>: translateY(1rem);</pre></td></tr>
+  <tr><td class="codeShow_order">45</td><td><pre> <span class="codeReserved">transition-property</span>: <span class="codeReserved">transform</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">46</td><td><pre> <span class="codeReserved">transition-duration</span>: <span class="codeReserved">var</span>(--md-sys-motion-duration-300);</pre></td></tr>
+  <tr><td class="codeShow_order">47</td><td><pre> <span class="codeReserved">white-space</span>: nowrap;</pre></td></tr>
+  <tr><td class="codeShow_order">48</td><td><pre> <span class="codeReserved">text-overflow</span>: ellipsis;</pre></td></tr>
+  <tr><td class="codeShow_order">49</td><td><pre> <span class="codeReserved">overflow</span>: hidden;</pre></td></tr>
+  <tr><td class="codeShow_order">50</td><td><pre> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</pre></td></tr>
+  <tr><td class="codeShow_order">51</td><td><pre> <span class="codeReserved">font-family</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-font);</pre></td></tr>
+  <tr><td class="codeShow_order">52</td><td><pre> <span class="codeReserved">font-weight</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-weight);</pre></td></tr>
+  <tr><td class="codeShow_order">53</td><td><pre> <span class="codeReserved">font-size</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-size);</pre></td></tr>
+  <tr><td class="codeShow_order">54</td><td><pre> <span class="codeReserved">font-style</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-font-style);</pre></td></tr>
+  <tr><td class="codeShow_order">55</td><td><pre> <span class="codeReserved">letter-spacing</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-tracking);</pre></td></tr>
+  <tr><td class="codeShow_order">56</td><td><pre> <span class="codeReserved">line-height</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-line-height);</pre></td></tr>
+  <tr><td class="codeShow_order">57</td><td><pre> <span class="codeReserved">text-transform</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-text-transform);</pre></td></tr>
+  <tr><td class="codeShow_order">58</td><td><pre> <span class="codeReserved">text-decoration</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-text-decoration);</pre></td></tr>
+  <tr><td class="codeShow_order">59</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">60</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">61</td><td><pre>.md-filled-text-field :not(:placeholder-shown)+span,</pre></td></tr>
+  <tr><td class="codeShow_order">62</td><td><pre>.md-filled-text-field :not(:placeholder-shown)+label,</pre></td></tr>
+  <tr><td class="codeShow_order">63</td><td><pre>.md-filled-text-field .populated+span,</pre></td></tr>
+  <tr><td class="codeShow_order">64</td><td><pre>.md-filled-text-field .populated+label,</pre></td></tr>
+  <tr><td class="codeShow_order">65</td><td><pre>.md-filled-text-field:focus-within span,</pre></td></tr>
+  <tr><td class="codeShow_order">66</td><td><pre>.md-filled-text-field:focus-within label,</pre></td></tr>
+  <tr><td class="codeShow_order">67</td><td><pre>.md-filled-text-field.float span,</pre></td></tr>
+  <tr><td class="codeShow_order">68</td><td><pre>.md-filled-text-field.float label {</pre></td></tr>
+  <tr><td class="codeShow_order">69</td><td><pre> <span class="codeReserved">transform</span>: translateY(0);</pre></td></tr>
+  <tr><td class="codeShow_order">70</td><td><pre> <span class="codeReserved">font-family</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-font);</pre></td></tr>
+  <tr><td class="codeShow_order">71</td><td><pre> <span class="codeReserved">font-weight</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-weight);</pre></td></tr>
+  <tr><td class="codeShow_order">72</td><td><pre> <span class="codeReserved">font-size</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-size);</pre></td></tr>
+  <tr><td class="codeShow_order">73</td><td><pre> <span class="codeReserved">font-style</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-font-style);</pre></td></tr>
+  <tr><td class="codeShow_order">74</td><td><pre> <span class="codeReserved">letter-spacing</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-tracking);</pre></td></tr>
+  <tr><td class="codeShow_order">75</td><td><pre> <span class="codeReserved">line-height</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-line-height);</pre></td></tr>
+  <tr><td class="codeShow_order">76</td><td><pre> <span class="codeReserved">text-transform</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-text-transform);</pre></td></tr>
+  <tr><td class="codeShow_order">77</td><td><pre> <span class="codeReserved">text-decoration</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-text-decoration);</pre></td></tr>
+  <tr><td class="codeShow_order">78</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">79</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">80</td><td><pre>.md-filled-text-field :not(label, span, small) {</pre></td></tr>
+  <tr><td class="codeShow_order">81</td><td><pre> <span class="codeReserved">position</span>: relative;</pre></td></tr>
+  <tr><td class="codeShow_order">82</td><td><pre> <span class="codeReserved">caret-color</span>: <span class="codeReserved">var</span>(--md-sys-color-primary);</pre></td></tr>
+  <tr><td class="codeShow_order">83</td><td><pre> <span class="codeReserved">min-height</span>: 2rem;</pre></td></tr>
+  <tr><td class="codeShow_order">84</td><td><pre> <span class="codeReserved">box-sizing</span>: border-box;</pre></td></tr>
+  <tr><td class="codeShow_order">85</td><td><pre> <span class="codeReserved">padding-left</span>: 1rem;</pre></td></tr>
+  <tr><td class="codeShow_order">86</td><td><pre> <span class="codeReserved">padding-bottom</span>: 0.5rem;</pre></td></tr>
+  <tr><td class="codeShow_order">87</td><td><pre> <span class="codeReserved">padding-right</span>: 1rem;</pre></td></tr>
+  <tr><td class="codeShow_order">88</td><td><pre> <span class="codeReserved">border</span>: none;</pre></td></tr>
+  <tr><td class="codeShow_order">89</td><td><pre> <span class="codeReserved">resize</span>: none;</pre></td></tr>
+  <tr><td class="codeShow_order">90</td><td><pre> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</pre></td></tr>
+  <tr><td class="codeShow_order">91</td><td><pre> <span class="codeReserved">font-family</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-font);</pre></td></tr>
+  <tr><td class="codeShow_order">92</td><td><pre> <span class="codeReserved">font-weight</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-weight);</pre></td></tr>
+  <tr><td class="codeShow_order">93</td><td><pre> <span class="codeReserved">font-size</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-size);</pre></td></tr>
+  <tr><td class="codeShow_order">94</td><td><pre> <span class="codeReserved">font-style</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-font-style);</pre></td></tr>
+  <tr><td class="codeShow_order">95</td><td><pre> <span class="codeReserved">letter-spacing</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-tracking);</pre></td></tr>
+  <tr><td class="codeShow_order">96</td><td><pre> <span class="codeReserved">line-height</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-line-height);</pre></td></tr>
+  <tr><td class="codeShow_order">97</td><td><pre> <span class="codeReserved">text-transform</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-text-transform);</pre></td></tr>
+  <tr><td class="codeShow_order">98</td><td><pre> <span class="codeReserved">text-decoration</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-large-text-decoration);</pre></td></tr>
+  <tr><td class="codeShow_order">99</td><td><pre> <span class="codeReserved">background-color</span>: transparent;</pre></td></tr>
+  <tr><td class="codeShow_order">100</td><td><pre> <span class="codeReserved">outline</span>: none;</pre></td></tr>
+  <tr><td class="codeShow_order">101</td><td><pre> <span class="codeReserved">border-bottom-width</span>: 0.0625rem;</pre></td></tr>
+  <tr><td class="codeShow_order">102</td><td><pre> <span class="codeReserved">border-bottom-style</span>: solid;</pre></td></tr>
+  <tr><td class="codeShow_order">103</td><td><pre> <span class="codeReserved">border-bottom-color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</pre></td></tr>
+  <tr><td class="codeShow_order">104</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">105</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">106</td><td><pre>.md-filled-text-field ::placeholder {</pre></td></tr>
+  <tr><td class="codeShow_order">107</td><td><pre> <span class="codeReserved">color</span>: transparent;</pre></td></tr>
+  <tr><td class="codeShow_order">108</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">109</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">110</td><td><pre>.md-filled-text-field small {</pre></td></tr>
+  <tr><td class="codeShow_order">111</td><td><pre> <span class="codeReserved">display</span>: block;</pre></td></tr>
+  <tr><td class="codeShow_order">112</td><td><pre> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</pre></td></tr>
+  <tr><td class="codeShow_order">113</td><td><pre> <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-background);</pre></td></tr>
+  <tr><td class="codeShow_order">114</td><td><pre> <span class="codeReserved">font-family</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-font);</pre></td></tr>
+  <tr><td class="codeShow_order">115</td><td><pre> <span class="codeReserved">font-weight</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-weight);</pre></td></tr>
+  <tr><td class="codeShow_order">116</td><td><pre> <span class="codeReserved">font-size</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-size);</pre></td></tr>
+  <tr><td class="codeShow_order">117</td><td><pre> <span class="codeReserved">font-style</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-font-style);</pre></td></tr>
+  <tr><td class="codeShow_order">118</td><td><pre> <span class="codeReserved">letter-spacing</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-tracking);</pre></td></tr>
+  <tr><td class="codeShow_order">119</td><td><pre> <span class="codeReserved">line-height</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-line-height);</pre></td></tr>
+  <tr><td class="codeShow_order">120</td><td><pre> <span class="codeReserved">text-transform</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-text-transform);</pre></td></tr>
+  <tr><td class="codeShow_order">121</td><td><pre> <span class="codeReserved">text-decoration</span>: <span class="codeReserved">var</span>(--md-sys-typescale-body-small-text-decoration);</pre></td></tr>
+  <tr><td class="codeShow_order">122</td><td><pre> <span class="codeReserved">padding</span>: 0.25rem 1rem 0 1rem;</pre></td></tr>
+  <tr><td class="codeShow_order">123</td><td><pre> <span class="codeReserved">white-space</span>: nowrap;</pre></td></tr>
+  <tr><td class="codeShow_order">124</td><td><pre> <span class="codeReserved">text-overflow</span>: ellipsis;</pre></td></tr>
+  <tr><td class="codeShow_order">125</td><td><pre> <span class="codeReserved">overflow</span>: hidden;</pre></td></tr>
+  <tr><td class="codeShow_order">126</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">127</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">128</td><td><pre>.md-filled-text-field:hover span,</pre></td></tr>
+  <tr><td class="codeShow_order">129</td><td><pre>.md-filled-text-field:hover label {</pre></td></tr>
+  <tr><td class="codeShow_order">130</td><td><pre> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</pre></td></tr>
+  <tr><td class="codeShow_order">131</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">132</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">133</td><td><pre>.md-filled-text-field:hover :not(label, span, small) {</pre></td></tr>
+  <tr><td class="codeShow_order">134</td><td><pre> <span class="codeReserved">padding-bottom</span>: 0.5rem;</pre></td></tr>
+  <tr><td class="codeShow_order">135</td><td><pre> <span class="codeReserved">border-bottom-width</span>: 0.0625rem;</pre></td></tr>
+  <tr><td class="codeShow_order">136</td><td><pre> <span class="codeReserved">border-bottom-color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</pre></td></tr>
+  <tr><td class="codeShow_order">137</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">138</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">139</td><td><pre>.md-filled-text-field:hover::after {</pre></td></tr>
+  <tr><td class="codeShow_order">140</td><td><pre> <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</pre></td></tr>
+  <tr><td class="codeShow_order">141</td><td><pre> <span class="codeReserved">opacity</span>: <span class="codeReserved">var</span>(--md-sys-state-hover-state-layer-opacity);</pre></td></tr>
+  <tr><td class="codeShow_order">142</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">143</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">144</td><td><pre>.md-filled-text-field:hover small {</pre></td></tr>
+  <tr><td class="codeShow_order">145</td><td><pre> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</pre></td></tr>
+  <tr><td class="codeShow_order">146</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">147</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">148</td><td><pre>.md-filled-text-field:focus-within span,</pre></td></tr>
+  <tr><td class="codeShow_order">149</td><td><pre>.md-filled-text-field:focus-within label {</pre></td></tr>
+  <tr><td class="codeShow_order">150</td><td><pre> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-primary);</pre></td></tr>
+  <tr><td class="codeShow_order">151</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">152</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">153</td><td><pre>.md-filled-text-field :focus {</pre></td></tr>
+  <tr><td class="codeShow_order">154</td><td><pre> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</pre></td></tr>
+  <tr><td class="codeShow_order">155</td><td><pre> <span class="codeReserved">outline</span>: none;</pre></td></tr>
+  <tr><td class="codeShow_order">156</td><td><pre> <span class="codeReserved">padding-bottom</span>: 0.4375rem;</pre></td></tr>
+  <tr><td class="codeShow_order">157</td><td><pre> <span class="codeReserved">border-bottom-width</span>: 0.125rem;</pre></td></tr>
+  <tr><td class="codeShow_order">158</td><td><pre> <span class="codeReserved">border-bottom-color</span>: <span class="codeReserved">var</span>(--md-sys-color-primary);</pre></td></tr>
+  <tr><td class="codeShow_order">159</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">160</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">161</td><td><pre>.md-filled-text-field:hover :focus {</pre></td></tr>
+  <tr><td class="codeShow_order">162</td><td><pre> <span class="codeReserved">padding-bottom</span>: 0.4375rem;</pre></td></tr>
+  <tr><td class="codeShow_order">163</td><td><pre> <span class="codeReserved">border-bottom-width</span>: 0.125rem;</pre></td></tr>
+  <tr><td class="codeShow_order">164</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">165</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">166</td><td><pre>.md-filled-text-field:focus-within small {</pre></td></tr>
+  <tr><td class="codeShow_order">167</td><td><pre> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface-variant);</pre></td></tr>
+  <tr><td class="codeShow_order">168</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">169</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">170</td><td><pre>.md-filled-text-field :invalid {</pre></td></tr>
+  <tr><td class="codeShow_order">171</td><td><pre> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</pre></td></tr>
+  <tr><td class="codeShow_order">172</td><td><pre> <span class="codeReserved">border-bottom-color</span>: <span class="codeReserved">var</span>(--md-sys-color-error);</pre></td></tr>
+  <tr><td class="codeShow_order">173</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">174</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">175</td><td><pre>.md-filled-text-field :invalid+span,</pre></td></tr>
+  <tr><td class="codeShow_order">176</td><td><pre>.md-filled-text-field :invalid+label {</pre></td></tr>
+  <tr><td class="codeShow_order">177</td><td><pre> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-error);</pre></td></tr>
+  <tr><td class="codeShow_order">178</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">179</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">180</td><td><pre>.md-filled-text-field :invalid~small,</pre></td></tr>
+  <tr><td class="codeShow_order">181</td><td><pre>.md-filled-text-field:hover :invalid~small,</pre></td></tr>
+  <tr><td class="codeShow_order">182</td><td><pre>.md-filled-text-field:focus-within .input-text:invalid~small {</pre></td></tr>
+  <tr><td class="codeShow_order">183</td><td><pre> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-error);</pre></td></tr>
+  <tr><td class="codeShow_order">184</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">185</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">186</td><td><pre>.md-filled-text-field :invalid:focus {</pre></td></tr>
+  <tr><td class="codeShow_order">187</td><td><pre> <span class="codeReserved">caret-color</span>: <span class="codeReserved">var</span>(--md-sys-color-error);</pre></td></tr>
+  <tr><td class="codeShow_order">188</td><td><pre> <span class="codeReserved">border-bottom-color</span>: <span class="codeReserved">var</span>(--md-sys-color-error);</pre></td></tr>
+  <tr><td class="codeShow_order">189</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">190</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">191</td><td><pre>.md-filled-text-field:hover :invalid {</pre></td></tr>
+  <tr><td class="codeShow_order">192</td><td><pre> <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--md-sys-color-on-surface);</pre></td></tr>
+  <tr><td class="codeShow_order">193</td><td><pre> <span class="codeReserved">border-bottom-color</span>: <span class="codeReserved">var</span>(--md-sys-color-error);</pre></td></tr>
+  <tr><td class="codeShow_order">194</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>

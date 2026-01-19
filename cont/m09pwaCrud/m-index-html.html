@@ -1,0 +1,86 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span> <span class="codeReserved">class</span>=<span class="codeString">"light dark"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre>&lt;<span class="codeReserved">head</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre> &lt;<span class="codeReserved">title</span>&gt;PWA con Crud&lt;/<span class="codeReserved">title</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"description"</span> <span class="codeReserved">content</span>=<span class="codeString">"Ejemplo de PWA con Formulario"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span> <span class="codeReserved">src</span>=<span class="codeString">"js/lib/registraServiceWorker.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span> <span class="codeReserved">src</span>=<span class="codeString">"js/lib/manejaErrores.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"theme-color"</span> <span class="codeReserved">content</span>=<span class="codeString">"#fffbfe"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"icon"</span> sizes=<span class="codeString">"32x32"</span> href=<span class="codeString">"favicon.ico"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"manifest"</span> href=<span class="codeString">"site.webmanifest"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre> &lt;<span class="codeReserved">script</span> <span class="codeReserved">src</span>=<span class="codeString">"ungap/custom-elements.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span> <span class="codeReserved">src</span>=<span class="codeString">"js/lib/custom/md-app-bar.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span> <span class="codeReserved">src</span>=<span class="codeString">"js/nav-tab-fixed.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/estilos.css"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/transicion_pestanas.css"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/md-tab.css"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/material-symbols-outlined.css"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/md-list.css"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/md-fab-primary.css"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre>&lt;/<span class="codeReserved">head</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre>&lt;<span class="codeReserved">body</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre> &lt;<span class="codeReserved">md-app-bar</span> <span class="codeReserved">class</span>=<span class="codeString">"centered"</span> adicional=<span class="codeString">"tab"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre>  &lt;<span class="codeReserved">h1</span>&gt;PWA con Crud&lt;/<span class="codeReserved">h1</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre> &lt;/<span class="codeReserved">md-app-bar</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre> &lt;<span class="codeReserved">nav-tab-fixed</span> id=<span class="codeString">"tab"</span>&gt;&lt;/<span class="codeReserved">nav-tab-fixed</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">41</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">42</td><td><pre> &lt;<span class="codeReserved">section</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">43</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">44</td><td><pre>  &lt;<span class="codeReserved">ul</span> <span class="codeReserved">class</span>=<span class="codeString">"md-list"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">45</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">46</td><td><pre>   &lt;<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">47</td><td><pre>    &lt;<span class="codeReserved">a</span> <span class="codeReserved">class</span>=<span class="codeString">"md-one-line"</span> href=<span class="codeString">"modifica.html?id=1"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">48</td><td><pre>     &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"headline"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">49</td><td><pre>      Fut</pre></td></tr>
+  <tr><td class="codeShow_order">50</td><td><pre>     &lt;/<span class="codeReserved">span</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">51</td><td><pre>    &lt;/<span class="codeReserved">a</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">52</td><td><pre>   &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">53</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">54</td><td><pre>   &lt;<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">55</td><td><pre>    &lt;<span class="codeReserved">a</span> <span class="codeReserved">class</span>=<span class="codeString">"md-one-line"</span> href=<span class="codeString">"modifica.html?id=2"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">56</td><td><pre>     &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"headline"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">57</td><td><pre>      Basket</pre></td></tr>
+  <tr><td class="codeShow_order">58</td><td><pre>     &lt;/<span class="codeReserved">span</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">59</td><td><pre>    &lt;/<span class="codeReserved">a</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">60</td><td><pre>   &lt;/<span class="codeReserved">li</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">61</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">62</td><td><pre>  &lt;/<span class="codeReserved">ul</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">63</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">64</td><td><pre>  &lt;<span class="codeReserved">a</span> href=<span class="codeString">"agrega.html"</span> <span class="codeReserved">class</span>=<span class="codeString">"md-fab-primary"</span> title=<span class="codeString">"Agregar"</span></pre></td></tr>
+  <tr><td class="codeShow_order">65</td><td><pre>    style=<span class="codeString">"<span class="codeReserved">position</span>: fixed; <span class="codeReserved">bottom</span>: 1rem; <span class="codeReserved">right</span>: 1rem;"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">66</td><td><pre>   &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=<span class="codeString">"material-symbols-outlined"</span>&gt;add&lt;/<span class="codeReserved">span</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">67</td><td><pre>  &lt;/<span class="codeReserved">a</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">68</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">69</td><td><pre> &lt;/<span class="codeReserved">section</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">70</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">71</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">72</td><td><pre>&lt;/<span class="codeReserved">body</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">73</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">74</td><td><pre>&lt;/<span class="codeReserved">html</span>&gt;</pre></td></tr>
+ </tbody>
+</table>

@@ -1,0 +1,46 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { resaltaSiEstasEn } <span class="codeReserved">from</span> <span class="codeString">"./lib/resaltaSiEstasEn.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">class</span> NavTabFixed <span class="codeReserved">extends</span> HTMLElement {</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre> <span class="codeReserved">constructor</span>() {</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre>  super()</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre>  <span class="codeReserved">this</span>.creado = <span class="codeReserved">false</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> connectedCallback() {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>  <span class="codeReserved">this</span>.classList.add(<span class="codeString">"md-tab"</span>, <span class="codeString">"fixed"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>  <span class="codeReserved">if</span> (!<span class="codeReserved">this</span>.creado) {</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>   <span class="codeReserved">this</span>.innerHTML = <span class="codeComment">/* HTML */</span><span class="codeString">`</span></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre><span class="codeString">    &lt;<span class="codeReserved">a</span> ${resaltaSiEstasEn([&quot;/index.html&quot;, &quot;&quot;, &quot;/&quot;])} href=&quot;index.html&quot;&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre><span class="codeString">     &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=&quot;material-symbols-outlined&quot;&gt;home&lt;/<span class="codeReserved">span</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre><span class="codeString">     Inicio</span></pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre><span class="codeString">    &lt;/<span class="codeReserved">a</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre><span class="codeString"> </span></pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre><span class="codeString">    &lt;<span class="codeReserved">a</span> ${resaltaSiEstasEn([&quot;/ayuda.html&quot;])} href=&quot;ayuda.html&quot;&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre><span class="codeString">     &lt;<span class="codeReserved">span</span> <span class="codeReserved">class</span>=&quot;material-symbols-outlined&quot;&gt;help&lt;/<span class="codeReserved">span</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre><span class="codeString">     Ayuda</span></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre><span class="codeString">    &lt;/<span class="codeReserved">a</span>&gt;`</span></pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>   <span class="codeReserved">this</span>.creado = <span class="codeReserved">true</span></pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre>customElements.define(<span class="codeString">"nav-tab-fixed"</span>, NavTabFixed)</pre></td></tr>
+ </tbody>
+</table>
