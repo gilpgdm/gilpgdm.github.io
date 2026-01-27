@@ -23123,10 +23123,10 @@ xdebug.start_with_request = yes
   <li>
    <p>
     Necesitas un hosting. En este ejemplo se muestra como usar el hosting.
-    Si no lo has usado, lo primero que tienes que hacer es entrar a
     <a href="https://infinityfree.com/" target="_blank"
-       rel="noopener noreferrer"></a>
-    registrar tu email con el botón
+       rel="noopener noreferrer">https://infinityfree.com/</a>
+    Si no lo has usado, lo primero que tienes que hacer es entrar a registrar tu
+    email con el botón
     <em>Registrar</em>.
     Si ya tienes tu email registrado, omite este paso.
    </p>
@@ -23135,7 +23135,7 @@ xdebug.start_with_request = yes
    <p>
     <a href="https://drive.google.com/file/d/1Km1cR5zTxQsohqTOqzleq948sVKfsuQZ/view?usp=sharing"
        target="_blank" rel="noopener noreferrer">Crea una cuenta.</a>
-       Si ya tienes cuenta, entra a ella y crea un nuevo domino. En este ejemplo
+       Si ya tienes cuenta, entra a ella y crea un nuevo dominio. En este ejemplo
        no se crean los archivos directamente en el hosting. 
    </p>
   </li>
@@ -23439,9 +23439,9 @@ xdebug.start_with_request = yes
     </li>
     <li>
      <p>
-      Tecle al mismo tiempo SFTP: Config. Aparece un archivo de configuración de
-      FTP. Llena los datos con la configuración de FTP de su servidor, excepto
-      la contraseña.
+      Tecle al mismo Mayúsculas+Control+P y selecciona SFTP: Config. Aparece un
+      archivo de configuración de FTP. Llena los datos con la configuración de
+      FTP de tu servidor, excepto la contraseña.
      </p>
     </li>
     <li>
@@ -23467,7 +23467,7 @@ xdebug.start_with_request = yes
   </li>
   <li>
    <p>
-    <strong>En el hosting InfinityFree,</strong> la primera ves que corres la
+    <strong>En el hosting InfinityFree,</strong> la primera vez que corres la
     página, puede marcar un mensaje de error, pero al recargar funciona
     correctamente. Puedes evitar este problema usando un dominio propio.
    </p>
@@ -24979,12 +24979,14 @@ xdebug.start_with_request = yes
   <tr><td class="codeShow_order">12</td><td><pre>  <span class="codeReserved">return</span> respuesta</pre></td></tr>
   <tr><td class="codeShow_order">13</td><td><pre> } <span class="codeReserved">else</span> {</pre></td></tr>
   <tr><td class="codeShow_order">14</td><td><pre>  <span class="codeReserved">const</span> contentType = respuesta.headers.get(<span class="codeString">"Content-Type"</span>)</pre></td></tr>
-  <tr><td class="codeShow_order">15</td><td><pre>  <span class="codeReserved">if</span> (contentType === <span class="codeString">"application/problem+json; charset=utf-8"</span>)</pre></td></tr>
-  <tr><td class="codeShow_order">16</td><td><pre>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetailsError(<span class="codeReserved">await</span> respuesta.json())</pre></td></tr>
-  <tr><td class="codeShow_order">17</td><td><pre>  <span class="codeReserved">else</span></pre></td></tr>
-  <tr><td class="codeShow_order">18</td><td><pre>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(respuesta.statusText)</pre></td></tr>
-  <tr><td class="codeShow_order">19</td><td><pre> }</pre></td></tr>
-  <tr><td class="codeShow_order">20</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>  <span class="codeReserved">if</span> (</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>   contentType !== <span class="codeReserved">null</span> && contentType.startsWith(<span class="codeString">"application/problem+json"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>  )</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetailsError(<span class="codeReserved">await</span> respuesta.json())</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>  <span class="codeReserved">else</span></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(respuesta.statusText)</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>}</pre></td></tr>
  </tbody>
 </table>
       </section>
@@ -33852,10 +33854,10 @@ xdebug.start_with_request = yes
   <li>
    <p>
     Necesitas un hosting. En este ejemplo se muestra como usar el hosting.
-    Si no lo has usado, lo primero que tienes que hacer es entrar a
     <a href="https://infinityfree.com/" target="_blank"
-       rel="noopener noreferrer"></a>
-    registrar tu email con el botón
+       rel="noopener noreferrer">https://infinityfree.com/</a>
+    Si no lo has usado, lo primero que tienes que hacer es entrar a registrar tu
+    email con el botón
     <em>Registrar</em>.
     Si ya tienes tu email registrado, omite este paso.
    </p>
@@ -33864,7 +33866,7 @@ xdebug.start_with_request = yes
    <p>
     <a href="https://drive.google.com/file/d/1Km1cR5zTxQsohqTOqzleq948sVKfsuQZ/view?usp=sharing"
        target="_blank" rel="noopener noreferrer">Crea una cuenta.</a>
-       Si ya tienes cuenta, entra a ella y crea un nuevo domino. En este ejemplo
+       Si ya tienes cuenta, entra a ella y crea un nuevo dominio. En este ejemplo
        no se crean los archivos directamente en el hosting.
    </p>
   </li>
@@ -34194,9 +34196,9 @@ xdebug.start_with_request = yes
     </li>
     <li>
      <p>
-      Tecle al mismo tiempo SFTP: Config. Aparece un archivo de configuración de
-      FTP. Llena los datos con la configuración de FTP de su servidor, excepto
-      la contraseña.
+      Tecle al mismo Mayúsculas+Control+P y selecciona SFTP: Config. Aparece un
+      archivo de configuración de FTP. Llena los datos con la configuración de
+      FTP de tu servidor, excepto la contraseña.
      </p>
     </li>
     <li>
@@ -35838,12 +35840,14 @@ xdebug.start_with_request = yes
   <tr><td class="codeShow_order">12</td><td><pre>  <span class="codeReserved">return</span> respuesta</pre></td></tr>
   <tr><td class="codeShow_order">13</td><td><pre> } <span class="codeReserved">else</span> {</pre></td></tr>
   <tr><td class="codeShow_order">14</td><td><pre>  <span class="codeReserved">const</span> contentType = respuesta.headers.get(<span class="codeString">"Content-Type"</span>)</pre></td></tr>
-  <tr><td class="codeShow_order">15</td><td><pre>  <span class="codeReserved">if</span> (contentType === <span class="codeString">"application/problem+json; charset=utf-8"</span>)</pre></td></tr>
-  <tr><td class="codeShow_order">16</td><td><pre>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetailsError(<span class="codeReserved">await</span> respuesta.json())</pre></td></tr>
-  <tr><td class="codeShow_order">17</td><td><pre>  <span class="codeReserved">else</span></pre></td></tr>
-  <tr><td class="codeShow_order">18</td><td><pre>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(respuesta.statusText)</pre></td></tr>
-  <tr><td class="codeShow_order">19</td><td><pre> }</pre></td></tr>
-  <tr><td class="codeShow_order">20</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>  <span class="codeReserved">if</span> (</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>   contentType !== <span class="codeReserved">null</span> && contentType.startsWith(<span class="codeString">"application/problem+json"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>  )</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> ProblemDetailsError(<span class="codeReserved">await</span> respuesta.json())</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>  <span class="codeReserved">else</span></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>   <span class="codeReserved">throw</span> <span class="codeReserved">new</span> Error(respuesta.statusText)</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>}</pre></td></tr>
  </tbody>
 </table>
       </section>
@@ -38131,7 +38135,7 @@ xdebug.start_with_request = yes
     </li>
     <li>
      <p>
-      <strong>En el hosting InfinityFree,</strong> la primera ves que corres la
+      <strong>En el hosting InfinityFree,</strong> la primera vez que corres la
       página, puede marcar un mensaje de error, pero al recargar funciona
       correctamente. Puedes evitar este problema usando un dominio propio.
      </p>
