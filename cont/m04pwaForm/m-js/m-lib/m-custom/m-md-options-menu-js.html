@@ -1,0 +1,117 @@
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">import</span> { abreElementoHtml } <span class="codeReserved">from</span> <span class="codeString">"../abreElementoHtml.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeReserved">import</span> { cierraElementoHtmo } <span class="codeReserved">from</span> <span class="codeString">"../cierraElementoHtmo.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">import</span> { querySelector } <span class="codeReserved">from</span> <span class="codeString">"../querySelector.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre><span class="codeReserved">export</span> <span class="codeReserved">class</span> MdOptionsMenu <span class="codeReserved">extends</span> HTMLElement {</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre> getContent() {</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>  <span class="codeReserved">return</span> <span class="codeComment">/* HTML */</span><span class="codeString">`</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre><span class="codeString"></span></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre><span class="codeString">   &lt;<span class="codeReserved">style</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre><span class="codeString"></span></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre><span class="codeString">    :host {</span></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre><span class="codeString">     <span class="codeReserved">position</span>: absolute;</span></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre><span class="codeString">    }</span></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre><span class="codeString"></span></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre><span class="codeString">   &lt;/<span class="codeReserved">style</span>&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre><span class="codeString"></span></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre><span class="codeString">   &lt;<span class="codeReserved">slot</span>&gt;&lt;/<span class="codeReserved">slot</span>&gt;`</span></pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre> <span class="codeReserved">constructor</span>() {</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>  super()</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>  <span class="codeReserved">const</span> shadow = <span class="codeReserved">this</span>.attachShadow({ mode: <span class="codeString">"open"</span> })</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>  shadow.innerHTML = <span class="codeReserved">this</span>.getContent()</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre>  <span class="codeReserved">this</span>._configuraOpciones = <span class="codeReserved">this</span>._configuraOpciones.bind(<span class="codeReserved">this</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre>  <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre><span class="codeComment">   * <span class="codeReserved">@private</span></span></pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre><span class="codeComment">   * <span class="codeReserved">@type</span> { HTMLSlotElement }</span></pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre><span class="codeComment">   */</span></pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre>  <span class="codeReserved">this</span>._slot = querySelector(shadow, <span class="codeString">"slot"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre>  <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre><span class="codeComment">   * <span class="codeReserved">@private</span></span></pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre><span class="codeComment">   * <span class="codeReserved">@type</span> { HTMLElement[] }</span></pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre><span class="codeComment">   */</span></pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre>  <span class="codeReserved">this</span>._opciones = []</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre>  <span class="codeReserved">this</span>._slot.addEventListener(<span class="codeString">"slotchange"</span>, <span class="codeReserved">this</span>._configuraOpciones)</pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre> connectedCallback() {</pre></td></tr>
+  <tr><td class="codeShow_order">41</td><td><pre>  <span class="codeReserved">this</span>.classList.add(<span class="codeString">"md-menu"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">42</td><td><pre>  <span class="codeReserved">this</span>.role = <span class="codeString">"listbox"</span></pre></td></tr>
+  <tr><td class="codeShow_order">43</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">44</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">45</td><td><pre> <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">46</td><td><pre><span class="codeComment">  * <span class="codeReserved">@returns</span> {readonly Readonly&lt;HTMLElement&gt;[]}</span></pre></td></tr>
+  <tr><td class="codeShow_order">47</td><td><pre><span class="codeComment">  */</span></pre></td></tr>
+  <tr><td class="codeShow_order">48</td><td><pre> get opciones() {</pre></td></tr>
+  <tr><td class="codeShow_order">49</td><td><pre>  <span class="codeReserved">return</span> <span class="codeReserved">this</span>._opciones</pre></td></tr>
+  <tr><td class="codeShow_order">50</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">51</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">52</td><td><pre> get seleccion() {</pre></td></tr>
+  <tr><td class="codeShow_order">53</td><td><pre>  <span class="codeComment">/** <span class="codeReserved">@type</span> { HTMLInputElement | <span class="codeReserved">null</span> } */</span></pre></td></tr>
+  <tr><td class="codeShow_order">54</td><td><pre>  <span class="codeReserved">const</span> seleccionado = <span class="codeReserved">this</span>.querySelector(<span class="codeString">".selected"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">55</td><td><pre>  <span class="codeReserved">return</span> seleccionado === <span class="codeReserved">null</span> ? <span class="codeString">""</span> : seleccionado.value</pre></td></tr>
+  <tr><td class="codeShow_order">56</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">57</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">58</td><td><pre> _configuraOpciones() {</pre></td></tr>
+  <tr><td class="codeShow_order">59</td><td><pre>  <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">60</td><td><pre><span class="codeComment">   * <span class="codeReserved">@type</span> {HTMLElement[]}</span></pre></td></tr>
+  <tr><td class="codeShow_order">61</td><td><pre><span class="codeComment">  */</span></pre></td></tr>
+  <tr><td class="codeShow_order">62</td><td><pre>  <span class="codeReserved">const</span> opciones = []</pre></td></tr>
+  <tr><td class="codeShow_order">63</td><td><pre>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> opcion of <span class="codeReserved">this</span>._slot.assignedElements()) {</pre></td></tr>
+  <tr><td class="codeShow_order">64</td><td><pre>   opcion.role = <span class="codeString">"option"</span></pre></td></tr>
+  <tr><td class="codeShow_order">65</td><td><pre>   <span class="codeReserved">if</span> (opcion <span class="codeReserved">instanceof</span> HTMLElement) {</pre></td></tr>
+  <tr><td class="codeShow_order">66</td><td><pre>    opciones.push(opcion)</pre></td></tr>
+  <tr><td class="codeShow_order">67</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">68</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">69</td><td><pre>  <span class="codeReserved">this</span>._opciones = opciones</pre></td></tr>
+  <tr><td class="codeShow_order">70</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">71</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">72</td><td><pre> abre() {</pre></td></tr>
+  <tr><td class="codeShow_order">73</td><td><pre>  abreElementoHtml(<span class="codeReserved">this</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">74</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">75</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">76</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">77</td><td><pre> cierra() {</pre></td></tr>
+  <tr><td class="codeShow_order">78</td><td><pre>  cierraElementoHtmo(<span class="codeReserved">this</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">79</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">80</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">81</td><td><pre> <span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">82</td><td><pre><span class="codeComment">  * <span class="codeReserved">@param</span> {string} value</span></pre></td></tr>
+  <tr><td class="codeShow_order">83</td><td><pre><span class="codeComment">  */</span></pre></td></tr>
+  <tr><td class="codeShow_order">84</td><td><pre> muestraValue(value) {</pre></td></tr>
+  <tr><td class="codeShow_order">85</td><td><pre>  <span class="codeReserved">let</span> texto = <span class="codeString">""</span></pre></td></tr>
+  <tr><td class="codeShow_order">86</td><td><pre>  <span class="codeReserved">for</span> (<span class="codeReserved">const</span> opcion of <span class="codeReserved">this</span>._opciones) {</pre></td></tr>
+  <tr><td class="codeShow_order">87</td><td><pre>   <span class="codeReserved">if</span> (opcion.dataset.value === value) {</pre></td></tr>
+  <tr><td class="codeShow_order">88</td><td><pre>    opcion.classList.add(<span class="codeString">"selected"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">89</td><td><pre>    <span class="codeReserved">let</span> textContent = opcion.textContent</pre></td></tr>
+  <tr><td class="codeShow_order">90</td><td><pre>    <span class="codeReserved">if</span> (texto === <span class="codeString">""</span> && textContent !== <span class="codeReserved">null</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">91</td><td><pre>     textContent = textContent.trim()</pre></td></tr>
+  <tr><td class="codeShow_order">92</td><td><pre>     <span class="codeReserved">if</span> (textContent !== <span class="codeString">""</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">93</td><td><pre>      texto = textContent</pre></td></tr>
+  <tr><td class="codeShow_order">94</td><td><pre>     }</pre></td></tr>
+  <tr><td class="codeShow_order">95</td><td><pre>    }</pre></td></tr>
+  <tr><td class="codeShow_order">96</td><td><pre>   } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">97</td><td><pre>    opcion.classList.remove(<span class="codeString">"selected"</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">98</td><td><pre>   }</pre></td></tr>
+  <tr><td class="codeShow_order">99</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">100</td><td><pre>  <span class="codeReserved">return</span> texto</pre></td></tr>
+  <tr><td class="codeShow_order">101</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">102</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">103</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">104</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">105</td><td><pre>customElements.define(<span class="codeString">"md-options-menu"</span>, MdOptionsMenu)</pre></td></tr>
+ </tbody>
+</table>
