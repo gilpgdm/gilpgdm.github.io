@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/lib/js/muestra-codigo.js"></script>
+ <title>Carpeta « public » - GilPG DM</title>
+ <meta name="description" content="">
+ <style>
+ /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
+ :root {
+  --marginTop: 0.25rem;
+  --padTop: 0;
+  --h1PadTop: 2.5rem;
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --navDuracion: 0.7s;
+  --navFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colPush: var(--colFondo);
+  --colPushHover: var(--colFondo);
+  --colPushFocus: var(--colFondo);
+  --colPushActive: #bae397;
+  --colFondoPush: #609732;
+  --colFondoPushHover: #8abd5f;
+  --colFondoPushFocus: #3e7213;
+  --colFondoPushActive: #224c00;
+  --paddingPush: 0.2rem 0.3rem;
+  --borderPush: none;
+  --borderRadiusPush: 0.6em;
+  --colA: #6a7b15;
+  --colAVisited: #6f256f;
+  --colAActive: #e498af;
+  --colAPush: var(--colFondo);
+  --colAVisitedPush: var(--colFondo);
+  --colAPushHover: var(--colFondo);
+  --colAVisitedPushHover: var(--colFondo);
+  --colAPushFocus: var(--colFondo);
+  --colAVisitedPushFocus: var(--colFondo);
+  --colAPushActive: var(--colFondo);
+  --colAVisitedPushActive: var(--colFondo);
+  --colFondoAPush: #6a7b15;
+  --colFondoAVisitedPush: #6f256f;
+  --colFondoAPushHover: #91a437;
+  --colFondoAVisitedPushHover: #a66fa6;
+  --colFondoAPushFocus: #445200;
+  --colFondoAVisitedPushFocus: #530e53;
+  --colFondoAPushActive: #e498af;
+  --colFondoAVisitedPushActive: #e498af;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --shadowTitulo: 3px 1px 2px black;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
+  --colAStrong: var(--colLetra);
+  /* --colNavH1Sel: #b35f7c; */
+  --colFondoNav: var(--colFondo);
+  --colFondoNavSel: #e498af;
+  --colScrollbar: #CFD8DC;
+  --colThumb: #90a4ae;
+  --colThumbActivo: #3f3f3f;
+  --colResaltado: #e9c8d2;
+  --colResaltado2: #bae397;
+  --colResaltado3: #cfcfcf;
+  --colLetraResaltado: black;
+  --colLetraCodeComment: #224c00;
+  --colLetraCodeString: #903357;
+  --colLetraCodeReserved: #445200;
+  --colSecundario: #e498af;
+  --colTarget: #cef4ff;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --anchoThumb: 7px;
+  --borderRadiusThumb: 3.5px;
+  --gap: 0.5rem;
+  --fontMono: 'Xanh Mono', monospace;
+  --fontSans: 'Patrick Hand', sans-serif;
+  /* --fontSerif: 'Purple Purse', serif; */
+  --fontSerif: Georgia, 'Times New Roman', Times, serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ @media (prefers-color-scheme: light) {
+  :root {
+   --colLetra: black;
+   --colFondo: white;
+  }
+ }
+
+ /* https://paletton.com/#uid=74W0u0kaVz84jP27qHbeJtFiHpX */
+ @media (prefers-color-scheme: dark) {
+
+  :root {
+   --colLetra: white;
+   /* --colFondo: #272727; */
+   --colFondo: black;
+   --colPushActive: #e3f5d4;
+   --colFondoPush: #bbe697;
+   --colFondoPushHover: #d0eeb7;
+   --colFondoPushFocus: #9ed372;
+   --colFondoPushActive: #7db84d;
+   --colA: #e9f7a3;
+   --colAVisited: #c89ac8;
+   --colAActive: #983351;
+   --colFondoAPush: #e9f7a3;
+   --colFondoAVisitedPush: #c89ac8;
+   --colFondoAPushHover: #f6fcda;
+   --colFondoAVisitedPushHover: #dec0de;
+   --colFondoAPushFocus: #b4c853;
+   --colFondoAVisitedPushFocus: #9a539a;
+   --colFondoAPushActive: #983351;
+   --colFondoAVisitedPushActive: #983351;
+   --colSombra: #00000080;
+   --colTitulo: #e3f5d4;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
+   --colFondoNavSel: #7a3059;
+   --colScrollbar: #616161;
+   --colThumb: #ffffff;
+   --colResaltado: #7a3059;
+   --colResaltado2: #5c922f;
+   --colResaltado3: #4e4e4e;
+   --colLetraResaltado: white;
+   --colLetraCodeComment: #d0eeb7;
+   --colLetraCodeString: #eeb7c8;
+   --colLetraCodeReserved: #f0fac0;
+  }
+ }
+
+ /* xanh-mono-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* xanh-mono-italic - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: italic;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-italic.woff2') format('woff2');
+ }
+
+ /* patrick-hand-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Patrick Hand';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/patrick-hand-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* purple-purse-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Purple Purse';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/purple-purse-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ @font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  src:
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].woff2) format('woff2'),
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].ttf) format('truetype');
+ }
+
+ .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+ }
+
+ body::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ body::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ body::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ body {
+  margin-top: 0;
+ }
+
+ h1 {
+  font-size: 3rem;
+ }
+
+ section h1,
+ nav h1 {
+  font-size: 2.5rem;
+  font-style: oblique;
+ }
+
+ section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section section h1 {
+  font-size: 1.5rem;
+  font-style: oblique;
+ }
+
+ section section section section section h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+ }
+
+ a {
+  color: var(--colA);
+ }
+
+ a:visited {
+  color: var(--colAVisited);
+ }
+
+ a:active {
+  color: var(--colAActive);
+ }
+
+ .anterior,
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente,
+ button {
+  display: inline-block;
+  padding: var(--paddingPush);
+  border: var(--borderPush);
+  border-radius: var(--borderRadiusPush);
+  text-align: center;
+  text-decoration: none;
+ }
+
+ .anterior,
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente {
+  color: var(--colAPush);
+  background-color: var(--colFondoAPush);
+ }
+
+ .anterior:visited,
+ .siguiente:visited,
+ .paginaAnterior:visited,
+ .paginaSiguiente:visited {
+  color: var(--colAVisitedPush);
+  background-color: var(--colFondoAVisitedPush);
+ }
+
+ .anterior.bye,
+ .siguiente.bye,
+ .paginaAnterior.bye,
+ .paginaSiguiente.bye {
+  display: none;
+ }
+
+ .anterior:hover,
+ .siguiente:hover,
+ .paginaAnterior:hover,
+ .paginaSiguiente:hover {
+  color: var(--colAPushHover);
+  background-color: var(--colFondoAPushHover);
+ }
+
+ .anterior:visited:hover,
+ .siguiente:visited:hover,
+ .paginaAnterior:visited:hover,
+ .paginaSiguiente:visited:hover {
+  color: var(--colAVisitedPushHover);
+  background-color: var(--colFondoAVisitedPushHover);
+ }
+
+ .anterior:focus,
+ .siguiente:focus,
+ .paginaAnterior:focus,
+ .paginaSiguiente:focus {
+  color: var(--colAPushFocus);
+  background-color: var(--colFondoAPushFocus);
+ }
+
+ .anterior:visited:focus,
+ .siguiente:visited:focus,
+ .paginaAnterior:visited:focus,
+ .paginaSiguiente:visited:focus {
+  color: var(--colAVisitedPushFocus);
+  background-color: var(--colFondoAVisitedPushFocus);
+ }
+
+ .anterior:active,
+ .siguiente:active,
+ .paginaAnterior:active,
+ .paginaSiguiente:active {
+  color: var(--colAPushActive);
+  background-color: var(--colFondoAPushActive);
+ }
+
+ .anterior:visited:active,
+ .siguiente:visited:active,
+ .paginaAnterior:visited:active,
+ .paginaSiguiente:visited:active {
+  color: var(--colAVisitedPushActive);
+  background-color: var(--colFondoAVisitedPushActive);
+ }
+
+ button {
+  color: var(--colPush);
+  background-color: var(--colFondoPush);
+ }
+
+ button:hover {
+  color: var(--colPushHover);
+  background-color: var(--colFondoPushHover);
+ }
+
+ button:focus {
+  color: var(--colPushFocus);
+  background-color: var(--colFondoPushFocus);
+ }
+
+ button:active {
+  color: var(--colPushActive);
+  background-color: var(--colFondoPushActive);
+ }
+
+ .anterior span,
+ .siguiente span,
+ .paginaAnterior span,
+ .paginaSiguiente span,
+ button span {
+  vertical-align: middle;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  font-size: 1em;
+ }
+
+ a strong,
+ a code {
+  color: var(--colAStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+ }
+
+ code {
+  font-family: var(--fontMono);
+  font-size: 1rem;
+ }
+
+ .tree {
+  font-family: var(--fontSans);
+ }
+
+ .tree summary {
+  text-decoration: underline;
+  cursor: pointer;
+ }
+
+ .tree li {
+  margin-top: 1em;
+  margin-bottom: 1em;
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloFondo);
+ }
+
+ h1,
+ .lectura a,
+ .lectura p,
+ .lectura blockquote {
+  overflow-wrap: anywhere;
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloFondo);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  width: 100%;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+
+  .pruebaDeEscritorio {
+   page-break-before: always;
+  }
+ }
+
+ iframe {
+  /* background-color: white; */
+  box-sizing: border-box;
+  resize: both;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ .horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: start;
+  justify-content: center;
+ }
+
+ .horizontal>*:first-child {
+  flex: 1 1 auto;
+ }
+
+ .horizontal>*:nth-child(2) {
+  flex: 1 1 40ch;
+ }
+
+ .horizontal iframe {
+  width: 300px;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: var(--colResaltado);
+  color: var(--colLetraResaltado);
+ }
+
+ .resaltado2 {
+  background-color: var(--colResaltado2);
+  color: var(--colLetraResaltado);
+ }
+
+ .resaltado3 {
+  background-color: var(--colResaltado3);
+  color: var(--colLetraResaltado);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ table.codeShow {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+ }
+
+ .codeShow td.codeShow_order {
+  text-align: right;
+  padding: 0 0 0 0;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  /* Avoid selection */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+ }
+
+ .codeShow td:has(pre) {
+  padding: 0 0 0 0.25rem;
+  vertical-align: top;
+ }
+
+ .codeShow td pre {
+  font-family: var(--fontMono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  margin: 0;
+ }
+
+ .codeReserved {
+  color: var(--colLetraCodeReserved);
+  font-weight: bolder;
+ }
+
+ .codeString {
+  color: var(--colLetraCodeString);
+  font-weight: 600;
+ }
+
+ .codeComment {
+  color: var(--colLetraCodeComment);
+  font-style: italic;
+ }
+
+ @media print {
+
+  .codeShow button {
+   display: none;
+  }
+ }
+
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ .pruebaDeEscritorio {
+  font-family: var(--fontSans);
+ }
+
+ .pruebaDeEscritorio .section,
+ .pruebaDeEscritorio section {
+  display: inline-block;
+  vertical-align: top;
+ }
+
+ .pruebaDeEscritorio section {
+  margin: 1em;
+ }
+
+ .section section {
+  display: block;
+ }
+
+ .pruebaDeEscritorio section pre {
+  margin: 0;
+ }
+
+ .pruebaDeEscritorio samp {
+  font-weight: bold;
+ }
+
+ .pruebaDeEscritorio .activo {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  vertical-align: top;
+  background-color: var(--colSecundario);
+  border: 1px solid var(--colSecundario);
+ }
+
+ .pruebaDeEscritorio :target,
+ .pruebaDeEscritorio :target caption {
+  background-color: var(--colTarget);
+ }
+
+ .pruebaDeEscritorio .numero1 {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  color: var(--colStack1);
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio .numero2 {
+  display: inline-block;
+  color: var(--colStack2);
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio .numero3 {
+  display: inline-block;
+  color: var(--colStack3);
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio a.parametro1,
+ .pruebaDeEscritorio .parametro1 {
+  color: var(--colPar1);
+ }
+
+ .pruebaDeEscritorio a.parametro2,
+ .pruebaDeEscritorio .parametro2 {
+  color: var(--colPar2);
+ }
+
+ .pruebaDeEscritorio .descongela {
+  color: var(--colDescongela);
+ }
+
+ .pruebaDeEscritorio table.tabla1,
+ .pruebaDeEscritorio table.tabla1 th,
+ .pruebaDeEscritorio table.tabla1 td {
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio table.tabla3,
+ .pruebaDeEscritorio table.tabla3 th,
+ .pruebaDeEscritorio table.tabla3 td {
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio .frame {
+  font-family: var(--fontMono);
+  border-collapse: collapse;
+ }
+
+ .pruebaDeEscritorio .frame,
+ .pruebaDeEscritorio .frame th,
+ .pruebaDeEscritorio .frame td {
+  border: thin solid;
+ }
+
+ .pruebaDeEscritorio .frame caption {
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .objeto caption {
+  text-decoration: underline;
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .creación {
+  display: flex;
+ }
+</style>
+</head>
+
+<body class="print">
+   <h1 >D. Carpeta « public »</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
+    </p>
+   </div>
+
+  <div class="lectura">
+   <nav>
+    <h1>Contenido</h1>
+    
+   <ol type="A">
+    
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m--htaccess.html">public / .htaccess</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-404-html.html">public / 404.html</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-favicon-ico.html">public / favicon.ico</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-index-html.html">public / index.html</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-site-webmanifest.html">public / site.webmanifest</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-sw-js.html">public / sw.js</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-css/">Carpeta « public / css »</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-img/">Carpeta « img »</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-js/">Carpeta « public / js »</a>
+    </p>
+   </li>
+   </ol>
+   </nav>
+  </div>
+     <section >
+         <h1 >A. public / .htaccess</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Este archivo configura las respuestas del servidor..
+   </p>
+  </li>
+  <li>
+   <p>
+    Lo utilizan principalmente servidores como Apache o Nginx.
+   </p>
+  </li>
+  <li>
+   <p>
+    Configura el mime type para el archivo de manifiesto y sedhabilita el uso
+    de la cache general de http..
+   </p>
+  </li>
+ </ul>
+</div>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre>AddType application/manifest+json .webmanifest</pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre>ExpiresActive On</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre>Header set Cache-Control "max-age=1, must-revalidate"</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre></pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >B. public / 404.html</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre>&lt;<span class="codeReserved">html</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre>  &lt;<span class="codeReserved">head</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre>    &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"utf-8"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre>    &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width, initial-scale=1"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre>    &lt;<span class="codeReserved">title</span>&gt;Page Not Found&lt;/<span class="codeReserved">title</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>    &lt;<span class="codeReserved">style</span> media=<span class="codeString">"screen"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre>      body { background: #ECEFF1; <span class="codeReserved">color</span>: rgba(0,0,0,0.87); <span class="codeReserved">font-family</span>: Roboto, Helvetica, Arial, <span class="codeReserved">sans-serif</span>; <span class="codeReserved">margin</span>: 0; <span class="codeReserved">padding</span>: 0; }</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>      #message { background: white; <span class="codeReserved">max-width</span>: 360px; <span class="codeReserved">margin</span>: 100px auto 16px; <span class="codeReserved">padding</span>: 32px 24px 16px; <span class="codeReserved">border-radius</span>: 3px; }</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>      #message h3 { <span class="codeReserved">color</span>: #888; <span class="codeReserved">font-weight</span>: normal; <span class="codeReserved">font-size</span>: 16px; <span class="codeReserved">margin</span>: 16px 0 12px; }</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>      #message h2 { <span class="codeReserved">color</span>: #ffa100; <span class="codeReserved">font-weight</span>: bold; <span class="codeReserved">font-size</span>: 16px; <span class="codeReserved">margin</span>: 0 0 8px; }</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>      #message h1 { <span class="codeReserved">font-size</span>: 22px; <span class="codeReserved">font-weight</span>: 300; <span class="codeReserved">color</span>: rgba(0,0,0,0.6); <span class="codeReserved">margin</span>: 0 0 16px;}</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>      #message p { <span class="codeReserved">line-height</span>: 140%; <span class="codeReserved">margin</span>: 16px 0 24px; <span class="codeReserved">font-size</span>: 14px; }</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>      #message a { <span class="codeReserved">display</span>: block; <span class="codeReserved">text-align</span>: center; background: #039be5; <span class="codeReserved">text-transform</span>: uppercase; <span class="codeReserved">text-decoration</span>: none; <span class="codeReserved">color</span>: white; <span class="codeReserved">padding</span>: 16px; <span class="codeReserved">border-radius</span>: 4px; }</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>      #message, #message a { <span class="codeReserved">box-shadow</span>: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }</pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>      #load { <span class="codeReserved">color</span>: rgba(0,0,0,0.4); <span class="codeReserved">text-align</span>: center; <span class="codeReserved">font-size</span>: 13px; }</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>      <span class="codeReserved">@media</span> (<span class="codeReserved">max-width</span>: 600px) {</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>        body, #message { <span class="codeReserved">margin-top</span>: 0; background: white; <span class="codeReserved">box-shadow</span>: none; }</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>        body { border-top: 16px solid #ffa100; }</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>      }</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>    &lt;/<span class="codeReserved">style</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>  &lt;/<span class="codeReserved">head</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>  &lt;<span class="codeReserved">body</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre>    &lt;<span class="codeReserved">div</span> id=<span class="codeString">"message"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre>      &lt;<span class="codeReserved">h2</span>&gt;404&lt;/<span class="codeReserved">h2</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre>      &lt;<span class="codeReserved">h1</span>&gt;Page Not Found&lt;/<span class="codeReserved">h1</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre>      &lt;<span class="codeReserved">p</span>&gt;The specified file was not found on <span class="codeReserved">this</span> website. Please check the URL <span class="codeReserved">for</span> mistakes and <span class="codeReserved">try</span> again.&lt;/<span class="codeReserved">p</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>      &lt;<span class="codeReserved">h3</span>&gt;Why am I seeing <span class="codeReserved">this</span>?&lt;/<span class="codeReserved">h3</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre>      &lt;<span class="codeReserved">p</span>&gt;This page was generated by the Firebase Command-Line Interface. To modify it, edit the &lt;<span class="codeReserved">code</span>&gt;404.html&lt;/<span class="codeReserved">code</span>&gt; file <span class="codeReserved">in</span> your project's configured &lt;<span class="codeReserved">code</span>&gt;<span class="codeReserved">public</span>&lt;/<span class="codeReserved">code</span>&gt; directory.&lt;/<span class="codeReserved">p</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre>    &lt;/<span class="codeReserved">div</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre>  &lt;/<span class="codeReserved">body</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre>&lt;/<span class="codeReserved">html</span>&gt;</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >C. public / favicon.ico</h1><figure>
+    <img style="width: auto; max-width: 100%;" alt="favicon.ico"
+      src="/img/m05pwaBasica/favicon.ico">
+   </figure>
+      </section>
+     <section >
+         <h1 >D. public / index.html</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre>&lt;<span class="codeReserved">head</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> &lt;<span class="codeReserved">title</span>&gt;PWA Básica&lt;/<span class="codeReserved">title</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> <span class="codeComment">&lt;!-- Resumen para los motores de búsqueda. --&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"description"</span> <span class="codeReserved">content</span>=<span class="codeString">"Ejemplo de PWA"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre> &lt;<span class="codeReserved">script</span> type=<span class="codeString">"module"</span> <span class="codeReserved">src</span>=<span class="codeString">"js/registraServiceWorker.js"</span>&gt;&lt;/<span class="codeReserved">script</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre> <span class="codeComment">&lt;!-- Color de la barra de navegación de Chrome en dispositivos móviles. --&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"theme-color"</span> <span class="codeReserved">content</span>=<span class="codeString">"#cbc693"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre> <span class="codeComment">&lt;!-- Ícono para la página web, que normalmente se pone en la raíz del sitio.</span></pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre><span class="codeComment">  Puede ser diferente para cada página. --&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"icon"</span> sizes=<span class="codeString">"32x32"</span> href=<span class="codeString">"favicon.ico"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre> <span class="codeComment">&lt;!-- Configuración de la PWA para Chrome, Edge y Safari.</span></pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre><span class="codeComment">  Debe ponerse en todas las páginas. --&gt;</span></pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"manifest"</span> href=<span class="codeString">"site.webmanifest"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre> &lt;<span class="codeReserved">link</span> rel=<span class="codeString">"stylesheet"</span> href=<span class="codeString">"css/estilos.css"</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre>&lt;/<span class="codeReserved">head</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre>&lt;<span class="codeReserved">body</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre> &lt;<span class="codeReserved">h1</span>&gt;PWA Básica&lt;/<span class="codeReserved">h1</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre> &lt;<span class="codeReserved">p</span>&gt;Hola mundo.&lt;/<span class="codeReserved">p</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre>&lt;/<span class="codeReserved">body</span>&gt;</pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre>&lt;/<span class="codeReserved">html</span>&gt;</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section >
+         <h1 >E. public / site.webmanifest</h1><div class="horizontal">
+ <section class="lectura" style="text-align: justify;">
+  <ul>
+   <li>
+    <p>Este archivo sirve para configurar los instaladores de la aplicación.</p>
+   </li>
+  </ul>
+  <h1>Explicación de las propiedades</h1>
+  <dl>
+   <dt><code><dfn>short_name</dfn></code></dt>
+   <dd>
+    <p>
+     Nombre corto. Normalmente se despliega en dispositivos móviles.
+     Máximo 20 caracteres.
+    </p>
+   </dd>
+   <dt><code><dfn>name</dfn></code></dt>
+   <dd>
+    <p>
+     Nombre largo. Normalmente se despliega en computadoras de escritorio.
+     Máximo 30 caracteres.
+    </p>
+   </dd>
+   <dt><code><dfn>id</dfn></code></dt>
+   <dd>
+    <p>
+     Identificador del archivo de instalación. Normalmente es la ruta del
+     archivo
+     inicial de la app.
+    </p>
+   </dd>
+   <dt><code><dfn>start_url</dfn></code></dt>
+   <dd>
+    <p>
+     Ruta del archivo inicial de la app.
+    </p>
+   </dd>
+   <dt><code><dfn>display</dfn></code></dt>
+   <dd>
+    <p>
+     Forma de mostrar la app. El término <code>standalone</code> significa que
+     no
+     se muestra la barra de navegación del navegador web.
+    </p>
+   </dd>
+   <dt><code><dfn>theme_color</dfn></code></dt>
+   <dd>
+    <p>
+     Color de la barra de estado (en dispositivos móviles) o de título (en
+     computadoras de escritorio) de la app.
+    </p>
+   </dd>
+   <dt><code><dfn>background_color</dfn></code></dt>
+   <dd>
+    <p>
+     Color de fondo de la pantalla desplah en dispositivos móviles.
+    </p>
+   </dd>
+   <dt><code><dfn>description</dfn></code></dt>
+   <dd>
+    <p>
+     Describe el propósito de la aplicación. Aparece en el cuadro de diálogo que
+     muestra el navegador al instalar la app.
+    </p>
+   </dd>
+   <dt><code><dfn>screenshots</dfn></code></dt>
+   <dd>
+    <p>
+     Listado de máximo 8 capturas de pantalla. Aparecen en el cuadro de diálogo
+     que muestra el navegador al instalar la app. Debes incluir al menos una con
+     <code>"form_factor": "wide"</code>
+     y otra con
+     <code>"form_factor": "narrow"</code>.
+    </p>
+   </dd>
+   <dt><code><dfn>icons</dfn></code></dt>
+   <dd>
+    <p>
+     Listado de íconos en distintas resoluciones para los instaladores de la
+     app.
+     Se selecciona el que se vea mejor según las característocas del
+     dispositivo.
+    </p>
+   </dd>
+   <dt><code><dfn>src</dfn></code></dt>
+   <dd>
+    <p>
+     Url de la imagen dentro de la app.
+    </p>
+   </dd>
+   <dt><code><dfn>sizes</dfn></code></dt>
+   <dd>
+    <p>
+     Dimensiones en pixeles de la imagen, <em>ancho</em>x<em>alto</em>.
+    </p>
+   </dd>
+   <dt><code><dfn>type</dfn></code></dt>
+   <dd>
+    <p>
+     Tipo mime de la imagen.
+    </p>
+   </dd>
+   <dt><code><dfn>purpose</dfn></code></dt>
+   <dd>
+    <p>
+     Forma en que se usa la imagen.
+    </p>
+    <dl>
+     <dt><code><dfn>maskable</dfn></code></dt>
+     <dd>
+      <p>
+       La imagen puede recortarse de forma segura para tomar distintas formas,
+       como círculos, gotas, cuadrados con esquinas redondeadas, etc.
+       Normalmente
+       se usa para dispositivos móviles.
+      </p>
+     </dd>
+     <dt><code><dfn>any</dfn></code></dt>
+     <dd>
+      <p>
+       No se puede asegurar nada sobre la imagen. Normalmente se usa para
+       dispositivos de escritorio.
+      </p>
+     </dd>
+    </dl>
+    <p>
+     Normalmente debe proporcionarse un juego de íconos con <code>purpose</code>
+     <code>any</code> y otro juego de íconos con <code>purpose</code>
+     <code>maskable</code>.
+    </p>
+   </dd>
+   <dt><code><dfn>form_factor</dfn></code></dt>
+   <dd>
+    <p>
+     Orientación de una screenshot.
+    </p>
+    <dl>
+     <dt><code><dfn>wide</dfn></code></dt>
+     <dd>
+      <p>
+       La screenshot tiene una orientación horizontal. Normalmente la creenshot
+       se usa para dispositivos de escritorio.
+      </p>
+     </dd>
+     <dt><code><dfn>narrow</dfn></code></dt>
+     <dd>
+      <p>
+       La screenshot tiene una orientación vertical. Normalmente la creenshot
+       se usa para dispositivos móviles.
+      </p>
+     </dd>
+    </dl>
+    <p>
+     Debes incluir al menos una screenshot con
+     <code>"form_factor": "wide"</code>
+     y otra con
+     <code>"form_factor": "narrow"</code>.
+    </p>
+   </dd>
+   <dt><code><dfn>label</dfn></code></dt>
+   <dd>
+    <p>
+     Descripción de una screenshot. Aparece en el cuadro de diálogo que
+     muestra el navegador al instalar la app.
+    </p>
+   </dd>
+  </dl>
+ </section>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre>{</pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre> <span class="codeString">"short_name"</span>: <span class="codeString">"PWA"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre> <span class="codeString">"name"</span>: <span class="codeString">"Ejemplo de PWA"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre> <span class="codeString">"id"</span>: <span class="codeString">"/index.html"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre> <span class="codeString">"start_url"</span>: <span class="codeString">"/index.html"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre> <span class="codeString">"<span class="codeReserved">display</span>"</span>: <span class="codeString">"standalone"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre> <span class="codeString">"theme_color"</span>: <span class="codeString">"#cbc693"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre> <span class="codeString">"background_color"</span>: <span class="codeString">"#ffffff"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre> <span class="codeString">"description"</span>: <span class="codeString">"Ejemplos básico de PWA."</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre> <span class="codeString">"screenshots"</span>: [</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/screenshot_horizontal.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"1507x777"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre>   <span class="codeString">"form_factor"</span>: <span class="codeString">"wide"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre>   <span class="codeString">"label"</span>: <span class="codeString">"PWA Básica"</span></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/screenshot_vertical.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"591x980"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre>   <span class="codeString">"form_factor"</span>: <span class="codeString">"narrow"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre>   <span class="codeString">"label"</span>: <span class="codeString">"PWA Básica (2)"</span></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre> ],</pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre> <span class="codeString">"icons"</span>: [</pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x48.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"48x48"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x72.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"72x72"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x96.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">41</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"96x96"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">42</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">43</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></pre></td></tr>
+  <tr><td class="codeShow_order">44</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">45</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">46</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x128.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">47</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"128x128"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">48</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">49</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></pre></td></tr>
+  <tr><td class="codeShow_order">50</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">51</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">52</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x192.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">53</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"192x192"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">54</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">55</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></pre></td></tr>
+  <tr><td class="codeShow_order">56</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">57</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">58</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x384.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">59</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"384x384"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">60</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">61</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></pre></td></tr>
+  <tr><td class="codeShow_order">62</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">63</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">64</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x512.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">65</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"512x512"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">66</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">67</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></pre></td></tr>
+  <tr><td class="codeShow_order">68</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">69</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">70</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">71</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"2730x2730"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">72</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">73</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></pre></td></tr>
+  <tr><td class="codeShow_order">74</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">75</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">76</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/icono2048.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">77</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"2048x2048"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">78</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">79</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"any"</span></pre></td></tr>
+  <tr><td class="codeShow_order">80</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">81</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">82</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x48.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">83</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"48x48"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">84</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">85</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></pre></td></tr>
+  <tr><td class="codeShow_order">86</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">87</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">88</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x72.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">89</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"72x72"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">90</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">91</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></pre></td></tr>
+  <tr><td class="codeShow_order">92</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">93</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">94</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x96.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">95</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"96x96"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">96</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">97</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></pre></td></tr>
+  <tr><td class="codeShow_order">98</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">99</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">100</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x128.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">101</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"128x128"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">102</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">103</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></pre></td></tr>
+  <tr><td class="codeShow_order">104</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">105</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">106</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x192.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">107</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"192x192"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">108</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">109</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></pre></td></tr>
+  <tr><td class="codeShow_order">110</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">111</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">112</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x384.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">113</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"384x384"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">114</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">115</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></pre></td></tr>
+  <tr><td class="codeShow_order">116</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">117</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">118</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon_x512.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">119</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"512x512"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">120</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">121</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></pre></td></tr>
+  <tr><td class="codeShow_order">122</td><td><pre>  },</pre></td></tr>
+  <tr><td class="codeShow_order">123</td><td><pre>  {</pre></td></tr>
+  <tr><td class="codeShow_order">124</td><td><pre>   <span class="codeString">"<span class="codeReserved">src</span>"</span>: <span class="codeString">"/img/maskable_icon.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">125</td><td><pre>   <span class="codeString">"sizes"</span>: <span class="codeString">"2730x2730"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">126</td><td><pre>   <span class="codeString">"type"</span>: <span class="codeString">"image/png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">127</td><td><pre>   <span class="codeString">"purpose"</span>: <span class="codeString">"maskable"</span></pre></td></tr>
+  <tr><td class="codeShow_order">128</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">129</td><td><pre> ]</pre></td></tr>
+  <tr><td class="codeShow_order">130</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+</div>
+      </section>
+     <section >
+         <h1 >F. public / sw.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeComment">/* Este archivo debe estar colocado en la carpeta raíz del sitio.</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre><span class="codeComment"> * </span></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeComment"> * Cualquier cambio en el contenido de este archivo hace que el service</span></pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre><span class="codeComment"> * worker se reinstale. */</span></pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre><span class="codeComment"> * Cambia el número de la versión cuando cambia el contenido de los</span></pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre><span class="codeComment"> * archivos.</span></pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre><span class="codeComment"> * </span></pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre><span class="codeComment"> * El número a la izquierda del punto (.), en este caso &lt;q&gt;1&lt;/q&gt;, se</span></pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre><span class="codeComment"> * conoce como número mayor y se cambia cuando se realizan</span></pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre><span class="codeComment"> * modificaciones grandes o importantes.</span></pre></td></tr>
+  <tr><td class="codeShow_order">13</td><td><pre><span class="codeComment"> * </span></pre></td></tr>
+  <tr><td class="codeShow_order">14</td><td><pre><span class="codeComment"> * El número a la derecha del punto (.), en este caso &lt;q&gt;00&lt;/q&gt;, se</span></pre></td></tr>
+  <tr><td class="codeShow_order">15</td><td><pre><span class="codeComment"> * conoce como número menor y se cambia cuando se realizan</span></pre></td></tr>
+  <tr><td class="codeShow_order">16</td><td><pre><span class="codeComment"> * modificaciones menores.</span></pre></td></tr>
+  <tr><td class="codeShow_order">17</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">18</td><td><pre><span class="codeReserved">const</span> VERSION = <span class="codeString">"1.00"</span></pre></td></tr>
+  <tr><td class="codeShow_order">19</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">20</td><td><pre><span class="codeComment">/** Nombre del archivo de cache. */</span></pre></td></tr>
+  <tr><td class="codeShow_order">21</td><td><pre><span class="codeReserved">const</span> CACHE = <span class="codeString">"ejemploPWA"</span></pre></td></tr>
+  <tr><td class="codeShow_order">22</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">23</td><td><pre><span class="codeComment">/**</span></pre></td></tr>
+  <tr><td class="codeShow_order">24</td><td><pre><span class="codeComment"> * Archivos requeridos para que la aplicación funcione fuera de</span></pre></td></tr>
+  <tr><td class="codeShow_order">25</td><td><pre><span class="codeComment"> * línea.</span></pre></td></tr>
+  <tr><td class="codeShow_order">26</td><td><pre><span class="codeComment"> */</span></pre></td></tr>
+  <tr><td class="codeShow_order">27</td><td><pre><span class="codeReserved">const</span> ARCHIVOS = [</pre></td></tr>
+  <tr><td class="codeShow_order">28</td><td><pre> <span class="codeString">"favicon.ico"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">29</td><td><pre> <span class="codeString">"index.html"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">30</td><td><pre> <span class="codeString">"site.webmanifest"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">31</td><td><pre> <span class="codeString">"css/estilos.css"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">32</td><td><pre> <span class="codeString">"img/icono2048.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">33</td><td><pre> <span class="codeString">"img/maskable_icon.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">34</td><td><pre> <span class="codeString">"img/maskable_icon_x128.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">35</td><td><pre> <span class="codeString">"img/maskable_icon_x192.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">36</td><td><pre> <span class="codeString">"img/maskable_icon_x384.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">37</td><td><pre> <span class="codeString">"img/maskable_icon_x48.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">38</td><td><pre> <span class="codeString">"img/maskable_icon_x512.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">39</td><td><pre> <span class="codeString">"img/maskable_icon_x72.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">40</td><td><pre> <span class="codeString">"img/maskable_icon_x96.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">41</td><td><pre> <span class="codeString">"img/screenshot_horizontal.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">42</td><td><pre> <span class="codeString">"img/screenshot_vertical.png"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">43</td><td><pre> <span class="codeString">"js/registraServiceWorker.js"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">44</td><td><pre> <span class="codeString">"/"</span></pre></td></tr>
+  <tr><td class="codeShow_order">45</td><td><pre>]</pre></td></tr>
+  <tr><td class="codeShow_order">46</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">47</td><td><pre><span class="codeComment">// Verifica si el código corre dentro de un service worker.</span></pre></td></tr>
+  <tr><td class="codeShow_order">48</td><td><pre><span class="codeReserved">if</span> (<span class="codeReserved">self</span> <span class="codeReserved">instanceof</span> ServiceWorkerGlobalScope) {</pre></td></tr>
+  <tr><td class="codeShow_order">49</td><td><pre> <span class="codeComment">// Evento al empezar a instalar el servide worker,</span></pre></td></tr>
+  <tr><td class="codeShow_order">50</td><td><pre> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"install"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">51</td><td><pre>  (<span class="codeComment">/** <span class="codeReserved">@type</span> {ExtendableEvent} */</span> evt) =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">52</td><td><pre>   console.log(<span class="codeString">"El service worker se está instalando."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">53</td><td><pre>   evt.waitUntil(llenaElCache())</pre></td></tr>
+  <tr><td class="codeShow_order">54</td><td><pre>  })</pre></td></tr>
+  <tr><td class="codeShow_order">55</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">56</td><td><pre> <span class="codeComment">// Evento al solicitar información a la red.</span></pre></td></tr>
+  <tr><td class="codeShow_order">57</td><td><pre> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"fetch"</span>, (<span class="codeComment">/** <span class="codeReserved">@type</span> {FetchEvent} */</span> evt) =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">58</td><td><pre>  <span class="codeReserved">if</span> (evt.request.method === <span class="codeString">"GET"</span>) {</pre></td></tr>
+  <tr><td class="codeShow_order">59</td><td><pre>   evt.respondWith(buscaLaRespuestaEnElCache(evt))</pre></td></tr>
+  <tr><td class="codeShow_order">60</td><td><pre>  }</pre></td></tr>
+  <tr><td class="codeShow_order">61</td><td><pre> })</pre></td></tr>
+  <tr><td class="codeShow_order">62</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">63</td><td><pre> <span class="codeComment">// Evento cuando el service worker se vuelve activo.</span></pre></td></tr>
+  <tr><td class="codeShow_order">64</td><td><pre> <span class="codeReserved">self</span>.addEventListener(<span class="codeString">"activate"</span>,</pre></td></tr>
+  <tr><td class="codeShow_order">65</td><td><pre>  () =&gt; console.log(<span class="codeString">"El service worker está activo."</span>))</pre></td></tr>
+  <tr><td class="codeShow_order">66</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">67</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">68</td><td><pre><span class="codeReserved">async</span> <span class="codeReserved">function</span> llenaElCache() {</pre></td></tr>
+  <tr><td class="codeShow_order">69</td><td><pre> console.log(<span class="codeString">"Intentando cargar caché:"</span>, CACHE)</pre></td></tr>
+  <tr><td class="codeShow_order">70</td><td><pre> <span class="codeComment">// Borra todos los cachés.</span></pre></td></tr>
+  <tr><td class="codeShow_order">71</td><td><pre> <span class="codeReserved">const</span> keys = <span class="codeReserved">await</span> caches.keys()</pre></td></tr>
+  <tr><td class="codeShow_order">72</td><td><pre> <span class="codeReserved">for</span> (<span class="codeReserved">const</span> key of keys) {</pre></td></tr>
+  <tr><td class="codeShow_order">73</td><td><pre>  <span class="codeReserved">await</span> caches.delete(key)</pre></td></tr>
+  <tr><td class="codeShow_order">74</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">75</td><td><pre> <span class="codeComment">// Abre el caché de este service worker.</span></pre></td></tr>
+  <tr><td class="codeShow_order">76</td><td><pre> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</pre></td></tr>
+  <tr><td class="codeShow_order">77</td><td><pre> <span class="codeComment">// Carga el listado de ARCHIVOS.</span></pre></td></tr>
+  <tr><td class="codeShow_order">78</td><td><pre> <span class="codeReserved">await</span> cache.addAll(ARCHIVOS)</pre></td></tr>
+  <tr><td class="codeShow_order">79</td><td><pre> console.log(<span class="codeString">"Cache cargado:"</span>, CACHE)</pre></td></tr>
+  <tr><td class="codeShow_order">80</td><td><pre> console.log(<span class="codeString">"Versión:"</span>, VERSION)</pre></td></tr>
+  <tr><td class="codeShow_order">81</td><td><pre>}</pre></td></tr>
+  <tr><td class="codeShow_order">82</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">83</td><td><pre><span class="codeComment">/** <span class="codeReserved">@param</span> {FetchEvent} evt */</span></pre></td></tr>
+  <tr><td class="codeShow_order">84</td><td><pre><span class="codeReserved">async</span> <span class="codeReserved">function</span> buscaLaRespuestaEnElCache(evt) {</pre></td></tr>
+  <tr><td class="codeShow_order">85</td><td><pre> <span class="codeComment">// Abre el caché.</span></pre></td></tr>
+  <tr><td class="codeShow_order">86</td><td><pre> <span class="codeReserved">const</span> cache = <span class="codeReserved">await</span> caches.open(CACHE)</pre></td></tr>
+  <tr><td class="codeShow_order">87</td><td><pre> <span class="codeReserved">const</span> request = evt.request</pre></td></tr>
+  <tr><td class="codeShow_order">88</td><td><pre> <span class="codeComment">/* Busca la respuesta a la solicitud en el contenido del caché, sin</span></pre></td></tr>
+  <tr><td class="codeShow_order">89</td><td><pre><span class="codeComment">  * tomar en cuenta la parte después del símbolo &quot;?&quot; en la URL. */</span></pre></td></tr>
+  <tr><td class="codeShow_order">90</td><td><pre> <span class="codeReserved">const</span> response = <span class="codeReserved">await</span> cache.match(request, { ignoreSearch: <span class="codeReserved">true</span> })</pre></td></tr>
+  <tr><td class="codeShow_order">91</td><td><pre> <span class="codeReserved">if</span> (response === undefined) {</pre></td></tr>
+  <tr><td class="codeShow_order">92</td><td><pre>  <span class="codeComment">/* Si no la encuentra, empieza a descargar de la red y devuelve</span></pre></td></tr>
+  <tr><td class="codeShow_order">93</td><td><pre><span class="codeComment">   * la promesa. */</span></pre></td></tr>
+  <tr><td class="codeShow_order">94</td><td><pre>  <span class="codeReserved">return</span> fetch(request)</pre></td></tr>
+  <tr><td class="codeShow_order">95</td><td><pre> } <span class="codeReserved">else</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">96</td><td><pre>  <span class="codeComment">// Si la encuentra, devuelve la respuesta encontrada en el caché.</span></pre></td></tr>
+  <tr><td class="codeShow_order">97</td><td><pre>  <span class="codeReserved">return</span> response</pre></td></tr>
+  <tr><td class="codeShow_order">98</td><td><pre> }</pre></td></tr>
+  <tr><td class="codeShow_order">99</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+     <section>
+         <h1 >G. Carpeta « public / css »</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
+    </p>
+   </div>
+
+  <div class="lectura">
+   <nav>
+    <h1>Contenido</h1>
+    
+   <ol type="1">
+    
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-css/m-estilos-css.html">public / css / estilos.css</a>
+    </p>
+   </li>
+   </ol>
+   </nav>
+  </div>
+     <section >
+         <h1 >1. public / css / estilos.css</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre>html {</pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre> <span class="codeReserved">color-scheme</span>: light dark;</pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre> <span class="codeReserved">font-family</span>: <span class="codeReserved">sans-serif</span>;</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+      </section>
+     <section>
+         <h1 >H. Carpeta « img »</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
+    </p>
+   </div>
+
+  <div class="lectura">
+   <nav>
+    <h1>Contenido</h1>
+    
+   <ol type="A">
+    
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-img/m-icono2048-png.html">img / icono2048.png</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-img/m-maskable_icon-png.html">img / maskable_icon.png</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-img/m-maskable_icon_x128-png.html">img / maskable_icon_x128.png</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-img/m-maskable_icon_x192-png.html">img / maskable_icon_x192.png</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-img/m-maskable_icon_x384-png.html">img / maskable_icon_x384.png</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-img/m-maskable_icon_x48-png.html">img / maskable_icon_x48.png</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-img/m-maskable_icon_x512-png.html">img / maskable_icon_x512.png</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-img/m-maskable_icon_x72-png.html">img / maskable_icon_x72.png</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-img/m-maskable_icon_x96-png.html">img / maskable_icon_x96.png</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-img/m-screenshot_horizontal-png.html">img / screenshot_horizontal.png</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-img/m-screenshot_vertical-png.html">img / screenshot_vertical.png</a>
+    </p>
+   </li>
+   </ol>
+   </nav>
+  </div>
+     <section >
+         <h1 >A. img / icono2048.png</h1><figure>
+    <img style="width: auto; max-width: 100%;" alt="icono2048.png"
+      src="/img/m05pwaBasica/icono2048.png">
+   </figure>
+      </section>
+     <section >
+         <h1 >B. img / maskable_icon.png</h1><figure>
+    <img style="width: auto; max-width: 100%;" alt="maskable_icon.png"
+      src="/img/m05pwaBasica/maskable_icon.png">
+   </figure>
+      </section>
+     <section >
+         <h1 >C. img / maskable_icon_x128.png</h1><figure>
+    <img style="width: auto; max-width: 100%;" alt="maskable_icon_x128.png"
+      src="/img/m05pwaBasica/maskable_icon_x128.png">
+   </figure>
+      </section>
+     <section >
+         <h1 >D. img / maskable_icon_x192.png</h1><figure>
+    <img style="width: auto; max-width: 100%;" alt="maskable_icon_x192.png"
+      src="/img/m05pwaBasica/maskable_icon_x192.png">
+   </figure>
+      </section>
+     <section >
+         <h1 >E. img / maskable_icon_x384.png</h1><figure>
+    <img style="width: auto; max-width: 100%;" alt="maskable_icon_x384.png"
+      src="/img/m05pwaBasica/maskable_icon_x384.png">
+   </figure>
+      </section>
+     <section >
+         <h1 >F. img / maskable_icon_x48.png</h1><figure>
+    <img style="width: auto; max-width: 100%;" alt="maskable_icon_x48.png"
+      src="/img/m05pwaBasica/maskable_icon_x48.png">
+   </figure>
+      </section>
+     <section >
+         <h1 >G. img / maskable_icon_x512.png</h1><figure>
+    <img style="width: auto; max-width: 100%;" alt="maskable_icon_x512.png"
+      src="/img/m05pwaBasica/maskable_icon_x512.png">
+   </figure>
+      </section>
+     <section >
+         <h1 >H. img / maskable_icon_x72.png</h1><figure>
+    <img style="width: auto; max-width: 100%;" alt="maskable_icon_x72.png"
+      src="/img/m05pwaBasica/maskable_icon_x72.png">
+   </figure>
+      </section>
+     <section >
+         <h1 >I. img / maskable_icon_x96.png</h1><figure>
+    <img style="width: auto; max-width: 100%;" alt="maskable_icon_x96.png"
+      src="/img/m05pwaBasica/maskable_icon_x96.png">
+   </figure>
+      </section>
+     <section >
+         <h1 >J. img / screenshot_horizontal.png</h1><figure>
+    <img style="width: auto; max-width: 100%;" alt="screenshot_horizontal.png"
+      src="/img/m05pwaBasica/screenshot_horizontal.png">
+   </figure>
+      </section>
+     <section >
+         <h1 >K. img / screenshot_vertical.png</h1><figure>
+    <img style="width: auto; max-width: 100%;" alt="screenshot_vertical.png"
+      src="/img/m05pwaBasica/screenshot_vertical.png">
+   </figure>
+      </section>
+      </section>
+     <section>
+         <h1 >I. Carpeta « public / js »</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
+    </p>
+   </div>
+
+  <div class="lectura">
+   <nav>
+    <h1>Contenido</h1>
+    
+   <ol type="1">
+    
+   <li>
+    <p>
+     <a href="/m04pwaBasica/m-public/m-js/m-registraServiceWorker-js.html">public / js / registraServiceWorker.js</a>
+    </p>
+   </li>
+   </ol>
+   </nav>
+  </div>
+     <section >
+         <h1 >1. public / js / registraServiceWorker.js</h1><table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td class="codeShow_order">1</td><td><pre><span class="codeReserved">const</span> nombreDeServiceWorker = <span class="codeString">"sw.js"</span></pre></td></tr>
+  <tr><td class="codeShow_order">2</td><td><pre></pre></td></tr>
+  <tr><td class="codeShow_order">3</td><td><pre><span class="codeReserved">try</span> {</pre></td></tr>
+  <tr><td class="codeShow_order">4</td><td><pre> navigator.serviceWorker.register(nombreDeServiceWorker)</pre></td></tr>
+  <tr><td class="codeShow_order">5</td><td><pre>  .then(registro =&gt; {</pre></td></tr>
+  <tr><td class="codeShow_order">6</td><td><pre>   console.log(nombreDeServiceWorker, <span class="codeString">"registrado."</span>)</pre></td></tr>
+  <tr><td class="codeShow_order">7</td><td><pre>   console.log(registro)</pre></td></tr>
+  <tr><td class="codeShow_order">8</td><td><pre>  })</pre></td></tr>
+  <tr><td class="codeShow_order">9</td><td><pre>  .<span class="codeReserved">catch</span>(error =&gt; console.log(error))</pre></td></tr>
+  <tr><td class="codeShow_order">10</td><td><pre>} <span class="codeReserved">catch</span> (error) {</pre></td></tr>
+  <tr><td class="codeShow_order">11</td><td><pre> console.log(error)</pre></td></tr>
+  <tr><td class="codeShow_order">12</td><td><pre>}</pre></td></tr>
+ </tbody>
+</table>
+      </section>
+      </section>
+</body>
+
+</html>
